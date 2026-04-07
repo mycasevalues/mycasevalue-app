@@ -90,8 +90,8 @@ export default function NotFound() {
               transition: all 200ms ease;
             }
             .notfound-link-primary:hover {
-              background: #7C3AED !important;
-              box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+              background: #004182 !important;
+              box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
             }
             .notfound-link-secondary {
               transition: all 200ms ease;
@@ -119,7 +119,7 @@ export default function NotFound() {
                 alignItems: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: '#8B5CF6',
+                background: '#0A66C2',
                 color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '12px',

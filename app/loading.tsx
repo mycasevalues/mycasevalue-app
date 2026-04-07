@@ -40,7 +40,7 @@ export default function Loading() {
           width: '48px',
           height: '48px',
           border: '3px solid #E5E7EB',
-          borderTop: '3px solid #6D28D9',
+          borderTop: '3px solid #004182',
           borderRadius: '50%',
           animation: 'spin 1s linear infinite',
         }}

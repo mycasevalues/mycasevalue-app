@@ -45,7 +45,7 @@ export default function ResultsPage() {
       <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '12px 0' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <nav style={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#4B5563' }}>
-            <Link href="/" style={{ color: '#6D28D9', textDecoration: 'none' }}>
+            <Link href="/" style={{ color: '#004182', textDecoration: 'none' }}>
               Home
             </Link>
             <span style={{ margin: '0 8px', color: '#A8ACB1' }}>&gt;</span>
@@ -60,7 +60,7 @@ export default function ResultsPage() {
           <div style={{ marginBottom: '16px' }}>
             <span style={{
               display: 'inline-block',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               color: '#FFFFFF',
               padding: '6px 12px',
               borderRadius: '12px',
@@ -138,7 +138,7 @@ export default function ResultsPage() {
                 borderRadius: '12px',
                 fontSize: '14px',
                 fontWeight: '600',
-                background: '#8B5CF6',
+                background: '#0A66C2',
                 color: '#FFFFFF',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',

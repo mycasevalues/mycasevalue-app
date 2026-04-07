@@ -37,7 +37,7 @@ export default function DocumentIntelligencePage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA', fontFamily: 'var(--font-body)' }}>
       <style>{`
-        input:focus { border-color: #8B5CF6 !important; outline: none; box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.08); }
+        input:focus { border-color: #0A66C2 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
@@ -45,13 +45,13 @@ export default function DocumentIntelligencePage() {
       {/* Header */}
       <div style={{ background: '#1B3A5C', padding: '32px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <Link href="/" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/" style={{ fontSize: '13px', color: '#0A66C2', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Home &gt; Attorney Tools &gt; Document Intelligence
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(232,23,31,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
               </svg>
             </div>
@@ -79,14 +79,14 @@ export default function DocumentIntelligencePage() {
           <button
             onClick={handleUpload}
             disabled={!file || loading}
-            style={{ padding: '0 28px', height: '48px', background: !file || loading ? '#E5E7EB' : '#8B5CF6', color: '#fff', border: 'none', borderRadius: '12px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
+            style={{ padding: '0 28px', height: '48px', background: !file || loading ? '#E5E7EB' : '#0A66C2', color: '#fff', border: 'none', borderRadius: '12px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
           >
             {loading ? 'Analyzing...' : 'Analyze Document'}
           </button>
           <p style={{ fontSize: '11px', color: '#4B5563', marginTop: '12px' }}>Supported: PDF, TXT, DOC, DOCX · Max 10MB</p>
         </div>
 
-        {error && <div style={{ padding: '12px 16px', background: 'rgba(139, 92, 246, 0.12)', border: '1px solid #E5E7EB', borderRadius: '12px', color: '#8B5CF6', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
+        {error && <div style={{ padding: '12px 16px', background: 'rgba(10, 102, 194, 0.12)', border: '1px solid #E5E7EB', borderRadius: '12px', color: '#0A66C2', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
 
         {analysis && (
           <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>

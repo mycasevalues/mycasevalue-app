@@ -58,7 +58,7 @@ export default function Loading() {
                   style={{
                     height: '28px',
                     width: '140px',
-                    background: '#8B5CF6',
+                    background: '#0A66C2',
                     borderRadius: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}

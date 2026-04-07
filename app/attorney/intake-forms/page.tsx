@@ -126,7 +126,7 @@ export default function IntakeFormsPage() {
     }
     .header {
       margin-bottom: 32px;
-      border-bottom: 2px solid #8B5CF6;
+      border-bottom: 2px solid #0A66C2;
       padding-bottom: 16px;
     }
     .header h1 {
@@ -180,8 +180,8 @@ export default function IntakeFormsPage() {
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: #8B5CF6;
-      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+      border-color: #0A66C2;
+      box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
     }
     .checkbox-group {
       display: flex;
@@ -312,10 +312,10 @@ export default function IntakeFormsPage() {
       <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#8B5CF6', flexShrink: 0 }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0A66C2', flexShrink: 0 }}>
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
             </svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
               Intake Form Generator
             </span>
           </div>
@@ -354,9 +354,9 @@ export default function IntakeFormsPage() {
                       style={{
                         padding: '12px',
                         borderRadius: '12px',
-                        border: `1px solid ${category === cat.id ? '#8B5CF6' : '#E5E7EB'}`,
-                        backgroundColor: category === cat.id ? 'rgba(139, 92, 246, 0.08)' : '#FAFBFC',
-                        color: category === cat.id ? '#8B5CF6' : '#4B5563',
+                        border: `1px solid ${category === cat.id ? '#0A66C2' : '#E5E7EB'}`,
+                        backgroundColor: category === cat.id ? 'rgba(10, 102, 194, 0.08)' : '#FAFBFC',
+                        color: category === cat.id ? '#0A66C2' : '#4B5563',
                         fontSize: '13px',
                         fontWeight: 600,
                         cursor: 'pointer',
@@ -402,7 +402,7 @@ export default function IntakeFormsPage() {
               {/* Error */}
               {error && (
                 <div style={{ padding: '12px 14px', borderRadius: '12px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid #E5E7EB' }}>
-                  <p style={{ fontSize: '13px', color: '#8B5CF6', margin: 0, fontFamily: 'var(--font-body)' }}>{error}</p>
+                  <p style={{ fontSize: '13px', color: '#0A66C2', margin: 0, fontFamily: 'var(--font-body)' }}>{error}</p>
                 </div>
               )}
 
@@ -413,7 +413,7 @@ export default function IntakeFormsPage() {
                 style={{
                   width: '100%',
                   padding: '14px',
-                  backgroundColor: loading || !caseType || !category ? '#E5E7EB' : '#8B5CF6',
+                  backgroundColor: loading || !caseType || !category ? '#E5E7EB' : '#0A66C2',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: '8px',
@@ -436,8 +436,8 @@ export default function IntakeFormsPage() {
                     width: '100%',
                     padding: '12px',
                     backgroundColor: '#FFFFFF',
-                    color: '#8B5CF6',
-                    border: '1px solid #8B5CF6',
+                    color: '#0A66C2',
+                    border: '1px solid #0A66C2',
                     borderRadius: '8px',
                     fontSize: '13px',
                     fontWeight: 600,
@@ -446,7 +446,7 @@ export default function IntakeFormsPage() {
                     transition: 'all 0.2s',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(139, 92, 246, 0.08)';
+                    e.currentTarget.style.backgroundColor = 'rgba(10, 102, 194, 0.08)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#FFFFFF';
@@ -471,7 +471,7 @@ export default function IntakeFormsPage() {
                       onClick={copyToClipboard}
                       style={{
                         padding: '8px 12px',
-                        background: copied ? '#059669' : '#8B5CF6',
+                        background: copied ? '#059669' : '#0A66C2',
                         color: '#FFFFFF',
                         border: 'none',
                         borderRadius: '8px',
@@ -482,10 +482,10 @@ export default function IntakeFormsPage() {
                         fontFamily: 'var(--font-body)',
                       }}
                       onMouseEnter={(e) => {
-                        if (!copied) e.currentTarget.style.background = '#6D28D9';
+                        if (!copied) e.currentTarget.style.background = '#004182';
                       }}
                       onMouseLeave={(e) => {
-                        if (!copied) e.currentTarget.style.background = '#8B5CF6';
+                        if (!copied) e.currentTarget.style.background = '#0A66C2';
                       }}
                     >
                       {copied ? 'Copied!' : 'Copy HTML'}
@@ -564,7 +564,7 @@ export default function IntakeFormsPage() {
         {!intakeForm && (
           <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
             <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>
@@ -576,7 +576,7 @@ export default function IntakeFormsPage() {
             </div>
 
             <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>
@@ -588,7 +588,7 @@ export default function IntakeFormsPage() {
             </div>
 
             <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>
@@ -604,7 +604,7 @@ export default function IntakeFormsPage() {
         {/* Navigation */}
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid #E5E7EB', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/fee-calculator" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#8B5CF6'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(139, 92, 246, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0A66C2'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: '#0f0f0f', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
                 Fee Calculator
               </p>
@@ -614,7 +614,7 @@ export default function IntakeFormsPage() {
             </div>
           </Link>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#8B5CF6'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(139, 92, 246, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0A66C2'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: '#0f0f0f', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
                 Demand Letter
               </p>
@@ -624,7 +624,7 @@ export default function IntakeFormsPage() {
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#8B5CF6'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(139, 92, 246, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0A66C2'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: '#0f0f0f', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
                 Case Predictor
               </p>

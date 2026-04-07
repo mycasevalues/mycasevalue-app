@@ -70,7 +70,7 @@ export default function CasePredictorPage() {
   const focusStyle = `
     select:focus, input:focus {
       outline: none;
-      border-color: #8B5CF6;
+      border-color: #0A66C2;
       box-shadow: 0 0 0 2px rgba(232, 23, 31, 0.08);
     }
   `;
@@ -163,13 +163,13 @@ export default function CasePredictorPage() {
       {/* Header */}
       <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <Link href="/" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/" style={{ fontSize: '13px', color: '#0A66C2', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Home &gt; Attorney Tools &gt; Case Predictor
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M8 10h.01M16 10h.01" />
                 <path d="M9 16c1-1 3-1 6 0" />
@@ -195,7 +195,7 @@ export default function CasePredictorPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '28px' }}>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: '#8B5CF6', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 600, fontSize: '18px' }}>
+              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: '#0A66C2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 600, fontSize: '18px' }}>
                 1
               </div>
               <div>
@@ -208,7 +208,7 @@ export default function CasePredictorPage() {
               </div>
             </div>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: '#8B5CF6', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 600, fontSize: '18px' }}>
+              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: '#0A66C2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 600, fontSize: '18px' }}>
                 2
               </div>
               <div>
@@ -221,7 +221,7 @@ export default function CasePredictorPage() {
               </div>
             </div>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: '#8B5CF6', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 600, fontSize: '18px' }}>
+              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: '#0A66C2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 600, fontSize: '18px' }}>
                 3
               </div>
               <div>
@@ -332,9 +332,9 @@ export default function CasePredictorPage() {
                           flex: 1,
                           padding: '10px',
                           borderRadius: '12px',
-                          border: `1px solid ${hasAttorney === opt.val ? '#8B5CF6' : '#E5E7EB'}`,
-                          backgroundColor: hasAttorney === opt.val ? 'rgba(139, 92, 246, 0.08)' : '#FAFBFC',
-                          color: hasAttorney === opt.val ? '#8B5CF6' : '#4B5563',
+                          border: `1px solid ${hasAttorney === opt.val ? '#0A66C2' : '#E5E7EB'}`,
+                          backgroundColor: hasAttorney === opt.val ? 'rgba(10, 102, 194, 0.08)' : '#FAFBFC',
+                          color: hasAttorney === opt.val ? '#0A66C2' : '#4B5563',
                           fontSize: '13px',
                           fontWeight: 600,
                           cursor: 'pointer',
@@ -378,7 +378,7 @@ export default function CasePredictorPage() {
                           borderRadius: '12px',
                           border: `1px solid ${caseStrength === opt.val ? opt.color : '#E5E7EB'}`,
                           backgroundColor: caseStrength === opt.val ? `${opt.color}15` : '#FAFBFC',
-                          color: caseStrength === opt.val ? opt.color === '#EA2143' ? '#8B5CF6' : opt.color === '#E89558' ? '#B86E00' : '#059669' : '#4B5563',
+                          color: caseStrength === opt.val ? opt.color === '#EA2143' ? '#0A66C2' : opt.color === '#E89558' ? '#B86E00' : '#059669' : '#4B5563',
                           fontSize: '13px',
                           fontWeight: 600,
                           cursor: 'pointer',
@@ -398,7 +398,7 @@ export default function CasePredictorPage() {
                       type="checkbox"
                       checked={priorOffers}
                       onChange={(e) => setPriorOffers(e.target.checked)}
-                      style={{ width: '16px', height: '16px', accentColor: '#8B5CF6' }}
+                      style={{ width: '16px', height: '16px', accentColor: '#0A66C2' }}
                     />
                     Prior settlement offers
                   </label>
@@ -407,7 +407,7 @@ export default function CasePredictorPage() {
                       type="checkbox"
                       checked={documentedEvidence}
                       onChange={(e) => setDocumentedEvidence(e.target.checked)}
-                      style={{ width: '16px', height: '16px', accentColor: '#8B5CF6' }}
+                      style={{ width: '16px', height: '16px', accentColor: '#0A66C2' }}
                     />
                     Documented evidence
                   </label>
@@ -416,7 +416,7 @@ export default function CasePredictorPage() {
                 {/* Error */}
                 {error && (
                   <div style={{ padding: '10px 14px', borderRadius: '12px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid #E5E7EB' }}>
-                    <p style={{ fontSize: '13px', color: '#8B5CF6', margin: 0 }}>{error}</p>
+                    <p style={{ fontSize: '13px', color: '#0A66C2', margin: 0 }}>{error}</p>
                   </div>
                 )}
 
@@ -427,7 +427,7 @@ export default function CasePredictorPage() {
                   style={{
                     width: '100%',
                     padding: '14px',
-                    backgroundColor: loading || !caseType ? '#E5E7EB' : '#8B5CF6',
+                    backgroundColor: loading || !caseType ? '#E5E7EB' : '#0A66C2',
                     color: '#FFFFFF',
                     border: 'none',
                     borderRadius: '12px',
@@ -461,17 +461,17 @@ export default function CasePredictorPage() {
                     fontSize: '11px',
                     fontWeight: 600,
                     backgroundColor: p.confidence === 'High' ? 'rgba(7,132,74,0.08)' : p.confidence === 'Moderate' ? 'rgba(184,110,0,0.08)' : 'rgba(204,16,25,0.08)',
-                    color: p.confidence === 'High' ? '#059669' : p.confidence === 'Moderate' ? '#B86E00' : '#8B5CF6',
+                    color: p.confidence === 'High' ? '#059669' : p.confidence === 'Moderate' ? '#B86E00' : '#0A66C2',
                   }}>
                     {p.confidence} Confidence
                   </span>
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '24px' }}>
-                  <ScoreRing value={p.predictedWinRate} label="Win Rate" color={p.predictedWinRate >= 55 ? '#059669' : p.predictedWinRate >= 40 ? '#B86E00' : '#8B5CF6'} />
-                  <ScoreRing value={p.predictedSettlementRate} label="Settlement" color="#8B5CF6" />
+                  <ScoreRing value={p.predictedWinRate} label="Win Rate" color={p.predictedWinRate >= 55 ? '#059669' : p.predictedWinRate >= 40 ? '#B86E00' : '#0A66C2'} />
+                  <ScoreRing value={p.predictedSettlementRate} label="Settlement" color="#0A66C2" />
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ width: 80, height: 80, borderRadius: '50%', border: '6px solid #8B5CF6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: 80, height: 80, borderRadius: '50%', border: '6px solid #0A66C2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <span className="font-mono" style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f' }}>{p.predictedDurationMonths}mo</span>
                     </div>
                     <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>Duration</div>
@@ -504,7 +504,7 @@ export default function CasePredictorPage() {
                       left: '10%',
                       right: '10%',
                       height: '100%',
-                      background: 'linear-gradient(90deg, #8B5CF6, #059669)',
+                      background: 'linear-gradient(90deg, #0A66C2, #059669)',
                       borderRadius: '12px',
                     }} />
                   </div>
@@ -536,7 +536,7 @@ export default function CasePredictorPage() {
                         <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f' }}>{o.percentage}%</span>
                       </div>
                       <div style={{ height: '8px', background: '#E5E7EB', borderRadius: '12px', overflow: 'hidden' }}>
-                        <div style={{ height: '100%', width: `${o.percentage}%`, background: o.color === '#EA2143' ? '#8B5CF6' : o.color === '#E89558' ? '#B86E00' : o.color === '#059669' ? '#059669' : '#8B5CF6', borderRadius: '12px', transition: 'width 0.5s ease' }} />
+                        <div style={{ height: '100%', width: `${o.percentage}%`, background: o.color === '#EA2143' ? '#0A66C2' : o.color === '#E89558' ? '#B86E00' : o.color === '#059669' ? '#059669' : '#0A66C2', borderRadius: '12px', transition: 'width 0.5s ease' }} />
                       </div>
                     </div>
                   ))}
@@ -551,7 +551,7 @@ export default function CasePredictorPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   {p.keyFactors.map((f, i) => (
                     <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                       <span style={{ fontSize: '13px', color: '#4B5563', lineHeight: 1.5 }}>{f}</span>
@@ -564,10 +564,10 @@ export default function CasePredictorPage() {
               {p.aiInsights && (
                 <div style={{ background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', borderRadius: '12px', padding: '28px', border: '1px solid #D8BFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#8B5CF6', flexShrink: 0 }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#0A66C2', flexShrink: 0 }}>
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
                     </svg>
-                    <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 600, color: '#6D28D9', margin: '0' }}>
+                    <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 600, color: '#004182', margin: '0' }}>
                       AI Strategic Insights
                     </h3>
                   </div>
@@ -597,9 +597,9 @@ export default function CasePredictorPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
             <Link href="/attorney/judge-intelligence" style={{ textDecoration: 'none' }}>
-              <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '24px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = '#8B5CF6'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = '#E5E7EB'; }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+              <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '24px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = '#0A66C2'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = '#E5E7EB'; }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                     <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
                   </svg>
                 </div>
@@ -612,9 +612,9 @@ export default function CasePredictorPage() {
               </div>
             </Link>
             <Link href="/attorney/venue-optimizer" style={{ textDecoration: 'none' }}>
-              <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '24px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = '#8B5CF6'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = '#E5E7EB'; }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+              <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '24px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = '#0A66C2'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = '#E5E7EB'; }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                     <circle cx="12" cy="12" r="10" />
                     <circle cx="12" cy="12" r="6" />
                     <circle cx="12" cy="12" r="2" />

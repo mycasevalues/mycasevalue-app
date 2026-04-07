@@ -64,7 +64,7 @@ export default function ReportsPage() {
   if (loading) {
     return (
       <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#8B5CF6', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#0A66C2', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
     );
@@ -81,7 +81,7 @@ export default function ReportsPage() {
             <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 600, color: '#FFFFFF', margin: 0 }}>
               My Reports
             </h1>
-            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#8B5CF6', color: '#FFFFFF', padding: '4px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0A66C2', color: '#FFFFFF', padding: '4px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' }}>
               Reports
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function ReportsPage() {
                 <style>{`
                   .feature-card:hover {
                     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                    border-color: #6D28D9;
+                    border-color: #004182;
                   }
                 `}</style>
                 <div style={{
@@ -179,7 +179,7 @@ export default function ReportsPage() {
                   justifyContent: 'center',
                   margin: '0 auto 12px',
                 }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
@@ -235,7 +235,7 @@ export default function ReportsPage() {
               >
                 <style>{`
                   .report-link:hover {
-                    border-color: #8B5CF6;
+                    border-color: #0A66C2;
                     box-shadow: 0 8px 24px rgba(232, 23, 31, 0.12);
                     transform: translateY(-2px);
                   }
@@ -263,7 +263,7 @@ export default function ReportsPage() {
                       Nature of Suit: {report.nos}
                     </p>
                   </div>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
                 </div>
@@ -276,7 +276,7 @@ export default function ReportsPage() {
           /* Empty State */
           <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '64px 32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', textAlign: 'center' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(0,105,151,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                 <polyline points="14 2 14 8 20 8" />
                 <line x1="12" y1="11" x2="12" y2="17" />
@@ -289,7 +289,7 @@ export default function ReportsPage() {
             <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
               Your saved case research reports and search history will appear here. Start by running a case lookup.
             </p>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
               Start a Case Lookup
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </Link>
@@ -310,7 +310,7 @@ export default function ReportsPage() {
                     fontSize: '14px',
                     fontWeight: 600,
                     cursor: 'pointer',
-                    backgroundColor: tab === t ? '#8B5CF6' : 'transparent',
+                    backgroundColor: tab === t ? '#0A66C2' : 'transparent',
                     color: tab === t ? '#FFFFFF' : '#4B5563',
                     transition: 'all 0.2s',
                   }}
@@ -328,7 +328,7 @@ export default function ReportsPage() {
                     transition: all 0.2s;
                   }
                   .report-card:hover {
-                    border-left: 4px solid #8B5CF6;
+                    border-left: 4px solid #0A66C2;
                     box-shadow: 0 4px 12px rgba(232, 23, 31, 0.12);
                   }
                 `}</style>
@@ -373,7 +373,7 @@ export default function ReportsPage() {
                     transition: all 0.2s;
                   }
                   .history-card:hover {
-                    border-left: 4px solid #8B5CF6;
+                    border-left: 4px solid #0A66C2;
                     box-shadow: 0 4px 12px rgba(232, 23, 31, 0.12);
                   }
                 `}</style>

@@ -37,8 +37,8 @@ export default function MotionAnalyticsPage() {
   const focusStyle = `
     select:focus, input:focus {
       outline: none;
-      border-color: #8B5CF6;
-      box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.08);
+      border-color: #0A66C2;
+      box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08);
     }
   `;
 
@@ -104,13 +104,13 @@ export default function MotionAnalyticsPage() {
       {/* Header */}
       <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/attorney" style={{ fontSize: '13px', color: '#0A66C2', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Back to Attorney Tools
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M9 9h6M9 15h6" />
               </svg>
@@ -124,7 +124,7 @@ export default function MotionAnalyticsPage() {
               </p>
             </div>
           </div>
-          <p style={{ fontSize: '12px', color: 'rgba(139, 92, 246, 0.8)', margin: '12px 0 0', fontWeight: 500 }}>
+          <p style={{ fontSize: '12px', color: 'rgba(10, 102, 194, 0.8)', margin: '12px 0 0', fontWeight: 500 }}>
             Free during public beta
           </p>
         </div>
@@ -167,7 +167,7 @@ export default function MotionAnalyticsPage() {
                   textTransform: 'uppercase',
                   letterSpacing: '0.04em',
                   cursor: 'pointer',
-                  backgroundColor: comparisonMode ? '#8B5CF6' : '#FFFFFF',
+                  backgroundColor: comparisonMode ? '#0A66C2' : '#FFFFFF',
                   color: comparisonMode ? '#FFFFFF' : '#4B5563',
                   transition: 'all 0.2s',
                 }}
@@ -202,7 +202,7 @@ export default function MotionAnalyticsPage() {
         {/* Loading */}
         {loading && (
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
-            <div style={{ width: 36, height: 36, border: '3px solid #E5E7EB', borderTopColor: '#8B5CF6', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
+            <div style={{ width: 36, height: 36, border: '3px solid #E5E7EB', borderTopColor: '#0A66C2', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
             <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
             <p style={{ fontSize: '14px', color: '#4B5563' }}>Analyzing motion data...</p>
           </div>
@@ -240,8 +240,8 @@ export default function MotionAnalyticsPage() {
                       style={{
                         padding: '4px 10px',
                         borderRadius: '6px',
-                        backgroundColor: motion.successColor === 'green' ? 'rgba(16, 185, 129, 0.12)' : motion.successColor === 'amber' ? 'rgba(232, 149, 88, 0.12)' : 'rgba(139, 92, 246, 0.12)',
-                        color: motion.successColor === 'green' ? '#10B981' : motion.successColor === 'amber' ? '#E89558' : '#8B5CF6',
+                        backgroundColor: motion.successColor === 'green' ? 'rgba(16, 185, 129, 0.12)' : motion.successColor === 'amber' ? 'rgba(232, 149, 88, 0.12)' : 'rgba(10, 102, 194, 0.12)',
+                        color: motion.successColor === 'green' ? '#10B981' : motion.successColor === 'amber' ? '#E89558' : '#0A66C2',
                         fontSize: '11px',
                         fontWeight: 600,
                         textTransform: 'uppercase' as const,
@@ -255,7 +255,7 @@ export default function MotionAnalyticsPage() {
                   <div style={{ marginBottom: '16px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                       <span style={{ fontSize: '12px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase' as const }}>Grant Rate</span>
-                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 600, color: motion.successColor === 'green' ? '#10B981' : motion.successColor === 'amber' ? '#E89558' : '#8B5CF6' }}>
+                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 600, color: motion.successColor === 'green' ? '#10B981' : motion.successColor === 'amber' ? '#E89558' : '#0A66C2' }}>
                         {motion.grantRate}%
                       </span>
                     </div>
@@ -264,7 +264,7 @@ export default function MotionAnalyticsPage() {
                         style={{
                           height: '100%',
                           width: `${Math.min(motion.grantRate, 100)}%`,
-                          background: motion.successColor === 'green' ? '#10B981' : motion.successColor === 'amber' ? '#E89558' : '#8B5CF6',
+                          background: motion.successColor === 'green' ? '#10B981' : motion.successColor === 'amber' ? '#E89558' : '#0A66C2',
                           borderRadius: '3px',
                         }}
                       />
@@ -317,7 +317,7 @@ export default function MotionAnalyticsPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '24px' }}>
               {/* Left case */}
               <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid #8B5CF6' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid #0A66C2' }}>
                   {data.caseType}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -333,7 +333,7 @@ export default function MotionAnalyticsPage() {
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                         <span style={{ fontSize: '12px', fontWeight: 600, color: '#0f0f0f' }}>{motion.motionType}</span>
-                        <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: '#8B5CF6' }}>
+                        <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: '#0A66C2' }}>
                           {motion.grantRate}%
                         </span>
                       </div>
@@ -342,7 +342,7 @@ export default function MotionAnalyticsPage() {
                           style={{
                             height: '100%',
                             width: `${Math.min(motion.grantRate, 100)}%`,
-                            background: '#8B5CF6',
+                            background: '#0A66C2',
                             borderRadius: '2px',
                           }}
                         />
@@ -402,8 +402,8 @@ export default function MotionAnalyticsPage() {
         {/* Empty state */}
         {!selectedNos && !loading && (
           <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M9 9h6M9 15h6" />
               </svg>

@@ -258,7 +258,7 @@ export default function DistrictsPage() {
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
       <style>{`
-        a.lex-link { color: #8B5CF6; text-decoration: none; font-weight: 500; }
+        a.lex-link { color: #0A66C2; text-decoration: none; font-weight: 500; }
         a.lex-link:hover { text-decoration: underline; }
       `}</style>
 
@@ -288,7 +288,7 @@ export default function DistrictsPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 6,
-            background: '#8B5CF6',
+            background: '#0A66C2',
             color: '#FFFFFF',
             padding: '4px 12px',
             borderRadius: 4,
@@ -347,7 +347,7 @@ export default function DistrictsPage() {
                 <div style={{
                   fontSize: 28,
                   fontWeight: 700,
-                  color: '#8B5CF6',
+                  color: '#0A66C2',
                   fontFamily: 'var(--font-display)',
                 }}>
                   {stat.v}
@@ -394,7 +394,7 @@ export default function DistrictsPage() {
                   {circuit.name}
                 </h2>
                 <span style={{
-                  background: '#8B5CF6',
+                  background: '#0A66C2',
                   color: '#FFFFFF',
                   padding: '4px 12px',
                   borderRadius: 4,
@@ -422,7 +422,7 @@ export default function DistrictsPage() {
                     <div style={{
                       fontSize: 20,
                       fontWeight: 700,
-                      color: '#8B5CF6',
+                      color: '#0A66C2',
                       fontFamily: 'var(--font-display)',
                     }}>
                       {winRate}%
@@ -468,7 +468,7 @@ export default function DistrictsPage() {
                           </h3>
                           <div style={{
                             fontSize: 12,
-                            color: '#8B5CF6',
+                            color: '#0A66C2',
                             fontWeight: 600,
                             fontFamily: 'var(--font-body)',
                           }}>

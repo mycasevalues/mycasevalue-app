@@ -64,7 +64,7 @@ const steps = [
     title: 'Select Your Case Type',
     description: 'Choose from 84 federal case categories. No legal jargon needed — we use plain English labels to describe every case type.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5">
         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
       </svg>
@@ -75,7 +75,7 @@ const steps = [
     title: 'Choose Your District',
     description: 'Pick from 94 federal judicial districts across the United States. We analyze cases from your specific district for maximum relevance.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5">
         <circle cx="11" cy="11" r="8"/>
         <path d="m21 21-4.35-4.35"/>
         <circle cx="8" cy="8" r="1"/>
@@ -88,7 +88,7 @@ const steps = [
     title: 'Get Your Report',
     description: 'Instant results with win rates, settlement ranges, timelines, judge analytics, and plain-English explanations. All from verified public records.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5">
         <line x1="12" y1="2" x2="12" y2="22"/>
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
       </svg>
@@ -120,8 +120,8 @@ export default function HowItWorksPage() {
       <div style={{ background: '#1B3A5C' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(139, 92, 246, 0.1)', color: '#8B5CF6', borderRadius: '12px' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+            style={{ background: 'rgba(10, 102, 194, 0.1)', color: '#0A66C2', borderRadius: '12px' }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
               <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
               <polyline points="12 12 20 7.5"></polyline>
               <polyline points="12 12 12 21"></polyline>
@@ -246,7 +246,7 @@ export default function HowItWorksPage() {
               <div key={i} className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
                 {/* Red Icon */}
                 <div className="mb-4" style={{ width: '24px', height: '24px' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5">
                     <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
                     <path d="M9 12l2 2 4-4"/>
                   </svg>
@@ -404,7 +404,7 @@ export default function HowItWorksPage() {
                     justifyContent: 'center',
                   }}
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5">
                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
                     <polyline points="13 2 13 9 20 9" />
                   </svg>
@@ -423,7 +423,7 @@ export default function HowItWorksPage() {
 
       <style>{`
         .feature-card:hover {
-          border-color: #6D28D9 !important;
+          border-color: #004182 !important;
           box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
           transform: translateY(-4px);
         }
@@ -451,7 +451,7 @@ export default function HowItWorksPage() {
                       width: '60px',
                       height: '60px',
                       borderRadius: '50%',
-                      backgroundColor: idx % 2 === 0 ? '#8B5CF6' : '#6D28D9',
+                      backgroundColor: idx % 2 === 0 ? '#0A66C2' : '#004182',
                       color: '#FFFFFF',
                       display: 'flex',
                       alignItems: 'center',
@@ -521,7 +521,7 @@ export default function HowItWorksPage() {
                 href={btn.href}
                 style={{
                   padding: '16px 24px',
-                  backgroundColor: '#8B5CF6',
+                  backgroundColor: '#0A66C2',
                   color: '#FFFFFF',
                   textDecoration: 'none',
                   borderRadius: '12px',
@@ -618,7 +618,7 @@ export default function HowItWorksPage() {
           </p>
           <a href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold transition-all hover:shadow-lg"
-            style={{ background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px' }}>
+            style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}>
             Start Free Research
             <ArrowRightIcon size={16} />
           </a>

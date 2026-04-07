@@ -88,7 +88,7 @@ export default function CookieConsent() {
             <Link
               href="/privacy"
               style={{
-                color: '#6D28D9',
+                color: '#004182',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
                 fontWeight: 500,
@@ -135,7 +135,7 @@ export default function CookieConsent() {
               fontSize: '12px',
               fontFamily: 'var(--font-body)',
               border: 'none',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               color: '#FFFFFF',
               cursor: 'pointer',
               transition: 'all 200ms',

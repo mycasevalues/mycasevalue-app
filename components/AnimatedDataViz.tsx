@@ -107,7 +107,7 @@ export default function AnimatedDataViz({
             {/* Animated bar */}
             <div
               style={{
-                background: 'rgba(139, 92, 246, 0.2)',
+                background: 'rgba(10, 102, 194, 0.2)',
                 borderRadius: '4px',
                 height: '6px',
                 overflow: 'hidden',
@@ -116,7 +116,7 @@ export default function AnimatedDataViz({
               <div
                 style={{
                   height: '100%',
-                  background: '#8B5CF6',
+                  background: '#0A66C2',
                   width: '0%',
                   animation: isVisible
                     ? `fillBar 1s ease-out ${idx * 0.15}s forwards`

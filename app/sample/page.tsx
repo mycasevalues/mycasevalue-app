@@ -440,7 +440,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: '#6D28D9',
+                color: '#004182',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -488,7 +488,7 @@ export default function SampleReportPage() {
                     style={{
                       height: '100%',
                       background:
-                        'linear-gradient(90deg, #6D28D9 0%, #8B5CF6 100%)',
+                        'linear-gradient(90deg, #004182 0%, #0A66C2 100%)',
                     }}
                   />
                 </div>
@@ -551,7 +551,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: '#6D28D9',
+                color: '#004182',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -711,7 +711,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: '#6D28D9',
+                color: '#004182',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -927,7 +927,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: '#6D28D9',
+                color: '#004182',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -1066,7 +1066,7 @@ export default function SampleReportPage() {
                     fontSize: '36px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
-                    color: '#8B5CF6',
+                    color: '#0A66C2',
                     margin: '0 0 4px 0',
                   }}
                 >
@@ -1087,7 +1087,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: '#6D28D9',
+                color: '#004182',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -1297,7 +1297,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: '#6D28D9',
+                color: '#004182',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -1313,7 +1313,7 @@ export default function SampleReportPage() {
                 href="/cases?category=work"
                 style={{
                   display: 'inline-block',
-                  backgroundColor: '#8B5CF6',
+                  backgroundColor: '#0A66C2',
                   color: '#fff',
                   padding: '16px 32px',
                   borderRadius: '12px',
@@ -1335,7 +1335,7 @@ export default function SampleReportPage() {
       {/* Hover styles (CSS-only, no event handlers needed in Server Component) */}
       <style dangerouslySetInnerHTML={{ __html: `
         .sample-banner-cta:hover { background-color: #f3f4f6 !important; }
-        .sample-breadcrumb-link:hover { color: #6D28D9 !important; }
+        .sample-breadcrumb-link:hover { color: #004182 !important; }
         .sample-section-link:hover { text-decoration: underline !important; }
         .sample-cta-btn:hover { opacity: 0.9; }
       `}} />

@@ -135,9 +135,9 @@ export default function ResetPasswordPage() {
           animation: fadeIn 0.4s ease-out;
         }
         .auth-input:focus {
-          border-color: #6D28D9 !important;
+          border-color: #004182 !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
+          box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1) !important;
         }
         .auth-btn:hover:not(:disabled) {
           background-color: #B91C1C !important;
@@ -166,7 +166,7 @@ export default function ResetPasswordPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#6D28D9',
+              color: '#004182',
               textDecoration: 'none',
               fontWeight: 500,
             }}
@@ -207,7 +207,7 @@ export default function ResetPasswordPage() {
                 margin: '0 auto 20px',
               }}
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
@@ -268,7 +268,7 @@ export default function ResetPasswordPage() {
               <div
                 style={{
                   padding: '12px 16px',
-                  backgroundColor: 'rgba(139, 92, 246, 0.06)',
+                  backgroundColor: 'rgba(10, 102, 194, 0.06)',
                   border: '1px solid rgba(204,16,25,0.20)',
                   borderRadius: '12px',
                   marginBottom: '20px',
@@ -278,7 +278,7 @@ export default function ResetPasswordPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '13px',
-                    color: '#8B5CF6',
+                    color: '#0A66C2',
                     margin: 0,
                   }}
                 >
@@ -378,7 +378,7 @@ export default function ResetPasswordPage() {
                   width: '100%',
                   height: '48px',
                   padding: '0 16px',
-                  backgroundColor: '#8B5CF6',
+                  backgroundColor: '#0A66C2',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: '12px',
@@ -401,7 +401,7 @@ export default function ResetPasswordPage() {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#6D28D9',
+                  color: '#004182',
                   textDecoration: 'none',
                   fontWeight: 500,
                 }}

@@ -89,7 +89,7 @@ export default function TrustBadges() {
               }}
             >
               {/* Icon */}
-              <div style={{ marginBottom: '12px', color: '#6D28D9' }}>
+              <div style={{ marginBottom: '12px', color: '#004182' }}>
                 {badge.icon}
               </div>
               {/* Stat number */}

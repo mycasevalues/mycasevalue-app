@@ -31,14 +31,14 @@ interface ApiStatsResponse {
 const STATS_EN: StatItem[] = [
   { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#F0F2F5' },
   { value: 94, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: '#F0F2F5' },
-  { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '', color: '#6D28D9' },
+  { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '', color: '#004182' },
   { value: 54, suffix: '', label: 'Years of Data', sublabel: '1970–2024', icon: '', color: '#F0F2F5' },
 ];
 
 const STATS_ES: StatItem[] = [
   { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#F0F2F5' },
   { value: 94, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: '#F0F2F5' },
-  { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '', color: '#6D28D9' },
+  { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '', color: '#004182' },
   { value: 54, suffix: '', label: 'Años de Datos', sublabel: '1970–2024', icon: '', color: '#F0F2F5' },
 ];
 
@@ -276,7 +276,7 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
             <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '4px' }}>All US courts</div>
           </div>
           <div style={{ padding: '20px', textAlign: 'center', background: '#FFFFFF', border: '2px solid rgba(109, 40, 217, 0.09)', borderRadius: '12px' }}>
-            <div style={{ fontSize: '36px', fontWeight: 600, color: '#6D28D9', fontFamily: "'PT Mono', monospace" }}>84</div>
+            <div style={{ fontSize: '36px', fontWeight: 600, color: '#004182', fontFamily: "'PT Mono', monospace" }}>84</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', marginTop: '10px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Case Categories</div>
             <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '4px' }}>Tracked</div>
           </div>

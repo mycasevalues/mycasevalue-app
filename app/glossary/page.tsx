@@ -277,7 +277,7 @@ export default function GlossaryPage() {
           </nav>
 
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px' }}>
+            style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5"><path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z"/></svg>
             REFERENCE
           </div>
@@ -312,7 +312,7 @@ export default function GlossaryPage() {
                   borderRadius: '12px',
                   textDecoration: 'none',
                   transition: 'all 200ms ease',
-                  color: lettersWithTerms.has(letter) ? '#8B5CF6' : '#A9AEB3',
+                  color: lettersWithTerms.has(letter) ? '#0A66C2' : '#A9AEB3',
                   background: lettersWithTerms.has(letter) ? 'transparent' : '#F7F8FA',
                   cursor: lettersWithTerms.has(letter) ? 'pointer' : 'default',
                 }}
@@ -335,7 +335,7 @@ export default function GlossaryPage() {
                 fontSize: '18px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                color: '#8B5CF6',
+                color: '#0A66C2',
                 marginBottom: '16px',
                 paddingBottom: '8px',
                 borderBottom: `2px solid #E5E7EB`,
@@ -377,7 +377,7 @@ export default function GlossaryPage() {
                           gap: '6px',
                           fontSize: '13px',
                           fontWeight: 600,
-                          color: '#8B5CF6',
+                          color: '#0A66C2',
                           textDecoration: 'none',
                           transition: 'opacity 200ms ease',
                         }}>
@@ -428,7 +428,7 @@ export default function GlossaryPage() {
           }
 
           .glossary-tool-card:hover {
-            border-color: #8B5CF6;
+            border-color: #0A66C2;
             box-shadow: 0 2px 8px rgba(232, 23, 31, 0.12);
           }
         `}</style>

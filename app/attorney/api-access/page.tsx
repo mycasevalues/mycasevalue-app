@@ -41,9 +41,9 @@ console.log(data.prediction.settlementRange);      // { low, median, high }`;
 
 const methodColors: Record<string, string> = {
   GET: '#059669',
-  POST: '#6D28D9',
+  POST: '#004182',
   PUT: '#B86E00',
-  DELETE: '#8B5CF6',
+  DELETE: '#0A66C2',
 };
 
 export default function ApiAccessPage() {
@@ -61,19 +61,19 @@ export default function ApiAccessPage() {
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        input:focus, select:focus { border-color: #8B5CF6 !important; outline: none; box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.08); }
+        input:focus, select:focus { border-color: #0A66C2 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
       `}</style>
       <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <Link href="/" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/" style={{ fontSize: '13px', color: '#0A66C2', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Home &gt; Attorney Tools &gt; API Access
           </Link>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+              <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                   <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" /><path d="M10 12l2 2 4-4" />
                 </svg>
               </div>
@@ -81,8 +81,8 @@ export default function ApiAccessPage() {
                 <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 600, color: '#FFFFFF', margin: 0 }}>API Access</h1>
               </div>
             </div>
-            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '12px', border: '1px solid #8B5CF6' }}>
-              <span className="font-display" style={{ fontSize: '12px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Developer Tools</span>
+            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '12px', border: '1px solid #0A66C2' }}>
+              <span className="font-display" style={{ fontSize: '12px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Developer Tools</span>
             </div>
           </div>
           <p style={{ fontSize: '14px', color: '#B0B8C0', margin: '4px 0 0 52px' }}>Programmatic access to MyCaseValue data for custom integrations</p>
@@ -97,7 +97,7 @@ export default function ApiAccessPage() {
             <div style={{ flex: 1, padding: '12px 14px', backgroundColor: '#F8F9FA', borderRadius: '12px', border: '1px solid #E5E7EB', fontFamily: 'var(--font-mono)', fontSize: '14px', color: '#0f0f0f', letterSpacing: '0.5px' }}>
               {apiKey}
             </div>
-            <button onClick={copyKey} style={{ padding: '12px 20px', backgroundColor: copied ? '#059669' : '#8B5CF6', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', transition: 'background-color 0.2s', minWidth: '80px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <button onClick={copyKey} style={{ padding: '12px 20px', backgroundColor: copied ? '#059669' : '#0A66C2', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', transition: 'background-color 0.2s', minWidth: '80px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               {copied ? 'Copied!' : 'Copy'}
             </button>
           </div>

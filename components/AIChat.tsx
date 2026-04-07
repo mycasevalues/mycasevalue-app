@@ -36,7 +36,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
         style={{
           position: 'fixed', bottom: 24, right: 24, zIndex: 1000,
           width: 56, height: 56, borderRadius: '50%',
-          background: 'linear-gradient(135deg, #8B5CF6, #6D28D9)',
+          background: 'linear-gradient(135deg, #0A66C2, #004182)',
           color: '#fff', border: 'none', cursor: 'pointer',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           boxShadow: '0 4px 20px rgba(139,92,246,0.4)',
@@ -60,7 +60,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
       style={containerStyle}
     >
       {/* Header */}
-      <div style={{ padding: '12px 16px', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'linear-gradient(135deg, #8B5CF6, #6D28D9)' }}>
+      <div style={{ padding: '12px 16px', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'linear-gradient(135deg, #0A66C2, #004182)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#fff' }}>
           <span style={{ fontSize: 18 }}>🤖</span>
           <span style={{ fontWeight: 600, fontSize: 14 }}>AI Case Analyst</span>
@@ -88,7 +88,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
             <div style={{
               padding: '8px 14px', borderRadius: 12, fontSize: 13, lineHeight: 1.5,
               ...(msg.role === 'user'
-                ? { backgroundColor: '#8B5CF6', color: '#fff', borderBottomRightRadius: 4 }
+                ? { backgroundColor: '#0A66C2', color: '#fff', borderBottomRightRadius: 4 }
                 : { backgroundColor: '#f3f4f6', color: '#1f2937', borderBottomLeftRadius: 4 })
             }}>
               {msg.content}
@@ -109,7 +109,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
           <div style={{ alignSelf: 'flex-start' }}>
             <motion.div style={{ display: 'flex', gap: 4, padding: '8px 14px' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
               {[0, 1, 2].map(i => (
-                <motion.div key={i} style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#8B5CF6' }} animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.15 }} />
+                <motion.div key={i} style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#0A66C2' }} animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.15 }} />
               ))}
             </motion.div>
           </div>
@@ -138,7 +138,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
           disabled={isLoading || !input.trim()}
           style={{
             padding: '8px 16px', borderRadius: 8, border: 'none',
-            background: isLoading || !input.trim() ? '#d1d5db' : '#8B5CF6',
+            background: isLoading || !input.trim() ? '#d1d5db' : '#0A66C2',
             color: '#fff', cursor: isLoading || !input.trim() ? 'not-allowed' : 'pointer',
             fontSize: 13, fontWeight: 600,
           }}

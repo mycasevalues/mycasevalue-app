@@ -56,13 +56,13 @@ export default function PrivacyPage() {
         }
 
         .legal-toc-link:hover {
-          color: #6D28D9;
-          border-left-color: #6D28D9;
+          color: #004182;
+          border-left-color: #004182;
         }
 
         .legal-toc-link.active {
-          color: #6D28D9;
-          border-left-color: #6D28D9;
+          color: #004182;
+          border-left-color: #004182;
           font-weight: 600;
         }
 
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
         }
 
         .legal-contact-email {
-          color: #6D28D9;
+          color: #004182;
           text-decoration: none;
         }
 
@@ -132,7 +132,7 @@ export default function PrivacyPage() {
           .legal-toc-link:hover,
           .legal-toc-link.active {
             border-left: none;
-            border-bottom-color: #6D28D9;
+            border-bottom-color: #004182;
           }
 
           .legal-content {
@@ -170,9 +170,9 @@ export default function PrivacyPage() {
             textTransform: 'uppercase',
             marginBottom: '16px',
             background: '#FFF3F4',
-            color: '#8B5CF6'
+            color: '#0A66C2'
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
             PRIVACY

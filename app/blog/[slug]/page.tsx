@@ -233,7 +233,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <p style={{ color: '#4B5563', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
             We could not find the article you are looking for.
           </p>
-          <Link href="/blog" style={{ color: '#8B5CF6', fontWeight: '600', textDecoration: 'none' }}>
+          <Link href="/blog" style={{ color: '#0A66C2', fontWeight: '600', textDecoration: 'none' }}>
             Return to Blog
           </Link>
         </div>
@@ -273,12 +273,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         .related-article-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-          border-color: #8B5CF6;
+          border-color: #0A66C2;
         }
 
         .category-badge {
           background: #FFF3F4;
-          color: #8B5CF6;
+          color: #0A66C2;
           padding: 4px 10px;
           border-radius: 12px;
           font-size: 12px;
@@ -315,7 +315,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             Back to Blog
           </Link>
 
-          <div className="category-badge" style={{ marginBottom: '16px', background: 'rgba(139, 92, 246, 0.15)', color: '#FFFFFF', fontSize: '12px' }}>
+          <div className="category-badge" style={{ marginBottom: '16px', background: 'rgba(10, 102, 194, 0.15)', color: '#FFFFFF', fontSize: '12px' }}>
             {article.category}
           </div>
 
@@ -414,7 +414,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
 
             {/* CTA Box */}
-            <div style={{ background: '#FFFFFF', border: '2px solid #8B5CF6', borderRadius: '12px', padding: '24px', textAlign: 'center' }}>
+            <div style={{ background: '#FFFFFF', border: '2px solid #0A66C2', borderRadius: '12px', padding: '24px', textAlign: 'center' }}>
               <h3 style={{ fontSize: '16px', fontWeight: 'bold', color: '#0f0f0f', marginBottom: '12px' }}>
                 Get More Insights
               </h3>
@@ -427,7 +427,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '6px',
-                  background: '#8B5CF6',
+                  background: '#0A66C2',
                   color: '#FFFFFF',
                   padding: '10px 16px',
                   borderRadius: '8px',
@@ -461,7 +461,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               color: '#FFFFFF',
               padding: '12px 24px',
               borderRadius: '12px',

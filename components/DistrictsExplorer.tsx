@@ -155,7 +155,7 @@ export default function DistrictsExplorer({
           display: block;
         }
         .district-card:hover {
-          border-color: #6D28D9;
+          border-color: #004182;
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
@@ -171,7 +171,7 @@ export default function DistrictsExplorer({
           min-width: 140px;
         }
         .circuit-card:hover {
-          border-color: #6D28D9;
+          border-color: #004182;
           box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .circuit-card.active {
@@ -186,7 +186,7 @@ export default function DistrictsExplorer({
           color: rgba(255,255,255,0.7);
         }
         .circuit-card.active .circuit-card-rate {
-          color: #8B5CF6;
+          color: #0A66C2;
         }
         .circuit-card-name {
           font-size: 12px;
@@ -202,7 +202,7 @@ export default function DistrictsExplorer({
         .circuit-card-rate {
           font-size: 14px;
           font-weight: 600;
-          color: #6D28D9;
+          color: #004182;
           font-family: var(--font-mono);
         }
         .circuits-scroll {
@@ -275,7 +275,7 @@ export default function DistrictsExplorer({
         .control-input:focus,
         .control-select:focus {
           outline: none;
-          border-color: #6D28D9;
+          border-color: #004182;
           box-shadow: 0 0 0 3px rgba(0,105,151,0.1);
         }
         @media (max-width: 768px) {
@@ -348,7 +348,7 @@ export default function DistrictsExplorer({
             </div>
             <div
               className="circuit-card-rate"
-              style={{ color: selectedCircuit === null ? '#8B5CF6' : '#6D28D9' }}
+              style={{ color: selectedCircuit === null ? '#0A66C2' : '#004182' }}
             >
               {stats.avgWinRate}%
             </div>
@@ -369,13 +369,13 @@ export default function DistrictsExplorer({
                   className="circuit-card-rate"
                   style={{
                     color: isActive
-                      ? '#8B5CF6'
+                      ? '#0A66C2'
                       : rate !== null
                       ? rate >= 50
                         ? '#059669'
                         : rate >= 35
                         ? '#D97706'
-                        : '#8B5CF6'
+                        : '#0A66C2'
                       : '#999',
                   }}
                 >
@@ -407,7 +407,7 @@ export default function DistrictsExplorer({
           <div className="stat-label">Lowest Win Rate</div>
           {stats.lowestWinRate ? (
             <>
-              <div className="stat-value" style={{ color: '#8B5CF6' }}>
+              <div className="stat-value" style={{ color: '#0A66C2' }}>
                 {stats.lowestWinRate.winRate}%
               </div>
               <div className="stat-meta">{stats.lowestWinRate.name}</div>
@@ -447,7 +447,7 @@ export default function DistrictsExplorer({
         }}
       >
         {filteredDistricts.map((d) => {
-          const wrColor = d.winRate >= 50 ? '#059669' : d.winRate >= 35 ? '#D97706' : '#8B5CF6';
+          const wrColor = d.winRate >= 50 ? '#059669' : d.winRate >= 35 ? '#D97706' : '#0A66C2';
           return (
             <Link
               key={d.slug}
@@ -591,7 +591,7 @@ export default function DistrictsExplorer({
           <Link
             href="/judges"
             style={{
-              color: '#6D28D9',
+              color: '#004182',
               textDecoration: 'none',
               fontSize: 13,
             }}
@@ -603,7 +603,7 @@ export default function DistrictsExplorer({
           <Link
             href="/map"
             style={{
-              color: '#6D28D9',
+              color: '#004182',
               textDecoration: 'none',
               fontSize: 13,
             }}
@@ -615,7 +615,7 @@ export default function DistrictsExplorer({
           <Link
             href="/trends"
             style={{
-              color: '#6D28D9',
+              color: '#004182',
               textDecoration: 'none',
               fontSize: 13,
             }}
@@ -627,7 +627,7 @@ export default function DistrictsExplorer({
           <Link
             href="/nos-explorer"
             style={{
-              color: '#6D28D9',
+              color: '#004182',
               textDecoration: 'none',
               fontSize: 13,
             }}

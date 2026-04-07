@@ -21,7 +21,7 @@ export async function generateReportPDF(data: ReportPDFData) {
     const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
     const w = doc.internal.pageSize.getWidth();
 
-    // Brand colors: #1B3A5C (navy), #7C3AED (red), #212529 (headings), #4B5563 (body)
+    // Brand colors: #1B3A5C (navy), #004182 (red), #212529 (headings), #4B5563 (body)
     // ─── Header bar ──────────────────────────────────────
     doc.setFillColor(0, 23, 46); // #1B3A5C dark navy
     doc.rect(0, 0, w, 25, 'F');
@@ -62,7 +62,7 @@ export async function generateReportPDF(data: ReportPDFData) {
       doc.setFont('helvetica', 'normal');
       doc.text(s.label, x + 5, y + 9);
       doc.setFontSize(16);
-      doc.setTextColor(232, 23, 31); // #7C3AED brand red
+      doc.setTextColor(232, 23, 31); // #004182 brand red
       doc.setFont('helvetica', 'bold');
       doc.text(s.value, x + 5, y + 20);
     });
@@ -74,7 +74,7 @@ export async function generateReportPDF(data: ReportPDFData) {
       doc.setFont('helvetica', 'bold');
       doc.text('Median Settlement', 15, 132);
       doc.setFontSize(16);
-      doc.setTextColor(232, 23, 31); // #7C3AED
+      doc.setTextColor(232, 23, 31); // #004182
       doc.text(`$${data.settlementMedian.toLocaleString()}K`, 70, 132);
     }
 
@@ -89,7 +89,7 @@ export async function generateReportPDF(data: ReportPDFData) {
     // ─── Footer line ─────────────────────────────────────
     doc.setDrawColor(0, 23, 46); // #1B3A5C
     doc.line(15, 265, w - 15, 265);
-    doc.setTextColor(232, 23, 31); // #7C3AED
+    doc.setTextColor(232, 23, 31); // #004182
     doc.setFontSize(9);
     doc.setFont('helvetica', 'normal');
     doc.text('mycasevalues.com', w / 2, 268, { align: 'center' });

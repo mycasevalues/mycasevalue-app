@@ -107,7 +107,7 @@ export default function TranslatePage() {
           {/* Header Content */}
           <div className="pb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px' }}>
+              style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               TRANSLATE
             </div>
@@ -128,7 +128,7 @@ export default function TranslatePage() {
           {/* Free Access Banner */}
           <div className="mb-8 p-4 flex items-center gap-3" style={{ background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '12px' }}>
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#059669', flexShrink: 0 }} />
-            <p className="text-sm" style={{ color: '#6D28D9', fontFamily: 'var(--font-body)', margin: 0 }}>
+            <p className="text-sm" style={{ color: '#004182', fontFamily: 'var(--font-body)', margin: 0 }}>
               <strong>Unlimited translations</strong> — all features are free during launch
             </p>
           </div>
@@ -163,8 +163,8 @@ export default function TranslatePage() {
 
           {/* Error Display */}
           {error && (
-            <div className="mb-6 p-4" style={{ background: 'rgba(139, 92, 246, 0.06)', border: '1px solid #8B5CF6', borderRadius: '12px' }}>
-              <p className="text-sm" style={{ color: '#8B5CF6', fontFamily: 'var(--font-body)' }}>
+            <div className="mb-6 p-4" style={{ background: 'rgba(10, 102, 194, 0.06)', border: '1px solid #0A66C2', borderRadius: '12px' }}>
+              <p className="text-sm" style={{ color: '#0A66C2', fontFamily: 'var(--font-body)' }}>
                 {error}
               </p>
             </div>
@@ -180,7 +180,7 @@ export default function TranslatePage() {
               background:
                 !input.trim() || loading
                   ? '#E5E7EB'
-                  : '#8B5CF6',
+                  : '#0A66C2',
               color:
                 !input.trim() || loading
                   ? '#4B5563'
@@ -213,7 +213,7 @@ export default function TranslatePage() {
         {/* Translation Result */}
         {translation && (
           <>
-            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#8B5CF6', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #8B5CF6', borderRadius: '12px' }}>
+            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#0A66C2', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #0A66C2', borderRadius: '12px' }}>
               <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)' }}>
                 Plain English Translation
               </h2>
@@ -327,8 +327,8 @@ export default function TranslatePage() {
                   transition: 'all 150ms',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#8B5CF6';
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(139, 92, 246, 0.1)';
+                  e.currentTarget.style.borderColor = '#0A66C2';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = '#E5E7EB';
@@ -339,7 +339,7 @@ export default function TranslatePage() {
                   {item.term}
                 </p>
                 {item.pronunciation && (
-                  <p className="text-[11px] mb-2" style={{ color: '#8B5CF6', fontFamily: 'var(--font-mono)', fontStyle: 'italic' }}>
+                  <p className="text-[11px] mb-2" style={{ color: '#0A66C2', fontFamily: 'var(--font-mono)', fontStyle: 'italic' }}>
                     {item.pronunciation}
                   </p>
                 )}
@@ -348,7 +348,7 @@ export default function TranslatePage() {
                 </p>
                 {item.related && (
                   <div style={{ paddingTop: '8px', borderTop: '1px solid #E5E7EB' }}>
-                    <p className="text-[10px] font-semibold mb-2" style={{ color: '#6D28D9', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '8px 0 4px' }}>
+                    <p className="text-[10px] font-semibold mb-2" style={{ color: '#004182', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '8px 0 4px' }}>
                       Related Terms:
                     </p>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
@@ -359,7 +359,7 @@ export default function TranslatePage() {
                             fontSize: '10px',
                             padding: '2px 6px',
                             background: '#F0E7FF',
-                            color: '#6D28D9',
+                            color: '#004182',
                             borderRadius: '4px',
                             fontFamily: 'var(--font-body)',
                           }}
@@ -421,7 +421,7 @@ export default function TranslatePage() {
                         onClick={() => loadFromHistory(item)}
                         className="px-3 py-2 text-[11px] font-semibold whitespace-nowrap transition-all hover:shadow-sm active:scale-[0.98]"
                         style={{
-                          background: '#6D28D9',
+                          background: '#004182',
                           color: '#FFFFFF',
                           borderRadius: '12px',
                           border: 'none',

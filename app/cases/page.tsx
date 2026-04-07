@@ -83,7 +83,7 @@ function getTopWinRateCaseTypes(): Array<{ nos: string; label: string; wr: numbe
 function getWinRateColor(wr: number): string {
   if (wr >= 50) return '#059669';
   if (wr >= 35) return '#D97706';
-  return '#8B5CF6';
+  return '#0A66C2';
 }
 
 const jsonLd = {
@@ -122,7 +122,7 @@ export default function CasesIndexPage() {
       {/* Header */}
       <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#8B5CF6' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#0A66C2' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
             CASE TYPES
           </div>
@@ -147,7 +147,7 @@ export default function CasesIndexPage() {
             </div>
           </div>
           <div>
-            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#6D28D9', marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#004182', marginBottom: 4 }}>
               {platformStats.totalNOS}
             </div>
             <div style={{ fontSize: 12, color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -212,8 +212,8 @@ export default function CasesIndexPage() {
               outline: 'none',
             }}
             onFocus={(e) => {
-              (e.target as HTMLInputElement).style.borderColor = '#8B5CF6';
-              (e.target as HTMLInputElement).style.boxShadow = '0 0 0 3px rgba(139, 92, 246, 0.08)';
+              (e.target as HTMLInputElement).style.borderColor = '#0A66C2';
+              (e.target as HTMLInputElement).style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.08)';
             }}
             onBlur={(e) => {
               (e.target as HTMLInputElement).style.borderColor = '#E5E7EB';
@@ -236,10 +236,10 @@ export default function CasesIndexPage() {
           .cat-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-color: #8B5CF6;
+            border-color: #0A66C2;
           }
           .cat-card-arrow {
-            color: #8B5CF6;
+            color: #0A66C2;
             transition: transform 0.2s ease;
             margin-left: auto;
           }
@@ -266,7 +266,7 @@ export default function CasesIndexPage() {
           }
           .stat-bar-fill {
             height: 100%;
-            background: #6D28D9;
+            background: #004182;
             transition: width 0.3s ease;
           }
           .quick-link-card {
@@ -284,7 +284,7 @@ export default function CasesIndexPage() {
             gap: 12px;
           }
           .quick-link-card:hover {
-            border-color: #8B5CF6;
+            border-color: #0A66C2;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
           }
         `}} />
@@ -331,11 +331,11 @@ export default function CasesIndexPage() {
                     {catStats.totalCases > 0 && (
                       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 16px', marginBottom: 'auto', padding: '12px 0' }}>
                         <div>
-                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: '#6D28D9' }}>{catStats.totalCases.toLocaleString()}</div>
+                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: '#004182' }}>{catStats.totalCases.toLocaleString()}</div>
                           <div style={{ fontSize: 11, color: '#4B5563', fontWeight: 500 }}>Total Cases</div>
                         </div>
                         <div>
-                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: catStats.avgWinRate >= 50 ? '#059669' : '#8B5CF6' }}>{catStats.avgWinRate}%</div>
+                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: catStats.avgWinRate >= 50 ? '#059669' : '#0A66C2' }}>{catStats.avgWinRate}%</div>
                           <div style={{ fontSize: 11, color: '#4B5563', fontWeight: 500 }}>Avg Win Rate</div>
                         </div>
                         <div>
@@ -382,7 +382,7 @@ export default function CasesIndexPage() {
                       </div>
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                      <div className="font-mono" style={{ fontSize: 16, fontWeight: 600, color: '#6D28D9' }}>
+                      <div className="font-mono" style={{ fontSize: 16, fontWeight: 600, color: '#004182' }}>
                         {caseType.total.toLocaleString()}
                       </div>
                       <div style={{ fontSize: 11, color: '#4B5563', fontWeight: 500 }}>Cases</div>
@@ -435,7 +435,7 @@ export default function CasesIndexPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
               <Link href="/search" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="m21 21-4.35-4.35"></path>
                   </svg>
@@ -457,7 +457,7 @@ export default function CasesIndexPage() {
 
               <Link href="/compare" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                     <path d="M12 3v18M3 9h6M15 9h6M3 15h6M15 15h6"></path>
                   </svg>
                   <div style={{ fontWeight: 600, color: '#0f0f0f' }}>Compare Cases</div>
@@ -477,7 +477,7 @@ export default function CasesIndexPage() {
 
               <Link href="/map" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
@@ -499,7 +499,7 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 18, color: '#4B5563', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
+          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
             Start Researching
             <ArrowRightIcon size={14} />
           </a>

@@ -68,7 +68,7 @@ export default async function JudgePage({ params }: PageProps) {
             transition: color 0.2s ease;
           }
           .judge-available-link:hover {
-            color: #6D28D9;
+            color: #004182;
           }
           .judge-available-btn {
             transition: background-color 0.2s ease;
@@ -131,7 +131,7 @@ export default async function JudgePage({ params }: PageProps) {
               height="32"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#8B5CF6"
+              stroke="#0A66C2"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -174,7 +174,7 @@ export default async function JudgePage({ params }: PageProps) {
               gap: '8px',
               padding: '12px 28px',
               borderRadius: '12px',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               color: '#FFFFFF',
               fontSize: '16px',
               fontWeight: '600',
@@ -276,7 +276,7 @@ export default async function JudgePage({ params }: PageProps) {
           transition: color 0.2s ease;
         }
         .judge-breadcrumb-link:hover {
-          color: #6D28D9;
+          color: #004182;
         }
 
         @media (max-width: 768px) {
@@ -372,7 +372,7 @@ export default async function JudgePage({ params }: PageProps) {
                 fontSize: '12px',
                 fontWeight: '600',
                 letterSpacing: '0.5px',
-                background: '#8B5CF6',
+                background: '#0A66C2',
                 color: '#FFFFFF',
                 whiteSpace: 'nowrap',
                 marginTop: '4px',
@@ -401,12 +401,12 @@ export default async function JudgePage({ params }: PageProps) {
             {
               label: 'Plaintiff Win Rate',
               value: `${judge.stats.plaintiffWinRate}%`,
-              color: judge.stats.plaintiffWinRate >= 50 ? '#059669' : '#8B5CF6',
+              color: judge.stats.plaintiffWinRate >= 50 ? '#059669' : '#0A66C2',
             },
             {
               label: 'Motion Grant Rate',
               value: `${judge.stats.motionGrantRate}%`,
-              color: '#6D28D9',
+              color: '#004182',
             },
             {
               label: 'Median Duration',
@@ -554,7 +554,7 @@ export default async function JudgePage({ params }: PageProps) {
                   style={{
                     fontSize: '16px',
                     fontWeight: '600',
-                    color: '#8B5CF6',
+                    color: '#0A66C2',
                     fontFamily: 'var(--font-body)',
                   }}
                 >
@@ -634,7 +634,7 @@ export default async function JudgePage({ params }: PageProps) {
                   <div
                     style={{
                       width: `${dismissalRate}%`,
-                      background: '#8B5CF6',
+                      background: '#0A66C2',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -662,7 +662,7 @@ export default async function JudgePage({ params }: PageProps) {
                     Settlement: {settlementRate}%
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#0f0f0f', fontFamily: 'var(--font-body)' }}>
-                    <span style={{ width: '12px', height: '12px', borderRadius: '12px', background: '#8B5CF6' }}></span>
+                    <span style={{ width: '12px', height: '12px', borderRadius: '12px', background: '#0A66C2' }}></span>
                     Other/Dismissal: {dismissalRate}%
                   </div>
                 </div>
@@ -733,7 +733,7 @@ export default async function JudgePage({ params }: PageProps) {
                         fontSize: '12px',
                         fontWeight: '600',
                         background: isPositive ? '#DCF7E5' : '#FDE5E6',
-                        color: isPositive ? '#059669' : '#8B5CF6',
+                        color: isPositive ? '#059669' : '#0A66C2',
                         fontFamily: 'var(--font-mono)',
                       }}
                     >
@@ -842,7 +842,7 @@ export default async function JudgePage({ params }: PageProps) {
                     width: '20px',
                     height: '20px',
                     borderRadius: '12px',
-                    background: '#8B5CF6',
+                    background: '#0A66C2',
                     color: '#FFFFFF',
                     fontWeight: '600',
                     fontSize: '12px',
@@ -892,7 +892,7 @@ export default async function JudgePage({ params }: PageProps) {
                           <span style={{ fontSize: '13px', fontWeight: '600', color: '#0f0f0f', fontFamily: 'var(--font-body)' }}>
                             {caseType.label}
                           </span>
-                          <span style={{ fontSize: '13px', fontWeight: '600', color: '#6D28D9', fontFamily: 'var(--font-mono)' }}>
+                          <span style={{ fontSize: '13px', fontWeight: '600', color: '#004182', fontFamily: 'var(--font-mono)' }}>
                             {percentage}% ({caseType.count} cases)
                           </span>
                         </div>
@@ -900,7 +900,7 @@ export default async function JudgePage({ params }: PageProps) {
                           <div
                             style={{
                               width: `${percentage}%`,
-                              background: '#6D28D9',
+                              background: '#004182',
                               borderRadius: '12px',
                             }}
                           ></div>
@@ -998,7 +998,7 @@ export default async function JudgePage({ params }: PageProps) {
             padding: '16px 20px',
             borderRadius: '12px',
             background: '#FCE5E6',
-            border: '1px solid #8B5CF6',
+            border: '1px solid #0A66C2',
             marginBottom: '48px',
           }}
         >
@@ -1041,7 +1041,7 @@ export default async function JudgePage({ params }: PageProps) {
                   >
                     <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', marginBottom: '8px' }}>{j.name}</div>
                     <div style={{ display: 'flex', gap: '12px', fontSize: '12px', color: '#4B5563' }}>
-                      <span style={{ fontWeight: 600, color: j.stats.plaintiffWinRate >= 50 ? '#059669' : '#8B5CF6' }}>{j.stats.plaintiffWinRate}% win</span>
+                      <span style={{ fontWeight: 600, color: j.stats.plaintiffWinRate >= 50 ? '#059669' : '#0A66C2' }}>{j.stats.plaintiffWinRate}% win</span>
                       <span>{j.stats.totalCases.toLocaleString()} cases</span>
                     </div>
                   </Link>
@@ -1102,7 +1102,7 @@ export default async function JudgePage({ params }: PageProps) {
                 }}
 
               >
-                <div style={{ fontSize: '14px', fontWeight: '600', color: '#6D28D9', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: '14px', fontWeight: '600', color: '#004182', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
                   {resource.label}
                 </div>
                 <div style={{ fontSize: '13px', color: '#4B5563', lineHeight: '1.5', fontFamily: 'var(--font-body)' }}>

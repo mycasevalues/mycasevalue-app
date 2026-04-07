@@ -199,8 +199,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(139, 92, 246, 0.1)',
-              border: '1px solid rgba(139, 92, 246, 0.25)',
+              background: 'rgba(10, 102, 194, 0.1)',
+              border: '1px solid rgba(10, 102, 194, 0.25)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -222,7 +222,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#8B5CF6',
+                color: '#0A66C2',
               }}
             >
               {stats.avgWinRate}%
@@ -233,8 +233,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(139, 92, 246, 0.1)',
-              border: '1px solid rgba(139, 92, 246, 0.25)',
+              background: 'rgba(10, 102, 194, 0.1)',
+              border: '1px solid rgba(10, 102, 194, 0.25)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -256,7 +256,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#8B5CF6',
+                color: '#0A66C2',
               }}
             >
               {caseCount}
@@ -267,8 +267,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(139, 92, 246, 0.1)',
-              border: '1px solid rgba(139, 92, 246, 0.25)',
+              background: 'rgba(10, 102, 194, 0.1)',
+              border: '1px solid rgba(10, 102, 194, 0.25)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -290,7 +290,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#8B5CF6',
+                color: '#0A66C2',
               }}
             >
               {stats.caseTypeCount}

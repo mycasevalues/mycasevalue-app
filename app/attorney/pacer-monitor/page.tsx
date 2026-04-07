@@ -29,7 +29,7 @@ const DEMO_ALERTS: Alert[] = [
 ];
 
 const priorityColors = {
-  high: { bg: 'rgba(204,16,25,0.12)', text: '#8B5CF6', dot: '#8B5CF6' },
+  high: { bg: 'rgba(204,16,25,0.12)', text: '#0A66C2', dot: '#0A66C2' },
   medium: { bg: 'rgba(184,110,0,0.12)', text: '#B86E00', dot: '#B86E00' },
   low: { bg: 'rgba(7,135,74,0.12)', text: '#059669', dot: '#059669' },
 };
@@ -54,19 +54,19 @@ export default function PacerMonitorPage() {
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        input:focus { border-color: #8B5CF6 !important; outline: none; box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.08); }
+        input:focus { border-color: #0A66C2 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
       `}</style>
       <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <Link href="/" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/" style={{ fontSize: '13px', color: '#0A66C2', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Home &gt; Attorney Tools &gt; PACER Monitoring
           </Link>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+              <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                   <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" /><line x1="12" y1="10" x2="12" y2="18" />
                 </svg>
               </div>
@@ -74,8 +74,8 @@ export default function PacerMonitorPage() {
                 <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 600, color: '#FFFFFF', margin: 0 }}>PACER Monitoring</h1>
               </div>
             </div>
-            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '12px', border: '1px solid #8B5CF6' }}>
-              <span className="font-display" style={{ fontSize: '12px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Court Monitoring</span>
+            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '12px', border: '1px solid #0A66C2' }}>
+              <span className="font-display" style={{ fontSize: '12px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Court Monitoring</span>
             </div>
           </div>
           <p style={{ fontSize: '14px', color: '#B0B8C0', margin: '4px 0 0 52px' }}>Real-time alerts on case developments, filings, and motions</p>
@@ -91,7 +91,7 @@ export default function PacerMonitorPage() {
               <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: 0 }}>Recent Alerts</h2>
               <div style={{ display: 'flex', gap: '4px', background: '#F8F9FA', borderRadius: '12px', border: '1px solid #E5E7EB', padding: '3px' }}>
                 {(['all', 'high', 'medium', 'low'] as const).map((f) => (
-                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '12px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? '#8B5CF6' : 'transparent', color: filter === f ? '#FFFFFF' : '#4B5563', textTransform: 'capitalize' as const }}>
+                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '12px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? '#0A66C2' : 'transparent', color: filter === f ? '#FFFFFF' : '#4B5563', textTransform: 'capitalize' as const }}>
                     {f}
                   </button>
                 ))}
@@ -105,7 +105,7 @@ export default function PacerMonitorPage() {
                   <div key={alert.id} style={{ background: '#FFFFFF', borderRadius: '12px', padding: '16px 20px', border: '1px solid #E5E7EB', borderLeft: `4px solid ${pc.dot}` }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
                       <div>
-                        <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#6D28D9' }}>{alert.caseNumber}</span>
+                        <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#004182' }}>{alert.caseNumber}</span>
                         <span style={{ fontSize: '12px', color: '#4B5563', marginLeft: '8px' }}>{alert.court}</span>
                       </div>
                       <span style={{ fontSize: '10px', fontWeight: 600, padding: '2px 8px', borderRadius: '12px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>
@@ -131,10 +131,10 @@ export default function PacerMonitorPage() {
                   onChange={(e) => setWatchCase(e.target.value)}
                   placeholder="Case number..."
                   style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: '#FAFBFC', color: '#0f0f0f', outline: 'none' }}
-                  onFocus={(e) => e.target.style.borderColor = '#8B5CF6'}
+                  onFocus={(e) => e.target.style.borderColor = '#0A66C2'}
                   onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.10)'}
                 />
-                <button onClick={addWatch} style={{ padding: '12px 20px', height: '48px', backgroundColor: '#8B5CF6', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>+</button>
+                <button onClick={addWatch} style={{ padding: '12px 20px', height: '48px', backgroundColor: '#0A66C2', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>+</button>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {watchList.map((c) => (

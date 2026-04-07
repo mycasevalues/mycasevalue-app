@@ -86,7 +86,7 @@ export default function PlatformPage() {
 
         .flow-desc {
           font-size: 13px;
-          color: #7C3AED;
+          color: #004182;
           line-height: 1.5;
         }
 
@@ -107,7 +107,7 @@ export default function PlatformPage() {
           text-align: left;
           font-weight: 600;
           font-size: 14px;
-          border-bottom: 2px solid #8B5CF6;
+          border-bottom: 2px solid #0A66C2;
         }
 
         .comparison-table td {
@@ -138,7 +138,7 @@ export default function PlatformPage() {
 
         .comparison-table .price {
           font-weight: 600;
-          color: #8B5CF6;
+          color: #0A66C2;
         }
 
         .features-grid {
@@ -157,15 +157,15 @@ export default function PlatformPage() {
         }
 
         .feature-card:hover {
-          border-color: #8B5CF6;
-          box-shadow: 0 10px 25px rgba(139, 92, 246, 0.1);
+          border-color: #0A66C2;
+          box-shadow: 0 10px 25px rgba(10, 102, 194, 0.1);
           transform: translateY(-2px);
         }
 
         .feature-icon {
           width: 48px;
           height: 48px;
-          background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+          background: linear-gradient(135deg, #0A66C2 0%, #A78BFA 100%);
           border-radius: 12px;
           display: flex;
           align-items: center;
@@ -206,7 +206,7 @@ export default function PlatformPage() {
         .stat-number {
           font-size: clamp(24px, 4vw, 36px);
           font-weight: 700;
-          color: #8B5CF6;
+          color: #0A66C2;
           margin-bottom: 8px;
           font-family: var(--font-pt-mono);
         }
@@ -226,7 +226,7 @@ export default function PlatformPage() {
 
         .roadmap-phase {
           background: white;
-          border: 2px solid #8B5CF6;
+          border: 2px solid #0A66C2;
           border-radius: 12px;
           padding: 32px;
           position: relative;
@@ -240,7 +240,7 @@ export default function PlatformPage() {
           position: absolute;
           top: -12px;
           left: 24px;
-          background: #8B5CF6;
+          background: #0A66C2;
           color: white;
           padding: 4px 12px;
           border-radius: 20px;
@@ -276,7 +276,7 @@ export default function PlatformPage() {
           content: '';
           width: 6px;
           height: 6px;
-          background: #8B5CF6;
+          background: #0A66C2;
           border-radius: 50%;
           flex-shrink: 0;
           margin-top: 2px;
@@ -290,7 +290,7 @@ export default function PlatformPage() {
         }
 
         .market-card {
-          background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+          background: linear-gradient(135deg, #0A66C2 0%, #A78BFA 100%);
           padding: 28px;
           border-radius: 12px;
           color: white;
@@ -372,7 +372,7 @@ export default function PlatformPage() {
               <span style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#8B5CF6',
+                backgroundColor: '#0A66C2',
                 color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 600,
@@ -903,7 +903,7 @@ export default function PlatformPage() {
               <a href="/sign-up" style={{
                 display: 'inline-block',
                 padding: '12px 32px',
-                background: '#8B5CF6',
+                background: '#0A66C2',
                 color: '#FFFFFF',
                 textDecoration: 'none',
                 borderRadius: '12px',
@@ -918,8 +918,8 @@ export default function PlatformPage() {
                 display: 'inline-block',
                 padding: '12px 32px',
                 background: 'transparent',
-                color: '#8B5CF6',
-                border: '2px solid #8B5CF6',
+                color: '#0A66C2',
+                border: '2px solid #0A66C2',
                 textDecoration: 'none',
                 borderRadius: '12px',
                 fontWeight: 600,

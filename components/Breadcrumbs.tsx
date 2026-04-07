@@ -20,7 +20,7 @@ const HomeIcon = () => (
   >
     <path
       d="M1 7V12.5C1 12.7761 1.22386 13 1.5 13H5V9H9V13H12.5C12.7761 13 13 12.7761 13 12.5V7M1 7L7 1.5L13 7M1 7H2.5M11.5 7V3.5"
-      stroke="#6D28D9"
+      stroke="#004182"
       strokeWidth="1.2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -82,7 +82,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                         display: 'inline-flex',
                         alignItems: 'center',
                         textDecoration: 'none',
-                        color: '#6D28D9',
+                        color: '#004182',
                         fontFamily: 'var(--font-body)',
                       }}
                       title={item.label}
@@ -139,7 +139,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   className="breadcrumbs-link"
                   style={{
                     fontSize: '13px',
-                    color: '#6D28D9',
+                    color: '#004182',
                     textDecoration: 'none',
                     fontFamily: 'var(--font-body)',
                   }}

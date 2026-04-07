@@ -93,8 +93,8 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
   money: { label: 'Financial', color: '#F59E0B' },
   work: { label: 'Employment', color: '#0f0f0f' },
   injury: { label: 'Injury', color: '#EF4444' },
-  consumer: { label: 'Consumer', color: '#6D28D9' },
-  rights: { label: 'Civil Rights', color: '#8B5CF6' },
+  consumer: { label: 'Consumer', color: '#004182' },
+  rights: { label: 'Civil Rights', color: '#0A66C2' },
   housing: { label: 'Housing', color: '#06B6D4' },
   medical: { label: 'Medical', color: '#EC4899' },
   family: { label: 'Family', color: '#F97316' },
@@ -140,13 +140,13 @@ export default function TrendsPage() {
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <style>{`
-        a.lex-link { color: #6D28D9; text-decoration: none; }
+        a.lex-link { color: #004182; text-decoration: none; }
         a.lex-link:hover { text-decoration: underline; }
         .lex-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; }
         .lex-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .lex-btn-primary { background: #8B5CF6; color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; }
-        .lex-btn-primary:hover { background: #6D28D9; }
-        .lex-badge { background: rgba(139, 92, 246, 0.1); color: #8B5CF6; border-radius: 12px; }
+        .lex-btn-primary { background: #0A66C2; color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; }
+        .lex-btn-primary:hover { background: #004182; }
+        .lex-badge { background: rgba(10, 102, 194, 0.1); color: #0A66C2; border-radius: 12px; }
         h1 { font-family: var(--font-display); }
         h2 { font-family: var(--font-display); }
       `}</style>
@@ -177,7 +177,7 @@ export default function TrendsPage() {
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
             style={{
-              background: '#8B5CF6',
+              background: '#0A66C2',
               color: '#FFFFFF',
               borderRadius: '12px',
               fontFamily: 'var(--font-body)',
@@ -271,7 +271,7 @@ export default function TrendsPage() {
                     <div className="flex items-center gap-3">
                       <span
                         className="text-xs font-bold w-6 h-6 flex items-center justify-center rounded"
-                        style={{ background: '#8B5CF6', color: '#FFFFFF' }}
+                        style={{ background: '#0A66C2', color: '#FFFFFF' }}
                       >
                         {i + 1}
                       </span>
@@ -286,7 +286,7 @@ export default function TrendsPage() {
                     </div>
                     <div className="flex items-center gap-4 text-xs" style={{ color: '#4B5563' }}>
                       <span>{t.total.toLocaleString()} cases</span>
-                      <span style={{ color: '#6D28D9' }}>{t.winRate}% win</span>
+                      <span style={{ color: '#004182' }}>{t.winRate}% win</span>
                       <span>{t.months}mo avg</span>
                     </div>
                   </div>
@@ -295,7 +295,7 @@ export default function TrendsPage() {
                       className="h-full"
                       style={{
                         width: `${pct}%`,
-                        background: 'linear-gradient(90deg, #8B5CF6, #6D28D9)',
+                        background: 'linear-gradient(90deg, #0A66C2, #004182)',
                       }}
                     />
                   </div>
@@ -336,7 +336,7 @@ export default function TrendsPage() {
                     <div className="h-full" style={{ width: `${pct}%`, background: c.color }} />
                   </div>
                   <div className="text-[11px]" style={{ color: '#4B5563' }}>
-                    Avg win rate: <span style={{ color: '#6D28D9', fontWeight: 600 }}>{c.avgWinRate}%</span>
+                    Avg win rate: <span style={{ color: '#004182', fontWeight: 600 }}>{c.avgWinRate}%</span>
                   </div>
                 </div>
               );
@@ -359,7 +359,7 @@ export default function TrendsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {circuitData.map((circuit) => {
                   const isAboveAvg = circuit.avgWinRate > nationalAvg;
-                  const indicatorColor = circuit.avgWinRate > 55 ? '#10B981' : circuit.avgWinRate < 45 ? '#8B5CF6' : '#6D28D9';
+                  const indicatorColor = circuit.avgWinRate > 55 ? '#10B981' : circuit.avgWinRate < 45 ? '#0A66C2' : '#004182';
                   return (
                     <div
                       key={circuit.circuit}
@@ -384,7 +384,7 @@ export default function TrendsPage() {
                       </div>
                       <div className="flex items-center justify-between text-[11px]" style={{ color: '#4B5563' }}>
                         <span>{circuit.caseCount.toLocaleString()} cases</span>
-                        <span style={{ color: isAboveAvg ? '#10B981' : '#8B5CF6' }}>
+                        <span style={{ color: isAboveAvg ? '#10B981' : '#0A66C2' }}>
                           {isAboveAvg ? '+' : ''}{(circuit.avgWinRate - nationalAvg).toFixed(1)}%
                         </span>
                       </div>
@@ -416,7 +416,7 @@ export default function TrendsPage() {
                   }}
                 >
                   <span className="text-sm lex-link">{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: '#6D28D9' }}>{t.winRate}%</span>
+                  <span className="text-sm font-bold" style={{ color: '#004182' }}>{t.winRate}%</span>
                 </a>
               ))}
             </div>
@@ -439,7 +439,7 @@ export default function TrendsPage() {
                   }}
                 >
                   <span className="text-sm lex-link">{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: '#8B5CF6' }}>{t.winRate}%</span>
+                  <span className="text-sm font-bold" style={{ color: '#0A66C2' }}>{t.winRate}%</span>
                 </a>
               ))}
             </div>
@@ -466,7 +466,7 @@ export default function TrendsPage() {
                   }}
                 >
                   <span className="text-sm lex-link">{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: '#6D28D9' }}>{t.months} months</span>
+                  <span className="text-sm font-bold" style={{ color: '#004182' }}>{t.months} months</span>
                 </a>
               ))}
             </div>
@@ -489,7 +489,7 @@ export default function TrendsPage() {
                   }}
                 >
                   <span className="text-sm lex-link">{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: '#8B5CF6' }}>{t.months} months</span>
+                  <span className="text-sm font-bold" style={{ color: '#0A66C2' }}>{t.months} months</span>
                 </a>
               ))}
             </div>
@@ -581,13 +581,13 @@ export default function TrendsPage() {
                     <td className="px-4 py-2.5 text-right lex-card" style={{ color: '#4B5563' }}>
                       {fmtK(t.medianLo)}
                     </td>
-                    <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: '#8B5CF6' }}>
+                    <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: '#0A66C2' }}>
                       {fmtK(t.medianMd)}
                     </td>
                     <td className="px-4 py-2.5 text-right lex-card" style={{ color: '#4B5563' }}>
                       {fmtK(t.medianHi)}
                     </td>
-                    <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: '#6D28D9', borderRadius: '0 4px 4px 0' }}>
+                    <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: '#004182', borderRadius: '0 4px 4px 0' }}>
                       {t.winRate}%
                     </td>
                   </tr>
@@ -673,7 +673,7 @@ export default function TrendsPage() {
                   let barColor = '#059669';
                   let bgColor = 'rgba(7,135,74,0.15)';
                   if (c.avgWr < 35) {
-                    barColor = '#8B5CF6';
+                    barColor = '#0A66C2';
                     bgColor = 'rgba(232,23,31,0.15)';
                   } else if (c.avgWr < 50) {
                     barColor = '#D97706';
@@ -765,14 +765,14 @@ export default function TrendsPage() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-semibold lex-link">{t.label}</span>
-                      <span className="text-sm font-bold" style={{ color: '#8B5CF6' }}>{t.months}mo</span>
+                      <span className="text-sm font-bold" style={{ color: '#0A66C2' }}>{t.months}mo</span>
                     </div>
                     <div className="h-1.5 overflow-hidden" style={{ background: '#E5E7EB', borderRadius: '12px' }}>
                       <div
                         className="h-full"
                         style={{
                           width: `${Math.min((t.months / 120) * 100, 100)}%`,
-                          background: '#8B5CF6',
+                          background: '#0A66C2',
                         }}
                       />
                     </div>
@@ -809,7 +809,7 @@ export default function TrendsPage() {
                     <div className="flex items-center gap-4 mb-2">
                       <span
                         className="text-sm font-bold w-7 h-7 flex items-center justify-center rounded"
-                        style={{ background: '#6D28D9', color: '#FFFFFF' }}
+                        style={{ background: '#004182', color: '#FFFFFF' }}
                       >
                         {i + 1}
                       </span>
@@ -821,7 +821,7 @@ export default function TrendsPage() {
                           {t.settlementPct}% of {t.label} cases settle before trial
                         </div>
                       </div>
-                      <span className="text-sm font-bold" style={{ color: '#6D28D9' }}>
+                      <span className="text-sm font-bold" style={{ color: '#004182' }}>
                         {t.settlementPct}%
                       </span>
                     </div>
@@ -830,7 +830,7 @@ export default function TrendsPage() {
                         className="h-full"
                         style={{
                           width: `${t.settlementPct}%`,
-                          background: '#6D28D9',
+                          background: '#004182',
                         }}
                       />
                     </div>
@@ -878,7 +878,7 @@ export default function TrendsPage() {
                         className="w-full transition-all"
                         style={{
                           height: `${(v.volume / maxVol) * 100}%`,
-                          background: 'linear-gradient(180deg, #8B5CF6, #6D28D9)',
+                          background: 'linear-gradient(180deg, #0A66C2, #004182)',
                         }}
                       />
                     </div>
@@ -935,7 +935,7 @@ export default function TrendsPage() {
                 }}
               >
                 <div style={{ fontSize: '2rem', marginBottom: '12px' }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg>
                 </div>
                 <h3 className="font-semibold mb-2 group-hover:text-blue-600 transition-colors" style={{ color: '#0f0f0f' }}>
                   {item.title}
@@ -943,7 +943,7 @@ export default function TrendsPage() {
                 <p style={{ color: '#4B5563', fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}>
                   {item.description}
                 </p>
-                <div className="mt-4 text-sm font-semibold" style={{ color: '#6D28D9' }}>
+                <div className="mt-4 text-sm font-semibold" style={{ color: '#004182' }}>
                   Explore →
                 </div>
               </Link>

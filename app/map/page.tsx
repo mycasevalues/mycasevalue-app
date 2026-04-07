@@ -92,7 +92,7 @@ interface StateData {
 function getWinRateColor(winRate: number): string {
   if (winRate >= 50) return '#059669'; // green
   if (winRate >= 35) return '#FF9D00'; // amber
-  return '#8B5CF6'; // red
+  return '#0A66C2'; // red
 }
 
 // Helper function to get top/bottom states
@@ -225,7 +225,7 @@ export default function DistrictHeatmapPage() {
         }
         .state-card:hover {
           box-shadow: 0 2px 8px rgba(0, 23, 46, 0.1);
-          border-color: #8B5CF6;
+          border-color: #0A66C2;
         }
       `}</style>
 
@@ -250,7 +250,7 @@ export default function DistrictHeatmapPage() {
               <span
                 style={{
                   display: 'inline-block',
-                  backgroundColor: '#8B5CF6',
+                  backgroundColor: '#0A66C2',
                   color: '#FFFFFF',
                   padding: '6px 12px',
                   borderRadius: '12px',
@@ -446,14 +446,14 @@ export default function DistrictHeatmapPage() {
                     style={{
                       width: '100%',
                       height: `${(bin.count / maxBinCount) * 160}px`,
-                      backgroundColor: '#6D28D9',
+                      backgroundColor: '#004182',
                       borderRadius: '12px',
                       transition: 'background-color 0.2s ease',
                       cursor: 'pointer',
                       minHeight: bin.count > 0 ? '4px' : '0px',
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#004B7A')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#6D28D9')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#004182')}
                     title={`${bin.label}: ${bin.count} states`}
                   />
                   <p
@@ -520,7 +520,7 @@ export default function DistrictHeatmapPage() {
                   boxSizing: 'border-box',
                   transition: 'border-color 0.2s ease',
                 }}
-                onFocus={(e) => (e.target.style.borderColor = '#8B5CF6')}
+                onFocus={(e) => (e.target.style.borderColor = '#0A66C2')}
                 onBlur={(e) => (e.target.style.borderColor = '#E5E7EB')}
               />
             </div>
@@ -558,7 +558,7 @@ export default function DistrictHeatmapPage() {
                   transition: 'border-color 0.2s ease',
                   cursor: 'pointer',
                 }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = '#8B5CF6')}
+                onFocus={(e) => (e.currentTarget.style.borderColor = '#0A66C2')}
                 onBlur={(e) => (e.currentTarget.style.borderColor = '#E5E7EB')}
               >
                 <option value="name">Name (A-Z)</option>
@@ -579,7 +579,7 @@ export default function DistrictHeatmapPage() {
               }}
             >
               {filteredStates.map((state) => {
-                const barColor = state.winRate >= 55 ? '#059669' : state.winRate < 45 ? '#8B5CF6' : '#6D28D9';
+                const barColor = state.winRate >= 55 ? '#059669' : state.winRate < 45 ? '#0A66C2' : '#004182';
                 const districtSlug = state.code.toLowerCase();
                 return (
                   <a
@@ -655,7 +655,7 @@ export default function DistrictHeatmapPage() {
                             ? 'Near average'
                             : 'Above average'}
                       </p>
-                      <span style={{ fontSize: '11px', color: '#6D28D9', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
+                      <span style={{ fontSize: '11px', color: '#004182', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
                         View details →
                       </span>
                     </div>
@@ -925,7 +925,7 @@ export default function DistrictHeatmapPage() {
                 borderRadius: '12px',
                 fontWeight: '600',
                 color: '#FFFFFF',
-                backgroundColor: '#8B5CF6',
+                backgroundColor: '#0A66C2',
                 textDecoration: 'none',
                 fontSize: '14px',
                 fontFamily: 'var(--font-body)',
@@ -933,7 +933,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#D01419')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#8B5CF6')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0A66C2')}
             >
               Go to Case Calculator
             </a>
@@ -973,7 +973,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#8B5CF6';
+                e.currentTarget.style.borderColor = '#0A66C2';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
@@ -1017,7 +1017,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#8B5CF6';
+                e.currentTarget.style.borderColor = '#0A66C2';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
@@ -1061,7 +1061,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#8B5CF6';
+                e.currentTarget.style.borderColor = '#0A66C2';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
@@ -1105,7 +1105,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#8B5CF6';
+                e.currentTarget.style.borderColor = '#0A66C2';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {

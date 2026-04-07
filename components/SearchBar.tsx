@@ -51,7 +51,7 @@ export default function SearchBar({ large = false }: { large?: boolean }) {
     <form onSubmit={handleSubmit} style={{ position: 'relative', width: '100%', maxWidth: large ? 680 : 500 }}>
       <div style={{
         display: 'flex', alignItems: 'center',
-        border: focused ? '2px solid #8B5CF6' : '2px solid #e5e7eb',
+        border: focused ? '2px solid #0A66C2' : '2px solid #e5e7eb',
         borderRadius: large ? 16 : 10,
         backgroundColor: '#fff',
         padding: large ? '4px 4px 4px 20px' : '2px 2px 2px 14px',
@@ -77,7 +77,7 @@ export default function SearchBar({ large = false }: { large?: boolean }) {
         <button type="submit" style={{
           padding: large ? '12px 28px' : '8px 18px',
           borderRadius: large ? 12 : 8,
-          border: 'none', backgroundColor: '#8B5CF6', color: '#fff',
+          border: 'none', backgroundColor: '#0A66C2', color: '#fff',
           fontWeight: 600, fontSize: large ? 15 : 13, cursor: 'pointer',
         }}>
           Search

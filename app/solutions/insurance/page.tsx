@@ -53,7 +53,7 @@ export default function InsurancePage() {
             fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
-            color: '#6D28D9',
+            color: '#004182',
             marginBottom: '16px',
           }}>
             SOLUTIONS
@@ -79,7 +79,7 @@ export default function InsurancePage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" style={{
-              background: '#8B5CF6',
+              background: '#0A66C2',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
@@ -134,7 +134,7 @@ export default function InsurancePage() {
                 borderRadius: '12px',
                 padding: '32px 24px',
               }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',
@@ -182,7 +182,7 @@ export default function InsurancePage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/search" style={{
-              background: '#8B5CF6',
+              background: '#0A66C2',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '12px',

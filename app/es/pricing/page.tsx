@@ -96,7 +96,7 @@ export default function SpanishPricingPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px' }}>
+            style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}>
             OPCIONES DE PAGO
           </div>
 
@@ -144,7 +144,7 @@ export default function SpanishPricingPage() {
                 'Citas de fuentes',
               ].map((feature, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2.5" className="flex-shrink-0 mt-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
                   <span className="text-sm" style={{ color: '#4B5563' }}>
@@ -166,11 +166,11 @@ export default function SpanishPricingPage() {
           <div className="border-2 p-8 transition-all duration-300 hover:shadow-lg md:scale-105 hover:shadow-amber-500/30"
             style={{
               borderRadius: '12px',
-              borderColor: '#8B5CF6',
+              borderColor: '#0A66C2',
               background: '#FFFFFF',
             }}>
             <div className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ borderRadius: '12px', background: 'rgba(139, 92, 246, 0.08)', color: '#8B5CF6' }}>
+              style={{ borderRadius: '12px', background: 'rgba(10, 102, 194, 0.08)', color: '#0A66C2' }}>
               MEJOR VALOR
             </div>
 
@@ -179,7 +179,7 @@ export default function SpanishPricingPage() {
                 Informes Ilimitados
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: '#8B5CF6', fontFamily: 'PT Mono' }}>
+                <span className="text-4xl font-extrabold" style={{ color: '#0A66C2', fontFamily: 'PT Mono' }}>
                   $9.99
                 </span>
                 <span className="text-sm" style={{ color: '#4B5563' }}>
@@ -197,7 +197,7 @@ export default function SpanishPricingPage() {
                 'Soporte prioritario',
               ].map((feature, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5" className="flex-shrink-0 mt-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
                   <span className="text-sm" style={{ color: '#4B5563' }}>
@@ -210,7 +210,7 @@ export default function SpanishPricingPage() {
             <button
               disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '12px', background: '#8B5CF6', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
+              style={{ borderRadius: '12px', background: '#0A66C2', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
@@ -227,7 +227,7 @@ export default function SpanishPricingPage() {
                 Modo Abogado
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: '#6D28D9', fontFamily: 'PT Mono' }}>
+                <span className="text-4xl font-extrabold" style={{ color: '#004182', fontFamily: 'PT Mono' }}>
                   $29.99
                 </span>
                 <span className="text-sm" style={{ color: '#4B5563' }}>
@@ -248,7 +248,7 @@ export default function SpanishPricingPage() {
                 'Opciones de etiqueta blanca',
               ].map((feature, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2.5" className="flex-shrink-0 mt-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
                   <span className="text-sm" style={{ color: '#4B5563' }}>
@@ -261,7 +261,7 @@ export default function SpanishPricingPage() {
             <button
               disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '12px', background: '#6D28D9', color: 'white', opacity: 0.5, cursor: 'not-allowed' }}>
+              style={{ borderRadius: '12px', background: '#004182', color: 'white', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
@@ -328,7 +328,7 @@ export default function SpanishPricingPage() {
           </p>
           <a href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '12px', background: '#8B5CF6', color: '#FFFFFF' }}>
+            style={{ borderRadius: '12px', background: '#0A66C2', color: '#FFFFFF' }}>
             Consultar Mi Tipo de Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -346,7 +346,7 @@ export default function SpanishPricingPage() {
             <Link href="/search">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
@@ -357,7 +357,7 @@ export default function SpanishPricingPage() {
             <Link href="/calculator">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
@@ -368,7 +368,7 @@ export default function SpanishPricingPage() {
             <Link href="/compare">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
@@ -379,7 +379,7 @@ export default function SpanishPricingPage() {
             <Link href="/nos-explorer">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
@@ -391,7 +391,7 @@ export default function SpanishPricingPage() {
           {/* Language Switcher */}
           <div className="mt-12 p-6 text-center" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
             <p className="text-sm" style={{ color: '#4B5563' }}>
-              This page is also available in <Link href="/pricing" style={{ color: '#6D28D9', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
+              This page is also available in <Link href="/pricing" style={{ color: '#004182', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>
           </div>
         </div>

@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
  *
  * Features:
  * - 3px height bar positioned fixed at top
- * - Red (#8B5CF6) color
+ * - Red (#0A66C2) color
  * - Animates from 0% to ~80% on navigation start
  * - Completes to 100% and fades out when complete
  * - Uses Next.js usePathname() to detect route changes
@@ -52,7 +52,7 @@ export default function NavigationProgress() {
           top: 0;
           left: 0;
           height: 3px;
-          background-color: #8B5CF6;
+          background-color: #0A66C2;
           z-index: 9999;
           pointer-events: none;
         }

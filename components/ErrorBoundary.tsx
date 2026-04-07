@@ -87,7 +87,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
           }}>
             <div style={{
               width: 64, height: 64, borderRadius: '50%',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               margin: '0 auto 20px',
             }}>
@@ -104,7 +104,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
               style={{
                 padding: '0 32px',
                 height: '48px',
-                background: '#8B5CF6',
+                background: '#0A66C2',
                 color: 'white',
                 border: 'none',
                 borderRadius: 4,

@@ -105,7 +105,7 @@ export default function TestimonialCarousel() {
             style={{
               width: '60px',
               height: '4px',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               margin: '0 auto 16px',
               borderRadius: '12px',
             }}
@@ -168,7 +168,7 @@ export default function TestimonialCarousel() {
               transition: 'background-color 200ms',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#8B5CF6';
+              e.currentTarget.style.background = '#0A66C2';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = '#1B3A5C';
@@ -217,7 +217,7 @@ export default function TestimonialCarousel() {
                     width="16"
                     height="16"
                     viewBox="0 0 24 24"
-                    fill="#8B5CF6"
+                    fill="#0A66C2"
                     stroke="none"
                   >
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -300,7 +300,7 @@ export default function TestimonialCarousel() {
               transition: 'background-color 200ms',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#8B5CF6';
+              e.currentTarget.style.background = '#0A66C2';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = '#1B3A5C';
@@ -339,14 +339,14 @@ export default function TestimonialCarousel() {
                 height: '10px',
                 borderRadius: '50%',
                 border: index === currentIndex ? 'none' : '1px solid #E5E7EB',
-                background: index === currentIndex ? '#8B5CF6' : 'transparent',
+                background: index === currentIndex ? '#0A66C2' : 'transparent',
                 cursor: 'pointer',
                 transition: 'all 200ms',
                 padding: 0,
               }}
               onMouseEnter={(e) => {
                 if (index !== currentIndex) {
-                  e.currentTarget.style.borderColor = '#8B5CF6';
+                  e.currentTarget.style.borderColor = '#0A66C2';
                 }
               }}
               onMouseLeave={(e) => {

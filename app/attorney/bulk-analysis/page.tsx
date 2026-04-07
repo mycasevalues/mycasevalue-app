@@ -40,8 +40,8 @@ type PortfolioResult = {
 const riskColors: Record<string, { bg: string; text: string; label: string }> = {
   low: { bg: 'rgba(7,202,107,0.12)', text: '#059669', label: 'Low Risk' },
   moderate: { bg: 'rgba(232,149,88,0.12)', text: '#E89558', label: 'Moderate' },
-  high: { bg: 'rgba(139, 92, 246, 0.12)', text: '#8B5CF6', label: 'High Risk' },
-  'very-high': { bg: 'rgba(139, 92, 246, 0.12)', text: '#8B5CF6', label: 'Very High' },
+  high: { bg: 'rgba(10, 102, 194, 0.12)', text: '#0A66C2', label: 'High Risk' },
+  'very-high': { bg: 'rgba(10, 102, 194, 0.12)', text: '#0A66C2', label: 'Very High' },
 };
 
 // Flatten all case options across categories
@@ -97,7 +97,7 @@ export default function BulkAnalysisPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA', fontFamily: 'var(--font-body)' }}>
       <style>{`
-        input:focus, select:focus { border-color: #8B5CF6 !important; outline: none; box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.08); }
+        input:focus, select:focus { border-color: #0A66C2 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
@@ -105,13 +105,13 @@ export default function BulkAnalysisPage() {
       {/* Header */}
       <div style={{ background: '#1B3A5C', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <Link href="/" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/" style={{ fontSize: '13px', color: '#0A66C2', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Home &gt; Attorney Tools &gt; Bulk Analysis
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(232,23,31,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                 <line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="14" />
               </svg>
             </div>
@@ -134,7 +134,7 @@ export default function BulkAnalysisPage() {
                 <option key={o.nos + o.label} value={o.nos}>{o.label} ({o.category})</option>
               ))}
             </select>
-            <button onClick={addCase} disabled={!addValue} style={{ padding: '0 24px', height: '48px', backgroundColor: addValue ? '#8B5CF6' : '#E5E7EB', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: addValue ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            <button onClick={addCase} disabled={!addValue} style={{ padding: '0 24px', height: '48px', backgroundColor: addValue ? '#0A66C2' : '#E5E7EB', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: addValue ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               Add
             </button>
           </div>
@@ -147,7 +147,7 @@ export default function BulkAnalysisPage() {
                 return (
                   <span key={nos} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '6px 12px', backgroundColor: '#F7F8FA', borderRadius: '12px', fontSize: '13px', color: '#0f0f0f', fontWeight: 500 }}>
                     {opt?.label || `NOS ${nos}`}
-                    <button onClick={() => removeCase(nos)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#8B5CF6', fontSize: '16px', lineHeight: 1, padding: 0 }}>&times;</button>
+                    <button onClick={() => removeCase(nos)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#0A66C2', fontSize: '16px', lineHeight: 1, padding: 0 }}>&times;</button>
                   </span>
                 );
               })}
@@ -156,15 +156,15 @@ export default function BulkAnalysisPage() {
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span style={{ fontSize: '13px', color: '#4B5563' }}>{selectedNos.length} of 20 case types selected</span>
-            <button onClick={analyze} disabled={loading || selectedNos.length === 0} style={{ padding: '0 28px', height: '48px', backgroundColor: loading || selectedNos.length === 0 ? '#E5E7EB' : '#8B5CF6', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, fontFamily: 'var(--font-display)', cursor: loading || selectedNos.length === 0 ? 'not-allowed' : 'pointer', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            <button onClick={analyze} disabled={loading || selectedNos.length === 0} style={{ padding: '0 28px', height: '48px', backgroundColor: loading || selectedNos.length === 0 ? '#E5E7EB' : '#0A66C2', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, fontFamily: 'var(--font-display)', cursor: loading || selectedNos.length === 0 ? 'not-allowed' : 'pointer', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               {loading ? 'Analyzing...' : 'Analyze Portfolio'}
             </button>
           </div>
         </div>
 
         {error && (
-          <div style={{ padding: '14px 18px', borderRadius: '12px', backgroundColor: 'rgba(139, 92, 246, 0.12)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
-            <p style={{ fontSize: '13px', color: '#8B5CF6', margin: 0 }}>{error}</p>
+          <div style={{ padding: '14px 18px', borderRadius: '12px', backgroundColor: 'rgba(10, 102, 194, 0.12)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+            <p style={{ fontSize: '13px', color: '#0A66C2', margin: 0 }}>{error}</p>
           </div>
         )}
 
@@ -175,7 +175,7 @@ export default function BulkAnalysisPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '12px', marginBottom: '24px' }}>
               {[
                 { label: 'Case Types', value: String(p.caseCount), color: '#0f0f0f' },
-                { label: 'Avg Win Rate', value: `${p.avgWinRate}%`, color: p.avgWinRate >= 55 ? '#059669' : p.avgWinRate >= 40 ? '#E89558' : '#8B5CF6' },
+                { label: 'Avg Win Rate', value: `${p.avgWinRate}%`, color: p.avgWinRate >= 55 ? '#059669' : p.avgWinRate >= 40 ? '#E89558' : '#0A66C2' },
                 { label: 'Avg Settlement', value: `${p.avgSettlementRate}%`, color: '#059669' },
                 { label: 'Avg Duration', value: `${p.avgDurationMonths}mo`, color: '#0f0f0f' },
                 { label: 'Total in DB', value: p.totalCasesInDatabase.toLocaleString(), color: '#0f0f0f' },
@@ -209,7 +209,7 @@ export default function BulkAnalysisPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {result.insights.map((ins, i) => (
                   <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12" /></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12" /></svg>
                     <span style={{ fontSize: '14px', color: '#4B5563', lineHeight: 1.5 }}>{ins}</span>
                   </div>
                 ))}
@@ -237,9 +237,9 @@ export default function BulkAnalysisPage() {
                         { label: 'Win Rate', value: `${c.winRate}%`, color: c.winRate >= 55 ? '#059669' : '#E89558' },
                         { label: 'Settlement', value: `${c.settlementRate}%`, color: '#059669' },
                         { label: 'Duration', value: `${c.medianDurationMonths}mo`, color: '#0f0f0f' },
-                        { label: 'Dismissal', value: `${c.dismissalRate}%`, color: '#8B5CF6' },
+                        { label: 'Dismissal', value: `${c.dismissalRate}%`, color: '#0A66C2' },
                         { label: 'With Attorney', value: `${c.representedWinRate}%`, color: '#059669' },
-                        { label: 'Pro Se', value: `${Math.round(c.proSeWinRate)}%`, color: '#8B5CF6' },
+                        { label: 'Pro Se', value: `${Math.round(c.proSeWinRate)}%`, color: '#0A66C2' },
                       ].map((s) => (
                         <div key={s.label} style={{ padding: '8px', background: '#F7F8FA', borderRadius: '12px' }}>
                           <p style={{ fontSize: '10px', color: '#4B5563', margin: '0 0 2px', textTransform: 'uppercase' as const }}>{s.label}</p>
@@ -262,8 +262,8 @@ export default function BulkAnalysisPage() {
         {/* Empty state */}
         {!result && !loading && selectedNos.length === 0 && (
           <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2"><line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
+            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2"><line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
             </div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 12px' }}>Build a Case Portfolio</h2>
             <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>

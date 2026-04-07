@@ -73,7 +73,7 @@ export default function BillingPage() {
   if (loading) {
     return (
       <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#8B5CF6', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#0A66C2', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
     );
@@ -102,7 +102,7 @@ export default function BillingPage() {
 
           {/* Badge and Title */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
-            <span style={{ padding: '6px 14px', backgroundColor: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <span style={{ padding: '6px 14px', backgroundColor: '#0A66C2', color: '#FFFFFF', borderRadius: '12px', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               BILLING
             </span>
           </div>
@@ -137,7 +137,7 @@ export default function BillingPage() {
                   <span className="font-display" style={{ fontSize: '24px', fontWeight: 600, color: '#0f0f0f' }}>
                     {details.name}
                   </span>
-                  <span style={{ padding: '4px 12px', borderRadius: '12px', fontSize: '12px', fontWeight: 600, backgroundColor: 'rgba(0,105,151,0.06)', color: '#6D28D9' }}>
+                  <span style={{ padding: '4px 12px', borderRadius: '12px', fontSize: '12px', fontWeight: 600, backgroundColor: 'rgba(0,105,151,0.06)', color: '#004182' }}>
                     Active
                   </span>
                 </div>
@@ -181,7 +181,7 @@ export default function BillingPage() {
             </div>
 
             <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid #E5E7EB' }}>
-              <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+              <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#0A66C2', color: '#FFFFFF', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
                 {currentPlan === 'free' ? 'Upgrade Plan' : 'Change Plan'}
               </Link>
             </div>
@@ -204,7 +204,7 @@ export default function BillingPage() {
 
           {/* Back link */}
           <div style={{ textAlign: 'center' }}>
-            <Link href="/account" style={{ fontSize: '14px', color: '#6D28D9', textDecoration: 'none' }}>
+            <Link href="/account" style={{ fontSize: '14px', color: '#004182', textDecoration: 'none' }}>
               Back to Account Settings
             </Link>
           </div>

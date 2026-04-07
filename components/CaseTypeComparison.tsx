@@ -36,7 +36,7 @@ function getAllNosEntries(): NosEntry[] {
   return entries.sort((a, b) => b.total - a.total);
 }
 
-const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#8B5CF6';
+const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#0A66C2';
 
 export default function CaseTypeComparison() {
   const allEntries = useMemo(() => getAllNosEntries(), []);
@@ -59,7 +59,7 @@ export default function CaseTypeComparison() {
   return (
     <div>
       <style>{`
-        .cmp-select:focus { border-color: #6D28D9 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
+        .cmp-select:focus { border-color: #004182 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
       `}</style>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: 16, alignItems: 'center', marginBottom: 24 }}>

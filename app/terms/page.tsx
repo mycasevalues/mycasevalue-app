@@ -56,13 +56,13 @@ export default function TermsPage() {
         }
 
         .legal-toc-link:hover {
-          color: #6D28D9;
-          border-left-color: #6D28D9;
+          color: #004182;
+          border-left-color: #004182;
         }
 
         .legal-toc-link.active {
-          color: #6D28D9;
-          border-left-color: #6D28D9;
+          color: #004182;
+          border-left-color: #004182;
           font-weight: 600;
         }
 
@@ -98,7 +98,7 @@ export default function TermsPage() {
         }
 
         .legal-contact-email {
-          color: #6D28D9;
+          color: #004182;
           text-decoration: none;
         }
 
@@ -132,7 +132,7 @@ export default function TermsPage() {
           .legal-toc-link:hover,
           .legal-toc-link.active {
             border-left: none;
-            border-bottom-color: #6D28D9;
+            border-bottom-color: #004182;
           }
 
           .legal-content {
@@ -170,9 +170,9 @@ export default function TermsPage() {
             textTransform: 'uppercase',
             marginBottom: '16px',
             background: '#FFF3F4',
-            color: '#8B5CF6'
+            color: '#0A66C2'
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5">
               <path d="M7 7h10v10H7z M7 7v3 M7 10h10 M7 13h10 M7 16h10 M17 7v10" />
             </svg>
             TERMS
@@ -254,7 +254,7 @@ export default function TermsPage() {
             color: '#0f0f0f',
             marginBottom: '32px'
           }}>
-            <p style={{ margin: 0, fontWeight: '600', color: '#8B5CF6', fontSize: '15px', lineHeight: 1.7 }}>
+            <p style={{ margin: 0, fontWeight: '600', color: '#0A66C2', fontSize: '15px', lineHeight: 1.7 }}>
               IMPORTANT: By using MyCaseValue, you agree that this Service provides informational data only and is NOT legal advice.
               MyCaseValue does not create an attorney-client relationship. Always consult a licensed attorney for legal matters.
             </p>

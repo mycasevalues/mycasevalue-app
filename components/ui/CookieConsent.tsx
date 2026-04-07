@@ -107,7 +107,7 @@ export default function CookieConsent() {
             onClick={handleAccept}
             style={{
               padding: '0.625rem 1.25rem',
-              backgroundColor: '#8B5CF6',
+              backgroundColor: '#0A66C2',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '12px',

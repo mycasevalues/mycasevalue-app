@@ -159,12 +159,12 @@ export default function JudgesPage() {
         }
         .judge-district-link:hover {
           background: #F7F8FA;
-          border-color: #6D28D9;
-          color: #6D28D9;
+          border-color: #004182;
+          color: #004182;
         }
         .judge-district-link .arrow {
           font-size: 12px;
-          color: #6D28D9;
+          color: #004182;
           font-weight: 500;
         }
       `}</style>
@@ -184,7 +184,7 @@ export default function JudgesPage() {
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
                 padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600,
-                letterSpacing: '1.5px', marginBottom: 16, background: 'rgba(139, 92, 246, 0.15)',
+                letterSpacing: '1.5px', marginBottom: 16, background: 'rgba(10, 102, 194, 0.15)',
                 color: '#FFFFFF', textTransform: 'uppercase', border: '1px solid rgba(255,255,255,0.2)',
               }}
             >
@@ -242,7 +242,7 @@ export default function JudgesPage() {
               { iconPath: 'M3 3h8v8H3z M13 3h8v8h-8z M3 13h8v8H3z M13 13h8v8h-8z', title: 'Case Type Breakdown', desc: 'Performance metrics segmented by Nature of Suit code and case category.' },
             ].map((item, idx) => (
               <div key={idx} style={{ padding: 24, borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
-                <div style={{ fontSize: 20, marginBottom: 8 }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg></div>
+                <div style={{ fontSize: 20, marginBottom: 8 }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg></div>
                 <h3 style={{ fontSize: 15, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
                   {item.title}
                 </h3>
@@ -316,7 +316,7 @@ export default function JudgesPage() {
               style={{
                 padding: '12px 28px',
                 borderRadius: 2,
-                background: '#8B5CF6',
+                background: '#0A66C2',
                 color: '#FFFFFF',
                 fontSize: 16,
                 fontWeight: 600,

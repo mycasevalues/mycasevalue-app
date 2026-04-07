@@ -184,7 +184,7 @@ export default function SiteFooter() {
             Ready to research your case?
           </p>
           <Link href="/sign-up" style={{
-            background: '#8B5CF6',
+            background: '#0A66C2',
             color: '#FAFBFC',
             padding: '0.75rem 1.5rem',
             borderRadius: '0.25rem',
@@ -367,7 +367,7 @@ export default function SiteFooter() {
           background: rgba(255, 255, 255, 0.1) !important;
         }
         .site-footer-cta-button:hover {
-          background: #6D28D9 !important;
+          background: #004182 !important;
         }
         @media (max-width: 768px) {
           .site-footer-grid {

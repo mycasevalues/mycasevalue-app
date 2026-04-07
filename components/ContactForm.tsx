@@ -50,10 +50,10 @@ export default function ContactForm() {
   return (
     <>
       <style>{`
-        .contact-input:focus { border-color: #6D28D9 !important; outline: none; }
+        .contact-input:focus { border-color: #004182 !important; outline: none; }
         .contact-submit {
           display: block; padding: 0 32px; height: 48px;
-          background: #8B5CF6; color: #FFFFFF; border: none;
+          background: #0A66C2; color: #FFFFFF; border: none;
           border-radius: 12px; font-size: 15px; font-weight: 600;
           cursor: pointer; transition: background 200ms;
           font-family: var(--font-body); width: 100%;

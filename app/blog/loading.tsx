@@ -5,8 +5,8 @@ export default function BlogLoading() {
       <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1B3A5C' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4 animate-pulse"
-            style={{ background: '#FFF3F4', color: '#8B5CF6', borderRadius: '9999px' }}>
-            <div className="w-3 h-3" style={{ background: '#8B5CF6', borderRadius: '50%' }} />
+            style={{ background: '#FFF3F4', color: '#0A66C2', borderRadius: '9999px' }}>
+            <div className="w-3 h-3" style={{ background: '#0A66C2', borderRadius: '50%' }} />
             INSIGHTS & ANALYSIS
           </div>
           <div className="h-12 mb-4 animate-pulse" style={{ background: '#E5E7EB', borderRadius: '12px' }} />

@@ -234,12 +234,12 @@ html, body {
    ACCESSIBILITY — Focus states with red accent
    ============================================================ */
 *:focus-visible {
-  outline: 2px solid #8B5CF6;
+  outline: 2px solid #0A66C2;
   outline-offset: 2px;
 }
 
 button:focus-visible, a:focus-visible, input:focus-visible {
-  outline: 2px solid #8B5CF6;
+  outline: 2px solid #0A66C2;
   outline-offset: 2px;
 }
 
@@ -477,7 +477,7 @@ select option {
 
 /* Improved focus visibility for accessibility */
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 2px solid #8B5CF6;
+  outline: 2px solid #0A66C2;
   outline-offset: 2px;
   border-radius: 12px;
 }
@@ -806,7 +806,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 [role="button"]:focus-visible {
-  outline: 2px solid #8B5CF6;
+  outline: 2px solid #0A66C2;
   outline-offset: 2px;
   border-radius: 12px;
 }
@@ -1084,7 +1084,7 @@ button:disabled,
   left: 50%;
   width: 0;
   height: 2px;
-  background: #8B5CF6;
+  background: #0A66C2;
   transition: all 200ms ease;
   transform: translateX(-50%);
 }
@@ -1094,7 +1094,7 @@ button:disabled,
 
 /* Button press effect */
 a[style*="background: rgb(232, 23, 31)"]:active,
-a[style*="background: #8B5CF6"]:active {
+a[style*="background: #0A66C2"]:active {
   transform: scale(0.98);
 }
 
@@ -1134,7 +1134,7 @@ a[style*="background: #8B5CF6"]:active {
 
 /* Related cards hover */
 .related-card:hover {
-  border-color: #8B5CF6 !important;
+  border-color: #0A66C2 !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
 }

@@ -154,7 +154,7 @@ const FeatureCard = ({
       }}
       className="attorney-feature-card"
     >
-      <div style={{ fontSize: '32px', color: '#6D28D9', transition: 'color 0.3s ease' }}>{icon}</div>
+      <div style={{ fontSize: '32px', color: '#004182', transition: 'color 0.3s ease' }}>{icon}</div>
       <div>
         <h3
           style={{
@@ -191,7 +191,7 @@ const FeatureCard = ({
             letterSpacing: '0.5px',
             backgroundColor:
               badge === 'available' ? '#10B981' : '#FAFBFC',
-            color: badge === 'available' ? '#ffffff' : '#6D28D9',
+            color: badge === 'available' ? '#ffffff' : '#004182',
             border:
               badge === 'available'
                 ? 'none'
@@ -202,7 +202,7 @@ const FeatureCard = ({
           {badge === 'available' ? 'Available' : 'In Development'}
         </span>
         {href && (
-          <span style={{ fontSize: '13px', color: '#6D28D9', fontWeight: 600, transition: 'color 0.3s ease' }}>
+          <span style={{ fontSize: '13px', color: '#004182', fontWeight: 600, transition: 'color 0.3s ease' }}>
             Try it →
           </span>
         )}
@@ -374,7 +374,7 @@ export default function AttorneyPage() {
     >
       <style dangerouslySetInnerHTML={{ __html: `
         .attorney-feature-card:hover {
-          border-color: #6D28D9 !important;
+          border-color: #004182 !important;
           box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
           transform: translateY(-4px);
         }
@@ -382,13 +382,13 @@ export default function AttorneyPage() {
           color: #1B3A5C !important;
         }
         .attorney-feature-card:hover h3 {
-          color: #6D28D9 !important;
+          color: #004182 !important;
         }
         .attorney-feature-card:hover span {
-          color: #6D28D9 !important;
+          color: #004182 !important;
         }
         .attorney-cta-link:hover {
-          background-color: #8B5CF6 !important;
+          background-color: #0A66C2 !important;
           box-shadow: 0 8px 24px rgba(232, 23, 31, 0.24) !important;
           transform: translateY(-2px);
         }
@@ -432,7 +432,7 @@ export default function AttorneyPage() {
               style={{
                 display: 'inline-block',
                 padding: '8px 16px',
-                backgroundColor: 'rgba(139, 92, 246, 0.15)',
+                backgroundColor: 'rgba(10, 102, 194, 0.15)',
                 color: '#FFFFFF',
                 borderRadius: '12px',
                 fontSize: '12px',
@@ -586,7 +586,7 @@ export default function AttorneyPage() {
                   }}
                   className="attorney-feature-card"
                 >
-                  <div style={{ fontSize: '32px', color: '#6D28D9', transition: 'color 0.3s ease' }}>{item.icon}</div>
+                  <div style={{ fontSize: '32px', color: '#004182', transition: 'color 0.3s ease' }}>{item.icon}</div>
                   <div>
                     <h3
                       style={{
@@ -612,7 +612,7 @@ export default function AttorneyPage() {
                     </p>
                   </div>
                   <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '13px', color: '#6D28D9', fontWeight: 600, transition: 'color 0.3s ease' }}>
+                    <span style={{ fontSize: '13px', color: '#004182', fontWeight: 600, transition: 'color 0.3s ease' }}>
                       Explore →
                     </span>
                   </div>
@@ -709,7 +709,7 @@ export default function AttorneyPage() {
                       justifyContent: 'center',
                       width: '28px',
                       height: '28px',
-                      backgroundColor: '#8B5CF6',
+                      backgroundColor: '#0A66C2',
                       color: '#FFFFFF',
                       borderRadius: '12px',
                       fontSize: '16px',
@@ -828,7 +828,7 @@ export default function AttorneyPage() {
                     fontSize: 'clamp(32px, 5vw, 48px)',
                     fontWeight: '600',
                     fontFamily: 'var(--font-display)',
-                    color: '#8B5CF6',
+                    color: '#0A66C2',
                     marginBottom: '12px',
                   }}
                 >
@@ -882,7 +882,7 @@ export default function AttorneyPage() {
               <span
                 style={{
                   display: 'block',
-                  color: '#8B5CF6',
+                  color: '#0A66C2',
                 }}
               >
                 plus:

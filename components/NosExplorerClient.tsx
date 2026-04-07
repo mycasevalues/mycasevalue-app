@@ -21,10 +21,10 @@ interface NosRow {
 type SortField = 'nos' | 'label' | 'total' | 'wr' | 'sp' | 'mo' | 'rngMd';
 type SortDir = 'asc' | 'desc';
 
-const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#8B5CF6';
+const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#0A66C2';
 
 const CATEGORY_COLORS: Record<string, string> = {
-  work: '#0f0f0f', injury: '#8B5CF6', consumer: '#6D28D9', rights: '#8B5CF6',
+  work: '#0f0f0f', injury: '#0A66C2', consumer: '#004182', rights: '#0A66C2',
   money: '#D97706', housing: '#059669', medical: '#DB2777', family: '#EC4899',
   gov: '#4B5563', education: '#0891B2', ip: '#10B981', other: '#4B5563',
 };
@@ -82,10 +82,10 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
   return (
     <div>
       <style>{`
-        .nos-input:focus { border-color: #6D28D9 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
-        .nos-select:focus { border-color: #6D28D9 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
+        .nos-input:focus { border-color: #004182 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
+        .nos-select:focus { border-color: #004182 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
         .nos-th { cursor: pointer; user-select: none; white-space: nowrap; }
-        .nos-th:hover { color: #6D28D9 !important; }
+        .nos-th:hover { color: #004182 !important; }
         .nos-tr:hover { background: #F7F8FA !important; }
         .nos-expand:hover { background: #F0F3F5 !important; }
         @media (max-width: 768px) {
@@ -97,7 +97,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, marginBottom: 20 }}>
         {[
           { label: 'NOS Codes', value: String(filtered.length), color: '#0f0f0f' },
-          { label: 'Total Cases', value: totalFiltered >= 1000000 ? `${(totalFiltered / 1000000).toFixed(1)}M` : `${(totalFiltered / 1000).toFixed(0)}K`, color: '#6D28D9' },
+          { label: 'Total Cases', value: totalFiltered >= 1000000 ? `${(totalFiltered / 1000000).toFixed(1)}M` : `${(totalFiltered / 1000).toFixed(0)}K`, color: '#004182' },
           { label: 'Avg Win Rate', value: `${avgWR}%`, color: wrColor(avgWR) },
         ].map(s => (
           <div key={s.label} style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2, padding: '16px 12px', textAlign: 'center' }}>
@@ -181,7 +181,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                   onClick={() => setExpandedNos(expandedNos === row.nos ? null : row.nos)}
                   style={{ borderBottom: '1px solid #F0F0F0', background: i % 2 === 0 ? '#FFFFFF' : '#FAFAFA', cursor: 'pointer' }}
                 >
-                  <td style={{ padding: '10px 16px', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#6D28D9', fontSize: 13 }}>
+                  <td style={{ padding: '10px 16px', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#004182', fontSize: 13 }}>
                     {row.nos}
                   </td>
                   <td style={{ padding: '10px 8px', fontWeight: 600, color: '#0f0f0f' }}>
@@ -209,14 +209,14 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                   <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0f0f0f' }}>
                     {row.mo}mo
                   </td>
-                  <td style={{ padding: '10px 16px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#8B5CF6' }}>
+                  <td style={{ padding: '10px 16px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0A66C2' }}>
                     {row.rngMd > 0 ? fmtK(row.rngMd) : '–'}
                   </td>
                 </tr>
                 {expandedNos === row.nos && (
                   <tr key={`${row.nos}-expand`}>
                     <td colSpan={8} style={{ padding: 0 }}>
-                      <div className="nos-expand" style={{ padding: '16px 24px', background: '#F8F9FA', borderBottom: '2px solid #6D28D9' }}>
+                      <div className="nos-expand" style={{ padding: '16px 24px', background: '#F8F9FA', borderBottom: '2px solid #004182' }}>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16 }}>
                           <div>
                             <div style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', color: '#4B5563', marginBottom: 4 }}>Recovery Range</div>
@@ -234,7 +234,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                           <div>
                             <div style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', color: '#4B5563', marginBottom: 4 }}>Settlement Rate</div>
                             <div style={{ height: 8, background: '#E0E0E0', borderRadius: 4, overflow: 'hidden', marginTop: 6 }}>
-                              <div style={{ width: `${row.sp}%`, height: '100%', background: '#6D28D9', borderRadius: 4 }} />
+                              <div style={{ width: `${row.sp}%`, height: '100%', background: '#004182', borderRadius: 4 }} />
                             </div>
                           </div>
                           <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -242,7 +242,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                               href={`/report/${row.nos}`}
                               style={{
                                 display: 'inline-flex', alignItems: 'center', gap: 6,
-                                padding: '8px 16px', background: '#8B5CF6', color: '#FFFFFF',
+                                padding: '8px 16px', background: '#0A66C2', color: '#FFFFFF',
                                 borderRadius: 2, fontSize: 12, fontWeight: 600, textDecoration: 'none',
                                 fontFamily: 'var(--font-body)',
                               }}

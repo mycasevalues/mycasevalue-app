@@ -133,7 +133,7 @@ export default function AccountPage() {
               {' > Account'}
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-              <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: '#0A66C2', color: '#FFFFFF', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                 Account
               </span>
             </div>
@@ -148,7 +148,7 @@ export default function AccountPage() {
 
         {/* Loading Spinner */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '80px' }}>
-          <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#8B5CF6', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+          <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#0A66C2', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
           <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
         </div>
       </div>
@@ -167,7 +167,7 @@ export default function AccountPage() {
             {' > Account'}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-            <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+            <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: '#0A66C2', color: '#FFFFFF', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               Account
             </span>
           </div>
@@ -228,7 +228,7 @@ export default function AccountPage() {
               <button
                 type="submit"
                 disabled={saving}
-                style={{ padding: '10px 20px', backgroundColor: '#8B5CF6', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.6 : 1, textTransform: 'uppercase' }}
+                style={{ padding: '10px 20px', backgroundColor: '#0A66C2', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.6 : 1, textTransform: 'uppercase' }}
               >
                 {saving ? 'Saving...' : 'Save Changes'}
               </button>
@@ -279,7 +279,7 @@ export default function AccountPage() {
               <button
                 type="submit"
                 disabled={passwordSaving}
-                style={{ padding: '10px 20px', backgroundColor: '#8B5CF6', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: passwordSaving ? 'not-allowed' : 'pointer', opacity: passwordSaving ? 0.6 : 1, textTransform: 'uppercase' }}
+                style={{ padding: '10px 20px', backgroundColor: '#0A66C2', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: passwordSaving ? 'not-allowed' : 'pointer', opacity: passwordSaving ? 0.6 : 1, textTransform: 'uppercase' }}
               >
                 {passwordSaving ? 'Updating...' : 'Update Password'}
               </button>
@@ -296,7 +296,7 @@ export default function AccountPage() {
               <span className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: '#0f0f0f' }}>
                 {planLabels[planInfo?.plan || 'free'] || 'Free'}
               </span>
-              <span style={{ padding: '4px 10px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? '#FAFBFC' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? '#4B5563' : '#6D28D9' }}>
+              <span style={{ padding: '4px 10px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? '#FAFBFC' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? '#4B5563' : '#004182' }}>
                 {planInfo?.plan === 'free' ? 'Free' : 'Active'}
               </span>
             </div>
@@ -313,7 +313,7 @@ export default function AccountPage() {
             )}
 
             <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
-              <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#8B5CF6', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+              <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#0A66C2', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
                 {planInfo?.plan === 'free' ? 'Upgrade Plan' : 'Change Plan'}
               </Link>
               <Link href="/billing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#FAFBFC', color: '#0f0f0f', border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
@@ -347,8 +347,8 @@ export default function AccountPage() {
             </div>
             <style>{`
               .quick-link-card:hover {
-                border-color: #6D28D9;
-                box-shadow: 0 2px 8px rgba(139, 92, 246, 0.12);
+                border-color: #004182;
+                box-shadow: 0 2px 8px rgba(10, 102, 194, 0.12);
               }
             `}</style>
           </div>
@@ -369,8 +369,8 @@ export default function AccountPage() {
               }
             `}</style>
 
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '2px solid #8B5CF6' }}>
-              <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: '#8B5CF6', margin: '0 0 16px 0' }}>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '2px solid #0A66C2' }}>
+              <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: '#0A66C2', margin: '0 0 16px 0' }}>
                 Danger Zone
               </h2>
               <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 16px 0', lineHeight: 1.5 }}>
@@ -378,7 +378,7 @@ export default function AccountPage() {
               </p>
               <p style={{ fontSize: '12px', color: '#4B5563', margin: 0 }}>
                 To delete your account, contact{' '}
-                <a href="mailto:support@mycasevalues.com" style={{ color: '#6D28D9', textDecoration: 'none' }}>support@mycasevalues.com</a>.
+                <a href="mailto:support@mycasevalues.com" style={{ color: '#004182', textDecoration: 'none' }}>support@mycasevalues.com</a>.
               </p>
             </div>
           </div>

@@ -2,7 +2,7 @@
    MYCASEVALUE DESIGN SYSTEM — Professional Legal Data Platform
    ============================================================
    Montserrat (headings) / Roboto (body) / PT Mono (data).
-   Navy primary (#1B3A5C). Purple accent (#8B5CF6).
+   Navy primary (#1B3A5C). Purple accent (#0A66C2).
    Professional, institutional aesthetic.
    ============================================================ */
 
@@ -13,8 +13,8 @@
   --color-navy-light:  #2A5080;
 
   /* Accent */
-  --color-accent:      #8B5CF6;
-  --color-accent-dark: #6D28D9;
+  --color-accent:      #0A66C2;
+  --color-accent-dark: #004182;
   --color-accent-light:#EDE9FE;
 
   /* Surfaces */
@@ -28,7 +28,7 @@
   --color-text-secondary: #4B5563;
   --color-text-muted:     #9CA3AF;
   --color-text-inverse:   #FFFFFF;
-  --color-text-accent:    #6D28D9;
+  --color-text-accent:    #004182;
 
   /* Borders */
   --color-border-light:   #E5E7EB;
@@ -154,7 +154,7 @@
   --gradient-cta:         var(--color-accent);
   --gradient-cta-hover:   var(--color-accent-dark);
   --gradient-hero: linear-gradient(160deg, #1B3A5C 0%, #122840 50%, #1B3A5C 100%);
-  --gradient-accent: linear-gradient(to right, #8B5CF6 0%, #6D28D9 100%);
+  --gradient-accent: linear-gradient(to right, #0A66C2 0%, #004182 100%);
 }
 
 /* High Contrast Mode */

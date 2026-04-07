@@ -138,7 +138,7 @@ export default function QuickLookupForm() {
         type="submit"
         style={{
           height: '48px',
-          background: '#8B5CF6',
+          background: '#0A66C2',
           color: '#FFFFFF',
           fontWeight: 600,
           fontSize: '15px',
@@ -159,7 +159,7 @@ export default function QuickLookupForm() {
         const nos = OPT_TO_NOS[caseType];
         const rd = nos ? (REAL_DATA as any)[nos] : null;
         if (!rd) return null;
-        const wrColor = (rd.wr ?? 0) >= 50 ? '#059669' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#8B5CF6';
+        const wrColor = (rd.wr ?? 0) >= 50 ? '#059669' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#0A66C2';
         return (
           <div style={{
             background: '#F8F9FA',
@@ -179,7 +179,7 @@ export default function QuickLookupForm() {
               <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Win Rate</div>
             </div>
             <div>
-              <div style={{ fontSize: 18, fontWeight: 600, color: '#6D28D9', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+              <div style={{ fontSize: 18, fontWeight: 600, color: '#004182', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {rd.mo ?? '–'}mo
               </div>
               <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Duration</div>
@@ -209,12 +209,12 @@ export default function QuickLookupForm() {
       {/* Styles */}
       <style dangerouslySetInnerHTML={{ __html: `
         .quick-lookup-select:focus {
-          border-color: #6D28D9 !important;
-          box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
+          border-color: #004182 !important;
+          box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1) !important;
           outline: none;
         }
         .quick-lookup-select:invalid {
-          border-color: #8B5CF6 !important;
+          border-color: #0A66C2 !important;
         }
         .quick-lookup-submit:hover {
           background: #B91C1C !important;

@@ -49,7 +49,7 @@ function getCircuitForDistrict(district: string): string {
   return 'Other';
 }
 
-const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#8B5CF6';
+const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#0A66C2';
 
 export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
   const [search, setSearch] = useState('');
@@ -145,17 +145,17 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
   return (
     <div>
       <style>{`
-        .je-input:focus { border-color: #6D28D9 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
-        .je-select:focus { border-color: #6D28D9 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
-        .je-card:hover { border-color: #6D28D9 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; }
+        .je-input:focus { border-color: #004182 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
+        .je-select:focus { border-color: #004182 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
+        .je-card:hover { border-color: #004182 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; }
         .je-th { cursor: pointer; user-select: none; white-space: nowrap; }
-        .je-th:hover { color: #6D28D9 !important; }
+        .je-th:hover { color: #004182 !important; }
         .je-tr:hover { background: #F7F8FA !important; }
         .je-view-btn { border: 1px solid #E5E7EB; background: #FFFFFF; padding: 6px 12px; cursor: pointer; font-size: 12px; font-weight: 600; transition: all 0.15s; }
         .je-view-btn:hover { background: #F7F8FA; }
         .je-view-btn.active { background: #1B3A5C; color: #FFFFFF; border-color: #1B3A5C; }
         .je-page-btn { border: 1px solid #E5E7EB; background: #FFFFFF; padding: 6px 12px; cursor: pointer; font-size: 13px; font-family: var(--font-mono); min-width: 36px; transition: all 0.15s; }
-        .je-page-btn:hover { background: #F7F8FA; border-color: #6D28D9; }
+        .je-page-btn:hover { background: #F7F8FA; border-color: #004182; }
         .je-page-btn.active { background: #1B3A5C; color: #FFFFFF; border-color: #1B3A5C; }
         .je-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
         @media (max-width: 768px) {
@@ -169,8 +169,8 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
         {[
           { label: 'Judges', value: String(filtered.length), color: '#0f0f0f' },
           { label: 'Avg Win Rate', value: `${avgWR}%`, color: wrColor(avgWR) },
-          { label: 'Avg Motion Grant', value: `${avgMGR}%`, color: '#6D28D9' },
-          { label: 'Avg Settlement', value: `${avgSettle}%`, color: '#6D28D9' },
+          { label: 'Avg Motion Grant', value: `${avgMGR}%`, color: '#004182' },
+          { label: 'Avg Settlement', value: `${avgSettle}%`, color: '#004182' },
           { label: 'Avg Duration', value: `${avgDur}mo`, color: '#0f0f0f' },
         ].map(s => (
           <div key={s.label} style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2, padding: '16px 12px', textAlign: 'center' }}>
@@ -300,7 +300,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           <p style={{ fontSize: 15, color: '#4B5563', fontFamily: 'var(--font-body)' }}>No judges match your filters.</p>
           <button
             onClick={() => { setSearch(''); setCircuitFilter(''); setDistrictFilter(''); setStatusFilter('all'); setPage(1); }}
-            style={{ marginTop: 12, border: 'none', background: '#8B5CF6', color: '#FFFFFF', padding: '8px 20px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
+            style={{ marginTop: 12, border: 'none', background: '#0A66C2', color: '#FFFFFF', padding: '8px 20px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
           >
             Clear Filters
           </button>
@@ -332,7 +332,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                   </div>
                   <div style={{ display: 'flex', gap: 4 }}>
                     {judge.chiefJudge && (
-                      <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(139, 92, 246, 0.08)', color: '#8B5CF6', textTransform: 'uppercase' }}>Chief</span>
+                      <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(10, 102, 194, 0.08)', color: '#0A66C2', textTransform: 'uppercase' }}>Chief</span>
                     )}
                     {judge.seniorStatus && (
                       <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(184,110,0,0.08)', color: '#B86E00', textTransform: 'uppercase' }}>Senior</span>
@@ -354,13 +354,13 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                     <div style={{ fontSize: 9, color: '#4B5563', textTransform: 'uppercase', marginTop: 1 }}>Win</div>
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#6D28D9' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#004182' }}>
                       {judge.stats.motionGrantRate}%
                     </div>
                     <div style={{ fontSize: 9, color: '#4B5563', textTransform: 'uppercase', marginTop: 1 }}>MTD</div>
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#6D28D9' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#004182' }}>
                       {judge.stats.settlementRate}%
                     </div>
                     <div style={{ fontSize: 9, color: '#4B5563', textTransform: 'uppercase', marginTop: 1 }}>Settle</div>
@@ -423,11 +423,11 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
               {paginated.map((judge, i) => (
                 <tr key={judge.slug} className="je-tr" style={{ borderBottom: '1px solid #F0F0F0', background: i % 2 === 0 ? '#FFFFFF' : '#FAFAFA' }}>
                   <td style={{ padding: '10px 16px' }}>
-                    <Link href={`/judges/${judge.slug}`} style={{ color: '#6D28D9', textDecoration: 'none', fontWeight: 600 }}>
+                    <Link href={`/judges/${judge.slug}`} style={{ color: '#004182', textDecoration: 'none', fontWeight: 600 }}>
                       {judge.name}
                     </Link>
                     <div style={{ display: 'flex', gap: 4, marginTop: 2 }}>
-                      {judge.chiefJudge && <span style={{ fontSize: 9, fontWeight: 600, color: '#8B5CF6' }}>CHIEF</span>}
+                      {judge.chiefJudge && <span style={{ fontSize: 9, fontWeight: 600, color: '#0A66C2' }}>CHIEF</span>}
                       {judge.seniorStatus && <span style={{ fontSize: 9, fontWeight: 600, color: '#B86E00' }}>SENIOR</span>}
                     </div>
                   </td>

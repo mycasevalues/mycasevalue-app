@@ -44,14 +44,14 @@ export default function UpgradeBanner() {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #8B5CF6;
+          color: #0A66C2;
           font-weight: 600;
         }
         .upgrade-btn-primary {
           display: inline-block;
           padding: 12px 28px;
           height: 48px;
-          background: #8B5CF6;
+          background: #0A66C2;
           color: #FFFFFF;
           border-radius: 12px;
           text-transform: uppercase;
@@ -98,7 +98,7 @@ export default function UpgradeBanner() {
           <div>
             <div style={{
               display: 'inline-flex', alignItems: 'center',
-              background: 'rgba(139, 92, 246, 0.2)', color: '#8B5CF6',
+              background: 'rgba(10, 102, 194, 0.2)', color: '#0A66C2',
               fontSize: '11px', fontWeight: 600, textTransform: 'uppercase',
               padding: '6px 12px', borderRadius: '12px', marginBottom: '16px',
               letterSpacing: '0.08em',
@@ -156,7 +156,7 @@ export default function UpgradeBanner() {
               <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', marginBottom: '20px', fontFamily: 'var(--font-display)' }}>
                 Case Outcome Prediction
               </div>
-              <div style={{ fontSize: '48px', fontWeight: 600, color: '#8B5CF6', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
+              <div style={{ fontSize: '48px', fontWeight: 600, color: '#0A66C2', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
                 72%
               </div>
               <div style={{ fontSize: '13px', color: '#4B5563', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>

@@ -28,8 +28,8 @@ export default function ExpertWitnessPage() {
   const focusStyle = `
     select:focus, input:focus {
       outline: none;
-      border-color: #8B5CF6;
-      box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.08);
+      border-color: #0A66C2;
+      box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08);
     }
   `;
 
@@ -88,13 +88,13 @@ export default function ExpertWitnessPage() {
       {/* Header */}
       <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/attorney" style={{ fontSize: '13px', color: '#0A66C2', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Back to Attorney Tools
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                 <circle cx="12" cy="12" r="9" />
                 <path d="M12 7v5l3 3" />
               </svg>
@@ -108,7 +108,7 @@ export default function ExpertWitnessPage() {
               </p>
             </div>
           </div>
-          <p style={{ fontSize: '12px', color: 'rgba(139, 92, 246, 0.8)', margin: '12px 0 0', fontWeight: 500 }}>
+          <p style={{ fontSize: '12px', color: 'rgba(10, 102, 194, 0.8)', margin: '12px 0 0', fontWeight: 500 }}>
             Free during public beta
           </p>
         </div>
@@ -164,7 +164,7 @@ export default function ExpertWitnessPage() {
         {/* Loading */}
         {loading && (
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
-            <div style={{ width: 36, height: 36, border: '3px solid #E5E7EB', borderTopColor: '#8B5CF6', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
+            <div style={{ width: 36, height: 36, border: '3px solid #E5E7EB', borderTopColor: '#0A66C2', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
             <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
             <p style={{ fontSize: '14px', color: '#4B5563' }}>Retrieving expert witness data...</p>
           </div>
@@ -184,12 +184,12 @@ export default function ExpertWitnessPage() {
 
             {/* Cost estimate summary */}
             {estimatedDuration && (
-              <div style={{ background: 'rgba(139, 92, 246, 0.08)', border: '1px solid rgba(139, 92, 246, 0.3)', borderRadius: '12px', padding: '16px', marginBottom: '24px' }}>
+              <div style={{ background: 'rgba(10, 102, 194, 0.08)', border: '1px solid rgba(10, 102, 194, 0.3)', borderRadius: '12px', padding: '16px', marginBottom: '24px' }}>
                 <p style={{ fontSize: '12px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase' as const, margin: '0 0 8px' }}>
                   Estimated Total Expert Costs ({durationMonths} months)
                 </p>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-                  <span className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: '#8B5CF6' }}>
+                  <span className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: '#0A66C2' }}>
                     ${(data.estimatedTotalCostLow / 1000).toFixed(0)}K
                   </span>
                   <span style={{ fontSize: '14px', color: '#4B5563' }}>
@@ -254,7 +254,7 @@ export default function ExpertWitnessPage() {
                   <div style={{ paddingTop: '12px', borderTop: '1px solid #E5E7EB' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                       <span style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase' as const }}>Daubert Survives</span>
-                      <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: expert.daubertChallengeSuccessRate >= 70 ? '#10B981' : expert.daubertChallengeSuccessRate >= 50 ? '#E89558' : '#8B5CF6' }}>
+                      <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: expert.daubertChallengeSuccessRate >= 70 ? '#10B981' : expert.daubertChallengeSuccessRate >= 50 ? '#E89558' : '#0A66C2' }}>
                         {expert.daubertChallengeSuccessRate}%
                       </span>
                     </div>
@@ -263,7 +263,7 @@ export default function ExpertWitnessPage() {
                         style={{
                           height: '100%',
                           width: `${Math.min(expert.daubertChallengeSuccessRate, 100)}%`,
-                          background: expert.daubertChallengeSuccessRate >= 70 ? '#10B981' : expert.daubertChallengeSuccessRate >= 50 ? '#E89558' : '#8B5CF6',
+                          background: expert.daubertChallengeSuccessRate >= 70 ? '#10B981' : expert.daubertChallengeSuccessRate >= 50 ? '#E89558' : '#0A66C2',
                           borderRadius: '3px',
                         }}
                       />
@@ -288,8 +288,8 @@ export default function ExpertWitnessPage() {
         {/* Empty state */}
         {!selectedNos && !loading && (
           <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                 <circle cx="12" cy="12" r="9" />
                 <path d="M12 7v5l3 3" />
               </svg>

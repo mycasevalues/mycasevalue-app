@@ -98,7 +98,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   fontWeight: 600,
                   color: '#0f0f0f',
                   transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
-                  borderLeft: isOpen ? '4px solid #8B5CF6' : '4px solid transparent',
+                  borderLeft: isOpen ? '4px solid #0A66C2' : '4px solid transparent',
                   paddingLeft: '16px',
                 }}
                 onMouseEnter={(e) => {

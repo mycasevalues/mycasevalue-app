@@ -59,7 +59,7 @@ export default function ContactPage() {
               <span style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#8B5CF6',
+                backgroundColor: '#0A66C2',
                 color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 600,
@@ -100,7 +100,7 @@ export default function ContactPage() {
         <div style={{ borderBottom: '1px solid #E5E7EB', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: '#F7F8FA' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
             <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
-              <Link href="/" style={{ color: '#6D28D9', textDecoration: 'none' }}>
+              <Link href="/" style={{ color: '#004182', textDecoration: 'none' }}>
                 Home
               </Link>
               <span style={{ color: '#4B5563' }}>/</span>
@@ -194,7 +194,7 @@ export default function ContactPage() {
 
         <style>{`
           .contact-quick-link:hover {
-            border-color: #6D28D9 !important;
+            border-color: #004182 !important;
             box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
             transform: translateY(-4px);
           }
@@ -243,7 +243,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#8B5CF6',
+                  color: '#0A66C2',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                 }}
@@ -296,7 +296,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#8B5CF6',
+                  color: '#0A66C2',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                 }}
@@ -349,7 +349,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#8B5CF6',
+                  color: '#0A66C2',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                 }}
@@ -384,11 +384,11 @@ export default function ContactPage() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '8px' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <span style={{ fontSize: '14px', fontWeight: 600, color: '#6D28D9', fontFamily: 'var(--font-display)' }}>
+            <span style={{ fontSize: '14px', fontWeight: 600, color: '#004182', fontFamily: 'var(--font-display)' }}>
               Response Time
             </span>
           </div>
@@ -415,7 +415,7 @@ export default function ContactPage() {
             lineHeight: 1.6,
           }}
         >
-          You can also reach out via email at <a href="mailto:support@mycasevalue.com" style={{ color: '#8B5CF6', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalue.com</a> or <a href="mailto:enterprise@mycasevalue.com" style={{ color: '#8B5CF6', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalue.com</a>
+          You can also reach out via email at <a href="mailto:support@mycasevalue.com" style={{ color: '#0A66C2', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalue.com</a> or <a href="mailto:enterprise@mycasevalue.com" style={{ color: '#0A66C2', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalue.com</a>
         </p>
         </div>
       </div>

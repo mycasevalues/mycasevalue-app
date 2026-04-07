@@ -75,7 +75,7 @@ export default function ComparePage() {
     <>
       <style>{`
         .lexis-link {
-          color: #6D28D9;
+          color: #004182;
           text-decoration: none;
           transition: color 0.2s ease;
         }
@@ -87,12 +87,12 @@ export default function ComparePage() {
           transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
         .lexis-select:hover {
-          border-color: #6D28D9;
+          border-color: #004182;
         }
         .lexis-select:focus {
           outline: none;
-          border-color: #6D28D9;
-          box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.1);
+          border-color: #004182;
+          box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.1);
         }
         .lexis-btn {
           transition: background-color 0.2s ease, opacity 0.2s ease;
@@ -137,7 +137,7 @@ export default function ComparePage() {
             marginBottom: 16,
             textTransform: 'uppercase',
             color: '#ffffff',
-            background: '#8B5CF6',
+            background: '#0A66C2',
             padding: '4px 12px',
             borderRadius: 4,
           }}>
@@ -175,7 +175,7 @@ export default function ComparePage() {
         fontFamily: 'var(--font-body)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 48px)', paddingRight: 'clamp(16px, 3vw, 48px)' }}>
-          <Link href="/" className="lexis-link" style={{ marginRight: 8, color: '#6D28D9' }}>Home</Link>
+          <Link href="/" className="lexis-link" style={{ marginRight: 8, color: '#004182' }}>Home</Link>
           <span style={{ color: '#4B5563', marginRight: 8 }}>/</span>
           <span style={{ color: '#0f0f0f', fontWeight: 600 }}>Compare Case Types</span>
         </div>
@@ -253,7 +253,7 @@ export default function ComparePage() {
             className="lexis-btn"
             style={{
               padding: '12px 32px',
-              background: canCompare ? '#8B5CF6' : '#E5E7EB',
+              background: canCompare ? '#0A66C2' : '#E5E7EB',
               color: canCompare ? '#ffffff' : '#4B5563',
               border: 'none',
               borderRadius: 4,
@@ -377,7 +377,7 @@ export default function ComparePage() {
                             <td key={s.nos} style={{
                               textAlign: 'center',
                               padding: '14px 16px',
-                              color: isBest ? '#6D28D9' : '#0f0f0f',
+                              color: isBest ? '#004182' : '#0f0f0f',
                               fontWeight: isBest ? 700 : 400,
                               fontFamily: 'var(--font-mono)',
                               fontSize: 14,
@@ -389,7 +389,7 @@ export default function ComparePage() {
                                   <div style={{
                                     height: '100%',
                                     width: `${Math.min(v, 100)}%`,
-                                    background: isBest ? '#6D28D9' : row.key === 'dismissRate' ? '#8B5CF6' : '#E5E7EB',
+                                    background: isBest ? '#004182' : row.key === 'dismissRate' ? '#0A66C2' : '#E5E7EB',
                                     borderRadius: 2,
                                     transition: 'width 0.5s ease',
                                   }} />
@@ -435,7 +435,7 @@ export default function ComparePage() {
                   value: s[metric.key as keyof CaseStats] as number,
                 }));
                 const maxValue = Math.max(...metricStats.map(m => m.value));
-                const colors = ['#8B5CF6', '#6D28D9', '#1B3A5C'];
+                const colors = ['#0A66C2', '#004182', '#1B3A5C'];
 
                 return (
                   <div key={metric.key} style={{ marginBottom: 24 }}>
@@ -579,7 +579,7 @@ export default function ComparePage() {
                       </div>
                       <div style={{
                         width: `${s.dismissRate}%`,
-                        background: '#8B5CF6',
+                        background: '#0A66C2',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -627,7 +627,7 @@ export default function ComparePage() {
                         <div style={{
                           width: 12,
                           height: 12,
-                          background: '#8B5CF6',
+                          background: '#0A66C2',
                           borderRadius: 2,
                           margin: '0 auto 4px',
                         }} />
@@ -802,8 +802,8 @@ export default function ComparePage() {
                     fontFamily: 'var(--font-body)',
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLButtonElement).style.borderColor = '#6D28D9';
-                    (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 2px 4px rgba(139, 92, 246, 0.1)';
+                    (e.currentTarget as HTMLButtonElement).style.borderColor = '#004182';
+                    (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 2px 4px rgba(10, 102, 194, 0.1)';
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLButtonElement).style.borderColor = '#E5E7EB';
@@ -827,7 +827,7 @@ export default function ComparePage() {
                     <span style={{
                       fontSize: 11,
                       fontWeight: 600,
-                      color: '#8B5CF6',
+                      color: '#0A66C2',
                       background: '#FFE5E5',
                       padding: '2px 8px',
                       borderRadius: 2,
@@ -896,8 +896,8 @@ export default function ComparePage() {
                     transition: 'all 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = '#6D28D9';
-                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 2px 4px rgba(139, 92, 246, 0.1)';
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = '#004182';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 2px 4px rgba(10, 102, 194, 0.1)';
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLAnchorElement).style.borderColor = '#E5E7EB';
@@ -907,7 +907,7 @@ export default function ComparePage() {
                   <h4 style={{
                     fontSize: 14,
                     fontWeight: 600,
-                    color: '#6D28D9',
+                    color: '#004182',
                     margin: '0 0 4px 0',
                     fontFamily: 'var(--font-display)',
                   }}>

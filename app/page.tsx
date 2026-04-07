@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import AnimatedCounter from '../components/AnimatedCounter';
 
-const ACCENT_COLOR = '#8B5CF6';
+const ACCENT_COLOR = '#0A66C2';
 const TEXT_COLOR = '#0f0f0f';
 const SUCCESS_COLOR = '#059669';
 const BORDER_COLOR = '#e5e7eb';
@@ -116,7 +116,7 @@ export default function HomePage() {
                 maxWidth: '600px',
                 margin: '0 auto',
                 display: 'flex',
-                boxShadow: '0 10px 40px rgba(139, 92, 246, 0.1)',
+                boxShadow: '0 10px 40px rgba(10, 102, 194, 0.1)',
                 borderRadius: '8px',
                 overflow: 'hidden',
               }}
@@ -332,7 +332,7 @@ export default function HomePage() {
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLDivElement;
-                    el.style.boxShadow = '0 12px 32px rgba(139, 92, 246, 0.15)';
+                    el.style.boxShadow = '0 12px 32px rgba(10, 102, 194, 0.15)';
                     el.style.borderColor = ACCENT_COLOR;
                     el.style.transform = 'translateY(-4px)';
                   }}
@@ -492,7 +492,7 @@ export default function HomePage() {
       {/* Bottom CTA Section */}
       <section
         style={{
-          background: `linear-gradient(135deg, ${ACCENT_COLOR} 0%, #7c3aed 100%)`,
+          background: `linear-gradient(135deg, ${ACCENT_COLOR} 0%, #004182 100%)`,
           padding: '80px 20px',
           textAlign: 'center',
           color: '#ffffff',

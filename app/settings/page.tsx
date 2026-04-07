@@ -195,7 +195,7 @@ export default function SettingsPage() {
                           className="mr-3 rounded-sm"
                           defaultChecked={caseType === 'Patent'}
                           style={{
-                            accentColor: '#8B5CF6',
+                            accentColor: '#0A66C2',
                           }}
                         />
                         <span style={{ color: '#4B5563' }}>{caseType}</span>
@@ -220,7 +220,7 @@ export default function SettingsPage() {
                           className="mr-3 rounded-sm"
                           defaultChecked={pref.checked}
                           style={{
-                            accentColor: '#8B5CF6',
+                            accentColor: '#0A66C2',
                           }}
                         />
                         <span style={{ color: '#4B5563' }}>{pref.label}</span>
@@ -251,7 +251,7 @@ export default function SettingsPage() {
                   href="/privacy"
                   className="settings-link-button block px-4 py-3 rounded-sm text-sm font-medium transition-colors"
                   style={{
-                    color: '#6D28D9',
+                    color: '#004182',
                     border: '1px solid #E5E7EB',
                     backgroundColor: 'white',
                   }}
@@ -262,7 +262,7 @@ export default function SettingsPage() {
                   href="/terms"
                   className="settings-link-button block px-4 py-3 rounded-sm text-sm font-medium transition-colors"
                   style={{
-                    color: '#6D28D9',
+                    color: '#004182',
                     border: '1px solid #E5E7EB',
                     backgroundColor: 'white',
                   }}
@@ -272,7 +272,7 @@ export default function SettingsPage() {
                 <button
                   className="settings-link-button w-full px-4 py-3 rounded-sm text-sm font-medium transition-colors text-left"
                   style={{
-                    color: '#6D28D9',
+                    color: '#004182',
                     border: '1px solid #E5E7EB',
                     backgroundColor: 'white',
                   }}
@@ -311,7 +311,7 @@ export default function SettingsPage() {
                         defaultChecked={option.value === 'comfortable'}
                         className="mr-3"
                         style={{
-                          accentColor: '#8B5CF6',
+                          accentColor: '#0A66C2',
                         }}
                       />
                       <span style={{ color: '#4B5563' }}>{option.label}</span>
@@ -379,7 +379,7 @@ export default function SettingsPage() {
                     href={link.href}
                     className="settings-link-button px-4 py-3 rounded-sm text-sm font-medium transition-colors"
                     style={{
-                      color: '#6D28D9',
+                      color: '#004182',
                       border: '1px solid #E5E7EB',
                       backgroundColor: 'white',
                     }}

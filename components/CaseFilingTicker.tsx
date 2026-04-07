@@ -71,7 +71,7 @@ export default function CaseFilingTicker() {
           style={{
             fontSize: '11px',
             fontWeight: 600,
-            color: '#8B5CF6',
+            color: '#0A66C2',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             marginBottom: '12px',

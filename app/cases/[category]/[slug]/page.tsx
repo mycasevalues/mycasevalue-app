@@ -117,7 +117,7 @@ function StatsCard({
         style={{
           fontSize: '28px',
           fontWeight: 'bold',
-          color: '#8B5CF6',
+          color: '#0A66C2',
           margin: '0',
           fontFamily: 'var(--font-data)',
         }}
@@ -160,7 +160,7 @@ export default async function CaseTypeDetailPage({
               display: 'inline-block',
               padding: '12px 32px',
               borderRadius: '12px',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               color: 'white',
               textDecoration: 'none',
               fontWeight: '600',
@@ -296,7 +296,7 @@ export default async function CaseTypeDetailPage({
                 display: 'inline-block',
                 padding: '8px 16px',
                 borderRadius: '12px',
-                background: '#8B5CF6',
+                background: '#0A66C2',
                 fontSize: '12px',
                 fontWeight: '600',
                 color: '#FFFFFF',
@@ -449,7 +449,7 @@ export default async function CaseTypeDetailPage({
                     style={{
                       position: 'absolute',
                       left: '0',
-                      color: '#8B5CF6',
+                      color: '#0A66C2',
                     }}
                   >
                     •
@@ -467,7 +467,7 @@ export default async function CaseTypeDetailPage({
             display: inline-block;
             padding: 14px 36px;
             border-radius: 12px;
-            background: #8B5CF6;
+            background: #0A66C2;
             color: white;
             text-decoration: none;
             font-weight: 600;
@@ -543,7 +543,7 @@ export default async function CaseTypeDetailPage({
               box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
             }
             .related-case-card:hover {
-              border-color: #8B5CF6;
+              border-color: #0A66C2;
               background: #FFFFFF;
               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
               transform: translateY(-1px);

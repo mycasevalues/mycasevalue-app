@@ -186,7 +186,7 @@ export default function SpanishFAQPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px' }}>
+            style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}>
             AYUDA
           </div>
 
@@ -257,7 +257,7 @@ export default function SpanishFAQPage() {
           </p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-            style={{ borderRadius: '12px', background: '#FFFFFF', border: '1px solid #E5E7EB', color: '#6D28D9' }}>
+            style={{ borderRadius: '12px', background: '#FFFFFF', border: '1px solid #E5E7EB', color: '#004182' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contactar Soporte
           </a>
@@ -274,7 +274,7 @@ export default function SpanishFAQPage() {
             <Link href="/search">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
@@ -285,7 +285,7 @@ export default function SpanishFAQPage() {
             <Link href="/calculator">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
@@ -296,7 +296,7 @@ export default function SpanishFAQPage() {
             <Link href="/compare">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
@@ -307,7 +307,7 @@ export default function SpanishFAQPage() {
             <Link href="/nos-explorer">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
@@ -319,7 +319,7 @@ export default function SpanishFAQPage() {
           {/* Language Switcher */}
           <div className="mt-12 p-6 text-center" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
             <p className="text-sm" style={{ color: '#4B5563' }}>
-              This page is also available in <Link href="/faq" style={{ color: '#6D28D9', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
+              This page is also available in <Link href="/faq" style={{ color: '#004182', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>
           </div>
         </div>

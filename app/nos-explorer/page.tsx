@@ -101,7 +101,7 @@ export default function NosExplorerPage() {
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600,
-              letterSpacing: '1.5px', marginBottom: 16, background: '#8B5CF6',
+              letterSpacing: '1.5px', marginBottom: 16, background: '#0A66C2',
               color: '#FFFFFF', textTransform: 'uppercase',
             }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

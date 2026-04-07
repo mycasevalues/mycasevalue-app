@@ -65,7 +65,7 @@ export default function AboutPage() {
           letter-spacing: 1.5px;
           text-transform: uppercase;
           background: #FFF3F4;
-          color: #8B5CF6;
+          color: #0A66C2;
         }
 
         .mission-hero h1 {
@@ -123,13 +123,13 @@ export default function AboutPage() {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: #8B5CF6;
+          background: #0A66C2;
           color: #FFFFFF;
           font-family: var(--font-display);
           font-weight: 600;
           font-size: 1rem;
           margin: 0 auto 1rem;
-          box-shadow: 0 2px 8px rgba(139, 92, 246, 0.2);
+          box-shadow: 0 2px 8px rgba(10, 102, 194, 0.2);
           flex-shrink: 0;
         }
 
@@ -169,8 +169,8 @@ export default function AboutPage() {
         }
 
         .source-card:hover {
-          border-color: #8B5CF6;
-          box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+          border-color: #0A66C2;
+          box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
           transform: translateY(-2px);
         }
 
@@ -225,7 +225,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 2rem;
           font-weight: 600;
-          color: #8B5CF6;
+          color: #0A66C2;
           line-height: 1.2;
         }
 
@@ -309,7 +309,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 0.875rem;
           font-weight: 600;
-          background: #8B5CF6;
+          background: #0A66C2;
           color: #FFFFFF;
           text-decoration: none;
           transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -320,7 +320,7 @@ export default function AboutPage() {
         .cta-button:hover {
           background: #B91C1C;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(139, 92, 246, 0.25);
+          box-shadow: 0 8px 24px rgba(10, 102, 194, 0.25);
         }
 
         .section-heading {
@@ -364,7 +364,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 2.5rem;
           font-weight: 600;
-          color: #8B5CF6;
+          color: #0A66C2;
           line-height: 1;
           margin-bottom: 0.5rem;
         }
@@ -394,7 +394,7 @@ export default function AboutPage() {
         .differentiator-card {
           padding: 1.5rem;
           border-radius: 12px;
-          border-top: 3px solid #8B5CF6;
+          border-top: 3px solid #0A66C2;
           border-left: 1px solid #E5E7EB;
           border-right: 1px solid #E5E7EB;
           border-bottom: 1px solid #E5E7EB;
@@ -441,8 +441,8 @@ export default function AboutPage() {
         }
 
         .tool-card:hover {
-          border-color: #8B5CF6;
-          box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+          border-color: #0A66C2;
+          box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
           transform: translateY(-2px);
         }
 
@@ -465,7 +465,7 @@ export default function AboutPage() {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          color: #6D28D9;
+          color: #004182;
           text-decoration: none;
           font-family: var(--font-body);
           font-size: 0.75rem;
@@ -474,7 +474,7 @@ export default function AboutPage() {
         }
 
         .tool-link:hover {
-          color: #8B5CF6;
+          color: #0A66C2;
         }
 
         .contact-section {
@@ -510,7 +510,7 @@ export default function AboutPage() {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          color: #6D28D9;
+          color: #004182;
           text-decoration: none;
           font-family: var(--font-body);
           font-size: 0.875rem;
@@ -520,7 +520,7 @@ export default function AboutPage() {
         }
 
         .contact-link:hover {
-          color: #8B5CF6;
+          color: #0A66C2;
         }
 
         @media (max-width: 640px) {
@@ -563,7 +563,7 @@ export default function AboutPage() {
             <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', fontFamily: 'var(--font-body)' }}>About</span>
           </div>
           <div className="about-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
             ABOUT US

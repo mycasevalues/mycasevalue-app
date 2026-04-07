@@ -68,7 +68,7 @@ export default function NOSIndexPage() {
           cursor: pointer;
         }
         .nos-card:hover {
-          border-left: 3px solid #8B5CF6;
+          border-left: 3px solid #0A66C2;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         .nos-card h3 {
@@ -79,10 +79,10 @@ export default function NOSIndexPage() {
           transition: color 0.2s ease;
         }
         .nos-card:hover h3 {
-          color: #8B5CF6;
+          color: #0A66C2;
         }
         .nos-card-arrow {
-          color: #8B5CF6;
+          color: #0A66C2;
           font-size: 20px;
           transition: transform 0.2s ease;
         }
@@ -90,7 +90,7 @@ export default function NOSIndexPage() {
           transform: translateX(4px);
         }
         .nos-back-link {
-          color: #8B5CF6;
+          color: #0A66C2;
           text-decoration: none;
           font-size: 14px;
           display: inline-block;
@@ -101,7 +101,7 @@ export default function NOSIndexPage() {
           color: #C21119;
         }
         .nos-breadcrumb-link {
-          color: #6D28D9;
+          color: #004182;
           text-decoration: none;
           transition: color 0.2s ease;
         }
@@ -155,7 +155,7 @@ export default function NOSIndexPage() {
             </h1>
             <span
               style={{
-                background: '#8B5CF6',
+                background: '#0A66C2',
                 color: '#FFFFFF',
                 padding: '6px 12px',
                 borderRadius: '12px',
@@ -199,7 +199,7 @@ export default function NOSIndexPage() {
             Home
           </Link>
           <span style={{ color: '#4B5563', margin: '0 8px' }}>/</span>
-          <span style={{ color: '#6D28D9', fontWeight: '600' }}>Case Types</span>
+          <span style={{ color: '#004182', fontWeight: '600' }}>Case Types</span>
         </div>
       </div>
 
@@ -214,7 +214,7 @@ export default function NOSIndexPage() {
                 marginBottom: '24px',
                 color: '#0f0f0f',
                 paddingLeft: '16px',
-                borderLeft: '3px solid #8B5CF6',
+                borderLeft: '3px solid #0A66C2',
                 fontFamily: 'var(--font-display)',
               }}
             >

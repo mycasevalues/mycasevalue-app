@@ -41,7 +41,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '/attorney/api-access',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6" />
         <polyline points="8 6 2 12 8 18" />
       </svg>
@@ -55,7 +55,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '/attorney',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
         <polyline points="14 2 14 8 20 8" />
         <line x1="16" y1="13" x2="8" y2="13" />
@@ -72,7 +72,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '#',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
         <line x1="8" y1="21" x2="16" y2="21" />
         <line x1="12" y1="17" x2="12" y2="21" />
@@ -87,7 +87,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '#',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
       </svg>
     ),
@@ -100,7 +100,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '#',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
@@ -113,7 +113,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '/attorney',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
         <line x1="3" y1="9" x2="21" y2="9" />
         <line x1="3" y1="15" x2="21" y2="15" />
@@ -139,7 +139,7 @@ export default function IntegrationsPage() {
         .integration-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-          border-color: #8B5CF6;
+          border-color: #0A66C2;
         }
         .integration-card:hover::before {
           content: '';
@@ -148,7 +148,7 @@ export default function IntegrationsPage() {
           left: 0;
           right: 0;
           height: 3px;
-          background: #8B5CF6;
+          background: #0A66C2;
           border-radius: 12px 4px 0 0;
         }
         .breadcrumb-link:hover {
@@ -206,7 +206,7 @@ export default function IntegrationsPage() {
             textTransform: 'uppercase' as const,
             marginBottom: '16px',
             background: 'rgba(255,255,255,0.1)',
-            color: '#8B5CF6',
+            color: '#0A66C2',
           }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="16 18 22 12 16 6" />
@@ -252,7 +252,7 @@ export default function IntegrationsPage() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '24px',
                 fontWeight: 600,
-                color: '#8B5CF6',
+                color: '#0A66C2',
                 margin: '0 0 4px 0',
               }}>
                 {stat.value}
@@ -307,7 +307,7 @@ export default function IntegrationsPage() {
                   padding: '4px 10px',
                   borderRadius: '12px',
                   background: integration.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
-                  color: integration.status === 'Available' ? '#059669' : '#8B5CF6',
+                  color: integration.status === 'Available' ? '#059669' : '#0A66C2',
                   border: integration.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                 }}>
                   {integration.status}
@@ -318,7 +318,7 @@ export default function IntegrationsPage() {
               <p style={{
                 fontSize: '11px',
                 fontWeight: 600,
-                color: '#6D28D9',
+                color: '#004182',
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.08em',
                 margin: '0 0 8px 0',
@@ -363,7 +363,7 @@ export default function IntegrationsPage() {
                 style={{
                   display: 'inline-block',
                   padding: '10px 24px',
-                  background: '#8B5CF6',
+                  background: '#0A66C2',
                   color: '#FFFFFF',
                   borderRadius: '12px',
                   textDecoration: 'none',
@@ -401,7 +401,7 @@ export default function IntegrationsPage() {
               display: 'inline-block',
               width: '4px',
               height: '4px',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               borderRadius: '50%',
             }} />
           </div>
@@ -470,7 +470,7 @@ export default function IntegrationsPage() {
                   .capability-card:hover {
                     transform: translateY(-2px);
                     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-                    border-color: #6D28D9;
+                    border-color: #004182;
                   }
                 `}</style>
                 <h3 style={{
@@ -498,7 +498,7 @@ export default function IntegrationsPage() {
                   padding: '4px 10px',
                   borderRadius: '12px',
                   background: capability.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
-                  color: capability.status === 'Available' ? '#059669' : '#8B5CF6',
+                  color: capability.status === 'Available' ? '#059669' : '#0A66C2',
                   border: capability.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                   display: 'inline-block',
                 }}>
@@ -530,7 +530,7 @@ export default function IntegrationsPage() {
               display: 'inline-block',
               width: '4px',
               height: '4px',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               borderRadius: '50%',
             }} />
           </div>
@@ -589,7 +589,7 @@ export default function IntegrationsPage() {
                   fontSize: '32px',
                   lineHeight: 1,
                 }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={source.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={source.iconPath}/></svg>
                 </div>
                 <div>
                   <h3 style={{
@@ -654,11 +654,11 @@ export default function IntegrationsPage() {
           }}>
             <div style={{ color: '#4B5563', marginBottom: '8px' }}>{'// Fetch case outcome data'}</div>
             <div>
-              <span style={{ color: '#8B5CF6' }}>const</span>{' '}
+              <span style={{ color: '#0A66C2' }}>const</span>{' '}
               <span style={{ color: '#FFFFFF' }}>response</span>{' '}
               <span style={{ color: '#4B5563' }}>=</span>{' '}
-              <span style={{ color: '#8B5CF6' }}>await</span>{' '}
-              <span style={{ color: '#6D28D9' }}>fetch</span>
+              <span style={{ color: '#0A66C2' }}>await</span>{' '}
+              <span style={{ color: '#004182' }}>fetch</span>
               <span style={{ color: '#E5E7EB' }}>(</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
@@ -686,7 +686,7 @@ export default function IntegrationsPage() {
               style={{
                 display: 'inline-block',
                 padding: '12px 28px',
-                background: '#8B5CF6',
+                background: '#0A66C2',
                 color: '#FFFFFF',
                 borderRadius: '12px',
                 textDecoration: 'none',
@@ -723,7 +723,7 @@ export default function IntegrationsPage() {
               display: 'inline-block',
               width: '4px',
               height: '4px',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               borderRadius: '50%',
             }} />
           </div>
@@ -748,7 +748,7 @@ export default function IntegrationsPage() {
               href="/solutions/api"
               style={{
                 background: '#FFFFFF',
-                border: '2px solid #6D28D9',
+                border: '2px solid #004182',
                 borderRadius: '12px',
                 padding: '32px 24px',
                 textDecoration: 'none',
@@ -767,7 +767,7 @@ export default function IntegrationsPage() {
                 }
               `}</style>
               <div>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
                   <polyline points="16 18 22 12 16 6" />
                   <polyline points="8 6 2 12 8 18" />
                 </svg>
@@ -792,7 +792,7 @@ export default function IntegrationsPage() {
               <span style={{
                 fontSize: '13px',
                 fontWeight: 600,
-                color: '#6D28D9',
+                color: '#004182',
                 marginTop: '24px',
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.05em',
@@ -805,7 +805,7 @@ export default function IntegrationsPage() {
               href="/contact"
               style={{
                 background: '#FFFFFF',
-                border: '2px solid #8B5CF6',
+                border: '2px solid #0A66C2',
                 borderRadius: '12px',
                 padding: '32px 24px',
                 textDecoration: 'none',
@@ -824,7 +824,7 @@ export default function IntegrationsPage() {
                 }
               `}</style>
               <div>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <h3 style={{
@@ -848,7 +848,7 @@ export default function IntegrationsPage() {
               <span style={{
                 fontSize: '13px',
                 fontWeight: 600,
-                color: '#8B5CF6',
+                color: '#0A66C2',
                 marginTop: '24px',
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.05em',
@@ -893,7 +893,7 @@ export default function IntegrationsPage() {
             style={{
               display: 'inline-block',
               padding: '14px 32px',
-              background: '#8B5CF6',
+              background: '#0A66C2',
               color: '#FFFFFF',
               borderRadius: '12px',
               textDecoration: 'none',

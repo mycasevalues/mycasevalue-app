@@ -122,7 +122,7 @@ export default function BlogPage() {
           left: 0;
           right: 0;
           height: 0;
-          background: #8B5CF6;
+          background: #0A66C2;
           border-radius: 12px 12px 0 0;
           transition: height 0.3s ease;
         }
@@ -130,7 +130,7 @@ export default function BlogPage() {
         .blog-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-          border-color: #8B5CF6;
+          border-color: #0A66C2;
         }
 
         .blog-card:hover::before {
@@ -163,7 +163,7 @@ export default function BlogPage() {
 
         .category-badge {
           background: #FFF3F4;
-          color: #8B5CF6;
+          color: #0A66C2;
           padding: 4px 10px;
           border-radius: 12px;
           font-size: 12px;
@@ -189,7 +189,7 @@ export default function BlogPage() {
         }
 
         .filter-item:hover {
-          color: #8B5CF6;
+          color: #0A66C2;
         }
 
         .featured-research-card {
@@ -204,7 +204,7 @@ export default function BlogPage() {
         .featured-research-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-          border-color: #8B5CF6;
+          border-color: #0A66C2;
         }
 
         .topic-pill {
@@ -223,9 +223,9 @@ export default function BlogPage() {
         }
 
         .topic-pill:hover {
-          border-color: #8B5CF6;
+          border-color: #0A66C2;
           background: #FFF3F4;
-          color: #8B5CF6;
+          color: #0A66C2;
         }
 
         .related-tools-card {
@@ -243,7 +243,7 @@ export default function BlogPage() {
         .related-tools-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-          border-color: #8B5CF6;
+          border-color: #0A66C2;
         }
 
         @media (max-width: 768px) {
@@ -273,7 +273,7 @@ export default function BlogPage() {
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
             <span style={{ color: '#FFFFFF' }}>Blog</span>
           </div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#8B5CF6' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#0A66C2' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             BLOG
           </div>
@@ -322,7 +322,7 @@ export default function BlogPage() {
                     href={`/blog/${featuredPost.slug}`}
                     className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
                     style={{
-                      background: '#8B5CF6',
+                      background: '#0A66C2',
                       color: '#FFFFFF',
                       borderRadius: '12px',
                     }}
@@ -414,7 +414,7 @@ export default function BlogPage() {
                       className="inline-flex items-center gap-1 px-3 py-2 rounded text-xs font-semibold transition-all"
                       style={{
                         background: '#FFF3F4',
-                        color: '#8B5CF6',
+                        color: '#0A66C2',
                       }}
                     >
                       Read More
@@ -469,7 +469,7 @@ export default function BlogPage() {
               <p style={{ fontSize: '14px', color: '#4B5563', margin: '0 0 16px 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
                 {research.description}
               </p>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: '#8B5CF6', textDecoration: 'none' }}>
+              <span style={{ fontSize: '13px', fontWeight: 600, color: '#0A66C2', textDecoration: 'none' }}>
                 Read more {'>'}
               </span>
             </a>
@@ -533,7 +533,7 @@ export default function BlogPage() {
             >
               <div>
                 <div style={{ fontSize: '32px', marginBottom: '12px' }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg>
                 </div>
                 <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
                   {tool.name}
@@ -542,7 +542,7 @@ export default function BlogPage() {
                   Explore federal case data interactively.
                 </p>
               </div>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: '#8B5CF6', marginTop: '16px', textDecoration: 'none' }}>
+              <span style={{ fontSize: '13px', fontWeight: 600, color: '#0A66C2', marginTop: '16px', textDecoration: 'none' }}>
                 Explore {'>'}
               </span>
             </Link>
@@ -562,7 +562,7 @@ export default function BlogPage() {
           <a
             href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold transition-all"
-            style={{ background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px' }}
+            style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}
           >
             Explore Attorney Mode
             <ArrowRightIcon size={16} />

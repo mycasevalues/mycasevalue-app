@@ -121,7 +121,7 @@ export default async function OutcomesPage({
             borderRadius: '12px',
             fontWeight: 600,
             color: '#FFFFFF',
-            background: '#8B5CF6',
+            background: '#0A66C2',
             textDecoration: 'none',
             fontSize: '14px',
             fontFamily: 'var(--font-body)',
@@ -190,7 +190,7 @@ export default async function OutcomesPage({
 
   // Outcome distribution
   const outcomes = [
-    { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: '#6D28D9' },
+    { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: '#004182' },
     { label: 'Dismissed', value: Math.round(Math.max(10, 53 - districtSettleRate - districtWinRate * 0.6)), color: '#4B5563' },
     { label: 'Trial Win', value: Math.round(districtWinRate * 0.6), color: '#333333' },
     { label: 'Trial Loss', value: Math.round(districtWinRate * 0.4), color: '#EF4444' },
@@ -229,8 +229,8 @@ export default async function OutcomesPage({
       {/* Design system styles */}
       <style>{`
         .outcome-card-link:hover {
-          border-color: #6D28D9;
-          box-shadow: 0 2px 8px rgba(139, 92, 246, 0.1);
+          border-color: #004182;
+          box-shadow: 0 2px 8px rgba(10, 102, 194, 0.1);
           transform: translateY(-2px);
         }
 
@@ -298,7 +298,7 @@ export default async function OutcomesPage({
               {option.label} Cases in {stateName}
             </h1>
             <div style={{
-              background: '#8B5CF6',
+              background: '#0A66C2',
               color: '#FFFFFF',
               padding: '6px 12px',
               borderRadius: '12px',
@@ -647,7 +647,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: '#6D28D9',
+                    color: '#004182',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(districtSettleRate)}%
@@ -817,7 +817,7 @@ export default async function OutcomesPage({
                 <div style={{
                   fontSize: '15px',
                   fontWeight: 600,
-                  color: '#6D28D9',
+                  color: '#004182',
                   fontFamily: 'var(--font-display)',
                   marginBottom: '12px',
                 }}>
@@ -863,7 +863,7 @@ export default async function OutcomesPage({
                 key={i}
                 href={action.path}
                 style={{
-                  background: '#6D28D9',
+                  background: '#004182',
                   color: '#FFFFFF',
                   padding: '16px 20px',
                   borderRadius: '12px',
@@ -874,7 +874,7 @@ export default async function OutcomesPage({
                   textAlign: 'center',
                   transition: 'all 0.3s ease',
                   display: 'block',
-                  border: '1px solid #6D28D9',
+                  border: '1px solid #004182',
                 }}
 
               >

@@ -90,19 +90,19 @@ function SignInForm() {
           text-align: center;
         }
         .auth-input:focus {
-          border-color: #6D28D9 !important;
+          border-color: #004182 !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15) !important;
+          box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15) !important;
         }
         .auth-btn {
-          background: #8B5CF6;
+          background: #0A66C2;
         }
         .auth-btn:hover:not(:disabled) {
           opacity: 0.9;
           transform: translateY(-1px);
         }
         .auth-link:hover {
-          color: #6D28D9 !important;
+          color: #004182 !important;
         }
         .checkbox-wrapper {
           display: flex;
@@ -113,7 +113,7 @@ function SignInForm() {
         .checkbox-input {
           width: 18px;
           height: 18px;
-          accent-color: #8B5CF6;
+          accent-color: #0A66C2;
           cursor: pointer;
         }
         .benefits-section {
@@ -372,7 +372,7 @@ function SignInForm() {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#6D28D9',
+                  color: '#004182',
                   textDecoration: 'none',
                   fontWeight: 500,
                 }}
@@ -433,12 +433,12 @@ function SignInForm() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#8B5CF6',
+                color: '#0A66C2',
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
-                backgroundColor: 'rgba(139, 92, 246, 0.06)',
+                backgroundColor: 'rgba(10, 102, 194, 0.06)',
                 borderRadius: '12px',
-                border: '1px solid rgba(139, 92, 246, 0.2)',
+                border: '1px solid rgba(10, 102, 194, 0.2)',
               }}
             >
               {error}
@@ -454,7 +454,7 @@ function SignInForm() {
               width: '100%',
               height: '48px',
               padding: '0 16px',
-              backgroundColor: '#8B5CF6',
+              backgroundColor: '#0A66C2',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '12px',
@@ -525,7 +525,7 @@ function SignInForm() {
             <Link
               href="/sign-up"
               style={{
-                color: '#6D28D9',
+                color: '#004182',
                 textDecoration: 'none',
                 fontWeight: 600,
               }}
@@ -551,7 +551,7 @@ function SignInForm() {
             <Link
               href="/terms"
               style={{
-                color: '#6D28D9',
+                color: '#004182',
                 textDecoration: 'none',
               }}
               className="auth-link"
@@ -562,7 +562,7 @@ function SignInForm() {
             <Link
               href="/privacy"
               style={{
-                color: '#6D28D9',
+                color: '#004182',
                 textDecoration: 'none',
               }}
               className="auth-link"

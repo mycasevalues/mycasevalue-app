@@ -273,9 +273,9 @@ export default function SiteNav() {
                         fontFamily: 'var(--font-display)',
                         fontSize: '14px',
                         fontWeight: 500,
-                        color: active ? '#8B5CF6' : '#1a1a1a',
+                        color: active ? '#0A66C2' : '#1a1a1a',
                         textDecoration: 'none',
-                        borderBottom: active ? '2px solid #8B5CF6' : '2px solid transparent',
+                        borderBottom: active ? '2px solid #0A66C2' : '2px solid transparent',
                         transition: 'color 150ms',
                         whiteSpace: 'nowrap',
                       }}
@@ -302,12 +302,12 @@ export default function SiteNav() {
                     fontFamily: 'var(--font-display)',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: active ? '#8B5CF6' : '#1a1a1a',
+                    color: active ? '#0A66C2' : '#1a1a1a',
                     textDecoration: 'none',
-                    borderBottom: active ? '2px solid #8B5CF6' : '2px solid transparent',
+                    borderBottom: active ? '2px solid #0A66C2' : '2px solid transparent',
                     transition: 'color 150ms',
                     whiteSpace: 'nowrap',
-                    ...(item.attorney ? { borderLeft: '2px solid #8B5CF6', marginLeft: '8px', paddingLeft: '14px' } : {}),
+                    ...(item.attorney ? { borderLeft: '2px solid #0A66C2', marginLeft: '8px', paddingLeft: '14px' } : {}),
                   }}
                   aria-current={active ? 'page' : undefined}
                 >
@@ -329,7 +329,7 @@ export default function SiteNav() {
                   Dashboard
                 </Link>
                 <button onClick={handleSignOut} style={{
-                  fontSize: '14px', fontWeight: 600, color: '#FFFFFF', background: '#8B5CF6',
+                  fontSize: '14px', fontWeight: 600, color: '#FFFFFF', background: '#0A66C2',
                   padding: '8px 20px', borderRadius: '8px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-display)', transition: 'all 150ms',
                 }}>
@@ -345,7 +345,7 @@ export default function SiteNav() {
                   Sign In
                 </Link>
                 <Link href="/search" className="navbar-cta" style={{
-                  fontSize: '14px', fontWeight: 600, color: '#FFFFFF', background: '#8B5CF6',
+                  fontSize: '14px', fontWeight: 600, color: '#FFFFFF', background: '#0A66C2',
                   padding: '10px 20px', borderRadius: '8px', textDecoration: 'none',
                   fontFamily: 'var(--font-display)', transition: 'background 150ms',
                   whiteSpace: 'nowrap',
@@ -437,11 +437,11 @@ export default function SiteNav() {
                   padding: '14px 24px',
                   fontSize: '15px',
                   fontWeight: isActive(item.href) ? 600 : 500,
-                  color: isActive(item.href) ? '#8B5CF6' : '#1a1a1a',
+                  color: isActive(item.href) ? '#0A66C2' : '#1a1a1a',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-display)',
                   minHeight: '44px',
-                  borderLeft: item.attorney ? '3px solid #8B5CF6' : '3px solid transparent',
+                  borderLeft: item.attorney ? '3px solid #0A66C2' : '3px solid transparent',
                   background: isActive(item.href) ? 'rgba(139,92,246,0.06)' : 'transparent',
                 }}
               >
@@ -504,7 +504,7 @@ export default function SiteNav() {
               </Link>
               <button onClick={() => { setMobileOpen(false); handleSignOut(); }} style={{
                 display: 'block', width: '100%', padding: '12px', borderRadius: '8px',
-                fontSize: '15px', fontWeight: 600, color: '#FFFFFF', background: '#8B5CF6',
+                fontSize: '15px', fontWeight: 600, color: '#FFFFFF', background: '#0A66C2',
                 fontFamily: 'var(--font-display)', textAlign: 'center', minHeight: '44px',
                 marginTop: '8px', border: 'none', cursor: 'pointer',
               }}>
@@ -521,7 +521,7 @@ export default function SiteNav() {
               </Link>
               <Link href="/search" onClick={() => setMobileOpen(false)} style={{
                 display: 'block', padding: '12px', borderRadius: '8px', marginTop: '8px',
-                fontSize: '15px', fontWeight: 600, color: '#FFFFFF', background: '#8B5CF6',
+                fontSize: '15px', fontWeight: 600, color: '#FFFFFF', background: '#0A66C2',
                 textDecoration: 'none', fontFamily: 'var(--font-display)', textAlign: 'center', minHeight: '44px',
               }}>
                 Start Researching
@@ -532,10 +532,10 @@ export default function SiteNav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .navbar-item:hover { color: #8B5CF6 !important; }
-        .navbar-signin:hover { color: #8B5CF6 !important; }
-        .navbar-cta:hover { background: #6D28D9 !important; }
-        .navbar-dropdown-item:hover { background: #f9fafb !important; color: #8B5CF6 !important; }
+        .navbar-item:hover { color: #0A66C2 !important; }
+        .navbar-signin:hover { color: #0A66C2 !important; }
+        .navbar-cta:hover { background: #004182 !important; }
+        .navbar-dropdown-item:hover { background: #f9fafb !important; color: #0A66C2 !important; }
         .navbar-mobile-subitem:hover { background: #f3f4f6 !important; }
 
         @media (max-width: 1024px) {

@@ -13,8 +13,8 @@ export function getWinRateColor(rate: number): {
 
 export function getSettlementColor(medianInThousands: number): string {
   if (medianInThousands >= 500) return '#5b21b6';
-  if (medianInThousands >= 100) return '#7c3aed';
-  if (medianInThousands >= 50) return '#8B5CF6';
+  if (medianInThousands >= 100) return '#004182';
+  if (medianInThousands >= 50) return '#0A66C2';
   if (medianInThousands >= 10) return '#a78bfa';
   return '#c4b5fd';
 }

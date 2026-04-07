@@ -85,7 +85,7 @@ export default function SolutionsPage() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#6D28D9',
+              color: '#004182',
               marginBottom: '16px',
             }}
           >
@@ -134,7 +134,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: '#6D28D9',
+                  color: '#004182',
                   marginBottom: '4px',
                 }}
               >
@@ -157,7 +157,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: '#6D28D9',
+                  color: '#004182',
                   marginBottom: '4px',
                 }}
               >
@@ -180,7 +180,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: '#6D28D9',
+                  color: '#004182',
                   marginBottom: '4px',
                 }}
               >
@@ -203,7 +203,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: '#8B5CF6',
+                  color: '#0A66C2',
                   marginBottom: '4px',
                 }}
               >
@@ -227,7 +227,7 @@ export default function SolutionsPage() {
       {/* Free During Beta Banner */}
       <section
         style={{
-          background: 'linear-gradient(135deg, #8B5CF6 0%, #8B5CF6 100%)',
+          background: 'linear-gradient(135deg, #0A66C2 0%, #0A66C2 100%)',
           color: '#FAFBFC',
           padding: '24px',
           textAlign: 'center',
@@ -279,7 +279,7 @@ export default function SolutionsPage() {
                 className="solutions-card"
               >
                 <div style={{ marginBottom: '12px' }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
                 </div>
                 <h2
                   style={{
@@ -353,7 +353,7 @@ export default function SolutionsPage() {
               href="/search"
               style={{
                 background:
-                  '#8B5CF6',
+                  '#0A66C2',
                 color: '#FAFBFC',
                 padding: '0.875rem 2rem',
                 borderRadius: '12px',

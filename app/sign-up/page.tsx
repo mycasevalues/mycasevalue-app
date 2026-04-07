@@ -94,16 +94,16 @@ export default function SignUpPage() {
             animation: fadeIn 0.4s ease-out;
           }
           .auth-input:focus {
-            border-color: #6D28D9 !important;
+            border-color: #004182 !important;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15) !important;
+            box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15) !important;
           }
           .auth-btn:hover:not(:disabled) {
-            background-color: #6D28D9 !important;
+            background-color: #004182 !important;
             transform: translateY(-1px);
           }
           .auth-link:hover {
-            color: #6D28D9 !important;
+            color: #004182 !important;
           }
         `}</style>
         <div
@@ -131,7 +131,7 @@ export default function SignUpPage() {
               margin: '0 auto 20px',
             }}
           >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2.5">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2.5">
               <path d="M20 6L9 17l-5-5" />
             </svg>
           </div>
@@ -162,7 +162,7 @@ export default function SignUpPage() {
             style={{
               display: 'inline-block',
               padding: '12px 24px',
-              backgroundColor: '#8B5CF6',
+              backgroundColor: '#0A66C2',
               color: '#FFFFFF',
               borderRadius: '12px',
               fontFamily: 'var(--font-body)',
@@ -203,17 +203,17 @@ export default function SignUpPage() {
           animation: fadeIn 0.4s ease-out;
         }
         .auth-input:focus {
-          border-color: #6D28D9 !important;
+          border-color: #004182 !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15) !important;
+          box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15) !important;
         }
         .auth-btn:hover:not(:disabled) {
-          background: #6D28D9 !important;
+          background: #004182 !important;
           transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25) !important;
+          box-shadow: 0 4px 12px rgba(10, 102, 194, 0.25) !important;
         }
         .auth-link:hover {
-          color: #6D28D9 !important;
+          color: #004182 !important;
         }
         .feature-card {
           border-radius: 12px;
@@ -552,7 +552,7 @@ export default function SignUpPage() {
                     minWidth: '18px',
                     marginTop: '2px',
                     cursor: 'pointer',
-                    accentColor: '#6D28D9',
+                    accentColor: '#004182',
                   }}
                 />
                 <label
@@ -569,7 +569,7 @@ export default function SignUpPage() {
                   <Link
                     href="/terms"
                     style={{
-                      color: '#6D28D9',
+                      color: '#004182',
                       textDecoration: 'none',
                     }}
                     className="auth-link"
@@ -580,7 +580,7 @@ export default function SignUpPage() {
                   <Link
                     href="/privacy"
                     style={{
-                      color: '#6D28D9',
+                      color: '#004182',
                       textDecoration: 'none',
                     }}
                     className="auth-link"
@@ -596,12 +596,12 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '13px',
-                    color: '#8B5CF6',
+                    color: '#0A66C2',
                     margin: '0 0 16px 0',
                     padding: '10px 12px',
-                    backgroundColor: 'rgba(139, 92, 246, 0.06)',
+                    backgroundColor: 'rgba(10, 102, 194, 0.06)',
                     borderRadius: '12px',
-                    border: '1px solid rgba(139, 92, 246, 0.2)',
+                    border: '1px solid rgba(10, 102, 194, 0.2)',
                   }}
                 >
                   {error}
@@ -613,19 +613,19 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '13px',
-                    color: '#8B5CF6',
+                    color: '#0A66C2',
                     margin: '0 0 16px 0',
                     padding: '10px 12px',
-                    backgroundColor: 'rgba(139, 92, 246, 0.06)',
+                    backgroundColor: 'rgba(10, 102, 194, 0.06)',
                     borderRadius: '12px',
-                    border: '1px solid rgba(139, 92, 246, 0.2)',
+                    border: '1px solid rgba(10, 102, 194, 0.2)',
                   }}
                 >
                   An account with this email already exists.{' '}
                   <Link
                     href="/sign-in"
                     style={{
-                      color: '#6D28D9',
+                      color: '#004182',
                       textDecoration: 'none',
                       fontWeight: 600,
                     }}
@@ -644,7 +644,7 @@ export default function SignUpPage() {
                   width: '100%',
                   height: '48px',
                   padding: '0',
-                  background: '#8B5CF6',
+                  background: '#0A66C2',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: '12px',
@@ -680,7 +680,7 @@ export default function SignUpPage() {
                 <Link
                   href="/sign-in"
                   style={{
-                    color: '#6D28D9',
+                    color: '#004182',
                     textDecoration: 'none',
                     fontWeight: 600,
                   }}
@@ -765,7 +765,7 @@ export default function SignUpPage() {
                   style={{
                     width: '40px',
                     height: '40px',
-                    backgroundColor: 'rgba(139, 92, 246, 0.08)',
+                    backgroundColor: 'rgba(10, 102, 194, 0.08)',
                     borderRadius: '12px',
                     display: 'flex',
                     alignItems: 'center',
@@ -773,7 +773,7 @@ export default function SignUpPage() {
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
                   </svg>
@@ -902,7 +902,7 @@ export default function SignUpPage() {
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <line x1="7" y1="7" x2="7" y2="18" />
                     <line x1="17" y1="3" x2="17" y2="18" />
                     <line x1="3" y1="20" x2="21" y2="20" />
@@ -938,7 +938,7 @@ export default function SignUpPage() {
                   style={{
                     width: '40px',
                     height: '40px',
-                    backgroundColor: 'rgba(139, 92, 246, 0.08)',
+                    backgroundColor: 'rgba(10, 102, 194, 0.08)',
                     borderRadius: '12px',
                     display: 'flex',
                     alignItems: 'center',
@@ -946,7 +946,7 @@ export default function SignUpPage() {
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                     <polyline points="17 6 23 6 23 12" />
                   </svg>
@@ -1061,7 +1061,7 @@ export default function SignUpPage() {
           <Link
             href="/privacy"
             style={{
-              color: '#6D28D9',
+              color: '#004182',
               textDecoration: 'none',
             }}
             className="auth-link"
@@ -1072,7 +1072,7 @@ export default function SignUpPage() {
           <Link
             href="/terms"
             style={{
-              color: '#6D28D9',
+              color: '#004182',
               textDecoration: 'none',
             }}
             className="auth-link"

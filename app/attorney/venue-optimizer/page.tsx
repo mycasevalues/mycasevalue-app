@@ -39,7 +39,7 @@ export default function VenueOptimizerPage() {
   const focusStyle = `
     select:focus, input:focus {
       outline: none;
-      border-color: #8B5CF6;
+      border-color: #0A66C2;
       box-shadow: 0 0 0 2px rgba(232, 23, 31, 0.08);
     }
   `;
@@ -94,13 +94,13 @@ export default function VenueOptimizerPage() {
       {/* Header */}
       <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <Link href="/" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/" style={{ fontSize: '13px', color: '#0A66C2', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Home &gt; Attorney Tools &gt; Venue Optimizer
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="6" />
                 <circle cx="12" cy="12" r="2" />
@@ -162,7 +162,7 @@ export default function VenueOptimizerPage() {
                       textTransform: 'uppercase',
                       letterSpacing: '0.04em',
                       cursor: 'pointer',
-                      backgroundColor: prioritize === opt.key ? '#8B5CF6' : 'transparent',
+                      backgroundColor: prioritize === opt.key ? '#0A66C2' : 'transparent',
                       color: prioritize === opt.key ? '#FFFFFF' : '#4B5563',
                       transition: 'all 0.2s',
                     }}
@@ -178,7 +178,7 @@ export default function VenueOptimizerPage() {
         {/* Loading */}
         {loading && (
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
-            <div style={{ width: 36, height: 36, border: '3px solid #E5E7EB', borderTopColor: '#8B5CF6', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
+            <div style={{ width: 36, height: 36, border: '3px solid #E5E7EB', borderTopColor: '#0A66C2', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
             <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
             <p style={{ fontSize: '14px', color: '#4B5563' }}>Analyzing venues...</p>
           </div>
@@ -198,7 +198,7 @@ export default function VenueOptimizerPage() {
               </div>
               <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <p style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Median Duration</p>
-                <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: '#8B5CF6', margin: 0 }}>{data.nationalStats.medianDurationMonths}mo</p>
+                <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: '#0A66C2', margin: 0 }}>{data.nationalStats.medianDurationMonths}mo</p>
               </div>
               <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <p style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Total Cases</p>
@@ -248,7 +248,7 @@ export default function VenueOptimizerPage() {
                   <span style={{ fontSize: '14px', fontWeight: v.rank <= 3 ? 700 : 500, color: '#0f0f0f' }}>
                     {v.stateLabel}
                   </span>
-                  <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: v.winRate >= data.nationalStats.winRate ? '#059669' : '#8B5CF6', textAlign: 'right' }}>
+                  <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: v.winRate >= data.nationalStats.winRate ? '#059669' : '#0A66C2', textAlign: 'right' }}>
                     {v.winRate}%
                   </span>
                   <span className="font-mono" style={{ fontSize: '14px', fontWeight: 500, color: '#0f0f0f', textAlign: 'right' }}>
@@ -261,14 +261,14 @@ export default function VenueOptimizerPage() {
                     fontSize: '13px',
                     fontWeight: 600,
                     textAlign: 'right',
-                    color: v.advantage > 0 ? '#059669' : v.advantage < 0 ? '#8B5CF6' : '#4B5563',
+                    color: v.advantage > 0 ? '#059669' : v.advantage < 0 ? '#0A66C2' : '#4B5563',
                   }}>
                     {v.advantage > 0 ? '+' : ''}{v.advantage}%
                   </span>
                   <div style={{ textAlign: 'right' }}>
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                       <div style={{ width: '32px', height: '6px', background: '#E5E7EB', borderRadius: '3px', overflow: 'hidden' }}>
-                        <div style={{ height: '100%', width: `${v.score}%`, background: v.score >= 70 ? '#059669' : v.score >= 50 ? '#E89558' : '#8B5CF6', borderRadius: '3px' }} />
+                        <div style={{ height: '100%', width: `${v.score}%`, background: v.score >= 70 ? '#059669' : v.score >= 50 ? '#E89558' : '#0A66C2', borderRadius: '3px' }} />
                       </div>
                       <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f' }}>{v.score}</span>
                     </div>
@@ -281,7 +281,7 @@ export default function VenueOptimizerPage() {
                 <div style={{ padding: '16px 24px', textAlign: 'center' }}>
                   <button
                     onClick={() => setShowAll(true)}
-                    style={{ padding: '8px 20px', border: '1px solid rgba(232,23,31,0.30)', borderRadius: '12px', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', cursor: 'pointer', background: 'rgba(139, 92, 246, 0.08)', color: '#8B5CF6', transition: 'all 0.2s' }}
+                    style={{ padding: '8px 20px', border: '1px solid rgba(232,23,31,0.30)', borderRadius: '12px', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', cursor: 'pointer', background: 'rgba(10, 102, 194, 0.08)', color: '#0A66C2', transition: 'all 0.2s' }}
                   >
                     Show all {data.venues.length} districts
                   </button>
@@ -301,8 +301,8 @@ export default function VenueOptimizerPage() {
         {/* Empty state */}
         {!selectedNos && !loading && (
           <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="12" r="6" />
                 <circle cx="12" cy="12" r="2" />

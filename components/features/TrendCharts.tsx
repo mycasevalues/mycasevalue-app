@@ -29,9 +29,9 @@ import {
 
 // LexisNexis color palette for categories
 const CATEGORY_CHART_COLORS: Record<string, string> = {
-  Financial: '#8B5CF6',
+  Financial: '#0A66C2',
   Employment: '#1B3A5C',
-  Injury: '#6D28D9',
+  Injury: '#004182',
   Consumer: '#4B5563',
   'Civil Rights': '#E5E7EB',
   Housing: '#0080B8',
@@ -120,8 +120,8 @@ export default function TrendCharts() {
           <AreaChart data={nationalTrends}>
             <defs>
               <linearGradient id="colorFilings" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#6D28D9" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#6D28D9" stopOpacity={0.1} />
+                <stop offset="5%" stopColor="#004182" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#004182" stopOpacity={0.1} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="#F7F8FA" />
@@ -131,7 +131,7 @@ export default function TrendCharts() {
             <Area
               type="monotone"
               dataKey="totalFilings"
-              stroke="#6D28D9"
+              stroke="#004182"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorFilings)"
@@ -176,9 +176,9 @@ export default function TrendCharts() {
                 dataKey={cat.categoryLabel}
                 stroke={
                   [
-                    '#8B5CF6',
+                    '#0A66C2',
                     '#1B3A5C',
-                    '#6D28D9',
+                    '#004182',
                     '#4B5563',
                     '#E5E7EB',
                     '#0080B8',
@@ -225,7 +225,7 @@ export default function TrendCharts() {
             <XAxis type="number" stroke="#4B5563" tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-body)' }} />
             <YAxis dataKey="label" type="category" stroke="#4B5563" width={300} tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-body)' }} />
             <Tooltip content={<CustomTooltip />} />
-            <Bar dataKey="count" fill="#6D28D9" radius={[0, 8, 8, 0]} />
+            <Bar dataKey="count" fill="#004182" radius={[0, 8, 8, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
@@ -323,7 +323,7 @@ export default function TrendCharts() {
                       <p style={{ color: '#0f0f0f', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
                         {payload[0].payload.circuit}
                       </p>
-                      <p style={{ color: '#6D28D9', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
+                      <p style={{ color: '#004182', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
                         Win Rate: {payload[0].value}%
                       </p>
                       <p style={{ color: '#4B5563', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
@@ -337,7 +337,7 @@ export default function TrendCharts() {
             />
             <Bar dataKey="avgWinRate" radius={[0, 8, 8, 0]}>
               {circuitWinRates.map((entry, index) => (
-                <Cell key={index} fill={entry.avgWinRate > 55 ? '#10B981' : entry.avgWinRate < 45 ? '#8B5CF6' : '#6D28D9'} />
+                <Cell key={index} fill={entry.avgWinRate > 55 ? '#10B981' : entry.avgWinRate < 45 ? '#0A66C2' : '#004182'} />
               ))}
             </Bar>
           </BarChart>
@@ -443,7 +443,7 @@ export default function TrendCharts() {
             <Tooltip content={<CustomTooltip />} />
             <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#4B5563' }} />
             <Bar dataKey="settlementMonths" fill="#10B981" radius={[0, 4, 4, 0]} />
-            <Bar dataKey="trialMonths" fill="#8B5CF6" radius={[0, 4, 4, 0]} />
+            <Bar dataKey="trialMonths" fill="#0A66C2" radius={[0, 4, 4, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>

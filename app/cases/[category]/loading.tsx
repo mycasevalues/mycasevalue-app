@@ -2,7 +2,7 @@ export default function CategoryLoading() {
   return (
     <div style={{ minHeight: '100vh', background: '#F7F8FA', fontFamily: 'var(--font-body)' }}>
       {/* Hero header skeleton */}
-      <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #8B5CF6' }}>
+      <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #0A66C2' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ height: '36px', width: '40%', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '16px' }} />
           <div style={{ height: '48px', background: 'rgba(255,255,255,0.08)', borderRadius: '12px', marginBottom: '12px' }} />

@@ -58,7 +58,7 @@ export default function SidebarNav() {
         .sidebar-nav-item.active {
           font-weight: 600;
           background: rgba(232, 23, 31, 0.12);
-          border-left-color: #8B5CF6;
+          border-left-color: #0A66C2;
           color: #FFFFFF;
         }
         .sidebar-nav-item:hover:not(.active) {
@@ -75,7 +75,7 @@ export default function SidebarNav() {
           flex-shrink: 0;
         }
         .sidebar-nav-item.active .sidebar-nav-icon {
-          color: #8B5CF6;
+          color: #0A66C2;
         }
       `}</style>
       {navItems.map((item, idx) => {
