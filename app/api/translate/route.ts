@@ -124,18 +124,8 @@ export async function POST(request: NextRequest) {
 
     const result = streamText({
       model: anthropic('claude-sonnet-4-20250514'),
-      system: `You are an expert legal translator. Your job is to explain legal jargon and complex legal language in simple, plain English that a layperson can understand.
-
-When translating legal text:
-- Use simple, everyday words instead of jargon
-- Explain what the legal action or concept means in practical terms
-- Keep explanations concise (2-3 sentences max per concept)
-- Focus on what it means for the person reading the document
-- Do not give legal advice, just explain what the language means
-- If the text contains multiple concepts, explain each one clearly
-
-Your response should be a clear, friendly explanation that helps someone understand what the legal language means.`,
-      prompt: `Please translate this legal text to plain English:\n\n${sanitizedText}`,
+      system: `You are a legal jargon translator. Detect the language of the input term. If the term is in English, explain it in plain English for non-lawyers. If the term is in Spanish, explain it in plain Spanish (español claro, sin tecnicismos innecesarios). Always respond in the same language as the input.`,
+      prompt: `Please translate this legal text:\n\n${sanitizedText}`,
       maxOutputTokens: 1024,
       temperature: 0.3,
     });

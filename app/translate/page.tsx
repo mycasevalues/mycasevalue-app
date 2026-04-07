@@ -128,7 +128,7 @@ export default function TranslatePage() {
               Legal Jargon Translator
             </h1>
             <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
-              Paste any legal text from a federal court document and get an instant plain-English explanation. Free translations every day.
+              Paste any legal text from a federal court document in English or Spanish and get an instant explanation in the same language. Free translations every day.
             </p>
           </div>
         </div>
@@ -149,7 +149,7 @@ export default function TranslatePage() {
           {/* Text Area */}
           <div className="mb-6">
             <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)' }}>
-              Legal Text to Translate
+              Legal Text to Translate (English or Spanish)
             </label>
             <textarea
               value={input}
@@ -158,7 +158,7 @@ export default function TranslatePage() {
                 setError('');
                 setTranslation('');
               }}
-              placeholder="Paste legal text here, e.g., 'The court hereby grants the motion for summary judgment...'"
+              placeholder="Paste legal text here in English or Spanish. Examples: 'The court hereby grants the motion for summary judgment...' or 'La corte otorga la moción para sentencia sumaria...'"
               className="w-full px-4 py-4 border text-sm transition-all focus:outline-none focus:ring-2 resize-none"
               style={{
                 borderRadius: '12px',
@@ -170,7 +170,7 @@ export default function TranslatePage() {
               }}
             />
             <p className="text-[11px] mt-2" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
-              Minimum 10 characters, maximum 3,000 characters.
+              Minimum 10 characters, maximum 3,000 characters. Supports English and Spanish input.
             </p>
           </div>
 
@@ -217,7 +217,7 @@ export default function TranslatePage() {
             ) : (
               <>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline mr-2" style={{ marginBottom: '2px' }}><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
-                Translate to Plain English
+                Translate to Plain Language
               </>
             )}
           </button>
