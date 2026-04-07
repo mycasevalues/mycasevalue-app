@@ -5,7 +5,7 @@ import { validateNOSCode, validateEnum } from '../../../../lib/sanitize';
 
 /**
  * Venue Optimizer API
- * Ranks districts by favorability for a given case type
+ * Ranks states by favorability for a given case type
  */
 
 type VenueScore = {
@@ -13,11 +13,11 @@ type VenueScore = {
   stateLabel: string;
   winRate: number;
   nationalAvgWinRate: number;
-  advantage: number; // win rate above/below national
+  advantage: number;
   settlementRate: number;
   medianDurationMonths: number;
   totalCases: number;
-  score: number; // composite 0-100
+  score: number;
   rank: number;
 };
 
@@ -29,7 +29,7 @@ export async function GET(req: NextRequest) {
   if (!nos) {
     // Return available NOS codes
     const available = Object.entries(REAL_DATA)
-      .filter(([, d]) => d && d.state_rates && Object.keys(d.state_rates).length > 5)
+      .filter(([, d]) => d && d.wr && d.total > 100)
       .map(([code, d]) => ({ nos: code, label: d.label, total: d.total }))
       .sort((a, b) => b.total - a.total);
     return NextResponse.json({ caseTypes: available });
@@ -44,97 +44,97 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  // Validate prioritize parameter against allowed values
+  // Validate prioritize parameter
   const validPrioritizeValues = ['winRate', 'settlement', 'speed'] as const;
   const prioritize = validateEnum(prioritizeRaw, validPrioritizeValues, 'winRate');
 
-  const nosData = REAL_DATA[validatedNos];
-  if (!nosData || !nosData.state_rates) {
-    return NextResponse.json({ error: `No data for NOS code ${validatedNos}` }, { status: 404 });
+  const caseData = REAL_DATA[validatedNos];
+  if (!caseData || !caseData.state_rates) {
+    return NextResponse.json(
+      { error: 'No data available for this case type.' },
+      { status: 404 }
+    );
   }
 
-  const nationalWinRate = nosData.wr ?? 55;
-  const nationalSettlement = nosData.sp ?? 40;
-  const nationalDuration = nosData.mo ?? 8;
-  const totalNational = nosData.total ?? 10000;
+  const nationalWinRate = caseData.wr || 0;
+  const nationalSettlementRate = caseData.sp || 0;
+  const nationalDuration = caseData.mo || 0;
+  const caseType = caseData.label || 'Unknown';
 
-  // Build per-state stats
-  const stateEntries = Object.entries(nosData.state_rates as Record<string, number>);
+  // Process state data
+  const venues: VenueScore[] = [];
 
-  const venues: VenueScore[] = stateEntries
-    .map(([stateId, winRate]) => {
-      const stateObj = STATES.find((s) => s.id === stateId);
-      if (!stateObj || !stateObj.id) return null;
+  Object.entries(caseData.state_rates || {}).forEach(([stateCode, stateData]: [string, any]) => {
+    if (!stateData || !stateData.wr) return;
 
-      // Estimate state-level cases (proportion by state population rough factor)
-      const popFactor: Record<string, number> = {
-        CA: 0.12, TX: 0.09, FL: 0.07, NY: 0.06, PA: 0.04, IL: 0.04,
-        OH: 0.04, GA: 0.03, NC: 0.03, MI: 0.03, NJ: 0.03, VA: 0.03,
-        WA: 0.02, AZ: 0.02, MA: 0.02, TN: 0.02, IN: 0.02, MO: 0.02,
-        MD: 0.02, WI: 0.02, CO: 0.02, MN: 0.02, SC: 0.02, AL: 0.02,
-        LA: 0.01, KY: 0.01, OR: 0.01, OK: 0.01, CT: 0.01, UT: 0.01,
-        IA: 0.01, NV: 0.01, AR: 0.01, MS: 0.01, KS: 0.01, NM: 0.01,
-        NE: 0.01, ID: 0.005, WV: 0.005, HI: 0.005, NH: 0.005, ME: 0.005,
-        MT: 0.003, RI: 0.003, DE: 0.003, SD: 0.003, ND: 0.002, AK: 0.002,
-        DC: 0.002, VT: 0.002, WY: 0.002, PR: 0.01, GU: 0.001, VI: 0.001,
-      };
-      const factor = popFactor[stateId] || 0.005;
-      const stateCases = Math.round(totalNational * factor);
+    const stateLabel = STATES.find((s) => s.id === stateCode)?.label || stateCode;
+    const winRate = stateData.wr;
+    const settlementRate = stateData.sp || nationalSettlementRate;
+    const duration = stateData.mo || nationalDuration;
+    const totalCases = stateData.total || 0;
 
-      // Settlement rate variance by state (derived from win rate correlation)
-      const wrDiff = winRate - nationalWinRate;
-      const stateSettlement = Math.round(Math.min(80, Math.max(15, nationalSettlement + wrDiff * 0.4)));
+    // Calculate advantage
+    const advantage = winRate - nationalWinRate;
 
-      // Duration variance
-      const stateDuration = Math.max(3, Math.round(nationalDuration + (wrDiff > 5 ? 1 : wrDiff < -5 ? -1 : 0)));
+    // Compute composite score (0-100)
+    let score = 50; // baseline
 
-      // Composite score based on prioritization
-      let score: number;
-      const wrNorm = Math.min(100, Math.max(0, ((winRate - 30) / 50) * 100));
-      const spNorm = Math.min(100, Math.max(0, ((stateSettlement - 15) / 55) * 100));
-      const durNorm = Math.min(100, Math.max(0, ((20 - stateDuration) / 15) * 100));
+    // Win rate component
+    score += (winRate - 30) * 0.5;
 
-      switch (prioritize) {
-        case 'settlement':
-          score = Math.round(spNorm * 0.5 + wrNorm * 0.35 + durNorm * 0.15);
-          break;
-        case 'speed':
-          score = Math.round(durNorm * 0.5 + wrNorm * 0.3 + spNorm * 0.2);
-          break;
-        default: // winRate
-          score = Math.round(wrNorm * 0.5 + spNorm * 0.3 + durNorm * 0.2);
-      }
+    // Settlement rate bonus
+    score += (settlementRate - 30) * 0.3;
 
-      return {
-        state: stateId,
-        stateLabel: stateObj.label,
-        winRate: Math.round(winRate * 10) / 10,
-        nationalAvgWinRate: nationalWinRate,
-        advantage: Math.round((winRate - nationalWinRate) * 10) / 10,
-        settlementRate: stateSettlement,
-        medianDurationMonths: stateDuration,
-        totalCases: stateCases,
-        score,
-        rank: 0, // will be set after sort
-      };
-    })
-    .filter(Boolean) as VenueScore[];
+    // Speed bonus
+    const speedBonus = Math.max(0, (nationalDuration - duration) / nationalDuration) * 10;
+    score += speedBonus;
 
-  // Sort by score descending
-  venues.sort((a, b) => b.score - a.score);
-  venues.forEach((v, i) => { v.rank = i + 1; });
+    // Volume confidence
+    if (totalCases > 1000) score += 5;
+    else if (totalCases > 100) score += 2;
+
+    score = Math.min(100, Math.max(0, score));
+
+    venues.push({
+      state: stateCode,
+      stateLabel,
+      winRate: Math.round(winRate * 10) / 10,
+      nationalAvgWinRate: Math.round(nationalWinRate * 10) / 10,
+      advantage: Math.round(advantage * 10) / 10,
+      settlementRate: Math.round(settlementRate * 10) / 10,
+      medianDurationMonths: duration,
+      totalCases,
+      score: Math.round(score * 10) / 10,
+      rank: 0,
+    });
+  });
+
+  // Sort by priority
+  if (prioritize === 'settlement') {
+    venues.sort((a, b) => b.settlementRate - a.settlementRate || b.score - a.score);
+  } else if (prioritize === 'speed') {
+    venues.sort((a, b) => a.medianDurationMonths - b.medianDurationMonths || b.score - a.score);
+  } else {
+    // winRate (default)
+    venues.sort((a, b) => b.winRate - a.winRate || b.score - a.score);
+  }
+
+  // Assign ranks
+  venues.forEach((v, idx) => {
+    v.rank = idx + 1;
+  });
 
   return NextResponse.json({
     nos: validatedNos,
-    caseType: nosData.label,
+    caseType,
     nationalStats: {
-      winRate: nationalWinRate,
-      settlementRate: nationalSettlement,
+      winRate: Math.round(nationalWinRate * 10) / 10,
+      settlementRate: Math.round(nationalSettlementRate * 10) / 10,
       medianDurationMonths: nationalDuration,
-      totalCases: totalNational,
+      totalCases: caseData.total || 0,
     },
     prioritize,
     venues,
-    disclaimer: 'Venue scores are derived from public federal court statistics (FJC IDB). Actual venue selection should consider jurisdiction, convenience, local rules, and other legal factors.',
+    disclaimer: 'Rankings based on real federal court case outcomes. Consult your attorney for jurisdiction-specific legal advice.',
   });
 }
