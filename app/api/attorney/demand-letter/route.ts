@@ -50,7 +50,10 @@ export async function POST(req: NextRequest) {
     const result = await streamText({
       model: anthropic('claude-sonnet-4-20250514'),
       maxOutputTokens: 2000,
-      system: `You are an expert legal professional specializing in drafting settlement demand letters. Generate a professional, concise demand letter template based on the case details provided.
+      messages: [
+        {
+          role: 'system',
+          content: `You are an expert legal professional specializing in drafting settlement demand letters. Generate a professional, concise demand letter template based on the case details provided.
 
 The letter should:
 1. Include standard legal greeting and case reference
@@ -63,7 +66,8 @@ The letter should:
 8. Be comprehensive but not excessive (2-3 pages worth)
 
 Format as a professional letter template that can be customized by the attorney.`,
-      messages: [
+          providerOptions: { anthropic: { cacheControl: { type: 'ephemeral' } } },
+        },
         {
           role: 'user',
           content: `Generate a settlement demand letter for the following case:

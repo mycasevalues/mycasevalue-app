@@ -24,7 +24,10 @@ export async function POST(req: NextRequest) {
     const result = await streamText({
       model: anthropic('claude-sonnet-4-20250514'),
       maxOutputTokens: 2500,
-      system: `You are an experienced litigation attorney specializing in deposition preparation. Generate a comprehensive, structured deposition outline with numbered questions.
+      messages: [
+        {
+          role: 'system',
+          content: `You are an experienced litigation attorney specializing in deposition preparation. Generate a comprehensive, structured deposition outline with numbered questions.
 
 The outline MUST be organized into these sections:
 1. BACKGROUND QUESTIONS — Establish identity, qualifications, and relationship to case
@@ -36,7 +39,8 @@ The outline MUST be organized into these sections:
 Use clear numbering (1.1, 1.2, etc.) within each section. Include strategic notes in [brackets] where helpful.
 Questions should be open-ended where appropriate but also include some yes/no questions for pinning down key facts.
 Tailor all questions specifically to the case type and deponent role provided.`,
-      messages: [
+          providerOptions: { anthropic: { cacheControl: { type: 'ephemeral' } } },
+        },
         {
           role: 'user',
           content: `Generate a deposition outline for:

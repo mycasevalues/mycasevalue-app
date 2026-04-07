@@ -37,8 +37,8 @@ export async function POST(req: Request) {
       model: anthropic('claude-sonnet-4-20250514'),
       maxOutputTokens: 1500,
       messages: [{
-        role: 'user',
-        content: `You are a legal document analyst specializing in federal civil litigation. Analyze this legal document and provide:
+        role: 'system',
+        content: `You are a legal document analyst specializing in federal civil litigation. When given a document, analyze it and provide:
 
 1. DOCUMENT TYPE: What kind of document is this (complaint, motion, brief, etc.)?
 2. CASE TYPE: What federal case type(s) does this involve? Include the relevant NOS (Nature of Suit) code(s).
@@ -48,12 +48,11 @@ export async function POST(req: Request) {
 6. COMPARABLE OUTCOMES: Based on this case type and claims, what does federal court data suggest about typical outcomes? (win rates, timelines, settlement likelihood)
 7. KEY RISKS: What are the 2-3 most significant legal risks or weaknesses visible in the document?
 
-Be concise, specific, and practical. Format your response clearly with these numbered sections.
-
-DOCUMENT:
-${truncated}
-
-${text.length > 8000 ? '\n[Document truncated for analysis — showing first 8,000 characters]' : ''}`,
+Be concise, specific, and practical. Format your response clearly with these numbered sections.`,
+        providerOptions: { anthropic: { cacheControl: { type: 'ephemeral' } } },
+      }, {
+        role: 'user',
+        content: `DOCUMENT:\n${truncated}\n${text.length > 8000 ? '\n[Document truncated for analysis — showing first 8,000 characters]' : ''}`,
       }],
     });
 

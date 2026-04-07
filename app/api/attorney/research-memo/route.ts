@@ -35,7 +35,10 @@ export async function POST(req: NextRequest) {
     const result = await streamText({
       model: anthropic('claude-sonnet-4-20250514'),
       maxOutputTokens: 3000,
-      system: `You are an experienced legal research attorney drafting a formal legal research memorandum. Follow the standard IRAC format strictly.
+      messages: [
+        {
+          role: 'system',
+          content: `You are an experienced legal research attorney drafting a formal legal research memorandum. Follow the standard IRAC format strictly.
 
 Structure the memo with these exact sections:
 I. ISSUE PRESENTED
@@ -47,7 +50,8 @@ V. CONCLUSION
 In the APPLICABLE LAW and DISCUSSION sections, reference relevant federal standards, statutes, and leading cases for the case type. Where platform statistics are provided, integrate them naturally to support the analysis (e.g., "Historical data shows a ${nosData?.wr || 55}% win rate for this case type...").
 
 Write in formal legal memo style with proper citations. Use standard legal citation format.`,
-      messages: [
+          providerOptions: { anthropic: { cacheControl: { type: 'ephemeral' } } },
+        },
         {
           role: 'user',
           content: `Draft a legal research memorandum:

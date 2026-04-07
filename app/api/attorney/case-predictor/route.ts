@@ -183,8 +183,12 @@ Settlement Rate in Category: ${nosData?.sp ?? 42}%
     const result = await generateText({
       model: anthropic('claude-sonnet-4-20250514'),
       maxOutputTokens: 300,
-      system: `You are an expert litigation strategist. Provide 2-3 key strategic insights based on the case prediction data. Focus on actionable advice for the attorney about settlement strategy, risk factors, and next steps. Keep insights concise and practical.`,
       messages: [
+        {
+          role: 'system',
+          content: `You are an expert litigation strategist. Provide 2-3 key strategic insights based on the case prediction data. Focus on actionable advice for the attorney about settlement strategy, risk factors, and next steps. Keep insights concise and practical.`,
+          providerOptions: { anthropic: { cacheControl: { type: 'ephemeral' } } },
+        },
         {
           role: 'user',
           content: `Based on this case prediction data, provide strategic insights:\n${context}`,

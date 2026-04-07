@@ -54,14 +54,18 @@ Number each request sequentially. Frame each as a clear, specific statement to b
     const result = await streamText({
       model: anthropic('claude-sonnet-4-20250514'),
       maxOutputTokens: 2500,
-      system: `You are an experienced litigation attorney drafting formal discovery requests. Generate discovery in proper FRCP format with appropriate legal language and definitions.
+      messages: [
+        {
+          role: 'system',
+          content: `You are an experienced litigation attorney drafting formal discovery requests. Generate discovery in proper FRCP format with appropriate legal language and definitions.
 
 Include a standard DEFINITIONS AND INSTRUCTIONS section at the top with common discovery definitions (e.g., "Document," "Communication," "You/Your," "Identify," "Relate to," "Person").
 
 ${typeInstructions[discoveryType] || typeInstructions.interrogatories}
 
 Format output as a formal legal document ready for attorney review.`,
-      messages: [
+          providerOptions: { anthropic: { cacheControl: { type: 'ephemeral' } } },
+        },
         {
           role: 'user',
           content: `Generate ${typeLabels[discoveryType] || 'Interrogatories'} for:

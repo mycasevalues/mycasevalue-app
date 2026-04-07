@@ -46,8 +46,17 @@ export async function POST(req: NextRequest) {
 
     const result = streamText({
       model: anthropic('claude-sonnet-4-20250514'),
-      system: systemPrompt,
-      prompt: context ? `Context: ${context}\n\nUser question: ${prompt}` : prompt,
+      messages: [
+        {
+          role: 'system',
+          content: systemPrompt,
+          providerOptions: { anthropic: { cacheControl: { type: 'ephemeral' } } },
+        },
+        {
+          role: 'user',
+          content: context ? `Context: ${context}\n\nUser question: ${prompt}` : prompt,
+        },
+      ],
       maxOutputTokens: 1000,
       temperature: 0.3,
     });

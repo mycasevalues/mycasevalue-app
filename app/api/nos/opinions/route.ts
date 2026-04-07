@@ -97,8 +97,12 @@ export async function GET(req: NextRequest) {
           model: anthropic('claude-sonnet-4-20250514'),
           maxOutputTokens: 100,
           messages: [{
+            role: 'system',
+            content: 'Summarize court opinions in exactly one sentence (max 30 words). Be factual and concise.',
+            providerOptions: { anthropic: { cacheControl: { type: 'ephemeral' } } },
+          }, {
             role: 'user',
-            content: `Summarize this court opinion in exactly one sentence (max 30 words). Case: ${op.caseName}. Court: ${op.court}. Excerpt: ${op.snippet.substring(0, 500)}`,
+            content: `Case: ${op.caseName}. Court: ${op.court}. Excerpt: ${op.snippet.substring(0, 500)}`,
           }],
         });
 
