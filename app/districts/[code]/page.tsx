@@ -154,7 +154,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 // Get top case types for a district with their settlement data
 function getTopCaseTypesForDistrict(code: string) {
-  const caseTypes: Record<string, { label: string; winRate: number; settlementRangeText: string; count: number }> = {};
+  const caseTypes: Record<string, { label: string; nosCode: string; winRate: number; settlementRangeText: string; count: number }> = {};
 
   Object.entries(REAL_DATA).forEach(([nosCode, data]: [string, any]) => {
     if (!data.label || !data.circuit_rates) return;
@@ -168,6 +168,7 @@ function getTopCaseTypesForDistrict(code: string) {
     if (!caseTypes[data.label]) {
       caseTypes[data.label] = {
         label: data.label,
+        nosCode: nosCode,
         winRate: circuitRate,
         settlementRangeText: data.rng
           ? `$${data.rng.lo}K - $${data.rng.hi}K (median: $${data.rng.md}K)`
@@ -359,12 +360,30 @@ export default async function DistrictPage({ params }: PageProps) {
             gap: 16,
           }}>
             {caseTypes.map((caseType, idx) => (
-              <div key={idx} style={{
-                background: '#FFFFFF',
-                border: '1px solid #e5e7eb',
-                borderRadius: '12px',
-                padding: '20px',
-              }}>
+              <Link
+                key={idx}
+                href={`/districts/${code.toUpperCase()}/${caseType.nosCode}`}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <div style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '12px',
+                  padding: '20px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.currentTarget as HTMLElement;
+                  target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+                  target.style.borderColor = '#0A66C2';
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.currentTarget as HTMLElement;
+                  target.style.boxShadow = '';
+                  target.style.borderColor = '#e5e7eb';
+                }}
+                >
                 <h3 style={{
                   fontSize: 15,
                   fontWeight: 700,
@@ -447,6 +466,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   </div>
                 </div>
               </div>
+              </Link>
             ))}
           </div>
         </section>

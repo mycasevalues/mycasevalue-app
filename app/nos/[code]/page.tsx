@@ -63,6 +63,26 @@ function getAllNOSCodes(): string[] {
   return Array.from(nosSet).sort();
 }
 
+// Map circuit numbers to representative district codes
+// Returns the first major district for each circuit for linking purposes
+function getRepresentativeDistrictForCircuit(circuit: string): string | null {
+  const circuitToDistrict: Record<string, string> = {
+    '1': 'MADN',    // District of Massachusetts (1st Circuit)
+    '2': 'SDNY',    // S.D.N.Y. (2nd Circuit)
+    '3': 'EDPA',    // E.D. Pa. (3rd Circuit)
+    '4': 'EDVA',    // E.D. Va. (4th Circuit)
+    '5': 'EDTX',    // E.D. Tex. (5th Circuit)
+    '6': 'EDMI',    // E.D. Mich. (6th Circuit)
+    '7': 'NDIL',    // N.D. Ill. (7th Circuit)
+    '8': 'EDMO',    // E.D. Mo. (8th Circuit)
+    '9': 'NDCA',    // N.D. Cal. (9th Circuit)
+    '10': 'CODN',   // District of Colorado (10th Circuit)
+    '11': 'NDGA',   // N.D. Ga. (11th Circuit)
+    'dc': 'DCDN',   // D.D.C. (D.C. Circuit)
+  };
+  return circuitToDistrict[circuit] || null;
+}
+
 interface PageProps {
   params: Promise<{ code: string }>;
 }
@@ -1075,8 +1095,10 @@ export default async function NOSPage({ params }: PageProps) {
                   .sort(([, a], [, b]) => (b as number) - (a as number))
                   .map(([circuit, rate]) => {
                     const wr = rate as number;
-                    return (
-                      <div key={circuit} style={{
+                    const districtCode = getRepresentativeDistrictForCircuit(circuit);
+                    const districtUrl = districtCode ? `/districts/${districtCode}/${code}` : null;
+                    const cardContent = (
+                      <div style={{
                         padding: '12px 16px',
                         background: '#FAFBFC',
                         border: '1px solid #E5E7EB',
@@ -1103,6 +1125,15 @@ export default async function NOSPage({ params }: PageProps) {
                             borderRadius: '12px',
                           }} />
                         </div>
+                      </div>
+                    );
+                    return districtUrl ? (
+                      <Link key={circuit} href={districtUrl} style={{ textDecoration: 'none', cursor: 'pointer' }}>
+                        {cardContent}
+                      </Link>
+                    ) : (
+                      <div key={circuit}>
+                        {cardContent}
                       </div>
                     );
                   })}
