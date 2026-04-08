@@ -102,7 +102,7 @@ export default function SiteFooter() {
             <div className="site-footer-logo">
               {/* Brand identity mark — on navy variant */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <svg width="30" height="30" viewBox="-100 -100 200 200" style={{ display: 'block', flexShrink: 0 }}>
+                <svg width="30" height="30" viewBox="-100 -100 200 200" aria-hidden="true" style={{ display: 'block', flexShrink: 0 }}>
                   <rect x="-100" y="-100" width="200" height="200" rx="26" fill="#0966C3" />
                   <g transform="rotate(12)">
                     <polygon points="0,0 -40,-69.3 40,-69.3 80,0" fill="white" opacity="0.93" />
