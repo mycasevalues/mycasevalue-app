@@ -4,6 +4,15 @@ export const metadata: Metadata = {
   title: 'System Status',
   description: 'MyCaseValue system health and service status',
   robots: { index: true, follow: true },
+  openGraph: {
+    title: 'System Status',
+    description: 'MyCaseValue system health and service status',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'System Status',
+    description: 'MyCaseValue system health and service status',
+  },
 };
 
 interface ServiceStatus {
