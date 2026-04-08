@@ -28,7 +28,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Case Trends',
     description: 'Track federal court case outcome trends over time',
-    url: `${SITE_URL}/trends`,
+    url: `${SITE_URL}/trends`,  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Case Trends',
+    description: 'Track federal court case outcome trends over time. Analyze year-over-year changes in win rates, settlement values, and case durations across 84 case types.',
   },
 };
 
