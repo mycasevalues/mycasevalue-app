@@ -36,7 +36,7 @@ export default function AnnualReportPage() {
             lineHeight: 1.6,
             maxWidth: '600px',
           }}>
-            Analyze settlement trends, win rates, case duration, and litigation patterns across federal courts. 20 pages of data-driven insights from 4M+ cases.
+            Analyze settlement trends, case outcome rates, case duration, and litigation patterns across federal courts. 20 pages of data-driven insights from 4M+ cases.
           </p>
         </div>
       </div>
