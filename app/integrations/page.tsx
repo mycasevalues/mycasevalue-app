@@ -74,7 +74,7 @@ const INTEGRATIONS = [
     description: 'Connect MyCaseValue analytics directly to your Clio practice management workspace. Auto-attach case outcome reports to matters.',
     features: ['Matter linking', 'Auto-attach reports', 'Activity sync', 'Custom fields'],
     status: 'Available',
-    href: '#',
+    href: '/contact',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
@@ -89,7 +89,7 @@ const INTEGRATIONS = [
     description: 'Integrate settlement analytics and case outcome data directly into your MyCase workflow. Enrich case records with federal court intelligence.',
     features: ['Case enrichment', 'Settlement data', 'Automated reports', 'Dashboard widgets'],
     status: 'Available',
-    href: '#',
+    href: '/contact',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
@@ -102,7 +102,7 @@ const INTEGRATIONS = [
     description: 'Connect MyCaseValue to 5,000+ apps through Zapier. Trigger workflows when new case data is available or send reports to any destination.',
     features: ['5,000+ app connections', 'Trigger-based workflows', 'Multi-step Zaps', 'Filters & paths'],
     status: 'Available',
-    href: '#',
+    href: '/contact',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />

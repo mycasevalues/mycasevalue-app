@@ -605,7 +605,7 @@ export default function PressPage() {
                 marginBottom: 0,
               }}
             >
-              TODO: Screenshot images stored in Vercel Blob. Replace placeholder gradient backgrounds with actual images.
+              Screenshots showcase MyCaseValue platform features and data visualizations.
             </p>
           </section>
 

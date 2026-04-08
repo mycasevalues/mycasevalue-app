@@ -295,7 +295,7 @@ export default function SiteNav() {
                 <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
               </g>
             </svg>
-            <span style={{ fontFamily: 'var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '17px', fontWeight: 700, letterSpacing: '-0.3px', color: '#1C3A5E', whiteSpace: 'nowrap' }}>
+            <span style={{ fontFamily: 'var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, sans-serif', fontSize: '17px', fontWeight: 700, letterSpacing: '-0.3px', color: '#0f0f0f', whiteSpace: 'nowrap' }}>
               MyCase<span style={{ color: '#0966C3' }}>Value</span>
             </span>
           </Link>

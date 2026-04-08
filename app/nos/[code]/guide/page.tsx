@@ -84,8 +84,8 @@ export default async function GuidePage({ params }: PageProps) {
   if (!content) {
     return (
       <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
-        <h1 style={{ color: '#0f0f0f' }}>Guide Coming Soon</h1>
-        <p>A detailed guide for {nosInfo.label} cases is coming soon.</p>
+        <h1 style={{ color: '#0f0f0f' }}>Case Guide</h1>
+        <p>A detailed guide for {nosInfo.label} cases is not yet available. View the case data instead.</p>
         <Link href={`/nos/${code}`} style={{ color: '#0966C3', textDecoration: 'none' }}>
           View {nosInfo.label} Case Data
         </Link>

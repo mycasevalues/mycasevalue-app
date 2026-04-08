@@ -80,7 +80,7 @@ export default function DashboardTabs({
       {activeTab === 'overview' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {/* Welcome */}
-          <div style={{ ...cardStyle, background: 'linear-gradient(135deg, #1C3A5E 0%, #003366 100%)', color: '#FFF', border: 'none' }}>
+          <div style={{ ...cardStyle, background: 'linear-gradient(135deg, #0966C3 0%, #004182 100%)', color: '#FFF', border: 'none' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, margin: '0 0 4px', fontFamily: 'var(--font-display)' }}>
               Welcome back, {userName}
             </h2>
@@ -109,7 +109,7 @@ export default function DashboardTabs({
               { label: 'Search Cases', href: '/search', icon: '' },
               { label: 'Calculator', href: '/calculator', icon: '' },
               { label: 'Attorney Tools', href: '/attorney', icon: '' },
-              { label: 'Set Alerts', href: '#', icon: '' },
+              { label: 'View Settings', href: '/settings', icon: '' },
             ].map(action => (
               <Link key={action.label} href={action.href} style={{ textDecoration: 'none' }}>
                 <div style={{ ...cardStyle, textAlign: 'center', padding: '16px', cursor: 'pointer' }}>

@@ -79,7 +79,7 @@ export default function Footer() {
                 fontSize: '18px',
                 fontWeight: 700,
                 letterSpacing: '-0.3px',
-                color: '#1C3A5E',
+                color: '#0f0f0f',
               }}>
                 MyCase<span style={{ color: '#0966C3' }}>Value</span>
               </span>
@@ -87,7 +87,7 @@ export default function Footer() {
             <p style={{
               fontSize: '14px',
               fontWeight: 600,
-              color: '#1C3A5E',
+              color: '#0f0f0f',
               marginBottom: '12px',
               lineHeight: '1.4',
             }}>
@@ -295,7 +295,7 @@ export default function Footer() {
                 fontSize: '18px',
                 fontWeight: 700,
                 letterSpacing: '-0.3px',
-                color: '#1C3A5E',
+                color: '#0f0f0f',
               }}>
                 MyCase<span style={{ color: '#0966C3' }}>Value</span>
               </span>
@@ -303,7 +303,7 @@ export default function Footer() {
             <p style={{
               fontSize: '14px',
               fontWeight: 600,
-              color: '#1C3A5E',
+              color: '#0f0f0f',
               marginBottom: '12px',
               lineHeight: '1.4',
             }}>

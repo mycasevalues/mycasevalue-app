@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          navy:        '#1C3A5E',   // page bg / dark section bg
+          navy:        '#0966C3',   // page bg / dark section bg
           panel:       '#274464',   // raised card on dark
           border:      '#284565',   // panel edge on dark
           blue:        '#0966C3',   // primary CTA
@@ -24,8 +24,8 @@ module.exports = {
           // Light surface (for non-dark sections)
           surface:     '#F7F8FA',
           'surface-2': '#EEF0F4',
-          ink:         '#1C3A5E',   // heading text on white
-          'ink-2':     '#122840',   // body text on white
+          ink:         '#0f0f0f',   // heading text on white
+          'ink-2':     '#0f0f0f',   // body text on white
           gray:        '#4B5563',
           'text-secondary': '#4B5563',
           'text-muted': '#9CA3AF',
@@ -40,8 +40,8 @@ module.exports = {
           'bg-neu':    '#FFFBEB',
         },
         // Legacy compat — mapped to brand tokens (consolidated)
-        navy: { DEFAULT: '#1C3A5E', dark: '#122840', light: '#2A5080' },
-        midnight: { DEFAULT: '#1C3A5E', 50: '#2A5080', 100: '#1C3A5E', 200: '#122840', 800: '#F7F8FA', 900: '#FFFFFF' },
+        navy: { DEFAULT: '#0966C3', dark: '#004182', light: '#1577D5' },
+        midnight: { DEFAULT: '#0966C3', 50: '#1577D5', 100: '#0966C3', 200: '#004182', 800: '#F7F8FA', 900: '#FFFFFF' },
         outcome: {
           win: '#15803D',
           'win-bg': '#F0FDF4',

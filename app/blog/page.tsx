@@ -485,9 +485,8 @@ export default function BlogPage() {
               description: 'Explore the correlation between judge assignment and case duration, settlement, and verdicts.',
             },
           ].map((research, idx) => (
-            <a
+            <div
               key={idx}
-              href="#"
               className="featured-research-card"
             >
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 12px 0', lineHeight: 1.4, fontFamily: 'var(--font-display)' }}>
@@ -499,7 +498,7 @@ export default function BlogPage() {
               <span style={{ fontSize: '13px', fontWeight: 600, color: '#0966C3', textDecoration: 'none' }}>
                 Read more {'>'}
               </span>
-            </a>
+            </div>
           ))}
         </div>
       </div>
@@ -524,13 +523,12 @@ export default function BlogPage() {
             'Settlement Data',
             'Judge Analytics',
           ].map((topic) => (
-            <a
+            <span
               key={topic}
-              href="#"
               className="topic-pill"
             >
               {topic}
-            </a>
+            </span>
           ))}
         </div>
       </div>

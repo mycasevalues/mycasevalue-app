@@ -112,10 +112,10 @@ export default async function JudgesPage() {
         {/* Beta Notice with Radar Preview */}
         <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #E5E7EB', background: '#F7F8FA', marginBottom: 64, marginTop: 64 }}>
           <h2 style={{ fontSize: 24, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
-            Judge Analytics — Expanded Profile Features Coming Soon
+            Judge Analytics — Advanced Profile Metrics
           </h2>
           <p style={{ fontSize: 15, color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: 680, margin: '0 0 28px', lineHeight: 1.6 }}>
-            Detailed judge profiles are being enhanced with additional metrics from PACER and FJC records. View the preview below to see what's coming.
+            Explore detailed judge profiles with additional metrics derived from PACER and FJC records. Preview the analytics radar below.
           </p>
 
           {/* Radar chart preview */}
