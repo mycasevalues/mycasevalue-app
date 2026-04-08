@@ -8,7 +8,7 @@ interface PageProps {
 
 export const metadata: Metadata = {
   title: 'Compare Federal Judges — Side-by-Side Analysis | MyCaseValue',
-  description: 'Compare up to 3 federal judges side-by-side. Analyze plaintiff win rates, motion grant rates, settlement patterns, and ruling trends across judges.',
+  description: 'Compare up to 3 federal judges side-by-side. Analyze case outcome rates, motion grant rates, settlement patterns, and ruling trends across judges.',
   alternates: { canonical: `${SITE_URL}/judges/compare` },
   openGraph: {
     title: 'Compare Federal Judges',
