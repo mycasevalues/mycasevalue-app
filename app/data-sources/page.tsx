@@ -12,7 +12,11 @@ export const metadata: Metadata = {
     title: 'MyCaseValue Data Sources',
     description: 'Federal court data analytics built on verified court records from FJC, PACER, and CourtListener.',
     url: `${SITE_URL}/data-sources`,
-    type: 'website',
+    type: 'website',  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Data Sources & Methodology | MyCaseValue',
+    description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 4M+ cases across 94 federal districts with quarterly updates.',
   },
 };
 
