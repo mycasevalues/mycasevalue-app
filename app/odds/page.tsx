@@ -104,6 +104,28 @@ export default function OddsPage() {
   // Calculate favorable percentage (win + settlement)
   const favorablePercentage = results ? results.winRate + results.settlementRate : 0;
 
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Case Odds', item: `${SITE_URL}/odds` },
+        ],
+      },
+      {
+        '@type': 'WebApplication',
+        name: 'Case Odds Calculator',
+        description: 'Calculate your odds of winning a federal court case based on historical data, case type, and jurisdiction.',
+        url: `${SITE_URL}/odds`,
+        applicationCategory: 'LegalService',
+        isPartOf: { '@type': 'WebSite', name: 'MyCaseValue', url: SITE_URL },
+      },
+    ],
+  };
+
   return (
     <>
       <style>{`
@@ -200,6 +222,10 @@ export default function OddsPage() {
         padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
           <div style={{
             display: 'inline-block',
             background: '#0966C3',
