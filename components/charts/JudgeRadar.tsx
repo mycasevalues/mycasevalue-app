@@ -3,7 +3,7 @@
 /**
  * JudgeRadar — Radar/spider chart comparing a judge's profile
  * against the district average across five axes:
- *   1. Plaintiff Win Rate
+ *   1. Win Rate
  *   2. Summary Judgment Grant Rate (inverted — lower is better for plaintiff)
  *   3. Average Case Duration (inverted — shorter is better for plaintiff)
  *   4. Settlement Rate
@@ -38,7 +38,7 @@ interface JudgeRadarProps {
 }
 
 const AXES = [
-  { key: 'plaintiffWinRate', label: 'Plaintiff Win Rate', invert: false },
+  { key: 'plaintiffWinRate', label: 'Win Rate', invert: false },
   { key: 'sjGrantRate', label: 'SJ Grant Rate', invert: true },
   { key: 'caseDuration', label: 'Case Duration', invert: true },
   { key: 'settlementRate', label: 'Settlement Rate', invert: false },
