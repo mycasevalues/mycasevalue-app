@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: 'For Legal Aid Organizations | MyCaseValue',
   description: 'Free case research, outcome analysis, and grant reporting tools for non-profits and pro-bono legal services.',
   alternates: { canonical: `${SITE_URL}/solutions/legal-aid` },
+  openGraph: {
+    title: 'For Legal Aid Organizations | MyCaseValue',
+    description: 'Free case research, outcome analysis, and grant reporting tools for non-profits and pro-bono legal services.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Legal Aid Organizations | MyCaseValue',
+    description: 'Free case research, outcome analysis, and grant reporting tools for non-profits and pro-bono legal services.',
+  },
 };
 
 const FEATURES = [
