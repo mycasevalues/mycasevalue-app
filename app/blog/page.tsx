@@ -15,8 +15,8 @@ const blogArticles = [
     author: 'MyCaseValue Research Team',
   },
   {
-    slug: 'plaintiff-friendly-districts',
-    title: 'The 10 Most Plaintiff-Friendly Federal Districts — And What Makes Them Different',
+    slug: 'favorable-outcome-districts',
+    title: 'The 10 Most Favorable-Outcome Federal Districts — And What Makes Them Different',
     description: 'Real district win rate data reveals which federal courts are most favorable to plaintiffs and the factors that make them stand out.',
     category: 'District Analysis',
     date: new Date('2025-02-03'),
