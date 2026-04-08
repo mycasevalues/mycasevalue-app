@@ -9,7 +9,11 @@ export const metadata: Metadata = {
     title: 'Integrations — MyCaseValue',
     description: 'Connect federal court analytics to your legal workflow with our API, exports, and direct integrations.',
     type: 'website',
-    url: 'https://www.mycasevalues.com/integrations',
+    url: 'https://www.mycasevalues.com/integrations',  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Integrations — MyCaseValue | Connect Your Legal Tools',
+    description: 'Integrate MyCaseValue federal court data with your existing legal tools. REST API, CSV exports, and direct connections to case management systems.',
   },
 };
 
