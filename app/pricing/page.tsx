@@ -1,13 +1,28 @@
-'use client';
-
-export const dynamic = 'force-dynamic';
-
-import { useState } from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link';
-
 import { SITE_URL } from '../../lib/site-config';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
 
-const getJsonLd = () => ({
+export const metadata: Metadata = {
+  title: 'Pricing Built for Every Budget — MyCaseValues',
+  description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode. No hidden fees.',
+  alternates: { canonical: `${SITE_URL}/pricing` },
+  openGraph: {
+    title: 'Pricing Built for Every Budget — MyCaseValues',
+    description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode.',
+    type: 'website',
+    url: `${SITE_URL}/pricing`,
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValues Pricing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing Built for Every Budget — MyCaseValues',
+    description: 'Transparent pricing for federal court intelligence. Free, $5.99, $9.99/mo, $29.99/mo.',
+    images: [`${SITE_URL}/og-image.png`],
+  },
+};
+
+const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -29,1461 +44,494 @@ const getJsonLd = () => ({
       ],
     },
   ],
-});
+};
 
-function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
-  return [
-    {
-      id: 'free',
-      name: 'Free',
-      tagline: 'For anyone researching a case',
-      price: '$0',
-      period: 'during beta',
-      description: 'Start your research with essential case data and win rate analysis.',
-      sectionLabel: 'Includes:',
-      features: [
-        { text: 'Win rate percentage for any case + district', included: true },
-        { text: 'Median settlement amount (national average)', included: true },
-        { text: 'Median case duration', included: true },
-        { text: 'Sample size with every data point', included: true },
-        { text: 'All 94 district overview pages', included: true },
-        { text: 'All 84 case type pages', included: true },
-        { text: '3 free lookups per day', included: true },
-        { text: 'Settlement range (full percentiles)', included: false },
-        { text: 'Judge profiles', included: false },
-        { text: 'PDF export', included: false },
-      ],
-      ctaText: 'Access Free During Beta',
-      ctaSubtext: 'No account required',
-    },
-    {
-      id: 'single_report',
-      name: 'Single Report',
-      tagline: 'For one specific case',
-      price: '$5.99',
-      period: 'one-time',
-      description: 'Deep dive into a single case with full settlement ranges and judge data.',
-      sectionLabel: 'Includes:',
-      stripePlan: 'single',
-      features: [
-        { text: 'One full case outcome report (any case type + district)', included: true },
-        { text: 'Full settlement range — 10th through 90th percentile', included: true },
-        { text: 'Confidence intervals', included: true },
-        { text: 'Settlement calculator — full results', included: true },
-        { text: 'Basic judge overview for your district', included: true },
-        { text: 'PDF export — clean, branded', included: true },
-        { text: '90-day report access', included: true },
-        { text: 'Email delivery — no account required', included: true },
-        { text: 'Multiple reports', included: false },
-        { text: 'Trend data (year-over-year)', included: false },
-        { text: 'Saved reports library', included: false },
-        { text: 'Judge intelligence profiles', included: false },
-        { text: 'Attorney Mode features', included: false },
-      ],
-      ctaText: 'Access Free During Beta',
-      ctaSubtext: 'Save and revisit for 90 days · No subscription',
-      ctaHref: '/search',
-    },
-    {
-      id: 'unlimited',
-      name: 'Unlimited Reports',
-      tagline: 'For ongoing case research',
-      price: annual ? '$8.33' : '$9.99',
-      period: annual ? '/mo (billed $99.99/yr)' : '/mo',
-      description: 'Unlimited lookups across all case types and districts with trend analysis.',
-      sectionLabel: 'Everything in Single Report, plus:',
-      badge: 'MOST POPULAR',
-      featured: true,
-      stripePlan: 'unlimited',
-      monthlyPrice: annual ? '$9.99' : undefined,
-      features: [
-        { text: 'Unlimited case type + district lookups', included: true },
-        { text: 'All 84 case types · all 94 districts', included: true },
-        { text: 'Full settlement percentile ranges', included: true },
-        { text: 'Year-over-year trend data (10-year history)', included: true },
-        { text: 'Compare up to 3 cases simultaneously', included: true },
-        { text: 'Save unlimited reports — no expiry', included: true },
-        { text: 'Search history (last 100 searches)', included: true },
-        { text: 'Watchlist alerts for 10 districts or case types', included: true },
-        { text: 'Standard judge profiles', included: true },
-        { text: 'Clean PDF exports — no watermark', included: true },
-        { text: 'Bilingual — English & Spanish', included: true },
-        { text: 'Full account dashboard', included: true },
-        { text: 'Advanced judge intelligence', included: false },
-        { text: 'AI outcome predictor', included: false },
-        { text: 'Opposing counsel research', included: false },
-        { text: 'Attorney Mode features', included: false },
-      ],
-      ctaText: 'Access Free During Beta',
-      ctaSubtext: 'Cancel anytime',
-      ctaHref: '/sign-up',
-    },
-    {
-      id: 'attorney',
-      name: 'Attorney Mode',
-      tagline: 'For legal professionals',
-      price: annual ? '$24.99' : '$29.99',
-      period: annual ? '/mo (billed $299.88/yr)' : '/mo',
-      description: 'Advanced tools for law firms: AI predictions, bulk analysis, API access, and team collaboration.',
-      sectionLabel: 'Everything in Unlimited Reports, plus:',
-      stripePlan: 'attorney',
-      monthlyPrice: annual ? '$29.99' : undefined,
-      features: [
-        { text: 'Advanced judge intelligence (motion rates, bias trends, behavioral patterns)', included: true },
-        { text: 'AI case outcome predictor', included: true },
-        { text: 'Opposing counsel research', included: true },
-        { text: 'Document intelligence — upload any complaint or motion', included: true },
-        { text: 'Venue selection optimizer (94 districts ranked)', included: true },
-        { text: 'Case trajectory mapper', included: true },
-        { text: 'Appeal probability scorer', included: true },
-        { text: 'Motion success rate database', included: true },
-        { text: 'Negotiation timing intelligence', included: true },
-        { text: 'Expert witness tracker with Daubert risk scores', included: true },
-        { text: 'Real-time PACER monitoring (up to 25 alerts)', included: true },
-        { text: 'Class action intelligence', included: true },
-        { text: 'Bulk analysis — up to 1,000 cases via CSV', included: true },
-        { text: 'Full API access — unlimited calls', included: true },
-        { text: 'Team workspace — 5 seats included', included: true },
-        { text: 'White-label PDF reports — your firm\'s branding', included: true },
-        { text: 'Custom dashboards — shareable with clients', included: true },
-        { text: 'Daily data refresh (vs. weekly on Unlimited)', included: true },
-        { text: 'Priority support — 24-hour response', included: true },
-      ],
-      ctaText: 'Access Free During Beta',
-      ctaSubtext: 'Cancel anytime · Team seats included',
-      ctaHref: '/attorney',
-    },
-    {
-      id: 'enterprise',
-      name: 'Enterprise',
-      tagline: 'For legal departments & organizations',
-      price: 'Custom',
-      period: 'contact for pricing',
-      description: 'Tailored solutions for large legal teams, insurance companies, litigation funders, and government agencies.',
-      sectionLabel: 'Everything in Attorney Mode, plus:',
-      features: [
-        { text: 'Unlimited team seats', included: true },
-        { text: 'SSO / SAML integration', included: true },
-        { text: 'Custom API rate limits', included: true },
-        { text: 'Bulk data exports (CSV, JSON, XML)', included: true },
-        { text: 'Custom dashboards and reporting', included: true },
-        { text: 'Dedicated account manager', included: true },
-        { text: 'SLA guarantee (99.9% uptime)', included: true },
-        { text: 'White-label deployments', included: true },
-        { text: 'Custom data integrations', included: true },
-        { text: 'On-premises deployment option', included: true },
-        { text: 'Training and onboarding', included: true },
-        { text: 'Priority phone support', included: true },
-      ],
-      ctaText: 'Contact us',
-      ctaSubtext: 'Custom pricing · Tailored onboarding',
-      ctaHref: '/contact',
-    },
-  ];
-}
-
-const pricingFaqs = [
-  { q: 'What does "Single Report" mean exactly?', a: 'You select one case type and one district. We generate a complete outcome report for that specific combination. You have 90 days of access to view and download the PDF. No subscription, no recurring charge.' },
-  { q: 'Can I upgrade from Single Report to Unlimited later?', a: "Yes. If you upgrade within your 90-day access window, we'll credit the report purchase price toward your first month of Unlimited Reports." },
-  { q: "Where does MyCaseValue's data come from?", a: 'All data is derived from three public federal court record sources: the Federal Judicial Center Integrated Database (FJCID), PACER (Public Access to Court Electronic Records), and CourtListener. We do not create or estimate any data — we aggregate and analyze public court records only.' },
-  { q: 'How current is the data?', a: 'Free and Single Report data is refreshed monthly. Unlimited Reports data is refreshed weekly. Attorney Mode data is refreshed daily.' },
-  { q: 'Is this legal advice?', a: 'No. MyCaseValue provides legal data for informational and research purposes only. Nothing on this platform constitutes legal advice or creates an attorney-client relationship. Always consult a licensed attorney.' },
-  { q: 'Does Attorney Mode work for both plaintiff and defense attorneys?', a: 'Yes. All analytics — win rates, settlement ranges, judge intelligence, and the AI predictor — present data neutrally. You can filter by party position in most tools.' },
-  { q: 'Is my search activity private?', a: 'Yes. We do not sell, share, or expose any search data. What you research on MyCaseValue stays between you and the public court records.' },
-  { q: 'Does MyCaseValue cover state courts?', a: 'Not currently. MyCaseValue covers all 94 federal judicial districts only. We focus exclusively on federal court records to ensure data accuracy and completeness.' },
-  { q: 'Is there a Spanish language version?', a: 'Yes. Unlimited Reports and Attorney Mode include a full English/Spanish toggle. All UI, reports, and data labels are available in Spanish.' },
-  { q: 'What is the refund policy?', a: 'Single Report purchases are refundable within 24 hours if the report has not been downloaded. Subscription plans (Unlimited and Attorney Mode) can be cancelled anytime. No partial-month refunds on monthly plans.' },
-];
-
-interface FeatureItem {
-  text: string;
-  included: boolean;
-}
-
-interface PlanCard {
+interface PricingTier {
   id: string;
   name: string;
-  tagline: string;
+  bestFor: string;
   price: string;
   period: string;
   description: string;
-  sectionLabel: string;
-  features: FeatureItem[];
+  features: string[];
   ctaText: string;
-  ctaSubtext: string;
-  ctaHref?: string;
-  badge?: string;
-  featured?: boolean;
-  stripePlan?: 'single' | 'unlimited' | 'attorney';
-  monthlyPrice?: string;
+  ctaHref: string;
+  highlighted?: boolean;
 }
 
-function PricingCard({
-  plan,
-  loadingPlan,
-  onCheckout,
-}: {
-  plan: PlanCard;
-  loadingPlan: string | null;
-  onCheckout: (stripePlan: 'single' | 'unlimited' | 'attorney') => void;
-}) {
-  const f = plan.featured;
-  const isLoading = loadingPlan === plan.stripePlan;
-  const anyLoading = loadingPlan !== null;
+const tiers: PricingTier[] = [
+  {
+    id: 'free',
+    name: 'Free',
+    bestFor: 'Self-represented litigants',
+    price: '$0',
+    period: 'during beta',
+    description: 'Essential case data and win rate analysis.',
+    features: [
+      'Win rate percentage by case type + district',
+      'Median settlement amount',
+      'Median case duration',
+      'Sample size with every data point',
+      'All 94 federal district overviews',
+      'All 84 case type pages',
+      '3 lookups per day',
+    ],
+    ctaText: 'Get Started Free',
+    ctaHref: '/search',
+  },
+  {
+    id: 'single_report',
+    name: 'Single Report',
+    bestFor: 'One specific case analysis',
+    price: '$5.99',
+    period: 'one-time',
+    description: 'Deep dive into one case with full settlement ranges.',
+    features: [
+      'One full case outcome report',
+      'Full settlement range (10th–90th percentile)',
+      'Confidence intervals',
+      'Settlement calculator',
+      'Judge district overview',
+      'PDF export (branded)',
+      '90-day report access',
+      'Email delivery (no account required)',
+    ],
+    ctaText: 'Buy Single Report',
+    ctaHref: '/search',
+  },
+  {
+    id: 'unlimited',
+    name: 'Unlimited',
+    bestFor: 'Ongoing case research',
+    price: '$9.99',
+    period: '/month',
+    description: 'Unlimited lookups with trend analysis and saved reports.',
+    features: [
+      'Unlimited case type + district lookups',
+      'All 84 case types across all 94 districts',
+      'Full settlement percentile ranges',
+      '10-year trend data',
+      'Save unlimited reports (no expiry)',
+      'Search history (last 100 searches)',
+      'Watchlist alerts (10 items)',
+      'Judge profiles',
+      'PDF exports without watermark',
+      'English & Spanish',
+    ],
+    ctaText: 'Start Free Trial',
+    ctaHref: '/sign-up',
+    highlighted: true,
+  },
+  {
+    id: 'attorney',
+    name: 'Attorney Mode',
+    bestFor: 'Legal professionals',
+    price: '$29.99',
+    period: '/month',
+    description: 'Advanced litigation analytics for law firms.',
+    features: [
+      'Advanced judge intelligence (motion rates, bias patterns)',
+      'AI case outcome predictor',
+      'Opposing counsel research',
+      'Document intelligence (upload complaints/motions)',
+      'Venue selection optimizer (94 districts ranked)',
+      'Motion success rate database',
+      'Bulk analysis (up to 1,000 cases via CSV)',
+      'Full API access',
+      'Team workspace (5 seats included)',
+      'White-label PDF reports',
+      'Daily data refresh',
+      'Priority support (24-hour response)',
+    ],
+    ctaText: 'Try Attorney Mode',
+    ctaHref: '/attorney',
+  },
+];
 
-  return (
-    <div
-      style={{
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%',
-        borderRadius: '12px',
-        border: '1px solid #E5E7EB',
-        borderTop: f ? '4px solid #0966C3' : '1px solid #E5E7EB',
-        background: '#FFFFFF',
-        boxShadow: f ? '0 1px 3px rgba(0,0,0,0.08)' : '0 1px 3px rgba(0,0,0,0.08)',
-      }}
-    >
-      {plan.badge && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '-13px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            borderRadius: '12px',
-            padding: '4px 16px',
-            background: '#0966C3',
-            color: '#FFFFFF',
-            fontSize: '11px',
-            fontWeight: 600,
-            letterSpacing: '0.05em',
-            fontFamily: 'var(--font-body)',
-            textTransform: 'uppercase',
-          }}
-        >
-          {plan.badge}
-        </div>
-      )}
-
-      <div
-        style={{
-          padding: '24px',
-          display: 'flex',
-          flexDirection: 'column',
-          height: '100%',
-          paddingTop: plan.badge ? '32px' : '24px',
-        }}
-      >
-        <h3
-          style={{
-            fontSize: '18px',
-            fontWeight: 600,
-            marginBottom: '4px',
-            color: '#0f0f0f',
-            fontFamily: 'var(--font-display)',
-          }}
-        >
-          {plan.name}
-        </h3>
-
-        <p
-          style={{
-            fontSize: '11px',
-            fontWeight: 600,
-            marginBottom: '20px',
-            color: '#4B5563',
-            textTransform: 'uppercase',
-            letterSpacing: '0.08em',
-            fontFamily: 'var(--font-body)',
-          }}
-        >
-          {plan.tagline}
-        </p>
-
-        <div style={{ marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span
-            style={{
-              fontSize: '48px',
-              lineHeight: '1',
-              fontWeight: 600,
-              color: '#0f0f0f',
-              fontFamily: 'var(--font-mono)',
-            }}
-          >
-            {plan.price}
-          </span>
-          {plan.monthlyPrice && (
-            <span
-              style={{
-                fontSize: '14px',
-                color: '#4B5563',
-                textDecoration: 'line-through',
-                fontFamily: 'var(--font-body)',
-              }}
-            >
-              {plan.monthlyPrice}
-            </span>
-          )}
-        </div>
-
-        <p
-          style={{
-            fontSize: '14px',
-            marginBottom: '24px',
-            color: '#4B5563',
-            fontFamily: 'var(--font-body)',
-          }}
-        >
-          {plan.period}
-        </p>
-
-        <p
-          style={{
-            fontSize: '13px',
-            marginBottom: '24px',
-            color: '#4B5563',
-            fontFamily: 'var(--font-body)',
-            lineHeight: '1.5',
-          }}
-        >
-          {plan.description}
-        </p>
-
-        {/* CTA Button */}
-        <Link
-          href={plan.ctaHref || '/search'}
-          style={{
-            width: '100%',
-            height: '48px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '14px',
-            fontWeight: 600,
-            borderRadius: '4px',
-            border: 'none',
-            background: '#0966C3',
-            color: '#FFFFFF',
-            textDecoration: 'none',
-            textAlign: 'center',
-            fontFamily: 'var(--font-display)',
-            transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
-            marginBottom: '8px',
-            cursor: 'pointer',
-            opacity: 1,
-            textTransform: 'none',
-            letterSpacing: '0.04em',
-          }}
-          className="pricing-cta-link"
-        >
-          {plan.ctaText}
-        </Link>
-
-        <p
-          style={{
-            fontSize: '12px',
-            textAlign: 'center',
-            marginBottom: '24px',
-            color: '#4B5563',
-            fontFamily: 'var(--font-body)',
-          }}
-        >
-          {plan.ctaSubtext}
-        </p>
-
-        {(plan.id === 'single_report' || plan.id === 'unlimited' || plan.id === 'attorney') && (
-          <p style={{ fontSize: '0.8125rem', color: '#059669', marginBottom: '24px', marginTop: '-16px', fontWeight: 500, textAlign: 'center' }}>
-            Free during beta -- no payment required
-          </p>
-        )}
-
-        <div
-          style={{
-            marginBottom: '20px',
-            height: '1px',
-            background: '#E5E7EB',
-          }}
-        />
-
-        <p
-          style={{
-            fontSize: '11px',
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: '0.08em',
-            marginBottom: '16px',
-            color: '#4B5563',
-            fontFamily: 'var(--font-body)',
-          }}
-        >
-          {plan.sectionLabel}
-        </p>
-
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '12px',
-            flexGrow: 1,
-          }}
-        >
-          {plan.features.map((feat, i) => (
-            <div
-              key={i}
-              style={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '10px',
-              }}
-            >
-              <span
-                style={{
-                  flexShrink: 0,
-                  marginTop: '2px',
-                  width: '14px',
-                  textAlign: 'center',
-                  fontSize: '14px',
-                  lineHeight: '1',
-                  color: feat.included ? '#059669' : '#C0C4C8',
-                  fontWeight: feat.included ? 700 : 400,
-                }}
-              >
-                {feat.included ? '✓' : '—'}
-              </span>
-              <span
-                style={{
-                  fontSize: '14px',
-                  color: feat.included ? '#0f0f0f' : '#C0C4C8',
-                  fontFamily: 'var(--font-body)',
-                }}
-              >
-                {feat.text}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+const faqItems = [
+  {
+    q: 'What does "Single Report" mean exactly?',
+    a: 'You select one case type and one federal district. We generate a complete outcome report for that specific combination. You have 90 days of access to view and download the PDF. No subscription, no recurring charge.',
+  },
+  {
+    q: 'Can I upgrade from Single Report to Unlimited later?',
+    a: "Yes. If you upgrade within your 90-day access window, we'll credit the report purchase price toward your first month of Unlimited Reports.",
+  },
+  {
+    q: 'Where does MyCaseValues data come from?',
+    a: 'All data is derived from three public federal court record sources: the Federal Judicial Center Integrated Database (FJC IDB), PACER (Public Access to Court Electronic Records), and CourtListener. We do not create or estimate any data — we aggregate and analyze official public court records only.',
+  },
+  {
+    q: 'How current is the data?',
+    a: 'Free tier data is refreshed monthly. Unlimited data is refreshed weekly. Attorney Mode data is refreshed daily, providing the most current federal court information.',
+  },
+  {
+    q: 'Is MyCaseValues legal advice?',
+    a: 'No. MyCaseValues provides legal data for informational and research purposes only. Nothing on this platform constitutes legal advice or creates an attorney-client relationship. Always consult a licensed attorney.',
+  },
+  {
+    q: 'Does my research activity stay private?',
+    a: 'Yes. We do not sell, share, or expose any search data. What you research on MyCaseValues stays between you and the public federal court records.',
+  },
+  {
+    q: 'Does Attorney Mode work for both plaintiffs and defense?',
+    a: 'Yes. All analytics—win rates, settlement ranges, judge intelligence, and the AI predictor—present data neutrally. You can filter by party position in most tools.',
+  },
+  {
+    q: 'What is the refund policy?',
+    a: 'Single Report purchases are refundable within 24 hours if the report has not been downloaded. Subscription plans (Unlimited and Attorney Mode) can be cancelled anytime with no partial-month refunds.',
+  },
+];
 
 export default function PricingPage() {
-  const [annual, setAnnual] = useState(false);
-  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
-  const [error, setError] = useState('');
-  const plans = getPlansByBillingPeriod(annual);
-
-  async function handleCheckout(plan: 'single' | 'unlimited' | 'attorney') {
-    setError('');
-    setLoadingPlan(plan);
-    try {
-      // DEV MODE: All features unlocked — Stripe integration pending
-      // When Stripe is re-added, this will create a checkout session
-      const res = await fetch('/api/stripe/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan }),
-      });
-      if (!res.ok) {
-        // Stripe not configured yet — redirect to sign-in as interim flow
-        window.location.href = '/sign-in?plan=' + plan;
-        return;
-      }
-      const data = await res.json();
-      if (data.url) window.location.href = data.url;
-    } catch {
-      // Stripe not configured — redirect to sign-in as interim
-      window.location.href = '/sign-in?plan=' + plan;
-    } finally {
-      setLoadingPlan(null);
-    }
-  }
-
   return (
-    <div style={{ background: '#F7F8FA' }}>
-      <style dangerouslySetInnerHTML={{ __html: `
-        .pricing-cta-link:hover { background: #B91C1C !important; transform: translateY(-2px); box-shadow: none; }
-        .pricing-enterprise-link:hover { opacity: 0.9 !important; }
-      `}} />
+    <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+      <style>{`
+        .pricing-header {
+          background: #1C3A5E;
+          color: #FFFFFF;
+          padding: 3rem 1.5rem;
+          text-align: center;
+        }
+
+        .pricing-h1 {
+          font-family: var(--font-inter);
+          font-size: clamp(2rem, 5vw, 3rem);
+          font-weight: 600;
+          letter-spacing: -0.5px;
+          line-height: 1.2;
+          margin-bottom: 1rem;
+          color: #FFFFFF;
+        }
+
+        .pricing-subtitle {
+          font-family: var(--font-inter);
+          font-size: 1.125rem;
+          line-height: 1.8;
+          color: rgba(255, 255, 255, 0.85);
+          max-width: 42rem;
+          margin: 0 auto 1.5rem;
+        }
+
+        .pricing-container {
+          max-width: 80rem;
+          margin: 0 auto;
+          padding: 3rem 1.5rem;
+        }
+
+        .pricing-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 2rem;
+          margin-bottom: 4rem;
+        }
+
+        @media (min-width: 768px) {
+          .pricing-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+          }
+        }
+
+        .pricing-card {
+          display: flex;
+          flex-direction: column;
+          padding: 2rem;
+          border-radius: 12px;
+          border: 1px solid #E5E7EB;
+          background: #FFFFFF;
+          transition: all 0.3s ease;
+          position: relative;
+        }
+
+        .pricing-card.highlighted {
+          border: 2px solid #0966C3;
+          box-shadow: 0 8px 32px rgba(9, 102, 195, 0.15);
+          transform: scale(1.02);
+        }
+
+        .pricing-card:hover {
+          border-color: #0966C3;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card.highlighted:hover {
+          box-shadow: 0 12px 40px rgba(9, 102, 195, 0.2);
+        }
+
+        .card-name {
+          font-family: var(--font-inter);
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #0f0f0f;
+          margin-bottom: 0.5rem;
+        }
+
+        .card-best-for {
+          font-family: var(--font-inter);
+          font-size: 0.875rem;
+          color: #0966C3;
+          font-weight: 500;
+          margin-bottom: 1.25rem;
+        }
+
+        .card-price {
+          font-family: var(--font-inter);
+          font-size: 2.5rem;
+          font-weight: 600;
+          color: #0966C3;
+          line-height: 1;
+          margin-bottom: 0.25rem;
+        }
+
+        .card-period {
+          font-family: var(--font-inter);
+          font-size: 0.875rem;
+          color: #4B5563;
+          margin-bottom: 1rem;
+        }
+
+        .card-description {
+          font-family: var(--font-inter);
+          font-size: 0.875rem;
+          color: #4B5563;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+
+        .card-features {
+          flex: 1;
+          margin-bottom: 1.5rem;
+        }
+
+        .card-features ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .card-features li {
+          font-family: var(--font-inter);
+          font-size: 0.875rem;
+          color: #4B5563;
+          padding: 0.5rem 0;
+          line-height: 1.5;
+          display: flex;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+
+        .card-features li::before {
+          content: '✓';
+          color: #0966C3;
+          font-weight: 600;
+          flex-shrink: 0;
+          margin-top: 0.125rem;
+        }
+
+        .card-cta {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.75rem 1.5rem;
+          border-radius: 9999px;
+          font-family: var(--font-inter);
+          font-size: 0.875rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          width: 100%;
+          text-align: center;
+          background: #0966C3;
+          color: #FFFFFF;
+          border: none;
+          cursor: pointer;
+        }
+
+        .card-cta:hover {
+          background: #0855a3;
+          transform: translateY(-2px);
+        }
+
+        .callout-section {
+          background: #FFFFFF;
+          border: 1px solid #E5E7EB;
+          border-radius: 12px;
+          padding: 2.5rem;
+          margin-bottom: 4rem;
+          max-width: 56rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .callout-text {
+          font-family: var(--font-inter);
+          font-size: 1.125rem;
+          line-height: 1.8;
+          color: #4B5563;
+          text-align: center;
+        }
+
+        .faq-section {
+          max-width: 56rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .faq-heading {
+          font-family: var(--font-inter);
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: #0f0f0f;
+          margin-bottom: 2rem;
+          text-align: center;
+        }
+
+        .faq-item {
+          background: #FFFFFF;
+          border: 1px solid #E5E7EB;
+          border-radius: 12px;
+          padding: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .faq-question {
+          font-family: var(--font-inter);
+          font-size: 1rem;
+          font-weight: 600;
+          color: #0f0f0f;
+          margin-bottom: 0.75rem;
+        }
+
+        .faq-answer {
+          font-family: var(--font-inter);
+          font-size: 0.9375rem;
+          color: #4B5563;
+          line-height: 1.7;
+        }
+
+        .breadcrumb-wrapper {
+          max-width: 80rem;
+          margin: 0 auto;
+          padding: 1.5rem 1.5rem 0;
+          font-family: var(--font-inter);
+        }
+
+        @media (max-width: 640px) {
+          .pricing-h1 {
+            font-size: 1.75rem;
+          }
+
+          .pricing-subtitle {
+            font-size: 1rem;
+          }
+
+          .pricing-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .pricing-card.highlighted {
+            transform: scale(1);
+          }
+
+          .pricing-container {
+            padding: 2rem 1rem;
+          }
+
+          .callout-section {
+            padding: 2rem 1.5rem;
+          }
+        }
+      `}</style>
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd()) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+      {/* Breadcrumb */}
+      <div className="breadcrumb-wrapper">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Pricing' }]} />
+      </div>
+
       {/* Header */}
-      <div
-        style={{
-          background: '#1C3A5E',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '1440px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            paddingLeft: '24px',
-            paddingRight: '24px',
-            paddingTop: '64px',
-            paddingBottom: '80px',
-            textAlign: 'center',
-          }}
-        >
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              background: 'rgba(10, 102, 194, 0.1)',
-              borderRadius: '12px',
-              marginBottom: '16px',
-            }}
-          >
-            <span
-              style={{
-                fontSize: '11px',
-                fontWeight: 600,
-                color: '#0966C3',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                fontFamily: 'var(--font-body)',
-              }}
-            >
-              PRICING
-            </span>
-          </div>
-
-          <h1
-            style={{
-              fontSize: 'clamp(32px, 8vw, 56px)',
-              fontWeight: '900',
-              marginBottom: '16px',
-              color: '#FFFFFF',
-              fontFamily: 'var(--font-display)',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            Simple, transparent pricing.
-          </h1>
-
-          <p
-            style={{
-              fontSize: '18px',
-              maxWidth: '448px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              marginBottom: '32px',
-              color: 'rgba(255,255,255,0.7)',
-              fontFamily: 'var(--font-body)',
-            }}
-          >
-            All plans are currently free during the public beta period. Paid access will activate after the beta ends — you will be notified in advance.
-          </p>
-
-          {/* Launch Banner */}
-          <div style={{
-            display: 'inline-block',
-            background: '#059669',
-            color: '#FFFFFF',
-            padding: '12px 32px',
-            borderRadius: 2,
-            fontSize: 16,
-            fontWeight: 600,
-            fontFamily: 'var(--font-display)',
-            letterSpacing: '0.02em',
-          }}>
-            LAUNCH SPECIAL — Everything is free. No limits.
-          </div>
-        </div>
-      </div>
-
-      {/* Breadcrumb Navigation */}
-      <div style={{ borderBottom: '1px solid #E5E7EB', background: '#FFFFFF' }}>
-        <div
-          style={{
-            maxWidth: '1440px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            paddingLeft: '24px',
-            paddingRight: '24px',
-            paddingTop: '12px',
-            paddingBottom: '12px',
-          }}
-        >
-          <nav
-            style={{
-              fontSize: '14px',
-              color: '#4B5563',
-              fontFamily: 'var(--font-body)',
-            }}
-          >
-            <Link href="/" style={{ color: '#004182', textDecoration: 'none' }}>
-              Home
-            </Link>
-            <span style={{ margin: '0 8px', color: '#4B5563' }}>/</span>
-            <span style={{ color: '#0f0f0f' }}>Pricing</span>
-          </nav>
-        </div>
-      </div>
-
-      {/* Free During Beta Banner */}
-      <div style={{ background: '#F0FFF4', borderLeft: '4px solid #059669' }}>
-        <div
-          style={{
-            maxWidth: '1344px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            paddingLeft: '24px',
-            paddingRight: '24px',
-            paddingTop: '32px',
-            paddingBottom: '32px',
-            display: 'flex',
-            alignItems: 'flex-start',
-            gap: '24px',
-          }}
-        >
-          <div style={{ flexShrink: 0, marginTop: '4px' }}>
-            <svg aria-hidden="true"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#059669"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-            </svg>
-          </div>
-          <div style={{ flex: 1 }}>
-            <h2
-              style={{
-                fontSize: '24px',
-                fontWeight: '600',
-                marginBottom: '8px',
-                color: '#059669',
-                fontFamily: 'var(--font-display)',
-              }}
-            >
-              All Premium Features Free
-            </h2>
-            <p
-              style={{
-                fontSize: '15px',
-                lineHeight: '1.6',
-                color: '#4B5563',
-                marginBottom: '8px',
-                fontFamily: 'var(--font-body)',
-              }}
-            >
-              During our beta period, every feature is completely free. No account required, no credit card needed. This includes judge analytics, circuit breakdowns, settlement calculator, and all comparison tools.
-            </p>
-            <p
-              style={{
-                fontSize: '12px',
-                color: '#059669',
-                fontWeight: '600',
-                fontFamily: 'var(--font-body)',
-              }}
-            >
-              Limited time offer
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        style={{
-          maxWidth: '1344px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          paddingLeft: '24px',
-          paddingRight: '24px',
-          paddingTop: '64px',
-        }}
-      >
-        {/* What's Included Free Feature Grid */}
-        <div style={{ marginBottom: '64px' }}>
-          <h2
-            style={{
-              fontSize: '28px',
-              fontWeight: '600',
-              textAlign: 'center',
-              marginBottom: '48px',
-              color: '#0f0f0f',
-              fontFamily: 'var(--font-display)',
-            }}
-          >
-            What's Included Free
-          </h2>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '20px',
-            }}
-          >
-            {[
-              { title: 'Unlimited Searches', desc: 'Search any case type across all 94 districts' },
-              { title: 'Full Reports', desc: 'Detailed reports with circuit and judge breakdowns' },
-              { title: 'Settlement Calculator', desc: 'Estimate ranges with 9 input factors' },
-              { title: 'Judge Analytics', desc: 'Win rates, motion grants, and case profiles across 94 federal districts' },
-              { title: 'Case Comparison', desc: 'Compare up to 3 case types side by side' },
-              { title: 'Jargon Translator', desc: 'Convert legal text to plain English instantly' },
-              { title: 'NOS Explorer', desc: 'Browse and filter all 84 federal case type codes' },
-              { title: 'Trend Analysis', desc: 'Year-over-year filing and outcome trends' },
-            ].map((feature, i) => (
-              <div
-                key={i}
-                style={{
-                  padding: '20px',
-                  borderRadius: '12px',
-                  border: '2px solid #E5E7EB',
-                  background: '#FFFFFF',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '8px',
-                }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
-                  <svg aria-hidden="true"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#059669"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                  </svg>
-                </div>
-                <h3
-                  style={{
-                    fontSize: '14px',
-                    fontWeight: '600',
-                    color: '#0f0f0f',
-                    fontFamily: 'var(--font-display)',
-                    margin: 0,
-                    textAlign: 'center',
-                  }}
-                >
-                  {feature.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: '12px',
-                    color: '#4B5563',
-                    fontFamily: 'var(--font-body)',
-                    margin: 0,
-                    textAlign: 'center',
-                    lineHeight: '1.4',
-                  }}
-                >
-                  {feature.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Billing Toggle */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '16px',
-            marginBottom: '48px',
-          }}
-        >
-          <span
-            style={{
-              fontSize: '14px',
-              fontFamily: 'var(--font-body)',
-              color: annual ? '#4B5563' : '#0f0f0f',
-              fontWeight: annual ? '400' : '500',
-            }}
-          >
-            Monthly
-          </span>
-
-          <button
-            onClick={() => setAnnual(!annual)}
-            aria-label={`Switch to ${annual ? 'monthly' : 'annual'} billing`}
-            style={{
-              position: 'relative',
-              width: '56px',
-              height: '32px',
-              borderRadius: '12px',
-              border: 'none',
-              background: annual ? '#0966C3' : '#E5E7EB',
-              cursor: 'pointer',
-              padding: '2px',
-              transition: 'background 200ms ease',
-              display: 'flex',
-              alignItems: 'center',
-              paddingLeft: annual ? '26px' : '4px',
-              paddingRight: annual ? '4px' : '26px',
-            }}
-          >
-            <div
-              style={{
-                width: '24px',
-                height: '24px',
-                borderRadius: '12px',
-                background: 'white',
-                transition: 'all 200ms ease',
-              }}
-            />
-          </button>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span
-              style={{
-                fontSize: '14px',
-                fontFamily: 'var(--font-body)',
-                color: annual ? '#0f0f0f' : '#4B5563',
-                fontWeight: annual ? '500' : '400',
-              }}
-            >
-              Annual
-            </span>
-            {annual && (
-              <span
-                style={{
-                  display: 'inline-block',
-                  padding: '2px 8px',
-                  borderRadius: '12px',
-                  background: '#FFF3F4',
-                  color: '#0966C3',
-                  fontSize: '11px',
-                  fontWeight: '600',
-                  fontFamily: 'var(--font-body)',
-                  letterSpacing: '0.05em',
-                }}
-              >
-                Save 16%
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* Error Banner */}
-        {error && (
-          <div
-            style={{
-              maxWidth: '600px',
-              margin: '0 auto 24px',
-              padding: '12px 16px',
-              backgroundColor: '#FFF3F4',
-              border: '1px solid #0966C3',
-              borderRadius: '12px',
-              textAlign: 'center',
-            }}
-          >
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '13px',
-                color: '#0966C3',
-                margin: 0,
-              }}
-            >
-              {error}
-            </p>
-          </div>
-        )}
-
-        {/* Pricing Cards Grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '24px',
-            marginBottom: '80px',
-          }}
-        >
-          {plans.map((plan) => (
-            <PricingCard
-              key={plan.id}
-              plan={plan}
-              loadingPlan={loadingPlan}
-              onCheckout={handleCheckout}
-            />
-          ))}
-        </div>
-
-        {/* Launch FAQ Mini-Section */}
-        <div style={{ marginBottom: '80px' }}>
-          <h2
-            style={{
-              fontSize: '24px',
-              fontWeight: '600',
-              textAlign: 'center',
-              marginBottom: '40px',
-              color: '#0f0f0f',
-              fontFamily: 'var(--font-display)',
-            }}
-          >
-            Frequently Asked
-          </h2>
-
-          <div
-            style={{
-              maxWidth: '800px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '16px',
-            }}
-          >
-            {[
-              {
-                q: 'Is it really free?',
-                a: 'Yes, all features are free during launch. No hidden fees, no limits, and no credit card required. We\'ll announce any pricing changes well in advance.',
-              },
-              {
-                q: 'Do I need an account?',
-                a: 'No account required for most features. You can start searching and generating reports immediately. Sign up to save reports and set up alerts.',
-              },
-              {
-                q: 'Will prices change?',
-                a: 'We\'ll give you plenty of notice before any pricing changes. Your free access during launch is guaranteed, and early users will have special grandfathering options.',
-              },
-              {
-                q: 'Is my data private?',
-                a: 'We collect minimal analytics and never sell your search data. Your research stays private and secure. Read our full privacy policy for details.',
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                style={{
-                  padding: '24px',
-                  borderRadius: '12px',
-                  border: '1px solid #E5E7EB',
-                  background: '#FFFFFF',
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: '14px',
-                    fontWeight: '600',
-                    marginBottom: '12px',
-                    color: '#0f0f0f',
-                    fontFamily: 'var(--font-display)',
-                  }}
-                >
-                  {item.q}
-                </h3>
-                <p
-                  style={{
-                    fontSize: '13px',
-                    lineHeight: '1.6',
-                    color: '#4B5563',
-                    fontFamily: 'var(--font-body)',
-                    margin: 0,
-                  }}
-                >
-                  {item.a}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Compare All Features Section */}
-        <div
-          style={{
-            marginBottom: '80px',
-            padding: '40px 24px',
-            borderRadius: '12px',
-            border: '1px solid #E5E7EB',
-            background: '#FFFFFF',
-          }}
-        >
-          <h2
-            style={{
-              fontSize: '24px',
-              fontWeight: '600',
-              textAlign: 'center',
-              marginBottom: '40px',
-              color: '#0f0f0f',
-              fontFamily: 'var(--font-display)',
-            }}
-          >
-            Compare All Features
-          </h2>
-
-          <div style={{ overflowX: 'auto' }}>
-            <table
-              style={{
-                width: '100%',
-                borderCollapse: 'collapse',
-                fontFamily: 'var(--font-body)',
-              }}
-            >
-              <thead>
-                <tr>
-                  <th
-                    style={{
-                      textAlign: 'left',
-                      padding: '16px',
-                      borderBottom: '2px solid #E5E7EB',
-                      fontSize: '13px',
-                      fontWeight: '600',
-                      color: '#4B5563',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      background: '#F8F9FA',
-                    }}
-                  >
-                    Feature
-                  </th>
-                  {plans.map((plan) => (
-                    <th
-                      key={plan.id}
-                      style={{
-                        textAlign: 'center',
-                        padding: '16px',
-                        borderBottom: '2px solid #E5E7EB',
-                        fontSize: '13px',
-                        fontWeight: '600',
-                        color: '#0f0f0f',
-                        background: '#F8F9FA',
-                      }}
-                    >
-                      {plan.name}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {plans[0].features.map((feature, idx) => (
-                  <tr
-                    key={idx}
-                    style={{
-                      borderBottom: '1px solid #E5E7EB',
-                    }}
-                  >
-                    <td
-                      style={{
-                        padding: '14px 16px',
-                        fontSize: '14px',
-                        color: '#0f0f0f',
-                        fontWeight: '500',
-                        textAlign: 'left',
-                      }}
-                    >
-                      {feature.text}
-                    </td>
-                    {plans.map((plan) => {
-                      const planFeature = plan.features[idx];
-                      return (
-                        <td
-                          key={plan.id}
-                          style={{
-                            padding: '14px 16px',
-                            textAlign: 'center',
-                            borderLeft: '1px solid #E5E7EB',
-                          }}
-                        >
-                          <span
-                            style={{
-                              fontSize: '14px',
-                              color: planFeature.included ? '#0966C3' : '#C0C4C8',
-                              fontWeight: planFeature.included ? '700' : '400',
-                            }}
-                          >
-                            {planFeature.included ? '[x]' : '—'}
-                          </span>
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <p
-          style={{
-            textAlign: 'center',
-            fontSize: '13px',
-            marginBottom: '48px',
-            color: '#4B5563',
-            fontFamily: 'var(--font-body)',
-          }}
-        >
-          All plans · PACER-verified data · WCAG AA accessible · No case data stored · Cancel subscriptions anytime
+      <div className="pricing-header">
+        <h1 className="pricing-h1">Pricing Built for Every Budget</h1>
+        <p className="pricing-subtitle">
+          Federal court intelligence shouldn't cost what a junior associate earns. Pick the plan that fits.
         </p>
+      </div>
 
-        {/* Trust Badges */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: '24px',
-            marginBottom: '80px',
-          }}
-        >
-          {[
-            {
-              icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
-              label: 'Encrypted',
-              desc: 'Bank-grade SSL',
-            },
-            {
-              icon: 'M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z',
-              label: 'Court-verified',
-              desc: 'PACER data',
-            },
-            {
-              icon: 'M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-              label: 'Updated regularly',
-              desc: 'Daily to monthly',
-            },
-            {
-              icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10',
-              label: 'English & Spanish',
-              desc: 'Full bilingual',
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              style={{
-                textAlign: 'center',
-                padding: '24px',
-                width: '200px',
-                borderRadius: '12px',
-                border: '1px solid #E5E7EB',
-                background: '#FFFFFF',
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '12px' }}>
-                <svg aria-hidden="true"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#0966C3"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d={item.icon} />
-                </svg>
+      {/* Main Content */}
+      <div className="pricing-container">
+        {/* Pricing Cards */}
+        <div className="pricing-grid">
+          {tiers.map((tier) => (
+            <div key={tier.id} className={`pricing-card ${tier.highlighted ? 'highlighted' : ''}`}>
+              <h2 className="card-name">{tier.name}</h2>
+              <p className="card-best-for">Best for {tier.bestFor.toLowerCase()}</p>
+              <div className="card-price">{tier.price}</div>
+              <p className="card-period">{tier.period}</p>
+              <p className="card-description">{tier.description}</p>
+              <div className="card-features">
+                <ul>
+                  {tier.features.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
               </div>
-              <h3
-                style={{
-                  fontWeight: '600',
-                  fontSize: '14px',
-                  marginBottom: '4px',
-                  color: '#0f0f0f',
-                  fontFamily: 'var(--font-display)',
-                }}
-              >
-                {item.label}
-              </h3>
-              <p
-                style={{
-                  fontSize: '12px',
-                  color: '#4B5563',
-                  fontFamily: 'var(--font-body)',
-                }}
-              >
-                {item.desc}
-              </p>
+              <Link href={tier.ctaHref} className="card-cta">
+                {tier.ctaText}
+              </Link>
             </div>
           ))}
+        </div>
+
+        {/* Callout Section */}
+        <div className="callout-section">
+          <p className="callout-text">
+            Professional litigation analytics have historically been priced for large firm budgets. We built MyCaseValues for everyone else.
+          </p>
         </div>
 
         {/* FAQ Section */}
-        <div style={{ marginBottom: '80px' }}>
-          <h2
-            style={{
-              fontSize: '28px',
-              fontWeight: '600',
-              textAlign: 'center',
-              marginBottom: '48px',
-              color: '#0f0f0f',
-              fontFamily: 'var(--font-display)',
-            }}
-          >
-            Frequently Asked Questions
-          </h2>
-
-          <div
-            style={{
-              maxWidth: '768px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '12px',
-            }}
-          >
-            {pricingFaqs.map((faq, idx) => (
-              <details
-                key={idx}
-                style={{
-                  padding: '20px',
-                  borderRadius: '12px',
-                  border: '1px solid #E5E7EB',
-                  background: '#FFFFFF',
-                  cursor: 'pointer',
-                }}
-              >
-                <summary
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    justifyContent: 'space-between',
-                    fontWeight: '600',
-                    userSelect: 'none',
-                    color: '#0f0f0f',
-                    fontFamily: 'var(--font-body)',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <span
-                    style={{
-                      flex: 1,
-                      fontSize: '14px',
-                      lineHeight: '1.5',
-                      paddingRight: '16px',
-                    }}
-                  >
-                    {faq.q}
-                  </span>
-                  <svg aria-hidden="true"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    style={{
-                      flexShrink: 0,
-                      transition: 'transform 200ms ease',
-                      color: '#0f0f0f',
-                    }}
-                  >
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </summary>
-                <div
-                  style={{
-                    paddingTop: '16px',
-                    marginTop: '16px',
-                    borderTop: '1px solid #E5E7EB',
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: '14px',
-                      lineHeight: '1.6',
-                      color: '#4B5563',
-                      fontFamily: 'var(--font-body)',
-                    }}
-                  >
-                    {faq.a}
-                  </p>
-                </div>
-              </details>
-            ))}
-          </div>
+        <div className="faq-section">
+          <h2 className="faq-heading">Frequently Asked Questions</h2>
+          {faqItems.map((item, idx) => (
+            <div key={idx} className="faq-item">
+              <h3 className="faq-question">{item.q}</h3>
+              <p className="faq-answer">{item.a}</p>
+            </div>
+          ))}
         </div>
 
-        {/* Explore Our Tools CTA Section */}
-        <div style={{ marginBottom: '80px' }}>
-          <h2
-            style={{
-              fontSize: '28px',
-              fontWeight: '600',
-              textAlign: 'center',
-              marginBottom: '48px',
-              color: '#0f0f0f',
-              fontFamily: 'var(--font-display)',
-            }}
-          >
-            Explore Our Tools
-          </h2>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: '20px',
-            }}
-          >
-            {[
-              {
-                title: 'Settlement Calculator',
-                desc: 'Estimate settlement ranges with 9 input factors based on federal court data.',
-                href: '/calculator',
-              },
-              {
-                title: 'Case Search',
-                desc: 'Search outcomes across all 94 federal districts and 84 case types.',
-                href: '/search',
-              },
-              {
-                title: 'Judge Analytics',
-                desc: 'Review win rates, motion grants, and detailed profiles across 94 federal districts.',
-                href: '/judges',
-              },
-              {
-                title: 'Case Comparison',
-                desc: 'Compare up to 3 case types side-by-side to understand outcome differences.',
-                href: '/compare',
-              },
-            ].map((tool, i) => (
-              <Link
-                key={i}
-                href={tool.href}
-                style={{
-                  padding: '28px 24px',
-                  borderRadius: '12px',
-                  border: '1px solid #E5E7EB',
-                  background: '#FFFFFF',
-                  textDecoration: 'none',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '12px',
-                  transition: 'all 200ms ease',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)';
-                  e.currentTarget.style.borderColor = '#004182';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
-                  e.currentTarget.style.borderColor = '#E5E7EB';
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    color: '#004182',
-                    fontFamily: 'var(--font-display)',
-                    margin: 0,
-                  }}
-                >
-                  {tool.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: '13px',
-                    lineHeight: '1.5',
-                    color: '#4B5563',
-                    fontFamily: 'var(--font-body)',
-                    margin: 0,
-                    flexGrow: 1,
-                  }}
-                >
-                  {tool.desc}
-                </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '12px',
-                    fontWeight: '600',
-                    color: '#004182',
-                    fontFamily: 'var(--font-body)',
-                    marginTop: '8px',
-                  }}
-                >
-                  Explore
-                  <svg aria-hidden="true"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Enterprise CTA */}
-        <div
-          style={{
-            textAlign: 'center',
-            padding: '40px',
-            marginBottom: '64px',
-            borderRadius: '12px',
-            border: '1px solid #E5E7EB',
-            background: '#FFFFFF',
-          }}
-        >
-          <p
-            style={{
-              fontSize: '16px',
-              marginBottom: '16px',
-              color: '#0f0f0f',
-              fontFamily: 'var(--font-body)',
-            }}
-          >
-            Need custom data access, more than 5 team seats, or a white-label integration?
+        {/* Contact CTA */}
+        <div style={{ marginTop: '4rem', textAlign: 'center' }}>
+          <p style={{ fontFamily: 'var(--font-inter)', fontSize: '1rem', color: '#4B5563', marginBottom: '1.5rem' }}>
+            Have other questions about pricing or features?
           </p>
-          <a
-            href="mailto:enterprise@mycasevalue.com"
+          <Link
+            href="/contact"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
-              paddingLeft: '24px',
-              paddingRight: '24px',
-              paddingTop: '12px',
-              paddingBottom: '12px',
-              fontSize: '14px',
+              padding: '0.75rem 2rem',
+              borderRadius: '9999px',
+              fontFamily: 'var(--font-inter)',
+              fontSize: '0.875rem',
               fontWeight: '600',
-              borderRadius: '12px',
-              border: 'none',
+              textDecoration: 'none',
               background: '#0966C3',
               color: '#FFFFFF',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
-              transition: 'opacity 200ms ease',
-              cursor: 'pointer',
-              textTransform: 'uppercase',
+              transition: 'all 0.3s ease',
             }}
-            className="pricing-enterprise-link"
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#0855a3')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#0966C3')}
           >
-            Talk to Us{' '}
-            <svg aria-hidden="true"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
+            Contact Us
+          </Link>
         </div>
       </div>
-
-
     </div>
   );
 }

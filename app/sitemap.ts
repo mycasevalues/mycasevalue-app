@@ -99,6 +99,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/attorney/court-rules`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${baseUrl}/attorney/deadline-calculator`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${baseUrl}/attorney/pacer-monitor`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
+    { url: `${baseUrl}/attorney/api-access`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/calculator/liens`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${baseUrl}/press`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/reports/2026-annual`, lastModified: now, changeFrequency: 'yearly', priority: 0.6 },
@@ -117,6 +118,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/es/how-it-works`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/es/disclaimer`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
     { url: `${baseUrl}/es/trends`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+  ];
+
+  // ── Audience pages (for/) ─────────────────────────────
+  const audiencePages: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/for/pro-se`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/for/researchers`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/for/students`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/for/paralegals`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ];
 
   // ── Case category pages (10) ──────────────────────────
@@ -183,6 +192,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages,
     ...spanishPages,
+    ...audiencePages,
     ...categoryUrls,
     ...nosUrls,
     ...districtUrls,

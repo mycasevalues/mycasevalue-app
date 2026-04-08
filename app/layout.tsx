@@ -13,6 +13,10 @@ import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME } from '../lib/site-config';
 import { inter, jakarta, plexMono } from '../lib/fonts';
+import { logEnvironmentStatus } from '../lib/env-check';
+
+// Check environment variables at server startup
+logEnvironmentStatus();
 
 // Dynamic imports for client-side only components to improve initial page load
 // These components are non-critical and loaded after hydration

@@ -297,6 +297,15 @@ export default async function DistrictPage({ params }: PageProps) {
             {districtMeta.name} • {districtMeta.states.join(', ')}
           </p>
 
+          {/* Last Updated */}
+          <div style={{
+            fontSize: 12,
+            color: 'rgba(255,255,255,0.6)',
+            marginBottom: 24,
+          }}>
+            Last updated: April 2026
+          </div>
+
           {/* Key Stats */}
           <div style={{
             display: 'grid',
@@ -320,7 +329,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 color: '#0966C3',
                 fontFamily: 'var(--font-display)',
               }}>
-                {districtWinRate}%
+                {isNaN(districtWinRate ?? 0) ? '—' : `${districtWinRate}%`}
               </div>
             </div>
             <div>
@@ -339,7 +348,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 color: '#0966C3',
                 fontFamily: 'var(--font-display)',
               }}>
-                {(caseVolume / 1000).toFixed(1)}K
+                {isNaN(caseVolume ?? 0) ? '—' : `${(caseVolume / 1000).toFixed(1)}K`}
               </div>
             </div>
           </div>
@@ -421,8 +430,8 @@ export default async function DistrictPage({ params }: PageProps) {
                       alignItems: 'center',
                       gap: '8px',
                     }}>
-                      {Math.round(caseType.winRate * 10) / 10}%
-                      <span title={`Based on ${caseType.count.toLocaleString()} cases — ${caseType.count >= 10000 ? 'High' : caseType.count >= 1000 ? 'Medium' : caseType.count >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: caseType.count >= 10000 ? '#057642' : caseType.count >= 1000 ? '#C37D16' : caseType.count >= 100 ? '#CC1016' : '#999999' }} />
+                      {isNaN(caseType?.winRate ?? 0) ? '—' : `${Math.round((caseType?.winRate ?? 0) * 10) / 10}%`}
+                      <span title={`Based on ${(caseType?.count ?? 0).toLocaleString()} cases — ${(caseType?.count ?? 0) >= 10000 ? 'High' : (caseType?.count ?? 0) >= 1000 ? 'Medium' : (caseType?.count ?? 0) >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: (caseType?.count ?? 0) >= 10000 ? '#057642' : (caseType?.count ?? 0) >= 1000 ? '#C37D16' : (caseType?.count ?? 0) >= 100 ? '#CC1016' : '#999999' }} />
                     </div>
                   </div>
                   <div>
@@ -441,7 +450,7 @@ export default async function DistrictPage({ params }: PageProps) {
                       color: '#0f0f0f',
                       fontFamily: 'var(--font-display)',
                     }}>
-                      {(caseType.count / 1000).toFixed(0)}K
+                      {isNaN(caseType?.count ?? 0) ? '—' : `${((caseType?.count ?? 0) / 1000).toFixed(0)}K`}
                     </div>
                   </div>
                 </div>
@@ -530,12 +539,19 @@ export default async function DistrictPage({ params }: PageProps) {
               fontSize: 14,
               color: '#4B5563',
               lineHeight: 1.7,
-              margin: 0,
+              margin: '0 0 16px 0',
               fontFamily: 'var(--font-body)',
             }}>
               Win rates and settlement data shown are derived from the Federal Judicial Center Integrated Database covering {(Object.values(REAL_DATA).reduce((sum: number, d: any) => sum + (d.total || 0), 0) / 1_000_000).toFixed(1)}M+ federal civil cases (2000–2024).
               Rates are specific to case type within this district. Settlement ranges represent historical median values in thousands of dollars.
               This is not legal advice.
+            </p>
+            <p style={{
+              fontSize: 11,
+              color: '#9CA3AF',
+              margin: 0,
+            }}>
+              Source: FJC Integrated Database · CourtListener / RECAP · Public Federal Records
             </p>
           </div>
         </section>

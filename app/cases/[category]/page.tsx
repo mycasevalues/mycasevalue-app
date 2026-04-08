@@ -536,6 +536,14 @@ async function CategoryPage({
         borderBottom: '1px solid #E5E7EB',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          {/* Last Updated Timestamp */}
+          <div style={{
+            fontSize: '12px',
+            color: '#9CA3AF',
+            marginBottom: '20px',
+          }}>
+            Last updated: April 2026
+          </div>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -547,9 +555,12 @@ async function CategoryPage({
               for (const opt of (categoryData?.opts ?? [])) {
                 if (seen.has(opt.nos)) continue;
                 seen.add(opt.nos);
-                const rd = REAL_DATA[opt.nos];
+                const rd = REAL_DATA?.[opt.nos];
                 if (rd?.total) totalCases += rd.total;
               }
+              const winRate = stats?.avgWinRate ?? 0;
+              const settleRate = stats?.avgSettleRate ?? 0;
+              const timelineMonths = stats?.avgTimelineMonths ?? 0;
               return (
                 <>
                   <div style={{
@@ -566,7 +577,7 @@ async function CategoryPage({
                       marginBottom: '8px',
                       fontFamily: 'var(--font-mono)',
                     }}>
-                      {totalCases.toLocaleString()}
+                      {isNaN(totalCases) ? '—' : totalCases.toLocaleString()}
                     </div>
                     <div style={{
                       fontSize: '13px',
@@ -596,14 +607,14 @@ async function CategoryPage({
                       justifyContent: 'center',
                       gap: '8px',
                     }}>
-                      {stats.avgWinRate}%
+                      {isNaN(winRate) ? '—' : `${winRate}%`}
                       {(() => {
                         const seen = new Set<string>();
                         let totalCases = 0;
                         for (const opt of (categoryData?.opts ?? [])) {
                           if (seen.has(opt.nos)) continue;
                           seen.add(opt.nos);
-                          const rd = REAL_DATA[opt.nos];
+                          const rd = REAL_DATA?.[opt.nos];
                           if (rd?.total) totalCases += rd.total;
                         }
                         return totalCases > 0 ? (
@@ -635,7 +646,7 @@ async function CategoryPage({
                       marginBottom: '8px',
                       fontFamily: 'var(--font-mono)',
                     }}>
-                      {stats.avgSettleRate}%
+                      {isNaN(settleRate) ? '—' : `${settleRate}%`}
                     </div>
                     <div style={{
                       fontSize: '13px',
@@ -661,7 +672,7 @@ async function CategoryPage({
                       marginBottom: '8px',
                       fontFamily: 'var(--font-mono)',
                     }}>
-                      {stats.avgTimelineMonths}mo
+                      {isNaN(timelineMonths) ? '—' : `${timelineMonths}mo`}
                     </div>
                     <div style={{
                       fontSize: '13px',
@@ -677,6 +688,15 @@ async function CategoryPage({
               );
             })()}
           </div>
+          {/* Data Attribution */}
+          <p style={{
+            fontSize: '11px',
+            color: '#9CA3AF',
+            marginTop: '20px',
+            marginBottom: 0,
+          }}>
+            Source: FJC Integrated Database · CourtListener / RECAP · Public Federal Records
+          </p>
         </div>
       </div>
 
@@ -743,16 +763,20 @@ async function CategoryPage({
             gap: '20px',
           }}>
             {(categoryData?.opts ?? [])?.map?.((opt) => {
-              const allCaseTypes = getAllCaseTypeSEO();
+              const allCaseTypes = getAllCaseTypeSEO?.() ?? [];
               const caseType = allCaseTypes?.find?.(
-                (ct) => ct.categorySlug === category && ct.nosCode === opt.nos
+                (ct) => ct?.categorySlug === category && ct?.nosCode === opt?.nos
               );
               const href = caseType ? `/cases/${category}/${caseType.slug}` : `#`;
-              const rd = REAL_DATA?.[opt.nos];
+              const rd = REAL_DATA?.[opt?.nos ?? ''];
+              const rdTotal = rd?.total ?? 0;
+              const rdWr = rd?.wr ?? null;
+              const rdSp = rd?.sp ?? null;
+              const rdMo = rd?.mo ?? null;
 
               return (
                 <Link
-                  key={`${opt.nos}-${opt.d}`}
+                  key={`${opt?.nos ?? ''}-${opt?.d ?? ''}`}
                   href={href}
                   className="case-type-card"
                   style={{
@@ -774,7 +798,7 @@ async function CategoryPage({
                     color: '#0f0f0f',
                     margin: '0 0 8px 0',
                   }}>
-                    {opt.label}
+                    {opt?.label ?? '—'}
                   </h3>
                   <p style={{
                     fontSize: '13px',
@@ -782,39 +806,39 @@ async function CategoryPage({
                     margin: '0 0 12px 0',
                     lineHeight: '1.5',
                   }}>
-                    {opt.d}
+                    {opt?.d ?? '—'}
                   </p>
 
                   {/* Real data stats */}
-                  {rd && rd.total > 0 && (
+                  {rd && rdTotal > 0 && (
                     <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: 12 }}>
                       <div style={{ minWidth: 60 }}>
                         <div style={{ fontSize: '16px', fontWeight: 600, color: '#004182', fontFamily: 'var(--font-mono)' }}>
-                          {rd.total.toLocaleString()}
+                          {isNaN(rdTotal) ? '—' : rdTotal.toLocaleString()}
                         </div>
                         <div style={{ fontSize: '10px', color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Cases</div>
                       </div>
-                      {rd.wr != null && (
+                      {rdWr != null && (
                         <div style={{ minWidth: 50 }}>
-                          <div style={{ fontSize: '16px', fontWeight: 600, color: rd.wr >= 50 ? '#059669' : '#0966C3', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                            {rd.wr}%
-                            <span title={`Based on ${rd.total.toLocaleString()} cases — ${rd.total >= 10000 ? 'High' : rd.total >= 1000 ? 'Medium' : rd.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: rd.total >= 10000 ? '#057642' : rd.total >= 1000 ? '#C37D16' : rd.total >= 100 ? '#CC1016' : '#999999' }} />
+                          <div style={{ fontSize: '16px', fontWeight: 600, color: isNaN(rdWr) ? '#999' : rdWr >= 50 ? '#059669' : '#0966C3', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                            {isNaN(rdWr) ? '—' : `${rdWr}%`}
+                            <span title={`Based on ${(rdTotal ?? 0).toLocaleString()} cases — ${(rdTotal ?? 0) >= 10000 ? 'High' : (rdTotal ?? 0) >= 1000 ? 'Medium' : (rdTotal ?? 0) >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: (rdTotal ?? 0) >= 10000 ? '#057642' : (rdTotal ?? 0) >= 1000 ? '#C37D16' : (rdTotal ?? 0) >= 100 ? '#CC1016' : '#999999' }} />
                           </div>
                           <div style={{ fontSize: '10px', color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Win Rate</div>
                         </div>
                       )}
-                      {rd.sp != null && (
+                      {rdSp != null && (
                         <div style={{ minWidth: 50 }}>
                           <div style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-mono)' }}>
-                            {rd.sp}%
+                            {isNaN(rdSp) ? '—' : `${rdSp}%`}
                           </div>
                           <div style={{ fontSize: '10px', color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Settlement</div>
                         </div>
                       )}
-                      {rd.mo != null && (
+                      {rdMo != null && (
                         <div style={{ minWidth: 50 }}>
                           <div style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-mono)' }}>
-                            {rd.mo}mo
+                            {isNaN(rdMo) ? '—' : `${rdMo}mo`}
                           </div>
                           <div style={{ fontSize: '10px', color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Duration</div>
                         </div>
@@ -823,9 +847,9 @@ async function CategoryPage({
                   )}
 
                   {/* Win rate bar */}
-                  {rd && rd.wr != null && (
+                  {rd && rdWr != null && (
                     <div style={{ height: 4, background: '#F0F3F5', borderRadius: 2, marginBottom: 12, overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: `${Math.min(rd.wr, 100)}%`, background: rd.wr >= 50 ? '#059669' : '#0966C3', borderRadius: 2 }} />
+                      <div style={{ height: '100%', width: `${Math.min(Math.max(rdWr, 0), 100)}%`, background: isNaN(rdWr) ? '#CCC' : rdWr >= 50 ? '#059669' : '#0966C3', borderRadius: 2 }} />
                     </div>
                   )}
 
@@ -839,9 +863,9 @@ async function CategoryPage({
                     justifyContent: 'space-between',
                     alignItems: 'center',
                   }}>
-                    <span>NOS Code: {opt.nos}</span>
-                    {rd?.rng?.md && (
-                      <span style={{ fontWeight: 600, color: '#004182' }}>Median: {formatSettlementAmount(rd.rng.md, { compact: true })}</span>
+                    <span>NOS Code: {opt?.nos ?? '—'}</span>
+                    {rd?.rng?.md && !isNaN(rd.rng.md) && (
+                      <span style={{ fontWeight: 600, color: '#004182' }}>Median: {formatSettlementAmount?.(rd.rng.md, { compact: true }) ?? '—'}</span>
                     )}
                   </div>
                 </Link>

@@ -111,26 +111,26 @@ export default function JudgeProfileClient({
         {/* Overall Win Rate */}
         <StatCard
           label="Overall Win Rate"
-          value={`${(aggregated.plaintiffWinRate || 0).toFixed(0)}%`}
-          sublabel={`(n = ${aggregated.totalCases} cases)`}
-          colorObj={getWinRateColor(aggregated.plaintiffWinRate || 0)}
+          value={isNaN(aggregated?.plaintiffWinRate ?? 0) ? '—' : `${(aggregated?.plaintiffWinRate ?? 0).toFixed(0)}%`}
+          sublabel={`(n = ${aggregated?.totalCases ?? 0} cases)`}
+          colorObj={getWinRateColor(isNaN(aggregated?.plaintiffWinRate ?? 0) ? 0 : aggregated.plaintiffWinRate || 0)}
         />
 
         {/* Summary Judgment Grant Rate (inversed) */}
         <StatCard
           label="Summary Judgment Defense Rate"
-          value={`${(aggregated.summaryJudgmentRate || 0).toFixed(1)}%`}
+          value={isNaN(aggregated?.summaryJudgmentRate ?? 0) ? '—' : `${(aggregated?.summaryJudgmentRate ?? 0).toFixed(1)}%`}
           sublabel="Grants defendant motions"
-          colorObj={getWinRateColor(100 - (aggregated.summaryJudgmentRate || 0))}
+          colorObj={getWinRateColor(100 - (isNaN(aggregated?.summaryJudgmentRate ?? 0) ? 0 : aggregated?.summaryJudgmentRate ?? 0))}
         />
 
         {/* Average Case Duration */}
         <StatCard
           label="Average Case Duration"
-          value={`${(aggregated.avgDuration || 0).toFixed(1)} months`}
-          sublabel={`vs ${(districtAverage.avgDuration || 0).toFixed(1)} month district avg`}
+          value={isNaN(aggregated?.avgDuration ?? 0) ? '—' : `${(aggregated?.avgDuration ?? 0).toFixed(1)} months`}
+          sublabel={`vs ${isNaN(districtAverage?.avgDuration ?? 0) ? '—' : (districtAverage?.avgDuration ?? 0).toFixed(1)} month district avg`}
           colorObj={
-            (aggregated.avgDuration || 0) < (districtAverage.avgDuration || 0)
+            (aggregated?.avgDuration ?? 0) < (districtAverage?.avgDuration ?? 0)
               ? getWinRateColor(65) // Green for faster
               : getWinRateColor(20) // Red for slower
           }
@@ -139,9 +139,9 @@ export default function JudgeProfileClient({
         {/* Settlement Rate */}
         <StatCard
           label="Settlement Rate"
-          value={`${(aggregated.settlementRate || 0).toFixed(1)}%`}
+          value={isNaN(aggregated?.settlementRate ?? 0) ? '—' : `${(aggregated?.settlementRate ?? 0).toFixed(1)}%`}
           sublabel="Cases settle before trial"
-          colorObj={getWinRateColor(aggregated.settlementRate ? Math.min(aggregated.settlementRate, 65) : 0)}
+          colorObj={getWinRateColor(aggregated?.settlementRate ? Math.min(aggregated.settlementRate, 65) : 0)}
         />
       </div>
 
@@ -249,36 +249,36 @@ export default function JudgeProfileClient({
           <tbody>
             <DistrictComparisonRow
               metric="Win Rate"
-              judgeValue={aggregated.plaintiffWinRate || 0}
-              districtValue={districtAverage.plaintiffWinRate || 0}
+              judgeValue={aggregated?.plaintiffWinRate ?? 0}
+              districtValue={districtAverage?.plaintiffWinRate ?? 0}
               suffix="%"
               isInverse={false}
             />
             <DistrictComparisonRow
               metric="Summary Judgment Rate"
-              judgeValue={aggregated.summaryJudgmentRate || 0}
-              districtValue={districtAverage.summaryJudgmentRate || 0}
+              judgeValue={aggregated?.summaryJudgmentRate ?? 0}
+              districtValue={districtAverage?.summaryJudgmentRate ?? 0}
               suffix="%"
               isInverse={true}
             />
             <DistrictComparisonRow
               metric="Dismissal Rate"
-              judgeValue={aggregated.dismissalRate || 0}
-              districtValue={districtAverage.dismissalRate || 0}
+              judgeValue={aggregated?.dismissalRate ?? 0}
+              districtValue={districtAverage?.dismissalRate ?? 0}
               suffix="%"
               isInverse={true}
             />
             <DistrictComparisonRow
               metric="Average Duration"
-              judgeValue={aggregated.avgDuration || 0}
-              districtValue={districtAverage.avgDuration || 0}
+              judgeValue={aggregated?.avgDuration ?? 0}
+              districtValue={districtAverage?.avgDuration ?? 0}
               suffix=" months"
               isInverse={true}
             />
             <DistrictComparisonRow
               metric="Settlement Rate"
-              judgeValue={aggregated.settlementRate || 0}
-              districtValue={districtAverage.settlementRate || 0}
+              judgeValue={aggregated?.settlementRate ?? 0}
+              districtValue={districtAverage?.settlementRate ?? 0}
               suffix="%"
               isInverse={false}
             />
@@ -555,6 +555,35 @@ export default function JudgeProfileClient({
         </div>
       )}
 
+      {/* Last Updated and Data Attribution */}
+      <div
+        style={{
+          background: '#F7F8FA',
+          padding: '20px',
+          borderRadius: '8px',
+          marginBottom: '48px',
+        }}
+      >
+        <p
+          style={{
+            fontSize: '12px',
+            color: '#9CA3AF',
+            margin: '0 0 8px 0',
+          }}
+        >
+          Last updated: April 2026
+        </p>
+        <p
+          style={{
+            fontSize: '11px',
+            color: '#9CA3AF',
+            margin: 0,
+          }}
+        >
+          Source: FJC Integrated Database · CourtListener / RECAP · Public Federal Records
+        </p>
+      </div>
+
       {/* Section 7: CTA / Next Steps */}
       <div
         style={{
@@ -726,18 +755,20 @@ function DistrictComparisonRow({
   const diffColor = isFavorable ? '#057642' : '#CC1016';
   const diffText = isFavorable ? '✓' : '';
 
+  const judgeVal = isNaN(judgeValue ?? 0) ? 0 : judgeValue ?? 0;
+  const districtVal = isNaN(districtValue ?? 0) ? 0 : districtValue ?? 0;
+
   return (
     <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
       <td style={{ padding: '16px 0', color: '#0f0f0f', fontWeight: '500' }}>{metric}</td>
       <td style={{ padding: '16px 0', textAlign: 'right', color: '#0f0f0f', fontWeight: '600' }}>
-        {judgeValue.toFixed(1)}{suffix}
+        {isNaN(judgeVal) ? '—' : `${judgeVal.toFixed(1)}${suffix}`}
       </td>
       <td style={{ padding: '16px 0', textAlign: 'right', color: '#4B5563' }}>
-        {districtValue.toFixed(1)}{suffix}
+        {isNaN(districtVal) ? '—' : `${districtVal.toFixed(1)}${suffix}`}
       </td>
       <td style={{ padding: '16px 0', textAlign: 'right', color: diffColor, fontWeight: '600' }}>
-        {diffText}
-        {diff > 0 ? '+' : ''}{diff.toFixed(1)}{suffix}
+        {isNaN(diff) ? '—' : `${diffText}${diff > 0 ? '+' : ''}${diff.toFixed(1)}${suffix}`}
       </td>
     </tr>
   );

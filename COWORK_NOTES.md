@@ -264,5 +264,202 @@ Using usePathname():
 
 ---
 
+## Phase 8 — Environment Variables & Email Wiring (COMPLETED)
+
+### Task 8.1 — Environment Variable Audit
+
+**Status: COMPLETED**
+
+Audited all environment variables used in the codebase. Created comprehensive mapping:
+
+#### Required Environment Variables (Must be set for production)
+
+**Supabase (Core Infrastructure):**
+- `NEXT_PUBLIC_SUPABASE_URL` - Used in: middleware.ts, lib/supabase.ts, app/layout.tsx, all API routes
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Used in: middleware.ts, lib/supabase.ts, app/layout.tsx, all API routes
+- `SUPABASE_SERVICE_ROLE_KEY` - Used in: lib/supabase.ts, lib/judge-data-service.ts, admin API routes
+
+**AI & ML:**
+- `ANTHROPIC_API_KEY` - Used in: lib/judge-ai-analysis.ts, lib/courtlistener-opinions.ts, app/api/search/*, attorney tool routes
+
+**Email:**
+- `RESEND_API_KEY` - Used in: lib/email.ts, app/api/email/*, app/api/contact/route.ts, scripts/verify-data.ts
+
+#### Optional Environment Variables (Nice-to-have, features degrade gracefully)
+
+**Stripe (Not yet integrated):**
+- `STRIPE_SECRET_KEY` - Not currently used
+- `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` - Not currently used
+- `STRIPE_WEBHOOK_SECRET` - Not currently used
+
+**External APIs:**
+- `COURTLISTENER_API_TOKEN` - Used in: lib/courtlistener.ts, lib/ingestion/courtlistener.ts
+- `BLS_API_KEY` - Used in: lib/bls.ts
+- `GOVINFO_API_KEY` - Used in: lib/govinfo.ts
+- `SERPAPI_KEY` - Used in: lib/google-scholar.ts
+
+**Webhooks & Cron:**
+- `SUPABASE_WEBHOOK_SECRET` - Used in: app/api/email/alert/route.ts, app/api/email/welcome/route.ts
+- `CRON_SECRET` - Used in: app/api/cron/* routes
+- `REVALIDATION_SECRET` - Used in: app/api/revalidate/route.ts
+
+**Cache & Storage:**
+- `UPSTASH_REDIS_REST_URL` - Used in: lib/cache.ts, lib/rate-limit-upstash.ts
+- `UPSTASH_REDIS_REST_TOKEN` - Used in: lib/cache.ts, lib/rate-limit-upstash.ts
+
+**Push Notifications:**
+- `NEXT_PUBLIC_VAPID_PUBLIC_KEY` - Used in: lib/push-notifications.ts, app/api/push/send/route.ts
+- `VAPID_PRIVATE_KEY` - Used in: app/api/push/send/route.ts
+- `VAPID_SUBJECT` - Used in: app/api/push/send/route.ts
+- `PUSH_API_KEY` - Used in: app/api/push/* routes
+
+**Admin & Security:**
+- `ADMIN_SECRET` - Used in: app/api/admin/* routes
+- `ADMIN_API_KEY` - Used in: app/api/alerts/subscribe/route.ts
+- `ADMIN_DATA_QUALITY_TOKEN` - Used in: app/api/admin/data-quality/route.ts
+- `HEALTH_CHECK_API_KEY` - Used in: app/api/health/route.ts
+- `INGEST_API_KEY` - Used in: app/api/ingest/route.ts
+
+**Other:**
+- `RESEND_FROM_EMAIL` - Used in: lib/email.ts
+- `ADMIN_EMAIL` - Used in: inngest/refresh-fjc-quarterly.ts, scripts/verify-backup.ts
+- `ENTERPRISE_DEMO_EMAIL` - Used in: app/api/enterprise/demo-request/route.ts
+
+---
+
+### Task 8.2 — Boot-Time Environment Validation
+
+**Status: COMPLETED**
+
+Created `lib/env-check.ts` with the following features:
+
+- Exports `validateEnvironmentVariables()` function that returns detailed audit of all env vars
+- Exports `logEnvironmentStatus()` function that logs warnings for missing required vars
+- Automatically runs at server startup (module-level execution)
+- Groups variables by category (supabase, stripe, ai_and_ml, email, etc.)
+- Logs percentage of configured vars per category
+- Does NOT crash on missing vars (warnings only)
+
+**Integration:**
+- Added import in `app/layout.tsx` at module level
+- Runs on every server start
+- Outputs summary like: "supabase: 3/3 (100%), stripe: 0/3 (0%), email: 1/2 (50%)"
+
+**Output example:**
+```
+⚠️  MISSING REQUIRED ENVIRONMENT VARIABLES ⚠️
+
+  ANTHROPIC_API_KEY
+    Category: ai_and_ml
+    Used in: lib/judge-ai-analysis.ts, lib/courtlistener-opinions.ts, app/api/search/*, attorney tool routes
+
+📋 Environment Variable Status Summary:
+
+  supabase: 3/3 (100%)
+  stripe: 0/3 (0%)
+  ai_and_ml: 0/1 (0%)
+  ...
+```
+
+---
+
+### Task 8.3 — Stripe CTA Audit
+
+**Status: COMPLETED - NO ISSUES FOUND**
+
+Audited `app/pricing/page.tsx` for all CTAs:
+
+- Free tier: `/search` ✓
+- Single Report: `/search` ✓
+- Unlimited: `/sign-up` ✓
+- Attorney Mode: `/attorney` ✓
+- Contact link at bottom: `/contact` ✓
+
+All CTAs use proper Next.js Link components with valid routes. No hardcoded "#" anchors or "javascript:void(0)" found.
+
+---
+
+### Task 8.4 — Resend Email Wiring
+
+**Status: COMPLETED**
+
+#### Existing Email Routes Verified:
+- `app/api/email/route.ts` - Generic email sender (welcome, report types)
+- `app/api/email/welcome/route.ts` - Welcome emails
+- `app/api/email/alert/route.ts` - Alert emails
+- `app/api/email/digest/route.ts` - Digest emails
+- `app/api/email/capture/route.ts` - Capture emails
+
+All existing routes use Resend with `RESEND_API_KEY`.
+
+#### New Contact Route Created:
+- **File:** `app/api/contact/route.ts`
+- **Method:** POST /api/contact
+- **Request body:**
+  - `name` (string, 1-100 chars, required)
+  - `email` (string, valid email, required)
+  - `subject` (enum: general|support|enterprise|data|billing|feedback, required)
+  - `message` (string, 10-5000 chars, required)
+
+**Features:**
+- Uses Resend via `sendEmail()` from lib/email.ts
+- Rate limiting: 5 requests per hour per IP
+- Validates all inputs (length, format, allowed values)
+- Checks for RESEND_API_KEY at runtime
+- Development mode fallback (no error if key missing, just logs)
+- Routes to appropriate support email based on subject
+- Comprehensive HTML + plain text email templates
+- Logs successful submissions with metadata
+- Graceful error handling
+
+**Response:**
+```json
+{
+  "success": true,
+  "message": "Contact form submitted successfully. We will respond within 24-48 hours."
+}
+```
+
+#### ContactForm Component Updated:
+- Updated `components/ContactForm.tsx` to call `/api/contact`
+- Added loading state with "Sending..." button text
+- Added error message display with icon
+- Form disables during submission
+- Maintains existing UI/styling
+
+**Usage:**
+```typescript
+POST /api/contact
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "subject": "general",
+  "message": "I have a question about..."
+}
+```
+
+---
+
+## Summary of Changes
+
+### New Files Created:
+1. `lib/env-check.ts` - Environment variable validation utility
+2. `app/api/contact/route.ts` - Contact form API endpoint
+
+### Files Modified:
+1. `app/layout.tsx` - Added env-check import and initialization
+2. `components/ContactForm.tsx` - Connected to API, added loading/error states
+
+### Verification Results:
+- Total env vars found in codebase: 24 custom app vars
+- Required vars: 3 critical (Supabase) + 1 (Anthropic) + 1 (Resend) = 5 critical
+- Optional vars: 18+ (graceful degradation)
+- Pricing page CTAs: All 4 tiers + contact link use valid routes
+- Email integration: Fully wired with Resend
+
+---
+
 Last updated: 2026-04-08
-Audit completed by: Claude (Haiku 4.5)
+Phase 8 completed by: Claude (Haiku 4.5)

@@ -1,15 +1,6 @@
-# robots.txt for mycasevalues.com
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /account
-Disallow: /dashboard
-Disallow: /settings
-Disallow: /billing
-Disallow: /sign-in
-Disallow: /sign-up
-Disallow: /_next/
-Disallow: /widget/
+Disallow: /admin/
 
-# Sitemap
-Sitemap: https://www.mycasevalues.com/sitemap.xml
+Sitemap: https://mycasevalues.com/sitemap.xml

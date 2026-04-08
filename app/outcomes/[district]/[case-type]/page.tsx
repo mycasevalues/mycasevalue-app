@@ -335,6 +335,14 @@ export default async function OutcomesPage({
         borderBottom: '1px solid #E5E7EB',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          {/* Last Updated Timestamp */}
+          <div style={{
+            fontSize: '12px',
+            color: '#9CA3AF',
+            marginBottom: '20px',
+          }}>
+            Last updated: April 2026
+          </div>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
@@ -355,7 +363,7 @@ export default async function OutcomesPage({
                 color: '#0f0f0f',
                 fontFamily: 'var(--font-display)',
               }}>
-                {Math.round(districtWinRate)}%
+                {isNaN(districtWinRate ?? 0) ? '—' : `${Math.round(districtWinRate ?? 0)}%`}
               </div>
               <div style={{
                 fontSize: '13px',
@@ -377,7 +385,7 @@ export default async function OutcomesPage({
                 color: '#0f0f0f',
                 fontFamily: 'var(--font-display)',
               }}>
-                {districtDuration} mo
+                {isNaN(districtDuration ?? 0) ? '—' : `${districtDuration} mo`}
               </div>
               <div style={{
                 fontSize: '13px',
@@ -399,7 +407,7 @@ export default async function OutcomesPage({
                 color: '#0f0f0f',
                 fontFamily: 'var(--font-display)',
               }}>
-                {Math.round(districtSettleRate)}%
+                {isNaN(districtSettleRate ?? 0) ? '—' : `${Math.round(districtSettleRate ?? 0)}%`}
               </div>
               <div style={{
                 fontSize: '13px',
@@ -421,7 +429,7 @@ export default async function OutcomesPage({
                 color: '#0f0f0f',
                 fontFamily: 'var(--font-display)',
               }}>
-                {totalOutcomes.toLocaleString()}+
+                {isNaN(totalOutcomes ?? 0) ? '—' : `${(totalOutcomes ?? 0).toLocaleString()}+`}
               </div>
               <div style={{
                 fontSize: '13px',
@@ -983,8 +991,15 @@ export default async function OutcomesPage({
           <p style={{ margin: '0 0 16px 0', color: '#4B5563' }}>
             <strong style={{ color: '#0f0f0f' }}>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and CourtListener and are not predictions of your case outcome. Case outcomes vary significantly based on specific facts, law applicable to your jurisdiction, quality of legal representation, and numerous other factors.
           </p>
-          <p style={{ margin: 0, color: '#4B5563' }}>
+          <p style={{ margin: '0 0 16px 0', color: '#4B5563' }}>
             <strong style={{ color: '#0f0f0f' }}>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction for advice specific to your situation.
+          </p>
+          <p style={{
+            fontSize: '11px',
+            color: '#9CA3AF',
+            margin: 0,
+          }}>
+            Source: FJC Integrated Database · CourtListener / RECAP · Public Federal Records
           </p>
         </div>
       </div>

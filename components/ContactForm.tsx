@@ -3,11 +3,36 @@ import { useState } from 'react';
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', subject: 'general', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || 'Failed to submit form. Please try again.');
+        setLoading(false);
+        return;
+      }
+
+      setSubmitted(true);
+      setLoading(false);
+    } catch (err) {
+      setError('An error occurred. Please try again.');
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -39,6 +64,7 @@ export default function ContactForm() {
     transition: 'border-color 200ms',
     height: '48px',
     boxSizing: 'border-box' as any,
+    opacity: loading ? 0.6 : 1,
   } as React.CSSProperties;
 
   const labelStyle = {
@@ -58,7 +84,12 @@ export default function ContactForm() {
           cursor: pointer; transition: background 200ms;
           font-family: var(--font-body); width: 100%;
         }
-        .contact-submit:hover { background: #D61219; }
+        .contact-submit:hover:not(:disabled) { background: #0855a3; }
+        .contact-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+        .error-message {
+          background: #fee2e2; color: #991b1b; padding: 12px; border-radius: 8px;
+          font-size: 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+        }
       `}</style>
       <form onSubmit={handleSubmit} style={{
         padding: '32px', background: '#FFFFFF', border: '1px solid #E5E7EB',
@@ -68,6 +99,16 @@ export default function ContactForm() {
         <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
           Send Us a Message
         </h2>
+        {error && (
+          <div className="error-message">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+            {error}
+          </div>
+        )}
         <div className="contact-form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div>
             <label htmlFor="contact-name" style={labelStyle}>Full Name</label>
@@ -97,7 +138,9 @@ export default function ContactForm() {
           <textarea id="contact-message" className="contact-input" style={{...inputStyle, height: '140px', resize: 'vertical'}} placeholder="How can we help?"
             required value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} />
         </div>
-        <button type="submit" className="contact-submit">Send Message</button>
+        <button type="submit" className="contact-submit" disabled={loading}>
+          {loading ? 'Sending...' : 'Send Message'}
+        </button>
       </form>
     </>
   );
