@@ -305,9 +305,9 @@ export default function DeadlineCalculatorPage() {
             {/* Summary Stats */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', marginBottom: '32px' }}>
               {[
-                { label: 'Total Deadlines', value: String(allDeadlines.length), icon: '📋' },
-                { label: 'Critical', value: String(allDeadlines.filter(d => d.category === 'critical').length), icon: '🔴' },
-                { label: 'Days to First Deadline', value: getDaysUntil(allDeadlines[0]?.calculatedDate) > 0 ? String(getDaysUntil(allDeadlines[0]?.calculatedDate)) : 'Past due', icon: '⏱️' },
+                { label: 'Total Deadlines', value: String(allDeadlines.length) },
+                { label: 'Critical', value: String(allDeadlines.filter(d => d.category === 'critical').length) },
+                { label: 'Days to First Deadline', value: getDaysUntil(allDeadlines[0]?.calculatedDate) > 0 ? String(getDaysUntil(allDeadlines[0]?.calculatedDate)) : 'Past due' },
               ].map((stat, i) => (
                 <div key={i} style={{ background: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                   <p style={{ fontSize: '12px', fontWeight: 600, color: '#6B7280', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>

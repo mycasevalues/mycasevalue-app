@@ -99,7 +99,7 @@ export function logEnvironmentStatus(): void {
   const missing = results.filter((r) => r.required && !r.present);
 
   if (missing.length > 0) {
-    console.warn('\n⚠️  MISSING REQUIRED ENVIRONMENT VARIABLES ⚠️\n');
+    console.warn('\n[WARNING] MISSING REQUIRED ENVIRONMENT VARIABLES [WARNING]\n');
     missing.forEach((result) => {
       console.warn(`  ${result.variable}`);
       console.warn(`    Category: ${result.category}`);
@@ -119,7 +119,7 @@ export function logEnvironmentStatus(): void {
   );
 
   if (process.env.NODE_ENV !== 'production') {
-    console.log('\n📋 Environment Variable Status Summary:\n');
+    console.log('\nEnvironment Variable Status Summary:\n');
     for (const [category, stats] of Object.entries(byCategory)) {
       const percentage = ((stats.present / stats.total) * 100).toFixed(0);
       console.log(`  ${category}: ${stats.present}/${stats.total} (${percentage}%)`);
@@ -128,7 +128,8 @@ export function logEnvironmentStatus(): void {
   }
 }
 
-// Auto-check on module load (server-side only, once)
-if (typeof window === 'undefined') {
+// Auto-check on module load during build time only (server-side only, once)
+// Check if we're in a build context to avoid spamming runtime logs
+if (typeof window === 'undefined' && process.env.NEXT_PHASE === 'phase-production-build') {
   logEnvironmentStatus();
 }

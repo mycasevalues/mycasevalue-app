@@ -44,7 +44,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
         }}
         aria-label="Open AI Assistant"
       >
-        🤖
+        AI
       </button>
     );
   }
@@ -62,7 +62,6 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
       {/* Header */}
       <div style={{ padding: '12px 16px', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'linear-gradient(135deg, #0966C3, #004182)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#fff' }}>
-          <span style={{ fontSize: 18 }}>🤖</span>
           <span style={{ fontWeight: 600, fontSize: 14 }}>AI Case Analyst</span>
         </div>
         {compact && (

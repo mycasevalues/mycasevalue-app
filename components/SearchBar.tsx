@@ -105,7 +105,6 @@ export default function SearchBar({ large = false }: { large?: boolean }) {
                   backgroundColor: i === selectedIdx ? '#f3f4f6' : 'transparent',
                 }}
               >
-                <span style={{ color: '#9CA3AF', marginRight: 8 }}>🔍</span>
                 {s}
               </div>
             ))}

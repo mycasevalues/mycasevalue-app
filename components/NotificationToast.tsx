@@ -5,10 +5,10 @@ import { useAppStore } from '../lib/store';
 import { useEffect } from 'react';
 
 const iconMap = {
-  info: '💡',
-  success: '✅',
-  warning: '⚠️',
-  error: '❌',
+  info: 'Info',
+  success: 'Success',
+  warning: 'Warning',
+  error: 'Error',
 };
 
 const colorMap = {

@@ -411,32 +411,32 @@ export default function ApiAccessPage() {
           >
             {[
               {
-                icon: '📊',
+                icon: '',
                 title: 'Win Rates',
                 desc: 'National and district-specific win rates by case type',
               },
               {
-                icon: '💰',
+                icon: '',
                 title: 'Settlement Data',
                 desc: 'Median, low, and high settlement ranges',
               },
               {
-                icon: '📈',
+                icon: '',
                 title: 'Case Counts',
                 desc: 'Volume of cases by type, jurisdiction, and outcome',
               },
               {
-                icon: '🏛️',
+                icon: '',
                 title: 'District Analytics',
                 desc: 'Case trends, judge performance, and litigation patterns',
               },
               {
-                icon: '🔮',
+                icon: '',
                 title: 'Predictive Analytics',
                 desc: 'AI-powered outcome predictions based on case factors',
               },
               {
-                icon: '⚖️',
+                icon: '',
                 title: 'Judge Intelligence',
                 desc: 'Individual judge statistics and decision patterns',
               },

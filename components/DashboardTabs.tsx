@@ -20,11 +20,11 @@ interface DashboardTabsProps {
 }
 
 const TABS: { key: Tab; label: string; icon: string }[] = [
-  { key: 'overview', label: 'Overview', icon: '◉' },
-  { key: 'history', label: 'Research History', icon: '◷' },
-  { key: 'saved', label: 'Saved Reports', icon: '★' },
-  { key: 'alerts', label: 'Alerts', icon: '⚡' },
-  { key: 'account', label: 'Account', icon: '⚙' },
+  { key: 'overview', label: 'Overview', icon: '' },
+  { key: 'history', label: 'Research History', icon: '' },
+  { key: 'saved', label: 'Saved Reports', icon: '' },
+  { key: 'alerts', label: 'Alerts', icon: '' },
+  { key: 'account', label: 'Account', icon: '' },
 ];
 
 export default function DashboardTabs({
@@ -106,10 +106,10 @@ export default function DashboardTabs({
           {/* Quick Actions */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 10 }}>
             {[
-              { label: 'Search Cases', href: '/search', icon: '🔍' },
-              { label: 'Calculator', href: '/calculator', icon: '🧮' },
-              { label: 'Attorney Tools', href: '/attorney', icon: '⚖️' },
-              { label: 'Set Alerts', href: '#', icon: '🔔' },
+              { label: 'Search Cases', href: '/search', icon: '' },
+              { label: 'Calculator', href: '/calculator', icon: '' },
+              { label: 'Attorney Tools', href: '/attorney', icon: '' },
+              { label: 'Set Alerts', href: '#', icon: '' },
             ].map(action => (
               <Link key={action.label} href={action.href} style={{ textDecoration: 'none' }}>
                 <div style={{ ...cardStyle, textAlign: 'center', padding: '16px', cursor: 'pointer' }}>
@@ -225,7 +225,6 @@ export default function DashboardTabs({
               <span style={{ fontSize: '12px', color: '#4B5563' }}>0 / 10 active (beta limit)</span>
             </div>
             <div style={{ padding: '32px', textAlign: 'center', background: '#FAFBFC', borderRadius: 10, border: '1px solid #E5E7EB' }}>
-              <div style={{ fontSize: '36px', marginBottom: 12 }}>🔔</div>
               <p style={{ fontSize: '14px', color: '#4B5563', marginBottom: 16 }}>No active alerts. Set up monitoring for case numbers, case types, or judge assignments.</p>
               <div style={{ background: '#EDF3FB', borderRadius: 10, padding: '20px', maxWidth: 400, margin: '0 auto' }}>
                 <p style={{ fontSize: '13px', fontWeight: 600, color: '#004182', marginBottom: 10 }}>New Alert</p>

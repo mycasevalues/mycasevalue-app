@@ -13,8 +13,8 @@ export default function SearchTabs() {
   const [activeTab, setActiveTab] = useState<TabType>('semantic');
 
   const tabs: Array<{ id: TabType; label: string; icon: string }> = [
-    { id: 'semantic', label: 'Describe your situation', icon: '💬' },
-    { id: 'natural', label: 'Natural language search', icon: '🔍' },
+    { id: 'semantic', label: 'Describe your situation', icon: '' },
+    { id: 'natural', label: 'Natural language search', icon: '' },
   ];
 
   return (

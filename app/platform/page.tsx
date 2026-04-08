@@ -67,17 +67,17 @@ const AI_CAPABILITIES = [
   {
     title: 'Document Intelligence',
     description: 'Extract key data from legal documents and automatically match against historical precedents.',
-    icon: '📄',
+    icon: '◆',
   },
   {
     title: 'Outcome Prediction',
     description: 'Predict case outcomes based on historical patterns, judge tendencies, and case characteristics.',
-    icon: '🎯',
+    icon: '◆',
   },
   {
     title: 'Judge Analysis',
     description: 'Compare individual judge profiles to district averages and identify patterns in their rulings.',
-    icon: '⚖️',
+    icon: '◆',
   },
 ];
 

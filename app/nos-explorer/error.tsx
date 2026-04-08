@@ -24,9 +24,8 @@ export default function NosExplorerError({
       textAlign: 'center',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     }}>
-      <div style={{ fontSize: '48px', marginBottom: '1rem' }}>⚠️</div>
       <h2 style={{ fontSize: '1.5rem', fontWeight: 600, color: '#1f2937', marginBottom: '0.5rem' }}>
-        Something went wrong
+        [WARNING] Something went wrong
       </h2>
       <p style={{ color: '#6b7280', marginBottom: '1.5rem', maxWidth: '400px' }}>
         We encountered an error loading the NOS Explorer. Please try again.

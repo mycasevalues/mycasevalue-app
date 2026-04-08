@@ -59,7 +59,7 @@ export async function GET(request: NextRequest): Promise<NextResponse<CostRespon
       },
       {
         name: 'Anthropic',
-        icon: '🤖',
+        icon: 'AI',
         color: '#0966C3',
         currentSpend: 45.75,
         monthlyBudget: 100,
@@ -70,7 +70,7 @@ export async function GET(request: NextRequest): Promise<NextResponse<CostRespon
       },
       {
         name: 'Supabase',
-        icon: '🟢',
+        icon: '●',
         color: '#3ecf8e',
         currentSpend: 0,
         monthlyBudget: 25,
@@ -92,7 +92,7 @@ export async function GET(request: NextRequest): Promise<NextResponse<CostRespon
       },
       {
         name: 'Resend',
-        icon: '✉️',
+        icon: 'EMAIL',
         color: '#000000',
         currentSpend: 0,
         monthlyBudget: 20,
