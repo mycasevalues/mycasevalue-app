@@ -672,7 +672,7 @@ export default function OddsPage() {
                   lineHeight: 1.7,
                   margin: '0 0 12px',
                 }}>
-                  In federal court, <strong>{results.label}</strong> cases see a plaintiff win rate of{' '}
+                  In federal court, <strong>{results.label}</strong> cases see a win rate of{' '}
                   <strong style={{ color: winColor }}>{results.winRate.toFixed(1)}%</strong> at trial.
                   However, <strong style={{ color: '#D97706' }}>{results.settlementRate.toFixed(1)}%</strong> of
                   cases settle before trial
