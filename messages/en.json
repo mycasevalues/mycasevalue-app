@@ -63,7 +63,7 @@
     "disclaimer": "This estimate is based on historical data and is not legal advice."
   },
   "nos": {
-    "plaintiffWinRate": "Plaintiff Win Rate",
+    "plaintiffWinRate": "Win Rate",
     "defendantWinRate": "Defendant Win Rate",
     "totalCases": "Total Cases",
     "avgDuration": "Average Duration",
