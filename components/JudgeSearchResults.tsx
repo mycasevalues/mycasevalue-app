@@ -163,7 +163,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                           fontFamily: 'var(--font-mono)',
                         }}
                       >
-                        {(judge.overall_plaintiff_win_rate).toFixed(0)}% plaintiff win rate
+                        {(judge.overall_plaintiff_win_rate).toFixed(0)}% win rate
                       </div>
                     )}
                     {judge.total_cases_handled != null && (
