@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: 'For Academic Researchers | MyCaseValue',
   description: 'Research datasets, longitudinal analysis, and citation-ready data for law school faculty and research institutions.',
   alternates: { canonical: `${SITE_URL}/solutions/academic` },
+  openGraph: {
+    title: 'For Academic Researchers | MyCaseValue',
+    description: 'Research datasets, longitudinal analysis, and citation-ready data for law school faculty and research institutions.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Academic Researchers | MyCaseValue',
+    description: 'Research datasets, longitudinal analysis, and citation-ready data for law school faculty and research institutions.',
+  },
 };
 
 const FEATURES = [
