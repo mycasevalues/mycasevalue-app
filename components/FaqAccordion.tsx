@@ -113,7 +113,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                 }}
               >
                 <span style={{ flex: 1, textAlign: 'left' }}>{item.q}</span>
-                <svg
+                <svg aria-hidden="true"
                   className={`faq-chevron ${isOpen ? 'open' : ''}`}
                   width="20"
                   height="20"
