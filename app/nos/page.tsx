@@ -131,7 +131,7 @@ export default function NOSIndexPage() {
       {/* Header */}
       <header
         style={{
-          background: '#1C3A5E',
+          background: '#0966C3',
           padding: 'clamp(24px, 5vw, 48px) 24px',
           borderBottom: '1px solid #E5E7EB',
         }}

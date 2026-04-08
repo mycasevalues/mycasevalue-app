@@ -151,7 +151,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
             left: tooltip.x,
             top: tooltip.y,
             transform: 'translate(-50%, -100%)',
-            background: '#1C3A5E',
+            background: '#0966C3',
             color: '#FFFFFF',
             padding: '12px 16px',
             borderRadius: '8px',

@@ -91,7 +91,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#1C3A5E',
+  themeColor: '#0966C3',
 };
 
 // Schema.org structured data

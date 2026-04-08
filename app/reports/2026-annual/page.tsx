@@ -12,7 +12,7 @@ export default function AnnualReportPage() {
     <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
       {/* Dark Navy Hero Header */}
       <div style={{
-        backgroundColor: '#1C3A5E',
+        backgroundColor: '#0966C3',
         padding: '60px 20px',
         color: '#FFFFFF',
         borderBottom: '4px solid #0966C3',

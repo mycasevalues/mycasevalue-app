@@ -24,7 +24,7 @@ export default function AttorneyPageSkeleton({
       `}</style>
 
       {/* Navy header skeleton */}
-      <div style={{ backgroundColor: '#1C3A5E', color: '#FFFFFF', padding: '32px 20px' }}>
+      <div style={{ backgroundColor: '#0966C3', color: '#FFFFFF', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div className="skel-pulse" style={{ height: 12, width: 180, background: 'rgba(255,255,255,0.1)', borderRadius: 2, marginBottom: 20 }} />

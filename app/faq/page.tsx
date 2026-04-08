@@ -556,7 +556,7 @@ export default function FAQPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1C3A5E' }}>
+      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#0966C3' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           {/* Breadcrumb */}
           <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: '#FFFFFF' }}>
@@ -665,7 +665,7 @@ export default function FAQPage() {
               className="group p-6 border transition-all hover:shadow-md"
               style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: '#1C3A5E' }}>Settlement Calculator</h3>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: '#0f0f0f' }}>Settlement Calculator</h3>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#0966C3' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
@@ -677,7 +677,7 @@ export default function FAQPage() {
               className="group p-6 border transition-all hover:shadow-md"
               style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: '#1C3A5E' }}>Compare Cases</h3>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: '#0f0f0f' }}>Compare Cases</h3>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#0966C3' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
@@ -689,7 +689,7 @@ export default function FAQPage() {
               className="group p-6 border transition-all hover:shadow-md"
               style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: '#1C3A5E' }}>Jargon Translator</h3>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: '#0f0f0f' }}>Jargon Translator</h3>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#0966C3' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
@@ -701,7 +701,7 @@ export default function FAQPage() {
               className="group p-6 border transition-all hover:shadow-md"
               style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: '#1C3A5E' }}>NOS Explorer</h3>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: '#0f0f0f' }}>NOS Explorer</h3>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#0966C3' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>

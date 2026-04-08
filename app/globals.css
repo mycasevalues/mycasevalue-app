@@ -159,7 +159,7 @@ a:hover { text-decoration: underline; color: var(--color-accent-dark); }
    ============================================================ */
 :root {
   /* Dark surfaces */
-  --color-navy:          #1C3A5E;
+  --color-navy:          #0966C3;
   --color-panel:         #274464;
   --color-panel-border:  #284565;
   --color-navy-dark:     #122840;

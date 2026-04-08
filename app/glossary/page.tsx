@@ -42,7 +42,7 @@ export default function GlossaryPage() {
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1C3A5E' }}>
+      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#0966C3' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb */}
           <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: '#FFFFFF' }}>

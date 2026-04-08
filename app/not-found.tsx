@@ -30,7 +30,7 @@ export default function NotFound() {
           left: 0,
           right: 0,
           height: '8px',
-          background: '#1C3A5E',
+          background: '#0966C3',
         }}
       />
       <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>

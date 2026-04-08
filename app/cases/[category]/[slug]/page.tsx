@@ -246,7 +246,7 @@ export default async function CaseTypeDetailPage({
       {/* Dark Navy Header Section */}
       <header
         style={{
-          background: '#1C3A5E',
+          background: '#0966C3',
           padding: 'clamp(20px, 4vw, 40px) 24px',
           marginBottom: 'clamp(20px, 4vw, 40px)',
         }}
@@ -503,7 +503,7 @@ export default async function CaseTypeDetailPage({
         `}</style>
         <div
           style={{
-            background: '#1C3A5E',
+            background: '#0966C3',
             color: '#FFFFFF',
             borderRadius: '12px',
             padding: '48px 40px',

@@ -142,7 +142,7 @@ export default function CasesIndexPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
+      <div style={{ background: '#0966C3', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#0966C3' }}>
             <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
@@ -165,7 +165,7 @@ export default function CasesIndexPage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32 }}>
           <div>
-            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#1C3A5E', marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#0f0f0f', marginBottom: 4 }}>
               {platformStats.totalCases.toLocaleString()}
             </div>
             <div style={{ fontSize: 12, color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -181,7 +181,7 @@ export default function CasesIndexPage() {
             </div>
           </div>
           <div>
-            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#1C3A5E', marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#0f0f0f', marginBottom: 4 }}>
               {platformStats.totalCategories}
             </div>
             <div style={{ fontSize: 12, color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -407,7 +407,7 @@ export default function CasesIndexPage() {
               {topFiledCases.map((caseType, idx) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
                   <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 80px 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#1C3A5E' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#0f0f0f' }}>
                       #{idx + 1}
                     </div>
                     <div>

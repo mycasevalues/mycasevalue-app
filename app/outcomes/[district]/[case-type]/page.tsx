@@ -252,7 +252,7 @@ export default async function OutcomesPage({
 
       {/* Header Section - Dark Navy */}
       <div style={{
-        background: '#1C3A5E',
+        background: '#0966C3',
         padding: 'clamp(20px, 4vw, 32px) 20px',
         borderBottom: '1px solid #1a2a3a',
       }}>
@@ -579,7 +579,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: '#1C3A5E',
+                    color: '#0f0f0f',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(districtWinRate)}%
@@ -731,7 +731,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: '#1C3A5E',
+                    color: '#0f0f0f',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(districtDuration)}mo

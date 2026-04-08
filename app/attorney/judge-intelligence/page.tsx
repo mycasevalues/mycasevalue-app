@@ -123,7 +123,7 @@ export default function JudgeIntelligencePage() {
         `}
       </style>
       {/* Header */}
-      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
+      <div style={{ background: '#0966C3', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <Link href="/" style={{ fontSize: '13px', color: '#0966C3', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
@@ -346,7 +346,7 @@ export default function JudgeIntelligencePage() {
                             <MeterBar value={judge.plaintiffWinRate} max={100} color="#059669" label="Favorable Outcome Rate" />
                             <MeterBar value={judge.settlementRate} max={100} color="#1B7C7D" label="Settlement Rate" />
                             <MeterBar value={judge.dismissalRate} max={100} color="#0966C3" label="Dismissal Rate" />
-                            <MeterBar value={judge.trialRate} max={100} color="#1C3A5E" label="Trial Rate" />
+                            <MeterBar value={judge.trialRate} max={100} color='#0966C3' label="Trial Rate" />
                             <MeterBar value={judge.motionGrantRate} max={100} color="#004D80" label="Motion Grant Rate" />
                           </div>
 

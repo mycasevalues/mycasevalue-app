@@ -176,7 +176,7 @@ export default function TrendsPage() {
       <div
         style={{
           borderBottom: '1px solid #E5E7EB',
-          background: '#1C3A5E',
+          background: '#0966C3',
         }}
       >
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
@@ -969,7 +969,7 @@ export default function TrendsPage() {
         <section
           className="text-center p-8 lex-card"
           style={{
-            background: '#1C3A5E',
+            background: '#0966C3',
           }}
         >
           <h2 className="font-display font-bold mb-3" style={{ color: '#FFFFFF', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>

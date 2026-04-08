@@ -145,7 +145,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
       <div className="nos-table-wrap" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2, overflow: 'hidden' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-body)', fontSize: 13 }}>
           <thead>
-            <tr style={{ background: '#1C3A5E' }}>
+            <tr style={{ background: '#0966C3' }}>
               <th className="nos-th" onClick={() => toggleSort('nos')} style={{ textAlign: 'left', padding: '12px 16px', color: '#FFFFFF', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px', width: 70 }}>
                 NOS<SortArrow field="nos" />
               </th>

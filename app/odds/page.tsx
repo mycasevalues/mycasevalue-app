@@ -219,7 +219,7 @@ export default function OddsPage() {
 
       {/* Hero Header */}
       <header style={{
-        background: '#1C3A5E',
+        background: '#0966C3',
         padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -586,7 +586,7 @@ export default function OddsPage() {
                         <div style={{
                           width: '100%',
                           height: '100%',
-                          background: 'linear-gradient(to right, #E5E7EB 0%, #004182 50%, #1C3A5E 100%)',
+                          background: 'linear-gradient(to right, #E5E7EB 0%, #004182 50%, #0966C3 100%)',
                           borderRadius: 2,
                         }} />
                       </div>
@@ -1038,7 +1038,7 @@ export default function OddsPage() {
 
               {/* CTA */}
               <div style={{
-                background: '#1C3A5E',
+                background: '#0966C3',
                 borderRadius: 2,
                 padding: 'clamp(24px, 5vw, 40px)',
                 textAlign: 'center',
@@ -1395,7 +1395,7 @@ export default function OddsPage() {
                   <Link
                     href={`/report/${results.nos}`}
                     style={{
-                      display: 'block', padding: '16px', background: '#1C3A5E', borderRadius: 2,
+                      display: 'block', padding: '16px', background: '#0966C3', borderRadius: 2,
                       textDecoration: 'none', transition: 'all 0.2s ease',
                     }}
                   >

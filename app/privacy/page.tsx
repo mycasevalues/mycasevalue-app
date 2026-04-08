@@ -147,7 +147,7 @@ export default function PrivacyPage() {
       />
 
       {/* Header */}
-      <div style={{ borderColor: '#E5E7EB', background: '#1C3A5E' }}>
+      <div style={{ borderColor: '#E5E7EB', background: '#0966C3' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: '#CCCCCC' }}>

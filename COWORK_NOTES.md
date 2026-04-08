@@ -213,8 +213,8 @@ Using usePathname():
 
 **Colors (from tailwind.config.js):**
 - brand.blue: #0966C3 (primary CTA, active states)
-- brand.navy: #1C3A5E (dark text)
-- brand.ink: #1C3A5E (heading text)
+- brand.navy: #0966C3 (dark text)
+- brand.ink: #0f0f0f (heading text)
 - brand.ink-2: #122840 (body text)
 - brand.gray: #4B5563 (secondary text)
 - brand.text-muted: #9CA3AF (disabled/muted)

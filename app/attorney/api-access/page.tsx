@@ -308,7 +308,7 @@ export default function ApiAccessPage() {
       `}</style>
 
       {/* Hero Section */}
-      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
+      <div style={{ background: '#0966C3', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <Link
             href="/attorney"

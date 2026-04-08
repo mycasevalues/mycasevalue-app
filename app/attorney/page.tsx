@@ -419,7 +419,7 @@ export default function AttorneyPage() {
           transform: translateY(-4px);
         }
         .attorney-feature-card:hover svg {
-          color: #1C3A5E !important;
+          color: #0966C3 !important;
         }
         .attorney-feature-card:hover h3 {
           color: #004182 !important;
@@ -439,7 +439,7 @@ export default function AttorneyPage() {
       {/* Header Section */}
       <section
         style={{
-          backgroundColor: '#1C3A5E',
+          backgroundColor: '#0966C3',
           border: 'none',
           padding: '48px 20px',
           textAlign: 'center',

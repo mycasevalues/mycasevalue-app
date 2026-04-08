@@ -223,7 +223,7 @@ export default function PlatformPage() {
         }
 
         .comparison-table th {
-          background: #1C3A5E;
+          background: #0966C3;
           color: white;
           padding: 16px;
           text-align: left;
@@ -316,7 +316,7 @@ export default function PlatformPage() {
           gap: 24px;
           margin: 40px 0;
           padding: 32px;
-          background: linear-gradient(135deg, #1C3A5E 0%, #2D5A8C 100%);
+          background: linear-gradient(135deg, #0966C3 0%, #2D5A8C 100%);
           border-radius: 12px;
         }
 
@@ -488,7 +488,7 @@ export default function PlatformPage() {
 
       <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
         {/* Hero Section */}
-        <div style={{ background: '#1C3A5E', padding: '80px 24px' }}>
+        <div style={{ background: '#0966C3', padding: '80px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span style={{
@@ -560,7 +560,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 Modern Technology Stack
@@ -655,7 +655,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 Data Pipeline Architecture
@@ -714,7 +714,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 Market Position
@@ -807,7 +807,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 Platform Features
@@ -860,7 +860,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 Market Opportunity
@@ -943,7 +943,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 Product Roadmap
@@ -1007,7 +1007,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 The Problem We're Solving
@@ -1069,7 +1069,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 The Data: 5.1M+ Cases from 5 Official Sources
@@ -1158,7 +1158,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 The AI Layer: Four Core Capabilities
@@ -1223,7 +1223,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 The Tools: Organized by Role
@@ -1304,7 +1304,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1C3A5E',
+                color: '#0f0f0f',
                 marginBottom: 12,
               }}>
                 Six Key Audiences
@@ -1357,7 +1357,7 @@ export default function PlatformPage() {
         </div>
 
         {/* CTA Section */}
-        <div style={{ padding: '80px 24px', background: '#1C3A5E' }}>
+        <div style={{ padding: '80px 24px', background: '#0966C3' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
             <h2 style={{
               fontSize: 'clamp(28px, 4vw, 40px)',

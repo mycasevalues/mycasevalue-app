@@ -49,7 +49,7 @@ export default function PressPage() {
   ];
 
   const brandColors = [
-    { name: 'Navy', hex: '#1C3A5E' },
+    { name: 'Navy', hex: '#0966C3' },
     { name: 'Primary Blue', hex: '#0966C3' },
     { name: 'Secondary Blue', hex: '#004182' },
     { name: 'Background', hex: '#F7F8FA' },
@@ -120,7 +120,7 @@ export default function PressPage() {
 
       <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
         {/* Header Banner */}
-        <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
+        <div style={{ background: '#0966C3', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span
@@ -373,7 +373,7 @@ export default function PressPage() {
                         marginBottom: 12,
                         borderRadius: '8px',
                         background: logo.label.includes('Dark')
-                          ? '#1C3A5E'
+                          ? '#0966C3'
                           : '#F7F8FA',
                       }}
                     >

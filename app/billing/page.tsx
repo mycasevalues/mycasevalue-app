@@ -85,7 +85,7 @@ export default function BillingPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
       {/* Dark Navy Header */}
-      <div style={{ backgroundColor: '#1C3A5E', color: '#FFFFFF', padding: '32px 20px' }}>
+      <div style={{ backgroundColor: '#0966C3', color: '#FFFFFF', padding: '32px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '20px' }}>

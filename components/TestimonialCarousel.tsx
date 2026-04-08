@@ -159,7 +159,7 @@ export default function TestimonialCarousel() {
               height: '44px',
               borderRadius: '12px',
               border: 'none',
-              background: '#1C3A5E',
+              background: '#0966C3',
               color: '#FFFFFF',
               cursor: 'pointer',
               display: 'flex',
@@ -171,7 +171,7 @@ export default function TestimonialCarousel() {
               e.currentTarget.style.background = '#0966C3';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#1C3A5E';
+              e.currentTarget.style.background = '#0966C3';
             }}
           >
             <svg
@@ -291,7 +291,7 @@ export default function TestimonialCarousel() {
               height: '44px',
               borderRadius: '12px',
               border: 'none',
-              background: '#1C3A5E',
+              background: '#0966C3',
               color: '#FFFFFF',
               cursor: 'pointer',
               display: 'flex',
@@ -303,7 +303,7 @@ export default function TestimonialCarousel() {
               e.currentTarget.style.background = '#0966C3';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#1C3A5E';
+              e.currentTarget.style.background = '#0966C3';
             }}
           >
             <svg

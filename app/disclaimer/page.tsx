@@ -44,7 +44,7 @@ export default function DisclaimerPage() {
       {/* Header */}
       <div
         style={{
-          backgroundColor: '#1C3A5E',
+          backgroundColor: '#0966C3',
           padding: '64px 24px',
         }}
       >

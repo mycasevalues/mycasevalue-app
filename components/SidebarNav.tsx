@@ -35,7 +35,7 @@ export default function SidebarNav() {
       display: 'flex',
       flexDirection: 'column',
       gap: '8px',
-      backgroundColor: '#1C3A5E',
+      backgroundColor: '#0966C3',
       padding: '12px',
       borderRadius: '12px',
     }}>

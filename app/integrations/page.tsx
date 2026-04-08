@@ -187,7 +187,7 @@ export default function IntegrationsPage() {
       />
 
       {/* Header */}
-      <div style={{ background: '#1C3A5E', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
+      <div style={{ background: '#0966C3', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontSize: '14px' }}>
@@ -621,7 +621,7 @@ export default function IntegrationsPage() {
 
         {/* API Quick Start */}
         <div style={{
-          background: '#1C3A5E',
+          background: '#0966C3',
           borderRadius: '12px',
           padding: '48px',
           marginBottom: '48px',

@@ -83,7 +83,7 @@ export default function SpanishPricingPage() {
       />
 
       {/* Header with Dark Navy Background */}
-      <div className="border-b" style={{ background: '#1C3A5E', borderColor: '#E5E7EB' }}>
+      <div className="border-b" style={{ background: '#0966C3', borderColor: '#E5E7EB' }}>
         <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-8 text-sm">

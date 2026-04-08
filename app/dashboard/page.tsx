@@ -374,7 +374,7 @@ export default async function DashboardPage() {
       <aside
         style={{
           width: '240px',
-          background: '#1C3A5E',
+          background: '#0966C3',
           borderRight: '1px solid rgba(255, 255, 255, 0.1)',
           padding: '24px 16px',
           flexShrink: 0,
@@ -399,7 +399,7 @@ export default async function DashboardPage() {
       <main style={{ flex: 1, overflow: 'auto' }}>
         {/* Dark Navy Header with Welcome */}
         <div style={{
-          background: '#1C3A5E',
+          background: '#0966C3',
           padding: '32px 40px',
           marginBottom: '24px',
           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
@@ -756,7 +756,7 @@ export default async function DashboardPage() {
               {[
                 { label: 'Search Cases', href: '/search', color: '#0966C3' },
                 { label: 'Browse Districts', href: '/districts', color: '#004182' },
-                { label: 'View Judges', href: '/judges', color: '#1C3A5E' },
+                { label: 'View Judges', href: '/judges', color: '#0f0f0f' },
                 { label: 'Case Calculator', href: '/calculator', color: '#059669' },
                 { label: 'Trends & Data', href: '/trends', color: '#B86E00' },
               ].map((link) => (
@@ -768,7 +768,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* Platform Stats */}
-          <div style={{ backgroundColor: '#1C3A5E', borderRadius: '12px', padding: '32px', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: '#0966C3', borderRadius: '12px', padding: '32px', marginBottom: '24px' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: '#FFFFFF', margin: '0 0 20px' }}>
               Platform Data Coverage
             </h2>

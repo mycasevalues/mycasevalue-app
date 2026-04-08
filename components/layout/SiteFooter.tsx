@@ -78,7 +78,7 @@ export default function SiteFooter() {
       className="site-footer"
       role="contentinfo"
       style={{
-        background: '#1C3A5E',
+        background: '#0966C3',
         backdropFilter: undefined,
         WebkitBackdropFilter: undefined,
         borderTop: 'none',

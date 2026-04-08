@@ -54,7 +54,7 @@ export default function InsurancePage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ background: '#1C3A5E', color: '#FAFBFC', padding: '80px 24px 64px' }}>
+      <section style={{ background: '#0966C3', color: '#FAFBFC', padding: '80px 24px 64px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',

@@ -187,7 +187,7 @@ export default function AccountPage() {
     return (
       <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
         {/* Header */}
-        <div style={{ backgroundColor: '#1C3A5E', padding: '24px 20px' }}>
+        <div style={{ backgroundColor: '#0966C3', padding: '24px 20px' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
               <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
@@ -221,7 +221,7 @@ export default function AccountPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
       {/* Dark Navy Header */}
-      <div style={{ backgroundColor: '#1C3A5E', padding: '24px 20px' }}>
+      <div style={{ backgroundColor: '#0966C3', padding: '24px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>

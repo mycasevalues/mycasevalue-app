@@ -145,7 +145,7 @@ export default function EnterprisePage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ background: '#1C3A5E', color: '#FAFBFC', padding: '80px 24px 64px' }}>
+      <section style={{ background: '#0966C3', color: '#FAFBFC', padding: '80px 24px 64px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -306,7 +306,7 @@ export default function EnterprisePage() {
               border: '1px solid #E5E7EB',
             }}>
               <thead>
-                <tr style={{ background: '#1C3A5E', color: '#FAFBFC' }}>
+                <tr style={{ background: '#0966C3', color: '#FAFBFC' }}>
                   <th style={{ padding: '20px 24px', textAlign: 'left', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.875rem' }}>Feature</th>
                   {PRICING_TIERS.map(tier => (
                     <th key={tier.name} style={{ padding: '20px 24px', textAlign: 'left', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.875rem' }}>

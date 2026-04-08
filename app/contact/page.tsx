@@ -62,7 +62,7 @@ export default function ContactPage() {
       />
       <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
         {/* Header Banner */}
-        <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
+        <div style={{ background: '#0966C3', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span style={{

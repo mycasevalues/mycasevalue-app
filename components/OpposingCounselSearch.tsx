@@ -447,7 +447,7 @@ export default function OpposingCounselSearch() {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#1C3A5E', padding: '32px 20px' }}>
+      <div style={{ background: '#0966C3', padding: '32px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <Link
             href="/"

@@ -157,7 +157,7 @@
   /* CTA */
   --gradient-cta:         var(--color-accent);
   --gradient-cta-hover:   var(--color-accent-dark);
-  --gradient-hero: linear-gradient(160deg, #1C3A5E 0%, #122840 50%, #1C3A5E 100%);
+  --gradient-hero: linear-gradient(160deg, #0966C3 0%, #004182 50%, #0966C3 100%);
   --gradient-accent: linear-gradient(to right, #0966C3 0%, #004182 100%);
 }
 

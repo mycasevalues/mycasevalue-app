@@ -41,13 +41,6 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
     // 2. Include: item_title, item_type, note, shared_by (current user), shared_at (now)
     // 3. Trigger real-time event for team members
 
-    console.log('Saving to team workspace:', {
-      itemTitle,
-      itemType,
-      note: noteText,
-      savedAt: new Date().toISOString(),
-    });
-
     setIsSaving(false);
     setShowSuccess(true);
     setNoteText('');

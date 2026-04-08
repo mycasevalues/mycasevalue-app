@@ -25,7 +25,7 @@ export default function SpanishDisclaimerPage() {
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       {/* Header */}
-      <div className="border-b" style={{ background: '#1C3A5E', borderColor: '#E5E7EB' }}>
+      <div className="border-b" style={{ background: '#0966C3', borderColor: '#E5E7EB' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 mb-8 text-sm">

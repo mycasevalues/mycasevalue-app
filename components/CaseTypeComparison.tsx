@@ -94,7 +94,7 @@ export default function CaseTypeComparison() {
         {/* VS badge */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: 20 }}>
           <div style={{
-            width: 40, height: 40, borderRadius: '50%', background: '#1C3A5E', color: '#FFFFFF',
+            width: 40, height: 40, borderRadius: '50%', background: '#0966C3', color: '#FFFFFF',
             display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600,
             fontFamily: 'var(--font-display)',
           }}>
@@ -135,7 +135,7 @@ export default function CaseTypeComparison() {
       {entryA && entryB ? (
         <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2, overflow: 'hidden' }}>
           {/* Header row */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', background: '#1C3A5E', padding: '12px 16px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', background: '#0966C3', padding: '12px 16px' }}>
             <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#C7D1D8' }}>Metric</div>
             <div style={{ fontSize: 13, fontWeight: 600, color: '#FFFFFF', textAlign: 'center' }}>{entryA.label}</div>
             <div style={{ fontSize: 13, fontWeight: 600, color: '#FFFFFF', textAlign: 'center' }}>{entryB.label}</div>

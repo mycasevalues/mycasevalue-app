@@ -19,7 +19,7 @@ export default function GlobalError({
         <title>Error — MyCaseValue</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1C3A5E" />
+        <meta name="theme-color" content="#0966C3" />
         <style>{`
           body {
             margin: 0;

@@ -121,7 +121,7 @@ export default function HowItWorksPage() {
       />
 
       {/* Header */}
-      <div style={{ background: '#1C3A5E' }}>
+      <div style={{ background: '#0966C3' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
             style={{ background: 'rgba(10, 102, 194, 0.1)', color: '#0966C3', borderRadius: '12px' }}>
@@ -181,7 +181,7 @@ export default function HowItWorksPage() {
                       width: '40px',
                       height: '40px',
                       borderRadius: '12px',
-                      background: '#1C3A5E',
+                      background: '#0966C3',
                       color: '#FFFFFF',
                       fontSize: '18px',
                     }}>
@@ -553,7 +553,7 @@ export default function HowItWorksPage() {
 
       <style>{`
         .start-exploring-btn:hover {
-          background-color: #1C3A5E !important;
+          background-color: #0966C3 !important;
           box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
           transform: translateY(-2px);
         }

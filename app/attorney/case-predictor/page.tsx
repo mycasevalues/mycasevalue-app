@@ -161,7 +161,7 @@ export default function CasePredictorPage() {
         `}
       </style>
       {/* Header */}
-      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
+      <div style={{ background: '#0966C3', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <Link href="/" style={{ fontSize: '13px', color: '#0966C3', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
@@ -190,7 +190,7 @@ export default function CasePredictorPage() {
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 20px' }}>
         {/* How It Works Section */}
         <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '32px' }}>
-          <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: '#1C3A5E', margin: '0 0 24px' }}>
+          <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px' }}>
             How It Works
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '28px' }}>
@@ -237,7 +237,7 @@ export default function CasePredictorPage() {
         </div>
 
         {/* Data-Driven Insights */}
-        <div style={{ background: 'linear-gradient(135deg, #1C3A5E 0%, #003366 100%)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', marginBottom: '32px', color: '#FFFFFF' }}>
+        <div style={{ background: 'linear-gradient(135deg, #0966C3 0%, #003366 100%)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', marginBottom: '32px', color: '#FFFFFF' }}>
           <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: '#FFFFFF', margin: '0 0 24px' }}>
             Federal Court Data at Your Fingertips
           </h2>
@@ -592,7 +592,7 @@ export default function CasePredictorPage() {
 
         {/* Related Attorney Tools Section */}
         <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '2px solid #E5E7EB' }}>
-          <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: '#1C3A5E', margin: '0 0 24px' }}>
+          <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px' }}>
             Related Attorney Tools
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>

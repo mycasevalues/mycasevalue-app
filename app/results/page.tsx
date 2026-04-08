@@ -55,7 +55,7 @@ export default function ResultsPage() {
       </div>
 
       {/* Header */}
-      <div style={{ background: '#1C3A5E', paddingTop: '48px', paddingBottom: '48px', borderBottom: '1px solid #E5E7EB' }}>
+      <div style={{ background: '#0966C3', paddingTop: '48px', paddingBottom: '48px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <div style={{ marginBottom: '16px' }}>
             <span style={{

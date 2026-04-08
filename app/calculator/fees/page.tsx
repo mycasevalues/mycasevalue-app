@@ -29,7 +29,7 @@ export default function FeesPage() {
   return (
     <>
       {/* Header */}
-      <header style={{ background: '#1C3A5E', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
+      <header style={{ background: '#0966C3', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'inline-block', background: '#0966C3', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
             REFERENCE

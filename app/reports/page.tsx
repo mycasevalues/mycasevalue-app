@@ -75,7 +75,7 @@ export default function ReportsPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
       {/* Dark Navy Header */}
-      <div style={{ backgroundColor: '#1C3A5E', padding: '40px 20px', marginBottom: '32px' }}>
+      <div style={{ backgroundColor: '#0966C3', padding: '40px 20px', marginBottom: '32px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
             <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 600, color: '#FFFFFF', margin: 0 }}>

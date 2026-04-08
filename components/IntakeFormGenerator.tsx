@@ -693,7 +693,7 @@ export default function IntakeFormGenerator() {
           </h2>
 
           <div style={{ maxHeight: '600px', overflowY: 'auto', padding: '16px', background: '#FAFBFC', borderRadius: '12px', border: '1px solid #E5E7EB' }}>
-            <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#1C3A5E', margin: '0 0 16px', borderBottom: '2px solid #0966C3', paddingBottom: '8px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px', borderBottom: '2px solid #0966C3', paddingBottom: '8px' }}>
               Form Sections:
             </h3>
             <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '13px', color: '#0f0f0f', lineHeight: '1.8', fontFamily: 'var(--font-body)' }}>

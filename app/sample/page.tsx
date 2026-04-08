@@ -78,8 +78,8 @@ export default function SampleReportPage() {
         {/* Navy Header */}
         <div
           style={{
-            backgroundColor: '#1C3A5E',
-            borderBottom: '1px solid #1C3A5E',
+            backgroundColor: '#0966C3',
+            borderBottom: '1px solid #0966C3',
             padding: '40px 24px',
             position: 'sticky',
             top: 0,

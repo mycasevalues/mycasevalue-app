@@ -91,7 +91,7 @@ const container: React.CSSProperties = {
   borderRadius: '12px', overflow: 'hidden',
 };
 
-const header: React.CSSProperties = { backgroundColor: '#1C3A5E', padding: '24px 40px' };
+const header: React.CSSProperties = { backgroundColor: '#0966C3', padding: '24px 40px' };
 const logo: React.CSSProperties = { color: '#FFF', fontSize: '20px', fontWeight: 600, margin: '0 0 4px' };
 const headerBadge: React.CSSProperties = { color: '#FCD34D', fontSize: '11px', fontWeight: 600, letterSpacing: '1px', margin: 0 };
 const content: React.CSSProperties = { padding: '32px 40px' };

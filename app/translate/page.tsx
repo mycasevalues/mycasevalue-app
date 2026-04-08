@@ -108,7 +108,7 @@ export default function TranslatePage() {
   return (
     <div className="min-h-screen" style={{ background: '#F8F9FA' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1C3A5E' }}>
+      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#0966C3' }}>
         <div className="max-w-4xl mx-auto px-6 py-4">
           {/* Breadcrumb Navigation */}
           <div className="flex items-center gap-2 mb-12 text-sm" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>

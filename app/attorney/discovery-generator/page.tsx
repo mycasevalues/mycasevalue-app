@@ -139,7 +139,7 @@ export default function DiscoveryGeneratorPage() {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
+      <div style={{ background: '#0966C3', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5">

@@ -417,7 +417,7 @@ async function CategoryPage({
 
       {/* Hero Section */}
       <div style={{
-        background: '#1C3A5E',
+        background: '#0966C3',
         padding: '40px 20px',
         color: 'white',
       }}>
@@ -1606,7 +1606,7 @@ async function CategoryPage({
 
       {/* CTA Section */}
       <div style={{
-        background: '#1C3A5E',
+        background: '#0966C3',
         padding: '60px 20px',
         textAlign: 'center',
         color: 'white',

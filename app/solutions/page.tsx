@@ -81,7 +81,7 @@ export default function SolutionsPage() {
       {/* Hero */}
       <section
         style={{
-          background: '#1C3A5E',
+          background: '#0966C3',
           color: '#FAFBFC',
           padding: '80px 24px 64px',
         }}

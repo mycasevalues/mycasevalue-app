@@ -23,7 +23,6 @@ async function getCaseStatistics(nosCode) {
     }
 
     const data = await response.json();
-    console.log('Case Statistics:', data);
     return data;
   } catch (error) {
     console.error('Request failed:', error);

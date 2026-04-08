@@ -2,7 +2,7 @@ export default function UpgradeBanner() {
   return (
     <section
       style={{
-        background: '#1C3A5E',
+        background: '#0966C3',
         padding: '64px 24px',
         borderBottom: '1px solid #E5E7EB',
       }}

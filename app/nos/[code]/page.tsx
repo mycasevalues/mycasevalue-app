@@ -363,7 +363,7 @@ export default async function NOSPage({ params }: PageProps) {
       <DemoNOSPage />
       <style>{`
         .nos-header {
-          background: #1C3A5E;
+          background: #0966C3;
           color: #FFFFFF;
         }
 

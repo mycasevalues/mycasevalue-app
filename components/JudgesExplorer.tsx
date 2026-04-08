@@ -153,10 +153,10 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
         .je-tr:hover { background: #F7F8FA !important; }
         .je-view-btn { border: 1px solid #E5E7EB; background: #FFFFFF; padding: 6px 12px; cursor: pointer; font-size: 12px; font-weight: 600; transition: all 0.15s; }
         .je-view-btn:hover { background: #F7F8FA; }
-        .je-view-btn.active { background: #1C3A5E; color: #FFFFFF; border-color: #1C3A5E; }
+        .je-view-btn.active { background: #0966C3; color: #FFFFFF; border-color: #0966C3; }
         .je-page-btn { border: 1px solid #E5E7EB; background: #FFFFFF; padding: 6px 12px; cursor: pointer; font-size: 13px; font-family: var(--font-mono); min-width: 36px; transition: all 0.15s; }
         .je-page-btn:hover { background: #F7F8FA; border-color: #004182; }
-        .je-page-btn.active { background: #1C3A5E; color: #FFFFFF; border-color: #1C3A5E; }
+        .je-page-btn.active { background: #0966C3; color: #FFFFFF; border-color: #0966C3; }
         .je-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
         @media (max-width: 768px) {
           .je-filters { flex-direction: column !important; }
@@ -279,7 +279,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
               key={field}
               onClick={() => toggleSort(field)}
               style={{
-                border: 'none', background: sortField === field ? '#1C3A5E' : '#F7F8FA',
+                border: 'none', background: sortField === field ? '#0966C3' : '#F7F8FA',
                 color: sortField === field ? '#FFFFFF' : '#0f0f0f',
                 padding: '4px 10px', borderRadius: 2, fontSize: 12, fontWeight: 600,
                 cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 0.15s',
@@ -392,7 +392,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
         <div className="je-table-wrap" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2, overflow: 'hidden' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-body)', fontSize: 13 }}>
             <thead>
-              <tr style={{ background: '#1C3A5E' }}>
+              <tr style={{ background: '#0966C3' }}>
                 <th className="je-th" onClick={() => toggleSort('name')} style={{ textAlign: 'left', padding: '12px 16px', color: '#FFFFFF', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Judge<SortArrow field="name" />
                 </th>

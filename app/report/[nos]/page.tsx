@@ -251,7 +251,7 @@ export default async function ReportPage({
           }
 
           /* Ensure header prints cleanly */
-          div[style*="background: #1C3A5E"] {
+          div[style*="background: #0966C3"] {
             background: #F7F8FA !important;
             border: none !important;
             color: black !important;
@@ -317,7 +317,7 @@ export default async function ReportPage({
           }
 
           /* Add MyCaseValue branding to printed header */
-          div[style*="background: #1C3A5E"]::before {
+          div[style*="background: #0966C3"]::before {
             content: "MyCaseValue.com";
             display: block;
             font-size: 10px;
@@ -349,7 +349,7 @@ export default async function ReportPage({
       `}</style>
 
       {/* Dark Navy Header Banner */}
-      <div style={{ background: '#1C3A5E', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
+      <div style={{ background: '#0966C3', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 32px) 24px' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: 13, color: '#B0B8C1', fontFamily: 'var(--font-body)', marginBottom: '20px', letterSpacing: '0.3px' }}>
             <Link href="/" className="report-breadcrumb-link">Home</Link>
@@ -543,7 +543,7 @@ export default async function ReportPage({
                         style={{
                           width: '100%',
                           height: `${heightPercent}%`,
-                          background: '#1C3A5E',
+                          background: '#0966C3',
                           borderRadius: '2px 2px 0 0',
                           transition: 'all 0.3s ease',
                           cursor: 'pointer',
@@ -564,7 +564,7 @@ export default async function ReportPage({
               </div>
             );
           })()}
-          <style>{`.yoy-bar { background: #1C3A5E; } .yoy-bar:hover { background: #004182 !important; opacity: 0.8 !important; }`}</style>
+          <style>{`.yoy-bar { background: #0966C3; } .yoy-bar:hover { background: #004182 !important; opacity: 0.8 !important; }`}</style>
           <p style={{ fontSize: '12px', color: '#4B5563', marginTop: '16px', textAlign: 'center', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
             Deterministic projection based on historical case volume patterns
           </p>

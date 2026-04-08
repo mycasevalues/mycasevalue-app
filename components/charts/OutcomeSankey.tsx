@@ -108,7 +108,7 @@ export default function OutcomeSankey() {
       .attr('y', (d: any) => d.y0)
       .attr('width', (d: any) => d.x1 - d.x0)
       .attr('height', (d: any) => Math.max(1, d.y1 - d.y0))
-      .attr('fill', (d: any) => d.id === 0 ? '#1C3A5E' : '#0966C3')
+      .attr('fill', (d: any) => d.id === 0 ? '#0966C3' : '#0966C3')
       .attr('rx', 3);
 
     // Labels

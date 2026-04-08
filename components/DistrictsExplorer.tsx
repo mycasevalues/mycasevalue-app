@@ -175,8 +175,8 @@ export default function DistrictsExplorer({
           box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .circuit-card.active {
-          background: #1C3A5E;
-          border-color: #1C3A5E;
+          background: #0966C3;
+          border-color: #0966C3;
           color: #FFFFFF;
         }
         .circuit-card.active .circuit-card-name {
@@ -335,8 +335,8 @@ export default function DistrictsExplorer({
             onClick={() => setSelectedCircuit(null)}
             className="circuit-card"
             style={{
-              background: selectedCircuit === null ? '#1C3A5E' : '#FFFFFF',
-              borderColor: selectedCircuit === null ? '#1C3A5E' : '#E5E7EB',
+              background: selectedCircuit === null ? '#0966C3' : '#FFFFFF',
+              borderColor: selectedCircuit === null ? '#0966C3' : '#E5E7EB',
               color: selectedCircuit === null ? '#FFFFFF' : '#0f0f0f',
             }}
           >

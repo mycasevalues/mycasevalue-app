@@ -170,7 +170,7 @@ export default function DemandLetterPage() {
         select:focus, input:focus, textarea:focus { outline: none; border-color: #0966C3; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
       `}</style>
       {/* Header */}
-      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
+      <div style={{ background: '#0966C3', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0966C3', flexShrink: 0 }}>

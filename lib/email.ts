@@ -111,7 +111,7 @@ export async function sendWelcomeEmail(
             <style>
               body { margin: 0; padding: 0; }
               .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-              .header { background-color: #1C3A5E; color: white; padding: 24px; text-align: center; }
+              .header { background-color: #0966C3; color: white; padding: 24px; text-align: center; }
               .header-text { font-size: 24px; font-weight: bold; margin: 0; }
               .body-content { background-color: white; padding: 32px 24px; }
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
@@ -163,7 +163,7 @@ export async function sendWelcomeEmail(
           <style>
             body { margin: 0; padding: 0; }
             .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-            .header { background-color: #1C3A5E; color: white; padding: 24px; text-align: center; }
+            .header { background-color: #0966C3; color: white; padding: 24px; text-align: center; }
             .header-text { font-size: 24px; font-weight: bold; margin: 0; }
             .body-content { background-color: white; padding: 32px 24px; }
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
@@ -229,7 +229,7 @@ export async function sendReportEmail(
             <style>
               body { margin: 0; padding: 0; }
               .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-              .header { background-color: #1C3A5E; color: white; padding: 24px; text-align: center; }
+              .header { background-color: #0966C3; color: white; padding: 24px; text-align: center; }
               .header-text { font-size: 24px; font-weight: bold; margin: 0; }
               .body-content { background-color: white; padding: 32px 24px; }
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
@@ -291,7 +291,7 @@ export async function sendReportEmail(
           <style>
             body { margin: 0; padding: 0; }
             .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-            .header { background-color: #1C3A5E; color: white; padding: 24px; text-align: center; }
+            .header { background-color: #0966C3; color: white; padding: 24px; text-align: center; }
             .header-text { font-size: 24px; font-weight: bold; margin: 0; }
             .body-content { background-color: white; padding: 32px 24px; }
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
@@ -365,7 +365,7 @@ export async function sendPasswordResetEmail(
             <style>
               body { margin: 0; padding: 0; }
               .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-              .header { background-color: #1C3A5E; color: white; padding: 24px; text-align: center; }
+              .header { background-color: #0966C3; color: white; padding: 24px; text-align: center; }
               .header-text { font-size: 24px; font-weight: bold; margin: 0; }
               .body-content { background-color: white; padding: 32px 24px; text-align: center; }
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
@@ -411,7 +411,7 @@ export async function sendPasswordResetEmail(
           <style>
             body { margin: 0; padding: 0; }
             .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-            .header { background-color: #1C3A5E; color: white; padding: 24px; text-align: center; }
+            .header { background-color: #0966C3; color: white; padding: 24px; text-align: center; }
             .header-text { font-size: 24px; font-weight: bold; margin: 0; }
             .body-content { background-color: white; padding: 32px 24px; text-align: center; }
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
@@ -472,7 +472,7 @@ export async function sendReportReadyEmail(
             <style>
               body { margin: 0; padding: 0; }
               .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-              .header { background-color: #1C3A5E; color: white; padding: 24px; text-align: center; }
+              .header { background-color: #0966C3; color: white; padding: 24px; text-align: center; }
               .header-text { font-size: 24px; font-weight: bold; margin: 0; }
               .body-content { background-color: white; padding: 32px 24px; text-align: center; }
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
@@ -515,7 +515,7 @@ export async function sendReportReadyEmail(
           <style>
             body { margin: 0; padding: 0; }
             .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-            .header { background-color: #1C3A5E; color: white; padding: 24px; text-align: center; }
+            .header { background-color: #0966C3; color: white; padding: 24px; text-align: center; }
             .header-text { font-size: 24px; font-weight: bold; margin: 0; }
             .body-content { background-color: white; padding: 32px 24px; text-align: center; }
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }

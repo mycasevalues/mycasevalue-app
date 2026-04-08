@@ -251,7 +251,7 @@ export default function DistrictHeatmapPage() {
 
       <div style={{ backgroundColor: '#F7F8FA', minHeight: '100vh' }}>
         {/* Header */}
-        <header style={{ backgroundColor: '#1C3A5E', borderBottom: '1px solid #E5E7EB' }}>
+        <header style={{ backgroundColor: '#0966C3', borderBottom: '1px solid #E5E7EB' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '48px 24px' }}>
             {/* Breadcrumb */}
             <nav style={{ fontSize: '14px', color: '#FFFFFF', marginBottom: '16px', opacity: 0.85, fontFamily: 'var(--font-body)' }}>
@@ -933,7 +933,7 @@ export default function DistrictHeatmapPage() {
               padding: '32px',
               textAlign: 'center',
               marginBottom: '48px',
-              backgroundColor: '#1C3A5E',
+              backgroundColor: '#0966C3',
             }}
           >
             <h2
@@ -1027,7 +1027,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '600',
-                  color: '#1C3A5E',
+                  color: '#0f0f0f',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}
@@ -1071,7 +1071,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '600',
-                  color: '#1C3A5E',
+                  color: '#0f0f0f',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}
@@ -1115,7 +1115,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '600',
-                  color: '#1C3A5E',
+                  color: '#0f0f0f',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}
@@ -1159,7 +1159,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '600',
-                  color: '#1C3A5E',
+                  color: '#0f0f0f',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}

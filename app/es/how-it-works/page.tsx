@@ -30,7 +30,7 @@ export default function SpanishHowItWorksPage() {
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       {/* Header with Dark Navy Background */}
-      <div className="border-b" style={{ background: '#1C3A5E', borderColor: '#E5E7EB' }}>
+      <div className="border-b" style={{ background: '#0966C3', borderColor: '#E5E7EB' }}>
         <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-8 text-sm">
@@ -64,7 +64,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1C3A5E', color: 'white', borderRadius: '12px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#0966C3', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">1</span>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1C3A5E', color: 'white', borderRadius: '12px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#0966C3', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">2</span>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1C3A5E', color: 'white', borderRadius: '12px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#0966C3', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">3</span>
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1C3A5E', color: 'white', borderRadius: '12px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#0966C3', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">4</span>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1C3A5E', color: 'white', borderRadius: '12px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#0966C3', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">5</span>
                 </div>
               </div>

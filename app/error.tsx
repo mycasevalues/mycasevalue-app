@@ -80,7 +80,7 @@ export default function Error({
           left: 0,
           right: 0,
           height: '8px',
-          background: '#1C3A5E',
+          background: '#0966C3',
         }}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}

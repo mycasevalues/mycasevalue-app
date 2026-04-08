@@ -96,7 +96,7 @@ export default function AboutPage() {
         }
 
         .about-header {
-          background: #1C3A5E;
+          background: #0966C3;
           color: #FFFFFF;
           padding: 3rem 1.5rem;
           text-align: left;

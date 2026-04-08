@@ -121,7 +121,7 @@ export default function NosExplorerPage() {
     <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Header */}
-      <div style={{ borderBottom: '1px solid #E5E7EB', background: '#1C3A5E' }}>
+      <div style={{ borderBottom: '1px solid #E5E7EB', background: '#0966C3' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
           <div style={{ paddingTop: 24, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>

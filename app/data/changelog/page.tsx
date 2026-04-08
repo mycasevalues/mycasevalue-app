@@ -126,7 +126,7 @@ export default async function ChangelogPage() {
 
       <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
         {/* Dark Navy Hero Header */}
-        <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
+        <div style={{ background: '#0966C3', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             {/* Breadcrumb */}
             <div style={{ marginBottom: 24, display: 'flex', alignItems: 'center', gap: 8 }}>
