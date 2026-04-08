@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   description:
     'MyCaseValue solutions for individuals, law firms, enterprise legal teams, insurance companies, litigation funders, legal aid, academia, and government agencies.',
   alternates: { canonical: `${SITE_URL}/solutions` },
+  openGraph: {
+    title: 'Solutions',
+    description: 'MyCaseValue solutions for individuals, law firms, enterprise legal teams, insurance companies, litigation funders, legal aid, academia, and government agencies.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Solutions',
+    description: 'MyCaseValue solutions for individuals, law firms, enterprise legal teams, insurance companies, litigation funders, legal aid, academia, and government agencies.',
+  },
 };
 
 const SEGMENTS = [
