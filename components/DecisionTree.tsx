@@ -36,7 +36,7 @@ interface CategoryConfig {
 
 // SVG Icons
 const BriefcaseIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+  <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
     <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
     <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
     <line x1="9" y1="14" x2="9" y2="18" />
@@ -45,7 +45,7 @@ const BriefcaseIcon = () => (
 );
 
 const ShieldIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+  <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
     <path d="M12 22s-8-4-8-10V5l8-3 8 3v7c0 6-8 10-8 10z" />
     <line x1="12" y1="12" x2="12" y2="16" />
     <line x1="10" y1="14" x2="14" y2="14" />
@@ -53,7 +53,7 @@ const ShieldIcon = () => (
 );
 
 const DocumentIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+  <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
     <polyline points="13 2 13 9 20 9" />
     <line x1="9" y1="13" x2="15" y2="13" />
@@ -62,7 +62,7 @@ const DocumentIcon = () => (
 );
 
 const BuildingIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+  <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
     <polyline points="9 22 9 12 15 12 15 22" />
     <line x1="9" y1="8" x2="9" y2="7" />
@@ -72,14 +72,14 @@ const BuildingIcon = () => (
 );
 
 const HandshakeIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+  <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
     <path d="M17 12h-5v2h5v-2zm0-7H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2z" />
     <path d="M8 12l2-2 3 3 5-5" />
   </svg>
 );
 
 const QuestionIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+  <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
     <circle cx="12" cy="12" r="10" />
     <path d="M12 16v.01" />
     <path d="M12 13c-1.1 0-2 .9-2 2" />
