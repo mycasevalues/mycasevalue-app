@@ -378,8 +378,41 @@ function PlatformSection() {
 
 export default function HomePage() {
 
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        name: 'MyCaseValue',
+        url: SITE_URL,
+        description: 'Federal court analytics and settlement data platform. Research case outcomes, judge statistics, and settlement values.',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      },
+      {
+        '@type': 'Organization',
+        name: 'MyCaseValue',
+        url: SITE_URL,
+        logo: `${SITE_URL}/logo.png`,
+        sameAs: [],
+      },
+    ],
+  };
+
   return (
     <main className="font-inter text-brand-ink-2 bg-brand-surface">
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* ── HERO ── */}
       <section
