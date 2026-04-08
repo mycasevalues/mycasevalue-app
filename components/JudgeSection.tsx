@@ -111,7 +111,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                     marginBottom: 4,
                     fontFamily: 'var(--font-body)',
                   }}>
-                    Plaintiff Win Rate
+                    Win Rate
                   </div>
                   <div style={{
                     fontSize: 18,
