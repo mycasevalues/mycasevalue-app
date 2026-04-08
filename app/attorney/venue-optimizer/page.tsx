@@ -213,7 +213,7 @@ export default function VenueOptimizerPage() {
                   Venue Rankings — {data.caseType}
                 </h2>
                 <p style={{ fontSize: '13px', color: '#4B5563', margin: '4px 0 0' }}>
-                  {data.venues.length} districts ranked by {prioritize === 'winRate' ? 'plaintiff win rate' : prioritize === 'settlement' ? 'settlement likelihood' : 'case speed'}
+                  {data.venues.length} districts ranked by {prioritize === 'winRate' ? 'win rate' : prioritize === 'settlement' ? 'settlement likelihood' : 'case speed'}
                 </p>
               </div>
 
