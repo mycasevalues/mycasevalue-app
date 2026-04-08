@@ -78,12 +78,12 @@ export async function POST(req: NextRequest) {
     }
 
     // Single-page ingestion — fits within 10s timeout
-    const result = await ingestJudgesPage(supabaseUrl, supabaseServiceKey, cursor, courtlistenerToken);
+    const result = await ingestJudgesPage(supabaseUrl, supabaseServiceKey, cursor, courtlistenerToken) as Record<string, unknown>;
 
     // Enhance response with pagination info
     return NextResponse.json({
       ...result,
-      processed: result.processed || 0,
+      processed: (result.processed as number) || 0,
       total: (result.total !== undefined) ? result.total : null,
       nextOffset: offset + limit,
       done: !result.cursor, // done if no cursor returned (no more pages)
