@@ -1,5 +1,3 @@
-import { Metadata } from 'next';
-
 'use client';
 
 import { useState } from 'react';
@@ -12,44 +10,6 @@ import { StaggerGrid, StaggerItem } from '../../components/motion';
 import TrendSparkline from '../../components/charts/TrendSparkline';
 import { SITE_URL } from '../../lib/site-config';
 import ConfidenceDot from '../../components/ConfidenceDot';
-
-export const metadata: Metadata = {
-  title: 'Federal Case Categories | MyCaseValues',
-  description: 'Research federal court case categories with real outcome data. Explore 10+ case types including employment discrimination, personal injury, consumer protection, and civil rights. Win rates, settlement ranges, timelines, and recovery data from 5.1M+ public cases.',
-  keywords: [
-    'federal case categories',
-    'case types',
-    'federal court',
-    'win rates',
-    'settlement data',
-    'case outcomes',
-    'federal litigation',
-    'case analysis',
-  ],
-  alternates: {
-    canonical: `${SITE_URL}/cases`,
-  },
-  openGraph: {
-    title: 'Federal Case Categories | MyCaseValues',
-    description: 'Research federal court case categories with real outcome data. Win rates, settlement ranges, timelines, and recovery data from 5.1M+ public cases.',
-    url: `${SITE_URL}/cases`,
-    type: 'website',
-    siteName: 'MyCaseValues',
-    images: [
-      {
-        url: `${SITE_URL}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: 'Federal Case Categories',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Federal Case Categories | MyCaseValues',
-    description: 'Research federal court case categories with real outcome data.',
-  },
-};
 
 // Pre-compute aggregate stats for each category
 function getCategoryStats(categoryId: string, opts: { nos: string }[]): { totalCases: number; avgWinRate: number; avgSettlement: number; avgDuration: number } {
