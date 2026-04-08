@@ -14,7 +14,11 @@ export const metadata: Metadata = {
     title: 'Legal Glossary | MyCaseValue',
     description: 'Plain-English definitions of 327 federal court terms. NOS codes, PACER, settlement percentiles, win rates, summary judgment, and more legal jargon explained.',
     url: `${SITE_URL}/glossary`,
-    type: 'website',
+    type: 'website',  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Legal Glossary | MyCaseValue',
+    description: 'Plain-English definitions of 327 federal court terms. NOS codes, PACER, settlement percentiles, win rates, summary judgment, and more legal jargon explained.',
   },
 };
 
