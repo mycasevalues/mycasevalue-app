@@ -79,7 +79,7 @@ export default function AdminPage() {
   const metrics: MetricCard[] = [
     { label: 'Total Cases', value: '4.1M+' },
     { label: 'Active NOS Codes', value: '84' },
-    { label: 'Districts', value: '94' },
+    { label: 'Districts', value: '95' },
     { label: 'Monthly Visitors', value: '142K' },
     { label: 'API Calls Today', value: '892K' },
     { label: 'Active Users', value: '3,247' },

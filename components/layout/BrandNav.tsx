@@ -73,7 +73,7 @@ const NAV_ITEMS: NavItem[] = [
         heading: 'Intelligence',
         links: [
           { name: 'Judge Profiles',          description: 'MTD denial rates, judicial favorability',          href: '/judges' },
-          { name: 'District Benchmarks',     description: 'Compare all 94 federal districts',                  href: '/districts' },
+          { name: 'District Benchmarks',     description: 'Compare all 95 federal districts',                  href: '/districts' },
           { name: 'AI Research Assistant',   description: 'Natural language case analysis · Beta',             href: '/ai-research' },
         ],
       },

@@ -6,7 +6,7 @@ export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Data Sources & Methodology | MyCaseValue',
-  description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 4M+ cases across 94 federal districts with quarterly updates.',
+  description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 4M+ cases across 95 federal districts with quarterly updates.',
   alternates: { canonical: `${SITE_URL}/data-sources` },
   openGraph: {
     title: 'MyCaseValue Data Sources',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Data Sources & Methodology | MyCaseValue',
-    description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 4M+ cases across 94 federal districts with quarterly updates.',
+    description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 4M+ cases across 95 federal districts with quarterly updates.',
   },
 };
 
@@ -29,7 +29,7 @@ const jsonLd = {
   mainEntity: {
     '@type': 'Dataset',
     name: 'Federal Court Case Analytics',
-    description: '4M+ cases from 1970-2024 across 94 federal districts',
+    description: '4M+ cases from 1970-2024 across 95 federal districts',
     distribution: {
       '@type': 'DataDownload',
       encodingFormat: 'JSON',
@@ -164,7 +164,7 @@ export default function DataSourcesPage() {
               lineHeight: 1.8,
               maxWidth: 600,
             }}>
-              Built on verified federal court records. 4M+ cases across 94 districts with quarterly updates from authoritative sources like FJC, PACER, and CourtListener.
+              Built on verified federal court records. 4M+ cases across 95 districts with quarterly updates from authoritative sources like FJC, PACER, and CourtListener.
             </p>
           </div>
         </div>
@@ -188,7 +188,7 @@ export default function DataSourcesPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
               {[
                 { number: '4.1M', label: 'Federal Cases Analyzed' },
-                { number: '94', label: 'Federal Districts' },
+                { number: '95', label: 'Federal Districts' },
                 { number: '12', label: 'Circuit Courts' },
                 { number: '1970-2024', label: 'Historical Coverage' },
               ].map((stat, idx) => (

@@ -95,6 +95,31 @@ export default function SearchPage() {
   const [tipsExpanded, setTipsExpanded] = useState(false);
   const [recentlyViewedItems, setRecentlyViewedItems] = useState<RecentItem[]>([]);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Search', item: `${SITE_URL}/search` },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        name: 'Search Federal Cases',
+        description: 'Search and filter federal civil court cases by type, district, judge, and outcome. Find real case data for litigation research and strategy.',
+        url: `${SITE_URL}/search`,
+        isPartOf: { '@type': 'WebSite', name: 'MyCaseValue', url: SITE_URL },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: `${SITE_URL}/search?q={search_term_string}`,
+          'query-input': 'required name=search_term_string',
+        },
+      },
+    ],
+  };
+
   // AI Search state
   const [aiQuery, setAiQuery] = useState('');
   const [aiLoading, setAiLoading] = useState(false);

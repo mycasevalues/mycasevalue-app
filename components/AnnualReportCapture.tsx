@@ -133,7 +133,7 @@ export default function AnnualReportCapture() {
     doc.setFont('helvetica', 'normal');
     doc.text('Comprehensive Federal Litigation Data', margin, yPosition);
     yPosition += 10;
-    doc.text('4,168,590+ Cases | 84 Case Types | 94 Districts', margin, yPosition);
+    doc.text('4,168,590+ Cases | 84 Case Types | 95 Districts', margin, yPosition);
 
     yPosition = pageHeight - 60;
     doc.setFontSize(12);

@@ -356,13 +356,49 @@ const features: { icon: React.ReactNode; title: string; description: string; bad
     icon: <AIIcon />,
     title: 'Local Court Rules Reference',
     description:
-      'Quick-reference guide for local rules across all 94 federal districts, organized by circuit.',
+      'Quick-reference guide for local rules across all 95 federal districts, organized by circuit.',
     badge: 'available' as const,
     href: '/attorney/court-rules',
   },
 ];
 
 export default function AttorneyPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.mycasevalues.com' },
+          { '@type': 'ListItem', position: 2, name: 'Attorney Mode', item: 'https://www.mycasevalues.com/attorney' },
+        ],
+      },
+      {
+        '@type': 'SoftwareApplication',
+        name: 'Attorney Mode — MyCaseValue',
+        description: 'Advanced AI-powered legal intelligence tools for attorneys. Case prediction, document analysis, judge intelligence, opposing counsel research, and bulk analysis.',
+        url: 'https://www.mycasevalues.com/attorney',
+        applicationCategory: 'LegalApplication',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+        },
+        featureList: [
+          'AI Case Predictor',
+          'Document Intelligence',
+          'Judge Intelligence',
+          'Opposing Counsel Analysis',
+          'Venue Optimizer',
+          'PACER Monitoring',
+          'Bulk Case Analysis',
+          'Team Workspace',
+          'API Access',
+        ],
+      },
+    ],
+  };
+
   return (
     <div
       style={{
@@ -372,6 +408,10 @@ export default function AttorneyPage() {
         backgroundColor: '#F7F8FA',
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <style dangerouslySetInnerHTML={{ __html: `
         .attorney-feature-card:hover {
           border-color: #004182 !important;

@@ -20,7 +20,7 @@ const PAGES: PageConfig = {
   '/methodology': ['Data Sources', 'Federal Judicial Center', 'CourtListener', 'PACER', 'Processing'],
   '/faq': ['MyCaseValue', 'legal advice', 'data come from', 'how much', 'settlement'],
   '/how-it-works': ['How It Works', 'case type', 'district', 'report', 'data'],
-  '/districts': ['Federal Court', 'Districts', '94', 'district', 'outcomes'],
+  '/districts': ['Federal Court', 'Districts', '95', 'district', 'outcomes'],
   '/cases': ['Case Types', 'Employment', 'Personal Injury', 'Consumer', 'Civil Rights'],
   '/judges': ['Judge', 'federal', 'district', 'analytics', 'Intelligence'],
   '/calculator': ['Calculator', 'case type', 'district', 'settlement', 'Calculate'],

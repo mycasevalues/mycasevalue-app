@@ -276,7 +276,7 @@ export default function MethodologyPage() {
             {[
               { stat: '5.1M+', label: 'Federal Cases' },
               { stat: '84', label: 'NOS Case Types' },
-              { stat: '94', label: 'Federal Districts' },
+              { stat: '95', label: 'Federal Districts' },
               { stat: '13', label: 'Circuit Courts' },
               { stat: '54', label: 'Years of Data' },
               { stat: 'Quarterly', label: 'Update Frequency' },
@@ -433,7 +433,7 @@ export default function MethodologyPage() {
               { v: '5.1M+', l: 'Federal Cases', c: '#0f0f0f' },
               { v: '54', l: 'Years of Data', c: '#059669' },
               { v: '20+', l: 'Case Categories', c: '#0966C3' },
-              { v: '94', l: 'Federal Districts', c: '#004182' },
+              { v: '95', l: 'Federal Districts', c: '#004182' },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
                 <div className="text-3xl sm:text-4xl font-display font-extrabold mb-2" style={{ color: stat.c }}>{stat.v}</div>

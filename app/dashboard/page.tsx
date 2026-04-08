@@ -776,7 +776,7 @@ export default async function DashboardPage() {
               {[
                 { label: 'Federal Cases', value: '4.1M+' },
                 { label: 'Case Types', value: '84' },
-                { label: 'Federal Districts', value: '94' },
+                { label: 'Federal Districts', value: '95' },
                 { label: 'Federal Judges', value: '91' },
                 { label: 'Years of Data', value: '25+' },
               ].map((stat) => (

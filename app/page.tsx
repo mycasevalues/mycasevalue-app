@@ -238,10 +238,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Stat 2: 94 Districts */}
+            {/* Stat 2: 95 Districts */}
             <div className="text-center md:border-r md:border-gray-100 md:px-6">
               <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
-                94
+                95
               </div>
               <div className="text-sm md:text-base text-gray-500 font-medium">
                 District Courts

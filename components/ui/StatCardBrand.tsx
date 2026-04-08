@@ -146,7 +146,7 @@ export const HOMEPAGE_STATS: StatBarItem[] = [
   {
     label:  'Settlements tracked',
     value:  '$2.1B',
-    sub:    'Across all 94 federal districts',
+    sub:    'Across all 95 federal districts',
   },
   {
     label:  'Federal judge profiles',

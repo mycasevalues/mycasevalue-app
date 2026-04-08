@@ -225,7 +225,7 @@ function SignInForm() {
           <div className="benefit-item">
             <div className="benefit-icon">[x]</div>
             <div className="benefit-text">
-              Search and analyze cases from all 94 federal districts
+              Search and analyze cases from all 95 federal districts
             </div>
           </div>
 

@@ -3,10 +3,10 @@ import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Search Federal Court Cases — Win Rates & Settlement Data | MyCaseValue',
-  description: 'Search 84 federal case types across all 94 districts. Find win rates, settlement ranges, timelines, and judge analytics from 5.1M+ real court outcomes. Free and instant.',
+  description: 'Search 84 federal case types across all 95 districts. Find win rates, settlement ranges, timelines, and judge analytics from 5.1M+ real court outcomes. Free and instant.',
   openGraph: {
     title: 'Search Federal Court Cases — Win Rates & Settlement Data',
-    description: 'Search 84 federal case types across all 94 districts. Win rates, settlement ranges, timelines, and judge analytics from 5.1M+ real court outcomes.',
+    description: 'Search 84 federal case types across all 95 districts. Win rates, settlement ranges, timelines, and judge analytics from 5.1M+ real court outcomes.',
     url: `${SITE_URL}/search`,
     type: 'website',
     siteName: 'MyCaseValue',

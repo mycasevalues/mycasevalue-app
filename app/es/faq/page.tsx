@@ -108,7 +108,7 @@ const faqs = [
     questions: [
       {
         q: '¿Qué tribunales están cubiertos?',
-        a: 'MyCaseValue cubre casos civiles federales en los 94 tribunales de distrito federales y datos de apelaciones. Esto incluye tribunales de distrito federales, tribunales de circuito y apelaciones. Los tribunales estatales y locales no se incluyen en nuestro conjunto de datos.',
+        a: 'MyCaseValue cubre casos civiles federales en los 95 tribunales de distrito federales y datos de apelaciones. Esto incluye tribunales de distrito federales, tribunales de circuito y apelaciones. Los tribunales estatales y locales no se incluyen en nuestro conjunto de datos.',
       },
       {
         q: '¿Por qué varían los resultados por circuito?',

@@ -53,7 +53,7 @@ const DISTRICTS: DropdownItem[] = [
   { label: '11th Circuit', href: '/districts?circuit=11' },
   { label: 'D.C. Circuit', href: '/districts?circuit=dc' },
   { label: '', href: '', divider: true },
-  { label: 'View all 94 districts', href: '/districts' },
+  { label: 'View all 95 districts', href: '/districts' },
 ];
 
 const TOOLS: DropdownItem[] = [

@@ -49,7 +49,7 @@ const jsonLd = {
     {
       '@type': 'Dataset',
       name: 'Federal Court Filing Trends',
-      description: 'Aggregate statistics on federal civil litigation trends across 84 case types and 94 districts from 2000-2024.',
+      description: 'Aggregate statistics on federal civil litigation trends across 84 case types and 95 districts from 2000-2024.',
       creator: { '@type': 'Organization', name: 'MyCaseValue' },
       distribution: {
         '@type': 'DataDownload',
@@ -206,7 +206,7 @@ export default function TrendsPage() {
             Federal Court Filing Trends
           </h1>
           <p className="leading-relaxed max-w-2xl" style={{ color: '#B0C4DE', fontFamily: 'var(--font-body)', fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}>
-            Explore real statistics from {totalCases.toLocaleString()} federal civil cases across {trends.length} case types and 94 federal districts.
+            Explore real statistics from {totalCases.toLocaleString()} federal civil cases across {trends.length} case types and 95 federal districts.
           </p>
         </div>
       </div>
@@ -218,7 +218,7 @@ export default function TrendsPage() {
             {[
               { v: totalCases.toLocaleString(), l: 'Total cases analyzed' },
               { v: `${trends.length}`, l: 'Case types tracked' },
-              { v: '94', l: 'Federal districts' },
+              { v: '95', l: 'Federal districts' },
               { v: '2000–2024', l: 'Data span' },
             ].map((stat, i) => (
               <div
