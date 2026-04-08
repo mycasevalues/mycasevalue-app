@@ -395,6 +395,7 @@ export default function SearchPage() {
         <form onSubmit={handleAISearch} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
           <input
             type="text"
+            aria-label="AI-powered natural language search"
             placeholder="Search with natural language, e.g. 'wrongful termination cases settled over $100K in New York'"
             value={aiQuery}
             onChange={(e) => {
@@ -536,6 +537,7 @@ export default function SearchPage() {
           </div>
           <input
             type="text"
+            aria-label="Search case types"
             placeholder="e.g. wrongful termination, car accident, debt collection..."
             value={query}
             onChange={e => setQuery(e.target.value)}
