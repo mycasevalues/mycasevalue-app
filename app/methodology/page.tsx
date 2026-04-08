@@ -12,7 +12,11 @@ export const metadata: Metadata = {
     title: 'Methodology — MyCaseValue',
     description: 'Learn how MyCaseValue processes and presents aggregate federal court outcome data with transparency.',
     url: `${SITE_URL}/methodology`,
-    type: 'website',
+    type: 'website',  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Methodology — MyCaseValue | How We Process Federal Court Data',
+    description: 'Learn how MyCaseValue processes data from the Federal Judicial Center Integrated Database and CourtListener to provide aggregate federal court outcome statistics.',
   },
 };
 
