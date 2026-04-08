@@ -35,13 +35,16 @@ export const metadata: Metadata = {
   title: 'Federal Court Analytics & Settlement Data',
   description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
   openGraph: {
+    type: 'website',
     title: 'Federal Court Analytics & Settlement Data',
+    images: [{ url: `${SITE_URL}/og/home.png`, width: 1200, height: 630, alt: 'MyCaseValue - Federal Court Analytics' }],
     description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
     url: `${SITE_URL}`,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Federal Court Analytics & Settlement Data',
+    images: [`${SITE_URL}/og/home.png`],
     description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
   },
 };
