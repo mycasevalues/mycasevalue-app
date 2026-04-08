@@ -338,7 +338,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           }}>
             {/* Win Rate Card */}
             <div className="metric-card" style={{ borderColor: colorInfo.border }}>
-              <div className="metric-label">Plaintiff Win Rate</div>
+              <div className="metric-label">Win Rate</div>
               <div
                 style={{
                   fontSize: 32,
