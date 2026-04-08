@@ -11,9 +11,10 @@ out/
 build/
 dist/
 
-# Environment
+# Environment — never commit secrets
 .env
 .env.local
+.env.production
 .env.development.local
 .env.test.local
 .env.production.local
@@ -40,4 +41,10 @@ next-env.d.ts
 
 # Vercel
 .vercel
+
+# Testing
 playwright-report/
+test-results/
+
+# Sentry
+.sentryclirc
