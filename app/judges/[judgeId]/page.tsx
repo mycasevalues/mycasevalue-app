@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const aggregated = aggregateJudgeStats(statistics);
 
   const title = `Judge ${judge.full_name} — Federal Court Statistics | MyCaseValue`;
-  const description = `Research Judge ${judge.full_name}'s ruling patterns and statistics. Plaintiff win rate: ${(aggregated.plaintiffWinRate || 0).toFixed(1)}%. ${judge.district_id} District, ${judge.circuit} Circuit. ${aggregated.totalCases} cases analyzed.`;
+  const description = `Research Judge ${judge.full_name}'s ruling patterns and statistics. Win rate: ${(aggregated.plaintiffWinRate || 0).toFixed(1)}%. ${judge.district_id} District, ${judge.circuit} Circuit. ${aggregated.totalCases} cases analyzed.`;
 
   const ogImageUrl = new URL('/api/og', SITE_URL);
   ogImageUrl.searchParams.set('title', `Judge ${judge.full_name}`);
