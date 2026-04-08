@@ -439,7 +439,7 @@ export default async function ReportPage({
                 {winRate}%
               </p>
               <p style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-body)', marginBottom: '6px' }}>
-                Plaintiff win rate
+                Win rate
               </p>
               <p style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
                 Trial outcomes
@@ -718,7 +718,7 @@ export default async function ReportPage({
                   Win Rates by State
                 </h2>
                 <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
-                  How plaintiff win rates vary across federal districts
+                  How case outcome rates vary across federal districts
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   {Object.entries(real.state_rates as Record<string, number>)
@@ -762,7 +762,7 @@ export default async function ReportPage({
                   Win Rates by Circuit
                 </h2>
                 <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
-                  How plaintiff win rates vary across federal circuit courts
+                  How case outcome rates vary across federal circuit courts
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   {Object.entries(real.circuit_rates as Record<string, number>)
