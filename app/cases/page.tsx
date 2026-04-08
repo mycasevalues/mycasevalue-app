@@ -145,7 +145,7 @@ export default function CasesIndexPage() {
       <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#0966C3' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
             CASE TYPES
           </div>
           <h1 className="font-display" style={{ fontSize: 44, fontWeight: 600, color: '#FFFFFF', margin: '0 0 16px', letterSpacing: '-0.5px' }}>
@@ -476,7 +476,7 @@ export default function CasesIndexPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
               <Link href="/search" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="m21 21-4.35-4.35"></path>
                   </svg>
@@ -487,7 +487,7 @@ export default function CasesIndexPage() {
 
               <Link href="/calculator" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"></rect>
                     <path d="M8 6h8M8 10h8M8 14h8M8 18h8"></path>
                   </svg>
@@ -498,7 +498,7 @@ export default function CasesIndexPage() {
 
               <Link href="/compare" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
                     <path d="M12 3v18M3 9h6M15 9h6M3 15h6M15 15h6"></path>
                   </svg>
                   <div style={{ fontWeight: 600, color: '#0f0f0f' }}>Compare Cases</div>
@@ -508,7 +508,7 @@ export default function CasesIndexPage() {
 
               <Link href="/trends" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2">
                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                   </svg>
                   <div style={{ fontWeight: 600, color: '#0f0f0f' }}>View Trends</div>
@@ -518,7 +518,7 @@ export default function CasesIndexPage() {
 
               <Link href="/map" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
