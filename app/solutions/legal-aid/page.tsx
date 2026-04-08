@@ -260,7 +260,7 @@ export default function LegalAidPage() {
                 lineHeight: 1.6,
                 margin: 0,
               }}>
-                Settlement research for plaintiffs.
+                Settlement research for all parties.
               </p>
             </Link>
             <Link
