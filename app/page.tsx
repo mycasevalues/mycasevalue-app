@@ -31,21 +31,20 @@ import { SITE_URL } from '@/lib/site-config'
 import { LogoMark } from '@/components/brand/LogoMark'
 import { StatBar, HOMEPAGE_STATS } from '@/components/ui/StatCardBrand'
 
-
 export const metadata: Metadata = {
+  title: 'Federal Court Analytics & Settlement Data',
+  description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
+  openGraph: {
     title: 'Federal Court Analytics & Settlement Data',
-      description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
-        openGraph: {
-            title: 'Federal Court Analytics & Settlement Data',
-                description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
-                    url: `${SITE_URL}`,
-                      },
-                        twitter: {
-                            card: 'summary_large_image',
-                                title: 'Federal Court Analytics & Settlement Data',
-                                    description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
-                                      },
-                                      };
+    description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
+    url: `${SITE_URL}`,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Federal Court Analytics & Settlement Data',
+    description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
+  },
+};
 // ── TYPES ──────────────────────────────────────────────────────────────────
 
 interface Feature {
@@ -171,11 +170,13 @@ function HeroLeft() {
         method="GET"
         className="flex bg-white border-[1.5px] border-brand-rule rounded-[8px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,.05)] mb-2.5 max-w-[460px]"
       >
+        <label htmlFor="search-input" className="sr-only">Search by case type, judge name, or federal district</label>
         <div className="flex flex-1 items-center gap-2 px-3.5 py-2.5">
-          <svg className="w-3.5 h-3.5 text-brand-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-3.5 h-3.5 text-brand-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
             <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
           </svg>
           <input
+            id="search-input"
             name="q"
             placeholder="Case type, judge name, or federal district…"
             className="flex-1 border-none outline-none font-inter text-[13px] text-brand-ink-2 bg-transparent placeholder:text-brand-muted"
