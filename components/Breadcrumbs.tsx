@@ -16,7 +16,6 @@ const HomeIcon = () => (
     viewBox="0 0 14 14"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
   >
     <path
       d="M1 7V12.5C1 12.7761 1.22386 13 1.5 13H5V9H9V13H12.5C12.7761 13 13 12.7761 13 12.5V7M1 7L7 1.5L13 7M1 7H2.5M11.5 7V3.5"
