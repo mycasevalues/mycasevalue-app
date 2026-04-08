@@ -100,7 +100,7 @@ export default function DemandPackageGenerator() {
     doc.setFontSize(10);
 
     const winRate = caseData?.wr || 0;
-    doc.text(`Plaintiff Win Rate: ${winRate.toFixed(1)}%`, margin, yPos);
+    doc.text(`Win Rate: ${winRate.toFixed(1)}%`, margin, yPos);
     yPos += 5;
 
     const medianSettlement = caseData?.rng?.md ? caseData.rng.md * 1000 : 0;
@@ -433,7 +433,7 @@ function PreviewContent({
 
       <div style={{ marginBottom: '20px' }}>
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#0f0f0f', marginBottom: '8px' }}>
-          Plaintiff Win Rate
+          Win Rate
         </h3>
         <div style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
           <p style={{ margin: '4px 0' }}>
