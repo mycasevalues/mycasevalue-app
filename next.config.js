@@ -39,15 +39,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/widget/:nosCode/:district',
-        headers: [
-          { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'X-Frame-Options', value: 'ALLOWALL' },
-          { key: 'X-XSS-Protection', value: '1; mode=block' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-        ],
-      },
-      {
         source: '/(.*)',
         headers: [
           { key: 'X-Content-Type-Options', value: 'nosniff' },
@@ -69,9 +60,33 @@ const nextConfig = {
               "connect-src 'self' https://*.supabase.co https://api.stripe.com https://www.google-analytics.com https://www.googletagmanager.com https://api.anthropic.com https://courtlistener.com https://vercel.live",
               "frame-src https://js.stripe.com https://hooks.stripe.com https://vercel.live",
               "worker-src 'self' blob:",
+              "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
               "frame-ancestors 'none'",
+              "upgrade-insecure-requests",
+            ].join('; '),
+          },
+        ],
+      },
+      {
+        // Widget embeddable route — must come AFTER /(.*) to override frame restrictions
+        source: '/widget/:nosCode/:district',
+        headers: [
+          { key: 'X-Frame-Options', value: 'ALLOWALL' },
+          { key: 'Cross-Origin-Opener-Policy', value: 'unsafe-none' },
+          { key: 'Cross-Origin-Resource-Policy', value: 'cross-origin' },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline'",
+              "style-src 'self' 'unsafe-inline'",
+              "font-src 'self'",
+              "img-src 'self' data: blob: https:",
+              "connect-src 'self' https://*.supabase.co",
+              "object-src 'none'",
+              "frame-ancestors *",
               "upgrade-insecure-requests",
             ].join('; '),
           },
