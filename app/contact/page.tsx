@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'Get in touch with the MyCaseValue team for support, enterprise inquiries, or data methodology questions.',
   alternates: { canonical: `${SITE_URL}/contact` },
+  openGraph: {
+    title: 'Contact Us',
+    description: 'Get in touch with the MyCaseValue team for support, enterprise inquiries, or data methodology questions.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us',
+    description: 'Get in touch with the MyCaseValue team for support, enterprise inquiries, or data methodology questions.',
+  },
 };
 
 const jsonLd = {
