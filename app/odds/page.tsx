@@ -429,7 +429,7 @@ export default function OddsPage() {
                 </div>
                 <p style={{ fontSize: 14, color: '#4B5563', margin: '0 0 16px' }}>
                   Based on <strong style={{ color: '#0f0f0f', fontFamily: 'var(--font-mono)' }}>
-                    {results.totalCases.toLocaleString()}
+                    {(results.totalCases ?? 0).toLocaleString()}
                   </strong> {results.label} cases in federal court
                 </p>
                 <div style={{
@@ -531,7 +531,7 @@ export default function OddsPage() {
                             fontWeight: 600,
                             fontFamily: 'var(--font-mono)',
                           }}>
-                            {end.count.toLocaleString()}
+                            {(end.count ?? 0).toLocaleString()}
                           </span>
                         </div>
                       ))}
@@ -717,7 +717,7 @@ export default function OddsPage() {
                   letterSpacing: '0.3px',
                   fontWeight: 600,
                 }}>
-                  Source: Federal Judicial Center Integrated Database · {results.totalCases.toLocaleString()} cases
+                  Source: Federal Judicial Center Integrated Database · {(results.totalCases ?? 0).toLocaleString()} cases
                 </p>
               </div>
 
@@ -1203,12 +1203,12 @@ export default function OddsPage() {
                     <div style={{ padding: 16, background: '#E8F3EB', border: '1px solid #057642', borderRadius: 8, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>With Attorney</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: '#057642', fontFamily: 'var(--font-mono)' }}>{attyData.rwr}%</div>
-                      <div style={{ fontSize: 11, color: '#4B5563' }}>{attyData.rn.toLocaleString()} cases</div>
+                      <div style={{ fontSize: 11, color: '#4B5563' }}>{(attyData.rn ?? 0).toLocaleString()} cases</div>
                     </div>
                     <div style={{ padding: 16, background: '#FEF0EF', border: '1px solid #CC1016', borderRadius: 8, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>Pro Se</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{attyData.pwr}%</div>
-                      <div style={{ fontSize: 11, color: '#4B5563' }}>{attyData.pn.toLocaleString()} cases</div>
+                      <div style={{ fontSize: 11, color: '#4B5563' }}>{(attyData.pn ?? 0).toLocaleString()} cases</div>
                     </div>
                     <div style={{ padding: 16, background: '#EDF3FB', border: '1px solid #0966C3', borderRadius: 8, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>Advantage</div>
