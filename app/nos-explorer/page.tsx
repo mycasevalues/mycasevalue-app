@@ -3,7 +3,18 @@ import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 import { REAL_DATA } from '../../lib/realdata';
 import { SITS } from '../../lib/data';
-import NosExplorerClient from '../../components/NosExplorerClient';
+const NosExplorerClient = dynamic(
+  () => import('../../components/NosExplorerClient'),
+  {
+    loading: () => (
+      <div style={{ minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6b7280' }}>
+        Loading explorer...
+      </div>
+    ),
+    ssr: false,
+  }
+);
+import dynamic from 'next/dynamic';
 
 export const revalidate = 0;
 
