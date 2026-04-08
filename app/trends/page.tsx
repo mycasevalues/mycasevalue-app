@@ -189,7 +189,7 @@ export default function TrendsPage() {
               fontFamily: 'var(--font-body)',
             }}
           >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
             </svg>
             TRENDS
@@ -949,7 +949,7 @@ export default function TrendsPage() {
                 }}
               >
                 <div style={{ fontSize: '2rem', marginBottom: '12px' }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg>
+                  <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg>
                 </div>
                 <h3 className="font-semibold mb-2 group-hover:text-blue-600 transition-colors" style={{ color: '#0f0f0f' }}>
                   {item.title}
@@ -984,7 +984,7 @@ export default function TrendsPage() {
               className="lex-btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
             >
               Check My Odds — Free
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
