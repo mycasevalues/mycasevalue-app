@@ -1,14 +1,15 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
+import { getJudges } from '../../lib/judge-data-service';
 import JudgeDirectoryClient from '../../components/JudgeDirectoryClient';
 import JudgeRadarPreview from '../../components/JudgeRadarPreview';
 
-export const revalidate = 0;
+export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
   title: 'Federal Judge Directory — Statistics & Analytics | MyCaseValue',
-  description: 'Research federal judges across 94 districts with comprehensive statistics. Compare plaintiff win rates, motion grant rates, settlement patterns, and case duration for 5.1M+ cases.',
+  description: 'Research federal judges across 94 districts with comprehensive statistics. Compare win rates, motion grant rates, settlement patterns, and case duration for 5.1M+ cases.',
   alternates: { canonical: `${SITE_URL}/judges` },
   openGraph: {
     title: 'Federal Judge Directory — Statistics & Analytics',
@@ -18,7 +19,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function JudgesPage() {
+export default async function JudgesPage() {
+  // Pre-fetch initial 24 judges server-side for instant first paint
+  let initialJudges: Awaited<ReturnType<typeof getJudges>>['judges'] = [];
+  let initialTotal = 0;
+  try {
+    const result = await getJudges({ limit: 24, sortBy: 'name', order: 'asc' });
+    initialJudges = result.judges;
+    initialTotal = result.total;
+  } catch (err) {
+    console.error('Failed to pre-fetch judges:', err);
+  }
+
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
       {/* Header */}
@@ -54,7 +66,7 @@ export default function JudgesPage() {
               fontSize: 'clamp(15px, 2vw, 17px)', lineHeight: 1.6, maxWidth: 640,
               color: '#C7D1D8', fontFamily: 'var(--font-body)',
             }}>
-              Explore 94 federal judicial districts with comprehensive data from the Federal Judicial Center and CourtListener. Motion grant rates, case duration, plaintiff win rates, and ruling patterns.
+              Explore 94 federal judicial districts with comprehensive data from the Federal Judicial Center and CourtListener. Motion grant rates, case duration, win rates, and ruling patterns.
             </p>
           </div>
         </div>
@@ -63,7 +75,7 @@ export default function JudgesPage() {
       {/* Main Content */}
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '32px 24px 48px' }}>
         {/* Judge Directory Client Component */}
-        <JudgeDirectoryClient />
+        <JudgeDirectoryClient initialJudges={initialJudges} initialTotal={initialTotal} />
 
         {/* Beta Notice with Radar Preview */}
         <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #E5E7EB', background: '#F7F8FA', marginBottom: 64, marginTop: 64 }}>
@@ -84,7 +96,7 @@ export default function JudgesPage() {
             Data Methodology
           </h3>
           <p style={{ fontSize: 12, lineHeight: 1.6, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
-            Judge analytics are derived from publicly available federal court records and PACER data. Metrics include motion grant rates, case duration, plaintiff win rates, and settlement patterns. Data is updated periodically and covers active Article III judges in the 94 federal judicial districts. MyCaseValue LLC is not a law firm and does not provide legal advice.
+            Judge analytics are derived from publicly available federal court records and PACER data. Metrics include motion grant rates, case duration, win rates, and settlement patterns. Data is updated periodically and covers active Article III judges in the 94 federal judicial districts. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@
  * Includes tabbed interface for judge directory and case type finder
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { JudgeWithStats } from '@/lib/supabase-judges';
 import { getWinRateColor } from '@/lib/color-scale';
@@ -135,8 +135,14 @@ function getNosCodes(): Array<{ code: string; label: string }> {
   return result;
 }
 
-export default function JudgeDirectoryClient() {
+interface JudgeDirectoryClientProps {
+  initialJudges?: JudgeWithStats[];
+  initialTotal?: number;
+}
+
+export default function JudgeDirectoryClient({ initialJudges = [], initialTotal = 0 }: JudgeDirectoryClientProps) {
   const [activeTab, setActiveTab] = useState<'directory' | 'by-case-type'>('directory');
+  const hasInitialData = initialJudges.length > 0;
 
   // Directory tab state
   const [searchQuery, setSearchQuery] = useState('');
@@ -145,10 +151,10 @@ export default function JudgeDirectoryClient() {
   const [selectedPresident, setSelectedPresident] = useState('');
   const [sortBy, setSortBy] = useState('name');
   const [state, setState] = useState<JudgeDirectoryState>({
-    judges: [],
-    total: 0,
+    judges: initialJudges,
+    total: initialTotal,
     currentPage: 1,
-    loading: true,
+    loading: !hasInitialData,
     error: null,
   });
 
@@ -163,8 +169,17 @@ export default function JudgeDirectoryClient() {
     error: null,
   });
 
+  // Skip initial client fetch when server-side data is available
+  const skipInitialFetch = useRef(hasInitialData);
+
   // Fetch judges from API (directory tab)
   useEffect(() => {
+    // On first mount with SSR data, skip the redundant fetch
+    if (skipInitialFetch.current) {
+      skipInitialFetch.current = false;
+      return;
+    }
+
     const fetchJudges = async () => {
       setState(prev => ({ ...prev, loading: true, error: null }));
 

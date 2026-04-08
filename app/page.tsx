@@ -75,7 +75,7 @@ const FEATURES: Feature[] = [
       </svg>
     ),
     title: 'Judge Intelligence',
-    body:  'MTD denial rates, time-to-trial, and plaintiff favorability for 8,400+ federal judges nationwide.',
+    body:  'MTD denial rates, time-to-trial, and judicial favorability for 8,400+ federal judges nationwide.',
   },
   {
     icon: (
@@ -84,7 +84,7 @@ const FEATURES: Feature[] = [
       </svg>
     ),
     title: 'District Benchmarks',
-    body:  'Compare all 94 federal districts by settlement culture, filing velocity, and plaintiff outcomes.',
+    body:  'Compare all 94 federal districts by settlement culture, filing velocity, and case outcomes.',
   },
 ]
 
@@ -99,7 +99,7 @@ const PLATFORM_SECTIONS: PlatformSection[] = [
   {
     eyebrow: 'Judicial Intelligence',
     title:   'Judge & Court Profiling',
-    body:    'Plaintiff favorability scores, MTD denial rates, and decision patterns for 8,400+ federal judges nationwide.',
+    body:    'Judicial favorability scores, MTD denial rates, and decision patterns for 8,400+ federal judges nationwide.',
     href:    '/judges',
     cta:     'Search judges',
   },
@@ -222,7 +222,7 @@ function HeroLeft() {
         </div>
         <p className="font-inter text-[12px] text-brand-muted">
           Trusted by{' '}
-          <strong className="font-semibold text-brand-ink-2">5,000+ plaintiffs</strong>{' '}
+          <strong className="font-semibold text-brand-ink-2">5,000+ litigants</strong>{' '}
           across all 94 federal districts
         </p>
       </div>

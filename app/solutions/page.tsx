@@ -112,7 +112,7 @@ export default function SolutionsPage() {
               lineHeight: 1.6,
             }}
           >
-            From individual plaintiffs to enterprise legal departments, MyCaseValue
+            From individual litigants to enterprise legal departments, MyCaseValue
             delivers data-driven insights tailored to your workflow.
           </p>
 

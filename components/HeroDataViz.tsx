@@ -57,7 +57,7 @@ const DEFAULT_CARDS: CardItem[] = [
     district: 'C.D. Cal.',
     wr: 71.2,
     median: 142,
-    takeaway: 'Strongest plaintiff win rate across districts',
+    takeaway: 'Strongest win rate across districts',
   },
   {
     caseType: 'Product Liability',
@@ -92,7 +92,7 @@ const DEFAULT_CARDS: CardItem[] = [
     district: 'S.D. Tex.',
     wr: 61.0,
     median: 150,
-    takeaway: 'Regional enforcement patterns favor plaintiffs',
+    takeaway: 'Regional enforcement patterns favor filing parties',
   },
   {
     caseType: 'Labor Standards',

@@ -41,7 +41,7 @@ const TabbedFeatures: React.FC = () => {
       id: 1,
       title: 'Win Rate Analysis',
       description:
-        'See plaintiff win rates broken down by case type, district, and time period. Understand your odds before filing.',
+        'See win rates broken down by case type, district, and time period. Understand your odds before filing.',
       preview: <WinRatePreview />,
     },
     {

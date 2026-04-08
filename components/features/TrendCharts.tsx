@@ -160,7 +160,7 @@ export default function TrendCharts() {
           Win Rate Trends by Category (2018–2024)
         </h3>
         <p style={{ color: '#4B5563', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
-          Plaintiff win rate trends across top case categories
+          Win rate trends across top case categories
         </p>
         <ResponsiveContainer width="100%" height={350}>
           <LineChart data={categoryTrends[0]?.years ? buildCombinedCategoryData(categoryTrends) : []}>
@@ -296,7 +296,7 @@ export default function TrendCharts() {
           Circuit Court Win Rates
         </h3>
         <p style={{ color: '#4B5563', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
-          Average plaintiff win rate by federal circuit
+          Average win rate by federal circuit
         </p>
         <ResponsiveContainer width="100%" height={350}>
           <BarChart
