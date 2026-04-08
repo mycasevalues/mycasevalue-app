@@ -261,7 +261,7 @@ export default function SearchPage() {
       <div className="search-header" style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0966C3', flexShrink: 0 }}>
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0966C3', flexShrink: 0 }}>
               <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <span style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
@@ -337,7 +337,7 @@ export default function SearchPage() {
       {query.length === 0 && recentItems.length > 0 && (
         <div style={{ marginBottom: '24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#4B5563', flexShrink: 0 }}>
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#4B5563', flexShrink: 0 }}>
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
@@ -382,7 +382,7 @@ export default function SearchPage() {
       {/* AI-Powered Search Section */}
       <div style={{ marginBottom: '32px', padding: '24px', background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', border: '1px solid #D8BFFF', borderRadius: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0966C3', flexShrink: 0 }}>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0966C3', flexShrink: 0 }}>
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
           </svg>
           <label style={{ fontSize: '13px', fontWeight: '600', color: '#004182', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0' }}>
@@ -456,7 +456,7 @@ export default function SearchPage() {
           >
             {aiLoading ? (
               <>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline animate-spin mr-2" style={{ marginBottom: '2px', marginRight: '6px', animation: 'spin 1s linear infinite' }}><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 2.2"/></svg>
+                <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline animate-spin mr-2" style={{ marginBottom: '2px', marginRight: '6px', animation: 'spin 1s linear infinite' }}><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 2.2"/></svg>
                 Analyzing...
               </>
             ) : (
@@ -619,12 +619,12 @@ export default function SearchPage() {
           onMouseEnter={(e) => e.currentTarget.style.background = '#E0F2FE'}
           onMouseLeave={(e) => e.currentTarget.style.background = '#F0F9FF'}
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#0369A1', flexShrink: 0 }}>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#0369A1', flexShrink: 0 }}>
             <circle cx="12" cy="12" r="10" />
             <path d="M12 16v-4m0-4h.01" />
           </svg>
           <span style={{ fontSize: '13px', fontWeight: '600', color: '#0369A1', margin: 0, flex: 1, textAlign: 'left' }}>Search Tips</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0369A1', transform: tipsExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 150ms' }}>
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0369A1', transform: tipsExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 150ms' }}>
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </button>
@@ -650,7 +650,7 @@ export default function SearchPage() {
       {/* Empty state */}
       {query.length > 1 && results.length === 0 && !isLoading && (
         <div style={{ textAlign: 'center', padding: '40px 24px' }}>
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: '#E5E7EB', margin: '0 auto 16px', display: 'block' }}>
+          <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: '#E5E7EB', margin: '0 auto 16px', display: 'block' }}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <p style={{ color: '#4B5563', fontSize: 16, margin: 0, marginBottom: 8, fontFamily: 'var(--font-body)' }}>
