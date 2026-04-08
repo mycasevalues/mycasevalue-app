@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: 'For Insurance Companies | MyCaseValue',
   description: 'Settlement benchmarking, claim valuation, and litigation cost forecasting for insurers and defense counsel.',
   alternates: { canonical: `${SITE_URL}/solutions/insurance` },
+  openGraph: {
+    title: 'For Insurance Companies | MyCaseValue',
+    description: 'Settlement benchmarking, claim valuation, and litigation cost forecasting for insurers and defense counsel.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Insurance Companies | MyCaseValue',
+    description: 'Settlement benchmarking, claim valuation, and litigation cost forecasting for insurers and defense counsel.',
+  },
 };
 
 const FEATURES = [
