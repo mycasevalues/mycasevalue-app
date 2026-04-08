@@ -28,7 +28,7 @@ const WebVitalsReporter = dynamic(() => import('../components/analytics/WebVital
 const DemoMode = dynamic(() => import('../components/DemoMode'), { ssr: false });
 const LanguageDetectBanner = dynamic(() => import('../components/LanguageDetectBanner'), { ssr: false });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: 'MyCaseValue — Federal Court Analytics & Settlement Data',
     template: '%s | MyCaseValue',
@@ -51,7 +51,7 @@ export const metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image' as const,
+    card: 'summary_large_image',
     title: 'MyCaseValue — Federal Court Outcome Data',
     description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, recovery ranges. Free and private.',
     images: ['https://www.mycasevalues.com/og-image.png'],
@@ -73,7 +73,7 @@ export const metadata = {
       index: true,
       follow: true,
       'max-video-preview': -1,
-      'max-image-preview': 'large' as const,
+      'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
@@ -277,7 +277,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" hrefLang="x-default" href="https://www.mycasevalues.com" />
         <meta name="author" content="MyCaseValue LLC" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="theme-color" content="#F8F9FA" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="MyCaseValue" />
@@ -316,7 +315,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <LanguageDetectBanner />
             <BetaBanner />
             <SiteNav />
-            <main id="main-content" role="main">
+            <main id="main-content">
               {children}
             </main>
             <SiteFooter />
