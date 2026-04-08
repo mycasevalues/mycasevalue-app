@@ -277,7 +277,7 @@ export default function SmallFirmsPage() {
                 72%
               </div>
               <div style={{ fontSize: '11px', color: '#6b7280', marginBottom: '12px' }}>
-                plaintiff win rate
+                case outcome rate
               </div>
               <div style={{
                 fontFamily: '"Courier New", monospace',
