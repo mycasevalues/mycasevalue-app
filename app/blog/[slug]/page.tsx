@@ -36,8 +36,8 @@ The data suggests several strategic takeaways. First, early case evaluation shou
 Employment discrimination remains one of the most active and consequential areas of federal litigation. The data does not tell attorneys how to win individual cases, but it establishes the statistical landscape within which every case unfolds.`,
   },
   {
-    slug: 'plaintiff-friendly-districts',
-    title: 'The 10 Most Plaintiff-Friendly Federal Districts — And What Makes Them Different',
+    slug: 'favorable-outcome-districts',
+    title: 'The 10 Most Favorable-Outcome Federal Districts — And What Makes Them Different',
     description: 'Real district win rate data reveals which federal courts are most favorable to plaintiffs and the factors that make them stand out.',
     category: 'District Analysis',
     date: new Date('2025-02-03'),
@@ -45,7 +45,7 @@ Employment discrimination remains one of the most active and consequential areas
     author: 'MyCaseValue Analytics Team',
     content: `Not all federal districts are created equal. Across the 94 federal district courts, plaintiff win rates vary by more than 20 percentage points depending on jurisdiction, case type, and local litigation culture. For attorneys advising clients on venue selection, forum shopping, or simply calibrating settlement expectations, understanding which districts favor plaintiffs — and why — is essential intelligence.
 
-The concept of a "plaintiff-friendly" district is not simply about which courts award the biggest verdicts. It encompasses win rate at trial, settlement frequency, settlement amounts, dismissal rates, and the overall probability that a plaintiff walks away with some recovery. A district with sky-high verdicts but a 90% dismissal rate is not genuinely plaintiff-friendly; a district with moderate verdicts but high settlement rates and low dismissal rates may be.
+The concept of a "favorable-outcome" district is not simply about which courts award the biggest verdicts. It encompasses win rate at trial, settlement frequency, settlement amounts, dismissal rates, and the overall probability that a plaintiff walks away with some recovery. A district with sky-high verdicts but a 90% dismissal rate is not genuinely favorable-outcome; a district with moderate verdicts but high settlement rates and low dismissal rates may be.
 
 The Eastern District of Pennsylvania consistently ranks among the most favorable jurisdictions for civil plaintiffs. Its plaintiff win rate across all civil case types exceeds the national average by 5-7 percentage points, driven by a combination of favorable jury demographics, experienced plaintiff's bar, and judges who allow cases to proceed to discovery at higher rates. Employment discrimination cases in this district show settlement rates above 55%, compared to the national average of 49.6%.
 
@@ -63,13 +63,13 @@ The Eastern District of Michigan, encompassing Detroit, shows elevated plaintiff
 
 The District of Massachusetts, centered on Boston, shows above-average plaintiff outcomes in employment, intellectual property, and professional liability cases. The district benefits from sophisticated juries, a strong academic legal community, and judges who maintain active case management calendars.
 
-The Western District of Washington, encompassing Seattle, has emerged as an increasingly plaintiff-friendly jurisdiction, particularly in employment and technology-related litigation. Growing corporate presence in the Seattle area provides well-resourced defendants, while the local jury pool and judicial temperament tend to favor plaintiffs.
+The Western District of Washington, encompassing Seattle, has emerged as an increasingly favorable-outcome jurisdiction, particularly in employment and technology-related litigation. Growing corporate presence in the Seattle area provides well-resourced defendants, while the local jury pool and judicial temperament tend to favor plaintiffs.
 
 The Middle District of Florida shows strong plaintiff metrics in personal injury and insurance disputes. The district's large retired population creates jury pools sympathetic to injury claims, and Florida's insurance litigation environment creates steady case flow with predictable settlement patterns.
 
-Several common factors distinguish plaintiff-friendly districts. First, urban jury pools with higher education levels and diverse demographics tend to be more receptive to plaintiff arguments, particularly in discrimination and consumer protection cases. Second, strong local plaintiff's bars create competitive dynamics that drive better representation quality and more aggressive litigation strategies. Third, judges who actively manage cases and push toward resolution create environments where defendants cannot simply outlast plaintiffs through delay tactics. Fourth, high local cost of living translates directly into higher damage calculations for lost wages, medical expenses, and pain and suffering.
+Several common factors distinguish favorable-outcome districts. First, urban jury pools with higher education levels and diverse demographics tend to be more receptive to plaintiff arguments, particularly in discrimination and consumer protection cases. Second, strong local plaintiff's bars create competitive dynamics that drive better representation quality and more aggressive litigation strategies. Third, judges who actively manage cases and push toward resolution create environments where defendants cannot simply outlast plaintiffs through delay tactics. Fourth, high local cost of living translates directly into higher damage calculations for lost wages, medical expenses, and pain and suffering.
 
-Conversely, districts that rank as least plaintiff-friendly tend to be rural, with smaller jury pools, fewer experienced plaintiff attorneys, and judges who grant summary judgment at higher rates. The Northern District of Mississippi, Southern District of Alabama, and Western District of Oklahoma consistently show below-average plaintiff outcomes across most case types.
+Conversely, districts that rank as least favorable-outcome tend to be rural, with smaller jury pools, fewer experienced plaintiff attorneys, and judges who grant summary judgment at higher rates. The Northern District of Mississippi, Southern District of Alabama, and Western District of Oklahoma consistently show below-average plaintiff outcomes across most case types.
 
 For practitioners, this data should inform three key decisions: venue selection where multiple forums are available, settlement valuation calibrated to the specific district, and client counseling about realistic odds and timelines. A case worth $120,000 in the Northern District of California may be worth $65,000 in the Northern District of Mississippi — same facts, same law, different statistical reality.
 
