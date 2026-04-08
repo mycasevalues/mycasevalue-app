@@ -352,7 +352,7 @@ export default function TrendsPage() {
             Circuit Court Performance
           </h2>
           <p className="mb-8" style={{ color: '#4B5563', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
-            Average plaintiff win rates by federal circuit court with comparison to national average.
+            Average win rates by federal circuit court with comparison to national average.
           </p>
           {(() => {
             const circuitData = getCircuitWinRates();
