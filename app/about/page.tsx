@@ -567,7 +567,7 @@ export default function AboutPage() {
             <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', fontFamily: 'var(--font-body)' }}>About</span>
           </div>
           <div className="about-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5">
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
             ABOUT US
@@ -687,7 +687,7 @@ export default function AboutPage() {
                   name: 'Federal Judicial Center',
                   description: 'The official source for federal civil case statistics since 1970. Covers case type, disposition, and duration.',
                   icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f0f0f" strokeWidth="2">
+                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f0f0f" strokeWidth="2">
                       <path d="M12 3v18M3 12h18M3 6h18M3 18h18M6 3v18M18 3v18"/>
                     </svg>
                   ),
@@ -696,7 +696,7 @@ export default function AboutPage() {
                   name: 'CourtListener',
                   description: 'Aggregates federal judicial opinions, oral arguments, and PACER filings for comprehensive case data.',
                   icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2">
+                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2">
                       <path d="M3 12L9 6l6 6 6-6M3 12l6-6 6 6 6-6v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V12z"/>
                     </svg>
                   ),
@@ -705,7 +705,7 @@ export default function AboutPage() {
                   name: 'PACER',
                   description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and filings are sourced from PACER.',
                   icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4B5563" strokeWidth="2">
+                    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4B5563" strokeWidth="2">
                       <path d="M20 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"/>
                       <path d="M8 9h8M8 13h8"/>
                     </svg>
@@ -767,7 +767,7 @@ export default function AboutPage() {
                   <div className="tool-description">{tool.description}</div>
                   <Link href="/search" className="tool-link">
                     Explore
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                   </Link>
@@ -832,7 +832,7 @@ export default function AboutPage() {
                   <p>Have questions about our data, tools, or platform?</p>
                   <a href="mailto:support@mycasevalues.com" className="contact-link">
                     support@mycasevalues.com
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                   </a>
@@ -842,7 +842,7 @@ export default function AboutPage() {
                   <p>Help us improve. Share feedback and feature requests.</p>
                   <a href="mailto:feedback@mycasevalue.com" className="contact-link">
                     feedback@mycasevalue.com
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                   </a>
@@ -852,7 +852,7 @@ export default function AboutPage() {
                   <p>Stay updated on platform improvements and new features.</p>
                   <a href="https://twitter.com/mycasevalue" target="_blank" rel="noopener noreferrer" className="contact-link">
                     Twitter
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                   </a>
