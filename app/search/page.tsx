@@ -537,7 +537,6 @@ export default function SearchPage() {
           </div>
           <input
             type="text"
-            aria-label="Search case types"
             placeholder="e.g. wrongful termination, car accident, debt collection..."
             value={query}
             onChange={e => setQuery(e.target.value)}
