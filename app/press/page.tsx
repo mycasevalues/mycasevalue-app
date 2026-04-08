@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: 'Press Kit | MyCaseValue',
   description: 'Media resources, brand assets, company information, and press contact for MyCaseValue. Download logos, brand guidelines, and company overview for journalists and media professionals.',
   alternates: { canonical: `${SITE_URL}/press` },
+  openGraph: {
+    title: 'Press Kit | MyCaseValue',
+    description: 'Media resources, brand assets, company information, and press contact for MyCaseValue. Download logos, brand guidelines, and company overview for journalists and media professionals.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Press Kit | MyCaseValue',
+    description: 'Media resources, brand assets, company information, and press contact for MyCaseValue. Download logos, brand guidelines, and company overview for journalists and media professionals.',
+  },
 };
 
 const jsonLd = {
