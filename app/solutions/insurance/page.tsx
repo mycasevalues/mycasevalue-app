@@ -326,7 +326,7 @@ export default function InsurancePage() {
                 lineHeight: 1.6,
                 margin: 0,
               }}>
-                Settlement research for plaintiffs.
+                Settlement research for all parties.
               </p>
             </Link>
           </div>
