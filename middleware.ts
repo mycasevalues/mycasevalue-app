@@ -7,7 +7,7 @@ import { locales, defaultLocale, type Locale } from './lib/i18n-config';
  * Middleware for MyCaseValue
  * 1. Locale detection (cookie/header-based, no URL rewriting)
  * 2. Auth protection for /dashboard routes
- * 3. Security headers and geo-based detection
+ * 3. Geo-based state detection
  *
  * NOTE: We do NOT use next-intl's createMiddleware because the app's
  * pages live directly under app/ (not app/[locale]/). The next-intl
@@ -64,13 +64,8 @@ export async function middleware(request: NextRequest) {
   });
   response.headers.set('x-lang', locale);
 
-  // ── Add security headers to response ────────────────────────────────
-  response.headers.set('X-Frame-Options', 'DENY');
-  response.headers.set('X-Content-Type-Options', 'nosniff');
-  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
-  response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
-  response.headers.set('X-XSS-Protection', '1; mode=block');
+  // Security headers (X-Frame-Options, CSP, HSTS, etc.) are set in
+  // next.config.js headers() — no need to duplicate them here.
 
   // ── Geo-based state detection for US visitors ──────────────────────
   const country = request.geo?.country;
