@@ -142,7 +142,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
           {winRate.toFixed(0)}%
         </div>
         <div style={{ fontSize: '11px', color: '#6b7280' }}>
-          plaintiff win rate
+          case outcome rate
         </div>
       </div>
 
