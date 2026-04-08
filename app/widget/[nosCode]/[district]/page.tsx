@@ -169,21 +169,21 @@ export default function WidgetPage({ params }: WidgetPageProps) {
           display: 'inline-block',
         }}
       >
-        View full data →
+        View full data \u2192
       </a>
       <script
         dangerouslySetInnerHTML={{
           __html: `
             (function() {
-              const nosCode = "${nosCode}";
-              const district = "${district}";
-              const widgetType = "compact";
+              var nosCode = ${JSON.stringify(nosCode)};
+              var district = ${JSON.stringify(district)};
+              var widgetType = "compact";
 
               fetch('/api/widget/impression', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nos_code: nosCode, district, widget_type: widgetType })
-              }).catch(err => console.error('Widget impression tracking failed:', err));
+                body: JSON.stringify({ nos_code: nosCode, district: district, widget_type: widgetType })
+              }).catch(function(err) { console.error('Widget impression tracking failed:', err); });
             })();
           `,
         }}
