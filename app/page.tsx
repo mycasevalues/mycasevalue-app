@@ -392,7 +392,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of legal professionals, researchers, and individuals who use MyCaseValue to understand federal court outcomes.
+            Start searching free — no account required.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

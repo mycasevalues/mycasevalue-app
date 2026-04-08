@@ -187,7 +187,7 @@ export default function IndividualsPage() {
             marginBottom: '32px',
             lineHeight: 1.6,
           }}>
-            Join thousands of individuals using {SITE_NAME} to understand their case value and make confident decisions about settlement negotiations.
+            Start searching free — no account required. Understand your case value and make confident decisions about settlement negotiations.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/search" style={{
