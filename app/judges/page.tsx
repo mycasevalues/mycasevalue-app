@@ -15,11 +15,14 @@ export const metadata: Metadata = {
     title: 'Federal Judge Directory — Statistics & Analytics',
     description: 'Research federal judges across all 13 circuits and 94 districts with comprehensive analytics.',
     type: 'website',
-    url: `${SITE_URL}/judges`,  },
+    url: `${SITE_URL}/judges`,
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'Federal Judge Directory - MyCaseValue' }],
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Federal Judge Directory — Statistics & Analytics | MyCaseValue',
     description: 'Research federal judges across 94 districts with comprehensive statistics. Compare win rates, motion grant rates, settlement patterns, and case duration for 5.1M+ cases.',
+    images: [`${SITE_URL}/og-image.png`],
   },
 };
 
