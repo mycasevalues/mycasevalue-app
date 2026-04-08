@@ -13,11 +13,14 @@ export const metadata: Metadata = {
     title: 'About MyCaseValue — Democratizing Federal Court Data',
     description: 'MyCaseValue aggregates 5.1M+ federal court cases to help you research real outcomes, win rates, and settlement data.',
     type: 'website',
-    url: `${SITE_URL}/about`,  },
+    url: `${SITE_URL}/about`,
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'About MyCaseValue' }],
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'About MyCaseValue — Democratizing Federal Court Data',
     description: 'MyCaseValue democratizes federal court outcome data. Free access to win rates, settlement ranges, and timelines from 5.1M+ public federal civil cases.',
+    images: [`${SITE_URL}/og-image.png`],
   },
 };
 
