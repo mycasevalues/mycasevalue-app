@@ -23,7 +23,7 @@ const FAQ_ITEMS = [
   { q: 'How accurate is the data?', a: 'Our data comes directly from federal court records (PACER, Federal Judicial Center, CourtListener). We have reported 94% accuracy in case outcome classifications. Data limitations are always noted in your report.' },
   { q: 'What types of cases does MyCaseValue cover?', a: 'MyCaseValue covers 84 federal case types across 10 categories including employment discrimination, personal injury, medical malpractice, product liability, civil rights, consumer protection, breach of contract, and more. Data spans all 94 federal districts.' },
   { q: 'How much does it cost?', a: 'MyCaseValue is currently free for all users with no account required. All features — including settlement ranges, judge data, circuit breakdowns, and attorney tools — are available at no cost during our launch period.' },
-  { q: 'How is MyCaseValue different from Westlaw or LexisNexis?', a: 'MyCaseValue is designed specifically for individuals and small firms, not large law firms. It offers free access to federal court outcome data, transparent pricing, bilingual support (English/Spanish), and plaintiff-focused analytics — all without requiring a legal subscription.' },
+  { q: 'How is MyCaseValue different from Westlaw or LexisNexis?', a: 'MyCaseValue is designed specifically for individuals and small firms, not large law firms. It offers free access to federal court outcome data, transparent pricing, bilingual support (English/Spanish), and litigation-focused analytics — all without requiring a legal subscription.' },
   { q: 'Is my information kept confidential?', a: 'Yes. We do not store, share, or sell your data. All case information you enter is used only to generate your report. We do not track individuals or contact you about your case unless you opt into our mailing list.' },
   { q: 'How quickly do I get my report?', a: 'Your free report is generated instantly, typically within 60 seconds. Premium reports with detailed settlement data and attorney impact analysis also generate in real time. No account required for free reports.' },
   { q: 'What do the settlement percentiles mean?', a: 'Settlement percentiles show where outcomes fall in the distribution. P10 means 10% of cases settled for less. P50 is the median. P90 means only 10% exceeded that amount. These come from FJC IDB and BJS Civil Trial Statistics.' },
@@ -92,7 +92,7 @@ export default function ServerContent() {
               {
                 label: 'Win Rate',
                 example: '42%',
-                explanation: 'Of cases like yours that went to trial, 42% resulted in a plaintiff verdict. This tells you how often people in similar situations won their case.',
+                explanation: 'Of cases like yours that went to trial, 42% resulted in a favorable verdict. This tells you how often people in similar situations won their case.',
               },
               {
                 label: 'Settlement Range',
@@ -107,7 +107,7 @@ export default function ServerContent() {
               {
                 label: 'Attorney Impact',
                 example: '+23% win rate',
-                explanation: 'Plaintiffs with attorneys won 23% more often than those who represented themselves. This measures the statistical advantage of legal representation.',
+                explanation: 'Parties with attorneys won 23% more often than those who represented themselves. This measures the statistical advantage of legal representation.',
               },
             ].map((item, i) => (
               <div
@@ -345,11 +345,11 @@ export default function ServerContent() {
             }}
           >
             {[
-              { title: 'Win Rate Analysis', desc: 'Plaintiff vs. defendant win percentages based on historical federal court outcomes for your specific case type and district.' },
+              { title: 'Win Rate Analysis', desc: 'Case outcome win percentages based on historical federal court outcomes for your specific case type and district.' },
               { title: 'Settlement Ranges', desc: 'Full settlement distribution from 10th to 90th percentile. See median amounts, typical ranges, and outlier values from real cases.' },
               { title: 'Case Timeline Data', desc: 'Average case duration from filing to resolution. Understand how long similar cases typically take in your district.' },
               { title: 'Judge Analytics', desc: 'Judge-specific outcome patterns, motion grant rates, and behavioral trends for judges in your federal district.' },
-              { title: 'Attorney Impact', desc: 'How outcomes differ between represented plaintiffs and pro se litigants. Data-driven evidence on the value of legal representation.' },
+              { title: 'Attorney Impact', desc: 'How outcomes differ between represented parties and pro se litigants. Data-driven evidence on the value of legal representation.' },
               { title: 'District Comparison', desc: 'Compare outcomes across all 94 federal districts. See how your district ranks for your case type.' },
             ].map((feat, i) => (
               <ScrollReveal key={i} delay={i * 100} direction="up">
@@ -609,7 +609,7 @@ export default function ServerContent() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }} className="who-grid">
             {[
-              { title: 'Individual Plaintiffs', desc: 'Research what happened in cases like yours before hiring an attorney or negotiating a settlement. Understand your odds with real federal court data.', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
+              { title: 'Individual Litigants', desc: 'Research what happened in cases like yours before hiring an attorney or negotiating a settlement. Understand your odds with real federal court data.', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
               { title: 'Solo & Small Firm Attorneys', desc: 'Get the same data large firms pay thousands for. Benchmark settlements, evaluate venues, and build stronger cases with instant analytics.', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
               { title: 'Large Law Firms', desc: 'Enterprise analytics with bulk analysis, API access, team workspaces, and white-label PDF reports for client presentations.', icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z' },
               { title: 'Insurance Companies', desc: 'Evaluate claim values with real settlement data. Understand exposure across case types and jurisdictions with district-level analytics.', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
@@ -641,7 +641,7 @@ export default function ServerContent() {
               How we compare
             </p>
             <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#1C3A5E', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #0966C3', paddingLeft: '20px' }}>
-              Built for plaintiffs, not law firms
+              Built for everyone, not just law firms
             </h2>
             <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               MyCaseValue is the only federal court data platform designed from the ground up for individuals and small firms.
@@ -675,7 +675,7 @@ export default function ServerContent() {
                   { feature: 'Natural language search', mcv: true, westlaw: false, lexis: false, pacer: false },
                   { feature: 'AI outcome prediction', mcv: true, westlaw: false, lexis: false, pacer: false },
                   { feature: 'Plain-English results', mcv: true, westlaw: false, lexis: false, pacer: false },
-                  { feature: 'Plaintiff-focused interface', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'User-friendly interface', mcv: true, westlaw: false, lexis: false, pacer: false },
                   { feature: 'Paralegal workflow tools', mcv: true, westlaw: false, lexis: false, pacer: false },
                   { feature: 'Free tier', mcv: true, westlaw: false, lexis: false, pacer: false },
                   { feature: 'API access', mcv: true, westlaw: true, lexis: true, pacer: true },

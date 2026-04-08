@@ -145,7 +145,7 @@ export default function ServerHero() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }} className="about-grid">
             <p style={{ fontSize: '17px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.75, margin: 0 }}>
-              MyCaseValue is a federal court analytics platform that gives plaintiffs, attorneys, and researchers instant access to real outcome data from over 5.1 million federal court cases. We combine data from the Federal Judicial Center, PACER, and CourtListener to deliver win rates, settlement ranges, timelines, and judge analytics — all in plain English.
+              MyCaseValue is a federal court analytics platform that gives litigants, attorneys, and researchers instant access to real outcome data from over 5.1 million federal court cases. We combine data from the Federal Judicial Center, PACER, and CourtListener to deliver win rates, settlement ranges, timelines, and judge analytics — all in plain English.
             </p>
             <p style={{ fontSize: '17px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.75, margin: 0 }}>
               Whether you're evaluating a potential case, preparing for settlement negotiations, or researching judicial behavior, MyCaseValue delivers the data-driven insights that were previously only available to large law firms with expensive analytics subscriptions.
@@ -306,7 +306,7 @@ export default function ServerHero() {
               { title: 'Get straight to the data', desc: 'Select your case type and district — your outcome report generates in under 60 seconds with real federal court statistics.' },
               { title: 'Visualize settlement ranges', desc: 'See full settlement distributions from P10 to P90 at a glance. Understand where your case falls in the spectrum of outcomes.' },
               { title: 'Spot patterns fast', desc: 'Judge analytics surface behavioral patterns and motion grant rates so you can anticipate outcomes before they happen.' },
-              { title: 'Access the most complete data', desc: 'Over 5.1 million federal court cases from FJC, PACER, and CourtListener — the most comprehensive plaintiff-focused dataset available.' },
+              { title: 'Access the most complete data', desc: 'Over 5.1 million federal court cases from FJC, PACER, and CourtListener — the most comprehensive litigation dataset available.' },
               { title: 'Compare across districts', desc: 'Side-by-side district comparisons reveal where your case type has the strongest outcomes. Identify favorable venues instantly.' },
               { title: 'Export and share', desc: 'Generate PDF reports with full analytics for client presentations, settlement negotiations, or case evaluation meetings.' },
             ].map((item, i) => (
@@ -415,7 +415,7 @@ export default function ServerHero() {
               More Data, Better Outcomes
             </h2>
             <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '650px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300, fontStyle: 'italic' }}>
-              Broader coverage and greater depth than any other plaintiff-focused platform.
+              Broader coverage and greater depth than any other litigation analytics platform.
             </p>
           </div>
 
@@ -561,7 +561,7 @@ export default function ServerHero() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }} className="testimonials-grid">
             {[
-              { quote: 'MyCaseValue gave me the settlement data I needed to negotiate a fair offer. My attorney was impressed with the research.', name: 'Sarah M.', role: 'Plaintiff, Employment Case' },
+              { quote: 'MyCaseValue gave me the settlement data I needed to negotiate a fair offer. My attorney was impressed with the research.', name: 'Sarah M.', role: 'Litigant, Employment Case' },
               { quote: 'I use it before every initial client consultation. The win rates and judge analytics save me hours of research.', name: 'David K.', role: 'Trial Attorney, Chicago' },
               { quote: 'The district comparison tool helped us identify the strongest venue for our product liability case.', name: 'Jennifer L.', role: 'Partner, Boutique Firm' },
               { quote: 'Finally, a platform that makes federal court data accessible without a five-figure analytics subscription.', name: 'Marcus T.', role: 'Solo Practitioner, Miami' },
@@ -624,7 +624,7 @@ export default function ServerHero() {
               How MyCaseValue Compares
             </h2>
             <p style={{ fontSize: '16px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
-              The most comprehensive plaintiff-focused federal court analytics available.
+              The most comprehensive federal court analytics available.
             </p>
           </div>
           <div style={{ overflow: 'auto' }}>
@@ -682,7 +682,7 @@ export default function ServerHero() {
               { q: 'How current is the data?', a: 'Our database is updated regularly with new case dispositions. Most data reflects cases closed within the last several years, with historical data spanning 54 years (1970–2024) for trend analysis.' },
               { q: 'What is Attorney Mode?', a: 'Attorney Mode provides advanced analytics tools including case outcome prediction, judge intelligence reports, venue optimization, opposing counsel research, bulk analysis, and team workspace features.' },
               { q: 'Do you offer an API?', a: 'Yes. Our REST API provides programmatic access to case analytics data for integration into your own tools and workflows. Documentation and sandbox access are available on our API page.' },
-              { q: 'How are win rates calculated?', a: 'Win rates are calculated from final case dispositions in federal court records. We categorize outcomes as plaintiff verdicts, defense verdicts, settlements, and dismissals based on FJC disposition codes.' },
+              { q: 'How are win rates calculated?', a: 'Win rates are calculated from final case dispositions in federal court records. We categorize outcomes as favorable verdicts, defense verdicts, settlements, and dismissals based on FJC disposition codes.' },
               { q: 'Can I compare districts?', a: 'Yes. Our district comparison tool lets you view win rates, settlement ranges, and case timelines side by side across any of the 94 federal judicial districts.' },
               { q: 'Is there an institutional or academic license?', a: 'Yes. We offer institutional licensing for law schools, research institutions, and government agencies with special pricing and bulk data access. Contact us for details.' },
               { q: 'How do I contact support?', a: 'Visit our contact page or email support directly. We offer email support for all users.' },

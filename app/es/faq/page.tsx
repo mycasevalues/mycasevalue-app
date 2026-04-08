@@ -87,7 +87,7 @@ const faqs = [
       },
       {
         q: '¿Qué es una "tasa de victoria"?',
-        a: 'La tasa de victoria es el porcentaje de casos donde el demandante recibió un veredicto a su favor (veredicto del demandante). Las tasas de victoria no incluyen acuerdos, desestimaciones o transferencias, solo sentencias finales. Representan resultados históricos y no predicen resultados futuros.',
+        a: 'La tasa de victoria es el porcentaje de casos donde la parte actora recibió un veredicto favorable. Las tasas de victoria no incluyen acuerdos, desestimaciones o transferencias, solo sentencias finales. Representan resultados históricos y no predicen resultados futuros.',
       },
       {
         q: '¿Por qué no muestran montos de acuerdos?',

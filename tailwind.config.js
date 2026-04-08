@@ -39,38 +39,9 @@ module.exports = {
           'bg-neg':    '#FEF2F2',
           'bg-neu':    '#FFFBEB',
         },
-        // Legacy compat — kept for existing components
+        // Legacy compat — mapped to brand tokens (consolidated)
         navy: { DEFAULT: '#1C3A5E', dark: '#122840', light: '#2A5080' },
-        accent: { DEFAULT: '#0966C3', dark: '#004182', light: '#E8F4FD' },
-        surface: { 0: '#FFFFFF', 1: '#F7F8FA', 2: '#EEF0F4', nav: '#1C3A5E' },
-        'text-color': {
-          primary: '#111827',
-          secondary: '#4B5563',
-          muted: '#9CA3AF',
-          inverse: '#FFFFFF',
-          accent: '#0966C3',
-        },
-        border: {
-          light: '#E5E7EB',
-          medium: '#D1D5DB',
-          dark: '#9CA3AF',
-        },
-        badge: {
-          federal: '#1C3A5E',
-          'bg-federal': '#EFF6FF',
-        },
         midnight: { DEFAULT: '#1C3A5E', 50: '#2A5080', 100: '#1C3A5E', 200: '#122840', 800: '#F7F8FA', 900: '#FFFFFF' },
-        cream: { DEFAULT: '#F7F8FA', 100: '#F7F8FA', 200: '#FFFFFF' },
-        gold: { DEFAULT: '#B45309', light: '#FFFBEB', dark: '#92400E' },
-        emerald: { DEFAULT: '#15803D', light: '#F0FDF4', dark: '#166534' },
-        coral: { DEFAULT: '#B91C1C', light: '#FEF2F2', dark: '#991B1B' },
-        steel: { DEFAULT: '#9CA3AF', light: '#E5E7EB', dark: '#4B5563' },
-        mcv: {
-          blue: '#0966C3',
-          pale: '#E8F4FD',
-          ink: '#1C3A5E',
-          surface: '#F7F8FA',
-        },
         outcome: {
           win: '#15803D',
           'win-bg': '#F0FDF4',
@@ -84,13 +55,6 @@ module.exports = {
           neutral: '#9CA3AF',
           'neutral-bg': '#F7F8FA',
           'neutral-border': '#D1D5DB',
-        },
-        text: {
-          primary: '#111827',
-          secondary: '#4B5563',
-          muted: '#9CA3AF',
-          inverse: '#FFFFFF',
-          link: '#0966C3',
         },
       },
       fontFamily: {

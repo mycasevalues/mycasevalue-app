@@ -126,7 +126,7 @@ const COMPLIANCE   = ['SOC 2 Type II', 'CCPA compliant', 'Public records only', 
 
 function HeroLeft() {
   return (
-    <div className="bg-brand-surface px-7 py-[52px] flex flex-col justify-center border-r border-brand-rule">
+    <div className="bg-brand-surface px-4 md:px-7 py-8 md:py-[52px] flex flex-col justify-center md:border-r border-brand-rule">
       {/* Eyebrow — Inter 600, 10px, +0.16em, uppercase, brand-blue */}
       <span className="font-inter font-semibold text-brand-blue uppercase tracking-[0.16em] text-[10px] block mb-3">
         Federal Court Intelligence Platform
@@ -186,7 +186,7 @@ function HeroLeft() {
       </div>
 
       {/* CTAs — primary to pricing/checkout, secondary to report demo */}
-      <div className="flex items-center gap-3.5 mb-5">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-5">
         <Link
           href="/pricing"  // ← Update to your Stripe checkout route
           className="font-inter font-semibold text-[14px] text-white bg-brand-blue px-6 py-2.5 rounded-[8px] shadow-brand-btn-lg hover:bg-brand-blue-mid transition-colors"
@@ -364,24 +364,38 @@ export default function HomePage() {
 
       {/* ── HERO ── */}
       <section
-        className="grid"
-        style={{ gridTemplateColumns: '42% 58%' }}
+        className="grid grid-cols-1 md:grid-cols-[42%_58%]"
         aria-label="Hero"
       >
         <HeroLeft />
-        <HeroRight />
+        <div className="hidden md:block">
+          <HeroRight />
+        </div>
       </section>
 
       {/* ── STATS BAR ── */}
       <StatBar stats={HOMEPAGE_STATS} />
 
       {/* ── PLATFORM SECTIONS (dark) ── */}
-      <PlatformSection />
+      <div className="block md:hidden">
+        <div className="bg-[#060d1a]">
+          {PLATFORM_SECTIONS.map((section) => (
+            <div key={section.title} className="px-5 py-6 border-b border-white/[0.06]">
+              <p className="font-inter font-semibold text-brand-blue-sky uppercase tracking-[0.16em] text-[10px] mb-2.5">{section.eyebrow}</p>
+              <h3 className="font-jakarta font-extrabold text-white mb-2.5 leading-[1.15] text-[18px] tracking-[-0.3px]">{section.title}</h3>
+              <p className="font-inter text-white/40 text-[12px] leading-[1.65]">{section.body}</p>
+              <Link href={section.href} className="font-inter font-semibold text-brand-blue-sky text-[12px] flex items-center gap-1.5 mt-3.5 hover:text-white transition-colors">{section.cta} →</Link>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="hidden md:block">
+        <PlatformSection />
+      </div>
 
       {/* ── FEATURES ── */}
       <section
-        className="grid border-t border-brand-rule bg-brand-surface"
-        style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 border-t border-brand-rule bg-brand-surface"
         aria-label="Features"
       >
         {FEATURES.map((feat, i) => (
@@ -410,8 +424,7 @@ export default function HomePage() {
 
       {/* ── BRAND VOICE ── */}
       <section
-        className="grid border-t border-brand-rule bg-white"
-        style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 border-t border-brand-rule bg-white"
         aria-label="Brand voice"
       >
         {BRAND_VOICE.map((v, i) => (

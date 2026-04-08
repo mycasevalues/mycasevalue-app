@@ -78,7 +78,7 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
           <button
             onClick={runCheck}
             disabled={loading}
-            className="px-3 py-1 text-xs font-medium bg-accent text-white rounded hover:bg-accent-dark disabled:opacity-50"
+            className="px-3 py-1 text-xs font-medium bg-brand-blue text-white rounded hover:bg-brand-blue-dark disabled:opacity-50"
           >
             Run Check
           </button>
@@ -96,7 +96,7 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
         <button
           onClick={runCheck}
           disabled={loading}
-          className="px-3 py-1 text-xs font-medium bg-accent text-white rounded hover:bg-accent-dark disabled:opacity-50 transition-colors"
+          className="px-3 py-1 text-xs font-medium bg-brand-blue text-white rounded hover:bg-brand-blue-dark disabled:opacity-50 transition-colors"
         >
           {loading ? 'Checking...' : 'Run Check'}
         </button>

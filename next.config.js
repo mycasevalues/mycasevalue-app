@@ -185,7 +185,9 @@ const nextConfig = {
   },
   // Redirect non-www to www
   redirects: async () => [
-    { source: '/:path*', has: [{ type: 'host', value: 'mycasevalues.com' }], destination: 'https://www.mycasevalues.com/:path*', permanent: true }
+    { source: '/:path*', has: [{ type: 'host', value: 'mycasevalues.com' }], destination: 'https://www.mycasevalues.com/:path*', permanent: true },
+    { source: '/case-types', destination: '/cases', permanent: true },
+    { source: '/case-types/:path*', destination: '/cases/:path*', permanent: true },
   ],
 };
 
