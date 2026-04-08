@@ -66,7 +66,7 @@ interface PlatformSection {
 const FEATURES: Feature[] = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4" aria-hidden="true">
         <path d="M18 20V10M12 20V4M6 20v-6" />
       </svg>
     ),
@@ -75,7 +75,7 @@ const FEATURES: Feature[] = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4" aria-hidden="true">
         <rect x="2" y="3" width="20" height="14" rx="2" />
         <path d="M8 21h8M12 17v4" />
       </svg>
@@ -85,7 +85,7 @@ const FEATURES: Feature[] = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4" aria-hidden="true">
         <circle cx="12" cy="8" r="4" />
         <path d="M4 20v-1a8 8 0 0116 0v1" />
       </svg>
@@ -95,7 +95,7 @@ const FEATURES: Feature[] = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4" aria-hidden="true">
         <polygon points="3 11 22 2 13 21 11 13 3 11" />
       </svg>
     ),
@@ -175,6 +175,7 @@ function HeroLeft() {
           <svg className="w-3.5 h-3.5 text-brand-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
             <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
           </svg>
+          <label htmlFor="search-input" className="sr-only">Search cases by type, judge, or district</label>
           <input
             id="search-input"
             name="q"
@@ -182,7 +183,7 @@ function HeroLeft() {
             className="flex-1 border-none outline-none font-inter text-[13px] text-brand-ink-2 bg-transparent placeholder:text-brand-muted"
           />
         </div>
-        <button type="submit" className="bg-brand-blue text-white font-inter font-semibold text-[13px] px-5 flex-shrink-0 hover:bg-brand-blue-mid transition-colors">
+        <button type="submit" aria-label="Search cases" className="bg-brand-blue text-white font-inter font-semibold text-[13px] px-5 flex-shrink-0 hover:bg-brand-blue-mid transition-colors">
           Search
         </button>
       </form>
