@@ -256,8 +256,33 @@ const totalDistricts = CIRCUITS.reduce((sum, c) => sum + c.districts.length, 0);
 const totalCasesAllDistricts = Object.values(REAL_DATA).reduce((sum, d: any) => sum + (d.total || 0), 0);
 
 export default function DistrictsPage() {
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Districts', item: `${SITE_URL}/districts` },
+        ],
+      },
+      {
+        '@type': 'CollectionPage',
+        name: 'Federal Court Districts',
+        description: 'Explore federal court districts across the United States. View case statistics, filing trends, and outcome data by district.',
+        url: `${SITE_URL}/districts`,
+        isPartOf: { '@type': 'WebSite', name: 'MyCaseValue', url: SITE_URL },
+      },
+    ],
+  };
+
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <style>{`
         a.lex-link { color: #0966C3; text-decoration: none; font-weight: 500; }
         a.lex-link:hover { text-decoration: underline; }
