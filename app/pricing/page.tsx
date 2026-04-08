@@ -645,7 +645,7 @@ export default function PricingPage() {
           }}
         >
           <div style={{ flexShrink: 0, marginTop: '4px' }}>
-            <svg
+            <svg aria-hidden="true"
               width="32"
               height="32"
               viewBox="0 0 24 24"
@@ -750,7 +750,7 @@ export default function PricingPage() {
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
-                  <svg
+                  <svg aria-hidden="true"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -1169,7 +1169,7 @@ export default function PricingPage() {
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '12px' }}>
-                <svg
+                <svg aria-hidden="true"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -1264,7 +1264,7 @@ export default function PricingPage() {
                   >
                     {faq.q}
                   </span>
-                  <svg
+                  <svg aria-hidden="true"
                     width="20"
                     height="20"
                     viewBox="0 0 24 24"
@@ -1407,7 +1407,7 @@ export default function PricingPage() {
                   }}
                 >
                   Explore
-                  <svg
+                  <svg aria-hidden="true"
                     width="14"
                     height="14"
                     viewBox="0 0 24 24"
@@ -1469,7 +1469,7 @@ export default function PricingPage() {
             className="pricing-enterprise-link"
           >
             Talk to Us{' '}
-            <svg
+            <svg aria-hidden="true"
               width="16"
               height="16"
               viewBox="0 0 24 24"
