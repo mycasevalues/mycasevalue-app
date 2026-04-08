@@ -181,7 +181,7 @@ export default function CaseTypeComparison() {
         </div>
       ) : (
         <div style={{ textAlign: 'center', padding: '48px 24px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2 }}>
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="1.5" style={{ margin: '0 auto 16px' }}>
+          <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="1.5" style={{ margin: '0 auto 16px' }}>
             <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
           </svg>
           <p style={{ fontSize: 14, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
