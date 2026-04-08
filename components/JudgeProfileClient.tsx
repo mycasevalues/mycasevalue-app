@@ -108,9 +108,9 @@ export default function JudgeProfileClient({
           marginBottom: '48px',
         }}
       >
-        {/* Overall Plaintiff Win Rate */}
+        {/* Overall Win Rate */}
         <StatCard
-          label="Overall Plaintiff Win Rate"
+          label="Overall Win Rate"
           value={`${(aggregated.plaintiffWinRate || 0).toFixed(0)}%`}
           sublabel={`(n = ${aggregated.totalCases} cases)`}
           colorObj={getWinRateColor(aggregated.plaintiffWinRate || 0)}
@@ -248,7 +248,7 @@ export default function JudgeProfileClient({
           </thead>
           <tbody>
             <DistrictComparisonRow
-              metric="Plaintiff Win Rate"
+              metric="Win Rate"
               judgeValue={aggregated.plaintiffWinRate || 0}
               districtValue={districtAverage.plaintiffWinRate || 0}
               suffix="%"
