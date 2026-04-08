@@ -136,7 +136,7 @@ export default function SiteFooter() {
 
           {/* Link columns */}
           {FOOTER_COLUMNS.map(col => (
-            <div key={col.heading}>
+            <nav key={col.heading} aria-label={col.heading}>
               <h4 style={{
                 fontFamily: 'var(--font-inter)',
                 fontSize: '14px',
@@ -169,7 +169,7 @@ export default function SiteFooter() {
                   </Link>
                 ))}
               </div>
-            </div>
+            </nav>
           ))}
         </div>
 
@@ -212,7 +212,7 @@ export default function SiteFooter() {
         </div>
 
         {/* Follow Us section with SVG icons */}
-        <div style={{
+        <nav aria-label="Social media" style={{
           borderTop: '1px solid rgba(255,255,255,0.08)',
           paddingTop: '28px',
           paddingBottom: '28px',
@@ -231,14 +231,14 @@ export default function SiteFooter() {
           </h4>
           <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
             {/* Twitter/X Icon */}
-            <Link href="https://twitter.com/mycasevalue" target="_blank" rel="noopener noreferrer" className="site-footer-social-icon" style={{
+            <Link href="https://twitter.com/mycasevalue" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter/X" className="site-footer-social-icon" style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               transition: 'all 150ms ease-out',
               padding: '8px',
               borderRadius: '12px',
-            }} title="Twitter/X">
+            }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-1 7-1"></path>
               </svg>
