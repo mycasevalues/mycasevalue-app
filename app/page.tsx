@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'The Federal Court Record. Open to Everyone.',
-    images: [{ url: `${SITE_URL}/og/home.png`, width: 1200, height: 630, alt: 'MyCaseValue - Federal Court Records' }],
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue - Federal Court Records' }],
     description: 'Search 5.1 million federal case outcomes — win rates, settlement ranges, judge analytics, and case timelines — sourced entirely from public records.',
     url: `${SITE_URL}`,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Federal Court Record. Open to Everyone.',
-    images: [`${SITE_URL}/og/home.png`],
+    images: [`${SITE_URL}/og-image.png`],
     description: 'Search 5.1 million federal case outcomes — win rates, settlement ranges, judge analytics, and case timelines — sourced entirely from public records.',
   },
 };

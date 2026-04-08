@@ -40,7 +40,7 @@ export default function PressPage() {
   const stats = [
     { label: 'Federal Cases Analyzed', value: '4,168,590+' },
     { label: 'Case Type Categories', value: '84' },
-    { label: 'Federal Judicial Districts', value: '94' },
+    { label: 'Federal Judicial Districts', value: '95' },
     { label: 'Federal Circuits', value: '13' },
     { label: 'Data Points Per Case Type', value: '50+' },
     { label: 'Real-Time AI Analysis Tools', value: 'Yes' },
@@ -237,7 +237,7 @@ export default function PressPage() {
                   margin: 0,
                 }}
               >
-                Founded on the principle that court data should be accessible to everyone, the platform analyzes 4.1 million+ federal court cases across 84 case types and 94 federal judicial districts.
+                Founded on the principle that court data should be accessible to everyone, the platform analyzes 4.1 million+ federal court cases across 84 case types and 95 federal judicial districts.
               </p>
               <p
                 style={{

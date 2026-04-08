@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/platform` },
   openGraph: {
     title: 'Legal Intelligence Platform | MyCaseValue',
-    description: 'Democratizing federal court data with AI-powered legal analytics. 4M+ cases, 94 federal districts, 54 years of data.',
+    description: 'Democratizing federal court data with AI-powered legal analytics. 4M+ cases, 95 federal districts, 54 years of data.',
     type: 'website',
     url: `${SITE_URL}/platform`,
     images: [
       {
-        url: `${SITE_URL}/og-platform.png`,
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: 'MyCaseValue Legal Intelligence Platform',
@@ -833,7 +833,7 @@ export default function PlatformPage() {
                 { icon: '→', title: 'Timeline Predictions', desc: 'Expected case duration estimates with confidence intervals' },
                 { icon: '₹', title: 'Litigation Cost Modeling', desc: 'Estimated attorney fees and discovery costs by case complexity' },
                 { icon: '∞', title: 'Custom Cohort Analysis', desc: 'Build and analyze specific case populations with filters' },
-                { icon: '⚡', title: 'API Integration', desc: 'RESTful API for enterprise system integration' },
+                { icon: '>', title: 'API Integration', desc: 'RESTful API for enterprise system integration' },
                 { icon: '◈', title: 'Bulk Export', desc: 'Download case data in multiple formats (CSV, JSON, PDF)' },
                 { icon: '⌘', title: 'Natural Language Queries', desc: 'Ask questions in plain English, get data-driven answers' },
                 { icon: '◆', title: 'Precedent Finder', desc: 'Identify relevant historical cases with citation linking' },
@@ -963,7 +963,7 @@ export default function PlatformPage() {
                 <div className="phase-title">Federal Civil Data</div>
                 <ul className="phase-list">
                   <li>4M+ federal civil cases (1970-present)</li>
-                  <li>84 case types, 94 federal districts</li>
+                  <li>84 case types, 95 federal districts</li>
                   <li>AI-powered settlement predictions</li>
                   <li>Judge analytics and win rates</li>
                   <li>Real-time case monitoring</li>
@@ -1028,7 +1028,7 @@ export default function PlatformPage() {
             }}>
               {[
                 { number: '$500–$2,000', label: 'Monthly cost at Westlaw or Lex Machina' },
-                { number: '94 Districts', label: 'Federal court coverage nationwide' },
+                { number: '95 Districts', label: 'Federal court coverage nationwide' },
                 { number: '5.1M+ Cases', label: 'Complete historical database available' },
                 { number: 'Free', label: 'MyCaseValue base access with premium tiers' },
               ].map((item, idx) => (
@@ -1079,7 +1079,7 @@ export default function PlatformPage() {
                 color: '#6B7280',
                 maxWidth: 600,
               }}>
-                Comprehensive federal court data spanning 54 years across all 94 federal districts and 84 case types.
+                Comprehensive federal court data spanning 54 years across all 95 federal districts and 84 case types.
               </p>
             </div>
 

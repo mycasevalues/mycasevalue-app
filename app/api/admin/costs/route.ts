@@ -81,7 +81,7 @@ export async function GET(request: NextRequest): Promise<NextResponse<CostRespon
       },
       {
         name: 'Upstash Redis',
-        icon: '⚡',
+        icon: 'CACHE',
         color: '#00d084',
         currentSpend: 3.2,
         monthlyBudget: 10,
