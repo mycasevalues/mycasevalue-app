@@ -194,7 +194,7 @@ export default function AnnualReportCapture() {
     checkPageBreak(10);
     addText('Pro se representation is highest in civil rights and labor disputes, where self-representation rates exceed 60%.', 10);
 
-    // PAGE 6-8: Plaintiff Win Rate Analysis
+    // PAGE 6-8: Win Rate Analysis
     addPageNumber();
     doc.addPage();
     yPosition = margin;
