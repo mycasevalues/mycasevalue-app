@@ -8,7 +8,7 @@ export const runtime = 'edge';
 type Locale = 'en' | 'es';
 const translations: Record<Locale, Record<string, string>> = {
   en: {
-    'Plaintiff Win Rate': 'Plaintiff Win Rate',
+    'Win Rate': 'Win Rate',
     'Median Settlement': 'Median Settlement',
     'Cases': 'Cases',
     'Federal Court Data': 'Federal Court Data',
@@ -16,7 +16,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'Top Case Types': 'Top Case Types',
     'Case Type': 'Case Type',
     'federal cases analyzed': 'federal cases analyzed',
-    'plaintiff win rate': 'plaintiff win rate',
+    'case outcome rate': 'case outcome rate',
     'Settlement Range': 'Settlement Range',
     'settle before trial': 'settle before trial',
     'Based on federal court records': 'Based on federal court records',
@@ -30,7 +30,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'www.mycasevalues.com': 'www.mycasevalues.com',
   },
   es: {
-    'Plaintiff Win Rate': 'Tasa de Éxito del Demandante',
+    'Win Rate': 'Tasa de Éxito del Resultados',
     'Median Settlement': 'Acuerdo Mediano',
     'Cases': 'Casos',
     'Federal Court Data': 'Datos de Tribunales Federales',
