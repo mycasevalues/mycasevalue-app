@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: 'For Litigation Funders | MyCaseValue',
   description: 'Portfolio analytics, case evaluation, and ROI projections for litigation finance companies and alternative funders.',
   alternates: { canonical: `${SITE_URL}/solutions/funders` },
+  openGraph: {
+    title: 'For Litigation Funders | MyCaseValue',
+    description: 'Portfolio analytics, case evaluation, and ROI projections for litigation finance companies and alternative funders.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Litigation Funders | MyCaseValue',
+    description: 'Portfolio analytics, case evaluation, and ROI projections for litigation finance companies and alternative funders.',
+  },
 };
 
 const FEATURES = [
