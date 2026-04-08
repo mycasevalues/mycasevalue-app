@@ -85,11 +85,16 @@ export function validateEnvironmentVariables(): EnvCheckResult[] {
   return results;
 }
 
+// Run-once guard to prevent spamming during static generation
+let hasRun = false;
+
 /**
  * Log environment variable check results to console
  * Groups by category and logs warnings for missing required vars
  */
 export function logEnvironmentStatus(): void {
+  if (hasRun) return;
+  hasRun = true;
   const results = validateEnvironmentVariables();
   const missing = results.filter((r) => r.required && !r.present);
 
@@ -123,8 +128,7 @@ export function logEnvironmentStatus(): void {
   }
 }
 
-// Auto-check on module load
+// Auto-check on module load (server-side only, once)
 if (typeof window === 'undefined') {
-  // Server-side only
   logEnvironmentStatus();
 }

@@ -236,220 +236,6 @@ function SimpleDropdown({ items }: { items: DropdownItem[] }) {
   );
 }
 
-/**
- * DesktopNav: Desktop navigation items
- */
-function DesktopNav({
-  activeSection,
-  pathname,
-  openDropdown,
-  onMouseEnter,
-  onMouseLeave,
-}: {
-  activeSection: string | null;
-  pathname: string;
-  openDropdown: string | null;
-  onMouseEnter: (name: string) => void;
-  onMouseLeave: () => void;
-}) {
-  return (
-    <div className="hidden lg:flex items-center flex-1 gap-0">
-      {/* Explore */}
-      <div
-        className="relative"
-        onMouseEnter={() => onMouseEnter('explore')}
-        onMouseLeave={onMouseLeave}
-      >
-        <button
-          className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors ${
-            activeSection === 'explore'
-              ? 'text-brand-blue'
-              : 'text-gray-700 hover:text-brand-blue'
-          }`}
-          aria-expanded={openDropdown === 'explore'}
-          aria-haspopup="true"
-        >
-          Explore
-          <svg
-            width="12"
-            height="8"
-            viewBox="0 0 12 8"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="transition-transform"
-          >
-            <path d="M1 1L6 6L11 1" />
-          </svg>
-        </button>
-        {openDropdown === 'explore' && <MegaMenu columns={EXPLORE_MEGA_MENU} />}
-      </div>
-
-      {/* For Attorneys */}
-      <div
-        className="relative"
-        onMouseEnter={() => onMouseEnter('attorneys')}
-        onMouseLeave={onMouseLeave}
-      >
-        <button
-          className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors ${
-            activeSection === 'attorneys'
-              ? 'text-brand-blue'
-              : 'text-gray-700 hover:text-brand-blue'
-          }`}
-          aria-expanded={openDropdown === 'attorneys'}
-          aria-haspopup="true"
-        >
-          For Attorneys
-          <svg
-            width="12"
-            height="8"
-            viewBox="0 0 12 8"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="transition-transform"
-          >
-            <path d="M1 1L6 6L11 1" />
-          </svg>
-        </button>
-        {openDropdown === 'attorneys' && <SimpleDropdown items={FOR_ATTORNEYS_DROPDOWN} />}
-      </div>
-
-      {/* Resources */}
-      <div
-        className="relative"
-        onMouseEnter={() => onMouseEnter('resources')}
-        onMouseLeave={onMouseLeave}
-      >
-        <button
-          className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors ${
-            activeSection === 'resources'
-              ? 'text-brand-blue'
-              : 'text-gray-700 hover:text-brand-blue'
-          }`}
-          aria-expanded={openDropdown === 'resources'}
-          aria-haspopup="true"
-        >
-          Resources
-          <svg
-            width="12"
-            height="8"
-            viewBox="0 0 12 8"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="transition-transform"
-          >
-            <path d="M1 1L6 6L11 1" />
-          </svg>
-        </button>
-        {openDropdown === 'resources' && <SimpleDropdown items={RESOURCES_DROPDOWN} />}
-      </div>
-
-      {/* Pricing */}
-      <Link
-        href="/pricing"
-        className={`px-4 py-2 text-sm font-medium transition-colors ${
-          activeSection === 'pricing'
-            ? 'text-brand-blue'
-            : 'text-gray-700 hover:text-brand-blue'
-        }`}
-      >
-        Pricing
-      </Link>
-    </div>
-  );
-}
-
-/**
- * AuthButtons: Sign In / Get Started (desktop)
- */
-function AuthButtons({
-  userEmail,
-  onSignOut,
-}: {
-  userEmail: string | null;
-  onSignOut: () => void;
-}) {
-  const [authOpen, setAuthOpen] = useState(false);
-
-  if (userEmail) {
-    return (
-      <div className="hidden lg:flex items-center gap-3">
-        <div className="relative">
-          <button
-            onClick={() => setAuthOpen(!authOpen)}
-            className="w-10 h-10 rounded-full bg-brand-blue/10 text-brand-blue font-semibold text-sm flex items-center justify-center hover:bg-brand-blue/20 transition-colors"
-            aria-expanded={authOpen}
-            aria-haspopup="true"
-            aria-label="User menu"
-          >
-            {userEmail.charAt(0).toUpperCase()}
-          </button>
-          {authOpen && (
-            <div className="absolute top-full right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-40">
-              <Link
-                href="/dashboard"
-                className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors border-b border-gray-100"
-                onClick={() => setAuthOpen(false)}
-              >
-                Dashboard
-              </Link>
-              <Link
-                href="/dashboard/reports"
-                className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors border-b border-gray-100"
-                onClick={() => setAuthOpen(false)}
-              >
-                My Reports
-              </Link>
-              <Link
-                href="/dashboard/settings"
-                className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors border-b border-gray-100"
-                onClick={() => setAuthOpen(false)}
-              >
-                Settings
-              </Link>
-              <button
-                onClick={() => {
-                  setAuthOpen(false);
-                  onSignOut();
-                }}
-                className="w-full text-left px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors font-medium"
-              >
-                Sign Out
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="hidden lg:flex items-center gap-3">
-      <Link
-        href="/sign-in"
-        className="text-sm font-medium text-gray-700 hover:text-brand-blue transition-colors"
-      >
-        Sign In
-      </Link>
-      <Link
-        href="/sign-up"
-        className="px-4 py-2 rounded-full bg-brand-blue text-white text-sm font-semibold hover:bg-brand-blue/90 transition-colors flex items-center gap-1"
-      >
-        Get Started
-        <span>→</span>
-      </Link>
-    </div>
-  );
-}
 
 /* ─────────────────────────────────────────────────────────────────────────
    Main Header Component
@@ -461,6 +247,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [authOpen, setAuthOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -572,16 +359,185 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <DesktopNav
-              activeSection={activeSection}
-              pathname={pathname}
-              openDropdown={openDropdown}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            />
+            <div className="hidden lg:flex items-center flex-1 gap-0">
+              {/* Explore */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter('explore')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors ${
+                    activeSection === 'explore'
+                      ? 'text-brand-blue'
+                      : 'text-gray-700 hover:text-brand-blue'
+                  }`}
+                  aria-expanded={openDropdown === 'explore'}
+                  aria-haspopup="true"
+                >
+                  Explore
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-transform"
+                  >
+                    <path d="M1 1L6 6L11 1" />
+                  </svg>
+                </button>
+                {openDropdown === 'explore' && <MegaMenu columns={EXPLORE_MEGA_MENU} />}
+              </div>
+
+              {/* For Attorneys */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter('attorneys')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors ${
+                    activeSection === 'attorneys'
+                      ? 'text-brand-blue'
+                      : 'text-gray-700 hover:text-brand-blue'
+                  }`}
+                  aria-expanded={openDropdown === 'attorneys'}
+                  aria-haspopup="true"
+                >
+                  For Attorneys
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-transform"
+                  >
+                    <path d="M1 1L6 6L11 1" />
+                  </svg>
+                </button>
+                {openDropdown === 'attorneys' && <SimpleDropdown items={FOR_ATTORNEYS_DROPDOWN} />}
+              </div>
+
+              {/* Resources */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter('resources')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors ${
+                    activeSection === 'resources'
+                      ? 'text-brand-blue'
+                      : 'text-gray-700 hover:text-brand-blue'
+                  }`}
+                  aria-expanded={openDropdown === 'resources'}
+                  aria-haspopup="true"
+                >
+                  Resources
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-transform"
+                  >
+                    <path d="M1 1L6 6L11 1" />
+                  </svg>
+                </button>
+                {openDropdown === 'resources' && <SimpleDropdown items={RESOURCES_DROPDOWN} />}
+              </div>
+
+              {/* Pricing */}
+              <Link
+                href="/pricing"
+                className={`px-4 py-2 text-sm font-medium transition-colors ${
+                  activeSection === 'pricing'
+                    ? 'text-brand-blue'
+                    : 'text-gray-700 hover:text-brand-blue'
+                }`}
+              >
+                Pricing
+              </Link>
+            </div>
 
             {/* Auth Buttons */}
-            <AuthButtons userEmail={userEmail} onSignOut={handleSignOut} />
+            {userEmail ? (
+              <div className="hidden lg:flex items-center gap-3">
+                <div className="relative">
+                  <button
+                    onClick={() => setAuthOpen(!authOpen)}
+                    className="w-10 h-10 rounded-full bg-brand-blue/10 text-brand-blue font-semibold text-sm flex items-center justify-center hover:bg-brand-blue/20 transition-colors"
+                    aria-expanded={authOpen}
+                    aria-haspopup="true"
+                    aria-label="User menu"
+                  >
+                    {userEmail.charAt(0).toUpperCase()}
+                  </button>
+                  {authOpen && (
+                    <div className="absolute top-full right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-40">
+                      <Link
+                        href="/dashboard"
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors border-b border-gray-100"
+                        onClick={() => setAuthOpen(false)}
+                      >
+                        Dashboard
+                      </Link>
+                      <Link
+                        href="/dashboard/reports"
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors border-b border-gray-100"
+                        onClick={() => setAuthOpen(false)}
+                      >
+                        My Reports
+                      </Link>
+                      <Link
+                        href="/dashboard/settings"
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors border-b border-gray-100"
+                        onClick={() => setAuthOpen(false)}
+                      >
+                        Settings
+                      </Link>
+                      <button
+                        onClick={() => {
+                          setAuthOpen(false);
+                          handleSignOut();
+                        }}
+                        className="w-full text-left px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors font-medium"
+                      >
+                        Sign Out
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <div className="hidden lg:flex items-center gap-3">
+                <Link
+                  href="/sign-in"
+                  className="text-sm font-medium text-gray-700 hover:text-brand-blue transition-colors"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/sign-up"
+                  className="px-4 py-2 rounded-full bg-brand-blue text-white text-sm font-semibold hover:bg-brand-blue/90 transition-colors flex items-center gap-1"
+                >
+                  Get Started
+                  <span>→</span>
+                </Link>
+              </div>
+            )}
 
             {/* Mobile Hamburger */}
             <button
