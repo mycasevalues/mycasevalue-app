@@ -178,29 +178,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // ── Judge profile pages ────────────────────────────────
-  const judgeUrls: MetadataRoute.Sitemap = mockJudgesData.judges.map((judge) => ({
-    url: `${baseUrl}/judges/${judge.id}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.65,
-  }));
 
-  // ── Widget pages (for top 10 NOS codes with major districts) ──
-  const widgetUrls: MetadataRoute.Sitemap = [];
-  const topNosCodesForWidgets = Array.from(new Set(['442', '110', '440', '365', '190', '360', '220', '350', '710', '860']));
-  const majorDistricts = ['new-york-southern', 'california-central', 'illinois-northern', 'texas-northern', 'florida-southern'];
-
-  topNosCodesForWidgets.forEach((nos) => {
-    majorDistricts.forEach((district) => {
-      widgetUrls.push({
-        url: `${baseUrl}/widget/${nos}/${district}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      });
-    });
-  });
 
   return [
     ...staticPages,
@@ -211,7 +189,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...outcomesUrls,
     ...districtNosUrls,
     ...blogUrls,
-    ...judgeUrls,
-    ...widgetUrls,
   ];
 }
