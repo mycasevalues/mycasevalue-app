@@ -1,6 +1,17 @@
 import { Metadata } from 'next';
 import { SITE_URL } from '@/lib/site-config';
-import JudgeCompareClient from '@/components/JudgeCompareClient';
+const JudgeCompareClient = dynamic(
+  () => import('@/components/JudgeCompareClient'),
+  {
+    loading: () => (
+      <div style={{ minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6b7280' }}>
+        Loading judge comparison...
+      </div>
+    ),
+    ssr: false,
+  }
+);
+import dynamic from 'next/dynamic';
 
 interface PageProps {
   searchParams: Promise<{ judge?: string }>;
