@@ -1039,7 +1039,7 @@ export default function OddsPage() {
                   }}
                 >
                   View Full Report
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </Link>
@@ -1414,7 +1414,7 @@ export default function OddsPage() {
           {/* No-query state: show quick info */}
           {!showResults && (
             <div className="odds-card" style={{ padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="1.5" style={{ margin: '0 auto 16px', display: 'block' }}>
+              <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="1.5" style={{ margin: '0 auto 16px', display: 'block' }}>
                 <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
               </svg>
               <p style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
