@@ -96,8 +96,30 @@ export default function NosExplorerPage() {
   const nosData = buildNosData();
   const totalCases = nosData.reduce((s, r) => s + r.total, 0);
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'NOS Explorer', item: `${SITE_URL}/nos-explorer` },
+        ],
+      },
+      {
+        '@type': 'WebApplication',
+        name: 'NOS Code Explorer - MyCaseValue',
+        url: `${SITE_URL}/nos-explorer`,
+        applicationCategory: 'LegalApplication',
+        description: 'Interactive explorer for federal court Nature of Suit (NOS) codes with case statistics and settlement data.',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      },
+    ],
+  };
+
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Header */}
       <div style={{ borderBottom: '1px solid #E5E7EB', background: '#1C3A5E' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
