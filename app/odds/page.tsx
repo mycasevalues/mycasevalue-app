@@ -7,6 +7,7 @@ import { REAL_DATA } from '../../lib/realdata';
 import { fmtK } from '../../lib/format';
 import { ATTORNEY_IMPACT } from '../../lib/attorney-impact';
 import { getWinRateColor } from '../../lib/color-scale';
+import { SITE_URL } from '@/lib/site-config';
 
 const allTypes = SITS.flatMap(cat =>
   cat.opts.map(opt => ({ label: opt.label, nos: opt.nos, category: cat.label }))
