@@ -121,14 +121,7 @@ export default function ProSeLitigantsPage() {
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
             }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLAnchorElement).style.backgroundColor = '#005AA8';
-              (e.target as HTMLAnchorElement).style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLAnchorElement).style.backgroundColor = '#0966C3';
-              (e.target as HTMLAnchorElement).style.transform = 'translateY(0)';
-            }}
+            className="hover:opacity-90 hover:-translate-y-0.5"
           >
             Start Searching
           </Link>

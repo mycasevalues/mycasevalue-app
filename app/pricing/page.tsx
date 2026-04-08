@@ -525,8 +525,7 @@ export default function PricingPage() {
               color: '#FFFFFF',
               transition: 'all 0.3s ease',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#0855a3')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = '#0966C3')}
+            className="hover:opacity-90"
           >
             Contact Us
           </Link>
