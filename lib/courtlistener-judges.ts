@@ -49,6 +49,7 @@ interface CLPerson {
 
 interface CLAppointer {
   person: CLPerson;
+  position_type?: string;
 }
 
 // Map CourtListener court IDs to our district IDs
@@ -196,6 +197,39 @@ const PRESIDENT_PARTIES: Record<string, string> = {
   'Biden': 'Democratic',
 };
 
+// President terms for date-based inference fallback
+const PRESIDENT_TERMS: Array<{ name: string; start: string; end: string }> = [
+  { name: 'Eisenhower',       start: '1953-01-20', end: '1961-01-20' },
+  { name: 'Kennedy',          start: '1961-01-20', end: '1963-11-22' },
+  { name: 'Johnson',          start: '1963-11-22', end: '1969-01-20' },
+  { name: 'Nixon',            start: '1969-01-20', end: '1974-08-09' },
+  { name: 'Ford',             start: '1974-08-09', end: '1977-01-20' },
+  { name: 'Carter',           start: '1977-01-20', end: '1981-01-20' },
+  { name: 'Reagan',           start: '1981-01-20', end: '1989-01-20' },
+  { name: 'George H.W. Bush', start: '1989-01-20', end: '1993-01-20' },
+  { name: 'Clinton',          start: '1993-01-20', end: '2001-01-20' },
+  { name: 'George W. Bush',   start: '2001-01-20', end: '2009-01-20' },
+  { name: 'Obama',            start: '2009-01-20', end: '2017-01-20' },
+  { name: 'Trump',            start: '2017-01-20', end: '2021-01-20' },
+  { name: 'Biden',            start: '2021-01-20', end: '2025-01-20' },
+  { name: 'Trump',            start: '2025-01-20', end: '2029-01-20' },
+];
+
+/**
+ * Infer appointing president from appointment/commission date.
+ * Falls back when CourtListener appointer field is null.
+ */
+function inferPresidentFromDate(dateStr: string | null): { name: string; party: string } | null {
+  if (!dateStr) return null;
+  const d = new Date(dateStr);
+  for (const term of PRESIDENT_TERMS) {
+    if (d >= new Date(term.start) && d < new Date(term.end)) {
+      return { name: term.name, party: PRESIDENT_PARTIES[term.name] || '' };
+    }
+  }
+  return null;
+}
+
 function generateJudgeId(name: string, courtId: string): string {
   const slug = name.toLowerCase()
     .replace(/[^a-z0-9\s]/g, '')
@@ -233,6 +267,33 @@ function positionToJudgeRecord(pos: CLPositionResult) {
     .filter(Boolean).join(' ');
   const judgeId = generateJudgeId(fullName, courtId);
 
+  // ─── Extract appointing president ───────────────────────
+  let appointingPresident: string | null = null;
+  let appointingParty: string | null = null;
+
+  // Strategy 1: CourtListener appointer field (when populated)
+  if (pos.appointer?.person) {
+    const ap = pos.appointer.person;
+    const presName = [ap.name_first, ap.name_last].filter(Boolean).join(' ');
+    // Match against known presidents
+    for (const [key, party] of Object.entries(PRESIDENT_PARTIES)) {
+      if (presName.toLowerCase().includes(key.toLowerCase())) {
+        appointingPresident = key;
+        appointingParty = party;
+        break;
+      }
+    }
+  }
+
+  // Strategy 2: Infer from appointment date
+  if (!appointingPresident && pos.date_start) {
+    const inferred = inferPresidentFromDate(pos.date_start);
+    if (inferred) {
+      appointingPresident = inferred.name;
+      appointingParty = inferred.party;
+    }
+  }
+
   return {
     id: judgeId,
     courtlistener_id: person.id,
@@ -242,8 +303,8 @@ function positionToJudgeRecord(pos: CLPositionResult) {
     district_id: COURT_ID_MAP[courtId] || null,
     circuit: COURT_CIRCUIT_MAP[courtId] || null,
     appointment_date: pos.date_start || null,
-    appointing_president: null as string | null,
-    party_of_appointing_president: null as string | null,
+    appointing_president: appointingPresident,
+    party_of_appointing_president: appointingParty,
     termination_date: pos.date_termination || null,
     is_active: !pos.date_termination,
     position: pos.position_type === 'jud' ? 'District Judge' : pos.position_type,
