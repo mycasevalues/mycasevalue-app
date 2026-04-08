@@ -65,7 +65,7 @@ function checkMemoryFallback(
 
   entry.count++;
   const remaining = Math.max(0, FREE_DAILY_LIMIT - entry.count);
-  return { allowed: remaining >= 0, remaining };
+  return { allowed: remaining > 0, remaining };
 }
 
 // Cleanup stale memory entries every 10 minutes
