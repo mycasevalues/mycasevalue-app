@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: 'For Individuals | MyCaseValue',
   description: 'Research your case value, settlement ranges, and timeline estimates. Free access to case analytics for personal injury claims.',
   alternates: { canonical: `${SITE_URL}/solutions/individuals` },
+  openGraph: {
+    title: 'For Individuals | MyCaseValue',
+    description: 'Research your case value, settlement ranges, and timeline estimates. Free access to case analytics for personal injury claims.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Individuals | MyCaseValue',
+    description: 'Research your case value, settlement ranges, and timeline estimates. Free access to case analytics for personal injury claims.',
+  },
 };
 
 const FEATURES = [
