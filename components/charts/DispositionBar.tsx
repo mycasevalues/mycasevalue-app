@@ -23,7 +23,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
 
   const labels: Record<string, string> = {
     settled: 'Settlement',
-    plaintiffVerdict: 'Plaintiff Verdict',
+    plaintiffVerdict: 'Favorable Verdict',
     defenseVerdict: 'Defense Verdict',
     dismissed: 'Dismissed',
     summaryJudgment: 'Summary Judgment',
