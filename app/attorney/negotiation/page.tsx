@@ -89,7 +89,7 @@ export default function NegotiationPage() {
     const nosLabel = caseOptions.find(o => o.nos === caseType)?.label || `NOS ${caseType}`;
     const talkingPoints = [
       `Historical data from ${(data.total || 1000).toLocaleString()} federal ${nosLabel} cases shows a ${sr}% settlement rate. The median settlement is ${formatMoney(p50)}, placing the current offer at the ${offerPercentile}th percentile — ${offerPercentile < 50 ? 'below' : 'above'} the typical resolution range.`,
-      `Plaintiff win rate for ${represented ? 'represented parties' : 'pro se litigants'} in this case type is ${wr}%. ${represented ? 'With representation,' : 'Without representation,'} the expected value at trial (${Math.round(wr)}% × ${formatMoney(Math.round(medianVerdict))} median verdict) is ${formatMoney(Math.round((wr / 100) * medianVerdict))}, which ${batna > offer ? 'exceeds' : 'is below'} the current offer after litigation costs.`,
+      `Case win rate for ${represented ? 'represented parties' : 'pro se litigants'} in this case type is ${wr}%. ${represented ? 'With representation,' : 'Without representation,'} the expected value at trial (${Math.round(wr)}% × ${formatMoney(Math.round(medianVerdict))} median verdict) is ${formatMoney(Math.round((wr / 100) * medianVerdict))}, which ${batna > offer ? 'exceeds' : 'is below'} the current offer after litigation costs.`,
       `The BATNA analysis suggests a negotiation floor of ${formatMoney(floor)}. Given the ${caseStrength} case assessment and comparable settlement data, the target settlement should be ${formatMoney(target)} with an aspirational ceiling of ${formatMoney(ceiling)}.`,
     ];
 

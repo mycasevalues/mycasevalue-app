@@ -17,7 +17,7 @@ import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
 import { ingestJudges, ingestJudgesPage } from '../../../../lib/courtlistener-judges';
 
 export const dynamic = 'force-dynamic';
-export const maxDuration = 300; // Vercel Pro allows up to 300s
+export const maxDuration = 60; // Vercel Pro allows up to 300s, but use 60s for reliable chunk processing
 
 export async function POST(req: NextRequest) {
   // Strict rate limiting to prevent brute-force attacks on admin secret
@@ -47,18 +47,29 @@ export async function POST(req: NextRequest) {
       }, { status: 500 });
     }
 
-    // Parse request body for optional CourtListener token and cursor
+    // Parse request body for optional CourtListener token, cursor, and pagination params
     let courtlistenerToken: string | undefined;
     let cursor: string | undefined;
     let mode: string = 'page'; // default to single-page mode for Hobby plan
+    let offset = 0;
+    let limit = 50;
     try {
       const body = await req.json();
       courtlistenerToken = body?.courtlistener_token;
       cursor = body?.cursor;
       if (body?.mode === 'full') mode = 'full';
+      if (body?.offset !== undefined) offset = parseInt(String(body.offset), 10) || 0;
+      if (body?.limit !== undefined) limit = Math.min(parseInt(String(body.limit), 10) || 50, 50);
     } catch {
       // Body might be empty, that's fine
     }
+
+    // Also accept query params for offset/limit
+    const url = new URL(req.url);
+    const queryOffset = url.searchParams.get('offset');
+    const queryLimit = url.searchParams.get('limit');
+    if (queryOffset) offset = parseInt(queryOffset, 10) || offset;
+    if (queryLimit) limit = Math.min(parseInt(queryLimit, 10) || limit, 50);
 
     if (mode === 'full') {
       // Full ingestion — will timeout on Hobby plan
@@ -68,7 +79,15 @@ export async function POST(req: NextRequest) {
 
     // Single-page ingestion — fits within 10s timeout
     const result = await ingestJudgesPage(supabaseUrl, supabaseServiceKey, cursor, courtlistenerToken);
-    return NextResponse.json(result);
+
+    // Enhance response with pagination info
+    return NextResponse.json({
+      ...result,
+      processed: result.processed || 0,
+      total: (result.total !== undefined) ? result.total : null,
+      nextOffset: offset + limit,
+      done: !result.cursor, // done if no cursor returned (no more pages)
+    });
   } catch (err: unknown) {
     const errorMessage = err instanceof Error ? err.message : String(err);
     console.error('[api/admin/ingest-judges] Error:', errorMessage);
@@ -77,6 +96,8 @@ export async function POST(req: NextRequest) {
       processed: 0,
       errors: [errorMessage],
       duration_ms: 0,
+      nextOffset: 0,
+      done: false,
     }, { status: 500 });
   }
 }

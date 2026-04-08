@@ -141,7 +141,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = `${nosInfo.label} Cases in ${districtInfo.fullName} — Outcomes & Settlement Data | MyCaseValue`;
-  const description = `Plaintiff win rates, settlement ranges, and case timelines for ${nosInfo.label} cases in ${districtInfo.fullName}. Based on federal court cases from 1970–2024.`;
+  const description = `Win rates, settlement ranges, and case timelines for ${nosInfo.label} cases in ${districtInfo.fullName}. Based on federal court cases from 1970–2024.`;
   const canonical = `${SITE_URL}/districts/${district}/${nos}`;
 
   return {

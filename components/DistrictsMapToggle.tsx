@@ -3,6 +3,7 @@
 /**
  * Map/List toggle for the districts page.
  * Shows choropleth map or passes through to list view.
+ * MUST be a Client Component because it uses onClick handlers.
  */
 
 import { useState, type ReactNode } from 'react';

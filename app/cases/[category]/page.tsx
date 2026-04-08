@@ -247,7 +247,7 @@ function getAverageStats(category: string): {
   }
 
   const nosCodesInCategory = Array.from(
-    new Set(categoryData.opts.map((opt) => opt.nos))
+    new Set(categoryData.opts?.map?.((opt) => opt.nos) ?? [])
   );
 
   let totalWeightedWinRate = 0;
@@ -255,10 +255,10 @@ function getAverageStats(category: string): {
   let totalWeightedTimelineMonths = 0;
   let totalCases = 0;
 
-  nosCodesInCategory.forEach((nos) => {
-    const data = OUTCOME_DATA[nos];
-    const realData = REAL_DATA[nos];
-    if (data && data.trial_win !== undefined && realData && realData.total) {
+  nosCodesInCategory?.forEach?.((nos) => {
+    const data = OUTCOME_DATA?.[nos];
+    const realData = REAL_DATA?.[nos];
+    if (data && data.trial_win !== undefined && realData?.total) {
       const weight = realData.total;
       totalWeightedWinRate += (data.trial_win || 10) * weight;
       totalWeightedSettleRate += (data.fav_set || 22) * weight;
@@ -268,11 +268,11 @@ function getAverageStats(category: string): {
   });
 
   if (totalCases === 0) {
-    const defaults = OUTCOME_DATA._default;
+    const defaults = OUTCOME_DATA?._default;
     return {
-      avgWinRate: defaults.trial_win,
-      avgSettleRate: defaults.fav_set,
-      avgTimelineMonths: defaults.set_mo,
+      avgWinRate: defaults?.trial_win ?? 38,
+      avgSettleRate: defaults?.fav_set ?? 22,
+      avgTimelineMonths: defaults?.set_mo ?? 14,
     };
   }
 
@@ -289,19 +289,33 @@ async function CategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category } = await params;
-  const categoryData = SITS.find((c) => c.id === category);
+  let categoryData;
+  let stats;
 
-  if (!categoryData) {
+  try {
+    categoryData = SITS.find((c) => c.id === category);
+
+    if (!categoryData) {
+      return (
+        <div style={{ padding: '40px 20px', textAlign: 'center' }}>
+          <h1 className="text-2xl font-bold">Category not found</h1>
+          <p className="mt-4" style={{ color: '#4B5563' }}>The case type you&apos;re looking for doesn&apos;t exist.</p>
+          <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: '#0f0f0f', borderRadius: '12px' }}>Browse all categories</a>
+        </div>
+      );
+    }
+
+    stats = getAverageStats(category);
+  } catch (err: unknown) {
+    console.error('[cases/[category]] Error loading category data:', err);
     return (
-      <div style={{ padding: '40px 20px', textAlign: 'center' }}>
-        <h1 className="text-2xl font-bold">Category not found</h1>
-        <p className="mt-4" style={{ color: '#4B5563' }}>The case type you&apos;re looking for doesn&apos;t exist.</p>
-        <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: '#0f0f0f', borderRadius: '12px' }}>Browse all categories</a>
+      <div style={{ padding: '40px 20px', textAlign: 'center', minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <h1 style={{ fontSize: 24, fontWeight: 600, color: '#0f0f0f', marginBottom: 16 }}>Data Loading Error</h1>
+        <p style={{ color: '#4B5563', marginBottom: 24 }}>Data for this case type is being compiled. Check back soon.</p>
+        <a href="/cases" className="inline-block px-6 py-3 font-semibold text-white" style={{ background: '#0966C3', borderRadius: '12px', textDecoration: 'none', display: 'inline-block' }}>Browse all categories</a>
       </div>
     );
   }
-
-  const stats = getAverageStats(category);
 
   const categoryLongDescriptions: Record<string, string> = {
     work: 'Research workplace cases including wrongful termination, employment discrimination, sexual harassment, wage disputes, retaliation, disability discrimination (ADA), age discrimination, race discrimination, FMLA violations, whistleblower retaliation, and more. Our database includes real outcomes from federal employment litigation.',
@@ -322,7 +336,7 @@ async function CategoryPage({
     '@graph': [
       {
         '@type': 'WebPage',
-        name: `${categoryData.label} Case Data & Federal Court Outcomes`,
+        name: `${categoryData?.label} Case Data & Federal Court Outcomes`,
         description: categoryLongDescriptions[category],
         url: `https://www.mycasevalues.com/cases/${category}`,
         publisher: {
@@ -349,15 +363,15 @@ async function CategoryPage({
           {
             '@type': 'ListItem',
             position: 3,
-            name: categoryData.label,
+            name: categoryData?.label,
             item: `https://www.mycasevalues.com/cases/${category}`,
           },
         ],
       },
       {
         '@type': 'DataSet',
-        name: `${categoryData.label} Federal Court Outcomes`,
-        description: `Real outcome data from federal court cases involving ${categoryData.label.toLowerCase()}. Includes win rates, settlement percentages, timelines, and recovery data from public federal court records.`,
+        name: `${categoryData?.label} Federal Court Outcomes`,
+        description: `Real outcome data from federal court cases involving ${categoryData?.label.toLowerCase()}. Includes win rates, settlement percentages, timelines, and recovery data from public federal court records.`,
         url: `https://www.mycasevalues.com/cases/${category}`,
         distribution: {
           '@type': 'DataDownload',
@@ -397,7 +411,7 @@ async function CategoryPage({
             Cases
           </Link>
           {' / '}
-          <span style={{ color: '#0f0f0f', fontWeight: 500 }}>{categoryData.label}</span>
+          <span style={{ color: '#0f0f0f', fontWeight: 500 }}>{categoryData?.label}</span>
         </div>
       </div>
 
@@ -423,7 +437,7 @@ async function CategoryPage({
             color: '#FFFFFF',
             marginBottom: '16px',
           }}>
-            {categoryData.label.toUpperCase()}
+            {categoryData?.label.toUpperCase()}
           </div>
           <h1 style={{
             fontSize: '36px',
@@ -433,7 +447,7 @@ async function CategoryPage({
             letterSpacing: '-0.5px',
             color: '#FFFFFF',
           }}>
-            {categoryData.label} Cases
+            {categoryData?.label} Cases
           </h1>
           <p style={{
             fontSize: '15px',
@@ -443,7 +457,7 @@ async function CategoryPage({
             maxWidth: '600px',
             lineHeight: '1.6',
           }}>
-            {categoryData.sub}
+            {categoryData?.sub}
           </p>
           <div style={{
             display: 'flex',
@@ -455,7 +469,7 @@ async function CategoryPage({
               // Compute total cases in this category
               const seen = new Set<string>();
               let totalCases = 0;
-              for (const opt of categoryData.opts) {
+              for (const opt of (categoryData?.opts ?? [])) {
                 if (seen.has(opt.nos)) continue;
                 seen.add(opt.nos);
                 const rd = REAL_DATA[opt.nos];
@@ -476,7 +490,7 @@ async function CategoryPage({
                 {(() => {
                   const seen = new Set<string>();
                   let totalCases = 0;
-                  for (const opt of categoryData.opts) {
+                  for (const opt of (categoryData?.opts ?? [])) {
                     if (seen.has(opt.nos)) continue;
                     seen.add(opt.nos);
                     const rd = REAL_DATA[opt.nos];
@@ -530,7 +544,7 @@ async function CategoryPage({
             {(() => {
               const seen = new Set<string>();
               let totalCases = 0;
-              for (const opt of categoryData.opts) {
+              for (const opt of (categoryData?.opts ?? [])) {
                 if (seen.has(opt.nos)) continue;
                 seen.add(opt.nos);
                 const rd = REAL_DATA[opt.nos];
@@ -586,7 +600,7 @@ async function CategoryPage({
                       {(() => {
                         const seen = new Set<string>();
                         let totalCases = 0;
-                        for (const opt of categoryData.opts) {
+                        for (const opt of (categoryData?.opts ?? [])) {
                           if (seen.has(opt.nos)) continue;
                           seen.add(opt.nos);
                           const rd = REAL_DATA[opt.nos];
@@ -721,20 +735,20 @@ async function CategoryPage({
             fontFamily: 'var(--font-display)',
             letterSpacing: '-0.3px',
           }}>
-            {categoryData.opts.length} Case Types Covered
+            {categoryData?.opts?.length ?? 0} Case Types Covered
           </h2>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
             gap: '20px',
           }}>
-            {categoryData.opts.map((opt) => {
+            {(categoryData?.opts ?? [])?.map?.((opt) => {
               const allCaseTypes = getAllCaseTypeSEO();
-              const caseType = allCaseTypes.find(
+              const caseType = allCaseTypes?.find?.(
                 (ct) => ct.categorySlug === category && ct.nosCode === opt.nos
               );
               const href = caseType ? `/cases/${category}/${caseType.slug}` : `#`;
-              const rd = REAL_DATA[opt.nos];
+              const rd = REAL_DATA?.[opt.nos];
 
               return (
                 <Link
@@ -983,12 +997,12 @@ async function CategoryPage({
             fontFamily: 'var(--font-body)',
             lineHeight: 1.6,
           }}>
-            How {categoryData.label.toLowerCase()} case outcomes vary across federal circuits based on aggregate data from the primary NOS codes in this category.
+            How {categoryData?.label.toLowerCase()} case outcomes vary across federal circuits based on aggregate data from the primary NOS codes in this category.
           </p>
           {(() => {
             // Get circuit rates from the first NOS code with circuit_rates data
-            const primaryNos = categoryData.opts[0]?.nos;
-            const rd = primaryNos ? REAL_DATA[primaryNos] : null;
+            const primaryNos = categoryData?.opts?.[0]?.nos;
+            const rd = primaryNos ? REAL_DATA?.[primaryNos] : null;
             const circuitRates = rd?.circuit_rates || {};
             const entries = Object.entries(circuitRates).sort((a, b) => (b[1] as number) - (a[1] as number));
             const nationalAvg = entries.length > 0 ? Math.round(entries.reduce((s, e) => s + (e[1] as number), 0) / entries.length) : 0;
@@ -1053,7 +1067,7 @@ async function CategoryPage({
             {(() => {
               const seen = new Set<string>();
               const items: { label: string; lo: number; md: number; hi: number; nos: string }[] = [];
-              for (const opt of categoryData.opts) {
+              for (const opt of (categoryData?.opts ?? [])) {
                 if (seen.has(opt.nos)) continue;
                 seen.add(opt.nos);
                 const rd = REAL_DATA[opt.nos];
