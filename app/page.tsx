@@ -46,7 +46,6 @@ export const metadata: Metadata = {
                                     description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
                                       },
                                       };
-}
 // ── TYPES ──────────────────────────────────────────────────────────────────
 
 interface Feature {
