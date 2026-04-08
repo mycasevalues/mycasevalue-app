@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Review MyCaseValue\'s Acceptable Use Policy governing use of our platform and data.',
   openGraph: {
     title: 'Acceptable Use Policy | MyCaseValue',
-    description: 'Review MyCaseValue\',
+    description: 'Review MyCaseValue\'s Acceptable Use Policy governing use of our platform and data.',
   },
   twitter: {
     card: 'summary_large_image',
