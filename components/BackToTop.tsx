@@ -51,7 +51,7 @@ export default function BackToTop() {
       aria-label="Back to top"
       title="Back to top"
     >
-      <svg
+      <svg aria-hidden="true"
         width="20"
         height="20"
         viewBox="0 0 20 20"
