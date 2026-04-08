@@ -5,14 +5,18 @@ import { z } from 'zod';
 export function buildCSP(): string {
   const directives = {
     'default-src': ["'self'"],
-    'script-src': ["'self'", "'unsafe-eval'", "'unsafe-inline'", 'https://vercel.live'],
+    'script-src': ["'self'", "'unsafe-inline'", 'https://js.stripe.com', 'https://www.googletagmanager.com', 'https://www.google-analytics.com'],
     'style-src': ["'self'", "'unsafe-inline'"],
-    'img-src': ["'self'", 'data:', 'blob:', 'https://*.supabase.co'],
+    'img-src': ["'self'", 'data:', 'blob:', 'https:'],
     'font-src': ["'self'"],
-    'connect-src': ["'self'", 'https://*.supabase.co', 'https://api.anthropic.com', 'https://www.courtlistener.com', 'https://api.bls.gov', 'https://api.govinfo.gov', 'https://vercel.live', 'wss://ws-us3.pusher.com'],
+    'connect-src': ["'self'", 'https://*.supabase.co', 'https://api.stripe.com', 'https://www.google-analytics.com', 'https://www.googletagmanager.com', 'https://api.anthropic.com', 'https://courtlistener.com', 'https://vercel.live'],
     'frame-ancestors': ["'none'"],
     'base-uri': ["'self'"],
+    'frame-src': ['https://js.stripe.com', 'https://hooks.stripe.com', 'https://vercel.live'],
+    'worker-src': ["'self'", 'blob:'],
+    'object-src': ["'none'"],
     'form-action': ["'self'"],
+    'upgrade-insecure-requests': [],
   };
 
   return Object.entries(directives)
@@ -60,7 +64,7 @@ export const SecuritySchemas = {
   email: z.string().email().max(254),
   password: z.string().min(8).max(128),
   searchQuery: z.string().min(1).max(500).transform(sanitizeSearchQuery),
-  nosCode: z.string().regex(/^\d{3}$/, 'NOS code must be 3 digits'),
+  nosCode: z.string().regex(/^\d{1,4}$/, 'NOS code must be 1-4 digits'),
   districtCode: z.string().regex(/^[A-Z]{2}(-[A-Z]{1,3})?$/, 'Invalid district code'),
   dateRange: z.object({
     start: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
