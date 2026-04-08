@@ -3,6 +3,15 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Acceptable Use Policy | MyCaseValue',
   description: 'Review MyCaseValue\'s Acceptable Use Policy governing use of our platform and data.',
+  openGraph: {
+    title: 'Acceptable Use Policy | MyCaseValue',
+    description: 'Review MyCaseValue\',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Acceptable Use Policy | MyCaseValue',
+    description: 'Review MyCaseValue\',
+  },
 };
 
 export default function AUPPage() {
