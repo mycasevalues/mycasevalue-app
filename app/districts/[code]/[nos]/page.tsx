@@ -664,7 +664,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             }}>
               <p>
                 Win rates, settlement data, and case timelines are derived from the Federal Judicial Center Integrated Database,
-                covering 4.1M+ federal civil cases from 1970–2024. Metrics are specific to {nosInfo.label.toLowerCase()} cases within {districtInfo.fullName}.
+                covering 5.1M+ federal civil cases from 1970–2024. Metrics are specific to {nosInfo.label.toLowerCase()} cases within {districtInfo.fullName}.
               </p>
               <p style={{ marginTop: 12, marginBottom: 0 }}>
                 Settlement ranges represent historical median values in thousands of dollars for resolved cases. This information

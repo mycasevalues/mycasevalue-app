@@ -136,7 +136,7 @@ export const HOMEPAGE_STATS: StatBarItem[] = [
   {
     label:  'Cases indexed',
     value:  '5,100,000+',
-    sub:    '94 federal districts · All case types',
+    sub:    '95 federal districts · All case types',
   },
   {
     label:  'Median verdict · S.D.N.Y.',

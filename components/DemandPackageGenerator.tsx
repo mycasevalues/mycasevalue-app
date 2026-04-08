@@ -196,7 +196,7 @@ export default function DemandPackageGenerator() {
     doc.setFont('Helvetica', 'normal');
     doc.setFontSize(9);
     const methodologyText =
-      'This data package is derived from analysis of 4.1M+ federal civil cases filed in United States District Courts from 2010-2024. Win rates, settlement data, and case duration statistics are calculated from publicly available case disposition records. Settlement amounts are based on reported settlement values in cases with available damage data. District-level analysis applies national aggregates adjusted for local case composition.';
+      'This data package is derived from analysis of 5.1M+ federal civil cases filed in United States District Courts from 2010-2024. Win rates, settlement data, and case duration statistics are calculated from publicly available case disposition records. Settlement amounts are based on reported settlement values in cases with available damage data. District-level analysis applies national aggregates adjusted for local case composition.';
     const methodologyLines = doc.splitTextToSize(methodologyText, contentWidth - 4);
     methodologyLines.forEach((line) => {
       doc.text(line, margin + 2, yPos);
@@ -536,7 +536,7 @@ function PreviewContent({
         </h3>
         <div style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', fontSize: '14px', color: '#666' }}>
           <p>
-            This data package is derived from analysis of 4.1M+ federal civil cases filed in United States District Courts from
+            This data package is derived from analysis of 5.1M+ federal civil cases filed in United States District Courts from
             2010-2024. Win rates, settlement data, and case duration statistics are calculated from publicly available case
             disposition records. Settlement amounts are based on reported settlement values in cases with available damage data.
             District-level analysis applies national aggregates adjusted for local case composition.

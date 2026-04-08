@@ -453,7 +453,7 @@ export default async function DashboardPage() {
               {/* Total Cases Analyzed */}
               <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Total Cases Analyzed</div>
-                <div style={{ fontSize: '28px', fontWeight: 700, color: '#0f0f0f' }}>4.1M</div>
+                <div style={{ fontSize: '28px', fontWeight: 700, color: '#0f0f0f' }}>5.1M</div>
                 <div style={{ fontSize: '11px', color: '#999', marginTop: '6px' }}>Cases in database</div>
               </div>
 
@@ -467,7 +467,7 @@ export default async function DashboardPage() {
               {/* Federal Districts */}
               <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Federal Districts</div>
-                <div style={{ fontSize: '28px', fontWeight: 700, color: '#0f0f0f' }}>94</div>
+                <div style={{ fontSize: '28px', fontWeight: 700, color: '#0f0f0f' }}>95</div>
                 <div style={{ fontSize: '11px', color: '#999', marginTop: '6px' }}>U.S. courts covered</div>
               </div>
 
@@ -502,7 +502,7 @@ export default async function DashboardPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '16px', marginBottom: '40px' }}>
             <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '16px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <p style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>Total Cases</p>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 600, color: '#0966C3', margin: 0 }}>4.1M+</p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 600, color: '#0966C3', margin: 0 }}>5.1M+</p>
             </div>
             <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '16px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <p style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>NOS Codes</p>
@@ -510,7 +510,7 @@ export default async function DashboardPage() {
             </div>
             <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '16px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <p style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>Districts Covered</p>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 600, color: '#0966C3', margin: 0 }}>94</p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 600, color: '#0966C3', margin: 0 }}>95</p>
             </div>
             <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '16px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <p style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>Uptime Status</p>
@@ -774,7 +774,7 @@ export default async function DashboardPage() {
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px' }}>
               {[
-                { label: 'Federal Cases', value: '4.1M+' },
+                { label: 'Federal Cases', value: '5.1M+' },
                 { label: 'Case Types', value: '84' },
                 { label: 'Federal Districts', value: '95' },
                 { label: 'Federal Judges', value: '91' },

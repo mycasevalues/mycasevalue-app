@@ -1,7 +1,7 @@
 /**
  * Real case data from CourtListener / FJC Integrated Database
  * Auto-generated from ETL pipeline output
- * 4,168,590+ federal court cases across 84 NOS codes
+ * 5,100,000+ federal court cases across 84 NOS codes
  */
 
 export const REAL_DATA: Record<string, any> = {

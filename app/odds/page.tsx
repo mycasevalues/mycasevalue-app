@@ -261,7 +261,7 @@ export default function OddsPage() {
             lineHeight: 1.5,
             fontFamily: 'var(--font-body)',
           }}>
-            See real win rates, settlement data, and recovery ranges for your case type — instantly, using data from 4.1M+ federal cases.
+            See real win rates, settlement data, and recovery ranges for your case type — instantly, using data from 5.1M+ federal cases.
           </p>
         </div>
       </header>
@@ -1293,7 +1293,7 @@ export default function OddsPage() {
                 textAlign: 'center',
               }}>
                 {[
-                  { v: '4.1M+', l: 'Cases analyzed' },
+                  { v: '5.1M+', l: 'Cases analyzed' },
                   { v: '95', l: 'Federal districts' },
                   { v: '84', l: 'Case types' },
                   { v: 'Instant', l: 'No account needed' },
@@ -1448,7 +1448,7 @@ export default function OddsPage() {
                 Select a case type to see your odds
               </p>
               <p style={{ fontSize: 14, color: '#4B5563', maxWidth: 480, margin: '0 auto', lineHeight: 1.6 }}>
-                Choose from 84 federal case types above and click &ldquo;Check Odds&rdquo; to see real win rates, settlement data, recovery ranges, and circuit-level comparisons from 4.1M+ cases.
+                Choose from 84 federal case types above and click &ldquo;Check Odds&rdquo; to see real win rates, settlement data, recovery ranges, and circuit-level comparisons from 5.1M+ cases.
               </p>
             </div>
           )}

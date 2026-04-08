@@ -133,7 +133,7 @@ export default function AnnualReportCapture() {
     doc.setFont('helvetica', 'normal');
     doc.text('Comprehensive Federal Litigation Data', margin, yPosition);
     yPosition += 10;
-    doc.text('4,168,590+ Cases | 84 Case Types | 95 Districts', margin, yPosition);
+    doc.text('5,100,000+ Cases | 84 Case Types | 95 Districts', margin, yPosition);
 
     yPosition = pageHeight - 60;
     doc.setFontSize(12);
@@ -147,7 +147,7 @@ export default function AnnualReportCapture() {
     yPosition = margin;
 
     addHeader('Executive Summary');
-    addText('This report analyzes settlement trends, plaintiff win rates, case duration, and litigation patterns across the federal court system based on 4,168,590 cases filed from 2000-2026.');
+    addText('This report analyzes settlement trends, plaintiff win rates, case duration, and litigation patterns across the federal court system based on 5,100,000 cases filed from 2000-2026.');
 
     checkPageBreak(30);
     addSubheader('Key Findings');
@@ -400,7 +400,7 @@ export default function AnnualReportCapture() {
     addHeader('Methodology & Data Sources');
 
     addSubheader('Data Collection');
-    addText('This analysis covers 4,168,590 federal civil cases filed in U.S. District Courts from 2000-2026. Data sourced from:');
+    addText('This analysis covers 5,100,000 federal civil cases filed in U.S. District Courts from 2000-2026. Data sourced from:');
 
     checkPageBreak(15);
     addBulletPoint('Federal Judicial Center (FJC) Integrated Database (IDB) - official court records');
@@ -714,9 +714,9 @@ export default function AnnualReportCapture() {
                 paddingLeft: '20px',
                 margin: 0,
               }}>
-                <li>4,168,590+ analyzed federal cases</li>
+                <li>5,100,000+ analyzed federal cases</li>
                 <li>84 distinct case types covered</li>
-                <li>94 federal districts analyzed</li>
+                <li>95 federal districts analyzed</li>
                 <li>Plaintiff win rates: 28% to 62% by type</li>
                 <li>Settlement medians: $59K to $1.2M</li>
                 <li>Representation impact: 42% win rate advantage</li>

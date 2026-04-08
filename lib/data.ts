@@ -388,7 +388,7 @@ export const TESTIMONIALS = [
 ];
 
 // MOCK_DATA now points to REAL_DATA from CourtListener ETL pipeline
-// 4,168,590+ real federal court cases
+// 5,100,000+ real federal court cases
 export const MOCK_DATA: Record<string, any> = REAL_DATA;
 
 // Legacy mock kept only as comment for reference

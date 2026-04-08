@@ -40,7 +40,7 @@
   },
   "home": {
     "heroTitle": "What is your federal case really worth?",
-    "heroSubtitle": "5.1 million federal cases exposed. Win rates, settlement ranges, and judicial patterns across 94 districts — the data they don't want you to see.",
+    "heroSubtitle": "5.1 million federal cases exposed. Win rates, settlement ranges, and judicial patterns across 95 districts — the data they don't want you to see.",
     "quickLookup": "Quick Case Lookup",
     "selectCaseType": "Select a case type",
     "selectState": "Select a state",
@@ -157,7 +157,7 @@
     },
     "districts": {
       "allDistricts": "Federal Court Districts",
-      "allJudicial": "All 94 federal judicial districts across 13 circuits"
+      "allJudicial": "All 95 federal judicial districts across 13 circuits"
     }
   },
   "districts": {

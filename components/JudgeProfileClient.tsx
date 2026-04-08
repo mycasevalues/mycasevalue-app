@@ -650,7 +650,7 @@ export default function JudgeProfileClient({
             </Link>
           )}
           <Link
-            href="/alerts"
+            href="/dashboard"
             style={{
               display: 'inline-block',
               padding: '12px 24px',
@@ -667,7 +667,7 @@ export default function JudgeProfileClient({
             onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)')}
             onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)')}
           >
-            Set Up Alerts
+            View Dashboard
           </Link>
         </div>
       </div>

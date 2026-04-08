@@ -187,7 +187,7 @@ export default function DataSourcesPage() {
           <section style={{ marginBottom: 80 }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
               {[
-                { number: '4.1M', label: 'Federal Cases Analyzed' },
+                { number: '5.1M', label: 'Federal Cases Analyzed' },
                 { number: '95', label: 'Federal Districts' },
                 { number: '12', label: 'Circuit Courts' },
                 { number: '1970-2024', label: 'Historical Coverage' },

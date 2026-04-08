@@ -83,7 +83,7 @@ District-level data does not guarantee outcomes in individual cases. But it esta
     date: new Date('2025-01-27'),
     readTime: 8,
     author: 'MyCaseValue Research Team',
-    content: `The most common question clients ask their attorneys is some version of "how long will this take?" The honest answer has always been "it depends," but the FJC Integrated Database now lets us quantify exactly what it depends on. Across 84 federal case types and over 4.1 million cases, median case duration ranges from 2 months to 26 months — a 13-fold spread that makes generalization useless and case-type-specific data essential.
+    content: `The most common question clients ask their attorneys is some version of "how long will this take?" The honest answer has always been "it depends," but the FJC Integrated Database now lets us quantify exactly what it depends on. Across 84 federal case types and over 5.1 million cases, median case duration ranges from 2 months to 26 months — a 13-fold spread that makes generalization useless and case-type-specific data essential.
 
 At the fastest end of the spectrum sit administrative and procedural case types. Social Security appeals (NOS 863-865) average 5-7 months, driven by the structured administrative review process and limited discovery. Deportation cases move at a similar pace. Student loan recovery cases average approximately 3-4 months, reflecting the often uncontested nature of these filings. Rent disputes and forfeiture cases can resolve in as little as 2-3 months when defendants do not contest.
 

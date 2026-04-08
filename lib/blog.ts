@@ -163,7 +163,7 @@ The data reinforces a consistent finding: medical malpractice is among the most 
     slug: 'federal-court-win-rates-data',
     title: 'Understanding Federal Court Win Rates: What the Data Actually Shows',
     description: 'Analysis of 5.1M+ federal cases reveals surprising patterns in win rates across case types, districts, and judicial outcomes. Learn what the data really says about your chances.',
-    content: `Federal court win rates are one of the most misunderstood statistics in litigation. Our analysis of over 4.1 million federal civil cases reveals patterns that challenge conventional assumptions about courtroom success.
+    content: `Federal court win rates are one of the most misunderstood statistics in litigation. Our analysis of over 5.1 million federal civil cases reveals patterns that challenge conventional assumptions about courtroom success.
 
 The overall win rate for litigants in federal court is approximately 37%, but this masks enormous variation. Employment discrimination cases settle or go to judgment at dramatically different rates than personal injury cases. Civil rights cases show a 34% win rate, while contract disputes reach 42%. These differences aren't random—they reflect the complexity of legal claims, the strength of evidence typically available, and the way juries and judges evaluate different types of disputes.
 

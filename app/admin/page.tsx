@@ -77,7 +77,7 @@ export default function AdminPage() {
   const [searchUserQuery, setSearchUserQuery] = useState('');
 
   const metrics: MetricCard[] = [
-    { label: 'Total Cases', value: '4.1M+' },
+    { label: 'Total Cases', value: '5.1M+' },
     { label: 'Active NOS Codes', value: '84' },
     { label: 'Districts', value: '95' },
     { label: 'Monthly Visitors', value: '142K' },

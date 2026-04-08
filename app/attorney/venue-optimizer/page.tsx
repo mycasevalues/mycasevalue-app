@@ -312,7 +312,7 @@ export default function VenueOptimizerPage() {
               Find Your Optimal Venue
             </h2>
             <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
-              Select a case type above to see all federal districts ranked by win rate, settlement likelihood, and case speed. Uses real data from 4.1M+ federal cases.
+              Select a case type above to see all federal districts ranked by win rate, settlement likelihood, and case speed. Uses real data from 5.1M+ federal cases.
             </p>
           </div>
         )}

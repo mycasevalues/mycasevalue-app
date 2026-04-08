@@ -41,14 +41,14 @@ const EXPLORE_MEGA_MENU: MegaMenuColumn[] = [
     heading: 'CASES',
     items: [
       { label: 'Browse All Cases', href: '/cases' },
-      { label: 'Employment & Labor', href: '/cases?type=employment' },
-      { label: 'Civil Rights', href: '/cases?type=civil-rights' },
-      { label: 'Personal Injury / Torts', href: '/cases?type=personal-injury' },
-      { label: 'Contract Disputes', href: '/cases?type=contracts' },
-      { label: 'Criminal Defense', href: '/cases?type=criminal' },
-      { label: 'Federal Civil Rights', href: '/cases?type=federal-civil-rights' },
-      { label: 'Intellectual Property', href: '/cases?type=ip' },
-      { label: 'Immigration', href: '/cases?type=immigration' },
+      { label: 'Employment & Workplace', href: '/cases/employment-workplace' },
+      { label: 'Personal Injury', href: '/cases/personal-injury' },
+      { label: 'Civil Rights', href: '/cases/civil-rights' },
+      { label: 'Consumer Protection', href: '/cases/consumer-protection' },
+      { label: 'Business Disputes', href: '/cases/business-disputes' },
+      { label: 'Immigration', href: '/cases/immigration' },
+      { label: 'Intellectual Property', href: '/cases/intellectual-property' },
+      { label: 'Trends', href: '/trends' },
       { label: 'NOS Explorer', href: '/nos-explorer', highlight: true },
     ],
   },
@@ -56,21 +56,18 @@ const EXPLORE_MEGA_MENU: MegaMenuColumn[] = [
     heading: 'JUDGES',
     items: [
       { label: 'Browse All Judges', href: '/judges' },
-      { label: 'Search by Name', href: '/judges?search=true' },
-      { label: 'By District', href: '/judges?filter=district' },
-      { label: 'By Case Type', href: '/judges?filter=casetype' },
-      { label: 'Judge Analytics', href: '/judges#analytics' },
-      { label: 'Judicial History', href: '/judges#history' },
-      { label: 'View all judges', href: '/judges', highlight: true },
+      { label: 'Judge Profiles', href: '/judges' },
+      { label: 'By District', href: '/judges' },
+      { label: 'Judge Analytics', href: '/judges' },
+      { label: 'Compare Judges', href: '/judges' },
     ],
   },
   {
     heading: 'DISTRICTS',
     items: [
       { label: 'Browse All Districts', href: '/districts' },
-      { label: 'By State', href: '/districts?filter=state' },
-      { label: 'By Circuit', href: '/districts?filter=circuit' },
-      { label: 'District Statistics', href: '/districts#stats' },
+      { label: 'By State', href: '/districts' },
+      { label: 'By Circuit', href: '/districts' },
       { label: 'View all districts', href: '/districts', highlight: true },
     ],
   },
@@ -495,14 +492,14 @@ export default function Header() {
                         Dashboard
                       </Link>
                       <Link
-                        href="/dashboard/reports"
+                        href="/dashboard"
                         className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors border-b border-gray-100"
                         onClick={() => setAuthOpen(false)}
                       >
                         My Reports
                       </Link>
                       <Link
-                        href="/dashboard/settings"
+                        href="/settings"
                         className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-blue transition-colors border-b border-gray-100"
                         onClick={() => setAuthOpen(false)}
                       >

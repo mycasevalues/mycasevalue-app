@@ -244,7 +244,7 @@ export default function CasePredictorPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '12px', padding: '20px', border: '1px solid rgba(255,255,255,0.10)' }}>
               <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: '#FFFFFF', margin: '0 0 8px' }}>
-                4.1M+
+                5.1M+
               </div>
               <div style={{ fontSize: '13px', color: '#B0B5BA' }}>Federal cases analyzed</div>
             </div>

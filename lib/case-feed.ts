@@ -7,7 +7,7 @@
 import { SITS, OUTCOME_DATA, NOS_FALLBACK } from './data';
 
 /**
- * Federal district court abbreviations (94 federal districts)
+ * Federal district court abbreviations (95 federal districts)
  */
 export const DISTRICTS = [
   // First Circuit (1)
