@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     description: 'Get answers to common questions about federal court data, win rates, settlement ranges, and how MyCaseValue works.',
     type: 'website',
     url: `${SITE_URL}/faq`,
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'FAQ - MyCaseValue' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FAQ — MyCaseValue',
+    description: 'Get answers to common questions about federal court data, win rates, settlement ranges, and how MyCaseValue works.',
+    images: [`${SITE_URL}/og-image.png`],
   },
   keywords: 'federal court data FAQ, MyCaseValue questions, legal data FAQ, court outcome questions, case statistics',
 };
