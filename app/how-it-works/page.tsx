@@ -13,7 +13,11 @@ export const metadata: Metadata = {
     title: 'How It Works — MyCaseValue',
     description: 'Three simple steps to research real federal court outcomes. Select your case type, we analyze 5.1M+ cases, you get a personalized report.',
     type: 'website',
-    url: `${SITE_URL}/how-it-works`,
+    url: `${SITE_URL}/how-it-works`,  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How It Works — MyCaseValue | 3 Simple Steps',
+    description: 'Tell us your situation → We search 5.1M+ federal court cases → Get your personalized report with real outcomes, win rates, and timelines.',
   },
 };
 
