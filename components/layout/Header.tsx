@@ -56,18 +56,17 @@ const EXPLORE_MEGA_MENU: MegaMenuColumn[] = [
     heading: 'JUDGES',
     items: [
       { label: 'Browse All Judges', href: '/judges' },
-      { label: 'Judge Profiles', href: '/judges' },
-      { label: 'By District', href: '/judges' },
-      { label: 'Judge Analytics', href: '/judges' },
-      { label: 'Compare Judges', href: '/judges' },
+      { label: 'Judge Intelligence', href: '/attorney/judge-intelligence' },
+      { label: 'Methodology', href: '/methodology' },
+      { label: 'View all judges', href: '/judges', highlight: true },
     ],
   },
   {
     heading: 'DISTRICTS',
     items: [
       { label: 'Browse All Districts', href: '/districts' },
-      { label: 'By State', href: '/districts' },
-      { label: 'By Circuit', href: '/districts' },
+      { label: 'Court Rules', href: '/attorney/court-rules' },
+      { label: 'Venue Optimizer', href: '/attorney/venue-optimizer' },
       { label: 'View all districts', href: '/districts', highlight: true },
     ],
   },
