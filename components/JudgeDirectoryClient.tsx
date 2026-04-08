@@ -90,8 +90,8 @@ const SORT_OPTIONS = [
   { value: 'name', label: 'Judge Name' },
   { value: 'cases_high', label: 'Cases Handled (Most)' },
   { value: 'cases_low', label: 'Cases Handled (Least)' },
-  { value: 'winrate_high', label: 'Plaintiff Win Rate (Highest)' },
-  { value: 'winrate_low', label: 'Plaintiff Win Rate (Lowest)' },
+  { value: 'winrate_high', label: 'Win Rate (Highest)' },
+  { value: 'winrate_low', label: 'Win Rate (Lowest)' },
   { value: 'appointment_newest', label: 'Appointment Date (Newest)' },
 ];
 
