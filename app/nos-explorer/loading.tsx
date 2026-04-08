@@ -1,0 +1,62 @@
+export default function NosExplorerLoading() {
+  return (
+    <div style={{ background: '#F7F8FA', minHeight: '100vh', padding: '2rem' }}>
+      {/* Header skeleton */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{
+          height: '14px',
+          width: '180px',
+          backgroundColor: '#e5e7eb',
+          borderRadius: '4px',
+          marginBottom: '1.5rem',
+        }} />
+        <div style={{
+          height: '36px',
+          width: '400px',
+          backgroundColor: '#e5e7eb',
+          borderRadius: '6px',
+          marginBottom: '0.75rem',
+        }} />
+        <div style={{
+          height: '18px',
+          width: '600px',
+          backgroundColor: '#e5e7eb',
+          borderRadius: '4px',
+          marginBottom: '2rem',
+        }} />
+
+        {/* Search bar skeleton */}
+        <div style={{
+          height: '48px',
+          width: '100%',
+          maxWidth: '600px',
+          backgroundColor: '#e5e7eb',
+          borderRadius: '8px',
+          marginBottom: '2rem',
+        }} />
+
+        {/* Grid skeleton */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gap: '1rem',
+        }}>
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div key={i} style={{
+              height: '120px',
+              backgroundColor: '#fff',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px',
+              padding: '1rem',
+            }}>
+              <div style={{ height: '14px', width: '60%', backgroundColor: '#e5e7eb', borderRadius: '4px', marginBottom: '0.75rem' }} />
+              <div style={{ height: '12px', width: '40%', backgroundColor: '#f3f4f6', borderRadius: '4px', marginBottom: '0.5rem' }} />
+              <div style={{ height: '12px', width: '80%', backgroundColor: '#f3f4f6', borderRadius: '4px' }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
