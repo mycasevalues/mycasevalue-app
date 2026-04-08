@@ -343,7 +343,7 @@ export default function JudgeIntelligencePage() {
                             <h4 className="font-display" style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
                               Ruling Patterns
                             </h4>
-                            <MeterBar value={judge.plaintiffWinRate} max={100} color="#059669" label="Plaintiff Win Rate" />
+                            <MeterBar value={judge.plaintiffWinRate} max={100} color="#059669" label="Favorable Outcome Rate" />
                             <MeterBar value={judge.settlementRate} max={100} color="#1B7C7D" label="Settlement Rate" />
                             <MeterBar value={judge.dismissalRate} max={100} color="#0966C3" label="Dismissal Rate" />
                             <MeterBar value={judge.trialRate} max={100} color="#1C3A5E" label="Trial Rate" />
