@@ -4,41 +4,48 @@
    ============================================================ */
 
 /** Percentage: always 1 decimal place, include % sign. e.g. "34.2%" */
-export function formatPct(value: number): string {
+export function formatPct(value: number | null | undefined): string {
+  if (value == null || isNaN(Number(value))) return '—';
   return `${Number(value).toFixed(1)}%`;
 }
 
 /** Large case count: comma-separated. e.g. "5,100,000" */
-export function formatCount(value: number): string {
+export function formatCount(value: number | null | undefined): string {
+  if (value == null || isNaN(Number(value))) return '—';
   return Number(value).toLocaleString('en-US');
 }
 
 /** Compact count: short form. e.g. "5.1M" or "12K" — case counts use whole numbers */
-export function formatCountCompact(value: number): string {
+export function formatCountCompact(value: number | null | undefined): string {
+  if (value == null || isNaN(Number(value))) return '—';
   if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`;
   if (value >= 1_000) return `${Math.round(value / 1_000)}K`;
   return value.toString();
 }
 
 /** Dollar amount display: $XK or $X.XM. e.g. "$85K", "$1.2M" */
-export function formatDollar(value: number): string {
+export function formatDollar(value: number | null | undefined): string {
+  if (value == null || isNaN(Number(value))) return '—';
   if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1)}M`;
   if (value >= 1_000) return `$${Math.round(value / 1_000)}K`;
   return `$${value.toLocaleString('en-US')}`;
 }
 
 /** Dollar full format: $1,234,567 */
-export function formatDollarFull(value: number): string {
-  return `$${Number(value).toLocaleString('en-US')}`;
+export function formatDollarFull(value: number | null | undefined): string {
+  if (value == null || isNaN(Number(value))) return '—';
+  return `${Number(value).toLocaleString('en-US')}`;
 }
 
 /** Days: always integer, with "days" suffix. e.g. "142 days" */
-export function formatDays(value: number): string {
+export function formatDays(value: number | null | undefined): string {
+  if (value == null || isNaN(Number(value))) return '—';
   return `${Math.round(value)} days`;
 }
 
 /** Months: integer, with "mo" suffix. e.g. "14mo" */
-export function formatMonths(value: number): string {
+export function formatMonths(value: number | null | undefined): string {
+  if (value == null || isNaN(Number(value))) return '—';
   return `${Math.round(value)}mo`;
 }
 
