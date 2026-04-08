@@ -12,6 +12,7 @@ import { useResearchStore } from '../../store/research';
 import TrendSparkline from '../../components/charts/TrendSparkline';
 import SearchTabs from '../../components/SearchTabs';
 import JudgeSearchResults from '../../components/JudgeSearchResults';
+import { SITE_URL } from '@/lib/site-config';
 
 // Loading skeleton component
 const SkeletonResultCard = () => (
@@ -221,8 +222,34 @@ export default function SearchPage() {
     }
   };
 
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Search', item: `${SITE_URL}/search` },
+        ],
+      },
+      {
+        '@type': 'WebApplication',
+        name: 'Federal Case Search',
+        description: 'Search federal court cases by type, judge, district, or natural language. AI-powered legal research tool.',
+        url: `${SITE_URL}/search`,
+        applicationCategory: 'LegalService',
+        isPartOf: { '@type': 'WebSite', name: 'MyCaseValue', url: SITE_URL },
+      },
+    ],
+  };
+
   return (
     <main style={{ fontFamily: 'var(--font-body)', background: '#F7F8FA', minHeight: '100vh' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <style>{`
         @keyframes shimmer {
           0% {
