@@ -200,7 +200,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'How is MyCaseValue different from Westlaw or LexisNexis?',
-          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is designed specifically for individuals and small firms, not large law firms. It offers free access to federal court outcome data, transparent pricing, bilingual support (English/Spanish), and plaintiff-focused analytics — all without requiring a legal subscription.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is designed specifically for individuals and small firms, not large law firms. It offers free access to federal court outcome data, transparent pricing, bilingual support (English/Spanish), and comprehensive case analytics — all without requiring a legal subscription.' },
         },
         {
           '@type': 'Question',
