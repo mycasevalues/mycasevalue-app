@@ -223,7 +223,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
       // Key statistics table
       const stats = [
         ['Metric', 'Value'],
-        ['Plaintiff Win Rate', `${(slot.aggregated.plaintiffWinRate || 0).toFixed(1)}%`],
+        ['Win Rate', `${(slot.aggregated.plaintiffWinRate || 0).toFixed(1)}%`],
         ['Summary Judgment Rate', `${(slot.aggregated.summaryJudgmentRate || 0).toFixed(1)}%`],
         ['Dismissal Rate', `${(slot.aggregated.dismissalRate || 0).toFixed(1)}%`],
         ['Settlement Rate', `${(slot.aggregated.settlementRate || 0).toFixed(1)}%`],
@@ -580,7 +580,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
 
               {/* Statistics rows */}
               {[
-                { label: 'Plaintiff Win Rate', key: 'plaintiffWinRate' },
+                { label: 'Win Rate', key: 'plaintiffWinRate' },
                 { label: 'Summary Judgment Rate', key: 'summaryJudgmentRate' },
                 { label: 'Dismissal Rate', key: 'dismissalRate' },
                 { label: 'Settlement Rate', key: 'settlementRate' },
