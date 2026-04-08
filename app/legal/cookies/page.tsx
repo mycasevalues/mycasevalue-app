@@ -3,6 +3,15 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Cookie Policy | MyCaseValue',
   description: 'Learn about how MyCaseValue uses cookies and how to manage your cookie preferences.',
+  openGraph: {
+    title: 'Cookie Policy | MyCaseValue',
+    description: 'Learn about how MyCaseValue uses cookies and how to manage your cookie preferences.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cookie Policy | MyCaseValue',
+    description: 'Learn about how MyCaseValue uses cookies and how to manage your cookie preferences.',
+  },
 };
 
 export default function CookiePolicyPage() {
