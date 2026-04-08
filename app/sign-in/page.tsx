@@ -3,12 +3,11 @@
 import { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { createBrowserClient } from '@supabase/ssr';
 
 export default function SignInPage() {
   return (
-    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#1C3A5E' }} />}>
+    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#0966C3' }} />}>
       <SignInForm />
     </Suspense>
   );
@@ -188,10 +187,10 @@ function SignInForm() {
         }
       `}</style>
 
-      {/* Navy Header Strip */}
+      {/* Brand Blue Header Strip */}
       <div
         style={{
-          background: '#1C3A5E',
+          background: '#0966C3',
           height: '60px',
           display: 'flex',
           alignItems: 'center',
@@ -216,35 +215,43 @@ function SignInForm() {
       {/* Main Content Container */}
       <div className="auth-container">
         {/* Benefits/Trust Indicators Section */}
-        <div className="benefits-section">
+        <div className="benefits-section" style={{ background: '#0F2A4A', borderRadius: '16px', padding: '36px' }}>
           <h2 className="benefits-title">
             Access federal court analytics powering legal professionals
           </h2>
 
           {/* Benefit Items */}
           <div className="benefit-item">
-            <div className="benefit-icon">[x]</div>
+            <div className="benefit-icon">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
             <div className="benefit-text">
               Search and analyze cases from all 95 federal districts
             </div>
           </div>
 
           <div className="benefit-item">
-            <div className="benefit-icon">[x]</div>
+            <div className="benefit-icon">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
             <div className="benefit-text">
               Track judge histories, ruling patterns, and docket trends
             </div>
           </div>
 
           <div className="benefit-item">
-            <div className="benefit-icon">[x]</div>
+            <div className="benefit-icon">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
             <div className="benefit-text">
               Real-time alerts for case updates and statute changes
             </div>
           </div>
 
           <div className="benefit-item">
-            <div className="benefit-icon">[x]</div>
+            <div className="benefit-icon">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
             <div className="benefit-text">
               Export reports in multiple formats for filings and strategy
             </div>
@@ -253,16 +260,16 @@ function SignInForm() {
           {/* Trust Indicators */}
           <div className="trust-indicators">
             <div className="trust-item">
-              <div className="trust-number">4.1M+</div>
+              <div className="trust-number">5.1M+</div>
               <div className="trust-label">Cases from FJC/PACER</div>
             </div>
             <div className="trust-item">
-              <div className="trust-number">94</div>
+              <div className="trust-number">95</div>
               <div className="trust-label">Federal districts covered</div>
             </div>
             <div className="trust-item">
-              <div className="trust-number">2020+</div>
-              <div className="trust-label">Years of case history</div>
+              <div className="trust-number">84</div>
+              <div className="trust-label">Case types tracked</div>
             </div>
           </div>
         </div>
@@ -280,15 +287,18 @@ function SignInForm() {
         >
 
         {/* Logo */}
-        <div className="auth-logo">
-          <Image
-            src="/logo.svg"
-            alt="MyCaseValue"
-            width={120}
-            height={30}
-            priority
-            style={{ display: 'block' }}
-          />
+        <div className="auth-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+          <svg width="28" height="28" viewBox="-100 -100 200 200">
+            <rect x="-100" y="-100" width="200" height="200" rx="26" fill="#0966C3" />
+            <g transform="rotate(12)">
+              <polygon points="0,0 -40,-69.3 40,-69.3 80,0" fill="white" opacity="0.93" />
+              <polygon points="0,0 80,0 40,69.3 -40,69.3" fill="white" opacity="0.52" />
+              <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
+            </g>
+          </svg>
+          <span style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#111' }}>
+            MyCase<span style={{ color: '#0966C3' }}>Value</span>
+          </span>
         </div>
 
         {/* Heading */}

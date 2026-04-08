@@ -161,7 +161,7 @@ function getActiveNavSection(pathname: string): string | null {
  */
 function MegaMenu({ columns }: { columns: MegaMenuColumn[] }) {
   return (
-    <div className="absolute top-full left-0 right-0 mt-0 bg-white border-b border-gray-200 shadow-lg z-40">
+    <div className="fixed top-16 left-0 right-0 mt-0 bg-white border-b border-gray-200 shadow-lg z-40">
       {/* Search Bar */}
       <div className="border-b border-gray-100 px-6 py-4 max-w-6xl mx-auto">
         <input
@@ -187,10 +187,10 @@ function MegaMenu({ columns }: { columns: MegaMenuColumn[] }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block py-2.5 text-sm transition-colors ${
+                  className={`block py-2.5 px-3 -mx-3 rounded-md text-sm transition-colors ${
                     item.highlight
-                      ? 'font-semibold text-brand-blue hover:text-brand-blue'
-                      : 'text-gray-700 hover:text-brand-blue'
+                      ? 'font-semibold text-brand-blue hover:bg-blue-50'
+                      : 'text-gray-700 hover:text-brand-blue hover:bg-gray-50'
                   }`}
                 >
                   {item.label}
@@ -385,7 +385,7 @@ export default function Header() {
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="transition-transform"
+                    className={`transition-transform ${openDropdown === 'explore' ? 'rotate-180' : ''}`}
                   >
                     <path d="M1 1L6 6L11 1" />
                   </svg>
@@ -418,7 +418,7 @@ export default function Header() {
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="transition-transform"
+                    className={`transition-transform ${openDropdown === 'attorneys' ? 'rotate-180' : ''}`}
                   >
                     <path d="M1 1L6 6L11 1" />
                   </svg>
@@ -451,7 +451,7 @@ export default function Header() {
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="transition-transform"
+                    className={`transition-transform ${openDropdown === 'resources' ? 'rotate-180' : ''}`}
                   >
                     <path d="M1 1L6 6L11 1" />
                   </svg>

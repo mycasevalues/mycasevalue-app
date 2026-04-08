@@ -75,7 +75,7 @@ export default function SignUpPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#1C3A5E',
+          background: '#0966C3',
           padding: '20px',
         }}
       >
@@ -259,7 +259,7 @@ export default function SignUpPage() {
       {/* Navy Header Strip with Logo */}
       <div
         style={{
-          backgroundColor: '#1C3A5E',
+          backgroundColor: '#0966C3',
           padding: '24px',
           color: '#FFFFFF',
           borderBottom: '1px solid #E5E7EB',
@@ -702,7 +702,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '20px',
                 fontWeight: 600,
-                color: '#1C3A5E',
+                color: '#0966C3',
                 margin: '0 0 24px 0',
               }}
             >
@@ -730,7 +730,7 @@ export default function SignUpPage() {
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C3A5E" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
                     <path d="M3 3v18h18" />
                     <path d="M18 17V9m-5 8V5m-5 12v-3" />
                   </svg>
@@ -984,7 +984,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '20px',
                 fontWeight: 600,
-                color: '#1C3A5E',
+                color: '#0966C3',
                 margin: '0 0 24px 0',
               }}
             >

@@ -1,4 +1,8 @@
-<svg width="192" height="192" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
-  <rect width="192" height="192" fill="#0966C3"/>
-  <text x="96" y="80" font-family="Arial, sans-serif" font-size="76" font-weight="700" text-anchor="middle" fill="#FFFFFF">MCV</text>
+<svg viewBox="-100 -100 200 200" width="192" height="192" xmlns="http://www.w3.org/2000/svg">
+  <rect x="-100" y="-100" width="200" height="200" rx="26" fill="#0966C3" />
+  <g transform="rotate(12)">
+    <polygon points="0,0 -40,-69.3 40,-69.3 80,0" fill="white" opacity="0.93" />
+    <polygon points="0,0 80,0 40,69.3 -40,69.3" fill="white" opacity="0.52" />
+    <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
+  </g>
 </svg>

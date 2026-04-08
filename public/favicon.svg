@@ -1,33 +1,8 @@
-<svg viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-  <!-- Define gradients for depth -->
-  <defs>
-    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#E8171F;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#C41218;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-
-  <!-- Red geometric icon: Rounded square shield -->
-  <rect x="1" y="1" width="30" height="30" rx="4" ry="4" fill="url(#faviconGradient)" />
-
-  <!-- Balance scale of justice inside the shield -->
-  <!-- Center beam -->
-  <rect x="10" y="13" width="12" height="1.5" fill="white" rx="0.75" ry="0.75" />
-
-  <!-- Pivot point (triangle) -->
-  <polygon points="16,13 14.5,11 17.5,11" fill="white" />
-
-  <!-- Left pan (rectangle) -->
-  <rect x="6.5" y="16.5" width="4.5" height="2.5" fill="white" rx="0.5" ry="0.5" />
-
-  <!-- Right pan (rectangle) -->
-  <rect x="21" y="16.5" width="4.5" height="2.5" fill="white" rx="0.5" ry="0.5" />
-
-  <!-- Left chain links -->
-  <line x1="8.5" y1="16.5" x2="10" y2="14.5" stroke="white" stroke-width="0.8" stroke-linecap="round" />
-  <line x1="10.5" y1="16.5" x2="11" y2="14.5" stroke="white" stroke-width="0.8" stroke-linecap="round" />
-
-  <!-- Right chain links -->
-  <line x1="22" y1="16.5" x2="23.5" y2="14.5" stroke="white" stroke-width="0.8" stroke-linecap="round" />
-  <line x1="24.5" y1="16.5" x2="24" y2="14.5" stroke="white" stroke-width="0.8" stroke-linecap="round" />
+<svg viewBox="-100 -100 200 200" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <rect x="-100" y="-100" width="200" height="200" rx="26" fill="#0966C3" />
+  <g transform="rotate(12)">
+    <polygon points="0,0 -40,-69.3 40,-69.3 80,0" fill="white" opacity="0.93" />
+    <polygon points="0,0 80,0 40,69.3 -40,69.3" fill="white" opacity="0.52" />
+    <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
+  </g>
 </svg>
