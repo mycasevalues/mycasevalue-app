@@ -128,6 +128,6 @@ const hr: React.CSSProperties = { borderTop: '1px solid #E5E7EB', margin: '24px 
 const itemCard: React.CSSProperties = { backgroundColor: '#FAFBFC', borderRadius: '8px', border: '1px solid #E5E7EB', padding: '12px 16px', marginBottom: '8px' };
 const itemTitle: React.CSSProperties = { color: '#0966C3', fontSize: '14px', fontWeight: 600, textDecoration: 'none' };
 const itemDesc: React.CSSProperties = { color: '#4B5563', fontSize: '12px', lineHeight: '1.5', margin: '4px 0 0' };
-const ctaButton: React.CSSProperties = { display: 'inline-block', backgroundColor: '#0966C3', color: '#FFF', padding: '12px 28px', borderRadius: '8px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' };
+const ctaButton: React.CSSProperties = { display: 'inline-block', backgroundColor: '#0966C3', color: '#FFF', padding: '12px 28px', borderRadius: '20px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' };
 const footer: React.CSSProperties = { color: '#9CA3AF', fontSize: '11px', margin: '16px 0 4px' };
 const unsubLink: React.CSSProperties = { color: '#9CA3AF', fontSize: '11px', textDecoration: 'underline' };

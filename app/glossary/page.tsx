@@ -51,7 +51,7 @@ export default function GlossaryPage() {
 
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '12px' }}
+            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '20px' }}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5">
               <path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z" />

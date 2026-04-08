@@ -457,7 +457,7 @@ function SignInForm() {
               backgroundColor: '#0966C3',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '12px',
+              borderRadius: '20px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
               fontWeight: 600,

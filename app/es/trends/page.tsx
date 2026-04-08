@@ -38,7 +38,7 @@ export default function SpanishTrendsPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '12px' }}>
+            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '20px' }}>
             ANÁLISIS
           </div>
 

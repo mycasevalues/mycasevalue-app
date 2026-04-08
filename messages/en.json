@@ -50,7 +50,7 @@
     "recentFilings": "Recent federal filings via CourtListener RECAP"
   },
   "calculator": {
-    "title": "Case Value Calculator",
+    "title": "Settlement Research Tool",
     "subtitle": "Estimate your federal case value based on real court data",
     "caseType": "Case Type",
     "district": "Federal District",

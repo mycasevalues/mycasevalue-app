@@ -135,6 +135,20 @@ module.exports = {
         'brand-btn': '0 3px 12px rgba(10,102,194,.22)',
         'brand-btn-lg': '0 4px 18px rgba(10,102,194,.28)',
       },
+      spacing: {
+        // Base-8 scale — use these values only, no arbitrary spacing
+        '0':  '0px',
+        '1':  '4px',    // Micro — icon-to-label gaps
+        '2':  '8px',    // XS — inline spacing
+        '3':  '12px',   // SM — nav link stack gap
+        '4':  '16px',   // MD — default padding
+        '6':  '24px',   // LG — card internal padding
+        '7':  '28px',   // CTA box vertical padding
+        '8':  '32px',   // XL — component gaps
+        '12': '48px',   // 2XL — content section gaps
+        '14': '56px',   // Grid — footer column gap
+        '16': '64px',   // Page — footer top padding
+      },
       borderRadius: {
         'btn': '20px',    // pill — all primary buttons
         'card': '12px',   // cards, panels, CTA box

@@ -116,7 +116,7 @@ export default function SiteFooter() {
               </div>
             </div>
             <p style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-inter)',
               fontSize: '13px',
               color: '#E5E7EB',
               lineHeight: 1.7,
@@ -125,7 +125,7 @@ export default function SiteFooter() {
               Federal court analytics powered by public records.
             </p>
             <p style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-inter)',
               fontSize: '11px',
               color: 'rgba(213, 216, 220, 0.6)',
               letterSpacing: '0.05em',
@@ -138,7 +138,7 @@ export default function SiteFooter() {
           {FOOTER_COLUMNS.map(col => (
             <div key={col.heading}>
               <h4 style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-inter)',
                 fontSize: '14px',
                 fontWeight: 600,
                 color: '#FFFFFF',
@@ -160,7 +160,7 @@ export default function SiteFooter() {
                       fontSize: '13px',
                       color: '#E5E7EB',
                       textDecoration: 'none',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-inter)',
                       fontWeight: 400,
                       transition: 'color 150ms ease-out',
                     }}
@@ -187,7 +187,7 @@ export default function SiteFooter() {
           gap: '24px',
         }}>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-inter)',
             fontSize: '15px',
             fontWeight: 500,
             color: '#FFFFFF',
@@ -201,7 +201,7 @@ export default function SiteFooter() {
             padding: '0.75rem 1.5rem',
             borderRadius: '20px',
             textDecoration: 'none',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-inter)',
             fontWeight: 600,
             fontSize: '1rem',
             transition: 'background 150ms ease-out',
@@ -218,7 +218,7 @@ export default function SiteFooter() {
           paddingBottom: '28px',
         }}>
           <h4 style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-inter)',
             fontSize: '14px',
             fontWeight: 600,
             color: '#FFFFFF',
@@ -285,7 +285,7 @@ export default function SiteFooter() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <p style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-inter)',
               fontSize: '12px',
               color: 'rgba(213, 216, 220, 0.6)',
               margin: 0,
@@ -295,12 +295,12 @@ export default function SiteFooter() {
             </p>
             <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
               <span style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-inter)',
                 fontSize: '11px',
                 color: 'rgba(213, 216, 220, 0.4)',
               }}>|</span>
               <Link href="/privacy" style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-inter)',
                 fontSize: '12px',
                 color: '#E5E7EB',
                 textDecoration: 'none',
@@ -309,12 +309,12 @@ export default function SiteFooter() {
                 Privacy Policy
               </Link>
               <span style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-inter)',
                 fontSize: '11px',
                 color: 'rgba(213, 216, 220, 0.4)',
               }}>|</span>
               <Link href="/terms" style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-inter)',
                 fontSize: '12px',
                 color: '#E5E7EB',
                 textDecoration: 'none',
@@ -325,7 +325,7 @@ export default function SiteFooter() {
             </div>
           </div>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-inter)',
             fontSize: '12px',
             color: 'rgba(213, 216, 220, 0.6)',
             margin: 0,
@@ -342,7 +342,7 @@ export default function SiteFooter() {
           marginTop: '20px',
         }}>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-inter)',
             fontSize: '11px',
             color: 'rgba(213, 216, 220, 0.35)',
             lineHeight: 1.6,

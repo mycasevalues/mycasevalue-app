@@ -119,13 +119,13 @@ export default function MethodologyPage() {
           font-weight: 900;
           color: #0966C3;
           margin-bottom: 0.5rem;
-          font-family: var(--font-display, 'system-ui');
+          font-family: var(--font-inter, 'Inter', sans-serif);
         }
         .at-a-glance-label {
           font-size: 0.75rem;
           font-weight: 600;
           color: #6B7280;
-          font-family: var(--font-body, 'system-ui');
+          font-family: var(--font-inter, 'Inter', sans-serif);
         }
         .confidence-tiers {
           display: grid;
@@ -181,7 +181,7 @@ export default function MethodologyPage() {
           font-weight: 600;
           font-size: 0.875rem;
           color: #0f0f0f;
-          font-family: var(--font-display, 'system-ui');
+          font-family: var(--font-inter, 'Inter', sans-serif);
         }
         .stats-table td {
           border-bottom: 1px solid #E5E7EB;
@@ -195,7 +195,7 @@ export default function MethodologyPage() {
         .stats-stat-name {
           font-weight: 600;
           color: #0f0f0f;
-          font-family: var(--font-display, 'system-ui');
+          font-family: var(--font-inter, 'Inter', sans-serif);
         }
         .related-grid {
           display: grid;
@@ -231,7 +231,7 @@ export default function MethodologyPage() {
           font-weight: 600;
           font-size: 0.875rem;
           color: #004182;
-          font-family: var(--font-display, 'system-ui');
+          font-family: var(--font-inter, 'Inter', sans-serif);
         }
       `}</style>
 
@@ -531,7 +531,7 @@ export default function MethodologyPage() {
           <p className="text-sm mb-6" style={{ color: '#4B5563' }}>Questions about our methodology?</p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '12px', background: '#0966C3', color: '#FFFFFF', border: '1px solid #0966C3' }}>
+            style={{ borderRadius: '20px', background: '#0966C3', color: '#FFFFFF', border: '1px solid #0966C3' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

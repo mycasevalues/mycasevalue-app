@@ -237,7 +237,7 @@ export default function CalculatorPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'Case Value Calculator',
+    name: 'Settlement Research Tool',
     url: `${SITE_URL}/calculator`,
     applicationCategory: 'Legal',
     description: 'Estimate your case value with damage multipliers based on federal court data.',

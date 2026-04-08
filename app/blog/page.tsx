@@ -589,7 +589,7 @@ export default function BlogPage() {
           <a
             href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold transition-all"
-            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '12px' }}
+            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '20px' }}
           >
             Explore Attorney Mode
             <ArrowRightIcon size={16} />

@@ -328,7 +328,7 @@ export default function SpanishPricingPage() {
           </p>
           <a href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '12px', background: '#0966C3', color: '#FFFFFF' }}>
+            style={{ borderRadius: '20px', background: '#0966C3', color: '#FFFFFF' }}>
             Consultar Mi Tipo de Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

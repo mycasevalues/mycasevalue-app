@@ -55,7 +55,7 @@ const FEATURES: Feature[] = [
       </svg>
     ),
     title: 'Win Rate Analytics',
-    body:  'Plaintiff win rates by case type, circuit, district, and judge — filtered to your exact situation.',
+    body:  'Case outcome rates by case type, circuit, district, and judge — filtered to your exact situation.',
   },
   {
     icon: (
@@ -134,7 +134,7 @@ function HeroLeft() {
 
       {/* H1 — Plus Jakarta Sans 800, 36px, -1.2px, LH 1.1 */}
       <h1 className="font-jakarta font-extrabold text-[36px] tracking-[-1.2px] leading-[1.1] text-brand-ink mb-3.5">
-        Know your case value<br />
+        Start Researching Today<br />
         before{' '}
         <em className="not-italic text-brand-blue">they make the offer.</em>
       </h1>

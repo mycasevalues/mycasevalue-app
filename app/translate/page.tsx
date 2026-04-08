@@ -189,7 +189,7 @@ export default function TranslatePage() {
             disabled={!input.trim() || loading}
             className="w-full px-6 py-3 text-sm font-semibold transition-all hover:shadow-lg active:scale-[0.99]"
             style={{
-              borderRadius: '12px',
+              borderRadius: '20px',
               background:
                 !input.trim() || loading
                   ? '#E5E7EB'

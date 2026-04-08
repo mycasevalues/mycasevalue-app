@@ -46,7 +46,7 @@ export async function generateMetadata(
   }
 
   const title = `${nosInfo.label} Cases — Federal Court Guide & Legal Explainer | MyCaseValue`;
-  const description = `Understand ${nosInfo.label.toLowerCase()} cases in federal court. Win rates, settlements, legal elements to prove, and next steps for plaintiffs. Based on real court data.`;
+  const description = `Understand ${nosInfo.label.toLowerCase()} cases in federal court. Win rates, settlements, legal elements to prove, and next steps for parties. Based on real court data.`;
 
   return {
     title,
@@ -108,7 +108,7 @@ export default async function GuidePage({ params }: PageProps) {
         lineHeight: 1.2,
         fontFamily: 'var(--font-heading)',
       }}>
-        Understanding {nosInfo.label} Cases in Federal Court — A Plaintiff's Guide
+        Understanding {nosInfo.label} Cases in Federal Court — A Practical Guide
       </h1>
 
       <p style={{
@@ -488,7 +488,7 @@ export default async function GuidePage({ params }: PageProps) {
                 margin: 0,
                 fontFamily: 'var(--font-body)',
               }}>
-                Win rate for represented plaintiffs
+                Outcome rate for represented parties
               </p>
             </div>
 
@@ -521,7 +521,7 @@ export default async function GuidePage({ params }: PageProps) {
                 margin: 0,
                 fontFamily: 'var(--font-body)',
               }}>
-                Win rate for pro se (self-represented) plaintiffs
+                Outcome rate for pro se (self-represented) parties
               </p>
             </div>
           </div>
