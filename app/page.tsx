@@ -24,11 +24,29 @@
  *              this is connected to your Anthropic integration.
  */
 
+import type { Metadata } from 'next';
 import React from 'react'
 import Link from 'next/link'
+import { SITE_URL } from '@/lib/site-config'
 import { LogoMark } from '@/components/brand/LogoMark'
 import { StatBar, HOMEPAGE_STATS } from '@/components/ui/StatCardBrand'
 
+
+export const metadata: Metadata = {
+    title: 'Federal Court Analytics & Settlement Data',
+      description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
+        openGraph: {
+            title: 'Federal Court Analytics & Settlement Data',
+                description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
+                    url: `${SITE_URL}`,
+                      },
+                        twitter: {
+                            card: 'summary_large_image',
+                                title: 'Federal Court Analytics & Settlement Data',
+                                    description: 'Research real outcomes from 5.1M+ federal court cases. Win rates, settlement data, timelines for 84 case types across 94 districts.',
+                                      },
+                                      };
+}
 // ── TYPES ──────────────────────────────────────────────────────────────────
 
 interface Feature {
