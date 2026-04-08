@@ -3,9 +3,9 @@ import '../styles/performance.css';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
-import SiteNav from '../components/layout/SiteNav';
+import Header from '../components/layout/Header';
 import BetaBanner from '../components/BetaBanner';
-import SiteFooter from '../components/layout/SiteFooter';
+import Footer from '../components/layout/Footer';
 import ReferralCapture from '../components/ReferralCapture';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -305,20 +305,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-inter" style={{ background: '#ffffff', color: '#0f0f0f', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />
-        <a href="#main-content" className="skip-link" style={{
-          position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px',
-          overflow: 'hidden', zIndex: 9999
-        }}>Skip to main content</a>
+        <a href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-brand-blue focus:rounded focus:shadow-lg">
+          Skip to main content
+        </a>
         <ReferralCapture />
         <ErrorBoundary>
           <AnalyticsProvider>
             <LanguageDetectBanner />
             <BetaBanner />
-            <SiteNav />
+            <Header />
             <main id="main-content">
               {children}
             </main>
-            <SiteFooter />
+            <Footer />
           </AnalyticsProvider>
         </ErrorBoundary>
         <ScrollToTop />
