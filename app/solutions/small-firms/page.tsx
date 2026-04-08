@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: 'For Small Law Firms | MyCaseValue',
   description: 'Case analytics, opposing counsel intelligence, and venue selection tools designed for solo practitioners and small law firms.',
   alternates: { canonical: `${SITE_URL}/solutions/small-firms` },
+  openGraph: {
+    title: 'For Small Law Firms | MyCaseValue',
+    description: 'Case analytics, opposing counsel intelligence, and venue selection tools designed for solo practitioners and small law firms.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Small Law Firms | MyCaseValue',
+    description: 'Case analytics, opposing counsel intelligence, and venue selection tools designed for solo practitioners and small law firms.',
+  },
 };
 
 const FEATURES = [
