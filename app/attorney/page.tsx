@@ -487,11 +487,6 @@ export default function AttorneyPage() {
             </span>
           </div>
 
-          {/* Section Label Badge */}
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', color: '#FFFFFF', width: 'fit-content' }}>
-            ATTORNEY MODE
-          </div>
-
           {/* Title */}
           <h1
             style={{

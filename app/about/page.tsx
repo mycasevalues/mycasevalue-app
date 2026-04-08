@@ -6,20 +6,20 @@ import { Breadcrumbs } from '../../components/Breadcrumbs';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'About MyCaseValues — Making Federal Court Data Accessible',
-  description: 'MyCaseValues democratizes access to federal court outcome data from 5.1M+ public cases. Built on public records from FJC IDB, PACER, and CourtListener.',
+  title: 'About MyCaseValue — Making Federal Court Data Accessible',
+  description: 'MyCaseValue democratizes access to federal court outcome data from 5.1M+ public cases. Built on public records from FJC IDB, PACER, and CourtListener.',
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
-    title: 'About MyCaseValues — Making Federal Court Data Accessible',
-    description: 'MyCaseValues aggregates 5.1M+ federal court cases to help you research real outcomes, win rates, and settlement data.',
+    title: 'About MyCaseValue — Making Federal Court Data Accessible',
+    description: 'MyCaseValue aggregates 5.1M+ federal court cases to help you research real outcomes, win rates, and settlement data.',
     type: 'website',
     url: `${SITE_URL}/about`,
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'About MyCaseValues' }],
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'About MyCaseValue' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About MyCaseValues — Making Federal Court Data Accessible',
-    description: 'MyCaseValues democratizes federal court outcome data. Free access to win rates, settlement ranges, and timelines from 5.1M+ public federal civil cases.',
+    title: 'About MyCaseValue — Making Federal Court Data Accessible',
+    description: 'MyCaseValue democratizes federal court outcome data. Free access to win rates, settlement ranges, and timelines from 5.1M+ public federal civil cases.',
     images: [`${SITE_URL}/og-image.png`],
   },
 };
@@ -29,7 +29,7 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      name: 'MyCaseValues',
+      name: 'MyCaseValue',
       url: SITE_URL,
       logo: `${SITE_URL}/icon-512.png`,
       description: 'An open-access intelligence layer on public federal court records. Making litigation data transparent and accessible.',
@@ -324,7 +324,7 @@ export default function AboutPage() {
       {/* Header */}
       <div className="about-header">
         <div className="about-container">
-          <h1 className="about-h1">About MyCaseValues</h1>
+          <h1 className="about-h1">About MyCaseValue</h1>
           <p className="about-intro">
             An open-access intelligence layer on public federal court records. We make litigation data transparent and accessible to everyone.
           </p>
@@ -338,7 +338,7 @@ export default function AboutPage() {
           <div className="section">
             <div className="mission-box">
               <p className="section-text" style={{ marginBottom: 0 }}>
-                <strong>Our Mission:</strong> MyCaseValues democratizes access to federal court outcome data. We aggregate 5.1M+ cases from official public sources and transform raw court records into actionable intelligence for case evaluation, settlement negotiation, and strategic legal planning. By making outcome data transparent and accessible, we level the playing field and help people make genuinely informed decisions about their legal situations.
+                <strong>Our Mission:</strong> MyCaseValue democratizes access to federal court outcome data. We aggregate 5.1M+ cases from official public sources and transform raw court records into actionable intelligence for case evaluation, settlement negotiation, and strategic legal planning. By making outcome data transparent and accessible, we level the playing field and help people make genuinely informed decisions about their legal situations.
               </p>
             </div>
           </div>
@@ -347,7 +347,7 @@ export default function AboutPage() {
           <div className="section">
             <h2 className="section-heading">What It Is</h2>
             <p className="section-text">
-              Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys. MyCaseValues makes outcome data—win rates, settlement ranges, timelines, and recovery patterns—accessible to everyone evaluating their legal options.
+              Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys. MyCaseValue makes outcome data—win rates, settlement ranges, timelines, and recovery patterns—accessible to everyone evaluating their legal options.
             </p>
             <p className="section-text">
               We are not a law firm. We do not provide legal advice. We are a data platform, and we operate with institutional standards around privacy, accuracy, and transparency.
@@ -386,7 +386,7 @@ export default function AboutPage() {
           <div className="section">
             <h2 className="section-heading">Who We Serve</h2>
             <p className="section-text">
-              MyCaseValues serves six core audiences in the legal ecosystem:
+              MyCaseValue serves six core audiences in the legal ecosystem:
             </p>
             <div className="audience-grid">
               {audiences.map((audience, idx) => (

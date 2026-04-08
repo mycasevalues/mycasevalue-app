@@ -7,11 +7,11 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Law Students Federal Court Data | MyCaseValues',
+  title: 'Law Students Federal Court Data | MyCaseValue',
   description: 'Research real federal court outcomes for law school. Win rates, judge analytics, case timelines, and real-world data for moot court and law review research.',
   alternates: { canonical: `${SITE_URL}/for/students` },
   openGraph: {
-    title: 'Federal Court Data for Law Students | MyCaseValues',
+    title: 'Federal Court Data for Law Students | MyCaseValue',
     description: 'Go beyond the casebook. Research real federal court outcomes for moot court prep, law review, and understanding court patterns.',
     type: 'website',
     url: `${SITE_URL}/for/students`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Data for Law Students | MyCaseValues',
+    title: 'Federal Court Data for Law Students | MyCaseValue',
     description: 'Go beyond the casebook. Research real federal court outcomes for moot court prep, law review, and understanding court patterns.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -58,7 +58,7 @@ export default function StudentsPage() {
         </h1>
 
         <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#4B5563', marginBottom: '2rem' }}>
-          Go beyond the casebook. Research how courts actually rule on the issues you're studying — real win rates, real timelines, real outcomes. Use MyCaseValues for moot court prep, law review research, and understanding federal court patterns.
+          Go beyond the casebook. Research how courts actually rule on the issues you're studying — real win rates, real timelines, real outcomes. Use MyCaseValue for moot court prep, law review research, and understanding federal court patterns.
         </p>
 
         {/* Feature Cards */}

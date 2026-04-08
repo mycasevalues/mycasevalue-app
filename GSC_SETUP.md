@@ -1,6 +1,6 @@
 # Google Search Console Setup Guide
 
-This guide walks you through setting up Google Search Console (GSC) for MyCaseValues to monitor search visibility, indexing, and search performance.
+This guide walks you through setting up Google Search Console (GSC) for MyCaseValue to monitor search visibility, indexing, and search performance.
 
 ## Prerequisites
 

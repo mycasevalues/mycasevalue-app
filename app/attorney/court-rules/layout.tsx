@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Federal Court Rules & Local Rules Reference | MyCaseValues Attorney Tools',
+  title: 'Federal Court Rules & Local Rules Reference | MyCaseValue Attorney Tools',
   description: 'Complete reference for FRCP, FRCP of Appellate Procedure, and local rules for all 95 federal districts. ECF requirements, brief page limits, discovery rules, ADR requirements, and judge standing orders.',
   keywords: [
     'federal court rules',
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/attorney/court-rules`,
   },
   openGraph: {
-    title: 'Federal Court Rules & Local Rules Reference | MyCaseValues',
+    title: 'Federal Court Rules & Local Rules Reference | MyCaseValue',
     description: 'Complete reference for FRCP and local rules for all 95 federal districts.',
     url: `${SITE_URL}/attorney/court-rules`,
     type: 'website',
-    siteName: 'MyCaseValues',
+    siteName: 'MyCaseValue',
   },
   robots: { index: false, follow: false },
 };

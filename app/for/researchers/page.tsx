@@ -7,11 +7,11 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Academic Researchers Federal Court Data | MyCaseValues',
+  title: 'Academic Researchers Federal Court Data | MyCaseValue',
   description: 'Access 5.1 million federal case outcomes for empirical legal research. Searchable by district, case type, judge, outcome, and year. Built on public FJC, CourtListener, and RECAP data.',
   alternates: { canonical: `${SITE_URL}/for/researchers` },
   openGraph: {
-    title: 'Federal Court Data for Academic Researchers | MyCaseValues',
+    title: 'Federal Court Data for Academic Researchers | MyCaseValue',
     description: 'Comprehensive dataset of 5.1M federal cases with advanced filtering for empirical legal research. Built on public records.',
     type: 'website',
     url: `${SITE_URL}/for/researchers`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Data for Academic Researchers | MyCaseValues',
+    title: 'Federal Court Data for Academic Researchers | MyCaseValue',
     description: 'Comprehensive dataset of 5.1M federal cases with advanced filtering for empirical legal research. Built on public records.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -58,7 +58,7 @@ export default function ResearchersPage() {
         </h1>
 
         <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#4B5563', marginBottom: '2rem' }}>
-          MyCaseValues provides access to 5.1 million federal case outcomes — searchable by district, case type, judge, outcome, and year. Built on public records from the FJC Integrated Database, CourtListener, and RECAP. Designed for empirical legal research.
+          MyCaseValue provides access to 5.1 million federal case outcomes — searchable by district, case type, judge, outcome, and year. Built on public records from the FJC Integrated Database, CourtListener, and RECAP. Designed for empirical legal research.
         </p>
 
         {/* Feature Cards */}

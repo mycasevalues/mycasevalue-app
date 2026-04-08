@@ -13,7 +13,7 @@ export const PLATFORM_STATS = {
 } as const;
 
 export const PLATFORM_META = {
-  name: 'MyCaseValues',
+  name: 'MyCaseValue',
   tagline: 'The federal court record. Open to everyone.',
   description: 'Search 5.1M+ federal case outcomes — win rates, settlement ranges, judge analytics — sourced from public federal records.',
   url: 'https://mycasevalues.com',

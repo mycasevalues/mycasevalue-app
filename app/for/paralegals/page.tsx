@@ -7,11 +7,11 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Paralegals Federal Court Data | MyCaseValues',
+  title: 'Paralegals Federal Court Data | MyCaseValue',
   description: 'Pull federal court outcome data in minutes. Judge analytics, district data, and case research tools for paralegals supporting attorneys.',
   alternates: { canonical: `${SITE_URL}/for/paralegals` },
   openGraph: {
-    title: 'Federal Court Data for Paralegals | MyCaseValues',
+    title: 'Federal Court Data for Paralegals | MyCaseValue',
     description: 'Research federal court outcomes quickly. Judge analytics, district trends, and data-driven insights to support your legal team.',
     type: 'website',
     url: `${SITE_URL}/for/paralegals`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Data for Paralegals | MyCaseValues',
+    title: 'Federal Court Data for Paralegals | MyCaseValue',
     description: 'Research federal court outcomes quickly. Judge analytics, district trends, and data-driven insights to support your legal team.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -58,7 +58,7 @@ export default function ParalegalsPage() {
         </h1>
 
         <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#4B5563', marginBottom: '2rem' }}>
-          Pull federal court outcome data in minutes instead of hours. MyCaseValues lets you research judge analytics, filter by district and case type, and support your attorneys with data-driven insights — all from public records.
+          Pull federal court outcome data in minutes instead of hours. MyCaseValue lets you research judge analytics, filter by district and case type, and support your attorneys with data-driven insights — all from public records.
         </p>
 
         {/* Feature Cards */}

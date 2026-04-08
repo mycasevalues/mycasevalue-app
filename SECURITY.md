@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-We take the security of MyCaseValues seriously. If you discover a security vulnerability, please report it responsibly.
+We take the security of MyCaseValue seriously. If you discover a security vulnerability, please report it responsibly.
 
 ### How to Report
 
@@ -33,7 +33,7 @@ Please include:
 The following are in scope for security reports:
 
 - `mycasevalues.com` and all subdomains
-- The MyCaseValues API (`/api/*` endpoints)
+- The MyCaseValue API (`/api/*` endpoints)
 - Authentication and authorization flows
 - Data exposure or leakage
 

@@ -7,11 +7,11 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Pro Se Litigants Federal Court Data | MyCaseValues',
+  title: 'Pro Se Litigants Federal Court Data | MyCaseValue',
   description: 'Access federal court outcome data as a pro se litigant. Win rates, judge analytics, settlement ranges, and case timelines sourced from public records.',
   alternates: { canonical: `${SITE_URL}/for/pro-se` },
   openGraph: {
-    title: 'Federal Court Data for Pro Se Litigants | MyCaseValues',
+    title: 'Federal Court Data for Pro Se Litigants | MyCaseValue',
     description: 'Research real outcomes from federal cases. Get win rates, settlement ranges, and judge analytics — the same data attorneys use.',
     type: 'website',
     url: `${SITE_URL}/for/pro-se`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Data for Pro Se Litigants | MyCaseValues',
+    title: 'Federal Court Data for Pro Se Litigants | MyCaseValue',
     description: 'Research real outcomes from federal cases. Get win rates, settlement ranges, and judge analytics — the same data attorneys use.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -58,7 +58,7 @@ export default function ProSeLitigantsPage() {
         </h1>
 
         <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#4B5563', marginBottom: '2rem' }}>
-          Representing yourself in federal court is challenging enough without having to guess at outcomes. MyCaseValues gives you access to the same federal court outcome data that attorneys use — win rates, settlement ranges, judge analytics, and case timelines — sourced from public records and presented in plain language.
+          Representing yourself in federal court is challenging enough without having to guess at outcomes. MyCaseValue gives you access to the same federal court outcome data that attorneys use — win rates, settlement ranges, judge analytics, and case timelines — sourced from public records and presented in plain language.
         </p>
 
         {/* Feature Cards */}

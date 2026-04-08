@@ -19,7 +19,7 @@
 [DONE] Ph2 · T2.2 — Global search bar on homepage · sha: e3e6e98
 [DONE] Ph2 · T2.3 — CTA buttons: Explore All Cases + See How It Works · sha: e3e6e98
 [DONE] Ph2 · T2.4 — Trust bar: 4 stats (5.1M+, 94, 84, Public Records) · sha: e3e6e98
-[DONE] Ph2 · T2.5 — "Who Uses MyCaseValues" 6 audience cards · sha: e3e6e98
+[DONE] Ph2 · T2.5 — "Who Uses MyCaseValue" 6 audience cards · sha: e3e6e98
 [DONE] Ph2 · T2.6 — "How It Works" 3-step section with anchor · sha: e3e6e98
 [DONE] Ph2 · T2.7 — "What Makes This Different" 3 columns · sha: e3e6e98
 [DONE] Ph2 · T2.8 — Brand Blue bottom CTA section · sha: e3e6e98

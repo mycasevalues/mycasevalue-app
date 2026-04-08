@@ -4,19 +4,19 @@ import { SITE_URL } from '../../lib/site-config';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Pricing Built for Every Budget — MyCaseValues',
+  title: 'Pricing Built for Every Budget — MyCaseValue',
   description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode. No hidden fees.',
   alternates: { canonical: `${SITE_URL}/pricing` },
   openGraph: {
-    title: 'Pricing Built for Every Budget — MyCaseValues',
+    title: 'Pricing Built for Every Budget — MyCaseValue',
     description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode.',
     type: 'website',
     url: `${SITE_URL}/pricing`,
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValues Pricing' }],
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue Pricing' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing Built for Every Budget — MyCaseValues',
+    title: 'Pricing Built for Every Budget — MyCaseValue',
     description: 'Transparent pricing for federal court intelligence. Free, $5.99, $9.99/mo, $29.99/mo.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -158,7 +158,7 @@ const faqItems = [
     a: "Yes. If you upgrade within your 90-day access window, we'll credit the report purchase price toward your first month of Unlimited Reports.",
   },
   {
-    q: 'Where does MyCaseValues data come from?',
+    q: 'Where does MyCaseValue data come from?',
     a: 'All data is derived from three public federal court record sources: the Federal Judicial Center Integrated Database (FJC IDB), PACER (Public Access to Court Electronic Records), and CourtListener. We do not create or estimate any data — we aggregate and analyze official public court records only.',
   },
   {
@@ -166,12 +166,12 @@ const faqItems = [
     a: 'Free tier data is refreshed monthly. Unlimited data is refreshed weekly. Attorney Mode data is refreshed daily, providing the most current federal court information.',
   },
   {
-    q: 'Is MyCaseValues legal advice?',
-    a: 'No. MyCaseValues provides legal data for informational and research purposes only. Nothing on this platform constitutes legal advice or creates an attorney-client relationship. Always consult a licensed attorney.',
+    q: 'Is MyCaseValue legal advice?',
+    a: 'No. MyCaseValue provides legal data for informational and research purposes only. Nothing on this platform constitutes legal advice or creates an attorney-client relationship. Always consult a licensed attorney.',
   },
   {
     q: 'Does my research activity stay private?',
-    a: 'Yes. We do not sell, share, or expose any search data. What you research on MyCaseValues stays between you and the public federal court records.',
+    a: 'Yes. We do not sell, share, or expose any search data. What you research on MyCaseValue stays between you and the public federal court records.',
   },
   {
     q: 'Does Attorney Mode work for both plaintiffs and defense?',
@@ -490,7 +490,7 @@ export default function PricingPage() {
         {/* Callout Section */}
         <div className="callout-section">
           <p className="callout-text">
-            Professional litigation analytics have historically been priced for large firm budgets. We built MyCaseValues for everyone else.
+            Professional litigation analytics have historically been priced for large firm budgets. We built MyCaseValue for everyone else.
           </p>
         </div>
 

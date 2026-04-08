@@ -139,7 +139,7 @@ const DIFFERENTIATION_CARDS: DifferentiationCard[] = [
   },
   {
     title: 'Accessible to Every Budget',
-    description: 'Sophisticated litigation analytics have historically been priced for large firm budgets. MyCaseValues is built on the premise that access to the public record should not require a $600/month subscription.',
+    description: 'Sophisticated litigation analytics have historically been priced for large firm budgets. MyCaseValue is built on the premise that access to the public record should not require a $600/month subscription.',
   },
   {
     title: 'Designed for Humans',
@@ -281,7 +281,7 @@ export default function HomePage() {
               Built for Everyone Who Needs to Know
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Whether you're representing yourself or preparing a complex federal brief, MyCaseValues was built for you.
+              Whether you're representing yourself or preparing a complex federal brief, MyCaseValue was built for you.
             </p>
           </div>
 
@@ -313,7 +313,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How MyCaseValues Works
+              How MyCaseValue Works
             </h2>
             <p className="text-lg text-gray-600">
               Three steps to federal court intelligence.
@@ -392,7 +392,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of legal professionals, researchers, and individuals who use MyCaseValues to understand federal court outcomes.
+            Join thousands of legal professionals, researchers, and individuals who use MyCaseValue to understand federal court outcomes.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -417,7 +417,7 @@ export default function HomePage() {
           ────────────────────────────────────────────────────────────────── */}
       <div className="px-4 md:px-8 py-4 border-t border-gray-100 bg-white">
         <p className="text-xs text-gray-400 text-center">
-          MyCaseValues provides data from public federal court records for informational purposes only. This is not legal advice. Consult a licensed attorney for legal guidance.
+          MyCaseValue provides data from public federal court records for informational purposes only. This is not legal advice. Consult a licensed attorney for legal guidance.
         </p>
       </div>
     </main>

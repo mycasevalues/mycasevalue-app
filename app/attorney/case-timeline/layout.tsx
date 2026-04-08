@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Federal Case Timeline Generator | MyCaseValues Attorney Tools',
+  title: 'Federal Case Timeline Generator | MyCaseValue Attorney Tools',
   description: 'Generate accurate federal case timelines and milestones for your specific case type and district. Predict discovery closure, expert disclosures, and trial dates based on 5.1M+ historical federal cases.',
   keywords: [
     'case timeline generator',
@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/attorney/case-timeline`,
   },
   openGraph: {
-    title: 'Federal Case Timeline Generator | MyCaseValues',
+    title: 'Federal Case Timeline Generator | MyCaseValue',
     description: 'Generate accurate federal case timelines and milestones for your specific case type and district.',
     url: `${SITE_URL}/attorney/case-timeline`,
     type: 'website',
-    siteName: 'MyCaseValues',
+    siteName: 'MyCaseValue',
   },
   robots: { index: false, follow: false },
 };
