@@ -275,7 +275,7 @@ export default function CalculatorPage() {
       <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1C3A5E', padding: '64px 24px' }}>
         <div className="max-w-3xl mx-auto">
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#0966C3' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
             CALCULATOR
           </div>
           <h1 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)' }}>
@@ -961,7 +961,7 @@ export default function CalculatorPage() {
                     }}
                   >
                     View Full Report
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </Link>
                 </div>
               );
@@ -1062,7 +1062,7 @@ export default function CalculatorPage() {
                   padding: '24px',
                 }}
               >
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}>
+                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}>
                   <path d={item.iconPath}/>
                 </svg>
                 <h3 className="font-bold mb-2" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)', fontSize: '14px' }}>
@@ -1118,7 +1118,7 @@ export default function CalculatorPage() {
                       {tool.description}
                     </p>
                   </div>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2" style={{ marginLeft: '8px', flexShrink: 0 }}>
+                  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2" style={{ marginLeft: '8px', flexShrink: 0 }}>
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
                 </div>
