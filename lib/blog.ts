@@ -29,7 +29,7 @@ Settlement percentiles tell you the distribution of monetary outcomes. P10 means
 
 Case duration is measured as the number of months from the filing date to the date of disposition, which is the date the court closes the case. Dispositions include settlements, judgments, dismissals, and transfers. The median duration tells you how long a typical case takes. Duration varies significantly by case type and district.
 
-Attorney impact data compares outcomes for plaintiffs represented by counsel versus those proceeding pro se, meaning without a lawyer. The data consistently shows that represented plaintiffs achieve higher win rates and larger settlements. However, this comparison is not apples to apples. Attorneys tend to take stronger cases, which means the gap partly reflects case quality rather than attorney skill alone. Still, the magnitude of the difference, often thirty or more percentage points in win rate, suggests that representation has a substantial independent effect.
+Attorney impact data compares outcomes for litigants represented by counsel versus those proceeding pro se, meaning without a lawyer. The data consistently shows that represented plaintiffs achieve higher win rates and larger settlements. However, this comparison is not apples to apples. Attorneys tend to take stronger cases, which means the gap partly reflects case quality rather than attorney skill alone. Still, the magnitude of the difference, often thirty or more percentage points in win rate, suggests that representation has a substantial independent effect.
 
 One critical caveat: all of these numbers are aggregate historical statistics. They describe what happened across thousands of past cases. They do not predict what will happen in any individual case. Every lawsuit involves unique facts, unique parties, unique evidence, and unique judicial decisions. Use these statistics to understand the landscape and ask better questions, not to forecast a specific outcome. If you are involved in a legal matter, consult a licensed attorney who can evaluate your specific situation.`,
     author: 'MyCaseValue Research Team',
@@ -73,7 +73,7 @@ Remember that percentile data describes past outcomes, not future ones. Settleme
     description: 'An analysis of employment discrimination case outcomes across all 94 federal districts, based on FJC IDB data.',
     content: `Employment discrimination claims make up one of the largest segments of the federal civil docket. Title VII, the ADA, the ADEA, and Section 1981 drive hundreds of thousands of cases each year. Here is what the outcome data reveals about how these cases actually resolve.
 
-Across all employment discrimination case types, the plaintiff win rate at trial averages approximately 38 percent. But this figure hides meaningful variation. Retaliation claims, which are easier to prove because they require showing a causal connection between protected activity and adverse action, succeed at trial roughly 42 percent of the time. Age discrimination claims under the ADEA, which require showing that age was the but-for cause of the adverse action, succeed at closer to 32 percent.
+Across all employment discrimination case types, the win rate at trial averages approximately 38 percent. But this figure hides meaningful variation. Retaliation claims, which are easier to prove because they require showing a causal connection between protected activity and adverse action, succeed at trial roughly 42 percent of the time. Age discrimination claims under the ADEA, which require showing that age was the but-for cause of the adverse action, succeed at closer to 32 percent.
 
 Settlement patterns tell an equally important story. Roughly 55 to 60 percent of employment discrimination cases settle before reaching trial. The median settlement amount is approximately 50,000 dollars, but the distribution is wide. Cases involving high-level executives or extensive documented harassment can settle for six or seven figures. Cases with limited documentation and ambiguous facts often settle for the cost of defense, sometimes as little as five to fifteen thousand dollars.
 
@@ -95,7 +95,7 @@ These statistics provide context, not predictions. Every employment case turns o
     slug: 'plaintiff-vs-pro-se-outcomes',
     title: 'Represented vs. Pro Se: What Federal Court Data Says About Attorney Impact',
     description: 'A data-driven look at how legal representation affects case outcomes across federal civil litigation.',
-    content: `One of the most consistent patterns in federal court data is the gap between outcomes for represented and pro se litigants. Across millions of cases and every major case type, plaintiffs with attorneys achieve substantially better results than those who represent themselves.
+    content: `One of the most consistent patterns in federal court data is the gap between outcomes for represented and pro se litigants. Across millions of cases and every major case type, represented parties achieve substantially better results than those who represent themselves.
 
 The numbers are stark. Represented plaintiffs win at trial approximately 42 percent of the time. Pro se plaintiffs win approximately 12 percent of the time. This thirty-point gap persists across employment discrimination, civil rights, contract disputes, and personal injury cases. It is one of the most robust findings in the federal court data.
 
@@ -121,7 +121,7 @@ If cost is a barrier, many employment and civil rights attorneys work on conting
     description: 'Why the district where your case is filed matters, and what the outcome data shows across the 94 federal judicial districts.',
     content: `The United States has 94 federal judicial districts, and the data shows that outcomes vary meaningfully depending on where a case is filed. Understanding these differences can inform decisions about venue selection, case strategy, and realistic expectations.
 
-Win rates vary significantly by district. Some districts have plaintiff win rates above 45 percent for certain case types, while others hover below 25 percent. The Southern District of New York, one of the busiest commercial litigation districts, has different outcome patterns than the Eastern District of Texas, which is known for active docket management and faster case resolution. These differences are not random. They reflect local judicial culture, the composition of the judge roster, the nature of cases filed in each district, and the demographics of the jury pool.
+Win rates vary significantly by district. Some districts have win rates above 45 percent for certain case types, while others hover below 25 percent. The Southern District of New York, one of the busiest commercial litigation districts, has different outcome patterns than the Eastern District of Texas, which is known for active docket management and faster case resolution. These differences are not random. They reflect local judicial culture, the composition of the judge roster, the nature of cases filed in each district, and the demographics of the jury pool.
 
 Case duration also varies by district. The median time from filing to disposition ranges from roughly 14 months in faster districts to over 30 months in districts with heavier caseloads or more complex dockets. Districts with active judicial management and standing orders encouraging early mediation tend to resolve cases faster. If speed matters to your strategy, the district data is worth examining.
 
@@ -143,7 +143,7 @@ Venue selection is governed by federal rules that generally require cases to be 
     description: 'Win rates, settlement ranges, and timelines for medical malpractice cases in federal court, based on FJC IDB data.',
     content: `Medical malpractice cases that reach federal court tend to involve larger damages, more complex facts, and longer timelines than their state-court counterparts. Federal jurisdiction usually arises through diversity of citizenship, meaning the plaintiff and defendant are from different states and the amount in controversy exceeds 75,000 dollars. Here is what the federal data shows.
 
-The plaintiff win rate at trial in federal medical malpractice cases is approximately 28 percent, one of the lower win rates across all federal case types. This does not mean these cases lack merit. It reflects the high burden of proof: plaintiffs must establish a standard of care, demonstrate that the provider deviated from it, and prove that the deviation caused the injury. Expert testimony is required at every step, making these cases expensive and technically demanding to litigate.
+The win rate at trial in federal medical malpractice cases is approximately 28 percent, one of the lower win rates across all federal case types. This does not mean these cases lack merit. It reflects the high burden of proof: plaintiffs must establish a standard of care, demonstrate that the provider deviated from it, and prove that the deviation caused the injury. Expert testimony is required at every step, making these cases expensive and technically demanding to litigate.
 
 Settlement rates in medical malpractice are relatively high, around 60 percent. The median settlement is approximately 95,000 dollars, but the P90 can exceed one million dollars for cases involving catastrophic injury, wrongful death, or clear deviation from accepted medical practice. Cases with strong expert support and thorough medical record documentation settle significantly higher.
 
@@ -165,9 +165,9 @@ The data reinforces a consistent finding: medical malpractice is among the most 
     description: 'Analysis of 5.1M+ federal cases reveals surprising patterns in win rates across case types, districts, and judicial outcomes. Learn what the data really says about your chances.',
     content: `Federal court win rates are one of the most misunderstood statistics in litigation. Our analysis of over 4.1 million federal civil cases reveals patterns that challenge conventional assumptions about courtroom success.
 
-The overall win rate for plaintiffs in federal court is approximately 37%, but this masks enormous variation. Employment discrimination cases settle or go to judgment at dramatically different rates than personal injury cases. Civil rights cases show a 34% plaintiff win rate, while contract disputes reach 42%. These differences aren't random—they reflect the complexity of legal claims, the strength of evidence typically available, and the way juries and judges evaluate different types of disputes.
+The overall win rate for litigants in federal court is approximately 37%, but this masks enormous variation. Employment discrimination cases settle or go to judgment at dramatically different rates than personal injury cases. Civil rights cases show a 34% win rate, while contract disputes reach 42%. These differences aren't random—they reflect the complexity of legal claims, the strength of evidence typically available, and the way juries and judges evaluate different types of disputes.
 
-District-level variation is equally striking. Some federal districts have plaintiff win rates above 50%, while others hover below 25%. The Southern District of New York, for instance, handles complex commercial litigation where defendants often prevail at summary judgment. Meanwhile, the Southern District of Georgia processes many employment and civil rights cases with different outcome patterns. This variation matters: a case type that succeeds in one district may face headwinds in another.
+District-level variation is equally striking. Some federal districts have win rates above 50%, while others hover below 25%. The Southern District of New York, for instance, handles complex commercial litigation where defendants often prevail at summary judgment. Meanwhile, the Southern District of Georgia processes many employment and civil rights cases with different outcome patterns. This variation matters: a case type that succeeds in one district may face headwinds in another.
 
 What drives these differences? Several factors emerge from the data. First, case selection: stronger cases tend to proceed to trial, while weaker ones settle or get dismissed early. Second, attorney quality and resources: well-resourced parties tend to prevail more often. Third, judge assignments: judicial philosophies about summary judgment, evidence, and liability create systematic differences. Fourth, jury composition: districts with different demographic and educational profiles produce different outcomes.
 
@@ -273,7 +273,7 @@ Product liability cases specifically show distinct patterns. Cases involving wel
 
 Practical guidance for case valuation: establish early baseline by aggregating similar verdicts from relevant district. Document injuries thoroughly with medical records and expert testimony. Assess liability strength candidly—weak liability substantially reduces settlement value. Consider jury composition and local verdict patterns in your district. Negotiate early; cases settling in first 12 months average 20% lower valuations than cases proceeding into discovery, but reduce litigation costs and delay substantially.
 
-The data clearly shows: in personal injury cases, settlement earlier than trial is typically financially advantageous for plaintiffs (lower legal costs, reasonable recovery) and for defendants (certainty, lower risk). Trial is appropriate only when settlement demands exceed comparable verdicts or when liability is genuinely contested.`,
+The data clearly shows: in personal injury cases, settlement earlier than trial is typically financially advantageous for litigants (lower legal costs, reasonable recovery) and for defendants (certainty, lower risk). Trial is appropriate only when settlement demands exceed comparable verdicts or when liability is genuinely contested.`,
     author: 'MyCaseValue Research Team',
     publishedAt: new Date('2025-02-20'),
     updatedAt: new Date('2025-02-20'),
@@ -373,7 +373,7 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <p><strong>Procedural Rules:</strong> Federal cases follow the Federal Rules of Civil Procedure. State cases follow each state's rules. Federal rules are uniform nationwide; state rules vary. Attorneys experienced in federal practice often prefer federal court because the rules are national and predictable. Attorneys with strong state court experience may prefer state court where they have familiarity with local judges and procedures.</p>
 
-<p><strong>Jury Pools:</strong> Federal juries are drawn from a broader geographic area (the entire district) than state juries (typically county). This can matter significantly: in employment discrimination cases, federal juries in large urban districts may be more favorable to plaintiffs than state juries in smaller, more conservative counties. Conversely, state court in a sympathetic venue might produce better outcomes for certain claim types.</p>
+<p><strong>Jury Pools:</strong> Federal juries are drawn from a broader geographic area (the entire district) than state juries (typically county). This can matter significantly: in employment discrimination cases, federal juries in large urban districts may be more favorable to parties than state juries in smaller, more conservative counties. Conversely, state court in a sympathetic venue might produce better outcomes for certain claim types.</p>
 
 <p><strong>Judge Quality and Expertise:</strong> Federal judges are appointed for life and typically have substantial legal experience. Federal judges tend to be more sophisticated about complex litigation. State judges vary widely; some are highly experienced former litigators, others are less experienced. For complex cases, federal judges' expertise in sophisticated legal issues can be advantageous.</p>
 
@@ -383,7 +383,7 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <p><strong>Appeal:</strong> Federal appeals go to the U.S. Circuit Court of Appeals (13 circuits nationally). Federal appeals take approximately 12-24 months. State appeals go to the state appellate court, where timelines vary by state (6-18 months). Circuit Court decisions create national precedent in federal law; state appellate decisions apply only in that state.</p>
 
-<p><strong>Venue Issues:</strong> In federal court, venue is based on where the defendant resides or where the events occurred. In state court, venue rules are set by each state (typically county where defendant resides or where events occurred). For cases qualifying for federal diversity jurisdiction, strategic venue selection can matter—some federal districts have plaintiff-friendly outcome patterns, others defendant-friendly.</p>
+<p><strong>Venue Issues:</strong> In federal court, venue is based on where the defendant resides or where the events occurred. In state court, venue rules are set by each state (typically county where defendant resides or where events occurred). For cases qualifying for federal diversity jurisdiction, strategic venue selection can matter—some federal districts have favorable-outcome outcome patterns, others defendant-friendly.</p>
 
 <h2>When Federal Court Is Better</h2>
 
@@ -411,11 +411,11 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <h2>Overall Win Rates in Civil Rights Cases</h2>
 
-<p>The aggregate plaintiff win rate in civil rights cases is approximately 34-36% at trial. This is slightly below the federal average of 37%, reflecting the high burden of proof in civil rights cases. However, this aggregate figure masks enormous variation by specific claim type and jurisdiction.</p>
+<p>The aggregate win rate in civil rights cases is approximately 34-36% at trial. This is slightly below the federal average of 37%, reflecting the high burden of proof in civil rights cases. However, this aggregate figure masks enormous variation by specific claim type and jurisdiction.</p>
 
-<p>Section 1983 cases (civil rights against state and local government officials) show a plaintiff win rate of approximately 32% at trial. These cases require proving that the defendant acted under color of state law and violated a clearly established constitutional right. The "clearly established" standard is high and changed significantly after the 2011 Supreme Court decision in <em>Pearson v. Callahan</em>.</p>
+<p>Section 1983 cases (civil rights against state and local government officials) show a win rate of approximately 32% at trial. These cases require proving that the defendant acted under color of state law and violated a clearly established constitutional right. The "clearly established" standard is high and changed significantly after the 2011 Supreme Court decision in <em>Pearson v. Callahan</em>.</p>
 
-<p>Title VII employment discrimination cases show a plaintiff win rate of approximately 38-41% at trial, slightly above the civil rights average. This reflects that employment discrimination law has clearer standards and more available evidence than constitutional civil rights claims.</p>
+<p>Title VII employment discrimination cases show a win rate of approximately 38-41% at trial, slightly above the civil rights average. This reflects that employment discrimination law has clearer standards and more available evidence than constitutional civil rights claims.</p>
 
 <p>Americans with Disabilities Act (ADA) claims show varying win rates: ADA employment cases succeed at trial roughly 35-37%, while ADA public accommodations cases (access to businesses, services) succeed at roughly 42-45%, reflecting clearer liability standards in access cases.</p>
 
@@ -557,39 +557,39 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
     slug: 'medical-malpractice-win-rate-by-district',
     title: 'Medical Malpractice Win Rates: A District-by-District Analysis',
     description: 'Analysis of federal medical malpractice cases (NOS 362) outcomes across districts, identifying favorable and challenging jurisdictions.',
-    content: `Medical malpractice cases are among the most challenging in federal litigation. Across all federal districts, the plaintiff win rate at trial in medical malpractice cases (NOS 362) is approximately 28%, one of the lowest across all case types. However, substantial variation exists between districts. Some federal districts are significantly more plaintiff-friendly than others.
+    content: `Medical malpractice cases are among the most challenging in federal litigation. Across all federal districts, the win rate at trial in medical malpractice cases (NOS 362) is approximately 28%, one of the lowest across all case types. However, substantial variation exists between districts. Some federal districts are significantly more favorable-outcome than others.
 
 <h2>Overall Medical Malpractice Landscape</h2>
 
 <p>Medical malpractice cases require proving: (1) the provider owed a duty of care, (2) the provider deviated from the applicable standard of care, (3) the deviation caused the injury, and (4) the plaintiff suffered damages. Expert testimony is required at every step, making these cases expensive and technically demanding.</p>
 
-<p>The 28% plaintiff win rate reflects the high burden. Even when patients are injured, proving that provider negligence (not disease progression or unavoidable complications) caused the injury is difficult. Medical expert testimony is critical and often contested.</p>
+<p>The 28% win rate reflects the high burden. Even when patients are injured, proving that provider negligence (not disease progression or unavoidable complications) caused the injury is difficult. Medical expert testimony is critical and often contested.</p>
 
 <p>Settlement rates are relatively high at approximately 60%, reflecting parties' uncertainty about trial outcomes and the potential for catastrophic liability. Median settlement in federal medical malpractice cases is approximately $95,000, with P90 settlements exceeding $500,000 in cases involving permanent disability or wrongful death.</p>
 
-<h2>Most Plaintiff-Friendly Districts</h2>
+<h2>Most Favorable-Outcome Districts</h2>
 
-<p>Certain federal districts show higher plaintiff win rates in medical malpractice, driven by regional factors, jury demographics, and local judicial culture.</p>
+<p>Certain federal districts show higher win rates in medical malpractice, driven by regional factors, jury demographics, and local judicial culture.</p>
 
-<p><strong>Northern District of Illinois (Chicago):</strong> Plaintiff win rate approximately 38% (substantially above the 28% national average). Chicago juries have a reputation for plaintiff-friendliness in personal injury litigation generally. The district includes urban and suburban areas with educated, higher-income jurors who understand complex medical testimony.</p>
+<p><strong>Northern District of Illinois (Chicago):</strong> Win rate approximately 38% (substantially above the 28% national average). Chicago juries have a reputation for plaintiff-friendliness in personal injury litigation generally. The district includes urban and suburban areas with educated, higher-income jurors who understand complex medical testimony.</p>
 
-<p><strong>Eastern District of New York (Brooklyn/Queens):</strong> Plaintiff win rate approximately 36%. New York has a strong tradition of plaintiff-favorable personal injury jurisprudence. Jurors tend to be well-educated and skeptical of large institutional defendants (hospitals, medical systems).</p>
+<p><strong>Eastern District of New York (Brooklyn/Queens):</strong> Win rate approximately 36%. New York has a strong tradition of plaintiff-favorable personal injury jurisprudence. Jurors tend to be well-educated and skeptical of large institutional defendants (hospitals, medical systems).</p>
 
-<p><strong>Central District of California (Los Angeles):</strong> Plaintiff win rate approximately 34%. Large, diverse jury pool with representation from multiple demographic groups. High cost of living supports larger damage awards and settlements.</p>
+<p><strong>Central District of California (Los Angeles):</strong> Win rate approximately 34%. Large, diverse jury pool with representation from multiple demographic groups. High cost of living supports larger damage awards and settlements.</p>
 
-<p><strong>Northern District of California (San Francisco):</strong> Plaintiff win rate approximately 32%. Tech-industry region with educated juries, though defendants often have resources to litigate aggressively.</p>
+<p><strong>Northern District of California (San Francisco):</strong> Win rate approximately 32%. Tech-industry region with educated juries, though defendants often have resources to litigate aggressively.</p>
 
 <h2>Most Defendant-Friendly Districts</h2>
 
-<p>Other districts show lower plaintiff win rates, reflecting regional factors and local judicial culture.</p>
+<p>Other districts show lower win rates, reflecting regional factors and local judicial culture.</p>
 
-<p><strong>Southern District of Texas (Houston):</strong> Plaintiff win rate approximately 18%. Traditionally business-friendly, jury pools include many jurors employed in the energy sector with conservative liability views. Medical system reputation in region may also matter.</p>
+<p><strong>Southern District of Texas (Houston):</strong> Win rate approximately 18%. Traditionally business-friendly, jury pools include many jurors employed in the energy sector with conservative liability views. Medical system reputation in region may also matter.</p>
 
-<p><strong>Eastern District of Texas (Tyler):</strong> Plaintiff win rate approximately 16%. Very low medical malpractice plaintiff win rates. Jury pools are rural and conservative. The district has a reputation for summary judgment grants favoring defendants.</p>
+<p><strong>Eastern District of Texas (Tyler):</strong> Win rate approximately 16%. Very low medical malpractice win rates. Jury pools are rural and conservative. The district has a reputation for summary judgment grants favoring defendants.</p>
 
-<p><strong>Middle District of Georgia (Macon):</strong> Plaintiff win rate approximately 17%. Rural jury pool, conservative liability views, and lower damage awards even when liability is found.</p>
+<p><strong>Middle District of Georgia (Macon):</strong> Win rate approximately 17%. Rural jury pool, conservative liability views, and lower damage awards even when liability is found.</p>
 
-<p><strong>Northern District of Texas (Dallas/Fort Worth):</strong> Plaintiff win rate approximately 20%. Business-friendly region with jurors skeptical of large damage claims.</p>
+<p><strong>Northern District of Texas (Dallas/Fort Worth):</strong> Win rate approximately 20%. Business-friendly region with jurors skeptical of large damage claims.</p>
 
 <h2>Factors Affecting District Outcomes</h2>
 
@@ -605,7 +605,7 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <h2>Strategic Venue Selection</h2>
 
-<p>If your medical malpractice case qualifies for federal diversity jurisdiction, venue selection matters significantly. Your attorney can choose between multiple federal districts in some circumstances. The data suggests that northern districts (Illinois, New York) are more favorable to plaintiffs than southern or Texas districts.</p>
+<p>If your medical malpractice case qualifies for federal diversity jurisdiction, venue selection matters significantly. Your attorney can choose between multiple federal districts in some circumstances. The data suggests that northern districts (Illinois, New York) are more favorable to parties than southern or Texas districts.</p>
 
 <p>However, venue is often determined by where the provider practices or where the injury occurred. Strategic venue shopping is limited by the rule that venue must be proper (defendant's residence or place of events occurred). Discuss venue options with your attorney early.</p>
 
@@ -615,7 +615,7 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <p><strong>Strength of Expert Testimony:</strong> Compelling expert testimony from well-credentialed specialists explaining clear deviation from care standards dramatically improves outcomes regardless of district.</p>
 
-<p><strong>Injury Severity:</strong> Cases involving permanent disability, wrongful death, or severe injury settle higher and are more likely to survive summary judgment. Minor injury cases struggle even in plaintiff-friendly districts.</p>
+<p><strong>Injury Severity:</strong> Cases involving permanent disability, wrongful death, or severe injury settle higher and are more likely to survive summary judgment. Minor injury cases struggle even in favorable-outcome districts.</p>
 
 <p><strong>Documentation:</strong> Medical records clearly documenting deviation from care (orders not followed, tests not ordered, delayed diagnosis) support higher valuations. Cases built primarily on expert opinion (no documentary evidence) are more vulnerable.</p>
 
@@ -623,7 +623,7 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <h2>Key Takeaway</h2>
 
-<p>Medical malpractice is challenging nationwide, with a 28% trial win rate. However, district selection matters: plaintiff-friendly districts (Northern Illinois, Eastern New York, Central California) see 34-38% win rates, while defendant-friendly districts (Eastern Texas, Southern Texas) see 16-20% win rates. Case-specific factors (expert quality, injury severity, documentation) often matter more than district selection. Consult with attorneys who specialize in medical malpractice in your target district and understand local jury patterns, judge philosophies, and settlement norms.</p>`,
+<p>Medical malpractice is challenging nationwide, with a 28% trial win rate. However, district selection matters: favorable-outcome districts (Northern Illinois, Eastern New York, Central California) see 34-38% win rates, while defendant-friendly districts (Eastern Texas, Southern Texas) see 16-20% win rates. Case-specific factors (expert quality, injury severity, documentation) often matter more than district selection. Consult with attorneys who specialize in medical malpractice in your target district and understand local jury patterns, judge philosophies, and settlement norms.</p>`,
     author: 'MyCaseValue Research Team',
     publishedAt: new Date('2026-03-14'),
     updatedAt: new Date('2026-03-14'),
@@ -635,7 +635,7 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
     slug: 'consumer-protection-fdcpa-outcomes',
     title: 'FDCPA and Consumer Protection: Federal Court Outcomes',
     description: 'Analysis of debt collection and consumer protection cases in federal court, with real data on FDCPA outcomes and settlement patterns.',
-    content: `Debt collection and consumer protection cases have become a significant part of the federal civil docket, driven largely by the Fair Debt Collection Practices Act (FDCPA). Understanding outcomes in these cases—win rates, settlement values, and factors affecting recovery—is critical for plaintiffs facing aggressive debt collectors and for defendants evaluating FDCPA liability.
+    content: `Debt collection and consumer protection cases have become a significant part of the federal civil docket, driven largely by the Fair Debt Collection Practices Act (FDCPA). Understanding outcomes in these cases—win rates, settlement values, and factors affecting recovery—is critical for litigants facing aggressive debt collectors and for defendants evaluating FDCPA liability.
 
 <h2>FDCPA Overview and Prevalence</h2>
 
@@ -645,7 +645,7 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <h2>Win Rates and Settlement Patterns</h2>
 
-<p>The plaintiff win rate in FDCPA cases at trial is approximately 32-35%, slightly below the federal average. However, settlement rates are substantially higher than trial rates suggest. Roughly 70-75% of FDCPA cases settle, reflecting defendants' (debt collectors') recognition of statutory damages exposure and settlement pressure.</p>
+<p>The win rate in FDCPA cases at trial is approximately 32-35%, slightly below the federal average. However, settlement rates are substantially higher than trial rates suggest. Roughly 70-75% of FDCPA cases settle, reflecting defendants' (debt collectors') recognition of statutory damages exposure and settlement pressure.</p>
 
 <p>The statutory damages mechanism creates settlement leverage. Even if actual damages (harassment, emotional distress) are modest, statutory damages accumulate: if a collector made 20 harassing calls, that's $2,000-$20,000 in statutory damages (depending on the court's interpretation of "per violation"). This leverage drives settlement even in cases with weak actual damages claims.</p>
 
@@ -745,7 +745,7 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <p>In bench trials (judge decides verdict without jury), judge philosophy directly determines outcome. Some judges favor plaintiffs (higher win rates, higher damages in plaintiff-favorable cases). Other judges favor defendants (lower win rates, lower damages in plaintiff cases).</p>
 
-<p>Judge bench trial variation is substantial. In the same case type across different judges, plaintiff win rates might range from 25% to 60%. Damage awards for equivalent injuries vary 30-50% based on judge. For parties seeking predictable outcomes, jury trials are sometimes preferable to bench trials with unpredictable judges.</p>
+<p>Judge bench trial variation is substantial. In the same case type across different judges, win rates might range from 25% to 60%. Damage awards for equivalent injuries vary 30-50% based on judge. For parties seeking predictable outcomes, jury trials are sometimes preferable to bench trials with unpredictable judges.</p>
 
 <h2>Judicial Bias and Recusal</h2>
 
@@ -759,13 +759,13 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <h2>Judge Impact on Outcomes: Data Perspective</h2>
 
-<p>Empirical studies of federal judges show that judge assignment can affect case outcomes by 15-30 percentage points in some case types. Employment discrimination cases show variation: judge A's plaintiff win rate might be 35%, judge B's 50%. Personal injury cases show variation of 20-30 points in plaintiff win rates across judges.</p>
+<p>Empirical studies of federal judges show that judge assignment can affect case outcomes by 15-30 percentage points in some case types. Employment discrimination cases show variation: judge A's win rate might be 35%, judge B's 50%. Personal injury cases show variation of 20-30 points in win rates across judges.</p>
 
 <p>This judge variation suggests that forum selection (choosing federal court and district) significantly affects outcomes. If your case can be filed in multiple federal districts, research the judges' decision patterns and if possible, consider districts with judges favorable to your case type.</p>
 
 <h2>Key Takeaway</h2>
 
-<p>Federal judges dramatically affect litigation outcomes through motion rulings, summary judgment decisions, and discovery management. Judge variation is substantial: some judges are plaintiff-friendly, others defendant-friendly. Judge assignment can affect outcomes by 15-30 percentage points in certain case types. Research your assigned judge's past decisions before finalizing strategy. If multiple judges exist in your district, understand their patterns. If multiple federal districts are available (diversity jurisdiction allows choices), consider district-based judge variation in venue selection. Discuss judge reputation and strategic implications with your attorney early in litigation.</p>`,
+<p>Federal judges dramatically affect litigation outcomes through motion rulings, summary judgment decisions, and discovery management. Judge variation is substantial: some judges are favorable-outcome, others defendant-friendly. Judge assignment can affect outcomes by 15-30 percentage points in certain case types. Research your assigned judge's past decisions before finalizing strategy. If multiple judges exist in your district, understand their patterns. If multiple federal districts are available (diversity jurisdiction allows choices), consider district-based judge variation in venue selection. Discuss judge reputation and strategic implications with your attorney early in litigation.</p>`,
     author: 'MyCaseValue Research Team',
     publishedAt: new Date('2026-03-04'),
     updatedAt: new Date('2026-03-04'),
@@ -781,7 +781,7 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <h2>Win Rate Impact</h2>
 
-<p>Plaintiffs with attorneys win at trial approximately 42% of the time in federal cases. Pro se (self-represented) plaintiffs win approximately 12% of the time. This 30-percentage-point gap is consistent across case types and holds even when controlling for case quality (comparing similar cases with and without representation).</p>
+<p>Represented parties win at trial approximately 42% of the time in federal cases. Pro se (self-represented) plaintiffs win approximately 12% of the time. This 30-percentage-point gap is consistent across case types and holds even when controlling for case quality (comparing similar cases with and without representation).</p>
 
 <p>The gap reflects multiple factors: (1) case selection (attorneys screen and take stronger cases), (2) procedural expertise (attorneys know federal rules intimately; pro se litigants often miss deadlines or procedural requirements), (3) evidence presentation (attorneys know evidence rules and how to present evidence persuasively), (4) motions practice (attorneys file effective motions; pro se litigants often file legally insufficient motions), and (5) settlement strategy (attorneys evaluate settlement offers realistically; pro se litigants often make irrational settlement decisions).</p>
 
@@ -840,60 +840,60 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
     readTime: 8,
   },
   {
-    slug: 'top-10-plaintiff-friendly-districts',
-    title: 'Top 10 Most Plaintiff-Friendly Federal Districts',
-    description: 'Ranked list of federal districts with highest plaintiff win rates and settlement values, backed by federal court outcome data.',
-    content: `Not all federal districts are equal. Case outcomes vary significantly based on judge philosophy, jury composition, local legal culture, and case prevalence. For plaintiffs evaluating venue options in diversity cases, understanding which districts are plaintiff-friendly can inform strategic decisions.
+    slug: 'top-10-favorable-outcome-districts',
+    title: 'Top 10 Most Favorable-Outcome Federal Districts',
+    description: 'Ranked list of federal districts with highest win rates and settlement values, backed by federal court outcome data.',
+    content: `Not all federal districts are equal. Case outcomes vary significantly based on judge philosophy, jury composition, local legal culture, and case prevalence. For plaintiffs evaluating venue options in diversity cases, understanding which districts are favorable-outcome can inform strategic decisions.
 
 <h2>Methodology</h2>
 
-<p>We analyzed federal court outcome data across all 94 federal districts, examining plaintiff win rates at trial, settlement values, and case duration. We weighted analysis toward common case types (employment discrimination, personal injury, contract disputes, civil rights) where venue flexibility exists. Districts were ranked by aggregate plaintiff win rate across all case types, adjusted for case composition and population density.</p>
+<p>We analyzed federal court outcome data across all 94 federal districts, examining win rates at trial, settlement values, and case duration. We weighted analysis toward common case types (employment discrimination, personal injury, contract disputes, civil rights) where venue flexibility exists. Districts were ranked by aggregate win rate across all case types, adjusted for case composition and population density.</p>
 
-<h2>Top 10 Plaintiff-Friendly Federal Districts</h2>
+<h2>Top 10 Favorable-Outcome Federal Districts</h2>
 
-<p><strong>1. Northern District of Illinois (Chicago)</strong> - Plaintiff win rate: 48%</p>
+<p><strong>1. Northern District of Illinois (Chicago)</strong> - Win rate: 48%</p>
 
 <p>Chicago consistently leads federal litigation plaintiff-friendliness. The district includes highly educated urban jurors with experience in personal injury and employment litigation. Settlement values exceed national average by 30-40%. Chicago has a strong plaintiffs' bar, active judges supportive of plaintiffs, and jury pools less sympathetic to corporate defendants. Employment discrimination settlements average $65,000 versus $50,000 nationally. Medical malpractice settlements average $135,000 versus $95,000 nationally.</p>
 
-<p><strong>2. Eastern District of New York (Brooklyn/Queens)</strong> - Plaintiff win rate: 46%</p>
+<p><strong>2. Eastern District of New York (Brooklyn/Queens)</strong> - Win rate: 46%</p>
 
 <p>New York courts have a strong tradition of plaintiff-favorable tort law. Jurors tend to be educated and skeptical of large corporate defendants. Settlement premium in Eastern District exceeds the national average by 25-35%. Cases are typically complex and expensive, so defendants often settle to avoid trial costs. Personal injury settlements average $120,000 versus $75,000 nationally.</p>
 
-<p><strong>3. Central District of California (Los Angeles)</strong> - Plaintiff win rate: 44%</p>
+<p><strong>3. Central District of California (Los Angeles)</strong> - Win rate: 44%</p>
 
-<p>The district includes highly educated, diverse jury pools. High cost of living supports larger damage awards (medical costs, lost wages). Jury pools are sophisticated in evaluating complex cases. Some specific judges are known as plaintiff-friendly. Southern California plaintiff's bar is well-developed. Settlement values are 30-40% above national average.</p>
+<p>The district includes highly educated, diverse jury pools. High cost of living supports larger damage awards (medical costs, lost wages). Jury pools are sophisticated in evaluating complex cases. Some specific judges are known as favorable-outcome. Southern California plaintiff's bar is well-developed. Settlement values are 30-40% above national average.</p>
 
-<p><strong>4. Northern District of California (San Francisco Bay Area)</strong> - Plaintiff win rate: 42%</p>
+<p><strong>4. Northern District of California (San Francisco Bay Area)</strong> - Win rate: 42%</p>
 
-<p>Tech-industry region with educated jurors. Higher cost of living supports larger settlements. Cases are often complex (employment in tech, intellectual property/contract hybrid cases). Jury pools are younger, more diverse, and less favorable to traditional corporate defendants. Some judges have plaintiff-friendly reputations. Settlement premium is 20-30% above average.</p>
+<p>Tech-industry region with educated jurors. Higher cost of living supports larger settlements. Cases are often complex (employment in tech, intellectual property/contract hybrid cases). Jury pools are younger, more diverse, and less favorable to traditional corporate defendants. Some judges have favorable-outcome reputations. Settlement premium is 20-30% above average.</p>
 
-<p><strong>5. Eastern District of Pennsylvania (Philadelphia)</strong> - Plaintiff win rate: 41%</p>
+<p><strong>5. Eastern District of Pennsylvania (Philadelphia)</strong> - Win rate: 41%</p>
 
-<p>Historic plaintiff-friendly jurisdiction with strong personal injury and medical malpractice tradition. Philadelphia is known for large verdicts and settlements in personal injury cases. Jury pools are educated and sympathetic to injury plaintiffs. Judge variation is significant—some judges are very plaintiff-friendly, others less so. Research individual judge assignments carefully. Average settlement premium: 25-35%.</p>
+<p>Historic favorable-outcome jurisdiction with strong personal injury and medical malpractice tradition. Philadelphia is known for large verdicts and settlements in personal injury cases. Jury pools are educated and sympathetic to injury plaintiffs. Judge variation is significant—some judges are very favorable-outcome, others less so. Research individual judge assignments carefully. Average settlement premium: 25-35%.</p>
 
-<p><strong>6. Western District of Pennsylvania (Pittsburgh)</strong> - Plaintiff win rate: 40%</p>
+<p><strong>6. Western District of Pennsylvania (Pittsburgh)</strong> - Win rate: 40%</p>
 
-<p>Similar to Eastern District, Western District of Pennsylvania has a strong personal injury tradition and plaintiff-friendly juries. Settlements average 20-30% above national baseline. The district is smaller but maintains consistent plaintiff-favorable patterns. Employment discrimination and personal injury cases perform well.</p>
+<p>Similar to Eastern District, Western District of Pennsylvania has a strong personal injury tradition and favorable-outcome juries. Settlements average 20-30% above national baseline. The district is smaller but maintains consistent plaintiff-favorable patterns. Employment discrimination and personal injury cases perform well.</p>
 
-<p><strong>7. District of New Jersey</strong> - Plaintiff win rate: 41%</p>
+<p><strong>7. District of New Jersey</strong> - Win rate: 41%</p>
 
 <p>New Jersey courts follow New York's tradition of plaintiff-favorable tort law. Jury pools are educated and urban. Settlement values exceed national average by 20-30%. New Jersey has damage caps for certain categories (CAPPED), which limits recovery in some cases, but settlements remain above national average. Good venue for personal injury and contract disputes.</p>
 
-<p><strong>8. District of Massachusetts (Boston)</strong> - Plaintiff win rate: 40%</p>
+<p><strong>8. District of Massachusetts (Boston)</strong> - Win rate: 40%</p>
 
 <p>Massachusetts has strong plaintiff traditions and educated jury pools. Academic institutions (Harvard, MIT) in the region contribute to sophisticated juries. Boston is expensive, supporting higher settlements. Settlement premium: 20-30% above national average. Judge Felix Frankfurter had strong plaintiff reputation (historical); modern judges vary.</p>
 
-<p><strong>9. Southern District of New York (Manhattan)</strong> - Plaintiff win rate: 39%</p>
+<p><strong>9. Southern District of New York (Manhattan)</strong> - Win rate: 39%</p>
 
-<p>The largest and busiest federal court handles complex commercial and employment cases. Settlement values are 25-35% above average. However, plaintiff win rates are lower than other New York districts (39% versus 46% for Eastern District) because cases are complex and defendants are often well-resourced (corporations with substantial legal firepower). Juries are sophisticated. Good for employed plaintiffs with documented damages; bad for weak liability cases. Judge quality varies significantly.</p>
+<p>The largest and busiest federal court handles complex commercial and employment cases. Settlement values are 25-35% above average. However, win rates are lower than other New York districts (39% versus 46% for Eastern District) because cases are complex and defendants are often well-resourced (corporations with substantial legal firepower). Juries are sophisticated. Good for employed plaintiffs with documented damages; bad for weak liability cases. Judge quality varies significantly.</p>
 
-<p><strong>10. Central District of Illinois (Urbana-Champaign)</strong> - Plaintiff win rate: 39%</p>
+<p><strong>10. Central District of Illinois (Urbana-Champaign)</strong> - Win rate: 39%</p>
 
-<p>Central Illinois is a strong plaintiff-friendly district outside the Chicago area. Jury pools are less urban than Chicago but maintain plaintiff-favorable patterns. Settlement values are 15-25% above national average. Cases move somewhat faster than Chicago. Good venue for personal injury cases; employment discrimination cases perform adequately.</p>
+<p>Central Illinois is a strong favorable-outcome district outside the Chicago area. Jury pools are less urban than Chicago but maintain plaintiff-favorable patterns. Settlement values are 15-25% above national average. Cases move somewhat faster than Chicago. Good venue for personal injury cases; employment discrimination cases perform adequately.</p>
 
-<h2>Factors Making Districts Plaintiff-Friendly</h2>
+<h2>Factors Making Districts Favorable-Outcome</h2>
 
-<p><strong>Jury Composition:</strong> Districts with educated, urban jurors who are skeptical of large institutions tend to be plaintiff-friendly. Retired workers, union members, and public sector employees often are sympathetic to plaintiffs. Jurors from conservative areas may be less sympathetic.</p>
+<p><strong>Jury Composition:</strong> Districts with educated, urban jurors who are skeptical of large institutions tend to be favorable-outcome. Retired workers, union members, and public sector employees often are sympathetic to plaintiffs. Jurors from conservative areas may be less sympathetic.</p>
 
 <p><strong>Cost of Living:</strong> High-cost-of-living districts support larger damage awards for medical costs and lost wages. Juries understand that lost wages in high-income areas are substantial.</p>
 
@@ -901,23 +901,23 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <p><strong>Judge Appointment Patterns:</strong> Federal judges appointed by Democratic presidents tend to have slightly plaintiff-favorable leanings in employment and civil rights cases. Judges appointed by Republican presidents may be slightly defendant-favorable. However, individual judge variation is large and matters more than appointment party.</p>
 
-<p><strong>Local Practice Bar:</strong> Districts with strong plaintiffs' bars (many plaintiff-focused firms) tend to be plaintiff-friendly because attorneys screen cases carefully and litigate effectively. Districts with defendant-dominated practices (corporate, insurance) may be defendant-friendly.</p>
+<p><strong>Local Practice Bar:</strong> Districts with strong plaintiffs' bars (many plaintiff-focused firms) tend to be favorable-outcome because attorneys screen cases carefully and litigate effectively. Districts with defendant-dominated practices (corporate, insurance) may be defendant-friendly.</p>
 
 <h2>Important Caveats</h2>
 
 <p>These rankings are aggregate patterns across all case types. Specific case types may show different patterns. For example, contract disputes might show different district rankings than employment discrimination.</p>
 
-<p>Judge assignment within a district matters enormously. Even plaintiff-friendly districts include some defendant-friendly judges. Research your specific judge assignment, not just the district ranking.</p>
+<p>Judge assignment within a district matters enormously. Even favorable-outcome districts include some defendant-friendly judges. Research your specific judge assignment, not just the district ranking.</p>
 
 <p>Venue is often determined by statute (defendant's residence or place of events occurred). Strategic venue shopping is limited to cases where multiple venues are available (diversity cases where defendant resides in multiple states or events occurred in multiple locations). Discuss venue options with your attorney early.</p>
 
 <h2>Key Takeaway</h2>
 
-<p>If filing a diversity case and venue selection is available, plaintiff-friendly districts (Northern Illinois, Eastern New York, Central California, Northern California, Eastern Pennsylvania) show plaintiff win rates 40-48% versus national average of 37%, and settlement values 20-40% above national average. However, all districts vary by specific judge, case type, and facts. Research your specific judge assignment and discuss venue strategy with your attorney before filing. The data suggests that forum selection can affect outcomes by 5-10 percentage points on average, making it a meaningful strategic consideration.</p>`,
+<p>If filing a diversity case and venue selection is available, favorable-outcome districts (Northern Illinois, Eastern New York, Central California, Northern California, Eastern Pennsylvania) show win rates 40-48% versus national average of 37%, and settlement values 20-40% above national average. However, all districts vary by specific judge, case type, and facts. Research your specific judge assignment and discuss venue strategy with your attorney before filing. The data suggests that forum selection can affect outcomes by 5-10 percentage points on average, making it a meaningful strategic consideration.</p>`,
     author: 'MyCaseValue Research Team',
     publishedAt: new Date('2026-02-24'),
     updatedAt: new Date('2026-02-24'),
-    tags: ['districts', 'venue', 'plaintiff-friendly', 'litigation-strategy'],
+    tags: ['districts', 'venue', 'favorable-outcome', 'litigation-strategy'],
     category: 'Guide',
     readTime: 9,
   },
@@ -1053,7 +1053,7 @@ Federal court appeals are the last step after administrative exhaustion. By the 
 
 What does the 9.8 percent federal win rate actually measure? It counts cases in which the federal judge ruled in favor of the claimant in a judgment on the merits. This is a high bar: the judge must find that the SSA's decision was not supported by substantial evidence or was based on legal error. Federal courts apply a deferential standard of review, requiring claimants to show that the SSA's decision was arbitrary or unsupported, not merely that the court would have decided differently.
 
-Data from federal SSDI cases shows meaningful variation across circuits and districts. The Third Circuit Court of Appeals has a plaintiff win rate of 12.5 percent, while the Ninth Circuit has 11.6 percent. Other circuits cluster between 8 and 11 percent. Geographic variation suggests that local legal standards, ALJ quality, and the specific populations seeking appeal all affect outcomes.
+Data from federal SSDI cases shows meaningful variation across circuits and districts. The Third Circuit Court of Appeals has a win rate of 12.5 percent, while the Ninth Circuit has 11.6 percent. Other circuits cluster between 8 and 11 percent. Geographic variation suggests that local legal standards, ALJ quality, and the specific populations seeking appeal all affect outcomes.
 
 Representation matters significantly in federal SSDI appeals. Represented claimants win at a rate of 54 percent, compared to 40 percent for pro se claimants (those proceeding without counsel). This dramatic difference is larger than in most other federal case types. This gap reflects SSDI's complexity: administrative law, burden-of-proof standards, and proper framing of legal questions all require specialized knowledge. Pro se litigants frequently fail to present issues in ways that federal courts can review, missing the opportunity for appeal on grounds that an attorney would identify.
 
@@ -1089,7 +1089,7 @@ Cases settling late—month 18 to 30—generally represent higher-value outcomes
 
 Settlement values compared to trial outcomes show important patterns. The median settlement in most case types is lower than median jury verdicts, but this comparison requires context. Verdicts only exist for cases proceeding to trial, which are disproportionately strong cases (weak cases settled earlier). When comparing verdicts to settlements in similar-strength cases, the verdict premium is smaller, often 20 to 40 percent above median settlement.
 
-However, trial risk is substantial. Even in case types with 55 to 60 percent plaintiff win rates, defendants prevail 40 to 45 percent of the time. This uncertainty creates pressure for both sides to settle. A defendant facing a case type with 60 percent plaintiff win rate rationally values settling in the range of 40 to 60 percent of full damages, rather than risking loss. A plaintiff rationally accepts settlement in that range rather than risking total loss.
+However, trial risk is substantial. Even in case types with 55 to 60 percent win rates, defendants prevail 40 to 45 percent of the time. This uncertainty creates pressure for both sides to settle. A defendant facing a case type with 60 percent win rate rationally values settling in the range of 40 to 60 percent of full damages, rather than risking loss. A plaintiff rationally accepts settlement in that range rather than risking total loss.
 
 The mathematics of trial expected value illuminate settlement decisions. Consider a contract dispute where the plaintiff claims $100,000 in damages. The plaintiff estimates a 55 percent win rate based on case type data. The expected value at trial is $55,000 ($100,000 x 55 percent). A settlement offer of $45,000 appears low relative to expected value, but it avoids: litigation costs of $15,000 to $25,000, additional 12-month delay until trial, and the 45 percent risk of zero recovery. After accounting for costs and time value, settlement at $45,000 may be more rational than trial.
 
@@ -1167,7 +1167,7 @@ If you are proceeding pro se, educate yourself thoroughly: understand applicable
     slug: 'medical-malpractice-federal-court-win-rates',
     title: 'Medical Malpractice in Federal Court — What the Data Says About Your Odds',
     description: 'Win rates, settlement patterns, and Daubert challenges in medical malpractice litigation across federal courts.',
-    content: `Medical malpractice cases in federal court present significant challenges for plaintiffs. The plaintiff win rate is approximately 28 percent at trial, among the lowest across federal case types. Understanding why requires examining the evidentiary burden, the role of expert testimony, and how Daubert standards affect case outcomes.
+    content: `Medical malpractice cases in federal court present significant challenges for litigants. The win rate is approximately 28 percent at trial, among the lowest across federal case types. Understanding why requires examining the evidentiary burden, the role of expert testimony, and how Daubert standards affect case outcomes.
 
 The core challenge in medical malpractice is proving deviation from the standard of care. The plaintiff must establish what standard applies, demonstrate that the provider deviated from it, and prove that the deviation caused the injury. Each element requires expert testimony. Defendants present equally credible experts defending the treatment. Judges and juries, lacking medical knowledge, must evaluate competing expert opinions where both sides present specialists willing to testify about contested standards.
 
@@ -1191,11 +1191,11 @@ For plaintiffs considering medical malpractice litigation, the data suggests foc
     slug: 'product-liability-plaintiff-win-rates',
     title: 'Product Liability Win Rates — How Plaintiffs Really Fare Against Manufacturers',
     description: 'Comprehensive analysis of product liability case outcomes including defect types, settlement patterns, and verdicts.',
-    content: `Product liability cases in federal court show a plaintiff win rate of approximately 32 percent, reflecting the stringent requirements for proving product defects. The category encompasses design defect, manufacturing defect, and failure-to-warn claims. Each category shows distinct outcome patterns.
+    content: `Product liability cases in federal court show a win rate of approximately 32 percent, reflecting the stringent requirements for proving product defects. The category encompasses design defect, manufacturing defect, and failure-to-warn claims. Each category shows distinct outcome patterns.
 
-Manufacturing defect claims have the highest plaintiff win rate, approximately 38 percent. These cases allege that the product deviated from its intended design—a manufacturing error produced a dangerous product. Manufacturing defect claims benefit from relatively clear causation: the product failed in an unexpected way, the plaintiff was injured. Defendants struggle when manufacturing defects are obvious.
+Manufacturing defect claims have the highest win rate, approximately 38 percent. These cases allege that the product deviated from its intended design—a manufacturing error produced a dangerous product. Manufacturing defect claims benefit from relatively clear causation: the product failed in an unexpected way, the plaintiff was injured. Defendants struggle when manufacturing defects are obvious.
 
-Design defect claims are more contested. Plaintiffs must prove that the design itself was unreasonably dangerous, that a feasible safer alternative existed, and that the manufacturer knew or should have known of the danger. These cases have a plaintiff win rate of approximately 28 percent. Design defect claims pit plaintiff's experts against defendant's experts about what designs are feasible and what risks are acceptable. The burden of proving feasible alternatives is substantial.
+Design defect claims are more contested. Plaintiffs must prove that the design itself was unreasonably dangerous, that a feasible safer alternative existed, and that the manufacturer knew or should have known of the danger. These cases have a win rate of approximately 28 percent. Design defect claims pit plaintiff's experts against defendant's experts about what designs are feasible and what risks are acceptable. The burden of proving feasible alternatives is substantial.
 
 Failure-to-warn claims represent approximately 25 percent of product liability cases. Plaintiffs must show that the product was unreasonably dangerous because of inadequate warnings or instructions. The plaintiff must prove that the plaintiff would have acted differently had warnings been adequate. Failure-to-warn cases have a win rate of approximately 22 percent, the lowest among product liability categories.
 
@@ -1219,7 +1219,7 @@ For plaintiffs, the data suggests that manufacturing defect claims and failure-t
     slug: 'flsa-wage-theft-federal-overtime-cases',
     title: 'The FLSA Wage Theft Epidemic — Federal Overtime Case Outcomes',
     description: 'Analysis of Fair Labor Standards Act cases including collective actions, liquidated damages, and settlement patterns.',
-    content: `Fair Labor Standards Act (FLSA) wage and hour cases have become one of the most significant categories of federal litigation. Wage theft claims include unpaid overtime, misclassification of employees as exempt, and failure to pay minimum wage. The plaintiff win rate in FLSA cases is approximately 54 percent, one of the highest across federal case types.
+    content: `Fair Labor Standards Act (FLSA) wage and hour cases have become one of the most significant categories of federal litigation. Wage theft claims include unpaid overtime, misclassification of employees as exempt, and failure to pay minimum wage. The win rate in FLSA cases is approximately 54 percent, one of the highest across federal case types.
 
 Why do plaintiffs succeed at such high rates in FLSA cases? The statutory language is clear: non-exempt employees must receive overtime compensation at 150 percent of regular wages for hours exceeding 40 per week. The analysis is straightforward: did the employee work overtime hours? Was the employee non-exempt? Was overtime compensation paid? When facts are undisputed, summary judgment often favors plaintiffs.
 
@@ -1233,7 +1233,7 @@ Misclassification cases (incorrectly classifying employees as exempt salaried ra
 
 The representation advantage in FLSA cases is moderate. Represented plaintiffs win at approximately 56 percent, compared to approximately 35 percent for pro se plaintiffs. This lower gap reflects that wage-and-hour claims are relatively straightforward: time records, pay stubs, and classification status are objective facts. Pro se litigants can often present these facts without specialized legal knowledge.
 
-District variation in FLSA cases is meaningful. Districts with plaintiff-friendly bench cultures and those with significant manufacturing or service sector employment show higher plaintiff win rates. The Department of Labor's wage and hour division activity in a district can influence settlement expectations.
+District variation in FLSA cases is meaningful. Districts with favorable-outcome bench cultures and those with significant manufacturing or service sector employment show higher win rates. The Department of Labor's wage and hour division activity in a district can influence settlement expectations.
 
 For plaintiffs, FLSA cases represent strong recovery opportunities, particularly when multiple employees are involved. The statutory damages structure aligns incentives toward settlements that compensate employees fairly. For employers, early resolution of FLSA matters is frequently more cost-effective than litigation.`,
     author: 'MyCaseValue Research Team',
@@ -1247,7 +1247,7 @@ For plaintiffs, FLSA cases represent strong recovery opportunities, particularly
     slug: 'ada-employment-reasonable-accommodation',
     title: 'ADA Employment Cases — Accommodation Denials and Their Outcomes',
     description: 'Data on Americans with Disabilities Act employment discrimination cases, reasonable accommodation disputes, and settlement values.',
-    content: `ADA employment discrimination cases constitute a significant portion of the federal civil docket. These cases allege that employers discriminated against employees based on disability or failed to provide reasonable accommodations. The plaintiff win rate in ADA cases is approximately 41 percent, above the average for employment discrimination but below certain other employment categories.
+    content: `ADA employment discrimination cases constitute a significant portion of the federal civil docket. These cases allege that employers discriminated against employees based on disability or failed to provide reasonable accommodations. The win rate in ADA cases is approximately 41 percent, above the average for employment discrimination but below certain other employment categories.
 
 Reasonable accommodation disputes form the core of many ADA claims. An employer's obligation under the ADA is to provide reasonable accommodations that enable qualified employees with disabilities to perform essential job functions. The dispute typically centers on whether the requested accommodation is reasonable and what the employer's burden is to provide it.
 
@@ -1277,7 +1277,7 @@ For employees with disabilities facing accommodation denials, the data suggests 
     slug: 'securities-fraud-shareholder-lawsuits-recovery',
     title: 'Securities Fraud — What Shareholder Lawsuits Actually Recover',
     description: 'Analysis of federal securities fraud cases including class certification, settlement distributions, and plaintiff recovery rates.',
-    content: `Securities fraud cases, predominantly prosecuted as class actions, represent a unique litigation category with distinct outcome patterns. The plaintiff win rate in securities cases is approximately 23 percent, reflecting the high burden of proving scienter (intent to defraud) and loss causation. However, settlement patterns in securities cases differ substantially from individual cases.
+    content: `Securities fraud cases, predominantly prosecuted as class actions, represent a unique litigation category with distinct outcome patterns. The win rate in securities cases is approximately 23 percent, reflecting the high burden of proving scienter (intent to defraud) and loss causation. However, settlement patterns in securities cases differ substantially from individual cases.
 
 The majority of securities cases settle before trial. Approximately 87 percent of securities cases are resolved through settlement. The settlement-to-trial ratio in securities litigation is far higher than any other case type. This pattern reflects the structure of securities litigation: defendants face potentially catastrophic liability from class certification, so early negotiation of a global settlement is frequently rational.
 
