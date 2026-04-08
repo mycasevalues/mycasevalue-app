@@ -35,8 +35,33 @@ export default async function JudgesPage() {
     console.error('Failed to pre-fetch judges:', err);
   }
 
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Judges', item: `${SITE_URL}/judges` },
+        ],
+      },
+      {
+        '@type': 'CollectionPage',
+        name: 'Federal Judge Analytics',
+        description: 'Explore detailed analytics for federal judges including case outcomes, ruling patterns, and settlement statistics.',
+        url: `${SITE_URL}/judges`,
+        isPartOf: { '@type': 'WebSite', name: 'MyCaseValue', url: SITE_URL },
+      },
+    ],
+  };
+
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <div style={{ borderBottom: '1px solid #E5E7EB', background: '#1C3A5E' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
