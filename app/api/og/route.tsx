@@ -8,7 +8,7 @@ export const runtime = 'edge';
 type Locale = 'en' | 'es';
 const translations: Record<Locale, Record<string, string>> = {
   en: {
-    'Win Rate': 'Win Rate',
+    'Plaintiff Win Rate': 'Win Rate',
     'Median Settlement': 'Median Settlement',
     'Cases': 'Cases',
     'Federal Court Data': 'Federal Court Data',
@@ -16,7 +16,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'Top Case Types': 'Top Case Types',
     'Case Type': 'Case Type',
     'federal cases analyzed': 'federal cases analyzed',
-    'case outcome rate': 'case outcome rate',
+    'plaintiff win rate': 'case outcome rate',
     'Settlement Range': 'Settlement Range',
     'settle before trial': 'settle before trial',
     'Based on federal court records': 'Based on federal court records',
