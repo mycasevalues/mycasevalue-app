@@ -76,7 +76,7 @@ const EXPLORE_MEGA_MENU: MegaMenuColumn[] = [
 const FOR_ATTORNEYS_DROPDOWN: DropdownItem[] = [
   { label: 'Attorney Overview', href: '/attorney' },
   { label: 'API Access', href: '/attorney/api-access' },
-  { label: 'Case Reports', href: '/report/sample' },
+  { label: 'Case Reports', href: '/report/360' },
   { label: 'Get Started as an Attorney', href: '/attorney' },
 ];
 
@@ -155,9 +155,9 @@ function getActiveNavSection(pathname: string): string | null {
 /**
  * MegaMenu: 3-column layout for Explore
  */
-function MegaMenu({ columns }: { columns: MegaMenuColumn[] }) {
+function MegaMenu({ columns, onMouseEnter, onMouseLeave }: { columns: MegaMenuColumn[]; onMouseEnter?: () => void; onMouseLeave?: () => void }) {
   return (
-    <div className="fixed top-16 left-0 right-0 mt-0 bg-white border-b border-gray-200 shadow-lg z-40">
+    <div className="fixed top-16 left-0 right-0 mt-0 bg-white border-b border-gray-200 shadow-lg z-40" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {/* Search Bar */}
       <div className="border-b border-gray-100 px-6 py-4 max-w-6xl mx-auto">
         <input
@@ -322,7 +322,7 @@ export default function Header() {
   };
 
   const handleMouseLeave = () => {
-    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 100);
+    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 250);
   };
 
   const hasBlur = scrollY > 10;
@@ -386,7 +386,7 @@ export default function Header() {
                     <path d="M1 1L6 6L11 1" />
                   </svg>
                 </button>
-                {openDropdown === 'explore' && <MegaMenu columns={EXPLORE_MEGA_MENU} />}
+                {openDropdown === 'explore' && <MegaMenu columns={EXPLORE_MEGA_MENU} onMouseEnter={() => handleMouseEnter('explore')} onMouseLeave={handleMouseLeave} />}
               </div>
 
               {/* For Attorneys */}

@@ -17,6 +17,7 @@ import React from 'react';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/site-config';
 import { SearchHero } from '@/components/SearchHero';
+import StickyCTA from '@/components/StickyCTA';
 
 export const metadata: Metadata = {
   title: 'The Federal Court Record. Open to Everyone.',
@@ -183,6 +184,9 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      {/* Sticky CTA — appears after scrolling past hero, hides near footer */}
+      <StickyCTA />
 
       {/* ──────────────────────────────────────────────────────────────────
           2.1 HERO: H1 & SUBHEADLINE
