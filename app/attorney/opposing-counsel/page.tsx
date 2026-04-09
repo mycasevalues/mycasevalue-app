@@ -13,6 +13,13 @@ export const metadata: Metadata = {
       'Research opposing counsel track record, settlement patterns, and litigation strategy. Analyze their win rates, time to settlement, and case type preferences using public PACER data.',
     url: `${SITE_URL}/attorney/opposing-counsel`,
     type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Opposing Counsel Research | MyCaseValue',
+    description: 'Research opposing counsel track record, settlement patterns, and litigation strategy.',
   },
 };
 

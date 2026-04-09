@@ -23,6 +23,13 @@ export const metadata: Metadata = {
     type: 'website',
     url: `${SITE_URL}/es/how-it-works`,
     locale: 'es_ES',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cómo Funciona — MyCaseValue',
+    description: 'Cómo MyCaseValue analiza datos de casos federales para revelarte información real sobre resultados legales.',
   },
 };
 

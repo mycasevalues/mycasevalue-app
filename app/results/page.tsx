@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     description: 'View detailed case results and outcomes from the MyCaseValue database.',
     type: 'website',
     url: `${SITE_URL}/results`,
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Case Results',
+    description: 'View detailed case results and outcomes from the MyCaseValue database.',
   },
 };
 

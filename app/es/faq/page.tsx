@@ -23,6 +23,13 @@ export const metadata: Metadata = {
     type: 'website',
     url: `${SITE_URL}/es/faq`,
     locale: 'es_ES',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Preguntas Frecuentes — MyCaseValue',
+    description: 'Obtén respuestas a preguntas frecuentes sobre datos judiciales federales, tasas de victoria, rangos de acuerdos.',
   },
 };
 

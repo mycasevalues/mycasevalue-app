@@ -1,4 +1,25 @@
+import { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site-config';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Federal Court Fees Calculator | MyCaseValue',
+  description: 'Calculate federal court filing fees, PACER fees, pro hac vice fees, and other litigation costs.',
+  alternates: { canonical: `${SITE_URL}/calculator/fees` },
+  openGraph: {
+    title: 'Federal Court Fees Calculator | MyCaseValue',
+    description: 'Calculate federal court filing fees, PACER fees, pro hac vice fees, and other litigation costs.',
+    url: `${SITE_URL}/calculator/fees`,
+    type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Federal Court Fees Calculator | MyCaseValue',
+    description: 'Calculate federal court filing fees and litigation costs.',
+  },
+};
 
 const FILING_FEES = [
   { label: 'Civil Case Filing Fee', amount: '$405', note: 'Required for all new civil actions', rule: '28 U.S.C. § 1914(a)' },

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     description: 'Democratizing federal court data with AI-powered legal analytics. 4M+ cases, 95 federal districts, 54 years of data.',
     type: 'website',
     url: `${SITE_URL}/platform`,
+    siteName: 'MyCaseValue',
     images: [
       {
         url: `${SITE_URL}/og-image.png`,
@@ -18,6 +19,11 @@ export const metadata: Metadata = {
         alt: 'MyCaseValue Legal Intelligence Platform',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Legal Intelligence Platform | MyCaseValue',
+    description: 'Democratizing federal court data with AI-powered legal analytics. 4M+ cases, 95 federal districts, 54 years of data.',
   },
   keywords: [
     'legal technology', 'legal analytics', 'AI legal research', 'court data', 'settlement predictions',

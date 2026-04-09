@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     title: 'MyCaseValue en Español - Datos Federales de Casos',
     description: 'Resultados reales de 5,100,000+ casos judiciales federales. Tasas de victoria, plazos, porcentajes de acuerdo, rangos de recuperación y análisis de impacto de abogados.',
     url: `${SITE_URL}/es`,
+    type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MyCaseValue en Español - Datos Federales de Casos',
+    description: 'Resultados reales de 5,100,000+ casos judiciales federales. Tasas de victoria, plazos, porcentajes de acuerdo, rangos de recuperación.',
   },
 };
 

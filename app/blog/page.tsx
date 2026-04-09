@@ -97,6 +97,13 @@ export const metadata: Metadata = {
     description: 'Federal court insights, case data analysis, and litigation strategy based on 54 years of real case outcomes.',
     type: 'website',
     url: `${SITE_URL}/blog`,
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog — MyCaseValue',
+    description: 'Federal court insights, case data analysis, and litigation strategy based on 54 years of real case outcomes.',
   },
   keywords: 'federal court data, case outcomes, litigation strategy, win rates, settlement data, legal insights',
 };

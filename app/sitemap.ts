@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllPosts } from '../lib/blog';
 import { SITE_URL } from '../lib/site-config';
 import { mockJudgesData } from '../data/mock-judges';
+import { getAllCaseTypeSEO } from '../lib/case-type-seo';
 
 const CATEGORY_IDS = ['work', 'injury', 'consumer', 'rights', 'money', 'housing', 'medical', 'family', 'gov', 'education'];
 
@@ -187,7 +188,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // ── Case detail pages (84+ case types) ────────────────
+  const caseTypes = getAllCaseTypeSEO();
+  const caseDetailUrls: MetadataRoute.Sitemap = caseTypes.map((caseType) => ({
+    url: `${baseUrl}/cases/${caseType.categorySlug}/${caseType.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
+  // ── Judge profile pages (50+ federal judges) ──────────
+  const judgeUrls: MetadataRoute.Sitemap = mockJudgesData.judges.map((judge) => ({
+    url: `${baseUrl}/judges/${judge.id}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
 
   return [
     ...staticPages,
@@ -199,5 +215,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...outcomesUrls,
     ...districtNosUrls,
     ...blogUrls,
+    ...caseDetailUrls,
+    ...judgeUrls,
   ];
 }

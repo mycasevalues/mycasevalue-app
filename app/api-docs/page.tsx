@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     description: 'Programmatic access to federal court outcome data with enterprise-grade APIs.',
     url: `${SITE_URL}/api-docs`,
     type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MyCaseValue API Documentation',
+    description: 'Programmatic access to federal court outcome data with enterprise-grade APIs.',
   },
 };
 

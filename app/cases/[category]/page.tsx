@@ -195,6 +195,7 @@ export async function generateMetadata({
       description,
       type: 'website',
       url: `https://www.mycasevalues.com/cases/${category}`,
+      siteName: 'MyCaseValue',
       images: [
         {
           url: 'https://www.mycasevalues.com/og-image.png',
@@ -203,6 +204,11 @@ export async function generateMetadata({
           alt: `${categoryNames[category]} Case Outcomes`,
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${categoryNames[category]} — Real Federal Court Data`,
+      description,
     },
     alternates: {
       canonical: `https://www.mycasevalues.com/cases/${category}`,

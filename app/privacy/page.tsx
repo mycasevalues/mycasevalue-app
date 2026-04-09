@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     description: 'Learn how MyCaseValue collects, uses, and protects your data.',
     url: `${SITE_URL}/privacy`,
     type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy — MyCaseValue',
+    description: 'Learn how MyCaseValue collects, uses, and protects your data.',
   },
 };
 

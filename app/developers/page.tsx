@@ -17,6 +17,12 @@ export const metadata: Metadata = {
     url: 'https://www.mycasevalues.com/developers',
     type: 'website',
     siteName: 'MyCaseValue',
+    images: [{ url: 'https://www.mycasevalues.com/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'API & Integrations — Developer Portal',
+    description: 'REST API for case data, win rates, settlement analytics, and predictive intelligence.',
   },
   keywords: [
     'API',

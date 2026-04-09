@@ -18,6 +18,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     locale: 'es_ES',
+    title: 'Tendencias — MyCaseValue',
+    description: 'Tendencias en demandas federales año tras año. Análisis de qué tipos de casos están aumentando en los tribunales federales.',
+    url: `${SITE_URL}/es/trends`,
+    type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tendencias — MyCaseValue',
+    description: 'Tendencias en demandas federales año tras año. Análisis de qué tipos de casos están aumentando.',
   },
 };
 

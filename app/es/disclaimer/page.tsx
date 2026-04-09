@@ -18,6 +18,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     locale: 'es_ES',
+    title: 'Descargo de Responsabilidad',
+    description: 'Descargo de responsabilidad legal de MyCaseValue. Esta plataforma es solo para fines informativos y no constituye asesoramiento legal.',
+    url: `${SITE_URL}/es/disclaimer`,
+    type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Descargo de Responsabilidad',
+    description: 'Descargo de responsabilidad legal de MyCaseValue. Esta plataforma es solo para fines informativos.',
   },
 };
 

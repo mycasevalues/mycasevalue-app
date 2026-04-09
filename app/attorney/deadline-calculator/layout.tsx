@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/attorney/deadline-calculator`,
     type: 'website',
     siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Federal Court Deadline Calculator | MyCaseValue',
+    description: 'Calculate critical federal court deadlines for your cases. FRCP deadlines, discovery cutoffs, and statute of limitations dates.',
   },
   robots: { index: false, follow: false },
 };

@@ -14,6 +14,13 @@ export const metadata: Metadata = {
     description: 'Read MyCaseValue Terms of Service, including our service agreement and user responsibilities.',
     url: `${SITE_URL}/terms`,
     type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service — MyCaseValue',
+    description: 'Read MyCaseValue Terms of Service, including our service agreement and user responsibilities.',
   },
 };
 

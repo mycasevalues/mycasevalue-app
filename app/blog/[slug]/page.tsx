@@ -319,6 +319,13 @@ export async function generateMetadata(
       type: 'article',
       url: `${SITE_URL}/blog/${article.slug}`,
       publishedTime: article.date.toISOString(),
+      siteName: 'MyCaseValue',
+      images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description,
     },
     keywords: article.category,
   };
@@ -343,6 +350,32 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     );
   }
 
+  // Build JSON-LD structured data for Article schema
+  const jsonLdData = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    image: `${SITE_URL}/og-image.png`,
+    datePublished: article.date.toISOString(),
+    author: {
+      '@type': 'Organization',
+      name: article.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'MyCaseValue',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/blog/${article.slug}`,
+    },
+  };
+
   // Get related articles (excluding current one)
   const relatedArticles = blogArticles
     .filter((a) => a.slug !== article.slug)
@@ -350,6 +383,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   return (
     <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
+      {/* JSON-LD structured data for Article schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+      />
       <style>{`
         .article-content p {
           margin-bottom: 16px;

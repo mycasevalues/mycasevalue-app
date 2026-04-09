@@ -1,9 +1,25 @@
+import { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site-config';
 import Link from 'next/link';
 import LienCalculator from '../../../components/LienCalculator';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Lien & Subrogation Calculator | MyCaseValue',
   description: 'Estimate Medicare, Medicaid, and workers compensation liens. Calculate net recovery to client from your settlement amount.',
+  alternates: { canonical: `${SITE_URL}/calculator/liens` },
+  openGraph: {
+    title: 'Lien & Subrogation Calculator | MyCaseValue',
+    description: 'Estimate Medicare, Medicaid, and workers compensation liens. Calculate net recovery to client from your settlement amount.',
+    url: `${SITE_URL}/calculator/liens`,
+    type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lien & Subrogation Calculator | MyCaseValue',
+    description: 'Estimate Medicare, Medicaid, and workers compensation liens.',
+  },
 };
 
 export default function LienCalculatorPage() {

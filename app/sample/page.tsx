@@ -11,6 +11,14 @@ export const metadata: Metadata = {
       'Complete sample analytics for federal employment discrimination cases with outcome distributions and recovery analysis.',
     url: 'https://www.mycasevalues.com/sample',
     type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: 'https://www.mycasevalues.com/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sample Case Analysis Report — Employment Discrimination (NOS 442)',
+    description:
+      'Complete sample analytics for federal employment discrimination cases with outcome distributions and recovery analysis.',
   },
   alternates: {
     canonical: 'https://www.mycasevalues.com/sample',

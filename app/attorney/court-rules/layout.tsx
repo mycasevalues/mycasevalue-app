@@ -24,6 +24,12 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/attorney/court-rules`,
     type: 'website',
     siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Federal Court Rules & Local Rules Reference | MyCaseValue',
+    description: 'Complete reference for FRCP and local rules for all 95 federal districts.',
   },
   robots: { index: false, follow: false },
 };

@@ -1,10 +1,25 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Settings | MyCaseValue',
   description: 'Manage your MyCaseValue account settings and preferences.',
   robots: { index: false, follow: false },
+  alternates: { canonical: `${SITE_URL}/settings` },
+  openGraph: {
+    title: 'Settings | MyCaseValue',
+    description: 'Manage your MyCaseValue account settings and preferences.',
+    url: `${SITE_URL}/settings`,
+    type: 'website',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Settings | MyCaseValue',
+    description: 'Manage your MyCaseValue account settings and preferences.',
+  },
 };
 
 export default function SettingsPage() {

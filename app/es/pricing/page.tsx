@@ -23,6 +23,13 @@ export const metadata: Metadata = {
     type: 'website',
     url: `${SITE_URL}/es/pricing`,
     locale: 'es_ES',
+    siteName: 'MyCaseValue',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Precios — MyCaseValue | Planes de Datos de Casos Federales',
+    description: 'Precios transparentes y asequibles para datos de resultados de casos federales.',
   },
 };
 
