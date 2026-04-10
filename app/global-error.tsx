@@ -14,7 +14,7 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <html style={{ background: '#F7F8FA', margin: 0, padding: 0 }}>
+    <html lang="en" style={{ background: '#F7F8FA', margin: 0, padding: 0 }}>
       <head>
         <title>Error — MyCaseValue</title>
         <meta charSet="utf-8" />
@@ -112,9 +112,14 @@ export default function GlobalError({
             </p>
 
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+              <style>{`
+                .ge-btn-primary:hover { background: #004182 !important; }
+                .ge-btn-secondary:hover { background: #EEEEEE !important; }
+              `}</style>
               <button
                 type="button"
                 onClick={reset}
+                className="ge-btn-primary"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -127,22 +132,14 @@ export default function GlobalError({
                   fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
-                  transition: 'all 200ms',
-                  boxShadow: 'none',
-                }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLButtonElement).style.background = '#0966C3';
-                  (e.target as HTMLButtonElement).style.boxShadow = 'none';
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLButtonElement).style.background = '#0966C3';
-                  (e.target as HTMLButtonElement).style.boxShadow = 'none';
+                  transition: 'background 200ms',
                 }}
               >
                 Try again
               </button>
               <a
                 href="/"
+                className="ge-btn-secondary"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -155,16 +152,8 @@ export default function GlobalError({
                   fontSize: '14px',
                   fontWeight: 600,
                   textDecoration: 'none',
-                  transition: 'all 200ms',
+                  transition: 'background 200ms',
                   cursor: 'pointer',
-                }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLAnchorElement).style.background = '#EEEEEE';
-                  (e.target as HTMLAnchorElement).style.borderColor = '#E5E7EB';
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLAnchorElement).style.background = '#F7F8FA';
-                  (e.target as HTMLAnchorElement).style.borderColor = '#E5E7EB';
                 }}
               >
                 Go home
