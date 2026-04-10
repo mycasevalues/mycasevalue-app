@@ -9,7 +9,7 @@ import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Precios — MyCaseValue | Informes desde $5.99',
-  description: 'Informes asequibles de resultados de casos federales. Elige entre Informe Individual ($5.99), Informes Ilimitados ($9.99) o Modo Abogado ($29.99/mes). Todos los planes incluyen citas de fuentes y soporte bilingüe.',
+  description: 'Informes asequibles de resultados de casos federales. Elige entre Informe Individual ($5.99), Informes Ilimitados ($9.99/mes) o Modo Abogado ($29.99/mes). Todos los planes incluyen citas de fuentes y soporte bilingüe.',
   alternates: {
     canonical: `${SITE_URL}/es/pricing`,
     languages: {
@@ -64,8 +64,8 @@ const pricingFaqs = [
     a: 'Sí. Si compras un Informe Individual y luego quieres Informes Ilimitados, podemos aplicar tu pago hacia la actualización. Contacta a support@mycasevalues.com para detalles.',
   },
   {
-    q: '¿Hay prueba gratuita?',
-    a: 'Sí. Puedes generar un informe básico gratuito sin comprar nada. Las características premium requieren un pago único o una suscripción mensual.',
+    q: '¿Hay un nivel gratuito?',
+    a: 'Sí. Puedes generar informes básicos gratuitos sin crear una cuenta ni pagar nada. Las funciones premium requieren un pago único o una suscripción mensual.',
   },
   {
     q: '¿Qué incluye el "Modo Abogado"?',
@@ -190,7 +190,7 @@ export default function SpanishPricingPage() {
                   $9.99
                 </span>
                 <span className="text-sm" style={{ color: '#4B5563' }}>
-                  de una sola vez
+                  /mes
                 </span>
               </div>
             </div>
