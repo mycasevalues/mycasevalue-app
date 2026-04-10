@@ -1,5 +1,3 @@
-'use client';
-
 /* EXTRACTED from MyCaseValue.tsx — SectionLabel gradient text component */
 
 import React from 'react';

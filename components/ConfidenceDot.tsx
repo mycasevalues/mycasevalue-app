@@ -1,5 +1,3 @@
-'use client';
-
 /**
  * ConfidenceDot — 6px colored circle indicating data confidence level.
  * Appears next to win rate percentages across the platform.
