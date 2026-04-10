@@ -77,7 +77,7 @@ const audiences = [
   },
   {
     title: 'Legal Researchers',
-    description: 'Explore 5.1M+ federal cases across 54 years of history. Analyze trends and build evidence-based legal arguments.',
+    description: 'Explore 5.1M+ federal cases across 55+ years of history. Analyze trends and build evidence-based legal arguments.',
   },
   {
     title: 'Other Legal Professionals',

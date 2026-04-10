@@ -8,7 +8,7 @@ interface UpdatedBadgeProps {
   text?: string;
 }
 
-export default function UpdatedBadge({ text = 'Updated Q4 2024' }: UpdatedBadgeProps) {
+export default function UpdatedBadge({ text = 'Updated Q4 2025' }: UpdatedBadgeProps) {
   return (
     <span
       style={{

@@ -9,7 +9,7 @@ import Link from 'next/link';
  * Links to /methodology on click.
  */
 
-const FALLBACK_LABEL = 'Updated Q4 2024';
+const FALLBACK_LABEL = 'Updated Q4 2025';
 
 interface DataFreshnessProps {
   style?: React.CSSProperties;

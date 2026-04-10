@@ -94,7 +94,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/blog` },
   openGraph: {
     title: 'Blog — MyCaseValue',
-    description: 'Federal court insights, case data analysis, and litigation strategy based on 54 years of real case outcomes.',
+    description: 'Federal court insights, case data analysis, and litigation strategy based on 55+ years of real case outcomes.',
     type: 'website',
     url: `${SITE_URL}/blog`,
     siteName: 'MyCaseValue',
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Blog — MyCaseValue',
-    description: 'Federal court insights, case data analysis, and litigation strategy based on 54 years of real case outcomes.',
+    description: 'Federal court insights, case data analysis, and litigation strategy based on 55+ years of real case outcomes.',
   },
   keywords: 'federal court data, case outcomes, litigation strategy, win rates, settlement data, legal insights',
 };

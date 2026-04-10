@@ -3,11 +3,11 @@ import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Legal Intelligence Platform | MyCaseValue',
-  description: 'The Legal Intelligence Platform democratizing federal court data. 4M+ cases analyzed, AI-powered predictions, real-time settlement analytics, and attorney tools for data-driven legal decisions.',
+  description: 'The Legal Intelligence Platform democratizing federal court data. 5.1M+ cases analyzed, AI-powered predictions, real-time settlement analytics, and attorney tools for data-driven legal decisions.',
   alternates: { canonical: `${SITE_URL}/platform` },
   openGraph: {
     title: 'Legal Intelligence Platform | MyCaseValue',
-    description: 'Democratizing federal court data with AI-powered legal analytics. 4M+ cases, 95 federal districts, 54 years of data.',
+    description: 'Democratizing federal court data with AI-powered legal analytics. 5.1M+ cases, 95 federal districts, 55+ years of data.',
     type: 'website',
     url: `${SITE_URL}/platform`,
     siteName: 'MyCaseValue',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Legal Intelligence Platform | MyCaseValue',
-    description: 'Democratizing federal court data with AI-powered legal analytics. 4M+ cases, 95 federal districts, 54 years of data.',
+    description: 'Democratizing federal court data with AI-powered legal analytics. 5.1M+ cases, 95 federal districts, 55+ years of data.',
   },
   keywords: [
     'legal technology', 'legal analytics', 'AI legal research', 'court data', 'settlement predictions',
@@ -540,7 +540,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div className="stats-bar">
               <div className="stat-item">
-                <div className="stat-number">4M+</div>
+                <div className="stat-number">5.1M+</div>
                 <div className="stat-label">Federal Cases Analyzed</div>
               </div>
               <div className="stat-item">
@@ -553,7 +553,7 @@ export default function PlatformPage() {
               </div>
               <div className="stat-item">
                 <div className="stat-number">54</div>
-                <div className="stat-label">Years of Data (1970-2024)</div>
+                <div className="stat-label">Years of Data (1970-2025)</div>
               </div>
             </div>
           </div>
@@ -829,7 +829,7 @@ export default function PlatformPage() {
 
             <div className="features-grid">
               {[
-                { icon: '∴', title: 'Case Outcome Search', desc: 'Natural language search across 4M+ federal cases with instant results' },
+                { icon: '∴', title: 'Case Outcome Search', desc: 'Natural language search across 5.1M+ federal cases with instant results' },
                 { icon: '↔', title: 'Settlement Range Calculator', desc: 'AI-predicted settlement ranges based on case type, jurisdiction, and judge' },
                 { icon: '☆', title: 'Win Rate Analytics', desc: 'Historical win rates by case type, district, and attorney characteristics' },
                 { icon: '█', title: 'Judge Analytics', desc: 'Judge-specific ruling patterns, settlement tendencies, and trial history' },
@@ -968,7 +968,7 @@ export default function PlatformPage() {
                 <div className="phase-badge">Phase 1 - Now</div>
                 <div className="phase-title">Federal Civil Data</div>
                 <ul className="phase-list">
-                  <li>4M+ federal civil cases (1970-present)</li>
+                  <li>5.1M+ federal civil cases (1970-present)</li>
                   <li>84 case types, 95 federal districts</li>
                   <li>AI-powered settlement predictions</li>
                   <li>Judge analytics and win rates</li>
@@ -1085,7 +1085,7 @@ export default function PlatformPage() {
                 color: '#6B7280',
                 maxWidth: 600,
               }}>
-                Comprehensive federal court data spanning 54 years across all 95 federal districts and 84 case types.
+                Comprehensive federal court data spanning 55+ years across all 95 federal districts and 84 case types.
               </p>
             </div>
 
@@ -1174,7 +1174,7 @@ export default function PlatformPage() {
                 color: '#6B7280',
                 maxWidth: 600,
               }}>
-                Powered by Anthropic Claude API and trained on 54 years of federal court data.
+                Powered by Anthropic Claude API and trained on 55+ years of federal court data.
               </p>
             </div>
 

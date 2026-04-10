@@ -182,7 +182,7 @@ The most important insight is simple: win rates are not destiny. Historical aver
   {
     slug: 'employment-discrimination-settlements-2025',
     title: 'Employment Discrimination Cases: Settlement Ranges and Outcomes in 2025',
-    description: 'Based on 54 years of federal data: median settlement amounts, win rates by claim type, and what affects outcomes in employment discrimination lawsuits.',
+    description: 'Based on 55+ years of federal data: median settlement amounts, win rates by claim type, and what affects outcomes in employment discrimination lawsuits.',
     content: `Employment discrimination cases represent one of the largest categories of federal civil litigation. Our analysis of over 2.1 million employment-related cases filed in federal court since 1970 reveals concrete data about settlements, wins, losses, and outcomes.
 
 The median settlement in employment discrimination cases is approximately $50,000, but this figure conceals enormous variation. Cases involving racial discrimination, sexual harassment, and retaliation tend to settle higher than age or disability discrimination claims. Cases involving high-wage earners produce larger settlements, while minimum-wage workers' cases often settle for less. Cases with clear documentary evidence (emails, recordings, written policies) settle higher than cases built on testimony alone.

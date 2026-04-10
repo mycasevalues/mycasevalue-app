@@ -174,7 +174,7 @@ export default function CaseTimelineGenerator() {
             Case Timeline Generator
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
-            Generate expected federal case timelines based on historical data from 4M+ court cases.
+            Generate expected federal case timelines based on historical data from 5.1M+ court cases.
           </p>
         </div>
       </div>
@@ -340,7 +340,7 @@ export default function CaseTimelineGenerator() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div style={{ background: '#FEF3C7', padding: '16px', borderRadius: '12px', border: '1px solid #FCD34D' }}>
                   <p style={{ fontSize: '13px', color: '#92400E', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
-                    Statistical averages based on historical case data from 4M+ federal court cases. Actual deadlines are set by the court's scheduling order and may vary.
+                    Statistical averages based on historical case data from 5.1M+ federal court cases. Actual deadlines are set by the court's scheduling order and may vary.
                   </p>
                 </div>
 

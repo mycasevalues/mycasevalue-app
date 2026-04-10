@@ -507,7 +507,7 @@ export default function DemandLetterPage() {
                 AI-Powered Analysis
               </h3>
               <p style={{ fontSize: '13px', color: '#4B5563', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
-                Our AI references historical settlement data from 4M+ federal cases to strengthen your demand.
+                Our AI references historical settlement data from 5.1M+ federal cases to strengthen your demand.
               </p>
             </div>
 

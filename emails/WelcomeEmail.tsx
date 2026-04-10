@@ -34,7 +34,7 @@ export default function WelcomeEmail({ userName = 'there' }: WelcomeEmailProps) 
             <Text style={paragraph}>
               You now have access to the most comprehensive federal court analytics platform available.
               MyCaseValue covers all 84 federal case types with real settlement data, win rates, and
-              AI-powered tools built from 4M+ court records.
+              AI-powered tools built from 5.1M+ court records.
             </Text>
 
             <Hr style={hr} />

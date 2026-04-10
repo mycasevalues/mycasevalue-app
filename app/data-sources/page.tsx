@@ -6,7 +6,7 @@ export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Data Sources & Methodology | MyCaseValue',
-  description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 4M+ cases across 95 federal districts with quarterly updates.',
+  description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 5.1M+ cases across 95 federal districts with quarterly updates.',
   alternates: { canonical: `${SITE_URL}/data-sources` },
   openGraph: {
     title: 'MyCaseValue Data Sources',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Data Sources & Methodology | MyCaseValue',
-    description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 4M+ cases across 95 federal districts with quarterly updates.',
+    description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 5.1M+ cases across 95 federal districts with quarterly updates.',
   },
 };
 
@@ -43,7 +43,7 @@ export default function DataSourcesPage() {
     {
       name: 'Federal Judicial Center (FJC) Integrated Database',
       cases: '4,100,000+',
-      coverage: '1970-2024',
+      coverage: '1970-2025',
       frequency: 'Quarterly',
       description: 'The authoritative source for federal court statistics. Comprehensive database of all civil and criminal cases filed in U.S. district courts.',
       features: [
@@ -97,7 +97,7 @@ export default function DataSourcesPage() {
   const methodology = [
     {
       title: 'Win Rate Calculation',
-      description: 'Analyzed plaintiff vs. defendant outcomes across 4M+ cases. Win rate is calculated as (favorable outcomes / total resolved cases) by case type, district, and judge.',
+      description: 'Analyzed plaintiff vs. defendant outcomes across 5.1M+ cases. Win rate is calculated as (favorable outcomes / total resolved cases) by case type, district, and judge.',
     },
     {
       title: 'Settlement Ranges',
@@ -164,7 +164,7 @@ export default function DataSourcesPage() {
               lineHeight: 1.8,
               maxWidth: 600,
             }}>
-              Built on verified federal court records. 4M+ cases across 95 districts with quarterly updates from authoritative sources like FJC, PACER, and CourtListener.
+              Built on verified federal court records. 5.1M+ cases across 95 districts with quarterly updates from authoritative sources like FJC, PACER, and CourtListener.
             </p>
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function DataSourcesPage() {
                 { number: '5.1M', label: 'Federal Cases Analyzed' },
                 { number: '95', label: 'Federal Districts' },
                 { number: '12', label: 'Circuit Courts' },
-                { number: '1970-2024', label: 'Historical Coverage' },
+                { number: '1970-2025', label: 'Historical Coverage' },
               ].map((stat, idx) => (
                 <div key={idx} style={{
                   padding: 32,
@@ -522,10 +522,10 @@ export default function DataSourcesPage() {
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                   {[
-                    { source: 'FJC Cases (Q4 2024)', updated: 'March 2024' },
+                    { source: 'FJC Cases (Q4 2025)', updated: 'March 2026' },
                     { source: 'Court Opinions', updated: 'Today' },
-                    { source: 'Judge Analytics', updated: 'March 5, 2024' },
-                    { source: 'Settlement Data', updated: 'March 2024' },
+                    { source: 'Judge Analytics', updated: 'March 2026' },
+                    { source: 'Settlement Data', updated: 'March 2026' },
                   ].map((item, idx) => (
                     <div key={idx} style={{
                       display: 'flex',

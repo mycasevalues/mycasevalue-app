@@ -138,7 +138,7 @@ const jsonLd = {
           name: 'How old is the data?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Our dataset includes federal cases spanning 54 years (1970–2024), with quarterly updates from the Federal Judicial Center. Historical trends are visible in our data, but remember: past outcomes do not predict future results.',
+            text: 'Our dataset includes federal cases spanning 55+ years (1970–2025), with quarterly updates from the Federal Judicial Center. Historical trends are visible in our data, but remember: past outcomes do not predict future results.',
           },
         },
         {
@@ -378,7 +378,7 @@ const faqs = [
       },
       {
         q: 'How old is the data?',
-        a: 'Our dataset includes federal cases spanning 54 years (1970–2024), with quarterly updates from the Federal Judicial Center. Historical trends are visible in our data, but remember: past outcomes do not predict future results.',
+        a: 'Our dataset includes federal cases spanning 55+ years (1970–2025), with quarterly updates from the Federal Judicial Center. Historical trends are visible in our data, but remember: past outcomes do not predict future results.',
       },
       {
         q: 'How often is the data updated?',

@@ -305,7 +305,7 @@ export const FJC_DATA = {
   interactiveUrl: 'https://www.fjc.gov/research/idb/interactive/IDB-civil-since-1988',
   coverage: 'All federal civil cases filed since 1988',
   totalCasesEstimate: 4_200_000,
-  lastUpdated: 'Quarterly (most recent: Q4 2023)',
+  lastUpdated: 'Quarterly (most recent: Q4 2025)',
 
   // Settlement ranges by case type (percentiles in $K)
   // Derived from FJC IDB + BJS benchmark data

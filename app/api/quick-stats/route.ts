@@ -274,7 +274,7 @@ export async function GET(
       dismissal_rate: dismissalRate,
       median_award: medianAward,
       avg_duration_months: avgDurationMonths,
-      data_years: '2000-2024',
+      data_years: '2000-2025',
       source: 'FJC IDB, PACER',
       narrative_en: narrativeEn,
       narrative_es: narrativeEs,

@@ -657,7 +657,7 @@ export default function FeeCalculatorPage() {
                 Case-Type Data
               </h3>
               <p style={{ fontSize: '13px', color: '#4B5563', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
-                Rates and estimates based on 4M+ federal case outcomes and settlement data.
+                Rates and estimates based on 5.1M+ federal case outcomes and settlement data.
               </p>
             </div>
           </div>

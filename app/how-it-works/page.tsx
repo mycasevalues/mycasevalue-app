@@ -46,7 +46,7 @@ const jsonLd = {
         {
           '@type': 'HowToStep',
           position: 2,
-          name: 'We search 54 years of data',
+          name: 'We search 55+ years of data',
           text: 'Our system analyzes 5.1M+ federal court cases from the FJC Integrated Database, PACER, and CourtListener to find cases matching your situation.',
           image: `${SITE_URL}/step-2-icon.svg`,
         },
@@ -442,7 +442,7 @@ export default function HowItWorksPage() {
 
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: 0 }}>
             {[
-              { label: 'FJC IDB', description: '54 years of data' },
+              { label: 'FJC IDB', description: '55+ years of data' },
               { label: 'Data Ingestion', description: 'Parse & normalize' },
               { label: 'Classification', description: 'Tag & categorize' },
               { label: 'Aggregation', description: 'Calculate stats' },

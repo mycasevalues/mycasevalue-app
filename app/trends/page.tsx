@@ -49,7 +49,7 @@ const jsonLd = {
     {
       '@type': 'Dataset',
       name: 'Federal Court Filing Trends',
-      description: 'Aggregate statistics on federal civil litigation trends across 84 case types and 95 districts from 2000-2024.',
+      description: 'Aggregate statistics on federal civil litigation trends across 84 case types and 95 districts from 2000-2025.',
       creator: { '@type': 'Organization', name: 'MyCaseValue' },
       distribution: {
         '@type': 'DataDownload',

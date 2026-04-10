@@ -979,7 +979,7 @@ export default function CalculatorPage() {
               <span style={{ fontWeight: 600 }}>Data source:</span>
               <span>FJC Integrated Database · Federal civil cases 2000–2024</span>
               <span style={{ color: '#9CA3AF' }}>·</span>
-              <span>Updated Q4 2024</span>
+              <span>Updated Q4 2025</span>
               <span style={{ color: '#9CA3AF' }}>·</span>
               <span>NOS {results.nosCode}</span>
             </div>
