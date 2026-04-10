@@ -1,42 +1,8 @@
 'use client';
 
-import type { Metadata } from 'next';
 import { useState, useEffect } from 'react';
 import { createBrowserClient } from '@supabase/ssr';
 import Link from 'next/link';
-import { SITE_URL } from '@/lib/site-config';
-
-export const metadata: Metadata = {
-  title: 'Account Settings',
-  description: 'Manage your MyCaseValue account profile and preferences.',
-  alternates: {
-    canonical: `${SITE_URL}/account`,
-  },
-  robots: {
-    index: false,
-    follow: false,
-  },
-  openGraph: {
-    title: 'Account Settings',
-    description: 'Manage your MyCaseValue account profile and preferences.',
-    url: `${SITE_URL}/account`,
-    siteName: 'MyCaseValue',
-    images: [
-      {
-        url: `${SITE_URL}/og-image.png`,
-        width: 1200,
-        height: 630,
-      },
-    ],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Account Settings',
-    description: 'Manage your MyCaseValue account profile and preferences.',
-    images: [`${SITE_URL}/og-image.png`],
-  },
-};
 
 function getSupabase() {
   return createBrowserClient(
