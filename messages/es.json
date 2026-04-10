@@ -40,7 +40,7 @@
   },
   "home": {
     "heroTitle": "¿Cuánto vale realmente tu caso federal?",
-    "heroSubtitle": "5.1 millones de casos federales expuestos. Tasas de éxito, rangos de acuerdos y patrones judiciales en 94 distritos — los datos que no quieren que veas.",
+    "heroSubtitle": "Tasas de éxito, rangos de acuerdos y patrones judiciales de 5.1 millones de casos federales en 95 distritos — directamente de registros judiciales públicos.",
     "quickLookup": "Búsqueda Rápida de Casos",
     "selectCaseType": "Selecciona un tipo de caso",
     "selectState": "Selecciona un estado",
@@ -157,7 +157,7 @@
     },
     "districts": {
       "allDistricts": "Distritos de Tribunales Federales",
-      "allJudicial": "Los 94 distritos judiciales federales en 13 circuitos"
+      "allJudicial": "Los 95 distritos judiciales federales en 13 circuitos"
     }
   },
   "districts": {
