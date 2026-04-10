@@ -337,6 +337,7 @@ export default function SignUpPage() {
                 <input
                   id="name"
                   type="text"
+                  autoComplete="name"
                   placeholder="John Doe"
                   required
                   value={name}
@@ -376,6 +377,7 @@ export default function SignUpPage() {
                 <input
                   id="email"
                   type="email"
+                  autoComplete="email"
                   placeholder="you@example.com"
                   required
                   value={email}
@@ -461,6 +463,7 @@ export default function SignUpPage() {
                 <input
                   id="password"
                   type="password"
+                  autoComplete="new-password"
                   placeholder="••••••••"
                   required
                   minLength={8}
@@ -511,6 +514,7 @@ export default function SignUpPage() {
                 <input
                   id="confirm-password"
                   type="password"
+                  autoComplete="new-password"
                   placeholder="••••••••"
                   required
                   minLength={8}

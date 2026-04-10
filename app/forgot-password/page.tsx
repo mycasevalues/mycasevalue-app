@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { createBrowserClient } from '@supabase/ssr';
+import { SITE_URL } from '../../lib/site-config';
 
 function getSupabase() {
   return createBrowserClient(
@@ -25,7 +26,7 @@ export default function ForgotPasswordPage() {
     try {
       const supabase = getSupabase();
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: 'https://www.mycasevalues.com/reset-password',
+        redirectTo: `${SITE_URL}/reset-password`,
       });
       if (error) {
         setError(error.message);
@@ -251,6 +252,7 @@ export default function ForgotPasswordPage() {
                 <input
                   id="email"
                   type="email"
+                  autoComplete="email"
                   placeholder="you@example.com"
                   required
                   value={email}

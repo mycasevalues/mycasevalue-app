@@ -335,6 +335,7 @@ function SignInForm() {
             <input
               id="email"
               type="email"
+              autoComplete="email"
               placeholder="you@example.com"
               required
               value={email}
@@ -394,6 +395,7 @@ function SignInForm() {
             <input
               id="password"
               type="password"
+              autoComplete="current-password"
               placeholder="••••••••"
               required
               value={password}

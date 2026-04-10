@@ -158,6 +158,7 @@ export default function APIAccessForm() {
           <input
             id="name"
             type="text"
+            autoComplete="name"
             value={formState.name}
             onChange={(e) => setFormState((prev) => ({ ...prev, name: e.target.value }))}
             placeholder="John Doe"
@@ -195,6 +196,7 @@ export default function APIAccessForm() {
           <input
             id="email"
             type="email"
+            autoComplete="email"
             value={formState.email}
             onChange={(e) => setFormState((prev) => ({ ...prev, email: e.target.value }))}
             placeholder="john@lawfirm.com"
