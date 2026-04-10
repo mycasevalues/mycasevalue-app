@@ -158,6 +158,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
               </h2>
               <button
                 onClick={() => setShowModal(false)}
+                aria-label="Close dialog"
                 style={{
                   background: 'none',
                   border: 'none',

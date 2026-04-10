@@ -1,5 +1,6 @@
 'use client';
 
+import type { Metadata } from 'next';
 import { useState } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
@@ -10,6 +11,34 @@ import { StaggerGrid, StaggerItem } from '../../components/motion';
 import TrendSparkline from '../../components/charts/TrendSparkline';
 import { SITE_URL } from '../../lib/site-config';
 import ConfidenceDot from '../../components/ConfidenceDot';
+
+export const metadata: Metadata = {
+  title: 'Browse Case Outcomes',
+  description: 'Search and filter case outcomes across federal courts. View win rates, settlement ranges, and case timelines.',
+  alternates: {
+    canonical: `${SITE_URL}/cases`,
+  },
+  openGraph: {
+    title: 'Browse Case Outcomes',
+    description: 'Search and filter case outcomes across federal courts. View win rates, settlement ranges, and case timelines.',
+    url: `${SITE_URL}/cases`,
+    siteName: 'MyCaseValue',
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Browse Case Outcomes',
+    description: 'Search and filter case outcomes across federal courts. View win rates, settlement ranges, and case timelines.',
+    images: [`${SITE_URL}/og-image.png`],
+  },
+};
 
 // Pre-compute aggregate stats for each category
 function getCategoryStats(categoryId: string, opts: { nos: string }[]): { totalCases: number; avgWinRate: number; avgSettlement: number; avgDuration: number } {

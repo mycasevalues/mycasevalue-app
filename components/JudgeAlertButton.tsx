@@ -287,6 +287,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
             {!success && (
               <button
                 onClick={handleClose}
+                aria-label="Close dialog"
                 style={{
                   position: 'absolute',
                   top: '12px',

@@ -1,10 +1,43 @@
 'use client';
 
 import { useState } from 'react';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/site-config';
 import CostMonitor from '@/components/admin/CostMonitor';
 import APIUsagePanel from '@/components/admin/APIUsagePanel';
 import WidgetImpressionPanel from '@/components/admin/WidgetImpressionPanel';
+
+export const metadata: Metadata = {
+  title: 'Admin Dashboard',
+  description: 'Administrative dashboard for managing system operations.',
+  alternates: {
+    canonical: `${SITE_URL}/admin`,
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    title: 'Admin Dashboard',
+    description: 'Administrative dashboard for managing system operations.',
+    url: `${SITE_URL}/admin`,
+    siteName: 'MyCaseValue',
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Admin Dashboard',
+    description: 'Administrative dashboard for managing system operations.',
+    images: [`${SITE_URL}/og-image.png`],
+  },
+};
 
 /**
  * Admin Panel

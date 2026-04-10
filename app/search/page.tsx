@@ -1,5 +1,6 @@
 'use client';
 
+import type { Metadata } from 'next';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
@@ -13,7 +14,7 @@ import { useResearchStore } from '../../store/research';
 import TrendSparkline from '../../components/charts/TrendSparkline';
 import SearchTabs from '../../components/SearchTabs';
 import JudgeSearchResults from '../../components/JudgeSearchResults';
-import { SITE_URL } from '@/lib/site-config';
+import { SITE_URL } from '../../lib/site-config';
 
 // Loading skeleton component
 const SkeletonResultCard = () => (
