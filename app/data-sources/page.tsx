@@ -33,7 +33,7 @@ const jsonLd = {
     distribution: {
       '@type': 'DataDownload',
       encodingFormat: 'JSON',
-      contentUrl: 'https://api.mycasevalue.com/api/data',
+      contentUrl: 'https://api.mycasevalues.com/api/data',
     },
   },
 };

@@ -50,7 +50,7 @@ export default function ApiDocsPage() {
       title: 'Get Case Type Analytics',
       description: 'Retrieve win rates, settlement data, and case outcome statistics for a specific case type (identified by Nature of Suit code).',
       example: 'GET /api/nos/110',
-      curl: 'curl -H "Authorization: Bearer YOUR_API_KEY" https://api.mycasevalue.com/api/nos/110',
+      curl: 'curl -H "Authorization: Bearer YOUR_API_KEY" https://api.mycasevalues.com/api/nos/110',
       response: JSON.stringify({
         code: '110',
         name: 'Diversity - Insurance Contract',
@@ -68,7 +68,7 @@ export default function ApiDocsPage() {
       title: 'Get District Court Statistics',
       description: 'Access comprehensive statistics for a specific federal district including case distribution, judge analytics, and outcome trends.',
       example: 'GET /api/districts/s-nd-ca',
-      curl: 'curl -H "Authorization: Bearer YOUR_API_KEY" https://api.mycasevalue.com/api/districts/s-nd-ca',
+      curl: 'curl -H "Authorization: Bearer YOUR_API_KEY" https://api.mycasevalues.com/api/districts/s-nd-ca',
       response: JSON.stringify({
         id: 's-nd-ca',
         name: 'Southern District of California',
@@ -86,7 +86,7 @@ export default function ApiDocsPage() {
       title: 'Get Filing Trend Data',
       description: 'Retrieve filing volume trends over time, seasonal patterns, and case type distribution across the federal system.',
       example: 'GET /api/trends?period=12m&interval=month',
-      curl: 'curl -H "Authorization: Bearer YOUR_API_KEY" "https://api.mycasevalue.com/api/trends?period=12m&interval=month"',
+      curl: 'curl -H "Authorization: Bearer YOUR_API_KEY" "https://api.mycasevalues.com/api/trends?period=12m&interval=month"',
       response: JSON.stringify({
         period: '12m',
         interval: 'month',
@@ -102,7 +102,7 @@ export default function ApiDocsPage() {
       title: 'AI Case Outcome Prediction',
       description: 'Leverage machine learning to predict likely case outcomes based on case characteristics, judge history, and historical patterns.',
       example: 'POST /api/ai/predict',
-      curl: 'curl -X POST -H "Authorization: Bearer YOUR_API_KEY" -H "Content-Type: application/json" -d \'{"nos":"110","district":"s-nd-ca","judge":"J. Smith"}\' https://api.mycasevalue.com/api/ai/predict',
+      curl: 'curl -X POST -H "Authorization: Bearer YOUR_API_KEY" -H "Content-Type: application/json" -d \'{"nos":"110","district":"s-nd-ca","judge":"J. Smith"}\' https://api.mycasevalues.com/api/ai/predict',
       response: JSON.stringify({
         predictedOutcome: 'settlement',
         confidence: 0.87,
@@ -117,7 +117,7 @@ export default function ApiDocsPage() {
       title: 'Natural Language Case Search',
       description: 'Search the database using natural language queries. The API intelligently interprets your search intent and returns relevant cases.',
       example: 'POST /api/ai/search',
-      curl: 'curl -X POST -H "Authorization: Bearer YOUR_API_KEY" -H "Content-Type: application/json" -d \'{"query":"insurance contract dispute in california 2022-2024"}\' https://api.mycasevalue.com/api/ai/search',
+      curl: 'curl -X POST -H "Authorization: Bearer YOUR_API_KEY" -H "Content-Type: application/json" -d \'{"query":"insurance contract dispute in california 2022-2024"}\' https://api.mycasevalues.com/api/ai/search',
       response: JSON.stringify({
         query: 'insurance contract dispute in california 2022-2024',
         results: [
@@ -133,7 +133,7 @@ export default function ApiDocsPage() {
       title: 'Get Judge Analytics',
       description: 'Detailed analytics for individual judges including case history, decision patterns, settlement rates, and outcome trends.',
       example: 'GET /api/judges/ca-judge-12345',
-      curl: 'curl -H "Authorization: Bearer YOUR_API_KEY" https://api.mycasevalue.com/api/judges/ca-judge-12345',
+      curl: 'curl -H "Authorization: Bearer YOUR_API_KEY" https://api.mycasevalues.com/api/judges/ca-judge-12345',
       response: JSON.stringify({
         id: 'ca-judge-12345',
         name: 'Honorable Jane Smith',
@@ -507,7 +507,7 @@ export default function ApiDocsPage() {
                   overflow: 'auto',
                 }}>
 {`curl -H "Authorization: Bearer API_KEY" \\
-  https://api.mycasevalue.com/api/nos/110`}
+  https://api.mycasevalues.com/api/nos/110`}
                 </code>
               </div>
 
@@ -539,7 +539,7 @@ export default function ApiDocsPage() {
                   lineHeight: 1.5,
                   overflow: 'auto',
                 }}>
-{`fetch('https://api.mycasevalue.com/api/nos/110', {
+{`fetch('https://api.mycasevalues.com/api/nos/110', {
   headers: {
     'Authorization': 'Bearer API_KEY'
   }
@@ -577,7 +577,7 @@ export default function ApiDocsPage() {
                 }}>
 {`import requests
 r = requests.get(
-  'https://api.mycasevalue.com/api/nos/110',
+  'https://api.mycasevalues.com/api/nos/110',
   headers={'Authorization': 'Bearer API_KEY'}
 )`}
                 </code>

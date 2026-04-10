@@ -82,7 +82,7 @@ export default function AUPPage() {
               Purpose
             </h2>
             <p style={{ lineHeight: 1.7, fontSize: '1.0625rem', marginBottom: '1rem' }}>
-              This Acceptable Use Policy governs the use of mycasevalue.com (the "Platform") and all services provided by MyCaseValue LLC (the "Company"). By accessing or using the Platform, you agree to comply with this policy.
+              This Acceptable Use Policy governs the use of mycasevalues.com (the "Platform") and all services provided by MyCaseValue LLC (the "Company"). By accessing or using the Platform, you agree to comply with this policy.
             </p>
           </section>
 

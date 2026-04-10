@@ -8,7 +8,7 @@ export async function GET(
 
   // Generate embed code HTML snippet
   const embedCode = `<iframe
-  src="https://mycasevalue.com/widget/${nosCode}/${district}"
+  src="https://mycasevalues.com/widget/${nosCode}/${district}"
   width="280"
   height="160"
   frameborder="0"

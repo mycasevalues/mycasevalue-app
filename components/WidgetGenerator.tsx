@@ -48,7 +48,7 @@ export default function WidgetGenerator() {
   const dimensions = displayStyle === 'compact' ? { width: 280, height: 160 } : { width: 340, height: 220 };
   const embedCode = selectedNos
     ? `<iframe
-  src="https://mycasevalue.com/widget/${selectedNos}/${selectedDistrict}"
+  src="https://mycasevalues.com/widget/${selectedNos}/${selectedDistrict}"
   width="${dimensions.width}"
   height="${dimensions.height}"
   frameborder="0"

@@ -272,7 +272,7 @@ export default function IndividualsPage() {
               overflowX: 'auto',
               wordBreak: 'break-all',
             }}>
-              {'https://mycasevalue.com/widget/3001/all'}
+              {'https://mycasevalues.com/widget/3001/all'}
             </code>
             <p style={{
               fontSize: '12px',

@@ -109,7 +109,7 @@ export async function runWidgetSystemTests() {
       district: string = 'all',
       variant: 'compact' | 'full' = 'compact'
     ): string => {
-      const baseUrl = 'https://mycasevalue.com';
+      const baseUrl = 'https://mycasevalues.com';
       const variantPath = variant === 'full' ? '/full' : '';
       const url = `${baseUrl}/widget/${nosCode}/${district}${variantPath}`;
 
