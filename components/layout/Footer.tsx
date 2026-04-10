@@ -78,7 +78,6 @@ export default function Footer() {
         <div
           className="hidden lg:grid"
           style={{
-            display: 'grid',
             gridTemplateColumns: '2fr 1fr 1fr 1.2fr 1.2fr',
             gap: '48px',
             marginBottom: '48px',
