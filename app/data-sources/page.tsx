@@ -29,7 +29,7 @@ const jsonLd = {
   mainEntity: {
     '@type': 'Dataset',
     name: 'Federal Court Case Analytics',
-    description: '4M+ cases from 1970-2024 across 95 federal districts',
+    description: '5.1M+ cases from 1970-2025 across 95 federal districts',
     distribution: {
       '@type': 'DataDownload',
       encodingFormat: 'JSON',
