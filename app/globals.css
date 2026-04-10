@@ -1071,7 +1071,7 @@ button:disabled,
 .tool-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  border-color: rgba(232,23,31,0.3) !important;
+  border-color: rgba(9, 102, 195, 0.3) !important;
 }
 
 .tool-card {
@@ -1156,8 +1156,8 @@ button:disabled,
 }
 
 /* Button press effect */
-a[style*="background: rgb(232, 23, 31)"]:active,
-a[style*="background: #0966C3"]:active {
+a[style*="background: #0966C3"]:active,
+a[style*="background: rgb(9, 102, 195)"]:active {
   transform: scale(0.98);
 }
 

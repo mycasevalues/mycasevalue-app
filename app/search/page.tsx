@@ -291,7 +291,7 @@ export default function SearchPage() {
 
         input:focus {
           border-color: #0966C3 !important;
-          box-shadow: 0 0 0 3px rgba(232, 23, 31, 0.08) !important;
+          box-shadow: 0 0 0 3px rgba(9, 102, 195, 0.18) !important;
         }
 
         @media (max-width: 768px) {
@@ -586,7 +586,27 @@ export default function SearchPage() {
         )}
       </div>
 
-      <div style={{ display: 'flex', gap: '12px', marginBottom: 24, flexWrap: 'wrap' }}>
+      <form
+        role="search"
+        aria-label="Search federal case types"
+        onSubmit={(e) => {
+          e.preventDefault();
+          // Update the URL so the search is sharable / bookmarkable.
+          // The results list itself updates live as the user types,
+          // so we don't need to do anything else here.
+          if (typeof window !== 'undefined') {
+            const params = new URLSearchParams(window.location.search);
+            if (query.trim()) {
+              params.set('q', query.trim());
+            } else {
+              params.delete('q');
+            }
+            const newUrl = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ''}`;
+            window.history.replaceState(null, '', newUrl);
+          }
+        }}
+        style={{ display: 'flex', gap: '12px', marginBottom: 24, flexWrap: 'wrap' }}
+      >
         <div style={{ position: 'relative', flex: '1 1 auto', minWidth: '200px' }}>
           <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <SearchIcon size={20} color="#4B5563" />
@@ -602,7 +622,7 @@ export default function SearchPage() {
               width: '100%',
               height: '48px',
               paddingLeft: '44px',
-              paddingRight: '16px',
+              paddingRight: query ? '44px' : '16px',
               fontSize: '16px',
               border: '1px solid #E5E7EB',
               borderRadius: '12px',
@@ -615,17 +635,45 @@ export default function SearchPage() {
               transition: 'border-color 150ms, box-shadow 150ms',
             }}
           />
+          {query && (
+            <button
+              type="button"
+              onClick={() => setQuery('')}
+              aria-label="Clear search"
+              style={{
+                position: 'absolute',
+                right: '12px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                width: '24px',
+                height: '24px',
+                border: 'none',
+                background: 'transparent',
+                color: '#6B7280',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: '12px',
+                fontSize: '18px',
+                lineHeight: 1,
+                padding: 0,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#F3F4F6';
+                e.currentTarget.style.color = '#111827';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = '#6B7280';
+              }}
+            >
+              ×
+            </button>
+          )}
         </div>
         <button
-          onClick={() => {
-            // Trigger search - query state already updates results
-            if (query.length > 1) {
-              const firstResult = results[0];
-              if (firstResult) {
-                window.location.href = `/report/${firstResult.nos}`;
-              }
-            }
-          }}
+          type="submit"
           style={{
             height: '48px',
             paddingLeft: '24px',
@@ -655,7 +703,7 @@ export default function SearchPage() {
         >
           Search
         </button>
-      </div>
+      </form>
 
       {/* Search Tips Section */}
       <div style={{ marginBottom: '24px', background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '12px', overflow: 'hidden' }}>
