@@ -31,7 +31,11 @@ export function validateEnvironmentVariables(): EnvCheckResult[] {
       { variable: 'ANTHROPIC_API_KEY', required: true, usedIn: ['lib/judge-ai-analysis.ts', 'lib/courtlistener-opinions.ts', 'app/api/search/* routes', 'attorney tool routes'] },
     ],
     email: [
-      { variable: 'RESEND_API_KEY', required: true, usedIn: ['lib/email.ts', 'app/api/email/* routes', 'scripts/verify-data.ts'] },
+      // Optional: lib/email.ts gracefully no-ops when this key is missing,
+      // so the site builds and runs fine without it. Configure in Vercel
+      // if you want welcome / report / password-reset emails to actually
+      // be delivered.
+      { variable: 'RESEND_API_KEY', required: false, usedIn: ['lib/email.ts', 'app/api/email/* routes', 'scripts/verify-data.ts'] },
       { variable: 'RESEND_FROM_EMAIL', required: false, usedIn: ['lib/email.ts'] },
     ],
     external_apis: [
