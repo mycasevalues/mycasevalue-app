@@ -5,6 +5,7 @@ import { formatSettlementAmount, fmtK } from '../../../lib/format';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRightIcon } from '../../../components/ui/Icons';
+import { SITE_URL } from '../../../lib/site-config';
 
 export const revalidate = 0;
 
@@ -194,11 +195,11 @@ export async function generateMetadata({
       title: `${categoryNames[category]} — Real Federal Court Data`,
       description,
       type: 'website',
-      url: `https://www.mycasevalues.com/cases/${category}`,
+      url: `${SITE_URL}/cases/${category}`,
       siteName: 'MyCaseValue',
       images: [
         {
-          url: 'https://www.mycasevalues.com/og-image.png',
+          url: `${SITE_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: `${categoryNames[category]} Case Outcomes`,
@@ -211,7 +212,7 @@ export async function generateMetadata({
       description,
     },
     alternates: {
-      canonical: `https://www.mycasevalues.com/cases/${category}`,
+      canonical: `${SITE_URL}/cases/${category}`,
     },
   };
 }

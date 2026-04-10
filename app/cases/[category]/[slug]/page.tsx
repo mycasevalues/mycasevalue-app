@@ -7,6 +7,7 @@ import {
   getCaseTypeSEO,
   CaseTypeSEO,
 } from '../../../../lib/case-type-seo';
+import { SITE_URL } from '../../../../lib/site-config';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -41,7 +42,7 @@ export async function generateMetadata({
 
   const title = `${caseType.label} — Federal Court Outcomes & Win Rates`;
   const description = caseType.description.substring(0, 160) + '...';
-  const canonical = `https://mycasevalues.com/cases/${category}/${slug}`;
+  const canonical = `${SITE_URL}/cases/${category}/${slug}`;
 
   return {
     title,
@@ -64,7 +65,7 @@ export async function generateMetadata({
       siteName: 'MyCaseValue',
       images: [
         {
-          url: 'https://www.mycasevalues.com/og-image.png',
+          url: `${SITE_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: `${caseType.label} Federal Court Outcomes`,
