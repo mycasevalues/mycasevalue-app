@@ -215,15 +215,18 @@ export default function HomePage() {
             href="/cases"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-brand-blue text-white font-semibold transition-colors hover:bg-brand-blue/90"
           >
-            Explore All Cases →
+            Start searching free →
           </Link>
           <Link
             href="#how-it-works"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full border-2 border-gray-300 text-gray-900 font-semibold transition-colors hover:border-gray-400"
           >
-            See How It Works
+            See how it works
           </Link>
         </div>
+        <p className="text-sm text-gray-500 mt-4">
+          Free to search. Unlimited reports $9.99/mo. No account required.
+        </p>
       </section>
 
       {/* ──────────────────────────────────────────────────────────────────
@@ -402,7 +405,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Start searching free — no account required.
+            Free to search. Unlimited reports for $9.99/mo. No account required to get started.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -410,13 +413,13 @@ export default function HomePage() {
               href="/cases"
               className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-brand-blue font-semibold transition-colors hover:bg-gray-100"
             >
-              Start Searching — It's Free
+              Start searching free →
             </Link>
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center px-8 py-3 rounded-full border-2 border-white text-white font-semibold transition-colors hover:bg-white/10"
             >
-              Learn About Pricing
+              View pricing
             </Link>
           </div>
         </div>

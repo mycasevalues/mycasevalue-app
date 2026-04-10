@@ -75,7 +75,7 @@ export default function StickyCTA() {
           whiteSpace: 'nowrap',
         }}
       >
-        Start Searching Free &rarr;
+        Start searching free &rarr;
       </Link>
 
       <Link
@@ -91,7 +91,7 @@ export default function StickyCTA() {
           whiteSpace: 'nowrap',
         }}
       >
-        View Pricing
+        View pricing
       </Link>
     </div>
   );
