@@ -161,12 +161,12 @@ export default function SpanishPricingPage() {
               ))}
             </ul>
 
-            <button
-              disabled={true}
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '12px', background: '#F7F8FA', color: '#4B5563', opacity: 0.5, cursor: 'not-allowed' }}>
-              Próximamente
-            </button>
+            <Link
+              href="/search"
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all hover:opacity-90"
+              style={{ borderRadius: '12px', background: '#F7F8FA', color: '#0f0f0f', border: '1px solid #E5E7EB' }}>
+              Comprar un informe
+            </Link>
           </div>
 
           {/* Unlimited Reports Card */}
@@ -214,12 +214,12 @@ export default function SpanishPricingPage() {
               ))}
             </ul>
 
-            <button
-              disabled={true}
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '12px', background: '#0966C3', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
-              Próximamente
-            </button>
+            <Link
+              href="/sign-up"
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all hover:opacity-90"
+              style={{ borderRadius: '12px', background: '#0966C3', color: '#FFFFFF' }}>
+              Obtener ilimitado
+            </Link>
           </div>
 
           {/* Attorney Mode Card */}
@@ -265,12 +265,12 @@ export default function SpanishPricingPage() {
               ))}
             </ul>
 
-            <button
-              disabled={true}
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '12px', background: '#004182', color: 'white', opacity: 0.5, cursor: 'not-allowed' }}>
-              Próximamente
-            </button>
+            <Link
+              href="/attorney"
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all hover:opacity-90"
+              style={{ borderRadius: '12px', background: '#004182', color: '#FFFFFF' }}>
+              Probar Modo Abogado
+            </Link>
           </div>
 
         </div>
