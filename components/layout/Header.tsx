@@ -55,29 +55,26 @@ const EXPLORE_MEGA_MENU: MegaMenuColumn[] = [
   {
     heading: 'JUDGES',
     items: [
-      { label: 'Browse All Judges', href: '/judges' },
+      { label: 'Browse All Judges', href: '/judges', highlight: true },
       { label: 'Judge Intelligence', href: '/attorney/judge-intelligence' },
       { label: 'Methodology', href: '/methodology' },
-      { label: 'View all judges', href: '/judges', highlight: true },
     ],
   },
   {
     heading: 'DISTRICTS',
     items: [
-      { label: 'Browse All Districts', href: '/districts' },
+      { label: 'Browse All Districts', href: '/districts', highlight: true },
       { label: 'Court Rules', href: '/attorney/court-rules' },
       { label: 'Venue Optimizer', href: '/attorney/venue-optimizer' },
-      { label: 'View all districts', href: '/districts', highlight: true },
     ],
   },
 ];
 
 // For Attorneys Dropdown
 const FOR_ATTORNEYS_DROPDOWN: DropdownItem[] = [
-  { label: 'Attorney Overview', href: '/attorney' },
+  { label: 'Attorney Overview', href: '/attorney', highlight: true },
   { label: 'API Access', href: '/attorney/api-access' },
   { label: 'Case Reports', href: '/report/360' },
-  { label: 'Get Started as an Attorney', href: '/attorney' },
 ];
 
 // Resources Dropdown
@@ -156,17 +153,31 @@ function getActiveNavSection(pathname: string): string | null {
  * MegaMenu: 3-column layout for Explore
  */
 function MegaMenu({ columns, onMouseEnter, onMouseLeave }: { columns: MegaMenuColumn[]; onMouseEnter?: () => void; onMouseLeave?: () => void }) {
+  const router = useRouter();
+  const [megaQuery, setMegaQuery] = useState('');
+
   return (
     <div className="fixed top-16 left-0 right-0 mt-0 bg-white border-b border-gray-200 shadow-lg z-40" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {/* Search Bar */}
-      <div className="border-b border-gray-100 px-6 py-4 max-w-6xl mx-auto">
+      <form
+        role="search"
+        aria-label="Search federal court records"
+        className="border-b border-gray-100 px-6 py-4 max-w-6xl mx-auto"
+        onSubmit={(e) => {
+          e.preventDefault();
+          const q = megaQuery.trim();
+          router.push(q ? `/search?q=${encodeURIComponent(q)}` : '/cases');
+        }}
+      >
         <input
           type="text"
+          value={megaQuery}
+          onChange={(e) => setMegaQuery(e.target.value)}
           placeholder="Search cases, judges, districts..."
           className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/10 focus:border-brand-blue transition-colors"
           aria-label="Search cases, judges, districts"
         />
-      </div>
+      </form>
 
       {/* Columns Grid */}
       <div className="grid grid-cols-3 gap-0 px-6 py-6 max-w-6xl mx-auto">
@@ -242,6 +253,7 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [mobileQuery, setMobileQuery] = useState('');
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [authOpen, setAuthOpen] = useState(false);
   const pathname = usePathname();
@@ -583,12 +595,25 @@ export default function Header() {
       >
         <div className="p-6 space-y-6">
           {/* Search Bar */}
-          <input
-            type="text"
-            placeholder="Search cases, judges, districts..."
-            className="w-full px-4 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/10 focus:border-brand-blue transition-colors"
-            aria-label="Search cases, judges, districts"
-          />
+          <form
+            role="search"
+            aria-label="Search federal court records"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const q = mobileQuery.trim();
+              setMobileOpen(false);
+              router.push(q ? `/search?q=${encodeURIComponent(q)}` : '/cases');
+            }}
+          >
+            <input
+              type="text"
+              value={mobileQuery}
+              onChange={(e) => setMobileQuery(e.target.value)}
+              placeholder="Search cases, judges, districts..."
+              className="w-full px-4 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/10 focus:border-brand-blue transition-colors"
+              aria-label="Search cases, judges, districts"
+            />
+          </form>
 
           {/* Explore Section */}
           <div className="space-y-2">
