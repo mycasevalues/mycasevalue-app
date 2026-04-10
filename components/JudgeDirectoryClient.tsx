@@ -751,29 +751,52 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             Previous
           </button>
 
-          {Array.from({ length: totalPages }).map((_, idx) => {
-            const pageNum = idx + 1;
-            const isCurrentPage = pageNum === state.currentPage;
-            return (
-              <button
-                key={pageNum}
-                onClick={() => setState(prev => ({ ...prev, currentPage: pageNum }))}
-                style={{
-                  padding: '10px 14px',
-                  borderRadius: 2,
-                  border: '1px solid #E5E7EB',
-                  background: isCurrentPage ? '#0966C3' : '#FFFFFF',
-                  color: isCurrentPage ? '#FFFFFF' : '#0f0f0f',
-                  cursor: 'pointer',
-                  fontSize: 14,
-                  fontWeight: 600,
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                {pageNum}
-              </button>
-            );
-          })}
+          {(() => {
+            // Build truncated page list: 1 ... current-1 current current+1 ... last
+            const pages: (number | 'ellipsis')[] = [];
+            const current = state.currentPage;
+            const delta = 2; // pages around current
+            const rangeStart = Math.max(2, current - delta);
+            const rangeEnd = Math.min(totalPages - 1, current + delta);
+
+            pages.push(1);
+            if (rangeStart > 2) pages.push('ellipsis');
+            for (let i = rangeStart; i <= rangeEnd; i++) pages.push(i);
+            if (rangeEnd < totalPages - 1) pages.push('ellipsis');
+            if (totalPages > 1) pages.push(totalPages);
+
+            return pages.map((item, idx) => {
+              if (item === 'ellipsis') {
+                return (
+                  <span key={`ellipsis-${idx}`} style={{ padding: '10px 4px', color: '#9CA3AF', fontSize: 14, fontWeight: 600, userSelect: 'none' }}>
+                    …
+                  </span>
+                );
+              }
+              const isCurrentPage = item === current;
+              return (
+                <button
+                  key={item}
+                  onClick={() => setState(prev => ({ ...prev, currentPage: item }))}
+                  aria-label={`Page ${item}`}
+                  aria-current={isCurrentPage ? 'page' : undefined}
+                  style={{
+                    padding: '10px 14px',
+                    borderRadius: 2,
+                    border: '1px solid #E5E7EB',
+                    background: isCurrentPage ? '#0966C3' : '#FFFFFF',
+                    color: isCurrentPage ? '#FFFFFF' : '#0f0f0f',
+                    cursor: 'pointer',
+                    fontSize: 14,
+                    fontWeight: 600,
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  {item}
+                </button>
+              );
+            });
+          })()}
 
           <button
             onClick={() => setState(prev => ({ ...prev, currentPage: Math.min(totalPages, prev.currentPage + 1) }))}
