@@ -184,7 +184,7 @@ function MegaMenu({ columns, onMouseEnter, onMouseLeave }: { columns: MegaMenuCo
         {columns.map((col, colIndex) => (
           <div key={col.heading} className={colIndex > 0 ? 'border-l border-gray-100 pl-6' : ''}>
             {/* Column Heading */}
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4 pb-2 border-b border-gray-100">
+            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4 pb-2 border-b border-gray-100">
               {col.heading}
             </p>
 
@@ -639,7 +639,7 @@ export default function Header() {
               <div className="space-y-1 bg-gray-50 rounded-lg p-4">
                 {EXPLORE_MEGA_MENU.map((col) => (
                   <div key={col.heading} className="space-y-2 mb-4 last:mb-0">
-                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{col.heading}</p>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">{col.heading}</p>
                     <div className="space-y-1">
                       {col.items.map((item) => (
                         <Link

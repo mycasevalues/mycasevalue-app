@@ -52,6 +52,29 @@ export default function Footer() {
         borderTop: '1px solid #E0DDD8',
       }}
     >
+      <style>{`
+        .footer-link {
+          font-size: 14px;
+          color: #4B5563;
+          text-decoration: none;
+          transition: color 200ms;
+        }
+
+        .footer-link:hover {
+          color: #0966C3;
+        }
+
+        .footer-link-sm {
+          font-size: 12px;
+          color: #4B5563;
+          text-decoration: none;
+          transition: color 200ms;
+        }
+
+        .footer-link-sm:hover {
+          color: #0966C3;
+        }
+      `}</style>
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '64px 24px' }}>
         {/* Desktop grid: 5 columns */}
         <div
@@ -138,15 +161,7 @@ export default function Footer() {
                 <li key={link.href} style={{ marginBottom: '12px' }}>
                   <Link
                     href={link.href}
-                    style={{
-                      fontSize: '14px',
-                      color: '#4B5563',
-                      textDecoration: 'none',
-                      transition: 'color 200ms',
-                    }}
-                    className="hover:text-brand-blue"
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                    className="footer-link"
                   >
                     {link.label}
                   </Link>
@@ -172,15 +187,7 @@ export default function Footer() {
                 <li key={link.href} style={{ marginBottom: '12px' }}>
                   <Link
                     href={link.href}
-                    style={{
-                      fontSize: '14px',
-                      color: '#4B5563',
-                      textDecoration: 'none',
-                      transition: 'color 200ms',
-                    }}
-                    className="hover:text-brand-blue"
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                    className="footer-link"
                   >
                     {link.label}
                   </Link>
@@ -206,15 +213,7 @@ export default function Footer() {
                 <li key={link.href} style={{ marginBottom: '12px' }}>
                   <Link
                     href={link.href}
-                    style={{
-                      fontSize: '14px',
-                      color: '#4B5563',
-                      textDecoration: 'none',
-                      transition: 'color 200ms',
-                    }}
-                    className="hover:text-brand-blue"
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                    className="footer-link"
                   >
                     {link.label}
                   </Link>
@@ -243,30 +242,14 @@ export default function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        fontSize: '14px',
-                        color: '#4B5563',
-                        textDecoration: 'none',
-                        transition: 'color 200ms',
-                      }}
-                      className="hover:text-brand-blue"
-                      onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                      className="footer-link"
                     >
                       {link.label}
                     </a>
                   ) : (
                     <Link
                       href={link.href}
-                      style={{
-                        fontSize: '14px',
-                        color: '#4B5563',
-                        textDecoration: 'none',
-                        transition: 'color 200ms',
-                      }}
-                      className="hover:text-brand-blue"
-                      onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                      className="footer-link"
                     >
                       {link.label}
                     </Link>
@@ -356,15 +339,7 @@ export default function Footer() {
                   <li key={link.href} style={{ marginBottom: '12px' }}>
                     <Link
                       href={link.href}
-                      style={{
-                        fontSize: '14px',
-                        color: '#4B5563',
-                        textDecoration: 'none',
-                        transition: 'color 200ms',
-                      }}
-                      className="hover:text-brand-blue"
-                      onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                      className="footer-link"
                     >
                       {link.label}
                     </Link>
@@ -390,15 +365,7 @@ export default function Footer() {
                   <li key={link.href} style={{ marginBottom: '12px' }}>
                     <Link
                       href={link.href}
-                      style={{
-                        fontSize: '14px',
-                        color: '#4B5563',
-                        textDecoration: 'none',
-                        transition: 'color 200ms',
-                      }}
-                      className="hover:text-brand-blue"
-                      onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                      className="footer-link"
                     >
                       {link.label}
                     </Link>
@@ -424,15 +391,7 @@ export default function Footer() {
                   <li key={link.href} style={{ marginBottom: '12px' }}>
                     <Link
                       href={link.href}
-                      style={{
-                        fontSize: '14px',
-                        color: '#4B5563',
-                        textDecoration: 'none',
-                        transition: 'color 200ms',
-                      }}
-                      className="hover:text-brand-blue"
-                      onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                      className="footer-link"
                     >
                       {link.label}
                     </Link>
@@ -461,30 +420,14 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{
-                          fontSize: '14px',
-                          color: '#4B5563',
-                          textDecoration: 'none',
-                          transition: 'color 200ms',
-                        }}
-                        className="hover:text-brand-blue"
-                        onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                        className="footer-link"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        style={{
-                          fontSize: '14px',
-                          color: '#4B5563',
-                          textDecoration: 'none',
-                          transition: 'color 200ms',
-                        }}
-                        className="hover:text-brand-blue"
-                        onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                        className="footer-link"
                       >
                         {link.label}
                       </Link>
@@ -520,45 +463,21 @@ export default function Footer() {
             <div style={{ display: 'flex', gap: '24px', flexShrink: 0 }}>
               <Link
                 href="/privacy"
-                style={{
-                  fontSize: '12px',
-                  color: '#4B5563',
-                  textDecoration: 'none',
-                  transition: 'color 200ms',
-                }}
-                className="hover:text-brand-blue"
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                className="footer-link-sm"
               >
                 Privacy Policy
               </Link>
               <span style={{ color: '#E0DDD8' }}>→</span>
               <Link
                 href="/terms"
-                style={{
-                  fontSize: '12px',
-                  color: '#4B5563',
-                  textDecoration: 'none',
-                  transition: 'color 200ms',
-                }}
-                className="hover:text-brand-blue"
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                className="footer-link-sm"
               >
                 Terms of Service
               </Link>
               <span style={{ color: '#E0DDD8' }}>→</span>
               <Link
                 href="/contact"
-                style={{
-                  fontSize: '12px',
-                  color: '#4B5563',
-                  textDecoration: 'none',
-                  transition: 'color 200ms',
-                }}
-                className="hover:text-brand-blue"
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                className="footer-link-sm"
               >
                 Responsible Disclosure
               </Link>
@@ -577,43 +496,19 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <Link
                 href="/privacy"
-                style={{
-                  fontSize: '12px',
-                  color: '#4B5563',
-                  textDecoration: 'none',
-                  transition: 'color 200ms',
-                }}
-                className="hover:text-brand-blue"
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                className="footer-link-sm"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                style={{
-                  fontSize: '12px',
-                  color: '#4B5563',
-                  textDecoration: 'none',
-                  transition: 'color 200ms',
-                }}
-                className="hover:text-brand-blue"
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                className="footer-link-sm"
               >
                 Terms of Service
               </Link>
               <Link
                 href="/contact"
-                style={{
-                  fontSize: '12px',
-                  color: '#4B5563',
-                  textDecoration: 'none',
-                  transition: 'color 200ms',
-                }}
-                className="hover:text-brand-blue"
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#0966C3')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#4B5563')}
+                className="footer-link-sm"
               >
                 Responsible Disclosure
               </Link>

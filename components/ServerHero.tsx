@@ -600,8 +600,8 @@ export default function ServerHero() {
               { label: 'CourtListener', sub: 'Free Law Project' },
               { label: 'Bureau of Justice Stats', sub: 'DOJ data' },
               { label: '5.1M+ Cases', sub: 'Analyzed' },
-              { label: '94 Districts', sub: 'Full coverage' },
-              { label: '54 Years', sub: 'Historical data (1970–2025)' },
+              { label: '95 Districts', sub: 'Full coverage' },
+              { label: '55+ Years', sub: 'Historical data (1970–2025)' },
               { label: 'Daily Updates', sub: 'Fresh data' },
             ].map((award, i) => (
               <div key={i} style={{

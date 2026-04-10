@@ -30,16 +30,16 @@ interface ApiStatsResponse {
 
 const STATS_EN: StatItem[] = [
   { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#F0F2F5' },
-  { value: 94, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: '#F0F2F5' },
+  { value: 95, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: '#F0F2F5' },
   { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '', color: '#004182' },
-  { value: 54, suffix: '', label: 'Years of Data', sublabel: '1970–2024', icon: '', color: '#F0F2F5' },
+  { value: 55, suffix: '+', label: 'Years of Data', sublabel: '1970–2025', icon: '', color: '#F0F2F5' },
 ];
 
 const STATS_ES: StatItem[] = [
   { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#F0F2F5' },
-  { value: 94, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: '#F0F2F5' },
+  { value: 95, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: '#F0F2F5' },
   { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '', color: '#004182' },
-  { value: 54, suffix: '', label: 'Años de Datos', sublabel: '1970–2024', icon: '', color: '#F0F2F5' },
+  { value: 55, suffix: '+', label: 'Años de Datos', sublabel: '1970–2025', icon: '', color: '#F0F2F5' },
 ];
 
 function useCountUp(target: number, duration: number = 2000, shouldStart: boolean = false): number {
@@ -281,9 +281,9 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
             <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '4px' }}>Tracked</div>
           </div>
           <div style={{ padding: '20px', textAlign: 'center', background: '#FFFFFF', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '12px' }}>
-            <div style={{ fontSize: '36px', fontWeight: 600, color: '#F0F2F5', fontFamily: 'var(--font-mono)' }}>54</div>
+            <div style={{ fontSize: '36px', fontWeight: 600, color: '#F0F2F5', fontFamily: 'var(--font-mono)' }}>55+</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', marginTop: '10px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Years of Data</div>
-            <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '4px' }}>1970–2024</div>
+            <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '4px' }}>1970–2025</div>
           </div>
         </div>
       </noscript>

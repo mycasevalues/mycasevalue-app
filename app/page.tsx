@@ -265,13 +265,13 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Stat 4: Public Records */}
+            {/* Stat 4: 55+ Years of Data */}
             <div className="text-center md:px-6">
-              <div className="text-sm md:text-base text-gray-900 font-semibold">
-                Public Records
+              <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
+                55<span className="text-2xl md:text-3xl">+</span>
               </div>
               <div className="text-sm md:text-base text-gray-500 font-medium">
-                Data Source
+                Years of Data
               </div>
             </div>
           </div>
@@ -432,7 +432,7 @@ export default function HomePage() {
           2.9 DISCLAIMER
           ────────────────────────────────────────────────────────────────── */}
       <div className="px-4 md:px-8 py-4 border-t border-gray-100 bg-white">
-        <p className="text-xs text-gray-400 text-center">
+        <p className="text-xs text-gray-600 text-center max-w-3xl mx-auto">
           MyCaseValue provides data from public federal court records for informational purposes only. This is not legal advice. Consult a licensed attorney for legal guidance.
         </p>
       </div>

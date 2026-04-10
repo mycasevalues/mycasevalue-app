@@ -103,7 +103,7 @@ const steps = [
 const trustStats = [
   { value: '5.1M+', label: 'Federal cases analyzed' },
   { value: '95', label: 'Federal districts covered' },
-  { value: '54', label: 'Years of judicial data' },
+  { value: '55+', label: 'Years of judicial data' },
   { value: '84', label: 'Case types supported' },
 ];
 
