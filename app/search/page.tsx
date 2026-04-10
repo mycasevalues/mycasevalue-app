@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
@@ -87,8 +88,10 @@ const saveToRecent = (item: { label: string; nos: string; category: string }) =>
 };
 
 export default function SearchPage() {
+  const searchParams = useSearchParams();
+  const initialQuery = searchParams?.get('q') ?? '';
   const { currentCaseType, setCaseType, addRecentSearch } = useResearchStore();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(initialQuery);
   const [recentItems, setRecentItems] = useState<RecentItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(currentCaseType);
@@ -105,6 +108,16 @@ export default function SearchPage() {
   useEffect(() => {
     setCaseType(selectedCategory);
   }, [selectedCategory, setCaseType]);
+
+  // Keep query state in sync when the ?q= URL param changes
+  // (e.g., user navigates from homepage hero search to /search?q=foo)
+  useEffect(() => {
+    const q = searchParams?.get('q') ?? '';
+    if (q && q !== query) {
+      setQuery(q);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   useEffect(() => {
     try {
@@ -135,7 +148,11 @@ export default function SearchPage() {
     }))
   );
 
-  // Scored search: word-boundary matches rank higher, exact NOS code highest
+  // Scored search: word-boundary matches rank higher, exact NOS code highest.
+  // Results are deduplicated by NOS code so we never display the same
+  // underlying federal case statistics under multiple labels (which would
+  // misleadingly appear as if different case types had identical outcomes).
+  // Aliased labels are surfaced inside each result card via `aliases`.
   const results = query.length > 1
     ? (() => {
         const q = query.toLowerCase().trim();
@@ -168,9 +185,21 @@ export default function SearchPage() {
             return { ...t, score };
           })
           .filter(t => t.score > 0)
-          .sort((a, b) => b.score - a.score)
-          .slice(0, 20);
-        return scored;
+          .sort((a, b) => b.score - a.score);
+
+        // Deduplicate by NOS code: keep the highest-scoring entry per NOS,
+        // collect the other matching labels as aliases so users still see
+        // that their search term matched.
+        const byNos = new Map<string, typeof scored[number] & { aliases: string[] }>();
+        for (const item of scored) {
+          const existing = byNos.get(item.nos);
+          if (!existing) {
+            byNos.set(item.nos, { ...item, aliases: [] });
+          } else if (existing.label !== item.label && !existing.aliases.includes(item.label)) {
+            existing.aliases.push(item.label);
+          }
+        }
+        return Array.from(byNos.values()).slice(0, 20);
       })()
     : [];
 
@@ -751,6 +780,22 @@ export default function SearchPage() {
           </div>
           <p style={{ fontSize: '13px', color: '#4B5563', margin: '0', fontFamily: 'var(--font-body)', lineHeight: '1.5' }}>{r.categoryName}</p>
           {r.desc && <p style={{ fontSize: '13px', color: '#4B5563', margin: '8px 0 0 0', fontFamily: 'var(--font-body)', lineHeight: '1.4' }}>{r.desc}</p>}
+          {(r as { aliases?: string[] }).aliases && (r as { aliases: string[] }).aliases.length > 0 && (
+            <p
+              style={{
+                fontSize: '12px',
+                color: '#4B5563',
+                margin: '8px 0 0 0',
+                fontFamily: 'var(--font-body)',
+                lineHeight: '1.4',
+                fontStyle: 'italic',
+              }}
+              title={`These case-type labels share NOS code ${r.nos} and are reported under the same federal classification.`}
+            >
+              Also matches: {(r as { aliases: string[] }).aliases.slice(0, 4).join(', ')}
+              {(r as { aliases: string[] }).aliases.length > 4 ? ` +${(r as { aliases: string[] }).aliases.length - 4} more` : ''}
+            </p>
+          )}
           {/* Inline data preview */}
           {(() => {
             const rd = REAL_DATA[r.nos];
