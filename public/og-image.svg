@@ -3,60 +3,56 @@
   <defs>
     <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F7F8FA;stop-opacity:1" />
     </linearGradient>
     <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="40" y2="0" stroke="rgba(0,23,46,0.04)" stroke-width="1"/>
-      <line x1="0" y1="0" x2="0" y2="40" stroke="rgba(0,23,46,0.04)" stroke-width="1"/>
+      <line x1="0" y1="0" x2="40" y2="0" stroke="rgba(9,102,195,0.05)" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="40" stroke="rgba(9,102,195,0.05)" stroke-width="1"/>
     </pattern>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0966C3;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#0966C3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0966C3;stop-opacity:0" />
+    </linearGradient>
   </defs>
 
-  <!-- Background white -->
+  <!-- Background -->
   <rect width="1200" height="630" fill="url(#bgGradient)"/>
-
-  <!-- Grid pattern overlay -->
   <rect width="1200" height="630" fill="url(#gridPattern)"/>
 
-  <!-- Logo group -->
-  <g transform="translate(600, 180)">
-    <!-- Dot -->
-    <circle cx="-14" cy="0" r="4.5" fill="#E8171F"/>
-    <!-- Slash -->
-    <line x1="8" y1="-8" x2="0" y2="8" stroke="#E8171F" stroke-width="3" stroke-linecap="round"/>
-    <!-- Text: MyCaseValue -->
-    <text x="18" y="6" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#00172E" letter-spacing="-0.5">MyCaseValue</text>
+  <!-- Top brand bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="#0966C3"/>
+
+  <!-- Logo lockup -->
+  <g transform="translate(600, 150)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="700" fill="#0966C3" text-anchor="middle" letter-spacing="-0.5">MyCaseValue</text>
   </g>
 
   <!-- Main headline -->
-  <text x="600" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" fill="#00172E" text-anchor="middle" letter-spacing="-1" line-height="1.2">Federal Court Outcome Data</text>
+  <text x="600" y="270" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="60" font-weight="700" fill="#0f0f0f" text-anchor="middle" letter-spacing="-1.5">Federal Court Outcome Data</text>
 
-  <!-- Stats line -->
-  <g transform="translate(600, 380)">
-    <!-- First stat: 4.2M+ Cases -->
-    <text x="-180" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#E8171F">4.2M+</text>
-    <text x="-120" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#212529">Cases</text>
+  <!-- Subheadline -->
+  <text x="600" y="335" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="26" font-weight="400" fill="#4B5563" text-anchor="middle" letter-spacing="-0.3">Win rates, settlement ranges, and judge analytics</text>
+  <text x="600" y="370" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="26" font-weight="400" fill="#4B5563" text-anchor="middle" letter-spacing="-0.3">from public federal court records</text>
 
-    <!-- Separator -->
-    <text x="-25" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#E8171F">•</text>
+  <!-- Stats row -->
+  <g transform="translate(600, 470)">
+    <!-- Stat 1: 5.1M+ Cases -->
+    <text x="-280" y="0" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="36" font-weight="700" fill="#0966C3" text-anchor="middle">5.1M+</text>
+    <text x="-280" y="32" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" font-weight="500" fill="#4B5563" text-anchor="middle" letter-spacing="0.5">FEDERAL CASES</text>
 
-    <!-- Second stat: 50+ Years -->
-    <text x="20" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#E8171F">50+</text>
-    <text x="80" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#212529">Years</text>
+    <!-- Stat 2: 95 Districts -->
+    <text x="0" y="0" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="36" font-weight="700" fill="#0966C3" text-anchor="middle">95</text>
+    <text x="0" y="32" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" font-weight="500" fill="#4B5563" text-anchor="middle" letter-spacing="0.5">FEDERAL DISTRICTS</text>
 
-    <!-- Separator -->
-    <text x="160" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#E8171F">•</text>
-
-    <!-- Third stat: 94 Districts -->
-    <text x="205" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#E8171F">94</text>
-    <text x="255" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#212529">Districts</text>
+    <!-- Stat 3: 84 Case Types -->
+    <text x="280" y="0" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="36" font-weight="700" fill="#0966C3" text-anchor="middle">84</text>
+    <text x="280" y="32" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" font-weight="500" fill="#4B5563" text-anchor="middle" letter-spacing="0.5">CASE TYPES</text>
   </g>
 
-  <!-- Accent line -->
-  <defs>
-    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#E8171F;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#E8171F;stop-opacity:0" />
-    </linearGradient>
-  </defs>
-  <rect x="550" y="420" width="100" height="3" fill="url(#accentGradient)" rx="2"/>
+  <!-- Bottom accent line -->
+  <rect x="350" y="565" width="500" height="3" fill="url(#accentGradient)" rx="2"/>
+
+  <!-- Bottom URL -->
+  <text x="600" y="600" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" font-weight="500" fill="#9CA3AF" text-anchor="middle" letter-spacing="0.3">mycasevalues.com</text>
 </svg>
