@@ -23,22 +23,16 @@ export default function StickyCTA() {
   }, []);
 
   useEffect(() => {
-    // Watch any elements tagged as "hide the sticky CTA when I'm visible"
-    // (the in-flow bottom CTA section + the footer).
     const targets = Array.from(
-      document.querySelectorAll<HTMLElement>('[data-hide-sticky-cta], footer')
+      document.querySelectorAll('[data-hide-sticky-cta], footer')
     );
     if (targets.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // If any tracked element is intersecting the viewport, hide the pill.
         const anyVisible = entries.some((e) => e.isIntersecting);
         setFooterOrCtaVisible((prev) => {
-          // Merge with existing state — if another observer entry says
-          // something is still visible, keep it hidden.
           if (anyVisible) return true;
-          // Re-check all targets to see if any are still intersecting.
           const stillVisible = targets.some((el) => {
             const rect = el.getBoundingClientRect();
             return rect.top < window.innerHeight && rect.bottom > 0;
@@ -70,22 +64,13 @@ export default function StickyCTA() {
         background: '#FFFFFF',
         border: '1px solid #E5E7EB',
         borderRadius: '9999px',
-        padding: '8px 8px 8px 24px',
+        padding: '8px',
         boxShadow: '0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06)',
         maxWidth: 'calc(100vw - 32px)',
         whiteSpace: 'nowrap',
       }}
       aria-hidden={!visible}
     >
-      <span style={{
-        fontFamily: 'var(--font-body)',
-        fontSize: '14px',
-        fontWeight: 500,
-        color: '#374151',
-      }}>
-        Research your case value
-      </span>
-
       <Link
         href="/cases"
         style={{
