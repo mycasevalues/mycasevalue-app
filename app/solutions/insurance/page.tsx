@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'For Insurance Companies | MyCaseValue',
     description: 'Settlement benchmarking, claim valuation, and litigation cost forecasting for insurers and defense counsel.',
+    url: `${SITE_URL}/solutions/insurance`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
   twitter: {
     card: 'summary_large_image',

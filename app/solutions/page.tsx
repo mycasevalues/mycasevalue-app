@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Solutions',
     description: 'MyCaseValue solutions for individuals, law firms, enterprise legal teams, insurance companies, litigation funders, legal aid, academia, and government agencies.',
+    url: `${SITE_URL}/solutions`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
   twitter: {
     card: 'summary_large_image',

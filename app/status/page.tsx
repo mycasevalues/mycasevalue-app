@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { SITE_URL } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'System Status',
@@ -7,6 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'System Status',
     description: 'MyCaseValue system health and service status',
+    url: `${SITE_URL}/status`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
   twitter: {
     card: 'summary_large_image',

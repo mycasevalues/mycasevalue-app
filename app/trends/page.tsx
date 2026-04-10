@@ -28,7 +28,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Case Trends',
     description: 'Track federal court case outcome trends over time',
-    url: `${SITE_URL}/trends`,  },
+    url: `${SITE_URL}/trends`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Case Trends',

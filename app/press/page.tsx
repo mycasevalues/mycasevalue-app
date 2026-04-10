@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Press Kit | MyCaseValue',
     description: 'Media resources, brand assets, company information, and press contact for MyCaseValue. Download logos, brand guidelines, and company overview for journalists and media professionals.',
+    url: `${SITE_URL}/press`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
   twitter: {
     card: 'summary_large_image',

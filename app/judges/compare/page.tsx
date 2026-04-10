@@ -25,7 +25,9 @@ export const metadata: Metadata = {
     title: 'Compare Federal Judges',
     description: 'Compare federal judges side-by-side with comprehensive ruling analytics.',
     type: 'website',
-    url: `${SITE_URL}/judges/compare`,  },
+    url: `${SITE_URL}/judges/compare`,
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Compare Federal Judges — Side-by-Side Analysis | MyCaseValue',

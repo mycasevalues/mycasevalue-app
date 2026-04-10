@@ -12,7 +12,9 @@ export const metadata: Metadata = {
     title: 'MyCaseValue Data Sources',
     description: 'Federal court data analytics built on verified court records from FJC, PACER, and CourtListener.',
     url: `${SITE_URL}/data-sources`,
-    type: 'website',  },
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Data Sources & Methodology | MyCaseValue',

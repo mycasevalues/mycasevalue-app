@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'For Individuals | MyCaseValue',
     description: 'Research your case value, settlement ranges, and timeline estimates. Free access to case analytics for personal injury claims.',
+    url: `${SITE_URL}/solutions/individuals`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
   twitter: {
     card: 'summary_large_image',

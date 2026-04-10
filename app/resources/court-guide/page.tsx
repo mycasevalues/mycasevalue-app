@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description: 'Learn how to research federal court cases, understand legal terminology, and navigate the court system independently.',
     type: 'website',
     url: `${SITE_URL}/resources/court-guide`,
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
   keywords: 'federal court guide, legal research, court terminology, pro se, self-help legal, non-lawyer guide',
 };

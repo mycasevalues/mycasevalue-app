@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'For Academic Researchers | MyCaseValue',
     description: 'Research datasets, longitudinal analysis, and citation-ready data for law school faculty and research institutions.',
+    url: `${SITE_URL}/solutions/academic`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
   twitter: {
     card: 'summary_large_image',

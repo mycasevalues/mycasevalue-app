@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description: 'Comprehensive technical documentation of research methodology and statistical framework.',
     url: `${SITE_URL}/methodology/whitepaper`,
     type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
 };
 

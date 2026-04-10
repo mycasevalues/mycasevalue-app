@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'For Government Agencies | MyCaseValue',
     description: 'Court performance data, policy analysis, and transparency reporting tools for federal and state agencies.',
+    url: `${SITE_URL}/solutions/government`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
   twitter: {
     card: 'summary_large_image',

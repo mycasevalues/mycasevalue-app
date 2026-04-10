@@ -13,7 +13,9 @@ export const metadata: Metadata = {
     description:
       'Browse all federal case types with real court statistics. Explore win rates, case duration, and outcomes for employment, injury, consumer, civil rights, and more.',
     url: `${SITE_URL}/nos`,
-    type: 'website',  },
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'All Federal Case Types — MyCaseValue',

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description: 'Professional reference tool for paralegals working in federal court. Complete desk reference for procedures, deadlines, and court data.',
     type: 'website',
     url: `${SITE_URL}/resources/paralegal-handbook`,
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
   keywords: 'paralegal handbook, federal court procedures, FRCP deadlines, statute of limitations, federal districts, paralegal reference, federal court guide',
 };

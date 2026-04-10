@@ -13,7 +13,9 @@ export const metadata: Metadata = {
     title: 'How It Works — MyCaseValue',
     description: 'Three simple steps to research real federal court outcomes. Select your case type, we analyze 5.1M+ cases, you get a personalized report.',
     type: 'website',
-    url: `${SITE_URL}/how-it-works`,  },
+    url: `${SITE_URL}/how-it-works`,
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'How It Works — MyCaseValue | 3 Simple Steps',

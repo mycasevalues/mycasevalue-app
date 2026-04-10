@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description: 'Enterprise-grade case analytics infrastructure for institutional buyers.',
     type: 'website',
     url: `${SITE_URL}/solutions/enterprise`,
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
 };
 

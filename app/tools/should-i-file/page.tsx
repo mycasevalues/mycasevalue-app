@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       'Interactive questionnaire to help unrepresented individuals assess whether their situation may qualify as a federal case. Get jurisdiction guidance, win rates, and next steps.',
     url: `${SITE_URL}/tools/should-i-file`,
     type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
 };
 

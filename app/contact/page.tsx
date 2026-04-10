@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact Us',
     description: 'Get in touch with the MyCaseValue team for support, enterprise inquiries, or data methodology questions.',
+    url: `${SITE_URL}/contact`,
+    type: 'website',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
   },
   twitter: {
     card: 'summary_large_image',
