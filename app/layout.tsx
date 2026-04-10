@@ -190,7 +190,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'How much does it cost?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Basic reports are free. Premium reports with judge analytics, litigation cost calculator, and opposing counsel analysis are $5.99 for a single report, $9.99 for unlimited one-time access, or $29.99/month for Attorney Mode.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Basic reports are free. Premium reports with judge analytics, litigation cost calculator, and opposing counsel analysis are $5.99 for a single report, $9.99/month for unlimited reports, or $29.99/month for Attorney Mode.' },
         },
         {
           '@type': 'Question',

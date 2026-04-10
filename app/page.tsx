@@ -225,7 +225,7 @@ export default function HomePage() {
           </Link>
         </div>
         <p className="text-sm text-gray-500 mt-4">
-          Free to search. Unlimited reports $9.99/mo. No account required.
+          Free during public beta. No account required.
         </p>
       </section>
 
@@ -408,7 +408,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            See how your assigned judge ruled on similar motions, what your district typically settles for, and how long comparable cases took — before you file. Free to start, $9.99/mo for unlimited reports.
+            See how your assigned judge ruled on similar motions, what your district typically settles for, and how long comparable cases took — before you file. Free during public beta. No account required.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

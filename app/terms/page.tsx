@@ -460,7 +460,7 @@ export default function TermsPage() {
             </p>
             <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
               <li style={{ marginBottom: '8px' }}><strong>Single Report:</strong> $5.99 (one-time)</li>
-              <li style={{ marginBottom: '8px' }}><strong>Unlimited Reports:</strong> $9.99 (one-time)</li>
+              <li style={{ marginBottom: '8px' }}><strong>Unlimited Reports:</strong> $9.99/month (recurring)</li>
               <li><strong>Attorney Mode:</strong> $29.99/month (recurring)</li>
             </ul>
             <p className="legal-body" style={{ marginTop: '16px' }}>

@@ -132,7 +132,7 @@ const faqs = [
     questions: [
       {
         q: '¿Cuánto cuesta MyCaseValue?',
-        a: 'Los informes básicos son completamente gratuitos. Los informes premium con análisis detallados, desgloses por circuito/juez y herramientas de comparación cuestan $5.99 por un informe individual o $29.99/mes para acceso ilimitado.',
+        a: 'Los informes básicos son completamente gratuitos. Los informes premium cuestan $5.99 por un informe individual, $9.99/mes por informes ilimitados, o $29.99/mes para Modo Abogado con análisis avanzados y acceso a la API.',
       },
       {
         q: '¿Necesito crear una cuenta?',

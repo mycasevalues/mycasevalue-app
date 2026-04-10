@@ -28,7 +28,7 @@ export const TIER_LABELS: Record<Tier, { en: string; es: string }> = {
 export const TIER_PRICES: Record<Tier, { amount: number; interval: string | null }> = {
   free: { amount: 0, interval: null },
   single_report: { amount: 5.99, interval: null },
-  unlimited: { amount: 9.99, interval: null },
+  unlimited: { amount: 9.99, interval: 'month' },
   attorney: { amount: 29.99, interval: 'month' },
 };
 
@@ -101,7 +101,7 @@ const FEATURE_MIN_TIER: Record<FeatureKey, Tier> = {
   district_judge_overview: 'single_report',
   single_report_access: 'single_report',
 
-  // Unlimited Reports ($9.99 one-time)
+  // Unlimited Reports ($9.99/mo)
   unlimited_lookups: 'unlimited',
   trend_data: 'unlimited',
   case_comparison: 'unlimited',

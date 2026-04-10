@@ -90,7 +90,7 @@ const jsonLd = {
           name: 'How much does MyCaseValue cost?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'All features are currently free with no account required — including detailed analytics, circuit and judge breakdowns, comparison tools, and attorney features.',
+            text: 'All features are currently free during our public beta — no account, no payment required. After beta, pricing will be tiered: free basic reports, $5.99 single premium report, $9.99/month for unlimited reports, or $29.99/month for Attorney Mode.',
           },
         },
         {
@@ -496,7 +496,7 @@ const faqs = [
     questions: [
       {
         q: 'How much does MyCaseValue cost?',
-        a: 'All tiers are free during the public beta period. Once beta ends, we offer tiered pricing starting at $0 for basic access up to $29.99/month for Attorney Mode with advanced features.',
+        a: 'All features are currently free during our public beta — no account, no payment, no catch. After beta, pricing will be tiered: free basic reports, $5.99 for a single premium report, $9.99/month for unlimited reports, or $29.99/month for Attorney Mode with judge intelligence and API access. See the pricing page for the full plan.',
       },
       {
         q: 'Do I need to create an account?',
