@@ -43,7 +43,7 @@ export default function SpanishPage() {
       <div className="border-b" style={{ background: '#FFFFFF', borderColor: '#E5E7EB', padding: '12px 24px' }}>
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-sm" style={{ color: '#4B5563' }}>
-            This page is also available in <Link href="/" style={{ color: '#004182', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
+            Esta página también está disponible en <Link href="/" style={{ color: '#004182', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
           </p>
         </div>
       </div>

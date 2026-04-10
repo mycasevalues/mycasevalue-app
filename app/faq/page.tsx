@@ -106,7 +106,7 @@ const jsonLd = {
           name: 'Do you have a privacy policy?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. Our full privacy policy is available at ${SITE_URL}/privacy. It explains exactly what data we collect, how we use it, and your rights.',
+            text: 'Yes. Our full privacy policy is available at https://www.mycasevalues.com/privacy. It explains exactly what data we collect, how we use it, and your rights.',
           },
         },
         {
@@ -525,7 +525,7 @@ const faqs = [
       },
       {
         q: 'Do you have a privacy policy?',
-        a: 'Yes. Our full privacy policy is available at ${SITE_URL}/privacy. It explains exactly what data we collect, how we use it, and your rights.',
+        a: 'Yes. Our full privacy policy is available at https://www.mycasevalues.com/privacy. It explains exactly what data we collect, how we use it, and your rights.',
       },
       {
         q: 'Is my search activity private?',

@@ -27,7 +27,7 @@ export default function ServerHero() {
             <p style={{
               fontSize: '12px',
               fontWeight: 600,
-              color: '#0966C3',
+              color: 'rgba(255,255,255,0.7)',
               fontFamily: 'var(--font-body)',
               marginBottom: '16px',
               textTransform: 'uppercase',
