@@ -396,16 +396,19 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────────────────────────────
           2.8 BOTTOM CTA SECTION
           ────────────────────────────────────────────────────────────────── */}
-      <section className="px-4 md:px-8 py-16 md:py-24 bg-brand-blue text-white">
+      <section
+        data-hide-sticky-cta
+        className="px-4 md:px-8 py-16 md:py-24 bg-brand-blue text-white"
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            The federal court record is public.
+            Your judge has a track record.
             <br />
-            Now it's actually searchable.
+            So does your district.
           </h2>
 
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Free to search. Unlimited reports for $9.99/mo. No account required to get started.
+            See how your assigned judge ruled on similar motions, what your district typically settles for, and how long comparable cases took — before you file. Free to start, $9.99/mo for unlimited reports.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

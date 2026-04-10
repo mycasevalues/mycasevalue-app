@@ -5,28 +5,55 @@ import Link from 'next/link';
 
 /**
  * Sticky CTA bar that appears after the user scrolls past the hero section.
- * Hides again when nearing the footer. Desktop: centered pill. Mobile: full-width.
+ * Hides again when the page's in-flow CTA / footer enters the viewport so
+ * it never collides with the blue bottom CTA or footer copy.
+ * Desktop: centered pill. Mobile: full-width.
  */
 export default function StickyCTA() {
-  const [visible, setVisible] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
+  const [footerOrCtaVisible, setFooterOrCtaVisible] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      const scrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight;
-      const viewportHeight = window.innerHeight;
-
-      // Show after scrolling ~500px (past hero)
-      const pastHero = scrollY > 500;
-      // Hide when within 300px of the bottom (near footer)
-      const nearFooter = scrollY + viewportHeight > docHeight - 300;
-
-      setVisible(pastHero && !nearFooter);
+      setPastHero(window.scrollY > 500);
     };
-
+    onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    // Watch any elements tagged as "hide the sticky CTA when I'm visible"
+    // (the in-flow bottom CTA section + the footer).
+    const targets = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-hide-sticky-cta], footer')
+    );
+    if (targets.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // If any tracked element is intersecting the viewport, hide the pill.
+        const anyVisible = entries.some((e) => e.isIntersecting);
+        setFooterOrCtaVisible((prev) => {
+          // Merge with existing state — if another observer entry says
+          // something is still visible, keep it hidden.
+          if (anyVisible) return true;
+          // Re-check all targets to see if any are still intersecting.
+          const stillVisible = targets.some((el) => {
+            const rect = el.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom > 0;
+          });
+          return stillVisible;
+        });
+      },
+      { rootMargin: '0px 0px -40px 0px', threshold: 0 }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const visible = pastHero && !footerOrCtaVisible;
 
   return (
     <div
