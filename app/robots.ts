@@ -24,7 +24,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/dashboard/', '/account/', '/admin/', '/sign-in/', '/sign-up/', '/settings/', '/billing/', '/reports/', '/forgot-password/', '/reset-password/'],
+        // Note: /reports is a user-specific dashboard (client-side supabase-gated, nothing to index).
+        // We don't disallow /reports/ so /reports/2026-annual (public content report) can be crawled.
+        disallow: ['/api/', '/dashboard/', '/account/', '/admin/', '/sign-in/', '/sign-up/', '/settings/', '/billing/', '/forgot-password/', '/reset-password/'],
       },
       // Block AI training and retrieval crawlers
       ...AI_CRAWLERS.map((bot) => ({
