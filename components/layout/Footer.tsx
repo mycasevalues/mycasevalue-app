@@ -128,7 +128,7 @@ export default function Footer() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: '#999999',
+              color: '#595959',
               marginBottom: '16px',
             }}>
               Explore
@@ -162,7 +162,7 @@ export default function Footer() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: '#999999',
+              color: '#595959',
               marginBottom: '16px',
             }}>
               Resources
@@ -196,7 +196,7 @@ export default function Footer() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: '#999999',
+              color: '#595959',
               marginBottom: '16px',
             }}>
               Use Cases
@@ -230,7 +230,7 @@ export default function Footer() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: '#999999',
+              color: '#595959',
               marginBottom: '16px',
             }}>
               Data
@@ -346,7 +346,7 @@ export default function Footer() {
                 fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#999999',
+                color: '#595959',
                 marginBottom: '16px',
               }}>
                 Explore
@@ -380,7 +380,7 @@ export default function Footer() {
                 fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#999999',
+                color: '#595959',
                 marginBottom: '16px',
               }}>
                 Resources
@@ -414,7 +414,7 @@ export default function Footer() {
                 fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#999999',
+                color: '#595959',
                 marginBottom: '16px',
               }}>
                 Use Cases
@@ -448,7 +448,7 @@ export default function Footer() {
                 fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#999999',
+                color: '#595959',
                 marginBottom: '16px',
               }}>
                 Data
@@ -509,7 +509,7 @@ export default function Footer() {
             {/* Left: Copyright */}
             <p style={{
               fontSize: '12px',
-              color: '#999999',
+              color: '#595959',
               margin: 0,
               whiteSpace: 'nowrap',
             }}>
@@ -569,7 +569,7 @@ export default function Footer() {
           <div className="md:hidden mb-4">
             <p style={{
               fontSize: '12px',
-              color: '#999999',
+              color: '#595959',
               margin: '0 0 16px 0',
             }}>
               © 2026 MyCaseValue LLC · West Virginia
@@ -623,7 +623,7 @@ export default function Footer() {
           {/* Center: Disclaimer */}
           <p style={{
             fontSize: '11px',
-            color: '#999999',
+            color: '#595959',
             textAlign: 'center',
             margin: 0,
             lineHeight: '1.4',

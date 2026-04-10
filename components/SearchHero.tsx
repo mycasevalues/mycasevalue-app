@@ -31,6 +31,7 @@ export function SearchHero() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search cases, judges, districts, or case types..."
+          aria-label="Search federal court cases, judges, districts, or case types"
           className="flex-1 h-14 px-6 border-none outline-none text-gray-900 placeholder:text-gray-400 rounded-l-full focus:ring-2 focus:ring-brand-blue focus:ring-inset"
         />
 

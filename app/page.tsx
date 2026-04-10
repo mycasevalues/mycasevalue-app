@@ -328,7 +328,10 @@ export default function HomePage() {
             {HOW_IT_WORKS_STEPS.map((step, idx) => (
               <div key={step.title} className="relative">
                 {/* Step number background */}
-                <div className="text-6xl font-bold text-brand-blue opacity-20 mb-4 leading-none">
+                <div
+                  aria-hidden="true"
+                  className="text-6xl font-bold text-brand-blue opacity-20 mb-4 leading-none"
+                >
                   {step.number}
                 </div>
 
@@ -342,7 +345,10 @@ export default function HomePage() {
 
                 {/* Connecting arrow for desktop */}
                 {idx < HOW_IT_WORKS_STEPS.length - 1 && (
-                  <div className="hidden md:block absolute top-16 -right-4 text-gray-400 text-2xl">
+                  <div
+                    aria-hidden="true"
+                    className="hidden md:block absolute top-16 -right-4 text-gray-400 text-2xl"
+                  >
                     →
                   </div>
                 )}
