@@ -1396,7 +1396,7 @@ export default function PlatformPage() {
                 transition: 'all 0.3s ease',
               }}
               >
-                Start Free Trial
+                Start searching free
               </a>
               <a href="/contact" style={{
                 display: 'inline-block',

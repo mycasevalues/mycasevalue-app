@@ -739,7 +739,7 @@ export default function ServerHero() {
         </div>
       </div>
 
-      {/* ── BOTTOM CTA — Start Free Trial ────────────────── */}
+      {/* ── BOTTOM CTA ────────────────── */}
       <div style={{ background: '#0966C3', padding: '80px 24px' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '16px' }}>

@@ -118,7 +118,7 @@ const tiers: PricingTier[] = [
       'PDF exports without watermark',
       'English & Spanish',
     ],
-    ctaText: 'Start Free Trial',
+    ctaText: 'Get Unlimited',
     ctaHref: '/sign-up',
     highlighted: true,
   },
