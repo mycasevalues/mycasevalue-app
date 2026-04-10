@@ -434,7 +434,7 @@ export default function CasesIndexPage() {
             </h2>
             <div style={{ display: 'grid', gap: 12 }}>
               {topFiledCases.map((caseType, idx) => (
-                <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
+                <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
                   <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 80px 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#0f0f0f' }}>
                       #{idx + 1}
@@ -469,7 +469,7 @@ export default function CasesIndexPage() {
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
               {topWinRateCases.map((caseType) => (
-                <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
+                <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
                   <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: 20, height: '100%', transition: 'all 0.2s ease', cursor: 'pointer' }}>
                     <div style={{ fontSize: 14, color: '#4B5563', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 500 }}>
                       {caseType.categoryLabel}
