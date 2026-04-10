@@ -715,7 +715,7 @@ r = requests.get(
               Get enterprise-grade API access to federal court analytics. Our technical team is ready to help with custom integrations and high-volume use cases.
             </p>
             <a
-              href="mailto:enterprise@mycasevalue.com"
+              href="mailto:enterprise@mycasevalues.com"
               style={{
                 display: 'inline-block',
                 padding: '14px 32px',

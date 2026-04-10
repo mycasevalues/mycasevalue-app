@@ -380,7 +380,7 @@ export default function MethodologyCapture() {
     doc.setFontSize(11);
     doc.setTextColor(colors.primary[0], colors.primary[1], colors.primary[2]);
     doc.setFont(undefined, 'normal');
-    doc.text('research@mycasevalue.com', margin, y);
+    doc.text('research@mycasevalues.com', margin, y);
 
     return doc;
   };
@@ -562,7 +562,7 @@ export default function MethodologyCapture() {
 
       {submitStatus === 'error' && (
         <div className="error-message-box">
-          An error occurred while processing your request. Please try again or contact research@mycasevalue.com for assistance.
+          An error occurred while processing your request. Please try again or contact research@mycasevalues.com for assistance.
         </div>
       )}
 

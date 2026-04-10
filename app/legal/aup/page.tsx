@@ -327,7 +327,7 @@ export default function AUPPage() {
                 marginBottom: '0.5rem',
               }}
             >
-              legal@mycasevalue.com
+              legal@mycasevalues.com
             </p>
           </section>
 

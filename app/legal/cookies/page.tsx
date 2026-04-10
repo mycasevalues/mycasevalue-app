@@ -558,7 +558,7 @@ export default function CookiePolicyPage() {
                 marginBottom: '0.5rem',
               }}
             >
-              privacy@mycasevalue.com
+              privacy@mycasevalues.com
             </p>
           </section>
 

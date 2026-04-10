@@ -748,7 +748,7 @@ export default function DataSourcesPage() {
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <a
-                href="mailto:enterprise@mycasevalue.com"
+                href="mailto:enterprise@mycasevalues.com"
                 style={{
                   display: 'inline-block',
                   padding: '14px 32px',

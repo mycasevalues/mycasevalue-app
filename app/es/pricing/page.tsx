@@ -61,7 +61,7 @@ const pricingFaqs = [
   },
   {
     q: '¿Puedo actualizar de un plan a otro?',
-    a: 'Sí. Si compras un Informe Individual y luego quieres Informes Ilimitados, podemos aplicar tu pago hacia la actualización. Contacta a support@mycasevalue.com para detalles.',
+    a: 'Sí. Si compras un Informe Individual y luego quieres Informes Ilimitados, podemos aplicar tu pago hacia la actualización. Contacta a support@mycasevalues.com para detalles.',
   },
   {
     q: '¿Hay prueba gratuita?',
@@ -77,7 +77,7 @@ const pricingFaqs = [
   },
   {
     q: '¿Ofrecen descuentos educativos o sin fines de lucro?',
-    a: 'Sí. Ofrecemos un 50% de descuento para organizaciones sin fines de lucro verificadas, facultades de derecho y grupos de derechos civiles. Contáctanos en support@mycasevalue.com con prueba de estado.',
+    a: 'Sí. Ofrecemos un 50% de descuento para organizaciones sin fines de lucro verificadas, facultades de derecho y grupos de derechos civiles. Contáctanos en support@mycasevalues.com con prueba de estado.',
   },
 ];
 

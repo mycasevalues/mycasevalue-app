@@ -156,7 +156,7 @@ export default function SpanishDisclaimerPage() {
                 Si tienes preguntas sobre este descargo de responsabilidad, contáctanos en:
               </p>
               <p style={{ color: '#004182', fontWeight: '500' }}>
-                support@mycasevalue.com
+                support@mycasevalues.com
               </p>
             </section>
           </div>

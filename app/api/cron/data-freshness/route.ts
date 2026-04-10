@@ -11,7 +11,7 @@ export async function GET() {
         },
         body: JSON.stringify({
           from: 'MyCaseValue System <system@mycasevalues.com>',
-          to: 'support@mycasevalue.com',
+          to: 'support@mycasevalues.com',
           subject: 'Quarterly: Check FJC IDB for new data',
           html: '<p>Check <a href="https://www.fjc.gov/research/idb">FJC IDB</a> for new data releases.</p>',
         }),

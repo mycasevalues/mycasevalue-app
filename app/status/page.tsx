@@ -367,13 +367,13 @@ export default function StatusPage() {
           <p style={{ margin: '0 0 8px 0' }}>
             Status page updated every 5 minutes. Subscribe to updates at{' '}
             <a
-              href="mailto:status@mycasevalue.com"
+              href="mailto:status@mycasevalues.com"
               style={{
                 color: '#0966C3',
                 textDecoration: 'none',
               }}
             >
-              status@mycasevalue.com
+              status@mycasevalues.com
             </a>
           </p>
           <p style={{ margin: 0 }}>

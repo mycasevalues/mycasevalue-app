@@ -69,7 +69,7 @@ export const POST = apiHandler(
     // const { Resend } = await import('resend');
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // await resend.emails.send({
-    //   from: 'noreply@mycasevalue.com',
+    //   from: 'noreply@mycasevalues.com',
     //   to: cleanEmail,
     //   subject: '2026 Federal Court Statistics Annual Report',
     //   html: `<p>Thank you for downloading the 2026 Annual Report. Check your downloads.</p>`,

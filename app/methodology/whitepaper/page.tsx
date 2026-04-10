@@ -143,7 +143,7 @@ export default function WhitepaperPage() {
                 Contact
               </p>
               <a
-                href="mailto:research@mycasevalue.com"
+                href="mailto:research@mycasevalues.com"
                 style={{
                   fontSize: 15,
                   fontWeight: 600,
@@ -153,7 +153,7 @@ export default function WhitepaperPage() {
                   textDecoration: 'none',
                 }}
               >
-                research@mycasevalue.com
+                research@mycasevalues.com
               </a>
             </div>
           </div>

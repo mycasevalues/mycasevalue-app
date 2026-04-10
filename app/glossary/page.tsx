@@ -111,7 +111,7 @@ export default function GlossaryPage() {
             Have a term you think should be in this glossary?
           </p>
           <a
-            href="mailto:support@mycasevalue.com"
+            href="mailto:support@mycasevalues.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
             style={{
               background: '#FFFFFF',

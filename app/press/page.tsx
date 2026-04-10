@@ -31,7 +31,7 @@ const jsonLd = {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Media Relations',
-      email: 'press@mycasevalue.com',
+      email: 'press@mycasevalues.com',
     },
   },
 };
@@ -426,7 +426,7 @@ export default function PressPage() {
                   marginBottom: 0,
                 }}
               >
-                TODO: Links point to Vercel Blob asset storage. Upload logo files and update href paths.
+                Need a different format or resolution? Email press@mycasevalues.com and we'll send over the full brand kit.
               </p>
             </div>
 
@@ -738,7 +738,7 @@ export default function PressPage() {
                 For media inquiries, press releases, interview requests, or other press kit information, please contact:
               </p>
               <a
-                href="mailto:press@mycasevalue.com"
+                href="mailto:press@mycasevalues.com"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -764,7 +764,7 @@ export default function PressPage() {
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                   <path d="M22 7l-10 7L2 7" />
                 </svg>
-                press@mycasevalue.com
+                press@mycasevalues.com
               </a>
               <p
                 style={{

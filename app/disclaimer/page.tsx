@@ -467,7 +467,7 @@ export default function DisclaimerPage() {
               border: '1px solid #E5E7EB',
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Email:</strong> <a href="mailto:support@mycasevalue.com" data-link-type="teal" style={{ color: '#004182', textDecoration: 'none' }}>support@mycasevalue.com</a>
+                <strong>Email:</strong> <a href="mailto:support@mycasevalues.com" data-link-type="teal" style={{ color: '#004182', textDecoration: 'none' }}>support@mycasevalues.com</a>
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
                 <strong>Website:</strong> <a href="https://mycasevalues.com" data-link-type="teal" style={{ color: '#004182', textDecoration: 'none' }}>https://mycasevalues.com</a>

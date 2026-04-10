@@ -38,7 +38,7 @@ const jsonLd = {
       {
         '@type': 'ContactPoint',
         contactType: 'Enterprise & API',
-        email: 'enterprise@mycasevalue.com',
+        email: 'enterprise@mycasevalues.com',
       },
     ],
   },
@@ -298,7 +298,7 @@ export default function ContactPage() {
                 Bulk data licensing, custom integrations, team accounts, and API partnerships.
               </p>
               <a
-                href="mailto:enterprise@mycasevalue.com"
+                href="mailto:enterprise@mycasevalues.com"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -314,7 +314,7 @@ export default function ContactPage() {
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                   <path d="M22 7l-10 7L2 7" />
                 </svg>
-                enterprise@mycasevalue.com
+                enterprise@mycasevalues.com
               </a>
             </div>
 

@@ -100,7 +100,7 @@ export default function DeadlineCalculatorPage() {
 
         lines.push(
           'BEGIN:VEVENT',
-          `UID:deadline-${deadline.id}@mycasevalue.com`,
+          `UID:deadline-${deadline.id}@mycasevalues.com`,
           `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z`,
           `DTSTART;VALUE=DATE:${dateStr}`,
           `SUMMARY:[${categoryLabel}] ${deadline.event}`,
