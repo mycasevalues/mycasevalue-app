@@ -76,7 +76,7 @@ export default function FeesPage() {
       </nav>
 
       {/* Main Content */}
-      <main style={{ background: '#F7F8FA', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
+      <div style={{ background: '#F7F8FA', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
 
           {/* Filing Fees */}
@@ -235,7 +235,7 @@ export default function FeesPage() {
             <strong>Important:</strong> Fee amounts are current as of December 2024. Fees are set by the Judicial Conference and may change. Always verify fees with the specific court before filing. Local district fees (e.g., pro hac vice, attorney admission) vary and are set by individual courts.
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }

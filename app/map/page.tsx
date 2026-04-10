@@ -307,7 +307,7 @@ export default function DistrictHeatmapPage() {
         </header>
 
         {/* Main Content */}
-        <main style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 16px' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 16px' }}>
           {/* Summary Stats */}
           <div
             style={{
@@ -980,7 +980,7 @@ export default function DistrictHeatmapPage() {
               Go to Case Calculator
             </a>
           </div>
-        </main>
+        </div>
 
         {/* Related Pages */}
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 16px', backgroundColor: '#F7F8FA' }}>

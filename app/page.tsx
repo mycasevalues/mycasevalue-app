@@ -179,7 +179,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="bg-white font-sans text-gray-900">
+    <div className="bg-white font-sans text-gray-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -436,6 +436,6 @@ export default function HomePage() {
           MyCaseValue provides data from public federal court records for informational purposes only. This is not legal advice. Consult a licensed attorney for legal guidance.
         </p>
       </div>
-    </main>
+    </div>
   );
 }

@@ -63,7 +63,7 @@ export default function DocumentIntelligencePage() {
         </div>
       </div>
 
-      <main style={{ maxWidth: '800px', margin: '0 auto', padding: '32px 20px' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '32px 20px' }}>
         <p style={{ fontSize: '15px', color: '#4B5563', marginBottom: '32px' }}>
           Upload a legal document — complaint, motion, or brief — to receive an AI-powered analysis including case type classification, key claims identified, relevant NOS codes, and comparable federal court outcomes.
         </p>
@@ -98,7 +98,7 @@ export default function DocumentIntelligencePage() {
         <p style={{ fontSize: '11px', color: '#4B5563', marginTop: '24px', fontStyle: 'italic' }}>
           Document Intelligence uses AI to analyze legal documents. Results are informational only and not legal advice. Documents are processed securely and not stored after analysis.
         </p>
-      </main>
+      </div>
     </div>
   );
 }

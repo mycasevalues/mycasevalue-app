@@ -403,7 +403,7 @@ export default function BlogPage() {
           </aside>
 
           {/* Main: Blog Grid */}
-          <main className="md:col-span-3">
+          <div className="md:col-span-3">
             <div className="grid grid-3-cols gap-8" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
               {remainingPosts.map((post, idx) => (
                 <article
@@ -458,7 +458,7 @@ export default function BlogPage() {
                 </article>
               ))}
             </div>
-          </main>
+          </div>
         </div>
       </div>
 

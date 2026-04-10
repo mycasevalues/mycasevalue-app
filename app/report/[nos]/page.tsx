@@ -170,12 +170,12 @@ export default async function ReportPage({
       const { allowed } = await checkFreeRateLimit(ip);
       if (!allowed) {
         return (
-          <main style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
+          <div style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
             <h1 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '12px', color: '#0f0f0f' }}>Daily limit reached</h1>
             <p style={{ color: '#4B5563', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
             <a href="/pricing" style={{ padding: '12px 28px', background: '#0966C3', color: '#fff', borderRadius: '20px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
             <p style={{ fontSize: '12px', color: '#4B5563', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
-          </main>
+          </div>
         );
       }
     } catch {
@@ -407,7 +407,7 @@ export default async function ReportPage({
         </div>
       </div>
 
-      <main style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
         {/* ═══ FREE: Win Rate Analysis ═══ */}
         <section style={{
           background: '#FFFFFF',
@@ -1193,7 +1193,7 @@ export default async function ReportPage({
         <p style={{ fontSize: 13, color: '#4B5563', textAlign: 'center', marginTop: 40, fontStyle: 'italic', fontFamily: 'var(--font-body)', lineHeight: 1.7 }}>
           This report shows aggregate historical data from public federal court records. Not legal advice. Results vary by individual case facts, evidence, representation, and jurisdiction.
         </p>
-      </main>
+      </div>
     </div>
   );
 }

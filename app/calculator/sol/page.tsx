@@ -105,7 +105,7 @@ export default function SOLCalculatorPage() {
       </nav>
 
       {/* Main Content */}
-      <main style={{ background: '#F7F8FA', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
+      <div style={{ background: '#F7F8FA', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
 
           {/* Input Form */}
@@ -243,7 +243,7 @@ export default function SOLCalculatorPage() {
             </div>
           )}
         </div>
-      </main>
+      </div>
     </>
   );
 }

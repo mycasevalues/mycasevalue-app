@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 
 export default function OpposingCounselPage() {
   return (
-    <main style={{ minHeight: '100vh', backgroundColor: '#f9fafb' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#f9fafb' }}>
       <OpposingCounselSearch />
-    </main>
+    </div>
   );
 }

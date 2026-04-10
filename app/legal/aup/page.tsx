@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function AUPPage() {
   return (
-    <main id="main-content" role="main">
+    <div>
       <article>
         {/* Header */}
         <section
@@ -347,6 +347,6 @@ export default function AUPPage() {
           </div>
         </section>
       </article>
-    </main>
+    </div>
   );
 }

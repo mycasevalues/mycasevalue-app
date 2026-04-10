@@ -410,7 +410,7 @@ export default async function DashboardPage() {
       </aside>
 
       {/* Main Content */}
-      <main style={{ flex: 1, overflow: 'auto' }}>
+      <div style={{ flex: 1, overflow: 'auto' }}>
         {/* Dark Navy Header with Welcome */}
         <div style={{
           background: '#0966C3',
@@ -925,7 +925,7 @@ export default async function DashboardPage() {
           />
         </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

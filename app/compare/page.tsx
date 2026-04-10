@@ -213,7 +213,7 @@ export default function ComparePage() {
       </nav>
 
       {/* Main Content */}
-      <main style={{
+      <div style={{
         background: '#F7F8FA',
         minHeight: 'calc(100vh - 200px)',
         padding: 'clamp(24px, 5vw, 48px)',
@@ -1068,7 +1068,7 @@ export default function ComparePage() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </>
   );
 }

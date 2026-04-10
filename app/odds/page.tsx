@@ -282,7 +282,7 @@ export default function OddsPage() {
       </nav>
 
       {/* Main Content */}
-      <main style={{
+      <div style={{
         background: '#F7F8FA',
         minHeight: 'calc(100vh - 280px)',
         padding: 'clamp(24px, 5vw, 48px)',
@@ -1453,7 +1453,7 @@ export default function OddsPage() {
             </div>
           )}
         </div>
-      </main>
+      </div>
     </>
   );
 }

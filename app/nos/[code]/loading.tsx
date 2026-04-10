@@ -130,7 +130,7 @@ export default function Loading() {
         </div>
 
         {/* Main Content Skeleton */}
-        <main style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
           {/* Case Type Overview Section */}
           <section
             style={{
@@ -401,7 +401,7 @@ export default function Loading() {
               ))}
             </div>
           </section>
-        </main>
+        </div>
       </div>
     </>
   );

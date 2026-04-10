@@ -67,13 +67,13 @@ export default async function GuidePage({ params }: PageProps) {
 
   if (!nosInfo) {
     return (
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
         <h1 style={{ color: '#0f0f0f' }}>Case Guide Not Found</h1>
         <p>This NOS code does not have a guide yet.</p>
         <Link href="/nos" style={{ color: '#0966C3', textDecoration: 'none' }}>
           Back to Case Types
         </Link>
-      </main>
+      </div>
     );
   }
 
@@ -83,13 +83,13 @@ export default async function GuidePage({ params }: PageProps) {
 
   if (!content) {
     return (
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
         <h1 style={{ color: '#0f0f0f' }}>Case Guide</h1>
         <p>A detailed guide for {nosInfo.label} cases is not yet available. View the case data instead.</p>
         <Link href={`/nos/${code}`} style={{ color: '#0966C3', textDecoration: 'none' }}>
           View {nosInfo.label} Case Data
         </Link>
-      </main>
+      </div>
     );
   }
 
@@ -98,7 +98,7 @@ export default async function GuidePage({ params }: PageProps) {
   const duration = realData?.mo || null;
 
   return (
-    <main style={{ maxWidth: '900px', margin: '0 auto', padding: '60px 30px' }}>
+    <div style={{ maxWidth: '900px', margin: '0 auto', padding: '60px 30px' }}>
       {/* Header */}
       <h1 style={{
         fontSize: '2.5rem',
@@ -713,6 +713,6 @@ export default async function GuidePage({ params }: PageProps) {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

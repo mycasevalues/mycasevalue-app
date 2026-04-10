@@ -77,7 +77,7 @@ const SEGMENTS = [
 
 export default function SolutionsPage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section
         style={{
@@ -420,6 +420,6 @@ export default function SolutionsPage() {
       `,
         }}
       />
-    </main>
+    </div>
   );
 }

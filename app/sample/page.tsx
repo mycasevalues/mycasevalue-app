@@ -124,7 +124,7 @@ export default function SampleReportPage() {
         </div>
 
         {/* Main Content */}
-        <main
+        <div
           style={{
             maxWidth: '960px',
             margin: '0 auto',
@@ -1338,7 +1338,7 @@ export default function SampleReportPage() {
           </section>
 
 
-        </main>
+        </div>
       </div>
       {/* Hover styles (CSS-only, no event handlers needed in Server Component) */}
       <style dangerouslySetInnerHTML={{ __html: `

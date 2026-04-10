@@ -236,7 +236,7 @@ export default async function CaseTypeDetailPage({
   };
 
   return (
-    <main style={{ background: '#F7F8FA', color: '#0f0f0f' }}>
+    <div style={{ background: '#F7F8FA', color: '#0f0f0f' }}>
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -600,6 +600,6 @@ export default async function CaseTypeDetailPage({
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

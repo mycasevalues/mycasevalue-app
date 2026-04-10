@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function WidgetGeneratorPage() {
   return (
-    <main style={{ minHeight: '100vh', backgroundColor: '#f9fafb' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#f9fafb' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 24px' }}>
         <div style={{ marginBottom: '40px' }}>
           <h1 style={{
@@ -37,6 +37,6 @@ export default function WidgetGeneratorPage() {
         </div>
         <WidgetGenerator />
       </div>
-    </main>
+    </div>
   );
 }

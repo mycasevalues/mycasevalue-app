@@ -208,7 +208,7 @@ export default function NOSIndexPage() {
       </div>
 
       {/* Categories */}
-      <main style={{ padding: 'clamp(24px, 5vw, 48px) 24px', maxWidth: '1200px', margin: '0 auto' }}>
+      <div style={{ padding: 'clamp(24px, 5vw, 48px) 24px', maxWidth: '1200px', margin: '0 auto' }}>
         {categories.map((categoryName) => (
           <section key={categoryName} style={{ marginBottom: '64px' }}>
             <h2
@@ -269,7 +269,7 @@ export default function NOSIndexPage() {
             </div>
           </section>
         ))}
-      </main>
+      </div>
 
       {/* Info Section */}
       <section style={{ background: '#FFFFFF', borderTop: '1px solid #E5E7EB', padding: 'clamp(24px, 5vw, 48px) 24px' }}>

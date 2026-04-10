@@ -44,7 +44,7 @@ export default function SettingsPage() {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar Navigation */}
           <nav className="lg:col-span-1">
@@ -406,7 +406,7 @@ export default function SettingsPage() {
             </section>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

@@ -274,7 +274,7 @@ export default function SearchPage() {
   };
 
   return (
-    <main style={{ fontFamily: 'var(--font-body)', background: '#F7F8FA', minHeight: '100vh' }}>
+    <div style={{ fontFamily: 'var(--font-body)', background: '#F7F8FA', minHeight: '100vh' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -1154,6 +1154,6 @@ export default function SearchPage() {
       )}
       </div>
       </div>
-    </main>
+    </div>
   );
 }

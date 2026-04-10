@@ -148,7 +148,7 @@ export default function DeadlinesCalculatorPage() {
       </nav>
 
       {/* Main Content */}
-      <main style={{ background: '#F7F8FA', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
+      <div style={{ background: '#F7F8FA', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
 
           {/* Input Form */}
@@ -328,7 +328,7 @@ export default function DeadlinesCalculatorPage() {
             </div>
           )}
         </div>
-      </main>
+      </div>
     </>
   );
 }

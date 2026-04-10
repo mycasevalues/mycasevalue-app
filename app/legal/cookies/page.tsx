@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function CookiePolicyPage() {
   return (
-    <main id="main-content" role="main">
+    <div>
       <article>
         {/* Header */}
         <section
@@ -578,6 +578,6 @@ export default function CookiePolicyPage() {
           </div>
         </section>
       </article>
-    </main>
+    </div>
   );
 }

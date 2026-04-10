@@ -210,7 +210,7 @@ export default function AdminPage() {
       </aside>
 
       {/* Main Content */}
-      <main style={{ marginLeft: '240px', flex: 1, padding: '32px', overflowY: 'auto' }}>
+      <div style={{ marginLeft: '240px', flex: 1, padding: '32px', overflowY: 'auto' }}>
         {/* Header */}
         <header style={{ marginBottom: '32px' }}>
           <h1 style={{ fontSize: '32px', fontWeight: 'bold', margin: '0 0 8px 0', color: COLORS.black }}>
@@ -1016,7 +1016,7 @@ export default function AdminPage() {
             <CostMonitor />
           </div>
         )}
-      </main>
+      </div>
     </div>
   );
 }

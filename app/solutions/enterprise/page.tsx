@@ -143,7 +143,7 @@ const FAQ_ITEMS = [
 
 export default function EnterprisePage() {
   return (
-    <main>
+    <div>
       {/* Hero */}
       <section style={{ background: '#0966C3', color: '#FAFBFC', padding: '80px 24px 64px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
@@ -479,6 +479,6 @@ export default function EnterprisePage() {
           }
         }
       `}} />
-    </main>
+    </div>
   );
 }

@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 
 export default function CaseStrengthPage() {
   return (
-    <main style={{ minHeight: '100vh', backgroundColor: '#f9fafb' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#f9fafb' }}>
       <CaseStrengthAssessment />
-    </main>
+    </div>
   );
 }
