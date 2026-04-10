@@ -1,5 +1,3 @@
-'use client';
-
 /**
  * Footer.tsx — White background footer with 5-column layout.
  * Part of the MyCaseValue site overhaul.

@@ -3,7 +3,16 @@ import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 import { getJudges } from '../../lib/judge-data-service';
 import JudgeDirectoryClient from '../../components/JudgeDirectoryClient';
-import JudgeRadarPreview from '../../components/JudgeRadarPreview';
+import dynamic from 'next/dynamic';
+
+const JudgeRadarPreview = dynamic(() => import('../../components/JudgeRadarPreview'), {
+  ssr: false,
+  loading: () => (
+    <div style={{ height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#9CA3AF', fontFamily: 'var(--font-body)', fontSize: 14 }}>
+      Loading radar preview…
+    </div>
+  ),
+});
 
 export const revalidate = 3600; // Revalidate every hour
 
