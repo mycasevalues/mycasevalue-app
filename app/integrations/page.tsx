@@ -209,8 +209,8 @@ export default function IntegrationsPage() {
             letterSpacing: '1.5px',
             textTransform: 'uppercase' as const,
             marginBottom: '16px',
-            background: 'rgba(255,255,255,0.1)',
-            color: '#0966C3',
+            background: 'rgba(255,255,255,0.15)',
+            color: 'rgba(255,255,255,0.9)',
           }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="16 18 22 12 16 6" />
