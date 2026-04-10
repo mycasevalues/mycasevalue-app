@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import CodeExampleTabs from '@/components/CodeExampleTabs';
 import APISandbox from '@/components/APISandbox';
+import { SITE_URL } from '@/lib/site-config';
 
 export const revalidate = 0;
 
@@ -9,15 +10,15 @@ export const metadata: Metadata = {
   title: 'API & Integrations — REST API | Developer Portal',
   description: 'Comprehensive REST API documentation for MyCaseValue. Integrate case statistics, win rates, settlement data, and predictive analytics into your platform. Bearer token authentication, rate limits, interactive sandbox, and code examples included.',
   alternates: {
-    canonical: 'https://www.mycasevalues.com/developers',
+    canonical: `${SITE_URL}/developers`,
   },
   openGraph: {
     title: 'API & Integrations — Developer Portal',
     description: 'REST API for case data, win rates, settlement analytics, and predictive intelligence.',
-    url: 'https://www.mycasevalues.com/developers',
+    url: `${SITE_URL}/developers`,
     type: 'website',
     siteName: 'MyCaseValue',
-    images: [{ url: 'https://www.mycasevalues.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',

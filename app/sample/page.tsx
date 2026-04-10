@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Sample Case Analysis Report — Employment Discrimination (NOS 442)',
@@ -9,10 +10,10 @@ export const metadata: Metadata = {
     title: 'Sample Case Analysis Report — Employment Discrimination (NOS 442)',
     description:
       'Complete sample analytics for federal employment discrimination cases with outcome distributions and recovery analysis.',
-    url: 'https://www.mycasevalues.com/sample',
+    url: `${SITE_URL}/sample`,
     type: 'website',
     siteName: 'MyCaseValue',
-    images: [{ url: 'https://www.mycasevalues.com/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
       'Complete sample analytics for federal employment discrimination cases with outcome distributions and recovery analysis.',
   },
   alternates: {
-    canonical: 'https://www.mycasevalues.com/sample',
+    canonical: `${SITE_URL}/sample`,
   },
 };
 
@@ -38,16 +39,16 @@ export default function SampleReportPage() {
             name: 'Employment Discrimination Cases — S.D.N.Y.',
             description:
               'Sample dataset of 2,847 federal employment discrimination cases in the Southern District of New York with outcomes, settlements, and judge analytics.',
-            url: 'https://www.mycasevalues.com/sample',
+            url: `${SITE_URL}/sample`,
             distribution: {
               '@type': 'DataDownload',
               encodingFormat: 'JSON',
-              contentUrl: 'https://www.mycasevalues.com/api/sample',
+              contentUrl: `${SITE_URL}/api/sample`,
             },
             author: {
               '@type': 'Organization',
               name: 'MyCaseValue',
-              url: 'https://www.mycasevalues.com',
+              url: SITE_URL,
             },
             datePublished: '2026-04-02',
           }),
@@ -70,7 +71,7 @@ export default function SampleReportPage() {
             isPartOf: {
               '@type': 'WebSite',
               name: 'MyCaseValue',
-              url: 'https://www.mycasevalues.com',
+              url: SITE_URL,
             },
           }),
         }}

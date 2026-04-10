@@ -1,7 +1,16 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/site-config';
-import ParalegalHandbookCapture from '@/components/ParalegalHandbookCapture';
+import dynamic from 'next/dynamic';
+
+const ParalegalHandbookCapture = dynamic(() => import('@/components/ParalegalHandbookCapture'), {
+  ssr: false,
+  loading: () => (
+    <div style={{ padding: 24, textAlign: 'center', color: '#9CA3AF', fontFamily: 'var(--font-body)', fontSize: 14 }}>
+      Loading PDF generator…
+    </div>
+  ),
+});
 
 export const revalidate = 0;
 

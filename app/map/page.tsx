@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import { SITE_URL } from '../../lib/site-config';
 
 const USChoropleth = dynamic(() => import('../../components/charts/USChoropleth'), { ssr: false });
 import type { StateData as ChoroplethStateData } from '../../components/charts/USChoropleth';
@@ -208,13 +209,13 @@ export default function DistrictHeatmapPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://mycasevalues.com',
+            item: SITE_URL,
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Map',
-            item: 'https://www.mycasevalues.com/map',
+            item: `${SITE_URL}/map`,
           },
         ],
       },
@@ -223,7 +224,7 @@ export default function DistrictHeatmapPage() {
         name: 'Federal Court Win Rates by State and District',
         description:
           'Historical federal court win rates aggregated by state and judicial district.',
-        url: 'https://www.mycasevalues.com/map',
+        url: `${SITE_URL}/map`,
         creator: {
           '@type': 'Organization',
           name: 'MyCaseValue',

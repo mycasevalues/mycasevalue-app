@@ -1,15 +1,16 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Integrations — Connect Your Legal Tools',
   description: 'Integrate MyCaseValue federal court data with your existing legal tools. REST API, CSV exports, and direct connections to case management systems.',
-  alternates: { canonical: 'https://www.mycasevalues.com/integrations' },
+  alternates: { canonical: `${SITE_URL}/integrations` },
   openGraph: {
     title: 'Integrations — MyCaseValue',
     description: 'Connect federal court analytics to your legal workflow with our API, exports, and direct integrations.',
     type: 'website',
-    url: 'https://www.mycasevalues.com/integrations',  },
+    url: `${SITE_URL}/integrations`,  },
   twitter: {
     card: 'summary_large_image',
     title: 'Integrations — MyCaseValue | Connect Your Legal Tools',
@@ -23,15 +24,15 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'Integrations', item: 'https://www.mycasevalues.com/integrations' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Integrations', item: `${SITE_URL}/integrations` },
       ],
     },
     {
       '@type': 'WebPage',
       name: 'MyCaseValue Integrations',
       description: 'Connect MyCaseValue federal court data with your existing legal tools.',
-      url: 'https://www.mycasevalues.com/integrations',
+      url: `${SITE_URL}/integrations`,
     },
   ],
 };

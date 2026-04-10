@@ -38,11 +38,11 @@ export const metadata: Metadata = {
     description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, settlement percentages, recovery ranges, and attorney impact data for 84 case types.',
     type: 'website',
     siteName: 'MyCaseValue',
-    url: 'https://www.mycasevalues.com',
+    url: SITE_URL,
     locale: 'en_US',
     images: [
       {
-        url: 'https://www.mycasevalues.com/og-image.png',
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: 'MyCaseValue — Federal Court Outcome Data',
@@ -53,10 +53,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MyCaseValue — Federal Court Outcome Data',
     description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, recovery ranges. Free and private.',
-    images: ['https://www.mycasevalues.com/og-image.png'],
+    images: [`${SITE_URL}/og-image.png`],
   },
   alternates: {
-    canonical: 'https://www.mycasevalues.com',
+    canonical: SITE_URL,
   },
   keywords: [
     'federal court outcomes', 'case outcome data', 'lawsuit win rate', 'settlement data',
@@ -100,8 +100,8 @@ const jsonLd = {
     {
       '@type': 'Organization',
       name: 'MyCaseValue',
-      url: 'https://www.mycasevalues.com',
-      logo: 'https://www.mycasevalues.com/icon-512.png',
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon-512.png`,
       description: 'Federal court outcome data for informed research.',
       contactPoint: {
         '@type': 'ContactPoint',
@@ -112,7 +112,7 @@ const jsonLd = {
     {
       '@type': 'SoftwareApplication',
       name: 'MyCaseValue',
-      url: 'https://www.mycasevalues.com',
+      url: SITE_URL,
       applicationCategory: 'ReferenceApplication',
       operatingSystem: 'All',
       applicationSubCategory: 'Legal Research Tool',
@@ -127,13 +127,13 @@ const jsonLd = {
       '@type': 'Dataset',
       name: 'Federal Court Outcome Data',
       description: 'Aggregate historical outcome data from 5,100,000+ federal civil cases, sourced from the Federal Judicial Center Integrated Database, CourtListener, and Google Scholar for legal scholarship context.',
-      url: 'https://www.mycasevalues.com',
+      url: SITE_URL,
       license: 'https://www.usa.gov/government-copyright',
       creator: { '@type': 'Organization', name: 'Federal Judicial Center' },
       distribution: {
         '@type': 'DataDownload',
         encodingFormat: 'text/html',
-        contentUrl: 'https://www.mycasevalues.com',
+        contentUrl: SITE_URL,
       },
       spatialCoverage: 'United States Federal Courts',
       temporalCoverage: '1970-present',
@@ -142,14 +142,14 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      url: 'https://www.mycasevalues.com',
+      url: SITE_URL,
       name: 'MyCaseValue',
       description: 'Federal court outcome data for informed research.',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://www.mycasevalues.com/cases?q={search_term_string}',
+          urlTemplate: `${SITE_URL}/cases?q={search_term_string}`,
         },
         'query-input': 'required name=search_term_string',
       },
@@ -157,10 +157,10 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'Case Types', item: 'https://www.mycasevalues.com/cases' },
-        { '@type': 'ListItem', position: 3, name: 'FAQ', item: 'https://www.mycasevalues.com/faq' },
-        { '@type': 'ListItem', position: 4, name: 'Methodology', item: 'https://www.mycasevalues.com/methodology' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Case Types', item: `${SITE_URL}/cases` },
+        { '@type': 'ListItem', position: 3, name: 'FAQ', item: `${SITE_URL}/faq` },
+        { '@type': 'ListItem', position: 4, name: 'Methodology', item: `${SITE_URL}/methodology` },
       ],
     },
     {
@@ -271,9 +271,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
         {/* Canonical URL is handled per-page by Next.js metadata.alternates.canonical */}
-        <link rel="alternate" hrefLang="en" href="https://www.mycasevalues.com" />
-        <link rel="alternate" hrefLang="es" href="https://www.mycasevalues.com/es" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.mycasevalues.com" />
+        <link rel="alternate" hrefLang="en" href={SITE_URL} />
+        <link rel="alternate" hrefLang="es" href={`${SITE_URL}/es`} />
+        <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
         <meta name="author" content="MyCaseValue LLC" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

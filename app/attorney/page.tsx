@@ -1,22 +1,23 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import React from 'react';
+import { SITE_URL } from '@/lib/site-config';
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Attorney Mode — Professional Legal Intelligence Suite',
   description: 'Advanced AI-powered tools for legal professionals. Case prediction, document analysis, opposing counsel research, PACER monitoring, and bulk analysis.',
-  alternates: { canonical: 'https://www.mycasevalues.com/attorney' },
+  alternates: { canonical: `${SITE_URL}/attorney` },
   openGraph: {
     title: 'Attorney Mode — Professional Legal Intelligence Suite',
     description: 'Advanced AI-powered tools for legal professionals. Case prediction, document analysis, opposing counsel research, and more.',
-    url: 'https://www.mycasevalues.com/attorney',
+    url: `${SITE_URL}/attorney`,
     type: 'website',
     siteName: 'MyCaseValue',
     images: [
       {
-        url: 'https://www.mycasevalues.com/og-image.png',
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: 'Attorney Mode',
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Attorney Mode',
     description: 'Advanced AI-powered legal intelligence for attorneys.',
-    images: ['https://www.mycasevalues.com/og-image.png'],
+    images: [`${SITE_URL}/og-image.png`],
   },
   keywords: [
     'legal intelligence',
@@ -369,15 +370,15 @@ export default function AttorneyPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.mycasevalues.com' },
-          { '@type': 'ListItem', position: 2, name: 'Attorney Mode', item: 'https://www.mycasevalues.com/attorney' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Attorney Mode', item: `${SITE_URL}/attorney` },
         ],
       },
       {
         '@type': 'SoftwareApplication',
         name: 'Attorney Mode — MyCaseValue',
         description: 'Advanced AI-powered legal intelligence tools for attorneys. Case prediction, document analysis, judge intelligence, opposing counsel research, and bulk analysis.',
-        url: 'https://www.mycasevalues.com/attorney',
+        url: `${SITE_URL}/attorney`,
         applicationCategory: 'LegalApplication',
         offers: {
           '@type': 'Offer',

@@ -1,7 +1,16 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import MethodologyCapture from '@/components/MethodologyCapture';
+import dynamic from 'next/dynamic';
 import { SITE_URL } from '../../../lib/site-config';
+
+const MethodologyCapture = dynamic(() => import('@/components/MethodologyCapture'), {
+  ssr: false,
+  loading: () => (
+    <div style={{ padding: 24, textAlign: 'center', color: '#9CA3AF', fontFamily: 'var(--font-body)', fontSize: 14 }}>
+      Loading PDF generator…
+    </div>
+  ),
+});
 
 export const revalidate = 0;
 

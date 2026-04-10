@@ -9,6 +9,13 @@ import { JudgeWithStats } from '@/lib/supabase-judges';
 
 export const dynamic = 'force-dynamic';
 
+const cacheHeaders = {
+  'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200',
+};
+const errorCacheHeaders = {
+  'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
+};
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -53,7 +60,7 @@ export async function GET(request: Request) {
         total: judges.length,
         page: 1,
         limit: 5,
-      });
+      }, { headers: cacheHeaders });
     }
 
     if (mode === 'district-all' && districtId) {
@@ -67,7 +74,7 @@ export async function GET(request: Request) {
         total: sorted.length,
         page: 1,
         limit: sorted.length,
-      });
+      }, { headers: cacheHeaders });
     }
 
     if (mode === 'district-nos' && nosCode && districtId) {
@@ -84,7 +91,7 @@ export async function GET(request: Request) {
         total: judges.length,
         page: 1,
         limit: judges.length,
-      });
+      }, { headers: cacheHeaders });
     }
 
     // Check if this is a "find judges by NOS code" query (legacy)
@@ -102,7 +109,7 @@ export async function GET(request: Request) {
         total: judges.length,
         page: 1,
         limit: 100,
-      });
+      }, { headers: cacheHeaders });
     }
 
     // Standard directory query
@@ -160,12 +167,12 @@ export async function GET(request: Request) {
       total: result.total,
       page,
       limit,
-    });
+    }, { headers: cacheHeaders });
   } catch (error) {
     console.error('Judge API error:', error);
     return Response.json(
       { error: 'Failed to fetch judges' },
-      { status: 500 }
+      { status: 500, headers: errorCacheHeaders }
     );
   }
 }

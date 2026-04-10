@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { SITE_URL } from '@/lib/site-config'
 
 export const metadata: Metadata = {
   title: 'Document Intelligence',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Document Intelligence',
     description: 'AI-powered legal document analysis tool',
-    url: 'https://www.mycasevalues.com/attorney/document-intelligence',
+    url: `${SITE_URL}/attorney/document-intelligence`,
   },
 }
 

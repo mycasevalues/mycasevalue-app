@@ -1,6 +1,15 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import AnnualReportCapture from '@/components/AnnualReportCapture';
+import dynamic from 'next/dynamic';
+
+const AnnualReportCapture = dynamic(() => import('@/components/AnnualReportCapture'), {
+  ssr: false,
+  loading: () => (
+    <div style={{ padding: 24, textAlign: 'center', color: '#9CA3AF', fontFamily: 'var(--font-body)', fontSize: 14 }}>
+      Loading PDF generator…
+    </div>
+  ),
+});
 
 export const metadata: Metadata = {
   title: '2026 Federal Court Statistics Annual Report',
