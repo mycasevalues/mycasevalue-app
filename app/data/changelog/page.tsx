@@ -11,7 +11,7 @@ import { getChangelogEntries, formatDate, getUpdateTypeBadge } from '@/lib/chang
 import { SITE_URL } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Data Changelog | MyCaseValue',
+  title: 'Data Changelog',
   description: 'Track all updates, data refreshes, and feature releases for MyCaseValue platform. See what changed and how it affects your research.',
   alternates: { canonical: `${SITE_URL}/data/changelog` },
   openGraph: {

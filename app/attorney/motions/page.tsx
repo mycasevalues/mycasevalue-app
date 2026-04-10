@@ -3,7 +3,7 @@ import { SITE_URL } from '../../../lib/site-config';
 import MotionRateExplorer from '../../../components/MotionRateExplorer';
 
 export const metadata: Metadata = {
-  title: 'Motion Success Rate Database | MyCaseValue',
+  title: 'Motion Success Rate Database',
   description: 'Motion success rate database by case type and circuit',
   alternates: { canonical: `${SITE_URL}/attorney/motions` },
   openGraph: {

@@ -6,7 +6,7 @@ import CourtGuideCapture from '@/components/CourtGuideCapture';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Federal Court Research Guide for Non-Lawyers | MyCaseValue',
+  title: 'Federal Court Research Guide for Non-Lawyers',
   description: 'Free downloadable guide to federal court research, case terminology, finding resources, and navigating litigation with no legal background.',
   alternates: { canonical: `${SITE_URL}/resources/court-guide` },
   openGraph: {

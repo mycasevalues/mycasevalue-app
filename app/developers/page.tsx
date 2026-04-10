@@ -6,7 +6,7 @@ import APISandbox from '@/components/APISandbox';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'API & Integrations — MyCaseValue REST API | Developer Portal',
+  title: 'API & Integrations — REST API | Developer Portal',
   description: 'Comprehensive REST API documentation for MyCaseValue. Integrate case statistics, win rates, settlement data, and predictive analytics into your platform. Bearer token authentication, rate limits, interactive sandbox, and code examples included.',
   alternates: {
     canonical: 'https://www.mycasevalues.com/developers',

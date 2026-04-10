@@ -310,7 +310,7 @@ export async function generateMetadata(
   }
 
   return {
-    title: `${article.title} — MyCaseValue Blog`,
+    title: `${article.title}`,
     description: article.description,
     alternates: { canonical: `${SITE_URL}/blog/${article.slug}` },
     openGraph: {

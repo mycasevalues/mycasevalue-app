@@ -3,7 +3,7 @@ import { SITE_URL } from '../../../lib/site-config';
 import CaseStrengthAssessment from '../../../components/CaseStrengthAssessment';
 
 export const metadata: Metadata = {
-  title: 'Case Strength Assessment | MyCaseValue',
+  title: 'Case Strength Assessment',
   description:
     'Evaluate your case strength across key legal factors. Get a personalized assessment score, win rate comparison, and recommendations for next steps.',
   alternates: { canonical: `${SITE_URL}/tools/case-strength` },

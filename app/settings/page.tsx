@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Settings | MyCaseValue',
+  title: 'Settings',
   description: 'Manage your MyCaseValue account settings and preferences.',
   robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/settings` },

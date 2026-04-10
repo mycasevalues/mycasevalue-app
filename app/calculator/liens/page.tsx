@@ -4,7 +4,7 @@ import Link from 'next/link';
 import LienCalculator from '../../../components/LienCalculator';
 
 export const metadata: Metadata = {
-  title: 'Lien & Subrogation Calculator | MyCaseValue',
+  title: 'Lien & Subrogation Calculator',
   description: 'Estimate Medicare, Medicaid, and workers compensation liens. Calculate net recovery to client from your settlement amount.',
   alternates: { canonical: `${SITE_URL}/calculator/liens` },
   openGraph: {

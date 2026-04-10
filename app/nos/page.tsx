@@ -4,7 +4,7 @@ import { SITS } from '../../lib/data';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'All Federal Case Types — MyCaseValue',
+  title: 'All Federal Case Types',
   description:
     'Browse all federal case types with real court statistics. Explore win rates, case duration, and outcomes for employment, injury, consumer, civil rights, and more.',
   alternates: { canonical: `${SITE_URL}/nos` },

@@ -5,7 +5,7 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'Press Kit | MyCaseValue',
+  title: 'Press Kit',
   description: 'Media resources, brand assets, company information, and press contact for MyCaseValue. Download logos, brand guidelines, and company overview for journalists and media professionals.',
   alternates: { canonical: `${SITE_URL}/press` },
   openGraph: {

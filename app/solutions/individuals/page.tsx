@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SITE_URL, SITE_NAME } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'For Individuals | MyCaseValue',
+  title: 'For Individuals',
   description: 'Research your case value, settlement ranges, and timeline estimates. Free access to case analytics for personal injury claims.',
   alternates: { canonical: `${SITE_URL}/solutions/individuals` },
   openGraph: {

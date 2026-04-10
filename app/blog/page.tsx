@@ -89,7 +89,7 @@ const blogArticles = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Blog — MyCaseValue | Federal Court Data & Legal Insights',
+  title: 'Blog — Federal Court Data & Legal Insights',
   description: 'Research-backed articles about federal court outcomes, case statistics, settlement data, win rates, and litigation strategy based on 5.1M+ cases.',
   alternates: { canonical: `${SITE_URL}/blog` },
   openGraph: {

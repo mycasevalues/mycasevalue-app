@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AnnualReportCapture from '@/components/AnnualReportCapture';
 
 export const metadata: Metadata = {
-  title: '2026 Federal Court Statistics Annual Report | MyCaseValue',
+  title: '2026 Federal Court Statistics Annual Report',
   description: 'Comprehensive federal court statistics, settlement data, plaintiff win rates, and litigation trends for 2026. Download our data-driven annual report.',
 };
 

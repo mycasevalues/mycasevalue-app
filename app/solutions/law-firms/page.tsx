@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 
 export const metadata = {
-  title: 'Law Firm Solutions | MyCaseValue',
+  title: 'Law Firm Solutions',
   description: 'Federal court analytics tools designed for law firms. Access settlement data, win rates, and judge analytics to strengthen your case strategy.',
   openGraph: {
     title: 'Law Firm Solutions | MyCaseValue',

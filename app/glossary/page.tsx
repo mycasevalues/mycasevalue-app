@@ -7,7 +7,7 @@ import GlossaryExplorer from '../../components/GlossaryExplorer';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: 'Legal Glossary | MyCaseValue',
+  title: 'Legal Glossary',
   description: 'Plain-English definitions of 327 federal court terms. NOS codes, PACER, settlement percentiles, win rates, summary judgment, and more legal jargon explained.',
   alternates: { canonical: `${SITE_URL}/glossary` },
   openGraph: {

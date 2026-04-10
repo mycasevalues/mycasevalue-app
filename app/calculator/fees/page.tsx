@@ -3,7 +3,7 @@ import { SITE_URL } from '../../../lib/site-config';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Federal Court Fees Calculator | MyCaseValue',
+  title: 'Federal Court Fees Calculator',
   description: 'Calculate federal court filing fees, PACER fees, pro hac vice fees, and other litigation costs.',
   alternates: { canonical: `${SITE_URL}/calculator/fees` },
   openGraph: {

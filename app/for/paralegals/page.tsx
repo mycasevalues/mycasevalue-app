@@ -7,7 +7,7 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Paralegals Federal Court Data | MyCaseValue',
+  title: 'Paralegals Federal Court Data',
   description: 'Pull federal court outcome data in minutes. Judge analytics, district data, and case research tools for paralegals supporting attorneys.',
   alternates: { canonical: `${SITE_URL}/for/paralegals` },
   openGraph: {

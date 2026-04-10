@@ -3,7 +3,7 @@ import { getExpertTypes } from '@/lib/expert-witness';
 import ExpertWitnessExplorer from '@/components/ExpertWitnessExplorer';
 
 export const metadata: Metadata = {
-  title: 'Expert Witness Database | MyCaseValue Attorney Tools',
+  title: 'Expert Witness Database',
   description: 'Analyze Daubert challenge statistics, circuit outcomes, and expert witness patterns across 6 expert types. Access sample opinions and exclusion/admission grounds.',
   keywords: ['expert witness', 'Daubert challenges', 'expert testimony', 'litigation support'],
 };

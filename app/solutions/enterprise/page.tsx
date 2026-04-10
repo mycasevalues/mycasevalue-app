@@ -4,7 +4,7 @@ import { SITE_URL, SITE_NAME } from '@/lib/site-config';
 import EnterpriseDemoForm from '@/components/EnterpriseDemoForm';
 
 export const metadata: Metadata = {
-  title: 'MyCaseValue for Enterprise | API, Dashboards & Dedicated Support',
+  title: 'Enterprise — API, Dashboards & Dedicated Support',
   description: 'Enterprise-grade case analytics with API access, custom dashboards, white-label reports, SSO integration, and dedicated support for law firms, insurance companies, and law schools.',
   alternates: { canonical: `${SITE_URL}/solutions/enterprise` },
   openGraph: {

@@ -135,7 +135,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!districtInfo || !nosInfo) {
     return {
-      title: 'Case Data Not Found — MyCaseValue',
+      title: 'Case Data Not Found',
       description: 'This page does not exist.',
     };
   }

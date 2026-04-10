@@ -5,7 +5,7 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'API Documentation | MyCaseValue',
+  title: 'API Documentation',
   description: 'Programmatic access to federal court outcome data. Enterprise-grade API with authentication, rate limiting, and comprehensive endpoints for case analytics.',
   alternates: { canonical: `${SITE_URL}/api-docs` },
   openGraph: {

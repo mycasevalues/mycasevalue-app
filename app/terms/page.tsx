@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — MyCaseValue',
+  title: 'Terms of Service',
   description: 'MyCaseValue Terms of Service. Read our service agreement, disclaimers, and user responsibilities.',
   alternates: { canonical: `${SITE_URL}/terms` },
   robots: {

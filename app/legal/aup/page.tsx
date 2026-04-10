@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Acceptable Use Policy | MyCaseValue',
+  title: 'Acceptable Use Policy',
   description: 'Review MyCaseValue\'s Acceptable Use Policy governing use of our platform and data.',
   openGraph: {
     title: 'Acceptable Use Policy | MyCaseValue',

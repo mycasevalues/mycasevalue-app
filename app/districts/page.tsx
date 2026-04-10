@@ -8,7 +8,7 @@ import DistrictsMapToggle from '../../components/DistrictsMapToggle';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Federal Court Districts — All 95 Judicial Districts | MyCaseValue',
+  title: 'Federal Court Districts — All 95 Judicial Districts',
   description: 'All 95 federal judicial districts across 13 circuits. Explore case outcomes, win rates, and settlement data by district and jurisdiction.',
   alternates: { canonical: `${SITE_URL}/districts` },
   openGraph: {

@@ -45,7 +45,7 @@ export async function generateMetadata(
     return { title: 'Case Guide | MyCaseValue' };
   }
 
-  const title = `${nosInfo.label} Cases — Federal Court Guide & Legal Explainer | MyCaseValue`;
+  const title = `${nosInfo.label} Cases — Federal Court Guide & Legal Explainer`;
   const description = `Understand ${nosInfo.label.toLowerCase()} cases in federal court. Win rates, settlements, legal elements to prove, and next steps for parties. Based on real court data.`;
 
   return {

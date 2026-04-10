@@ -8,7 +8,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Preguntas Frecuentes — MyCaseValue',
+  title: 'Preguntas Frecuentes',
   description: 'Preguntas frecuentes sobre MyCaseValue: Cómo funciona, fuentes de datos, si es asesoramiento legal, precisión, precios, privacidad y cómo usar datos de resultados judiciales.',
   alternates: {
     canonical: `${SITE_URL}/es/faq`,

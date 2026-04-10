@@ -5,7 +5,7 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'FAQ — MyCaseValue | Federal Court Data Questions Answered',
+  title: 'FAQ — Federal Court Data Questions Answered',
   description: 'Comprehensive FAQ about MyCaseValue: How it works, data sources, whether it\'s legal advice, accuracy, pricing, privacy, and how to use court outcome data.',
   alternates: { canonical: `${SITE_URL}/faq` },
   openGraph: {

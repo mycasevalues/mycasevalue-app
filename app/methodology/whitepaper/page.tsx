@@ -6,7 +6,7 @@ import { SITE_URL } from '../../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Data Methodology Whitepaper | MyCaseValue',
+  title: 'Data Methodology Whitepaper',
   description: 'Comprehensive technical documentation of MyCaseValue research methodology, data sources, and statistical framework for federal court case analysis.',
   alternates: { canonical: `${SITE_URL}/methodology/whitepaper` },
   openGraph: {

@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Tendencias — MyCaseValue',
+  title: 'Tendencias',
   description: 'Tendencias en demandas federales año tras año. Análisis de qué tipos de casos están aumentando en los tribunales federales.',
   alternates: {
     canonical: `${SITE_URL}/es/trends`,

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — MyCaseValue',
+  title: 'Privacy Policy',
   description: 'MyCaseValue privacy policy. Learn how we collect, use, and protect your data when researching federal court outcomes.',
   alternates: { canonical: `${SITE_URL}/privacy` },
   robots: {

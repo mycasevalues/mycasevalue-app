@@ -7,7 +7,7 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Law Students Federal Court Data | MyCaseValue',
+  title: 'Law Students Federal Court Data',
   description: 'Research real federal court outcomes for law school. Win rates, judge analytics, case timelines, and real-world data for moot court and law review research.',
   alternates: { canonical: `${SITE_URL}/for/students` },
   openGraph: {

@@ -3,7 +3,7 @@ import { SITE_URL } from '../../../lib/site-config';
 import DecisionTree from '../../../components/DecisionTree';
 
 export const metadata: Metadata = {
-  title: 'Should I File? Decision Tree | MyCaseValue',
+  title: 'Should I File? Decision Tree',
   description:
     'Interactive questionnaire to help unrepresented individuals assess whether their situation may qualify as a federal case. Get jurisdiction guidance, win rates, and next steps.',
   alternates: { canonical: `${SITE_URL}/tools/should-i-file` },

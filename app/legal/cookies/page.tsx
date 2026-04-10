@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy | MyCaseValue',
+  title: 'Cookie Policy',
   description: 'Learn about how MyCaseValue uses cookies and how to manage your cookie preferences.',
   openGraph: {
     title: 'Cookie Policy | MyCaseValue',

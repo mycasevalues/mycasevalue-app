@@ -7,7 +7,7 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Academic Researchers Federal Court Data | MyCaseValue',
+  title: 'Academic Researchers Federal Court Data',
   description: 'Access 5.1 million federal case outcomes for empirical legal research. Searchable by district, case type, judge, outcome, and year. Built on public FJC, CourtListener, and RECAP data.',
   alternates: { canonical: `${SITE_URL}/for/researchers` },
   openGraph: {

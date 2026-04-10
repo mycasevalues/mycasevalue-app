@@ -8,7 +8,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Precios — MyCaseValue | Informes desde $5.99',
+  title: 'Precios — Informes desde $5.99',
   description: 'Informes asequibles de resultados de casos federales. Elige entre Informe Individual ($5.99), Informes Ilimitados ($9.99/mes) o Modo Abogado ($29.99/mes). Todos los planes incluyen citas de fuentes y soporte bilingüe.',
   alternates: {
     canonical: `${SITE_URL}/es/pricing`,

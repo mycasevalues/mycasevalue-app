@@ -125,7 +125,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!districtMeta) {
     return {
-      title: 'District Not Found — MyCaseValue',
+      title: 'District Not Found',
       description: 'This federal court district does not exist.',
     };
   }

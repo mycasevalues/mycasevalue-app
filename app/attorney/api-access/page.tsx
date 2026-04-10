@@ -6,7 +6,7 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'API Access — Integrate MyCaseValue Data | Developer Documentation',
+  title: 'API Access — Developer Documentation',
   description: 'Access programmatic APIs to get case statistics, win rates, settlement data, and predictive analytics. Complete API documentation with cURL examples.',
   alternates: {
     canonical: `${SITE_URL}/attorney/api-access`,

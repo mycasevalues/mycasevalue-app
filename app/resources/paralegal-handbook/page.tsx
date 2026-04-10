@@ -6,7 +6,7 @@ import ParalegalHandbookCapture from '@/components/ParalegalHandbookCapture';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Paralegal Federal Court Handbook | MyCaseValue',
+  title: 'Paralegal Federal Court Handbook',
   description: 'Professional reference handbook for paralegals. Federal court structure, FRCP deadlines, statute of limitations quick reference, district directories, and essential navigation guides.',
   alternates: { canonical: `${SITE_URL}/resources/paralegal-handbook` },
   openGraph: {

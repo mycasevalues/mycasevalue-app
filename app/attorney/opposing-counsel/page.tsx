@@ -3,7 +3,7 @@ import { SITE_URL } from '../../../lib/site-config';
 import OpposingCounselSearch from '../../../components/OpposingCounselSearch';
 
 export const metadata: Metadata = {
-  title: 'Opposing Counsel Research | MyCaseValue',
+  title: 'Opposing Counsel Research',
   description:
     'Research opposing counsel track record, settlement patterns, and litigation strategy. Analyze their win rates, time to settlement, and case type preferences using public PACER data.',
   alternates: { canonical: `${SITE_URL}/attorney/opposing-counsel` },

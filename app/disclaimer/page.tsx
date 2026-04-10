@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Disclaimer — MyCaseValue | Not Legal Advice',
+  title: 'Disclaimer — Not Legal Advice',
   description: 'Important disclaimer: MyCaseValue is not a law firm and provides data for informational purposes only, not legal advice.',
   alternates: { canonical: `${SITE_URL}/disclaimer` },
   robots: { index: true, follow: true },

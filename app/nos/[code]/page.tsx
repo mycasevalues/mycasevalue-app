@@ -106,7 +106,7 @@ export async function generateMetadata(
 
   if (!nosInfo) {
     return {
-      title: 'Case Type Not Found — MyCaseValue',
+      title: 'Case Type Not Found',
       description: 'This case type does not exist in our database.',
     };
   }

@@ -3,7 +3,7 @@ import { SITE_URL } from '@/lib/site-config';
 import WidgetGenerator from '@/components/WidgetGenerator';
 
 export const metadata: Metadata = {
-  title: 'Widget Generator | MyCaseValue',
+  title: 'Widget Generator',
   description: 'Build and customize embeddable case settlement widgets for your website.',
   alternates: { canonical: `${SITE_URL}/solutions/api/widget` },
   openGraph: {

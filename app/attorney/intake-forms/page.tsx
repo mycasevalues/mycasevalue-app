@@ -3,7 +3,7 @@ import Link from 'next/link';
 import IntakeFormGenerator from '../../../components/IntakeFormGenerator';
 
 export const metadata: Metadata = {
-  title: 'Case Intake Form Generator | MyCaseValue',
+  title: 'Case Intake Form Generator',
   description: 'Generate customized client intake questionnaires by case type to streamline case intake and client onboarding.',
 };
 

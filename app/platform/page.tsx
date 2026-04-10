@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Legal Intelligence Platform | MyCaseValue',
+  title: 'Legal Intelligence Platform',
   description: 'The Legal Intelligence Platform democratizing federal court data. 5.1M+ cases analyzed, AI-powered predictions, real-time settlement analytics, and attorney tools for data-driven legal decisions.',
   alternates: { canonical: `${SITE_URL}/platform` },
   openGraph: {

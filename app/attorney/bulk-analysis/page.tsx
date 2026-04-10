@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BulkAnalysisTool } from '@/components/BulkAnalysisTool';
 
 export const metadata: Metadata = {
-  title: 'Bulk Case Analysis | MyCaseValue',
+  title: 'Bulk Case Analysis',
   description: 'Upload and analyze CSV files of multiple cases for portfolio risk assessment and outcome trends.',
 };
 

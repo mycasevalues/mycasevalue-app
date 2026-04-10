@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SITE_URL, SITE_NAME } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'For Small Law Firms | MyCaseValue',
+  title: 'For Small Law Firms',
   description: 'Case analytics, opposing counsel intelligence, and venue selection tools designed for solo practitioners and small law firms.',
   alternates: { canonical: `${SITE_URL}/solutions/small-firms` },
   openGraph: {

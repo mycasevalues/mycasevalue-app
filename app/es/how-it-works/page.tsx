@@ -8,7 +8,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Cómo Funciona — MyCaseValue',
+  title: 'Cómo Funciona',
   description: 'Cómo MyCaseValue analiza 5.1M+ casos federales para mostrar tasas de victoria, acuerdos, cronogramas y análisis de jueces.',
   alternates: {
     canonical: `${SITE_URL}/es/how-it-works`,

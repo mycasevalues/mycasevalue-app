@@ -5,7 +5,7 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Data Sources & Methodology | MyCaseValue',
+  title: 'Data Sources & Methodology',
   description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 5.1M+ cases across 95 federal districts with quarterly updates.',
   alternates: { canonical: `${SITE_URL}/data-sources` },
   openGraph: {

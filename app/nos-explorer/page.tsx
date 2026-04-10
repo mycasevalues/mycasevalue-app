@@ -19,7 +19,7 @@ import dynamic from 'next/dynamic';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'NOS Code Explorer — All 84 Federal Case Types | MyCaseValue',
+  title: 'NOS Code Explorer — All 84 Federal Case Types',
   description: 'Explore all 84 Nature of Suit (NOS) codes used in federal civil litigation. Search, filter, and compare win rates, settlement data, duration, and recovery ranges.',
   alternates: { canonical: `${SITE_URL}/nos-explorer` },
   openGraph: {
