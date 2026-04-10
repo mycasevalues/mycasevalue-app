@@ -316,7 +316,7 @@ export default function HeroDataViz({ bars = DEFAULT_BARS, cards = DEFAULT_CARDS
       <div
         style={{
           fontSize: '11px',
-          color: '#999999',
+          color: '#595959',
           fontFamily: 'var(--font-body)',
           marginBottom: '20px',
           letterSpacing: '0.02em',

@@ -1045,7 +1045,7 @@ export default function TeamWorkspace() {
                     <span style={{ color: '#004182' }}>{activity.target}</span>
                   </p>
                 </div>
-                <span style={{ fontSize: '11px', color: '#AAAAAA', flexShrink: 0 }}>{activity.time}</span>
+                <span style={{ fontSize: '11px', color: '#6B7280', flexShrink: 0 }}>{activity.time}</span>
               </div>
             ))}
           </div>
@@ -1214,7 +1214,7 @@ export default function TeamWorkspace() {
                 >
                   {member.role}
                 </span>
-                <p style={{ fontSize: '10px', color: '#AAAAAA', margin: 0 }}>{member.lastActive}</p>
+                <p style={{ fontSize: '10px', color: '#6B7280', margin: 0 }}>{member.lastActive}</p>
               </div>
             ))}
           </div>

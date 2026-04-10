@@ -190,7 +190,7 @@ export default function BlogPage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #999;
+          color: #595959;
           font-size: 14px;
           border-radius: 12px;
         }

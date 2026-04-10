@@ -112,7 +112,7 @@ export default function PacerMonitorPage() {
                     </div>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 4px' }}>{alert.caseName}</p>
                     <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 6px', lineHeight: 1.4 }}>{alert.event}</p>
-                    <p style={{ fontSize: '11px', color: '#AAAAAA', margin: 0 }}>{new Date(alert.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                    <p style={{ fontSize: '11px', color: '#6B7280', margin: 0 }}>{new Date(alert.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
                   </div>
                 );
               })}
@@ -140,7 +140,7 @@ export default function PacerMonitorPage() {
                 {watchList.map((c) => (
                   <div key={c} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 10px', backgroundColor: '#FAFBFC', borderRadius: '12px' }}>
                     <span className="font-mono" style={{ fontSize: '12px', color: '#0f0f0f' }}>{c}</span>
-                    <button onClick={() => setWatchList(watchList.filter((w) => w !== c))} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#AAAAAA', fontSize: '14px' }}>&times;</button>
+                    <button onClick={() => setWatchList(watchList.filter((w) => w !== c))} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6B7280', fontSize: '14px' }}>&times;</button>
                   </div>
                 ))}
               </div>

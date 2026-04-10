@@ -124,7 +124,7 @@ export default function LanguageDetectBanner() {
           style={{
             background: 'none',
             border: 'none',
-            color: '#999999',
+            color: '#595959',
             fontSize: '18px',
             cursor: 'pointer',
             padding: '4px',

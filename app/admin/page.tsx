@@ -244,7 +244,7 @@ export default function AdminPage() {
                     boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                   }}
                 >
-                  <p style={{ fontSize: '12px', color: '#999', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+                  <p style={{ fontSize: '12px', color: '#595959', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
                     {metric.label}
                   </p>
                   <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
@@ -531,7 +531,7 @@ export default function AdminPage() {
                 Manage featured news and updates for homepage
               </p>
               <div style={{ padding: '32px', backgroundColor: '#f9f9f9', borderRadius: '6px', textAlign: 'center' }}>
-                <p style={{ fontSize: '14px', color: '#999', margin: 0 }}>No entries yet. Create your first one.</p>
+                <p style={{ fontSize: '14px', color: '#595959', margin: 0 }}>No entries yet. Create your first one.</p>
               </div>
             </div>
           </div>
@@ -875,7 +875,7 @@ export default function AdminPage() {
                   boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                 }}
               >
-                <p style={{ fontSize: '12px', color: '#999', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+                <p style={{ fontSize: '12px', color: '#595959', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
                   Subscriber Count
                 </p>
                 <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
@@ -891,7 +891,7 @@ export default function AdminPage() {
                   boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                 }}
               >
-                <p style={{ fontSize: '12px', color: '#999', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+                <p style={{ fontSize: '12px', color: '#595959', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
                   This Month
                 </p>
                 <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>

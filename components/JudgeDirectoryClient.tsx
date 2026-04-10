@@ -616,7 +616,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 <p style={{
                   fontSize: 12,
                   fontWeight: 400,
-                  color: '#999999',
+                  color: '#595959',
                   margin: '0 0 12px 0',
                   fontFamily: 'var(--font-body)',
                 }}>
@@ -1064,7 +1064,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     </div>
                     <div style={{
                       fontSize: 10,
-                      color: '#999999',
+                      color: '#595959',
                       fontFamily: 'var(--font-body)',
                       textAlign: 'center',
                     }}>
@@ -1086,7 +1086,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     </div>
                     <div style={{
                       fontSize: 10,
-                      color: '#999999',
+                      color: '#595959',
                       fontFamily: 'var(--font-body)',
                       marginTop: 2,
                     }}>
@@ -1108,7 +1108,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     </div>
                     <div style={{
                       fontSize: 10,
-                      color: '#999999',
+                      color: '#595959',
                       fontFamily: 'var(--font-body)',
                       marginTop: 2,
                     }}>

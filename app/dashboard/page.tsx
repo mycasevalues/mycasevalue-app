@@ -468,28 +468,28 @@ export default async function DashboardPage() {
               <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Total Cases Analyzed</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: '#0f0f0f' }}>5.1M</div>
-                <div style={{ fontSize: '11px', color: '#999', marginTop: '6px' }}>Cases in database</div>
+                <div style={{ fontSize: '11px', color: '#595959', marginTop: '6px' }}>Cases in database</div>
               </div>
 
               {/* Active Case Types */}
               <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Active Case Types</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: '#0f0f0f' }}>84</div>
-                <div style={{ fontSize: '11px', color: '#999', marginTop: '6px' }}>Federal case categories</div>
+                <div style={{ fontSize: '11px', color: '#595959', marginTop: '6px' }}>Federal case categories</div>
               </div>
 
               {/* Federal Districts */}
               <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Federal Districts</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: '#0f0f0f' }}>95</div>
-                <div style={{ fontSize: '11px', color: '#999', marginTop: '6px' }}>U.S. courts covered</div>
+                <div style={{ fontSize: '11px', color: '#595959', marginTop: '6px' }}>U.S. courts covered</div>
               </div>
 
               {/* Data Coverage */}
               <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Data Coverage</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: '#0f0f0f' }}>1970-2024</div>
-                <div style={{ fontSize: '11px', color: '#999', marginTop: '6px' }}>54+ years of data</div>
+                <div style={{ fontSize: '11px', color: '#595959', marginTop: '6px' }}>54+ years of data</div>
               </div>
             </div>
           </div>

@@ -217,7 +217,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
               />
             </div>
 
-            <p style={{ fontSize: '11px', color: '#AAAAAA', margin: '0 0 16px' }}>
+            <p style={{ fontSize: '11px', color: '#6B7280', margin: '0 0 16px' }}>
               This will be shared with your team on the Team Workspace
             </p>
 

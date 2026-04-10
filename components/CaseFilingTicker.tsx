@@ -86,7 +86,7 @@ export default function CaseFilingTicker() {
         <div
           style={{
             fontSize: '12px',
-            color: '#999999',
+            color: '#595959',
             fontFamily: 'var(--font-body)',
             marginBottom: '16px',
             textTransform: 'uppercase',

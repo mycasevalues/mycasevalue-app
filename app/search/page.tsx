@@ -761,7 +761,7 @@ export default function SearchPage() {
           <p style={{ color: '#4B5563', fontSize: 16, margin: 0, marginBottom: 8, fontFamily: 'var(--font-body)' }}>
             No case types match your search
           </p>
-          <p style={{ color: '#AAAAAA', fontSize: 14, margin: 0, marginBottom: 16, fontFamily: 'var(--font-body)' }}>
+          <p style={{ color: '#6B7280', fontSize: 14, margin: 0, marginBottom: 16, fontFamily: 'var(--font-body)' }}>
             for &ldquo;{query}&rdquo;
           </p>
           <Link href="/cases" style={{ color: '#004182', textDecoration: 'none', fontSize: 14 }}>Browse all categories &rarr;</Link>

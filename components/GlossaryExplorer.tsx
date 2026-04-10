@@ -71,7 +71,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               left: '12px',
               top: '50%',
               transform: 'translateY(-50%)',
-              color: '#999',
+              color: '#595959',
               pointerEvents: 'none',
             }}
           >
@@ -103,7 +103,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
             }}
           />
         </div>
-        <p style={{ fontSize: '12px', color: '#999', margin: '0' }}>
+        <p style={{ fontSize: '12px', color: '#595959', margin: '0' }}>
           {filteredTerms.length} of {terms.length} terms
         </p>
       </div>
