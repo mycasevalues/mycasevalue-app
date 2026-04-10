@@ -22,7 +22,6 @@ const RouteLoadingBar = dynamic(() => import('../components/ui/RouteLoadingBar')
 });
 const CookieConsent = dynamic(() => import('../components/ui/CookieConsent'), { ssr: false });
 const GlobalCommandPalette = dynamic(() => import('../components/ui/GlobalCommandPalette'), { ssr: false });
-const ScrollToTop = dynamic(() => import('../components/ui/ScrollToTop'), { ssr: false });
 const BackToTop = dynamic(() => import('../components/BackToTop'), { ssr: false });
 const WebVitalsReporter = dynamic(() => import('../components/analytics/WebVitalsReporter'), { ssr: false });
 const DemoMode = dynamic(() => import('../components/DemoMode'), { ssr: false });
@@ -150,7 +149,7 @@ const jsonLd = {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://www.mycasevalues.com/?q={search_term_string}',
+          urlTemplate: 'https://www.mycasevalues.com/cases?q={search_term_string}',
         },
         'query-input': 'required name=search_term_string',
       },
@@ -291,15 +290,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ` }} />
         <style>{`
           @keyframes pageEnter {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
           }
           main {
             animation: pageEnter 0.3s ease-out;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            main { animation: none; }
           }
         `}</style>
       </head>
@@ -321,7 +319,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </AnalyticsProvider>
         </ErrorBoundary>
-        <ScrollToTop />
         <BackToTop />
         <CookieConsent />
         <WebVitalsReporter />
