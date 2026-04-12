@@ -66,7 +66,7 @@ const DEMO_DOCUMENTS: SearchResult[] = [
   {
     id: 'demo-doc-004',
     title: 'Digital Privacy Act Amendments - Notice of Proposed Rulemaking',
-    snippet: 'This notice announces the Federal Trade Commission's proposal to amend regulations governing the collection and use of personal data by online platforms, establishing new requirements for data minimization and user consent.',
+    snippet: 'This notice announces the Federal Trade Commission\'s proposal to amend regulations governing the collection and use of personal data by online platforms, establishing new requirements for data minimization and user consent.',
     source: 'federal_register',
     sourceId: 'fr-002',
     type: 'notice',
@@ -85,7 +85,7 @@ const DEMO_DOCUMENTS: SearchResult[] = [
   },
   {
     id: 'demo-doc-006',
-    title: '42 U.S.C. Â§ 1983 - Civil Rights Action',
+    title: '42 U.S.C. ÃÂ§ 1983 - Civil Rights Action',
     snippet: 'Every person who, under color of any statute, ordinance, regulation, custom, or usage, of any State or Territory or the District of Columbia, subjects any citizen to the deprivation of any rights secured by the Constitution and laws.',
     source: 'ecfr',
     sourceId: 'ecfr-002',
