@@ -1,56 +1,48 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { streamText } from 'ai';
 import { createAnthropic } from '@ai-sdk/anthropic';
+import { NextResponse } from 'next/server';
 
-export const dynamic = 'force-dynamic';
+const anthropic = createAnthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY || '',
+});
 
-const SYSTEM_PROMPT = `You are a professional legal research assistant for MyCaseValue, a federal court data platform.
-
-Your role is to help users understand federal court data, case outcomes, and legal statistics from our database of 5.1M+ federal cases across 95 districts and 84 case types.
-
-Guidelines:
-- Provide accurate, data-focused insights about federal court trends and case outcomes
-- Be professional and concise
-- Clarify that you provide data insights and statistical analysis, NOT legal advice
-- Encourage users to consult qualified attorneys for legal advice
-- Reference MyCaseValue's database scope when relevant
-- Help users interpret patterns, trends, and statistics in federal litigation
-- Keep responses under 300 words unless more detail is specifically requested`;
-
-export async function POST(request: NextRequest) {
+export async function POST(req: Request) {
   try {
-    const body = await request.json();
-    const { messages } = body;
+    const { messages } = await req.json();
 
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json(
-        { error: 'Invalid messages' },
+        { error: 'Messages array is required' },
         { status: 400 }
       );
     }
 
-    const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-      console.error('[api/chat] Missing ANTHROPIC_API_KEY');
+    if (!process.env.ANTHROPIC_API_KEY) {
       return NextResponse.json(
-        { error: 'Service unavailable' },
-        { status: 500 }
+        { error: 'AI service is not configured' },
+        { status: 503 }
       );
     }
 
-    const anthropic = createAnthropic({ apiKey });
-
     const result = streamText({
       model: anthropic('claude-sonnet-4-20250514'),
-      system: SYSTEM_PROMPT,
+      system: `You are a legal research assistant for MyCaseValue, a federal court analytics platform. You help attorneys and legal professionals with:
+- Understanding federal court data and settlement values
+- Explaining legal concepts related to personal injury, medical malpractice, and civil litigation
+- Providing guidance on how to use MyCaseValue tools
+- Answering questions about court procedures, case types, and legal terminology
+
+Important: You provide informational assistance only. You do not provide legal advice. Always recommend consulting with a qualified attorney for specific legal matters.
+
+Be concise, professional, and helpful. Use plain language when possible.`,
       messages,
     });
 
-    return result.toDataStreamResponse();
+    return result.toTextStreamResponse();
   } catch (error) {
     console.error('[api/chat] Error:', error);
     return NextResponse.json(
-      { error: 'Failed to process request' },
+      { error: 'Failed to process chat request' },
       { status: 500 }
     );
   }
