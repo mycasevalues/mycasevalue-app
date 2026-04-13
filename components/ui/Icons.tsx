@@ -1,3 +1,4 @@
+import React from 'react';
 // Category SVG icons for MyCaseValue
 // Each icon is 24x24 with configurable color
 
@@ -90,6 +91,7 @@ interface IconProps {
   color?: string;
   strokeWidth?: number;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export function ArrowRightIcon({ size = 16, color = 'currentColor', strokeWidth = 2, className }: IconProps) {

@@ -1,0 +1,128 @@
+version: '3.9'
+
+services:
+  # ============================================================================
+  # doctor: Document Processing Service
+  # ============================================================================
+  doctor:
+    image: freelawproject/doctor:latest
+    container_name: myCaseValue-doctor
+    ports:
+      - "5050:5050"
+    environment:
+      MAX_FILE_SIZE: 100
+      OCR_LANG: eng
+      MAX_WORKERS: 4
+      QUEUE_SIZE: 100
+      LOG_LEVEL: INFO
+    volumes:
+      - doctor_cache:/app/cache
+      - doctor_logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5050/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - legal_network
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+
+  # ============================================================================
+  # inception: Vector Embedding Service
+  # ============================================================================
+  inception:
+    image: freelawproject/inception:latest
+    container_name: myCaseValue-inception
+    ports:
+      - "8005:8005"
+    environment:
+      MODEL: fine-tuned-legal-bert
+      BATCH_SIZE: 32
+      MAX_SEQUENCE_LENGTH: 512
+      DEVICE: cpu
+      WORKERS: 2
+      TIMEOUT: 300
+      CACHE_EMBEDDINGS: 'true'
+      CACHE_SIZE: 10000
+      LOG_LEVEL: INFO
+    volumes:
+      - inception_models:/app/models
+      - inception_logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped
+    networks:
+      - legal_network
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+
+  # ============================================================================
+  # postgres: Optional local PostgreSQL for development
+  # ============================================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: myCaseValue-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: development_password_change_me
+      POSTGRES_DB: mycasevalue
+      POSTGRES_INITDB_ARGS: "-c shared_preload_libraries=vector"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/01-init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - legal_network
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 1G
+
+networks:
+  legal_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16
+
+volumes:
+  doctor_cache:
+    driver: local
+  doctor_logs:
+    driver: local
+  inception_models:
+    driver: local
+  inception_logs:
+    driver: local
+  postgres_data:
+    driver: local

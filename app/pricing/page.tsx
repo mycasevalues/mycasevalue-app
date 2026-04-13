@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode. No hidden fees.',
   alternates: { canonical: `${SITE_URL}/pricing` },
   openGraph: {
-    title: 'Pricing Built for Every Budget — MyCaseValue',
+    title: 'Pricing Built for Every Budget â MyCaseValue',
     description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode.',
     type: 'website',
     url: `${SITE_URL}/pricing`,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing Built for Every Budget — MyCaseValue',
+    title: 'Pricing Built for Every Budget â MyCaseValue',
     description: 'Transparent pricing for federal court intelligence. Free, $5.99, $9.99/mo, $29.99/mo.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -75,6 +75,7 @@ const tiers: PricingTier[] = [
       'All 95 federal district overviews',
       'All 84 case type pages',
       '3 lookups per day',
+      'Preview: related regulations per case type',
     ],
     ctaText: 'Get Started Free',
     ctaHref: '/search',
@@ -85,14 +86,15 @@ const tiers: PricingTier[] = [
     bestFor: 'One specific case analysis',
     price: '$5.99',
     period: 'one-time',
-    description: 'Deep dive into one case with full settlement ranges.',
+    description: 'Deep dive into one case with full settlement ranges and legal context.',
     features: [
       'One full case outcome report',
-      'Full settlement range (10th–90th percentile)',
+      'Full settlement range (10th\u201390th percentile)',
       'Confidence intervals',
       'Settlement calculator',
       'Judge district overview',
-      'PDF export (branded)',
+      'Top 3 relevant citations & regulations',
+      'PDF export with legal landscape section',
       '90-day report access',
       'Email delivery (no account required)',
     ],
@@ -105,14 +107,16 @@ const tiers: PricingTier[] = [
     bestFor: 'Ongoing case research',
     price: '$9.99',
     period: '/month',
-    description: 'Unlimited lookups with trend analysis and saved reports.',
+    description: 'Unlimited lookups with legal research and trend analysis.',
     features: [
       'Unlimited case type + district lookups',
       'All 84 case types across all 95 districts',
       'Full settlement percentile ranges',
       '10-year trend data',
+      'Legal document search (7 sources)',
+      'Citation explorer access',
+      'Related regulations on every case page',
       'Save unlimited reports (no expiry)',
-      'Search history (last 100 searches)',
       'Watchlist alerts (10 items)',
       'Judge profiles',
       'PDF exports without watermark',
@@ -128,19 +132,21 @@ const tiers: PricingTier[] = [
     bestFor: 'Legal professionals',
     price: '$29.99',
     period: '/month',
-    description: 'Advanced litigation analytics for law firms.',
+    description: 'Full legal intelligence suite for law firms.',
     features: [
       'Advanced judge intelligence (motion rates, bias patterns)',
       'AI case outcome predictor',
-      'Opposing counsel research',
+      'Full legal research hub (127K+ documents)',
+      'Citation network analysis & export',
+      'Regulatory alerts (Federal Register monitoring)',
+      'Opposing counsel citation patterns',
       'Document intelligence (upload complaints/motions)',
       'Venue selection optimizer (95 districts ranked)',
-      'Motion success rate database',
       'Bulk analysis (up to 1,000 cases via CSV)',
-      'Full API access',
+      'Full API access (case data + legal docs)',
       'Team workspace (5 seats included)',
-      'White-label PDF reports',
-      'Daily data refresh',
+      'Citation-backed PDF reports',
+      'Daily data refresh across all 7 sources',
       'Priority support (24-hour response)',
     ],
     ctaText: 'Try Attorney Mode',
@@ -159,7 +165,7 @@ const faqItems = [
   },
   {
     q: 'Where does MyCaseValue data come from?',
-    a: 'All data is derived from three public federal court record sources: the Federal Judicial Center Integrated Database (FJC IDB), PACER (Public Access to Court Electronic Records), and CourtListener. We do not create or estimate any data — we aggregate and analyze official public court records only.',
+    a: 'Case outcome data comes from three public federal court record sources: the FJC Integrated Database, PACER, and CourtListener. Our legal research hub additionally indexes 7 authoritative sources including the Federal Register, eCFR, SEC EDGAR, Harvard Caselaw Access, CanLII, and GovInfo â over 127,000 legal documents and growing.',
   },
   {
     q: 'How current is the data?',
@@ -175,7 +181,7 @@ const faqItems = [
   },
   {
     q: 'Does Attorney Mode work for both plaintiffs and defense?',
-    a: 'Yes. All analytics—win rates, settlement ranges, judge intelligence, and the AI predictor—present data neutrally. You can filter by party position in most tools.',
+    a: 'Yes. All analyticsâwin rates, settlement ranges, judge intelligence, and the AI predictorâpresent data neutrally. You can filter by party position in most tools.',
   },
   {
     q: 'What is the refund policy?',
@@ -322,7 +328,7 @@ export default function PricingPage() {
         }
 
         .card-features li::before {
-          content: '✓';
+          content: 'â';
           color: #0966C3;
           font-weight: 600;
           flex-shrink: 0;
@@ -458,7 +464,7 @@ export default function PricingPage() {
       <div className="pricing-header">
         <h1 className="pricing-h1">Pricing Built for Every Budget</h1>
         <p className="pricing-subtitle">
-          Federal court intelligence shouldn't cost what a junior associate earns. Pick the plan that fits.
+          Case outcomes, legal research, and analytics shouldn&apos;t cost what a junior associate earns. Pick the plan that fits.
         </p>
       </div>
 
