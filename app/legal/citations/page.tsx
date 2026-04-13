@@ -1,442 +1,470 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import * as d3 from 'd3';
-import { Card, CardHeader, CardBody } from '../../../components/ui/Card';
 
-/* ââ Source colors for graph nodes ââ */
-const SOURCE_COLORS: Record<string, string> = {
-  courtlistener:    '#1E3A5F',
-  federal_register: '#7C3AED',
-  ecfr:             '#0D9488',
-  edgar:            '#D97706',
-  caselaw:          '#059669',
-  canlii:           '#DC2626',
-  govinfo:          '#6B7280',
-};
+/* ------------------------------------------------------------------ */
+/* Citation network data                                               */
+/* ------------------------------------------------------------------ */
 
-interface GraphNode {
+interface CaseNode {
   id: string;
-  label: string;
-  source: string;
-  type: string;
-  jurisdiction: string;
-  date: string;
-  isCentral?: boolean;
-  citationCount?: number;
-  // D3 simulation fields
+  name: string;
+  year: number;
+  court: string;
+  significance: string;
+  category: string;
   x?: number;
   y?: number;
-  fx?: number | null;
-  fy?: number | null;
+  vx?: number;
+  vy?: number;
 }
 
-interface GraphEdge {
-  id: string;
-  source: string | GraphNode;
-  target: string | GraphNode;
-  type: string;
-  cite: string;
-  text?: string;
+interface Citation {
+  from: string;
+  to: string;
+  strength: number;
 }
 
-interface GraphData {
-  nodes: GraphNode[];
-  edges: GraphEdge[];
-  centerDocumentId?: string;
-  mode?: string;
+const CATEGORIES = [
+  { key: 'constitutional', label: 'Constitutional', color: '#0966C3' },
+  { key: 'civil_rights', label: 'Civil Rights', color: '#7C3AED' },
+  { key: 'criminal', label: 'Criminal Law', color: '#DC2626' },
+  { key: 'regulatory', label: 'Regulatory', color: '#059669' },
+  { key: 'corporate', label: 'Corporate', color: '#D97706' },
+];
+
+const CATEGORY_COLORS: Record<string, string> = Object.fromEntries(CATEGORIES.map(c => [c.key, c.color]));
+
+const NODES: CaseNode[] = [
+  { id: 'marbury', name: 'Marbury v. Madison', year: 1803, court: 'SCOTUS', significance: 'Established judicial review', category: 'constitutional' },
+  { id: 'brown', name: 'Brown v. Board of Education', year: 1954, court: 'SCOTUS', significance: 'Ended school segregation', category: 'civil_rights' },
+  { id: 'miranda', name: 'Miranda v. Arizona', year: 1966, court: 'SCOTUS', significance: 'Miranda rights requirement', category: 'criminal' },
+  { id: 'roe', name: 'Roe v. Wade', year: 1973, court: 'SCOTUS', significance: 'Right to privacy / abortion', category: 'civil_rights' },
+  { id: 'griswold', name: 'Griswold v. Connecticut', year: 1965, court: 'SCOTUS', significance: 'Right to privacy', category: 'civil_rights' },
+  { id: 'gideon', name: 'Gideon v. Wainwright', year: 1963, court: 'SCOTUS', significance: 'Right to counsel', category: 'criminal' },
+  { id: 'mapp', name: 'Mapp v. Ohio', year: 1961, court: 'SCOTUS', significance: 'Exclusionary rule', category: 'criminal' },
+  { id: 'chevron', name: 'Chevron v. NRDC', year: 1984, court: 'SCOTUS', significance: 'Agency deference doctrine', category: 'regulatory' },
+  { id: 'citizens', name: 'Citizens United v. FEC', year: 2010, court: 'SCOTUS', significance: 'Corporate political speech', category: 'corporate' },
+  { id: 'obergefell', name: 'Obergefell v. Hodges', year: 2015, court: 'SCOTUS', significance: 'Marriage equality', category: 'civil_rights' },
+  { id: 'terry', name: 'Terry v. Ohio', year: 1968, court: 'SCOTUS', significance: 'Stop and frisk standard', category: 'criminal' },
+  { id: 'nyt', name: 'NYT v. Sullivan', year: 1964, court: 'SCOTUS', significance: 'Actual malice standard', category: 'constitutional' },
+  { id: 'tinker', name: 'Tinker v. Des Moines', year: 1969, court: 'SCOTUS', significance: 'Student free speech', category: 'constitutional' },
+  { id: 'dobbs', name: 'Dobbs v. Jackson', year: 2022, court: 'SCOTUS', significance: 'Overturned Roe v. Wade', category: 'civil_rights' },
+  { id: 'loper', name: 'Loper Bright v. Raimondo', year: 2024, court: 'SCOTUS', significance: 'Overturned Chevron deference', category: 'regulatory' },
+];
+
+const CITATIONS: Citation[] = [
+  { from: 'brown', to: 'marbury', strength: 0.6 },
+  { from: 'miranda', to: 'mapp', strength: 0.9 },
+  { from: 'miranda', to: 'gideon', strength: 0.8 },
+  { from: 'roe', to: 'griswold', strength: 0.95 },
+  { from: 'obergefell', to: 'roe', strength: 0.7 },
+  { from: 'obergefell', to: 'griswold', strength: 0.6 },
+  { from: 'dobbs', to: 'roe', strength: 1.0 },
+  { from: 'dobbs', to: 'griswold', strength: 0.5 },
+  { from: 'citizens', to: 'nyt', strength: 0.6 },
+  { from: 'tinker', to: 'nyt', strength: 0.5 },
+  { from: 'terry', to: 'mapp', strength: 0.7 },
+  { from: 'loper', to: 'chevron', strength: 1.0 },
+  { from: 'loper', to: 'marbury', strength: 0.5 },
+  { from: 'gideon', to: 'marbury', strength: 0.4 },
+  { from: 'mapp', to: 'marbury', strength: 0.5 },
+  { from: 'brown', to: 'nyt', strength: 0.3 },
+];
+
+/* ------------------------------------------------------------------ */
+/* Simple force-directed layout (no D3 dependency)                     */
+/* ------------------------------------------------------------------ */
+
+function initPositions(nodes: CaseNode[], width: number, height: number) {
+  const cx = width / 2;
+  const cy = height / 2;
+  const radius = Math.min(width, height) * 0.35;
+  nodes.forEach((n, i) => {
+    const angle = (2 * Math.PI * i) / nodes.length;
+    n.x = cx + radius * Math.cos(angle) + (Math.random() - 0.5) * 30;
+    n.y = cy + radius * Math.sin(angle) + (Math.random() - 0.5) * 30;
+    n.vx = 0;
+    n.vy = 0;
+  });
 }
 
-export default function CitationExplorerPage() {
-  const searchParams = useSearchParams();
-  const svgRef = useRef<SVGSVGElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const [documentId, setDocumentId] = useState(searchParams.get('documentId') || '');
-  const [graphData, setGraphData] = useState<GraphData | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
-  const [dimensions, setDimensions] = useState({ width: 800, height: 500 });
-
-  // Responsive dimensions
-  useEffect(() => {
-    const updateDims = () => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        setDimensions({
-          width: Math.max(rect.width, 400),
-          height: Math.max(window.innerHeight - 340, 400),
-        });
+function simulate(nodes: CaseNode[], edges: Citation[], width: number, height: number, iterations = 120) {
+  const nodeMap = new Map(nodes.map(n => [n.id, n]));
+  for (let iter = 0; iter < iterations; iter++) {
+    const alpha = 1 - iter / iterations;
+    // Repulsion
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i], b = nodes[j];
+        let dx = (b.x ?? 0) - (a.x ?? 0);
+        let dy = (b.y ?? 0) - (a.y ?? 0);
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const force = (800 * alpha) / (dist * dist);
+        dx *= force / dist;
+        dy *= force / dist;
+        a.vx! -= dx; a.vy! -= dy;
+        b.vx! += dx; b.vy! += dy;
       }
-    };
-    updateDims();
-    window.addEventListener('resize', updateDims);
-    return () => window.removeEventListener('resize', updateDims);
-  }, []);
-
-  const fetchGraph = useCallback(async (docId?: string) => {
-    setLoading(true);
-    setError('');
-    setSelectedNode(null);
-
-    const params = new URLSearchParams({ limit: '80' });
-    if (docId) params.set('documentId', docId);
-
-    try {
-      const res = await fetch(`/api/legal/citations?${params.toString()}`);
-      if (!res.ok) throw new Error('Failed to fetch');
-      const data = await res.json();
-      setGraphData(data);
-    } catch (err) {
-      setError('Failed to load citation network. The pipeline may not have processed citations yet.');
-      console.error(err);
-    } finally {
-      setLoading(false);
     }
+    // Attraction
+    for (const edge of edges) {
+      const a = nodeMap.get(edge.from);
+      const b = nodeMap.get(edge.to);
+      if (!a || !b) continue;
+      let dx = (b.x ?? 0) - (a.x ?? 0);
+      let dy = (b.y ?? 0) - (a.y ?? 0);
+      const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+      const force = (dist - 120) * 0.02 * alpha * edge.strength;
+      dx = (dx / dist) * force;
+      dy = (dy / dist) * force;
+      a.vx! += dx; a.vy! += dy;
+      b.vx! -= dx; b.vy! -= dy;
+    }
+    // Center gravity
+    for (const n of nodes) {
+      n.vx! += (width / 2 - (n.x ?? 0)) * 0.005 * alpha;
+      n.vy! += (height / 2 - (n.y ?? 0)) * 0.005 * alpha;
+    }
+    // Apply velocity
+    for (const n of nodes) {
+      n.vx! *= 0.6;
+      n.vy! *= 0.6;
+      n.x = Math.max(40, Math.min(width - 40, (n.x ?? 0) + n.vx!));
+      n.y = Math.max(40, Math.min(height - 40, (n.y ?? 0) + n.vy!));
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Component                                                           */
+/* ------------------------------------------------------------------ */
+
+export default function CitationsPage() {
+  const [selected, setSelected] = useState<CaseNode | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [graphNodes, setGraphNodes] = useState<CaseNode[]>([]);
+  const [dimensions] = useState({ width: 900, height: 560 });
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    const nodes = NODES.map(n => ({ ...n }));
+    initPositions(nodes, dimensions.width, dimensions.height);
+    simulate(nodes, CITATIONS, dimensions.width, dimensions.height);
+    setGraphNodes(nodes);
+  }, [dimensions]);
+
+  const getConnections = useCallback((nodeId: string) => {
+    return CITATIONS.filter(c => c.from === nodeId || c.to === nodeId);
   }, []);
 
-  useEffect(() => {
-    fetchGraph(documentId || undefined);
-  }, [documentId, fetchGraph]);
+  const isHighlighted = useCallback((nodeId: string) => {
+    if (!selected) return true;
+    if (nodeId === selected.id) return true;
+    return CITATIONS.some(c => (c.from === selected.id && c.to === nodeId) || (c.to === selected.id && c.from === nodeId));
+  }, [selected]);
 
-  // D3 force-directed graph
-  useEffect(() => {
-    if (!graphData || !svgRef.current) return;
-    if (graphData.nodes.length === 0) return;
+  const isEdgeHighlighted = useCallback((edge: Citation) => {
+    if (!selected) return true;
+    return edge.from === selected.id || edge.to === selected.id;
+  }, [selected]);
 
-    const svg = d3.select(svgRef.current);
-    svg.selectAll('*').remove();
-
-    const { width, height } = dimensions;
-
-    // Prepare data (clone to avoid mutation)
-    const nodes: GraphNode[] = graphData.nodes.map(n => ({ ...n }));
-    const edges: GraphEdge[] = graphData.edges.map(e => ({ ...e }));
-
-    // Create zoom group
-    const g = svg.append('g');
-
-    const zoom = d3.zoom<SVGSVGElement, unknown>()
-      .scaleExtent([0.2, 4])
-      .on('zoom', (event) => g.attr('transform', event.transform));
-
-    svg.call(zoom);
-
-    // Force simulation
-    const simulation = d3.forceSimulation(nodes as any)
-      .force('link', d3.forceLink(edges as any).id((d: any) => d.id).distance(100))
-      .force('charge', d3.forceManyBody().strength(-200))
-      .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius(25));
-
-    // Draw edges
-    const link = g.append('g')
-      .selectAll('line')
-      .data(edges)
-      .join('line')
-      .attr('stroke', '#D1D5DB')
-      .attr('stroke-width', 1)
-      .attr('stroke-opacity', 0.6)
-      .attr('marker-end', 'url(#arrow)');
-
-    // Arrow marker
-    svg.append('defs').append('marker')
-      .attr('id', 'arrow')
-      .attr('viewBox', '0 -5 10 10')
-      .attr('refX', 20)
-      .attr('refY', 0)
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 6)
-      .attr('orient', 'auto')
-      .append('path')
-      .attr('d', 'M0,-5L10,0L0,5')
-      .attr('fill', '#D1D5DB');
-
-    // Draw nodes
-    const node = g.append('g')
-      .selectAll('g')
-      .data(nodes)
-      .join('g')
-      .attr('cursor', 'pointer')
-      .call(d3.drag<SVGGElement, GraphNode>()
-        .on('start', (event, d: any) => {
-          if (!event.active) simulation.alphaTarget(0.3).restart();
-          d.fx = d.x;
-          d.fy = d.y;
-        })
-        .on('drag', (event, d: any) => {
-          d.fx = event.x;
-          d.fy = event.y;
-        })
-        .on('end', (event, d: any) => {
-          if (!event.active) simulation.alphaTarget(0);
-          d.fx = null;
-          d.fy = null;
-        }) as any
-      );
-
-    // Node circles
-    node.append('circle')
-      .attr('r', (d: GraphNode) => d.isCentral ? 14 : (d.citationCount ? Math.min(12, 6 + d.citationCount * 0.3) : 8))
-      .attr('fill', (d: GraphNode) => SOURCE_COLORS[d.source] || '#6B7280')
-      .attr('stroke', (d: GraphNode) => d.isCentral ? '#0966C3' : '#fff')
-      .attr('stroke-width', (d: GraphNode) => d.isCentral ? 3 : 1.5)
-      .attr('opacity', 0.85);
-
-    // Node labels (short)
-    node.append('text')
-      .text((d: GraphNode) => d.label.length > 30 ? d.label.substring(0, 30) + 'â¦' : d.label)
-      .attr('x', 16)
-      .attr('y', 4)
-      .attr('font-size', 10)
-      .attr('fill', '#4B5563')
-      .attr('font-family', 'var(--font-inter, Inter, sans-serif)')
-      .attr('pointer-events', 'none');
-
-    // Click to select
-    node.on('click', (event, d: GraphNode) => {
-      event.stopPropagation();
-      setSelectedNode(d);
-    });
-
-    // Click background to deselect
-    svg.on('click', () => setSelectedNode(null));
-
-    // Tick
-    simulation.on('tick', () => {
-      link
-        .attr('x1', (d: any) => d.source.x)
-        .attr('y1', (d: any) => d.source.y)
-        .attr('x2', (d: any) => d.target.x)
-        .attr('y2', (d: any) => d.target.y);
-
-      node.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
-    });
-
-    return () => { simulation.stop(); };
-  }, [graphData, dimensions]);
-
-  const formatDate = (d: string | null) => {
-    if (!d) return 'â';
-    return new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-  };
+  const filteredNodes = activeCategory ? graphNodes.filter(n => n.category === activeCategory) : graphNodes;
+  const filteredNodeIds = new Set(filteredNodes.map(n => n.id));
+  const filteredEdges = CITATIONS.filter(e => filteredNodeIds.has(e.from) && filteredNodeIds.has(e.to));
+  const nodeMap = new Map(graphNodes.map(n => [n.id, n]));
 
   return (
-    <div style={{ maxWidth: 1300, margin: '0 auto', padding: '32px 16px 64px' }}>
+    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '40px 16px 80px' }}>
 
-      {/* ââ Header ââ */}
-      <div style={{ marginBottom: 24 }}>
-        <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 8 }}>
-          <Link href="/" style={{ color: '#0966C3', textDecoration: 'none' }}>Home</Link>
-          <span style={{ margin: '0 6px' }}>/</span>
-          <Link href="/legal" style={{ color: '#0966C3', textDecoration: 'none' }}>Legal Data</Link>
-          <span style={{ margin: '0 6px' }}>/</span>
-          <span>Citation Explorer</span>
-        </nav>
-        <h1 style={{ fontFamily: 'var(--font-inter, Inter, sans-serif)', fontSize: 28, fontWeight: 700, color: '#0f0f0f', margin: 0 }}>
+      {/* Breadcrumb */}
+      <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 24 }}>
+        <Link href="/legal" style={{ color: '#0966C3', textDecoration: 'none' }}>Research Hub</Link>
+        <span style={{ margin: '0 8px' }}>/</span>
+        <span>Citation Explorer</span>
+      </nav>
+
+      {/* Hero */}
+      <div style={{ marginBottom: 32 }}>
+        <h1 style={{ fontSize: 32, fontWeight: 700, color: '#0f0f0f', margin: '0 0 8px', lineHeight: 1.2 }}>
           Citation Explorer
         </h1>
-        <p style={{ color: '#4B5563', fontSize: 15, margin: '4px 0 0' }}>
-          Interactive citation network showing how legal documents reference each other.
+        <p style={{ fontSize: 15, color: '#6B7280', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
+          Explore how landmark cases cite each other. See precedent chains, identify the most-cited rulings, and trace how legal doctrine evolves over time.
         </p>
       </div>
 
-      {/* ââ Search by document ID ââ */}
+      {/* Category filter */}
       <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
-        <input
-          type="text"
-          value={documentId}
-          onChange={(e) => setDocumentId(e.target.value)}
-          placeholder="Enter a document ID to center the graph (or leave empty for top-cited)"
-          style={{
-            flex: 1,
-            minWidth: 240,
-            padding: '10px 14px',
-            borderRadius: 8,
-            border: '1px solid #D1D5DB',
-            fontSize: 14,
-            fontFamily: 'var(--font-inter, Inter, sans-serif)',
-          }}
-        />
         <button
-          onClick={() => fetchGraph(documentId || undefined)}
-          disabled={loading}
-          className="mcv-btn mcv-btn--primary"
-          style={{ padding: '10px 24px', borderRadius: 8, fontSize: 14, fontWeight: 600 }}
+          onClick={() => { setActiveCategory(null); setSelected(null); }}
+          style={{
+            padding: '7px 16px',
+            borderRadius: 20,
+            fontSize: 13,
+            fontWeight: 500,
+            border: !activeCategory ? '2px solid #0966C3' : '1px solid #D1D5DB',
+            background: !activeCategory ? '#E8F4FD' : '#FFFFFF',
+            color: !activeCategory ? '#0966C3' : '#6B7280',
+            cursor: 'pointer',
+          }}
         >
-          {loading ? 'Loadingâ¦' : 'Explore'}
+          All Categories
         </button>
-        {documentId && (
+        {CATEGORIES.map(cat => (
           <button
-            onClick={() => { setDocumentId(''); fetchGraph(); }}
-            className="mcv-btn mcv-btn--secondary"
-            style={{ padding: '10px 16px', borderRadius: 8, fontSize: 14 }}
+            key={cat.key}
+            onClick={() => { setActiveCategory(activeCategory === cat.key ? null : cat.key); setSelected(null); }}
+            style={{
+              padding: '7px 16px',
+              borderRadius: 20,
+              fontSize: 13,
+              fontWeight: 500,
+              border: activeCategory === cat.key ? `2px solid ${cat.color}` : '1px solid #D1D5DB',
+              background: activeCategory === cat.key ? `${cat.color}14` : '#FFFFFF',
+              color: activeCategory === cat.key ? cat.color : '#6B7280',
+              cursor: 'pointer',
+            }}
           >
-            Reset
+            {cat.label}
           </button>
-        )}
-      </div>
-
-      {/* ââ Legend ââ */}
-      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 16 }}>
-        {Object.entries(SOURCE_COLORS).map(([key, color]) => (
-          <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, color: '#6B7280' }}>
-            <div style={{ width: 10, height: 10, borderRadius: '50%', background: color }} />
-            {key.replace(/_/g, ' ')}
-          </div>
         ))}
       </div>
 
-      {/* ââ Error ââ */}
-      {error && !loading && (
-        <Card variant="outlined" padding="lg">
-          <CardBody>
-            <div style={{ textAlign: 'center', color: '#6B7280' }}>
-              <p style={{ fontSize: 15, fontWeight: 500, margin: '0 0 4px' }}>No Citation Data</p>
-              <p style={{ fontSize: 13 }}>{error}</p>
-            </div>
-          </CardBody>
-        </Card>
-      )}
-
-      {/* ââ Graph + Detail panel ââ */}
-      <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-        {/* Graph container */}
-        <div
-          ref={containerRef}
-          style={{
-            flex: 1,
-            background: '#FAFBFC',
-            border: '1px solid #E5E7EB',
-            borderRadius: 12,
-            overflow: 'hidden',
-            position: 'relative',
-            minHeight: 400,
-          }}
+      {/* Graph */}
+      <div style={{
+        borderRadius: 16,
+        border: '1px solid #E5E7EB',
+        background: '#FAFBFC',
+        overflow: 'hidden',
+        marginBottom: 24,
+        position: 'relative',
+      }}>
+        <svg
+          ref={svgRef}
+          viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
+          style={{ width: '100%', height: 'auto', display: 'block' }}
+          onClick={() => setSelected(null)}
         >
-          {loading && (
-            <div style={{
-              position: 'absolute',
-              inset: 0,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(255,255,255,0.8)',
-              zIndex: 2,
-            }}>
-              <div style={{
-                width: 36,
-                height: 36,
-                border: '3px solid #E5E7EB',
-                borderTopColor: '#0966C3',
-                borderRadius: '50%',
-                animation: 'spin 0.8s linear infinite',
-              }} />
-              <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-            </div>
-          )}
+          {/* Edges */}
+          {filteredEdges.map((edge, i) => {
+            const from = nodeMap.get(edge.from);
+            const to = nodeMap.get(edge.to);
+            if (!from || !to) return null;
+            const highlighted = isEdgeHighlighted(edge);
+            return (
+              <line
+                key={i}
+                x1={from.x}
+                y1={from.y}
+                x2={to.x}
+                y2={to.y}
+                stroke={highlighted ? '#94A3B8' : '#E5E7EB'}
+                strokeWidth={highlighted ? 1.5 + edge.strength : 0.5}
+                opacity={highlighted ? 0.6 : 0.15}
+                strokeDasharray={edge.strength < 0.5 ? '4 4' : 'none'}
+              />
+            );
+          })}
 
-          {graphData && graphData.nodes.length === 0 && !loading && (
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: dimensions.height,
-              color: '#9CA3AF',
-              fontSize: 14,
-            }}>
-              No citation data available yet.
-            </div>
-          )}
+          {/* Arrow markers on edges */}
+          <defs>
+            <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="20" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#94A3B8" />
+            </marker>
+          </defs>
 
-          <svg
-            ref={svgRef}
-            width={dimensions.width}
-            height={dimensions.height}
-            style={{ display: 'block' }}
-          />
-
-          {/* Stats overlay */}
-          {graphData && graphData.nodes.length > 0 && (
-            <div style={{
-              position: 'absolute',
-              bottom: 12,
-              left: 12,
-              background: 'rgba(255,255,255,0.9)',
-              backdropFilter: 'blur(4px)',
-              padding: '6px 12px',
-              borderRadius: 8,
-              fontSize: 12,
-              color: '#6B7280',
-              border: '1px solid #E5E7EB',
-            }}>
-              {graphData.nodes.length} nodes &middot; {graphData.edges.length} edges
-              &middot; Drag to rearrange &middot; Scroll to zoom
-            </div>
-          )}
-        </div>
-
-        {/* Detail panel */}
-        {selectedNode && (
-          <div style={{ width: 300, flexShrink: 0 }}>
-          <Card variant="elevated" padding="md">
-            <CardBody>
-              <div style={{ marginBottom: 12 }}>
-                <span style={{
-                  display: 'inline-block',
-                  padding: '2px 10px',
-                  borderRadius: 20,
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: SOURCE_COLORS[selectedNode.source] || '#4B5563',
-                  background: '#F3F4F6',
-                  marginBottom: 8,
-                }}>
-                  {selectedNode.source.replace(/_/g, ' ')}
-                </span>
-                <h3 style={{ fontSize: 15, fontWeight: 600, color: '#0f0f0f', margin: 0, lineHeight: 1.35 }}>
-                  {selectedNode.label}
-                </h3>
-              </div>
-
-              <div style={{ fontSize: 13, color: '#4B5563', lineHeight: 1.6 }}>
-                {selectedNode.type && (
-                  <div><span style={{ color: '#9CA3AF' }}>Type:</span> {selectedNode.type}</div>
-                )}
-                {selectedNode.jurisdiction && (
-                  <div><span style={{ color: '#9CA3AF' }}>Jurisdiction:</span> {selectedNode.jurisdiction}</div>
-                )}
-                {selectedNode.date && (
-                  <div><span style={{ color: '#9CA3AF' }}>Date:</span> {formatDate(selectedNode.date)}</div>
-                )}
-                {selectedNode.citationCount !== undefined && (
-                  <div><span style={{ color: '#9CA3AF' }}>Citations:</span> <strong>{selectedNode.citationCount}</strong></div>
-                )}
-              </div>
-
-              <div style={{ marginTop: 16, display: 'flex', gap: 8 }}>
-                <button
-                  onClick={() => { setDocumentId(selectedNode.id); fetchGraph(selectedNode.id); }}
-                  className="mcv-btn mcv-btn--primary"
-                  style={{ flex: 1, padding: '8px 12px', borderRadius: 8, fontSize: 12, fontWeight: 600 }}
+          {/* Nodes */}
+          {filteredNodes.map((node) => {
+            const hl = isHighlighted(node.id);
+            const connections = getConnections(node.id);
+            const nodeSize = 8 + connections.length * 2;
+            const color = CATEGORY_COLORS[node.category] || '#6B7280';
+            return (
+              <g
+                key={node.id}
+                style={{ cursor: 'pointer' }}
+                onClick={(e) => { e.stopPropagation(); setSelected(selected?.id === node.id ? null : node); }}
+                opacity={hl ? 1 : 0.15}
+              >
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r={nodeSize}
+                  fill={selected?.id === node.id ? color : `${color}CC`}
+                  stroke={selected?.id === node.id ? '#0f0f0f' : color}
+                  strokeWidth={selected?.id === node.id ? 3 : 1.5}
+                />
+                <text
+                  x={node.x}
+                  y={(node.y ?? 0) + nodeSize + 14}
+                  textAnchor="middle"
+                  fontSize="10"
+                  fontWeight={selected?.id === node.id ? 700 : 500}
+                  fill={hl ? '#0f0f0f' : '#9CA3AF'}
+                  fontFamily="var(--font-inter, Inter, sans-serif)"
                 >
-                  Center on this
-                </button>
-                <Link
-                  href={`/legal/search?q=${encodeURIComponent(selectedNode.label)}`}
-                  className="mcv-btn mcv-btn--secondary"
-                  style={{ flex: 1, padding: '8px 12px', borderRadius: 8, fontSize: 12, fontWeight: 500, textAlign: 'center', textDecoration: 'none' }}
+                  {node.name.length > 22 ? node.name.slice(0, 20) + '...' : node.name}
+                </text>
+                <text
+                  x={node.x}
+                  y={(node.y ?? 0) + nodeSize + 25}
+                  textAnchor="middle"
+                  fontSize="9"
+                  fill="#9CA3AF"
+                  fontFamily="var(--font-mono, monospace)"
                 >
-                  Search
-                </Link>
-              </div>
-            </CardBody>
-          </Card>
+                  {node.year}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+
+        {/* Clicked node detail */}
+        {selected && (
+          <div style={{
+            position: 'absolute',
+            top: 16,
+            right: 16,
+            width: 280,
+            padding: '20px',
+            borderRadius: 14,
+            background: '#FFFFFF',
+            border: '1px solid #E5E7EB',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
+              <span style={{
+                padding: '3px 10px',
+                borderRadius: 6,
+                fontSize: 11,
+                fontWeight: 600,
+                color: CATEGORY_COLORS[selected.category],
+                background: `${CATEGORY_COLORS[selected.category]}14`,
+              }}>
+                {CATEGORIES.find(c => c.key === selected.category)?.label}
+              </span>
+              <button onClick={() => setSelected(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 16, color: '#9CA3AF' }}>
+                &times;
+              </button>
+            </div>
+            <h3 style={{ fontSize: 16, fontWeight: 700, color: '#0f0f0f', margin: '0 0 4px' }}>
+              {selected.name}
+            </h3>
+            <div style={{ fontSize: 13, color: '#6B7280', marginBottom: 8 }}>
+              {selected.court} &middot; {selected.year}
+            </div>
+            <p style={{ fontSize: 13, color: '#4B5563', lineHeight: 1.5, margin: '0 0 12px' }}>
+              {selected.significance}
+            </p>
+            <div style={{ fontSize: 12, fontWeight: 600, color: '#6B7280', marginBottom: 6 }}>
+              Citations ({getConnections(selected.id).length})
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              {getConnections(selected.id).map((c, i) => {
+                const otherId = c.from === selected.id ? c.to : c.from;
+                const other = NODES.find(n => n.id === otherId);
+                const direction = c.from === selected.id ? 'Cites' : 'Cited by';
+                return (
+                  <div key={i} style={{ fontSize: 12, color: '#4B5563' }}>
+                    <span style={{ color: '#9CA3AF' }}>{direction}:</span>{' '}
+                    <button
+                      onClick={() => setSelected(NODES.find(n => n.id === otherId) || null)}
+                      style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#0966C3', fontSize: 12, padding: 0, fontWeight: 500 }}
+                    >
+                      {other?.name} ({other?.year})
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
+      </div>
+
+      {/* Stats */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: 12,
+        marginBottom: 40,
+      }}>
+        <div style={{ padding: '20px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF', textAlign: 'center' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: '#0966C3', fontFamily: 'var(--font-mono, monospace)' }}>
+            {NODES.length}
+          </div>
+          <div style={{ fontSize: 13, color: '#6B7280' }}>Landmark Cases</div>
+        </div>
+        <div style={{ padding: '20px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF', textAlign: 'center' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: '#7C3AED', fontFamily: 'var(--font-mono, monospace)' }}>
+            {CITATIONS.length}
+          </div>
+          <div style={{ fontSize: 13, color: '#6B7280' }}>Citation Links</div>
+        </div>
+        <div style={{ padding: '20px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF', textAlign: 'center' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: '#059669', fontFamily: 'var(--font-mono, monospace)' }}>
+            {CATEGORIES.length}
+          </div>
+          <div style={{ fontSize: 13, color: '#6B7280' }}>Legal Categories</div>
+        </div>
+        <div style={{ padding: '20px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF', textAlign: 'center' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: '#D97706', fontFamily: 'var(--font-mono, monospace)' }}>
+            {new Date().getFullYear() - Math.min(...NODES.map(n => n.year))}+
+          </div>
+          <div style={{ fontSize: 13, color: '#6B7280' }}>Years of Precedent</div>
+        </div>
+      </div>
+
+      {/* Case list */}
+      <div style={{ marginBottom: 40 }}>
+        <h2 style={{ fontSize: 22, fontWeight: 600, color: '#0f0f0f', marginBottom: 16 }}>All Cases in Network</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 12 }}>
+          {NODES.sort((a, b) => b.year - a.year).map(node => (
+            <button
+              key={node.id}
+              onClick={() => setSelected(node)}
+              style={{
+                padding: '16px 20px',
+                borderRadius: 12,
+                border: selected?.id === node.id ? `2px solid ${CATEGORY_COLORS[node.category]}` : '1px solid #E5E7EB',
+                background: '#FFFFFF',
+                textAlign: 'left',
+                cursor: 'pointer',
+                transition: 'border-color 0.15s',
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
+                <span style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f' }}>{node.name}</span>
+                <span style={{ fontSize: 12, color: '#9CA3AF', fontFamily: 'var(--font-mono, monospace)' }}>{node.year}</span>
+              </div>
+              <div style={{ fontSize: 13, color: '#6B7280', marginBottom: 6 }}>{node.significance}</div>
+              <div style={{ display: 'flex', gap: 6 }}>
+                <span style={{
+                  padding: '2px 8px',
+                  borderRadius: 4,
+                  fontSize: 10,
+                  fontWeight: 600,
+                  color: CATEGORY_COLORS[node.category],
+                  background: `${CATEGORY_COLORS[node.category]}14`,
+                }}>
+                  {CATEGORIES.find(c => c.key === node.category)?.label}
+                </span>
+                <span style={{ fontSize: 11, color: '#9CA3AF' }}>
+                  {getConnections(node.id).length} citation{getConnections(node.id).length !== 1 ? 's' : ''}
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Back to hub */}
+      <div style={{ textAlign: 'center' }}>
+        <Link href="/legal" style={{ fontSize: 14, color: '#0966C3', textDecoration: 'none', fontWeight: 500 }}>
+          &larr; Back to Research Hub
+        </Link>
       </div>
     </div>
   );
