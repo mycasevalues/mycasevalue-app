@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode. No hidden fees.',
   alternates: { canonical: `${SITE_URL}/pricing` },
   openGraph: {
-    title: 'Pricing Built for Every Budget Ã¢ÂÂ MyCaseValue',
+    title: 'Pricing Built for Every Budget â MyCaseValue',
     description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode.',
     type: 'website',
     url: `${SITE_URL}/pricing`,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing Built for Every Budget Ã¢ÂÂ MyCaseValue',
+    title: 'Pricing Built for Every Budget â MyCaseValue',
     description: 'Transparent pricing for federal court intelligence. Free, $5.99, $9.99/mo, $29.99/mo.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -165,174 +165,7 @@ const faqItems = [
   },
   {
     q: 'Where does MyCaseValue data come from?',
-    a: 'Case outcome data comes from three public federal court record sources: the FJC Integratedimport { Metadata } from 'next';
-import Link from 'next/link';
-import { SITE_URL } from '../../lib/site-config';
-import { Breadcrumbs } from '../../components/Breadcrumbs';
-
-export const metadata: Metadata = {
-  title: 'Pricing Built for Every Budget',
-  description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode. No hidden fees.',
-  alternates: { canonical: `${SITE_URL}/pricing` },
-  openGraph: {
-    title: 'Pricing Built for Every Budget Ã¢ÂÂ MyCaseValue',
-    description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode.',
-    type: 'website',
-    url: `${SITE_URL}/pricing`,
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue Pricing' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Pricing Built for Every Budget Ã¢ÂÂ MyCaseValue',
-    description: 'Transparent pricing for federal court intelligence. Free, $5.99, $9.99/mo, $29.99/mo.',
-    images: [`${SITE_URL}/og-image.png`],
-  },
-};
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-        { '@type': 'ListItem', position: 2, name: 'Pricing', item: `${SITE_URL}/pricing` },
-      ],
-    },
-    {
-      '@type': 'Product',
-      name: 'MyCaseValue Pricing Plans',
-      description: 'Federal court outcome data with transparent pricing tiers.',
-      offers: [
-        { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'USD', url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Basic court outcome report with essential case data.' },
-        { '@type': 'Offer', name: 'Single Report', price: '5.99', priceCurrency: 'USD', url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'One premium report with judge data and detailed analysis.' },
-        { '@type': 'Offer', name: 'Unlimited Reports', price: '9.99', priceCurrency: 'USD', url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Unlimited reports for all case types and districts.' },
-        { '@type': 'Offer', name: 'Attorney Mode', price: '29.99', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1M' }, url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Professional attorney tools with bulk analysis and API access.' },
-      ],
-    },
-  ],
-};
-
-interface PricingTier {
-  id: string;
-  name: string;
-  bestFor: string;
-  price: string;
-  period: string;
-  description: string;
-  features: string[];
-  ctaText: string;
-  ctaHref: string;
-  highlighted?: boolean;
-}
-
-const tiers: PricingTier[] = [
-  {
-    id: 'free',
-    name: 'Free',
-    bestFor: 'Self-represented litigants',
-    price: '$0',
-    period: 'during beta',
-    description: 'Essential case data and win rate analysis.',
-    features: [
-      'Win rate percentage by case type + district',
-      'Median settlement amount',
-      'Median case duration',
-      'Sample size with every data point',
-      'All 95 federal district overviews',
-      'All 84 case type pages',
-      '3 lookups per day',
-      'Preview: related regulations per case type',
-    ],
-    ctaText: 'Get Started Free',
-    ctaHref: '/search',
-  },
-  {
-    id: 'single_report',
-    name: 'Single Report',
-    bestFor: 'One specific case analysis',
-    price: '$5.99',
-    period: 'one-time',
-    description: 'Deep dive into one case with full settlement ranges and legal context.',
-    features: [
-      'One full case outcome report',
-      'Full settlement range (10th\u201390th percentile)',
-      'Confidence intervals',
-      'Settlement calculator',
-      'Judge district overview',
-      'Top 3 relevant citations & regulations',
-      'PDF export with legal landscape section',
-      '90-day report access',
-      'Email delivery (no account required)',
-    ],
-    ctaText: 'Buy Single Report',
-    ctaHref: '/search',
-  },
-  {
-    id: 'unlimited',
-    name: 'Unlimited',
-    bestFor: 'Ongoing case research',
-    price: '$9.99',
-    period: '/month',
-    description: 'Unlimited lookups with legal research and trend analysis.',
-    features: [
-      'Unlimited case type + district lookups',
-      'All 84 case types across all 95 districts',
-      'Full settlement percentile ranges',
-      '10-year trend data',
-      'Legal document search (7 sources)',
-      'Citation explorer access',
-      'Related regulations on every case page',
-      'Save unlimited reports (no expiry)',
-      'Watchlist alerts (10 items)',
-      'Judge profiles',
-      'PDF exports without watermark',
-      'English & Spanish',
-    ],
-    ctaText: 'Get Unlimited',
-    ctaHref: '/sign-up',
-    highlighted: true,
-  },
-  {
-    id: 'attorney',
-    name: 'Attorney Mode',
-    bestFor: 'Legal professionals',
-    price: '$29.99',
-    period: '/month',
-    description: 'Full legal intelligence suite for law firms.',
-    features: [
-      'Advanced judge intelligence (motion rates, bias patterns)',
-      'AI case outcome predictor',
-      'Full legal research hub (127K+ documents)',
-      'Citation network analysis & export',
-      'Regulatory alerts (Federal Register monitoring)',
-      'Opposing counsel citation patterns',
-      'Document intelligence (upload complaints/motions)',
-      'Venue selection optimizer (95 districts ranked)',
-      'Bulk analysis (up to 1,000 cases via CSV)',
-      'Full API access (case data + legal docs)',
-      'Team workspace (5 seats included)',
-      'Citation-backed PDF reports',
-      'Daily data refresh across all 7 sources',
-      'Priority support (24-hour response)',
-    ],
-    ctaText: 'Try Attorney Mode',
-    ctaHref: '/attorney',
-  },
-];
-
-const faqItems = [
-  {
-    q: 'What does "Single Report" mean exactly?',
-    a: 'You select one case type and one federal district. We generate a complete outcome report for that specific combination. You have 90 days of access to view and download the PDF. No subscription, no recurring charge.',
-  },
-  {
-    q: 'Can I upgrade from Single Report to Unlimited later?',
-    a: "Yes. If you upgrade within your 90-day access window, we'll credit the report purchase price toward your first month of Unlimited Reports.",
-  },
-  {
-    q: 'Where does MyCaseValue data come from?',
-    a: 'Case outcome data comes from three public federal court record sources: the FJC Integrated Database, PACER, and CourtListener. Our legal research hub additionally indexes 7 authoritative sources including the Federal Register, eCFR, SEC EDGAR, Harvard Caselaw Access, CanLII, and GovInfo Ã¢ÂÂ over 127,000 legal documents and growing.',
+    a: 'Case outcome data comes from three public federal court record sources: the FJC Integrated Database, PACER, and CourtListener. Our legal research hub additionally indexes 7 authoritative sources including the Federal Register, eCFR, SEC EDGAR, Harvard Caselaw Access, CanLII, and GovInfo â over 127,000 legal documents and growing.',
   },
   {
     q: 'How current is the data?',
@@ -348,7 +181,7 @@ const faqItems = [
   },
   {
     q: 'Does Attorney Mode work for both plaintiffs and defense?',
-    a: 'Yes. All analyticsÃ¢ÂÂwin rates, settlement ranges, judge intelligence, and the AI predictorÃ¢ÂÂpresent data neutrally. You can filter by party position in most tools.',
+    a: 'Yes. All analyticsâwin rates, settlement ranges, judge intelligence, and the AI predictorâpresent data neutrally. You can filter by party position in most tools.',
   },
   {
     q: 'What is the refund policy?',
@@ -495,7 +328,7 @@ export default function PricingPage() {
         }
 
         .card-features li::before {
-          content: 'Ã¢ÂÂ';
+          content: 'â';
           color: #0966C3;
           font-weight: 600;
           flex-shrink: 0;
