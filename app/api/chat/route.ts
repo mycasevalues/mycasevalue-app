@@ -36,7 +36,6 @@ Important: You provide informational assistance only. You do not provide legal a
 
 Be concise, professional, and helpful. Use plain language when possible.`,
       messages,
-      maxTokens: 1024,
     });
 
     return result.toTextStreamResponse();
