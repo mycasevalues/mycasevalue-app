@@ -1,35 +1,18 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Card, CardBody } from '../../../components/ui/Card';
-import { SearchIcon } from '../../../components/ui/Icons';
-
-/* ââ Source config (icon colors + labels) ââ */
-const SOURCE_CONFIG: Record<string, { label: string; color: string; bg: string }> = {
-  courtlistener:    { label: 'CourtListener',    color: '#1E3A5F', bg: '#EFF6FF' },
-  federal_register: { label: 'Federal Register', color: '#7C3AED', bg: '#F5F3FF' },
-  ecfr:             { label: 'eCFR',             color: '#0D9488', bg: '#F0FDFA' },
-  edgar:            { label: 'EDGAR',            color: '#D97706', bg: '#FFFBEB' },
-  caselaw:          { label: 'Caselaw Access',   color: '#059669', bg: '#F0FDF4' },
-  canlii:           { label: 'CanLII',           color: '#DC2626', bg: '#FEF2F2' },
-  govinfo:          { label: 'GovInfo',          color: '#4B5563', bg: '#F9FAFB' },
-};
-
-const DOC_TYPES = ['opinion', 'regulation', 'filing', 'statute', 'notice', 'rule'];
 
 interface SearchResult {
   id: string;
+  title: string;
+  snippet: string;
   source: string;
   sourceId: string;
-  title: string;
   type: string;
-  snippet: string;
   jurisdiction: string;
-  dateFiled: string;
-  datePublished: string;
-  metadata: any;
+  date: string;
+  url?: string;
 }
 
 interface SearchResponse {
@@ -39,449 +22,452 @@ interface SearchResponse {
   limit: number;
   totalPages: number;
   query: string;
+  filters: Record<string, string | undefined>;
+  isDemo: boolean;
 }
 
-/* ââ Skeleton loader ââ */
-const SkeletonCard = () => (
-  <div style={{
-    padding: '20px',
-    marginBottom: '12px',
-    background: '#FFFFFF',
-    border: '1px solid #E5E7EB',
-    borderRadius: '12px',
-    animation: 'shimmer 2s infinite',
-  }}>
-    <div style={{ height: 20, width: '70%', background: '#E8EAED', borderRadius: 8, marginBottom: 10 }} />
-    <div style={{ height: 14, width: '40%', background: '#E8EAED', borderRadius: 8, marginBottom: 8 }} />
-    <div style={{ height: 14, width: '90%', background: '#E8EAED', borderRadius: 8 }} />
-  </div>
-);
+const SOURCES = [
+  { value: 'all', label: 'All Sources' },
+  { value: 'courtlistener', label: 'CourtListener' },
+  { value: 'federal_register', label: 'Federal Register' },
+  { value: 'ecfr', label: 'eCFR' },
+  { value: 'edgar', label: 'EDGAR' },
+  { value: 'caselaw', label: 'Caselaw Access' },
+  { value: 'canlii', label: 'CanLII' },
+  { value: 'govinfo', label: 'GovInfo' },
+];
+
+const TYPES = [
+  { value: 'all', label: 'All Types' },
+  { value: 'opinion', label: 'Opinions' },
+  { value: 'regulation', label: 'Regulations' },
+  { value: 'statute', label: 'Statutes' },
+  { value: 'filing', label: 'SEC Filings' },
+  { value: 'notice', label: 'Notices' },
+];
+
+const SOURCE_COLORS: Record<string, string> = {
+  courtlistener: '#1E3A5F',
+  federal_register: '#7C3AED',
+  ecfr: '#0D9488',
+  edgar: '#D97706',
+  caselaw: '#059669',
+  canlii: '#DC2626',
+  govinfo: '#6B7280',
+};
+
+const SOURCE_LABELS: Record<string, string> = {
+  courtlistener: 'CourtListener',
+  federal_register: 'Federal Register',
+  ecfr: 'eCFR',
+  edgar: 'EDGAR',
+  caselaw: 'Caselaw Access',
+  canlii: 'CanLII',
+  govinfo: 'GovInfo',
+};
+
+function highlightQuery(text: string, query: string): string {
+  if (!query.trim()) return text;
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return text.replace(new RegExp(`(${escaped})`, 'gi'), '<mark style="background:#FEF08A;padding:0 2px;border-radius:2px">$1</mark>');
+}
 
 export default function LegalSearchPage() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-
-  const [query, setQuery] = useState(searchParams.get('q') || '');
-  const [source, setSource] = useState(searchParams.get('source') || '');
-  const [docType, setDocType] = useState(searchParams.get('type') || '');
-  const [dateFrom, setDateFrom] = useState(searchParams.get('from') || '');
-  const [dateTo, setDateTo] = useState(searchParams.get('to') || '');
-  const [page, setPage] = useState(parseInt(searchParams.get('page') || '1', 10));
-
-  const [results, setResults] = useState<SearchResponse | null>(null);
+  const [query, setQuery] = useState('');
+  const [source, setSource] = useState('all');
+  const [docType, setDocType] = useState('all');
+  const [dateFrom, setDateFrom] = useState('');
+  const [dateTo, setDateTo] = useState('');
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [isDemo, setIsDemo] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
 
-  const doSearch = useCallback(async (p: number = 1) => {
-    if (!query.trim()) return;
+  const doSearch = useCallback(async (searchPage = 1) => {
     setLoading(true);
-    setError('');
-
-    const params = new URLSearchParams({ q: query.trim(), page: String(p), limit: '20' });
-    if (source) params.set('source', source);
-    if (docType) params.set('type', docType);
-    if (dateFrom) params.set('from', dateFrom);
-    if (dateTo) params.set('to', dateTo);
-
-    // Update URL
-    router.push(`/legal/search?${params.toString()}`, { scroll: false });
-
+    setHasSearched(true);
     try {
+      const params = new URLSearchParams();
+      if (query.trim()) params.set('q', query.trim());
+      if (source !== 'all') params.set('source', source);
+      if (docType !== 'all') params.set('type', docType);
+      if (dateFrom) params.set('from', dateFrom);
+      if (dateTo) params.set('to', dateTo);
+      params.set('page', String(searchPage));
+      params.set('limit', '10');
+
       const res = await fetch(`/api/legal/search?${params.toString()}`);
-      if (!res.ok) throw new Error('Search request failed');
-      const data = await res.json();
-      setResults(data);
-      setPage(p);
-    } catch (err) {
-      setError('Failed to search. Please try again.');
-      console.error(err);
+      const data: SearchResponse = await res.json();
+
+      setResults(data.results);
+      setTotal(data.total);
+      setPage(data.page);
+      setTotalPages(data.totalPages);
+      setIsDemo(data.isDemo);
+    } catch {
+      setResults([]);
+      setTotal(0);
     } finally {
       setLoading(false);
     }
-  }, [query, source, docType, dateFrom, dateTo, router]);
+  }, [query, source, docType, dateFrom, dateTo]);
 
-  // Initial search from URL params
   useEffect(() => {
-    if (searchParams.get('q')) doSearch(page);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    doSearch(1);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     doSearch(1);
   };
 
-  const formatDate = (d: string | null) => {
-    if (!d) return 'â';
-    return new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  const selectStyle: React.CSSProperties = {
+    padding: '10px 14px',
+    borderRadius: 10,
+    border: '1px solid #D1D5DB',
+    fontSize: 14,
+    color: '#374151',
+    background: '#FFFFFF',
+    outline: 'none',
+    minWidth: 140,
   };
 
   return (
-    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 16px 64px' }}>
+    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '40px 16px 80px' }}>
 
-      {/* ââ Header ââ */}
+      {/* Breadcrumb */}
+      <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 24 }}>
+        <Link href="/legal" style={{ color: '#0966C3', textDecoration: 'none' }}>Research Hub</Link>
+        <span style={{ margin: '0 8px' }}>/</span>
+        <span>Document Search</span>
+      </nav>
+
+      {/* Hero */}
       <div style={{ marginBottom: 32 }}>
-        <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 8 }}>
-          <Link href="/" style={{ color: '#0966C3', textDecoration: 'none' }}>Home</Link>
-          <span style={{ margin: '0 6px' }}>/</span>
-          <Link href="/legal" style={{ color: '#0966C3', textDecoration: 'none' }}>Legal Data</Link>
-          <span style={{ margin: '0 6px' }}>/</span>
-          <span>Search</span>
-        </nav>
-        <h1 style={{
-          fontFamily: 'var(--font-inter, Inter, sans-serif)',
-          fontSize: 28,
-          fontWeight: 700,
-          color: '#0f0f0f',
-          margin: 0,
-        }}>
+        <h1 style={{ fontSize: 32, fontWeight: 700, color: '#0f0f0f', margin: '0 0 8px', lineHeight: 1.2 }}>
           Legal Document Search
         </h1>
-        <p style={{ color: '#4B5563', fontSize: 15, margin: '6px 0 0', lineHeight: 1.5 }}>
-          Search across 7 legal data sources â opinions, regulations, filings, and statutes with full-text and semantic matching.
+        <p style={{ fontSize: 15, color: '#6B7280', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
+          Search across 7 authoritative legal data sources. Find opinions, regulations, statutes, SEC filings, and government documents from a single interface.
         </p>
       </div>
 
-      {/* ââ Search bar ââ */}
+      {/* Search bar */}
       <form onSubmit={handleSubmit} style={{ marginBottom: 24 }}>
-        <div style={{
-          display: 'flex',
-          gap: 8,
-          alignItems: 'stretch',
-        }}>
-          <div style={{
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-            background: '#FFFFFF',
-            border: '2px solid #E5E7EB',
-            borderRadius: 12,
-            padding: '0 12px',
-            transition: 'border-color 0.15s',
-          }}>
-            <SearchIcon style={{ width: 18, height: 18, color: '#9CA3AF', flexShrink: 0 }} />
+        <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+          <div style={{ flex: 1, position: 'relative' }}>
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search legal documents... (e.g., patent infringement, GDPR compliance)"
+              placeholder="Search cases, regulations, filings..."
               style={{
-                flex: 1,
-                border: 'none',
-                outline: 'none',
-                padding: '14px 10px',
-                fontSize: 15,
-                fontFamily: 'var(--font-inter, Inter, sans-serif)',
-                background: 'transparent',
+                width: '100%',
+                padding: '14px 18px 14px 46px',
+                borderRadius: 12,
+                border: '2px solid #D1D5DB',
+                fontSize: 16,
                 color: '#0f0f0f',
+                outline: 'none',
+                boxSizing: 'border-box',
+                transition: 'border-color 0.15s',
               }}
+              onFocus={(e) => (e.target.style.borderColor = '#0966C3')}
+              onBlur={(e) => (e.target.style.borderColor = '#D1D5DB')}
             />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2" style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)' }}>
+              <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
           </div>
           <button
             type="submit"
-            disabled={loading || !query.trim()}
-            className="mcv-btn mcv-btn--primary"
+            disabled={loading}
             style={{
               padding: '14px 28px',
               borderRadius: 12,
+              background: '#0966C3',
+              color: '#FFFFFF',
               fontSize: 15,
               fontWeight: 600,
+              border: 'none',
               cursor: loading ? 'wait' : 'pointer',
-              opacity: loading || !query.trim() ? 0.6 : 1,
+              opacity: loading ? 0.7 : 1,
               whiteSpace: 'nowrap',
             }}
           >
-            {loading ? 'Searchingâ¦' : 'Search'}
+            {loading ? 'Searching...' : 'Search'}
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowFilters(!showFilters)}
+            style={{
+              padding: '14px 18px',
+              borderRadius: 12,
+              background: showFilters ? '#E8F4FD' : '#F3F4F6',
+              color: showFilters ? '#0966C3' : '#6B7280',
+              fontSize: 14,
+              fontWeight: 500,
+              border: showFilters ? '1px solid #0966C3' : '1px solid #D1D5DB',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Filters {showFilters ? 'á¶²' : 'â¼'}
           </button>
         </div>
 
-        {/* Filter toggle */}
-        <button
-          type="button"
-          onClick={() => setShowFilters(!showFilters)}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#0966C3',
-            fontSize: 13,
-            fontWeight: 500,
-            cursor: 'pointer',
-            padding: '8px 0',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 4,
-          }}
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-          </svg>
-          {showFilters ? 'Hide filters' : 'Show filters'}
-        </button>
-
-        {/* ââ Filters ââ */}
+        {/* Filters panel */}
         {showFilters && (
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            display: 'flex',
             gap: 12,
-            padding: 16,
-            background: '#F7F8FA',
+            flexWrap: 'wrap',
+            padding: '16px 20px',
+            background: '#F9FAFB',
             borderRadius: 12,
-            marginTop: 4,
+            border: '1px solid #E5E7EB',
+            alignItems: 'center',
           }}>
             <div>
-              <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 4 }}>Source</label>
-              <select
-                value={source}
-                onChange={(e) => setSource(e.target.value)}
-                style={{ width: '100%', padding: '8px 10px', borderRadius: 8, border: '1px solid #D1D5DB', fontSize: 14, background: '#fff' }}
-              >
-                <option value="">All sources</option>
-                {Object.entries(SOURCE_CONFIG).map(([key, cfg]) => (
-                  <option key={key} value={key}>{cfg.label}</option>
-                ))}
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: '#6B7280', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Source</label>
+              <select value={source} onChange={(e) => setSource(e.target.value)} style={selectStyle}>
+                {SOURCES.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 4 }}>Document Type</label>
-              <select
-                value={docType}
-                onChange={(e) => setDocType(e.target.value)}
-                style={{ width: '100%', padding: '8px 10px', borderRadius: 8, border: '1px solid #D1D5DB', fontSize: 14, background: '#fff' }}
-              >
-                <option value="">All types</option>
-                {DOC_TYPES.map((t) => (
-                  <option key={t} value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>
-                ))}
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: '#6B7280', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Type</label>
+              <select value={docType} onChange={(e) => setDocType(e.target.value)} style={selectStyle}>
+                {TYPES.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 4 }}>From Date</label>
-              <input
-                type="date"
-                value={dateFrom}
-                onChange={(e) => setDateFrom(e.target.value)}
-                style={{ width: '100%', padding: '8px 10px', borderRadius: 8, border: '1px solid #D1D5DB', fontSize: 14 }}
-              />
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: '#6B7280', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>From</label>
+              <input type="date" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} style={{ ...selectStyle, minWidth: 150 }} />
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 4 }}>To Date</label>
-              <input
-                type="date"
-                value={dateTo}
-                onChange={(e) => setDateTo(e.target.value)}
-                style={{ width: '100%', padding: '8px 10px', borderRadius: 8, border: '1px solid #D1D5DB', fontSize: 14 }}
-              />
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: '#6B7280', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>To</label>
+              <input type="date" value={dateTo} onChange={(e) => setDateTo(e.target.value)} style={{ ...selectStyle, minWidth: 150 }} />
+            </div>
+            <div style={{ marginLeft: 'auto', alignSelf: 'flex-end' }}>
+              <button
+                type="button"
+                onClick={() => { setSource('all'); setDocType('all'); setDateFrom(''); setDateTo(''); }}
+                style={{ padding: '10px 16px', borderRadius: 8, background: 'transparent', color: '#6B7280', fontSize: 13, border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+              >
+                Clear filters
+              </button>
             </div>
           </div>
         )}
       </form>
 
-      {/* ââ Error ââ */}
-      {error && (
+      {/* Demo banner */}
+      {isDemo && hasSearched && (
         <div style={{
-          padding: '12px 16px',
-          background: '#FEF2F2',
-          border: '1px solid #FECACA',
-          borderRadius: 8,
-          color: '#B91C1C',
-          fontSize: 14,
+          padding: '10px 16px',
+          background: '#FFFBEB',
+          border: '1px solid #FDE68A',
+          borderRadius: 10,
+          fontSize: 13,
+          color: '#92400E',
           marginBottom: 16,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8,
         }}>
-          {error}
+          <span style={{ fontSize: 16 }}>&#x1F50D;</span>
+          <span>Showing demo results â connect to Supabase for live data from all 7 sources.</span>
         </div>
       )}
 
-      {/* ââ Results header ââ */}
-      {results && !loading && (
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: 16,
-          flexWrap: 'wrap',
-          gap: 8,
-        }}>
-          <p style={{ fontSize: 14, color: '#4B5563', margin: 0 }}>
-            <strong>{results.total.toLocaleString()}</strong> results for &ldquo;{results.query}&rdquo;
-          </p>
-          {results.totalPages > 1 && (
-            <p style={{ fontSize: 13, color: '#6B7280', margin: 0 }}>
-              Page {results.page} of {results.totalPages}
-            </p>
+      {/* Results header */}
+      {hasSearched && (
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+          <div style={{ fontSize: 14, color: '#6B7280' }}>
+            {loading ? 'Searching...' : `${total} result${total !== 1 ? 's' : ''} found`}
+            {query.trim() && !loading && <span> for &ldquo;<strong style={{ color: '#0f0f0f' }}>{query}</strong>&rdquo;</span>}
+          </div>
+          {total > 0 && totalPages > 1 && (
+            <div style={{ fontSize: 13, color: '#6B7280' }}>
+              Page {page} of {totalPages}
+            </div>
           )}
         </div>
       )}
 
-      {/* ââ Loading ââ */}
-      {loading && (
-        <div>
-          {[1, 2, 3, 4, 5].map(i => <SkeletonCard key={i} />)}
-        </div>
-      )}
-
-      {/* ââ Results list ââ */}
-      {results && !loading && results.results.map((doc) => {
-        const srcCfg = SOURCE_CONFIG[doc.source] || { label: doc.source, color: '#4B5563', bg: '#F9FAFB' };
-        return (
-          <Card key={doc.id} variant="outlined" padding="md" className="mb-3">
-            <CardBody>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6, flexWrap: 'wrap' }}>
-                <span style={{
-                  display: 'inline-block',
-                  padding: '2px 10px',
-                  borderRadius: 20,
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: srcCfg.color,
-                  background: srcCfg.bg,
-                  letterSpacing: '0.02em',
-                }}>
-                  {srcCfg.label}
-                </span>
-                {doc.type && (
-                  <span style={{
-                    display: 'inline-block',
-                    padding: '2px 8px',
-                    borderRadius: 20,
-                    fontSize: 11,
-                    color: '#4B5563',
-                    background: '#F3F4F6',
-                  }}>
-                    {doc.type}
-                  </span>
-                )}
-                {doc.jurisdiction && (
-                  <span style={{ fontSize: 12, color: '#6B7280' }}>{doc.jurisdiction}</span>
-                )}
-              </div>
-              <h3 style={{
-                fontSize: 16,
+      {/* Results list */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        {results.map((doc) => (
+          <div
+            key={doc.id}
+            style={{
+              padding: '20px 24px',
+              borderRadius: 14,
+              border: '1px solid #E5E7EB',
+              background: '#FFFFFF',
+              transition: 'border-color 0.15s, box-shadow 0.15s',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0966C3'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(9,102,195,0.08)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}
+          >
+            {/* Meta row */}
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8, flexWrap: 'wrap' }}>
+              <span style={{
+                display: 'inline-block',
+                padding: '3px 10px',
+                borderRadius: 6,
+                fontSize: 11,
                 fontWeight: 600,
-                color: '#0f0f0f',
-                margin: '0 0 6px',
-                lineHeight: 1.35,
+                color: SOURCE_COLORS[doc.source] || '#6B7280',
+                background: `${SOURCE_COLORS[doc.source] || '#6B7280'}14`,
+                letterSpacing: '0.02em',
               }}>
-                <Link
-                  href={`/legal/citations?documentId=${doc.id}`}
-                  style={{ color: '#004182', textDecoration: 'none' }}
-                >
-                  {doc.title || 'Untitled Document'}
-                </Link>
-              </h3>
-              <p style={{
-                fontSize: 13.5,
-                color: '#4B5563',
-                lineHeight: 1.55,
-                margin: '0 0 8px',
-                display: '-webkit-box',
-                WebkitLineClamp: 3,
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden',
+                {SOURCE_LABELS[doc.source] || doc.source}
+              </span>
+              <span style={{
+                display: 'inline-block',
+                padding: '3px 10px',
+                borderRadius: 6,
+                fontSize: 11,
+                fontWeight: 500,
+                color: '#6B7280',
+                background: '#F3F4F6',
+                textTransform: 'capitalize',
               }}>
-                {doc.snippet}
-              </p>
-              <div style={{ fontSize: 12, color: '#9CA3AF' }}>
-                {doc.datePublished && <span>Published {formatDate(doc.datePublished)}</span>}
-                {doc.dateFiled && doc.dateFiled !== doc.datePublished && (
-                  <span style={{ marginLeft: 12 }}>Filed {formatDate(doc.dateFiled)}</span>
-                )}
-              </div>
-            </CardBody>
-          </Card>
-        );
-      })}
+                {doc.type}
+              </span>
+              <span style={{ fontSize: 12, color: '#9CA3AF' }}>
+                {doc.jurisdiction}
+              </span>
+              <span style={{ fontSize: 12, color: '#9CA3AF', marginLeft: 'auto' }}>
+                {new Date(doc.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </span>
+            </div>
 
-      {/* ââ Empty state ââ */}
-      {results && !loading && results.results.length === 0 && (
-        <div style={{ textAlign: 'center', padding: '48px 16px', color: '#6B7280' }}>
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D1D5DB" strokeWidth="1.5" style={{ margin: '0 auto 16px' }}>
-            <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <p style={{ fontSize: 16, fontWeight: 500, margin: '0 0 4px' }}>No documents found</p>
-          <p style={{ fontSize: 14 }}>Try broadening your search or adjusting the filters.</p>
+            {/* Title */}
+            <h3
+              style={{ fontSize: 16, fontWeight: 600, color: '#0966C3', margin: '0 0 6px', lineHeight: 1.4 }}
+              dangerouslySetInnerHTML={{ __html: highlightQuery(doc.title, query) }}
+            />
+
+            {/* Snippet */}
+            <p
+              style={{ fontSize: 14, color: '#4B5563', margin: 0, lineHeight: 1.65 }}
+              dangerouslySetInnerHTML={{ __html: highlightQuery(doc.snippet, query) }}
+            />
+
+            {/* Footer */}
+            <div style={{ display: 'flex', gap: 16, marginTop: 12, alignItems: 'center' }}>
+              <span style={{ fontSize: 12, color: '#9CA3AF', fontFamily: 'var(--font-mono, monospace)' }}>
+                {doc.sourceId}
+              </span>
+              {doc.url && (
+                <a
+                  href={doc.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: 12, color: '#0966C3', textDecoration: 'none', fontWeight: 500 }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  View source &#x2197;
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Empty state */}
+      {hasSearched && !loading && results.length === 0 && (
+        <div style={{ textAlign: 'center', padding: '48px 20px' }}>
+          <div style={{ fontSize: 40, marginBottom: 12 }}>&#x1F50D;</div>
+          <h3 style={{ fontSize: 18, fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px' }}>No results found</h3>
+          <p style={{ fontSize: 14, color: '#6B7280', margin: 0 }}>
+            Try adjusting your search terms or filters to find what you&apos;re looking for.
+          </p>
         </div>
       )}
 
-      {/* ââ Pagination ââ */}
-      {results && results.totalPages > 1 && !loading && (
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: 8,
-          marginTop: 32,
-        }}>
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 28 }}>
           <button
             onClick={() => doSearch(page - 1)}
-            disabled={page <= 1}
-            className="mcv-btn mcv-btn--secondary"
-            style={{ padding: '8px 20px', borderRadius: 8, fontSize: 14, opacity: page <= 1 ? 0.4 : 1 }}
+            disabled={page <= 1 || loading}
+            style={{
+              padding: '10px 18px',
+              borderRadius: 10,
+              border: '1px solid #D1D5DB',
+              background: page <= 1 ? '#F3F4F6' : '#FFFFFF',
+              color: page <= 1 ? '#9CA3AF' : '#374151',
+              fontSize: 14,
+              cursor: page <= 1 ? 'not-allowed' : 'pointer',
+            }}
           >
-            Previous
+            &larr; Previous
           </button>
-          <span style={{ display: 'flex', alignItems: 'center', fontSize: 14, color: '#4B5563', padding: '0 12px' }}>
-            {page} / {results.totalPages}
-          </span>
           <button
             onClick={() => doSearch(page + 1)}
-            disabled={page >= results.totalPages}
-            className="mcv-btn mcv-btn--secondary"
-            style={{ padding: '8px 20px', borderRadius: 8, fontSize: 14, opacity: page >= results.totalPages ? 0.4 : 1 }}
+            disabled={page >= totalPages || loading}
+            style={{
+              padding: '10px 18px',
+              borderRadius: 10,
+              border: '1px solid #D1D5DB',
+              background: page >= totalPages ? '#F3F4F6' : '#FFFFFF',
+              color: page >= totalPages ? '#9CA3AF' : '#374151',
+              fontSize: 14,
+              cursor: page >= totalPages ? 'not-allowed' : 'pointer',
+            }}
           >
-            Next
+            Next &rarr;
           </button>
         </div>
       )}
 
-      {/* ââ Initial state (no search yet) ââ */}
-      {!results && !loading && !error && (
-        <div style={{ textAlign: 'center', padding: '64px 16px' }}>
-          <div style={{
-            width: 64,
-            height: 64,
-            borderRadius: '50%',
-            background: '#E8F4FD',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0 auto 20px',
-          }}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
-              <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-          </div>
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px' }}>
-            Search Legal Documents
-          </h2>
-          <p style={{ fontSize: 14, color: '#6B7280', maxWidth: 460, margin: '0 auto', lineHeight: 1.5 }}>
-            Enter a query above to search across CourtListener opinions, Federal Register regulations, eCFR, EDGAR filings, Harvard Caselaw, CanLII, and GovInfo.
-          </p>
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 8,
-            justifyContent: 'center',
-            marginTop: 24,
-          }}>
-            {Object.entries(SOURCE_CONFIG).map(([key, cfg]) => (
-              <span
-                key={key}
-                style={{
-                  padding: '4px 14px',
-                  borderRadius: 20,
-                  fontSize: 12,
-                  fontWeight: 500,
-                  color: cfg.color,
-                  background: cfg.bg,
-                }}
-              >
-                {cfg.label}
-              </span>
-            ))}
-          </div>
+      {/* Source stats sidebar */}
+      <div style={{
+        marginTop: 48,
+        padding: '28px 32px',
+        borderRadius: 16,
+        background: '#F9FAFB',
+        border: '1px solid #E5E7EB',
+      }}>
+        <h3 style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px' }}>
+          Search Across 7 Sources
+        </h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 10 }}>
+          {SOURCES.filter(s => s.value !== 'all').map((s) => (
+            <button
+              key={s.value}
+              onClick={() => { setSource(s.value); doSearch(1); }}
+              style={{
+                padding: '10px 14px',
+                borderRadius: 10,
+                border: source === s.value ? `2px solid ${SOURCE_COLORS[s.value]}` : '1px solid #E5E7EB',
+                background: source === s.value ? `${SOURCE_COLORS[s.value]}0A` : '#FFFFFF',
+                cursor: 'pointer',
+                textAlign: 'left',
+              }}
+            >
+              <div style={{ fontSize: 13, fontWeight: 600, color: SOURCE_COLORS[s.value] }}>
+                {s.label}
+              </div>
+            </button>
+          ))}
         </div>
-      )}
+      </div>
+
+      {/* Back to hub */}
+      <div style={{ textAlign: 'center', marginTop: 40 }}>
+        <Link href="/legal" style={{ fontSize: 14, color: '#0966C3', textDecoration: 'none', fontWeight: 500 }}>
+          &larr; Back to Research Hub
+        </Link>
+      </div>
     </div>
   );
 }
