@@ -260,7 +260,7 @@ export default function DiscoveryGeneratorPage() {
                       if (!texts[tab.key] && !loading) generateTab(tab.key);
                     }}
                     style={{
-                      flex: 1, padding: '10px 12px', borderRadius: '10px', border: 'none',
+                      flex: 1, padding: '10px 12px', borderRadius: '12px', border: 'none',
                       background: activeTab === tab.key ? '#0966C3' : 'transparent',
                       color: activeTab === tab.key ? '#FFF' : '#4B5563',
                       fontSize: '12px', fontWeight: 600, cursor: 'pointer',
