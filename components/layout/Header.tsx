@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Header.tsx Ã¢ÂÂ Consolidated site header component
+ * Header.tsx — Consolidated site header component
  *
  * Replaces SiteNav.tsx with improved architecture:
  * - Mega-menu for Explore (3-column: Cases, Judges, Districts)
@@ -20,9 +20,9 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { createBrowserClient } from '@supabase/ssr';
 
-/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+/* ─────────────────────────────────────────────────────────────────────────
    Dropdown Data Structures
-   Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+   ───────────────────────────────────────────────────────────────────────── */
 
 interface MegaMenuColumn {
   heading: string;
@@ -73,17 +73,73 @@ const EXPLORE_MEGA_MENU: MegaMenuColumn[] = [
     items: [
       { label: 'Research Hub Overview', href: '/legal', highlight: true },
       { label: 'Document Search', href: '/legal/search' },
-      { label: 'Data Dashboard', href: '/legal/dashboard' },
       { label: 'Citation Explorer', href: '/legal/citations' },
+      { label: 'Data Dashboard', href: '/legal/dashboard' },
     ],
   },
 ];
 
-// For Attorneys Dropdown
-const FOR_ATTORNEYS_DROPDOWN: DropdownItem[] = [
-  { label: 'Attorney Overview', href: '/attorney', highlight: true },
-  { label: 'API Access', href: '/attorney/api-access' },
-  { label: 'Case Reports', href: '/report/360' },
+// For Attorneys Mega-Menu: 6 categories covering all attorney tools
+const FOR_ATTORNEYS_MEGA_MENU: MegaMenuColumn[] = [
+  {
+    heading: 'CASE INTELLIGENCE',
+    items: [
+      { label: 'All Attorney Tools', href: '/attorney', highlight: true },
+      { label: 'Case Predictor', href: '/attorney/case-predictor' },
+      { label: 'Motion Analytics', href: '/attorney/motion-analytics' },
+      { label: 'Bulk Analysis', href: '/attorney/bulk-analysis' },
+      { label: 'Appeals', href: '/attorney/appeals' },
+      { label: 'Class Action', href: '/attorney/class-action' },
+    ],
+  },
+  {
+    heading: 'DOCUMENT DRAFTING',
+    items: [
+      { label: 'Demand Letter', href: '/attorney/demand-letter' },
+      { label: 'Demand Package', href: '/attorney/demand-package' },
+      { label: 'Discovery Generator', href: '/attorney/discovery-generator' },
+      { label: 'Motions', href: '/attorney/motions' },
+      { label: 'Research Memo', href: '/attorney/research-memo' },
+    ],
+  },
+  {
+    heading: 'COURT & JUDGE RESEARCH',
+    items: [
+      { label: 'Judge Intelligence', href: '/attorney/judge-intelligence' },
+      { label: 'Venue Optimizer', href: '/attorney/venue-optimizer' },
+      { label: 'Court Rules', href: '/attorney/court-rules' },
+      { label: 'Opposing Counsel', href: '/attorney/opposing-counsel' },
+      { label: 'Expert Witness', href: '/attorney/expert-witness' },
+    ],
+  },
+  {
+    heading: 'CALCULATORS & DEADLINES',
+    items: [
+      { label: 'Fee Calculator', href: '/attorney/fee-calculator' },
+      { label: 'Deadline Calculator', href: '/attorney/deadline-calculator' },
+      { label: 'SOL Calculator', href: '/attorney/sol-calculator' },
+      { label: 'Case Timeline', href: '/attorney/case-timeline' },
+      { label: 'Timeline', href: '/attorney/timeline' },
+    ],
+  },
+  {
+    heading: 'LITIGATION PREP',
+    items: [
+      { label: 'Deposition Prep', href: '/attorney/deposition-prep' },
+      { label: 'Document Intelligence', href: '/attorney/document-intelligence' },
+      { label: 'Intake Forms', href: '/attorney/intake-forms' },
+      { label: 'Negotiation', href: '/attorney/negotiation' },
+      { label: 'PACER Monitor', href: '/attorney/pacer-monitor' },
+    ],
+  },
+  {
+    heading: 'COLLABORATION',
+    items: [
+      { label: 'Team Workspace', href: '/attorney/team-workspace' },
+      { label: 'API Access', href: '/attorney/api-access' },
+      { label: 'Case Reports', href: '/report/360' },
+    ],
+  },
 ];
 
 // Resources Dropdown
@@ -95,9 +151,9 @@ const RESOURCES_DROPDOWN: DropdownItem[] = [
   { label: 'Contact', href: '/contact' },
 ];
 
-/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+/* ─────────────────────────────────────────────────────────────────────────
    Utility Functions
-   Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+   ───────────────────────────────────────────────────────────────────────── */
 
 /**
  * Check if a route is active based on pathname
@@ -154,75 +210,100 @@ function getActiveNavSection(pathname: string): string | null {
   return null;
 }
 
-/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+/* ─────────────────────────────────────────────────────────────────────────
    Dropdown Components
-   Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+   ───────────────────────────────────────────────────────────────────────── */
 
 /**
- * MegaMenu: 3-column layout for Explore
+ * MegaMenu: flexible column layout for Explore and For Attorneys
  */
-function MegaMenu({ columns, onMouseEnter, onMouseLeave }: { columns: MegaMenuColumn[]; onMouseEnter?: () => void; onMouseLeave?: () => void }) {
+function MegaMenu({ columns, onMouseEnter, onMouseLeave, showSearch = false, footer }: {
+  columns: MegaMenuColumn[];
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  showSearch?: boolean;
+  footer?: string;
+}) {
   const router = useRouter();
   const [megaQuery, setMegaQuery] = useState('');
+  const colCount = columns.length;
+  // 4 columns for Explore, 3x2 grid for 6-column attorney tools
+  const gridClass = colCount <= 4
+    ? `grid grid-cols-${colCount} gap-0`
+    : 'grid grid-cols-3 gap-0';
 
   return (
     <div className="fixed top-16 left-0 right-0 mt-0 bg-white border-b border-gray-200 shadow-lg z-40" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-      {/* Search Bar */}
-      <form
-        role="search"
-        aria-label="Search federal court records"
-        className="border-b border-gray-100 px-6 py-4 max-w-6xl mx-auto"
-        onSubmit={(e) => {
-          e.preventDefault();
-          const q = megaQuery.trim();
-          router.push(q ? `/search?q=${encodeURIComponent(q)}` : '/cases');
-        }}
-      >
-        <input
-          type="text"
-          value={megaQuery}
-          onChange={(e) => setMegaQuery(e.target.value)}
-          placeholder="Search cases, judges, districts..."
-          className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/10 focus:border-brand-blue transition-colors"
-          aria-label="Search cases, judges, districts"
-        />
-      </form>
+      {/* Optional Search Bar */}
+      {showSearch && (
+        <form
+          role="search"
+          aria-label="Search federal court records"
+          className="border-b border-gray-100 px-6 py-4 max-w-6xl mx-auto"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const q = megaQuery.trim();
+            router.push(q ? `/search?q=${encodeURIComponent(q)}` : '/cases');
+          }}
+        >
+          <input
+            type="text"
+            value={megaQuery}
+            onChange={(e) => setMegaQuery(e.target.value)}
+            placeholder="Search cases, judges, districts..."
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/10 focus:border-brand-blue transition-colors"
+            aria-label="Search cases, judges, districts"
+          />
+        </form>
+      )}
 
       {/* Columns Grid */}
-      <div className="grid grid-cols-4 gap-0 px-6 py-6 max-w-6xl mx-auto">
-        {columns.map((col, colIndex) => (
-          <div key={col.heading} className={colIndex > 0 ? 'border-l border-gray-100 pl-6' : ''}>
-            {/* Column Heading */}
-            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4 pb-2 border-b border-gray-100">
-              {col.heading}
-            </p>
-
-            {/* Column Items */}
-            <div className="space-y-0">
-              {col.items.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`block py-2.5 px-3 -mx-3 rounded-md text-sm transition-colors ${
-                    item.highlight
-                      ? 'font-semibold text-brand-blue hover:bg-blue-50'
-                      : 'text-gray-700 hover:text-brand-blue hover:bg-gray-50'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+      <div
+        className="px-6 py-6 max-w-6xl mx-auto"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: colCount <= 4 ? `repeat(${colCount}, 1fr)` : 'repeat(3, 1fr)',
+          gap: 0,
+        }}
+      >
+        {columns.map((col, colIndex) => {
+          // For 3-col grid, add top border on second row
+          const isSecondRow = colCount > 4 && colIndex >= 3;
+          const needsLeftBorder = colCount <= 4 ? colIndex > 0 : colIndex % 3 !== 0;
+          return (
+            <div
+              key={col.heading}
+              className={`${needsLeftBorder ? 'border-l border-gray-100 pl-6' : ''} ${isSecondRow ? 'border-t border-gray-100 pt-6 mt-4' : ''}`}
+            >
+              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4 pb-2 border-b border-gray-100">
+                {col.heading}
+              </p>
+              <div className="space-y-0">
+                {col.items.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`block py-2 px-3 -mx-3 rounded-md text-sm transition-colors ${
+                      item.highlight
+                        ? 'font-semibold text-brand-blue hover:bg-blue-50'
+                        : 'text-gray-700 hover:text-brand-blue hover:bg-gray-50'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {/* Footer Credit */}
-      <div className="border-t border-gray-100 bg-gray-50 px-6 py-4 max-w-6xl mx-auto">
-        <p className="text-xs text-gray-500">
-          Sourced from 5.1M+ public federal court records ÃÂ· FJC IDB ÃÂ· CourtListener ÃÂ· RECAP
-        </p>
-      </div>
+      {/* Footer */}
+      {footer && (
+        <div className="border-t border-gray-100 bg-gray-50 px-6 py-4 max-w-6xl mx-auto">
+          <p className="text-xs text-gray-500">{footer}</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -253,9 +334,9 @@ function SimpleDropdown({ items }: { items: DropdownItem[] }) {
 }
 
 
-/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ
+/* ─────────────────────────────────────────────────────────────────────────
    Main Header Component
-   Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+   ───────────────────────────────────────────────────────────────────────── */
 
 export default function Header() {
   const [scrollY, setScrollY] = useState(0);
@@ -407,7 +488,7 @@ export default function Header() {
                     <path d="M1 1L6 6L11 1" />
                   </svg>
                 </button>
-                {openDropdown === 'explore' && <MegaMenu columns={EXPLORE_MEGA_MENU} onMouseEnter={() => handleMouseEnter('explore')} onMouseLeave={handleMouseLeave} />}
+                {openDropdown === 'explore' && <MegaMenu columns={EXPLORE_MEGA_MENU} onMouseEnter={() => handleMouseEnter('explore')} onMouseLeave={handleMouseLeave} showSearch footer="Sourced from 5.1M+ public federal court records -- FJC IDB -- CourtListener -- RECAP" />}
               </div>
 
               {/* For Attorneys */}
@@ -440,7 +521,7 @@ export default function Header() {
                     <path d="M1 1L6 6L11 1" />
                   </svg>
                 </button>
-                {openDropdown === 'attorneys' && <SimpleDropdown items={FOR_ATTORNEYS_DROPDOWN} />}
+                {openDropdown === 'attorneys' && <MegaMenu columns={FOR_ATTORNEYS_MEGA_MENU} onMouseEnter={() => handleMouseEnter('attorneys')} onMouseLeave={handleMouseLeave} footer="27 professional tools for litigation, research, and case management" />}
               </div>
 
               {/* Resources */}
@@ -551,7 +632,7 @@ export default function Header() {
                   className="px-4 py-2 rounded-full bg-brand-blue text-white text-sm font-semibold hover:bg-brand-blue/90 transition-colors flex items-center gap-1"
                 >
                   Get Started
-                  <span>Ã¢ÂÂ</span>
+                  <span>→</span>
                 </Link>
               </div>
             )}
@@ -693,15 +774,26 @@ export default function Header() {
             </button>
             {mobileExpanded === 'attorneys' && (
               <div className="space-y-1 bg-gray-50 rounded-lg p-4">
-                {FOR_ATTORNEYS_DROPDOWN.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 px-3 rounded text-gray-700 hover:bg-white hover:text-brand-blue transition-colors"
-                  >
-                    {item.label}
-                  </Link>
+                {FOR_ATTORNEYS_MEGA_MENU.map((col) => (
+                  <div key={col.heading} className="space-y-2 mb-4 last:mb-0">
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">{col.heading}</p>
+                    <div className="space-y-1">
+                      {col.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setMobileOpen(false)}
+                          className={`block py-2 px-3 rounded transition-colors ${
+                            item.highlight
+                              ? 'font-semibold text-brand-blue hover:bg-white'
+                              : 'text-gray-700 hover:bg-white hover:text-brand-blue'
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             )}
@@ -789,7 +881,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="block py-3 px-4 rounded-full bg-brand-blue text-white font-semibold text-center hover:bg-brand-blue/90 transition-colors"
               >
-                Get Started Ã¢ÂÂ
+                Get Started →
               </Link>
             </div>
           )}
