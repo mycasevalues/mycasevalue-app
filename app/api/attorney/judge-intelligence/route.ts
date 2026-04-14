@@ -2,6 +2,25 @@ import { NextRequest, NextResponse } from 'next/server';
 import { REAL_DATA } from '../../../../lib/realdata';
 import { STATES } from '../../../../lib/data';
 import { validateState } from '../../../../lib/sanitize';
+import { getSupabaseAdmin } from '../../../../lib/supabase';
+
+/**
+ * Fetch case data from Supabase with REAL_DATA fallback.
+ * This ensures the tool works even if Supabase is unavailable.
+ */
+async function getDataWithFallback(nosCode: string) {
+  try {
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .from('case_stats')
+      .select('*')
+      .eq('nos_code', nosCode)
+      .single();
+    if (!error && data) return { ...data, _source: 'supabase' };
+  } catch { /* Supabase unavailable */ }
+  return REAL_DATA[nosCode] ? { ...REAL_DATA[nosCode], _source: 'local' } : null;
+}
+
 
 export const dynamic = 'force-dynamic';
 
