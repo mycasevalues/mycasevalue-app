@@ -239,7 +239,7 @@ export default function MotionAnalyticsPage() {
                     <div
                       style={{
                         padding: '4px 10px',
-                        borderRadius: '6px',
+                        borderRadius: '12px',
                         backgroundColor: motion.successColor === 'green' ? 'rgba(5, 118, 66, 0.12)' : motion.successColor === 'amber' ? 'rgba(195, 125, 22, 0.12)' : 'rgba(10, 102, 194, 0.12)',
                         color: motion.successColor === 'green' ? '#057642' : motion.successColor === 'amber' ? '#C37D16' : '#0966C3',
                         fontSize: '11px',
