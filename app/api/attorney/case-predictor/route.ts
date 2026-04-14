@@ -1,6 +1,46 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { REAL_DATA } from '../../../../lib/realdata';
 import { validateNOSCode, validateState, validateEnum, sanitizeForPrompt } from '../../../../lib/sanitize';
+import { getSupabaseAdmin } from '../../../../lib/supabase';
+
+/**
+ * Fetch case stats from Supabase, falling back to REAL_DATA
+ */
+async function getCaseData(nosCode: string) {
+  try {
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .from('case_stats')
+      .select('*')
+      .eq('nos_code', nosCode)
+      .single();
+
+    if (!error && data) {
+      // Map Supabase schema to REAL_DATA shape for compatibility
+      return {
+        label: data.label,
+        wr: data.win_rate,
+        sp: data.settlement_rate,
+        mo: data.avg_duration_months,
+        rng: { lo: data.settlement_lo, md: data.median_settlement, hi: data.settlement_hi },
+        total: data.total_cases,
+        rr: { wr: data.represented_win_rate },
+        ps: { wr: data.pro_se_win_rate },
+        sol: data.statute_of_limitations,
+        af: data.attorney_fee_range,
+        ends: null, // Will fall back to REAL_DATA for outcome distribution
+        state_rates: null,
+        _source: 'supabase',
+      };
+    }
+  } catch {
+    // Supabase unavailable — fall through to REAL_DATA
+  }
+
+  // Fallback to local REAL_DATA
+  const local = REAL_DATA[nosCode];
+  return local ? { ...local, _source: 'local' } : null;
+}
 
 /**
  * AI Case Outcome Predictor API
@@ -21,10 +61,20 @@ type PredictionInput = {
   documentedEvidence: boolean;
 };
 
-function calculatePrediction(input: PredictionInput) {
-  const nosData = REAL_DATA[input.caseType];
+async function calculatePrediction(input: PredictionInput) {
+  const nosData = await getCaseData(input.caseType);
   if (!nosData) {
     return null;
+  }
+
+  // If Supabase data doesn't have outcome distribution, merge from REAL_DATA
+  if (!nosData.ends) {
+    const localData = REAL_DATA[input.caseType];
+    if (localData?.ends) nosData.ends = localData.ends;
+  }
+  if (!nosData.state_rates) {
+    const localData = REAL_DATA[input.caseType];
+    if (localData?.state_rates) nosData.state_rates = localData.state_rates;
   }
 
   // Base rates from real data
@@ -242,7 +292,7 @@ export async function POST(req: NextRequest) {
     const validCaseStrengths = ['weak', 'moderate', 'strong'] as const;
     const validatedCaseStrength = validateEnum(caseStrength, validCaseStrengths, 'moderate');
 
-    const prediction = calculatePrediction({
+    const prediction = await calculatePrediction({
       caseType: validatedCaseType,
       state: validatedState,
       hasAttorney: !!hasAttorney,
@@ -300,3 +350,4 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
