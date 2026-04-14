@@ -26,6 +26,7 @@ const BackToTop = dynamic(() => import('../components/BackToTop'), { ssr: false 
 const WebVitalsReporter = dynamic(() => import('../components/analytics/WebVitalsReporter'), { ssr: false });
 const DemoMode = dynamic(() => import('../components/DemoMode'), { ssr: false });
 const LanguageDetectBanner = dynamic(() => import('../components/LanguageDetectBanner'), { ssr: false });
+const AIChatAssistant = dynamic(() => import('../components/AIChatAssistant'), { ssr: false });
 
 export const metadata: Metadata = {
   title: {
@@ -324,6 +325,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <WebVitalsReporter />
         <GlobalCommandPalette />
         <DemoMode />
+        <AIChatAssistant />
         <Analytics />
         <SpeedInsights />
         <script dangerouslySetInnerHTML={{ __html: `
