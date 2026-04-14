@@ -506,7 +506,7 @@ export default function ApiAccessPage() {
                 color: '#0f0f0f',
                 backgroundColor: '#F8F9FA',
                 padding: '8px 12px',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 display: 'block',
                 wordBreak: 'break-all',
               }}
@@ -550,7 +550,7 @@ export default function ApiAccessPage() {
                       fontSize: '11px',
                       fontWeight: 600,
                       padding: '4px 10px',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       backgroundColor: `${methodColors[endpoint.method]}20`,
                       color: methodColors[endpoint.method],
                       minWidth: '45px',
@@ -667,7 +667,7 @@ export default function ApiAccessPage() {
                     lineHeight: 1.5,
                     fontFamily: 'var(--font-mono)',
                     overflowX: 'auto',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                   }}
                 >
                   {endpoint.curlExample}
@@ -699,7 +699,7 @@ export default function ApiAccessPage() {
                     lineHeight: 1.5,
                     fontFamily: 'var(--font-mono)',
                     overflowX: 'auto',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                   }}
                 >
                   {endpoint.responseExample}
@@ -731,7 +731,7 @@ export default function ApiAccessPage() {
                         gap: '12px',
                         padding: '8px 12px',
                         backgroundColor: '#F8F9FA',
-                        borderRadius: '6px',
+                        borderRadius: '12px',
                         borderLeft: `3px solid ${error.code >= 500 ? '#DC2626' : error.code >= 400 ? '#F59E0B' : '#059669'}`,
                       }}
                     >
@@ -790,7 +790,7 @@ export default function ApiAccessPage() {
                 lineHeight: 1.5,
                 fontFamily: 'var(--font-mono)',
                 overflowX: 'auto',
-                borderRadius: '6px',
+                borderRadius: '12px',
               }}
             >
               {`Authorization: Bearer YOUR_API_KEY`}
