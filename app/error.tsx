@@ -158,7 +158,7 @@ export default function Error({
                 marginRight: 'auto',
               }}
             >
-              We hit an issue loading this page. This is usually temporary.
+              We encountered an issue loading this page. Please try again, or return to the homepage if the problem persists.
             </motion.p>
 
             {error.digest && (

@@ -379,7 +379,7 @@ export default function IntegrationsPage() {
                   transition: 'all 0.2s ease',
                 }}
               >
-                Learn More →
+                Learn More
               </Link>
             </div>
           ))}

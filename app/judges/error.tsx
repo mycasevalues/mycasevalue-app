@@ -22,27 +22,46 @@ export default function Error({
       fontFamily: 'var(--font-inter), Inter, -apple-system, sans-serif',
     }}>
       <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#1f2937', marginBottom: '12px' }}>
-        Something went wrong
+        Unable to load judge data
       </h2>
       <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '24px' }}>
-        We encountered an unexpected error loading this page. Please try again.
+        We encountered an issue loading the judge directory. Please try again or browse our judge analytics to research federal judges.
       </p>
-      <button
-        onClick={reset}
-        style={{
-          padding: '10px 24px',
-          backgroundColor: 'var(--accent-primary)',
-          color: 'white',
-          border: 'none',
-          borderRadius: '20px',
-          fontSize: '14px',
-          fontWeight: 600,
-          cursor: 'pointer',
-          fontFamily: 'inherit',
-        }}
-      >
-        Try again
-      </button>
+      <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <button
+          onClick={reset}
+          style={{
+            padding: '10px 24px',
+            backgroundColor: 'var(--accent-primary)',
+            color: 'white',
+            border: 'none',
+            borderRadius: '20px',
+            fontSize: '14px',
+            fontWeight: 600,
+            cursor: 'pointer',
+            fontFamily: 'inherit',
+          }}
+        >
+          Try again
+        </button>
+        <a
+          href="/judges"
+          style={{
+            padding: '10px 24px',
+            backgroundColor: 'var(--color-surface-1)',
+            color: '#1f2937',
+            border: '1px solid #e5e7eb',
+            borderRadius: '20px',
+            fontSize: '14px',
+            fontWeight: 600,
+            textDecoration: 'none',
+            cursor: 'pointer',
+            fontFamily: 'inherit',
+          }}
+        >
+          Judge directory
+        </a>
+      </div>
     </div>
   );
 }

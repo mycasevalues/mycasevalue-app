@@ -20,9 +20,9 @@ export default function PricingError({
           Unable to load pricing
         </h2>
         <p className="text-gray-600 mb-6">
-          We encountered an issue loading the pricing page. Please try again.
+          We encountered an issue loading our pricing information. Please try again or contact our team if the problem persists.
         </p>
-        <div className="flex gap-3 justify-center">
+        <div className="flex gap-3 justify-center flex-wrap">
           <button
             onClick={() => reset()}
             className="px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
