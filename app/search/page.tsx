@@ -314,31 +314,14 @@ function SearchPageInner() {
         }
       `}</style>
       {/* Dark Navy Header Banner */}
-      <div className="search-header" style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '64px 24px' }}>
+      <div className="search-header" style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '18px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.15)' }}>
-            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: 'rgba(255,255,255,0.9)', flexShrink: 0 }}>
-              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.9)', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
-              Search
-            </span>
-          </div>
-          <h1 className="search-header" style={{ fontSize: '40px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
+          <h1 className="search-header" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
             Search federal court outcomes.
           </h1>
           <p className="search-header" style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
             Search across all 84 federal case types to find real outcome data for your situation.
           </p>
-
-          {/* Breadcrumb */}
-          <div style={{ marginTop: '24px', fontSize: '13px', color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-body)' }}>
-            <Link href="/" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', transition: 'color 150ms' }} onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-text-inverse)'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}>
-              Home
-            </Link>
-            <span style={{ margin: '0 8px', color: 'rgba(255,255,255,0.5)' }}>/</span>
-            <span style={{ color: 'rgba(255,255,255,0.6)' }}>Search Results</span>
-          </div>
         </div>
       </div>
 

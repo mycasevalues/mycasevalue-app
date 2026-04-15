@@ -156,26 +156,12 @@ export default function ComparePage() {
       <header style={{
         background: 'var(--accent-primary)',
         color: 'var(--color-surface-0)',
-        padding: 'clamp(24px, 5vw, 48px)',
+        padding: 'clamp(16px, 3vw, 20px)',
         marginBottom: 0,
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 48px)', paddingRight: 'clamp(16px, 3vw, 48px)' }}>
-          <div style={{
-            display: 'inline-block',
-            fontSize: 11,
-            fontWeight: 600,
-            letterSpacing: '0.5px',
-            marginBottom: 16,
-            textTransform: 'uppercase',
-            color: 'var(--color-surface-0)',
-            background: 'var(--accent-primary)',
-            padding: '4px 12px',
-            borderRadius: 4,
-          }}>
-            COMPARE
-          </div>
+        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 24px)', paddingRight: 'clamp(16px, 3vw, 24px)' }}>
           <h1 className="compare-header" style={{
-            fontSize: 'clamp(28px, 7vw, 40px)',
+            fontSize: 'clamp(24px, 6vw, 28px)',
             fontWeight: 600,
             margin: 0,
             marginBottom: 12,
