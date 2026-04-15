@@ -11,6 +11,7 @@ import { JudgeWithStats } from '@/lib/supabase-judges';
 import { getWinRateColor } from '@/lib/color-scale';
 import { getPartyColor, getPartyLabel } from '@/lib/supabase-judges';
 import SaveButton from './ui/SaveButton';
+import HoverPreview, { JudgePreviewCard } from './ui/HoverPreview';
 
 interface JudgeTableViewProps {
   judges: JudgeWithStats[];
@@ -71,12 +72,25 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
                 className={`border-b border-gray-50 hover:bg-blue-50/50 transition-colors ${idx % 2 === 0 ? '' : 'bg-gray-25'}`}
               >
                 <td className="px-3 py-2">
-                  <Link
-                    href={`/judges/${judge.id}`}
-                    className="text-sm font-semibold text-gray-900 hover:text-brand-blue transition-colors"
+                  <HoverPreview
+                    preview={
+                      <JudgePreviewCard
+                        name={judge.full_name}
+                        district={judge.district_id || undefined}
+                        circuit={judge.circuit ? `${judge.circuit} Circuit` : undefined}
+                        winRate={winRate ?? undefined}
+                        totalCases={judge.total_cases_handled}
+                        party={judge.party_of_appointing_president || undefined}
+                      />
+                    }
                   >
-                    {judge.full_name}
-                  </Link>
+                    <Link
+                      href={`/judges/${judge.id}`}
+                      className="text-sm font-semibold text-gray-900 hover:text-brand-blue transition-colors"
+                    >
+                      {judge.full_name}
+                    </Link>
+                  </HoverPreview>
                 </td>
                 <td className="px-3 py-2 text-xs text-gray-600 whitespace-nowrap">
                   {judge.district_id || '—'}
