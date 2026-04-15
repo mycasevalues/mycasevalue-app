@@ -128,20 +128,20 @@ function StatsCard({
       style={{
         padding: '20px',
         borderRadius: '12px',
-        background: '#FFFFFF',
-        border: '1px solid #E5E7EB',
+        background: 'var(--color-surface-0)',
+        border: '1px solid var(--border-default)',
         textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
       }}
     >
-      <p style={{ color: '#4B5563', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
+      <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
         {label}
       </p>
       <p
         style={{
           fontSize: '28px',
           fontWeight: 'bold',
-          color: '#0966C3',
+          color: 'var(--accent-primary)',
           margin: '0',
           fontFamily: 'var(--font-data)',
         }}
@@ -149,7 +149,7 @@ function StatsCard({
         {value}
       </p>
       {subtitle && (
-        <p style={{ color: '#4B5563', fontSize: '12px', margin: '6px 0 0', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '12px', margin: '6px 0 0', fontFamily: 'var(--font-body)' }}>
           {subtitle}
         </p>
       )}
@@ -170,13 +170,13 @@ export default async function DistrictCaseTypePage({
     return (
       <div
         className="min-h-screen flex items-center justify-center"
-        style={{ background: '#F7F8FA' }}
+        style={{ background: 'var(--color-surface-1)' }}
       >
-        <div style={{ textAlign: 'center', color: '#0f0f0f' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 'bold', margin: '0 0 16px', fontFamily: 'var(--font-display)', color: '#0f0f0f' }}>
+        <div style={{ textAlign: 'center', color: 'var(--color-text-primary)' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 'bold', margin: '0 0 16px', fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
             Case data not found
           </h1>
-          <p style={{ color: '#4B5563', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
+          <p style={{ color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
             This case type and district combination does not exist in our database.
           </p>
           <Link
@@ -185,8 +185,8 @@ export default async function DistrictCaseTypePage({
               display: 'inline-block',
               padding: '12px 32px',
               borderRadius: '12px',
-              background: '#0966C3',
-              color: 'white',
+              background: 'var(--accent-primary)',
+              color: 'var(--color-text-inverse)',
               textDecoration: 'none',
               fontWeight: '600',
               fontSize: '14px',
@@ -257,7 +257,7 @@ export default async function DistrictCaseTypePage({
   };
 
   return (
-    <div style={{ background: '#F7F8FA', color: '#0f0f0f' }}>
+    <div style={{ background: 'var(--color-surface-1)', color: 'var(--color-text-primary)' }}>
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -267,7 +267,7 @@ export default async function DistrictCaseTypePage({
       {/* Dark Navy Header Section */}
       <header
         style={{
-          background: '#0966C3',
+          background: 'var(--accent-primary)',
           padding: 'clamp(20px, 4vw, 40px) 24px',
           marginBottom: 'clamp(20px, 4vw, 40px)',
         }}
@@ -276,32 +276,32 @@ export default async function DistrictCaseTypePage({
           {/* Breadcrumb */}
           <nav style={{ marginBottom: '24px' }}>
             <div style={{ display: 'flex', gap: '8px', fontSize: '14px', alignItems: 'center', flexWrap: 'wrap' }}>
-              <Link href="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>
+              <Link href="/" style={{ color: 'var(--color-text-inverse)', textDecoration: 'none' }}>
                 Home
               </Link>
-              <span style={{ color: '#E5E7EB' }}>&gt;</span>
+              <span style={{ color: 'var(--border-default)' }}>&gt;</span>
               <Link
                 href="/cases"
-                style={{ color: '#FFFFFF', textDecoration: 'none' }}
+                style={{ color: 'var(--color-text-inverse)', textDecoration: 'none' }}
               >
                 Cases
               </Link>
-              <span style={{ color: '#E5E7EB' }}>&gt;</span>
+              <span style={{ color: 'var(--border-default)' }}>&gt;</span>
               <Link
                 href={`/cases/${category}`}
-                style={{ color: '#FFFFFF', textDecoration: 'none' }}
+                style={{ color: 'var(--color-text-inverse)', textDecoration: 'none' }}
               >
                 {getCategoryLabel(category)}
               </Link>
-              <span style={{ color: '#E5E7EB' }}>&gt;</span>
+              <span style={{ color: 'var(--border-default)' }}>&gt;</span>
               <Link
                 href={`/cases/${category}/${slug}`}
-                style={{ color: '#FFFFFF', textDecoration: 'none' }}
+                style={{ color: 'var(--color-text-inverse)', textDecoration: 'none' }}
               >
                 {caseType.label}
               </Link>
-              <span style={{ color: '#E5E7EB' }}>&gt;</span>
-              <span style={{ color: '#E5E7EB' }}>{state.label}</span>
+              <span style={{ color: 'var(--border-default)' }}>&gt;</span>
+              <span style={{ color: 'var(--border-default)' }}>{state.label}</span>
             </div>
           </nav>
 
@@ -314,7 +314,7 @@ export default async function DistrictCaseTypePage({
                   fontWeight: 'bold',
                   margin: '0 0 8px',
                   fontFamily: 'var(--font-display)',
-                  color: '#FFFFFF',
+                  color: 'var(--color-text-inverse)',
                 }}
               >
                 {caseType.label}
@@ -322,7 +322,7 @@ export default async function DistrictCaseTypePage({
               <p
                 style={{
                   fontSize: '16px',
-                  color: '#E5E7EB',
+                  color: 'var(--border-default)',
                   margin: '0',
                   fontFamily: 'var(--font-body)',
                 }}
@@ -335,10 +335,10 @@ export default async function DistrictCaseTypePage({
                 display: 'inline-block',
                 padding: '8px 16px',
                 borderRadius: '12px',
-                background: '#0966C3',
+                background: 'var(--accent-primary)',
                 fontSize: '12px',
                 fontWeight: '600',
-                color: '#FFFFFF',
+                color: 'var(--color-text-inverse)',
                 textTransform: 'uppercase',
                 marginTop: '4px',
               }}
@@ -371,8 +371,8 @@ export default async function DistrictCaseTypePage({
         {/* District Info Section */}
         <div
           style={{
-            background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-0)',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
             padding: '32px',
             marginBottom: '40px',
@@ -385,7 +385,7 @@ export default async function DistrictCaseTypePage({
               fontWeight: 'bold',
               margin: '0 0 16px',
               fontFamily: 'var(--font-display)',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}
           >
             {caseType.label} in {state.label}
@@ -393,7 +393,7 @@ export default async function DistrictCaseTypePage({
           <p
             style={{
               lineHeight: '1.6',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               margin: '0',
               fontFamily: 'var(--font-body)',
             }}

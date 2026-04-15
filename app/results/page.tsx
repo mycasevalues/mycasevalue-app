@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function ResultsPage() {
   return (
-    <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
       <style>{`
         .cta-button {
           transition: all 0.2s ease;
@@ -36,7 +36,7 @@ export default function ResultsPage() {
           transition: all 0.2s ease;
         }
         .secondary-button:hover {
-          background-color: #F7F8FA;
+          background-color: var(--color-surface-1);
           border-color: #A8ACB1;
         }
         .info-card {
@@ -49,26 +49,26 @@ export default function ResultsPage() {
       `}</style>
 
       {/* Breadcrumb */}
-      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '12px 0' }}>
+      <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '12px 0' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
-          <nav style={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#4B5563' }}>
-            <Link href="/" style={{ color: '#004182', textDecoration: 'none' }}>
+          <nav style={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}>
+            <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
               Home
             </Link>
             <span style={{ margin: '0 8px', color: '#A8ACB1' }}>&gt;</span>
-            <span style={{ color: '#0f0f0f', fontWeight: '600' }}>Case Results</span>
+            <span style={{ color: 'var(--color-text-primary)', fontWeight: '600' }}>Case Results</span>
           </nav>
         </div>
       </div>
 
       {/* Header */}
-      <div style={{ background: '#0966C3', paddingTop: '48px', paddingBottom: '48px', borderBottom: '1px solid #E5E7EB' }}>
+      <div style={{ background: 'var(--accent-primary)', paddingTop: '48px', paddingBottom: '48px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <div style={{ marginBottom: '16px' }}>
             <span style={{
               display: 'inline-block',
-              background: '#0966C3',
-              color: '#FFFFFF',
+              background: 'var(--accent-primary)',
+              color: 'var(--color-text-inverse)',
               padding: '6px 12px',
               borderRadius: '12px',
               fontSize: '11px',
@@ -83,7 +83,7 @@ export default function ResultsPage() {
           <h1 style={{
             fontSize: '40px',
             fontWeight: '600',
-            color: '#FFFFFF',
+            color: 'var(--color-text-inverse)',
             margin: '0 0 12px 0',
             lineHeight: '1.2',
             fontFamily: 'var(--font-display)'
@@ -92,7 +92,7 @@ export default function ResultsPage() {
           </h1>
           <p style={{
             fontSize: '16px',
-            color: '#E5E7EB',
+            color: 'var(--border-default)',
             margin: '0',
             maxWidth: '600px',
             fontFamily: 'var(--font-body)',
@@ -109,14 +109,14 @@ export default function ResultsPage() {
         <div style={{
           padding: '32px',
           borderRadius: '12px',
-          border: '1px solid #E5E7EB',
-          background: '#FFFFFF',
+          border: '1px solid var(--border-default)',
+          background: 'var(--color-surface-0)',
           textAlign: 'center'
         }}>
           <h2 style={{
             fontSize: '18px',
             fontWeight: '600',
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             margin: '0 0 12px 0',
             fontFamily: 'var(--font-display)'
           }}>
@@ -124,7 +124,7 @@ export default function ResultsPage() {
           </h2>
           <p style={{
             fontSize: '14px',
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             margin: '0 0 24px 0',
             lineHeight: '1.6',
             fontFamily: 'var(--font-body)'
@@ -145,8 +145,8 @@ export default function ResultsPage() {
                 borderRadius: '12px',
                 fontSize: '14px',
                 fontWeight: '600',
-                background: '#0966C3',
-                color: '#FFFFFF',
+                background: 'var(--accent-primary)',
+                color: 'var(--color-text-inverse)',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
                 border: 'none',
@@ -168,11 +168,11 @@ export default function ResultsPage() {
                 borderRadius: '12px',
                 fontSize: '14px',
                 fontWeight: '600',
-                background: '#FFFFFF',
-                color: '#0f0f0f',
+                background: 'var(--color-surface-0)',
+                color: 'var(--color-text-primary)',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 cursor: 'pointer'
               }}>
               Browse by Type
@@ -186,13 +186,13 @@ export default function ResultsPage() {
           <div className="info-card" style={{
             padding: '20px',
             borderRadius: '12px',
-            border: '1px solid #E5E7EB',
-            background: '#FFFFFF'
+            border: '1px solid var(--border-default)',
+            background: 'var(--color-surface-0)'
           }}>
             <h3 style={{
               fontSize: '11px',
               fontWeight: '600',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-display)',
               letterSpacing: '0.08em',
@@ -202,7 +202,7 @@ export default function ResultsPage() {
             </h3>
             <p style={{
               fontSize: '13px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
               fontFamily: 'var(--font-body)'
@@ -213,13 +213,13 @@ export default function ResultsPage() {
           <div className="info-card" style={{
             padding: '20px',
             borderRadius: '12px',
-            border: '1px solid #E5E7EB',
-            background: '#FFFFFF'
+            border: '1px solid var(--border-default)',
+            background: 'var(--color-surface-0)'
           }}>
             <h3 style={{
               fontSize: '11px',
               fontWeight: '600',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-display)',
               letterSpacing: '0.08em',
@@ -229,7 +229,7 @@ export default function ResultsPage() {
             </h3>
             <p style={{
               fontSize: '13px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
               fontFamily: 'var(--font-body)'
@@ -240,13 +240,13 @@ export default function ResultsPage() {
           <div className="info-card" style={{
             padding: '20px',
             borderRadius: '12px',
-            border: '1px solid #E5E7EB',
-            background: '#FFFFFF'
+            border: '1px solid var(--border-default)',
+            background: 'var(--color-surface-0)'
           }}>
             <h3 style={{
               fontSize: '11px',
               fontWeight: '600',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-display)',
               letterSpacing: '0.08em',
@@ -256,7 +256,7 @@ export default function ResultsPage() {
             </h3>
             <p style={{
               fontSize: '13px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
               fontFamily: 'var(--font-body)'
@@ -267,13 +267,13 @@ export default function ResultsPage() {
           <div className="info-card" style={{
             padding: '20px',
             borderRadius: '12px',
-            border: '1px solid #E5E7EB',
-            background: '#FFFFFF'
+            border: '1px solid var(--border-default)',
+            background: 'var(--color-surface-0)'
           }}>
             <h3 style={{
               fontSize: '11px',
               fontWeight: '600',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-display)',
               letterSpacing: '0.08em',
@@ -283,7 +283,7 @@ export default function ResultsPage() {
             </h3>
             <p style={{
               fontSize: '13px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
               fontFamily: 'var(--font-body)'
@@ -295,10 +295,10 @@ export default function ResultsPage() {
       </div>
 
       {/* Footer */}
-      <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center', marginTop: '48px', background: '#FFFFFF' }}>
+      <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center', marginTop: '48px', background: 'var(--color-surface-0)' }}>
         <p style={{
           fontSize: '11px',
-          color: '#4B5563',
+          color: 'var(--color-text-secondary)',
           maxWidth: '600px',
           margin: '0 auto',
           paddingLeft: '24px',

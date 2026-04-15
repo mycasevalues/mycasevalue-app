@@ -121,17 +121,17 @@ export default function PressPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header Banner */}
-        <div style={{ background: '#0966C3', padding: '64px 24px' }}>
+        <div style={{ background: 'var(--accent-primary)', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span
                 style={{
                   display: 'inline-block',
                   padding: '6px 12px',
-                  backgroundColor: '#0966C3',
-                  color: '#FFFFFF',
+                  backgroundColor: 'var(--accent-primary)',
+                  color: 'var(--color-text-inverse)',
                   fontSize: '11px',
                   fontWeight: 600,
                   letterSpacing: '0.08em',
@@ -148,7 +148,7 @@ export default function PressPage() {
               style={{
                 fontSize: 'clamp(36px, 4vw, 48px)',
                 fontWeight: 600,
-                color: '#FFFFFF',
+                color: 'var(--color-text-inverse)',
                 fontFamily: 'var(--font-display)',
                 letterSpacing: '-1px',
                 marginBottom: 12,
@@ -172,10 +172,10 @@ export default function PressPage() {
         {/* Breadcrumb Navigation */}
         <div
           style={{
-            borderBottom: '1px solid #E5E7EB',
+            borderBottom: '1px solid var(--border-default)',
             paddingTop: '1rem',
             paddingBottom: '1rem',
-            backgroundColor: '#F7F8FA',
+            backgroundColor: 'var(--color-surface-1)',
           }}
         >
           <div
@@ -195,11 +195,11 @@ export default function PressPage() {
                 fontFamily: 'var(--font-body)',
               }}
             >
-              <Link href="/" style={{ color: '#004182', textDecoration: 'none' }}>
+              <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
                 Home
               </Link>
-              <span style={{ color: '#4B5563' }}>/</span>
-              <span style={{ color: '#4B5563' }}>Press Kit</span>
+              <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
+              <span style={{ color: 'var(--color-text-secondary)' }}>Press Kit</span>
             </nav>
           </div>
         </div>
@@ -212,7 +212,7 @@ export default function PressPage() {
               style={{
                 fontSize: 28,
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 32,
               }}
@@ -223,7 +223,7 @@ export default function PressPage() {
               <p
                 style={{
                   fontSize: 16,
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   lineHeight: 1.7,
                   margin: 0,
@@ -234,7 +234,7 @@ export default function PressPage() {
               <p
                 style={{
                   fontSize: 16,
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   lineHeight: 1.7,
                   margin: 0,
@@ -245,7 +245,7 @@ export default function PressPage() {
               <p
                 style={{
                   fontSize: 16,
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   lineHeight: 1.7,
                   margin: 0,
@@ -262,7 +262,7 @@ export default function PressPage() {
               style={{
                 fontSize: 28,
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 32,
               }}
@@ -283,8 +283,8 @@ export default function PressPage() {
                   style={{
                     padding: 28,
                     borderRadius: '12px',
-                    border: '1px solid #E5E7EB',
-                    background: '#FFFFFF',
+                    border: '1px solid var(--border-default)',
+                    background: 'var(--color-surface-0)',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                     textAlign: 'center',
                   }}
@@ -294,7 +294,7 @@ export default function PressPage() {
                       fontFamily: 'var(--font-mono)',
                       fontSize: 28,
                       fontWeight: 700,
-                      color: '#0966C3',
+                      color: 'var(--accent-primary)',
                       marginBottom: 12,
                     }}
                   >
@@ -303,7 +303,7 @@ export default function PressPage() {
                   <p
                     style={{
                       fontSize: 14,
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       fontFamily: 'var(--font-body)',
                       margin: 0,
                     }}
@@ -335,7 +335,7 @@ export default function PressPage() {
                 style={{
                   fontSize: 18,
                   fontWeight: 600,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-display)',
                   marginBottom: 20,
                 }}
@@ -356,8 +356,8 @@ export default function PressPage() {
                     style={{
                       padding: 24,
                       borderRadius: '12px',
-                      border: '1px solid #E5E7EB',
-                      background: '#FFFFFF',
+                      border: '1px solid var(--border-default)',
+                      background: 'var(--color-surface-0)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                       textDecoration: 'none',
                       textAlign: 'center',
@@ -376,8 +376,8 @@ export default function PressPage() {
                         marginBottom: 12,
                         borderRadius: '8px',
                         background: logo.label.includes('Dark')
-                          ? '#0966C3'
-                          : '#F7F8FA',
+                          ? 'var(--accent-primary)'
+                          : 'var(--color-surface-1)',
                       }}
                     >
                       <svg
@@ -385,7 +385,7 @@ export default function PressPage() {
                         height="32"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke={logo.label.includes('Dark') ? '#FFFFFF' : '#0f0f0f'}
+                        stroke={logo.label.includes('Dark') ? 'var(--color-text-inverse)' : 'var(--color-text-primary)'}
                         strokeWidth="2"
                       >
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -397,7 +397,7 @@ export default function PressPage() {
                       style={{
                         fontSize: 14,
                         fontWeight: 600,
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-body)',
                         margin: 0,
                         marginBottom: 4,
@@ -408,7 +408,7 @@ export default function PressPage() {
                     <p
                       style={{
                         fontSize: 12,
-                        color: '#4B5563',
+                        color: 'var(--color-text-secondary)',
                         fontFamily: 'var(--font-body)',
                         margin: 0,
                       }}
@@ -423,7 +423,7 @@ export default function PressPage() {
               <p
                 style={{
                   fontSize: 13,
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   marginTop: 16,
                   marginBottom: 0,
@@ -439,7 +439,7 @@ export default function PressPage() {
                 style={{
                   fontSize: 18,
                   fontWeight: 600,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-display)',
                   marginBottom: 20,
                 }}
@@ -460,8 +460,8 @@ export default function PressPage() {
                     style={{
                       overflow: 'hidden',
                       borderRadius: '12px',
-                      border: '1px solid #E5E7EB',
-                      background: '#FFFFFF',
+                      border: '1px solid var(--border-default)',
+                      background: 'var(--color-surface-0)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                     }}
                   >
@@ -476,7 +476,7 @@ export default function PressPage() {
                         style={{
                           fontSize: 14,
                           fontWeight: 600,
-                          color: '#0f0f0f',
+                          color: 'var(--color-text-primary)',
                           fontFamily: 'var(--font-display)',
                           margin: '0 0 8px 0',
                         }}
@@ -487,7 +487,7 @@ export default function PressPage() {
                         style={{
                           fontFamily: 'var(--font-mono)',
                           fontSize: 13,
-                          color: '#4B5563',
+                          color: 'var(--color-text-secondary)',
                           margin: 0,
                           fontWeight: 500,
                         }}
@@ -507,7 +507,7 @@ export default function PressPage() {
               style={{
                 fontSize: 28,
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 32,
               }}
@@ -528,25 +528,25 @@ export default function PressPage() {
                   style={{
                     overflow: 'hidden',
                     borderRadius: '12px',
-                    border: '1px solid #E5E7EB',
-                    background: '#FFFFFF',
+                    border: '1px solid var(--border-default)',
+                    background: 'var(--color-surface-0)',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                   }}
                 >
                   <div
                     style={{
                       height: 180,
-                      background: 'linear-gradient(135deg, #F7F8FA 0%, #E5E7EB 100%)',
+                      background: 'linear-gradient(135deg, var(--color-surface-1) 0%, var(--border-default) 100%)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      borderBottom: '1px solid #E5E7EB',
+                      borderBottom: '1px solid var(--border-default)',
                     }}
                   >
                     <div
                       style={{
                         textAlign: 'center',
-                        color: '#4B5563',
+                        color: 'var(--color-text-secondary)',
                         fontFamily: 'var(--font-body)',
                       }}
                     >
@@ -565,7 +565,7 @@ export default function PressPage() {
                       <p
                         style={{
                           fontSize: 12,
-                          color: '#4B5563',
+                          color: 'var(--color-text-secondary)',
                           margin: '8px 0 0 0',
                         }}
                       >
@@ -578,7 +578,7 @@ export default function PressPage() {
                       style={{
                         fontSize: 14,
                         fontWeight: 600,
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-display)',
                         margin: '0 0 8px 0',
                       }}
@@ -588,7 +588,7 @@ export default function PressPage() {
                     <p
                       style={{
                         fontSize: 13,
-                        color: '#4B5563',
+                        color: 'var(--color-text-secondary)',
                         fontFamily: 'var(--font-body)',
                         margin: 0,
                       }}
@@ -602,7 +602,7 @@ export default function PressPage() {
             <p
               style={{
                 fontSize: 13,
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-body)',
                 marginTop: 16,
                 marginBottom: 0,
@@ -618,7 +618,7 @@ export default function PressPage() {
               style={{
                 fontSize: 28,
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 32,
               }}
@@ -637,16 +637,16 @@ export default function PressPage() {
                   style={{
                     padding: 32,
                     borderRadius: '12px',
-                    border: '1px solid #E5E7EB',
-                    background: '#FFFFFF',
+                    border: '1px solid var(--border-default)',
+                    background: 'var(--color-surface-0)',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-                    borderLeft: '4px solid #0966C3',
+                    borderLeft: '4px solid var(--accent-primary)',
                   }}
                 >
                   <p
                     style={{
                       fontSize: 16,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-body)',
                       lineHeight: 1.7,
                       margin: '0 0 16px 0',
@@ -658,7 +658,7 @@ export default function PressPage() {
                   <p
                     style={{
                       fontSize: 14,
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       fontFamily: 'var(--font-body)',
                       margin: 0,
                       fontWeight: 500,
@@ -677,7 +677,7 @@ export default function PressPage() {
               style={{
                 fontSize: 28,
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 32,
               }}
@@ -688,8 +688,8 @@ export default function PressPage() {
               style={{
                 padding: 48,
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
-                background: '#FFFFFF',
+                border: '1px solid var(--border-default)',
+                background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 textAlign: 'center',
               }}
@@ -697,7 +697,7 @@ export default function PressPage() {
               <p
                 style={{
                   fontSize: 16,
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   margin: 0,
                 }}
@@ -713,7 +713,7 @@ export default function PressPage() {
               style={{
                 fontSize: 28,
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 32,
               }}
@@ -724,15 +724,15 @@ export default function PressPage() {
               style={{
                 padding: 40,
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
-                background: '#FFFFFF',
+                border: '1px solid var(--border-default)',
+                background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
               }}
             >
               <p
                 style={{
                   fontSize: 16,
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   lineHeight: 1.7,
                   margin: '0 0 24px 0',
@@ -748,7 +748,7 @@ export default function PressPage() {
                   gap: 12,
                   fontSize: 18,
                   fontWeight: 600,
-                  color: '#0966C3',
+                  color: 'var(--accent-primary)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   marginBottom: 24,
@@ -772,7 +772,7 @@ export default function PressPage() {
               <p
                 style={{
                   fontSize: 14,
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   lineHeight: 1.6,
                   margin: 0,
@@ -787,7 +787,7 @@ export default function PressPage() {
 
       <style>{`
         .press-logo-download:hover {
-          border-color: #0966C3 !important;
+          border-color: var(--accent-primary) !important;
           box-shadow: 0 8px 24px rgba(10, 102, 194, 0.12) !important;
           transform: translateY(-2px);
         }
