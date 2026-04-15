@@ -100,7 +100,7 @@ function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
   return (
     <Link
       href={item.href}
-      className={`flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm transition-colors ${
+      className={`flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm transition-all duration-150 ${
         isActive
           ? 'bg-blue-50 text-brand-blue font-semibold'
           : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
@@ -120,7 +120,7 @@ function NavSectionGroup({ section }: { section: NavSection }) {
     <div className="mb-1">
       <button
         onClick={() => section.collapsible && setIsOpen(!isOpen)}
-        className={`flex items-center justify-between w-full px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-400 border-l-2 border-l-transparent transition-colors ${
+        className={`flex items-center justify-between w-full px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-400 border-l-2 border-l-transparent transition-all duration-150 ${
           section.collapsible ? 'hover:text-gray-600 hover:border-l-gray-300 cursor-pointer' : 'cursor-default'
         }`}
       >
@@ -128,7 +128,7 @@ function NavSectionGroup({ section }: { section: NavSection }) {
         {section.collapsible && (
           <svg
             width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-            className={`transition-transform ${isOpen ? '' : '-rotate-90'}`}
+            className={`transition-transform duration-150 ${isOpen ? '' : '-rotate-90'}`}
           >
             <path d={ICONS.chevron} />
           </svg>

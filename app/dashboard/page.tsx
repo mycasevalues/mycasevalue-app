@@ -466,28 +466,28 @@ export default async function DashboardPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
               {/* Total Cases Analyzed */}
               <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Total Cases Analyzed</div>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Total Cases Analyzed</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)' }}>5.1M</div>
                 <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>Cases in database</div>
               </div>
 
               {/* Active Case Types */}
               <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Active Case Types</div>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Active Case Types</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)' }}>84</div>
                 <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>Federal case categories</div>
               </div>
 
               {/* Federal Districts */}
               <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Federal Districts</div>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Federal Districts</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)' }}>95</div>
                 <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>U.S. courts covered</div>
               </div>
 
               {/* Data Coverage */}
               <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Data Coverage</div>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Data Coverage</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)' }}>1970-2025</div>
                 <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>55+ years of data</div>
               </div>
@@ -662,7 +662,7 @@ export default async function DashboardPage() {
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 12px', fontFamily: 'var(--font-body)' }}>
                 Quick Action
               </p>
-              <Link href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: 'var(--accent-primary)', color: '#fff', borderRadius: '20px', textDecoration: 'none', fontSize: '14px', fontWeight: 600, textAlign: 'center', textTransform: 'uppercase', letterSpacing: '0.04em', fontFamily: 'var(--font-body)' }}>
+              <Link href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '20px', textDecoration: 'none', fontSize: '14px', fontWeight: 600, textAlign: 'center', textTransform: 'uppercase', letterSpacing: '0.04em', fontFamily: 'var(--font-body)' }}>
                 Browse Cases →
               </Link>
             </div>
@@ -706,7 +706,7 @@ export default async function DashboardPage() {
                 display: 'inline-block',
                 padding: '12px 20px',
                 background: 'var(--accent-primary)',
-                color: '#fff',
+                color: 'var(--color-surface-0)',
                 borderRadius: '12px',
                 textDecoration: 'none',
                 fontSize: '15px',
@@ -893,10 +893,10 @@ export default async function DashboardPage() {
                 { name: 'Anthropic AI', status: 'Connected', icon: '●' },
                 { name: 'Supabase', status: 'Connected', icon: '●' },
               ].map((item, i) => (
-                <div key={i} style={{ padding: '16px', borderRadius: '20px', border: '1px solid var(--border-default)', display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: '#F9FAFB' }}>
+                <div key={i} style={{ padding: '16px', borderRadius: '20px', border: '1px solid var(--border-default)', display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: 'var(--color-surface-1)' }}>
                   <div style={{ fontSize: '16px', color: '#059669' }}>{item.icon}</div>
                   <div style={{ flex: 1 }}>
-                    <p style={{ fontSize: '13px', fontWeight: 600, color: '#666', margin: 0, textTransform: 'uppercase', letterSpacing: '0.03em' }}>{item.name}</p>
+                    <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.03em' }}>{item.name}</p>
                     <p style={{ fontSize: '12px', color: '#059669', fontWeight: 600, margin: '4px 0 0' }}>{item.status}</p>
                   </div>
                 </div>

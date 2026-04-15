@@ -630,7 +630,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Net Recovery */}
-          <div style={{ background: '#E8F3EB', borderRadius: 12, padding: 24, border: '2px solid #D1E8D6', marginBottom: 24 }}>
+          <div style={{ background: 'var(--color-surface-1)', borderRadius: 12, padding: 24, border: '1px solid var(--border-default)', marginBottom: 24 }}>
             <h3 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-display)' }}>
               Estimated Net Recovery to Client
             </h3>

@@ -252,9 +252,9 @@ export default function WidgetGenerator() {
                   fontSize: '14px',
                   fontWeight: 500,
                   backgroundColor: 'var(--accent-primary)',
-                  color: '#fff',
+                  color: 'var(--color-surface-0)',
                   border: 'none',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   cursor: 'pointer',
                   width: '100%',
                 }}

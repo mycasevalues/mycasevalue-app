@@ -44,8 +44,8 @@ export default function NosExplorerLoading() {
           {Array.from({ length: 12 }).map((_, i) => (
             <div key={i} style={{
               height: '120px',
-              backgroundColor: '#fff',
-              border: '1px solid #e5e7eb',
+              backgroundColor: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '8px',
               padding: '1rem',
             }}>

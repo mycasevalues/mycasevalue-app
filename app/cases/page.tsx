@@ -616,7 +616,7 @@ export default function CasesIndexPage() {
           <button
             onClick={handleCompare}
             style={{
-              background: 'white',
+              background: 'var(--color-surface-0)',
               color: 'var(--accent-primary)',
               border: 'none',
               borderRadius: '8px',

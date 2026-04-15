@@ -325,17 +325,17 @@ export default function DashboardTabs({
             <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#CC1016', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>Danger Zone</h3>
             <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: 12 }}>Permanently delete your account and all associated data. This action cannot be undone.</p>
             {!showDeleteConfirm ? (
-              <button onClick={() => setShowDeleteConfirm(true)} style={{ padding: '10px 20px', background: '#FFF', border: '1px solid #CC1016', borderRadius: 8, fontSize: '13px', color: '#CC1016', fontWeight: 600, cursor: 'pointer' }}>
+              <button onClick={() => setShowDeleteConfirm(true)} style={{ padding: '10px 20px', background: 'var(--color-surface-0)', border: '1px solid #CC1016', borderRadius: 8, fontSize: '13px', color: '#CC1016', fontWeight: 600, cursor: 'pointer' }}>
                 Delete Account
               </button>
             ) : (
-              <div style={{ padding: '16px', background: '#FEF0EF', borderRadius: 10, border: '1px solid #CC1016' }}>
+              <div style={{ padding: '16px', background: '#FEF0EF', borderRadius: 8, border: '1px solid #CC1016' }}>
                 <p style={{ fontSize: '13px', fontWeight: 600, color: '#CC1016', marginBottom: 10 }}>Are you sure? This will permanently delete all your data.</p>
                 <div style={{ display: 'flex', gap: 8 }}>
                   <button style={{ padding: '8px 16px', background: '#CC1016', color: '#FFF', border: 'none', borderRadius: 8, fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                     Yes, Delete Everything
                   </button>
-                  <button onClick={() => setShowDeleteConfirm(false)} style={{ padding: '8px 16px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 8, fontSize: '13px', color: 'var(--color-text-secondary)', cursor: 'pointer' }}>
+                  <button onClick={() => setShowDeleteConfirm(false)} style={{ padding: '8px 16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 8, fontSize: '13px', color: 'var(--color-text-secondary)', cursor: 'pointer' }}>
                     Cancel
                   </button>
                 </div>

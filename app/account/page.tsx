@@ -283,7 +283,7 @@ export default function AccountPage() {
               </div>
 
               {profileMsg && (
-                <div style={{ padding: '10px 14px', borderRadius: '12px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: profileMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: profileMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${profileMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
+                <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: profileMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: profileMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${profileMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
                   {profileMsg.text}
                 </div>
               )}
@@ -334,7 +334,7 @@ export default function AccountPage() {
               </div>
 
               {passwordMsg && (
-                <div style={{ padding: '10px 14px', borderRadius: '12px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: passwordMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: passwordMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${passwordMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
+                <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: passwordMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: passwordMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${passwordMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
                   {passwordMsg.text}
                 </div>
               )}
@@ -359,7 +359,7 @@ export default function AccountPage() {
               <span className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                 {planLabels[planInfo?.plan || 'free'] || 'Free'}
               </span>
-              <span style={{ padding: '4px 10px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? '#FAFBFC' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? 'var(--color-text-secondary)' : 'var(--accent-primary-hover)' }}>
+              <span style={{ padding: '4px 10px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? 'var(--color-surface-1)' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? 'var(--color-text-secondary)' : 'var(--accent-primary-hover)' }}>
                 {planInfo?.plan === 'free' ? 'Free' : 'Active'}
               </span>
             </div>
@@ -379,7 +379,7 @@ export default function AccountPage() {
               <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
                 {planInfo?.plan === 'free' ? 'Upgrade Plan' : 'Change Plan'}
               </Link>
-              <Link href="/billing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#FAFBFC', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
+              <Link href="/billing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
                 Billing History
               </Link>
             </div>
@@ -395,7 +395,7 @@ export default function AccountPage() {
             </p>
 
             {apiKeyMsg && (
-              <div style={{ padding: '10px 14px', borderRadius: '12px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: apiKeyMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: apiKeyMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${apiKeyMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
+              <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: apiKeyMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: apiKeyMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${apiKeyMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
                 {apiKeyMsg.text}
               </div>
             )}

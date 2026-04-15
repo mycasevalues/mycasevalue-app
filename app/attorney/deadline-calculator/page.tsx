@@ -292,7 +292,7 @@ export default function DeadlineCalculatorPage() {
                 { label: 'Days to First Deadline', value: getDaysUntil(allDeadlines[0]?.calculatedDate) > 0 ? String(getDaysUntil(allDeadlines[0]?.calculatedDate)) : 'Past due' },
               ].map((stat, i) => (
                 <div key={i} style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: '#6B7280', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     {stat.label}
                   </p>
                   <p style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
@@ -310,7 +310,7 @@ export default function DeadlineCalculatorPage() {
                   {Object.entries(eventCategories).map(([key, config]) => (
                     <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: config.dot }} />
-                      <span style={{ fontSize: '12px', color: '#6B7280' }}>{config.label}</span>
+                      <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{config.label}</span>
                     </div>
                   ))}
                 </div>
@@ -347,7 +347,7 @@ export default function DeadlineCalculatorPage() {
                             </span>
                           )}
                         </div>
-                        <p style={{ fontSize: '12px', color: '#6B7280', margin: '0 0 6px' }}>
+                        <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '0 0 6px' }}>
                           {deadline.note}
                         </p>
                         <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: 'var(--color-text-secondary)' }}>

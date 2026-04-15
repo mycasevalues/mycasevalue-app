@@ -677,7 +677,7 @@ export default function DistrictHeatmapPage() {
                       </p>
                     </div>
 
-                    <div style={{ width: '100%', backgroundColor: '#F0F3F5', borderRadius: '12px', height: '6px', overflow: 'hidden', marginBottom: '8px' }}>
+                    <div style={{ width: '100%', backgroundColor: 'var(--color-surface-1)', borderRadius: '12px', height: '6px', overflow: 'hidden', marginBottom: '8px' }}>
                       <div
                         style={{
                           height: '100%',

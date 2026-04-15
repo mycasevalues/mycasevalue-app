@@ -171,7 +171,7 @@ export default function NegotiationPage() {
                 <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Representation</label>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   {[{ val: true, label: 'Attorney' }, { val: false, label: 'Pro Se' }].map(opt => (
-                    <button key={String(opt.val)} type="button" onClick={() => setRepresented(opt.val)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: `1px solid ${represented === opt.val ? 'var(--accent-primary)' : 'var(--border-default)'}`, backgroundColor: represented === opt.val ? 'rgba(10,102,194,0.08)' : '#FAFBFC', color: represented === opt.val ? 'var(--accent-primary)' : 'var(--color-text-secondary)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+                    <button key={String(opt.val)} type="button" onClick={() => setRepresented(opt.val)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: `1px solid ${represented === opt.val ? 'var(--accent-primary)' : 'var(--border-default)'}`, backgroundColor: represented === opt.val ? 'rgba(10,102,194,0.08)' : 'var(--color-surface-1)', color: represented === opt.val ? 'var(--accent-primary)' : 'var(--color-text-secondary)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                       {opt.label}
                     </button>
                   ))}
@@ -187,7 +187,7 @@ export default function NegotiationPage() {
                   ))}
                 </div>
               </div>
-              <button type="submit" disabled={!caseType || !currentOffer} style={{ width: '100%', padding: '14px', backgroundColor: !caseType || !currentOffer ? 'var(--border-default)' : 'var(--accent-primary)', color: '#FFF', border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: !caseType || !currentOffer ? 'not-allowed' : 'pointer' }}>
+              <button type="submit" disabled={!caseType || !currentOffer} style={{ width: '100%', padding: '14px', backgroundColor: !caseType || !currentOffer ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: !caseType || !currentOffer ? 'not-allowed' : 'pointer' }}>
                 Analyze Negotiation Position
               </button>
             </form>

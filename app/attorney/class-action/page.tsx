@@ -102,7 +102,7 @@ export default function ClassActionPage() {
                 <div
                   key={caseType.nos}
                   style={{
-                    background: 'white',
+                    background: 'var(--color-surface-0)',
                     border: `1px solid ${borderColor}`,
                     borderRadius: '12px',
                     padding: '20px',
@@ -114,7 +114,7 @@ export default function ClassActionPage() {
                   </h3>
                   <div style={{ display: 'flex', gap: '16px', marginBottom: '12px' }}>
                     <div>
-                      <p style={{ fontSize: '12px', color: '#666', margin: '0 0 4px' }}>Certification Rate</p>
+                      <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '0 0 4px' }}>Certification Rate</p>
                       <div
                         style={{
                           display: 'inline-block',
@@ -131,7 +131,7 @@ export default function ClassActionPage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ fontSize: '13px', color: '#666', lineHeight: '1.5', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: '1.5', marginBottom: '12px' }}>
                     <p style={{ margin: '4px 0' }}>
                       <strong>Avg per member:</strong> ${stats?.avgPerMember.toLocaleString() || 'N/A'}
                     </p>
@@ -155,7 +155,7 @@ export default function ClassActionPage() {
           <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '24px', color: secondaryColor, fontFamily: 'var(--font-heading)' }}>
             Recent Class Action Settlements
           </h2>
-          <div style={{ background: 'white', borderRadius: '12px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>
@@ -192,7 +192,7 @@ export default function ClassActionPage() {
           <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '24px', color: secondaryColor, fontFamily: 'var(--font-heading)' }}>
             Class Certification Approval Rates by District
           </h2>
-          <div style={{ background: 'white', borderRadius: '12px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>
@@ -236,7 +236,7 @@ export default function ClassActionPage() {
               </table>
             </div>
           </div>
-          <p style={{ fontSize: '12px', color: '#666', marginTop: '12px' }}>
+          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '12px' }}>
             Based on class certification motions filed and decided in federal district courts (2018-2025)
           </p>
         </section>

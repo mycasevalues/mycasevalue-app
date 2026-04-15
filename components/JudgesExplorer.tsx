@@ -478,7 +478,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
             value={perPage}
             onChange={e => { setPerPage(Number(e.target.value)); setPage(1); }}
             className="je-select"
-            style={{ height: 32, padding: '0 24px 0 8px', border: '1px solid var(--border-default)', borderRadius: 2, fontSize: 12, fontFamily: 'var(--font-body)', background: 'var(--color-surface-0)', appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 4px center', backgroundSize: '14px' }}
+            style={{ height: 32, padding: '0 24px 0 8px', border: '1px solid var(--border-default)', borderRadius: 8, fontSize: 12, fontFamily: 'var(--font-body)', background: 'var(--color-surface-0)', appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 4px center', backgroundSize: '14px' }}
           >
             <option value={12}>12/page</option>
             <option value={24}>24/page</option>

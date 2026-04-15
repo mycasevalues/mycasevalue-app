@@ -1207,7 +1207,7 @@ export default function OddsPage() {
               {/* AI-Generated Next Steps */}
               <section className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-                  <span style={{ padding: '2px 8px', background: '#F3F2EF', borderRadius: 4, fontSize: 10, fontWeight: 600, color: '#666', letterSpacing: '0.3px' }}>AI</span>
+                  <span style={{ padding: '2px 8px', background: 'var(--color-surface-1)', borderRadius: 8, fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.3px' }}>AI</span>
                   <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-display)' }}>
                     Recommended Next Steps
                   </h3>

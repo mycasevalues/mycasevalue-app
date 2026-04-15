@@ -201,7 +201,7 @@ export default function LegalDashboardPage() {
                   <span style={{
                     display: 'inline-block',
                     padding: '2px 10px',
-                    borderRadius: 6,
+                    borderRadius: 8,
                     fontSize: 11,
                     fontWeight: 600,
                     color: st.color,
@@ -227,11 +227,11 @@ export default function LegalDashboardPage() {
                       {src.uptime}%
                     </span>
                   </div>
-                  <div style={{ height: 6, borderRadius: 3, background: '#F3F4F6', overflow: 'hidden' }}>
+                  <div style={{ height: 6, borderRadius: 8, background: 'var(--border-default)', overflow: 'hidden' }}>
                     <div style={{
                       height: '100%',
                       width: `${src.uptime}%`,
-                      borderRadius: 3,
+                      borderRadius: 8,
                       background: src.uptime >= 99 ? '#22C55E' : src.uptime >= 97 ? '#F59E0B' : '#EF4444',
                       transition: 'width 0.5s',
                     }} />
@@ -300,7 +300,7 @@ export default function LegalDashboardPage() {
                       display: 'inline-block',
                       marginTop: 6,
                       padding: '2px 8px',
-                      borderRadius: 4,
+                      borderRadius: 8,
                       fontSize: 11,
                       fontWeight: 600,
                       color: es.color,
@@ -335,11 +335,11 @@ export default function LegalDashboardPage() {
                     <span style={{ fontSize: 13, color: 'var(--color-text-secondary)' }}>{item.label}</span>
                     <span style={{ fontSize: 13, fontWeight: 600, color: item.value >= 95 ? '#15803D' : item.value >= 90 ? '#B45309' : '#DC2626' }}>{item.value}%</span>
                   </div>
-                  <div style={{ height: 6, borderRadius: 3, background: '#F3F4F6' }}>
+                  <div style={{ height: 6, borderRadius: 8, background: 'var(--border-default)' }}>
                     <div style={{
                       height: '100%',
                       width: `${item.value}%`,
-                      borderRadius: 3,
+                      borderRadius: 8,
                       background: item.value >= 95 ? '#22C55E' : item.value >= 90 ? '#F59E0B' : '#EF4444',
                     }} />
                   </div>

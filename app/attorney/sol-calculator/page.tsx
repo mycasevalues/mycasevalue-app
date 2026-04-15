@@ -584,13 +584,13 @@ export default function SOLCalculatorPage() {
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                   }}
                 >
-                  <h3 style={{ fontSize: '13px', fontWeight: 600, color: '#6B7280', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <h3 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Filing Deadline
                   </h3>
                   <p style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
                     {deadline}
                   </p>
-                  <p style={{ fontSize: '14px', color: '#6B7280', margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
                     {selectedSOLData?.federalSOL}
                   </p>
                 </div>
@@ -671,7 +671,7 @@ export default function SOLCalculatorPage() {
             <div style={{ padding: '24px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
                 <div>
-                  <h3 style={{ fontSize: '12px', fontWeight: 600, color: '#6B7280', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Federal Statute
                   </h3>
                   <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
@@ -680,7 +680,7 @@ export default function SOLCalculatorPage() {
                 </div>
                 {selectedSOLData.discoveryRule && (
                   <div>
-                    <h3 style={{ fontSize: '12px', fontWeight: 600, color: '#6B7280', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       Discovery Rule
                     </h3>
                     <p style={{ fontSize: '15px', fontWeight: 600, color: '#059669', margin: 0 }}>

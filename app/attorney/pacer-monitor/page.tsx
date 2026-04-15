@@ -94,7 +94,7 @@ export default function PacerMonitorPage() {
                     </div>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>{alert.caseName}</p>
                     <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 6px', lineHeight: 1.4 }}>{alert.event}</p>
-                    <p style={{ fontSize: '11px', color: '#6B7280', margin: 0 }}>{new Date(alert.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                    <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: 0 }}>{new Date(alert.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
                   </div>
                 );
               })}
@@ -112,7 +112,7 @@ export default function PacerMonitorPage() {
                   value={watchCase}
                   onChange={(e) => setWatchCase(e.target.value)}
                   placeholder="Case number..."
-                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: '#FAFBFC', color: 'var(--color-text-primary)', outline: 'none' }}
+                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', outline: 'none' }}
                   onFocus={(e) => e.target.style.borderColor = 'var(--accent-primary)'}
                   onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.10)'}
                 />
@@ -120,9 +120,9 @@ export default function PacerMonitorPage() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {watchList.map((c) => (
-                  <div key={c} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 10px', backgroundColor: '#FAFBFC', borderRadius: '12px' }}>
+                  <div key={c} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 10px', backgroundColor: 'var(--color-surface-1)', borderRadius: '12px' }}>
                     <span className="font-mono" style={{ fontSize: '12px', color: 'var(--color-text-primary)' }}>{c}</span>
-                    <button onClick={() => setWatchList(watchList.filter((w) => w !== c))} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6B7280', fontSize: '14px' }}>&times;</button>
+                    <button onClick={() => setWatchList(watchList.filter((w) => w !== c))} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-secondary)', fontSize: '14px' }}>&times;</button>
                   </div>
                 ))}
               </div>

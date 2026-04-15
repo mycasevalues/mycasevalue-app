@@ -518,7 +518,7 @@ export default function ComparePage() {
                 border: '1px solid #E0DDD8',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
-                  <span style={{ display: 'inline-block', padding: '1px 6px', background: 'var(--border-default)', borderRadius: 3, fontSize: 10, fontWeight: 600, color: '#666', letterSpacing: '0.3px' }}>AI</span>
+                  <span style={{ display: 'inline-block', padding: '1px 6px', background: 'var(--border-default)', borderRadius: 8, fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.3px' }}>AI</span>
                   <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Comparison Summary</span>
                 </div>
                 <p style={{ fontSize: 13, color: 'var(--color-text-primary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-body)' }}>

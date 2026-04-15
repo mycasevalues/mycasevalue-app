@@ -145,8 +145,9 @@
   border-radius: var(--radius-md);
   padding: 16px;
   transition:
-    border-color 150ms ease,
-    box-shadow 150ms ease;
+    box-shadow 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
 }
 
 /* Primary card — clean white with subtle border (LinkedIn style) */
@@ -304,6 +305,7 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
 
 .mcv-input:hover {
   border-color: var(--accent-secondary-border);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
 .mcv-input:focus {
@@ -375,13 +377,20 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
 }
 
 /* Badge variants */
-.mcv-badge--default  { background: var(--bg-hover); color: var(--fg-secondary); }
-.mcv-badge--success  { background: var(--success-subtle); color: var(--success); }
-.mcv-badge--warning  { background: var(--warning-subtle); color: var(--warning); }
-.mcv-badge--danger   { background: var(--danger-subtle); color: var(--danger); }
-.mcv-badge--info     { background: var(--info-subtle); color: var(--info); }
-.mcv-badge--accent   { background: var(--accent-primary-subtle); color: var(--accent-primary); }
-.mcv-badge--outline  { background: transparent; color: var(--fg-secondary); border: 1px solid var(--border-default); }
+.mcv-badge--default  { background: var(--bg-hover); color: var(--fg-secondary); transition: background-color 150ms ease; }
+.mcv-badge--default:hover { background-color: var(--border-subtle); }
+.mcv-badge--success  { background: var(--success-subtle); color: var(--success); transition: background-color 150ms ease; }
+.mcv-badge--success:hover { background-color: var(--success); opacity: 0.8; }
+.mcv-badge--warning  { background: var(--warning-subtle); color: var(--warning); transition: background-color 150ms ease; }
+.mcv-badge--warning:hover { background-color: var(--warning); opacity: 0.8; }
+.mcv-badge--danger   { background: var(--danger-subtle); color: var(--danger); transition: background-color 150ms ease; }
+.mcv-badge--danger:hover { background-color: var(--danger); opacity: 0.8; }
+.mcv-badge--info     { background: var(--info-subtle); color: var(--info); transition: background-color 150ms ease; }
+.mcv-badge--info:hover { background-color: var(--info); opacity: 0.8; }
+.mcv-badge--accent   { background: var(--accent-primary-subtle); color: var(--accent-primary); transition: background-color 150ms ease; }
+.mcv-badge--accent:hover { background-color: var(--accent-primary); opacity: 0.8; }
+.mcv-badge--outline  { background: transparent; color: var(--fg-secondary); border: 1px solid var(--border-default); transition: background-color 150ms ease, border-color 150ms ease; }
+.mcv-badge--outline:hover { background-color: var(--bg-hover); border-color: var(--accent-primary); }
 
 
 /* ── STAT CARD — Clean Corporate ─────────────────────────── */

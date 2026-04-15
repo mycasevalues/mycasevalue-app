@@ -7,7 +7,7 @@ const NosExplorerClient = dynamic(
   () => import('../../components/NosExplorerClient'),
   {
     loading: () => (
-      <div style={{ minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6b7280' }}>
+      <div style={{ minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-secondary)' }}>
         Loading explorer...
       </div>
     ),

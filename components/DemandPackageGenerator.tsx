@@ -534,7 +534,7 @@ function PreviewContent({
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Methodology
         </h3>
-        <div style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', fontSize: '14px', color: '#666' }}>
+        <div style={{ backgroundColor: 'var(--color-surface-1)', padding: '12px', borderRadius: '8px', fontSize: '14px', color: 'var(--color-text-secondary)' }}>
           <p>
             This data package is derived from analysis of 5.1M+ federal civil cases filed in United States District Courts from
             2010-2025. Win rates, settlement data, and case duration statistics are calculated from publicly available case

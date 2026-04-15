@@ -52,7 +52,7 @@ export default function SettingsPage() {
               className="rounded-sm p-4 space-y-1"
               style={{
                 border: '1px solid var(--border-default)',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
               }}
             >
               {[
@@ -84,7 +84,7 @@ export default function SettingsPage() {
               className="rounded-sm p-6"
               style={{
                 border: '1px solid var(--border-default)',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
               }}
             >
               <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
@@ -166,7 +166,7 @@ export default function SettingsPage() {
               className="rounded-sm p-6"
               style={{
                 border: '1px solid var(--border-default)',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
               }}
             >
               <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
@@ -181,7 +181,7 @@ export default function SettingsPage() {
                     className="w-full px-3 py-2 rounded-sm text-sm"
                     style={{
                       border: '1px solid var(--border-default)',
-                      backgroundColor: 'white',
+                      backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-secondary)',
                     }}
                   >
@@ -252,7 +252,7 @@ export default function SettingsPage() {
               className="rounded-sm p-6"
               style={{
                 border: '1px solid var(--border-default)',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
               }}
             >
               <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
@@ -268,7 +268,7 @@ export default function SettingsPage() {
                   style={{
                     color: 'var(--accent-primary-hover)',
                     border: '1px solid var(--border-default)',
-                    backgroundColor: 'white',
+                    backgroundColor: 'var(--color-surface-0)',
                   }}
                 >
                   View Privacy Policy {'>'}
@@ -279,7 +279,7 @@ export default function SettingsPage() {
                   style={{
                     color: 'var(--accent-primary-hover)',
                     border: '1px solid var(--border-default)',
-                    backgroundColor: 'white',
+                    backgroundColor: 'var(--color-surface-0)',
                   }}
                 >
                   Terms of Service {'>'}
@@ -289,7 +289,7 @@ export default function SettingsPage() {
                   style={{
                     color: 'var(--accent-primary-hover)',
                     border: '1px solid var(--border-default)',
-                    backgroundColor: 'white',
+                    backgroundColor: 'var(--color-surface-0)',
                   }}
                 >
                   Request Data Export
@@ -303,7 +303,7 @@ export default function SettingsPage() {
               className="rounded-sm p-6"
               style={{
                 border: '1px solid var(--border-default)',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
               }}
             >
               <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
@@ -342,7 +342,7 @@ export default function SettingsPage() {
               className="rounded-sm p-6"
               style={{
                 border: '1px solid var(--border-default)',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
               }}
             >
               <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
@@ -396,7 +396,7 @@ export default function SettingsPage() {
                     style={{
                       color: 'var(--accent-primary-hover)',
                       border: '1px solid var(--border-default)',
-                      backgroundColor: 'white',
+                      backgroundColor: 'var(--color-surface-0)',
                     }}
                   >
                     {link.label}
