@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/solutions/academic` },
   openGraph: {
     title: 'For Academic Researchers | MyCaseValue',
-    description: 'Research datasets, longitudinal analysis, and citation-ready data for law school faculty and research institutions.',
+    description: 'Enable empirical legal research with 5.1M+ federal cases. Free institutional licensing for law schools and research institutions.',
     url: `${SITE_URL}/solutions/academic`,
     type: 'website',
     images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],

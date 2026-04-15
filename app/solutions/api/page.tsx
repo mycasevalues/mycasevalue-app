@@ -75,7 +75,7 @@ export default function ApiPage() {
             margin: '0 auto 32px',
             lineHeight: 1.6,
           }}>
-            Integrate federal case outcome data with REST APIs, webhooks, SDKs, and webhooks. Comprehensive documentation, sandbox environment, and dedicated developer support included.
+            Integrate federal case outcome data with REST APIs, webhooks, and SDKs. Comprehensive documentation, sandbox environment, and dedicated developer support included.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/solutions/api" style={{

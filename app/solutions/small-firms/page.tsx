@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/solutions/small-firms` },
   openGraph: {
     title: 'For Small Law Firms | MyCaseValue',
-    description: 'Case analytics, opposing counsel intelligence, and venue selection tools designed for solo practitioners and small law firms.',
+    description: 'Level the playing field with enterprise-grade case analytics, judge profiles, and opposing counsel intelligence designed for solo practitioners.',
     url: `${SITE_URL}/solutions/small-firms`,
     type: 'website',
     images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],

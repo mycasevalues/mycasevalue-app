@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/solutions/legal-aid` },
   openGraph: {
     title: 'For Legal Aid Organizations | MyCaseValue',
-    description: 'Free case research, outcome analysis, and grant reporting tools for non-profits and pro-bono legal services.',
+    description: 'Free enterprise-grade case analytics for legal aid organizations. Strengthen case strategies and maximize limited resources to serve underrepresented communities.',
     url: `${SITE_URL}/solutions/legal-aid`,
     type: 'website',
     images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],

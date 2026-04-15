@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/solutions/insurance` },
   openGraph: {
     title: 'For Insurance Companies | MyCaseValue',
-    description: 'Settlement benchmarking, claim valuation, and litigation cost forecasting for insurers and defense counsel.',
+    description: 'Reduce claims payouts and litigation costs with data-driven valuation models, risk scoring, and settlement intelligence for insurance carriers.',
     url: `${SITE_URL}/solutions/insurance`,
     type: 'website',
     images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
