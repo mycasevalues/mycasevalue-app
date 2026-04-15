@@ -55,8 +55,8 @@ const RESEARCH_NAV: NavSection = {
     { label: 'Judges', href: '/judges', icon: ICONS.judges },
     { label: 'Districts', href: '/districts', icon: ICONS.districts },
     { label: 'Legal Documents', href: '/legal/search', icon: ICONS.documents },
-    { label: 'Trends', href: '/trends', icon: ICONS.trends },
-    { label: 'NOS Explorer', href: '/nos-explorer', icon: ICONS.cases },
+    { label: 'Compare', href: '/compare', icon: ICONS.trends },
+    { label: 'Calculator', href: '/calculator', icon: ICONS.calculator },
   ],
 };
 
@@ -74,11 +74,15 @@ const TOOLS_NAV: NavSection = {
   ],
 };
 
-const WORKSPACE_NAV: NavSection = {
-  title: 'Workspace',
+const MORE_NAV: NavSection = {
+  title: 'More',
+  collapsible: true,
   items: [
+    { label: 'Trends', href: '/trends', icon: ICONS.trends },
+    { label: 'NOS Explorer', href: '/nos-explorer', icon: ICONS.cases },
+    { label: 'Win Rate Map', href: '/map', icon: ICONS.districts },
+    { label: 'Case Odds', href: '/odds', icon: ICONS.predictor },
     { label: 'Dashboard', href: '/dashboard', icon: ICONS.workspace },
-    { label: 'Saved Searches', href: '/dashboard', icon: ICONS.search },
   ],
 };
 
@@ -211,19 +215,17 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
           <div className="px-3 py-3 border-b border-gray-100 flex-shrink-0">
             <form onSubmit={handleSearch} role="search" aria-label="Search federal court records">
               <div className="relative">
-                <SidebarIcon path={ICONS.search} size={16} />
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                  <SidebarIcon path={ICONS.search} size={16} />
+                </div>
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search cases, judges..."
                   className="w-full pl-9 pr-3 py-2 text-sm bg-gray-50 border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-colors"
-                  style={{ paddingLeft: '36px' }}
                   aria-label="Search"
                 />
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
-                  <SidebarIcon path={ICONS.search} size={16} />
-                </div>
               </div>
             </form>
             {/* Keyboard shortcut hint */}
@@ -237,7 +239,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
           <div className="flex-1 overflow-y-auto px-2 py-3 space-y-4">
             <NavSectionGroup section={RESEARCH_NAV} />
             <NavSectionGroup section={TOOLS_NAV} />
-            <NavSectionGroup section={WORKSPACE_NAV} />
+            <NavSectionGroup section={MORE_NAV} />
 
             {/* Recent searches */}
             {recentSearches.length > 0 && (
