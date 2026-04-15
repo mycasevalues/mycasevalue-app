@@ -338,7 +338,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return (
       <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center', maxWidth: '600px', padding: '24px' }}>
-          <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '16px' }}>Article Not Found</h1>
+          <h1 style={{ fontSize: '22px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '16px' }}>Article Not Found</h1>
           <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
             We could not find the article you are looking for.
           </p>
@@ -436,7 +436,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', padding: '48px 24px' }}>
+      <div style={{ background: 'var(--accent-primary)', padding: '40px 24px' }}>
         <div className="max-w-4xl mx-auto">
           <Link
             href="/blog"
@@ -459,7 +459,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             {article.category}
           </div>
 
-          <h1 style={{ color: 'var(--color-surface-0)', fontSize: '42px', fontWeight: 'bold', marginBottom: '16px', lineHeight: 1.2 }}>
+          <h1 style={{ color: 'var(--color-surface-0)', fontSize: '26px', fontWeight: 'bold', marginBottom: '16px', lineHeight: 1.2 }}>
             {article.title}
           </h1>
 
@@ -485,7 +485,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
 
             {/* Article Footer */}
-            <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid var(--border-default)' }}>
+            <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid var(--border-default)' }}>
               <div style={{ marginBottom: '24px' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Share This Article
@@ -588,7 +588,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       {/* Bottom CTA */}
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <section style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '48px 32px', textAlign: 'center' }}>
+        <section style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '32px 24px', textAlign: 'center' }}>
           <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '12px' }}>
             Ready to put this data into action?
           </h2>

@@ -78,7 +78,7 @@ export default function ReportsPage() {
       <div style={{ backgroundColor: 'var(--accent-primary)', padding: '40px 20px', marginBottom: '32px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+            <h1 className="font-display" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
               My Reports
             </h1>
             <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '4px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' }}>
@@ -126,7 +126,7 @@ export default function ReportsPage() {
         </div>
 
         {/* What's In a Report Section */}
-        <div style={{ marginBottom: '48px' }}>
+        <div style={{ marginBottom: '32px' }}>
           <h2 style={{
             fontSize: '24px',
             fontWeight: 600,
@@ -199,7 +199,7 @@ export default function ReportsPage() {
         </div>
 
         {/* Sample Reports Section */}
-        <div style={{ marginBottom: '48px' }}>
+        <div style={{ marginBottom: '32px' }}>
           <h2 style={{
             fontSize: '24px',
             fontWeight: 600,
@@ -274,7 +274,7 @@ export default function ReportsPage() {
 
         {!hasData ? (
           /* Empty State */
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '64px 32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', textAlign: 'center' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '40px 24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', textAlign: 'center' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(0,105,151,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />

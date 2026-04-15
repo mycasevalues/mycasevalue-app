@@ -34,14 +34,14 @@ export default function Error({
         height: '8px',
         background: 'var(--accent-primary)',
       }} />
-      <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+      <div style={{ padding: '40px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
         <div style={{
           maxWidth: 480,
           textAlign: 'center',
           background: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
           borderRadius: '12px',
-          padding: '48px 32px',
+          padding: '32px 24px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}>
           {/* Icon */}

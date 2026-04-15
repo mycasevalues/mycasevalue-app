@@ -215,7 +215,7 @@ function SignInForm() {
       {/* Main Content Container */}
       <div className="auth-container">
         {/* Benefits/Trust Indicators Section */}
-        <div className="benefits-section" style={{ background: '#0F2A4A', borderRadius: '16px', padding: '36px' }}>
+        <div className="benefits-section" style={{ background: '#0F2A4A', borderRadius: '8px', padding: '36px' }}>
           <h2 className="benefits-title">
             Access federal court analytics powering legal professionals
           </h2>
@@ -280,7 +280,7 @@ function SignInForm() {
           style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '12px',
+            borderRadius: '8px',
             padding: '24px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
@@ -346,7 +346,7 @@ function SignInForm() {
                 height: '48px',
                 padding: '12px 14px',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '8px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
@@ -406,7 +406,7 @@ function SignInForm() {
                 height: '48px',
                 padding: '12px 14px',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '8px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
@@ -449,7 +449,7 @@ function SignInForm() {
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
                 backgroundColor: 'rgba(10, 102, 194, 0.06)',
-                borderRadius: '12px',
+                borderRadius: '8px',
                 border: '1px solid rgba(10, 102, 194, 0.2)',
               }}
             >

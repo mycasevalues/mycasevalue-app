@@ -22,7 +22,7 @@ export default function AnnualReportPage() {
       {/* Dark Navy Hero Header */}
       <div style={{
         backgroundColor: 'var(--accent-primary)',
-        padding: '60px 20px',
+        padding: '40px 20px',
         color: 'var(--color-surface-0)',
         borderBottom: '4px solid var(--accent-primary)',
       }}>
@@ -31,7 +31,7 @@ export default function AnnualReportPage() {
             FEDERAL COURT DATA REPORT
           </div>
           <h1 style={{
-            fontSize: '48px',
+            fontSize: '26px',
             fontWeight: 700,
             fontFamily: 'var(--font-display)',
             marginBottom: '16px',

@@ -299,7 +299,7 @@ export default function BlogPage() {
       />
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--accent-primary)', padding: '40px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb Navigation */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
@@ -333,7 +333,7 @@ export default function BlogPage() {
                   </div>
                   <h2
                     className="font-display font-bold mb-4 transition-colors"
-                    style={{ fontSize: '28px', lineHeight: '1.3', color: 'var(--color-text-primary)', fontWeight: 600 }}
+                    style={{ fontSize: '22px', lineHeight: '1.3', color: 'var(--color-text-primary)', fontWeight: 600 }}
                   >
                     {featuredPost.title}
                   </h2>
@@ -564,7 +564,7 @@ export default function BlogPage() {
               className="related-tools-card"
             >
               <div>
-                <div style={{ fontSize: '32px', marginBottom: '12px' }}>
+                <div style={{ marginBottom: '12px' }}>
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg>
                 </div>
                 <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>

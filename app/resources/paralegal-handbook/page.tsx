@@ -32,9 +32,9 @@ export default function ParalegalHandbookPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-800 px-4 py-16 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-800 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold text-white sm:text-5xl">
+          <h1 className="text-2xl font-bold text-white sm:text-3xl">
             Paralegal Federal Court Handbook
           </h1>
           <p className="mt-4 text-lg text-blue-100">

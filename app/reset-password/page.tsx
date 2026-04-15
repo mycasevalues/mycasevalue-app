@@ -154,7 +154,7 @@ export default function ResetPasswordPage() {
           maxWidth: '440px',
           backgroundColor: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '8px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           padding: '32px',
         }}
@@ -199,7 +199,7 @@ export default function ResetPasswordPage() {
               style={{
                 width: '56px',
                 height: '56px',
-                borderRadius: '12px',
+                borderRadius: '8px',
                 backgroundColor: 'rgba(0,105,151,0.08)',
                 display: 'flex',
                 alignItems: 'center',
@@ -270,7 +270,7 @@ export default function ResetPasswordPage() {
                   padding: '12px 16px',
                   backgroundColor: 'rgba(10, 102, 194, 0.06)',
                   border: '1px solid rgba(204,16,25,0.20)',
-                  borderRadius: '12px',
+                  borderRadius: '8px',
                   marginBottom: '20px',
                 }}
               >
@@ -318,7 +318,7 @@ export default function ResetPasswordPage() {
                     height: '48px',
                     padding: '12px 14px',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '12px',
+                    borderRadius: '8px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: 'var(--color-text-primary)',
@@ -358,7 +358,7 @@ export default function ResetPasswordPage() {
                     height: '48px',
                     padding: '12px 14px',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '12px',
+                    borderRadius: '8px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: 'var(--color-text-primary)',
@@ -381,7 +381,7 @@ export default function ResetPasswordPage() {
                   backgroundColor: 'var(--accent-primary)',
                   color: 'var(--color-surface-0)',
                   border: 'none',
-                  borderRadius: '12px',
+                  borderRadius: '20px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '15px',
                   fontWeight: 600,
