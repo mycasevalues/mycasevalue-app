@@ -507,7 +507,7 @@ export default function ApiAccessPage() {
                       color: 'var(--color-text-primary)',
                       backgroundColor: '#F8F9FA',
                       padding: '4px 8px',
-                      borderRadius: '4px',
+                      borderRadius: '8px',
                       wordBreak: 'break-all',
                       flex: 1,
                     }}

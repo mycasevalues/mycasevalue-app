@@ -521,7 +521,7 @@ async function CategoryPage({
         borderBottom: '1px solid var(--border-default)',
         textAlign: 'center',
       }}>
-        <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: '#EDF3FB', color: 'var(--accent-primary)', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
+        <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: '#EDF3FB', color: 'var(--accent-primary)', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '8px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
       </div>
 
       {/* Category Statistics Summary Bar */}
@@ -561,7 +561,7 @@ async function CategoryPage({
                   <div style={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     padding: '20px',
                     textAlign: 'center',
                   }}>
@@ -587,7 +587,7 @@ async function CategoryPage({
                   <div style={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     padding: '20px',
                     textAlign: 'center',
                   }}>
@@ -630,7 +630,7 @@ async function CategoryPage({
                   <div style={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     padding: '20px',
                     textAlign: 'center',
                   }}>
@@ -656,7 +656,7 @@ async function CategoryPage({
                   <div style={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     padding: '20px',
                     textAlign: 'center',
                   }}>
@@ -843,8 +843,8 @@ async function CategoryPage({
 
                   {/* Win rate bar */}
                   {rd && rdWr != null && (
-                    <div style={{ height: 4, background: '#F0F3F5', borderRadius: 2, marginBottom: 12, overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: `${Math.min(Math.max(rdWr, 0), 100)}%`, background: isNaN(rdWr) ? '#CCC' : rdWr >= 50 ? '#059669' : 'var(--accent-primary)', borderRadius: 2 }} />
+                    <div style={{ height: 4, background: '#F0F3F5', borderRadius: 8, marginBottom: 12, overflow: 'hidden' }}>
+                      <div style={{ height: '100%', width: `${Math.min(Math.max(rdWr, 0), 100)}%`, background: isNaN(rdWr) ? '#CCC' : rdWr >= 50 ? '#059669' : 'var(--accent-primary)', borderRadius: 8 }} />
                     </div>
                   )}
 
@@ -927,7 +927,7 @@ async function CategoryPage({
                         padding: '20px 24px',
                         background: 'var(--color-surface-1)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '4px',
+                        borderRadius: '8px',
                         textDecoration: 'none',
                         transition: 'all 0.2s ease',
                       }}
@@ -973,14 +973,14 @@ async function CategoryPage({
                       <div style={{
                         height: '8px',
                         background: '#E0E3E6',
-                        borderRadius: '4px',
+                        borderRadius: '8px',
                         overflow: 'hidden',
                       }}>
                         <div style={{
                           height: '100%',
                           width: `${Math.min(item.wr || 0, 100)}%`,
                           background: item.wr >= 50 ? '#059669' : 'var(--accent-primary)',
-                          borderRadius: '4px',
+                          borderRadius: '8px',
                         }} />
                       </div>
                     </Link>
@@ -1036,14 +1036,14 @@ async function CategoryPage({
                   const color = wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : 'var(--accent-primary)';
                   return (
                     <div key={circuit} style={{
-                      padding: '16px', borderRadius: 2, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)',
+                      padding: '16px', borderRadius: 8, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)',
                     }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                         <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>{circuit}</span>
                         <span style={{ fontSize: 15, fontWeight: 600, color, fontFamily: 'var(--font-mono)' }}>{wr}%</span>
                       </div>
-                      <div style={{ height: 6, background: '#F0F3F5', borderRadius: 3, overflow: 'hidden', marginBottom: 6 }}>
-                        <div style={{ width: `${Math.min(wr, 100)}%`, height: '100%', background: color, borderRadius: 3 }} />
+                      <div style={{ height: 6, background: '#F0F3F5', borderRadius: 8, overflow: 'hidden', marginBottom: 6 }}>
+                        <div style={{ width: `${Math.min(wr, 100)}%`, height: '100%', background: color, borderRadius: 8 }} />
                       </div>
                       <div style={{ fontSize: 11, color: diff >= 0 ? '#059669' : 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         {diff >= 0 ? '+' : ''}{diff.toFixed(1)}% vs avg
@@ -1103,7 +1103,7 @@ async function CategoryPage({
                   href={`/report/${item.nos}`}
                   style={{
                     display: 'block', padding: '16px 20px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
-                    borderRadius: 2, textDecoration: 'none', transition: 'all 0.2s ease',
+                    borderRadius: 8, textDecoration: 'none', transition: 'all 0.2s ease',
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
@@ -1111,7 +1111,7 @@ async function CategoryPage({
                     <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>{fmtK(item.md)} median</span>
                   </div>
                   {/* Range bar visualization */}
-                  <div style={{ position: 'relative', height: 28, background: 'var(--color-surface-1)', borderRadius: 2, overflow: 'hidden' }}>
+                  <div style={{ position: 'relative', height: 28, background: 'var(--color-surface-1)', borderRadius: 8, overflow: 'hidden' }}>
                     {/* Low to high range */}
                     <div style={{
                       position: 'absolute',
@@ -1119,7 +1119,7 @@ async function CategoryPage({
                       width: `${((item.hi - item.lo) / maxHi) * 100}%`,
                       height: '100%',
                       background: 'linear-gradient(90deg, rgba(10, 102, 194, 0.15), rgba(10, 102, 194, 0.25))',
-                      borderRadius: 2,
+                      borderRadius: 8,
                     }} />
                     {/* Median marker */}
                     <div style={{
@@ -1129,7 +1129,7 @@ async function CategoryPage({
                       width: 3,
                       height: '100%',
                       background: 'var(--accent-primary)',
-                      borderRadius: 1,
+                      borderRadius: 8,
                     }} />
                     {/* Labels */}
                     <div style={{ position: 'absolute', left: `${(item.lo / maxHi) * 100}%`, bottom: 2, fontSize: 10, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', transform: 'translateX(-50%)' }}>
@@ -1200,7 +1200,7 @@ async function CategoryPage({
                       padding: '20px',
                       background: 'var(--color-surface-1)',
                       border: '1px solid var(--border-default)',
-                      borderRadius: '4px',
+                      borderRadius: '8px',
                       textDecoration: 'none',
                       transition: 'all 0.2s ease',
                     }}
@@ -1425,7 +1425,7 @@ async function CategoryPage({
                 padding: '24px',
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '8px',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease',
                 color: 'var(--color-text-primary)',
@@ -1470,7 +1470,7 @@ async function CategoryPage({
                 padding: '24px',
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '8px',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease',
                 color: 'var(--color-text-primary)',
@@ -1515,7 +1515,7 @@ async function CategoryPage({
                 padding: '24px',
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '8px',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease',
                 color: 'var(--color-text-primary)',
@@ -1560,7 +1560,7 @@ async function CategoryPage({
                 padding: '24px',
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '8px',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease',
                 color: 'var(--color-text-primary)',

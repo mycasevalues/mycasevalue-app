@@ -223,7 +223,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                       padding: '2px 8px',
                       background: partyColor,
                       color: 'var(--color-surface-0)',
-                      borderRadius: '4px',
+                      borderRadius: '8px',
                       fontSize: '12px',
                       fontWeight: '600',
                     }}
@@ -242,7 +242,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   padding: '4px 12px',
                   background: '#EDF3FB',
                   border: '1px solid var(--accent-primary)',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                   fontSize: '12px',
                   fontFamily: 'var(--font-body)',
                   color: 'var(--accent-primary-hover)',

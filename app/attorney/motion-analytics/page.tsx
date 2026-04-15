@@ -160,7 +160,7 @@ export default function MotionAnalyticsPage() {
                 onClick={() => setComparisonMode(!comparisonMode)}
                 style={{
                   padding: '12px 20px',
-                  borderRadius: '20px',
+                  borderRadius: '8px',
                   border: '1px solid var(--border-default)',
                   fontSize: '13px',
                   fontWeight: 600,

@@ -41,8 +41,8 @@ const MeterBar = ({ value, max, color, label }: { value: number; max: number; co
       <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{label}</span>
       <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{value}%</span>
     </div>
-    <div style={{ height: '6px', background: 'var(--border-default)', borderRadius: '3px', overflow: 'hidden' }}>
-      <div style={{ height: '100%', width: `${(value / max) * 100}%`, background: color, borderRadius: '3px', transition: 'width 0.5s ease' }} />
+    <div style={{ height: '6px', background: 'var(--border-default)', borderRadius: '8px', overflow: 'hidden' }}>
+      <div style={{ height: '100%', width: `${(value / max) * 100}%`, background: color, borderRadius: '8px', transition: 'width 0.5s ease' }} />
     </div>
   </div>
 );
@@ -123,7 +123,7 @@ export default function JudgeIntelligencePage() {
         `}
       </style>
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '16px 20px' }}>
+      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '20px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <Link href="/" style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
@@ -387,7 +387,7 @@ export default function JudgeIntelligencePage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '24px', padding: '16px 20px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
+            <div style={{ marginTop: '24px', padding: '20px 20px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
               <p style={{ fontSize: '12px', color: '#B86E00', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>

@@ -272,7 +272,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             background: 'var(--accent-primary)',
             color: 'var(--color-text-inverse)',
             padding: '4px 12px',
-            borderRadius: 4,
+            borderRadius: 8,
             fontSize: 11,
             fontWeight: 600,
             letterSpacing: '0.5px',

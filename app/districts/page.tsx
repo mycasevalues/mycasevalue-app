@@ -366,7 +366,7 @@ export default function DistrictsPage() {
                   background: 'var(--accent-primary)',
                   color: 'var(--color-text-inverse)',
                   padding: '4px 12px',
-                  borderRadius: 4,
+                  borderRadius: 8,
                   fontSize: 12,
                   fontWeight: 600,
                   whiteSpace: 'nowrap',

@@ -539,7 +539,7 @@ export default function PricingPage() {
               display: 'inline-flex',
               alignItems: 'center',
               padding: '0.75rem 2rem',
-              borderRadius: '9999px',
+              borderRadius: '8px',
               fontFamily: 'var(--font-inter)',
               fontSize: '0.875rem',
               fontWeight: '600',

@@ -342,7 +342,7 @@ export default function CasesIndexPage() {
                 fontSize: 14,
                 fontWeight: 600,
                 border: '1px solid var(--border-default)',
-                borderRadius: 4,
+                borderRadius: 8,
                 background: 'var(--color-surface-0)',
                 color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-body)',
@@ -416,7 +416,7 @@ export default function CasesIndexPage() {
                                 {catStats.avgWinRate}%
                               </div>
                               {catStats.avgWinRate > 0 && (
-                                <span style={{ fontSize: 9, fontWeight: 700, color: getWinRateColor(catStats.avgWinRate), background: getWinRateBg(catStats.avgWinRate), border: `1px solid ${getWinRateColor(catStats.avgWinRate)}`, borderRadius: '2px', padding: '1px 4px', whiteSpace: 'nowrap' }}>
+                                <span style={{ fontSize: 9, fontWeight: 700, color: getWinRateColor(catStats.avgWinRate), background: getWinRateBg(catStats.avgWinRate), border: `1px solid ${getWinRateColor(catStats.avgWinRate)}`, borderRadius: '8px', padding: '1px 4px', whiteSpace: 'nowrap' }}>
                                   {getWinRateLabel(catStats.avgWinRate)}
                                 </span>
                               )}
@@ -619,7 +619,7 @@ export default function CasesIndexPage() {
               background: 'white',
               color: 'var(--accent-primary)',
               border: 'none',
-              borderRadius: '6px',
+              borderRadius: '8px',
               padding: '8px 20px',
               fontWeight: 600,
               fontSize: 14,

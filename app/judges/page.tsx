@@ -108,7 +108,7 @@ export default async function JudgesPage() {
         <JudgeDirectoryClient initialJudges={initialJudges} initialTotal={initialTotal} />
 
         {/* Beta Notice with Radar Preview */}
-        <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid var(--border-default)', background: 'var(--color-surface-1)', marginBottom: 64, marginTop: 64 }}>
+        <section style={{ padding: '48px 32px', borderRadius: 8, border: '1px solid var(--border-default)', background: 'var(--color-surface-1)', marginBottom: 64, marginTop: 64 }}>
           <h2 style={{ fontSize: 24, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
             Judge Analytics — Advanced Profile Metrics
           </h2>
@@ -121,7 +121,7 @@ export default async function JudgesPage() {
         </section>
 
         {/* Disclaimer */}
-        <div style={{ padding: 24, border: '1px solid var(--border-default)', borderRadius: 2, background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: 24, border: '1px solid var(--border-default)', borderRadius: 8, background: 'var(--color-surface-0)' }}>
           <h3 style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
             Data Methodology
           </h3>

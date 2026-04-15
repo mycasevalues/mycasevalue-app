@@ -189,7 +189,7 @@ export default function TranslatePage() {
             disabled={!input.trim() || loading}
             className="w-full px-6 py-3 text-sm font-semibold transition-all hover:shadow-lg active:scale-[0.99]"
             style={{
-              borderRadius: '20px',
+              borderRadius: '8px',
               background:
                 !input.trim() || loading
                   ? 'var(--border-default)'
@@ -268,7 +268,7 @@ export default function TranslatePage() {
                           padding: '8px 12px',
                           background: 'var(--color-surface-0)',
                           border: '1px solid #BAE6FD',
-                          borderRadius: '20px',
+                          borderRadius: '8px',
                           fontSize: '12px',
                           color: '#0369A1',
                           cursor: 'pointer',

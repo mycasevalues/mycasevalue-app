@@ -282,7 +282,7 @@ export default function DiscoveryGeneratorPage() {
                       disabled={loading || !currentText}
                       style={{
                         padding: '8px 12px', background: copied ? '#059669' : 'var(--accent-primary)',
-                        color: '#FFF', border: 'none', borderRadius: '20px',
+                        color: '#FFF', border: 'none', borderRadius: '8px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || !currentText ? 'not-allowed' : 'pointer',
                         opacity: loading || !currentText ? 0.5 : 1,
@@ -295,7 +295,7 @@ export default function DiscoveryGeneratorPage() {
                       disabled={loading || exporting || !currentText}
                       style={{
                         padding: '8px 12px', background: 'var(--accent-primary-hover)',
-                        color: '#FFF', border: 'none', borderRadius: '20px',
+                        color: '#FFF', border: 'none', borderRadius: '8px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || exporting || !currentText ? 'not-allowed' : 'pointer',
                         opacity: loading || exporting || !currentText ? 0.5 : 1,
