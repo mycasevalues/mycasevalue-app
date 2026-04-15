@@ -26,7 +26,7 @@ export default function LienCalculatorPage() {
   return (
     <>
       {/* Header */}
-      <header style={{ background: 'var(--accent-primary)', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
+      <header style={{ background: 'var(--accent-primary)', padding: 'clamp(16px, 3vw, 32px) clamp(16px, 3vw, 24px)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'inline-block', background: 'var(--accent-primary)', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
             CALCULATOR

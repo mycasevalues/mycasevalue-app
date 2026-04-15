@@ -23,8 +23,8 @@ export default function AUPPage() {
           style={{
             background: 'linear-gradient(135deg, #004182 0%, var(--accent-primary) 100%)',
             color: 'var(--color-surface-0)',
-            padding: '3rem 1.5rem',
-            marginBottom: '3rem',
+            padding: '1.5rem 1.5rem',
+            marginBottom: '1.5rem',
           }}
         >
           <div
@@ -62,13 +62,13 @@ export default function AUPPage() {
           style={{
             maxWidth: '900px',
             margin: '0 auto',
-            padding: '0 1.5rem 4rem 1.5rem',
+            padding: '0 1.5rem 2rem 1.5rem',
             fontFamily: 'var(--font-body)',
             color: 'var(--color-text-primary)',
           }}
         >
           {/* Purpose */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -87,7 +87,7 @@ export default function AUPPage() {
           </section>
 
           {/* Permitted Uses */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -121,7 +121,7 @@ export default function AUPPage() {
           </section>
 
           {/* Prohibited Uses */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -173,7 +173,7 @@ export default function AUPPage() {
           </section>
 
           {/* Data Usage */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -195,7 +195,7 @@ export default function AUPPage() {
           </section>
 
           {/* Account Responsibility */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -227,7 +227,7 @@ export default function AUPPage() {
           </section>
 
           {/* Intellectual Property */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -249,7 +249,7 @@ export default function AUPPage() {
           </section>
 
           {/* Enforcement */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -284,7 +284,7 @@ export default function AUPPage() {
           </section>
 
           {/* Changes to Policy */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -303,7 +303,7 @@ export default function AUPPage() {
           </section>
 
           {/* Contact */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -335,8 +335,8 @@ export default function AUPPage() {
           <div
             style={{
               borderTop: '1px solid var(--border-default)',
-              paddingTop: '2rem',
-              marginTop: '3rem',
+              paddingTop: '1rem',
+              marginTop: '1.5rem',
               fontSize: '0.9375rem',
               color: 'var(--color-text-secondary)',
             }}

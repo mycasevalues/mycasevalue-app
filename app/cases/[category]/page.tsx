@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { ArrowRightIcon } from '../../../components/ui/Icons';
 import { SITE_URL } from '../../../lib/site-config';
 import RelatedEntities from '../../../components/RelatedEntities';
+import SaveButton from '../../../components/ui/SaveButton';
 
 export const revalidate = 0;
 
@@ -431,16 +432,28 @@ async function CategoryPage({
         color: 'white',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <h1 style={{
-            fontSize: '28px',
-            fontWeight: 600,
-            margin: '0 0 4px 0',
-            fontFamily: 'var(--font-display)',
-            letterSpacing: '-0.5px',
-            color: 'var(--color-text-inverse)',
-          }}>
-            {categoryData?.label} Cases
-          </h1>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4px' }}>
+            <h1 style={{
+              fontSize: '28px',
+              fontWeight: 600,
+              margin: '0',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '-0.5px',
+              color: 'var(--color-text-inverse)',
+            }}>
+              {categoryData?.label} Cases
+            </h1>
+            <SaveButton
+              item={{
+                id: `category-${category}`,
+                type: 'case',
+                label: `${categoryData?.label} Cases`,
+                sublabel: 'Case Category',
+                href: `/cases/${category}`,
+              }}
+              size="sm"
+            />
+          </div>
           <div style={{
             display: 'flex',
             gap: '32px',

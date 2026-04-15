@@ -62,7 +62,7 @@ export default function ResultsPage() {
       </div>
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', paddingTop: '48px', paddingBottom: '48px', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--accent-primary)', paddingTop: '24px', paddingBottom: '24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <div style={{ marginBottom: '16px' }}>
             <span style={{
@@ -104,10 +104,10 @@ export default function ResultsPage() {
       </div>
 
       {/* Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
         {/* Empty State Card */}
         <div style={{
-          padding: '32px',
+          padding: '20px',
           borderRadius: '12px',
           border: '1px solid var(--border-default)',
           background: 'var(--color-surface-0)',
@@ -182,9 +182,9 @@ export default function ResultsPage() {
         </div>
 
         {/* Info Cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', marginTop: '32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', marginTop: '16px' }}>
           <div className="info-card" style={{
-            padding: '20px',
+            padding: '12px',
             borderRadius: '12px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
@@ -211,7 +211,7 @@ export default function ResultsPage() {
             </p>
           </div>
           <div className="info-card" style={{
-            padding: '20px',
+            padding: '12px',
             borderRadius: '12px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
@@ -238,7 +238,7 @@ export default function ResultsPage() {
             </p>
           </div>
           <div className="info-card" style={{
-            padding: '20px',
+            padding: '12px',
             borderRadius: '12px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
@@ -265,7 +265,7 @@ export default function ResultsPage() {
             </p>
           </div>
           <div className="info-card" style={{
-            padding: '20px',
+            padding: '12px',
             borderRadius: '12px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
@@ -295,7 +295,7 @@ export default function ResultsPage() {
       </div>
 
       {/* Footer */}
-      <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center', marginTop: '48px', background: 'var(--color-surface-0)' }}>
+      <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center', marginTop: '24px', background: 'var(--color-surface-0)' }}>
         <p style={{
           fontSize: '11px',
           color: 'var(--color-text-secondary)',

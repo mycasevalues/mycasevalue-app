@@ -220,7 +220,7 @@ export default function OddsPage() {
       {/* Hero Header */}
       <header style={{
         background: 'var(--accent-primary)',
-        padding: 'clamp(16px, 3vw, 20px) clamp(16px, 4vw, 24px)',
+        padding: 'clamp(12px, 2vw, 16px) clamp(16px, 3vw, 20px)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
       <script
@@ -270,18 +270,18 @@ export default function OddsPage() {
       <div style={{
         background: 'var(--color-surface-1)',
         minHeight: 'calc(100vh - 280px)',
-        padding: 'clamp(24px, 5vw, 48px)',
+        padding: 'clamp(16px, 3vw, 24px)',
         fontFamily: 'var(--font-body)',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 24px)' }}>
 
           {/* Input Section */}
-          <div className="odds-card" style={{ padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
+          <div className="odds-card" style={{ padding: 'clamp(16px, 3vw, 24px)', marginBottom: 16 }}>
             <h2 style={{
               fontSize: 18,
               fontWeight: 600,
               color: 'var(--color-text-primary)',
-              margin: '0 0 24px',
+              margin: '0 0 16px',
               fontFamily: 'var(--font-display)',
             }}>
               Select Your Case Type
@@ -713,7 +713,7 @@ export default function OddsPage() {
                     fontSize: 14,
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
-                    margin: '0 0 24px',
+                    margin: '0 0 16px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
                     fontFamily: 'var(--font-display)',
@@ -770,7 +770,7 @@ export default function OddsPage() {
                     fontSize: 14,
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
-                    margin: '0 0 24px',
+                    margin: '0 0 16px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
                     fontFamily: 'var(--font-display)',
@@ -870,7 +870,7 @@ export default function OddsPage() {
                     fontSize: 14,
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
-                    margin: '0 0 24px',
+                    margin: '0 0 16px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
                     fontFamily: 'var(--font-display)',

@@ -313,13 +313,13 @@ function SearchPageInner() {
           }
         }
       `}</style>
-      {/* Dark Navy Header Banner */}
-      <div className="search-header" style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '18px 24px' }}>
+      {/* Dark Navy Header Banner — Compact */}
+      <div className="search-header" style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '20px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
-          <h1 className="search-header" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
+          <h1 className="search-header" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em', margin: '0 0 4px 0' }}>
             Search federal court outcomes.
           </h1>
-          <p className="search-header" style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+          <p className="search-header" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', marginBottom: 0, lineHeight: 1.4, fontFamily: 'var(--font-body)' }}>
             Search across all 84 federal case types to find real outcome data for your situation.
           </p>
         </div>
@@ -590,7 +590,7 @@ function SearchPageInner() {
         }}
         style={{ display: 'flex', gap: '12px', marginBottom: 24, flexWrap: 'wrap' }}
       >
-        <div style={{ position: 'relative', flex: '1 1 auto', minWidth: '200px' }}>
+        <div style={{ position: 'relative', flex: '1 1 100%', minWidth: '200px' }}>
           <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <SearchIcon size={20} color="var(--color-text-secondary)" />
           </div>
@@ -654,38 +654,10 @@ function SearchPageInner() {
               ×
             </button>
           )}
+          <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginTop: '6px', fontFamily: 'var(--font-body)' }}>
+            Press <kbd style={{ background: 'var(--color-surface-0)', padding: '2px 6px', borderRadius: '4px', border: '1px solid var(--border-default)', fontSize: '10px', fontWeight: 600 }}>Enter</kbd> to search
+          </div>
         </div>
-        <button
-          type="submit"
-          style={{
-            height: '48px',
-            paddingLeft: '24px',
-            paddingRight: '24px',
-            fontSize: '15px',
-            fontWeight: '600',
-            background: 'var(--accent-primary)',
-            color: 'var(--color-text-inverse)',
-            border: 'none',
-            borderRadius: '12px',
-            cursor: 'pointer',
-            fontFamily: 'var(--font-body)',
-            transition: 'all 150ms ease-out',
-            boxShadow: '0 2px 4px rgba(10, 102, 194, 0.2)',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'var(--accent-primary-hover)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.25)';
-            e.currentTarget.style.transform = 'translateY(-1px)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'var(--accent-primary)';
-            e.currentTarget.style.boxShadow = '0 2px 4px rgba(10, 102, 194, 0.2)';
-            e.currentTarget.style.transform = 'translateY(0)';
-          }}
-          aria-label="Search"
-        >
-          Search
-        </button>
       </form>
 
       {/* Search Tips Section */}
@@ -751,19 +723,94 @@ function SearchPageInner() {
         </div>
       )}
 
-      {/* Result count */}
-      {query.length > 1 && !isLoading && results.length > 0 && (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-          <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
-            <strong style={{ color: 'var(--color-text-primary)' }}>{results.length}</strong> result{results.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;
-            {selectedCategory && <span> in <strong style={{ color: 'var(--accent-primary)' }}>{categories.find(c => c.id === selectedCategory)?.label}</strong></span>}
-          </p>
-          {selectedCategory && (
-            <button onClick={() => setSelectedCategory(null)} style={{ fontSize: '12px', color: 'var(--accent-primary-hover)', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
-              Clear filter
-            </button>
+      {/* Results header and category filter pills */}
+      {query.length > 1 && (
+        <>
+          {/* Results for... header */}
+          <div style={{ marginBottom: '16px' }}>
+            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0', fontFamily: 'var(--font-display)' }}>
+              Results for &ldquo;{query}&rdquo;
+            </h2>
+
+            {/* Category filter pills */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              <button
+                onClick={() => setSelectedCategory(null)}
+                style={{
+                  padding: '6px 14px',
+                  fontSize: '13px',
+                  fontWeight: selectedCategory === null ? 600 : 500,
+                  background: selectedCategory === null ? 'var(--accent-primary)' : 'var(--color-surface-0)',
+                  color: selectedCategory === null ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)',
+                  border: selectedCategory === null ? 'none' : '1px solid var(--border-default)',
+                  borderRadius: '20px',
+                  cursor: 'pointer',
+                  fontFamily: 'var(--font-body)',
+                  transition: 'all 120ms ease-out',
+                }}
+                onMouseEnter={(e) => {
+                  if (selectedCategory !== null) {
+                    e.currentTarget.style.background = '#F0F6FB';
+                    e.currentTarget.style.borderColor = 'var(--accent-primary-hover)';
+                    e.currentTarget.style.color = 'var(--accent-primary)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (selectedCategory !== null) {
+                    e.currentTarget.style.background = 'var(--color-surface-0)';
+                    e.currentTarget.style.borderColor = 'var(--border-default)';
+                    e.currentTarget.style.color = 'var(--color-text-secondary)';
+                  }
+                }}
+              >
+                All Categories
+              </button>
+              {categories.map(cat => (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id === selectedCategory ? null : cat.id)}
+                  style={{
+                    padding: '6px 14px',
+                    fontSize: '13px',
+                    fontWeight: selectedCategory === cat.id ? 600 : 500,
+                    background: selectedCategory === cat.id ? 'var(--accent-primary)' : 'var(--color-surface-0)',
+                    color: selectedCategory === cat.id ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)',
+                    border: selectedCategory === cat.id ? 'none' : '1px solid var(--border-default)',
+                    borderRadius: '20px',
+                    cursor: 'pointer',
+                    fontFamily: 'var(--font-body)',
+                    transition: 'all 120ms ease-out',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (selectedCategory !== cat.id) {
+                      e.currentTarget.style.background = '#F0F6FB';
+                      e.currentTarget.style.borderColor = 'var(--accent-primary-hover)';
+                      e.currentTarget.style.color = 'var(--accent-primary)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (selectedCategory !== cat.id) {
+                      e.currentTarget.style.background = 'var(--color-surface-0)';
+                      e.currentTarget.style.borderColor = 'var(--border-default)';
+                      e.currentTarget.style.color = 'var(--color-text-secondary)';
+                    }
+                  }}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Result count */}
+          {!isLoading && results.length > 0 && (
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+                <strong style={{ color: 'var(--color-text-primary)' }}>{results.length}</strong> result{results.length !== 1 ? 's' : ''} {selectedCategory && <span>in <strong style={{ color: 'var(--accent-primary)' }}>{categories.find(c => c.id === selectedCategory)?.label}</strong></span>}
+              </p>
+            </div>
           )}
-        </div>
+        </>
       )}
 
       {!isLoading && results.map((r, i) => (
@@ -875,24 +922,24 @@ function SearchPageInner() {
 
       {query.length === 0 && (
         <>
-          {/* Popular Searches */}
-          <div style={{ marginTop: '24px', marginBottom: '32px' }}>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Popular searches</p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+          {/* Popular Searches — Compact */}
+          <div style={{ marginTop: '16px', marginBottom: '28px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>Popular searches</p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
               {['Wrongful termination', 'Car accident', 'Medical malpractice', 'Debt collection', 'Discrimination', 'Slip and fall', 'Breach of contract', 'Insurance bad faith', 'Product liability', 'Sexual harassment', 'ADA violation', 'Wage theft'].map(s => (
                 <button
                   key={s}
                   onClick={() => setQuery(s)}
                   style={{
-                    padding: '8px 16px',
+                    padding: '6px 12px',
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '12px',
-                    fontSize: '13px',
+                    fontSize: '12px',
                     color: 'var(--accent-primary-hover)',
                     cursor: 'pointer',
                     fontFamily: 'var(--font-body)',
-                    transition: 'all 150ms ease-out',
+                    transition: 'all 120ms ease-out',
                     fontWeight: '500',
                   }}
                   onMouseEnter={(e) => {

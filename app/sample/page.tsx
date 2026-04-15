@@ -89,7 +89,7 @@ export default function SampleReportPage() {
           style={{
             backgroundColor: 'var(--accent-primary)',
             borderBottom: '1px solid var(--accent-primary)',
-            padding: '40px 24px',
+            padding: '20px 24px',
             position: 'sticky',
             top: 0,
             zIndex: 50,
@@ -129,7 +129,7 @@ export default function SampleReportPage() {
           style={{
             maxWidth: '960px',
             margin: '0 auto',
-            padding: '48px 24px',
+            padding: '24px 24px',
           }}
         >
           {/* Breadcrumb */}
@@ -137,7 +137,7 @@ export default function SampleReportPage() {
             style={{
               display: 'flex',
               gap: '8px',
-              marginBottom: '32px',
+              marginBottom: '16px',
               fontSize: '14px',
               color: 'var(--color-text-secondary)',
             }}
@@ -168,13 +168,13 @@ export default function SampleReportPage() {
           </nav>
 
           {/* Metadata Section */}
-          <section style={{ marginBottom: '48px' }}>
+          <section style={{ marginBottom: '24px' }}>
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
-                padding: '24px',
+                padding: '16px',
               }}
             >
               <div
@@ -288,13 +288,13 @@ export default function SampleReportPage() {
           </section>
 
           {/* Section A: Win Rate Analysis */}
-          <section style={{ paddingTop: '48px' }}>
+          <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                marginBottom: '32px',
+                marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
             >
@@ -305,7 +305,7 @@ export default function SampleReportPage() {
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                 gap: '20px',
-                marginBottom: '32px',
+                marginBottom: '16px',
               }}
             >
               <div
@@ -313,7 +313,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '16px',
                 }}
               >
                 <p
@@ -356,7 +356,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '16px',
                 }}
               >
                 <p
@@ -398,7 +398,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '16px',
                 }}
               >
                 <p
@@ -459,13 +459,13 @@ export default function SampleReportPage() {
           </section>
 
           {/* Section B: Settlement Range */}
-          <section style={{ paddingTop: '48px' }}>
+          <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                marginBottom: '32px',
+                marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
             >
@@ -570,13 +570,13 @@ export default function SampleReportPage() {
           </section>
 
           {/* Section C: Case Timeline */}
-          <section style={{ paddingTop: '48px' }}>
+          <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                marginBottom: '32px',
+                marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
             >
@@ -595,7 +595,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '16px',
                 }}
               >
                 <p
@@ -637,7 +637,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '16px',
                 }}
               >
                 <p
@@ -679,7 +679,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '16px',
                 }}
               >
                 <p
@@ -730,13 +730,13 @@ export default function SampleReportPage() {
           </section>
 
           {/* Section D: Judge Analytics */}
-          <section style={{ paddingTop: '48px' }}>
+          <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                marginBottom: '32px',
+                marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
             >
@@ -946,13 +946,13 @@ export default function SampleReportPage() {
           </section>
 
           {/* Section E: Attorney Impact */}
-          <section style={{ paddingTop: '48px' }}>
+          <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                marginBottom: '32px',
+                marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
             >
@@ -971,7 +971,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '16px',
                 }}
               >
                 <p
@@ -1013,7 +1013,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '16px',
                 }}
               >
                 <p
@@ -1055,7 +1055,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '16px',
                 }}
               >
                 <p
@@ -1106,13 +1106,13 @@ export default function SampleReportPage() {
           </section>
 
           {/* Section F: District Comparison */}
-          <section style={{ paddingTop: '48px' }}>
+          <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                marginBottom: '32px',
+                marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
             >

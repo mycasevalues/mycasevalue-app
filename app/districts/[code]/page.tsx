@@ -7,6 +7,7 @@ import legalAidData from '../../../data/legal-aid.json';
 import FilingVolumeTrend from '../../../components/charts/FilingVolumeTrend';
 import { DISTRICT_FILING_TRENDS } from '../../../data/district-trends';
 import JudgeSectionLoader from '../../../components/JudgeSectionLoader';
+import SaveButton from '../../../components/ui/SaveButton';
 
 // ISR: revalidate every 90 days (matches FJC quarterly update cycle)
 export const revalidate = 7776000;
@@ -276,17 +277,29 @@ export default async function DistrictPage({ params }: PageProps) {
             Circuit {districtMeta.circuit}
           </div>
 
-          <h1 style={{
-            color: 'var(--color-text-inverse)',
-            fontFamily: 'var(--font-display)',
-            letterSpacing: '-1.5px',
-            fontSize: 'clamp(28px, 5vw, 48px)',
-            lineHeight: 1.2,
-            fontWeight: 700,
-            margin: '0 0 8px',
-          }}>
-            {districtMeta.fullName}
-          </h1>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '16px' }}>
+            <h1 style={{
+              color: 'var(--color-text-inverse)',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '-1.5px',
+              fontSize: 'clamp(28px, 5vw, 48px)',
+              lineHeight: 1.2,
+              fontWeight: 700,
+              margin: '0 0 8px',
+            }}>
+              {districtMeta.fullName}
+            </h1>
+            <SaveButton
+              item={{
+                id: `district-${upperCode}`,
+                type: 'district',
+                label: districtMeta.fullName,
+                sublabel: `${districtMeta.name} • ${districtMeta.states.join(', ')}`,
+                href: `/districts/${code}`,
+              }}
+              size="sm"
+            />
+          </div>
 
           <p style={{
             color: 'rgba(255,255,255,0.8)',

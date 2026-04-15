@@ -114,7 +114,7 @@ export default function SignUpPage() {
             backgroundColor: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
             borderRadius: '12px',
-            padding: '32px',
+            padding: '20px',
             textAlign: 'center',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
@@ -152,7 +152,7 @@ export default function SignUpPage() {
               fontSize: '15px',
               color: 'var(--color-text-secondary)',
               lineHeight: 1.6,
-              margin: '0 0 24px 0',
+              margin: '0 0 12px 0',
             }}
           >
             We sent a confirmation link to <strong style={{ color: 'var(--color-text-primary)' }}>{email}</strong>. Click the link to activate your account.
@@ -284,11 +284,11 @@ export default function SignUpPage() {
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          gap: '48px',
+          gap: '32px',
           maxWidth: '1200px',
           width: '100%',
           margin: '0 auto',
-          padding: '48px 24px',
+          padding: '24px 24px',
           alignItems: 'start',
         }}
       >
@@ -299,7 +299,7 @@ export default function SignUpPage() {
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              padding: '40px',
+              padding: '24px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
             }}
           >
@@ -310,7 +310,7 @@ export default function SignUpPage() {
                 fontSize: '24px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
-                margin: '0 0 24px 0',
+                margin: '0 0 12px 0',
                 lineHeight: 1.2,
               }}
             >
@@ -707,7 +707,7 @@ export default function SignUpPage() {
                 fontSize: '20px',
                 fontWeight: 600,
                 color: 'var(--accent-primary)',
-                margin: '0 0 24px 0',
+                margin: '0 0 12px 0',
               }}
             >
               What you'll get access to
@@ -989,7 +989,7 @@ export default function SignUpPage() {
                 fontSize: '20px',
                 fontWeight: 600,
                 color: 'var(--accent-primary)',
-                margin: '0 0 24px 0',
+                margin: '0 0 12px 0',
               }}
             >
               Trusted by attorneys nationwide

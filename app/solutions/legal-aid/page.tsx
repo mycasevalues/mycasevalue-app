@@ -57,7 +57,7 @@ export default function LegalAidPage() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: 'var(--accent-primary)', color: '#FAFBFC', padding: '80px 24px 64px' }}>
+      <section style={{ background: 'var(--accent-primary)', color: '#FAFBFC', padding: '40px 24px 32px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -126,7 +126,7 @@ export default function LegalAidPage() {
       </section>
 
       {/* Features Grid */}
-      <section style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -144,7 +144,7 @@ export default function LegalAidPage() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
-                padding: '32px 24px',
+                padding: '20px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
@@ -172,7 +172,7 @@ export default function LegalAidPage() {
       </section>
 
       {/* Get Started CTA */}
-      <section style={{ padding: '64px 24px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+      <section style={{ padding: '20px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -229,7 +229,7 @@ export default function LegalAidPage() {
       </section>
 
       {/* Related Solutions */}
-      <section style={{ padding: '64px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '20px 16px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -248,7 +248,7 @@ export default function LegalAidPage() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
-                padding: '32px 24px',
+                padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
                 transition: 'box-shadow 200ms ease, border-color 200ms ease',
@@ -281,7 +281,7 @@ export default function LegalAidPage() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
-                padding: '32px 24px',
+                padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
                 transition: 'box-shadow 200ms ease, border-color 200ms ease',
@@ -314,7 +314,7 @@ export default function LegalAidPage() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
-                padding: '32px 24px',
+                padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
                 transition: 'box-shadow 200ms ease, border-color 200ms ease',

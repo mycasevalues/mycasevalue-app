@@ -90,7 +90,7 @@ export default function LegalDashboardPage() {
   const avgLatency = Math.round(sources.filter(s => s.latency > 0).reduce((sum, s) => sum + s.latency, 0) / sources.filter(s => s.latency > 0).length);
 
   return (
-    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '40px 16px 80px' }}>
+    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '20px 16px 40px' }}>
 
       {/* Breadcrumb */}
       <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 24 }}>
@@ -100,7 +100,7 @@ export default function LegalDashboardPage() {
       </nav>
 
       {/* Hero */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 32, flexWrap: 'wrap', gap: 16 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16, flexWrap: 'wrap', gap: 16 }}>
         <div>
           <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
             Data Pipeline Dashboard

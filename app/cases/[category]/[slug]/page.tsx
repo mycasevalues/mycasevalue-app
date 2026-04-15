@@ -8,6 +8,7 @@ import {
   CaseTypeSEO,
 } from '../../../../lib/case-type-seo';
 import { SITE_URL } from '../../../../lib/site-config';
+import SaveButton from '../../../../components/ui/SaveButton';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -279,7 +280,7 @@ export default async function CaseTypeDetailPage({
           </nav>
 
           {/* Header Content */}
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '0', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '0', flexWrap: 'wrap' }}>
             <div style={{ flex: 1 }}>
               <h1
                 style={{
@@ -293,6 +294,16 @@ export default async function CaseTypeDetailPage({
                 {caseType.label}
               </h1>
             </div>
+            <SaveButton
+              item={{
+                id: `casetype-${caseType.nosCode}`,
+                type: 'case',
+                label: caseType.label,
+                sublabel: 'Case Type',
+                href: `/cases/${category}/${slug}`,
+              }}
+              size="sm"
+            />
           </div>
         </div>
       </header>

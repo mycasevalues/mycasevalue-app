@@ -76,8 +76,8 @@ function SignInForm() {
           flex: 1;
           align-items: center;
           justify-content: center;
-          padding: 48px 24px;
-          gap: 64px;
+          padding: 24px 24px;
+          gap: 32px;
         }
         .auth-card {
           animation: fadeIn 0.4s ease-out;
@@ -281,7 +281,7 @@ function SignInForm() {
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
             borderRadius: '12px',
-            padding: '40px',
+            padding: '24px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
         >

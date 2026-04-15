@@ -8,6 +8,7 @@ import {
   CaseTypeSEO,
 } from '../../../../../lib/case-type-seo';
 import { SITE_URL } from '../../../../../lib/site-config';
+import SaveButton from '../../../../../components/ui/SaveButton';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -306,7 +307,7 @@ export default async function DistrictCaseTypePage({
           </nav>
 
           {/* Header Content */}
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '8px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '8px', flexWrap: 'wrap' }}>
             <div style={{ flex: 1 }}>
               <h1
                 style={{
@@ -330,21 +331,33 @@ export default async function DistrictCaseTypePage({
                 {state.label} Federal Court Data
               </p>
             </div>
-            <span
-              style={{
-                display: 'inline-block',
-                padding: '8px 16px',
-                borderRadius: '12px',
-                background: 'var(--accent-primary)',
-                fontSize: '12px',
-                fontWeight: '600',
-                color: 'var(--color-text-inverse)',
-                textTransform: 'uppercase',
-                marginTop: '4px',
-              }}
-            >
-              NOS {caseType.nosCode}
-            </span>
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+              <span
+                style={{
+                  display: 'inline-block',
+                  padding: '8px 16px',
+                  borderRadius: '12px',
+                  background: 'var(--accent-primary)',
+                  fontSize: '12px',
+                  fontWeight: '600',
+                  color: 'var(--color-text-inverse)',
+                  textTransform: 'uppercase',
+                  marginTop: '4px',
+                }}
+              >
+                NOS {caseType.nosCode}
+              </span>
+              <SaveButton
+                item={{
+                  id: `casetype-${caseType.nosCode}-${district}`,
+                  type: 'case',
+                  label: `${caseType.label} in ${state.label}`,
+                  sublabel: 'Case Type by District',
+                  href: `/cases/${category}/${slug}/${district}`,
+                }}
+                size="sm"
+              />
+            </div>
           </div>
         </div>
       </header>

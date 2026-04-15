@@ -137,7 +137,7 @@ export default function LegalSearchPage() {
   };
 
   return (
-    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '40px 16px 80px' }}>
+    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '20px 16px 40px' }}>
 
       {/* Breadcrumb */}
       <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 24 }}>
@@ -147,7 +147,7 @@ export default function LegalSearchPage() {
       </nav>
 
       {/* Hero */}
-      <div style={{ marginBottom: 32 }}>
+      <div style={{ marginBottom: 16 }}>
         <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
           Legal Document Search
         </h1>

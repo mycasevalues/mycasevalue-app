@@ -146,7 +146,7 @@ export default function EnterprisePage() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: 'var(--accent-primary)', color: '#FAFBFC', padding: '80px 24px 64px' }}>
+      <section style={{ background: 'var(--accent-primary)', color: '#FAFBFC', padding: '40px 24px 32px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -182,7 +182,7 @@ export default function EnterprisePage() {
       </section>
 
       {/* Features Grid */}
-      <section style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -200,7 +200,7 @@ export default function EnterprisePage() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
-                padding: '32px 24px',
+                padding: '20px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
@@ -228,7 +228,7 @@ export default function EnterprisePage() {
       </section>
 
       {/* Use Cases */}
-      <section style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--color-surface-0)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -276,7 +276,7 @@ export default function EnterprisePage() {
       </section>
 
       {/* Pricing */}
-      <section style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -372,7 +372,7 @@ export default function EnterprisePage() {
       </section>
 
       {/* Social Proof */}
-      <section style={{ padding: '64px 24px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+      <section style={{ padding: '20px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -386,7 +386,7 @@ export default function EnterprisePage() {
       </section>
 
       {/* FAQ */}
-      <section style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -433,7 +433,7 @@ export default function EnterprisePage() {
       </section>
 
       {/* Demo Form */}
-      <section style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--color-surface-0)' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -450,7 +450,7 @@ export default function EnterprisePage() {
             fontSize: '1rem',
             color: 'var(--color-text-secondary)',
             textAlign: 'center',
-            marginBottom: '40px',
+            marginBottom: '20px',
             lineHeight: 1.6,
           }}>
             Schedule a personalized demo with our enterprise team. We will walk through your use case and discuss custom solutions for your organization.

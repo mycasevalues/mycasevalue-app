@@ -23,8 +23,8 @@ export default function CookiePolicyPage() {
           style={{
             background: 'linear-gradient(135deg, #004182 0%, var(--accent-primary) 100%)',
             color: 'var(--color-surface-0)',
-            padding: '3rem 1.5rem',
-            marginBottom: '3rem',
+            padding: '1.5rem 1.5rem',
+            marginBottom: '1.5rem',
           }}
         >
           <div
@@ -62,13 +62,13 @@ export default function CookiePolicyPage() {
           style={{
             maxWidth: '900px',
             margin: '0 auto',
-            padding: '0 1.5rem 4rem 1.5rem',
+            padding: '0 1.5rem 2rem 1.5rem',
             fontFamily: 'var(--font-body)',
             color: 'var(--color-text-primary)',
           }}
         >
           {/* What Are Cookies */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -90,7 +90,7 @@ export default function CookiePolicyPage() {
           </section>
 
           {/* Essential Cookies */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -150,7 +150,7 @@ export default function CookiePolicyPage() {
           </section>
 
           {/* Analytics Cookies */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -207,7 +207,7 @@ export default function CookiePolicyPage() {
           </section>
 
           {/* Preference Cookies */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -264,7 +264,7 @@ export default function CookiePolicyPage() {
           </section>
 
           {/* Third-Party Cookies */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -321,7 +321,7 @@ export default function CookiePolicyPage() {
           </section>
 
           {/* Cookie Consent */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -361,7 +361,7 @@ export default function CookiePolicyPage() {
           </section>
 
           {/* Managing Cookies */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -420,7 +420,7 @@ export default function CookiePolicyPage() {
           </section>
 
           {/* Cookie Duration Table */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -512,7 +512,7 @@ export default function CookiePolicyPage() {
           </section>
 
           {/* Updates to Policy */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -534,7 +534,7 @@ export default function CookiePolicyPage() {
           </section>
 
           {/* Contact */}
-          <section style={{ marginBottom: '2.5rem' }}>
+          <section style={{ marginBottom: '1.5rem' }}>
             <h2
               style={{
                 fontSize: '1.75rem',
@@ -566,8 +566,8 @@ export default function CookiePolicyPage() {
           <div
             style={{
               borderTop: '1px solid var(--border-default)',
-              paddingTop: '2rem',
-              marginTop: '3rem',
+              paddingTop: '1rem',
+              marginTop: '1.5rem',
               fontSize: '0.9375rem',
               color: 'var(--color-text-secondary)',
             }}

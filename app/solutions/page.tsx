@@ -86,7 +86,7 @@ export default function SolutionsPage() {
         style={{
           background: 'var(--accent-primary)',
           color: '#FAFBFC',
-          padding: '80px 24px 64px',
+          padding: '40px 24px 32px',
         }}
       >
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
@@ -133,10 +133,10 @@ export default function SolutionsPage() {
             style={{
               display: 'flex',
               justifyContent: 'center',
-              gap: '48px',
+              gap: '32px',
               flexWrap: 'wrap',
-              marginTop: '40px',
-              paddingTop: '40px',
+              marginTop: '20px',
+              paddingTop: '20px',
               borderTop: '1px solid rgba(255,255,255,0.2)',
             }}
           >
@@ -262,7 +262,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Grid */}
-      <section style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div
           className="solutions-grid-wrap"
           style={{ maxWidth: '1120px', margin: '0 auto' }}
@@ -283,7 +283,7 @@ export default function SolutionsPage() {
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  padding: '32px 24px',
+                  padding: '20px 16px',
                   textDecoration: 'none',
                   display: 'block',
                   transition: 'box-shadow 200ms ease, border-color 200ms ease',
@@ -324,7 +324,7 @@ export default function SolutionsPage() {
       {/* Bottom CTA */}
       <section
         style={{
-          padding: '64px 24px',
+          padding: '32px 24px',
           background: 'var(--color-surface-0)',
           textAlign: 'center',
         }}

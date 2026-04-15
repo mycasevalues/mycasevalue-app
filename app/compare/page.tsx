@@ -191,7 +191,7 @@ export default function ComparePage() {
         fontSize: 13,
         fontFamily: 'var(--font-body)',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 48px)', paddingRight: 'clamp(16px, 3vw, 48px)' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 24px)', paddingRight: 'clamp(16px, 3vw, 24px)' }}>
           <Link href="/" className="lexis-link" style={{ marginRight: 8, color: 'var(--accent-primary-hover)' }}>Home</Link>
           <span style={{ color: 'var(--color-text-secondary)', marginRight: 8 }}>/</span>
           <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>Compare Case Types</span>
@@ -202,16 +202,16 @@ export default function ComparePage() {
       <div style={{
         background: 'var(--color-surface-1)',
         minHeight: 'calc(100vh - 200px)',
-        padding: 'clamp(24px, 5vw, 48px)',
+        padding: 'clamp(16px, 3vw, 24px)',
         fontFamily: 'var(--font-body)',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 48px)', paddingRight: 'clamp(16px, 3vw, 48px)' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 24px)', paddingRight: 'clamp(16px, 3vw, 24px)' }}>
           {/* Selectors */}
           <div className="compare-selectors" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
             gap: 16,
-            marginBottom: 32,
+            marginBottom: 16,
           }}>
             {[0, 1, 2].map(idx => (
               <div key={idx}>
@@ -278,7 +278,7 @@ export default function ComparePage() {
               fontWeight: 600,
               cursor: canCompare ? 'pointer' : 'not-allowed',
               fontFamily: 'var(--font-display)',
-              marginBottom: 40,
+              marginBottom: 20,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
               transition: 'background-color 0.2s ease, opacity 0.2s ease',

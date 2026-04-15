@@ -176,7 +176,7 @@ export default function CitationsPage() {
   const nodeMap = new Map(graphNodes.map(n => [n.id, n]));
 
   return (
-    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '40px 16px 80px' }}>
+    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '20px 16px 40px' }}>
 
       {/* Breadcrumb */}
       <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 24 }}>
@@ -186,7 +186,7 @@ export default function CitationsPage() {
       </nav>
 
       {/* Hero */}
-      <div style={{ marginBottom: 32 }}>
+      <div style={{ marginBottom: 16 }}>
         <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
           Citation Explorer
         </h1>
@@ -389,7 +389,7 @@ export default function CitationsPage() {
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
         gap: 12,
-        marginBottom: 40,
+        marginBottom: 20,
       }}>
         <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono, monospace)' }}>
@@ -418,7 +418,7 @@ export default function CitationsPage() {
       </div>
 
       {/* Case list */}
-      <div style={{ marginBottom: 40 }}>
+      <div style={{ marginBottom: 20 }}>
         <h2 style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 16 }}>All Cases in Network</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 12 }}>
           {NODES.sort((a, b) => b.year - a.year).map(node => (

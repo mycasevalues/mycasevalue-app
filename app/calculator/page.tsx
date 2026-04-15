@@ -290,7 +290,7 @@ export default function CalculatorPage() {
           style={{
             borderColor: 'var(--border-default)',
             background: 'var(--color-surface-0)',
-            padding: '32px',
+            padding: '20px',
             borderRadius: '12px',
           }}
           onSubmit={(e) => { e.preventDefault(); calculate(); }}
@@ -586,7 +586,7 @@ export default function CalculatorPage() {
             borderColor: 'var(--border-default)',
             background: 'var(--color-surface-0)',
             borderRadius: '12px',
-            padding: '32px',
+            padding: '20px',
             animation: 'slideUpFadeIn 0.4s ease-out',
           }}>
             <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-display)' }}>

@@ -81,10 +81,10 @@ const USE_CASES = [
 
 export default function LegalDataPage() {
   return (
-    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '48px 16px 80px' }}>
+    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '24px 16px 40px' }}>
 
       {/* -- Hero -- */}
-      <div style={{ textAlign: 'center', marginBottom: 56 }}>
+      <div style={{ textAlign: 'center', marginBottom: 28 }}>
         <div style={{
           display: 'inline-block',
           padding: '4px 14px',
@@ -123,7 +123,7 @@ export default function LegalDataPage() {
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
         gap: 16,
-        marginBottom: 56,
+        marginBottom: 28,
       }}>
         {FEATURES.map((feat) => (
           <Link key={feat.href} href={feat.href} style={{ textDecoration: 'none' }}>
@@ -158,7 +158,7 @@ export default function LegalDataPage() {
       </div>
 
       {/* -- How It Enhances Your Research -- */}
-      <div style={{ marginBottom: 56 }}>
+      <div style={{ marginBottom: 28 }}>
         <h2 style={{ fontSize: 26, fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: 8, textAlign: 'center' }}>
           Case Outcomes + Legal Context = Competitive Edge
         </h2>
@@ -193,7 +193,7 @@ export default function LegalDataPage() {
       </div>
 
       {/* -- Data sources -- */}
-      <div style={{ marginBottom: 56 }}>
+      <div style={{ marginBottom: 28 }}>
         <h2 style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, textAlign: 'center' }}>
           7 Authoritative Sources, Unified Search
         </h2>
@@ -244,11 +244,11 @@ export default function LegalDataPage() {
 
       {/* -- What's Coming Next -- */}
       <div style={{
-        padding: '32px',
+        padding: '20px',
         borderRadius: 16,
         background: '#F0F5FF',
         border: '1px solid #D4E4F7',
-        marginBottom: 40,
+        marginBottom: 20,
       }}>
         <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
           Coming Soon to the Research Hub
@@ -269,7 +269,7 @@ export default function LegalDataPage() {
       {/* -- CTA -- */}
       <div style={{
         textAlign: 'center',
-        padding: '40px 24px',
+        padding: '24px 20px',
         background: 'var(--accent-primary)',
         borderRadius: 16,
         color: 'var(--color-surface-0)',
