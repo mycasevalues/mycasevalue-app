@@ -10,6 +10,7 @@ import { StaggerGrid, StaggerItem } from '../../components/motion';
 import TrendSparkline from '../../components/charts/TrendSparkline';
 import { SITE_URL } from '../../lib/site-config';
 import ConfidenceDot from '../../components/ConfidenceDot';
+import SaveButton from '../../components/ui/SaveButton';
 
 // Pre-compute aggregate stats for each category
 function getCategoryStats(categoryId: string, opts: { nos: string }[]): { totalCases: number; avgWinRate: number; avgSettlement: number; avgDuration: number } {
@@ -343,9 +344,21 @@ export default function CasesIndexPage() {
                 <StaggerItem key={category.id}>
                 <Link href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
                   <div className="cat-card">
-                    <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
-                      {category.label}
-                    </h2>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
+                      <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
+                        {category.label}
+                      </h2>
+                      <SaveButton
+                        item={{
+                          id: `category-${category.id}`,
+                          type: 'case',
+                          label: category.label,
+                          sublabel: `${catStats.totalCases.toLocaleString()} cases · ${catStats.avgWinRate}% win rate`,
+                          href: `/cases/${category.id}`,
+                          meta: { winRate: catStats.avgWinRate, totalCases: catStats.totalCases },
+                        }}
+                      />
+                    </div>
                     <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, marginBottom: 16 }}>{category.sub}</p>
 
                     {/* Inline Stats */}

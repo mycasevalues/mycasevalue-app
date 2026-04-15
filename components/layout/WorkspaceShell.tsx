@@ -14,6 +14,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import WorkspaceSidebar from './WorkspaceSidebar';
+import ResearchBreadcrumb from '../ui/ResearchBreadcrumb';
 
 // Routes that should show the workspace sidebar
 const WORKSPACE_ROUTES = [
@@ -78,6 +79,11 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
           <span className="text-sm font-medium text-gray-600 truncate">
             {getPageTitle(pathname)}
           </span>
+        </div>
+
+        {/* Research breadcrumb — desktop only */}
+        <div className="hidden lg:block px-4 border-b border-gray-50 bg-white">
+          <ResearchBreadcrumb />
         </div>
 
         {/* Page content */}
