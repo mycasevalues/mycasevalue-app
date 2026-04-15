@@ -16,6 +16,7 @@ import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useResearchStore } from '@/store/research';
+import { useWorkspaceStore } from '@/store/workspace';
 
 interface NavItem {
   label: string;
@@ -151,6 +152,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
   const router = useRouter();
   const pathname = usePathname();
   const { recentSearches } = useResearchStore();
+  const { savedItems } = useWorkspaceStore();
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = useCallback((e: React.FormEvent) => {
@@ -260,6 +262,37 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
                       <span className="truncate text-xs">{search.query}</span>
                     </Link>
                   ))}
+                </div>
+              </div>
+            )}
+
+            {/* Saved Items */}
+            {savedItems.length > 0 && (
+              <div className="mb-1">
+                <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+                  Saved ({savedItems.length})
+                </div>
+                <div className="space-y-0.5">
+                  {savedItems.slice(0, 5).map((item) => (
+                    <Link
+                      key={item.id}
+                      href={item.href}
+                      className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors"
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1.5" className="flex-shrink-0 text-brand-blue">
+                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                      </svg>
+                      <div className="min-w-0 flex-1">
+                        <span className="truncate text-xs block">{item.label}</span>
+                        {item.sublabel && <span className="truncate text-[10px] text-gray-400 block">{item.sublabel}</span>}
+                      </div>
+                    </Link>
+                  ))}
+                  {savedItems.length > 5 && (
+                    <Link href="/dashboard" className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-xs text-brand-blue hover:bg-blue-50 transition-colors">
+                      View all {savedItems.length} saved →
+                    </Link>
+                  )}
                 </div>
               </div>
             )}

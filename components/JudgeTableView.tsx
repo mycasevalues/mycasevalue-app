@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { JudgeWithStats } from '@/lib/supabase-judges';
 import { getWinRateColor } from '@/lib/color-scale';
 import { getPartyColor, getPartyLabel } from '@/lib/supabase-judges';
+import SaveButton from './ui/SaveButton';
 
 interface JudgeTableViewProps {
   judges: JudgeWithStats[];
@@ -53,6 +54,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
             <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide whitespace-nowrap">
               Party
             </th>
+            <th className="w-10 px-2 py-2.5" aria-label="Save"></th>
           </tr>
         </thead>
         <tbody>
@@ -120,6 +122,23 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
                       {getPartyLabel(party)}
                     </span>
                   )}
+                </td>
+                <td className="px-2 py-2">
+                  <SaveButton
+                    item={{
+                      id: `judge-${judge.id}`,
+                      type: 'judge',
+                      label: judge.full_name,
+                      sublabel: judge.district_id || undefined,
+                      href: `/judges/${judge.id}`,
+                      meta: {
+                        winRate: winRate ?? undefined,
+                        totalCases: judge.total_cases_handled,
+                        district: judge.district_id || undefined,
+                        circuit: judge.circuit || undefined,
+                      },
+                    }}
+                  />
                 </td>
               </tr>
             );
