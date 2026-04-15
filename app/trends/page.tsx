@@ -182,34 +182,20 @@ export default function TrendsPage() {
           background: 'var(--accent-primary)',
         }}
       >
-        <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
-          <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{
-              background: 'var(--accent-primary)',
-              color: 'var(--color-text-inverse)',
-              borderRadius: '12px',
-              fontFamily: 'var(--font-body)',
-            }}
-          >
-            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-            </svg>
-            TRENDS
-          </div>
+        <div className="max-w-6xl mx-auto px-6 py-6">
           <h1
-            className="font-display font-extrabold mb-4"
+            className="font-display font-extrabold mb-2"
             style={{
               color: 'var(--color-text-inverse)',
               letterSpacing: '-1.5px',
-              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
               lineHeight: '1.2',
             }}
           >
             Federal Court Filing Trends
           </h1>
-          <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)', fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}>
-            Explore real statistics from {totalCases.toLocaleString()} federal civil cases across {trends.length} case types and 95 federal districts.
+          <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            Case statistics from {totalCases.toLocaleString()} federal cases across {trends.length} types.
           </p>
         </div>
       </div>

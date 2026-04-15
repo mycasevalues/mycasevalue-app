@@ -307,39 +307,17 @@ export default function DistrictsPage() {
       <header style={{
         background: 'var(--accent-primary)',
         borderBottom: '1px solid #e5e7eb',
-        padding: 'clamp(32px, 6vw, 56px) 0',
+        padding: '20px 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 6,
-            background: 'var(--accent-primary)',
-            color: 'var(--color-text-inverse)',
-            padding: '4px 12px',
-            borderRadius: 4,
-            fontSize: 11,
-            fontWeight: 600,
-            letterSpacing: '0.5px',
-            textTransform: 'uppercase',
-            marginBottom: 16,
-            fontFamily: 'var(--font-display)',
-          }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            ALL DISTRICTS
-          </div>
-
           <h1 style={{
             color: 'var(--color-text-inverse)',
             fontFamily: 'var(--font-display)',
             letterSpacing: '-1.5px',
-            fontSize: 'clamp(28px, 5vw, 48px)',
+            fontSize: 'clamp(24px, 4vw, 32px)',
             lineHeight: 1.2,
             fontWeight: 600,
-            margin: '0 0 16px',
+            margin: '0 0 8px',
           }}>
             Federal Court Districts
           </h1>
@@ -347,50 +325,13 @@ export default function DistrictsPage() {
           <p style={{
             color: 'rgba(255,255,255,0.7)',
             fontFamily: 'var(--font-body)',
-            fontSize: 'clamp(14px, 2vw, 16px)',
-            lineHeight: 1.6,
+            fontSize: 14,
+            lineHeight: 1.5,
             maxWidth: 700,
-            margin: '0 0 32px',
+            margin: 0,
           }}>
-            All {totalDistricts} federal judicial districts organized across {CIRCUITS.length} circuits.
-            Each district handles civil litigation and has distinct outcome patterns.
+            All {totalDistricts} federal districts across {CIRCUITS.length} circuits with case outcome data.
           </p>
-
-          {/* Stats */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-            gap: 24,
-            maxWidth: 600,
-          }}>
-            {[
-              { v: totalDistricts.toString(), l: 'Districts' },
-              { v: CIRCUITS.length.toString(), l: 'Circuits' },
-              { v: `${(totalCasesAllDistricts / 1_000_000).toFixed(1)}M`, l: 'Federal Cases' },
-              { v: '50', l: 'States + Territories' },
-            ].map((stat, i) => (
-              <div key={i}>
-                <div style={{
-                  fontSize: 28,
-                  fontWeight: 700,
-                  color: 'var(--color-text-inverse)',
-                  fontFamily: 'var(--font-display)',
-                }}>
-                  {stat.v}
-                </div>
-                <div style={{
-                  fontSize: 11,
-                  color: 'rgba(255,255,255,0.6)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.3px',
-                  marginTop: 4,
-                  fontWeight: 500,
-                }}>
-                  {stat.l}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </header>
 

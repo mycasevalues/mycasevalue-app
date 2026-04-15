@@ -124,51 +124,26 @@ export default function NosExplorerPage() {
       <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--accent-primary)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
-          <div style={{ paddingTop: 24, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
+          <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Home</Link>
             <span style={{ color: 'rgba(255,255,255,0.4)' }}>/</span>
             <span style={{ color: 'var(--color-surface-0)' }}>NOS Explorer</span>
           </div>
 
-          <div style={{ paddingTop: 40, paddingBottom: 48 }}>
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600,
-              letterSpacing: '1.5px', marginBottom: 16, background: 'var(--accent-primary)',
-              color: 'var(--color-surface-0)', textTransform: 'uppercase',
-            }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
-              </svg>
-              DATABASE
-            </div>
-
+          <div style={{ paddingTop: 16, paddingBottom: 20 }}>
             <h1 style={{
-              fontSize: 'clamp(28px, 5vw, 44px)', fontWeight: 900, marginBottom: 16,
+              fontSize: 'clamp(22px, 3vw, 28px)', fontWeight: 900, marginBottom: 8,
               color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
             }}>
-              Find Your Case Type. See Real Outcomes.
+              NOS Code Explorer
             </h1>
 
             <p style={{
-              fontSize: 'clamp(15px, 2vw, 17px)', lineHeight: 1.6, maxWidth: 640,
+              fontSize: 14, lineHeight: 1.5, maxWidth: 640,
               color: '#C7D1D8', fontFamily: 'var(--font-body)',
             }}>
-              Search all {nosData.length} federal case types with actual win rates, settlement ranges, and case duration from {totalCases.toLocaleString()} real federal cases. No predictions, no guesses—just data.
+              Search {nosData.length} federal case types with win rates and settlement data from {totalCases.toLocaleString()} cases.
             </p>
-
-            <div style={{ display: 'flex', gap: 32, marginTop: 24, flexWrap: 'wrap' }}>
-              {[
-                { label: 'NOS Codes', value: String(nosData.length) },
-                { label: 'Total Cases', value: `${(totalCases / 1000000).toFixed(1)}M+` },
-                { label: 'Data Span', value: '2000–2024' },
-              ].map(s => (
-                <div key={s.label}>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 600, color: 'var(--color-surface-0)' }}>{s.value}</div>
-                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

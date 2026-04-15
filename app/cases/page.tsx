@@ -140,17 +140,13 @@ export default function CasesIndexPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '64px 24px' }}>
+      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '24px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.9)' }}>
-            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-            CASE TYPES
-          </div>
-          <h1 className="font-display" style={{ fontSize: 44, fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 16px', letterSpacing: '-0.5px' }}>
+          <h1 className="font-display" style={{ fontSize: 32, fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 8px', letterSpacing: '-0.5px' }}>
             Case Categories
           </h1>
-          <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
-            Research real federal court outcomes across 10 major categories covering 84 NOS case types. Explore win rates, settlements, timelines, and recovery data from 5.1M+ public cases.
+          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5, maxWidth: 600 }}>
+            Browse 10 major case categories with outcomes from 5.1M+ federal cases.
           </p>
         </div>
       </div>

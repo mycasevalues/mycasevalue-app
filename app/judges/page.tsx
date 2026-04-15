@@ -78,36 +78,25 @@ export default async function JudgesPage() {
       <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--accent-primary)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
-          <div style={{ paddingTop: 24, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
+          <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Home</Link>
             <span style={{ color: 'rgba(255,255,255,0.4)' }}>/</span>
             <span style={{ color: 'var(--color-text-inverse)' }}>Judges</span>
           </div>
 
-          <div style={{ paddingTop: 40, paddingBottom: 48 }}>
-            <div
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: 8,
-                padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600,
-                letterSpacing: '1.5px', marginBottom: 16, background: 'var(--accent-secondary-subtle)',
-                color: 'var(--color-text-inverse)', textTransform: 'uppercase', border: '1px solid rgba(255,255,255,0.2)',
-              }}
-            >
-              JUDGE ANALYTICS
-            </div>
-
+          <div style={{ paddingTop: 16, paddingBottom: 20 }}>
             <h1 style={{
-              fontSize: 'clamp(28px, 5vw, 44px)', fontWeight: 900, marginBottom: 16,
+              fontSize: 'clamp(22px, 3vw, 28px)', fontWeight: 900, marginBottom: 8,
               color: 'var(--color-text-inverse)', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
             }}>
               Federal Judge Directory
             </h1>
 
             <p style={{
-              fontSize: 'clamp(15px, 2vw, 17px)', lineHeight: 1.6, maxWidth: 640,
+              fontSize: 14, lineHeight: 1.5, maxWidth: 640,
               color: '#C7D1D8', fontFamily: 'var(--font-body)',
             }}>
-              Explore 95 federal judicial districts with comprehensive data from the Federal Judicial Center and CourtListener. Motion grant rates, case duration, win rates, and ruling patterns.
+              Research judges across 95 federal districts with win rates, motion rates, and settlement data.
             </p>
           </div>
         </div>
