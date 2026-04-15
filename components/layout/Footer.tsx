@@ -46,31 +46,31 @@ export default function Footer() {
       className="site-footer"
       role="contentinfo"
       style={{
-        background: '#FFFFFF',
-        borderTop: '1px solid #E0DDD8',
+        background: 'var(--color-surface-0)',
+        borderTop: '1px solid var(--border-default)',
       }}
     >
       <style>{`
         .footer-link {
           font-size: 14px;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           text-decoration: none;
           transition: color 200ms;
         }
 
         .footer-link:hover {
-          color: #0966C3;
+          color: var(--accent-primary);
         }
 
         .footer-link-sm {
           font-size: 12px;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           text-decoration: none;
           transition: color 200ms;
         }
 
         .footer-link-sm:hover {
-          color: #0966C3;
+          color: var(--accent-primary);
         }
       `}</style>
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '64px 24px' }}>
@@ -99,15 +99,15 @@ export default function Footer() {
                 fontSize: '18px',
                 fontWeight: 700,
                 letterSpacing: '-0.3px',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
               }}>
-                MyCase<span style={{ color: '#0966C3' }}>Value</span>
+                MyCase<span style={{ color: 'var(--accent-primary)' }}>Value</span>
               </span>
             </Link>
             <p style={{
               fontSize: '14px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '12px',
               lineHeight: '1.4',
             }}>
@@ -115,7 +115,7 @@ export default function Footer() {
             </p>
             <p style={{
               fontSize: '13px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               marginBottom: '16px',
               lineHeight: '1.5',
             }}>
@@ -135,7 +135,7 @@ export default function Footer() {
               }}
               aria-label="LinkedIn"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#4B5563' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--color-text-secondary)' }}>
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </a>
@@ -148,7 +148,7 @@ export default function Footer() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: '#595959',
+              color: 'var(--color-text-secondary)',
               marginBottom: '16px',
             }}>
               Explore
@@ -174,7 +174,7 @@ export default function Footer() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: '#595959',
+              color: 'var(--color-text-secondary)',
               marginBottom: '16px',
             }}>
               Resources
@@ -200,7 +200,7 @@ export default function Footer() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: '#595959',
+              color: 'var(--color-text-secondary)',
               marginBottom: '16px',
             }}>
               Use Cases
@@ -226,7 +226,7 @@ export default function Footer() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
-              color: '#595959',
+              color: 'var(--color-text-secondary)',
               marginBottom: '16px',
             }}>
               Data
@@ -275,15 +275,15 @@ export default function Footer() {
                 fontSize: '18px',
                 fontWeight: 700,
                 letterSpacing: '-0.3px',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
               }}>
-                MyCase<span style={{ color: '#0966C3' }}>Value</span>
+                MyCase<span style={{ color: 'var(--accent-primary)' }}>Value</span>
               </span>
             </Link>
             <p style={{
               fontSize: '14px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '12px',
               lineHeight: '1.4',
             }}>
@@ -291,7 +291,7 @@ export default function Footer() {
             </p>
             <p style={{
               fontSize: '13px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               marginBottom: '16px',
               lineHeight: '1.5',
             }}>
@@ -311,7 +311,7 @@ export default function Footer() {
               }}
               aria-label="LinkedIn"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#4B5563' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--color-text-secondary)' }}>
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </a>
@@ -326,7 +326,7 @@ export default function Footer() {
                 fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#595959',
+                color: 'var(--color-text-secondary)',
                 marginBottom: '16px',
               }}>
                 Explore
@@ -352,7 +352,7 @@ export default function Footer() {
                 fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#595959',
+                color: 'var(--color-text-secondary)',
                 marginBottom: '16px',
               }}>
                 Resources
@@ -378,7 +378,7 @@ export default function Footer() {
                 fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#595959',
+                color: 'var(--color-text-secondary)',
                 marginBottom: '16px',
               }}>
                 Use Cases
@@ -404,7 +404,7 @@ export default function Footer() {
                 fontWeight: 600,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#595959',
+                color: 'var(--color-text-secondary)',
                 marginBottom: '16px',
               }}>
                 Data
@@ -439,7 +439,7 @@ export default function Footer() {
         {/* Bottom bar: full-width, border-top */}
         <div
           style={{
-            borderTop: '1px solid #E0DDD8',
+            borderTop: '1px solid var(--border-default)',
             paddingTop: '24px',
             marginTop: '24px',
           }}
@@ -449,7 +449,7 @@ export default function Footer() {
             {/* Left: Copyright */}
             <p style={{
               fontSize: '12px',
-              color: '#595959',
+              color: 'var(--color-text-secondary)',
               margin: 0,
               whiteSpace: 'nowrap',
             }}>
@@ -464,14 +464,14 @@ export default function Footer() {
               >
                 Privacy Policy
               </Link>
-              <span style={{ color: '#E0DDD8' }}>→</span>
+              <span style={{ color: 'var(--border-default)' }}>→</span>
               <Link
                 href="/terms"
                 className="footer-link-sm"
               >
                 Terms of Service
               </Link>
-              <span style={{ color: '#E0DDD8' }}>→</span>
+              <span style={{ color: 'var(--border-default)' }}>→</span>
               <Link
                 href="/contact"
                 className="footer-link-sm"
@@ -485,7 +485,7 @@ export default function Footer() {
           <div className="md:hidden mb-4">
             <p style={{
               fontSize: '12px',
-              color: '#595959',
+              color: 'var(--color-text-secondary)',
               margin: '0 0 16px 0',
             }}>
               © 2026 MyCaseValue LLC · West Virginia
@@ -515,7 +515,7 @@ export default function Footer() {
           {/* Center: Disclaimer */}
           <p style={{
             fontSize: '11px',
-            color: '#595959',
+            color: 'var(--color-text-secondary)',
             textAlign: 'center',
             margin: 0,
             lineHeight: '1.4',

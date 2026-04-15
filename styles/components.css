@@ -62,27 +62,27 @@
 
 /* Primary — LinkedIn blue pill */
 .mcv-btn--primary {
-  background: #0966C3;
-  color: #FFFFFF;
+  background: var(--accent-primary);
+  color: var(--color-text-inverse);
 }
 .mcv-btn--primary:hover:not(:disabled) {
-  background: #004182;
+  background: var(--accent-primary-hover);
 }
 
 /* Secondary — ghost outline pill */
 .mcv-btn--secondary {
   background: transparent;
-  color: #0966C3;
-  border: 1.5px solid #0966C3;
+  color: var(--accent-primary);
+  border: 1.5px solid var(--accent-primary);
 }
 .mcv-btn--secondary:hover:not(:disabled) {
-  background: #EDF3FB;
+  background: var(--accent-primary-subtle);
 }
 
 /* Ghost — borderless */
 .mcv-btn--ghost {
   background: transparent;
-  color: #666666;
+  color: var(--fg-secondary);
   font-weight: 500;
   font-size: 14px;
   height: 32px;
@@ -90,23 +90,23 @@
   border-radius: 4px;
 }
 .mcv-btn--ghost:hover:not(:disabled) {
-  background: #F3F2EF;
-  color: #191919;
+  background: var(--bg-hover);
+  color: var(--fg-primary);
 }
 
 /* Accent — same as primary (backwards compat) */
 .mcv-btn--accent {
-  background: #0966C3;
-  color: #FFFFFF;
+  background: var(--accent-primary);
+  color: var(--color-text-inverse);
 }
 .mcv-btn--accent:hover:not(:disabled) {
-  background: #004182;
+  background: var(--accent-primary-hover);
 }
 
 /* Danger */
 .mcv-btn--danger {
   background: var(--danger);
-  color: #FFFFFF;
+  color: var(--color-text-inverse);
 }
 .mcv-btn--danger:hover:not(:disabled) {
   background: #990C13;
@@ -139,8 +139,8 @@
 
 /* ── CARD — LinkedIn Visual Language ───────────────────── */
 .mcv-card {
-  background: #FFFFFF;
-  border-radius: 8px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-md);
   padding: 16px;
   transition:
     border-color 150ms ease,
@@ -149,7 +149,7 @@
 
 /* Primary card — clean white with subtle border (LinkedIn style) */
 .mcv-card--default {
-  border: 1px solid #E0DDD8;
+  border: 1px solid var(--border-default);
   box-shadow: none;
 }
 .mcv-card--default:hover {
@@ -158,39 +158,39 @@
 
 /* Elevated card — for prominent content */
 .mcv-card--elevated {
-  border: 1px solid #E0DDD8;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-sm);
 }
 .mcv-card--elevated:hover {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Surface card — for data displays */
 .mcv-card--surface {
-  background: #F3F2EF;
+  background: var(--bg-base);
   border: none;
   box-shadow: none;
 }
 
 /* Outlined card — borderless variant (renamed from outlined) */
 .mcv-card--outlined {
-  border: 1px solid #E0DDD8;
+  border: 1px solid var(--border-default);
   box-shadow: none;
 }
 .mcv-card--outlined:hover {
-  border-color: #0966C3;
-  box-shadow: 0 0 0 1px #0966C3;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 1px var(--accent-primary);
 }
 
 /* Interactive card — clickable with hover state */
 .mcv-card--interactive {
-  border: 1px solid #E0DDD8;
+  border: 1px solid var(--border-default);
   box-shadow: none;
   cursor: pointer;
 }
 .mcv-card--interactive:hover {
-  border-color: #0966C3;
-  box-shadow: 0 0 0 1px #0966C3;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 1px var(--accent-primary);
 }
 .mcv-card--interactive:active {
   transform: scale(0.99);
@@ -198,7 +198,7 @@
 
 /* Featured card — highlighted with accent border */
 .mcv-card--accent {
-  border: 2px solid #0966C3;
+  border: 2px solid var(--accent-primary);
 }
 
 .mcv-card__header {
@@ -223,7 +223,7 @@
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
-  color: #0966C3;
+  color: var(--accent-primary);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: none;
@@ -302,6 +302,11 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
 .mcv-input:focus {
   border-color: var(--accent-secondary);
   box-shadow: 0 0 0 3px var(--accent-secondary-subtle);
+}
+
+.mcv-input:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
 }
 
 .mcv-input--error {
@@ -449,7 +454,7 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
   transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 .auth-btn:hover {
-  background-color: #CC1019 !important;
+  background-color: var(--accent-primary-hover) !important;
 }
 .auth-btn:active {
   transform: scale(0.98);

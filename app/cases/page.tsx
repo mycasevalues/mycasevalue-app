@@ -138,17 +138,17 @@ export default function CasesIndexPage() {
   );
 
   return (
-    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
+    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <div style={{ background: '#0966C3', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
+      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.9)' }}>
             <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
             CASE TYPES
           </div>
-          <h1 className="font-display" style={{ fontSize: 44, fontWeight: 600, color: '#FFFFFF', margin: '0 0 16px', letterSpacing: '-0.5px' }}>
+          <h1 className="font-display" style={{ fontSize: 44, fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 16px', letterSpacing: '-0.5px' }}>
             Case Categories
           </h1>
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
@@ -158,7 +158,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Platform Statistics Bar */}
-      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '32px 24px' }}>
+      <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '32px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
             <DataFreshness />
@@ -229,10 +229,10 @@ export default function CasesIndexPage() {
               height: '56px',
               padding: '12px 16px 12px 48px',
               fontSize: '15px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
-              background: '#FFFFFF',
-              color: '#0f0f0f',
+              background: 'var(--color-surface-0)',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-body)',
               boxSizing: 'border-box',
               transition: 'border-color 0.2s, box-shadow 0.2s',
@@ -251,9 +251,9 @@ export default function CasesIndexPage() {
 
         <style dangerouslySetInnerHTML={{ __html: `
           .cat-card {
-            background: #FFFFFF;
-            border: 1px solid #E0DDD8;
-            border-radius: 8px;
+            background: var(--color-surface-0);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-md);
             padding: 32px;
             transition: border-color 150ms ease, box-shadow 150ms ease;
             height: 100%;
@@ -261,11 +261,11 @@ export default function CasesIndexPage() {
             flex-direction: column;
           }
           .cat-card:hover {
-            border-color: #0966C3;
-            box-shadow: 0 0 0 1px #0966C3;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 1px var(--accent-primary);
           }
           .cat-card-arrow {
-            color: #0966C3;
+            color: var(--accent-primary);
             transition: transform 0.2s ease;
             margin-left: auto;
           }
@@ -273,18 +273,18 @@ export default function CasesIndexPage() {
             transform: translateX(4px);
           }
           .clear-search-btn:hover {
-            background: #FAFBFC;
-            border-color: #B5B9BD;
+            background: var(--color-surface-1);
+            border-color: var(--color-border-medium);
           }
           .cta-link:hover {
-            background: #B91C1C;
+            background: var(--accent-primary-hover);
             box-shadow: none;
             transform: translateY(-2px);
           }
           .stat-bar {
-            background: #FFFFFF;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
+            background: var(--color-surface-0);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-lg);
             height: 8px;
             width: 100%;
             overflow: hidden;
@@ -292,13 +292,13 @@ export default function CasesIndexPage() {
           }
           .stat-bar-fill {
             height: 100%;
-            background: #004182;
+            background: var(--accent-primary-hover);
             transition: width 0.3s ease;
           }
           .quick-link-card {
-            background: #FFFFFF;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
+            background: var(--color-surface-0);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-lg);
             padding: 20px;
             text-align: center;
             transition: all 0.2s ease;
@@ -310,8 +310,8 @@ export default function CasesIndexPage() {
             gap: 12px;
           }
           .quick-link-card:hover {
-            border-color: #0966C3;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
           }
         `}} />
 
@@ -532,15 +532,15 @@ export default function CasesIndexPage() {
       </div>
 
       {/* CTA */}
-      <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', padding: '60px 20px', textAlign: 'center' }}>
+      <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', padding: '60px 20px', textAlign: 'center' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 className="font-display" style={{ fontSize: 32, fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
+          <h2 className="font-display" style={{ fontSize: 32, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
             Ready to research your case?
           </h2>
-          <p style={{ fontSize: 18, color: '#4B5563', margin: '0 0 32px', lineHeight: 1.6 }}>
+          <p style={{ fontSize: 18, color: 'var(--color-text-secondary)', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#0966C3', color: '#FFFFFF', borderRadius: '12px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
+          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '12px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
             Start Researching
             <ArrowRightIcon size={14} />
           </a>
@@ -548,7 +548,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Footer */}
-      <div style={{ background: '#F7F8FA', color: '#4B5563', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid #E5E7EB' }}>
+      <div style={{ background: 'var(--color-surface-1)', color: 'var(--color-text-secondary)', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ margin: 0 }}>
             <strong>Legal Disclaimer:</strong> This data is for research purposes only and is not legal advice. MyCaseValue provides historical federal court outcome data from public records. This does not constitute a prediction of any case outcome. Consult a qualified attorney for legal advice. © {new Date().getFullYear()} MyCaseValue LLC.

@@ -56,20 +56,20 @@ export default function ServerContent() {
 
       <section
         style={{
-          background: '#F7F8FA',
-          borderTop: '1px solid #E5E7EB',
+          background: 'var(--color-surface-1)',
+          borderTop: '1px solid var(--border-default)',
           padding: '80px 24px',
         }}
       >
         <div style={{ maxWidth: '768px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               In plain English
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #0966C3', paddingLeft: '20px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px' }}>
               What this data actually tells you
             </h2>
-            <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
+            <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               We take millions of public federal court records and turn them into clear, actionable insights.
               Here&apos;s what the numbers mean for you.
             </p>
@@ -79,7 +79,7 @@ export default function ServerContent() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               textAlign: 'center',
               marginBottom: '12px',
             }}
@@ -113,8 +113,8 @@ export default function ServerContent() {
               <div
                 key={i}
                 style={{
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                   display: 'flex',
@@ -129,7 +129,7 @@ export default function ServerContent() {
                     fontFamily: '"PT Mono", monospace',
                     fontSize: '18px',
                     fontWeight: 600,
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     background: 'rgba(10, 102, 194, 0.08)',
                     padding: '8px 14px',
                     borderRadius: '12px',
@@ -146,7 +146,7 @@ export default function ServerContent() {
                       fontFamily: 'var(--font-display)',
                       fontSize: '15px',
                       fontWeight: 600,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       margin: '0 0 6px 0',
                     }}
                   >
@@ -156,7 +156,7 @@ export default function ServerContent() {
                     style={{
                       fontFamily: 'var(--font-body)',
                       fontSize: '14px',
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       lineHeight: 1.6,
                       margin: 0,
                       fontWeight: 300,
@@ -173,7 +173,7 @@ export default function ServerContent() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '12px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               textAlign: 'center',
               marginTop: '12px',
               fontStyle: 'italic',
@@ -194,7 +194,7 @@ export default function ServerContent() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
                 fontWeight: 600,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 textDecoration: 'none',
               }}
             >
@@ -206,22 +206,22 @@ export default function ServerContent() {
 
 
       {/* ── TRUSTED CASE INTELLIGENCE ──────────────────────────── */}
-      <section id="features" style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #E5E7EB' }}>
+      <section id="features" style={{ background: 'var(--color-surface-0)', padding: '80px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }} className="trusted-grid">
             <div>
-              <p style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
                 Trusted Case Intelligence
               </p>
-              <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '16px', lineHeight: 1.3 }}>
+              <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '16px', lineHeight: 1.3 }}>
                 Built on the most authoritative federal court records
               </h2>
-              <p style={{ fontSize: '16px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.7, fontWeight: 300, marginBottom: '24px' }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.7, fontWeight: 300, marginBottom: '24px' }}>
                 MyCaseValue surfaces the most relevant case data fast — reducing time spent searching and increasing certainty in your case assessment.
               </p>
               <a href="/search" className="cta-btn-primary" style={{
                 display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                height: '48px', padding: '0 32px', background: '#0966C3', color: '#FFFFFF', borderRadius: '12px',
+                height: '48px', padding: '0 32px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '12px',
                 fontWeight: 600, fontSize: '14px', textDecoration: 'none', textTransform: 'uppercase',
                 letterSpacing: '0.04em', fontFamily: 'var(--font-display)',
               }}>
@@ -238,9 +238,9 @@ export default function ServerContent() {
                 { title: 'Analyze settlement trends', desc: 'Access full settlement distributions from P10 to P90, with median values and trend data over time.' },
                 { title: 'Act with confidence', desc: 'From data-driven settlement estimates to judge-specific insights, get the intelligence that drives better decisions.' },
               ].map((item, i) => (
-                <div key={i} style={{ padding: '16px', background: '#F8F9FA', borderRadius: '12px', border: '1px solid #E5E7EB' }}>
-                  <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '6px' }}>{item.title}</h3>
-                  <p style={{ fontSize: '13px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
+                <div key={i} style={{ padding: '16px', background: '#F8F9FA', borderRadius: '12px', border: '1px solid var(--border-default)' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '6px' }}>{item.title}</h3>
+                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -251,20 +251,20 @@ export default function ServerContent() {
       {/* ── CASE CATEGORIES ───────────────────────────────── */}
       <section
         style={{
-          background: '#F7F8FA',
-          borderTop: '1px solid #E5E7EB',
+          background: 'var(--color-surface-1)',
+          borderTop: '1px solid var(--border-default)',
           padding: '80px 24px',
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Case types
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #0966C3', paddingLeft: '20px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px' }}>
               84 Federal Case Types Covered
             </h2>
-            <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
+            <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               Research win rates, settlement ranges, and timelines for any federal case type across all 94 districts.
             </p>
           </div>
@@ -279,8 +279,8 @@ export default function ServerContent() {
             {CASE_CATEGORIES.map((cat, i) => (
               <a key={i} href={`/cases/${cat.id}`} style={{ textDecoration: 'none' }}>
                 <div className="category-card" style={{
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                   transition: 'all 0.2s ease',
@@ -289,7 +289,7 @@ export default function ServerContent() {
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', margin: 0 }}>
+                    <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', margin: 0 }}>
                       {cat.name}
                     </h3>
                     <span style={{
@@ -297,7 +297,7 @@ export default function ServerContent() {
                       fontWeight: 600,
                       padding: '3px 8px',
                       background: 'rgba(10, 102, 194, 0.08)',
-                      color: '#0966C3',
+                      color: 'var(--accent-primary)',
                       borderRadius: '12px',
                       fontFamily: 'var(--font-body)',
                       flexShrink: 0,
@@ -307,10 +307,10 @@ export default function ServerContent() {
                       {cat.count} types
                     </span>
                   </div>
-                  <p style={{ fontSize: '14px', color: '#0f0f0f', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0, fontWeight: 300 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0, fontWeight: 300 }}>
                     {cat.description}
                   </p>
-                  <p style={{ fontSize: '13px', color: '#004182', fontFamily: 'var(--font-body)', marginTop: '16px', marginBottom: 0, fontWeight: 500 }}>
+                  <p style={{ fontSize: '13px', color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-body)', marginTop: '16px', marginBottom: 0, fontWeight: 500 }}>
                     View outcome data →
                   </p>
                 </div>
@@ -323,16 +323,16 @@ export default function ServerContent() {
       {/* ── FEATURES ──────────────────────────────────────── */}
       <section
         style={{
-          background: '#FFFFFF',
+          background: 'var(--color-surface-0)',
           padding: '80px 24px',
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               What you get
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #0966C3', paddingLeft: '20px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px' }}>
               What You Get in Every Report
             </h2>
           </div>
@@ -357,8 +357,8 @@ export default function ServerContent() {
                   className="feature-card"
                   style={{
                     background: '#FAFBFC',
-                    border: '1px solid #E5E7EB',
-                    borderTop: '3px solid #0966C3',
+                    border: '1px solid var(--border-default)',
+                    borderTop: '3px solid var(--accent-primary)',
                     borderRadius: '12px',
                     padding: '24px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -370,7 +370,7 @@ export default function ServerContent() {
                       fontFamily: 'var(--font-display)',
                       fontSize: '16px',
                       fontWeight: 600,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       margin: '0 0 8px 0',
                     }}
                   >
@@ -380,7 +380,7 @@ export default function ServerContent() {
                     style={{
                       fontFamily: 'var(--font-body)',
                       fontSize: '14px',
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       lineHeight: 1.6,
                       margin: 0,
                       fontWeight: 300,
@@ -398,9 +398,9 @@ export default function ServerContent() {
       {/* ── FEATURED CASE TYPES ───────────────────────────────────── */}
       <section
         style={{
-          background: '#FFFFFF',
+          background: 'var(--color-surface-0)',
           padding: '80px 24px',
-          borderBottom: '1px solid #E5E7EB',
+          borderBottom: '1px solid var(--border-default)',
         }}
       >
         <style>{`
@@ -412,7 +412,7 @@ export default function ServerContent() {
           .featured-case-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.12);
-            border-left-color: #0966C3;
+            border-left-color: var(--accent-primary);
           }
         `}</style>
 
@@ -422,11 +422,11 @@ export default function ServerContent() {
               style={{
                 fontSize: '32px',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-display)',
                 marginBottom: '12px',
                 letterSpacing: '-0.01em',
-                borderLeft: '3px solid #0966C3',
+                borderLeft: '3px solid var(--accent-primary)',
                 paddingLeft: '20px',
               }}
             >
@@ -448,7 +448,7 @@ export default function ServerContent() {
                 code: '442',
                 desc: 'Win rates, settlement data, and outcomes',
                 icon: (
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
                   </svg>
@@ -459,7 +459,7 @@ export default function ServerContent() {
                 code: '360',
                 desc: 'Accident and injury case statistics',
                 icon: (
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z" />
                   </svg>
                 ),
@@ -469,7 +469,7 @@ export default function ServerContent() {
                 code: '440',
                 desc: 'Federal civil rights case outcomes',
                 icon: (
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
                     <path d="M10 17l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
                   </svg>
@@ -480,7 +480,7 @@ export default function ServerContent() {
                 code: '190',
                 desc: 'Breach of contract case data',
                 icon: (
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                     <polyline points="14 2 14 8 20 8" />
                     <line x1="12" y1="11" x2="12" y2="17" />
@@ -493,7 +493,7 @@ export default function ServerContent() {
                 code: '110',
                 desc: 'Insurance dispute statistics',
                 icon: (
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2l7 3.46v5.12c0 5.55-3.84 10.74-7 12-3.16-1.26-7-6.45-7-12V5.46L12 2z" />
                     <path d="M10 14l2 2 4-4" />
                   </svg>
@@ -504,7 +504,7 @@ export default function ServerContent() {
                 code: '710',
                 desc: 'Family medical leave case outcomes',
                 icon: (
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7h3v2h-3zm-4 0h3v2H9z" />
                   </svg>
                 ),
@@ -518,8 +518,8 @@ export default function ServerContent() {
                   <div
                     className="featured-case-card"
                     style={{
-                      background: '#FFFFFF',
-                      border: '1px solid #E5E7EB',
+                      background: 'var(--color-surface-0)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: '12px',
                       padding: '28px 24px',
                       height: '100%',
@@ -546,7 +546,7 @@ export default function ServerContent() {
                       style={{
                         fontSize: '16px',
                         fontWeight: 600,
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-display)',
                         marginBottom: '8px',
                         margin: '0 0 8px 0',
@@ -558,7 +558,7 @@ export default function ServerContent() {
                     <p
                       style={{
                         fontSize: '14px',
-                        color: '#4B5563',
+                        color: 'var(--color-text-secondary)',
                         fontFamily: 'var(--font-body)',
                         lineHeight: 1.6,
                         marginBottom: '16px',
@@ -573,7 +573,7 @@ export default function ServerContent() {
                     <div
                       style={{
                         fontSize: '14px',
-                        color: '#004182',
+                        color: 'var(--accent-primary-hover)',
                         fontFamily: 'var(--font-body)',
                         fontWeight: 500,
                       }}
@@ -594,16 +594,16 @@ export default function ServerContent() {
       </ScrollReveal>
 
       {/* ── WHO IS MYCASEVALUE FOR? ────────────────────────────── */}
-      <section id="who" data-section style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #E5E7EB' }}>
+      <section id="who" data-section style={{ background: 'var(--color-surface-0)', padding: '80px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Who is it for?
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '12px', borderLeft: '3px solid #0966C3', paddingLeft: '20px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '12px', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px' }}>
               Built for everyone in the legal process
             </h2>
-            <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
+            <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               MyCaseValue is designed for all segments of the legal community, with features and pricing that fit unique needs.
             </p>
           </div>
@@ -616,12 +616,12 @@ export default function ServerContent() {
               { title: 'Legal Aid & Nonprofits', desc: 'Free tier designed for access to justice. Help underrepresented communities understand their legal options with real outcome data.', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
               { title: 'Legal Researchers & Academics', desc: 'Access comprehensive federal court statistics spanning 55+ years (1970–2025). Perfect for empirical legal studies and policy analysis.', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
             ].map((item, i) => (
-              <div key={i} className="who-card" style={{ padding: '28px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', transition: 'all 0.2s ease' }}>
+              <div key={i} className="who-card" style={{ padding: '28px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', transition: 'all 0.2s ease' }}>
                 <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.08)', border: '1px solid rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
                 </div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
-                <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -630,20 +630,20 @@ export default function ServerContent() {
       {/* ── HOW IT COMPARES ──────────────────────────────── */}
       <section
         style={{
-          background: '#FFFFFF',
-          borderTop: '1px solid #E5E7EB',
+          background: 'var(--color-surface-0)',
+          borderTop: '1px solid var(--border-default)',
           padding: '80px 24px',
         }}
       >
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               How we compare
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #0966C3', paddingLeft: '20px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px' }}>
               Built for everyone, not just law firms
             </h2>
-            <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
+            <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               MyCaseValue is the only federal court data platform designed from the ground up for individuals and small firms.
             </p>
           </div>
@@ -658,12 +658,12 @@ export default function ServerContent() {
               }}
             >
               <thead>
-                <tr style={{ borderBottom: '2px solid #E5E7EB' }}>
-                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>Feature</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#0f0f0f', fontWeight: 600, background: 'rgba(10, 102, 194, 0.08)', borderRadius: '2px 2px 0 0' }}>MyCaseValue</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>Westlaw Litigation Analytics</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>Lex Machina</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>PACER Direct</th>
+                <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
+                  <th style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--color-text-secondary)', fontWeight: 600, fontSize: '13px' }}>Feature</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--color-text-primary)', fontWeight: 600, background: 'rgba(10, 102, 194, 0.08)', borderRadius: '2px 2px 0 0' }}>MyCaseValue</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--color-text-secondary)', fontWeight: 600, fontSize: '13px' }}>Westlaw Litigation Analytics</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--color-text-secondary)', fontWeight: 600, fontSize: '13px' }}>Lex Machina</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--color-text-secondary)', fontWeight: 600, fontSize: '13px' }}>PACER Direct</th>
                 </tr>
               </thead>
               <tbody>
@@ -680,20 +680,20 @@ export default function ServerContent() {
                   { feature: 'Free tier', mcv: true, westlaw: false, lexis: false, pacer: false },
                   { feature: 'API access', mcv: true, westlaw: true, lexis: true, pacer: true },
                 ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #E5E7EB' }}>
-                    <td style={{ padding: '12px 16px', color: '#0f0f0f', fontWeight: 500 }}>{row.feature}</td>
+                  <tr key={i} style={{ borderBottom: '1px solid var(--border-default)' }}>
+                    <td style={{ padding: '12px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>{row.feature}</td>
                     <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(10, 102, 194, 0.08)', color: row.mcv ? '#057642' : '#9ca3af', fontWeight: 600, fontSize: '16px' }}>{row.mcv ? 'Yes' : 'No'}</td>
                     <td style={{ textAlign: 'center', padding: '12px 16px', color: row.westlaw ? '#057642' : '#9ca3af', fontSize: '16px' }}>{row.westlaw ? 'Yes' : 'No'}</td>
                     <td style={{ textAlign: 'center', padding: '12px 16px', color: row.lexis === 'partial' ? '#C37D16' : (row.lexis ? '#057642' : '#9ca3af'), fontSize: '16px' }}>{row.lexis === 'partial' ? 'Partial' : (row.lexis ? 'Yes' : 'No')}</td>
                     <td style={{ textAlign: 'center', padding: '12px 16px', color: row.pacer ? '#057642' : '#9ca3af', fontSize: '16px' }}>{row.pacer ? 'Yes' : 'No'}</td>
                   </tr>
                 ))}
-                <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
-                  <td style={{ padding: '12px 16px', color: '#0f0f0f', fontWeight: 500 }}>Starting price</td>
-                  <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(10, 102, 194, 0.08)', color: '#0f0f0f', fontWeight: 600 }}>Free</td>
-                  <td style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563' }}>$500+/mo</td>
-                  <td style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563' }}>$2,000+/mo</td>
-                  <td style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563' }}>$0.10/page</td>
+                <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
+                  <td style={{ padding: '12px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>Starting price</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--color-text-primary)', fontWeight: 600 }}>Free</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--color-text-secondary)' }}>$500+/mo</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--color-text-secondary)' }}>$2,000+/mo</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--color-text-secondary)' }}>$0.10/page</td>
                 </tr>
               </tbody>
             </table>
@@ -704,19 +704,19 @@ export default function ServerContent() {
       {/* ── PRICING PREVIEW ──────────────────────────────── */}
       <section
         style={{
-          background: '#FFFFFF',
+          background: 'var(--color-surface-0)',
           padding: '80px 24px',
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Pricing
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #0966C3', paddingLeft: '20px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px' }}>
               Simple, Transparent Pricing
             </h2>
-            <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
+            <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               Start free. Upgrade when you need deeper data.
             </p>
           </div>
@@ -739,8 +739,8 @@ export default function ServerContent() {
               <div
                 key={i}
                 style={{
-                  background: '#FFFFFF',
-                  border: plan.featured ? '2px solid #0966C3' : '1px solid #E5E7EB',
+                  background: 'var(--color-surface-0)',
+                  border: plan.featured ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                   display: 'flex',
@@ -761,8 +761,8 @@ export default function ServerContent() {
                       fontWeight: 600,
                       letterSpacing: '1px',
                       textTransform: 'uppercase',
-                      background: '#0966C3',
-                      color: '#FFFFFF',
+                      background: 'var(--accent-primary)',
+                      color: 'var(--color-text-inverse)',
                       padding: '4px 12px',
                       borderRadius: '12px',
                       whiteSpace: 'nowrap',
@@ -776,7 +776,7 @@ export default function ServerContent() {
                     fontFamily: 'var(--font-display)',
                     fontSize: '16px',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -788,7 +788,7 @@ export default function ServerContent() {
                       fontFamily: 'var(--font-display)',
                       fontSize: '28px',
                       fontWeight: 600,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                     }}
                   >
                     {plan.price}
@@ -797,7 +797,7 @@ export default function ServerContent() {
                     style={{
                       fontFamily: 'var(--font-body)',
                       fontSize: '14px',
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       marginLeft: '4px',
                     }}
                   >
@@ -808,7 +808,7 @@ export default function ServerContent() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     lineHeight: 1.5,
                     margin: '0 0 16px 0',
                     flex: 1,
@@ -828,9 +828,9 @@ export default function ServerContent() {
                     fontSize: '14px',
                     fontWeight: 600,
                     textDecoration: 'none',
-                    background: plan.featured ? '#0966C3' : 'transparent',
-                    color: plan.featured ? '#FFFFFF' : '#0f0f0f',
-                    border: plan.featured ? 'none' : '1px solid #E5E7EB',
+                    background: plan.featured ? 'var(--accent-primary)' : 'transparent',
+                    color: plan.featured ? 'var(--color-text-inverse)' : 'var(--color-text-primary)',
+                    border: plan.featured ? 'none' : '1px solid var(--border-default)',
                     boxShadow: 'none',
                     textTransform: 'uppercase',
                   }}
@@ -847,10 +847,10 @@ export default function ServerContent() {
               marginTop: '24px',
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
             }}
           >
-            <a href="/pricing" style={{ color: '#004182', fontWeight: 600, textDecoration: 'none' }}>
+            <a href="/pricing" style={{ color: 'var(--accent-primary-hover)', fontWeight: 600, textDecoration: 'none' }}>
               Compare all features →
             </a>
           </p>
@@ -865,17 +865,17 @@ export default function ServerContent() {
         id="faq"
         data-section
         style={{
-          background: '#F7F8FA',
-          borderTop: '1px solid #E5E7EB',
+          background: 'var(--color-surface-1)',
+          borderTop: '1px solid var(--border-default)',
           padding: '80px 24px',
         }}
       >
         <div style={{ maxWidth: '768px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               FAQ
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #0966C3', paddingLeft: '20px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px' }}>
               Frequently Asked Questions
             </h2>
           </div>
@@ -885,9 +885,9 @@ export default function ServerContent() {
       </section>
 
       {/* ── RELATED SOLUTIONS ──────────────────────────────── */}
-      <section style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
+      <section style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '24px', borderLeft: '3px solid #0966C3', paddingLeft: '20px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '24px', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px' }}>
             Related Solutions
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }} className="related-grid">
@@ -898,11 +898,11 @@ export default function ServerContent() {
               { title: 'Blog & Insights', desc: 'Legal research articles, case studies, and federal court data analysis.', href: '/blog' },
             ].map((item, i) => (
               <a key={i} href={item.href} style={{
-                display: 'block', padding: '24px', background: '#F8F9FA', border: '1px solid #E5E7EB',
+                display: 'block', padding: '24px', background: '#F8F9FA', border: '1px solid var(--border-default)',
                 borderRadius: '12px', textDecoration: 'none', transition: 'all 200ms',
               }} className="related-card">
-                <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
-                <p style={{ fontSize: '13px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
+                <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
               </a>
             ))}
           </div>
@@ -912,7 +912,7 @@ export default function ServerContent() {
       {/* ── NEWSLETTER ─────────────────────────────────────── */}
       <section
         style={{
-          background: '#FFFFFF',
+          background: 'var(--color-surface-0)',
           padding: '80px 24px 0',
         }}
       >
@@ -923,12 +923,12 @@ export default function ServerContent() {
         </div>
       </section>
 
-      <section style={{ padding: '80px 24px', background: '#FFFFFF', borderBottom: '1px solid #E5E7EB' }}>
+      <section style={{ padding: '80px 24px', background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p style={{ fontSize: '12px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '16px', fontFamily: 'var(--font-body)', textAlign: 'center' }}>
+          <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '16px', fontFamily: 'var(--font-body)', textAlign: 'center' }}>
             Research Tools
           </p>
-          <h2 style={{ fontSize: '36px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '48px', textAlign: 'center', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontSize: '36px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '48px', textAlign: 'center', letterSpacing: '-0.01em' }}>
             Free Tools for Case Research
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
@@ -946,15 +946,15 @@ export default function ServerContent() {
                 key={tool.href}
                 href={tool.href}
                 style={{
-                  display: 'block', padding: '24px', background: '#F8F9FA', border: '1px solid #E5E7EB',
+                  display: 'block', padding: '24px', background: '#F8F9FA', border: '1px solid var(--border-default)',
                   borderRadius: 6, textDecoration: 'none', transition: 'all 0.2s ease',
                 }}
               >
-                <div style={{ marginBottom: 8 }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg></div>
-                <h3 style={{ fontSize: 15, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 4 }}>
+                <div style={{ marginBottom: 8 }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg></div>
+                <h3 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 4 }}>
                   {tool.title}
                 </h3>
-                <p style={{ fontSize: 13, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: 0, lineHeight: 1.5 }}>
                   {tool.desc}
                 </p>
               </a>
@@ -964,13 +964,13 @@ export default function ServerContent() {
       </section>
 
       {/* ── TRUSTED DATA SOURCES ──────────────────────────────── */}
-      <section style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
+      <section style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
               Trusted Data Sources
             </h2>
-            <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: 0 }}>
               All data sourced from official federal court record systems
             </p>
           </div>
@@ -979,9 +979,9 @@ export default function ServerContent() {
             flexWrap: 'wrap',
             alignItems: 'center',
             gap: '24px',
-            background: '#FFFFFF',
+            background: 'var(--color-surface-0)',
             padding: '28px 32px',
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
             justifyContent: 'center',
           }}>
@@ -992,11 +992,11 @@ export default function ServerContent() {
               { name: 'Bureau of Justice Statistics' },
             ].map((source, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                <span style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
+                <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#057642" strokeWidth="2" style={{display:'inline', verticalAlign:'middle', marginRight: '6px'}}><path d="M20 6L9 17l-5-5"/></svg>
                   {source.name}
                 </span>
-                {i < 3 && <span style={{ fontSize: '12px', color: '#E5E7EB', marginLeft: '20px' }}>•</span>}
+                {i < 3 && <span style={{ fontSize: '12px', color: 'var(--border-default)', marginLeft: '20px' }}>•</span>}
               </div>
             ))}
           </div>
@@ -1004,10 +1004,10 @@ export default function ServerContent() {
       </section>
 
       {/* ── PLATFORM STATISTICS ──────────────────────────────── */}
-      <section style={{ background: '#0f0f0f', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
+      <section style={{ background: '#0f0f0f', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
               Platform at a Glance
             </h2>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', margin: 0 }}>
@@ -1027,7 +1027,7 @@ export default function ServerContent() {
             ].map((item, i) => (
               <div key={i} style={{
                 background: 'transparent',
-                border: '2px solid #0966C3',
+                border: '2px solid var(--accent-primary)',
                 borderRadius: '12px',
                 padding: '28px 20px',
                 textAlign: 'center',
@@ -1035,7 +1035,7 @@ export default function ServerContent() {
                 <p style={{
                   fontSize: '36px',
                   fontWeight: 600,
-                  color: '#0966C3',
+                  color: 'var(--accent-primary)',
                   fontFamily: 'var(--font-display)',
                   margin: '0 0 8px 0',
                   lineHeight: 1,
@@ -1044,7 +1044,7 @@ export default function ServerContent() {
                 </p>
                 <p style={{
                   fontSize: '13px',
-                  color: '#FFFFFF',
+                  color: 'var(--color-text-inverse)',
                   fontFamily: 'var(--font-body)',
                   margin: 0,
                   fontWeight: 500,
@@ -1058,13 +1058,13 @@ export default function ServerContent() {
       </section>
 
       {/* ── HOW IT WORKS ──────────────────────────────── */}
-      <section style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
+      <section style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
               How It Works
             </h2>
-            <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: 0 }}>
               Three simple steps to make informed legal decisions
             </p>
           </div>
@@ -1095,8 +1095,8 @@ export default function ServerContent() {
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
-                  background: '#0966C3',
-                  color: '#FFFFFF',
+                  background: 'var(--accent-primary)',
+                  color: 'var(--color-text-inverse)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -1110,7 +1110,7 @@ export default function ServerContent() {
                 <h3 style={{
                   fontSize: '15px',
                   fontWeight: 600,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-display)',
                   marginBottom: '8px',
                 }}>
@@ -1118,7 +1118,7 @@ export default function ServerContent() {
                 </h3>
                 <p style={{
                   fontSize: '13px',
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   lineHeight: 1.6,
                   margin: 0,
@@ -1132,13 +1132,13 @@ export default function ServerContent() {
       </section>
 
       {/* ── FEATURED CASE TYPES BY VOLUME ──────────────────────────────── */}
-      <section style={{ background: '#F7F8FA', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
+      <section style={{ background: 'var(--color-surface-1)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
               Most Common Federal Case Types
             </h2>
-            <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: 0 }}>
               Explore the case types with the most federal court data available
             </p>
           </div>
@@ -1156,8 +1156,8 @@ export default function ServerContent() {
                 return (
                   <Link key={i} href={`/report/${nos}`} style={{ textDecoration: 'none' }}>
                     <div style={{
-                      background: '#FFFFFF',
-                      border: '1px solid #E5E7EB',
+                      background: 'var(--color-surface-0)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: '12px',
                       padding: '24px',
                       transition: 'all 0.2s ease',
@@ -1170,7 +1170,7 @@ export default function ServerContent() {
                         <h3 style={{
                           fontSize: '15px',
                           fontWeight: 600,
-                          color: '#0f0f0f',
+                          color: 'var(--color-text-primary)',
                           fontFamily: 'var(--font-display)',
                           margin: '0 0 4px 0',
                         }}>
@@ -1178,7 +1178,7 @@ export default function ServerContent() {
                         </h3>
                         <p style={{
                           fontSize: '12px',
-                          color: '#4B5563',
+                          color: 'var(--color-text-secondary)',
                           fontFamily: 'var(--font-body)',
                           margin: '0 0 8px 0',
                         }}>
@@ -1189,7 +1189,7 @@ export default function ServerContent() {
                       <div style={{ marginBottom: '12px' }}>
                         <p style={{
                           fontSize: '12px',
-                          color: '#4B5563',
+                          color: 'var(--color-text-secondary)',
                           fontFamily: 'var(--font-body)',
                           margin: '0 0 4px 0',
                         }}>
@@ -1216,7 +1216,7 @@ export default function ServerContent() {
 
                       <p style={{
                         fontSize: '12px',
-                        color: '#004182',
+                        color: 'var(--accent-primary-hover)',
                         fontFamily: 'var(--font-body)',
                         fontWeight: 500,
                         margin: 0,
@@ -1237,14 +1237,14 @@ export default function ServerContent() {
           background: '#0f0f0f',
           padding: '100px 24px',
           textAlign: 'center',
-          borderBottom: '3px solid #0966C3',
+          borderBottom: '3px solid var(--accent-primary)',
         }}
       >
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-          <p style={{ fontSize: '12px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
             Ready to Win Cases with Data
           </p>
-          <h2 style={{ fontSize: '48px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '20px', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: '48px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', marginBottom: '20px', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
             Research Federal Court Outcomes Instantly
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, marginBottom: '48px', fontWeight: 300 }}>
@@ -1260,8 +1260,8 @@ export default function ServerContent() {
                 justifyContent: 'center',
                 height: '48px',
                 padding: '0 40px',
-                background: '#0966C3',
-                color: '#FFFFFF',
+                background: 'var(--accent-primary)',
+                color: 'var(--color-text-inverse)',
                 borderRadius: '12px',
                 fontFamily: 'var(--font-display)',
                 fontSize: '16px',
@@ -1286,7 +1286,7 @@ export default function ServerContent() {
                 height: '48px',
                 padding: '0 40px',
                 background: 'rgba(255,255,255,0.1)',
-                color: '#FFFFFF',
+                color: 'var(--color-text-inverse)',
                 borderRadius: '12px',
                 fontFamily: 'var(--font-display)',
                 fontSize: '16px',
