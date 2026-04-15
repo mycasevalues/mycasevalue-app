@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function MethodologyPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#F8F9FA' }}>
+    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
       <style>{`
         .source-card {
           transition: all 0.3s ease;
@@ -243,23 +243,23 @@ export default function MethodologyPage() {
       `}</style>
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#0966C3' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-6 text-[11px]" style={{ color: '#CCCCCC' }}>
             <a href="/" className="transition-colors hover:text-white" style={{ color: '#CCCCCC' }}>Home</a>
             <span>/</span>
-            <span style={{ color: '#FFFFFF' }}>Methodology</span>
+            <span style={{ color: 'var(--color-surface-0)' }}>Methodology</span>
           </nav>
 
           {/* Badge and Title */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#FFF3F4', color: '#0966C3', borderRadius: '9999px' }}>
+            style={{ background: '#FFF3F4', color: 'var(--accent-primary)', borderRadius: '9999px' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
             METHODOLOGY
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px' }}>
             Data Methodology
           </h1>
           <p className="text-base sm:text-lg leading-relaxed max-w-2xl" style={{ color: '#CCCCCC' }}>
@@ -269,9 +269,9 @@ export default function MethodologyPage() {
       </div>
 
       {/* Data Coverage at a Glance */}
-      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#F7F8FA' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-1)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-          <h2 className="text-lg font-display font-bold mb-6" style={{ color: '#0f0f0f' }}>Data Coverage at a Glance</h2>
+          <h2 className="text-lg font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>Data Coverage at a Glance</h2>
           <div className="at-a-glance-grid">
             {[
               { stat: '5.1M+', label: 'Federal Cases' },
@@ -294,7 +294,7 @@ export default function MethodologyPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         {/* Section 1: Processing Pipeline */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>How We Process Data</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>How We Process Data</h2>
           <div>
             {[
               { step: '1', title: 'Ingestion', desc: 'Raw data is pulled from the FJC IDB (updated quarterly) and CourtListener API. Each record is validated for completeness and coded by Nature of Suit (NOS) classification.' },
@@ -306,8 +306,8 @@ export default function MethodologyPage() {
               <div key={i} className="timeline-item">
                 <div className="timeline-number">{s.step}</div>
                 <div className="pt-0.5">
-                  <h3 className="text-base font-display font-semibold mb-2" style={{ color: '#0f0f0f' }}>{s.title}</h3>
-                  <p className="text-sm leading-relaxed m-0" style={{ color: '#4B5563' }}>{s.desc}</p>
+                  <h3 className="text-base font-display font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>{s.title}</h3>
+                  <p className="text-sm leading-relaxed m-0" style={{ color: 'var(--color-text-secondary)' }}>{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -316,14 +316,14 @@ export default function MethodologyPage() {
 
         {/* Section 2: Data Sources */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>Data Sources</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Data Sources</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
               {
                 name: 'Federal Judicial Center — Integrated Database (IDB)',
                 description: 'The IDB contains case-level data for every federal civil case filed since 1970, maintained by the Federal Judicial Center as a public statistical resource. It includes case type (Nature of Suit code), final disposition, procedural progress, jurisdiction basis, and case duration. Currently contains 5.1M+ cases.',
                 badge: 'Primary Source',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 url: 'https://www.fjc.gov/research/idb',
                 icon: 'database'
               },
@@ -347,7 +347,7 @@ export default function MethodologyPage() {
                 name: 'Bureau of Justice Statistics (BJS)',
                 description: 'The BJS publishes benchmark civil trial statistics including verdict and settlement distributions, trial rates, and case processing times for federal and state courts.',
                 badge: 'Benchmark',
-                color: '#0966C3',
+                color: 'var(--accent-primary)',
                 url: 'https://bjs.ojp.gov/library/publications/civil-bench-and-jury-trials-state-courts-2005',
                 icon: 'chart'
               },
@@ -370,13 +370,13 @@ export default function MethodologyPage() {
                     {source.icon === 'building' && '-'}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-sm font-display font-semibold m-0 mb-1" style={{ color: '#0f0f0f' }}>{source.name}</h3>
+                    <h3 className="text-sm font-display font-semibold m-0 mb-1" style={{ color: 'var(--color-text-primary)' }}>{source.name}</h3>
                     <span className="inline-block text-[10px] font-bold px-2 py-0.5" style={{ background: source.color.replace('#', '#').substring(0, 7) + '1F', color: source.color, borderRadius: '9999px' }}>
                       {source.badge}
                     </span>
                   </div>
                 </div>
-                <p className="text-xs leading-relaxed m-0 mb-3" style={{ color: '#4B5563' }}>{source.description}</p>
+                <p className="text-xs leading-relaxed m-0 mb-3" style={{ color: 'var(--color-text-secondary)' }}>{source.description}</p>
                 {source.url && (
                   <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[11px] font-semibold transition-opacity hover:opacity-70" style={{ color: source.color }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -390,10 +390,10 @@ export default function MethodologyPage() {
 
         {/* Section 3: Data Accuracy & Confidence */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>Data Accuracy & Confidence</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Data Accuracy & Confidence</h2>
 
           <div className="mb-8">
-            <p className="text-sm leading-relaxed mb-6" style={{ color: '#4B5563' }}>
+            <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--color-text-secondary)' }}>
               We assign confidence levels to our statistics based on sample size. A larger dataset provides more reliable and stable estimates of outcomes. Confidence levels indicate how much we trust the statistical measures for a particular case type, jurisdiction, or aggregation level.
             </p>
           </div>
@@ -416,8 +416,8 @@ export default function MethodologyPage() {
           </div>
 
           <div className="limitation-callout mt-8">
-            <p className="text-sm font-semibold mb-3" style={{ color: '#4B5563' }}>Known Limitations:</p>
-            <ul className="space-y-2 text-sm m-0 pl-4" style={{ color: '#4B5563' }}>
+            <p className="text-sm font-semibold mb-3" style={{ color: 'var(--color-text-secondary)' }}>Known Limitations:</p>
+            <ul className="space-y-2 text-sm m-0 pl-4" style={{ color: 'var(--color-text-secondary)' }}>
               <li><strong>Sealed settlements</strong> are not captured in public court records.</li>
               <li><strong>Pro se case outcomes</strong> may be underrepresented in aggregate statistics.</li>
               <li><strong>Multi-district litigation</strong> is counted per district, which may inflate case counts for coordinated actions.</li>
@@ -427,17 +427,17 @@ export default function MethodologyPage() {
 
         {/* Section 4: Dataset Coverage */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>Dataset Coverage</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Dataset Coverage</h2>
           <div className="coverage-grid">
             {[
-              { v: '5.1M+', l: 'Federal Cases', c: '#0f0f0f' },
+              { v: '5.1M+', l: 'Federal Cases', c: 'var(--color-text-primary)' },
               { v: '55+', l: 'Years of Data', c: '#059669' },
-              { v: '20+', l: 'Case Categories', c: '#0966C3' },
-              { v: '94', l: 'Federal Districts', c: '#004182' },
+              { v: '20+', l: 'Case Categories', c: 'var(--accent-primary)' },
+              { v: '94', l: 'Federal Districts', c: 'var(--accent-primary-hover)' },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
                 <div className="text-3xl sm:text-4xl font-display font-extrabold mb-2" style={{ color: stat.c }}>{stat.v}</div>
-                <div className="text-sm font-semibold" style={{ color: '#4B5563' }}>{stat.l}</div>
+                <div className="text-sm font-semibold" style={{ color: 'var(--color-text-secondary)' }}>{stat.l}</div>
               </div>
             ))}
           </div>
@@ -445,8 +445,8 @@ export default function MethodologyPage() {
 
         {/* Section 5: Frequently Cited Statistics */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>Frequently Cited Statistics</h2>
-          <p className="text-sm leading-relaxed mb-6" style={{ color: '#4B5563' }}>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Frequently Cited Statistics</h2>
+          <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--color-text-secondary)' }}>
             These five metrics are the most commonly referenced on MyCaseValue. Each has a specific calculation method rooted in federal court records and administrative classifications.
           </p>
           <table className="stats-table">
@@ -489,21 +489,21 @@ export default function MethodologyPage() {
 
         {/* Section 6: Limitations */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#0f0f0f' }}>Important Limitations</h2>
+          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>Important Limitations</h2>
           <div className="limitation-callout">
-            <ul className="space-y-3 text-sm leading-relaxed m-0 pl-4" style={{ color: '#4B5563' }}>
-              <li>MyCaseValue displays <strong style={{ color: '#0f0f0f' }}>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
-              <li>Win rates reflect <strong style={{ color: '#0f0f0f' }}>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>
+            <ul className="space-y-3 text-sm leading-relaxed m-0 pl-4" style={{ color: 'var(--color-text-secondary)' }}>
+              <li>MyCaseValue displays <strong style={{ color: 'var(--color-text-primary)' }}>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
+              <li>Win rates reflect <strong style={{ color: 'var(--color-text-primary)' }}>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>
               <li>Settlement amounts are not systematically reported in federal court records. Recovery ranges are derived from cases where monetary awards were documented.</li>
               <li>Past outcomes do not predict future results. Every case has unique facts, parties, and circumstances.</li>
-              <li>This tool is <strong style={{ color: '#0f0f0f' }}>not legal advice</strong>. It does not create an attorney-client relationship. Always consult a licensed attorney.</li>
+              <li>This tool is <strong style={{ color: 'var(--color-text-primary)' }}>not legal advice</strong>. It does not create an attorney-client relationship. Always consult a licensed attorney.</li>
             </ul>
           </div>
         </section>
 
         {/* Section 7: Public Domain */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#0f0f0f' }}>Public Domain Status</h2>
+          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>Public Domain Status</h2>
           <div className="public-domain-callout">
             <p className="text-sm leading-relaxed m-0" style={{ color: '#003d5c' }}>
               All source data used by MyCaseValue is public domain under 17 U.S.C. § 105 (works of the United States government) or made freely available by the Free Law Project under open-access principles. MyCaseValue's proprietary contribution is in the aggregation, categorization, and presentation of this data — not in the underlying records themselves.
@@ -513,7 +513,7 @@ export default function MethodologyPage() {
 
         {/* Section 8: Related Pages */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>Related Pages</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Related Pages</h2>
           <div className="related-grid">
             {[
               { href: '/faq', iconPath: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', title: 'FAQ' },
@@ -534,11 +534,11 @@ export default function MethodologyPage() {
         </section>
 
         {/* CTA */}
-        <div className="text-center pt-12 border-t" style={{ borderColor: '#E5E7EB' }}>
-          <p className="text-sm mb-6" style={{ color: '#4B5563' }}>Questions about our methodology?</p>
+        <div className="text-center pt-12 border-t" style={{ borderColor: 'var(--border-default)' }}>
+          <p className="text-sm mb-6" style={{ color: 'var(--color-text-secondary)' }}>Questions about our methodology?</p>
           <a href="mailto:support@mycasevalues.com"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '20px', background: '#0966C3', color: '#FFFFFF', border: '1px solid #0966C3' }}>
+            style={{ borderRadius: '20px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: '1px solid #0966C3' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

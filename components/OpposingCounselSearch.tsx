@@ -45,12 +45,12 @@ interface MeterBarProps {
 const MeterBar = ({ value, max, color, label }: MeterBarProps) => (
   <div style={{ marginBottom: '10px' }}>
     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-      <span style={{ fontSize: '12px', color: '#4B5563' }}>{label}</span>
-      <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#0f0f0f' }}>
+      <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{label}</span>
+      <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
         {value}%
       </span>
     </div>
-    <div style={{ height: '6px', background: '#E5E7EB', borderRadius: '3px', overflow: 'hidden' }}>
+    <div style={{ height: '6px', background: 'var(--border-default)', borderRadius: '3px', overflow: 'hidden' }}>
       <div
         style={{
           height: '100%',
@@ -76,17 +76,17 @@ const DistrictBarChart = ({ districts }: DistrictBarChartProps) => {
       {districts.map((district) => (
         <div key={district.district}>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-            <span style={{ fontSize: '12px', color: '#4B5563' }}>{district.district}</span>
-            <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#0f0f0f' }}>
+            <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{district.district}</span>
+            <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
               {district.caseCount}
             </span>
           </div>
-          <div style={{ height: '5px', background: '#E5E7EB', borderRadius: '2px', overflow: 'hidden' }}>
+          <div style={{ height: '5px', background: 'var(--border-default)', borderRadius: '2px', overflow: 'hidden' }}>
             <div
               style={{
                 height: '100%',
                 width: `${(district.caseCount / maxCases) * 100}%`,
-                background: '#0966C3',
+                background: 'var(--accent-primary)',
                 borderRadius: '2px',
               }}
             />
@@ -120,7 +120,7 @@ const CaseList = ({ cases }: CaseListProps) => (
             justifyContent: 'space-between',
             alignItems: 'flex-start',
             paddingBottom: '12px',
-            borderBottom: idx < cases.length - 1 ? '1px solid #E5E7EB' : 'none',
+            borderBottom: idx < cases.length - 1 ? '1px solid var(--border-default)' : 'none',
             gap: '12px',
           }}
         >
@@ -132,7 +132,7 @@ const CaseList = ({ cases }: CaseListProps) => (
               style={{
                 fontSize: '13px',
                 fontWeight: 500,
-                color: '#0966C3',
+                color: 'var(--accent-primary)',
                 textDecoration: 'none',
                 display: 'block',
                 marginBottom: '4px',
@@ -140,7 +140,7 @@ const CaseList = ({ cases }: CaseListProps) => (
             >
               {caseItem.title}
             </a>
-            <div style={{ fontSize: '12px', color: '#4B5563' }}>
+            <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
               {caseItem.court} · {caseItem.year}
             </div>
           </div>
@@ -178,22 +178,22 @@ const CaseTypeTable = ({ breakdown }: CaseTypeTableProps) => (
           gridTemplateColumns: '1fr 50px 50px',
           gap: '16px',
           padding: '12px 0',
-          borderBottom: idx < breakdown.length - 1 ? '1px solid #E5E7EB' : 'none',
+          borderBottom: idx < breakdown.length - 1 ? '1px solid var(--border-default)' : 'none',
           alignItems: 'center',
         }}
       >
-        <span style={{ fontSize: '13px', color: '#0f0f0f' }}>{item.type}</span>
+        <span style={{ fontSize: '13px', color: 'var(--color-text-primary)' }}>{item.type}</span>
         <div style={{ textAlign: 'center' }}>
-          <div className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f' }}>
+          <div className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
             {item.count}
           </div>
-          <div style={{ fontSize: '10px', color: '#4B5563' }}>cases</div>
+          <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)' }}>cases</div>
         </div>
         <div style={{ textAlign: 'center' }}>
-          <div className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#0966C3' }}>
+          <div className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-primary)' }}>
             {item.winRate}%
           </div>
-          <div style={{ fontSize: '10px', color: '#4B5563' }}>win</div>
+          <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)' }}>win</div>
         </div>
       </div>
     ))}
@@ -209,9 +209,9 @@ interface AttorneyCardProps {
 const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => (
   <div
     style={{
-      background: '#FFFFFF',
+      background: 'var(--color-surface-0)',
       borderRadius: '12px',
-      border: isExpanded ? '2px solid #0966C3' : '1px solid #E5E7EB',
+      border: isExpanded ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
       overflow: 'hidden',
       boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)',
       transition: 'all 0.2s',
@@ -231,10 +231,10 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
         <div style={{ flex: 1 }}>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '17px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 4px' }}>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '17px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
             {attorney.name}
           </h3>
-          <p style={{ fontSize: '13px', color: '#4B5563', margin: 0 }}>
+          <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0 }}>
             {attorney.firmName} · {attorney.barNumber}
           </p>
         </div>
@@ -242,18 +242,18 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
         {/* Quick Stats */}
         <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
           <div style={{ textAlign: 'center' }}>
-            <div className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: '#0966C3' }}>
+            <div className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)' }}>
               {attorney.winRate}%
             </div>
-            <div style={{ fontSize: '10px', color: '#4B5563', textTransform: 'uppercase' }}>Win Rate</div>
+            <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>Win Rate</div>
           </div>
           <div style={{ textAlign: 'center' }}>
             <div className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: '#1B7C7D' }}>
               {attorney.settlementRate}%
             </div>
-            <div style={{ fontSize: '10px', color: '#4B5563', textTransform: 'uppercase' }}>Settlement</div>
+            <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>Settlement</div>
           </div>
-          <div style={{ color: '#4B5563' }}>
+          <div style={{ color: 'var(--color-text-secondary)' }}>
             <ChevronDownIcon isExpanded={isExpanded} />
           </div>
         </div>
@@ -262,7 +262,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
 
     {/* Expanded Content */}
     {isExpanded && (
-      <div style={{ padding: '0 24px 24px', borderTop: '1px solid #E5E7EB' }}>
+      <div style={{ padding: '0 24px 24px', borderTop: '1px solid var(--border-default)' }}>
         <div style={{ paddingTop: '20px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
           {/* Left Column */}
           <div>
@@ -271,7 +271,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
                 fontFamily: 'var(--font-display)',
                 fontSize: '13px',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 margin: '0 0 14px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -279,7 +279,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
             >
               Litigation Profile
             </h4>
-            <MeterBar value={attorney.winRate} max={100} color="#0966C3" label="Win Rate" />
+            <MeterBar value={attorney.winRate} max={100} color="var(--accent-primary)" label="Win Rate" />
             <MeterBar value={attorney.settlementRate} max={100} color="#1B7C7D" label="Settlement Rate" />
             <MeterBar value={attorney.trialVsSettlement.trialRate} max={100} color="#004D80" label="Trial Rate" />
 
@@ -288,7 +288,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
                 fontFamily: 'var(--font-display)',
                 fontSize: '13px',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 margin: '20px 0 14px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -300,13 +300,13 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
               {[
                 { label: 'Early', value: attorney.trialVsSettlement.earlySettlementRate, color: '#059669' },
                 { label: 'Standard', value: attorney.trialVsSettlement.settlementRate - attorney.trialVsSettlement.earlySettlementRate, color: '#B86E00' },
-                { label: 'Late', value: 100 - attorney.trialVsSettlement.settlementRate, color: '#0966C3' },
+                { label: 'Late', value: 100 - attorney.trialVsSettlement.settlementRate, color: 'var(--accent-primary)' },
               ].map((s) => (
                 <div key={s.label} style={{ flex: 1, padding: '8px', borderRadius: '12px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
                   <div className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: s.color }}>
                     {s.value}%
                   </div>
-                  <div style={{ fontSize: '10px', color: '#4B5563' }}>{s.label}</div>
+                  <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)' }}>{s.label}</div>
                 </div>
               ))}
             </div>
@@ -319,7 +319,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
                 fontFamily: 'var(--font-display)',
                 fontSize: '13px',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 margin: '0 0 14px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -334,9 +334,9 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
               { label: 'Avg Time to Settlement', value: `${attorney.avgTimeToSettlement} months` },
               { label: 'District Average', value: `${attorney.districtAvg} months` },
             ].map((item) => (
-              <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #E5E7EB' }}>
-                <span style={{ fontSize: '12px', color: '#4B5563' }}>{item.label}</span>
-                <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#0f0f0f' }}>
+              <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid var(--border-default)' }}>
+                <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{item.label}</span>
+                <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                   {item.value}
                 </span>
               </div>
@@ -351,7 +351,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
               fontFamily: 'var(--font-display)',
               fontSize: '13px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 14px',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -369,7 +369,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
               fontFamily: 'var(--font-display)',
               fontSize: '13px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 14px',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -387,7 +387,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
               fontFamily: 'var(--font-display)',
               fontSize: '13px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 14px',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -438,22 +438,22 @@ export default function OpposingCounselSearch() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: '#F7F8FA', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
       <style>{`
-        input:focus { border-color: #0966C3 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#0966C3', padding: '32px 20px' }}>
+      <div style={{ background: 'var(--accent-primary)', padding: '32px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <Link
             href="/"
             style={{
               fontSize: '13px',
-              color: '#0966C3',
+              color: 'var(--color-text-inverse)',
               textDecoration: 'none',
               fontWeight: 500,
               display: 'inline-flex',
@@ -475,7 +475,7 @@ export default function OpposingCounselSearch() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#0966C3',
+                color: 'var(--color-text-inverse)',
               }}
             >
               <SearchIcon />
@@ -486,7 +486,7 @@ export default function OpposingCounselSearch() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '28px',
                   fontWeight: 600,
-                  color: '#FFFFFF',
+                  color: 'var(--color-text-inverse)',
                   margin: 0,
                 }}
               >
@@ -506,7 +506,7 @@ export default function OpposingCounselSearch() {
         <form onSubmit={handleSearch} style={{ marginBottom: '24px' }}>
           <div style={{ display: 'flex', gap: '8px' }}>
             <div style={{ flex: 1, position: 'relative' }}>
-              <div style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#4B5563' }}>
+              <div style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-text-secondary)' }}>
                 <SearchIcon />
               </div>
               <input
@@ -518,11 +518,11 @@ export default function OpposingCounselSearch() {
                   width: '100%',
                   padding: '12px 12px 12px 42px',
                   height: '48px',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   fontSize: '14px',
-                  color: '#0f0f0f',
-                  background: '#FFFFFF',
+                  color: 'var(--color-text-primary)',
+                  background: 'var(--color-surface-0)',
                   fontFamily: 'var(--font-body)',
                 }}
               />
@@ -533,8 +533,8 @@ export default function OpposingCounselSearch() {
               style={{
                 padding: '0 24px',
                 height: '48px',
-                backgroundColor: '#0966C3',
-                color: '#FFFFFF',
+                backgroundColor: 'var(--accent-primary)',
+                color: 'var(--color-text-inverse)',
                 border: 'none',
                 borderRadius: '12px',
                 fontSize: '14px',
@@ -568,7 +568,7 @@ export default function OpposingCounselSearch() {
         {/* Results */}
         {result && (
           <>
-            <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '16px' }}>
+            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
               {result.resultCount} result{result.resultCount !== 1 ? 's' : ''} for "{result.query}"
             </p>
 
@@ -588,7 +588,7 @@ export default function OpposingCounselSearch() {
               style={{
                 padding: '14px 18px',
                 backgroundColor: 'rgba(232, 149, 88, 0.12)',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
               }}
             >
@@ -603,8 +603,8 @@ export default function OpposingCounselSearch() {
         {!result && !loading && (
           <div
             style={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '64px 32px',
               textAlign: 'center',
@@ -621,7 +621,7 @@ export default function OpposingCounselSearch() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 margin: '0 auto 24px',
-                color: '#0966C3',
+                color: 'var(--accent-primary)',
               }}
             >
               <SearchIcon />
@@ -631,16 +631,16 @@ export default function OpposingCounselSearch() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '22px',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 margin: '0 0 12px',
               }}
             >
               Research Opposing Counsel
             </h2>
-            <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 20px' }}>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 20px' }}>
               Search by attorney name, firm name, or bar number to view litigation track record, settlement patterns, and strategic tendencies.
             </p>
-            <p style={{ fontSize: '13px', color: '#4B5563' }}>Try: Mitchell, Chen, Williams, or Martinez</p>
+            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>Try: Mitchell, Chen, Williams, or Martinez</p>
           </div>
         )}
       </div>
