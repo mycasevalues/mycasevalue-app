@@ -215,7 +215,7 @@ export default function CaseDetailPage() {
                 <DetailRow label="Procedural Posture" value={c.proceduralPosture} />
               )}
               {c.court?.circuit && (
-                <DetailRow label="Circuit" value={`${c.court.circuit}${c.court.circuit.match(/\d/) ? 'th' : ''} Circuit`} />
+                <DetailRow label="Circuit" value={`${c.court.circuit}${ordinalSuffix(c.court.circuit)} Circuit`} />
               )}
 
               {c.tags.length > 0 && (
@@ -428,6 +428,19 @@ function DetailRow({ label, value }: { label: string; value: string }) {
       <span className="text-sm text-gray-700">{value}</span>
     </div>
   );
+}
+
+function ordinalSuffix(n: string): string {
+  const num = parseInt(n, 10);
+  if (isNaN(num)) return '';
+  const mod100 = num % 100;
+  if (mod100 >= 11 && mod100 <= 13) return 'th';
+  switch (num % 10) {
+    case 1: return 'st';
+    case 2: return 'nd';
+    case 3: return 'rd';
+    default: return 'th';
+  }
 }
 
 function PartyGroup({ label, parties }: { label: string; parties: Array<{ name: string; role: string }> }) {
