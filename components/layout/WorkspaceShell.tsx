@@ -96,6 +96,13 @@ export function ConditionalFooter({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
+/** Client component to conditionally hide beta banner on workspace routes */
+export function ConditionalBanner({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  if (isWorkspaceRoute(pathname)) return null;
+  return <>{children}</>;
+}
+
 function getPageTitle(pathname: string): string {
   if (pathname.startsWith('/cases')) return 'Cases';
   if (pathname.startsWith('/judges')) return 'Judges';

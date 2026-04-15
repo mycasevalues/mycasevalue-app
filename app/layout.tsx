@@ -6,7 +6,7 @@ import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 import Header from '../components/layout/Header';
 import BetaBanner from '../components/BetaBanner';
 import Footer from '../components/layout/Footer';
-import WorkspaceShell, { ConditionalFooter } from '../components/layout/WorkspaceShell';
+import WorkspaceShell, { ConditionalFooter, ConditionalBanner } from '../components/layout/WorkspaceShell';
 import ReferralCapture from '../components/ReferralCapture';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -306,7 +306,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ErrorBoundary>
           <AnalyticsProvider>
             <LanguageDetectBanner />
-            <BetaBanner />
+            <ConditionalBanner><BetaBanner /></ConditionalBanner>
             <Header />
             <WorkspaceShell>
               <main id="main-content">

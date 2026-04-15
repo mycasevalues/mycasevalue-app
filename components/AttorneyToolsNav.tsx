@@ -41,7 +41,7 @@ export default function AttorneyToolsNav() {
   if (pathname === '/attorney') return null;
 
   return (
-    <div style={{
+    <div className="lg:hidden" style={{
       background: 'var(--color-surface-0)',
       backdropFilter: undefined,
       WebkitBackdropFilter: undefined,

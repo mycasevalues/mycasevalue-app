@@ -38,12 +38,12 @@ export function ToolPageLayout({
     <div className="min-h-screen bg-white">
       {/* Header */}
       <div className="border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-6 py-12 sm:py-16">
+        <div className="max-w-4xl mx-auto px-6 py-4 sm:py-6">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-3 mb-1">
                 <h1
-                  className="text-3xl sm:text-4xl font-semibold text-gray-900"
+                  className="text-xl sm:text-2xl font-semibold text-gray-900"
                   style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                 >
                   {title}
@@ -57,7 +57,7 @@ export function ToolPageLayout({
                   </span>
                 )}
               </div>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 {description}
               </p>
             </div>
