@@ -27,8 +27,8 @@ export default function CategoryLoading() {
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
             }}>
               <div style={{ height: '24px', width: '80%', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '12px' }} />
-              <div style={{ height: '14px', width: '100%', background: '#F0F1F2', borderRadius: '12px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '90%', background: '#F0F1F2', borderRadius: '12px' }} />
+              <div style={{ height: '14px', width: '100%', background: 'var(--color-surface-1)', borderRadius: '12px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '90%', background: 'var(--color-surface-1)', borderRadius: '12px' }} />
             </div>
           ))}
         </div>

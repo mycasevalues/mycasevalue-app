@@ -21,18 +21,18 @@ export default function Error({
       textAlign: 'center',
       fontFamily: 'var(--font-inter), Inter, -apple-system, sans-serif',
     }}>
-      <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#1f2937', marginBottom: '12px' }}>
+      <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '12px' }}>
         Something went wrong
       </h2>
-      <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '24px' }}>
+      <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
         We encountered an unexpected error loading this page. Please try again.
       </p>
       <button
         onClick={reset}
         style={{
           padding: '10px 24px',
-          backgroundColor: '#0966C3',
-          color: 'white',
+          backgroundColor: 'var(--accent-primary)',
+          color: 'var(--color-text-inverse)',
           border: 'none',
           borderRadius: '20px',
           fontSize: '14px',

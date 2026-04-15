@@ -53,22 +53,22 @@ export default function DashboardTabs({
 
   const tabStyle = (key: Tab): React.CSSProperties => ({
     padding: '10px 18px', borderRadius: '10px', border: 'none',
-    background: activeTab === key ? '#0966C3' : 'transparent',
-    color: activeTab === key ? '#FFF' : '#4B5563',
+    background: activeTab === key ? 'var(--accent-primary)' : 'transparent',
+    color: activeTab === key ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)',
     fontSize: '13px', fontWeight: 600, cursor: 'pointer',
     fontFamily: 'var(--font-body)', transition: 'all 0.2s',
     display: 'flex', alignItems: 'center', gap: 6,
   });
 
   const cardStyle: React.CSSProperties = {
-    background: '#FFF', borderRadius: '12px', padding: '24px',
-    border: '1px solid #E5E7EB',
+    background: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px',
+    border: '1px solid var(--border-default)',
   };
 
   return (
     <div>
       {/* Tabs */}
-      <div style={{ display: 'flex', gap: '4px', background: '#FFF', borderRadius: '12px', padding: '4px', border: '1px solid #E5E7EB', marginBottom: 24, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-0)', borderRadius: '12px', padding: '4px', border: '1px solid var(--border-default)', marginBottom: 24, flexWrap: 'wrap' }}>
         {TABS.map(tab => (
           <button key={tab.key} onClick={() => setActiveTab(tab.key)} style={tabStyle(tab.key)}>
             <span>{tab.icon}</span> {tab.label}
@@ -80,7 +80,7 @@ export default function DashboardTabs({
       {activeTab === 'overview' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {/* Welcome */}
-          <div style={{ ...cardStyle, background: 'linear-gradient(135deg, #0966C3 0%, #004182 100%)', color: '#FFF', border: 'none' }}>
+          <div style={{ ...cardStyle, background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-hover) 100%)', color: 'var(--color-text-inverse)', border: 'none' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, margin: '0 0 4px', fontFamily: 'var(--font-display)' }}>
               Welcome back, {userName}
             </h2>
@@ -92,13 +92,13 @@ export default function DashboardTabs({
           {/* Quick Stats */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
             {[
-              { label: 'Reports Generated', value: reportsCount, color: '#0966C3' },
-              { label: 'Saved Reports', value: savedCount, color: '#057642' },
-              { label: 'Active Alerts', value: alertsCount, color: '#D97706' },
+              { label: 'Reports Generated', value: reportsCount, color: 'var(--accent-primary)' },
+              { label: 'Saved Reports', value: savedCount, color: 'var(--color-success)' },
+              { label: 'Active Alerts', value: alertsCount, color: '#D97706' },  /* Note: warning color kept as-is */
             ].map(stat => (
               <div key={stat.label} style={{ ...cardStyle, textAlign: 'center' }}>
                 <div style={{ fontSize: '32px', fontWeight: 600, color: stat.color, fontFamily: 'var(--font-mono)' }}>{stat.value}</div>
-                <div style={{ fontSize: '12px', color: '#4B5563', marginTop: 4 }}>{stat.label}</div>
+                <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: 4 }}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -114,7 +114,7 @@ export default function DashboardTabs({
               <Link key={action.label} href={action.href} style={{ textDecoration: 'none' }}>
                 <div style={{ ...cardStyle, textAlign: 'center', padding: '16px', cursor: 'pointer' }}>
                   <div style={{ fontSize: '24px', marginBottom: 6 }}>{action.icon}</div>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f' }}>{action.label}</div>
+                  <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{action.label}</div>
                 </div>
               </Link>
             ))}
@@ -122,18 +122,18 @@ export default function DashboardTabs({
 
           {/* Recent Activity */}
           <div style={cardStyle}>
-            <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Recent Activity</h3>
+            <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Recent Activity</h3>
             {recentActivity.length > 0 ? (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
                 {recentActivity.slice(0, 5).map((a, i) => (
-                  <div key={i} style={{ padding: '10px 0', borderBottom: i < Math.min(recentActivity.length, 5) - 1 ? '1px solid #E5E7EB' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Link href={a.link} style={{ fontSize: '13px', color: '#0966C3', textDecoration: 'none', fontWeight: 500 }}>{a.label}</Link>
-                    <span style={{ fontSize: '11px', color: '#4B5563', fontFamily: 'var(--font-mono)' }}>{a.time}</span>
+                  <div key={i} style={{ padding: '10px 0', borderBottom: i < Math.min(recentActivity.length, 5) - 1 ? '1px solid var(--border-default)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Link href={a.link} style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500 }}>{a.label}</Link>
+                    <span style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>{a.time}</span>
                   </div>
                 ))}
               </div>
             ) : (
-              <p style={{ fontSize: '13px', color: '#4B5563', margin: 0 }}>No recent activity yet. Start by searching for a case type.</p>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0 }}>No recent activity yet. Start by searching for a case type.</p>
             )}
           </div>
         </div>
@@ -143,29 +143,29 @@ export default function DashboardTabs({
       {activeTab === 'history' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <div style={{ ...cardStyle, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-            <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-display)' }}>Research History</h3>
+            <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-display)' }}>Research History</h3>
             <input
               type="text"
               placeholder="Search history..."
               value={historySearch}
               onChange={e => { setHistorySearch(e.target.value); setHistoryPage(0); }}
-              style={{ padding: '8px 14px', border: '1px solid #E5E7EB', borderRadius: '10px', fontSize: '13px', width: 200, fontFamily: 'var(--font-body)' }}
+              style={{ padding: '8px 14px', border: '1px solid var(--border-default)', borderRadius: '10px', fontSize: '13px', width: 200, fontFamily: 'var(--font-body)' }}
             />
           </div>
 
           {pagedHistory.length > 0 ? (
             <div style={cardStyle}>
               {pagedHistory.map((h, i) => (
-                <div key={i} style={{ padding: '12px 0', borderBottom: i < pagedHistory.length - 1 ? '1px solid #E5E7EB' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+                <div key={i} style={{ padding: '12px 0', borderBottom: i < pagedHistory.length - 1 ? '1px solid var(--border-default)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
                   <div>
-                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f' }}>{h.query}</div>
-                    {h.category && <div style={{ fontSize: '11px', color: '#4B5563' }}>{h.category}</div>}
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{h.query}</div>
+                    {h.category && <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>{h.category}</div>}
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <span style={{ fontSize: '11px', color: '#4B5563', fontFamily: 'var(--font-mono)' }}>
+                    <span style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                       {new Date(h.searched_at).toLocaleDateString()}
                     </span>
-                    <Link href={`/search?q=${encodeURIComponent(h.query)}`} style={{ fontSize: '12px', color: '#0966C3', textDecoration: 'none', fontWeight: 600, padding: '4px 10px', background: '#EDF3FB', borderRadius: 6 }}>
+                    <Link href={`/search?q=${encodeURIComponent(h.query)}`} style={{ fontSize: '12px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600, padding: '4px 10px', background: '#EDF3FB', borderRadius: 6 }}>
                       Search Again
                     </Link>
                   </div>
@@ -174,7 +174,7 @@ export default function DashboardTabs({
               {historyPages > 1 && (
                 <div style={{ display: 'flex', gap: 8, justifyContent: 'center', marginTop: 16 }}>
                   {Array.from({ length: historyPages }).map((_, p) => (
-                    <button key={p} onClick={() => setHistoryPage(p)} style={{ width: 32, height: 32, borderRadius: '50%', border: 'none', background: historyPage === p ? '#0966C3' : '#E5E7EB', color: historyPage === p ? '#FFF' : '#4B5563', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>
+                    <button key={p} onClick={() => setHistoryPage(p)} style={{ width: 32, height: 32, borderRadius: '50%', border: 'none', background: historyPage === p ? 'var(--accent-primary)' : 'var(--border-default)', color: historyPage === p ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>
                       {p + 1}
                     </button>
                   ))}
@@ -183,7 +183,7 @@ export default function DashboardTabs({
             </div>
           ) : (
             <div style={{ ...cardStyle, textAlign: 'center', padding: '40px' }}>
-              <p style={{ fontSize: '14px', color: '#4B5563' }}>No search history yet.</p>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>No search history yet.</p>
             </div>
           )}
         </div>
@@ -193,11 +193,11 @@ export default function DashboardTabs({
       {activeTab === 'saved' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <div style={{ ...cardStyle }}>
-            <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Saved Reports</h3>
+            <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Saved Reports</h3>
             {savedReports.length > 0 ? (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 12 }}>
                 {savedReports.map((r, i) => (
-                  <div key={i} style={{ padding: '16px', background: '#FAFBFC', borderRadius: 10, border: '1px solid #E5E7EB' }}>
+                  <div key={i} style={{ padding: '16px', background: 'var(--color-surface-1)', borderRadius: 10, border: '1px solid var(--border-default)' }}>
                     <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', marginBottom: 4 }}>{r.category}</div>
                     {r.district && <div style={{ fontSize: '12px', color: '#4B5563', marginBottom: 8 }}>{r.district}</div>}
                     <div style={{ fontSize: '11px', color: '#4B5563', fontFamily: 'var(--font-mono)', marginBottom: 10 }}>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
@@ -87,7 +87,7 @@ const saveToRecent = (item: { label: string; nos: string; category: string }) =>
   }
 };
 
-export default function SearchPage() {
+function SearchPageInner() {
   const searchParams = useSearchParams();
   const initialQuery = searchParams?.get('q') ?? '';
   const { currentCaseType, setCaseType, addRecentSearch } = useResearchStore();
@@ -1155,5 +1155,19 @@ export default function SearchPage() {
       </div>
       </div>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', padding: '60px 20px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          {[...Array(5)].map((_, i) => <SkeletonResultCard key={i} />)}
+        </div>
+      </div>
+    }>
+      <SearchPageInner />
+    </Suspense>
   );
 }

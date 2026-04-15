@@ -2,9 +2,9 @@ export default function UpgradeBanner() {
   return (
     <section
       style={{
-        background: '#0966C3',
+        background: 'var(--accent-primary)',
         padding: '64px 24px',
-        borderBottom: '1px solid #E5E7EB',
+        borderBottom: '1px solid var(--border-default)',
       }}
     >
       <style>{`
@@ -44,15 +44,15 @@ export default function UpgradeBanner() {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #0966C3;
+          color: var(--accent-primary);
           font-weight: 600;
         }
         .upgrade-btn-primary {
           display: inline-block;
           padding: 12px 28px;
           height: 48px;
-          background: #0966C3;
-          color: #FFFFFF;
+          background: var(--accent-primary);
+          color: var(--color-text-inverse);
           border-radius: 12px;
           text-transform: uppercase;
           font-weight: 600;
@@ -75,7 +75,7 @@ export default function UpgradeBanner() {
           display: inline-block;
           padding: 12px 28px;
           background: transparent;
-          color: #FFFFFF;
+          color: var(--color-text-inverse);
           border: 1px solid rgba(255,255,255,0.3);
           border-radius: 12px;
           text-transform: uppercase;
@@ -98,7 +98,7 @@ export default function UpgradeBanner() {
           <div>
             <div style={{
               display: 'inline-flex', alignItems: 'center',
-              background: 'rgba(10, 102, 194, 0.2)', color: '#0966C3',
+              background: 'rgba(10, 102, 194, 0.2)', color: 'var(--accent-primary)',
               fontSize: '11px', fontWeight: 600, textTransform: 'uppercase',
               padding: '6px 12px', borderRadius: '12px', marginBottom: '16px',
               letterSpacing: '0.08em',
@@ -107,7 +107,7 @@ export default function UpgradeBanner() {
             </div>
 
             <h2 style={{
-              fontSize: '32px', fontWeight: 600, color: '#FFFFFF',
+              fontSize: '32px', fontWeight: 600, color: 'var(--color-text-inverse)',
               margin: '0 0 16px 0', fontFamily: 'var(--font-display)', lineHeight: 1.2,
             }}>
               MyCaseValue Attorney Mode
@@ -116,7 +116,7 @@ export default function UpgradeBanner() {
             <p style={{
               fontSize: '16px', color: 'rgba(255,255,255,0.7)', fontWeight: 300,
               lineHeight: 1.7, margin: '0 0 32px 0', fontFamily: 'var(--font-body)',
-            }}>
+            }} /* Note: rgba color used for transparency, keeping as-is */>
               AI-powered case predictions, judge intelligence, venue optimization, and bulk
               analysis — built for legal professionals. Get the competitive edge that large
               firms already have.
@@ -150,19 +150,19 @@ export default function UpgradeBanner() {
           {/* Right Side — Prediction Card Mockup */}
           <div>
             <div style={{
-              background: '#FFFFFF', borderRadius: '12px', padding: '32px',
+              background: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
             }}>
-              <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', marginBottom: '20px', fontFamily: 'var(--font-display)' }}>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '20px', fontFamily: 'var(--font-display)' }}>
                 Case Outcome Prediction
               </div>
-              <div style={{ fontSize: '48px', fontWeight: 600, color: '#0966C3', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
+              <div style={{ fontSize: '48px', fontWeight: 600, color: 'var(--accent-primary)', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
                 72%
               </div>
-              <div style={{ fontSize: '13px', color: '#4B5563', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
+              <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
                 Favorable Outcome Probability
               </div>
-              <div style={{ height: '1px', background: '#E5E7EB', marginBottom: '20px' }} />
+              <div style={{ height: '1px', background: 'var(--border-default)', marginBottom: '20px' }} />
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {[
                   { label: 'Win Rate', value: '68%' },
@@ -173,8 +173,8 @@ export default function UpgradeBanner() {
                     display: 'flex', justifyContent: 'space-between',
                     fontSize: '13px', fontFamily: 'var(--font-body)',
                   }}>
-                    <span style={{ color: '#4B5563' }}>{m.label}</span>
-                    <span style={{ fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-mono)' }}>{m.value}</span>
+                    <span style={{ color: 'var(--color-text-secondary)' }}>{m.label}</span>
+                    <span style={{ fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{m.value}</span>
                   </div>
                 ))}
               </div>

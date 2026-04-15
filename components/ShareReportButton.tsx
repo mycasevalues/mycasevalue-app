@@ -15,8 +15,8 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
   const [shortUrl, setShortUrl] = useState<string | null>(null);
   const [showToast, setShowToast] = useState(false);
 
-  const accentColor = '#0966C3';
-  const secondaryColor = '#004182';
+  const accentColor = 'var(--accent-primary)';
+  const secondaryColor = 'var(--accent-primary-hover)';
 
   const sizeMap = {
     sm: { padding: '6px 12px', fontSize: '13px' },
@@ -128,8 +128,8 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
             top: '100%',
             right: 0,
             marginTop: '8px',
-            background: 'white',
-            border: `1px solid #E5E7EB`,
+            background: 'var(--color-surface-0)',
+            border: `1px solid var(--border-default)`,
             borderRadius: '8px',
             boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
             zIndex: 1000,
@@ -153,12 +153,12 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
               cursor: 'pointer',
               fontSize: '14px',
               fontWeight: 500,
-              color: '#0f0f0f',
-              borderBottom: '1px solid #E5E7EB',
+              color: 'var(--color-text-primary)',
+              borderBottom: '1px solid var(--border-default)',
               transition: 'background 0.2s',
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = '#F3F4F6';
+              (e.currentTarget as HTMLElement).style.background = 'var(--color-surface-1)';
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.background = 'transparent';
@@ -170,7 +170,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
             </svg>
             <div>
               <p style={{ margin: 0, fontSize: '13px', fontWeight: 600 }}>Copy Link</p>
-              <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#666' }}>Share this report</p>
+              <p style={{ margin: '2px 0 0', fontSize: '12px', color: 'var(--color-text-secondary)' }}>Share this report</p>
             </div>
           </button>
 
@@ -191,18 +191,18 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
               cursor: 'pointer',
               fontSize: '14px',
               fontWeight: 500,
-              color: '#0f0f0f',
-              borderBottom: '1px solid #E5E7EB',
+              color: 'var(--color-text-primary)',
+              borderBottom: '1px solid var(--border-default)',
               transition: 'background 0.2s',
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = '#F3F4F6';
+              (e.currentTarget as HTMLElement).style.background = 'var(--color-surface-1)';
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.background = 'transparent';
             }}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#0966C3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent-primary)">
               <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
             </svg>
             <div>
@@ -228,11 +228,11 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
               cursor: 'pointer',
               fontSize: '14px',
               fontWeight: 500,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               transition: 'background 0.2s',
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = '#F3F4F6';
+              (e.currentTarget as HTMLElement).style.background = 'var(--color-surface-1)';
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.background = 'transparent';
@@ -257,8 +257,8 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
             bottom: '24px',
             left: '50%',
             transform: 'translateX(-50%)',
-            background: '#057642',
-            color: 'white',
+            background: 'var(--color-success)',
+            color: 'var(--color-text-inverse)',
             padding: '12px 20px',
             borderRadius: '6px',
             fontSize: '14px',
