@@ -12,11 +12,12 @@
  * 5. Account
  */
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useResearchStore } from '@/store/research';
 import { useWorkspaceStore } from '@/store/workspace';
+import { SITS } from '@/lib/data';
 
 interface NavItem {
   label: string;
@@ -155,8 +156,39 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
   const { savedItems } = useWorkspaceStore();
   const [searchQuery, setSearchQuery] = useState('');
 
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  // Type-ahead suggestions from case type data
+  const suggestions = useMemo(() => {
+    if (searchQuery.length < 2) return [];
+    const q = searchQuery.toLowerCase();
+    const results: Array<{ label: string; href: string; category: string }> = [];
+    for (const cat of SITS) {
+      for (const opt of cat.opts) {
+        if (opt.label.toLowerCase().includes(q)) {
+          results.push({ label: opt.label, href: `/cases/${cat.id}`, category: cat.label });
+        }
+        if (results.length >= 6) break;
+      }
+      if (results.length >= 6) break;
+    }
+    // Add page suggestions
+    const pages = [
+      { label: 'Cases', href: '/cases' }, { label: 'Judges', href: '/judges' },
+      { label: 'Districts', href: '/districts' }, { label: 'Calculator', href: '/calculator' },
+      { label: 'Compare', href: '/compare' }, { label: 'Trends', href: '/trends' },
+    ];
+    for (const p of pages) {
+      if (p.label.toLowerCase().includes(q) && results.length < 8) {
+        results.push({ ...p, category: 'Page' });
+      }
+    }
+    return results;
+  }, [searchQuery]);
+
   const handleSearch = useCallback((e: React.FormEvent) => {
     e.preventDefault();
+    setShowSuggestions(false);
     if (searchQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
     }
@@ -223,11 +255,30 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
                 <input
                   type="text"
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => { setSearchQuery(e.target.value); setShowSuggestions(true); }}
+                  onFocus={() => setShowSuggestions(true)}
+                  onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                   placeholder="Search cases, judges..."
                   className="w-full pl-9 pr-3 py-2 text-sm bg-gray-50 border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-colors"
                   aria-label="Search"
+                  autoComplete="off"
                 />
+                {/* Type-ahead suggestions */}
+                {showSuggestions && suggestions.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden">
+                    {suggestions.map((s, i) => (
+                      <Link
+                        key={i}
+                        href={s.href}
+                        className="flex items-center justify-between px-3 py-2 text-xs hover:bg-blue-50 transition-colors"
+                        onClick={() => { setSearchQuery(''); setShowSuggestions(false); }}
+                      >
+                        <span className="text-gray-800 font-medium truncate">{s.label}</span>
+                        <span className="text-[10px] text-gray-400 flex-shrink-0 ml-2">{s.category}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             </form>
             {/* Keyboard shortcut hint */}
