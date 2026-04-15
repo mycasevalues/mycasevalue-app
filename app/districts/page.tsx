@@ -278,19 +278,19 @@ export default function DistrictsPage() {
   };
 
   return (
-    <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <style>{`
-        a.lex-link { color: #0966C3; text-decoration: none; font-weight: 500; }
+        a.lex-link { color: var(--accent-primary); text-decoration: none; font-weight: 500; }
         a.lex-link:hover { text-decoration: underline; }
       `}</style>
 
       {/* Breadcrumb */}
       <nav style={{
-        background: '#FFFFFF',
+        background: 'var(--color-surface-0)',
         borderBottom: '1px solid #e5e7eb',
         padding: '12px 0',
         fontSize: 13,
@@ -299,13 +299,13 @@ export default function DistrictsPage() {
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
           <Link href="/" className="lex-link" style={{ fontWeight: 500 }}>Home</Link>
           <span style={{ color: '#e5e7eb', margin: '0 8px' }}>›</span>
-          <span style={{ color: '#0f0f0f', fontWeight: 600 }}>Districts</span>
+          <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>Districts</span>
         </div>
       </nav>
 
       {/* Hero */}
       <header style={{
-        background: '#0966C3',
+        background: 'var(--accent-primary)',
         borderBottom: '1px solid #e5e7eb',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
@@ -314,8 +314,8 @@ export default function DistrictsPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 6,
-            background: '#0966C3',
-            color: '#FFFFFF',
+            background: 'var(--accent-primary)',
+            color: 'var(--color-text-inverse)',
             padding: '4px 12px',
             borderRadius: 4,
             fontSize: 11,
@@ -333,7 +333,7 @@ export default function DistrictsPage() {
           </div>
 
           <h1 style={{
-            color: '#FFFFFF',
+            color: 'var(--color-text-inverse)',
             fontFamily: 'var(--font-display)',
             letterSpacing: '-1.5px',
             fontSize: 'clamp(28px, 5vw, 48px)',
@@ -373,7 +373,7 @@ export default function DistrictsPage() {
                 <div style={{
                   fontSize: 28,
                   fontWeight: 700,
-                  color: '#0966C3',
+                  color: 'var(--color-text-inverse)',
                   fontFamily: 'var(--font-display)',
                 }}>
                   {stat.v}
@@ -414,7 +414,7 @@ export default function DistrictsPage() {
                 <h2 style={{
                   fontSize: 'clamp(20px, 4vw, 28px)',
                   fontWeight: 700,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   margin: 0,
                   fontFamily: 'var(--font-display)',
                   letterSpacing: '-0.5px',
@@ -422,8 +422,8 @@ export default function DistrictsPage() {
                   {circuit.name}
                 </h2>
                 <span style={{
-                  background: '#0966C3',
-                  color: '#FFFFFF',
+                  background: 'var(--accent-primary)',
+                  color: 'var(--color-text-inverse)',
                   padding: '4px 12px',
                   borderRadius: 4,
                   fontSize: 12,
@@ -440,7 +440,7 @@ export default function DistrictsPage() {
                   }}>
                     <div style={{
                       fontSize: 12,
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.3px',
                       marginBottom: 4,
@@ -450,7 +450,7 @@ export default function DistrictsPage() {
                     <div style={{
                       fontSize: 20,
                       fontWeight: 700,
-                      color: '#0966C3',
+                      color: 'var(--accent-primary)',
                       fontFamily: 'var(--font-display)',
                     }}>
                       {winRate}%
@@ -472,7 +472,7 @@ export default function DistrictsPage() {
                   return (
                     <Link key={district.code} href={`/districts/${district.code}`} style={{ textDecoration: 'none' }}>
                       <div style={{
-                        background: '#FFFFFF',
+                        background: 'var(--color-surface-0)',
                         border: '1px solid #e5e7eb',
                         borderRadius: '12px',
                         padding: '20px',
@@ -488,7 +488,7 @@ export default function DistrictsPage() {
                           <h3 style={{
                             fontSize: 15,
                             fontWeight: 600,
-                            color: '#0f0f0f',
+                            color: 'var(--color-text-primary)',
                             margin: '0 0 8px',
                             fontFamily: 'var(--font-display)',
                           }}>
@@ -496,7 +496,7 @@ export default function DistrictsPage() {
                           </h3>
                           <div style={{
                             fontSize: 12,
-                            color: '#0966C3',
+                            color: 'var(--accent-primary)',
                             fontWeight: 600,
                             fontFamily: 'var(--font-body)',
                           }}>
@@ -514,7 +514,7 @@ export default function DistrictsPage() {
                           <div>
                             <div style={{
                               fontSize: 11,
-                              color: '#4B5563',
+                              color: 'var(--color-text-secondary)',
                               textTransform: 'uppercase',
                               letterSpacing: '0.3px',
                               marginBottom: 4,
@@ -524,7 +524,7 @@ export default function DistrictsPage() {
                             <div style={{
                               fontSize: 18,
                               fontWeight: 700,
-                              color: '#0f0f0f',
+                              color: 'var(--color-text-primary)',
                               fontFamily: 'var(--font-display)',
                             }}>
                               {wrate}%
@@ -533,7 +533,7 @@ export default function DistrictsPage() {
                           <div>
                             <div style={{
                               fontSize: 11,
-                              color: '#4B5563',
+                              color: 'var(--color-text-secondary)',
                               textTransform: 'uppercase',
                               letterSpacing: '0.3px',
                               marginBottom: 4,
@@ -543,7 +543,7 @@ export default function DistrictsPage() {
                             <div style={{
                               fontSize: 18,
                               fontWeight: 700,
-                              color: '#0f0f0f',
+                              color: 'var(--color-text-primary)',
                               fontFamily: 'var(--font-display)',
                             }}>
                               {(caseVolume / 1000).toFixed(1)}K
@@ -554,7 +554,7 @@ export default function DistrictsPage() {
                         <div style={{
                           marginTop: 12,
                           fontSize: 11,
-                          color: '#4B5563',
+                          color: 'var(--color-text-secondary)',
                           fontFamily: 'var(--font-body)',
                         }}>
                           {district.states.join(', ')}
@@ -573,7 +573,7 @@ export default function DistrictsPage() {
 
       {/* Data Info Section */}
       <section style={{
-        background: '#FFFFFF',
+        background: 'var(--color-surface-0)',
         borderTop: '1px solid #e5e7eb',
         padding: 'clamp(32px, 5vw, 48px) 0',
       }}>
@@ -581,7 +581,7 @@ export default function DistrictsPage() {
           <h2 style={{
             fontSize: 18,
             fontWeight: 700,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             margin: '0 0 16px',
             fontFamily: 'var(--font-display)',
           }}>
@@ -589,7 +589,7 @@ export default function DistrictsPage() {
           </h2>
           <p style={{
             fontSize: 14,
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             lineHeight: 1.7,
             margin: '0 0 12px',
             maxWidth: 800,
@@ -601,7 +601,7 @@ export default function DistrictsPage() {
           </p>
           <p style={{
             fontSize: 13,
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             margin: 0,
             fontFamily: 'var(--font-body)',
           }}>
