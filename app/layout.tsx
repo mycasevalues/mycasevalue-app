@@ -293,7 +293,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     @media (prefers-reduced-motion: reduce) {
                                 .animate-page-enter { animation: none !important; }
                                           }
-                                          </style>
+                                                  `}</style>
       </head>
       <body className="font-inter" style={{ background: '#ffffff', color: '#0f0f0f', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />

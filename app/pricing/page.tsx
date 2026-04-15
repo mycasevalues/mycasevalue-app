@@ -328,7 +328,7 @@ export default function PricingPage() {
         }
 
         .card-features li::before {
-                    content: '\2713';
+                              content: '\\2713';
           color: #0966C3;
           font-weight: 600;
           flex-shrink: 0;
