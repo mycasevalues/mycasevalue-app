@@ -100,7 +100,7 @@ function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
   return (
     <Link
       href={item.href}
-      className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
+      className={`flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm transition-colors ${
         isActive
           ? 'bg-blue-50 text-brand-blue font-semibold'
           : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
@@ -246,7 +246,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
           </div>
 
           {/* Search */}
-          <div className="px-3 py-3 border-b border-gray-100 flex-shrink-0">
+          <div className="px-3 py-2 border-b border-gray-100 flex-shrink-0">
             <form onSubmit={handleSearch} role="search" aria-label="Search federal court records">
               <div className="relative">
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
@@ -281,15 +281,10 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
                 )}
               </div>
             </form>
-            {/* Keyboard shortcut hint */}
-            <div className="flex items-center gap-1 mt-1.5 px-1">
-              <kbd className="text-[10px] text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded border border-gray-200 font-mono">⌘K</kbd>
-              <span className="text-[10px] text-gray-400">to search</span>
-            </div>
           </div>
 
           {/* Navigation sections */}
-          <div className="flex-1 overflow-y-auto px-2 py-3 space-y-4">
+          <div className="flex-1 overflow-y-auto px-2 py-3 space-y-2">
             <NavSectionGroup section={RESEARCH_NAV} />
             <NavSectionGroup section={TOOLS_NAV} />
             <NavSectionGroup section={MORE_NAV} />

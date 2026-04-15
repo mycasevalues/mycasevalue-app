@@ -153,41 +153,41 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Platform Statistics Bar */}
-      <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '32px 24px' }}>
+      <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '16px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
             <DataFreshness />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32 }}>
           <div>
-            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 4 }}>
               {platformStats.totalCases.toLocaleString()}
             </div>
-            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               Total Cases Analyzed
             </div>
           </div>
           <div>
-            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: 'var(--accent-primary-hover)', marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--accent-primary-hover)', marginBottom: 4 }}>
               {platformStats.totalNOS}
             </div>
-            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               NOS Code Types
             </div>
           </div>
           <div>
-            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 4 }}>
               {platformStats.totalCategories}
             </div>
-            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               Case Categories
             </div>
           </div>
           <div>
-            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: getWinRateColor(platformStats.avgWinRate), marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: getWinRateColor(platformStats.avgWinRate), marginBottom: 4 }}>
               {platformStats.avgWinRate}%
             </div>
-            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               Average Win Rate
             </div>
           </div>
@@ -196,9 +196,9 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Categories Grid */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '60px 20px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 20px' }}>
         {/* Search Input */}
-        <div style={{ position: 'relative', width: '100%', maxWidth: '480px', marginBottom: '32px' }}>
+        <div style={{ position: 'relative', width: '100%', maxWidth: '480px', marginBottom: '24px' }}>
           <div
             style={{
               position: 'absolute',

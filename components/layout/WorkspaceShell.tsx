@@ -82,7 +82,7 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
         </div>
 
         {/* Research breadcrumb — desktop only */}
-        <div className="hidden lg:block px-4 border-b border-gray-50 bg-white">
+        <div className="hidden lg:block px-4 py-1 border-b border-gray-200 bg-gray-50">
           <ResearchBreadcrumb />
         </div>
 
