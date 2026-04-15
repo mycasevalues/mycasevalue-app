@@ -129,8 +129,6 @@ export default function CasesIndexPage() {
   const platformStats = getPlatformStats();
   const topFiledCases = getTopFiledCaseTypes();
   const topWinRateCases = getTopWinRateCaseTypes();
-  const maxCases = Math.max(...topFiledCases.map(c => c.total));
-
   const filtered = SITS.filter(cat =>
     cat.label.toLowerCase().includes(search.toLowerCase()) ||
     cat.sub.toLowerCase().includes(search.toLowerCase()) ||

@@ -151,10 +151,10 @@ export default function DiscoveryGeneratorPage() {
             </span>
           </div>
           <h1 style={{ fontSize: '40px', fontWeight: 600, color: '#FFF', fontFamily: 'var(--font-display)', margin: '0 0 8px', letterSpacing: '-0.02em' }}>
-            AI Discovery Generator
+            Draft Discovery Requests in Minutes, Not Hours
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
-            Generate interrogatories, requests for production, and requests for admissions in FRCP format.
+            Generate compliant interrogatories, production requests, and admissions in FRCP format instantly
           </p>
         </div>
       </div>

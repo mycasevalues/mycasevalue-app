@@ -163,10 +163,10 @@ export default function DepositionPrepPage() {
             </span>
           </div>
           <h1 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-display)', margin: '0 0 8px', letterSpacing: '-0.02em' }}>
-            AI Deposition Prep Tool
+            Master Every Deposition in Days, Not Weeks
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
-            Generate structured deposition outlines with numbered questions organized by topic.
+            Get targeted, organized outlines with strategic questions for any deponent role — plaintiff, defendant, expert, or witness
           </p>
         </div>
       </div>

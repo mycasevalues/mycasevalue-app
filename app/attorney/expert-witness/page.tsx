@@ -40,15 +40,15 @@ export default function ExpertWitnessPage() {
             </div>
             <div>
               <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
-                Expert Witness Database
+                Win Daubert Challenges with Circuit-Specific Data
               </h1>
               <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
-                Daubert challenges, circuit outcomes, and expert testimony patterns
+                Track expert admissions and exclusions by type to strengthen your expert strategy and predict outcomes
               </p>
             </div>
           </div>
           <p style={{ fontSize: '12px', color: 'rgba(10, 102, 194, 0.8)', margin: '12px 0 0', fontWeight: 500 }}>
-            Based on federal opinions data
+            Based on 100K+ federal court opinions
           </p>
         </div>
       </div>

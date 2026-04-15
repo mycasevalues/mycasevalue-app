@@ -490,10 +490,10 @@ export default function OpposingCounselSearch() {
                   margin: 0,
                 }}
               >
-                Opposing Counsel Research
+                Predict Opposing Counsel's Next Move
               </h1>
               <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: '4px 0 0 0' }}>
-                Analyze litigation track record, settlement patterns, and strategy
+                Analyze win rates, settlement history, and litigation patterns to inform your strategy
               </p>
             </div>
           </div>

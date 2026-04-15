@@ -143,10 +143,10 @@ export default function ResearchMemoPage() {
             </span>
           </div>
           <h1 style={{ fontSize: '40px', fontWeight: 600, color: '#FFF', fontFamily: 'var(--font-display)', margin: '0 0 8px' }}>
-            AI Research Memo Generator
+            Research Memos Backed by Real Court Data
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
-            Generate structured legal research memoranda with IRAC format and platform statistics.
+            Generate IRAC memoranda with platform statistics showing outcome trends and settlement data
           </p>
         </div>
       </div>

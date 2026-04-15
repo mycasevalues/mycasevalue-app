@@ -65,9 +65,9 @@ export default function AppealsPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2.5"><path d="M18 15l-6-6-6 6" /></svg>
             <span style={{ fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.9)', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Appeal Analysis</span>
           </div>
-          <h1 style={{ fontSize: '40px', fontWeight: 600, color: '#FFF', fontFamily: 'var(--font-display)', margin: '0 0 8px' }}>Appeal Probability Scorer</h1>
+          <h1 style={{ fontSize: '40px', fontWeight: 600, color: '#FFF', fontFamily: 'var(--font-display)', margin: '0 0 8px' }}>Know Your Appeal's Win Odds Before You File</h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
-            Assess the likelihood and success probability of an appeal based on case type and trial outcome.
+            Get reversal probability and strategic insights based on case type, circuit, and trial outcome from real appeal data
           </p>
         </div>
       </div>

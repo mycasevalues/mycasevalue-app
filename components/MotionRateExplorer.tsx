@@ -245,9 +245,9 @@ export default function MotionRateExplorer() {
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
-        <h1 style={titleStyle}>Motion Success Rate Database</h1>
+        <h1 style={titleStyle}>Win More Motions with Circuit-Specific Data</h1>
         <p style={subtitleStyle}>
-          Motion grant and deny rates by case type and federal circuit, based on federal court records.
+          Track grant/deny rates by motion type and circuit to predict outcomes and refine strategy
         </p>
       </div>
 

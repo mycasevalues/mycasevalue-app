@@ -488,12 +488,12 @@ export default function SOLCalculatorPage() {
             </div>
             <div>
               <h1 style={{ fontSize: '36px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0, letterSpacing: '-0.02em' }}>
-                Statute of Limitations Calculator
+                Know Every SOL Before Time Runs Out
               </h1>
             </div>
           </div>
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.8)', margin: '8px 0 0 52px' }}>
-            Calculate filing deadlines and statute of limitations periods for federal and state law claims
+            Instantly identify federal and state filing deadlines with tolling rules, discovery rule dates, and key milestones
           </p>
           <div style={{ marginTop: '12px', display: 'inline-block', background: 'rgba(10, 102, 194, 0.1)', padding: '6px 12px', borderRadius: '12px', border: '1px solid rgba(10, 102, 194, 0.3)' }}>
             <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
