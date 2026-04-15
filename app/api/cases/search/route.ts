@@ -3,8 +3,8 @@
  *
  * GET /api/cases/search?q=...&court=...&caseType=...&yearFrom=...&yearTo=...&status=...&sort=...&page=...&limit=...
  *
- * Searches the canonical cases table using PostgreSQL full-text search.
- * Returns cases with court info, AI summary preview, and tags.
+ * Searches the canonical cases table. Returns cases with court, summary preview, and tags.
+ * Uses separate queries for related data to avoid FK detection issues with Supabase.
  */
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -21,7 +21,7 @@ export async function GET(req: NextRequest) {
   const yearFrom = params.get('yearFrom') || '';
   const yearTo = params.get('yearTo') || '';
   const status = params.get('status') || '';
-  const sort = params.get('sort') || 'relevance'; // relevance, newest, oldest
+  const sort = params.get('sort') || 'relevance';
   const page = Math.max(1, parseInt(params.get('page') || '1', 10));
   const limit = Math.min(MAX_LIMIT, Math.max(1, parseInt(params.get('limit') || String(DEFAULT_LIMIT), 10)));
   const offset = (page - 1) * limit;
@@ -29,30 +29,13 @@ export async function GET(req: NextRequest) {
   try {
     const db = getSupabaseAdmin();
 
+    // Build the base query
     let query = db
       .from('cases')
-      .select(
-        `
-        id,
-        case_name,
-        docket_number,
-        case_type,
-        nature_of_suit,
-        filing_date,
-        termination_date,
-        status,
-        procedural_posture,
-        courts(name, abbreviation, circuit),
-        case_summaries(summary_text),
-        case_tags(tag, tag_category)
-      `,
-        { count: 'exact' }
-      );
+      .select('id, case_name, docket_number, case_type, nature_of_suit, filing_date, termination_date, status, procedural_posture, court_id', { count: 'exact' });
 
-    // Text search on case name
+    // Text search
     if (q) {
-      // Use ilike for simple substring matching (works without FTS setup)
-      // If the query looks like a docket number, search that field too
       const isDocketLike = /\d+.*-.*-\d+/.test(q);
       if (isDocketLike) {
         query = query.or(`case_name.ilike.%${q}%,docket_number.ilike.%${q}%`);
@@ -62,9 +45,6 @@ export async function GET(req: NextRequest) {
     }
 
     // Filters
-    if (court) {
-      query = query.eq('courts.abbreviation', court.toUpperCase());
-    }
     if (caseType) {
       query = query.ilike('case_type', `%${caseType}%`);
     }
@@ -79,52 +59,87 @@ export async function GET(req: NextRequest) {
     }
 
     // Sorting
-    if (sort === 'newest') {
-      query = query.order('filing_date', { ascending: false, nullsFirst: false });
-    } else if (sort === 'oldest') {
+    if (sort === 'oldest') {
       query = query.order('filing_date', { ascending: true, nullsFirst: false });
     } else {
-      // Default: newest first (relevance sorting would need pg_trgm or FTS rank)
       query = query.order('filing_date', { ascending: false, nullsFirst: false });
     }
 
     // Pagination
     query = query.range(offset, offset + limit - 1);
 
-    const { data, error, count } = await query;
+    const { data: cases, error, count } = await query;
 
     if (error) {
       console.error('[api/cases/search] Query error:', error.message);
-      return NextResponse.json(
-        { error: 'Search failed', detail: error.message },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'Search failed', detail: error.message }, { status: 500 });
     }
 
+    if (!cases || cases.length === 0) {
+      return NextResponse.json({
+        results: [],
+        total: count ?? 0,
+        page,
+        limit,
+        totalPages: 0,
+        query: q,
+        filters: { court, caseType, yearFrom, yearTo, status },
+      });
+    }
+
+    // Get court data for all results
+    const courtIds = Array.from(new Set(cases.map((c: any) => c.court_id).filter(Boolean)));
+    const courtMap = new Map<number, any>();
+    if (courtIds.length > 0) {
+      const { data: courts } = await db.from('courts').select('id, name, abbreviation, circuit').in('id', courtIds);
+      (courts ?? []).forEach((c: any) => courtMap.set(c.id, c));
+    }
+
+    // Filter by court abbreviation if specified (post-query since it's a join)
+    let filteredCases = cases;
+    if (court) {
+      const upperCourt = court.toUpperCase();
+      filteredCases = cases.filter((c: any) => {
+        const ct = courtMap.get(c.court_id);
+        return ct && ct.abbreviation === upperCourt;
+      });
+    }
+
+    // Get summaries and tags for results
+    const caseIds = filteredCases.map((c: any) => c.id);
+    const [summariesRes, tagsRes] = await Promise.all([
+      db.from('case_summaries').select('case_id, summary_text').in('case_id', caseIds),
+      db.from('case_tags').select('case_id, tag, tag_category').in('case_id', caseIds),
+    ]);
+
+    const summaryMap = new Map<number, string>();
+    (summariesRes.data ?? []).forEach((s: any) => summaryMap.set(s.case_id, s.summary_text));
+
+    const tagMap = new Map<number, Array<{ tag: string; category: string }>>();
+    (tagsRes.data ?? []).forEach((t: any) => {
+      const existing = tagMap.get(t.case_id) ?? [];
+      existing.push({ tag: t.tag, category: t.tag_category });
+      tagMap.set(t.case_id, existing);
+    });
+
     // Shape results
-    const results = (data ?? []).map((row: any) => ({
-      id: row.id,
-      caseName: row.case_name,
-      docketNumber: row.docket_number,
-      caseType: row.case_type || null,
-      natureOfSuit: row.nature_of_suit || null,
-      filingDate: row.filing_date || null,
-      terminationDate: row.termination_date || null,
-      status: row.status || null,
-      proceduralPosture: row.procedural_posture || null,
-      court: row.courts
-        ? {
-            name: row.courts.name,
-            abbreviation: row.courts.abbreviation,
-            circuit: row.courts.circuit,
-          }
-        : null,
-      summaryPreview: row.case_summaries?.[0]?.summary_text?.slice(0, 200) || null,
-      tags: (row.case_tags ?? []).map((t: any) => ({
-        tag: t.tag,
-        category: t.tag_category,
-      })),
-    }));
+    const results = filteredCases.map((row: any) => {
+      const ct = courtMap.get(row.court_id);
+      return {
+        id: row.id,
+        caseName: row.case_name,
+        docketNumber: row.docket_number,
+        caseType: row.case_type || null,
+        natureOfSuit: row.nature_of_suit || null,
+        filingDate: row.filing_date || null,
+        terminationDate: row.termination_date || null,
+        status: row.status || null,
+        proceduralPosture: row.procedural_posture || null,
+        court: ct ? { name: ct.name, abbreviation: ct.abbreviation, circuit: ct.circuit } : null,
+        summaryPreview: summaryMap.get(row.id)?.slice(0, 200) || null,
+        tags: tagMap.get(row.id) ?? [],
+      };
+    });
 
     return NextResponse.json({
       results,
@@ -137,9 +152,6 @@ export async function GET(req: NextRequest) {
     });
   } catch (err) {
     console.error('[api/cases/search] Error:', err);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
