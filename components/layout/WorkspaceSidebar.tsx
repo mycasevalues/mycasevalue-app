@@ -169,14 +169,18 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-40 h-full bg-white border-r border-gray-100 transition-transform duration-200 lg:translate-x-0 lg:sticky lg:z-auto ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
-        style={{ width: '272px', top: '0' }}
+        className={`
+          fixed top-0 left-0 z-40 h-full
+          bg-white border-r border-gray-100
+          transition-transform duration-200
+          lg:relative lg:translate-x-0 lg:z-auto lg:h-auto
+          ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+        `}
+        style={{ width: '272px', minWidth: '272px', flexShrink: 0 }}
         role="navigation"
         aria-label="Workspace navigation"
       >
-        <div className="flex flex-col h-full lg:h-[calc(100vh-0px)] lg:sticky lg:top-0">
+        <div className="flex flex-col h-full lg:h-[calc(100vh-120px)] lg:sticky lg:top-[80px] overflow-hidden">
           {/* Mobile only: Logo + Close */}
           <div className="flex items-center justify-between px-4 h-14 border-b border-gray-100 flex-shrink-0 lg:hidden">
             <Link href="/" className="flex items-center gap-2">

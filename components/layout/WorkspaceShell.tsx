@@ -42,6 +42,8 @@ function isWorkspaceRoute(pathname: string): boolean {
   return WORKSPACE_ROUTES.some(route => pathname === route || pathname.startsWith(route + '/'));
 }
 
+export { isWorkspaceRoute };
+
 export default function WorkspaceShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const showSidebar = isWorkspaceRoute(pathname);
@@ -79,12 +81,19 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
         </div>
 
         {/* Page content */}
-        <div className="min-h-screen">
+        <div className="min-h-[calc(100vh-120px)]">
           {children}
         </div>
       </div>
     </div>
   );
+}
+
+/** Client component to conditionally hide footer on workspace routes */
+export function ConditionalFooter({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  if (isWorkspaceRoute(pathname)) return null;
+  return <>{children}</>;
 }
 
 function getPageTitle(pathname: string): string {

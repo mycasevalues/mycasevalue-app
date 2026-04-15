@@ -354,6 +354,10 @@ export default function Header() {
 
   const activeSection = getActiveNavSection(pathname);
 
+  // Hide mega-menu nav on workspace routes (sidebar handles navigation)
+  const WORKSPACE_PREFIXES = ['/cases', '/judges', '/districts', '/attorney', '/search', '/dashboard', '/legal', '/trends', '/nos-explorer', '/compare', '/calculator', '/map', '/odds', '/report', '/results', '/sample', '/account', '/settings', '/glossary'];
+  const isWorkspace = WORKSPACE_PREFIXES.some(p => pathname === p || pathname.startsWith(p + '/'));
+
   /* Auth */
   useEffect(() => {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -456,8 +460,8 @@ export default function Header() {
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center flex-1 gap-0">
+            {/* Desktop Navigation — hidden on workspace routes (sidebar provides nav) */}
+            <div className={`hidden ${isWorkspace ? '' : 'lg:flex'} items-center flex-1 gap-0`}>
               {/* Explore */}
               <div
                 className="relative"
