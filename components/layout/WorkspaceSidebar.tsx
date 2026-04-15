@@ -169,18 +169,18 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-50 h-full bg-white border-r border-gray-100 transition-transform duration-200 lg:translate-x-0 lg:static lg:z-auto ${
+        className={`fixed top-0 left-0 z-40 h-full bg-white border-r border-gray-100 transition-transform duration-200 lg:translate-x-0 lg:sticky lg:z-auto ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
-        style={{ width: '272px' }}
+        style={{ width: '272px', top: '0' }}
         role="navigation"
         aria-label="Workspace navigation"
       >
-        <div className="flex flex-col h-full">
-          {/* Logo + Close (mobile) */}
-          <div className="flex items-center justify-between px-4 h-16 border-b border-gray-100 flex-shrink-0">
+        <div className="flex flex-col h-full lg:h-[calc(100vh-0px)] lg:sticky lg:top-0">
+          {/* Mobile only: Logo + Close */}
+          <div className="flex items-center justify-between px-4 h-14 border-b border-gray-100 flex-shrink-0 lg:hidden">
             <Link href="/" className="flex items-center gap-2">
-              <svg width="28" height="28" viewBox="-100 -100 200 200" className="flex-shrink-0">
+              <svg width="24" height="24" viewBox="-100 -100 200 200" className="flex-shrink-0">
                 <rect x="-100" y="-100" width="200" height="200" rx="26" fill="#0966C3" />
                 <g transform="rotate(12)">
                   <polygon points="0,0 -40,-69.3 40,-69.3 80,0" fill="white" opacity="0.93" />
@@ -188,13 +188,13 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
                   <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
                 </g>
               </svg>
-              <span className="font-bold text-gray-900 text-base">
+              <span className="font-bold text-gray-900 text-sm">
                 MyCase<span className="text-brand-blue">Value</span>
               </span>
             </Link>
             <button
               onClick={onToggle}
-              className="lg:hidden p-2 text-gray-500 hover:text-gray-700 rounded-lg"
+              className="p-2 text-gray-500 hover:text-gray-700 rounded-lg"
               aria-label="Close sidebar"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
