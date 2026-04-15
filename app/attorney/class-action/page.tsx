@@ -67,11 +67,11 @@ const DISTRICT_RANKINGS = [
 ];
 
 export default function ClassActionPage() {
-  const accentColor = '#0966C3';
-  const secondaryColor = '#004182';
-  const textColor = '#0f0f0f';
-  const bgColor = '#F7F8FA';
-  const borderColor = '#E5E7EB';
+  const accentColor = 'var(--accent-primary)';
+  const secondaryColor = 'var(--accent-primary-hover)';
+  const textColor = 'var(--color-text-primary)';
+  const bgColor = 'var(--color-surface-1)';
+  const borderColor = 'var(--border-default)';
 
   return (
     <div style={{ minHeight: '100vh', background: bgColor, fontFamily: 'var(--font-body)', color: textColor }}>

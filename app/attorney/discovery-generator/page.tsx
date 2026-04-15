@@ -121,8 +121,8 @@ export default function DiscoveryGeneratorPage() {
 
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
-    border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px',
-    color: '#0f0f0f', backgroundColor: '#FFF', fontFamily: 'var(--font-body)',
+    border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px',
+    color: 'var(--color-text-primary)', backgroundColor: '#FFF', fontFamily: 'var(--font-body)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -132,14 +132,14 @@ export default function DiscoveryGeneratorPage() {
   const hasAnyText = texts.interrogatories || texts.production || texts.admissions;
 
   return (
-    <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        select:focus, input:focus, textarea:focus { outline: none; border-color: #0966C3; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#0966C3', padding: '64px 24px' }}>
+      <div style={{ background: 'var(--accent-primary)', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.15)' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2.5">
@@ -163,13 +163,13 @@ export default function DiscoveryGeneratorPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: hasAnyText ? '340px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
-          <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+          <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
               Case Details
             </h2>
             <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Case Category</label>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category</label>
                 <select value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); }} style={selectStyle}>
                   <option value="">Select category...</option>
                   {SITS.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
@@ -178,7 +178,7 @@ export default function DiscoveryGeneratorPage() {
 
               {caseCategory && (
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Case Type *</label>
+                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Type *</label>
                   <select value={caseType} onChange={e => setCaseType(e.target.value)} style={selectStyle}>
                     <option value="">Select type...</option>
                     {caseOptions.map(opt => <option key={opt.label} value={opt.nos}>{opt.label}</option>)}
@@ -187,7 +187,7 @@ export default function DiscoveryGeneratorPage() {
               )}
 
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Party Role *</label>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Party Role *</label>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   {['plaintiff', 'defendant'].map(role => (
                     <button
@@ -196,9 +196,9 @@ export default function DiscoveryGeneratorPage() {
                       onClick={() => setPartyRole(role)}
                       style={{
                         flex: 1, padding: '10px', borderRadius: '12px',
-                        border: `1px solid ${partyRole === role ? '#0966C3' : '#E5E7EB'}`,
+                        border: `1px solid ${partyRole === role ? 'var(--accent-primary)' : 'var(--border-default)'}`,
                         backgroundColor: partyRole === role ? 'rgba(10,102,194,0.08)' : '#FAFBFC',
-                        color: partyRole === role ? '#0966C3' : '#4B5563',
+                        color: partyRole === role ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                         fontSize: '13px', fontWeight: 600, cursor: 'pointer',
                         textTransform: 'capitalize',
                       }}
@@ -210,14 +210,14 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Claims or Defenses (optional)</label>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Claims or Defenses (optional)</label>
                 <textarea
                   placeholder="Describe the key claims or defenses to tailor the discovery requests..."
                   value={claimsDefenses}
                   onChange={e => setClaimsDefenses(e.target.value)}
                   style={{
-                    width: '100%', padding: '12px 14px', border: '1px solid #E5E7EB',
-                    borderRadius: '12px', fontSize: '14px', color: '#0f0f0f',
+                    width: '100%', padding: '12px 14px', border: '1px solid var(--border-default)',
+                    borderRadius: '12px', fontSize: '14px', color: 'var(--color-text-primary)',
                     backgroundColor: '#FFF', fontFamily: 'var(--font-body)',
                     minHeight: '80px', resize: 'vertical', boxSizing: 'border-box' as const,
                   }}
@@ -225,7 +225,7 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               {error && (
-                <div style={{ padding: '10px 14px', borderRadius: '12px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid #E5E7EB' }}>
+                <div style={{ padding: '10px 14px', borderRadius: '12px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
                   <p style={{ fontSize: '13px', color: '#CC1016', margin: 0 }}>{error}</p>
                 </div>
               )}
@@ -235,7 +235,7 @@ export default function DiscoveryGeneratorPage() {
                 disabled={loading || !caseType}
                 style={{
                   width: '100%', padding: '14px',
-                  backgroundColor: loading || !caseType ? '#E5E7EB' : '#0966C3',
+                  backgroundColor: loading || !caseType ? 'var(--border-default)' : 'var(--accent-primary)',
                   color: '#FFF', border: 'none', borderRadius: '12px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-display)',
                   textTransform: 'uppercase', letterSpacing: '0.04em',
@@ -251,7 +251,7 @@ export default function DiscoveryGeneratorPage() {
           {hasAnyText && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Tabs */}
-              <div style={{ display: 'flex', gap: '4px', background: '#FFF', borderRadius: '12px', padding: '4px', border: '1px solid #E5E7EB' }}>
+              <div style={{ display: 'flex', gap: '4px', background: '#FFF', borderRadius: '12px', padding: '4px', border: '1px solid var(--border-default)' }}>
                 {TABS.map(tab => (
                   <button
                     key={tab.key}
@@ -261,8 +261,8 @@ export default function DiscoveryGeneratorPage() {
                     }}
                     style={{
                       flex: 1, padding: '10px 12px', borderRadius: '12px', border: 'none',
-                      background: activeTab === tab.key ? '#0966C3' : 'transparent',
-                      color: activeTab === tab.key ? '#FFF' : '#4B5563',
+                      background: activeTab === tab.key ? 'var(--accent-primary)' : 'transparent',
+                      color: activeTab === tab.key ? '#FFF' : 'var(--color-text-secondary)',
                       fontSize: '12px', fontWeight: 600, cursor: 'pointer',
                       fontFamily: 'var(--font-body)', transition: 'all 0.2s',
                     }}
@@ -279,18 +279,18 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               {/* Content */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB' }}>
+              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: 8 }}>
-                  <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-display)' }}>
+                  <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-display)' }}>
                     {TABS.find(t => t.key === activeTab)?.label}
-                    {loading && activeTab && <span style={{ fontSize: 12, color: '#0966C3', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
+                    {loading && activeTab && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
                   <div style={{ display: 'flex', gap: 8 }}>
                     <button
                       onClick={copyToClipboard}
                       disabled={loading || !currentText}
                       style={{
-                        padding: '8px 12px', background: copied ? '#059669' : '#0966C3',
+                        padding: '8px 12px', background: copied ? '#059669' : 'var(--accent-primary)',
                         color: '#FFF', border: 'none', borderRadius: '20px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || !currentText ? 'not-allowed' : 'pointer',
@@ -303,7 +303,7 @@ export default function DiscoveryGeneratorPage() {
                       onClick={exportAsDocx}
                       disabled={loading || exporting || !currentText}
                       style={{
-                        padding: '8px 12px', background: '#004182',
+                        padding: '8px 12px', background: 'var(--accent-primary-hover)',
                         color: '#FFF', border: 'none', borderRadius: '20px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || exporting || !currentText ? 'not-allowed' : 'pointer',
@@ -320,16 +320,16 @@ export default function DiscoveryGeneratorPage() {
                     ref={outputRef}
                     style={{
                       maxHeight: '600px', overflowY: 'auto', padding: '16px',
-                      background: '#FAFBFC', borderRadius: '12px', border: '1px solid #E5E7EB',
-                      fontSize: '13px', color: '#0f0f0f', lineHeight: '1.7',
+                      background: '#FAFBFC', borderRadius: '12px', border: '1px solid var(--border-default)',
+                      fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.7',
                       fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap', wordWrap: 'break-word',
                     }}
                   >
                     {currentText}
-                    {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: '#0966C3', marginLeft: 2, animation: 'blink 1s infinite' }} />}
+                    {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: 'var(--accent-primary)', marginLeft: 2, animation: 'blink 1s infinite' }} />}
                   </div>
                 ) : (
-                  <div style={{ padding: '40px', textAlign: 'center', color: '#4B5563', fontSize: '13px' }}>
+                  <div style={{ padding: '40px', textAlign: 'center', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
                     {loading ? 'Generating...' : 'Click "Generate" or switch to this tab to generate content.'}
                   </div>
                 )}

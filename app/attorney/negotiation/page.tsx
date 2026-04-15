@@ -108,8 +108,8 @@ export default function NegotiationPage() {
 
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
-    border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px',
-    color: '#0f0f0f', backgroundColor: '#FFF', fontFamily: 'var(--font-body)',
+    border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px',
+    color: 'var(--color-text-primary)', backgroundColor: '#FFF', fontFamily: 'var(--font-body)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -118,10 +118,10 @@ export default function NegotiationPage() {
   const r = results;
 
   return (
-    <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
-      <style>{`select:focus, input:focus { outline: none; border-color: #0966C3; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+      <style>{`select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
 
-      <div style={{ background: '#0966C3', padding: '64px 24px' }}>
+      <div style={{ background: 'var(--accent-primary)', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.15)' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2.5"><circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" /></svg>
@@ -137,11 +137,11 @@ export default function NegotiationPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: r ? '380px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
-          <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>Case & Offer Details</h2>
+          <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>Case & Offer Details</h2>
             <form onSubmit={handleAnalyze} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Case Category</label>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category</label>
                 <select value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); setResults(null); }} style={selectStyle}>
                   <option value="">Select category...</option>
                   {SITS.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
@@ -149,7 +149,7 @@ export default function NegotiationPage() {
               </div>
               {caseCategory && (
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Case Type *</label>
+                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Type *</label>
                   <select value={caseType} onChange={e => { setCaseType(e.target.value); setResults(null); }} style={selectStyle}>
                     <option value="">Select type...</option>
                     {caseOptions.map(opt => <option key={opt.label} value={opt.nos}>{opt.label}</option>)}
@@ -157,41 +157,41 @@ export default function NegotiationPage() {
                 </div>
               )}
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>District (optional)</label>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>District (optional)</label>
                 <select value={district} onChange={e => setDistrict(e.target.value)} style={selectStyle}>
                   <option value="">All districts</option>
                   {STATES.filter(s => s.id).map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
                 </select>
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Current Settlement Offer ($) *</label>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Current Settlement Offer ($) *</label>
                 <input type="number" placeholder="e.g., 75000" value={currentOffer} onChange={e => setCurrentOffer(e.target.value)} style={{ ...selectStyle, appearance: 'auto' as const, backgroundImage: 'none' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Estimated Litigation Cost to Trial ($)</label>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Estimated Litigation Cost to Trial ($)</label>
                 <input type="number" placeholder="e.g., 50000" value={litigationCost} onChange={e => setLitigationCost(e.target.value)} style={{ ...selectStyle, appearance: 'auto' as const, backgroundImage: 'none' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Representation</label>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Representation</label>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   {[{ val: true, label: 'Attorney' }, { val: false, label: 'Pro Se' }].map(opt => (
-                    <button key={String(opt.val)} type="button" onClick={() => setRepresented(opt.val)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: `1px solid ${represented === opt.val ? '#0966C3' : '#E5E7EB'}`, backgroundColor: represented === opt.val ? 'rgba(10,102,194,0.08)' : '#FAFBFC', color: represented === opt.val ? '#0966C3' : '#4B5563', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+                    <button key={String(opt.val)} type="button" onClick={() => setRepresented(opt.val)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: `1px solid ${represented === opt.val ? 'var(--accent-primary)' : 'var(--border-default)'}`, backgroundColor: represented === opt.val ? 'rgba(10,102,194,0.08)' : '#FAFBFC', color: represented === opt.val ? 'var(--accent-primary)' : 'var(--color-text-secondary)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                       {opt.label}
                     </button>
                   ))}
                 </div>
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Case Strength</label>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Strength</label>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   {[{ v: 'weak', l: 'Weak', c: '#CC1016' }, { v: 'moderate', l: 'Moderate', c: '#D97706' }, { v: 'strong', l: 'Strong', c: '#057642' }].map(opt => (
-                    <button key={opt.v} type="button" onClick={() => setCaseStrength(opt.v)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: `1px solid ${caseStrength === opt.v ? opt.c : '#E5E7EB'}`, backgroundColor: caseStrength === opt.v ? `${opt.c}15` : '#FAFBFC', color: caseStrength === opt.v ? opt.c : '#4B5563', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+                    <button key={opt.v} type="button" onClick={() => setCaseStrength(opt.v)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: `1px solid ${caseStrength === opt.v ? opt.c : 'var(--border-default)'}`, backgroundColor: caseStrength === opt.v ? `${opt.c}15` : '#FAFBFC', color: caseStrength === opt.v ? opt.c : 'var(--color-text-secondary)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                       {opt.l}
                     </button>
                   ))}
                 </div>
               </div>
-              <button type="submit" disabled={!caseType || !currentOffer} style={{ width: '100%', padding: '14px', backgroundColor: !caseType || !currentOffer ? '#E5E7EB' : '#0966C3', color: '#FFF', border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: !caseType || !currentOffer ? 'not-allowed' : 'pointer' }}>
+              <button type="submit" disabled={!caseType || !currentOffer} style={{ width: '100%', padding: '14px', backgroundColor: !caseType || !currentOffer ? 'var(--border-default)' : 'var(--accent-primary)', color: '#FFF', border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: !caseType || !currentOffer ? 'not-allowed' : 'pointer' }}>
                 Analyze Negotiation Position
               </button>
             </form>
@@ -201,15 +201,15 @@ export default function NegotiationPage() {
           {r && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Offer Percentile */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB', textAlign: 'center' }}>
-                <div style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Current Offer Position</div>
+              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
+                <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Current Offer Position</div>
                 <div style={{ fontSize: '56px', fontWeight: 600, color: getWinRateColor(r.offerPercentile).text, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                   {r.offerPercentile}<span style={{ fontSize: '24px' }}>th</span>
                 </div>
-                <div style={{ fontSize: '13px', color: '#4B5563', marginTop: 4 }}>percentile of historical settlements</div>
-                <div style={{ marginTop: 16, height: 10, background: '#E5E7EB', borderRadius: 5, position: 'relative' }}>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: 4 }}>percentile of historical settlements</div>
+                <div style={{ marginTop: 16, height: 10, background: 'var(--border-default)', borderRadius: 5, position: 'relative' }}>
                   <div style={{ position: 'absolute', left: `${Math.min(r.offerPercentile, 98)}%`, top: -4, width: 18, height: 18, borderRadius: '50%', background: getWinRateColor(r.offerPercentile).bg, border: '3px solid #FFF', boxShadow: '0 2px 4px rgba(0,0,0,0.2)', transform: 'translateX(-50%)' }} />
-                  <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 16, fontSize: 10, color: '#4B5563', fontFamily: 'var(--font-mono)' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 16, fontSize: 10, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                     <span>{formatMoney(r.p25)}</span><span>{formatMoney(r.p50)}</span><span>{formatMoney(r.p75)}</span>
                   </div>
                 </div>
@@ -217,11 +217,11 @@ export default function NegotiationPage() {
 
               {/* BATNA */}
               <div style={{ background: r.batna > parseInt(currentOffer) ? '#E8F3EB' : '#FEF0EF', borderRadius: '12px', padding: '24px', border: `1px solid ${r.batna > parseInt(currentOffer) ? '#057642' : '#CC1016'}` }}>
-                <div style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>BATNA (Best Alternative to Negotiated Agreement)</div>
+                <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>BATNA (Best Alternative to Negotiated Agreement)</div>
                 <div style={{ fontSize: '32px', fontWeight: 600, color: r.batna > parseInt(currentOffer) ? '#057642' : '#CC1016', fontFamily: 'var(--font-mono)' }}>
                   {formatMoney(r.batna)}
                 </div>
-                <div style={{ fontSize: '12px', color: '#4B5563', marginTop: 4 }}>
+                <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: 4 }}>
                   = {Math.round(r.winRate)}% win rate × {formatMoney(r.medianVerdict)} median verdict − {formatMoney(parseInt(litigationCost) || 50000)} litigation costs
                 </div>
                 <div style={{ marginTop: 8, fontSize: '13px', fontWeight: 600, color: r.batna > parseInt(currentOffer) ? '#057642' : '#CC1016' }}>
@@ -230,38 +230,38 @@ export default function NegotiationPage() {
               </div>
 
               {/* Negotiation Range */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Recommended Negotiation Range</h3>
+              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Recommended Negotiation Range</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
                   <div style={{ textAlign: 'center', padding: '16px', background: '#FEF0EF', borderRadius: 10 }}>
-                    <div style={{ fontSize: '10px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>Floor</div>
+                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Floor</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.floor)}</div>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '16px', background: '#EDF3FB', borderRadius: 10, border: '2px solid #0966C3' }}>
-                    <div style={{ fontSize: '10px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>Target</div>
-                    <div style={{ fontSize: '20px', fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.target)}</div>
+                  <div style={{ textAlign: 'center', padding: '16px', background: '#EDF3FB', borderRadius: 10, border: '2px solid var(--accent-primary)' }}>
+                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Target</div>
+                    <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.target)}</div>
                   </div>
                   <div style={{ textAlign: 'center', padding: '16px', background: '#E8F3EB', borderRadius: 10 }}>
-                    <div style={{ fontSize: '10px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>Ceiling</div>
+                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Ceiling</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: '#057642', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.ceiling)}</div>
                   </div>
                 </div>
               </div>
 
               {/* Timing */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '24px', border: '1px solid #E5E7EB' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>Settlement Timing Intelligence</h3>
-                <p style={{ fontSize: '13px', color: '#4B5563', margin: 0, lineHeight: 1.6 }}>{r.settlementTiming}</p>
+              <div style={{ background: '#FFF', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>Settlement Timing Intelligence</h3>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>{r.settlementTiming}</p>
               </div>
 
               {/* Talking Points */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Negotiation Talking Points</h3>
+              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Negotiation Talking Points</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {r.talkingPoints.map((pt, i) => (
                     <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-                      <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: '#0966C3', color: '#FFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600, marginTop: 2 }}>{i + 1}</div>
-                      <p style={{ fontSize: '13px', color: '#0f0f0f', margin: 0, lineHeight: 1.6 }}>{pt}</p>
+                      <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: 'var(--accent-primary)', color: '#FFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600, marginTop: 2 }}>{i + 1}</div>
+                      <p style={{ fontSize: '13px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6 }}>{pt}</p>
                     </div>
                   ))}
                 </div>

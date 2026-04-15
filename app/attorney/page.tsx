@@ -140,8 +140,8 @@ const FeatureCard = ({
   const content = (
     <div
       style={{
-        backgroundColor: '#FFFFFF',
-        border: '1px solid #E5E7EB',
+        backgroundColor: 'var(--color-surface-0)',
+        border: '1px solid var(--border-default)',
         borderRadius: '12px',
         padding: '24px',
         display: 'flex',
@@ -155,7 +155,7 @@ const FeatureCard = ({
       }}
       className="attorney-feature-card"
     >
-      <div style={{ fontSize: '32px', color: '#004182', transition: 'color 0.3s ease' }}>{icon}</div>
+      <div style={{ fontSize: '32px', color: 'var(--accent-primary-hover)', transition: 'color 0.3s ease' }}>{icon}</div>
       <div>
         <h3
           style={{
@@ -163,7 +163,7 @@ const FeatureCard = ({
             fontSize: '16px',
             fontWeight: '500',
             fontFamily: 'var(--font-display)',
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
           }}
         >
           {title}
@@ -172,7 +172,7 @@ const FeatureCard = ({
           style={{
             margin: 0,
             fontSize: '14px',
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             lineHeight: '1.5',
             fontFamily: 'var(--font-body)',
           }}
@@ -192,18 +192,18 @@ const FeatureCard = ({
             letterSpacing: '0.5px',
             backgroundColor:
               badge === 'available' ? '#057642' : '#FAFBFC',
-            color: badge === 'available' ? '#ffffff' : '#0966C3',
+            color: badge === 'available' ? 'var(--color-surface-0)' : 'var(--accent-primary)',
             border:
               badge === 'available'
                 ? 'none'
-                : '1px solid #E5E7EB',
+                : '1px solid var(--border-default)',
             transition: 'all 0.3s ease',
           }}
         >
           {badge === 'available' ? 'Available' : 'In Development'}
         </span>
         {href && (
-          <span style={{ fontSize: '13px', color: '#0966C3', fontWeight: 600, transition: 'color 0.3s ease' }}>
+          <span style={{ fontSize: '13px', color: 'var(--accent-primary)', fontWeight: 600, transition: 'color 0.3s ease' }}>
             Try it →
           </span>
         )}
@@ -403,10 +403,10 @@ export default function AttorneyPage() {
   return (
     <div
       style={{
-        color: '#0f0f0f',
+        color: 'var(--color-text-primary)',
         fontFamily: 'var(--font-body)',
         minHeight: '100vh',
-        backgroundColor: '#F7F8FA',
+        backgroundColor: 'var(--color-surface-1)',
       }}
     >
       <script
@@ -415,32 +415,32 @@ export default function AttorneyPage() {
       />
       <style dangerouslySetInnerHTML={{ __html: `
         .attorney-feature-card:hover {
-          border-color: #004182 !important;
+          border-color: var(--accent-primary-hover) !important;
           box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
           transform: translateY(-4px);
         }
         .attorney-feature-card:hover svg {
-          color: #0966C3 !important;
+          color: var(--accent-primary) !important;
         }
         .attorney-feature-card:hover h3 {
-          color: #004182 !important;
+          color: var(--accent-primary-hover) !important;
         }
         .attorney-feature-card:hover span {
-          color: #004182 !important;
+          color: var(--accent-primary-hover) !important;
         }
         .attorney-cta-link:hover {
-          background-color: #0966C3 !important;
+          background-color: var(--accent-primary) !important;
           box-shadow: 0 8px 24px rgba(232, 23, 31, 0.24) !important;
           transform: translateY(-2px);
         }
         .attorney-breadcrumb-link:hover {
-          color: #FFFFFF !important;
+          color: var(--color-text-inverse) !important;
         }
       `}} />
       {/* Header Section */}
       <section
         style={{
-          backgroundColor: '#0966C3',
+          backgroundColor: 'var(--accent-primary)',
           border: 'none',
           padding: '48px 20px',
           textAlign: 'center',
@@ -451,9 +451,9 @@ export default function AttorneyPage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
             <a href="/" className="attorney-breadcrumb-link" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s ease' }}>Home</a>
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
-            <span style={{ color: '#FFFFFF' }}>Find an Attorney</span>
+            <span style={{ color: 'var(--color-surface-0)' }}>Find an Attorney</span>
           </div>
-          <Link href="/dashboard" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+          <Link href="/dashboard" style={{ fontSize: '13px', color: 'var(--color-surface-0)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
             <BackIcon />
             Dashboard
           </Link>
@@ -474,7 +474,7 @@ export default function AttorneyPage() {
                 display: 'inline-block',
                 padding: '8px 16px',
                 backgroundColor: 'rgba(10, 102, 194, 0.15)',
-                color: '#FFFFFF',
+                color: 'var(--color-text-inverse)',
                 borderRadius: '12px',
                 fontSize: '12px',
                 fontWeight: '600',
@@ -496,7 +496,7 @@ export default function AttorneyPage() {
               fontWeight: '600',
               fontFamily: 'var(--font-display)',
               lineHeight: '1.2',
-              color: '#FFFFFF',
+              color: 'var(--color-text-inverse)',
             }}
           >
             Attorney Mode — Professional Legal Analytics
@@ -542,7 +542,7 @@ export default function AttorneyPage() {
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
               }}
             >
               Attorney Toolkit
@@ -551,7 +551,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -608,8 +608,8 @@ export default function AttorneyPage() {
               <Link key={index} href={item.href} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div
                   style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid #E5E7EB',
+                    backgroundColor: 'var(--color-surface-0)',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '12px',
                     padding: '24px',
                     display: 'flex',
@@ -622,7 +622,7 @@ export default function AttorneyPage() {
                   }}
                   className="attorney-feature-card"
                 >
-                  <div style={{ fontSize: '32px', color: '#004182', transition: 'color 0.3s ease' }}>{item.icon}</div>
+                  <div style={{ fontSize: '32px', color: 'var(--accent-primary-hover)', transition: 'color 0.3s ease' }}>{item.icon}</div>
                   <div>
                     <h3
                       style={{
@@ -630,7 +630,7 @@ export default function AttorneyPage() {
                         fontSize: '18px',
                         fontWeight: '600',
                         fontFamily: 'var(--font-display)',
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                       }}
                     >
                       {item.title}
@@ -639,7 +639,7 @@ export default function AttorneyPage() {
                       style={{
                         margin: 0,
                         fontSize: '14px',
-                        color: '#4B5563',
+                        color: 'var(--color-text-secondary)',
                         lineHeight: '1.5',
                         fontFamily: 'var(--font-body)',
                       }}
@@ -648,7 +648,7 @@ export default function AttorneyPage() {
                     </p>
                   </div>
                   <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '13px', color: '#0966C3', fontWeight: 600, transition: 'color 0.3s ease' }}>
+                    <span style={{ fontSize: '13px', color: 'var(--accent-primary)', fontWeight: 600, transition: 'color 0.3s ease' }}>
                       Explore →
                     </span>
                   </div>
@@ -663,7 +663,7 @@ export default function AttorneyPage() {
       <section
         style={{
           padding: '60px 20px',
-          backgroundColor: '#FFFFFF',
+          backgroundColor: 'var(--color-surface-0)',
         }}
       >
         <div
@@ -683,7 +683,7 @@ export default function AttorneyPage() {
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
               }}
             >
               How Attorneys Use MyCaseValue
@@ -692,7 +692,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-body)',
                 maxWidth: '600px',
                 marginLeft: 'auto',
@@ -728,8 +728,8 @@ export default function AttorneyPage() {
               <div
                 key={index}
                 style={{
-                  backgroundColor: '#F7F8FA',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-1)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '32px',
                   display: 'flex',
@@ -745,8 +745,8 @@ export default function AttorneyPage() {
                       justifyContent: 'center',
                       width: '28px',
                       height: '28px',
-                      backgroundColor: '#0966C3',
-                      color: '#FFFFFF',
+                      backgroundColor: 'var(--accent-primary)',
+                      color: 'var(--color-text-inverse)',
                       borderRadius: '12px',
                       fontSize: '16px',
                       fontWeight: '600',
@@ -760,7 +760,7 @@ export default function AttorneyPage() {
                       fontSize: '18px',
                       fontWeight: '600',
                       fontFamily: 'var(--font-display)',
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                     }}
                   >
                     {useCase.title}
@@ -770,7 +770,7 @@ export default function AttorneyPage() {
                   style={{
                     margin: 0,
                     fontSize: '14px',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     lineHeight: '1.6',
                     fontFamily: 'var(--font-body)',
                   }}
@@ -806,7 +806,7 @@ export default function AttorneyPage() {
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
               }}
             >
               Data-Driven Advantage
@@ -815,7 +815,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-body)',
                 maxWidth: '600px',
                 marginLeft: 'auto',
@@ -851,8 +851,8 @@ export default function AttorneyPage() {
               <div
                 key={index}
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '32px',
                   textAlign: 'center',
@@ -864,7 +864,7 @@ export default function AttorneyPage() {
                     fontSize: 'clamp(32px, 5vw, 48px)',
                     fontWeight: '600',
                     fontFamily: 'var(--font-display)',
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     marginBottom: '12px',
                   }}
                 >
@@ -874,7 +874,7 @@ export default function AttorneyPage() {
                   style={{
                     margin: 0,
                     fontSize: '14px',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     lineHeight: '1.6',
                     fontFamily: 'var(--font-body)',
                   }}
@@ -891,7 +891,7 @@ export default function AttorneyPage() {
       <section
         style={{
           padding: '60px 20px',
-          backgroundColor: '#FFFFFF',
+          backgroundColor: 'var(--color-surface-0)',
         }}
       >
         <div
@@ -911,14 +911,14 @@ export default function AttorneyPage() {
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
               }}
             >
               Everything in Unlimited,
               <span
                 style={{
                   display: 'block',
-                  color: '#0966C3',
+                  color: 'var(--accent-primary)',
                 }}
               >
                 plus:
@@ -928,7 +928,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -974,7 +974,7 @@ export default function AttorneyPage() {
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
               }}
             >
               Get Started
@@ -983,7 +983,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-body)',
                 maxWidth: '600px',
                 marginLeft: 'auto',
@@ -1027,8 +1027,8 @@ export default function AttorneyPage() {
                 href={cta.href}
                 style={{
                   padding: '24px',
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   textDecoration: 'none',
                   color: 'inherit',
@@ -1047,7 +1047,7 @@ export default function AttorneyPage() {
                     fontSize: '18px',
                     fontWeight: '600',
                     fontFamily: 'var(--font-display)',
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                   }}
                 >
                   {cta.label}
@@ -1056,7 +1056,7 @@ export default function AttorneyPage() {
                   style={{
                     margin: 0,
                     fontSize: '13px',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     lineHeight: '1.5',
                     fontFamily: 'var(--font-body)',
                   }}

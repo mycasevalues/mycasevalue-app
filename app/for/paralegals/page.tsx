@@ -40,7 +40,7 @@ const jsonLd = {
 
 export default function ParalegalsPage() {
   return (
-    <div style={{ background: '#FFFFFF' }}>
+    <div style={{ background: 'var(--color-surface-0)' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -53,11 +53,11 @@ export default function ParalegalsPage() {
 
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <h1 style={{ fontSize: '2.25rem', fontWeight: 600, lineHeight: 1.2, color: '#0f0f0f', marginBottom: '1.5rem' }}>
+        <h1 style={{ fontSize: '2.25rem', fontWeight: 600, lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '1.5rem' }}>
           Federal Court Data for Paralegals
         </h1>
 
-        <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#4B5563', marginBottom: '2rem' }}>
+        <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
           Pull federal court outcome data in minutes instead of hours. MyCaseValue lets you research judge analytics, filter by district and case type, and support your attorneys with data-driven insights — all from public records.
         </p>
 
@@ -86,16 +86,16 @@ export default function ParalegalsPage() {
               key={i}
               style={{
                 padding: '1.5rem',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
-                background: '#FFFFFF',
+                background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
               }}
             >
-              <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#0f0f0f', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>
                 {feature.title}
               </h3>
-              <p style={{ fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                 {feature.description}
               </p>
             </div>
@@ -112,8 +112,8 @@ export default function ParalegalsPage() {
               gap: '0.5rem',
               padding: '0.75rem 1.5rem',
               borderRadius: '8px',
-              backgroundColor: '#0966C3',
-              color: '#FFFFFF',
+              backgroundColor: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               textDecoration: 'none',
               fontSize: '0.875rem',
               fontWeight: 600,

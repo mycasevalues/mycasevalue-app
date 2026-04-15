@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function IntakeFormsPage() {
   return (
-    <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       {/* Header */}
-      <div style={{ background: '#0966C3', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
+      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.15)' }}>
@@ -22,7 +22,7 @@ export default function IntakeFormsPage() {
               Intake Form Generator
             </span>
           </div>
-          <h1 style={{ fontSize: '40px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
+          <h1 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
             Case Intake Form Generator
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>

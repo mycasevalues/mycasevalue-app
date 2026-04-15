@@ -19,7 +19,7 @@ const HomeIcon = () => (
   >
     <path
       d="M1 7V12.5C1 12.7761 1.22386 13 1.5 13H5V9H9V13H12.5C12.7761 13 13 12.7761 13 12.5V7M1 7L7 1.5L13 7M1 7H2.5M11.5 7V3.5"
-      stroke="#004182"
+      stroke="var(--accent-primary-hover)"
       strokeWidth="1.2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -81,7 +81,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                         display: 'inline-flex',
                         alignItems: 'center',
                         textDecoration: 'none',
-                        color: '#004182',
+                        color: 'var(--accent-primary-hover)',
                         fontFamily: 'var(--font-body)',
                       }}
                       title={item.label}
@@ -108,7 +108,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                 <span
                   className="breadcrumbs-separator"
                   style={{
-                    color: '#9CA3AF',
+                    color: 'var(--color-text-muted)',
                     margin: '0 8px',
                     fontSize: '13px',
                     fontFamily: 'var(--font-body)',
@@ -124,7 +124,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   className="breadcrumbs-current"
                   style={{
                     fontSize: '13px',
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     fontWeight: '500',
                     fontFamily: 'var(--font-body)',
                   }}
@@ -138,7 +138,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   className="breadcrumbs-link"
                   style={{
                     fontSize: '13px',
-                    color: '#004182',
+                    color: 'var(--accent-primary-hover)',
                     textDecoration: 'none',
                     fontFamily: 'var(--font-body)',
                   }}
