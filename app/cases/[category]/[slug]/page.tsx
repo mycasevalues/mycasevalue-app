@@ -248,13 +248,13 @@ export default async function CaseTypeDetailPage({
       <header
         style={{
           background: 'var(--accent-primary)',
-          padding: 'clamp(20px, 4vw, 40px) 24px',
-          marginBottom: 'clamp(20px, 4vw, 40px)',
+          padding: '16px 24px',
+          marginBottom: '20px',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Breadcrumb */}
-          <nav style={{ marginBottom: '24px' }}>
+          <nav style={{ marginBottom: '12px', display: 'none' }}>
             <div style={{ display: 'flex', gap: '8px', fontSize: '14px', alignItems: 'center', flexWrap: 'wrap' }}>
               <Link href="/" style={{ color: 'var(--color-text-inverse)', textDecoration: 'none' }}>
                 Home
@@ -279,45 +279,20 @@ export default async function CaseTypeDetailPage({
           </nav>
 
           {/* Header Content */}
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '8px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '0', flexWrap: 'wrap' }}>
             <div style={{ flex: 1 }}>
               <h1
                 style={{
-                  fontSize: 'clamp(28px, 6vw, 36px)',
+                  fontSize: 'clamp(24px, 5vw, 28px)',
                   fontWeight: 'bold',
-                  margin: '0 0 8px',
+                  margin: '0',
                   fontFamily: 'var(--font-display)',
                   color: 'var(--color-text-inverse)',
                 }}
               >
                 {caseType.label}
               </h1>
-              <p
-                style={{
-                  fontSize: '16px',
-                  color: 'var(--border-default)',
-                  margin: '0',
-                  fontFamily: 'var(--font-body)',
-                }}
-              >
-                Federal Court Outcomes & Win Rates
-              </p>
             </div>
-            <span
-              style={{
-                display: 'inline-block',
-                padding: '8px 16px',
-                borderRadius: '12px',
-                background: 'var(--accent-primary)',
-                fontSize: '12px',
-                fontWeight: '600',
-                color: 'var(--color-text-inverse)',
-                textTransform: 'uppercase',
-                marginTop: '4px',
-              }}
-            >
-              NOS {caseType.nosCode}
-            </span>
           </div>
         </div>
       </header>

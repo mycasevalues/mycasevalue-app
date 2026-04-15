@@ -123,26 +123,23 @@ export default function JudgeIntelligencePage() {
         `}
       </style>
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '32px 20px' }}>
+      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '16px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <Link href="/" style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/" style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Home &gt; Attorney Tools &gt; Judge Intelligence
           </Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
                 <line x1="12" y1="10" x2="12" y2="18" />
               </svg>
             </div>
             <div>
-              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+              <h1 className="font-display" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
                 Know Your Judge Before the Courtroom
               </h1>
-              <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
-                Access detailed ruling patterns, settlement rates, and case analytics for every federal judge. Take the guesswork out of strategy.
-              </p>
             </div>
           </div>
         </div>

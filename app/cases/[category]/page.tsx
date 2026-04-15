@@ -425,47 +425,20 @@ async function CategoryPage({
       {/* Hero Section */}
       <div style={{
         background: 'var(--accent-primary)',
-        padding: '40px 20px',
+        padding: '16px 20px',
         color: 'white',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          {/* Badge */}
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '6px 14px',
-            background: 'var(--accent-primary)',
-            borderRadius: '12px',
-            fontSize: '12px',
-            fontWeight: 600,
-            letterSpacing: '0.5px',
-            textTransform: 'uppercase' as const,
-            color: 'var(--color-text-inverse)',
-            marginBottom: '16px',
-          }}>
-            {categoryData?.label.toUpperCase()}
-          </div>
           <h1 style={{
-            fontSize: '36px',
+            fontSize: '28px',
             fontWeight: 600,
-            margin: '0 0 12px 0',
+            margin: '0 0 4px 0',
             fontFamily: 'var(--font-display)',
             letterSpacing: '-0.5px',
             color: 'var(--color-text-inverse)',
           }}>
             {categoryData?.label} Cases
           </h1>
-          <p style={{
-            fontSize: '15px',
-            margin: '0 0 24px 0',
-            fontFamily: 'var(--font-body)',
-            color: 'rgba(255,255,255,0.75)',
-            maxWidth: '600px',
-            lineHeight: '1.6',
-          }}>
-            {categoryData?.sub}
-          </p>
           <div style={{
             display: 'flex',
             gap: '32px',
