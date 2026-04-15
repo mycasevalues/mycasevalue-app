@@ -102,9 +102,9 @@ export default function MotionAnalyticsPage() {
       </style>
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '32px 20px' }}>
+      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '18px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/attorney" style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Back to Attorney Tools
           </Link>
@@ -116,8 +116,8 @@ export default function MotionAnalyticsPage() {
               </svg>
             </div>
             <div>
-              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
-                Motion Success Rates
+              <h1 className="font-display" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+                Win More Motions with Circuit-Specific Data
               </h1>
               <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
                 Analyze federal motion grant rates by case type

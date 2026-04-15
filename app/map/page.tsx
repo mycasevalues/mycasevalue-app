@@ -253,7 +253,7 @@ export default function DistrictHeatmapPage() {
       <div style={{ backgroundColor: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header */}
         <header style={{ backgroundColor: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '48px 24px' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '18px 24px' }}>
             {/* Breadcrumb */}
             <nav style={{ fontSize: '14px', color: 'var(--color-surface-0)', marginBottom: '16px', opacity: 0.85, fontFamily: 'var(--font-body)' }}>
               <a href="/" style={{ color: 'var(--color-surface-0)', textDecoration: 'none' }}>Home</a>
@@ -281,11 +281,11 @@ export default function DistrictHeatmapPage() {
               </span>
               <h1
                 style={{
-                  fontSize: '36px',
+                  fontSize: '26px',
                   fontWeight: '600',
                   color: 'var(--color-surface-0)',
                   margin: 0,
-                  marginBottom: '8px',
+                  marginBottom: '4px',
                   fontFamily: 'var(--font-display)',
                 }}
               >
