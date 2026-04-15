@@ -9,6 +9,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { JudgeWithStats } from '@/lib/supabase-judges';
+import JudgeTableView from './JudgeTableView';
 import { getWinRateColor } from '@/lib/color-scale';
 import { getPartyColor, getPartyLabel } from '@/lib/supabase-judges';
 import { SITS } from '@/lib/data';
@@ -142,6 +143,7 @@ interface JudgeDirectoryClientProps {
 
 export default function JudgeDirectoryClient({ initialJudges = [], initialTotal = 0 }: JudgeDirectoryClientProps) {
   const [activeTab, setActiveTab] = useState<'directory' | 'by-case-type'>('directory');
+  const [viewMode, setViewMode] = useState<'cards' | 'table'>('table'); // Default to table for density
   const hasInitialData = initialJudges.length > 0;
 
   // Directory tab state
@@ -555,8 +557,53 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
         </div>
       )}
 
-      {/* Judge Cards Grid */}
+      {/* View Toggle + Judge Results */}
       {!state.loading && state.judges.length > 0 && (
+        <>
+        {/* View mode toggle */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+          <span style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+            Showing {state.judges.length} of {state.total} judges
+          </span>
+          <div style={{ display: 'flex', gap: 4, background: 'var(--color-surface-1)', borderRadius: 8, padding: 2 }}>
+            <button
+              onClick={() => setViewMode('table')}
+              style={{
+                padding: '6px 12px', fontSize: 12, fontWeight: 600, border: 'none', cursor: 'pointer',
+                borderRadius: 6, fontFamily: 'var(--font-body)', transition: 'all 0.15s',
+                background: viewMode === 'table' ? 'var(--color-surface-0)' : 'transparent',
+                color: viewMode === 'table' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                boxShadow: viewMode === 'table' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
+              }}
+              aria-label="Table view"
+            >
+              ☰ Table
+            </button>
+            <button
+              onClick={() => setViewMode('cards')}
+              style={{
+                padding: '6px 12px', fontSize: 12, fontWeight: 600, border: 'none', cursor: 'pointer',
+                borderRadius: 6, fontFamily: 'var(--font-body)', transition: 'all 0.15s',
+                background: viewMode === 'cards' ? 'var(--color-surface-0)' : 'transparent',
+                color: viewMode === 'cards' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                boxShadow: viewMode === 'cards' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
+              }}
+              aria-label="Card view"
+            >
+              ▦ Cards
+            </button>
+          </div>
+        </div>
+
+        {/* Table View */}
+        {viewMode === 'table' && (
+          <div style={{ marginBottom: 32, border: '1px solid var(--border-default)', borderRadius: 8, overflow: 'hidden', background: 'var(--color-surface-0)' }}>
+            <JudgeTableView judges={state.judges} sortBy={sortBy} sortOrder="asc" />
+          </div>
+        )}
+
+        {/* Cards View */}
+        {viewMode === 'cards' && (
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
@@ -709,6 +756,8 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             );
           })}
         </div>
+        )}
+        </>
       )}
 
       {/* Empty State */}
