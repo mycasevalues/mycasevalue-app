@@ -18,15 +18,15 @@ export function SearchHero() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (query.trim()) {
-      router.push(`/cases?q=${encodeURIComponent(query)}`);
+      router.push(`/case-search?q=${encodeURIComponent(query)}`);
     } else {
-      router.push('/cases');
+      router.push('/case-search');
     }
   };
 
   const handleExampleClick = (example: string) => {
     setQuery(example);
-    router.push(`/cases?q=${encodeURIComponent(example)}`);
+    router.push(`/case-search?q=${encodeURIComponent(example)}`);
   };
 
   return (
