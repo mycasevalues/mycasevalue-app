@@ -52,8 +52,8 @@ export default async function Image({
             display: 'flex',
             width: '100%',
             height: '100%',
-            background: 'var(--accent-primary)',
-            color: 'var(--color-surface-0)',
+            background: '#0966C3',
+            color: '#ffffff',
             fontFamily: 'Inter, sans-serif',
             alignItems: 'center',
             justifyContent: 'center',
@@ -81,8 +81,8 @@ export default async function Image({
           flexDirection: 'column',
           width: '100%',
           height: '100%',
-          background: 'var(--accent-primary)',
-          color: 'var(--color-surface-0)',
+          background: '#0966C3',
+          color: '#ffffff',
           fontFamily: 'Inter, sans-serif',
           padding: '60px',
           boxSizing: 'border-box',
@@ -117,7 +117,7 @@ export default async function Image({
               fontSize: '28px',
               fontWeight: '600',
               letterSpacing: '-0.5px',
-              color: 'var(--color-surface-0)',
+              color: '#ffffff',
             }}
           >
             MyCaseValue
@@ -151,7 +151,7 @@ export default async function Image({
               lineHeight: '1.2',
               maxWidth: '900px',
               letterSpacing: '-1px',
-              color: 'var(--color-surface-0)',
+              color: '#ffffff',
             }}
           >
             {caseData.label}
@@ -194,7 +194,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: 'var(--accent-primary)',
+                color: '#0966C3',
               }}
             >
               {winRate}%
@@ -228,7 +228,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: 'var(--accent-primary)',
+                color: '#0966C3',
               }}
             >
               {caseCount}
@@ -262,7 +262,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: 'var(--accent-primary)',
+                color: '#0966C3',
               }}
             >
               {recovery}
