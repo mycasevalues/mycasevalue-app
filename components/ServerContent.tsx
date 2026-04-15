@@ -18,10 +18,10 @@ import CaseFilingTicker from './CaseFilingTicker';
 const FAQ_ITEMS = [
   { q: 'What is MyCaseValue?', a: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It helps individuals and attorneys research win rates, settlement ranges, timelines, and judge analytics. It is not legal advice.' },
   { q: 'Where does the data come from?', a: 'All data is sourced from three official public federal court record systems: the Federal Judicial Center Integrated Database (FJCID), PACER (Public Access to Court Electronic Records), and CourtListener. We do not create or estimate any data.' },
-  { q: 'What federal courts does your data cover?', a: 'We have comprehensive data from all 94 federal judicial districts across all 50 states, plus historical records dating back to 1970. Our database includes civil cases from federal PACER records and the Federal Judicial Center Integrated Database.' },
+  { q: 'What federal courts does your data cover?', a: 'We have comprehensive data from all 95 federal judicial districts across all 50 states, plus historical records dating back to 1970. Our database includes civil cases from federal PACER records and the Federal Judicial Center Integrated Database.' },
   { q: 'Is MyCaseValue legal advice?', a: 'No. MyCaseValue provides aggregate data from public records only. It does not evaluate individual cases, provide legal opinions, or create any attorney-client relationship. Always consult a licensed attorney for legal advice.' },
   { q: 'How accurate is the data?', a: 'Our data comes directly from federal court records (PACER, Federal Judicial Center, CourtListener). We have reported 94% accuracy in case outcome classifications. Data limitations are always noted in your report.' },
-  { q: 'What types of cases does MyCaseValue cover?', a: 'MyCaseValue covers 84 federal case types across 10 categories including employment discrimination, personal injury, medical malpractice, product liability, civil rights, consumer protection, breach of contract, and more. Data spans all 94 federal districts.' },
+  { q: 'What types of cases does MyCaseValue cover?', a: 'MyCaseValue covers 84 federal case types across 10 categories including employment discrimination, personal injury, medical malpractice, product liability, civil rights, consumer protection, breach of contract, and more. Data spans all 95 federal districts.' },
   { q: 'How much does it cost?', a: 'MyCaseValue is currently free for all users with no account required. All features — including settlement ranges, judge data, circuit breakdowns, and attorney tools — are available at no cost during our launch period.' },
   { q: 'How is MyCaseValue different from Westlaw or LexisNexis?', a: 'MyCaseValue is designed specifically for individuals and small firms, not large law firms. It offers free access to federal court outcome data, transparent pricing, bilingual support (English/Spanish), and litigation-focused analytics — all without requiring a legal subscription.' },
   { q: 'Is my information kept confidential?', a: 'Yes. We do not store, share, or sell your data. All case information you enter is used only to generate your report. We do not track individuals or contact you about your case unless you opt into our mailing list.' },
@@ -265,7 +265,7 @@ export default function ServerContent() {
               84 Federal Case Types Covered
             </h2>
             <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
-              Research win rates, settlement ranges, and timelines for any federal case type across all 94 districts.
+              Research win rates, settlement ranges, and timelines for any federal case type across all 95 districts.
             </p>
           </div>
 
@@ -350,7 +350,7 @@ export default function ServerContent() {
               { title: 'Case Timeline Data', desc: 'Average case duration from filing to resolution. Understand how long similar cases typically take in your district.' },
               { title: 'Judge Analytics', desc: 'Judge-specific outcome patterns, motion grant rates, and behavioral trends for judges in your federal district.' },
               { title: 'Attorney Impact', desc: 'How outcomes differ between represented parties and pro se litigants. Data-driven evidence on the value of legal representation.' },
-              { title: 'District Comparison', desc: 'Compare outcomes across all 94 federal districts. See how your district ranks for your case type.' },
+              { title: 'District Comparison', desc: 'Compare outcomes across all 95 federal districts. See how your district ranks for your case type.' },
             ].map((feat, i) => (
               <ScrollReveal key={i} delay={i * 100} direction="up">
                 <div
@@ -894,7 +894,7 @@ export default function ServerContent() {
             {[
               { title: 'Attorney Mode', desc: 'AI-powered attorney tools for case prediction, judge intelligence, and document analysis.', href: '/attorney' },
               { title: 'Settlement Calculator', desc: 'Estimate your case value with our data-driven settlement calculator.', href: '/calculator' },
-              { title: 'District Reports', desc: 'Explore case outcomes across all 94 federal judicial districts.', href: '/districts' },
+              { title: 'District Reports', desc: 'Explore case outcomes across all 95 federal judicial districts.', href: '/districts' },
               { title: 'Blog & Insights', desc: 'Legal research articles, case studies, and federal court data analysis.', href: '/blog' },
             ].map((item, i) => (
               <a key={i} href={item.href} style={{

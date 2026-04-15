@@ -171,7 +171,7 @@ export default function CourtGuideCapture() {
 
       addHeader('Finding Your Federal District');
       addText(
-        'The United States is divided into 94 federal judicial districts. Your case will likely be filed in your district - the one where you live or where the defendant lives.',
+        'The United States is divided into 95 federal judicial districts. Your case will likely be filed in your district - the one where you live or where the defendant lives.',
         10
       );
 

@@ -271,7 +271,7 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>Analyzed</div>
           </div>
           <div style={{ padding: '20px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '12px' }}>
-            <div style={{ fontSize: '36px', fontWeight: 600, color: '#F0F2F5', fontFamily: 'var(--font-mono)' }}>94</div>
+            <div style={{ fontSize: '36px', fontWeight: 600, color: '#F0F2F5', fontFamily: 'var(--font-mono)' }}>95</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '10px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Federal Districts</div>
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>All US courts</div>
           </div>

@@ -69,7 +69,7 @@ const TabbedFeatures: React.FC = () => {
       id: 5,
       title: 'District Comparison',
       description:
-        'Compare case outcomes across all 94 federal districts to identify favorable venues.',
+        'Compare case outcomes across all 95 federal districts to identify favorable venues.',
       preview: <DistrictComparisonPreview />,
     },
     {

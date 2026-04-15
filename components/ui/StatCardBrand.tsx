@@ -136,7 +136,7 @@ export const HOMEPAGE_STATS: StatBarItem[] = [
   {
     label:  'Cases indexed',
     value:  '5,100,000+',
-    sub:    '94 federal districts · All case types',
+    sub:    '95 federal districts · All case types',
   },
   {
     label:  'Median verdict · S.D.N.Y.',
@@ -146,7 +146,7 @@ export const HOMEPAGE_STATS: StatBarItem[] = [
   {
     label:  'Settlements tracked',
     value:  '$2.1B',
-    sub:    'Across all 94 federal districts',
+    sub:    'Across all 95 federal districts',
   },
   {
     label:  'Federal judge profiles',
