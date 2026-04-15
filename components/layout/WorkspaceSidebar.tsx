@@ -120,8 +120,8 @@ function NavSectionGroup({ section }: { section: NavSection }) {
     <div className="mb-1">
       <button
         onClick={() => section.collapsible && setIsOpen(!isOpen)}
-        className={`flex items-center justify-between w-full px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-400 ${
-          section.collapsible ? 'hover:text-gray-600 cursor-pointer' : 'cursor-default'
+        className={`flex items-center justify-between w-full px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-400 border-l-2 border-l-transparent transition-colors ${
+          section.collapsible ? 'hover:text-gray-600 hover:border-l-gray-300 cursor-pointer' : 'cursor-default'
         }`}
       >
         <span>{section.title}</span>
@@ -246,7 +246,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
           </div>
 
           {/* Search */}
-          <div className="px-3 py-2 border-b border-gray-100 flex-shrink-0">
+          <div className="px-3 py-2 border-b border-gray-100 flex-shrink-0 shadow-sm">
             <form onSubmit={handleSearch} role="search" aria-label="Search federal court records">
               <div className="relative">
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
@@ -344,7 +344,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
             )}
           </div>
 
-          {/* Bottom section: Pricing + Help */}
+          {/* Bottom section: Pricing + Help + Keyboard hint */}
           <div className="flex-shrink-0 border-t border-gray-100 px-2 py-3 space-y-0.5">
             <NavLink
               item={{ label: 'Pricing', href: '/pricing', icon: ICONS.pricing }}
@@ -354,6 +354,12 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
               item={{ label: 'Help & Methodology', href: '/methodology', icon: ICONS.help }}
               isActive={pathname === '/methodology'}
             />
+            <div className="flex items-center gap-2 px-3 py-2 text-xs text-gray-400 mt-1.5 pt-1.5 border-t border-gray-100">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="flex-shrink-0">
+                <path d="M12 6v12m6-6H6" />
+              </svg>
+              <span className="text-[11px]">Press ? for shortcuts</span>
+            </div>
           </div>
         </div>
       </aside>

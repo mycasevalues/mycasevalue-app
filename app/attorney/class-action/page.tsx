@@ -76,30 +76,12 @@ export default function ClassActionPage() {
   return (
     <div style={{ minHeight: '100vh', background: bgColor, fontFamily: 'var(--font-body)', color: textColor }}>
       {/* Header */}
-      <div style={{ background: secondaryColor, padding: '40px 20px', borderBottom: `1px solid ${borderColor}` }}>
+      <div style={{ background: secondaryColor, padding: '20px 20px', borderBottom: `1px solid ${borderColor}` }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <Link
-            href="/attorney"
-            style={{
-              fontSize: '13px',
-              color: accentColor,
-              textDecoration: 'none',
-              fontWeight: 500,
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '4px',
-              marginBottom: '16px',
-            }}
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-            Home &gt; Attorney Tools &gt; Class Action Intelligence
-          </Link>
-          <h1 style={{ fontSize: '36px', fontWeight: 700, margin: '0 0 12px', color: 'white', fontFamily: 'var(--font-heading)' }}>
+          <h1 style={{ fontSize: '26px', fontWeight: 700, margin: '0 0 8px', color: 'white', fontFamily: 'var(--font-heading)' }}>
             Class Action Intelligence
           </h1>
-          <p style={{ fontSize: '16px', margin: '0', color: 'rgba(255,255,255,0.85)' }}>
+          <p style={{ fontSize: '14px', margin: '0', color: 'rgba(255,255,255,0.85)' }}>
             Certification rates, settlement trends, and strategic insights for class action litigation
           </p>
         </div>

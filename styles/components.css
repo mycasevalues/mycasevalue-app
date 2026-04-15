@@ -67,6 +67,7 @@
 }
 .mcv-btn--primary:hover:not(:disabled) {
   background: var(--accent-primary-hover);
+  transform: translateY(-1px);
 }
 
 /* Secondary — ghost outline pill */
@@ -77,6 +78,7 @@
 }
 .mcv-btn--secondary:hover:not(:disabled) {
   background: var(--accent-primary-subtle);
+  border-color: var(--accent-primary-hover);
 }
 
 /* Ghost — borderless */

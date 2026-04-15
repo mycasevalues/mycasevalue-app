@@ -263,13 +263,13 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────────────────────────────
           LEGAL INTELLIGENCE PREVIEW (NEW SECTION)
           ────────────────────────────────────────────────────────────────── */}
-      <section className="px-4 md:px-8 py-16 md:py-24 bg-white">
+      <section className="px-4 md:px-8 py-10 md:py-14 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <div className="inline-block px-3 py-1 rounded-full bg-blue-50 text-brand-blue text-sm font-semibold mb-4">
               Legal Research Hub
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               Case Data Meets Legal Research
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -278,16 +278,16 @@ export default function HomePage() {
           </div>
 
           {/* Data Sources Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 mb-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 mb-8">
             {LEGAL_SOURCES.map((src) => (
               <div
                 key={src.name}
-                className="text-center p-4 rounded-xl border border-gray-100 bg-white hover:shadow-md transition-shadow"
+                className="text-center p-3 rounded-xl border border-gray-100 bg-white hover:shadow-md transition-shadow"
               >
-                <div className="text-xl font-bold font-mono mb-1" style={{ color: src.color }}>
+                <div className="text-lg font-bold font-mono mb-0.5" style={{ color: src.color }}>
                   {src.count}
                 </div>
-                <div className="text-sm font-semibold text-gray-900 mb-0.5">
+                <div className="text-xs font-semibold text-gray-900 mb-0.5">
                   {src.name}
                 </div>
                 <div className="text-xs text-gray-500">
@@ -350,10 +350,10 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────────────────────────────
           HOW IT WORKS: 3 STEPS
           ────────────────────────────────────────────────────────────────── */}
-      <section id="how-it-works" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-gray-50">
+      <section id="how-it-works" className="scroll-mt-[72px] px-4 md:px-8 py-10 md:py-14 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               How MyCaseValue Works
             </h2>
             <p className="text-lg text-gray-600">
@@ -367,7 +367,7 @@ export default function HomePage() {
                 {/* Step number background */}
                 <div
                   aria-hidden="true"
-                  className="text-6xl font-bold text-brand-blue opacity-20 mb-4 leading-none"
+                  className="text-4xl font-bold text-brand-blue opacity-20 mb-2 leading-none"
                 >
                   {step.number}
                 </div>
@@ -403,10 +403,10 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────────────────────────────
           WHAT MAKES THIS DIFFERENT
           ────────────────────────────────────────────────────────────────── */}
-      <section className="px-4 md:px-8 py-16 md:py-24 bg-white">
+      <section className="px-4 md:px-8 py-10 md:py-14 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               A Different Kind of Legal Platform
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -437,14 +437,14 @@ export default function HomePage() {
           ────────────────────────────────────────────────────────────────── */}
       <section
         data-hide-sticky-cta
-        className="px-4 md:px-8 py-16 md:py-24 text-white"
+        className="px-4 md:px-8 py-10 md:py-14 text-white"
         style={{
           background: 'linear-gradient(135deg, #0966C3 0%, #064B8A 50%, #0E3B6D 100%)',
           backgroundAttachment: 'fixed',
         }}
       >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
             Stop Paying Enterprise Prices
             <br />
             <span className="text-white/90">for Incomplete Legal Intelligence</span>

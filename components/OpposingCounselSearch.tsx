@@ -606,7 +606,7 @@ export default function OpposingCounselSearch() {
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
               borderRadius: '12px',
-              padding: '64px 32px',
+              padding: '40px 24px',
               textAlign: 'center',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}

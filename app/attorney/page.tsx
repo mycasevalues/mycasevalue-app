@@ -442,7 +442,7 @@ export default function AttorneyPage() {
         style={{
           backgroundColor: 'var(--accent-primary)',
           border: 'none',
-          padding: '48px 20px',
+          padding: '20px 20px',
           textAlign: 'center',
         }}
       >
@@ -467,54 +467,34 @@ export default function AttorneyPage() {
             gap: '24px',
           }}
         >
-          {/* Badge */}
-          <div>
-            <span
-              style={{
-                display: 'inline-block',
-                padding: '8px 16px',
-                backgroundColor: 'rgba(10, 102, 194, 0.15)',
-                color: 'var(--color-text-inverse)',
-                borderRadius: '12px',
-                fontSize: '12px',
-                fontWeight: '600',
-                textTransform: 'uppercase',
-                letterSpacing: '1px',
-                fontFamily: 'var(--font-mono)',
-                border: '1px solid rgba(255,255,255,0.2)',
-              }}
-            >
-              Attorney Mode
-            </span>
-          </div>
 
           {/* Title */}
           <h1
             style={{
               margin: 0,
-              fontSize: 'clamp(32px, 5vw, 56px)',
+              fontSize: '26px',
               fontWeight: '600',
               fontFamily: 'var(--font-display)',
               lineHeight: '1.2',
               color: 'var(--color-text-inverse)',
             }}
           >
-            Outcome Prediction and Settlement Analytics Westlaw & LexisNexis Don't Offer
+            Outcome Prediction and Settlement Analytics
           </h1>
 
           {/* Subtitle */}
           <p
             style={{
               margin: 0,
-              fontSize: 'clamp(16px, 2vw, 20px)',
+              fontSize: '14px',
               color: 'rgba(255,255,255,0.7)',
-              lineHeight: '1.6',
+              lineHeight: '1.4',
               maxWidth: '700px',
               marginLeft: 'auto',
               marginRight: 'auto',
             }}
           >
-            AI-powered case predictions, data-backed settlement ranges, judge intelligence, and venue optimization. Gain competitive intelligence enterprise platforms can't provide. Free access for all attorneys.
+            AI-powered case predictions, data-backed settlement ranges, judge intelligence, and venue optimization.
           </p>
         </div>
       </section>

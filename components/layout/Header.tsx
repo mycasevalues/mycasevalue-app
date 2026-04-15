@@ -445,20 +445,28 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link href="/" aria-label="MyCaseValue home" className="flex items-center gap-2 flex-shrink-0">
-              <svg width="32" height="32" viewBox="-100 -100 200 200" className="block flex-shrink-0">
-                <rect x="-100" y="-100" width="200" height="200" rx="26" fill="var(--accent-primary)" />
-                <g transform="rotate(12)">
-                  <polygon points="0,0 -40,-69.3 40,-69.3 80,0" fill="white" opacity="0.93" />
-                  <polygon points="0,0 80,0 40,69.3 -40,69.3" fill="white" opacity="0.52" />
-                  <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
-                </g>
-              </svg>
-              <span className="font-inter text-lg font-bold text-gray-900 hidden sm:block">
-                MyCase<span className="text-brand-blue">Value</span>
-              </span>
-            </Link>
+            {/* Logo + Search Hint (on workspace routes) */}
+            <div className="flex items-center gap-4 flex-shrink-0">
+              <Link href="/" aria-label="MyCaseValue home" className="flex items-center gap-2 flex-shrink-0">
+                <svg width="32" height="32" viewBox="-100 -100 200 200" className="block flex-shrink-0">
+                  <rect x="-100" y="-100" width="200" height="200" rx="26" fill="var(--accent-primary)" />
+                  <g transform="rotate(12)">
+                    <polygon points="0,0 -40,-69.3 40,-69.3 80,0" fill="white" opacity="0.93" />
+                    <polygon points="0,0 80,0 40,69.3 -40,69.3" fill="white" opacity="0.52" />
+                    <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
+                  </g>
+                </svg>
+                <span className="font-inter text-lg font-bold text-gray-900 hidden sm:block">
+                  MyCase<span className="text-brand-blue">Value</span>
+                </span>
+              </Link>
+              {isWorkspace && (
+                <div className="hidden xl:flex items-center gap-2 text-xs text-gray-500 pl-4 border-l border-gray-200">
+                  <kbd className="px-2 py-1 rounded bg-gray-100 text-gray-700 font-mono text-[11px] border border-gray-300 shadow-sm">⌘K</kbd>
+                  <span>Search</span>
+                </div>
+              )}
+            </div>
 
             {/* Desktop Navigation — hidden on workspace routes (sidebar provides nav) */}
             <div className={`hidden ${isWorkspace ? '' : 'lg:flex'} items-center flex-1 gap-0`}>

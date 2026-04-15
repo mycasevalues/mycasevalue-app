@@ -25,30 +25,13 @@ export default function ExpertWitnessPage() {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '32px 20px' }}>
+      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '20px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <a href="/attorney" style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-            Back to Attorney Tools
-          </a>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
-                <circle cx="12" cy="12" r="9" />
-                <path d="M12 7v5l3 3" />
-              </svg>
-            </div>
-            <div>
-              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
-                Win Daubert Challenges with Circuit-Specific Data
-              </h1>
-              <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
-                Track expert admissions and exclusions by type to strengthen your expert strategy and predict outcomes
-              </p>
-            </div>
-          </div>
-          <p style={{ fontSize: '12px', color: 'rgba(10, 102, 194, 0.8)', margin: '12px 0 0', fontWeight: 500 }}>
-            Based on 100K+ federal court opinions
+          <h1 className="font-display" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+            Expert Witness Intelligence
+          </h1>
+          <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '8px 0 0 0' }}>
+            Daubert challenge success rates and expert retention patterns by case type
           </p>
         </div>
       </div>
