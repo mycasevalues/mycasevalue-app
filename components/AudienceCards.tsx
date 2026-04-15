@@ -52,7 +52,7 @@ const AUDIENCE_CARDS: AudienceCard[] = [
         <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2V17zm4 0h-2V7h2V17zm4 0h-2v-4h2V17z"/>
       </svg>
     ),
-    description: 'Access 5.1 million federal case records filtered by district, judge, outcome, and year. Citable. Built for empirical research.',
+    description: 'Access millions of federal case records filtered by district, judge, outcome, and year. Citable. Built for empirical research.',
   },
   {
     title: 'Other Legal Professionals',
@@ -74,11 +74,11 @@ export default function AudienceCards() {
     <section id="who-uses" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Built for Everyone Who Needs to Know
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            Built for Legal Professionals
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Whether you&apos;re representing yourself or preparing a complex federal brief, MyCaseValue was built for you.
+          <p className="text-base text-gray-500 max-w-xl mx-auto">
+            Whether you&apos;re representing yourself or preparing a complex federal brief.
           </p>
         </div>
 

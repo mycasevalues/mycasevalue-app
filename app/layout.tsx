@@ -33,13 +33,13 @@ const ToastContainer = dynamic(() => import('../components/ui/Toast'), { ssr: fa
 
 export const metadata: Metadata = {
   title: {
-    default: 'MyCaseValue — Federal Court Analytics & Settlement Data',
+    default: 'MyCaseValue | Federal Court Intelligence',
     template: '%s | MyCaseValue',
   },
-  description: 'See real outcomes from 5.1M+ federal court cases. Research win rates, settlement data, timelines, and recovery ranges for 84 case types. Free, private, and instant.',
+  description: 'Search millions of federal court records for case outcomes, judge analytics, settlement data, and litigation intelligence. Built entirely from public federal court and agency records.',
   openGraph: {
-    title: 'MyCaseValue — Federal Court Analytics & Settlement Data',
-    description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, settlement percentages, recovery ranges, and attorney impact data for 84 case types.',
+    title: 'MyCaseValue | Federal Court Intelligence',
+    description: 'Federal court intelligence platform. Case outcomes, judge analytics, and litigation data from public records.',
     type: 'website',
     siteName: 'MyCaseValue',
     url: SITE_URL,
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MyCaseValue — Federal Court Outcome Data',
-    description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, recovery ranges. Free and private.',
+    title: 'MyCaseValue | Federal Court Intelligence',
+    description: 'Federal court intelligence platform. Case outcomes, judge analytics, and litigation data from public records.',
     images: [`${SITE_URL}/og-image.png`],
   },
   alternates: {
@@ -106,7 +106,7 @@ const jsonLd = {
       name: 'MyCaseValue',
       url: SITE_URL,
       logo: `${SITE_URL}/icon-512.png`,
-      description: 'Federal court outcome data for informed research.',
+      description: 'Federal court intelligence platform built from public records.',
       contactPoint: {
         '@type': 'ContactPoint',
         email: 'support@mycasevalues.com',
@@ -130,7 +130,7 @@ const jsonLd = {
     {
       '@type': 'Dataset',
       name: 'Federal Court Outcome Data',
-      description: 'Aggregate historical outcome data from 5,100,000+ federal civil cases, sourced from the Federal Judicial Center Integrated Database, CourtListener, and Google Scholar for legal scholarship context.',
+      description: 'Aggregate historical outcome data from millions of federal civil cases, sourced from the Federal Judicial Center Integrated Database, CourtListener, and PACER.',
       url: SITE_URL,
       license: 'https://www.usa.gov/government-copyright',
       creator: { '@type': 'Organization', name: 'Federal Judicial Center' },
@@ -148,7 +148,7 @@ const jsonLd = {
       '@type': 'WebSite',
       url: SITE_URL,
       name: 'MyCaseValue',
-      description: 'Federal court outcome data for informed research.',
+      description: 'Federal court intelligence platform built from public records.',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
@@ -173,7 +173,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'What is MyCaseValue?',
-          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It is not legal advice.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is a federal court intelligence platform that aggregates historical outcome data from millions of public federal court records. It is not legal advice.' },
         },
         {
           '@type': 'Question',
@@ -218,7 +218,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'How accurate is the data?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Our data comes directly from federal court records (PACER, Federal Judicial Center, CourtListener). We have reported 94% accuracy in case outcome classifications. Data limitations are always noted in your report.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Our data comes directly from federal court records (PACER, Federal Judicial Center, CourtListener). We apply quality checks to case outcome classifications. Data limitations are always noted in your report.' },
         },
         {
           '@type': 'Question',

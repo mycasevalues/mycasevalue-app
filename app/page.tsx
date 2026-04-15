@@ -1,111 +1,106 @@
 /**
- * MyCaseValue Homepage — app/page.tsx
+ * MyCaseValue Homepage
  *
- * Revamped: Legal intelligence platform positioning
- * 1. Hero (H1 + subheadline) — legal intelligence angle
- * 2. Trust bar (6 stats — includes legal data)
- * 3. Search bar
- * 4. Audience cards (who uses it)
- * 5. Legal Intelligence Preview (NEW — showcase data depth)
- * 6. How it works (3 steps — updated)
- * 7. What's different (differentiation — updated)
- * 8. Bottom CTA
- * 9. Disclaimer
+ * Redesigned for premium legal intelligence positioning.
+ * Structure:
+ * 1. Hero with search bar + example queries
+ * 2. Trust metrics bar
+ * 3. Data sources (premium grid)
+ * 4. Product preview (browser mockup)
+ * 5. Platform capabilities
+ * 6. How it works
+ * 7. Bottom CTA
+ * 8. Disclaimer
  */
 
 import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/site-config';
+import { SITE_METRICS } from '@/lib/site-metrics';
 import { SearchHero } from '@/components/SearchHero';
 import StickyCTA from '@/components/StickyCTA';
-import AudienceCards from '@/components/AudienceCards';
 import ProductPreview from '@/components/ProductPreview';
 
 export const metadata: Metadata = {
-  title: 'Federal Court Intelligence — MyCaseValue',
-  description: 'Search 5.1M federal cases for win rates, settlement data, judge analytics & legal research. AI-powered case prediction. Free during beta.',
+  title: 'Federal Court Intelligence | MyCaseValue',
+  description:
+    'Search millions of federal court records for case outcomes, judge analytics, settlement data, and litigation intelligence. Built entirely from public federal court and agency records.',
   openGraph: {
     type: 'website',
-    title: 'Federal Court Intelligence — Case Outcomes, Legal Research & Analytics',
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue - Federal Court Intelligence' }],
-    description: 'Search 5.1 million federal case outcomes alongside 127,000+ legal documents from 7 authoritative sources.',
+    title: 'Federal Court Intelligence | MyCaseValue',
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: 'MyCaseValue — Federal Court Intelligence',
+      },
+    ],
+    description:
+      'Search millions of federal court records for case outcomes, judge analytics, and litigation intelligence.',
     url: `${SITE_URL}`,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Intelligence — Case Outcomes, Legal Research & Analytics',
+    title: 'Federal Court Intelligence | MyCaseValue',
     images: [`${SITE_URL}/og-image.png`],
-    description: 'Search 5.1 million federal case outcomes alongside 127,000+ legal documents from 7 authoritative sources.',
+    description:
+      'Search millions of federal court records for case outcomes, judge analytics, and litigation intelligence.',
   },
 };
 
-// ── TYPES ────────────────────────────────────────────────────────────────────────
+// ── DATA ──
 
-interface HowItWorksStep {
-  number: string;
-  title: string;
-  description: string;
-}
-
-interface DifferentiationCard {
-  title: string;
-  description: string;
-}
-
-interface LegalSourcePreview {
-  name: string;
-  count: string;
-  type: string;
-  color: string;
-}
-
-// ── DATA ─────────────────────────────────────────────────────────────────────────
-
-const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
+const CAPABILITIES = [
   {
-    number: '01',
-    title: 'Search the Record',
-    description: 'Enter a case type, judge name, district, or keyword. We search across 5.1 million federal court outcomes and 127,000+ legal documents — opinions, regulations, filings, and statutes from 7 authoritative sources.',
+    icon: '⚖',
+    title: 'Case Outcome Analytics',
+    description:
+      'Win rates, settlement ranges, and disposition data across 84 federal case types and 94 districts.',
   },
   {
-    number: '02',
-    title: 'See the Full Picture',
-    description: 'Get win rates, settlement ranges, and judge analytics alongside the relevant regulations, landmark precedents, and citation networks that shape outcomes. Not just data — context.',
+    icon: '👤',
+    title: 'Judge Intelligence',
+    description:
+      'Ruling patterns, case duration, and outcome tendencies for federal judges.',
   },
   {
-    number: '03',
-    title: 'Act with Confidence',
-    description: 'Evaluate venues, prepare clients, research judges, and build stronger arguments. Export citation-backed reports with the legal landscape around your case type. Everything from public records, in plain language.',
+    icon: '📊',
+    title: 'Venue Analysis',
+    description:
+      'Compare districts by case type performance, timelines, and historical outcomes.',
+  },
+  {
+    icon: '🔍',
+    title: 'Legal Research',
+    description:
+      'Full-text search across opinions, regulations, and filings from 7 public data sources.',
   },
 ];
 
-const DIFFERENTIATION_CARDS: DifferentiationCard[] = [
+const HOW_IT_WORKS = [
   {
-    title: 'Outcome Analytics They Don\'t Offer',
-    description: 'Enterprise platforms give you case law OR case data. MyCaseValue combines both. Get win rates, settlement ranges, judge intelligence, and AI outcome predictions—all backed by actual regulations and precedents. See the intelligence behind the outcomes, not just the outcomes.',
+    step: '01',
+    title: 'Search',
+    description:
+      'Enter a case type, judge, district, or keyword. Search across millions of federal court records and legal documents.',
   },
   {
-    title: 'AI Case Prediction (Not Available Elsewhere)',
-    description: 'Predict case outcomes for your specific judge, district, and case type using machine learning trained on 5.1M real federal cases. No other platform combines outcome data with AI prediction at this scale and price.',
+    step: '02',
+    title: 'Analyze',
+    description:
+      'Review win rates, settlement ranges, judge analytics, and the regulations and precedents that shape outcomes.',
   },
   {
-    title: 'A Fraction of Enterprise Pricing',
-    description: 'Professional litigation intelligence that costs $300-$500/month elsewhere? MyCaseValue is $0-$29.99/mo. Start free, upgrade only if you need attorney tools. No account required. No hidden fees. Transparent pricing from day one.',
+    step: '03',
+    title: 'Act',
+    description:
+      'Evaluate venues, prepare clients, and build stronger arguments with data-backed intelligence from public records.',
   },
 ];
 
-const LEGAL_SOURCES: LegalSourcePreview[] = [
-  { name: 'CourtListener', count: '500K+', type: 'Opinions', color: '#1E3A5F' },
-  { name: 'Federal Register', count: 'Daily', type: 'Regulations', color: '#7C3AED' },
-  { name: 'eCFR', count: '~200K', type: 'Federal Code', color: '#0D9488' },
-  { name: 'EDGAR', count: 'Millions', type: 'SEC Filings', color: '#D97706' },
-  { name: 'Caselaw Access', count: '6.7M', type: 'US Cases', color: '#059669' },
-  { name: 'CanLII', count: '100K+', type: 'Canadian Law', color: '#DC2626' },
-  { name: 'GovInfo', count: 'Millions', type: 'Gov Docs', color: '#6B7280' },
-];
-
-// ── PAGE COMPONENT ─────────────────────────────────────────────────────────────
+// ── COMPONENT ──
 
 export default function HomePage() {
   const jsonLd = {
@@ -115,7 +110,8 @@ export default function HomePage() {
         '@type': 'WebSite',
         name: 'MyCaseValue',
         url: SITE_URL,
-        description: 'Search 5.1 million federal case outcomes alongside 127,000+ legal documents from 7 authoritative sources.',
+        description:
+          'Federal court intelligence platform built from public records.',
         potentialAction: {
           '@type': 'SearchAction',
           target: {
@@ -130,7 +126,6 @@ export default function HomePage() {
         name: 'MyCaseValue',
         url: SITE_URL,
         logo: `${SITE_URL}/logo.png`,
-        sameAs: [],
       },
     ],
   };
@@ -141,252 +136,219 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      {/* Sticky CTA — appears after scrolling past hero, hides near footer */}
       <StickyCTA />
 
-      {/* ──────────────────────────────────────────────────────────────────
-          HERO: H1 & SUBHEADLINE
-          ────────────────────────────────────────────────────────────────── */}
-      <section className="px-4 md:px-8 py-10 md:py-16 text-center" style={{ background: 'linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%)' }}>
-        <h1 className="font-sans text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.1] text-gray-900 mb-4 text-balance">
-          Federal Court Intelligence
-          <br />
-          <span className="text-brand-blue">Enterprise Platforms Can&apos;t Match</span>
-        </h1>
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(9,102,195,0.08) 0%, transparent 70%)',
+          }}
+        />
+        <div className="relative px-4 md:px-8 pt-16 pb-12 md:pt-24 md:pb-16 text-center max-w-5xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight leading-[1.1] text-gray-900 mb-5 text-balance">
+            Federal Court Intelligence,
+            <br />
+            <span className="text-brand-blue">Built from Public Records</span>
+          </h1>
 
-        <p className="max-w-2xl mx-auto text-base md:text-lg text-gray-500 leading-relaxed mb-8">
-          Outcome analytics, AI case prediction, and 127K+ legal documents from 7 sources.
-          <br className="hidden md:block" />
-          What costs $300–$500/month elsewhere is <strong className="text-gray-700">free during beta</strong>.
-        </p>
+          <p className="max-w-2xl mx-auto text-base md:text-lg text-gray-500 leading-relaxed mb-10">
+            Search millions of federal court outcomes for win rates, settlement
+            data, judge analytics, and litigation intelligence. Sourced entirely
+            from public federal court and agency records.
+          </p>
 
-        {/* GLOBAL SEARCH BAR */}
-        <SearchHero />
+          {/* Search bar */}
+          <SearchHero />
 
-        {/* CTA BUTTONS */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6">
-          <Link
-            href="/cases"
-            className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-brand-blue text-white font-semibold transition-all hover:bg-brand-blue-dark hover:shadow-lg"
-          >
-            Start searching free →
-          </Link>
-          <Link
-            href="/legal/search"
-            className="inline-flex items-center justify-center px-7 py-3 rounded-full border-2 border-gray-200 text-gray-700 font-semibold transition-all hover:border-brand-blue hover:text-brand-blue"
-          >
-            Explore legal research
-          </Link>
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
+            <Link
+              href="/cases"
+              className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-brand-blue text-white font-semibold text-sm transition-all hover:bg-brand-blue-dark hover:shadow-lg"
+            >
+              Browse Case Types
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-gray-200 text-gray-700 font-semibold text-sm transition-all hover:border-brand-blue hover:text-brand-blue"
+            >
+              View Pricing
+            </Link>
+          </div>
+
+          <p className="text-xs text-gray-400 mt-5 tracking-wide">
+            FREE DURING BETA · NO ACCOUNT REQUIRED
+          </p>
         </div>
-        <p className="text-xs text-gray-400 mt-4 tracking-wide">
-          PUBLIC BETA · ALL FEATURES FREE · NO ACCOUNT REQUIRED · 50K+ LEGAL PROFESSIONALS
-        </p>
       </section>
 
-      {/* ──────────────────────────────────────────────────────────────────
-          TRUST BAR: 6 STATS
-          ────────────────────────────────────────────────────────────────── */}
-      <section className="w-full border-y border-gray-100 bg-gray-50/50 py-6 md:py-8">
-        <div className="px-4 md:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-0">
-            {/* Stat 1: 5.1M Cases */}
-            <div className="text-center lg:border-r lg:border-gray-100 md:px-4">
-              <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
-                5.1M+
+      {/* ── TRUST METRICS BAR ── */}
+      <section className="w-full border-y border-gray-100 bg-gray-50/60 py-6">
+        <div className="max-w-5xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
+            <div className="text-center md:border-r md:border-gray-200/60">
+              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1 tabular-nums">
+                {SITE_METRICS.totalCases}
               </div>
-              <div className="text-sm text-gray-500 font-medium">
+              <div className="text-xs text-gray-500 font-medium uppercase tracking-wider">
                 Federal Cases
               </div>
             </div>
-
-            {/* Stat 2: 95 districts */}
-            <div className="text-center lg:border-r lg:border-gray-100 md:px-4">
-              <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
-                95
+            <div className="text-center md:border-r md:border-gray-200/60">
+              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1 tabular-nums">
+                {SITE_METRICS.districtCourts}
               </div>
-              <div className="text-sm text-gray-500 font-medium">
+              <div className="text-xs text-gray-500 font-medium uppercase tracking-wider">
                 District Courts
               </div>
             </div>
-
-            {/* Stat 3: 84 Case Types */}
-            <div className="text-center lg:border-r lg:border-gray-100 md:px-4">
-              <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
-                84
+            <div className="text-center md:border-r md:border-gray-200/60">
+              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1 tabular-nums">
+                {SITE_METRICS.caseTypes}
               </div>
-              <div className="text-sm text-gray-500 font-medium">
+              <div className="text-xs text-gray-500 font-medium uppercase tracking-wider">
                 Case Types
               </div>
             </div>
-
-            {/* Stat 4: 127K+ Legal Docs */}
-            <div className="text-center lg:border-r lg:border-gray-100 md:px-4">
-              <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
-                127K+
-              </div>
-              <div className="text-sm text-gray-500 font-medium">
-                Legal Documents
-              </div>
-            </div>
-
-            {/* Stat 5: 7 Data Sources */}
-            <div className="text-center lg:border-r lg:border-gray-100 md:px-4">
-              <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
                 7
               </div>
-              <div className="text-sm text-gray-500 font-medium">
-                Data Sources
-              </div>
-            </div>
-
-            {/* Stat 6: 55+ Years */}
-            <div className="text-center md:px-4">
-              <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
-                55<span className="text-2xl md:text-3xl">+</span>
-              </div>
-              <div className="text-sm text-gray-500 font-medium">
-                Years of Data
+              <div className="text-xs text-gray-500 font-medium uppercase tracking-wider">
+                Public Data Sources
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ──────────────────────────────────────────────────────────────────
-          WHO USES IT: AUDIENCE CARDS
-          ────────────────────────────────────────────────────────────────── */}
-      <div style={{ marginTop: '-2rem' }}>
-        <AudienceCards />
-      </div>
-
-      {/* ──────────────────────────────────────────────────────────────────
-          LEGAL INTELLIGENCE PREVIEW (NEW SECTION)
-          ────────────────────────────────────────────────────────────────── */}
-      <section className="px-4 md:px-8 py-10 md:py-14 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8">
-            <div className="inline-block px-3 py-1 rounded-full bg-blue-50 text-brand-blue text-sm font-semibold mb-4">
-              Legal Research Hub
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Case Data Meets Legal Research
+      {/* ── DATA SOURCES ── */}
+      <section className="px-4 md:px-8 py-14 md:py-20 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-xs font-semibold text-brand-blue uppercase tracking-widest mb-3">
+              Transparency
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              Public Records, Organized
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Every case type page now shows the regulations, precedents, and citation networks that shape outcomes. Seven sources, one search.
+            <p className="text-base text-gray-500 max-w-xl mx-auto">
+              Every data point comes from official federal court and agency
+              sources. No proprietary black boxes.
             </p>
           </div>
 
-          {/* Data Sources Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 mb-8">
-            {LEGAL_SOURCES.map((src) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {SITE_METRICS.dataSources.map((src) => (
               <div
                 key={src.name}
-                className="text-center p-3 rounded-xl border border-gray-100 bg-white hover:shadow-md transition-shadow"
+                className="flex items-start gap-3 p-4 rounded-xl border border-gray-100 bg-white hover:border-gray-200 hover:shadow-sm transition-all"
               >
-                <div className="text-lg font-bold font-mono mb-0.5" style={{ color: src.color }}>
-                  {src.count}
-                </div>
-                <div className="text-xs font-semibold text-gray-900 mb-0.5">
-                  {src.name}
-                </div>
-                <div className="text-xs text-gray-500">
-                  {src.type}
+                <div className="w-2 h-2 rounded-full bg-brand-blue mt-2 flex-shrink-0" />
+                <div>
+                  <div className="text-sm font-semibold text-gray-900">
+                    {src.name}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-0.5">
+                    {src.description}
+                  </div>
+                  <div className="text-[11px] text-gray-400 mt-1">
+                    {src.category} · Updated {src.updateFrequency.toLowerCase()}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Three Key Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="text-center mt-8">
             <Link
-              href="/legal/search"
-              className="group p-6 rounded-2xl border border-gray-100 hover:border-brand-blue hover:shadow-lg transition-all duration-200"
+              href="/data-sources"
+              className="text-sm font-medium text-brand-blue hover:text-brand-blue-dark transition-colors"
             >
-              <div className="w-10 h-10 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-4 text-lg">
-                ⌕
-              </div>
-              <h3 className="text-base font-semibold text-gray-900 mb-2 group-hover:text-brand-blue transition-colors">
-                Document Search
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Full-text and semantic search across opinions, regulations, filings, and statutes from all 7 sources.
-              </p>
-            </Link>
-
-            <Link
-              href="/legal/citations"
-              className="group p-6 rounded-2xl border border-gray-100 hover:border-purple-400 hover:shadow-lg transition-all duration-200"
-            >
-              <div className="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center mb-4 text-lg">
-                ◉
-              </div>
-              <h3 className="text-base font-semibold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
-                Citation Explorer
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Interactive network graph showing how landmark cases connect. See which precedents drive outcomes in your case type.
-              </p>
-            </Link>
-
-            <Link
-              href="/legal/dashboard"
-              className="group p-6 rounded-2xl border border-gray-100 hover:border-emerald-400 hover:shadow-lg transition-all duration-200"
-            >
-              <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 text-lg">
-                ▦
-              </div>
-              <h3 className="text-base font-semibold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
-                Data Dashboard
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Monitor ingestion pipeline health, source status, and document processing across all 7 data sources in real time.
-              </p>
+              View full data source documentation &rarr;
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ──────────────────────────────────────────────────────────────────
-          HOW IT WORKS: 3 STEPS
-          ────────────────────────────────────────────────────────────────── */}
-      <section id="how-it-works" className="scroll-mt-[72px] px-4 md:px-8 py-10 md:py-14 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              How MyCaseValue Works
+      {/* ── PRODUCT PREVIEW ── */}
+      <ProductPreview />
+
+      {/* ── CAPABILITIES ── */}
+      <section className="px-4 md:px-8 py-14 md:py-20 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold text-brand-blue uppercase tracking-widest mb-3">
+              Platform
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              What You Can Do
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-base text-gray-500 max-w-xl mx-auto">
+              Turn fragmented federal records into actionable litigation
+              intelligence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {CAPABILITIES.map((cap) => (
+              <div
+                key={cap.title}
+                className="flex items-start gap-4 p-5 rounded-xl border border-gray-100 bg-white hover:border-gray-200 hover:shadow-sm transition-all"
+              >
+                <div className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-lg flex-shrink-0">
+                  {cap.icon}
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                    {cap.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">
+                    {cap.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS ── */}
+      <section
+        id="how-it-works"
+        className="scroll-mt-[72px] px-4 md:px-8 py-14 md:py-20 bg-gray-50"
+      >
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              How It Works
+            </h2>
+            <p className="text-base text-gray-500">
               Three steps to federal court intelligence.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-            {HOW_IT_WORKS_STEPS.map((step, idx) => (
-              <div key={step.title} className="relative">
-                {/* Step number background */}
-                <div
-                  aria-hidden="true"
-                  className="text-4xl font-bold text-brand-blue opacity-20 mb-2 leading-none"
-                >
-                  {step.number}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {HOW_IT_WORKS.map((item, idx) => (
+              <div key={item.step} className="relative text-center md:text-left">
+                <div className="text-5xl font-bold text-brand-blue/10 mb-2 leading-none">
+                  {item.step}
                 </div>
-
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {step.title}
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {item.title}
                 </h3>
-
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {step.description}
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  {item.description}
                 </p>
-
-                {/* Connecting arrow for desktop */}
-                {idx < HOW_IT_WORKS_STEPS.length - 1 && (
+                {idx < HOW_IT_WORKS.length - 1 && (
                   <div
                     aria-hidden="true"
-                    className="hidden md:block absolute top-16 -right-4 text-gray-400 text-2xl"
+                    className="hidden md:block absolute top-8 -right-4 text-gray-300 text-xl"
                   >
-                    →
+                    &rarr;
                   </div>
                 )}
               </div>
@@ -395,88 +357,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ──────────────────────────────────────────────────────────────────
-          PRODUCT PREVIEW
-          ────────────────────────────────────────────────────────────────── */}
-      <ProductPreview />
-
-      {/* ──────────────────────────────────────────────────────────────────
-          WHAT MAKES THIS DIFFERENT
-          ────────────────────────────────────────────────────────────────── */}
-      <section className="px-4 md:px-8 py-10 md:py-14 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              A Different Kind of Legal Platform
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Case outcomes and legal research, finally in one place.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {DIFFERENTIATION_CARDS.map((card) => (
-              <div
-                key={card.title}
-                className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
-              >
-                <h3 className="text-base font-semibold text-gray-900 mb-3">
-                  {card.title}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {card.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ──────────────────────────────────────────────────────────────────
-          BOTTOM CTA SECTION
-          ────────────────────────────────────────────────────────────────── */}
+      {/* ── BOTTOM CTA ── */}
       <section
         data-hide-sticky-cta
-        className="px-4 md:px-8 py-10 md:py-14 text-white"
+        className="px-4 md:px-8 py-14 md:py-20 text-white"
         style={{
-          background: 'linear-gradient(135deg, #0966C3 0%, #064B8A 50%, #0E3B6D 100%)',
-          backgroundAttachment: 'fixed',
+          background:
+            'linear-gradient(135deg, #0966C3 0%, #064B8A 50%, #0E3B6D 100%)',
         }}
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            Stop Paying Enterprise Prices
-            <br />
-            <span className="text-white/90">for Incomplete Legal Intelligence</span>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Start Researching Federal Court Data
           </h2>
-
-          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Get AI-powered case prediction, federal judge analytics, settlement data, outcome trends, and integrated legal research. Everything Westlaw and LexisNexis charge thousands for, at a fraction of the cost. Free during public beta.
+          <p className="text-base md:text-lg text-white/80 mb-8 max-w-xl mx-auto leading-relaxed">
+            Case outcomes, judge analytics, settlement data, and litigation
+            intelligence from public records. Free during beta.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/cases"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-white text-brand-blue font-semibold transition-colors hover:bg-gray-100"
+              className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-white text-brand-blue font-semibold text-sm transition-colors hover:bg-gray-100"
             >
-              Start searching free →
+              Start Searching Free
             </Link>
             <Link
-              href="/legal"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full border-2 border-white text-white font-semibold transition-colors hover:bg-white/10"
+              href="/attorney"
+              className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-white/30 text-white font-semibold text-sm transition-colors hover:bg-white/10"
             >
-              Explore research hub
+              Attorney Tools
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ──────────────────────────────────────────────────────────────────
-          DISCLAIMER
-          ────────────────────────────────────────────────────────────────── */}
+      {/* ── DISCLAIMER ── */}
       <div className="px-4 md:px-8 py-4 border-t border-gray-100 bg-white">
-        <p className="text-xs text-gray-600 text-center max-w-3xl mx-auto">
-          MyCaseValue provides data from public federal court records and legal documents for informational purposes only. This is not legal advice. Consult a licensed attorney for legal guidance.
+        <p className="text-xs text-gray-500 text-center max-w-3xl mx-auto">
+          MyCaseValue provides data from public federal court records for
+          informational purposes only. This is not legal advice. Consult a
+          licensed attorney for legal guidance.
         </p>
       </div>
     </main>

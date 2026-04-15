@@ -10,4 +10,4 @@ export const SITE_URL =
 export const SITE_NAME = 'MyCaseValue';
 
 export const SITE_DESCRIPTION =
-  'Research real outcomes from 5.1M+ federal court cases across 94 districts. Get win rates, settlement ranges, timelines, and judge analytics sourced from public court records.';
+  'Search millions of federal court records for case outcomes, judge analytics, settlement data, and litigation intelligence. Built entirely from public federal court and agency records.';

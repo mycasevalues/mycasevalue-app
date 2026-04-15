@@ -240,7 +240,7 @@ export default function TermsPage() {
             <a href="#termination" className="legal-toc-link">9. Termination of Use</a>
             <a href="#third-party" className="legal-toc-link">10. Third-Party Links</a>
             <a href="#indemnification" className="legal-toc-link">11. Indemnification</a>
-            <a href="#governing-law" className="legal-toc-link">12. Governing Law</a>
+            <a href="#governing-law" className="legal-toc-link">12. Governing Law & Arbitration</a>
             <a href="#privacy" className="legal-toc-link">13. Privacy</a>
             <a href="#contact" className="legal-toc-link">14. Contact Us</a>
             <a href="#related-legal" className="legal-toc-link">Related Legal Pages</a>
@@ -288,7 +288,7 @@ export default function TermsPage() {
           <section id="description">
             <h2 className="legal-section-heading">2. Description of Service</h2>
             <p className="legal-body">
-              MyCaseValue is a federal court data analytics and research tool that aggregates, categorizes, and displays historical outcome data from 5.1+ million federal civil court cases spanning multiple decades.
+              MyCaseValue is a federal court data analytics and research tool that aggregates, categorizes, and displays historical outcome data from millions of federal civil court cases spanning multiple decades.
               The Service provides aggregate statistics on case outcomes, win/loss rates, settlement percentages, case timelines, recovery ranges, judge analytics, and trends analyzed by case type, federal circuit, judicial district, judge, and other filters.
             </p>
 
@@ -504,12 +504,47 @@ export default function TermsPage() {
 
           <section id="governing-law">
             <h2 className="legal-section-heading">12. Governing Law & Dispute Resolution</h2>
-            <p className="legal-body">
-              These Terms are governed by the laws of the United States without regard to conflict of law principles.
-              Any disputes shall be subject to exclusive jurisdiction of the federal and state courts located in the United States.
-            </p>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Governing Law</h4>
+              <p className="legal-body">
+                These Terms and any dispute arising out of or related to these Terms or the Service shall be governed by and construed in accordance with the laws of the State of West Virginia, without regard to its conflict of law provisions.
+              </p>
+            </div>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Binding Arbitration</h4>
+              <p className="legal-body">
+                Any dispute, claim, or controversy arising out of or relating to these Terms, the Service, or your use thereof, including the determination of the scope or applicability of this agreement to arbitrate, shall be determined by binding arbitration administered in the State of West Virginia. The arbitration shall be conducted by a single arbitrator in accordance with the rules of the American Arbitration Association (AAA) then in effect. The arbitrator&apos;s decision shall be final and binding, and judgment on the award rendered by the arbitrator may be entered in any court having jurisdiction thereof.
+              </p>
+              <p className="legal-body" style={{ marginTop: '12px' }}>
+                You agree that any arbitration under these Terms will take place on an individual basis; class arbitrations and class actions are not permitted, and you are agreeing to give up the ability to participate in a class action.
+              </p>
+            </div>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Forum and Venue</h4>
+              <p className="legal-body">
+                To the extent that any dispute is not subject to arbitration as described above, or if a court of competent jurisdiction determines that the arbitration provision is unenforceable, you agree that any such dispute shall be brought exclusively in the state or federal courts located in the State of West Virginia. You consent to the personal jurisdiction of and venue in such courts and waive any objection as to inconvenient forum.
+              </p>
+            </div>
+
+            {/* TODO: Have legal counsel review this arbitration/forum clause before final publication. */}
+            <div style={{
+              marginTop: '16px',
+              padding: '12px 16px',
+              borderRadius: '8px',
+              background: '#FFFBEB',
+              borderLeft: '3px solid #D97706',
+              fontSize: '13px',
+              color: 'var(--color-text-secondary)',
+              lineHeight: 1.6,
+            }}>
+              <strong>Notice:</strong> This section contains a binding arbitration clause and class action waiver. Please read it carefully, as it affects your legal rights regarding disputes with MyCaseValue.
+            </div>
+
             <p className="legal-body" style={{ marginTop: '16px' }}>
-              Before litigation, we encourage good-faith negotiation. Contact us at <a href="mailto:support@mycasevalues.com" className="legal-contact-email">support@mycasevalues.com</a> to resolve disputes.
+              Before initiating arbitration or litigation, we encourage good-faith negotiation. Contact us at <a href="mailto:support@mycasevalues.com" className="legal-contact-email">support@mycasevalues.com</a> to resolve disputes informally.
             </p>
           </section>
 

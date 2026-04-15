@@ -20,7 +20,10 @@ export default function BetaBanner() {
         flexWrap: 'wrap',
       }}
     >
-      <span>Public beta: Get federal court outcome analytics and AI prediction free—features that cost $500/month elsewhere. No account required. Join 50K+ legal professionals.</span>
+      <span>
+        Public beta: Federal court analytics, judge intelligence, and case
+        outcome data. Free during beta, no account required.
+      </span>
       <Link
         href="/about"
         style={{
