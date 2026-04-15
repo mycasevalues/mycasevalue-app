@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import CommandPalette from './CommandPalette';
+import { SITS } from '@/lib/data';
 
 /**
  * Global Command Palette wrapper that handles Cmd+K / Ctrl+K keyboard shortcut
@@ -36,19 +38,39 @@ export default function GlobalCommandPalette() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen]);
 
-  // Handle navigation and case selection
+  const router = useRouter();
+
+  // Navigate to case type when selected from command palette
   const handleSelectCase = useCallback((nos: string, description: string) => {
-    // This would typically navigate to the case or update parent state
-  }, []);
+    setIsOpen(false);
+    // Find the category for this NOS code
+    const category = SITS.find(cat => cat.opts.some(opt => opt.nos === nos));
+    if (category) {
+      router.push(`/cases/${category.id}`);
+    } else {
+      router.push(`/search?q=${encodeURIComponent(description)}`);
+    }
+  }, [router]);
 
   const handleNavigate = useCallback((tab: string) => {
-    // Handle navigation based on tab
-    if (tab === 'home') {
-      window.location.href = '/';
-    } else if (tab === 'lang') {
-      // Handle language switch
+    setIsOpen(false);
+    const routes: Record<string, string> = {
+      home: '/',
+      cases: '/cases',
+      judges: '/judges',
+      districts: '/districts',
+      search: '/search',
+      pricing: '/pricing',
+      attorney: '/attorney',
+      calculator: '/calculator',
+      compare: '/compare',
+      trends: '/trends',
+      map: '/map',
+    };
+    if (routes[tab]) {
+      router.push(routes[tab]);
     }
-  }, []);
+  }, [router]);
 
   return (
     <CommandPalette
@@ -56,7 +78,7 @@ export default function GlobalCommandPalette() {
       onClose={() => setIsOpen(false)}
       onSelectCase={handleSelectCase}
       onNavigate={handleNavigate}
-      sits={[]}
+      sits={SITS}
     />
   );
 }
