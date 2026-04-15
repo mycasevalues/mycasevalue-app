@@ -82,7 +82,7 @@ export default function ParalegalHandbookPage() {
             <div className="rounded-lg border border-gray-200 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">District Directory & Rules</h3>
               <p className="text-gray-700">
-                Complete listing of all 94 federal districts with states and PACER codes, plus local rules summaries for 20 largest districts.
+                Complete listing of all 95 federal districts with states and PACER codes, plus local rules summaries for 20 largest districts.
               </p>
             </div>
 
@@ -131,7 +131,7 @@ export default function ParalegalHandbookPage() {
               </li>
               <li className="flex items-start">
                 <span className="mr-3 text-blue-900 font-semibold">Pages 13-16:</span>
-                <span>District Court Directory (all 94 districts)</span>
+                <span>District Court Directory (all 95 districts)</span>
               </li>
             </ul>
             <ul className="space-y-2 text-gray-700">
@@ -179,7 +179,7 @@ export default function ParalegalHandbookPage() {
             This handbook is designed for paralegals, law students, and legal professionals who work with federal court cases. It provides quick reference information for the most common procedural questions, deadline calculations, and court data lookups that arise in daily practice.
           </p>
           <p className="mb-4 text-gray-700">
-            The handbook combines procedural guidance with data from the Federal Judicial Center Integrated Database and CourtListener. Statute of limitations data is sourced from REAL_DATA with all 84 Nature of Suit codes. District information reflects the current 94 federal judicial districts.
+            The handbook combines procedural guidance with data from the Federal Judicial Center Integrated Database and CourtListener. Statute of limitations data is sourced from REAL_DATA with all 84 Nature of Suit codes. District information reflects the current 95 federal judicial districts.
           </p>
           <p className="text-sm text-gray-600">
             This handbook is not legal advice. Always verify current procedures, rules, and deadlines with the specific federal district where your case is filed. Local rules and standing orders may differ from national standards shown in this reference.

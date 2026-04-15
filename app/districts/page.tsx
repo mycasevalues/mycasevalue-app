@@ -9,11 +9,11 @@ export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Federal Court Districts — All 95 Judicial Districts',
-  description: 'All 94 federal judicial districts across 13 circuits. Explore case outcomes, win rates, and settlement data by district and jurisdiction.',
+  description: 'All 95 federal judicial districts across 13 circuits. Explore case outcomes, win rates, and settlement data by district and jurisdiction.',
   alternates: { canonical: `${SITE_URL}/districts` },
   openGraph: {
     title: 'Federal Court Districts — All 95 Judicial Districts',
-    description: 'Explore all 94 federal judicial districts across 13 circuits with case outcomes, win rates, and settlement data by jurisdiction.',
+    description: 'Explore all 95 federal judicial districts across 13 circuits with case outcomes, win rates, and settlement data by jurisdiction.',
     type: 'website',
     url: `${SITE_URL}/districts`,
     siteName: 'MyCaseValue',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Federal Court Districts',
-    description: 'Explore all 94 federal judicial districts with case outcomes data.',
+    description: 'Explore all 95 federal judicial districts with case outcomes data.',
     images: [`${SITE_URL}/og-image.png`],
   },
 };

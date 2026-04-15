@@ -152,7 +152,7 @@ export default function CasesIndexPage() {
             Case Categories
           </h1>
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
-            Research real federal court outcomes across 10 major case types. Explore win rates, settlements, timelines, and recovery data from 5.1M+ public cases.
+            Research real federal court outcomes across 10 major categories covering 84 NOS case types. Explore win rates, settlements, timelines, and recovery data from 5.1M+ public cases.
           </p>
         </div>
       </div>

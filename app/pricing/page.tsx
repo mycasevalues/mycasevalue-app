@@ -65,7 +65,7 @@ const tiers: PricingTier[] = [
     name: 'Free',
     bestFor: 'Self-represented litigants',
     price: '$0',
-    period: 'during beta',
+    period: 'during public beta',
     description: 'Essential case data and win rate analysis.',
     features: [
       'Win rate percentage by case type + district',
@@ -110,7 +110,7 @@ const tiers: PricingTier[] = [
     description: 'Unlimited lookups with legal research and trend analysis.',
     features: [
       'Unlimited case type + district lookups',
-      'All 84 case types across all 94 districts',
+      'All 84 case types across all 95 districts',
       'Full settlement percentile ranges',
       '10-year trend data',
       'Legal document search (7 sources)',
@@ -141,7 +141,7 @@ const tiers: PricingTier[] = [
       'Regulatory alerts (Federal Register monitoring)',
       'Opposing counsel citation patterns',
       'Document intelligence (upload complaints/motions)',
-      'Venue selection optimizer (94 districts ranked)',
+      'Venue selection optimizer (95 districts ranked)',
       'Bulk analysis (up to 1,000 cases via CSV)',
       'Full API access (case data + legal docs)',
       'Team workspace (5 seats included)',
@@ -165,7 +165,7 @@ const faqItems = [
   },
   {
     q: 'Where does MyCaseValue data come from?',
-    a: 'Case outcome data comes from three public federal court record sources: the FJC Integrated Database, PACER, and CourtListener. Our legal research hub additionally indexes 7 authoritative sources including the Federal Register, eCFR, SEC EDGAR, Harvard Caselaw Access, CanLII, and GovInfo â over 127,000 legal documents and growing.',
+    a: 'Case outcome data comes from three public federal court record sources: the FJC Integrated Database, PACER, and CourtListener. Our legal research hub additionally indexes 7 authoritative sources including the Federal Register, eCFR, SEC EDGAR, Harvard Caselaw Access, CanLII, and GovInfo — over 127,000 legal documents and growing.',
   },
   {
     q: 'How current is the data?',
@@ -181,7 +181,7 @@ const faqItems = [
   },
   {
     q: 'Does Attorney Mode work for both plaintiffs and defense?',
-    a: 'Yes. All analyticsâwin rates, settlement ranges, judge intelligence, and the AI predictorâpresent data neutrally. You can filter by party position in most tools.',
+    a: 'Yes. All analytics—win rates, settlement ranges, judge intelligence, and the AI predictor—present data neutrally. You can filter by party position in most tools.',
   },
   {
     q: 'What is the refund policy?',

@@ -240,7 +240,7 @@ export default function PressPage() {
                   margin: 0,
                 }}
               >
-                Founded on the principle that court data should be accessible to everyone, the platform analyzes 5.1 million+ federal court cases across 84 case types and 94 federal judicial districts.
+                Founded on the principle that court data should be accessible to everyone, the platform analyzes 5.1 million+ federal court cases across 84 case types and 95 federal judicial districts.
               </p>
               <p
                 style={{

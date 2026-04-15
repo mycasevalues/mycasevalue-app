@@ -43,7 +43,7 @@ Employment discrimination remains one of the most active and consequential areas
     date: new Date('2025-02-03'),
     readTime: 9,
     author: 'MyCaseValue Analytics Team',
-    content: `Not all federal districts are created equal. Across the 94 federal district courts, plaintiff win rates vary by more than 20 percentage points depending on jurisdiction, case type, and local litigation culture. For attorneys advising clients on venue selection, forum shopping, or simply calibrating settlement expectations, understanding which districts favor plaintiffs — and why — is essential intelligence.
+    content: `Not all federal districts are created equal. Across the 95 federal district courts, plaintiff win rates vary by more than 20 percentage points depending on jurisdiction, case type, and local litigation culture. For attorneys advising clients on venue selection, forum shopping, or simply calibrating settlement expectations, understanding which districts favor plaintiffs — and why — is essential intelligence.
 
 The concept of a "favorable-outcome" district is not simply about which courts award the biggest verdicts. It encompasses win rate at trial, settlement frequency, settlement amounts, dismissal rates, and the overall probability that a plaintiff walks away with some recovery. A district with sky-high verdicts but a 90% dismissal rate is not genuinely favorable-outcome; a district with moderate verdicts but high settlement rates and low dismissal rates may be.
 
@@ -117,7 +117,7 @@ For practitioners, the key takeaway is that case-type-specific duration data sho
     author: 'MyCaseValue Research Team',
     content: `Federal court filings continue to evolve in response to changing litigation patterns, technological adoption, and economic conditions. Our latest analysis of 2024 data reveals significant shifts in case composition, filing volumes, and jurisdictional distribution that warrant attention from legal professionals.
 
-The overall volume of federal civil filings in 2024 showed modest growth compared to 2023, with approximately 250,000 new cases filed across all 94 federal districts. This represents a 3.2% increase from the previous year, though volumes remain slightly below pre-pandemic levels. However, this aggregate number masks important variations in specific case types and regions.
+The overall volume of federal civil filings in 2024 showed modest growth compared to 2023, with approximately 250,000 new cases filed across all 95 federal districts. This represents a 3.2% increase from the previous year, though volumes remain slightly below pre-pandemic levels. However, this aggregate number masks important variations in specific case types and regions.
 
 Employment discrimination cases continue to represent a significant portion of the federal docket, accounting for approximately 12% of all civil filings. However, the composition within this category is shifting. Claims involving retaliation and harassment have increased by 8.5%, while traditional discrimination claims show more modest growth. This shift may reflect increased workplace awareness, changing enforcement priorities, and evolving litigation strategies among plaintiff's counsel.
 

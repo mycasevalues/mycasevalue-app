@@ -4,7 +4,7 @@ import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Federal Court Rules & Local Rules Reference | MyCaseValue Attorney Tools',
-  description: 'Complete reference for FRCP, FRCP of Appellate Procedure, and local rules for all 94 federal districts. ECF requirements, brief page limits, discovery rules, ADR requirements, and judge standing orders.',
+  description: 'Complete reference for FRCP, FRCP of Appellate Procedure, and local rules for all 95 federal districts. ECF requirements, brief page limits, discovery rules, ADR requirements, and judge standing orders.',
   keywords: [
     'federal court rules',
     'FRCP',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Federal Court Rules & Local Rules Reference | MyCaseValue',
-    description: 'Complete reference for FRCP and local rules for all 94 federal districts.',
+    description: 'Complete reference for FRCP and local rules for all 95 federal districts.',
     url: `${SITE_URL}/attorney/court-rules`,
     type: 'website',
     siteName: 'MyCaseValue',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Federal Court Rules & Local Rules Reference | MyCaseValue',
-    description: 'Complete reference for FRCP and local rules for all 94 federal districts.',
+    description: 'Complete reference for FRCP and local rules for all 95 federal districts.',
   },
   robots: { index: false, follow: false },
 };
