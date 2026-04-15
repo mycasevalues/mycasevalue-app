@@ -136,7 +136,7 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
             fontWeight: 600,
             fontSize: '13px',
             marginBottom: '6px',
-            color: '#E5E7EB',
+            color: 'var(--border-default)',
           }}>
             {displayLabel}
           </div>

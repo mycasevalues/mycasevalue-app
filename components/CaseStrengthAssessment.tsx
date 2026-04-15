@@ -20,7 +20,7 @@ interface CaseType {
 
 // SVG Icons
 const EmploymentIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
     <rect x="2" y="7" width="20" height="14" rx="2" />
     <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
     <line x1="9" y1="14" x2="9" y2="18" />
@@ -29,7 +29,7 @@ const EmploymentIcon = () => (
 );
 
 const PersonalInjuryIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
     <circle cx="12" cy="6" r="3" />
     <path d="M9 12h6" />
     <path d="M12 12v6" />
@@ -39,7 +39,7 @@ const PersonalInjuryIcon = () => (
 );
 
 const ProductIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
     <path d="M6 9l6-6 6 6" />
     <rect x="2" y="9" width="20" height="12" rx="1" />
     <line x1="6" y1="13" x2="18" y2="13" />
@@ -47,7 +47,7 @@ const ProductIcon = () => (
 );
 
 const MedicalIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
     <circle cx="12" cy="12" r="10" />
     <line x1="12" y1="8" x2="12" y2="16" />
     <line x1="8" y1="12" x2="16" y2="12" />
@@ -55,7 +55,7 @@ const MedicalIcon = () => (
 );
 
 const ContractIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
     <polyline points="13 2 13 9 20 9" />
     <line x1="9" y1="13" x2="15" y2="13" />
@@ -64,14 +64,14 @@ const ContractIcon = () => (
 );
 
 const RightsIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
     <polyline points="9 22 9 12 15 12 15 22" />
   </svg>
 );
 
 const ADAIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
     <circle cx="12" cy="8" r="4" />
     <path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
     <path d="M9 13h6" />
@@ -79,7 +79,7 @@ const ADAIcon = () => (
 );
 
 const WageIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
     <circle cx="12" cy="12" r="9" />
     <line x1="12" y1="6" x2="12" y2="18" />
     <path d="M8.5 9.5c0-.5.5-1 1.5-1h4c1 0 1.5.5 1.5 1s-.5 1-1.5 1h-4c-1 0-1.5.5-1.5 1s.5 1 1.5 1h4c1 0 1.5.5 1.5 1" />
@@ -228,9 +228,9 @@ const caseTypes: CaseType[] = [
 
 // Helper function to calculate score with proper color coding
 function getScoreColor(score: number): string {
-  if (score >= 75) return '#0966C3'; // Strong - primary blue
+  if (score >= 75) return 'var(--accent-primary)'; // Strong - primary blue
   if (score >= 50) return '#4A93C9'; // Moderate - lighter blue
-  if (score >= 25) return '#9CA3AF'; // Challenging - gray
+  if (score >= 25) return 'var(--color-text-muted)'; // Challenging - gray
   return '#E0DDD8'; // Difficult - light gray
 }
 
@@ -249,7 +249,7 @@ function ProgressBar({ current, total }: { current: number; total: number }) {
       <div
         style={{
           height: '8px',
-          backgroundColor: '#E5E7EB',
+          backgroundColor: 'var(--border-default)',
           borderRadius: '4px',
           overflow: 'hidden',
         }}
@@ -258,7 +258,7 @@ function ProgressBar({ current, total }: { current: number; total: number }) {
           style={{
             height: '100%',
             width: `${percentage}%`,
-            backgroundColor: '#0966C3',
+            backgroundColor: 'var(--accent-primary)',
             transition: 'width 0.3s ease',
           }}
         />
@@ -291,7 +291,7 @@ function CircularGauge({ score }: { score: number }) {
             cy="50"
             r="45"
             fill="none"
-            stroke="#E5E7EB"
+            stroke="var(--border-default)"
             strokeWidth="8"
           />
           {/* Progress circle */}
@@ -326,7 +326,7 @@ function CircularGauge({ score }: { score: number }) {
             style={{
               fontSize: '48px',
               fontWeight: 'bold',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               lineHeight: 1,
             }}
           >
@@ -425,7 +425,7 @@ export default function CaseStrengthAssessment() {
             style={{
               fontSize: '36px',
               fontWeight: 'bold',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '12px',
               margin: '0 0 12px 0',
             }}
@@ -470,18 +470,18 @@ export default function CaseStrengthAssessment() {
                 style={{
                   padding: '24px',
                   backgroundColor: 'white',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '8px',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                   textAlign: 'left',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#0966C3';
+                  e.currentTarget.style.borderColor = 'var(--accent-primary)';
                   e.currentTarget.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.1)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#E5E7EB';
+                  e.currentTarget.style.borderColor = 'var(--border-default)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
               >
@@ -492,7 +492,7 @@ export default function CaseStrengthAssessment() {
                   style={{
                     fontSize: '18px',
                     fontWeight: '600',
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -536,7 +536,7 @@ export default function CaseStrengthAssessment() {
             backgroundColor: 'white',
             padding: '40px',
             borderRadius: '8px',
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
           }}
         >
           <div style={{ marginBottom: '32px' }}>
@@ -544,7 +544,7 @@ export default function CaseStrengthAssessment() {
               style={{
                 fontSize: '20px',
                 fontWeight: '600',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 marginBottom: '8px',
                 margin: '0 0 8px 0',
               }}
@@ -567,7 +567,7 @@ export default function CaseStrengthAssessment() {
               style={{
                 fontSize: '18px',
                 fontWeight: '500',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 marginBottom: '24px',
                 margin: '0 0 24px 0',
               }}
@@ -622,14 +622,14 @@ export default function CaseStrengthAssessment() {
                     style={{
                       width: '18px',
                       height: '18px',
-                      accentColor: '#0966C3',
+                      accentColor: 'var(--accent-primary)',
                       cursor: 'pointer',
                     }}
                   />
                   <span
                     style={{
                       fontSize: '16px',
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       fontWeight: answers[currentQuestion.id] === option.value ? '600' : '400',
                     }}
                   >
@@ -667,8 +667,8 @@ export default function CaseStrengthAssessment() {
               style={{
                 padding: '12px 24px',
                 backgroundColor: 'white',
-                color: '#0966C3',
-                border: '1px solid #0966C3',
+                color: 'var(--accent-primary)',
+                border: '1px solid var(--accent-primary)',
                 borderRadius: '6px',
                 fontSize: '14px',
                 fontWeight: '600',
@@ -691,7 +691,7 @@ export default function CaseStrengthAssessment() {
                 disabled={!isAnswered}
                 style={{
                   padding: '12px 32px',
-                  backgroundColor: isAnswered ? '#0966C3' : '#D1D5DB',
+                  backgroundColor: isAnswered ? 'var(--accent-primary)' : '#D1D5DB',
                   color: 'white',
                   border: 'none',
                   borderRadius: '6px',
@@ -702,12 +702,12 @@ export default function CaseStrengthAssessment() {
                 }}
                 onMouseEnter={(e) => {
                   if (isAnswered) {
-                    e.currentTarget.style.backgroundColor = '#004182';
+                    e.currentTarget.style.backgroundColor = 'var(--accent-primary-hover)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (isAnswered) {
-                    e.currentTarget.style.backgroundColor = '#0966C3';
+                    e.currentTarget.style.backgroundColor = 'var(--accent-primary)';
                   }
                 }}
               >
@@ -723,7 +723,7 @@ export default function CaseStrengthAssessment() {
                 disabled={!isAnswered}
                 style={{
                   padding: '12px 32px',
-                  backgroundColor: isAnswered ? '#0966C3' : '#D1D5DB',
+                  backgroundColor: isAnswered ? 'var(--accent-primary)' : '#D1D5DB',
                   color: 'white',
                   border: 'none',
                   borderRadius: '6px',
@@ -734,12 +734,12 @@ export default function CaseStrengthAssessment() {
                 }}
                 onMouseEnter={(e) => {
                   if (isAnswered) {
-                    e.currentTarget.style.backgroundColor = '#004182';
+                    e.currentTarget.style.backgroundColor = 'var(--accent-primary-hover)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (isAnswered) {
-                    e.currentTarget.style.backgroundColor = '#0966C3';
+                    e.currentTarget.style.backgroundColor = 'var(--accent-primary)';
                   }
                 }}
               >
@@ -772,7 +772,7 @@ export default function CaseStrengthAssessment() {
           style={{
             backgroundColor: 'white',
             borderRadius: '8px',
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
             padding: '40px',
           }}
         >
@@ -782,7 +782,7 @@ export default function CaseStrengthAssessment() {
               style={{
                 fontSize: '24px',
                 fontWeight: 'bold',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 marginBottom: '32px',
                 margin: '0 0 32px 0',
               }}
@@ -843,7 +843,7 @@ export default function CaseStrengthAssessment() {
               style={{
                 fontSize: '18px',
                 fontWeight: '600',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 marginBottom: '16px',
                 margin: '0 0 16px 0',
               }}
@@ -864,14 +864,14 @@ export default function CaseStrengthAssessment() {
                       alignItems: 'center',
                       paddingBottom: '12px',
                       marginBottom: '12px',
-                      borderBottom: '1px solid #E5E7EB',
+                      borderBottom: '1px solid var(--border-default)',
                     }}
                   >
                     <div>
                       <p
                         style={{
                           fontSize: '14px',
-                          color: '#0f0f0f',
+                          color: 'var(--color-text-primary)',
                           margin: '0',
                           fontWeight: answered ? '500' : '400',
                         }}
@@ -884,7 +884,7 @@ export default function CaseStrengthAssessment() {
                         marginLeft: '16px',
                         whiteSpace: 'nowrap',
                         fontWeight: '600',
-                        color: isYes ? '#10B981' : '#9CA3AF',
+                        color: isYes ? '#10B981' : 'var(--color-text-muted)',
                       }}
                     >
                       {isYes ? `+${q.points}` : '−'}
@@ -901,7 +901,7 @@ export default function CaseStrengthAssessment() {
               style={{
                 fontSize: '16px',
                 fontWeight: '600',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 marginBottom: '12px',
                 margin: '0 0 12px 0',
               }}
@@ -922,7 +922,7 @@ export default function CaseStrengthAssessment() {
               style={{
                 fontSize: '24px',
                 fontWeight: 'bold',
-                color: '#0966C3',
+                color: 'var(--accent-primary)',
                 margin: '0',
               }}
             >
@@ -936,7 +936,7 @@ export default function CaseStrengthAssessment() {
               style={{
                 fontSize: '16px',
                 fontWeight: '600',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 marginBottom: '16px',
                 margin: '0 0 16px 0',
               }}
@@ -952,7 +952,7 @@ export default function CaseStrengthAssessment() {
               <li
                 style={{
                   fontSize: '14px',
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   marginBottom: '12px',
                   lineHeight: '1.6',
                 }}
@@ -962,7 +962,7 @@ export default function CaseStrengthAssessment() {
               <li
                 style={{
                   fontSize: '14px',
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   marginBottom: '12px',
                   lineHeight: '1.6',
                 }}
@@ -972,7 +972,7 @@ export default function CaseStrengthAssessment() {
               <li
                 style={{
                   fontSize: '14px',
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   marginBottom: '12px',
                   lineHeight: '1.6',
                 }}
@@ -1017,8 +1017,8 @@ export default function CaseStrengthAssessment() {
               style={{
                 padding: '12px 24px',
                 backgroundColor: 'white',
-                color: '#0966C3',
-                border: '1px solid #0966C3',
+                color: 'var(--accent-primary)',
+                border: '1px solid var(--accent-primary)',
                 borderRadius: '6px',
                 fontSize: '14px',
                 fontWeight: '600',
@@ -1041,7 +1041,7 @@ export default function CaseStrengthAssessment() {
               }}
               style={{
                 padding: '12px 24px',
-                backgroundColor: '#0966C3',
+                backgroundColor: 'var(--accent-primary)',
                 color: 'white',
                 border: 'none',
                 borderRadius: '6px',
@@ -1051,10 +1051,10 @@ export default function CaseStrengthAssessment() {
                 transition: 'all 0.2s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#004182';
+                e.currentTarget.style.backgroundColor = 'var(--accent-primary-hover)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#0966C3';
+                e.currentTarget.style.backgroundColor = 'var(--accent-primary)';
               }}
             >
               Get Legal Help

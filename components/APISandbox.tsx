@@ -250,7 +250,7 @@ export default function APISandbox() {
             display: 'block',
             fontSize: '13px',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '8px',
             fontFamily: 'var(--font-heading)',
           }}
@@ -266,7 +266,7 @@ export default function APISandbox() {
             width: '100%',
             padding: '10px 12px',
             fontSize: '13px',
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
             borderRadius: '6px',
             fontFamily: 'var(--font-mono)',
             boxSizing: 'border-box',
@@ -281,7 +281,7 @@ export default function APISandbox() {
             display: 'block',
             fontSize: '13px',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '8px',
             fontFamily: 'var(--font-heading)',
           }}
@@ -300,7 +300,7 @@ export default function APISandbox() {
             width: '100%',
             padding: '10px 12px',
             fontSize: '13px',
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
             borderRadius: '6px',
             fontFamily: 'var(--font-mono)',
             boxSizing: 'border-box',
@@ -321,7 +321,7 @@ export default function APISandbox() {
             style={{
               fontSize: '13px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 12px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -335,7 +335,7 @@ export default function APISandbox() {
                   style={{
                     fontSize: '12px',
                     fontWeight: 500,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     display: 'block',
                     marginBottom: '4px',
                   }}
@@ -351,7 +351,7 @@ export default function APISandbox() {
                     width: '100%',
                     padding: '8px 12px',
                     fontSize: '12px',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '4px',
                     fontFamily: 'var(--font-mono)',
                     boxSizing: 'border-box',
@@ -372,8 +372,8 @@ export default function APISandbox() {
           padding: '12px 16px',
           fontSize: '14px',
           fontWeight: 600,
-          color: '#FFFFFF',
-          backgroundColor: loading ? '#9CA3AF' : '#0966C3',
+          color: 'var(--color-surface-0)',
+          backgroundColor: loading ? 'var(--color-text-muted)' : 'var(--accent-primary)',
           border: 'none',
           borderRadius: '6px',
           cursor: loading ? 'not-allowed' : 'pointer',
@@ -432,7 +432,7 @@ export default function APISandbox() {
             <span
               style={{
                 fontSize: '12px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
               }}
             >
               Response time: {response.time}ms

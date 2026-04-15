@@ -42,10 +42,10 @@ export default function AttorneyToolsNav() {
 
   return (
     <div style={{
-      background: '#FFFFFF',
+      background: 'var(--color-surface-0)',
       backdropFilter: undefined,
       WebkitBackdropFilter: undefined,
-      borderBottom: '1px solid #E5E7EB',
+      borderBottom: '1px solid var(--border-default)',
       overflowX: 'auto',
       WebkitOverflowScrolling: 'touch',
     }}>
@@ -66,7 +66,7 @@ export default function AttorneyToolsNav() {
             padding: '10px 12px',
             fontSize: '12px',
             fontWeight: 600,
-            color: '#0966C3',
+            color: 'var(--accent-primary)',
             textDecoration: 'none',
             borderBottom: '2px solid transparent',
             whiteSpace: 'nowrap',
@@ -76,7 +76,7 @@ export default function AttorneyToolsNav() {
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1" /></svg>
           All Tools
         </Link>
-        <div style={{ width: '1px', backgroundColor: '#E5E7EB', margin: '6px 4px' }} />
+        <div style={{ width: '1px', backgroundColor: 'var(--border-default)', margin: '6px 4px' }} />
         {TOOLS.map((tool) => {
           const isActive = pathname === tool.href;
           return (
@@ -90,9 +90,9 @@ export default function AttorneyToolsNav() {
                 padding: '10px 12px',
                 fontSize: '12px',
                 fontWeight: isActive ? 700 : 500,
-                color: isActive ? '#0f0f0f' : '#4B5563',
+                color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                 textDecoration: 'none',
-                borderBottom: isActive ? '2px solid #0966C3' : '2px solid transparent',
+                borderBottom: isActive ? '2px solid var(--accent-primary)' : '2px solid transparent',
                 whiteSpace: 'nowrap',
                 transition: 'all 0.15s ease',
                 fontFamily: 'var(--font-body)',

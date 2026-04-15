@@ -69,9 +69,9 @@ export default function CodeExampleTabs() {
   return (
     <div
       style={{
-        background: '#FFFFFF',
+        background: 'var(--color-surface-0)',
         borderRadius: '12px',
-        border: '1px solid #E5E7EB',
+        border: '1px solid var(--border-default)',
         overflow: 'hidden',
         boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
       }}
@@ -80,8 +80,8 @@ export default function CodeExampleTabs() {
       <div
         style={{
           display: 'flex',
-          borderBottom: '1px solid #E5E7EB',
-          background: '#F8F9FA',
+          borderBottom: '1px solid var(--border-default)',
+          background: 'var(--color-surface-1)',
         }}
       >
         {Object.keys(codeExamples).map((lang) => (
@@ -93,10 +93,10 @@ export default function CodeExampleTabs() {
               padding: '12px 16px',
               fontSize: '13px',
               fontWeight: activeTab === lang ? 600 : 500,
-              color: activeTab === lang ? '#0966C3' : '#4B5563',
-              background: activeTab === lang ? '#FFFFFF' : 'transparent',
+              color: activeTab === lang ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+              background: activeTab === lang ? 'var(--color-surface-0)' : 'transparent',
               border: 'none',
-              borderBottom: activeTab === lang ? '2px solid #0966C3' : 'none',
+              borderBottom: activeTab === lang ? '2px solid var(--accent-primary)' : 'none',
               cursor: 'pointer',
               transition: 'all 0.2s ease',
               fontFamily: 'var(--font-heading)',

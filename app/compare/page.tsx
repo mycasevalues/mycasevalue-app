@@ -106,7 +106,7 @@ export default function ComparePage() {
     <>
       <style>{`
         .lexis-link {
-          color: #004182;
+          color: var(--accent-primary-hover);
           text-decoration: none;
           transition: color 0.2s ease;
         }
@@ -118,11 +118,11 @@ export default function ComparePage() {
           transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
         .lexis-select:hover {
-          border-color: #004182;
+          border-color: var(--accent-primary-hover);
         }
         .lexis-select:focus {
           outline: none;
-          border-color: #004182;
+          border-color: var(--accent-primary-hover);
           box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.1);
         }
         .lexis-btn {
@@ -201,7 +201,7 @@ export default function ComparePage() {
       <nav style={{
         background: 'var(--color-surface-0)',
         padding: '12px 0',
-        borderBottom: '1px solid #E5E7EB',
+        borderBottom: '1px solid var(--border-default)',
         fontSize: 13,
         fontFamily: 'var(--font-body)',
       }}>
@@ -249,7 +249,7 @@ export default function ComparePage() {
                     height: 48,
                     padding: '0 12px',
                     fontSize: 14,
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: 4,
                     background: 'var(--color-surface-0)',
                     color: 'var(--color-text-primary)',
@@ -306,7 +306,7 @@ export default function ComparePage() {
             <div className="compare-table-wrapper" style={{
               overflowX: 'auto',
               background: 'var(--color-surface-0)',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               borderRadius: 4,
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
               WebkitOverflowScrolling: 'touch',
@@ -318,7 +318,7 @@ export default function ComparePage() {
                 fontFamily: 'var(--font-body)',
               }}>
                 <thead>
-                  <tr style={{ borderBottom: '2px solid #E5E7EB', background: 'var(--color-surface-1)' }}>
+                  <tr style={{ borderBottom: '2px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
                     <th style={{
                       textAlign: 'left',
                       padding: '16px 16px',
@@ -383,7 +383,7 @@ export default function ComparePage() {
 
                     return (
                       <tr key={row.label} style={{
-                        borderBottom: '1px solid #E5E7EB',
+                        borderBottom: '1px solid var(--border-default)',
                         background: ri % 2 === 0 ? 'var(--color-surface-1)' : 'var(--color-surface-0)',
                       }}>
                         <td style={{
@@ -443,7 +443,7 @@ export default function ComparePage() {
               marginTop: 32,
               padding: 'clamp(24px, 5vw, 32px)',
               background: 'var(--color-surface-0)',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               borderRadius: 4,
             }}>
               <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0', fontFamily: 'var(--font-display)' }}>
@@ -453,7 +453,7 @@ export default function ComparePage() {
                 {stats.map((s) => {
                   const wrColor = getWinRateColor(s.winRate);
                   return (
-                    <div key={s.nos} style={{ padding: '16px', background: '#FAFBFC', border: '1px solid #E5E7EB', borderRadius: '8px' }}>
+                    <div key={s.nos} style={{ padding: '16px', background: '#FAFBFC', border: '1px solid var(--border-default)', borderRadius: '8px' }}>
                       <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, fontFamily: 'var(--font-display)' }}>
                         {s.label}
                       </div>
@@ -473,7 +473,7 @@ export default function ComparePage() {
                               position: 'absolute', top: 8, height: 8,
                               left: `${Math.min(90, (s.rngLo / s.rngHi) * 100)}%`,
                               right: '0%',
-                              background: 'linear-gradient(90deg, #70B5F9, #0966C3)',
+                              background: 'linear-gradient(90deg, #70B5F9, var(--accent-primary))',
                               borderRadius: 4,
                             }} />
                             <div style={{ position: 'absolute', top: 4, width: 2, height: 16, background: 'var(--accent-primary-hover)', left: `${(s.medianRecovery / s.rngHi) * 100}%`, transform: 'translateX(-50%)' }} />
@@ -555,7 +555,7 @@ export default function ComparePage() {
               marginTop: 48,
               padding: 'clamp(24px, 5vw, 32px)',
               background: 'var(--color-surface-0)',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               borderRadius: 4,
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
             }}>
@@ -641,7 +641,7 @@ export default function ComparePage() {
               marginTop: 48,
               padding: 'clamp(24px, 5vw, 32px)',
               background: 'var(--color-surface-0)',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               borderRadius: 4,
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
             }}>
@@ -663,7 +663,7 @@ export default function ComparePage() {
                   <div key={s.nos} style={{
                     padding: 16,
                     background: 'var(--color-surface-1)',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: 4,
                   }}>
                     <h4 style={{
@@ -883,7 +883,7 @@ export default function ComparePage() {
             marginTop: 48,
             padding: 'clamp(16px, 4vw, 32px)',
             background: 'var(--color-surface-0)',
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
             borderRadius: 4,
             boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
           }}>
@@ -936,7 +936,7 @@ export default function ComparePage() {
                   }}
                   style={{
                     background: 'var(--color-surface-0)',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: 2,
                     padding: 16,
                     cursor: 'pointer',
@@ -1033,7 +1033,7 @@ export default function ComparePage() {
                     display: 'block',
                     padding: 16,
                     background: 'var(--color-surface-0)',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: 4,
                     textDecoration: 'none',
                     transition: 'all 0.2s ease',

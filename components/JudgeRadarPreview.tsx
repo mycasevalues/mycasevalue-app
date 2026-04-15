@@ -29,7 +29,7 @@ const SAMPLE_DISTRICT_AVG: JudgeRadarData = {
 export default function JudgeRadarPreview() {
   return (
     <div style={{ maxWidth: 380, margin: '24px auto 0' }}>
-      <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: '#9CA3AF', textAlign: 'center', marginBottom: 8, fontFamily: 'var(--font-body)' }}>
+      <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-text-muted)', textAlign: 'center', marginBottom: 8, fontFamily: 'var(--font-body)' }}>
         Sample Judge Profile Preview
       </div>
       <JudgeRadar

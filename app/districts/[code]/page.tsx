@@ -584,7 +584,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   <div style={{
                     padding: '16px',
                     background: '#FAFBFC',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '8px',
                   }}>
                     <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 10 }}>
@@ -610,7 +610,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   <div style={{
                     padding: '16px',
                     background: '#FAFBFC',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '8px',
                   }}>
                     <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 10 }}>
@@ -638,7 +638,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   <div style={{
                     padding: '16px',
                     background: '#FAFBFC',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '8px',
                   }}>
                     <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 10 }}>
@@ -705,7 +705,7 @@ export default async function DistrictPage({ params }: PageProps) {
                     <div key={idx} style={{
                       padding: '16px',
                       background: '#FAFBFC',
-                      border: '1px solid #E5E7EB',
+                      border: '1px solid var(--border-default)',
                       borderRadius: '8px',
                     }}>
                       <a

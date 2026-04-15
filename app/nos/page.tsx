@@ -61,11 +61,11 @@ export default function NOSIndexPage() {
   const categories = Object.keys(byCategory).sort();
 
   return (
-    <div style={{ minHeight: '100vh', color: '#0f0f0f', background: '#F7F8FA' }}>
+    <div style={{ minHeight: '100vh', color: 'var(--color-text-primary)', background: 'var(--color-surface-1)' }}>
       <style>{`
         .nos-card {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           border-radius: 12px;
           padding: 24px;
           transition: all 0.2s ease;
@@ -74,21 +74,21 @@ export default function NOSIndexPage() {
           cursor: pointer;
         }
         .nos-card:hover {
-          border-left: 3px solid #0966C3;
+          border-left: 3px solid var(--accent-primary);
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         .nos-card h3 {
           font-weight: 600;
           font-size: 18px;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           margin: 0 0 8px 0;
           transition: color 0.2s ease;
         }
         .nos-card:hover h3 {
-          color: #0966C3;
+          color: var(--accent-primary);
         }
         .nos-card-arrow {
-          color: #0966C3;
+          color: var(--accent-primary);
           font-size: 20px;
           transition: transform 0.2s ease;
         }
@@ -96,7 +96,7 @@ export default function NOSIndexPage() {
           transform: translateX(4px);
         }
         .nos-back-link {
-          color: #0966C3;
+          color: var(--accent-primary);
           text-decoration: none;
           font-size: 14px;
           display: inline-block;
@@ -133,9 +133,9 @@ export default function NOSIndexPage() {
       {/* Header */}
       <header
         style={{
-          background: '#0966C3',
+          background: 'var(--accent-primary)',
           padding: 'clamp(24px, 5vw, 48px) 24px',
-          borderBottom: '1px solid #E5E7EB',
+          borderBottom: '1px solid var(--border-default)',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -152,7 +152,7 @@ export default function NOSIndexPage() {
               style={{
                 fontSize: 'clamp(28px, 6vw, 42px)',
                 fontWeight: 'bold',
-                color: '#FFFFFF',
+                color: 'var(--color-surface-0)',
                 margin: 0,
                 fontFamily: 'var(--font-display)',
               }}
@@ -161,8 +161,8 @@ export default function NOSIndexPage() {
             </h1>
             <span
               style={{
-                background: '#0966C3',
-                color: '#FFFFFF',
+                background: 'var(--accent-primary)',
+                color: 'var(--color-surface-0)',
                 padding: '6px 12px',
                 borderRadius: '12px',
                 fontSize: '12px',
@@ -176,7 +176,7 @@ export default function NOSIndexPage() {
           <p
             style={{
               fontSize: '16px',
-              color: '#E5E7EB',
+              color: 'var(--border-default)',
               maxWidth: '600px',
               margin: '0',
               fontFamily: 'var(--font-body)',
@@ -192,8 +192,8 @@ export default function NOSIndexPage() {
       <div
         style={{
           padding: '16px 24px',
-          background: '#FFFFFF',
-          borderBottom: '1px solid #E5E7EB',
+          background: 'var(--color-surface-0)',
+          borderBottom: '1px solid var(--border-default)',
           fontSize: '14px',
         }}
       >
@@ -204,8 +204,8 @@ export default function NOSIndexPage() {
           >
             Home
           </Link>
-          <span style={{ color: '#4B5563', margin: '0 8px' }}>/</span>
-          <span style={{ color: '#004182', fontWeight: '600' }}>Case Types</span>
+          <span style={{ color: 'var(--color-text-secondary)', margin: '0 8px' }}>/</span>
+          <span style={{ color: 'var(--accent-primary-hover)', fontWeight: '600' }}>Case Types</span>
         </div>
       </div>
 
@@ -218,9 +218,9 @@ export default function NOSIndexPage() {
                 fontSize: '24px',
                 fontWeight: 'bold',
                 marginBottom: '24px',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 paddingLeft: '16px',
-                borderLeft: '3px solid #0966C3',
+                borderLeft: '3px solid var(--accent-primary)',
                 fontFamily: 'var(--font-display)',
               }}
             >
@@ -246,7 +246,7 @@ export default function NOSIndexPage() {
                       <p
                         style={{
                           fontSize: '13px',
-                          color: '#4B5563',
+                          color: 'var(--color-text-secondary)',
                           margin: '0',
                           fontFamily: 'var(--font-mono)',
                         }}
@@ -259,7 +259,7 @@ export default function NOSIndexPage() {
                   <p
                     style={{
                       fontSize: '13px',
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       margin: '0',
                       fontFamily: 'var(--font-body)',
                     }}
@@ -274,12 +274,12 @@ export default function NOSIndexPage() {
       </div>
 
       {/* Info Section */}
-      <section style={{ background: '#FFFFFF', borderTop: '1px solid #E5E7EB', padding: 'clamp(24px, 5vw, 48px) 24px' }}>
+      <section style={{ background: 'var(--color-surface-0)', borderTop: '1px solid var(--border-default)', padding: 'clamp(24px, 5vw, 48px) 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div
             style={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '32px',
           }}
@@ -289,7 +289,7 @@ export default function NOSIndexPage() {
                 fontSize: '24px',
                 fontWeight: 'bold',
                 marginBottom: '16px',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 margin: '0 0 16px 0',
                 fontFamily: 'var(--font-display)',
               }}
@@ -299,7 +299,7 @@ export default function NOSIndexPage() {
             <p
               style={{
                 marginBottom: '16px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 lineHeight: '1.6',
                 fontFamily: 'var(--font-body)',
               }}
@@ -311,7 +311,7 @@ export default function NOSIndexPage() {
             <p
               style={{
                 marginBottom: '16px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 lineHeight: '1.6',
                 fontFamily: 'var(--font-body)',
               }}
@@ -322,7 +322,7 @@ export default function NOSIndexPage() {
             </p>
             <p
               style={{
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 lineHeight: '1.6',
                 margin: '0',
                 fontFamily: 'var(--font-body)',

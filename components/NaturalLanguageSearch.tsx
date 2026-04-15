@@ -231,10 +231,10 @@ export default function NaturalLanguageSearch() {
             gap: '8px',
             padding: '8px 12px',
             background: '#E8F4FD',
-            border: '1px solid #0966C3',
+            border: '1px solid var(--accent-primary)',
             borderRadius: '6px',
             fontSize: '14px',
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             fontFamily: 'var(--font-body)',
             marginRight: '8px',
             marginBottom: '8px',
@@ -251,7 +251,7 @@ export default function NaturalLanguageSearch() {
               border: 'none',
               cursor: 'pointer',
               fontSize: '16px',
-              color: '#0966C3',
+              color: 'var(--accent-primary)',
               padding: '0',
               display: 'flex',
               alignItems: 'center',
@@ -274,10 +274,10 @@ export default function NaturalLanguageSearch() {
             gap: '8px',
             padding: '8px 12px',
             background: '#E8F4FD',
-            border: '1px solid #0966C3',
+            border: '1px solid var(--accent-primary)',
             borderRadius: '6px',
             fontSize: '14px',
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             fontFamily: 'var(--font-body)',
             marginRight: '8px',
             marginBottom: '8px',
@@ -294,7 +294,7 @@ export default function NaturalLanguageSearch() {
               border: 'none',
               cursor: 'pointer',
               fontSize: '16px',
-              color: '#0966C3',
+              color: 'var(--accent-primary)',
               padding: '0',
               display: 'flex',
               alignItems: 'center',
@@ -317,10 +317,10 @@ export default function NaturalLanguageSearch() {
             gap: '8px',
             padding: '8px 12px',
             background: '#E8F4FD',
-            border: '1px solid #0966C3',
+            border: '1px solid var(--accent-primary)',
             borderRadius: '6px',
             fontSize: '14px',
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             fontFamily: 'var(--font-body)',
             marginRight: '8px',
             marginBottom: '8px',
@@ -337,7 +337,7 @@ export default function NaturalLanguageSearch() {
               border: 'none',
               cursor: 'pointer',
               fontSize: '16px',
-              color: '#0966C3',
+              color: 'var(--accent-primary)',
               padding: '0',
               display: 'flex',
               alignItems: 'center',
@@ -360,10 +360,10 @@ export default function NaturalLanguageSearch() {
             gap: '8px',
             padding: '8px 12px',
             background: '#E8F4FD',
-            border: '1px solid #0966C3',
+            border: '1px solid var(--accent-primary)',
             borderRadius: '6px',
             fontSize: '14px',
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             fontFamily: 'var(--font-body)',
             marginRight: '8px',
             marginBottom: '8px',
@@ -380,7 +380,7 @@ export default function NaturalLanguageSearch() {
               border: 'none',
               cursor: 'pointer',
               fontSize: '16px',
-              color: '#0966C3',
+              color: 'var(--accent-primary)',
               padding: '0',
               display: 'flex',
               alignItems: 'center',
@@ -401,8 +401,8 @@ export default function NaturalLanguageSearch() {
       style={{
         display: 'block',
         padding: '24px',
-        background: '#FFFFFF',
-        border: '2px solid #0966C3',
+        background: 'var(--color-surface-0)',
+        border: '2px solid var(--accent-primary)',
         borderRadius: '12px',
         marginBottom: '24px',
       }}
@@ -413,7 +413,7 @@ export default function NaturalLanguageSearch() {
           fontSize: '18px',
           fontWeight: '600',
           fontFamily: 'var(--font-heading)',
-          color: '#0f0f0f',
+          color: 'var(--color-text-primary)',
           marginBottom: '8px',
         }}
       >
@@ -450,7 +450,7 @@ export default function NaturalLanguageSearch() {
               transition: 'border-color 0.2s',
               boxSizing: 'border-box',
             }}
-            onFocus={(e) => (e.currentTarget.style.borderColor = '#0966C3')}
+            onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--accent-primary)')}
             onBlur={(e) => (e.currentTarget.style.borderColor = '#D1D5DB')}
           />
           <button
@@ -458,8 +458,8 @@ export default function NaturalLanguageSearch() {
             disabled={isLoading || !query.trim()}
             style={{
               padding: '12px 24px',
-              background: isLoading || !query.trim() ? '#CCCCCC' : '#0966C3',
-              color: '#FFFFFF',
+              background: isLoading || !query.trim() ? '#CCCCCC' : 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               fontSize: '14px',
               fontWeight: '600',
               fontFamily: 'var(--font-body)',
@@ -470,12 +470,12 @@ export default function NaturalLanguageSearch() {
             }}
             onMouseEnter={(e) => {
               if (!isLoading && query.trim()) {
-                e.currentTarget.style.background = '#004182';
+                e.currentTarget.style.background = 'var(--accent-primary-hover)';
               }
             }}
             onMouseLeave={(e) => {
               if (!isLoading && query.trim()) {
-                e.currentTarget.style.background = '#0966C3';
+                e.currentTarget.style.background = 'var(--accent-primary)';
               }
             }}
           >
@@ -545,7 +545,7 @@ export default function NaturalLanguageSearch() {
                 style={{
                   padding: '12px',
                   background: '#F9FAFB',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '8px',
                 }}
               >
@@ -554,7 +554,7 @@ export default function NaturalLanguageSearch() {
                     fontSize: '14px',
                     fontWeight: '600',
                     fontFamily: 'var(--font-heading)',
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     marginBottom: '4px',
                   }}
                 >

@@ -122,9 +122,9 @@ export default async function JudgeProfilePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
       />
-      <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       {/* Header with breadcrumb */}
-      <div style={{ borderBottom: '1px solid #E5E7EB', background: '#FFFFFF' }}>
+      <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
           <nav
@@ -134,18 +134,18 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               paddingBottom: '16px',
               fontSize: '13px',
               fontFamily: 'var(--font-body)',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
             }}
           >
             <ol style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0, padding: 0, listStyle: 'none' }}>
               <li>
-                <Link href="/" style={{ color: '#0966C3', textDecoration: 'none' }}>
+                <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
                   Home
                 </Link>
               </li>
               <li style={{ color: '#B0B8C1' }}>›</li>
               <li>
-                <Link href="/judges" style={{ color: '#0966C3', textDecoration: 'none' }}>
+                <Link href="/judges" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
                   Judges
                 </Link>
               </li>
@@ -153,7 +153,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               {judge.circuit && (
                 <>
                   <li>
-                    <Link href={`/judges?circuit=${judge.circuit}`} style={{ color: '#0966C3', textDecoration: 'none' }}>
+                    <Link href={`/judges?circuit=${judge.circuit}`} style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
                       {judge.circuit} Circuit
                     </Link>
                   </li>
@@ -163,20 +163,20 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               {judge.district_id && (
                 <>
                   <li>
-                    <Link href={`/judges?district=${judge.district_id}`} style={{ color: '#0966C3', textDecoration: 'none' }}>
+                    <Link href={`/judges?district=${judge.district_id}`} style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
                       {judge.district_id}
                     </Link>
                   </li>
                   <li style={{ color: '#B0B8C1' }}>›</li>
                 </>
               )}
-              <li style={{ color: '#0f0f0f', fontWeight: '600' }}>{judge.full_name}</li>
+              <li style={{ color: 'var(--color-text-primary)', fontWeight: '600' }}>{judge.full_name}</li>
             </ol>
           </nav>
 
           {/* Page heading */}
           <div style={{ paddingTop: '0px', paddingBottom: '24px' }}>
-            <div style={{ fontSize: '12px', fontFamily: 'var(--font-body)', color: '#4B5563', marginBottom: '8px', letterSpacing: '0.5px', textTransform: 'uppercase', fontWeight: '600' }}>
+            <div style={{ fontSize: '12px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)', marginBottom: '8px', letterSpacing: '0.5px', textTransform: 'uppercase', fontWeight: '600' }}>
               JUDGE PROFILE
             </div>
             <h1
@@ -184,7 +184,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                 fontSize: '32px',
                 fontFamily: 'var(--font-heading)',
                 fontWeight: '700',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 margin: '0 0 12px 0',
               }}
             >
@@ -194,7 +194,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               style={{
                 fontSize: '14px',
                 fontFamily: 'var(--font-body)',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 margin: '0 0 12px 0',
               }}
             >
@@ -207,12 +207,12 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                 style={{
                   fontSize: '13px',
                   fontFamily: 'var(--font-body)',
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   flex: '1 1 auto',
                 }}
               >
                 Appointed {appointmentYear || 'N/A'} by President{' '}
-                <span style={{ fontWeight: '600', color: '#0f0f0f' }}>
+                <span style={{ fontWeight: '600', color: 'var(--color-text-primary)' }}>
                   {judge.appointing_president || 'Unknown'}
                 </span>
                 {partyLabel !== '—' && (
@@ -222,7 +222,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                       marginLeft: '8px',
                       padding: '2px 8px',
                       background: partyColor,
-                      color: '#FFFFFF',
+                      color: 'var(--color-surface-0)',
                       borderRadius: '4px',
                       fontSize: '12px',
                       fontWeight: '600',
@@ -241,16 +241,16 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   gap: '6px',
                   padding: '4px 12px',
                   background: '#EDF3FB',
-                  border: '1px solid #0966C3',
+                  border: '1px solid var(--accent-primary)',
                   borderRadius: '4px',
                   fontSize: '12px',
                   fontFamily: 'var(--font-body)',
-                  color: '#004182',
+                  color: 'var(--accent-primary-hover)',
                   fontWeight: '500',
                   flexShrink: 0,
                 }}
               >
-                <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: '#0966C3' }} />
+                <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-primary)' }} />
                 Data as of {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
               </div>
 

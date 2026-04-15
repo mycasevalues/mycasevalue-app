@@ -36,7 +36,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
         <div style={{
           padding: '1.5rem',
           background: '#FAFBFC',
-          border: '1px solid #E5E7EB',
+          border: '1px solid var(--border-default)',
           borderRadius: '12px',
         }}>
           {/* Header */}
@@ -44,7 +44,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
             <h2 style={{
               fontSize: '1.125rem',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '0.5rem',
               marginTop: 0,
               fontFamily: 'var(--font-display)',
@@ -53,7 +53,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
             </h2>
             <p style={{
               fontSize: '0.8125rem',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               margin: 0,
               fontFamily: 'var(--font-body)',
               lineHeight: 1.5,
@@ -78,7 +78,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
                     <span style={{
                       fontSize: '0.8125rem',
                       fontWeight: 600,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-body)',
                     }}>
                       {stage.label}
@@ -86,7 +86,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
                     <span className="font-mono" style={{
                       fontSize: '0.8125rem',
                       fontWeight: 600,
-                      color: '#004182',
+                      color: 'var(--accent-primary-hover)',
                       fontFamily: 'var(--font-mono)',
                     }}>
                       {stage.value}%
@@ -96,14 +96,14 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
                   {/* Bar */}
                   <div style={{
                     height: '24px',
-                    background: '#E5E7EB',
+                    background: 'var(--border-default)',
                     borderRadius: '6px',
                     overflow: 'hidden',
                   }}>
                     <div style={{
                       height: '100%',
                       width: `${width}%`,
-                      background: '#0966C3',
+                      background: 'var(--accent-primary)',
                       borderRadius: '6px',
                       transition: 'width 150ms ease',
                     }} />
@@ -112,7 +112,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
                   {/* Count */}
                   <div className="font-mono" style={{
                     fontSize: '0.75rem',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     marginTop: '0.25rem',
                     fontFamily: 'var(--font-mono)',
                   }}>
@@ -129,13 +129,13 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
             gridTemplateColumns: '1fr 1fr',
             gap: '1rem',
             paddingTop: '1rem',
-            borderTop: '1px solid #E5E7EB',
+            borderTop: '1px solid var(--border-default)',
           }}>
             <div>
               <div style={{
                 fontSize: '0.75rem',
                 fontWeight: 600,
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
@@ -146,7 +146,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
               <div className="font-mono" style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 fontFamily: 'var(--font-mono)',
               }}>
                 {meritRate}%
@@ -157,7 +157,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
               <div style={{
                 fontSize: '0.75rem',
                 fontWeight: 600,
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
@@ -168,7 +168,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
               <div className="font-mono" style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 fontFamily: 'var(--font-mono)',
               }}>
                 {federalLawsuitRate}%
@@ -182,11 +182,11 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
             padding: '0.75rem',
             background: '#EDF3FB',
             borderRadius: '8px',
-            borderLeft: '4px solid #0966C3',
+            borderLeft: '4px solid var(--accent-primary)',
           }}>
             <p style={{
               fontSize: '0.8125rem',
-              color: '#004182',
+              color: 'var(--accent-primary-hover)',
               margin: 0,
               fontFamily: 'var(--font-body)',
               lineHeight: 1.5,
@@ -199,7 +199,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
           {/* Footer Note */}
           <p style={{
             fontSize: '0.75rem',
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             marginTop: '1rem',
             marginBottom: 0,
             fontFamily: 'var(--font-body)',

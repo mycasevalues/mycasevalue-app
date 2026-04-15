@@ -36,9 +36,9 @@ const LINKS: SankeyLink[] = [
   { source: 0, target: 1, value: 42.2, color: '#70B5F9' },   // Settlement
   { source: 0, target: 2, value: 18.1, color: '#999999' },   // Dismissed
   { source: 0, target: 3, value: 15.7, color: '#B0C4DE' },   // Other
-  { source: 0, target: 4, value: 9.7,  color: '#004182' },   // Summary Judgment
+  { source: 0, target: 4, value: 9.7,  color: 'var(--accent-primary-hover)' },   // Summary Judgment
   { source: 0, target: 5, value: 3.0,  color: '#5A9BD5' },   // Default Judgment
-  { source: 0, target: 6, value: 2.1,  color: '#0966C3' },   // Trial
+  { source: 0, target: 6, value: 2.1,  color: 'var(--accent-primary)' },   // Trial
   { source: 0, target: 7, value: 1.0,  color: '#A3D4FF' },   // Consent
 ];
 
@@ -108,7 +108,7 @@ export default function OutcomeSankey() {
       .attr('y', (d: any) => d.y0)
       .attr('width', (d: any) => d.x1 - d.x0)
       .attr('height', (d: any) => Math.max(1, d.y1 - d.y0))
-      .attr('fill', (d: any) => d.id === 0 ? '#0966C3' : '#0966C3')
+      .attr('fill', (d: any) => d.id === 0 ? 'var(--accent-primary)' : 'var(--accent-primary)')
       .attr('rx', 3);
 
     // Labels
@@ -122,7 +122,7 @@ export default function OutcomeSankey() {
       .attr('text-anchor', (d: any) => d.id === 0 ? 'end' : 'start')
       .attr('font-size', '13px')
       .attr('font-family', 'var(--font-body), Inter, sans-serif')
-      .attr('fill', '#0f0f0f')
+      .attr('fill', 'var(--color-text-primary)')
       .text((d: any) => {
         if (d.id === 0) return d.name;
         const link = LINKS.find((l) => l.target === d.id);

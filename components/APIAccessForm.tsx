@@ -63,10 +63,10 @@ export default function APIAccessForm() {
     return (
       <div
         style={{
-          background: '#FFFFFF',
+          background: 'var(--color-surface-0)',
           borderRadius: '12px',
           padding: '24px',
-          border: '1px solid #E5E7EB',
+          border: '1px solid var(--border-default)',
           boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
           textAlign: 'center',
         }}
@@ -98,7 +98,7 @@ export default function APIAccessForm() {
           style={{
             fontSize: '16px',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             margin: '0 0 8px',
           }}
         >
@@ -107,7 +107,7 @@ export default function APIAccessForm() {
         <p
           style={{
             fontSize: '14px',
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             margin: 0,
           }}
         >
@@ -121,17 +121,17 @@ export default function APIAccessForm() {
   return (
     <div
       style={{
-        background: '#FFFFFF',
+        background: 'var(--color-surface-0)',
         borderRadius: '12px',
         padding: '24px',
-        border: '1px solid #E5E7EB',
+        border: '1px solid var(--border-default)',
         boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
       }}
     >
       <p
         style={{
           fontSize: '14px',
-          color: '#4B5563',
+          color: 'var(--color-text-secondary)',
           margin: '0 0 20px',
           fontStyle: 'italic',
         }}
@@ -147,7 +147,7 @@ export default function APIAccessForm() {
               display: 'block',
               fontSize: '13px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '6px',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -166,12 +166,12 @@ export default function APIAccessForm() {
             style={{
               width: '100%',
               padding: '12px 14px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               borderRadius: '8px',
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
-              color: '#0f0f0f',
-              backgroundColor: '#F8F9FA',
+              color: 'var(--color-text-primary)',
+              backgroundColor: 'var(--color-surface-1)',
               boxSizing: 'border-box',
               transition: 'border-color 0.2s, box-shadow 0.2s',
             }}
@@ -185,7 +185,7 @@ export default function APIAccessForm() {
               display: 'block',
               fontSize: '13px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '6px',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -204,12 +204,12 @@ export default function APIAccessForm() {
             style={{
               width: '100%',
               padding: '12px 14px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               borderRadius: '8px',
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
-              color: '#0f0f0f',
-              backgroundColor: '#F8F9FA',
+              color: 'var(--color-text-primary)',
+              backgroundColor: 'var(--color-surface-1)',
               boxSizing: 'border-box',
               transition: 'border-color 0.2s, box-shadow 0.2s',
             }}
@@ -223,7 +223,7 @@ export default function APIAccessForm() {
               display: 'block',
               fontSize: '13px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '6px',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -241,12 +241,12 @@ export default function APIAccessForm() {
             style={{
               width: '100%',
               padding: '12px 14px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               borderRadius: '8px',
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
-              color: '#0f0f0f',
-              backgroundColor: '#F8F9FA',
+              color: 'var(--color-text-primary)',
+              backgroundColor: 'var(--color-surface-1)',
               boxSizing: 'border-box',
               resize: 'vertical',
               transition: 'border-color 0.2s, box-shadow 0.2s',
@@ -274,8 +274,8 @@ export default function APIAccessForm() {
           disabled={formState.loading}
           style={{
             padding: '12px 20px',
-            backgroundColor: formState.loading ? '#A5A5A5' : '#0966C3',
-            color: '#FFFFFF',
+            backgroundColor: formState.loading ? '#A5A5A5' : 'var(--accent-primary)',
+            color: 'var(--color-surface-0)',
             border: 'none',
             borderRadius: '8px',
             fontSize: '13px',

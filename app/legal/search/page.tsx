@@ -131,7 +131,7 @@ export default function LegalSearchPage() {
     border: '1px solid #D1D5DB',
     fontSize: 14,
     color: '#374151',
-    background: '#FFFFFF',
+    background: 'var(--color-surface-0)',
     outline: 'none',
     minWidth: 140,
   };
@@ -141,14 +141,14 @@ export default function LegalSearchPage() {
 
       {/* Breadcrumb */}
       <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 24 }}>
-        <Link href="/legal" style={{ color: '#0966C3', textDecoration: 'none' }}>Research Hub</Link>
+        <Link href="/legal" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Research Hub</Link>
         <span style={{ margin: '0 8px' }}>/</span>
         <span>Document Search</span>
       </nav>
 
       {/* Hero */}
       <div style={{ marginBottom: 32 }}>
-        <h1 style={{ fontSize: 32, fontWeight: 700, color: '#0f0f0f', margin: '0 0 8px', lineHeight: 1.2 }}>
+        <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
           Legal Document Search
         </h1>
         <p style={{ fontSize: 15, color: '#6B7280', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
@@ -171,15 +171,15 @@ export default function LegalSearchPage() {
                 borderRadius: 12,
                 border: '2px solid #D1D5DB',
                 fontSize: 16,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 outline: 'none',
                 boxSizing: 'border-box',
                 transition: 'border-color 0.15s',
               }}
-              onFocus={(e) => (e.target.style.borderColor = '#0966C3')}
+              onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
               onBlur={(e) => (e.target.style.borderColor = '#D1D5DB')}
             />
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2" style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)' }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2" style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)' }}>
               <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </div>
@@ -189,8 +189,8 @@ export default function LegalSearchPage() {
             style={{
               padding: '14px 28px',
               borderRadius: 12,
-              background: '#0966C3',
-              color: '#FFFFFF',
+              background: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               fontSize: 15,
               fontWeight: 600,
               border: 'none',
@@ -208,10 +208,10 @@ export default function LegalSearchPage() {
               padding: '14px 18px',
               borderRadius: 12,
               background: showFilters ? '#E8F4FD' : '#F3F4F6',
-              color: showFilters ? '#0966C3' : '#6B7280',
+              color: showFilters ? 'var(--accent-primary)' : '#6B7280',
               fontSize: 14,
               fontWeight: 500,
-              border: showFilters ? '1px solid #0966C3' : '1px solid #D1D5DB',
+              border: showFilters ? '1px solid var(--accent-primary)' : '1px solid #D1D5DB',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
             }}
@@ -229,7 +229,7 @@ export default function LegalSearchPage() {
             padding: '16px 20px',
             background: '#F9FAFB',
             borderRadius: 12,
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
             alignItems: 'center',
           }}>
             <div>
@@ -289,7 +289,7 @@ export default function LegalSearchPage() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
           <div style={{ fontSize: 14, color: '#6B7280' }}>
             {loading ? 'Searching...' : `${total} result${total !== 1 ? 's' : ''} found`}
-            {query.trim() && !loading && <span> for &ldquo;<strong style={{ color: '#0f0f0f' }}>{query}</strong>&rdquo;</span>}
+            {query.trim() && !loading && <span> for &ldquo;<strong style={{ color: 'var(--color-text-primary)' }}>{query}</strong>&rdquo;</span>}
           </div>
           {total > 0 && totalPages > 1 && (
             <div style={{ fontSize: 13, color: '#6B7280' }}>
@@ -307,13 +307,13 @@ export default function LegalSearchPage() {
             style={{
               padding: '20px 24px',
               borderRadius: 14,
-              border: '1px solid #E5E7EB',
-              background: '#FFFFFF',
+              border: '1px solid var(--border-default)',
+              background: 'var(--color-surface-0)',
               transition: 'border-color 0.15s, box-shadow 0.15s',
               cursor: 'pointer',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0966C3'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(9,102,195,0.08)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(9,102,195,0.08)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}
           >
             {/* Meta row */}
             <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8, flexWrap: 'wrap' }}>
@@ -341,29 +341,29 @@ export default function LegalSearchPage() {
               }}>
                 {doc.type}
               </span>
-              <span style={{ fontSize: 12, color: '#9CA3AF' }}>
+              <span style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>
                 {doc.jurisdiction}
               </span>
-              <span style={{ fontSize: 12, color: '#9CA3AF', marginLeft: 'auto' }}>
+              <span style={{ fontSize: 12, color: 'var(--color-text-muted)', marginLeft: 'auto' }}>
                 {new Date(doc.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
               </span>
             </div>
 
             {/* Title */}
             <h3
-              style={{ fontSize: 16, fontWeight: 600, color: '#0966C3', margin: '0 0 6px', lineHeight: 1.4 }}
+              style={{ fontSize: 16, fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 6px', lineHeight: 1.4 }}
               dangerouslySetInnerHTML={{ __html: highlightQuery(doc.title, query) }}
             />
 
             {/* Snippet */}
             <p
-              style={{ fontSize: 14, color: '#4B5563', margin: 0, lineHeight: 1.65 }}
+              style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.65 }}
               dangerouslySetInnerHTML={{ __html: highlightQuery(doc.snippet, query) }}
             />
 
             {/* Footer */}
             <div style={{ display: 'flex', gap: 16, marginTop: 12, alignItems: 'center' }}>
-              <span style={{ fontSize: 12, color: '#9CA3AF', fontFamily: 'var(--font-mono, monospace)' }}>
+              <span style={{ fontSize: 12, color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono, monospace)' }}>
                 {doc.sourceId}
               </span>
               {doc.url && (
@@ -371,7 +371,7 @@ export default function LegalSearchPage() {
                   href={doc.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ fontSize: 12, color: '#0966C3', textDecoration: 'none', fontWeight: 500 }}
+                  style={{ fontSize: 12, color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500 }}
                   onClick={(e) => e.stopPropagation()}
                 >
                   View source &#x2197;
@@ -386,7 +386,7 @@ export default function LegalSearchPage() {
       {hasSearched && !loading && results.length === 0 && (
         <div style={{ textAlign: 'center', padding: '48px 20px' }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>&#x1F50D;</div>
-          <h3 style={{ fontSize: 18, fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px' }}>No results found</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>No results found</h3>
           <p style={{ fontSize: 14, color: '#6B7280', margin: 0 }}>
             Try adjusting your search terms or filters to find what you&apos;re looking for.
           </p>
@@ -403,8 +403,8 @@ export default function LegalSearchPage() {
               padding: '10px 18px',
               borderRadius: 10,
               border: '1px solid #D1D5DB',
-              background: page <= 1 ? '#F3F4F6' : '#FFFFFF',
-              color: page <= 1 ? '#9CA3AF' : '#374151',
+              background: page <= 1 ? '#F3F4F6' : 'var(--color-surface-0)',
+              color: page <= 1 ? 'var(--color-text-muted)' : '#374151',
               fontSize: 14,
               cursor: page <= 1 ? 'not-allowed' : 'pointer',
             }}
@@ -418,8 +418,8 @@ export default function LegalSearchPage() {
               padding: '10px 18px',
               borderRadius: 10,
               border: '1px solid #D1D5DB',
-              background: page >= totalPages ? '#F3F4F6' : '#FFFFFF',
-              color: page >= totalPages ? '#9CA3AF' : '#374151',
+              background: page >= totalPages ? '#F3F4F6' : 'var(--color-surface-0)',
+              color: page >= totalPages ? 'var(--color-text-muted)' : '#374151',
               fontSize: 14,
               cursor: page >= totalPages ? 'not-allowed' : 'pointer',
             }}
@@ -435,9 +435,9 @@ export default function LegalSearchPage() {
         padding: '28px 32px',
         borderRadius: 16,
         background: '#F9FAFB',
-        border: '1px solid #E5E7EB',
+        border: '1px solid var(--border-default)',
       }}>
-        <h3 style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px' }}>
+        <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
           Search Across 7 Sources
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 10 }}>
@@ -448,8 +448,8 @@ export default function LegalSearchPage() {
               style={{
                 padding: '10px 14px',
                 borderRadius: 10,
-                border: source === s.value ? `2px solid ${SOURCE_COLORS[s.value]}` : '1px solid #E5E7EB',
-                background: source === s.value ? `${SOURCE_COLORS[s.value]}0A` : '#FFFFFF',
+                border: source === s.value ? `2px solid ${SOURCE_COLORS[s.value]}` : '1px solid var(--border-default)',
+                background: source === s.value ? `${SOURCE_COLORS[s.value]}0A` : 'var(--color-surface-0)',
                 cursor: 'pointer',
                 textAlign: 'left',
               }}
@@ -464,7 +464,7 @@ export default function LegalSearchPage() {
 
       {/* Back to hub */}
       <div style={{ textAlign: 'center', marginTop: 40 }}>
-        <Link href="/legal" style={{ fontSize: 14, color: '#0966C3', textDecoration: 'none', fontWeight: 500 }}>
+        <Link href="/legal" style={{ fontSize: 14, color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500 }}>
           &larr; Back to Research Hub
         </Link>
       </div>

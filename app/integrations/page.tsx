@@ -312,7 +312,7 @@ export default function IntegrationsPage() {
                   padding: '4px 10px',
                   borderRadius: '12px',
                   background: integration.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
-                  color: integration.status === 'Available' ? '#059669' : '#0966C3',
+                  color: integration.status === 'Available' ? '#059669' : 'var(--accent-primary)',
                   border: integration.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                 }}>
                   {integration.status}
@@ -503,7 +503,7 @@ export default function IntegrationsPage() {
                   padding: '4px 10px',
                   borderRadius: '12px',
                   background: capability.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
-                  color: capability.status === 'Available' ? '#059669' : '#0966C3',
+                  color: capability.status === 'Available' ? '#059669' : 'var(--accent-primary)',
                   border: capability.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                   display: 'inline-block',
                 }}>

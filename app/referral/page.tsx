@@ -60,15 +60,15 @@ export default function ReferralPage() {
   ];
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
       {/* Header */}
-      <div style={{ backgroundColor: '#0966C3', padding: '24px 20px' }}>
+      <div style={{ backgroundColor: 'var(--accent-primary)', padding: '24px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Home</Link>
             {' > Referral Program'}
           </div>
-          <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 600, color: '#FFFFFF', margin: '0 0 8px 0' }}>
+          <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 8px 0' }}>
             Referral Program
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
@@ -81,8 +81,8 @@ export default function ReferralPage() {
       <div style={{ padding: '40px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* How It Works */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
-            <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 20px 0' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+            <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               How It Works
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '24px' }}>
@@ -92,19 +92,19 @@ export default function ReferralPage() {
                 { step: '3', title: 'Earn Rewards', desc: 'Get free premium access for each successful referral.' },
               ].map((item) => (
                 <div key={item.step} style={{ textAlign: 'center' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#0966C3', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px', fontSize: '18px', fontWeight: 700 }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px', fontSize: '18px', fontWeight: 700 }}>
                     {item.step}
                   </div>
-                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 6px 0' }}>{item.title}</h3>
-                  <p style={{ fontSize: '13px', color: '#4B5563', margin: 0, lineHeight: 1.5 }}>{item.desc}</p>
+                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 6px 0' }}>{item.title}</h3>
+                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Your Referral Link */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
-            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 20px 0' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Your Referral Link
             </h2>
 
@@ -112,38 +112,38 @@ export default function ReferralPage() {
               <div style={{ padding: '12px 16px', borderRadius: '12px', marginBottom: '16px', fontSize: '13px', backgroundColor: '#FEF2F2', color: '#991B1B', border: '1px solid #FECACA' }}>
                 {error}
                 {error.includes('Sign in') && (
-                  <span>{' '}<Link href="/sign-in" style={{ color: '#004182', fontWeight: 600 }}>Sign in here</Link></span>
+                  <span>{' '}<Link href="/sign-in" style={{ color: 'var(--accent-primary-hover)', fontWeight: 600 }}>Sign in here</Link></span>
                 )}
               </div>
             )}
 
             {loading ? (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#4B5563', fontSize: '14px' }}>
-                <div style={{ width: 20, height: 20, border: '2px solid #E5E7EB', borderTopColor: '#0966C3', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+                <div style={{ width: 20, height: 20, border: '2px solid var(--border-default)', borderTopColor: 'var(--accent-primary)', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
                 Loading...
                 <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
               </div>
             ) : referralCode ? (
               <div>
                 <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                  <code style={{ flex: 1, padding: '12px 16px', backgroundColor: '#F7F8FA', borderRadius: '12px', fontSize: '14px', fontFamily: 'var(--font-mono)', color: '#0f0f0f', border: '1px solid #E5E7EB', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  <code style={{ flex: 1, padding: '12px 16px', backgroundColor: 'var(--color-surface-1)', borderRadius: '12px', fontSize: '14px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     https://www.mycasevalues.com/?ref={referralCode}
                   </code>
                   <button
                     onClick={handleCopy}
-                    style={{ padding: '12px 20px', backgroundColor: copied ? '#065F46' : '#0966C3', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background-color 0.2s' }}
+                    style={{ padding: '12px 20px', backgroundColor: copied ? '#065F46' : 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background-color 0.2s' }}
                   >
                     {copied ? 'Copied!' : 'Copy Link'}
                   </button>
                 </div>
-                <p style={{ fontSize: '12px', color: '#4B5563', marginTop: '8px' }}>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '8px' }}>
                   Your code: <strong>{referralCode}</strong>
                 </p>
               </div>
             ) : (
               <button
                 onClick={handleGenerate}
-                style={{ padding: '12px 24px', backgroundColor: '#0966C3', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase' }}
+                style={{ padding: '12px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase' }}
               >
                 Generate Referral Code
               </button>
@@ -151,22 +151,22 @@ export default function ReferralPage() {
           </div>
 
           {/* Reward Tiers */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB' }}>
-            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 20px 0' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)' }}>
+            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Reward Tiers
             </h2>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid #E5E7EB' }}>
-                  <th style={{ textAlign: 'left', padding: '10px 0', fontWeight: 600, color: '#4B5563' }}>Milestone</th>
-                  <th style={{ textAlign: 'left', padding: '10px 0', fontWeight: 600, color: '#4B5563' }}>Reward</th>
+                <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
+                  <th style={{ textAlign: 'left', padding: '10px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Milestone</th>
+                  <th style={{ textAlign: 'left', padding: '10px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Reward</th>
                 </tr>
               </thead>
               <tbody>
                 {rewards.map((r) => (
                   <tr key={r.count} style={{ borderBottom: '1px solid #F3F4F6' }}>
-                    <td style={{ padding: '12px 0', fontWeight: 500, color: '#0f0f0f' }}>{r.count}</td>
-                    <td style={{ padding: '12px 0', color: '#004182', fontWeight: 500 }}>{r.reward}</td>
+                    <td style={{ padding: '12px 0', fontWeight: 500, color: 'var(--color-text-primary)' }}>{r.count}</td>
+                    <td style={{ padding: '12px 0', color: 'var(--accent-primary-hover)', fontWeight: 500 }}>{r.reward}</td>
                   </tr>
                 ))}
               </tbody>

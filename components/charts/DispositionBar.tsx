@@ -13,7 +13,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
   const [dimensions, setDimensions] = useState({ width: 600, height: 60 });
 
   const colors: Record<string, string> = {
-    settled: '#0966C3',
+    settled: 'var(--accent-primary)',
     plaintiffVerdict: '#057642',
     defenseVerdict: '#CC1016',
     dismissed: '#999999',
@@ -115,7 +115,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
       .attr('y', height / 2)
       .attr('dy', '0.35em')
       .attr('text-anchor', 'middle')
-      .attr('fill', '#FFFFFF')
+      .attr('fill', 'var(--color-surface-0)')
       .attr('font-size', '12px')
       .attr('font-weight', '600')
       .attr('font-family', 'var(--font-mono)')
@@ -165,7 +165,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
           gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
           gap: '16px',
           paddingTop: '16px',
-          borderTop: '1px solid #E5E7EB',
+          borderTop: '1px solid var(--border-default)',
         }}
       >
         {segments.map((segment) => (
@@ -177,7 +177,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
               gap: '8px',
               fontSize: '13px',
               fontFamily: 'var(--font-body)',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
             }}
           >
             <div
@@ -190,7 +190,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
               }}
             />
             <span>
-              {labels[segment.key]}: <strong style={{ color: '#0966C3', fontFamily: 'var(--font-mono)' }}>{segment.percentage.toFixed(1)}%</strong>
+              {labels[segment.key]}: <strong style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>{segment.percentage.toFixed(1)}%</strong>
             </span>
           </div>
         ))}

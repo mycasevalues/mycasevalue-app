@@ -238,7 +238,7 @@ export default function ServerContent() {
                 { title: 'Analyze settlement trends', desc: 'Access full settlement distributions from P10 to P90, with median values and trend data over time.' },
                 { title: 'Act with confidence', desc: 'From data-driven settlement estimates to judge-specific insights, get the intelligence that drives better decisions.' },
               ].map((item, i) => (
-                <div key={i} style={{ padding: '16px', background: '#F8F9FA', borderRadius: '12px', border: '1px solid var(--border-default)' }}>
+                <div key={i} style={{ padding: '16px', background: 'var(--color-surface-1)', borderRadius: '12px', border: '1px solid var(--border-default)' }}>
                   <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '6px' }}>{item.title}</h3>
                   <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
                 </div>
@@ -898,7 +898,7 @@ export default function ServerContent() {
               { title: 'Blog & Insights', desc: 'Legal research articles, case studies, and federal court data analysis.', href: '/blog' },
             ].map((item, i) => (
               <a key={i} href={item.href} style={{
-                display: 'block', padding: '24px', background: '#F8F9FA', border: '1px solid var(--border-default)',
+                display: 'block', padding: '24px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)',
                 borderRadius: '12px', textDecoration: 'none', transition: 'all 200ms',
               }} className="related-card">
                 <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
@@ -946,7 +946,7 @@ export default function ServerContent() {
                 key={tool.href}
                 href={tool.href}
                 style={{
-                  display: 'block', padding: '24px', background: '#F8F9FA', border: '1px solid var(--border-default)',
+                  display: 'block', padding: '24px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)',
                   borderRadius: 6, textDecoration: 'none', transition: 'all 0.2s ease',
                 }}
               >
@@ -1004,7 +1004,7 @@ export default function ServerContent() {
       </section>
 
       {/* ── PLATFORM STATISTICS ──────────────────────────────── */}
-      <section style={{ background: '#0f0f0f', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <section style={{ background: 'var(--color-text-primary)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
@@ -1234,7 +1234,7 @@ export default function ServerContent() {
       {/* ── CTA ────────────────────────────────────────────── */}
       <section
         style={{
-          background: '#0f0f0f',
+          background: 'var(--color-text-primary)',
           padding: '100px 24px',
           textAlign: 'center',
           borderBottom: '3px solid var(--accent-primary)',
@@ -1317,12 +1317,12 @@ export default function ServerContent() {
         .featured-type-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
-          border-left: 3px solid #0966C3 !important;
+          border-left: 3px solid var(--accent-primary) !important;
           padding-left: calc(24px - 2px) !important;
         }
 
         .newsletter-btn:hover {
-          background-color: #0966C3 !important;
+          background-color: var(--accent-primary) !important;
         }
 
         /* CTA Button Styles */

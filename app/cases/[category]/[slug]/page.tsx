@@ -345,8 +345,8 @@ export default async function CaseTypeDetailPage({
         {/* Description Section */}
         <div
           style={{
-            background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-0)',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
             padding: '32px',
             marginBottom: '40px',
@@ -359,7 +359,7 @@ export default async function CaseTypeDetailPage({
               fontWeight: 'bold',
               margin: '0 0 16px',
               fontFamily: 'var(--font-display)',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}
           >
             About {caseType.label}
@@ -367,7 +367,7 @@ export default async function CaseTypeDetailPage({
           <p
             style={{
               lineHeight: '1.6',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               margin: '0',
               fontFamily: 'var(--font-body)',
             }}
@@ -388,8 +388,8 @@ export default async function CaseTypeDetailPage({
           {/* Federal Law */}
           <div
             style={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
@@ -401,7 +401,7 @@ export default async function CaseTypeDetailPage({
                 fontWeight: 'bold',
                 margin: '0 0 16px',
                 fontFamily: 'var(--font-display)',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
               }}
             >
               Governing Federal Law
@@ -409,7 +409,7 @@ export default async function CaseTypeDetailPage({
             <p
               style={{
                 fontSize: '15px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 margin: '0',
                 fontFamily: 'var(--font-body)',
               }}
@@ -421,8 +421,8 @@ export default async function CaseTypeDetailPage({
           {/* Typical Claims */}
           <div
             style={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
@@ -434,7 +434,7 @@ export default async function CaseTypeDetailPage({
                 fontWeight: 'bold',
                 margin: '0 0 16px',
                 fontFamily: 'var(--font-display)',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
               }}
             >
               Typical Claims
@@ -453,7 +453,7 @@ export default async function CaseTypeDetailPage({
                     paddingLeft: '20px',
                     marginBottom: idx < caseType.typicalClaims.length - 1 ? '10px' : '0',
                     position: 'relative',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     fontFamily: 'var(--font-body)',
                   }}
                 >
@@ -461,7 +461,7 @@ export default async function CaseTypeDetailPage({
                     style={{
                       position: 'absolute',
                       left: '0',
-                      color: '#0966C3',
+                      color: 'var(--accent-primary)',
                     }}
                   >
                     •
@@ -479,8 +479,8 @@ export default async function CaseTypeDetailPage({
             display: inline-block;
             padding: 14px 36px;
             border-radius: 12px;
-            background: #0966C3;
-            color: white;
+            background: var(--accent-primary);
+            color: var(--color-text-inverse);
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
@@ -489,7 +489,7 @@ export default async function CaseTypeDetailPage({
             transition: background-color 0.2s ease, transform 0.2s ease;
           }
           .cta-button:hover {
-            background-color: #c41218;
+            background-color: var(--accent-primary-hover);
             transform: translateY(-1px);
           }
 
@@ -504,8 +504,8 @@ export default async function CaseTypeDetailPage({
         `}</style>
         <div
           style={{
-            background: '#0966C3',
-            color: '#FFFFFF',
+            background: 'var(--accent-primary)',
+            color: 'var(--color-text-inverse)',
             borderRadius: '12px',
             padding: '48px 40px',
             textAlign: 'center',
@@ -518,7 +518,7 @@ export default async function CaseTypeDetailPage({
               fontWeight: 'bold',
               margin: '0 0 12px',
               fontFamily: 'var(--font-display)',
-              color: '#FFFFFF',
+              color: 'var(--color-text-inverse)',
             }}
           >
             Research Your District
@@ -527,7 +527,7 @@ export default async function CaseTypeDetailPage({
             style={{
               fontSize: '16px',
               margin: '0 0 28px',
-              color: '#E5E7EB',
+              color: 'var(--border-default)',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -547,16 +547,16 @@ export default async function CaseTypeDetailPage({
             .related-case-card {
               padding: 16px;
               border-radius: 12px;
-              background: #FFFFFF;
-              border: 1px solid #E5E7EB;
+              background: var(--color-surface-0);
+              border: 1px solid var(--border-default);
               text-decoration: none;
               color: inherit;
               transition: all 0.2s ease;
               box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
             }
             .related-case-card:hover {
-              border-color: #0966C3;
-              background: #FFFFFF;
+              border-color: var(--accent-primary);
+              background: var(--color-surface-0);
               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
               transform: translateY(-1px);
             }
@@ -567,7 +567,7 @@ export default async function CaseTypeDetailPage({
               fontWeight: 'bold',
               margin: '0 0 24px',
               fontFamily: 'var(--font-display)',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}
           >
             Related Case Types

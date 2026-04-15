@@ -52,11 +52,11 @@ export default function PressPage() {
   ];
 
   const brandColors = [
-    { name: 'Navy', hex: '#0966C3' },
-    { name: 'Primary Blue', hex: '#0966C3' },
-    { name: 'Secondary Blue', hex: '#004182' },
-    { name: 'Background', hex: '#F7F8FA' },
-    { name: 'Text', hex: '#0f0f0f' },
+    { name: 'Navy', hex: 'var(--accent-primary)' },
+    { name: 'Primary Blue', hex: 'var(--accent-primary)' },
+    { name: 'Secondary Blue', hex: 'var(--accent-primary-hover)' },
+    { name: 'Background', hex: 'var(--color-surface-1)' },
+    { name: 'Text', hex: 'var(--color-text-primary)' },
     { name: 'Accent Grey', hex: '#E0DDD8' },
   ];
 
@@ -321,7 +321,7 @@ export default function PressPage() {
               style={{
                 fontSize: 28,
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 32,
               }}

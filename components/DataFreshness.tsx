@@ -52,7 +52,7 @@ export default function DataFreshness({ style }: DataFreshnessProps) {
         display: 'inline-flex',
         alignItems: 'center',
         background: '#EDF3FB',
-        color: '#0966C3',
+        color: 'var(--accent-primary)',
         fontSize: '11px',
         fontWeight: 500,
         fontFamily: 'var(--font-body)',

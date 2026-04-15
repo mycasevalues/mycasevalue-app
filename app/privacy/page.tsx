@@ -39,7 +39,7 @@ const jsonLd = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
+    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
       <style>{`
         .legal-toc {
           position: sticky;
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
           display: block;
           padding: 10px 0;
           font-size: 14px;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           text-decoration: none;
           border-left: 2px solid transparent;
           padding-left: 16px;
@@ -80,17 +80,17 @@ export default function PrivacyPage() {
         }
 
         .breadcrumb-home-link:hover {
-          color: #FFFFFF;
+          color: var(--color-surface-0);
         }
 
         .legal-section-heading {
           font-size: 20px;
           font-weight: 600;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           margin-bottom: 16px;
           margin-top: 48px;
           padding-bottom: 16px;
-          border-bottom: 1px solid #E5E7EB;
+          border-bottom: 1px solid var(--border-default);
         }
 
         .legal-section-heading:first-of-type {
@@ -99,7 +99,7 @@ export default function PrivacyPage() {
 
         .legal-body {
           font-size: 15px;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           line-height: 1.7;
           font-weight: 300;
         }
@@ -154,13 +154,13 @@ export default function PrivacyPage() {
       />
 
       {/* Header */}
-      <div style={{ borderColor: '#E5E7EB', background: '#0966C3' }}>
+      <div style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: '#CCCCCC' }}>
             <a href="/" className="breadcrumb-home-link">Home</a>
             <span>/</span>
-            <span style={{ color: '#FFFFFF' }}>Privacy Policy</span>
+            <span style={{ color: 'var(--color-surface-0)' }}>Privacy Policy</span>
           </nav>
           <div style={{
             display: 'inline-flex',
@@ -177,9 +177,9 @@ export default function PrivacyPage() {
             textTransform: 'uppercase',
             marginBottom: '16px',
             background: '#FFF3F4',
-            color: '#0966C3'
+            color: 'var(--accent-primary)'
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
             PRIVACY
@@ -265,13 +265,13 @@ export default function PrivacyPage() {
             <h2 className="legal-section-heading">2. Information We Collect</h2>
 
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#0f0f0f', marginTop: '24px', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginTop: '24px', marginBottom: '12px' }}>
                 2.1 Information You Provide Directly
               </h3>
               <p className="legal-body">
                 When you use MyCaseValue, you may voluntarily provide information such as:
               </p>
-              <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
+              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}><strong>Account information:</strong> Name, email address, and professional affiliation if you create an account or subscribe to services</li>
                 <li style={{ marginBottom: '8px' }}><strong>Search and usage data:</strong> Case type searches, jurisdictional filters, research queries, report requests, and features you access</li>
                 <li style={{ marginBottom: '8px' }}><strong>Payment information:</strong> Processed securely through Stripe (PCI-DSS compliant); we do not store full credit card numbers or sensitive payment card data</li>
@@ -281,13 +281,13 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#0f0f0f', marginTop: '24px', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginTop: '24px', marginBottom: '12px' }}>
                 2.2 Information Collected Automatically
               </h3>
               <p className="legal-body">
                 When you visit or use our Service, we automatically collect certain information about your interaction with us:
               </p>
-              <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
+              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}><strong>Usage data:</strong> Pages visited, case types searched, reports generated, features used, time spent on Service, search queries, referral source, and click patterns</li>
                 <li style={{ marginBottom: '8px' }}><strong>Device and browser information:</strong> Browser type and version, operating system, device type, unique device identifiers, and mobile network information</li>
                 <li style={{ marginBottom: '8px' }}><strong>IP address:</strong> Used for geographic analytics, fraud detection, and security purposes; not personally identified or linked to your name without additional data</li>
@@ -297,13 +297,13 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#0f0f0f', marginTop: '24px', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginTop: '24px', marginBottom: '12px' }}>
                 2.3 Information We Do NOT Collect or Store
               </h3>
               <p className="legal-body">
                 We are committed to minimizing data collection. We deliberately do not collect or store:
               </p>
-              <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
+              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}>Full credit card numbers or payment card data (all payments processed securely by Stripe; PCI-DSS compliant)</li>
                 <li style={{ marginBottom: '8px' }}>Social Security numbers, government IDs, passport numbers, or other sensitive identification</li>
                 <li style={{ marginBottom: '8px' }}>Precise geolocation data (we collect IP address for analytics only; geo-targeting is approximate by region)</li>
@@ -322,8 +322,8 @@ export default function PrivacyPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Types of Cookies We Use:</h4>
-              <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Types of Cookies We Use:</h4>
+              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}><strong>Essential/Functional Cookies:</strong> Necessary for site functionality, session management, authentication, security, and fraud prevention. These are required for the Service to function properly.</li>
                 <li style={{ marginBottom: '8px' }}><strong>Analytics Cookies:</strong> Collect aggregated data about how you use our Service (pages visited, features used, time on site) to understand user behavior and improve user experience. We use this data to identify trends and optimize content.</li>
                 <li style={{ marginBottom: '8px' }}><strong>Preference Cookies:</strong> Remember your settings, preferences, and choices (e.g., display preferences, accessibility settings) across visits.</li>
@@ -345,7 +345,7 @@ export default function PrivacyPage() {
             <p className="legal-body">
               We use the information we collect for the following purposes:
             </p>
-            <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
+            <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
               <li style={{ marginBottom: '8px' }}><strong>Provide and maintain the Service:</strong> Create and manage your account, process your requests, deliver reports, and ensure Service stability and security</li>
               <li style={{ marginBottom: '8px' }}><strong>Payment processing:</strong> Process purchases, subscriptions, billing inquiries, and send transaction confirmations and invoices</li>
               <li style={{ marginBottom: '8px' }}><strong>Customer communications:</strong> Send transactional emails (account confirmations, password resets, receipts, subscription updates, support responses)</li>
@@ -368,15 +368,15 @@ export default function PrivacyPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>When We Share Information:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>When We Share Information:</h4>
               <p className="legal-body">
                 We may share information with trusted service providers and partners who assist us in operating, maintaining, and improving our Service. All service providers are bound by confidentiality agreements and data processing agreements that limit their use of your information to providing the specific services we've contracted.
               </p>
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Service Providers We Work With:</h4>
-              <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Service Providers We Work With:</h4>
+              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}><strong>Stripe:</strong> PCI-DSS compliant payment processor; receives only payment information necessary to process transactions</li>
                 <li style={{ marginBottom: '8px' }}><strong>Cloud Infrastructure Providers:</strong> AWS or other providers for data storage, hosting, and infrastructure; bound by data processing agreements</li>
                 <li style={{ marginBottom: '8px' }}><strong>Analytics Services:</strong> Aggregated, anonymized usage data only; individual-level data is not shared</li>
@@ -385,11 +385,11 @@ export default function PrivacyPage() {
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Disclosures Required by Law:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Disclosures Required by Law:</h4>
               <p className="legal-body">
                 We may be required to disclose your information when:
               </p>
-              <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
+              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}>Required by subpoena, court order, or other legal process</li>
                 <li style={{ marginBottom: '8px' }}>Necessary to protect the safety, rights, or property of MyCaseValue, our users, or the public</li>
                 <li style={{ marginBottom: '8px' }}>Required by law enforcement or government agencies</li>
@@ -407,7 +407,7 @@ export default function PrivacyPage() {
             <p className="legal-body">
               We retain your information for as long as necessary to provide the Service and comply with legal obligations.
             </p>
-            <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
+            <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
               <li style={{ marginBottom: '8px' }}><strong>Account data:</strong> Retained until you delete your account</li>
               <li style={{ marginBottom: '8px' }}><strong>Search history:</strong> Retained for analytics (anonymized after 90 days)</li>
               <li style={{ marginBottom: '8px' }}><strong>Payment records:</strong> Retained as required for tax/legal compliance (typically 7 years)</li>
@@ -420,7 +420,7 @@ export default function PrivacyPage() {
             <p className="legal-body">
               You have the following rights regarding your personal information:
             </p>
-            <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
+            <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
               <li style={{ marginBottom: '8px' }}><strong>Access:</strong> Request what personal data we hold about you</li>
               <li style={{ marginBottom: '8px' }}><strong>Correction:</strong> Update or correct inaccurate information</li>
               <li style={{ marginBottom: '8px' }}><strong>Deletion:</strong> Request deletion of your account and associated data</li>
@@ -463,11 +463,11 @@ export default function PrivacyPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>European Union and European Economic Area Users:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>European Union and European Economic Area Users:</h4>
               <p className="legal-body">
                 If you are located in the EU/EEA, we process your personal data based on:
               </p>
-              <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
+              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}>Your explicit consent to our use of your information (e.g., when you create an account)</li>
                 <li style={{ marginBottom: '8px' }}>Our legitimate interests in providing, maintaining, and improving the Service</li>
                 <li><strong>GDPR rights:</strong> You have the right to access, rectification, erasure, data portability, and objection (see Section 7). These rights may be limited by applicable law.</li>
@@ -479,7 +479,7 @@ export default function PrivacyPage() {
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>California Residents:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>California Residents:</h4>
               <p className="legal-body">
                 If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including the right to know, delete, opt-out of sales, and understand how your data is used. Contact us at <a href="mailto:privacy@mycasevalues.com" className="legal-contact-email">privacy@mycasevalues.com</a> to exercise these rights. We will respond within 45 days.
               </p>
@@ -506,9 +506,9 @@ export default function PrivacyPage() {
               paddingTop: '16px',
               paddingBottom: '16px',
               borderRadius: '12px',
-              background: '#FFFFFF',
-              color: '#0f0f0f',
-              border: '1px solid #E5E7EB'
+              background: 'var(--color-surface-0)',
+              color: 'var(--color-text-primary)',
+              border: '1px solid var(--border-default)'
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
                 <strong>Privacy Requests:</strong> <a href="mailto:privacy@mycasevalues.com" className="legal-contact-email">privacy@mycasevalues.com</a>
@@ -538,9 +538,9 @@ export default function PrivacyPage() {
               paddingTop: '16px',
               paddingBottom: '16px',
               borderRadius: '12px',
-              background: '#FFFFFF',
-              color: '#0f0f0f',
-              border: '1px solid #E5E7EB'
+              background: 'var(--color-surface-0)',
+              color: 'var(--color-text-primary)',
+              border: '1px solid var(--border-default)'
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
                 <strong>Terms of Service:</strong> Read our <a href="/terms" className="legal-contact-email">Terms of Service</a> to understand the rules governing your use of MyCaseValue and our limitations of liability.
@@ -554,14 +554,14 @@ export default function PrivacyPage() {
       </div>
 
       {/* Footer disclaimer */}
-      <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center' }}>
+      <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center' }}>
         <p style={{
           fontSize: '11px',
           maxWidth: '400px',
           margin: '0 auto',
           paddingLeft: '24px',
           paddingRight: '24px',
-          color: '#4B5563'
+          color: 'var(--color-text-secondary)'
         }}>
           © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
         </p>

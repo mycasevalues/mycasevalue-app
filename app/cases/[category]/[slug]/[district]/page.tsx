@@ -408,8 +408,8 @@ export default async function DistrictCaseTypePage({
         {/* About the Case Type */}
         <div
           style={{
-            background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-0)',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
             padding: '24px',
             marginBottom: '40px',
@@ -422,7 +422,7 @@ export default async function DistrictCaseTypePage({
               fontWeight: 'bold',
               margin: '0 0 16px',
               fontFamily: 'var(--font-display)',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}
           >
             About {caseType.label}
@@ -430,7 +430,7 @@ export default async function DistrictCaseTypePage({
           <p
             style={{
               fontSize: '15px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.6',
               fontFamily: 'var(--font-body)',
@@ -443,8 +443,8 @@ export default async function DistrictCaseTypePage({
         {/* Governing Federal Law */}
         <div
           style={{
-            background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-0)',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
             padding: '24px',
             marginBottom: '40px',
@@ -457,7 +457,7 @@ export default async function DistrictCaseTypePage({
               fontWeight: 'bold',
               margin: '0 0 16px',
               fontFamily: 'var(--font-display)',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}
           >
             Governing Federal Law
@@ -465,7 +465,7 @@ export default async function DistrictCaseTypePage({
           <p
             style={{
               fontSize: '15px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               margin: '0',
               fontFamily: 'var(--font-body)',
             }}
@@ -480,7 +480,7 @@ export default async function DistrictCaseTypePage({
             display: inline-block;
             padding: '14px 36px';
             border-radius: '12px';
-            background: '#0966C3';
+            background: 'var(--accent-primary)';
             color: white;
             text-decoration: none;
             font-weight: '600';
@@ -519,7 +519,7 @@ export default async function DistrictCaseTypePage({
               fontWeight: 'bold',
               margin: '0 0 16px',
               fontFamily: 'var(--font-display)',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}
           >
             Explore Related Cases
@@ -545,7 +545,7 @@ export default async function DistrictCaseTypePage({
           style={{
             marginTop: '40px',
             padding: '16px 20px',
-            borderLeft: '4px solid #0966C3',
+            borderLeft: '4px solid var(--accent-primary)',
             background: '#F0F9FF',
             borderRadius: '4px',
           }}

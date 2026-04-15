@@ -90,7 +90,7 @@ export default async function ChangelogPage() {
         }
         .changelog-link-pill:hover {
           background-color: #D5E3F2;
-          color: #0966C3;
+          color: var(--accent-primary);
           text-decoration: none;
         }
         .changelog-date-pill {
@@ -124,9 +124,9 @@ export default async function ChangelogPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Dark Navy Hero Header */}
-        <div style={{ background: '#0966C3', padding: '64px 24px' }}>
+        <div style={{ background: 'var(--accent-primary)', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             {/* Breadcrumb */}
             <div style={{ marginBottom: 24, display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -149,8 +149,8 @@ export default async function ChangelogPage() {
               <span style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#0966C3',
-                color: '#FFFFFF',
+                backgroundColor: 'var(--accent-primary)',
+                color: 'var(--color-surface-0)',
                 fontSize: '11px',
                 fontWeight: 600,
                 letterSpacing: '0.08em',
@@ -165,7 +165,7 @@ export default async function ChangelogPage() {
             <h1 style={{
               fontSize: 'clamp(28px, 4vw, 48px)',
               fontWeight: 700,
-              color: '#FFFFFF',
+              color: 'var(--color-surface-0)',
               fontFamily: 'var(--font-display)',
               letterSpacing: '-1px',
               marginBottom: 16,
@@ -200,8 +200,8 @@ export default async function ChangelogPage() {
                         key={entry.id}
                         className="changelog-entry"
                         style={{
-                          background: '#FFFFFF',
-                          border: '1px solid #E5E7EB',
+                          background: 'var(--color-surface-0)',
+                          border: '1px solid var(--border-default)',
                           borderRadius: 12,
                           padding: '32px',
                           boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -227,7 +227,7 @@ export default async function ChangelogPage() {
                         <h2 style={{
                           fontSize: 20,
                           fontWeight: 700,
-                          color: '#0f0f0f',
+                          color: 'var(--color-text-primary)',
                           fontFamily: 'var(--font-display)',
                           margin: '0 0 12px 0',
                           letterSpacing: '-0.5px',
@@ -238,7 +238,7 @@ export default async function ChangelogPage() {
                         {/* Description */}
                         <p style={{
                           fontSize: 15,
-                          color: '#4B5563',
+                          color: 'var(--color-text-secondary)',
                           fontFamily: 'var(--font-body)',
                           lineHeight: 1.7,
                           margin: '0 0 20px 0',
@@ -252,7 +252,7 @@ export default async function ChangelogPage() {
                             <p style={{
                               fontSize: 12,
                               fontWeight: 600,
-                              color: '#004182',
+                              color: 'var(--accent-primary-hover)',
                               textTransform: 'uppercase',
                               letterSpacing: '0.05em',
                               margin: '0 0 12px 0',
@@ -280,7 +280,7 @@ export default async function ChangelogPage() {
                             <p style={{
                               fontSize: 12,
                               fontWeight: 600,
-                              color: '#004182',
+                              color: 'var(--accent-primary-hover)',
                               textTransform: 'uppercase',
                               letterSpacing: '0.05em',
                               margin: '0 0 12px 0',
@@ -307,15 +307,15 @@ export default async function ChangelogPage() {
                 </div>
               ) : (
                 <div style={{
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 12,
                   padding: '48px 32px',
                   textAlign: 'center',
                 }}>
                   <p style={{
                     fontSize: 16,
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     fontFamily: 'var(--font-body)',
                     margin: 0,
                   }}>
@@ -327,10 +327,10 @@ export default async function ChangelogPage() {
 
             {/* Subscribe Section */}
             <div style={{
-              background: 'linear-gradient(135deg, #0966C3 0%, #004182 100%)',
+              background: 'linear-gradient(135deg, var(--accent-primary) 0%, #004182 100%)',
               borderRadius: 12,
               padding: '48px 32px',
-              color: '#FFFFFF',
+              color: 'var(--color-surface-0)',
               marginBottom: 64,
             }}>
               <h2 style={{
@@ -365,7 +365,7 @@ export default async function ChangelogPage() {
                     borderRadius: 8,
                     border: '1px solid rgba(255,255,255,0.2)',
                     background: 'rgba(255,255,255,0.1)',
-                    color: '#FFFFFF',
+                    color: 'var(--color-surface-0)',
                     fontFamily: 'var(--font-body)',
                     fontSize: 14,
                   }}
@@ -378,8 +378,8 @@ export default async function ChangelogPage() {
                     padding: '12px 28px',
                     borderRadius: 8,
                     border: 'none',
-                    background: '#FFFFFF',
-                    color: '#0966C3',
+                    background: 'var(--color-surface-0)',
+                    color: 'var(--accent-primary)',
                     fontWeight: 600,
                     fontSize: 14,
                     fontFamily: 'var(--font-body)',
@@ -411,12 +411,12 @@ export default async function ChangelogPage() {
             }}>
               <p style={{
                 fontSize: 13,
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-body)',
                 lineHeight: 1.6,
                 margin: 0,
               }}>
-                <strong style={{ color: '#004182' }}>Update Frequency:</strong> Our data is updated quarterly as new information is available from the FJC Integrated Database and other authoritative sources. Feature releases may occur more frequently. Subscribe to stay informed about all changes.
+                <strong style={{ color: 'var(--accent-primary-hover)' }}>Update Frequency:</strong> Our data is updated quarterly as new information is available from the FJC Integrated Database and other authoritative sources. Feature releases may occur more frequently. Subscribe to stay informed about all changes.
               </p>
             </div>
           </div>

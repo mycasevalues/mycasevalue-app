@@ -26,7 +26,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
   return (
     <section style={{ marginTop: 56, marginBottom: 56 }}>
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--color-surface-0)',
         border: '1px solid #e5e7eb',
         borderRadius: '12px',
         padding: 'clamp(24px, 4vw, 32px)',
@@ -34,7 +34,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
         <h2 style={{
           fontSize: 18,
           fontWeight: 700,
-          color: '#0f0f0f',
+          color: 'var(--color-text-primary)',
           margin: '0 0 8px',
           fontFamily: 'var(--font-heading)',
           letterSpacing: '-0.5px',
@@ -45,7 +45,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
         {subtitle && (
           <p style={{
             fontSize: 14,
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             margin: '0 0 24px',
             fontFamily: 'var(--font-body)',
           }}>
@@ -79,7 +79,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                   <Link
                     href={`/judges/${judge.id}`}
                     style={{
-                      color: '#0966C3',
+                      color: 'var(--accent-primary)',
                       textDecoration: 'none',
                       fontWeight: 600,
                       fontSize: 14,
@@ -93,7 +93,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                   {showDistrict && judge.district_id && (
                     <div style={{
                       fontSize: 12,
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       fontFamily: 'var(--font-body)',
                     }}>
                       {judge.district_id}
@@ -105,7 +105,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                 <div>
                   <div style={{
                     fontSize: 11,
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
                     marginBottom: 4,
@@ -127,7 +127,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                 <div>
                   <div style={{
                     fontSize: 11,
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
                     marginBottom: 4,
@@ -138,7 +138,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                   <div style={{
                     fontSize: 14,
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-mono)',
                   }}>
                     {judge.total_cases.toLocaleString()}
@@ -149,7 +149,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                 <Link
                   href={`/judges/${judge.id}`}
                   style={{
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     textDecoration: 'none',
                     fontSize: 13,
                     fontWeight: 500,

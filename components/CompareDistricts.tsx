@@ -79,7 +79,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
     <div
       style={{
         padding: '24px',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: 'var(--color-surface-0)',
         border: '1px solid #D1D5DB',
         borderRadius: '8px',
         fontFamily: 'var(--font-body)',
@@ -89,7 +89,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
         style={{
           fontSize: '18px',
           fontWeight: 600,
-          color: '#0f0f0f',
+          color: 'var(--color-text-primary)',
           marginBottom: '16px',
           fontFamily: 'var(--font-heading)',
         }}
@@ -103,7 +103,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
             display: 'block',
             fontSize: '14px',
             fontWeight: 500,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '8px',
           }}
         >
@@ -133,8 +133,8 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
               fontSize: '14px',
               minHeight: '100px',
               fontFamily: 'var(--font-body)',
-              backgroundColor: '#FFFFFF',
-              color: '#0f0f0f',
+              backgroundColor: 'var(--color-surface-0)',
+              color: 'var(--color-text-primary)',
             }}
           >
             {availableDistricts.map((district) => (
@@ -161,7 +161,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
           style={{
             padding: '6px 12px',
             backgroundColor: '#F3F4F6',
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             border: '1px solid #D1D5DB',
             borderRadius: '4px',
             fontSize: '12px',
@@ -171,7 +171,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
             transition: 'all 0.2s',
           }}
           onMouseEnter={(e) => {
-            (e.target as HTMLButtonElement).style.backgroundColor = '#E5E7EB';
+            (e.target as HTMLButtonElement).style.backgroundColor = 'var(--border-default)';
           }}
           onMouseLeave={(e) => {
             (e.target as HTMLButtonElement).style.backgroundColor = '#F3F4F6';
@@ -197,7 +197,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     padding: '12px 8px',
                     textAlign: 'left',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-heading)',
                   }}
                 >
@@ -208,7 +208,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     padding: '12px 8px',
                     textAlign: 'center',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-heading)',
                   }}
                 >
@@ -219,7 +219,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     padding: '12px 8px',
                     textAlign: 'center',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-heading)',
                   }}
                 >
@@ -230,7 +230,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     padding: '12px 8px',
                     textAlign: 'center',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-heading)',
                   }}
                 >
@@ -241,7 +241,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     padding: '12px 8px',
                     textAlign: 'center',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-heading)',
                   }}
                 >
@@ -258,16 +258,16 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                     style={{
                       borderBottom:
                         idx < comparisonData.length - 1
-                          ? '1px solid #E5E7EB'
+                          ? '1px solid var(--border-default)'
                           : 'none',
-                      backgroundColor: idx % 2 === 0 ? '#FFFFFF' : '#F9FAFB',
+                      backgroundColor: idx % 2 === 0 ? 'var(--color-surface-0)' : '#F9FAFB',
                     }}
                   >
                     <td
                       style={{
                         padding: '12px 8px',
                         fontWeight: 500,
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                       }}
                     >
                       {district.name}
@@ -296,7 +296,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                       style={{
                         padding: '12px 8px',
                         textAlign: 'center',
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                       }}
                     >
                       ${district.medianSettlement}K
@@ -305,7 +305,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                       style={{
                         padding: '12px 8px',
                         textAlign: 'center',
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                       }}
                     >
                       {district.avgDuration} months

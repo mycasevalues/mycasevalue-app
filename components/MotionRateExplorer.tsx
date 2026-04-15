@@ -118,7 +118,7 @@ export default function MotionRateExplorer() {
   const titleStyle: React.CSSProperties = {
     fontSize: '32px',
     fontWeight: 700,
-    color: '#0f0f0f',
+    color: 'var(--color-text-primary)',
     marginBottom: '8px',
     lineHeight: 1.2,
   };
@@ -141,10 +141,10 @@ export default function MotionRateExplorer() {
     width: '100%',
     padding: '12px 14px',
     height: '48px',
-    border: '1px solid #E5E7EB',
+    border: '1px solid var(--border-default)',
     borderRadius: '12px',
     fontSize: '14px',
-    color: '#0f0f0f',
+    color: 'var(--color-text-primary)',
     backgroundColor: '#FFF',
     fontFamily: 'var(--font-body)',
     cursor: 'pointer',
@@ -161,7 +161,7 @@ export default function MotionRateExplorer() {
   const tableWrapperStyle: React.CSSProperties = {
     overflowX: 'auto',
     borderRadius: '12px',
-    border: '1px solid #E5E7EB',
+    border: '1px solid var(--border-default)',
     marginBottom: '32px',
   };
 
@@ -173,7 +173,7 @@ export default function MotionRateExplorer() {
 
   const theadStyle: React.CSSProperties = {
     backgroundColor: '#F9FAFB',
-    borderBottom: '1px solid #E5E7EB',
+    borderBottom: '1px solid var(--border-default)',
   };
 
   const thStyle: React.CSSProperties = {
@@ -191,7 +191,7 @@ export default function MotionRateExplorer() {
     padding: '14px 16px',
     fontSize: '14px',
     color: '#1F2937',
-    borderBottom: '1px solid #E5E7EB',
+    borderBottom: '1px solid var(--border-default)',
   };
 
   const sortIndicatorStyle: React.CSSProperties = {
@@ -206,7 +206,7 @@ export default function MotionRateExplorer() {
     cursor: 'pointer',
     padding: '4px 8px',
     fontSize: '14px',
-    color: '#0966C3',
+    color: 'var(--accent-primary)',
     fontWeight: 600,
     transition: 'color 0.2s',
   };
@@ -220,7 +220,7 @@ export default function MotionRateExplorer() {
 
   const circuitTdStyle: React.CSSProperties = {
     padding: '8px 16px',
-    borderBottom: '1px solid #E5E7EB',
+    borderBottom: '1px solid var(--border-default)',
     color: '#374151',
   };
 
@@ -359,7 +359,7 @@ export default function MotionRateExplorer() {
 
                 return (
                   <tbody key={rowId}>
-                    <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ ...tdStyle, textAlign: 'center' }}>
                         <button
                           style={expandButtonStyle}
@@ -396,7 +396,7 @@ export default function MotionRateExplorer() {
                             </h4>
                             <table style={circuitTableStyle}>
                               <thead>
-                                <tr style={{ backgroundColor: '#FFFFFF' }}>
+                                <tr style={{ backgroundColor: 'var(--color-surface-0)' }}>
                                   <th style={{ ...circuitTdStyle, fontWeight: 600 }}>Circuit</th>
                                   <th style={{ ...circuitTdStyle, fontWeight: 600 }}>Grant Rate</th>
                                 </tr>

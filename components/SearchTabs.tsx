@@ -25,7 +25,7 @@ export default function SearchTabs() {
           display: 'flex',
           gap: '8px',
           marginBottom: '24px',
-          borderBottom: '2px solid #E5E7EB',
+          borderBottom: '2px solid var(--border-default)',
         }}
       >
         {tabs.map((tab) => (
@@ -37,10 +37,10 @@ export default function SearchTabs() {
               fontSize: '14px',
               fontWeight: activeTab === tab.id ? '600' : '500',
               fontFamily: 'var(--font-body)',
-              color: activeTab === tab.id ? '#0966C3' : '#666',
+              color: activeTab === tab.id ? 'var(--accent-primary)' : '#666',
               background: 'transparent',
               border: 'none',
-              borderBottom: activeTab === tab.id ? '3px solid #0966C3' : 'none',
+              borderBottom: activeTab === tab.id ? '3px solid var(--accent-primary)' : 'none',
               cursor: 'pointer',
               transition: 'all 0.2s',
               display: 'flex',
@@ -49,7 +49,7 @@ export default function SearchTabs() {
             }}
             onMouseEnter={(e) => {
               if (activeTab !== tab.id) {
-                e.currentTarget.style.color = '#004182';
+                e.currentTarget.style.color = 'var(--accent-primary-hover)';
               }
             }}
             onMouseLeave={(e) => {

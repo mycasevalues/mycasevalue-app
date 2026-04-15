@@ -102,7 +102,7 @@ export default function WinRateTrend({
       .datum(validData)
       .attr('d', line)
       .attr('fill', 'none')
-      .attr('stroke', '#0966C3')
+      .attr('stroke', 'var(--accent-primary)')
       .attr('stroke-width', 2)
       .attr('stroke-linecap', 'round')
       .attr('stroke-linejoin', 'round')
@@ -117,8 +117,8 @@ export default function WinRateTrend({
       .attr('cx', (d) => x(d.year))
       .attr('cy', (d) => y(d.winRate))
       .attr('r', 4)
-      .attr('fill', '#0966C3')
-      .attr('stroke', '#FFFFFF')
+      .attr('fill', 'var(--accent-primary)')
+      .attr('stroke', 'var(--color-surface-0)')
       .attr('stroke-width', 2)
       .attr('pointer-events', 'auto')
       .style('cursor', 'pointer');
@@ -151,7 +151,7 @@ export default function WinRateTrend({
           d3.select(parentElement)
             .selectAll('.data-point')
             .attr('r', (pd: any) => pd.year === d.year ? 6 : 4)
-            .attr('fill', (pd: any) => pd.year === d.year ? '#0966C3' : '#0966C3')
+            .attr('fill', (pd: any) => pd.year === d.year ? 'var(--accent-primary)' : 'var(--accent-primary)')
             .attr('stroke-width', (pd: any) => pd.year === d.year ? 2.5 : 2);
         }
 
@@ -159,7 +159,7 @@ export default function WinRateTrend({
         const tooltip = tooltipRef.current;
         if (tooltip) {
           tooltip.style.display = 'block';
-          tooltip.innerHTML = `<div style="font-weight: 600; color: #0966C3; font-size: 13px; font-family: var(--font-mono)">${d.year}</div><div style="color: #4B5563; font-size: 12px; margin-top: 4px; font-family: var(--font-body)">Win Rate: <strong style="font-family: var(--font-mono)">${d.winRate}%</strong></div>`;
+          tooltip.innerHTML = `<div style="font-weight: 600; color: var(--accent-primary); font-size: 13px; font-family: var(--font-mono)">${d.year}</div><div style="color: var(--color-text-secondary); font-size: 12px; margin-top: 4px; font-family: var(--font-body)">Win Rate: <strong style="font-family: var(--font-mono)">${d.winRate}%</strong></div>`;
           const rect = (this as SVGRectElement).getBoundingClientRect();
           const svgRect = svgRef.current?.getBoundingClientRect();
           if (svgRect) {
@@ -196,7 +196,7 @@ export default function WinRateTrend({
         .attr('text-anchor', 'middle')
         .attr('font-size', '11px')
         .attr('font-family', 'var(--font-body)')
-        .attr('fill', '#4B5563')
+        .attr('fill', 'var(--color-text-secondary)')
         .attr('font-weight', 500)
         .text(String(firstData.year));
 
@@ -206,7 +206,7 @@ export default function WinRateTrend({
         .attr('text-anchor', 'middle')
         .attr('font-size', '11px')
         .attr('font-family', 'var(--font-body)')
-        .attr('fill', '#4B5563')
+        .attr('fill', 'var(--color-text-secondary)')
         .attr('font-weight', 500)
         .text(String(lastData.year));
     }
@@ -246,8 +246,8 @@ export default function WinRateTrend({
         style={{
           position: 'absolute',
           display: 'none',
-          background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
+          background: 'var(--color-surface-0)',
+          border: '1px solid var(--border-default)',
           borderRadius: '8px',
           padding: '8px 12px',
           boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',

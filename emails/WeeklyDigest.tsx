@@ -105,7 +105,7 @@ export default function WeeklyDigest({
 }
 
 const main: React.CSSProperties = {
-  backgroundColor: '#F7F8FA',
+  backgroundColor: 'var(--color-surface-1)',
   fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
 };
 
@@ -117,17 +117,17 @@ const container: React.CSSProperties = {
   overflow: 'hidden',
 };
 
-const header: React.CSSProperties = { backgroundColor: '#0966C3', padding: '24px 40px' };
+const header: React.CSSProperties = { backgroundColor: 'var(--accent-primary)', padding: '24px 40px' };
 const logo: React.CSSProperties = { color: '#FFF', fontSize: '20px', fontWeight: 600, margin: '0 0 4px' };
 const headerSub: React.CSSProperties = { color: 'rgba(255,255,255,0.7)', fontSize: '13px', margin: 0 };
 const content: React.CSSProperties = { padding: '32px 40px' };
-const h1: React.CSSProperties = { color: '#0f0f0f', fontSize: '24px', fontWeight: 600, margin: '0 0 8px' };
-const h2: React.CSSProperties = { color: '#0f0f0f', fontSize: '16px', fontWeight: 600, margin: '0 0 12px' };
-const paragraph: React.CSSProperties = { color: '#4B5563', fontSize: '14px', lineHeight: '1.6', margin: '0 0 8px' };
-const hr: React.CSSProperties = { borderTop: '1px solid #E5E7EB', margin: '24px 0' };
-const itemCard: React.CSSProperties = { backgroundColor: '#FAFBFC', borderRadius: '8px', border: '1px solid #E5E7EB', padding: '12px 16px', marginBottom: '8px' };
-const itemTitle: React.CSSProperties = { color: '#0966C3', fontSize: '14px', fontWeight: 600, textDecoration: 'none' };
-const itemDesc: React.CSSProperties = { color: '#4B5563', fontSize: '12px', lineHeight: '1.5', margin: '4px 0 0' };
-const ctaButton: React.CSSProperties = { display: 'inline-block', backgroundColor: '#0966C3', color: '#FFF', padding: '12px 28px', borderRadius: '20px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' };
-const footer: React.CSSProperties = { color: '#9CA3AF', fontSize: '11px', margin: '16px 0 4px' };
-const unsubLink: React.CSSProperties = { color: '#9CA3AF', fontSize: '11px', textDecoration: 'underline' };
+const h1: React.CSSProperties = { color: 'var(--color-text-primary)', fontSize: '24px', fontWeight: 600, margin: '0 0 8px' };
+const h2: React.CSSProperties = { color: 'var(--color-text-primary)', fontSize: '16px', fontWeight: 600, margin: '0 0 12px' };
+const paragraph: React.CSSProperties = { color: 'var(--color-text-secondary)', fontSize: '14px', lineHeight: '1.6', margin: '0 0 8px' };
+const hr: React.CSSProperties = { borderTop: '1px solid var(--border-default)', margin: '24px 0' };
+const itemCard: React.CSSProperties = { backgroundColor: '#FAFBFC', borderRadius: '8px', border: '1px solid var(--border-default)', padding: '12px 16px', marginBottom: '8px' };
+const itemTitle: React.CSSProperties = { color: 'var(--accent-primary)', fontSize: '14px', fontWeight: 600, textDecoration: 'none' };
+const itemDesc: React.CSSProperties = { color: 'var(--color-text-secondary)', fontSize: '12px', lineHeight: '1.5', margin: '4px 0 0' };
+const ctaButton: React.CSSProperties = { display: 'inline-block', backgroundColor: 'var(--accent-primary)', color: '#FFF', padding: '12px 28px', borderRadius: '20px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' };
+const footer: React.CSSProperties = { color: 'var(--color-text-muted)', fontSize: '11px', margin: '16px 0 4px' };
+const unsubLink: React.CSSProperties = { color: 'var(--color-text-muted)', fontSize: '11px', textDecoration: 'underline' };

@@ -15,7 +15,7 @@ export function BriefcaseIcon({ color = '#000000', size = 24 }: { color?: string
   );
 }
 
-export function HeartPulseIcon({ color = '#0966C3', size = 24 }: { color?: string; size?: number }) {
+export function HeartPulseIcon({ color = 'var(--accent-primary)', size = 24 }: { color?: string; size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" stroke={color} {...s}>
       <path d="M20.42 4.58a5.4 5.4 0 00-7.65 0L12 5.36l-.77-.78a5.4 5.4 0 00-7.65 7.65l1.06 1.06L12 20.65l7.36-7.36 1.06-1.06a5.4 5.4 0 000-7.65z" />
@@ -74,7 +74,7 @@ export function MedicalIcon({ color = '#DB2777', size = 24 }: { color?: string; 
   );
 }
 
-export function BuildingIcon({ color = '#4B5563', size = 24 }: { color?: string; size?: number }) {
+export function BuildingIcon({ color = 'var(--color-text-secondary)', size = 24 }: { color?: string; size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" stroke={color} {...s}>
       <rect x="4" y="2" width="16" height="20" rx="1" />

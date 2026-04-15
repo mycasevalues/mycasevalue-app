@@ -218,7 +218,7 @@ export default function VenueOptimizerPage() {
               </div>
 
               {/* Table Header */}
-              <div style={{ display: 'grid', gridTemplateColumns: '50px 1fr 90px 90px 80px 80px 70px', gap: '8px', padding: '12px 24px', borderBottom: '1px solid var(--border-default)', backgroundColor: '#F8F9FA' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '50px 1fr 90px 90px 80px 80px 70px', gap: '8px', padding: '12px 24px', borderBottom: '1px solid var(--border-default)', backgroundColor: 'var(--color-surface-1)' }}>
                 <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const }}>Rank</span>
                 <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const }}>District</span>
                 <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Win Rate</span>

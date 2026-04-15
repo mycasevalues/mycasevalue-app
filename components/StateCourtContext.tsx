@@ -139,7 +139,7 @@ export default function StateCourtContext({
         {/* Federal Data Column */}
         <div className="space-y-4">
           <h3 className="text-sm font-semibold text-gray-900 flex items-center">
-            <span className="inline-block w-3 h-3 rounded-full bg-[#0966C3] mr-2"></span>
+            <span className="inline-block w-3 h-3 rounded-full bg-[var(--accent-primary)] mr-2"></span>
             Federal Court
           </h3>
 
@@ -151,7 +151,7 @@ export default function StateCourtContext({
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
-                  className="bg-[#0966C3] h-2 rounded-full transition-all"
+                  className="bg-[var(--accent-primary)] h-2 rounded-full transition-all"
                   style={{ width: `${federalWinRate}%` }}
                 ></div>
               </div>

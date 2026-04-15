@@ -102,29 +102,29 @@ export default function DeadlinesCalculatorPage() {
     <>
       <style>{`
         .dl-select {
-          height: 48px; width: 100%; border: 1px solid #E5E7EB; border-radius: 12px;
-          padding: 0 36px 0 16px; font-family: var(--font-body); font-size: 14px; color: #0f0f0f;
-          background: #FFFFFF; appearance: none;
+          height: 48px; width: 100%; border: 1px solid var(--border-default); border-radius: 12px;
+          padding: 0 36px 0 16px; font-family: var(--font-body); font-size: 14px; color: var(--color-text-primary);
+          background: var(--color-surface-0); appearance: none;
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
           background-repeat: no-repeat; background-position: right 12px center; cursor: pointer;
           transition: border-color 0.2s ease;
         }
-        .dl-select:hover { border-color: #004182; }
-        .dl-select:focus { outline: none; border-color: #004182; box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
+        .dl-select:hover { border-color: var(--accent-primary-hover); }
+        .dl-select:focus { outline: none; border-color: var(--accent-primary-hover); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         .dl-input {
-          height: 48px; width: 100%; border: 1px solid #E5E7EB; border-radius: 12px;
-          padding: 0 16px; font-family: var(--font-body); font-size: 14px; color: #0f0f0f;
-          background: #FFFFFF; transition: border-color 0.2s ease;
+          height: 48px; width: 100%; border: 1px solid var(--border-default); border-radius: 12px;
+          padding: 0 16px; font-family: var(--font-body); font-size: 14px; color: var(--color-text-primary);
+          background: var(--color-surface-0); transition: border-color 0.2s ease;
         }
-        .dl-input:focus { outline: none; border-color: #004182; box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
+        .dl-input:focus { outline: none; border-color: var(--accent-primary-hover); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         @keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
       `}</style>
 
       {/* Header */}
-      <header style={{ background: '#0966C3', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
+      <header style={{ background: 'var(--accent-primary)', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: '#0966C3', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
+          <div style={{ display: 'inline-block', background: 'var(--accent-primary)', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
             FREE TOOL
           </div>
           <h1 style={{ color: '#FFF', fontSize: 'clamp(28px, 7vw, 40px)', fontWeight: 600, margin: '0 0 12px', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
@@ -137,29 +137,29 @@ export default function DeadlinesCalculatorPage() {
       </header>
 
       {/* Breadcrumb */}
-      <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid #E5E7EB', fontSize: 13, fontFamily: 'var(--font-body)' }}>
+      <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
-          <Link href="/" style={{ color: '#0966C3', textDecoration: 'none' }}>Home</Link>
-          <span style={{ color: '#E5E7EB', margin: '0 8px' }}>/</span>
-          <Link href="/calculator" style={{ color: '#0966C3', textDecoration: 'none' }}>Calculator</Link>
-          <span style={{ color: '#E5E7EB', margin: '0 8px' }}>/</span>
-          <span style={{ color: '#0f0f0f', fontWeight: 600 }}>Court Deadlines</span>
+          <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Home</Link>
+          <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
+          <Link href="/calculator" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Calculator</Link>
+          <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
+          <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>Court Deadlines</span>
         </div>
       </nav>
 
       {/* Main Content */}
-      <div style={{ background: '#F7F8FA', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
+      <div style={{ background: 'var(--color-surface-1)', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
 
           {/* Input Form */}
-          <div style={{ background: '#FFF', border: '1px solid #E5E7EB', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+          <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
               Calculate Your Deadlines
             </h2>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 16 }}>
               <div>
-                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
                   Event Type *
                 </label>
                 <select
@@ -175,7 +175,7 @@ export default function DeadlinesCalculatorPage() {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
                   Date of Event *
                 </label>
                 <input
@@ -193,11 +193,11 @@ export default function DeadlinesCalculatorPage() {
             <div style={{ display: 'grid', gap: 24, animation: 'slideUp 0.4s ease-out' }}>
 
               {/* Timeline Header */}
-              <div style={{ background: '#FFF', border: '1px solid #E5E7EB', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
-                <h3 style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>
+              <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
+                <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>
                   FRCP Deadline Timeline
                 </h3>
-                <p style={{ fontSize: 13, color: '#4B5563', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
                   {baseDate
                     ? `Starting from ${formatDate(baseDate)} — ${EVENT_TYPES.find(e => e.value === eventType)?.label}`
                     : 'Enter a date above to see specific deadline dates'}
@@ -206,14 +206,14 @@ export default function DeadlinesCalculatorPage() {
                 {/* Horizontal Timeline */}
                 <div style={{ position: 'relative', padding: '20px 0 0' }}>
                   {/* Timeline line */}
-                  <div style={{ position: 'absolute', top: 28, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #0966C3, #004182)', borderRadius: 2 }} />
+                  <div style={{ position: 'absolute', top: 28, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-primary-hover))', borderRadius: 2 }} />
 
                   {/* Event markers */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', position: 'relative', minHeight: 80 }}>
                     {/* Start marker */}
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 0, position: 'relative' }}>
-                      <div style={{ width: 14, height: 14, borderRadius: '50%', background: '#0966C3', border: '3px solid #FFF', boxShadow: '0 0 0 2px #0966C3', zIndex: 2 }} />
-                      <div style={{ fontSize: 10, color: '#4B5563', marginTop: 8, whiteSpace: 'nowrap', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
+                      <div style={{ width: 14, height: 14, borderRadius: '50%', background: 'var(--accent-primary)', border: '3px solid #FFF', boxShadow: '0 0 0 2px var(--accent-primary)', zIndex: 2 }} />
+                      <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', marginTop: 8, whiteSpace: 'nowrap', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
                         Day 0
                       </div>
                     </div>
@@ -239,7 +239,7 @@ export default function DeadlinesCalculatorPage() {
                             zIndex: 2,
                           }} />
                           <div style={{
-                            fontSize: 9, color: '#4B5563', marginTop: 6, whiteSpace: 'nowrap',
+                            fontSize: 9, color: 'var(--color-text-secondary)', marginTop: 6, whiteSpace: 'nowrap',
                             fontFamily: 'var(--font-mono)', fontWeight: 600,
                             transform: i % 2 === 0 ? 'none' : 'translateY(14px)',
                           }}>
@@ -265,8 +265,8 @@ export default function DeadlinesCalculatorPage() {
                     key={i}
                     style={{
                       background: '#FFF',
-                      border: `1px solid ${past ? '#FECACA' : '#E5E7EB'}`,
-                      borderLeft: `4px solid ${past ? '#CC1016' : daysFromNow !== null && daysFromNow <= 14 ? '#D97706' : '#0966C3'}`,
+                      border: `1px solid ${past ? '#FECACA' : 'var(--border-default)'}`,
+                      borderLeft: `4px solid ${past ? '#CC1016' : daysFromNow !== null && daysFromNow <= 14 ? '#D97706' : 'var(--accent-primary)'}`,
                       borderRadius: 12,
                       padding: 'clamp(16px, 3vw, 24px)',
                       animation: `slideUp 0.4s ease-out ${i * 0.08}s both`,
@@ -277,29 +277,29 @@ export default function DeadlinesCalculatorPage() {
                         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
                           <span style={{
                             display: 'inline-block', padding: '3px 10px', background: '#EDF3FB',
-                            color: '#004182', borderRadius: 6, fontSize: 11, fontWeight: 600,
+                            color: 'var(--accent-primary-hover)', borderRadius: 6, fontSize: 11, fontWeight: 600,
                             fontFamily: 'var(--font-mono)', whiteSpace: 'nowrap',
                           }}>
                             {d.rule}
                           </span>
                           <span style={{
-                            fontSize: 11, fontWeight: 600, color: '#4B5563',
+                            fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)',
                             fontFamily: 'var(--font-mono)',
                           }}>
                             +{d.days} days from {d.from}
                           </span>
                         </div>
-                        <h4 style={{ fontSize: 15, fontWeight: 600, color: '#0f0f0f', margin: '0 0 4px', fontFamily: 'var(--font-display)' }}>
+                        <h4 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-display)' }}>
                           {d.label}
                         </h4>
-                        <p style={{ fontSize: 13, color: '#4B5563', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
+                        <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
                           {d.description}
                         </p>
                       </div>
 
                       {deadlineDate && (
                         <div style={{ textAlign: 'right', minWidth: 130 }}>
-                          <div style={{ fontSize: 15, fontWeight: 600, color: past ? '#CC1016' : '#0f0f0f', fontFamily: 'var(--font-mono)' }}>
+                          <div style={{ fontSize: 15, fontWeight: 600, color: past ? '#CC1016' : 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
                             {formatDate(deadlineDate)}
                           </div>
                           {daysFromNow !== null && (

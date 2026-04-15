@@ -149,7 +149,7 @@ export default function DistrictsExplorer({
     <>
       <style>{`
         .district-card {
-          border: 1px solid #E5E7EB;
+          border: 1px solid var(--border-default);
           transition: border-color 150ms, transform 150ms, box-shadow 150ms;
           text-decoration: none;
           display: block;
@@ -160,8 +160,8 @@ export default function DistrictsExplorer({
           box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         .circuit-card {
-          border: 1px solid #E5E7EB;
-          background: #FFFFFF;
+          border: 1px solid var(--border-default);
+          background: var(--color-surface-0);
           border-radius: 12px;
           padding: 16px;
           cursor: pointer;
@@ -175,28 +175,28 @@ export default function DistrictsExplorer({
           box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .circuit-card.active {
-          background: #0966C3;
-          border-color: #0966C3;
-          color: #FFFFFF;
+          background: var(--accent-primary);
+          border-color: var(--accent-primary);
+          color: var(--color-surface-0);
         }
         .circuit-card.active .circuit-card-name {
-          color: #FFFFFF;
+          color: var(--color-surface-0);
         }
         .circuit-card.active .circuit-card-count {
           color: rgba(255,255,255,0.7);
         }
         .circuit-card.active .circuit-card-rate {
-          color: #0966C3;
+          color: var(--accent-primary);
         }
         .circuit-card-name {
           font-size: 12px;
           font-weight: 600;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           margin-bottom: 8px;
         }
         .circuit-card-count {
           font-size: 11px;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           margin-bottom: 6px;
         }
         .circuit-card-rate {
@@ -216,10 +216,10 @@ export default function DistrictsExplorer({
           height: 6px;
         }
         .circuits-scroll::-webkit-scrollbar-track {
-          background: #F7F8FA;
+          background: var(--color-surface-1);
         }
         .circuits-scroll::-webkit-scrollbar-thumb {
-          background: #E5E7EB;
+          background: var(--border-default);
           border-radius: 3px;
         }
         .stats-grid {
@@ -229,8 +229,8 @@ export default function DistrictsExplorer({
           margin-bottom: 32px;
         }
         .stat-card {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           border-radius: 12px;
           padding: 20px;
         }
@@ -239,19 +239,19 @@ export default function DistrictsExplorer({
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.3px;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           margin-bottom: 8px;
         }
         .stat-value {
           font-size: 16px;
           font-weight: 600;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           font-family: var(--font-mono);
           margin-bottom: 4px;
         }
         .stat-meta {
           font-size: 12px;
-          color: #4B5563;
+          color: var(--color-text-secondary);
         }
         .controls-row {
           display: grid;
@@ -261,13 +261,13 @@ export default function DistrictsExplorer({
         }
         .control-input,
         .control-select {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           border-radius: 12px;
           padding: 10px 12px;
           font-size: 13px;
           font-family: var(--font-body);
-          color: #0f0f0f;
+          color: var(--color-text-primary);
         }
         .control-input::placeholder {
           color: #999;
@@ -323,7 +323,7 @@ export default function DistrictsExplorer({
             fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.3px',
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             marginBottom: 12,
             fontFamily: 'var(--font-display)',
           }}
@@ -335,20 +335,20 @@ export default function DistrictsExplorer({
             onClick={() => setSelectedCircuit(null)}
             className="circuit-card"
             style={{
-              background: selectedCircuit === null ? '#0966C3' : '#FFFFFF',
-              borderColor: selectedCircuit === null ? '#0966C3' : '#E5E7EB',
-              color: selectedCircuit === null ? '#FFFFFF' : '#0f0f0f',
+              background: selectedCircuit === null ? 'var(--accent-primary)' : 'var(--color-surface-0)',
+              borderColor: selectedCircuit === null ? 'var(--accent-primary)' : 'var(--border-default)',
+              color: selectedCircuit === null ? 'var(--color-surface-0)' : 'var(--color-text-primary)',
             }}
           >
-            <div className="circuit-card-name" style={{ color: selectedCircuit === null ? '#FFFFFF' : '#0f0f0f' }}>
+            <div className="circuit-card-name" style={{ color: selectedCircuit === null ? 'var(--color-surface-0)' : 'var(--color-text-primary)' }}>
               All Circuits
             </div>
-            <div className="circuit-card-count" style={{ color: selectedCircuit === null ? 'rgba(255,255,255,0.7)' : '#4B5563' }}>
+            <div className="circuit-card-count" style={{ color: selectedCircuit === null ? 'rgba(255,255,255,0.7)' : 'var(--color-text-secondary)' }}>
               {circuits.reduce((sum, c) => sum + c.districts.length, 0)} districts
             </div>
             <div
               className="circuit-card-rate"
-              style={{ color: selectedCircuit === null ? '#0966C3' : '#004182' }}
+              style={{ color: selectedCircuit === null ? 'var(--accent-primary)' : 'var(--accent-primary-hover)' }}
             >
               {stats.avgWinRate}%
             </div>
@@ -369,13 +369,13 @@ export default function DistrictsExplorer({
                   className="circuit-card-rate"
                   style={{
                     color: isActive
-                      ? '#0966C3'
+                      ? 'var(--accent-primary)'
                       : rate !== null
                       ? rate >= 50
                         ? '#059669'
                         : rate >= 35
                         ? '#D97706'
-                        : '#0966C3'
+                        : 'var(--accent-primary)'
                       : '#999',
                   }}
                 >
@@ -407,7 +407,7 @@ export default function DistrictsExplorer({
           <div className="stat-label">Lowest Win Rate</div>
           {stats.lowestWinRate ? (
             <>
-              <div className="stat-value" style={{ color: '#0966C3' }}>
+              <div className="stat-value" style={{ color: 'var(--accent-primary)' }}>
                 {stats.lowestWinRate.winRate}%
               </div>
               <div className="stat-meta">{stats.lowestWinRate.name}</div>
@@ -447,14 +447,14 @@ export default function DistrictsExplorer({
         }}
       >
         {filteredDistricts.map((d) => {
-          const wrColor = d.winRate >= 50 ? '#059669' : d.winRate >= 35 ? '#D97706' : '#0966C3';
+          const wrColor = d.winRate >= 50 ? '#059669' : d.winRate >= 35 ? '#D97706' : 'var(--accent-primary)';
           return (
             <Link
               key={d.slug}
               href={`/districts/${d.slug}`}
               className="district-card"
               style={{
-                background: '#FFFFFF',
+                background: 'var(--color-surface-0)',
                 borderRadius: 2,
                 padding: '14px 16px',
               }}
@@ -465,7 +465,7 @@ export default function DistrictsExplorer({
                     style={{
                       fontSize: 14,
                       fontWeight: 600,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-body)',
                       marginBottom: 4,
                     }}
@@ -475,7 +475,7 @@ export default function DistrictsExplorer({
                   <div
                     style={{
                       fontSize: 11,
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       fontFamily: 'var(--font-body)',
                     }}
                   >
@@ -497,7 +497,7 @@ export default function DistrictsExplorer({
                   <div
                     style={{
                       fontSize: 10,
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.3px',
                       marginTop: 2,
@@ -533,7 +533,7 @@ export default function DistrictsExplorer({
                 <span
                   style={{
                     background: '#F0F3F5',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     padding: '2px 8px',
                     borderRadius: 2,
                     fontWeight: 500,
@@ -541,7 +541,7 @@ export default function DistrictsExplorer({
                 >
                   {d.caseType}
                 </span>
-                <span style={{ color: '#9CA3AF', fontSize: 10 }}>
+                <span style={{ color: 'var(--color-text-muted)', fontSize: 10 }}>
                   {(d.casesFiled / 1000).toFixed(1)}K cases
                 </span>
               </div>
@@ -555,7 +555,7 @@ export default function DistrictsExplorer({
           style={{
             textAlign: 'center',
             padding: '48px 20px',
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
           }}
         >
           <p style={{ fontSize: 14, margin: 0 }}>
@@ -569,8 +569,8 @@ export default function DistrictsExplorer({
         style={{
           marginTop: 48,
           padding: 'clamp(24px, 4vw, 32px)',
-          background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
+          background: 'var(--color-surface-0)',
+          border: '1px solid var(--border-default)',
           borderRadius: 2,
         }}
       >
@@ -578,7 +578,7 @@ export default function DistrictsExplorer({
           style={{
             fontSize: 14,
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             margin: '0 0 16px',
             textTransform: 'uppercase',
             letterSpacing: '0.3px',
@@ -591,7 +591,7 @@ export default function DistrictsExplorer({
           <Link
             href="/judges"
             style={{
-              color: '#004182',
+              color: 'var(--accent-primary-hover)',
               textDecoration: 'none',
               fontSize: 13,
             }}
@@ -603,7 +603,7 @@ export default function DistrictsExplorer({
           <Link
             href="/map"
             style={{
-              color: '#004182',
+              color: 'var(--accent-primary-hover)',
               textDecoration: 'none',
               fontSize: 13,
             }}
@@ -615,7 +615,7 @@ export default function DistrictsExplorer({
           <Link
             href="/trends"
             style={{
-              color: '#004182',
+              color: 'var(--accent-primary-hover)',
               textDecoration: 'none',
               fontSize: 13,
             }}
@@ -627,7 +627,7 @@ export default function DistrictsExplorer({
           <Link
             href="/nos-explorer"
             style={{
-              color: '#004182',
+              color: 'var(--accent-primary-hover)',
               textDecoration: 'none',
               fontSize: 13,
             }}

@@ -100,7 +100,7 @@ export function ToolResultCard({
               disabled={isSaving}
               className="px-6 py-2 rounded-full font-medium text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
-                backgroundColor: '#0966C3',
+                backgroundColor: 'var(--accent-primary)',
                 paddingLeft: '24px',
                 paddingRight: '24px',
                 paddingTop: '8px',

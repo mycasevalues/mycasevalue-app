@@ -95,25 +95,25 @@ export default function WelcomeEmail({ userName = 'there' }: WelcomeEmailProps) 
 }
 
 const main: React.CSSProperties = {
-  backgroundColor: '#F7F8FA',
+  backgroundColor: 'var(--color-surface-1)',
   fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
 };
 
 const container: React.CSSProperties = {
   maxWidth: '580px',
   margin: '0 auto',
-  backgroundColor: '#FFFFFF',
+  backgroundColor: 'var(--color-surface-0)',
   borderRadius: '12px',
   overflow: 'hidden',
 };
 
 const header: React.CSSProperties = {
-  backgroundColor: '#0966C3',
+  backgroundColor: 'var(--accent-primary)',
   padding: '32px 40px',
 };
 
 const logo: React.CSSProperties = {
-  color: '#FFFFFF',
+  color: 'var(--color-surface-0)',
   fontSize: '24px',
   fontWeight: 600,
   margin: 0,
@@ -124,35 +124,35 @@ const content: React.CSSProperties = {
 };
 
 const h1: React.CSSProperties = {
-  color: '#0f0f0f',
+  color: 'var(--color-text-primary)',
   fontSize: '28px',
   fontWeight: 600,
   margin: '0 0 16px',
 };
 
 const h2: React.CSSProperties = {
-  color: '#0f0f0f',
+  color: 'var(--color-text-primary)',
   fontSize: '18px',
   fontWeight: 600,
   margin: '0 0 16px',
 };
 
 const paragraph: React.CSSProperties = {
-  color: '#4B5563',
+  color: 'var(--color-text-secondary)',
   fontSize: '15px',
   lineHeight: '1.6',
   margin: '0 0 16px',
 };
 
 const hr: React.CSSProperties = {
-  borderTop: '1px solid #E5E7EB',
+  borderTop: '1px solid var(--border-default)',
   margin: '24px 0',
 };
 
 const toolCard: React.CSSProperties = {
   backgroundColor: '#FAFBFC',
   borderRadius: '8px',
-  border: '1px solid #E5E7EB',
+  border: '1px solid var(--border-default)',
   padding: '16px 20px',
   marginBottom: '12px',
 };
@@ -162,14 +162,14 @@ const toolLink: React.CSSProperties = {
 };
 
 const toolTitle: React.CSSProperties = {
-  color: '#0966C3',
+  color: 'var(--accent-primary)',
   fontSize: '15px',
   fontWeight: 600,
   margin: '0 0 4px',
 };
 
 const toolDesc: React.CSSProperties = {
-  color: '#4B5563',
+  color: 'var(--color-text-secondary)',
   fontSize: '13px',
   lineHeight: '1.5',
   margin: 0,
@@ -183,7 +183,7 @@ const betaBox: React.CSSProperties = {
 };
 
 const betaText: React.CSSProperties = {
-  color: '#004182',
+  color: 'var(--accent-primary-hover)',
   fontSize: '13px',
   lineHeight: '1.6',
   margin: 0,
@@ -196,8 +196,8 @@ const ctaSection: React.CSSProperties = {
 
 const ctaButton: React.CSSProperties = {
   display: 'inline-block',
-  backgroundColor: '#0966C3',
-  color: '#FFFFFF',
+  backgroundColor: 'var(--accent-primary)',
+  color: 'var(--color-surface-0)',
   padding: '14px 32px',
   borderRadius: '8px',
   fontSize: '16px',
@@ -206,14 +206,14 @@ const ctaButton: React.CSSProperties = {
 };
 
 const footer: React.CSSProperties = {
-  color: '#4B5563',
+  color: 'var(--color-text-secondary)',
   fontSize: '13px',
   lineHeight: '1.5',
   margin: '0 0 8px',
 };
 
 const footerSmall: React.CSSProperties = {
-  color: '#9CA3AF',
+  color: 'var(--color-text-muted)',
   fontSize: '11px',
   margin: 0,
 };

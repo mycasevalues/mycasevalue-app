@@ -57,14 +57,14 @@ export default function JudgeSectionLoader({ nosCode, districtId, mode }: JudgeS
     return (
       <section style={{ marginTop: 56, marginBottom: 56 }}>
         <div style={{
-          background: '#FFFFFF',
+          background: 'var(--color-surface-0)',
           border: '1px solid #e5e7eb',
           borderRadius: '12px',
           padding: 'clamp(24px, 4vw, 32px)',
         }}>
           <div style={{
             fontSize: 14,
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             fontFamily: 'var(--font-body)',
           }}>
             Loading judges...

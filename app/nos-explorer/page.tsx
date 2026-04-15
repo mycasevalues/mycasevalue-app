@@ -118,24 +118,24 @@ export default function NosExplorerPage() {
   };
 
   return (
-    <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Header */}
-      <div style={{ borderBottom: '1px solid #E5E7EB', background: '#0966C3' }}>
+      <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--accent-primary)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
           <div style={{ paddingTop: 24, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Home</Link>
             <span style={{ color: 'rgba(255,255,255,0.4)' }}>/</span>
-            <span style={{ color: '#FFFFFF' }}>NOS Explorer</span>
+            <span style={{ color: 'var(--color-surface-0)' }}>NOS Explorer</span>
           </div>
 
           <div style={{ paddingTop: 40, paddingBottom: 48 }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600,
-              letterSpacing: '1.5px', marginBottom: 16, background: '#0966C3',
-              color: '#FFFFFF', textTransform: 'uppercase',
+              letterSpacing: '1.5px', marginBottom: 16, background: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)', textTransform: 'uppercase',
             }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
@@ -145,7 +145,7 @@ export default function NosExplorerPage() {
 
             <h1 style={{
               fontSize: 'clamp(28px, 5vw, 44px)', fontWeight: 900, marginBottom: 16,
-              color: '#FFFFFF', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
+              color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
             }}>
               NOS Code Explorer
             </h1>
@@ -164,7 +164,7 @@ export default function NosExplorerPage() {
                 { label: 'Data Span', value: '2000–2024' },
               ].map(s => (
                 <div key={s.label}>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 600, color: '#FFFFFF' }}>{s.value}</div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 600, color: 'var(--color-surface-0)' }}>{s.value}</div>
                   <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{s.label}</div>
                 </div>
               ))}
@@ -178,17 +178,17 @@ export default function NosExplorerPage() {
         <NosExplorerClient data={nosData} />
 
         {/* What are NOS Codes? */}
-        <div style={{ marginTop: 48, padding: 32, background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
+        <div style={{ marginTop: 48, padding: 32, background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
             What Are NOS Codes?
           </h2>
-          <p style={{ fontSize: 14, lineHeight: 1.7, color: '#4B5563', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
+          <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
             Nature of Suit (NOS) codes are a classification system used by federal courts to categorize civil cases by their legal subject matter. Assigned at filing, these three-digit codes enable statistical analysis of court activity and help identify trends across case types.
           </p>
-          <p style={{ fontSize: 14, lineHeight: 1.7, color: '#4B5563', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
+          <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
             The coding system is maintained by the Administrative Office of the United States Courts and covers everything from contract disputes (NOS 110–199) to civil rights cases (NOS 440–449) to intellectual property (NOS 820–840).
           </p>
-          <p style={{ fontSize: 12, lineHeight: 1.6, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
+          <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: 0 }}>
             Data sourced from the Federal Judicial Center Integrated Database (FJC IDB) and public court records. MyCaseValue LLC is not a law firm.
           </p>
         </div>

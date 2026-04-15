@@ -25,7 +25,7 @@ export default function OSHAContext() {
         <div style={{
           padding: '1.5rem',
           background: '#FAFBFC',
-          border: '1px solid #E5E7EB',
+          border: '1px solid var(--border-default)',
           borderRadius: '12px',
         }}>
           {/* Header */}
@@ -33,7 +33,7 @@ export default function OSHAContext() {
             <h2 style={{
               fontSize: '1.125rem',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '0.5rem',
               marginTop: 0,
               fontFamily: 'var(--font-display)',
@@ -42,7 +42,7 @@ export default function OSHAContext() {
             </h2>
             <p style={{
               fontSize: '0.8125rem',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               margin: 0,
               fontFamily: 'var(--font-body)',
               lineHeight: 1.5,
@@ -62,12 +62,12 @@ export default function OSHAContext() {
               padding: '1rem',
               background: '#EDF3FB',
               borderRadius: '8px',
-              borderLeft: '4px solid #0966C3',
+              borderLeft: '4px solid var(--accent-primary)',
             }}>
               <div style={{
                 fontSize: '0.75rem',
                 fontWeight: 600,
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
@@ -78,7 +78,7 @@ export default function OSHAContext() {
               <div className="font-mono" style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 fontFamily: 'var(--font-mono)',
               }}>
                 {fmtK(oshaData.totalInspections)}
@@ -89,12 +89,12 @@ export default function OSHAContext() {
               padding: '1rem',
               background: '#EDF3FB',
               borderRadius: '8px',
-              borderLeft: '4px solid #0966C3',
+              borderLeft: '4px solid var(--accent-primary)',
             }}>
               <div style={{
                 fontSize: '0.75rem',
                 fontWeight: 600,
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
@@ -105,7 +105,7 @@ export default function OSHAContext() {
               <div className="font-mono" style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 fontFamily: 'var(--font-mono)',
               }}>
                 {fmtK(oshaData.totalCitations)}
@@ -119,12 +119,12 @@ export default function OSHAContext() {
             background: '#EDF3FB',
             borderRadius: '8px',
             marginBottom: '1.5rem',
-            borderLeft: '4px solid #0966C3',
+            borderLeft: '4px solid var(--accent-primary)',
           }}>
             <div style={{
               fontSize: '0.75rem',
               fontWeight: 600,
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
               marginBottom: '0.375rem',
@@ -135,7 +135,7 @@ export default function OSHAContext() {
             <div className="font-mono" style={{
               fontSize: '1.75rem',
               fontWeight: 700,
-              color: '#004182',
+              color: 'var(--accent-primary-hover)',
               fontFamily: 'var(--font-mono)',
             }}>
               ${oshaData.averagePenalty.toLocaleString()}
@@ -147,7 +147,7 @@ export default function OSHAContext() {
             <div style={{
               fontSize: '0.8125rem',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '0.75rem',
               fontFamily: 'var(--font-body)',
             }}>
@@ -165,7 +165,7 @@ export default function OSHAContext() {
                   <span style={{
                     fontSize: '0.8125rem',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-body)',
                   }}>
                     {violation.label}
@@ -173,7 +173,7 @@ export default function OSHAContext() {
                   <span className="font-mono" style={{
                     fontSize: '0.8125rem',
                     fontWeight: 600,
-                    color: '#004182',
+                    color: 'var(--accent-primary-hover)',
                     fontFamily: 'var(--font-mono)',
                   }}>
                     {violation.percentage}%
@@ -181,7 +181,7 @@ export default function OSHAContext() {
                 </div>
                 <div style={{
                   height: '8px',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   borderRadius: '6px',
                   overflow: 'hidden',
                 }}>
@@ -195,7 +195,7 @@ export default function OSHAContext() {
                 </div>
                 <div className="font-mono" style={{
                   fontSize: '0.75rem',
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   marginTop: '0.25rem',
                   fontFamily: 'var(--font-mono)',
                 }}>
@@ -208,12 +208,12 @@ export default function OSHAContext() {
           {/* Top States by Inspection Volume */}
           <div style={{
             paddingTop: '1rem',
-            borderTop: '1px solid #E5E7EB',
+            borderTop: '1px solid var(--border-default)',
           }}>
             <div style={{
               fontSize: '0.8125rem',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '0.75rem',
               fontFamily: 'var(--font-body)',
             }}>
@@ -231,7 +231,7 @@ export default function OSHAContext() {
                   <span style={{
                     fontSize: '0.8125rem',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-body)',
                   }}>
                     {state.state}
@@ -239,7 +239,7 @@ export default function OSHAContext() {
                   <span className="font-mono" style={{
                     fontSize: '0.8125rem',
                     fontWeight: 600,
-                    color: '#004182',
+                    color: 'var(--accent-primary-hover)',
                     fontFamily: 'var(--font-mono)',
                   }}>
                     {state.inspections}
@@ -247,21 +247,21 @@ export default function OSHAContext() {
                 </div>
                 <div style={{
                   height: '6px',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   borderRadius: '6px',
                   overflow: 'hidden',
                 }}>
                   <div style={{
                     height: '100%',
                     width: `${(state.inspections / oshaData.topStates[0].inspections) * 100}%`,
-                    background: '#0966C3',
+                    background: 'var(--accent-primary)',
                     borderRadius: '6px',
                     transition: 'width 150ms ease',
                   }} />
                 </div>
                 <div style={{
                   fontSize: '0.75rem',
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   marginTop: '0.25rem',
                   fontFamily: 'var(--font-mono)',
                   display: 'flex',
@@ -280,11 +280,11 @@ export default function OSHAContext() {
             padding: '0.75rem',
             background: '#EDF3FB',
             borderRadius: '8px',
-            borderLeft: '4px solid #0966C3',
+            borderLeft: '4px solid var(--accent-primary)',
           }}>
             <p style={{
               fontSize: '0.8125rem',
-              color: '#004182',
+              color: 'var(--accent-primary-hover)',
               margin: 0,
               fontFamily: 'var(--font-body)',
               lineHeight: 1.5,
@@ -297,7 +297,7 @@ export default function OSHAContext() {
           {/* Footer Note */}
           <p style={{
             fontSize: '0.75rem',
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             marginTop: '1rem',
             marginBottom: 0,
             fontFamily: 'var(--font-body)',

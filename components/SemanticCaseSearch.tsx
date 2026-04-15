@@ -87,8 +87,8 @@ export default function SemanticCaseSearch() {
       style={{
         display: 'block',
         padding: '24px',
-        background: '#FFFFFF',
-        border: '2px solid #0966C3',
+        background: 'var(--color-surface-0)',
+        border: '2px solid var(--accent-primary)',
         borderRadius: '12px',
         marginBottom: '24px',
       }}
@@ -99,7 +99,7 @@ export default function SemanticCaseSearch() {
           fontSize: '18px',
           fontWeight: '600',
           fontFamily: 'var(--font-heading)',
-          color: '#0f0f0f',
+          color: 'var(--color-text-primary)',
           marginBottom: '8px',
         }}
       >
@@ -139,7 +139,7 @@ export default function SemanticCaseSearch() {
               resize: 'vertical',
             }}
             onFocus={(e) => {
-              e.currentTarget.style.borderColor = isOverLimit ? '#CC1016' : '#0966C3';
+              e.currentTarget.style.borderColor = isOverLimit ? '#CC1016' : 'var(--accent-primary)';
             }}
             onBlur={(e) => {
               e.currentTarget.style.borderColor = isOverLimit ? '#CC1016' : '#D1D5DB';
@@ -166,8 +166,8 @@ export default function SemanticCaseSearch() {
           disabled={isLoading || !description.trim() || isOverLimit}
           style={{
             padding: '12px 24px',
-            background: isLoading || !description.trim() || isOverLimit ? '#CCCCCC' : '#0966C3',
-            color: '#FFFFFF',
+            background: isLoading || !description.trim() || isOverLimit ? '#CCCCCC' : 'var(--accent-primary)',
+            color: 'var(--color-surface-0)',
             fontSize: '14px',
             fontWeight: '600',
             fontFamily: 'var(--font-body)',
@@ -178,12 +178,12 @@ export default function SemanticCaseSearch() {
           }}
           onMouseEnter={(e) => {
             if (!isLoading && description.trim() && !isOverLimit) {
-              e.currentTarget.style.background = '#004182';
+              e.currentTarget.style.background = 'var(--accent-primary-hover)';
             }
           }}
           onMouseLeave={(e) => {
             if (!isLoading && description.trim() && !isOverLimit) {
-              e.currentTarget.style.background = '#0966C3';
+              e.currentTarget.style.background = 'var(--accent-primary)';
             }
           }}
         >
@@ -235,7 +235,7 @@ export default function SemanticCaseSearch() {
                   style={{
                     padding: '16px',
                     background: '#F9FAFB',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '8px',
                   }}
                 >
@@ -255,7 +255,7 @@ export default function SemanticCaseSearch() {
                           fontSize: '14px',
                           fontWeight: '600',
                           fontFamily: 'var(--font-heading)',
-                          color: '#0f0f0f',
+                          color: 'var(--color-text-primary)',
                           marginBottom: '2px',
                         }}
                       >
@@ -277,11 +277,11 @@ export default function SemanticCaseSearch() {
                         display: 'inline-block',
                         padding: '4px 12px',
                         background: '#EDF3FB',
-                        border: '1px solid #0966C3',
+                        border: '1px solid var(--accent-primary)',
                         borderRadius: '6px',
                         fontSize: '12px',
                         fontWeight: '600',
-                        color: '#004182',
+                        color: 'var(--accent-primary-hover)',
                         fontFamily: 'var(--font-mono)',
                       }}
                     >
@@ -359,7 +359,7 @@ export default function SemanticCaseSearch() {
                         style={{
                           padding: '8px 12px',
                           background: '#EDF3FB',
-                          border: '1px solid #0966C3',
+                          border: '1px solid var(--accent-primary)',
                           borderRadius: '6px',
                           fontSize: '12px',
                           fontFamily: 'var(--font-mono)',
@@ -369,7 +369,7 @@ export default function SemanticCaseSearch() {
                           style={{
                             fontSize: '11px',
                             textTransform: 'uppercase',
-                            color: '#004182',
+                            color: 'var(--accent-primary-hover)',
                             fontWeight: '600',
                             marginBottom: '2px',
                           }}
@@ -380,7 +380,7 @@ export default function SemanticCaseSearch() {
                           style={{
                             fontSize: '14px',
                             fontWeight: '600',
-                            color: '#004182',
+                            color: 'var(--accent-primary-hover)',
                           }}
                         >
                           {formatSettlement(result.settlementMedian)}
@@ -410,15 +410,15 @@ export default function SemanticCaseSearch() {
                       display: 'inline-block',
                       fontSize: '13px',
                       fontWeight: '600',
-                      color: '#0966C3',
+                      color: 'var(--accent-primary)',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
                       padding: '4px 0',
                       transition: 'color 0.2s',
                       cursor: 'pointer',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#004182')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#0966C3')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-primary-hover)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--accent-primary)')}
                   >
                     View full report →
                   </Link>

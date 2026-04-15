@@ -56,9 +56,9 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
   return (
     <div>
       {/* Filters */}
-      <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+      <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
         <div style={{ marginBottom: '20px' }}>
-          <h3 style={{ fontSize: '12px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 12px' }}>
+          <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 12px' }}>
             Expert Type
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
@@ -72,10 +72,10 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                     width: '18px',
                     height: '18px',
                     cursor: 'pointer',
-                    accentColor: '#0966C3',
+                    accentColor: 'var(--accent-primary)',
                   }}
                 />
-                <span style={{ fontSize: '14px', color: '#0f0f0f' }}>
+                <span style={{ fontSize: '14px', color: 'var(--color-text-primary)' }}>
                   {expert.type}
                 </span>
               </label>
@@ -85,7 +85,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', marginBottom: '20px' }}>
           <div>
-            <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '6px' }}>
+            <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '6px' }}>
               Circuit
             </label>
             <select
@@ -95,11 +95,11 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                 width: '100%',
                 padding: '10px 12px',
                 height: '40px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 borderRadius: '8px',
                 fontSize: '14px',
-                color: '#0f0f0f',
-                background: '#FFFFFF',
+                color: 'var(--color-text-primary)',
+                background: 'var(--color-surface-0)',
                 fontFamily: 'var(--font-body)',
                 transition: 'border-color 0.2s',
               }}
@@ -114,7 +114,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
           </div>
 
           <div>
-            <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '6px' }}>
+            <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '6px' }}>
               Case Type (NOS)
             </label>
             <select
@@ -124,11 +124,11 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                 width: '100%',
                 padding: '10px 12px',
                 height: '40px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 borderRadius: '8px',
                 fontSize: '14px',
-                color: '#0f0f0f',
-                background: '#FFFFFF',
+                color: 'var(--color-text-primary)',
+                background: 'var(--color-surface-0)',
                 fontFamily: 'var(--font-body)',
                 transition: 'border-color 0.2s',
               }}
@@ -150,9 +150,9 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
               padding: '8px 14px',
               fontSize: '13px',
               fontWeight: 500,
-              color: '#0966C3',
+              color: 'var(--accent-primary)',
               background: 'transparent',
-              border: '1px solid #0966C3',
+              border: '1px solid var(--accent-primary)',
               borderRadius: '6px',
               cursor: 'pointer',
               transition: 'all 0.2s',
@@ -180,8 +180,8 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
             <div
               key={expert.type}
               style={{
-                background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
+                background: 'var(--color-surface-0)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -189,29 +189,29 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
             >
               {/* Header */}
               <div style={{ marginBottom: '20px' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
                   {expert.type}
                 </h3>
-                <p style={{ fontSize: '13px', color: '#4B5563', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
                   {expert.description}
                 </p>
               </div>
 
               {/* Key Stats */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid #E5E7EB' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid var(--border-default)' }}>
                 <div>
-                  <p style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', margin: '0 0 6px' }}>
+                  <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', margin: '0 0 6px' }}>
                     Total Opinions
                   </p>
-                  <p style={{ fontSize: '20px', fontWeight: 600, color: '#0f0f0f', margin: 0 }}>
+                  <p style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
                     {expert.totalOpinions}
                   </p>
                 </div>
                 <div>
-                  <p style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', margin: '0 0 6px' }}>
+                  <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', margin: '0 0 6px' }}>
                     Daubert Challenge Rate
                   </p>
-                  <p style={{ fontSize: '20px', fontWeight: 600, color: '#0f0f0f', margin: 0 }}>
+                  <p style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
                     {expert.daubertChallengeRate}%
                   </p>
                 </div>
@@ -220,45 +220,45 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
               {/* Daubert Success Rate Bar */}
               <div style={{ marginBottom: '20px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <span style={{ fontSize: '12px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase' }}>
+                  <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>
                     Survival Rate (Post-Challenge)
                   </span>
                   <span style={{
                     fontSize: '16px',
                     fontWeight: 600,
-                    color: successRate >= 85 ? '#057642' : successRate >= 75 ? '#0966C3' : '#C37D16',
+                    color: successRate >= 85 ? '#057642' : successRate >= 75 ? 'var(--accent-primary)' : '#C37D16',
                   }}>
                     {successRate}%
                   </span>
                 </div>
-                <div style={{ height: '8px', background: '#E5E7EB', borderRadius: '4px', overflow: 'hidden' }}>
+                <div style={{ height: '8px', background: 'var(--border-default)', borderRadius: '4px', overflow: 'hidden' }}>
                   <div
                     style={{
                       height: '100%',
                       width: `${Math.min(successRate, 100)}%`,
-                      background: successRate >= 85 ? '#057642' : successRate >= 75 ? '#0966C3' : '#C37D16',
+                      background: successRate >= 85 ? '#057642' : successRate >= 75 ? 'var(--accent-primary)' : '#C37D16',
                       borderRadius: '4px',
                       transition: 'width 0.3s ease',
                     }}
                   />
                 </div>
-                <p style={{ fontSize: '11px', color: '#4B5563', margin: '6px 0 0', lineHeight: 1.4 }}>
+                <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '6px 0 0', lineHeight: 1.4 }}>
                   {expert.challengeSuccessRate}% of challenged opinions excluded
                 </p>
               </div>
 
               {/* Exclusion Grounds */}
               <div style={{ marginBottom: '16px' }}>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', margin: '0 0 8px' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', margin: '0 0 8px' }}>
                   Top Exclusion Grounds
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   {topExclusions.map((ground, idx) => (
                     <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontSize: '13px', color: '#0f0f0f' }}>
+                      <span style={{ fontSize: '13px', color: 'var(--color-text-primary)' }}>
                         {ground.reason}
                       </span>
-                      <span style={{ fontSize: '12px', fontWeight: 600, color: '#4B5563' }}>
+                      <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
                         {ground.percentage}%
                       </span>
                     </div>
@@ -268,13 +268,13 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
 
               {/* Admission Grounds */}
               <div style={{ marginBottom: '16px' }}>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', margin: '0 0 8px' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', margin: '0 0 8px' }}>
                   Top Admission Grounds
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   {topAdmissions.map((ground, idx) => (
                     <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontSize: '13px', color: '#0f0f0f' }}>
+                      <span style={{ fontSize: '13px', color: 'var(--color-text-primary)' }}>
                         {ground.reason}
                       </span>
                       <span style={{ fontSize: '12px', fontWeight: 600, color: '#057642' }}>
@@ -287,7 +287,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
 
               {/* Sample Opinions */}
               <div style={{ marginBottom: '16px' }}>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', margin: '0 0 8px' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', margin: '0 0 8px' }}>
                   Sample Opinions
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -309,7 +309,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                           style={{
                             fontSize: '13px',
                             fontWeight: 500,
-                            color: '#0966C3',
+                            color: 'var(--accent-primary)',
                             textDecoration: 'none',
                             wordBreak: 'break-word',
                           }}
@@ -324,7 +324,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                         </a>
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <p style={{ fontSize: '11px', color: '#4B5563', margin: 0, fontStyle: 'italic' }}>
+                        <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: 0, fontStyle: 'italic' }}>
                           {opinion.citation}
                         </p>
                         <span style={{
@@ -352,9 +352,9 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                     padding: '10px 12px',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     background: 'transparent',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '6px',
                     cursor: 'pointer',
                     textAlign: 'left',
@@ -388,7 +388,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                 </button>
 
                 {expandedCircuits.has(expert.type) && (
-                  <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px solid #E5E7EB' }}>
+                  <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px solid var(--border-default)' }}>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
                       {allCircuits.map((circuit) => {
                         const circuitData = expert.byCircuit[circuit];
@@ -396,16 +396,16 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                         const survivalRate = total > 0 ? Math.round(((total - circuitData.excluded) / total) * 100) : 0;
 
                         return (
-                          <div key={circuit} style={{ fontSize: '12px', color: '#0f0f0f', padding: '8px 10px', background: '#F7F8FA', borderRadius: '6px' }}>
+                          <div key={circuit} style={{ fontSize: '12px', color: 'var(--color-text-primary)', padding: '8px 10px', background: 'var(--color-surface-1)', borderRadius: '6px' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
                               <span style={{ fontWeight: 600 }}>
                                 Circuit {circuit === 'DC' ? 'D.C.' : circuit === 'Federal' ? 'Federal' : circuit}
                               </span>
-                              <span style={{ color: '#4B5563' }}>
+                              <span style={{ color: 'var(--color-text-secondary)' }}>
                                 {survivalRate}%
                               </span>
                             </div>
-                            <div style={{ fontSize: '11px', color: '#4B5563', lineHeight: 1.4 }}>
+                            <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', lineHeight: 1.4 }}>
                               {circuitData.admitted} admitted, {circuitData.excluded} excluded of {total}
                             </div>
                           </div>
@@ -422,8 +422,8 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
 
       {/* No Results */}
       {filteredExperts.length === 0 && (
-        <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-          <p style={{ fontSize: '16px', color: '#4B5563', margin: '0 0 12px' }}>
+        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: '0 0 12px' }}>
             No experts match the selected filters.
           </p>
           <button
@@ -432,9 +432,9 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
               padding: '10px 16px',
               fontSize: '14px',
               fontWeight: 600,
-              color: '#0966C3',
+              color: 'var(--accent-primary)',
               background: 'transparent',
-              border: '1px solid #0966C3',
+              border: '1px solid var(--accent-primary)',
               borderRadius: '6px',
               cursor: 'pointer',
               transition: 'all 0.2s',

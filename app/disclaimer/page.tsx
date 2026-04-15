@@ -32,7 +32,7 @@ const jsonLd = {
 
 export default function DisclaimerPage() {
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
       <style>{`
         a[data-link-type="teal"] {
           color: #004182;
@@ -51,7 +51,7 @@ export default function DisclaimerPage() {
       {/* Header */}
       <div
         style={{
-          backgroundColor: '#0966C3',
+          backgroundColor: 'var(--accent-primary)',
           padding: '64px 24px',
         }}
       >
@@ -60,8 +60,8 @@ export default function DisclaimerPage() {
             <span style={{
               display: 'inline-block',
               padding: '6px 12px',
-              backgroundColor: '#0966C3',
-              color: '#FFFFFF',
+              backgroundColor: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               fontSize: '11px',
               fontWeight: 600,
               letterSpacing: '0.08em',
@@ -76,7 +76,7 @@ export default function DisclaimerPage() {
             style={{
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 600,
-              color: '#FFFFFF',
+              color: 'var(--color-surface-0)',
               fontFamily: 'var(--font-display)',
               letterSpacing: '-1px',
               marginBottom: 12,
@@ -109,14 +109,14 @@ export default function DisclaimerPage() {
       </div>
 
       {/* Breadcrumb */}
-      <div style={{ borderBottom: '1px solid #E5E7EB', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: '#F7F8FA' }}>
+      <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
-            <a href="/" data-link-type="teal" style={{ color: '#004182' }}>
+            <a href="/" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)' }}>
               Home
             </a>
-            <span style={{ color: '#4B5563' }}>/</span>
-            <span style={{ color: '#4B5563' }}>Disclaimer</span>
+            <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
+            <span style={{ color: 'var(--color-text-secondary)' }}>Disclaimer</span>
           </nav>
         </div>
       </div>
@@ -132,14 +132,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               Not Legal Advice
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -155,14 +155,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               No Attorney-Client Relationship
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -178,14 +178,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               Data Sources and Public Records
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -194,7 +194,7 @@ export default function DisclaimerPage() {
             <ul style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               marginTop: 12,
               paddingLeft: '24px',
@@ -207,7 +207,7 @@ export default function DisclaimerPage() {
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
               marginTop: 12,
@@ -224,14 +224,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               Historical Data, Not Predictions
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -247,14 +247,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               Data Limitations and Accuracy
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -264,7 +264,7 @@ export default function DisclaimerPage() {
             <ul style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               marginTop: 12,
               paddingLeft: '24px',
@@ -282,7 +282,7 @@ export default function DisclaimerPage() {
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
               marginTop: 12,
@@ -299,14 +299,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               No Guarantees About Outcomes
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -316,7 +316,7 @@ export default function DisclaimerPage() {
             <ul style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               marginTop: 12,
               paddingLeft: '24px',
@@ -334,7 +334,7 @@ export default function DisclaimerPage() {
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
               marginTop: 12,
@@ -351,14 +351,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               Always Consult a Licensed Attorney
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -374,14 +374,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               Liability Limitations
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -397,18 +397,18 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               Privacy & Data Handling
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
-              We respect your privacy. We do not store information about the cases you research or the queries you make. All searches are performed privately and encrypted. We do not sell, trade, or share your research data with third parties. For complete details on our privacy practices, please see our <a href="/privacy" data-link-type="teal" style={{ color: '#004182', textDecoration: 'none' }}>Privacy Policy</a>.
+              We respect your privacy. We do not store information about the cases you research or the queries you make. All searches are performed privately and encrypted. We do not sell, trade, or share your research data with third parties. For complete details on our privacy practices, please see our <a href="/privacy" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>Privacy Policy</a>.
             </p>
           </section>
 
@@ -420,14 +420,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               Changes to This Disclaimer
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -443,14 +443,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               Questions About This Disclaimer?
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -463,14 +463,14 @@ export default function DisclaimerPage() {
               paddingTop: '16px',
               paddingBottom: '16px',
               borderRadius: '12px',
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Email:</strong> <a href="mailto:support@mycasevalues.com" data-link-type="teal" style={{ color: '#004182', textDecoration: 'none' }}>support@mycasevalues.com</a>
+                <strong>Email:</strong> <a href="mailto:support@mycasevalues.com" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>support@mycasevalues.com</a>
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Website:</strong> <a href="https://mycasevalues.com" data-link-type="teal" style={{ color: '#004182', textDecoration: 'none' }}>https://mycasevalues.com</a>
+                <strong>Website:</strong> <a href="https://mycasevalues.com" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>https://mycasevalues.com</a>
               </p>
             </div>
           </section>
@@ -483,14 +483,14 @@ export default function DisclaimerPage() {
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}>
               Related Legal Pages
             </h2>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
@@ -503,14 +503,14 @@ export default function DisclaimerPage() {
               paddingTop: '16px',
               paddingBottom: '16px',
               borderRadius: '12px',
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Terms of Service:</strong> <a href="/terms" data-link-type="teal" style={{ color: '#004182', textDecoration: 'none' }}>Read our Terms of Service</a> for rules governing use of MyCaseValue and our limitations of liability.
+                <strong>Terms of Service:</strong> <a href="/terms" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>Read our Terms of Service</a> for rules governing use of MyCaseValue and our limitations of liability.
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Privacy Policy:</strong> <a href="/privacy" data-link-type="teal" style={{ color: '#004182', textDecoration: 'none' }}>Review our Privacy Policy</a> to understand how we collect, use, and protect your data.
+                <strong>Privacy Policy:</strong> <a href="/privacy" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>Review our Privacy Policy</a> to understand how we collect, use, and protect your data.
               </p>
             </div>
           </section>
@@ -519,14 +519,14 @@ export default function DisclaimerPage() {
           <section style={{
             padding: '32px',
             borderRadius: '12px',
-            border: '2px solid #0966C3',
+            border: '2px solid var(--accent-primary)',
             backgroundColor: '#FFF3F4',
           }}>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
               margin: 0,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
             }}>
@@ -535,7 +535,7 @@ export default function DisclaimerPage() {
             <ul style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-body)',
               marginTop: 12,
               paddingLeft: '24px',
@@ -552,7 +552,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               margin: '12px 0 0 0',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-body)',
             }}>
               If you do not agree with this disclaimer, you should not use MyCaseValue.

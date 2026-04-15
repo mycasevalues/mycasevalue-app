@@ -219,14 +219,14 @@ export async function generateMetadata({
 
 const categoryColors: Record<string, string> = {
   work: '#000000',
-  injury: '#0966C3',
+  injury: 'var(--accent-primary)',
   consumer: '#2563EB',
-  rights: '#0966C3',
+  rights: 'var(--accent-primary)',
   money: '#D97706',
   housing: '#059669',
   medical: '#DB2777',
   family: '#EC4899',
-  gov: '#4B5563',
+  gov: 'var(--color-text-secondary)',
   education: '#0891B2',
 };
 
@@ -1045,7 +1045,7 @@ async function CategoryPage({
                 {entries.map(([circuit, rate]) => {
                   const wr = rate as number;
                   const diff = wr - nationalAvg;
-                  const color = wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#0966C3';
+                  const color = wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : 'var(--accent-primary)';
                   return (
                     <div key={circuit} style={{
                       padding: '16px', borderRadius: 2, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)',

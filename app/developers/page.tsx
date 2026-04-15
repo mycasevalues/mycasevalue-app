@@ -316,7 +316,7 @@ const ENDPOINTS: Endpoint[] = [
 
 const methodColors: Record<string, string> = {
   GET: '#059669',
-  POST: '#0966C3',
+  POST: 'var(--accent-primary)',
   PUT: '#B86E00',
   DELETE: '#DC2626',
 };
@@ -354,25 +354,25 @@ const rateLimitTiers = [
 
 export default function DevelopersPage() {
   return (
-    <div style={{ minHeight: '100vh', background: '#F7F8FA', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        input:focus, select:focus, textarea:focus { border-color: #0966C3 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus, select:focus, textarea:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
         code { font-family: var(--font-mono); }
         pre { font-family: var(--font-mono); }
       `}</style>
 
       {/* Hero Section */}
-      <div style={{ background: '#0966C3', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
+      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div
             style={{
               background: 'rgba(10, 102, 194, 0.15)',
               padding: '6px 14px',
               borderRadius: '12px',
-              border: '1px solid #0966C3',
+              border: '1px solid var(--accent-primary)',
               display: 'inline-block',
               marginBottom: '16px',
             }}
@@ -381,7 +381,7 @@ export default function DevelopersPage() {
               style={{
                 fontSize: '12px',
                 fontWeight: 600,
-                color: '#0966C3',
+                color: 'var(--accent-primary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontFamily: 'var(--font-heading)',
@@ -396,7 +396,7 @@ export default function DevelopersPage() {
                 style={{
                   fontSize: '36px',
                   fontWeight: 700,
-                  color: '#FFFFFF',
+                  color: 'var(--color-surface-0)',
                   margin: '0 0 8px',
                   fontFamily: 'var(--font-heading)',
                 }}
@@ -425,7 +425,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '24px',
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -461,17 +461,17 @@ export default function DevelopersPage() {
               <div
                 key={idx}
                 style={{
-                  background: '#FFFFFF',
+                  background: 'var(--color-surface-0)',
                   borderRadius: '12px',
                   padding: '16px',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
                 }}
               >
                 <p
                   style={{
                     fontSize: '11px',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     fontWeight: 600,
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -484,7 +484,7 @@ export default function DevelopersPage() {
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '13px',
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     wordBreak: 'break-word',
                     fontWeight: 500,
                   }}
@@ -502,7 +502,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '24px',
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -514,16 +514,16 @@ export default function DevelopersPage() {
             <div
               key={idx}
               style={{
-                background: '#FFFFFF',
+                background: 'var(--color-surface-0)',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 overflow: 'hidden',
                 marginBottom: '16px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
               }}
             >
               {/* Endpoint Header */}
-              <div style={{ padding: '20px 24px', borderBottom: '1px solid #E5E7EB' }}>
+              <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-default)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
                   <span
                     style={{
@@ -532,7 +532,7 @@ export default function DevelopersPage() {
                       padding: '4px 10px',
                       borderRadius: '6px',
                       backgroundColor: `${methodColors[endpoint.method]}`,
-                      color: '#FFFFFF',
+                      color: 'var(--color-surface-0)',
                       minWidth: '45px',
                       textAlign: 'center',
                       fontFamily: 'var(--font-mono)',
@@ -545,8 +545,8 @@ export default function DevelopersPage() {
                     style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: '13px',
-                      color: '#0f0f0f',
-                      backgroundColor: '#F8F9FA',
+                      color: 'var(--color-text-primary)',
+                      backgroundColor: 'var(--color-surface-1)',
                       padding: '4px 8px',
                       borderRadius: '4px',
                       wordBreak: 'break-all',
@@ -556,17 +556,17 @@ export default function DevelopersPage() {
                     {endpoint.path}
                   </code>
                 </div>
-                <p style={{ fontSize: '13px', color: '#4B5563', margin: '0' }}>{endpoint.description}</p>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0' }}>{endpoint.description}</p>
               </div>
 
               {/* Parameters */}
               {endpoint.params.length > 0 && (
-                <div style={{ padding: '20px 24px', borderBottom: '1px solid #E5E7EB' }}>
+                <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-default)' }}>
                   <h4
                     style={{
                       fontSize: '13px',
                       fontWeight: 600,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       margin: '0 0 12px',
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
@@ -583,7 +583,7 @@ export default function DevelopersPage() {
                             style={{
                               fontFamily: 'var(--font-mono)',
                               fontSize: '12px',
-                              color: '#0966C3',
+                              color: 'var(--accent-primary)',
                               fontWeight: 600,
                             }}
                           >
@@ -592,7 +592,7 @@ export default function DevelopersPage() {
                           <span
                             style={{
                               fontSize: '11px',
-                              color: '#666666',
+                              color: 'var(--color-text-secondary)',
                               backgroundColor: '#F0F0F0',
                               padding: '2px 6px',
                               borderRadius: '3px',
@@ -615,7 +615,7 @@ export default function DevelopersPage() {
                             </span>
                           )}
                         </div>
-                        <p style={{ color: '#4B5563', margin: '0', fontSize: '12px' }}>{param.description}</p>
+                        <p style={{ color: 'var(--color-text-secondary)', margin: '0', fontSize: '12px' }}>{param.description}</p>
                       </div>
                     ))}
                   </div>
@@ -628,7 +628,7 @@ export default function DevelopersPage() {
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     margin: '0 0 12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -663,7 +663,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '24px',
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -672,14 +672,14 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: '#FFFFFF',
+              background: 'var(--color-surface-0)',
               borderRadius: '12px',
               padding: '24px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
           >
-            <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 16px' }}>
+            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px' }}>
               All API requests require authentication using a Bearer token in the Authorization header.
             </p>
             <pre
@@ -698,7 +698,7 @@ export default function DevelopersPage() {
             >
               {`Authorization: Bearer YOUR_API_KEY`}
             </pre>
-            <p style={{ fontSize: '13px', color: '#4B5563', margin: 0 }}>
+            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0 }}>
               To get an API key, visit your account settings or request access below. API keys should never be shared or committed to version control.
             </p>
           </div>
@@ -710,7 +710,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '24px',
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -726,7 +726,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '24px',
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -735,9 +735,9 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: '#FFFFFF',
+              background: 'var(--color-surface-0)',
               borderRadius: '12px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               overflow: 'hidden',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
@@ -751,17 +751,17 @@ export default function DevelopersPage() {
                 }}
               >
                 <thead>
-                  <tr style={{ borderBottom: '1px solid #E5E7EB', background: '#F8F9FA' }}>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: '#0f0f0f' }}>
+                  <tr style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                       Tier
                     </th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: '#0f0f0f' }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                       Requests/Min
                     </th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: '#0f0f0f' }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                       Requests/Day
                     </th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: '#0f0f0f' }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                       Pricing
                     </th>
                   </tr>
@@ -771,21 +771,21 @@ export default function DevelopersPage() {
                     <tr
                       key={idx}
                       style={{
-                        borderBottom: idx < rateLimitTiers.length - 1 ? '1px solid #E5E7EB' : 'none',
-                        background: idx % 2 === 0 ? '#FFFFFF' : '#F8F9FA',
+                        borderBottom: idx < rateLimitTiers.length - 1 ? '1px solid var(--border-default)' : 'none',
+                        background: idx % 2 === 0 ? 'var(--color-surface-0)' : 'var(--color-surface-1)',
                       }}
                     >
-                      <td style={{ padding: '12px 16px', color: '#0f0f0f', fontWeight: 500 }}>{tier.name}</td>
-                      <td style={{ padding: '12px 16px', color: '#4B5563' }}>{tier.requestsPerMin}</td>
-                      <td style={{ padding: '12px 16px', color: '#4B5563' }}>{tier.requestsPerDay}</td>
-                      <td style={{ padding: '12px 16px', color: '#4B5563' }}>{tier.price}</td>
+                      <td style={{ padding: '12px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>{tier.name}</td>
+                      <td style={{ padding: '12px 16px', color: 'var(--color-text-secondary)' }}>{tier.requestsPerMin}</td>
+                      <td style={{ padding: '12px 16px', color: 'var(--color-text-secondary)' }}>{tier.requestsPerDay}</td>
+                      <td style={{ padding: '12px 16px', color: 'var(--color-text-secondary)' }}>{tier.price}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
-          <p style={{ fontSize: '12px', color: '#4B5563', marginTop: '16px', margin: '16px 0 0' }}>
+          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px', margin: '16px 0 0' }}>
             Rate limit status is included in response headers: <code style={{ fontFamily: 'var(--font-mono)' }}>X-RateLimit-Remaining</code> and{' '}
             <code style={{ fontFamily: 'var(--font-mono)' }}>X-RateLimit-Reset</code>.
           </p>
@@ -797,7 +797,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '24px',
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -806,9 +806,9 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: '#FFFFFF',
+              background: 'var(--color-surface-0)',
               borderRadius: '12px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
@@ -822,7 +822,7 @@ export default function DevelopersPage() {
                     alignItems: 'flex-start',
                     gap: '12px',
                     padding: '12px',
-                    backgroundColor: '#F8F9FA',
+                    backgroundColor: 'var(--color-surface-1)',
                     borderRadius: '6px',
                     borderLeft: `3px solid ${error.code >= 500 ? '#DC2626' : error.code >= 400 ? '#F59E0B' : '#059669'}`,
                   }}
@@ -832,13 +832,13 @@ export default function DevelopersPage() {
                       fontFamily: 'var(--font-mono)',
                       fontSize: '12px',
                       fontWeight: 700,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       minWidth: '45px',
                     }}
                   >
                     {error.code}
                   </code>
-                  <p style={{ fontSize: '12px', color: '#4B5563', margin: 0 }}>{error.message}</p>
+                  <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>{error.message}</p>
                 </div>
               ))}
             </div>
@@ -851,7 +851,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '24px',
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -860,15 +860,15 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: '#FFFFFF',
+              background: 'var(--color-surface-0)',
               borderRadius: '12px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               overflow: 'hidden',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
           >
             <div style={{ padding: '24px' }}>
-              <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 20px' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 20px' }}>
                 Test API endpoints directly in your browser. Requires a valid API key.
               </p>
               {/* APISandbox will be rendered here */}
@@ -883,7 +883,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '24px',
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -892,7 +892,7 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: 'linear-gradient(135deg, #0966C3 0%, #004182 100%)',
+              background: 'linear-gradient(135deg, var(--accent-primary) 0%, #004182 100%)',
               borderRadius: '12px',
               padding: '32px',
               textAlign: 'center',
@@ -903,7 +903,7 @@ export default function DevelopersPage() {
               style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: '#FFFFFF',
+                color: 'var(--color-surface-0)',
                 margin: '0 0 12px',
                 fontFamily: 'var(--font-heading)',
               }}
@@ -917,8 +917,8 @@ export default function DevelopersPage() {
               href="/solutions/enterprise"
               style={{
                 display: 'inline-block',
-                backgroundColor: '#FFFFFF',
-                color: '#0966C3',
+                backgroundColor: 'var(--color-surface-0)',
+                color: 'var(--accent-primary)',
                 padding: '12px 32px',
                 borderRadius: '8px',
                 textDecoration: 'none',

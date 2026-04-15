@@ -60,9 +60,9 @@ export default function SOLCalculatorPage() {
     <>
       <style>{`
         .sol-select {
-          height: 48px; width: 100%; border: 1px solid #E5E7EB; border-radius: 12px;
-          padding: 0 36px 0 16px; font-family: var(--font-body); font-size: 14px; color: #0f0f0f;
-          background: #FFFFFF; appearance: none;
+          height: 48px; width: 100%; border: 1px solid var(--border-default); border-radius: 12px;
+          padding: 0 36px 0 16px; font-family: var(--font-body); font-size: 14px; color: var(--color-text-primary);
+          background: var(--color-surface-0); appearance: none;
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
           background-repeat: no-repeat; background-position: right 12px center; cursor: pointer;
           transition: border-color 0.2s ease;
@@ -70,18 +70,18 @@ export default function SOLCalculatorPage() {
         .sol-select:hover { border-color: #004182; }
         .sol-select:focus { outline: none; border-color: #004182; box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         .sol-input {
-          height: 48px; width: 100%; border: 1px solid #E5E7EB; border-radius: 12px;
-          padding: 0 16px; font-family: var(--font-body); font-size: 14px; color: #0f0f0f;
-          background: #FFFFFF; transition: border-color 0.2s ease;
+          height: 48px; width: 100%; border: 1px solid var(--border-default); border-radius: 12px;
+          padding: 0 16px; font-family: var(--font-body); font-size: 14px; color: var(--color-text-primary);
+          background: var(--color-surface-0); transition: border-color 0.2s ease;
         }
         .sol-input:focus { outline: none; border-color: #004182; box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         @keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
       `}</style>
 
       {/* Header */}
-      <header style={{ background: '#0966C3', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
+      <header style={{ background: 'var(--accent-primary)', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: '#0966C3', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
+          <div style={{ display: 'inline-block', background: 'var(--accent-primary)', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
             FREE TOOL
           </div>
           <h1 style={{ color: '#FFF', fontSize: 'clamp(28px, 7vw, 40px)', fontWeight: 600, margin: '0 0 12px', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
@@ -94,29 +94,29 @@ export default function SOLCalculatorPage() {
       </header>
 
       {/* Breadcrumb */}
-      <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid #E5E7EB', fontSize: 13, fontFamily: 'var(--font-body)' }}>
+      <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
-          <Link href="/" style={{ color: '#0966C3', textDecoration: 'none' }}>Home</Link>
-          <span style={{ color: '#E5E7EB', margin: '0 8px' }}>/</span>
-          <Link href="/calculator" style={{ color: '#0966C3', textDecoration: 'none' }}>Calculator</Link>
-          <span style={{ color: '#E5E7EB', margin: '0 8px' }}>/</span>
-          <span style={{ color: '#0f0f0f', fontWeight: 600 }}>Statute of Limitations</span>
+          <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Home</Link>
+          <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
+          <Link href="/calculator" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Calculator</Link>
+          <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
+          <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>Statute of Limitations</span>
         </div>
       </nav>
 
       {/* Main Content */}
-      <div style={{ background: '#F7F8FA', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
+      <div style={{ background: 'var(--color-surface-1)', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
 
           {/* Input Form */}
-          <div style={{ background: '#FFF', border: '1px solid #E5E7EB', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+          <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
               Check Your Deadline
             </h2>
 
             <div style={{ display: 'grid', gap: 16 }}>
               <div>
-                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
                   Case Type *
                 </label>
                 <select
@@ -138,7 +138,7 @@ export default function SOLCalculatorPage() {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
                   Date of Incident (optional — for countdown)
                 </label>
                 <input
@@ -156,17 +156,17 @@ export default function SOLCalculatorPage() {
             <div style={{ display: 'grid', gap: 24, animation: 'slideUp 0.4s ease-out' }}>
 
               {/* SOL Period Card */}
-              <div style={{ background: '#FFF', border: '1px solid #E5E7EB', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
-                <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
+              <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
+                <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
                   Federal Statute of Limitations
                 </div>
-                <div style={{ fontSize: 'clamp(48px, 10vw, 64px)', fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-display)', lineHeight: 1 }}>
+                <div style={{ fontSize: 'clamp(48px, 10vw, 64px)', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-display)', lineHeight: 1 }}>
                   {formatPeriod(rule.years)}
                 </div>
-                <div style={{ marginTop: 12, display: 'inline-block', padding: '6px 14px', background: '#EDF3FB', borderRadius: 8, fontSize: 14, fontWeight: 600, color: '#004182', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ marginTop: 12, display: 'inline-block', padding: '6px 14px', background: '#EDF3FB', borderRadius: 8, fontSize: 14, fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>
                   {rule.usc}
                 </div>
-                <div style={{ marginTop: 12, fontSize: 14, color: '#0f0f0f', fontFamily: 'var(--font-body)' }}>
+                <div style={{ marginTop: 12, fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>
                   {typeInfo.label}
                 </div>
               </div>
@@ -178,7 +178,7 @@ export default function SOLCalculatorPage() {
                   border: `1px solid ${isExpired ? '#CC1016' : daysRemaining <= 90 ? '#D97706' : '#057642'}`,
                   borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center',
                 }}>
-                  <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
+                  <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
                     {isExpired ? 'DEADLINE EXPIRED' : 'Days Remaining'}
                   </div>
                   <div style={{
@@ -188,12 +188,12 @@ export default function SOLCalculatorPage() {
                   }}>
                     {isExpired ? '0' : daysRemaining.toLocaleString()}
                   </div>
-                  <div style={{ marginTop: 8, fontSize: 13, color: '#4B5563' }}>
+                  <div style={{ marginTop: 8, fontSize: 13, color: 'var(--color-text-secondary)' }}>
                     Deadline: {deadlineDate}
                   </div>
                   {/* Visual progress bar */}
                   {!isExpired && (
-                    <div style={{ marginTop: 16, height: 8, background: '#E5E7EB', borderRadius: 4, overflow: 'hidden' }}>
+                    <div style={{ marginTop: 16, height: 8, background: 'var(--border-default)', borderRadius: 4, overflow: 'hidden' }}>
                       <div style={{
                         height: '100%',
                         width: `${Math.max(5, Math.min(100, (daysRemaining / (rule.years * 365)) * 100))}%`,
@@ -207,24 +207,24 @@ export default function SOLCalculatorPage() {
               )}
 
               {/* Triggering Event */}
-              <div style={{ background: '#FFF', border: '1px solid #E5E7EB', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
-                <h3 style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
+              <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
+                <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
                   Key Triggering Event
                 </h3>
-                <p style={{ fontSize: 14, color: '#0f0f0f', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)', padding: '12px 16px', background: '#FAFBFC', borderRadius: 8, border: '1px solid #E5E7EB' }}>
+                <p style={{ fontSize: 14, color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)', padding: '12px 16px', background: '#FAFBFC', borderRadius: 8, border: '1px solid var(--border-default)' }}>
                   {rule.trigger}
                 </p>
               </div>
 
               {/* Tolling Exceptions */}
-              <div style={{ background: '#FFF', border: '1px solid #E5E7EB', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
-                <h3 style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
+              <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
+                <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
                   Common Tolling Exceptions
                 </h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                   {rule.tolling.map((t, i) => (
                     <span key={i} style={{
-                      padding: '6px 14px', background: '#EDF3FB', color: '#004182', borderRadius: 20,
+                      padding: '6px 14px', background: '#EDF3FB', color: 'var(--accent-primary-hover)', borderRadius: 20,
                       fontSize: 12, fontWeight: 500, fontFamily: 'var(--font-body)',
                     }}>
                       {t}

@@ -13,7 +13,7 @@ const FEATURES = [
         <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
       </svg>
     ),
-    color: '#0966C3',
+    color: 'var(--accent-primary)',
     bg: '#E8F4FD',
   },
   {
@@ -90,7 +90,7 @@ export default function LegalDataPage() {
           padding: '4px 14px',
           borderRadius: 20,
           background: '#E8F4FD',
-          color: '#0966C3',
+          color: 'var(--accent-primary)',
           fontSize: 13,
           fontWeight: 600,
           marginBottom: 16,
@@ -101,14 +101,14 @@ export default function LegalDataPage() {
           fontFamily: 'var(--font-inter, Inter, sans-serif)',
           fontSize: 40,
           fontWeight: 700,
-          color: '#0f0f0f',
+          color: 'var(--color-text-primary)',
           margin: '0 0 16px',
           lineHeight: 1.2,
         }}>
           Case Outcomes Meet Legal Research
         </h1>
         <p style={{
-          color: '#4B5563',
+          color: 'var(--color-text-secondary)',
           fontSize: 17,
           maxWidth: 640,
           margin: '0 auto',
@@ -142,10 +142,10 @@ export default function LegalDataPage() {
                 }}>
                   {feat.icon}
                 </div>
-                <h2 style={{ fontSize: 18, fontWeight: 600, color: '#0f0f0f', margin: '0 0 6px' }}>
+                <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 6px' }}>
                   {feat.title}
                 </h2>
-                <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.5, margin: 0 }}>
+                <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
                   {feat.description}
                 </p>
                 <div style={{ marginTop: 12, fontSize: 13, fontWeight: 600, color: feat.color }}>
@@ -159,10 +159,10 @@ export default function LegalDataPage() {
 
       {/* -- How It Enhances Your Research -- */}
       <div style={{ marginBottom: 56 }}>
-        <h2 style={{ fontSize: 26, fontWeight: 700, color: '#0f0f0f', marginBottom: 8, textAlign: 'center' }}>
+        <h2 style={{ fontSize: 26, fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: 8, textAlign: 'center' }}>
           How Legal Data Powers Better Outcomes
         </h2>
-        <p style={{ fontSize: 15, color: '#4B5563', textAlign: 'center', maxWidth: 560, margin: '0 auto 28px', lineHeight: 1.6 }}>
+        <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', textAlign: 'center', maxWidth: 560, margin: '0 auto 28px', lineHeight: 1.6 }}>
           The legal data integration enriches every part of MyCaseValue — from case type pages to judge profiles to your exported reports.
         </p>
         <div style={{
@@ -176,15 +176,15 @@ export default function LegalDataPage() {
               style={{
                 padding: '24px',
                 borderRadius: 16,
-                border: '1px solid #E5E7EB',
-                background: '#FFFFFF',
+                border: '1px solid var(--border-default)',
+                background: 'var(--color-surface-0)',
               }}
             >
               <div style={{ fontSize: 28, marginBottom: 12 }}>{uc.icon}</div>
-              <div style={{ fontSize: 15, fontWeight: 600, color: '#0f0f0f', marginBottom: 6 }}>
+              <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 6 }}>
                 {uc.audience}
               </div>
-              <div style={{ fontSize: 13, color: '#4B5563', lineHeight: 1.6 }}>
+              <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                 {uc.description}
               </div>
             </div>
@@ -194,10 +194,10 @@ export default function LegalDataPage() {
 
       {/* -- Data sources -- */}
       <div style={{ marginBottom: 56 }}>
-        <h2 style={{ fontSize: 22, fontWeight: 600, color: '#0f0f0f', marginBottom: 8, textAlign: 'center' }}>
+        <h2 style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, textAlign: 'center' }}>
           7 Integrated Data Sources
         </h2>
-        <p style={{ fontSize: 14, color: '#4B5563', textAlign: 'center', maxWidth: 480, margin: '0 auto 20px' }}>
+        <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', textAlign: 'center', maxWidth: 480, margin: '0 auto 20px' }}>
           All indexed, cross-referenced, and searchable from a single interface.
         </p>
         <div style={{
@@ -211,8 +211,8 @@ export default function LegalDataPage() {
               style={{
                 padding: '16px 20px',
                 borderRadius: 12,
-                border: '1px solid #E5E7EB',
-                background: '#FFFFFF',
+                border: '1px solid var(--border-default)',
+                background: 'var(--color-surface-0)',
               }}
             >
               <div style={{
@@ -223,17 +223,17 @@ export default function LegalDataPage() {
               }}>
                 {src.name}
               </div>
-              <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{src.type}</div>
+              <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{src.type}</div>
               <div style={{
                 fontSize: 20,
                 fontWeight: 700,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-mono, monospace)',
                 marginTop: 4,
               }}>
                 {src.records}
               </div>
-              <div style={{ fontSize: 11, color: '#9CA3AF', marginBottom: 6 }}>records</div>
+              <div style={{ fontSize: 11, color: 'var(--color-text-muted)', marginBottom: 6 }}>records</div>
               <div style={{ fontSize: 12, color: '#6B7280', lineHeight: 1.5 }}>
                 {src.description}
               </div>
@@ -250,18 +250,18 @@ export default function LegalDataPage() {
         border: '1px solid #D4E4F7',
         marginBottom: 40,
       }}>
-        <h3 style={{ fontSize: 18, fontWeight: 600, color: '#0f0f0f', margin: '0 0 12px' }}>
+        <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
           Coming Soon to the Research Hub
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
           <div style={{ fontSize: 14, color: '#374151' }}>
-            <strong style={{ color: '#0966C3' }}>Regulatory Alerts</strong> — Get notified when Federal Register rulemaking affects your case types
+            <strong style={{ color: 'var(--accent-primary)' }}>Regulatory Alerts</strong> — Get notified when Federal Register rulemaking affects your case types
           </div>
           <div style={{ fontSize: 14, color: '#374151' }}>
-            <strong style={{ color: '#0966C3' }}>Citation-Backed Reports</strong> — PDF exports with the legal landscape section showing relevant precedents
+            <strong style={{ color: 'var(--accent-primary)' }}>Citation-Backed Reports</strong> — PDF exports with the legal landscape section showing relevant precedents
           </div>
           <div style={{ fontSize: 14, color: '#374151' }}>
-            <strong style={{ color: '#0966C3' }}>Case Page Integration</strong> — Related regulations and landmark precedents on every case type page
+            <strong style={{ color: 'var(--accent-primary)' }}>Case Page Integration</strong> — Related regulations and landmark precedents on every case type page
           </div>
         </div>
       </div>
@@ -270,24 +270,24 @@ export default function LegalDataPage() {
       <div style={{
         textAlign: 'center',
         padding: '40px 24px',
-        background: '#0966C3',
+        background: 'var(--accent-primary)',
         borderRadius: 16,
-        color: '#FFFFFF',
+        color: 'var(--color-surface-0)',
       }}>
-        <h3 style={{ fontSize: 22, fontWeight: 700, color: '#FFFFFF', margin: '0 0 8px' }}>
+        <h3 style={{ fontSize: 22, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 8px' }}>
           Start Researching
         </h3>
         <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.85)', margin: '0 0 20px', maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
           Search legal documents, explore citation networks, or check the data pipeline. Free during beta.
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/legal/search" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 15, fontWeight: 600, textDecoration: 'none', background: '#FFFFFF', color: '#0966C3' }}>
+          <Link href="/legal/search" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 15, fontWeight: 600, textDecoration: 'none', background: 'var(--color-surface-0)', color: 'var(--accent-primary)' }}>
             Search Documents
           </Link>
-          <Link href="/legal/citations" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 15, fontWeight: 600, textDecoration: 'none', background: 'transparent', color: '#FFFFFF', border: '2px solid rgba(255,255,255,0.6)' }}>
+          <Link href="/legal/citations" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 15, fontWeight: 600, textDecoration: 'none', background: 'transparent', color: 'var(--color-surface-0)', border: '2px solid rgba(255,255,255,0.6)' }}>
             Citation Explorer
           </Link>
-          <Link href="/legal/dashboard" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 15, fontWeight: 500, textDecoration: 'none', background: 'transparent', color: '#FFFFFF', border: '2px solid rgba(255,255,255,0.6)' }}>
+          <Link href="/legal/dashboard" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 15, fontWeight: 500, textDecoration: 'none', background: 'transparent', color: 'var(--color-surface-0)', border: '2px solid rgba(255,255,255,0.6)' }}>
             View Dashboard
           </Link>
         </div>

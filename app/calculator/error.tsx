@@ -31,7 +31,7 @@ export default function Error({
         onClick={reset}
         style={{
           padding: '10px 24px',
-          backgroundColor: '#0966C3',
+          backgroundColor: 'var(--accent-primary)',
           color: 'white',
           border: 'none',
           borderRadius: '20px',

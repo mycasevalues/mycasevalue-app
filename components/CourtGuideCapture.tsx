@@ -41,7 +41,7 @@ export default function CourtGuideCapture() {
 
       const addHeader = (text: string) => {
         doc.setFontSize(14);
-        doc.setTextColor(10, 102, 194); // #0966C3
+        doc.setTextColor(10, 102, 194); // var(--accent-primary)
         doc.setFont('helvetica', 'bold');
         doc.text(text, margin, yPosition);
         yPosition += 10;

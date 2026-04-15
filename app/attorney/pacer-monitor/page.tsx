@@ -89,7 +89,7 @@ export default function PacerMonitorPage() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
               <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>Recent Alerts</h2>
-              <div style={{ display: 'flex', gap: '4px', background: '#F8F9FA', borderRadius: '12px', border: '1px solid var(--border-default)', padding: '3px' }}>
+              <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-1)', borderRadius: '12px', border: '1px solid var(--border-default)', padding: '3px' }}>
                 {(['all', 'high', 'medium', 'low'] as const).map((f) => (
                   <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '12px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? 'var(--accent-primary)' : 'transparent', color: filter === f ? 'var(--color-surface-0)' : 'var(--color-text-secondary)', textTransform: 'capitalize' as const }}>
                     {f}

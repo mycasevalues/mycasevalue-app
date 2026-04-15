@@ -624,7 +624,7 @@ export default function FeeCalculatorPage() {
         {!feeData && (
           <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
             <div style={cardStyle}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z" />
               </svg>
               <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>
@@ -636,7 +636,7 @@ export default function FeeCalculatorPage() {
             </div>
 
             <div style={cardStyle}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <line x1="3" y1="12" x2="21" y2="12" />
                 <polyline points="3 6 9 12 3 18" />
               </svg>
@@ -649,7 +649,7 @@ export default function FeeCalculatorPage() {
             </div>
 
             <div style={cardStyle}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M9 9h6v6H9z" />
               </svg>

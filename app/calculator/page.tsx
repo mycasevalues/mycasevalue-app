@@ -331,7 +331,7 @@ export default function CalculatorPage() {
             </div>
 
             {/* District Note */}
-            <div style={{ padding: '12px 16px', borderRadius: '12px', background: 'var(--color-surface-1)', border: '1px solid #E5E7EB' }}>
+            <div style={{ padding: '12px 16px', borderRadius: '12px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)' }}>
               <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontSize: '13px', margin: 0, lineHeight: 1.5 }}>
                 Estimates reflect national averages. District-specific data is available in <a href="/cases" style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600 }}>Case Reports</a>.
               </p>
@@ -609,7 +609,7 @@ export default function CalculatorPage() {
                   position: 'absolute', top: '16px', height: '8px',
                   left: `${Math.max(0, (results.p10 / results.p90) * 100 * 0.2)}%`,
                   right: `${Math.max(0, 100 - 100)}%`,
-                  background: 'linear-gradient(90deg, #B0D0F5, #70B5F9, #0966C3, #70B5F9, #B0D0F5)',
+                  background: 'linear-gradient(90deg, #B0D0F5, #70B5F9, var(--accent-primary), #70B5F9, #B0D0F5)',
                   borderRadius: '4px',
                   animation: 'slideUpFadeIn 0.6s ease-out',
                 }} />
@@ -660,7 +660,7 @@ export default function CalculatorPage() {
               {/* Win Rate Circle */}
               <div className="p-6 flex flex-col items-center justify-center" style={{
                 background: '#FAFBFC',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 minHeight: '200px',
               }}>
@@ -686,7 +686,7 @@ export default function CalculatorPage() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexDirection: 'column',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                   }}>
                     <p className="text-3xl font-black" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-display)', marginBottom: '2px' }}>
                       {(results.winRate * 100).toFixed(0)}%
@@ -698,7 +698,7 @@ export default function CalculatorPage() {
               {/* Timeline */}
               <div className="p-6 flex flex-col items-center justify-center" style={{
                 background: '#FAFBFC',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 minHeight: '200px',
               }}>
@@ -738,7 +738,7 @@ export default function CalculatorPage() {
                 <p className="text-2xl font-black" style={{ color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{results.proSeWinRate}%</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>win rate</p>
               </div>
-              <div className="p-5" style={{ background: '#EDF3FB', border: '1px solid #0966C3', borderRadius: '12px' }}>
+              <div className="p-5" style={{ background: '#EDF3FB', border: '1px solid var(--accent-primary)', borderRadius: '12px' }}>
                 <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>Sample Size</p>
                 <p className="text-2xl font-black" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>n={results.sampleSize.toLocaleString()}</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>cases analyzed</p>
@@ -746,52 +746,52 @@ export default function CalculatorPage() {
             </div>
 
             {/* Detailed Breakdown */}
-            <div className="mb-6 p-6" style={{ background: '#F8F9FA', border: '1px solid #E5E7EB', borderRadius: '12px' }}>
+            <div className="mb-6 p-6" style={{ background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
               <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
                 Calculation Breakdown
               </h3>
               <table style={{ width: '100%', fontFamily: 'var(--font-body)', fontSize: '13px', borderCollapse: 'collapse' }}>
                 <tbody>
-                  <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                  <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                     <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Base damages claimed</td>
                     <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{fmt(results.breakdown.baseDamages)}</td>
                   </tr>
-                  <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                  <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                     <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Case type multiplier (median)</td>
                     <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.categoryMult.median.toFixed(2)}</td>
                   </tr>
                   {results.breakdown.severityMult !== 1 && (
-                    <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Severity adjustment</td>
                       <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.severityMult > 1 ? '#059669' : '#B91C1C', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.severityMult.toFixed(1)}</td>
                     </tr>
                   )}
                   {results.breakdown.durationMult !== 1 && (
-                    <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Duration adjustment</td>
                       <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.durationMult > 1 ? '#059669' : '#B91C1C', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.durationMult.toFixed(1)}</td>
                     </tr>
                   )}
                   {results.breakdown.attorneyMult !== 1 && (
-                    <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Attorney representation boost</td>
                       <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: '#059669', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.attorneyMult.toFixed(2)}</td>
                     </tr>
                   )}
                   {results.breakdown.evidenceMult !== 1 && (
-                    <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Evidence strength adjustment</td>
                       <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.evidenceMult > 1 ? '#059669' : '#B91C1C', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.evidenceMult.toFixed(1)}</td>
                     </tr>
                   )}
                   {results.breakdown.settlementMult !== 1 && (
-                    <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Prior settlement adjustment</td>
                       <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.settlementMult > 1 ? '#059669' : '#B91C1C', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.settlementMult.toFixed(2)}</td>
                     </tr>
                   )}
                   {results.breakdown.defendantsMult !== 1 && (
-                    <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Multiple defendants adjustment</td>
                       <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.defendantsMult > 1 ? '#059669' : '#B91C1C', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.defendantsMult.toFixed(2)}</td>
                     </tr>
@@ -805,7 +805,7 @@ export default function CalculatorPage() {
             </div>
 
             {/* Scenario Comparison */}
-            <div className="mb-6 p-6" style={{ background: '#F0F4F8', border: '1px solid #E5E7EB', borderRadius: '12px' }}>
+            <div className="mb-6 p-6" style={{ background: '#F0F4F8', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                 <h3 className="text-[12px] font-bold uppercase tracking-[0.8px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
                   Scenario Comparison
@@ -851,7 +851,7 @@ export default function CalculatorPage() {
                         fontWeight: 600,
                         background: 'var(--color-surface-0)',
                         color: 'var(--color-text-primary)',
-                        border: '1px solid #E5E7EB',
+                        border: '1px solid var(--border-default)',
                         borderRadius: '12px',
                         cursor: 'pointer',
                         fontFamily: 'var(--font-body)',
@@ -868,7 +868,7 @@ export default function CalculatorPage() {
                 <div style={{ overflowX: 'auto' }}>
                   <table style={{ width: '100%', fontFamily: 'var(--font-body)', fontSize: '12px', borderCollapse: 'collapse' }}>
                     <thead>
-                      <tr style={{ borderBottom: '2px solid #E5E7EB', background: 'var(--color-surface-0)' }}>
+                      <tr style={{ borderBottom: '2px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
                         <th style={{ padding: '12px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Label</th>
                         <th style={{ padding: '12px', textAlign: 'right', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Median Estimate</th>
                         <th style={{ padding: '12px', textAlign: 'right', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Win Rate</th>
@@ -877,7 +877,7 @@ export default function CalculatorPage() {
                     </thead>
                     <tbody>
                       {scenarios.map((scenario) => (
-                        <tr key={scenario.id} style={{ borderBottom: '1px solid #E5E7EB', background: 'var(--color-surface-0)' }}>
+                        <tr key={scenario.id} style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
                           <td style={{ padding: '12px', color: 'var(--color-text-primary)', fontWeight: 500 }}>{scenario.label}</td>
                           <td style={{ padding: '12px', textAlign: 'right', color: 'var(--accent-primary)', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{fmt(scenario.median)}</td>
                           <td style={{ padding: '12px', textAlign: 'right', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>{(scenario.winRate * 100).toFixed(0)}%</td>
@@ -1057,12 +1057,12 @@ export default function CalculatorPage() {
                 key={idx}
                 style={{
                   background: 'var(--color-surface-0)',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                 }}
               >
-                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}>
+                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}>
                   <path d={item.iconPath}/>
                 </svg>
                 <h3 className="font-bold mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', fontSize: '14px' }}>
@@ -1094,7 +1094,7 @@ export default function CalculatorPage() {
                 style={{
                   display: 'block',
                   background: 'var(--color-surface-0)',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                   textDecoration: 'none',
@@ -1118,7 +1118,7 @@ export default function CalculatorPage() {
                       {tool.description}
                     </p>
                   </div>
-                  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2" style={{ marginLeft: '8px', flexShrink: 0 }}>
+                  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginLeft: '8px', flexShrink: 0 }}>
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
                 </div>

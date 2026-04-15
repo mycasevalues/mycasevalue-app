@@ -129,7 +129,7 @@ export default function JudgeWinRateByNOS({
       .attr('dominant-baseline', 'central')
       .attr('font-size', '12px')
       .attr('font-family', 'var(--font-body)')
-      .attr('fill', '#4B5563')
+      .attr('fill', 'var(--color-text-secondary)')
       .attr('font-weight', 500)
       .text((d) => NOS_CODE_LABELS[d.nos_code] || `NOS ${d.nos_code}`);
 
@@ -159,7 +159,7 @@ export default function JudgeWinRateByNOS({
       .attr('dominant-baseline', 'central')
       .attr('font-size', '11px')
       .attr('font-family', 'var(--font-body)')
-      .attr('fill', '#9CA3AF')
+      .attr('fill', 'var(--color-text-muted)')
       .text((d) => `(n = ${d.total_cases})`);
 
     // X-axis
@@ -173,7 +173,7 @@ export default function JudgeWinRateByNOS({
 
   if (filtered.length === 0) {
     return (
-      <div style={{ padding: '40px', textAlign: 'center', color: '#9CA3AF', fontFamily: 'var(--font-body)' }}>
+      <div style={{ padding: '40px', textAlign: 'center', color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)' }}>
         No case types with {minCases}+ cases
       </div>
     );
@@ -189,7 +189,7 @@ export default function JudgeWinRateByNOS({
         aria-label="Judge win rate by case type (NOS code)"
         role="img"
       />
-      <div style={{ fontSize: '12px', fontFamily: 'var(--font-body)', color: '#9CA3AF', marginTop: '16px', textAlign: 'center' }}>
+      <div style={{ fontSize: '12px', fontFamily: 'var(--font-body)', color: 'var(--color-text-muted)', marginTop: '16px', textAlign: 'center' }}>
         Click a case type to see more details
       </div>
     </div>

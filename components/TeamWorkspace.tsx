@@ -229,12 +229,12 @@ const DEMO_ACTIVITIES: ActivityItem[] = [
 const roleColors: Record<string, string> = {
   Admin: '#3D8FB5',
   Partner: '#059669',
-  Associate: '#004182',
+  Associate: 'var(--accent-primary-hover)',
   Paralegal: '#B86E00',
 };
 
 const statusColors: Record<string, string> = {
-  Researching: '#0966C3',
+  Researching: 'var(--accent-primary)',
   Active: '#059669',
   Settled: '#B86E00',
   Closed: '#6B7280',
@@ -409,7 +409,7 @@ export default function TeamWorkspace() {
             marginBottom: '24px',
             background: 'var(--color-surface-1)',
             borderRadius: '12px',
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
             padding: '3px',
             width: 'fit-content',
             flexWrap: 'wrap',
@@ -426,8 +426,8 @@ export default function TeamWorkspace() {
                 fontSize: '14px',
                 fontWeight: 600,
                 cursor: 'pointer',
-                backgroundColor: activeTab === tab ? '#0966C3' : 'transparent',
-                color: activeTab === tab ? '#FFFFFF' : '#4B5563',
+                backgroundColor: activeTab === tab ? 'var(--accent-primary)' : 'transparent',
+                color: activeTab === tab ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 transition: 'all 0.2s ease',
@@ -513,10 +513,10 @@ export default function TeamWorkspace() {
             {/* Add Note Form */}
             <div
               style={{
-                background: '#FFFFFF',
+                background: 'var(--color-surface-0)',
                 borderRadius: '12px',
                 padding: '20px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
               }}
             >
@@ -593,7 +593,7 @@ export default function TeamWorkspace() {
                   disabled={!newNoteText.trim() || !newNoteNOS.trim()}
                   style={{
                     padding: '10px 16px',
-                    backgroundColor: newNoteText.trim() && newNoteNOS.trim() ? '#0966C3' : '#CCCCCC',
+                    backgroundColor: newNoteText.trim() && newNoteNOS.trim() ? 'var(--accent-primary)' : '#CCCCCC',
                     color: 'var(--color-text-inverse)',
                     border: 'none',
                     borderRadius: '8px',
@@ -670,10 +670,10 @@ export default function TeamWorkspace() {
             {/* Add Case Form */}
             <div
               style={{
-                background: '#FFFFFF',
+                background: 'var(--color-surface-0)',
                 borderRadius: '12px',
                 padding: '20px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
               }}
             >
@@ -825,8 +825,8 @@ export default function TeamWorkspace() {
                   marginTop: '12px',
                   padding: '10px 16px',
                   backgroundColor:
-                    newCaseName.trim() && newCaseType && newCaseDistrict ? '#0966C3' : '#CCCCCC',
-                  color: '#FFFFFF',
+                    newCaseName.trim() && newCaseType && newCaseDistrict ? 'var(--accent-primary)' : '#CCCCCC',
+                  color: 'var(--color-surface-0)',
                   border: 'none',
                   borderRadius: '8px',
                   fontSize: '13px',
@@ -895,8 +895,8 @@ export default function TeamWorkspace() {
                         <tr
                           key={caseItem.id}
                           style={{
-                            backgroundColor: idx % 2 === 0 ? '#FFFFFF' : '#F8F9FA',
-                            borderBottom: '1px solid #E5E7EB',
+                            backgroundColor: idx % 2 === 0 ? 'var(--color-surface-0)' : 'var(--color-surface-1)',
+                            borderBottom: '1px solid var(--border-default)',
                           }}
                         >
                           <td style={{ padding: '12px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>
@@ -1192,13 +1192,13 @@ export default function TeamWorkspace() {
                     justifyContent: 'center',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     marginBottom: '8px',
                   }}
                 >
                   {member.avatar}
                 </div>
-                <p style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 2px' }}>
+                <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 2px' }}>
                   {member.name}
                 </p>
                 <span

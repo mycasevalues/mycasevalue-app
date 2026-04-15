@@ -29,10 +29,10 @@ export default function MethodologyPage() {
       <style>{`
         .source-card {
           transition: all 0.3s ease;
-          border: 1px solid #E5E7EB;
+          border: 1px solid var(--border-default);
         }
         .source-card:hover {
-          border-color: #0966C3;
+          border-color: var(--accent-primary);
           box-shadow: 0 4px 12px rgba(232, 23, 31, 0.08);
         }
         .timeline-item {
@@ -48,13 +48,13 @@ export default function MethodologyPage() {
           top: 3.5rem;
           width: 2px;
           height: calc(100% - 2rem);
-          background-color: #E5E7EB;
+          background-color: var(--border-default);
         }
         .timeline-number {
           width: 2rem;
           height: 2rem;
           border-radius: 50%;
-          background-color: #0966C3;
+          background-color: var(--accent-primary);
           color: white;
           display: flex;
           align-items: center;
@@ -76,14 +76,14 @@ export default function MethodologyPage() {
         }
         .stat-card {
           padding: 1.5rem;
-          border: 1px solid #E5E7EB;
+          border: 1px solid var(--border-default);
           border-radius: 12px;
-          background: #FFFFFF;
+          background: var(--color-surface-0);
           text-align: center;
           transition: all 0.3s ease;
         }
         .stat-card:hover {
-          border-color: #4B5563;
+          border-color: var(--color-text-secondary);
           transform: translateY(-2px);
         }
         .limitation-callout {
@@ -116,15 +116,15 @@ export default function MethodologyPage() {
         }
         .at-a-glance-card {
           padding: 1.25rem;
-          border: 2px solid #E5E7EB;
+          border: 2px solid var(--border-default);
           border-radius: 12px;
-          background: #FFFFFF;
+          background: var(--color-surface-0);
           text-align: center;
         }
         .at-a-glance-stat {
           font-size: 1.5rem;
           font-weight: 900;
-          color: #0966C3;
+          color: var(--accent-primary);
           margin-bottom: 0.5rem;
           font-family: var(--font-inter, 'Inter', sans-serif);
         }
@@ -147,9 +147,9 @@ export default function MethodologyPage() {
         }
         .confidence-tier {
           padding: 1.5rem;
-          border: 1px solid #E5E7EB;
+          border: 1px solid var(--border-default);
           border-radius: 12px;
-          background: #FFFFFF;
+          background: var(--color-surface-0);
           text-align: center;
         }
         .confidence-icon {
@@ -160,7 +160,7 @@ export default function MethodologyPage() {
           font-size: 0.875rem;
           font-weight: 600;
           margin-bottom: 0.5rem;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
         }
         .confidence-desc {
           font-size: 0.75rem;
@@ -171,8 +171,8 @@ export default function MethodologyPage() {
           font-size: 0.7rem;
           font-weight: 600;
           font-family: var(--font-mono, 'monospace');
-          color: #4B5563;
-          background: #F7F8FA;
+          color: var(--color-text-secondary);
+          background: var(--color-surface-1);
           padding: 0.5rem;
           border-radius: 12px;
         }
@@ -182,26 +182,26 @@ export default function MethodologyPage() {
           margin-top: 1.5rem;
         }
         .stats-table th {
-          border-bottom: 2px solid #0966C3;
+          border-bottom: 2px solid var(--accent-primary);
           padding: 1rem;
           text-align: left;
           font-weight: 600;
           font-size: 0.875rem;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           font-family: var(--font-inter, 'Inter', sans-serif);
         }
         .stats-table td {
-          border-bottom: 1px solid #E5E7EB;
+          border-bottom: 1px solid var(--border-default);
           padding: 1rem;
           font-size: 0.875rem;
-          color: #4B5563;
+          color: var(--color-text-secondary);
         }
         .stats-table tr:hover {
-          background: #F7F8FA;
+          background: var(--color-surface-1);
         }
         .stats-stat-name {
           font-weight: 600;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           font-family: var(--font-inter, 'Inter', sans-serif);
         }
         .related-grid {
@@ -217,16 +217,16 @@ export default function MethodologyPage() {
         }
         .related-card {
           padding: 1.5rem;
-          border: 1px solid #E5E7EB;
+          border: 1px solid var(--border-default);
           border-radius: 12px;
-          background: #FFFFFF;
+          background: var(--color-surface-0);
           text-align: center;
           text-decoration: none;
           color: inherit;
           transition: all 0.3s ease;
         }
         .related-card:hover {
-          border-color: #0966C3;
+          border-color: var(--accent-primary);
           box-shadow: 0 4px 12px rgba(232, 23, 31, 0.08);
           transform: translateY(-2px);
         }
@@ -255,7 +255,7 @@ export default function MethodologyPage() {
           {/* Badge and Title */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
             style={{ background: '#FFF3F4', color: 'var(--accent-primary)', borderRadius: '9999px' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
             METHODOLOGY
           </div>
 
@@ -405,7 +405,7 @@ export default function MethodologyPage() {
               { iconPath: 'M15 19l-7-7 7-7', label: 'Low Confidence', desc: 'Limited sample', threshold: '< 100 cases' },
             ].map((tier, i) => (
               <div key={i} className="confidence-tier">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="confidence-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="confidence-icon">
                   <path d={tier.iconPath}/>
                 </svg>
                 <div className="confidence-label">{tier.label}</div>
@@ -523,7 +523,7 @@ export default function MethodologyPage() {
             ].map((link, i) => (
               <Link key={i} href={link.href}>
                 <div className="related-card">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="related-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="related-icon">
                     <path d={link.iconPath}/>
                   </svg>
                   <div className="related-title">{link.title}</div>
@@ -538,7 +538,7 @@ export default function MethodologyPage() {
           <p className="text-sm mb-6" style={{ color: 'var(--color-text-secondary)' }}>Questions about our methodology?</p>
           <a href="mailto:support@mycasevalues.com"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '20px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: '1px solid #0966C3' }}>
+            style={{ borderRadius: '20px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: '1px solid var(--accent-primary)' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

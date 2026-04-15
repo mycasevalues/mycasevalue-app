@@ -138,7 +138,7 @@ export default function WidgetGenerator() {
                       borderBottom: '1px solid #f3f4f6',
                       cursor: 'pointer',
                       backgroundColor: selectedNos === type.nos ? '#eff6ff' : 'transparent',
-                      color: selectedNos === type.nos ? '#0966C3' : '#374151',
+                      color: selectedNos === type.nos ? 'var(--accent-primary)' : '#374151',
                     }}
                     onMouseEnter={(e) => {
                       if (selectedNos !== type.nos) {
@@ -166,7 +166,7 @@ export default function WidgetGenerator() {
               border: '1px solid #bfdbfe',
               borderRadius: '6px',
               fontSize: '13px',
-              color: '#0966C3',
+              color: 'var(--accent-primary)',
             }}>
               Selected: {selectedCaseType.label}
             </div>
@@ -196,9 +196,9 @@ export default function WidgetGenerator() {
                   padding: '12px',
                   fontSize: '14px',
                   fontWeight: 500,
-                  border: displayStyle === style.value ? '2px solid #0966C3' : '1px solid #d1d5db',
+                  border: displayStyle === style.value ? '2px solid var(--accent-primary)' : '1px solid #d1d5db',
                   backgroundColor: displayStyle === style.value ? '#eff6ff' : '#fff',
-                  color: displayStyle === style.value ? '#0966C3' : '#374151',
+                  color: displayStyle === style.value ? 'var(--accent-primary)' : '#374151',
                   borderRadius: '6px',
                   cursor: 'pointer',
                   transition: 'all 0.2s',
@@ -251,7 +251,7 @@ export default function WidgetGenerator() {
                   padding: '10px 16px',
                   fontSize: '14px',
                   fontWeight: 500,
-                  backgroundColor: '#0966C3',
+                  backgroundColor: 'var(--accent-primary)',
                   color: '#fff',
                   border: 'none',
                   borderRadius: '6px',

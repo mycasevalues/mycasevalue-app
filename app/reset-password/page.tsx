@@ -92,14 +92,14 @@ export default function ResetPasswordPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#0966C3',
+          background: 'var(--accent-primary)',
         }}
       >
         <p
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '14px',
-            color: '#FFFFFF',
+            color: 'var(--color-surface-0)',
             opacity: 0.8,
           }}
         >
@@ -116,7 +116,7 @@ export default function ResetPasswordPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#0966C3',
+        background: 'var(--accent-primary)',
         padding: '20px',
       }}
     >
@@ -152,8 +152,8 @@ export default function ResetPasswordPage() {
         style={{
           width: '100%',
           maxWidth: '440px',
-          backgroundColor: '#FFFFFF',
-          border: '1px solid #E5E7EB',
+          backgroundColor: 'var(--color-surface-0)',
+          border: '1px solid var(--border-default)',
           borderRadius: '12px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           padding: '32px',
@@ -166,7 +166,7 @@ export default function ResetPasswordPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#004182',
+              color: 'var(--accent-primary-hover)',
               textDecoration: 'none',
               fontWeight: 500,
             }}
@@ -183,7 +183,7 @@ export default function ResetPasswordPage() {
               fontFamily: 'var(--font-display)',
               fontSize: '24px',
               fontWeight: 900,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: 0,
               letterSpacing: '-0.5px',
             }}
@@ -216,7 +216,7 @@ export default function ResetPasswordPage() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '24px',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 margin: '0 0 12px 0',
                 lineHeight: 1.2,
               }}
@@ -227,7 +227,7 @@ export default function ResetPasswordPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 margin: 0,
                 lineHeight: 1.5,
               }}
@@ -243,7 +243,7 @@ export default function ResetPasswordPage() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '24px',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 margin: '0 0 12px 0',
                 lineHeight: 1.2,
               }}
@@ -255,7 +255,7 @@ export default function ResetPasswordPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 margin: '0 0 28px 0',
                 lineHeight: 1.5,
               }}
@@ -278,7 +278,7 @@ export default function ResetPasswordPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '13px',
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     margin: 0,
                   }}
                 >
@@ -298,7 +298,7 @@ export default function ResetPasswordPage() {
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     marginBottom: '8px',
                   }}
                 >
@@ -317,12 +317,12 @@ export default function ResetPasswordPage() {
                     width: '100%',
                     height: '48px',
                     padding: '12px 14px',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
-                    color: '#0f0f0f',
-                    backgroundColor: '#FFFFFF',
+                    color: 'var(--color-text-primary)',
+                    backgroundColor: 'var(--color-surface-0)',
                     boxSizing: 'border-box',
                     transition: 'border-color 0.2s, box-shadow 0.2s',
                   }}
@@ -338,7 +338,7 @@ export default function ResetPasswordPage() {
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     marginBottom: '8px',
                   }}
                 >
@@ -357,12 +357,12 @@ export default function ResetPasswordPage() {
                     width: '100%',
                     height: '48px',
                     padding: '12px 14px',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
-                    color: '#0f0f0f',
-                    backgroundColor: '#FFFFFF',
+                    color: 'var(--color-text-primary)',
+                    backgroundColor: 'var(--color-surface-0)',
                     boxSizing: 'border-box',
                     transition: 'border-color 0.2s, box-shadow 0.2s',
                   }}
@@ -378,8 +378,8 @@ export default function ResetPasswordPage() {
                   width: '100%',
                   height: '48px',
                   padding: '0 16px',
-                  backgroundColor: '#0966C3',
-                  color: '#FFFFFF',
+                  backgroundColor: 'var(--accent-primary)',
+                  color: 'var(--color-surface-0)',
                   border: 'none',
                   borderRadius: '12px',
                   fontFamily: 'var(--font-body)',
@@ -401,7 +401,7 @@ export default function ResetPasswordPage() {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#004182',
+                  color: 'var(--accent-primary-hover)',
                   textDecoration: 'none',
                   fontWeight: 500,
                 }}

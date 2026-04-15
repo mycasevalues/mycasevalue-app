@@ -57,7 +57,7 @@ const STATUS_STYLES: Record<string, { bg: string; color: string; label: string }
 };
 
 const EVENT_STYLES: Record<string, { bg: string; color: string; icon: string }> = {
-  ingestion: { bg: '#E8F4FD', color: '#0966C3', icon: '\u2B07' },
+  ingestion: { bg: '#E8F4FD', color: 'var(--accent-primary)', icon: '\u2B07' },
   processing: { bg: '#F5F3FF', color: '#7C3AED', icon: '\u2699' },
   embedding: { bg: '#F0FDF4', color: '#059669', icon: '\u2728' },
   error: { bg: '#FEF2F2', color: '#DC2626', icon: '\u26A0' },
@@ -94,7 +94,7 @@ export default function LegalDashboardPage() {
 
       {/* Breadcrumb */}
       <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 24 }}>
-        <Link href="/legal" style={{ color: '#0966C3', textDecoration: 'none' }}>Research Hub</Link>
+        <Link href="/legal" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Research Hub</Link>
         <span style={{ margin: '0 8px' }}>/</span>
         <span>Data Dashboard</span>
       </nav>
@@ -102,7 +102,7 @@ export default function LegalDashboardPage() {
       {/* Hero */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 32, flexWrap: 'wrap', gap: 16 }}>
         <div>
-          <h1 style={{ fontSize: 32, fontWeight: 700, color: '#0f0f0f', margin: '0 0 8px', lineHeight: 1.2 }}>
+          <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
             Data Pipeline Dashboard
           </h1>
           <p style={{ fontSize: 15, color: '#6B7280', margin: 0, maxWidth: 540, lineHeight: 1.6 }}>
@@ -128,32 +128,32 @@ export default function LegalDashboardPage() {
 
       {/* Summary cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, marginBottom: 28 }}>
-        <div style={{ padding: '20px 24px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
+        <div style={{ padding: '20px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Total Documents</div>
-          <div style={{ fontSize: 28, fontWeight: 700, color: '#0966C3', fontFamily: 'var(--font-mono, monospace)' }}>{formatNumber(totalDocs)}</div>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono, monospace)' }}>{formatNumber(totalDocs)}</div>
           <div style={{ fontSize: 12, color: '#15803D', marginTop: 4 }}>+12,341 today</div>
         </div>
-        <div style={{ padding: '20px 24px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
+        <div style={{ padding: '20px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Sources Online</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: '#059669', fontFamily: 'var(--font-mono, monospace)' }}>{healthySources}/{sources.length}</div>
           <div style={{ fontSize: 12, color: sources.some(s => s.status !== 'healthy') ? '#B45309' : '#15803D', marginTop: 4 }}>
             {sources.some(s => s.status === 'offline') ? '1 source offline' : sources.some(s => s.status === 'degraded') ? '1 degraded' : 'All healthy'}
           </div>
         </div>
-        <div style={{ padding: '20px 24px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
+        <div style={{ padding: '20px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Avg Uptime</div>
-          <div style={{ fontSize: 28, fontWeight: 700, color: '#0f0f0f', fontFamily: 'var(--font-mono, monospace)' }}>{avgUptime}%</div>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono, monospace)' }}>{avgUptime}%</div>
           <div style={{ fontSize: 12, color: '#6B7280', marginTop: 4 }}>30-day rolling</div>
         </div>
-        <div style={{ padding: '20px 24px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
+        <div style={{ padding: '20px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Avg Latency</div>
-          <div style={{ fontSize: 28, fontWeight: 700, color: '#0f0f0f', fontFamily: 'var(--font-mono, monospace)' }}>{avgLatency}ms</div>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono, monospace)' }}>{avgLatency}ms</div>
           <div style={{ fontSize: 12, color: '#6B7280', marginTop: 4 }}>API response time</div>
         </div>
       </div>
 
       {/* Tab nav */}
-      <div style={{ display: 'flex', gap: 4, marginBottom: 24, borderBottom: '1px solid #E5E7EB', paddingBottom: 0 }}>
+      <div style={{ display: 'flex', gap: 4, marginBottom: 24, borderBottom: '1px solid var(--border-default)', paddingBottom: 0 }}>
         {(['overview', 'events', 'quality'] as const).map(tab => (
           <button
             key={tab}
@@ -162,10 +162,10 @@ export default function LegalDashboardPage() {
               padding: '10px 20px',
               fontSize: 14,
               fontWeight: activeTab === tab ? 600 : 400,
-              color: activeTab === tab ? '#0966C3' : '#6B7280',
+              color: activeTab === tab ? 'var(--accent-primary)' : '#6B7280',
               background: 'transparent',
               border: 'none',
-              borderBottom: activeTab === tab ? '2px solid #0966C3' : '2px solid transparent',
+              borderBottom: activeTab === tab ? '2px solid var(--accent-primary)' : '2px solid transparent',
               cursor: 'pointer',
               textTransform: 'capitalize',
               marginBottom: -1,
@@ -187,8 +187,8 @@ export default function LegalDashboardPage() {
                 style={{
                   padding: '20px 24px',
                   borderRadius: 14,
-                  border: '1px solid #E5E7EB',
-                  background: '#FFFFFF',
+                  border: '1px solid var(--border-default)',
+                  background: 'var(--color-surface-0)',
                   display: 'grid',
                   gridTemplateColumns: '200px 100px 1fr 120px 100px',
                   alignItems: 'center',
@@ -213,10 +213,10 @@ export default function LegalDashboardPage() {
 
                 {/* Documents */}
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: '#0f0f0f', fontFamily: 'var(--font-mono, monospace)' }}>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono, monospace)' }}>
                     {formatNumber(src.documents)}
                   </div>
-                  <div style={{ fontSize: 11, color: '#9CA3AF' }}>docs</div>
+                  <div style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>docs</div>
                 </div>
 
                 {/* Health bar */}
@@ -240,16 +240,16 @@ export default function LegalDashboardPage() {
 
                 {/* Latency */}
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: src.latency === 0 ? '#DC2626' : src.latency < 300 ? '#0f0f0f' : '#B45309', fontFamily: 'var(--font-mono, monospace)' }}>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: src.latency === 0 ? '#DC2626' : src.latency < 300 ? 'var(--color-text-primary)' : '#B45309', fontFamily: 'var(--font-mono, monospace)' }}>
                     {src.latency === 0 ? '---' : `${src.latency}ms`}
                   </div>
-                  <div style={{ fontSize: 11, color: '#9CA3AF' }}>latency</div>
+                  <div style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>latency</div>
                 </div>
 
                 {/* Last sync */}
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ fontSize: 12, color: '#6B7280' }}>{src.lastSync}</div>
-                  <div style={{ fontSize: 11, color: '#9CA3AF' }}>every {src.syncInterval}</div>
+                  <div style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>every {src.syncInterval}</div>
                 </div>
               </div>
             );
@@ -268,8 +268,8 @@ export default function LegalDashboardPage() {
                 style={{
                   padding: '14px 20px',
                   borderRadius: 12,
-                  border: '1px solid #E5E7EB',
-                  background: '#FFFFFF',
+                  border: '1px solid var(--border-default)',
+                  background: 'var(--color-surface-0)',
                   display: 'flex',
                   gap: 14,
                   alignItems: 'flex-start',
@@ -291,10 +291,10 @@ export default function LegalDashboardPage() {
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 2 }}>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: '#0f0f0f' }}>{evt.source}</span>
-                    <span style={{ fontSize: 11, color: '#9CA3AF' }}>{evt.timestamp}</span>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)' }}>{evt.source}</span>
+                    <span style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>{evt.timestamp}</span>
                   </div>
-                  <div style={{ fontSize: 13, color: '#4B5563', lineHeight: 1.5 }}>{evt.message}</div>
+                  <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{evt.message}</div>
                   {evt.count && (
                     <span style={{
                       display: 'inline-block',
@@ -321,8 +321,8 @@ export default function LegalDashboardPage() {
         <div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16, marginBottom: 24 }}>
             {/* Completeness */}
-            <div style={{ padding: '24px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
-              <h3 style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px' }}>Document Completeness</h3>
+            <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+              <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>Document Completeness</h3>
               {[
                 { label: 'Has full text', value: 94 },
                 { label: 'Has metadata', value: 99 },
@@ -332,7 +332,7 @@ export default function LegalDashboardPage() {
               ].map(item => (
                 <div key={item.label} style={{ marginBottom: 12 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                    <span style={{ fontSize: 13, color: '#4B5563' }}>{item.label}</span>
+                    <span style={{ fontSize: 13, color: 'var(--color-text-secondary)' }}>{item.label}</span>
                     <span style={{ fontSize: 13, fontWeight: 600, color: item.value >= 95 ? '#15803D' : item.value >= 90 ? '#B45309' : '#DC2626' }}>{item.value}%</span>
                   </div>
                   <div style={{ height: 6, borderRadius: 3, background: '#F3F4F6' }}>
@@ -348,8 +348,8 @@ export default function LegalDashboardPage() {
             </div>
 
             {/* Freshness */}
-            <div style={{ padding: '24px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
-              <h3 style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px' }}>Data Freshness</h3>
+            <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+              <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>Data Freshness</h3>
               {sources.map(src => {
                 const fresh = src.status === 'healthy' ? 'current' : src.status === 'degraded' ? 'stale' : 'unavailable';
                 const freshColor = fresh === 'current' ? '#15803D' : fresh === 'stale' ? '#B45309' : '#DC2626';
@@ -373,11 +373,11 @@ export default function LegalDashboardPage() {
           </div>
 
           {/* Processing stats */}
-          <div style={{ padding: '24px', borderRadius: 14, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
-            <h3 style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px' }}>Processing Pipeline</h3>
+          <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+            <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>Processing Pipeline</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
               {[
-                { stage: 'Ingestion Queue', count: 3421, status: 'active', color: '#0966C3' },
+                { stage: 'Ingestion Queue', count: 3421, status: 'active', color: 'var(--accent-primary)' },
                 { stage: 'Text Extraction', count: 892, status: 'active', color: '#7C3AED' },
                 { stage: 'Entity Recognition', count: 456, status: 'active', color: '#0D9488' },
                 { stage: 'Embedding Generation', count: 1203, status: 'active', color: '#059669' },
@@ -387,7 +387,7 @@ export default function LegalDashboardPage() {
                   <div style={{ fontSize: 24, fontWeight: 700, color: stage.color, fontFamily: 'var(--font-mono, monospace)' }}>
                     {stage.count.toLocaleString()}
                   </div>
-                  <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{stage.stage}</div>
+                  <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{stage.stage}</div>
                   <span style={{
                     display: 'inline-block',
                     padding: '2px 8px',
@@ -408,7 +408,7 @@ export default function LegalDashboardPage() {
 
       {/* Back to hub */}
       <div style={{ textAlign: 'center', marginTop: 40 }}>
-        <Link href="/legal" style={{ fontSize: 14, color: '#0966C3', textDecoration: 'none', fontWeight: 500 }}>
+        <Link href="/legal" style={{ fontSize: 14, color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500 }}>
           &larr; Back to Research Hub
         </Link>
       </div>

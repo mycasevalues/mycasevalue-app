@@ -427,7 +427,7 @@ export default function ServerHero() {
               'High-value analytics for settlements, timing, and outcomes',
               'Exclusive comparisons via judge and district analytics',
             ].map((text, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px 16px', background: '#F8F9FA', borderRadius: '12px', border: '1px solid var(--border-default)' }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px 16px', background: 'var(--color-surface-1)', borderRadius: '12px', border: '1px solid var(--border-default)' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
@@ -571,7 +571,7 @@ export default function ServerHero() {
               { quote: 'As a litigation funder, the portfolio analytics help us make better investment decisions with objective data.', name: 'Victoria S.', role: 'Managing Director, Lit Finance' },
             ].map((t, i) => (
               <div key={i} style={{
-                background: '#F8F9FA', border: '1px solid var(--border-default)',
+                background: 'var(--color-surface-1)', border: '1px solid var(--border-default)',
                 padding: '28px', borderLeft: '3px solid var(--accent-primary-hover)',
               }}>
                 <p style={{ fontSize: '15px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', lineHeight: 1.7, marginBottom: '16px', fontStyle: 'italic' }}>
@@ -651,11 +651,11 @@ export default function ServerHero() {
                   { feature: 'No training required', mcv: true, pacer: false, premium: false },
                   { feature: 'API access', mcv: true, pacer: true, premium: true },
                 ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid var(--border-default)', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#F8F9FA' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid var(--border-default)', background: i % 2 === 0 ? 'var(--color-surface-0)' : 'var(--color-surface-1)' }}>
                     <td style={{ padding: '10px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>{row.feature}</td>
                     <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? '#059669' : '#B91C1C', fontWeight: 600 }}>{row.mcv ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? '#059669' : '#9CA3AF' }}>{row.pacer ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? '#059669' : '#9CA3AF' }}>{row.premium ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? '#059669' : 'var(--color-text-muted)' }}>{row.pacer ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? '#059669' : 'var(--color-text-muted)' }}>{row.premium ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
                   </tr>
                 ))}
               </tbody>

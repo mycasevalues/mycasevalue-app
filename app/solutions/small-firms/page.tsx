@@ -57,7 +57,7 @@ export default function SmallFirmsPage() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: '#0966C3', color: '#FAFBFC', padding: '80px 24px 64px' }}>
+      <section style={{ background: 'var(--accent-primary)', color: '#FAFBFC', padding: '80px 24px 64px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -65,7 +65,7 @@ export default function SmallFirmsPage() {
             fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
-            color: '#004182',
+            color: 'var(--accent-primary-hover)',
             marginBottom: '16px',
           }}>
             SOLUTIONS
@@ -91,7 +91,7 @@ export default function SmallFirmsPage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/sign-up" style={{
-              background: '#0966C3',
+              background: 'var(--accent-primary)',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
@@ -126,13 +126,13 @@ export default function SmallFirmsPage() {
       </section>
 
       {/* Features Grid */}
-      <section style={{ padding: '80px 24px', background: '#F7F8FA' }}>
+      <section style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '2rem',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             textAlign: 'center',
             marginBottom: '48px',
           }}>
@@ -141,17 +141,17 @@ export default function SmallFirmsPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             {FEATURES.map(f => (
               <div key={f.title} style={{
-                background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
+                background: 'var(--color-surface-0)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 padding: '32px 24px',
               }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',
                   fontWeight: 600,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   marginBottom: '8px',
                 }}>
                   {f.title}
@@ -159,7 +159,7 @@ export default function SmallFirmsPage() {
                 <p style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '0.875rem',
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   lineHeight: 1.6,
                   margin: 0,
                 }}>
@@ -172,13 +172,13 @@ export default function SmallFirmsPage() {
       </section>
 
       {/* Get Started CTA */}
-      <section style={{ padding: '64px 24px', background: '#FFFFFF', textAlign: 'center' }}>
+      <section style={{ padding: '64px 24px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '1.75rem',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '16px',
           }}>
             Start winning more cases with smarter research
@@ -186,7 +186,7 @@ export default function SmallFirmsPage() {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: '1rem',
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             marginBottom: '32px',
             lineHeight: 1.6,
           }}>
@@ -194,7 +194,7 @@ export default function SmallFirmsPage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/search" style={{
-              background: '#0966C3',
+              background: 'var(--accent-primary)',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
@@ -210,10 +210,10 @@ export default function SmallFirmsPage() {
             </Link>
             <Link href="/calculator" style={{
               background: 'transparent',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
-              border: '1.5px solid #E5E7EB',
+              border: '1.5px solid var(--border-default)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
@@ -229,13 +229,13 @@ export default function SmallFirmsPage() {
       </section>
 
       {/* Widget Embed Section */}
-      <section style={{ padding: '64px 24px', background: '#FFFFFF' }}>
+      <section style={{ padding: '64px 24px', background: 'var(--color-surface-0)' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '1.75rem',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '24px',
           }}>
             Embed your practice area data
@@ -243,22 +243,22 @@ export default function SmallFirmsPage() {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: '1rem',
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             lineHeight: 1.6,
             marginBottom: '32px',
           }}>
             Share real-time case value data on your website with our embeddable widgets. Display settlement ranges, win rates, and verdict data for your practice areas. Widgets automatically update with the latest data from our database.
           </p>
           <div style={{
-            background: '#F7F8FA',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-1)',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
             padding: '32px 24px',
             marginBottom: '32px',
           }}>
             <div style={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '8px',
               padding: '24px',
               textAlign: 'center',
@@ -266,7 +266,7 @@ export default function SmallFirmsPage() {
             }}>
               <div style={{
                 fontSize: '12px',
-                color: '#0966C3',
+                color: 'var(--accent-primary)',
                 fontWeight: 500,
                 marginBottom: '8px',
               }}>
@@ -312,7 +312,7 @@ export default function SmallFirmsPage() {
           </div>
           <div style={{ textAlign: 'center' }}>
             <Link href="/solutions/api/widget" style={{
-              background: '#0966C3',
+              background: 'var(--accent-primary)',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
@@ -331,13 +331,13 @@ export default function SmallFirmsPage() {
       </section>
 
       {/* Related Solutions */}
-      <section style={{ padding: '64px 24px', background: '#F7F8FA' }}>
+      <section style={{ padding: '64px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '1.75rem',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             textAlign: 'center',
             marginBottom: '48px',
           }}>
@@ -347,8 +347,8 @@ export default function SmallFirmsPage() {
             <Link
               href="/solutions/individuals"
               style={{
-                background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
+                background: 'var(--color-surface-0)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 padding: '32px 24px',
                 textDecoration: 'none',
@@ -362,7 +362,7 @@ export default function SmallFirmsPage() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 marginBottom: '8px',
               }}>
                 Individuals
@@ -370,7 +370,7 @@ export default function SmallFirmsPage() {
               <p style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.875rem',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 lineHeight: 1.6,
                 margin: 0,
               }}>
@@ -380,8 +380,8 @@ export default function SmallFirmsPage() {
             <Link
               href="/solutions/enterprise"
               style={{
-                background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
+                background: 'var(--color-surface-0)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 padding: '32px 24px',
                 textDecoration: 'none',
@@ -395,7 +395,7 @@ export default function SmallFirmsPage() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 marginBottom: '8px',
               }}>
                 Enterprise Legal
@@ -403,7 +403,7 @@ export default function SmallFirmsPage() {
               <p style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.875rem',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 lineHeight: 1.6,
                 margin: 0,
               }}>
@@ -413,8 +413,8 @@ export default function SmallFirmsPage() {
             <Link
               href="/solutions/funders"
               style={{
-                background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
+                background: 'var(--color-surface-0)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 padding: '32px 24px',
                 textDecoration: 'none',
@@ -428,7 +428,7 @@ export default function SmallFirmsPage() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 marginBottom: '8px',
               }}>
                 Litigation Funders
@@ -436,7 +436,7 @@ export default function SmallFirmsPage() {
               <p style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.875rem',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 lineHeight: 1.6,
                 margin: 0,
               }}>

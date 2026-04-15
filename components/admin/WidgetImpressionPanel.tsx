@@ -88,7 +88,7 @@ export default function WidgetImpressionPanel() {
             <p style={{ fontSize: '12px', color: '#6b7280', marginBottom: '8px' }}>
               {metric.label}
             </p>
-            <p style={{ fontSize: '28px', fontWeight: 700, color: '#0966C3' }}>
+            <p style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)' }}>
               {metric.value}
             </p>
           </div>
@@ -133,7 +133,7 @@ export default function WidgetImpressionPanel() {
                 })
                 .join(' ')}
               fill="none"
-              stroke="#0966C3"
+              stroke="var(--accent-primary)"
               strokeWidth="2"
             />
 
@@ -147,7 +147,7 @@ export default function WidgetImpressionPanel() {
                   cx={x}
                   cy={y}
                   r="3"
-                  fill="#0966C3"
+                  fill="var(--accent-primary)"
                 />
               );
             })}
@@ -195,7 +195,7 @@ export default function WidgetImpressionPanel() {
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: '#0966C3',
+                      backgroundColor: 'var(--accent-primary)',
                       width: `${percentage}%`,
                       transition: 'width 0.3s ease',
                     }}

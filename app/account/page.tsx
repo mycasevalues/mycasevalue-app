@@ -211,7 +211,7 @@ export default function AccountPage() {
 
         {/* Loading Spinner */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '80px' }}>
-          <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: 'var(--accent-primary)', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+          <div style={{ width: 32, height: 32, border: '3px solid var(--border-default)', borderTopColor: 'var(--accent-primary)', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
           <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
         </div>
       </div>
@@ -247,7 +247,7 @@ export default function AccountPage() {
       <div style={{ padding: '40px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Profile Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Profile Information
             </h2>
@@ -262,7 +262,7 @@ export default function AccountPage() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  style={{ width: '100%', height: '48px', padding: '10px 12px', border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px', color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', boxSizing: 'border-box' }}
+                  style={{ width: '100%', height: '48px', padding: '10px 12px', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px', color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', boxSizing: 'border-box' }}
                 />
               </div>
 
@@ -275,7 +275,7 @@ export default function AccountPage() {
                   type="email"
                   value={user?.email || ''}
                   disabled
-                  style={{ width: '100%', height: '48px', padding: '10px 12px', border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px', color: 'var(--color-text-secondary)', backgroundColor: 'var(--color-surface-1)', boxSizing: 'border-box', cursor: 'not-allowed' }}
+                  style={{ width: '100%', height: '48px', padding: '10px 12px', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px', color: 'var(--color-text-secondary)', backgroundColor: 'var(--color-surface-1)', boxSizing: 'border-box', cursor: 'not-allowed' }}
                 />
                 <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
                   Email cannot be changed. Contact support if needed.
@@ -299,7 +299,7 @@ export default function AccountPage() {
           </div>
 
           {/* Password Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Change Password
             </h2>
@@ -315,7 +315,7 @@ export default function AccountPage() {
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   placeholder="Minimum 8 characters"
-                  style={{ width: '100%', height: '48px', padding: '10px 12px', border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px', color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', boxSizing: 'border-box' }}
+                  style={{ width: '100%', height: '48px', padding: '10px 12px', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px', color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', boxSizing: 'border-box' }}
                 />
               </div>
 
@@ -329,7 +329,7 @@ export default function AccountPage() {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Re-enter your new password"
-                  style={{ width: '100%', height: '48px', padding: '10px 12px', border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px', color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', boxSizing: 'border-box' }}
+                  style={{ width: '100%', height: '48px', padding: '10px 12px', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px', color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', boxSizing: 'border-box' }}
                 />
               </div>
 
@@ -350,7 +350,7 @@ export default function AccountPage() {
           </div>
 
           {/* Subscription Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Subscription Plan
             </h2>
@@ -379,14 +379,14 @@ export default function AccountPage() {
               <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
                 {planInfo?.plan === 'free' ? 'Upgrade Plan' : 'Change Plan'}
               </Link>
-              <Link href="/billing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#FAFBFC', color: 'var(--color-text-primary)', border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
+              <Link href="/billing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#FAFBFC', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
                 Billing History
               </Link>
             </div>
           </div>
 
           {/* API Key Management */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
               API Keys
             </h2>
@@ -405,7 +405,7 @@ export default function AccountPage() {
                 <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 8px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Your New API Key (copy now)
                 </p>
-                <code style={{ display: 'block', padding: '10px 12px', backgroundColor: 'var(--color-surface-0)', borderRadius: '8px', fontSize: '13px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', wordBreak: 'break-all', border: '1px solid #E5E7EB' }}>
+                <code style={{ display: 'block', padding: '10px 12px', backgroundColor: 'var(--color-surface-0)', borderRadius: '8px', fontSize: '13px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', wordBreak: 'break-all', border: '1px solid var(--border-default)' }}>
                   {newApiKey}
                 </code>
               </div>
@@ -415,7 +415,7 @@ export default function AccountPage() {
               <div style={{ marginBottom: '20px' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
                   <thead>
-                    <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Key</th>
                       <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Created</th>
                       <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Last Used</th>
@@ -463,7 +463,7 @@ export default function AccountPage() {
           </div>
 
           {/* Quick Links */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Quick Links
             </h2>
@@ -478,7 +478,7 @@ export default function AccountPage() {
                   key={link.href}
                   href={link.href}
                   className="quick-link-card"
-                  style={{ display: 'block', padding: '16px', borderRadius: '12px', border: '1px solid #E5E7EB', textDecoration: 'none', transition: 'all 0.2s' }}
+                  style={{ display: 'block', padding: '16px', borderRadius: '12px', border: '1px solid var(--border-default)', textDecoration: 'none', transition: 'all 0.2s' }}
                 >
                   <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>{link.label}</div>
                   <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{link.desc}</div>
@@ -487,7 +487,7 @@ export default function AccountPage() {
             </div>
             <style>{`
               .quick-link-card:hover {
-                border-color: #004182;
+                border-color: var(--accent-primary-hover);
                 box-shadow: 0 2px 8px rgba(10, 102, 194, 0.12);
               }
             `}</style>
@@ -498,7 +498,7 @@ export default function AccountPage() {
             <button
               onClick={handleSignOut}
               className="sign-out-btn"
-              style={{ width: '100%', padding: '12px', backgroundColor: '#FAFBFC', color: 'var(--color-text-primary)', border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s' }}
+              style={{ width: '100%', padding: '12px', backgroundColor: '#FAFBFC', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s' }}
             >
               Sign Out
             </button>
@@ -509,7 +509,7 @@ export default function AccountPage() {
               }
             `}</style>
 
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '2px solid #0966C3' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '2px solid var(--accent-primary)' }}>
               <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>
                 Danger Zone
               </h2>

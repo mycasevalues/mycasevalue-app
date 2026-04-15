@@ -80,7 +80,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
       justifyContent: 'space-between',
     }}>
       {/* Attribution */}
-      <div style={{ fontSize: '9px', color: '#0966C3', fontWeight: 500 }}>
+      <div style={{ fontSize: '9px', color: 'var(--accent-primary)', fontWeight: 500 }}>
         Powered by MyCaseValue
       </div>
 
@@ -143,7 +143,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
               transform: 'translate(-50%, -50%)',
               width: '3px',
               height: '16px',
-              backgroundColor: '#0966C3',
+              backgroundColor: 'var(--accent-primary)',
               borderRadius: '2px',
               zIndex: 2,
             }}

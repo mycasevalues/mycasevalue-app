@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 const btnStyle: React.CSSProperties = {
   padding: '6px 14px',
-  background: '#FFFFFF',
-  border: '1px solid #E5E7EB',
+  background: 'var(--color-surface-0)',
+  border: '1px solid var(--border-default)',
   borderRadius: '12px',
   fontSize: '13px',
   color: '#F0F2F5',

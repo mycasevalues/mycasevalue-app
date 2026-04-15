@@ -113,7 +113,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
       justifyContent: 'space-between',
     }}>
       {/* Header with attribution */}
-      <div style={{ fontSize: '9px', color: '#0966C3', fontWeight: 500 }}>
+      <div style={{ fontSize: '9px', color: 'var(--accent-primary)', fontWeight: 500 }}>
         Powered by MyCaseValue
       </div>
 
@@ -162,7 +162,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
         href={`/nos/${nosCode}`}
         style={{
           fontSize: '11px',
-          color: '#0966C3',
+          color: 'var(--accent-primary)',
           textDecoration: 'none',
           fontWeight: 500,
           marginTop: '4px',

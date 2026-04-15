@@ -19,9 +19,9 @@ export default function Loading() {
         }
       `}</style>
 
-      <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
+      <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
         {/* Dark Navy Header Skeleton */}
-        <div style={{ background: '#0966C3', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
+        <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 32px) 24px' }}>
             {/* Breadcrumb skeleton */}
             <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
@@ -58,7 +58,7 @@ export default function Loading() {
                   style={{
                     height: '28px',
                     width: '140px',
-                    background: '#0966C3',
+                    background: 'var(--accent-primary)',
                     borderRadius: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -69,7 +69,7 @@ export default function Loading() {
         </div>
 
         {/* White Subheader Section Skeleton */}
-        <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
             {/* Description lines skeleton */}
             <div style={{ marginBottom: '20px' }}>
@@ -77,7 +77,7 @@ export default function Loading() {
                 style={{
                   height: '14px',
                   width: '85%',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   marginBottom: '8px',
                   borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -87,7 +87,7 @@ export default function Loading() {
                 style={{
                   height: '14px',
                   width: '70%',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
@@ -102,7 +102,7 @@ export default function Loading() {
                   style={{
                     width: '100px',
                     height: '36px',
-                    background: '#E5E7EB',
+                    background: 'var(--border-default)',
                     borderRadius: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -118,9 +118,9 @@ export default function Loading() {
                   style={{
                     width: '150px',
                     height: '28px',
-                    background: '#E5E7EB',
+                    background: 'var(--border-default)',
                     borderRadius: '12px',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
                 />
@@ -134,8 +134,8 @@ export default function Loading() {
           {/* Case Type Overview Section */}
           <section
             style={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '32px',
               marginBottom: '24px',
@@ -147,7 +147,7 @@ export default function Loading() {
                 style={{
                   height: '18px',
                   width: '30%',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   marginBottom: '8px',
                   borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -157,7 +157,7 @@ export default function Loading() {
                 style={{
                   height: '14px',
                   width: '50%',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
@@ -172,16 +172,16 @@ export default function Loading() {
                   style={{
                     textAlign: 'center',
                     padding: '28px 20px',
-                    background: '#F8F9FA',
+                    background: 'var(--color-surface-1)',
                     borderRadius: '12px',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                   }}
                 >
                   <div
                     style={{
                       height: '40px',
                       width: '70%',
-                      background: '#E5E7EB',
+                      background: 'var(--border-default)',
                       margin: '0 auto 12px',
                       borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -191,7 +191,7 @@ export default function Loading() {
                     style={{
                       height: '14px',
                       width: '80%',
-                      background: '#E5E7EB',
+                      background: 'var(--border-default)',
                       margin: '0 auto 8px',
                       borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -201,7 +201,7 @@ export default function Loading() {
                     style={{
                       height: '12px',
                       width: '70%',
-                      background: '#E5E7EB',
+                      background: 'var(--border-default)',
                       margin: '0 auto',
                       borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -216,7 +216,7 @@ export default function Loading() {
                 marginTop: '20px',
                 height: '12px',
                 width: '50%',
-                background: '#E5E7EB',
+                background: 'var(--border-default)',
                 margin: '20px auto 0',
                 borderRadius: '12px',
                 animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -227,8 +227,8 @@ export default function Loading() {
           {/* Case Timeline Section */}
           <section
             style={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '32px',
               marginBottom: '24px',
@@ -240,7 +240,7 @@ export default function Loading() {
                 style={{
                   height: '18px',
                   width: '28%',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   marginBottom: '8px',
                   borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -250,7 +250,7 @@ export default function Loading() {
                 style={{
                   height: '14px',
                   width: '50%',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
@@ -264,16 +264,16 @@ export default function Loading() {
                   key={i}
                   style={{
                     padding: '20px',
-                    background: '#F8F9FA',
+                    background: 'var(--color-surface-1)',
                     borderRadius: '12px',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                   }}
                 >
                   <div
                     style={{
                       height: '14px',
                       width: '40%',
-                      background: '#E5E7EB',
+                      background: 'var(--border-default)',
                       marginBottom: '8px',
                       borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -283,7 +283,7 @@ export default function Loading() {
                     style={{
                       height: '12px',
                       width: '60%',
-                      background: '#E5E7EB',
+                      background: 'var(--border-default)',
                       borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
@@ -296,8 +296,8 @@ export default function Loading() {
           {/* Settlement & Outcomes Section */}
           <section
             style={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '32px',
               marginBottom: '24px',
@@ -309,7 +309,7 @@ export default function Loading() {
                 style={{
                   height: '18px',
                   width: '30%',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   marginBottom: '8px',
                   borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -319,7 +319,7 @@ export default function Loading() {
                 style={{
                   height: '14px',
                   width: '50%',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
@@ -334,7 +334,7 @@ export default function Loading() {
                   style={{
                     height: '16px',
                     width: i === 4 ? '30%' : '100%',
-                    background: '#E5E7EB',
+                    background: 'var(--border-default)',
                     borderRadius: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -346,8 +346,8 @@ export default function Loading() {
           {/* Related Cases Section */}
           <section
             style={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '32px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -358,7 +358,7 @@ export default function Loading() {
                 style={{
                   height: '18px',
                   width: '25%',
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   marginBottom: '8px',
                   borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -373,16 +373,16 @@ export default function Loading() {
                   key={i}
                   style={{
                     padding: '16px',
-                    background: '#F8F9FA',
+                    background: 'var(--color-surface-1)',
                     borderRadius: '12px',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                   }}
                 >
                   <div
                     style={{
                       height: '14px',
                       width: '70%',
-                      background: '#E5E7EB',
+                      background: 'var(--border-default)',
                       marginBottom: '8px',
                       borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -392,7 +392,7 @@ export default function Loading() {
                     style={{
                       height: '12px',
                       width: '50%',
-                      background: '#E5E7EB',
+                      background: 'var(--border-default)',
                       borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}

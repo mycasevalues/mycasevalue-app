@@ -19,9 +19,9 @@ import WidgetImpressionPanel from '@/components/admin/WidgetImpressionPanel';
 type SectionType = 'overview' | 'content' | 'data' | 'rules' | 'users' | 'email' | 'costs' | 'api' | 'widgets';
 
 const COLORS = {
-  primary: '#0966C3',
-  dark: '#004182',
-  black: '#0f0f0f',
+  primary: 'var(--accent-primary)',
+  dark: 'var(--accent-primary-hover)',
+  black: 'var(--color-text-primary)',
 };
 
 interface MetricCard {

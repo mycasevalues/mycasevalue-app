@@ -6,7 +6,7 @@ import { SITE_URL } from '../../../lib/site-config';
 const MethodologyCapture = dynamic(() => import('@/components/MethodologyCapture'), {
   ssr: false,
   loading: () => (
-    <div style={{ padding: 24, textAlign: 'center', color: '#9CA3AF', fontFamily: 'var(--font-body)', fontSize: 14 }}>
+    <div style={{ padding: 24, textAlign: 'center', color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)', fontSize: 14 }}>
       Loading PDF generator…
     </div>
   ),
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
 
 export default function WhitepaperPage() {
   return (
-    <div style={{ background: '#F8F9FA', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       {/* Header Banner */}
-      <div style={{ background: '#0966C3', padding: '64px 24px' }}>
+      <div style={{ background: 'var(--accent-primary)', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
           <div style={{ marginBottom: 16 }}>
             <span
               style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#0966C3',
-                color: '#FFFFFF',
+                backgroundColor: 'var(--accent-primary)',
+                color: 'var(--color-surface-0)',
                 fontSize: '11px',
                 fontWeight: 600,
                 letterSpacing: '0.08em',
@@ -55,7 +55,7 @@ export default function WhitepaperPage() {
             style={{
               fontSize: 'clamp(28px, 4vw, 48px)',
               fontWeight: 700,
-              color: '#FFFFFF',
+              color: 'var(--color-surface-0)',
               fontFamily: 'var(--font-display)',
               letterSpacing: '-1px',
               marginBottom: 12,
@@ -79,18 +79,18 @@ export default function WhitepaperPage() {
       </div>
 
       {/* Breadcrumb Navigation */}
-      <div style={{ borderBottom: '1px solid #E5E7EB', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: '#F8F9FA' }}>
+      <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
-            <Link href="/" style={{ color: '#004182', textDecoration: 'none' }}>
+            <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
               Home
             </Link>
-            <span style={{ color: '#4B5563' }}>/</span>
-            <Link href="/methodology" style={{ color: '#004182', textDecoration: 'none' }}>
+            <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
+            <Link href="/methodology" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
               Methodology
             </Link>
-            <span style={{ color: '#4B5563' }}>/</span>
-            <span style={{ color: '#4B5563' }}>Whitepaper</span>
+            <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
+            <span style={{ color: 'var(--color-text-secondary)' }}>Whitepaper</span>
           </nav>
         </div>
       </div>
@@ -99,9 +99,9 @@ export default function WhitepaperPage() {
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '64px 24px' }}>
         <div
           style={{
-            background: '#FFFFFF',
+            background: 'var(--color-surface-0)',
             borderRadius: '12px',
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
             padding: '48px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
           }}
@@ -115,7 +115,7 @@ export default function WhitepaperPage() {
             marginTop: 48,
             padding: '24px',
             borderRadius: '12px',
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
             backgroundColor: 'rgba(10, 102, 194, 0.05)',
           }}
         >
@@ -123,7 +123,7 @@ export default function WhitepaperPage() {
             style={{
               fontSize: 16,
               fontWeight: 600,
-              color: '#004182',
+              color: 'var(--accent-primary-hover)',
               fontFamily: 'var(--font-display)',
               marginBottom: 12,
               marginTop: 0,
@@ -133,23 +133,23 @@ export default function WhitepaperPage() {
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
             <div>
-              <p style={{ fontSize: 13, color: '#4B5563', margin: '0 0 4px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-body)' }}>
                 Version
               </p>
-              <p style={{ fontSize: 15, fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>
                 1.0
               </p>
             </div>
             <div>
-              <p style={{ fontSize: 13, color: '#4B5563', margin: '0 0 4px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-body)' }}>
                 Published
               </p>
-              <p style={{ fontSize: 15, fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>
                 2026
               </p>
             </div>
             <div>
-              <p style={{ fontSize: 13, color: '#4B5563', margin: '0 0 4px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-body)' }}>
                 Contact
               </p>
               <a
@@ -157,7 +157,7 @@ export default function WhitepaperPage() {
                 style={{
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#0966C3',
+                  color: 'var(--accent-primary)',
                   margin: 0,
                   fontFamily: 'var(--font-body)',
                   textDecoration: 'none',
@@ -179,7 +179,7 @@ export default function WhitepaperPage() {
               gap: 8,
               fontSize: 15,
               fontWeight: 600,
-              color: '#0966C3',
+              color: 'var(--accent-primary)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
             }}

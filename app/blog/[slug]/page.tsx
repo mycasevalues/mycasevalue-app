@@ -336,13 +336,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   if (!article) {
     return (
-      <div style={{ minHeight: '100vh', background: '#F7F8FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center', maxWidth: '600px', padding: '24px' }}>
-          <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: '#0f0f0f', marginBottom: '16px' }}>Article Not Found</h1>
-          <p style={{ color: '#4B5563', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
+          <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '16px' }}>Article Not Found</h1>
+          <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
             We could not find the article you are looking for.
           </p>
-          <Link href="/blog" style={{ color: '#0966C3', fontWeight: '600', textDecoration: 'none' }}>
+          <Link href="/blog" style={{ color: 'var(--accent-primary)', fontWeight: '600', textDecoration: 'none' }}>
             Return to Blog
           </Link>
         </div>
@@ -382,7 +382,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     .slice(0, 3);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
       {/* JSON-LD structured data for Article schema */}
       <script
         type="application/ld+json"
@@ -392,7 +392,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         .article-content p {
           margin-bottom: 16px;
           line-height: 1.8;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           font-family: var(--font-body);
           font-size: 16px;
         }
@@ -402,8 +402,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         }
 
         .related-article-card {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           border-radius: 12px;
           padding: 20px;
           text-decoration: none;
@@ -413,12 +413,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         .related-article-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-          border-color: #0966C3;
+          border-color: var(--accent-primary);
         }
 
         .category-badge {
           background: #FFF3F4;
-          color: #0966C3;
+          color: var(--accent-primary);
           padding: 4px 10px;
           border-radius: 12px;
           font-size: 12px;
@@ -436,7 +436,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#0966C3', padding: '48px 24px' }}>
+      <div style={{ background: 'var(--accent-primary)', padding: '48px 24px' }}>
         <div className="max-w-4xl mx-auto">
           <Link
             href="/blog"
@@ -455,11 +455,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             Back to Blog
           </Link>
 
-          <div className="category-badge" style={{ marginBottom: '16px', background: 'rgba(10, 102, 194, 0.15)', color: '#FFFFFF', fontSize: '12px' }}>
+          <div className="category-badge" style={{ marginBottom: '16px', background: 'rgba(10, 102, 194, 0.15)', color: 'var(--color-surface-0)', fontSize: '12px' }}>
             {article.category}
           </div>
 
-          <h1 style={{ color: '#FFFFFF', fontSize: '42px', fontWeight: 'bold', marginBottom: '16px', lineHeight: 1.2 }}>
+          <h1 style={{ color: 'var(--color-surface-0)', fontSize: '42px', fontWeight: 'bold', marginBottom: '16px', lineHeight: 1.2 }}>
             {article.title}
           </h1>
 
@@ -485,9 +485,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
 
             {/* Article Footer */}
-            <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #E5E7EB' }}>
+            <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid var(--border-default)' }}>
               <div style={{ marginBottom: '24px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 'bold', color: '#0f0f0f', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Share This Article
                 </h3>
                 <div style={{ display: 'flex', gap: '12px' }}>
@@ -501,10 +501,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                       href={link.href}
                       style={{
                         padding: '8px 12px',
-                        border: '1px solid #E5E7EB',
+                        border: '1px solid var(--border-default)',
                         borderRadius: '20px',
                         fontSize: '12px',
-                        color: '#4B5563',
+                        color: 'var(--color-text-secondary)',
                         textDecoration: 'none',
                         transition: 'all 0.2s ease',
                       }}
@@ -516,11 +516,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 </div>
               </div>
 
-              <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '24px' }}>
-                <h3 style={{ fontSize: '16px', fontWeight: 'bold', color: '#0f0f0f', marginBottom: '12px' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '24px' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '12px' }}>
                   About the Author
                 </h3>
-                <p style={{ fontSize: '14px', color: '#4B5563', margin: '0 0 12px 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 12px 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
                   {article.author} creates in-depth analyses of federal court data and litigation trends to help legal professionals make informed decisions based on actual case outcomes.
                 </p>
               </div>
@@ -531,7 +531,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <aside style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             {/* Related Articles */}
             <div>
-              <h3 style={{ fontSize: '14px', fontWeight: 'bold', color: '#0f0f0f', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <h3 style={{ fontSize: '14px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Related Articles
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -542,10 +542,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     className="related-article-card"
                   >
                     <div className="category-badge">{relatedArticle.category}</div>
-                    <h4 style={{ fontSize: '14px', fontWeight: 'bold', color: '#0f0f0f', margin: '0 0 8px 0', lineHeight: 1.3 }}>
+                    <h4 style={{ fontSize: '14px', fontWeight: 'bold', color: 'var(--color-text-primary)', margin: '0 0 8px 0', lineHeight: 1.3 }}>
                       {relatedArticle.title}
                     </h4>
-                    <p style={{ fontSize: '12px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
                       {relatedArticle.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                     </p>
                   </Link>
@@ -554,11 +554,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
 
             {/* CTA Box */}
-            <div style={{ background: '#FFFFFF', border: '2px solid #0966C3', borderRadius: '12px', padding: '24px', textAlign: 'center' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: 'bold', color: '#0f0f0f', marginBottom: '12px' }}>
+            <div style={{ background: 'var(--color-surface-0)', border: '2px solid var(--accent-primary)', borderRadius: '12px', padding: '24px', textAlign: 'center' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '12px' }}>
                 Get More Insights
               </h3>
-              <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 16px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', fontFamily: 'var(--font-body)' }}>
                 Explore federal court data with our interactive tools and analytics platform.
               </p>
               <Link
@@ -567,8 +567,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '6px',
-                  background: '#0966C3',
-                  color: '#FFFFFF',
+                  background: 'var(--accent-primary)',
+                  color: 'var(--color-surface-0)',
                   padding: '10px 16px',
                   borderRadius: '20px',
                   fontSize: '12px',
@@ -588,11 +588,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       {/* Bottom CTA */}
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <section style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '48px 32px', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: '#0f0f0f', marginBottom: '12px' }}>
+        <section style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '48px 32px', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '12px' }}>
             Ready to put this data into action?
           </h2>
-          <p style={{ fontSize: '16px', color: '#4B5563', margin: '0 0 24px 0', fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0', fontFamily: 'var(--font-body)' }}>
             Search federal court cases and settlements by case type, jurisdiction, and more.
           </p>
           <Link
@@ -601,8 +601,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              background: '#0966C3',
-              color: '#FFFFFF',
+              background: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               padding: '12px 24px',
               borderRadius: '12px',
               fontSize: '14px',

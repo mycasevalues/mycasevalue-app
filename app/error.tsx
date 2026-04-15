@@ -66,7 +66,7 @@ export default function Error({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#F7F8FA',
+        background: 'var(--color-surface-1)',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         padding: '0',
         position: 'relative',
@@ -80,7 +80,7 @@ export default function Error({
           left: 0,
           right: 0,
           height: '8px',
-          background: '#0966C3',
+          background: 'var(--accent-primary)',
         }}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
@@ -91,8 +91,8 @@ export default function Error({
           style={{
             maxWidth: 480,
             textAlign: 'center',
-            background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-0)',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
             padding: '48px 32px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
@@ -138,7 +138,7 @@ export default function Error({
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 margin: '0 0 8px',
                 letterSpacing: '-0.01em',
               }}
@@ -150,7 +150,7 @@ export default function Error({
               variants={itemVariants}
               style={{
                 fontSize: '15px',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 lineHeight: 1.6,
                 margin: '0 0 24px',
                 maxWidth: 400,
@@ -167,7 +167,7 @@ export default function Error({
                 style={{
                   fontFamily: '"PT Mono", monospace',
                   fontSize: '12px',
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   margin: '0 0 24px',
                   wordBreak: 'break-all',
                 }}
@@ -187,8 +187,8 @@ export default function Error({
                   alignItems: 'center',
                   gap: 8,
                   padding: '12px 24px',
-                  background: '#0966C3',
-                  color: '#FFFFFF',
+                  background: 'var(--accent-primary)',
+                  color: 'var(--color-surface-0)',
                   border: 'none',
                   borderRadius: '12px',
                   fontSize: '14px',
@@ -214,9 +214,9 @@ export default function Error({
                   alignItems: 'center',
                   gap: 8,
                   padding: '12px 24px',
-                  background: '#F7F8FA',
-                  color: '#0f0f0f',
-                  border: '1px solid #E5E7EB',
+                  background: 'var(--color-surface-1)',
+                  color: 'var(--color-text-primary)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   fontSize: '14px',
                   fontWeight: 600,

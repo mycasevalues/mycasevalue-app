@@ -104,7 +104,7 @@ export default function StatusPage() {
         minHeight: '100vh',
         backgroundColor: '#F9FAFB',
         fontFamily: 'var(--font-body)',
-        color: '#0f0f0f',
+        color: 'var(--color-text-primary)',
       }}
     >
       <div
@@ -238,8 +238,8 @@ export default function StatusPage() {
                 <div
                   key={service.name}
                   style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid #E5E7EB',
+                    backgroundColor: 'var(--color-surface-0)',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '6px',
                     padding: '16px',
                     display: 'grid',
@@ -319,7 +319,7 @@ export default function StatusPage() {
                     <div
                       style={{
                         fontSize: '11px',
-                        color: '#9CA3AF',
+                        color: 'var(--color-text-muted)',
                       }}
                     >
                       {minutesAgo === 0 ? 'Just now' : `${minutesAgo}m ago`}
@@ -345,8 +345,8 @@ export default function StatusPage() {
           </h2>
           <div
             style={{
-              backgroundColor: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              backgroundColor: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '6px',
               padding: '16px',
               textAlign: 'center',
@@ -363,9 +363,9 @@ export default function StatusPage() {
           style={{
             marginTop: '48px',
             paddingTop: '24px',
-            borderTop: '1px solid #E5E7EB',
+            borderTop: '1px solid var(--border-default)',
             fontSize: '12px',
-            color: '#9CA3AF',
+            color: 'var(--color-text-muted)',
           }}
         >
           <p style={{ margin: '0 0 8px 0' }}>
@@ -373,7 +373,7 @@ export default function StatusPage() {
             <a
               href="mailto:status@mycasevalues.com"
               style={{
-                color: '#0966C3',
+                color: 'var(--accent-primary)',
                 textDecoration: 'none',
               }}
             >

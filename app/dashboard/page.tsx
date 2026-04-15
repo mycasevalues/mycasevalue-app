@@ -465,28 +465,28 @@ export default async function DashboardPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
               {/* Total Cases Analyzed */}
-              <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Total Cases Analyzed</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)' }}>5.1M</div>
                 <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>Cases in database</div>
               </div>
 
               {/* Active Case Types */}
-              <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Active Case Types</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)' }}>84</div>
                 <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>Federal case categories</div>
               </div>
 
               {/* Federal Districts */}
-              <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Federal Districts</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)' }}>95</div>
                 <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>U.S. courts covered</div>
               </div>
 
               {/* Data Coverage */}
-              <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div style={{ color: '#666', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Data Coverage</div>
                 <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)' }}>1970-2025</div>
                 <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>55+ years of data</div>
@@ -514,19 +514,19 @@ export default async function DashboardPage() {
 
           {/* Quick Stats Overview Bar */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '16px', marginBottom: '40px' }}>
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>Total Cases</p>
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0 }}>5.1M+</p>
             </div>
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>NOS Codes</p>
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0 }}>84</p>
             </div>
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>Districts Covered</p>
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0 }}>95</p>
             </div>
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>Uptime Status</p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600, color: '#059669', margin: 0 }}>100% [x]</p>
             </div>
@@ -553,7 +553,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* Platform Highlights — Top 5 Case Types */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '40px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '40px' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
               Platform Highlights — Top Case Types
             </h2>
@@ -582,7 +582,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* Recent Platform Updates */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '40px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '40px' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
               Recent Platform Updates
             </h2>
@@ -603,7 +603,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* Explore by Category */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '40px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '40px' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
               Explore by Category
             </h2>
@@ -628,7 +628,7 @@ export default async function DashboardPage() {
           {/* Stats Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '32px' }}>
             {/* Current Plan */}
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                 Current Plan
               </p>
@@ -638,7 +638,7 @@ export default async function DashboardPage() {
             </div>
 
             {/* Plan Status */}
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                 Plan Status
               </p>
@@ -648,7 +648,7 @@ export default async function DashboardPage() {
             </div>
 
             {/* Member Since */}
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                 Member Since
               </p>
@@ -658,7 +658,7 @@ export default async function DashboardPage() {
             </div>
 
             {/* Quick Action */}
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 12px', fontFamily: 'var(--font-body)' }}>
                 Quick Action
               </p>
@@ -669,7 +669,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* Your Plan Section */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
               Your Plan Includes
             </h2>
@@ -722,7 +722,7 @@ export default async function DashboardPage() {
 
           {/* Attorney Tools — Attorney tier */}
           {isAttorney && (
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
                   Attorney Tools
@@ -762,7 +762,7 @@ export default async function DashboardPage() {
           )}
 
           {/* Quick Research Links */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
               Quick Research
             </h2>
@@ -774,7 +774,7 @@ export default async function DashboardPage() {
                 { label: 'Case Calculator', href: '/calculator', color: '#059669' },
                 { label: 'Trends & Data', href: '/trends', color: '#B86E00' },
               ].map((link) => (
-                <Link key={link.href} href={link.href} style={{ display: 'block', padding: '16px', borderRadius: '12px', border: '1px solid #E5E7EB', textDecoration: 'none', textAlign: 'center', transition: 'all 0.2s ease', background: '#FAFBFC' }}>
+                <Link key={link.href} href={link.href} style={{ display: 'block', padding: '16px', borderRadius: '12px', border: '1px solid var(--border-default)', textDecoration: 'none', textAlign: 'center', transition: 'all 0.2s ease', background: '#FAFBFC' }}>
                   <span style={{ fontSize: '14px', fontWeight: 600, color: link.color, fontFamily: 'var(--font-body)' }}>{link.label}</span>
                 </Link>
               ))}
@@ -804,13 +804,13 @@ export default async function DashboardPage() {
 
           {/* Search History — Unlimited only */}
           {isUnlimitedPlus && !isExpired && searchHistory.length > 0 && (
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
               <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
                 Search History
               </h2>
               <div>
                 {searchHistory.map((s, i) => (
-                  <div key={i} style={{ padding: '10px 0', borderBottom: i < searchHistory.length - 1 ? '1px solid #E5E7EB' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div key={i} style={{ padding: '10px 0', borderBottom: i < searchHistory.length - 1 ? '1px solid var(--border-default)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
                       <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>{s.query}</p>
                       <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>{s.category ? `${s.category} · ` : ''}{new Date(s.searched_at).toLocaleDateString()}</p>
@@ -823,14 +823,14 @@ export default async function DashboardPage() {
           )}
 
           {/* Recent Activity Feed */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
               Recent Activity
             </h2>
             {recentReports.length > 0 ? (
               <div>
                 {recentReports.map((r, i) => (
-                  <div key={i} style={{ padding: '12px 0', borderBottom: i < recentReports.length - 1 ? '1px solid #E5E7EB' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div key={i} style={{ padding: '12px 0', borderBottom: i < recentReports.length - 1 ? '1px solid var(--border-default)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
                       <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>{getNosLabel(r.category)} · {r.district}</p>
                       <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>{new Date(r.viewed_at).toLocaleDateString()}</p>
@@ -842,28 +842,28 @@ export default async function DashboardPage() {
             ) : (
               <div>
                 {/* Demo Activity Feed for Investors */}
-                <div style={{ padding: '12px 0', borderBottom: '1px solid #E5E7EB', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ padding: '12px 0', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Employment Discrimination (NOS 442) · S.D.N.Y.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Analysis completed 2 hours ago</p>
                   </div>
                   <div style={{ fontSize: '12px', fontWeight: 600, color: '#059669', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>76% win rate</div>
                 </div>
-                <div style={{ padding: '12px 0', borderBottom: '1px solid #E5E7EB', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ padding: '12px 0', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Personal Injury — Auto (NOS 350) · C.D. Cal.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Report generated 5 hours ago</p>
                   </div>
                   <div style={{ fontSize: '12px', fontWeight: 600, color: '#059669', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>63% settlement</div>
                 </div>
-                <div style={{ padding: '12px 0', borderBottom: '1px solid #E5E7EB', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ padding: '12px 0', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Patent Infringement (NOS 830) · N.D. Cal.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Judge intelligence report 8 hours ago</p>
                   </div>
                   <div style={{ fontSize: '12px', fontWeight: 600, color: '#D97706', backgroundColor: '#FEF3C7', padding: '4px 12px', borderRadius: '6px' }}>Moderate risk</div>
                 </div>
-                <div style={{ padding: '12px 0', borderBottom: '1px solid #E5E7EB', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ padding: '12px 0', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Contract Dispute (NOS 110) · S.D. Tex.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Settlement analysis 12 hours ago</p>
@@ -882,7 +882,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* Platform Status Section */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
               Platform Status
             </h2>
@@ -893,7 +893,7 @@ export default async function DashboardPage() {
                 { name: 'Anthropic AI', status: 'Connected', icon: '●' },
                 { name: 'Supabase', status: 'Connected', icon: '●' },
               ].map((item, i) => (
-                <div key={i} style={{ padding: '16px', borderRadius: '20px', border: '1px solid #E5E7EB', display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: '#F9FAFB' }}>
+                <div key={i} style={{ padding: '16px', borderRadius: '20px', border: '1px solid var(--border-default)', display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: '#F9FAFB' }}>
                   <div style={{ fontSize: '16px', color: '#059669' }}>{item.icon}</div>
                   <div style={{ flex: 1 }}>
                     <p style={{ fontSize: '13px', fontWeight: 600, color: '#666', margin: 0, textTransform: 'uppercase', letterSpacing: '0.03em' }}>{item.name}</p>

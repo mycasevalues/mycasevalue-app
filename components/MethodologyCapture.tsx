@@ -60,11 +60,11 @@ export default function MethodologyCapture() {
 
     // Define fonts and colors
     const colors = {
-      primary: [10, 102, 194], // #0966C3
+      primary: [10, 102, 194], // var(--accent-primary)
       darkBlue: [0, 65, 130], // #004182
-      black: [15, 15, 15], // #0f0f0f
-      darkGray: [75, 85, 99], // #4B5563
-      lightGray: [229, 231, 235], // #E5E7EB
+      black: [15, 15, 15], // var(--color-text-primary)
+      darkGray: [75, 85, 99], // var(--color-text-secondary)
+      lightGray: [229, 231, 235], // var(--border-default)
     };
 
     let currentPage = 1;
@@ -463,7 +463,7 @@ export default function MethodologyCapture() {
         .form-input {
           width: 100%;
           padding: 12px 16px;
-          border: 1px solid #E5E7EB;
+          border: 1px solid var(--border-default);
           border-radius: 8px;
           font-size: 14px;
           font-family: var(--font-body);
@@ -472,7 +472,7 @@ export default function MethodologyCapture() {
         }
         .form-input:focus {
           outline: none;
-          border-color: #0966C3;
+          border-color: var(--accent-primary);
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
         }
         .form-input.error {
@@ -481,7 +481,7 @@ export default function MethodologyCapture() {
         .form-button {
           width: 100%;
           padding: 12px 24px;
-          background-color: #0966C3;
+          background-color: var(--accent-primary);
           color: white;
           border: none;
           border-radius: 8px;
@@ -532,7 +532,7 @@ export default function MethodologyCapture() {
           style={{
             fontSize: 20,
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             fontFamily: 'var(--font-display)',
             marginBottom: 8,
             marginTop: 0,
@@ -543,7 +543,7 @@ export default function MethodologyCapture() {
         <p
           style={{
             fontSize: 15,
-            color: '#4B5563',
+            color: 'var(--color-text-secondary)',
             fontFamily: 'var(--font-body)',
             lineHeight: 1.6,
             marginBottom: 24,
@@ -573,7 +573,7 @@ export default function MethodologyCapture() {
               display: 'block',
               fontSize: 14,
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: 8,
               fontFamily: 'var(--font-body)',
             }}
@@ -597,7 +597,7 @@ export default function MethodologyCapture() {
               display: 'block',
               fontSize: 14,
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: 8,
               fontFamily: 'var(--font-body)',
             }}
@@ -621,7 +621,7 @@ export default function MethodologyCapture() {
               display: 'block',
               fontSize: 14,
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: 8,
               fontFamily: 'var(--font-body)',
             }}
@@ -651,13 +651,13 @@ export default function MethodologyCapture() {
           borderRadius: 8,
           backgroundColor: 'rgba(0, 65, 130, 0.05)',
           fontSize: 13,
-          color: '#4B5563',
+          color: 'var(--color-text-secondary)',
           fontFamily: 'var(--font-body)',
           lineHeight: 1.6,
         }}
       >
         <p style={{ marginTop: 0, marginBottom: 8 }}>
-          <strong style={{ color: '#004182' }}>Whitepaper Details:</strong>
+          <strong style={{ color: 'var(--accent-primary-hover)' }}>Whitepaper Details:</strong>
         </p>
         <ul style={{ margin: 0, paddingLeft: 20 }}>
           <li>10-page comprehensive technical documentation</li>

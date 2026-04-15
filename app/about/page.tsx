@@ -87,7 +87,7 @@ const audiences = [
 
 export default function AboutPage() {
   return (
-    <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       <style>{`
         .about-container {
           max-width: 56rem;
@@ -96,8 +96,8 @@ export default function AboutPage() {
         }
 
         .about-header {
-          background: #0966C3;
-          color: #FFFFFF;
+          background: var(--accent-primary);
+          color: var(--color-surface-0);
           padding: 3rem 1.5rem;
           text-align: left;
         }
@@ -109,7 +109,7 @@ export default function AboutPage() {
           letter-spacing: -0.5px;
           line-height: 1.2;
           margin-bottom: 0.5rem;
-          color: #FFFFFF;
+          color: var(--color-surface-0);
         }
 
         .about-intro {
@@ -131,7 +131,7 @@ export default function AboutPage() {
           font-family: var(--font-inter);
           font-size: 1.5rem;
           font-weight: 600;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           margin-bottom: 1rem;
         }
 
@@ -139,19 +139,19 @@ export default function AboutPage() {
           font-family: var(--font-inter);
           font-size: 0.9375rem;
           line-height: 1.8;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           margin-bottom: 1rem;
         }
 
         .section-text strong {
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           font-weight: 600;
         }
 
         .mission-box {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
-          border-left: 4px solid #0966C3;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
+          border-left: 4px solid var(--accent-primary);
           border-radius: 12px;
           padding: 2rem;
           margin-bottom: 2rem;
@@ -171,15 +171,15 @@ export default function AboutPage() {
         }
 
         .source-card {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           border-radius: 12px;
           padding: 1.5rem;
           transition: all 0.2s ease;
         }
 
         .source-card:hover {
-          border-color: #0966C3;
+          border-color: var(--accent-primary);
           box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
           transform: translateY(-2px);
         }
@@ -188,14 +188,14 @@ export default function AboutPage() {
           font-family: var(--font-inter);
           font-size: 1rem;
           font-weight: 600;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           margin-bottom: 0.75rem;
         }
 
         .source-description {
           font-family: var(--font-inter);
           font-size: 0.875rem;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           line-height: 1.6;
         }
 
@@ -213,15 +213,15 @@ export default function AboutPage() {
         }
 
         .audience-card {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           border-radius: 12px;
           padding: 1.5rem;
           transition: all 0.2s ease;
         }
 
         .audience-card:hover {
-          border-color: #0966C3;
+          border-color: var(--accent-primary);
           box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
         }
 
@@ -229,20 +229,20 @@ export default function AboutPage() {
           font-family: var(--font-inter);
           font-size: 1rem;
           font-weight: 600;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           margin-bottom: 0.75rem;
         }
 
         .audience-description {
           font-family: var(--font-inter);
           font-size: 0.875rem;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           line-height: 1.6;
         }
 
         .company-info {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           border-radius: 12px;
           padding: 2rem;
           margin-bottom: 2rem;
@@ -252,7 +252,7 @@ export default function AboutPage() {
           font-family: var(--font-inter);
           font-size: 0.9375rem;
           line-height: 1.8;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           margin-bottom: 1rem;
         }
 
@@ -270,8 +270,8 @@ export default function AboutPage() {
           font-size: 0.875rem;
           font-weight: 600;
           text-decoration: none;
-          background: #0966C3;
-          color: #FFFFFF;
+          background: var(--accent-primary);
+          color: var(--color-surface-0);
           transition: all 0.3s ease;
           margin-top: 1.5rem;
         }

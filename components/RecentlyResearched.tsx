@@ -134,8 +134,8 @@ export default function RecentlyResearched() {
       <div
         style={{
           padding: '16px',
-          backgroundColor: '#FFFFFF',
-          border: '1px solid #E5E7EB',
+          backgroundColor: 'var(--color-surface-0)',
+          border: '1px solid var(--border-default)',
           borderRadius: '8px',
           fontFamily: 'var(--font-body)',
         }}
@@ -144,7 +144,7 @@ export default function RecentlyResearched() {
           style={{
             fontSize: '13px',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             margin: '0 0 8px 0',
             fontFamily: 'var(--font-heading)',
           }}
@@ -154,7 +154,7 @@ export default function RecentlyResearched() {
         <p
           style={{
             fontSize: '12px',
-            color: '#9CA3AF',
+            color: 'var(--color-text-muted)',
             margin: 0,
           }}
         >
@@ -168,8 +168,8 @@ export default function RecentlyResearched() {
     <div
       style={{
         padding: '16px',
-        backgroundColor: '#FFFFFF',
-        border: '1px solid #E5E7EB',
+        backgroundColor: 'var(--color-surface-0)',
+        border: '1px solid var(--border-default)',
         borderRadius: '8px',
         fontFamily: 'var(--font-body)',
       }}
@@ -178,7 +178,7 @@ export default function RecentlyResearched() {
         style={{
           fontSize: '13px',
           fontWeight: 600,
-          color: '#0f0f0f',
+          color: 'var(--color-text-primary)',
           margin: '0 0 12px 0',
           fontFamily: 'var(--font-heading)',
         }}
@@ -196,7 +196,7 @@ export default function RecentlyResearched() {
               flexDirection: 'column',
               padding: '8px 10px',
               backgroundColor: '#F9FAFB',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               borderRadius: '4px',
               textDecoration: 'none',
               transition: 'all 0.2s',
@@ -205,19 +205,19 @@ export default function RecentlyResearched() {
             onMouseEnter={(e) => {
               const el = e.currentTarget;
               el.style.backgroundColor = '#EDF3FB';
-              el.style.borderColor = '#0966C3';
+              el.style.borderColor = 'var(--accent-primary)';
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget;
               el.style.backgroundColor = '#F9FAFB';
-              el.style.borderColor = '#E5E7EB';
+              el.style.borderColor = 'var(--border-default)';
             }}
           >
             <p
               style={{
                 fontSize: '12px',
                 fontWeight: 500,
-                color: '#0966C3',
+                color: 'var(--accent-primary)',
                 margin: 0,
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
@@ -229,7 +229,7 @@ export default function RecentlyResearched() {
             <p
               style={{
                 fontSize: '11px',
-                color: '#9CA3AF',
+                color: 'var(--color-text-muted)',
                 margin: '2px 0 0 0',
               }}
             >
@@ -258,7 +258,7 @@ export default function RecentlyResearched() {
           transition: 'all 0.2s',
         }}
         onMouseEnter={(e) => {
-          (e.target as HTMLButtonElement).style.backgroundColor = '#E5E7EB';
+          (e.target as HTMLButtonElement).style.backgroundColor = 'var(--border-default)';
         }}
         onMouseLeave={(e) => {
           (e.target as HTMLButtonElement).style.backgroundColor = '#F3F4F6';

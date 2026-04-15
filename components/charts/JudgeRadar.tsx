@@ -10,7 +10,7 @@
  *   5. Motion to Dismiss Grant Rate (inverted — lower is better for plaintiff)
  *
  * Each axis is normalized 0–1 relative to the district average.
- * Two overlapping polygons: judge (#0966C3, 20% fill) and district avg (#E0DDD8, no fill).
+ * Two overlapping polygons: judge (var(--accent-primary), 20% fill) and district avg (#E0DDD8, no fill).
  */
 
 import { useRef, useEffect, useState } from 'react';
@@ -105,7 +105,7 @@ export default function JudgeRadar({
         .attr('cy', 0)
         .attr('r', r)
         .attr('fill', 'none')
-        .attr('stroke', '#E5E7EB')
+        .attr('stroke', 'var(--border-default)')
         .attr('stroke-width', lvl === levels ? 1 : 0.5)
         .attr('stroke-dasharray', lvl === levels ? 'none' : '2,3');
     }
@@ -121,7 +121,7 @@ export default function JudgeRadar({
         .attr('y1', 0)
         .attr('x2', x)
         .attr('y2', y)
-        .attr('stroke', '#E5E7EB')
+        .attr('stroke', 'var(--border-default)')
         .attr('stroke-width', 1);
 
       const labelX = Math.cos(angle) * (radius + 28);
@@ -134,7 +134,7 @@ export default function JudgeRadar({
         .attr('dominant-baseline', 'central')
         .attr('font-size', '11px')
         .attr('font-family', 'var(--font-body)')
-        .attr('fill', '#4B5563')
+        .attr('fill', 'var(--color-text-secondary)')
         .attr('font-weight', 500)
         .text(axis.label);
     });
@@ -175,7 +175,7 @@ export default function JudgeRadar({
       .datum(judgePoints)
       .attr('d', avgLine)
       .attr('fill', 'rgba(10, 102, 194, 0.2)')
-      .attr('stroke', '#0966C3')
+      .attr('stroke', 'var(--accent-primary)')
       .attr('stroke-width', 2);
 
     // Judge data points
@@ -184,8 +184,8 @@ export default function JudgeRadar({
         .attr('cx', px)
         .attr('cy', py)
         .attr('r', 4)
-        .attr('fill', '#0966C3')
-        .attr('stroke', '#FFFFFF')
+        .attr('fill', 'var(--accent-primary)')
+        .attr('stroke', 'var(--color-surface-0)')
         .attr('stroke-width', 1.5);
     });
 
@@ -202,11 +202,11 @@ export default function JudgeRadar({
         role="img"
       />
       <div style={{ display: 'flex', justifyContent: 'center', gap: 24, marginTop: 8 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-body)', color: '#4B5563' }}>
-          <span style={{ width: 12, height: 3, background: '#0966C3', borderRadius: 1, display: 'inline-block' }} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}>
+          <span style={{ width: 12, height: 3, background: 'var(--accent-primary)', borderRadius: 1, display: 'inline-block' }} />
           Judge Profile
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-body)', color: '#4B5563' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}>
           <span style={{ width: 12, height: 3, background: '#E0DDD8', borderRadius: 1, display: 'inline-block', borderTop: '1px dashed #E0DDD8' }} />
           District Average
         </div>

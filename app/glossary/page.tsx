@@ -42,12 +42,12 @@ export default function GlossaryPage() {
   }));
 
   return (
-    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
+    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#0966C3' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb */}
-          <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: '#FFFFFF' }}>
+          <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: 'var(--color-surface-0)' }}>
             <Link href="/" className="hover:opacity-80 transition-opacity">
               Home
             </Link>
@@ -57,9 +57,9 @@ export default function GlossaryPage() {
 
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '20px' }}
+            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '20px' }}
           >
-            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5">
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-surface-0)" strokeWidth="2.5">
               <path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z" />
             </svg>
             REFERENCE
@@ -68,7 +68,7 @@ export default function GlossaryPage() {
             style={{
               fontSize: '32px',
               fontWeight: 600,
-              color: '#FFFFFF',
+              color: 'var(--color-surface-0)',
               letterSpacing: '-1.5px',
               marginBottom: '16px',
               fontFamily: 'var(--font-display)',
@@ -80,14 +80,14 @@ export default function GlossaryPage() {
             style={{
               fontSize: '18px',
               lineHeight: 1.6,
-              color: '#FFFFFF',
+              color: 'var(--color-surface-0)',
               maxWidth: '600px',
               fontFamily: 'var(--font-body)',
             }}
           >
             Plain-English definitions of federal court terms, data concepts, and legal statutes used throughout MyCaseValue.
           </p>
-          <div className="mt-6 inline-block px-3 py-1.5 text-[13px] font-semibold" style={{ background: 'rgba(255, 255, 255, 0.1)', color: '#FFFFFF', borderRadius: '12px' }}>
+          <div className="mt-6 inline-block px-3 py-1.5 text-[13px] font-semibold" style={{ background: 'rgba(255, 255, 255, 0.1)', color: 'var(--color-surface-0)', borderRadius: '12px' }}>
             327 Legal Terms
           </div>
         </div>
@@ -97,9 +97,9 @@ export default function GlossaryPage() {
       <div className="max-w-3xl mx-auto px-6 py-12">
         <div
           style={{
-            background: '#FFFFFF',
+            background: 'var(--color-surface-0)',
             borderRadius: '12px',
-            border: '1px solid #E5E7EB',
+            border: '1px solid var(--border-default)',
             padding: '32px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
           }}
@@ -108,17 +108,17 @@ export default function GlossaryPage() {
         </div>
 
         {/* CTA */}
-        <div className="text-center pt-8 border-t" style={{ borderColor: '#E5E7EB' }}>
-          <p className="text-sm mb-4" style={{ color: '#4B5563' }}>
+        <div className="text-center pt-8 border-t" style={{ borderColor: 'var(--border-default)' }}>
+          <p className="text-sm mb-4" style={{ color: 'var(--color-text-secondary)' }}>
             Have a term you think should be in this glossary?
           </p>
           <a
             href="mailto:support@mycasevalues.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
             style={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
-              color: '#0f0f0f',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
+              color: 'var(--color-text-primary)',
               borderRadius: '12px',
             }}
           >
@@ -143,8 +143,8 @@ export default function GlossaryPage() {
         <style>
           {`
             .glossary-tool-card {
-              background: #FFFFFF;
-              border: 1px solid #E5E7EB;
+              background: var(--color-surface-0);
+              border: 1px solid var(--border-default);
               border-radius: 12px;
               text-decoration: none;
               display: block;
@@ -153,41 +153,41 @@ export default function GlossaryPage() {
             }
 
             .glossary-tool-card:hover {
-              border-color: #0966C3;
+              border-color: var(--accent-primary);
               box-shadow: 0 2px 8px rgba(232, 23, 31, 0.12);
             }
           `}
         </style>
-        <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#0f0f0f', marginBottom: '24px', fontFamily: 'var(--font-display)' }}>
+        <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '24px', fontFamily: 'var(--font-display)' }}>
           Related Tools
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Link href="/translate" className="glossary-tool-card">
-            <div style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>
+            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>
               Case Translator
             </div>
-            <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#4B5563' }}>Convert between case types and legal citations.</div>
+            <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Convert between case types and legal citations.</div>
           </Link>
 
           <Link href="/nos-explorer" className="glossary-tool-card">
-            <div style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>
+            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>
               NOS Explorer
             </div>
-            <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#4B5563' }}>Browse and explore Nature of Suit codes.</div>
+            <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Browse and explore Nature of Suit codes.</div>
           </Link>
 
           <Link href="/search" className="glossary-tool-card">
-            <div style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>
+            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>
               Case Search
             </div>
-            <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#4B5563' }}>Search federal court cases by type and location.</div>
+            <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Search federal court cases by type and location.</div>
           </Link>
 
           <Link href="/methodology" className="glossary-tool-card">
-            <div style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>
+            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>
               Our Methodology
             </div>
-            <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#4B5563' }}>Learn how we analyze federal court data.</div>
+            <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Learn how we analyze federal court data.</div>
           </Link>
         </div>
       </div>

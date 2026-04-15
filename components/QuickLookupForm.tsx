@@ -43,7 +43,7 @@ export default function QuickLookupForm() {
           style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -56,12 +56,12 @@ export default function QuickLookupForm() {
           style={{
             height: '48px',
             padding: '12px 16px',
-            background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-0)',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
             fontFamily: 'var(--font-body)',
             fontSize: '15px',
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             width: '100%',
             appearance: 'none',
             backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
@@ -94,7 +94,7 @@ export default function QuickLookupForm() {
             style={{
               fontSize: '14px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -107,12 +107,12 @@ export default function QuickLookupForm() {
             style={{
               height: '48px',
               padding: '12px 16px',
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               width: '100%',
               appearance: 'none',
               backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
@@ -138,8 +138,8 @@ export default function QuickLookupForm() {
         type="submit"
         style={{
           height: '48px',
-          background: '#0966C3',
-          color: '#FFFFFF',
+          background: 'var(--accent-primary)',
+          color: 'var(--color-surface-0)',
           fontWeight: 600,
           fontSize: '15px',
           borderRadius: '12px',
@@ -159,11 +159,11 @@ export default function QuickLookupForm() {
         const nos = OPT_TO_NOS[caseType];
         const rd = nos ? (REAL_DATA as any)[nos] : null;
         if (!rd) return null;
-        const wrColor = (rd.wr ?? 0) >= 50 ? '#059669' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#0966C3';
+        const wrColor = (rd.wr ?? 0) >= 50 ? '#059669' : (rd.wr ?? 0) >= 35 ? '#D97706' : 'var(--accent-primary)';
         return (
           <div style={{
-            background: '#F8F9FA',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-1)',
+            border: '1px solid var(--border-default)',
             borderRadius: 2,
             padding: '12px 16px',
             display: 'grid',
@@ -176,19 +176,19 @@ export default function QuickLookupForm() {
               <div style={{ fontSize: 18, fontWeight: 600, color: wrColor, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {(rd.wr ?? 0).toFixed(1)}%
               </div>
-              <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Win Rate</div>
+              <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Win Rate</div>
             </div>
             <div>
-              <div style={{ fontSize: 18, fontWeight: 600, color: '#004182', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+              <div style={{ fontSize: 18, fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {rd.mo ?? '–'}mo
               </div>
-              <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Duration</div>
+              <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Duration</div>
             </div>
             <div>
-              <div style={{ fontSize: 18, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+              <div style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {rd.total ? (rd.total >= 1000 ? `${(rd.total / 1000).toFixed(0)}K` : rd.total.toLocaleString()) : '–'}
               </div>
-              <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Cases</div>
+              <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Cases</div>
             </div>
           </div>
         );
@@ -198,7 +198,7 @@ export default function QuickLookupForm() {
       <div
         style={{
           fontSize: '12px',
-          color: '#4B5563',
+          color: 'var(--color-text-secondary)',
           textAlign: 'center',
           marginTop: '8px',
         }}
@@ -214,7 +214,7 @@ export default function QuickLookupForm() {
           outline: none;
         }
         .quick-lookup-select:invalid {
-          border-color: #0966C3 !important;
+          border-color: var(--accent-primary) !important;
         }
         .quick-lookup-submit:hover {
           background: #B91C1C !important;

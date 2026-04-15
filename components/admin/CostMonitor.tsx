@@ -23,9 +23,9 @@ interface CostData {
 }
 
 const COLORS = {
-  primary: '#0966C3',
-  dark: '#004182',
-  black: '#0f0f0f',
+  primary: 'var(--accent-primary)',
+  dark: 'var(--accent-primary-hover)',
+  black: 'var(--color-text-primary)',
 };
 
 const STATUS_COLORS = {
@@ -210,7 +210,7 @@ function ServiceCard({ service }: ServiceCardProps) {
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '16px' }}>
         <div>
-          <h3 style={{ fontSize: '16px', fontWeight: '600', margin: 0, color: '#0f0f0f' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '600', margin: 0, color: 'var(--color-text-primary)' }}>
             {service.icon} {service.name}
           </h3>
         </div>
@@ -235,7 +235,7 @@ function ServiceCard({ service }: ServiceCardProps) {
       <div style={{ marginBottom: '16px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
           <span style={{ fontSize: '12px', color: '#666' }}>Current Spend</span>
-          <span style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f' }}>
+          <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)' }}>
             ${service.currentSpend.toFixed(2)}
           </span>
         </div>

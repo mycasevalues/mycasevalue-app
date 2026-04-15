@@ -18,10 +18,10 @@ interface TrendChartProps {
 
 // PAPER DESIGN SYSTEM — Light mode only, no theme switching
 const lightModeColors = {
-  bg: '#FFFFFF',
+  bg: 'var(--color-surface-0)',
   border: 'rgba(255,255,255,0.10)',
-  text: '#0f0f0f',
-  muted: '#4B5563',
+  text: 'var(--color-text-primary)',
+  muted: 'var(--color-text-secondary)',
   accent: '#F0F2F5',
 };
 

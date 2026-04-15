@@ -107,7 +107,7 @@ const CaseList = ({ cases }: CaseListProps) => (
       const outcomeColors: Record<string, string> = {
         trial_win: '#059669',
         trial_loss: '#DC2626',
-        settlement: '#0966C3',
+        settlement: 'var(--accent-primary)',
         dismissal: '#6B7280',
         other: '#8B5CF6',
       };

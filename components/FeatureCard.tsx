@@ -13,7 +13,7 @@ interface FeatureCardProps {
   accentColor?: string;
 }
 
-export default function FeatureCard({ title, description, icon, href, delay = 0, accentColor = '#0966C3' }: FeatureCardProps) {
+export default function FeatureCard({ title, description, icon, href, delay = 0, accentColor = 'var(--accent-primary)' }: FeatureCardProps) {
   return (
     <Link href={href} style={{ textDecoration: 'none' }}>
       <motion.div
@@ -36,7 +36,7 @@ export default function FeatureCard({ title, description, icon, href, delay = 0,
         }}>
           {icon}
         </div>
-        <h3 style={{ fontSize: 17, fontWeight: 600, color: '#0f0f0f', marginBottom: 8 }}>{title}</h3>
+        <h3 style={{ fontSize: 17, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8 }}>{title}</h3>
         <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, margin: 0 }}>{description}</p>
       </motion.div>
     </Link>

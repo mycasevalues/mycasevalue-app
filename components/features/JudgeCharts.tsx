@@ -22,13 +22,13 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
   const chartStyle = {
     fontFamily: 'var(--font-body)',
     fontSize: '12px',
-    fill: '#0f0f0f',
+    fill: 'var(--color-text-primary)',
   };
 
   const cardStyle = {
-    background: '#FFFFFF',
+    background: 'var(--color-surface-0)',
     borderRadius: '12px',
-    border: '1px solid #E5E7EB',
+    border: '1px solid var(--border-default)',
     padding: '32px',
     marginBottom: '24px',
   };
@@ -41,7 +41,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           style={{
             fontSize: '16px',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '20px',
             marginTop: 0,
             fontFamily: 'var(--font-display)',
@@ -53,38 +53,38 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           <LineChart data={yearlyTrend}>
             <CartesianGrid
               strokeDasharray="3 3"
-              stroke="#F7F8FA"
+              stroke="var(--color-surface-1)"
               vertical={false}
             />
             <XAxis
               dataKey="year"
-              stroke="#4B5563"
-              tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-body)' }}
+              stroke="var(--color-text-secondary)"
+              tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
             />
             <YAxis
               label={{ value: 'Win Rate (%)', angle: -90, position: 'insideLeft' }}
-              stroke="#4B5563"
-              tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-body)' }}
+              stroke="var(--color-text-secondary)"
+              tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
               domain={[30, 70]}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: '#FFFFFF',
-                border: '1px solid #E5E7EB',
+                backgroundColor: 'var(--color-surface-0)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
               }}
-              cursor={{ stroke: '#F7F8FA' }}
+              cursor={{ stroke: 'var(--color-surface-1)' }}
             />
             <Line
               type="monotone"
               dataKey="winRate"
-              stroke="#0966C3"
+              stroke="var(--accent-primary)"
               strokeWidth={3}
-              dot={{ fill: '#0966C3', r: 5 }}
+              dot={{ fill: 'var(--accent-primary)', r: 5 }}
               activeDot={{ r: 7 }}
               isAnimationActive={true}
             />
@@ -98,7 +98,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           style={{
             fontSize: '16px',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '20px',
             marginTop: 0,
             fontFamily: 'var(--font-display)',
@@ -114,27 +114,27 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           >
             <CartesianGrid
               strokeDasharray="3 3"
-              stroke="#F7F8FA"
+              stroke="var(--color-surface-1)"
               horizontal={false}
             />
             <XAxis
               type="number"
-              stroke="#4B5563"
-              tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-body)' }}
+              stroke="var(--color-text-secondary)"
+              tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
             />
             <YAxis
               dataKey="label"
               type="category"
               width={190}
-              tick={{ fill: '#4B5563', fontSize: 12, fontFamily: 'var(--font-body)' }}
+              tick={{ fill: 'var(--color-text-secondary)', fontSize: 12, fontFamily: 'var(--font-body)' }}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: '#FFFFFF',
-                border: '1px solid #E5E7EB',
+                backgroundColor: 'var(--color-surface-0)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
               }}
@@ -142,7 +142,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             />
             <Bar
               dataKey="count"
-              fill="#0966C3"
+              fill="var(--accent-primary)"
               radius={[0, 8, 8, 0]}
               isAnimationActive={true}
             />

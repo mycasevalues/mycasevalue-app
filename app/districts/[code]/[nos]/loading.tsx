@@ -1,9 +1,9 @@
 export default function Loading() {
   return (
-    <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       {/* Breadcrumb Skeleton */}
       <nav style={{
-        background: '#FFFFFF',
+        background: 'var(--color-surface-0)',
         borderBottom: '1px solid #e5e7eb',
         padding: '12px 0',
       }}>
@@ -11,7 +11,7 @@ export default function Loading() {
           <div
             style={{
               height: 16,
-              background: '#E5E7EB',
+              background: 'var(--border-default)',
               borderRadius: 4,
               width: 200,
               animation: 'pulse 2s infinite',
@@ -22,7 +22,7 @@ export default function Loading() {
 
       {/* Hero Skeleton */}
       <header style={{
-        background: '#0966C3',
+        background: 'var(--accent-primary)',
         borderBottom: '1px solid #e5e7eb',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
@@ -63,7 +63,7 @@ export default function Loading() {
             <div
               key={i}
               style={{
-                background: '#FFFFFF',
+                background: 'var(--color-surface-0)',
                 border: '1px solid #e5e7eb',
                 borderRadius: '12px',
                 padding: '20px',
@@ -72,7 +72,7 @@ export default function Loading() {
               <div
                 style={{
                   height: 12,
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   borderRadius: 4,
                   marginBottom: 12,
                   animation: 'pulse 2s infinite',
@@ -81,7 +81,7 @@ export default function Loading() {
               <div
                 style={{
                   height: 32,
-                  background: '#E5E7EB',
+                  background: 'var(--border-default)',
                   borderRadius: 4,
                   animation: 'pulse 2s infinite',
                 }}

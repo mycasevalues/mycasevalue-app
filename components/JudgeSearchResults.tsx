@@ -63,7 +63,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
   if (loading) {
     return (
       <div style={{ marginTop: '32px', marginBottom: '32px' }}>
-        <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>
+        <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>
           Judges
         </p>
         <div style={{ display: 'grid', gap: '12px' }}>
@@ -72,8 +72,8 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
               key={i}
               style={{
                 padding: '16px',
-                background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
+                background: 'var(--color-surface-0)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 animation: 'shimmer 2s infinite',
               }}
@@ -108,8 +108,8 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
 
   return (
     <div style={{ marginTop: '32px', marginBottom: '32px' }}>
-      <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>
-        Judges <span style={{ color: '#9CA3AF' }}>({judges.length})</span>
+      <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>
+        Judges <span style={{ color: 'var(--color-text-muted)' }}>({judges.length})</span>
       </p>
       <div style={{ display: 'grid', gap: '12px' }}>
         {judges.map((judge) => {
@@ -121,8 +121,8 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
               style={{
                 display: 'block',
                 padding: '16px',
-                background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
+                background: 'var(--color-surface-0)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 textDecoration: 'none',
                 transition: 'all 150ms ease-out',
@@ -131,21 +131,21 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
                 e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.1)';
-                e.currentTarget.style.borderColor = '#0966C3';
+                e.currentTarget.style.borderColor = 'var(--accent-primary)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
                 e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
-                e.currentTarget.style.borderColor = '#E5E7EB';
+                e.currentTarget.style.borderColor = 'var(--border-default)';
               }}
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                 <div style={{ flex: 1 }}>
-                  <h4 style={{ fontSize: '15px', fontWeight: '600', color: '#0f0f0f', margin: '0 0 4px 0', fontFamily: 'var(--font-display)' }}>
+                  <h4 style={{ fontSize: '15px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px 0', fontFamily: 'var(--font-display)' }}>
                     {judge.full_name}
                   </h4>
                   {judge.district_id && (
-                    <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
                       {judge.district_id}
                     </p>
                   )}
@@ -167,7 +167,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                       </div>
                     )}
                     {judge.total_cases_handled != null && (
-                      <div style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                         {judge.total_cases_handled.toLocaleString()} cases
                       </div>
                     )}
@@ -177,11 +177,11 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                   style={{
                     padding: '6px 12px',
                     background: '#F0F6FB',
-                    border: '1px solid #0966C3',
+                    border: '1px solid var(--accent-primary)',
                     borderRadius: '6px',
                     fontSize: '12px',
                     fontWeight: '600',
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     fontFamily: 'var(--font-body)',
                     whiteSpace: 'nowrap',
                     flexShrink: 0,

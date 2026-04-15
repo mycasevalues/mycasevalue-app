@@ -595,14 +595,14 @@ export default function IntakeFormGenerator() {
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: selectedInfo ? '1fr 1fr' : '1fr', gap: '24px' }}>
-      <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-        <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+      <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
           Form Configuration
         </h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
           <div>
-            <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Case Type *
             </label>
             <select
@@ -611,11 +611,11 @@ export default function IntakeFormGenerator() {
               style={{
                 width: '100%',
                 padding: '12px 14px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 fontSize: '14px',
-                color: '#0f0f0f',
-                backgroundColor: '#FFFFFF',
+                color: 'var(--color-text-primary)',
+                backgroundColor: 'var(--color-surface-0)',
                 fontFamily: 'var(--font-body)',
                 outline: 'none',
               }}
@@ -641,8 +641,8 @@ export default function IntakeFormGenerator() {
             style={{
               width: '100%',
               padding: '14px',
-              backgroundColor: !selectedCaseType || loading ? '#E5E7EB' : '#0966C3',
-              color: '#FFFFFF',
+              backgroundColor: !selectedCaseType || loading ? 'var(--border-default)' : 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               border: 'none',
               borderRadius: '20px',
               fontSize: '15px',
@@ -663,9 +663,9 @@ export default function IntakeFormGenerator() {
               style={{
                 width: '100%',
                 padding: '12px',
-                backgroundColor: '#FFFFFF',
-                color: '#0966C3',
-                border: '1px solid #0966C3',
+                backgroundColor: 'var(--color-surface-0)',
+                color: 'var(--accent-primary)',
+                border: '1px solid var(--accent-primary)',
                 borderRadius: '20px',
                 fontSize: '13px',
                 fontWeight: 600,
@@ -677,7 +677,7 @@ export default function IntakeFormGenerator() {
                 e.currentTarget.style.backgroundColor = 'rgba(10, 102, 194, 0.08)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFFFFF';
+                e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
               }}
             >
               Back to Tools
@@ -687,16 +687,16 @@ export default function IntakeFormGenerator() {
       </div>
 
       {selectedInfo && (
-        <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 20px', fontFamily: 'var(--font-display)' }}>
+        <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-display)' }}>
             Preview
           </h2>
 
-          <div style={{ maxHeight: '600px', overflowY: 'auto', padding: '16px', background: '#FAFBFC', borderRadius: '12px', border: '1px solid #E5E7EB' }}>
-            <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px', borderBottom: '2px solid #0966C3', paddingBottom: '8px' }}>
+          <div style={{ maxHeight: '600px', overflowY: 'auto', padding: '16px', background: '#FAFBFC', borderRadius: '12px', border: '1px solid var(--border-default)' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', borderBottom: '2px solid var(--accent-primary)', paddingBottom: '8px' }}>
               Form Sections:
             </h3>
-            <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '13px', color: '#0f0f0f', lineHeight: '1.8', fontFamily: 'var(--font-body)' }}>
+            <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.8', fontFamily: 'var(--font-body)' }}>
               {selectedInfo.sections.map((section, idx) => (
                 <li key={idx}>{section}</li>
               ))}

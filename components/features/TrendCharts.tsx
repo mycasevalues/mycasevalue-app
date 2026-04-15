@@ -29,17 +29,17 @@ import {
 
 // LinkedIn color palette for categories
 const CATEGORY_CHART_COLORS: Record<string, string> = {
-  Financial: '#0966C3',
-  Employment: '#666666',
-  Injury: '#0966C3',
-  Consumer: '#4B5563',
-  'Civil Rights': '#E5E7EB',
+  Financial: 'var(--accent-primary)',
+  Employment: 'var(--color-text-secondary)',
+  Injury: 'var(--accent-primary)',
+  Consumer: 'var(--color-text-secondary)',
+  'Civil Rights': 'var(--border-default)',
   Housing: '#70B5F9',
   Medical: '#CC1016',
   Family: '#C37D16',
-  Government: '#666666',
+  Government: 'var(--color-text-secondary)',
   'Intellectual Property': '#057642',
-  Other: '#4B5563',
+  Other: 'var(--color-text-secondary)',
 };
 
 interface TooltipProps {
@@ -120,8 +120,8 @@ export default function TrendCharts() {
           <AreaChart data={nationalTrends}>
             <defs>
               <linearGradient id="colorFilings" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#0966C3" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#0966C3" stopOpacity={0.1} />
+                <stop offset="5%" stopColor="var(--accent-primary)" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="var(--accent-primary)" stopOpacity={0.1} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
@@ -131,7 +131,7 @@ export default function TrendCharts() {
             <Area
               type="monotone"
               dataKey="totalFilings"
-              stroke="#0966C3"
+              stroke="var(--accent-primary)"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorFilings)"
@@ -176,11 +176,11 @@ export default function TrendCharts() {
                 dataKey={cat.categoryLabel}
                 stroke={
                   [
-                    '#0966C3',
-                    '#666666',
+                    'var(--accent-primary)',
+                    'var(--color-text-secondary)',
                     '#70B5F9',
-                    '#4B5563',
-                    '#E5E7EB',
+                    'var(--color-text-secondary)',
+                    'var(--border-default)',
                     '#057642',
                   ][idx % 6]
                 }
@@ -225,7 +225,7 @@ export default function TrendCharts() {
             <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
             <YAxis dataKey="label" type="category" stroke="var(--color-text-secondary)" width={300} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
             <Tooltip content={<CustomTooltip />} />
-            <Bar dataKey="count" fill="#0966C3" radius={[0, 8, 8, 0]} />
+            <Bar dataKey="count" fill="var(--accent-primary)" radius={[0, 8, 8, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
@@ -337,7 +337,7 @@ export default function TrendCharts() {
             />
             <Bar dataKey="avgWinRate" radius={[0, 8, 8, 0]}>
               {circuitWinRates.map((entry, index) => (
-                <Cell key={index} fill={entry.avgWinRate > 55 ? '#057642' : entry.avgWinRate < 45 ? '#0966C3' : '#70B5F9'} />
+                <Cell key={index} fill={entry.avgWinRate > 55 ? '#057642' : entry.avgWinRate < 45 ? 'var(--accent-primary)' : '#70B5F9'} />
               ))}
             </Bar>
           </BarChart>
@@ -443,7 +443,7 @@ export default function TrendCharts() {
             <Tooltip content={<CustomTooltip />} />
             <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }} />
             <Bar dataKey="settlementMonths" fill="#057642" radius={[0, 4, 4, 0]} />
-            <Bar dataKey="trialMonths" fill="#0966C3" radius={[0, 4, 4, 0]} />
+            <Bar dataKey="trialMonths" fill="var(--accent-primary)" radius={[0, 4, 4, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>

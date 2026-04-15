@@ -24,18 +24,18 @@ export const metadata: Metadata = {
 
 export default function SettingsPage() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F7F8FA' }}>
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--color-surface-1)' }}>
       <style>{`
         .settings-nav-link:hover {
-          background-color: #F7F8FA;
+          background-color: var(--color-surface-1);
         }
 
         .settings-link-button:hover {
-          background-color: #F7F8FA;
+          background-color: var(--color-surface-1);
         }
       `}</style>
       {/* Navy Header */}
-      <header style={{ backgroundColor: '#0966C3' }} className="text-white py-8">
+      <header style={{ backgroundColor: 'var(--accent-primary)' }} className="text-white py-8">
         <div className="max-w-6xl mx-auto px-6">
           <h1 className="text-3xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>
             Settings
@@ -51,7 +51,7 @@ export default function SettingsPage() {
             <div
               className="rounded-sm p-4 space-y-1"
               style={{
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'white',
               }}
             >
@@ -67,7 +67,7 @@ export default function SettingsPage() {
                   href={`#${item.id}`}
                   className="settings-nav-link block px-3 py-2 text-sm rounded-sm transition-colors"
                   style={{
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                   }}
                 >
                   {item.label}
@@ -83,24 +83,24 @@ export default function SettingsPage() {
               id="account"
               className="rounded-sm p-6"
               style={{
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'white',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#0f0f0f' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
                 Account Information
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold mb-2" style={{ color: '#4B5563' }}>
+                  <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--color-text-secondary)' }}>
                     Full Name
                   </label>
                   <div
                     className="px-3 py-2 rounded-sm text-sm"
                     style={{
-                      backgroundColor: '#F7F8FA',
-                      color: '#4B5563',
-                      border: '1px solid #E5E7EB',
+                      backgroundColor: 'var(--color-surface-1)',
+                      color: 'var(--color-text-secondary)',
+                      border: '1px solid var(--border-default)',
                     }}
                   >
                     John Federal Analyst
@@ -110,15 +110,15 @@ export default function SettingsPage() {
                   </p>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2" style={{ color: '#4B5563' }}>
+                  <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--color-text-secondary)' }}>
                     Email Address
                   </label>
                   <div
                     className="px-3 py-2 rounded-sm text-sm"
                     style={{
-                      backgroundColor: '#F7F8FA',
-                      color: '#4B5563',
-                      border: '1px solid #E5E7EB',
+                      backgroundColor: 'var(--color-surface-1)',
+                      color: 'var(--color-text-secondary)',
+                      border: '1px solid var(--border-default)',
                     }}
                   >
                     john@casecheck.legal
@@ -128,30 +128,30 @@ export default function SettingsPage() {
                   </p>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2" style={{ color: '#4B5563' }}>
+                  <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--color-text-secondary)' }}>
                     Account Created
                   </label>
                   <div
                     className="px-3 py-2 rounded-sm text-sm"
                     style={{
-                      backgroundColor: '#F7F8FA',
-                      color: '#4B5563',
-                      border: '1px solid #E5E7EB',
+                      backgroundColor: 'var(--color-surface-1)',
+                      color: 'var(--color-text-secondary)',
+                      border: '1px solid var(--border-default)',
                     }}
                   >
                     January 15, 2024
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2" style={{ color: '#4B5563' }}>
+                  <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--color-text-secondary)' }}>
                     Account Type
                   </label>
                   <div
                     className="px-3 py-2 rounded-sm text-sm"
                     style={{
-                      backgroundColor: '#F7F8FA',
-                      color: '#4B5563',
-                      border: '1px solid #E5E7EB',
+                      backgroundColor: 'var(--color-surface-1)',
+                      color: 'var(--color-text-secondary)',
+                      border: '1px solid var(--border-default)',
                     }}
                   >
                     Research User
@@ -165,24 +165,24 @@ export default function SettingsPage() {
               id="preferences"
               className="rounded-sm p-6"
               style={{
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'white',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#0f0f0f' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
                 Preferences
               </h2>
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-semibold mb-2" style={{ color: '#4B5563' }}>
+                  <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--color-text-secondary)' }}>
                     Default District
                   </label>
                   <select
                     className="w-full px-3 py-2 rounded-sm text-sm"
                     style={{
-                      border: '1px solid #E5E7EB',
+                      border: '1px solid var(--border-default)',
                       backgroundColor: 'white',
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                     }}
                   >
                     <option>All Districts</option>
@@ -199,7 +199,7 @@ export default function SettingsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold mb-3" style={{ color: '#4B5563' }}>
+                  <label className="block text-sm font-semibold mb-3" style={{ color: 'var(--color-text-secondary)' }}>
                     Preferred Case Types
                   </label>
                   <div className="space-y-2">
@@ -210,17 +210,17 @@ export default function SettingsPage() {
                           className="mr-3 rounded-sm"
                           defaultChecked={caseType === 'Patent'}
                           style={{
-                            accentColor: '#0966C3',
+                            accentColor: 'var(--accent-primary)',
                           }}
                         />
-                        <span style={{ color: '#4B5563' }}>{caseType}</span>
+                        <span style={{ color: 'var(--color-text-secondary)' }}>{caseType}</span>
                       </label>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold mb-3" style={{ color: '#4B5563' }}>
+                  <label className="block text-sm font-semibold mb-3" style={{ color: 'var(--color-text-secondary)' }}>
                     Notification Preferences
                   </label>
                   <div className="space-y-2">
@@ -235,10 +235,10 @@ export default function SettingsPage() {
                           className="mr-3 rounded-sm"
                           defaultChecked={pref.checked}
                           style={{
-                            accentColor: '#0966C3',
+                            accentColor: 'var(--accent-primary)',
                           }}
                         />
-                        <span style={{ color: '#4B5563' }}>{pref.label}</span>
+                        <span style={{ color: 'var(--color-text-secondary)' }}>{pref.label}</span>
                       </label>
                     ))}
                   </div>
@@ -251,14 +251,14 @@ export default function SettingsPage() {
               id="privacy"
               className="rounded-sm p-6"
               style={{
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'white',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#0f0f0f' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
                 Data & Privacy
               </h2>
-              <p className="text-sm mb-6" style={{ color: '#4B5563' }}>
+              <p className="text-sm mb-6" style={{ color: 'var(--color-text-secondary)' }}>
                 Manage how your data is collected, used, and protected.
               </p>
               <div className="space-y-3">
@@ -266,8 +266,8 @@ export default function SettingsPage() {
                   href="/privacy"
                   className="settings-link-button block px-4 py-3 rounded-sm text-sm font-medium transition-colors"
                   style={{
-                    color: '#004182',
-                    border: '1px solid #E5E7EB',
+                    color: 'var(--accent-primary-hover)',
+                    border: '1px solid var(--border-default)',
                     backgroundColor: 'white',
                   }}
                 >
@@ -277,8 +277,8 @@ export default function SettingsPage() {
                   href="/terms"
                   className="settings-link-button block px-4 py-3 rounded-sm text-sm font-medium transition-colors"
                   style={{
-                    color: '#004182',
-                    border: '1px solid #E5E7EB',
+                    color: 'var(--accent-primary-hover)',
+                    border: '1px solid var(--border-default)',
                     backgroundColor: 'white',
                   }}
                 >
@@ -287,8 +287,8 @@ export default function SettingsPage() {
                 <button
                   className="settings-link-button w-full px-4 py-3 rounded-sm text-sm font-medium transition-colors text-left"
                   style={{
-                    color: '#004182',
-                    border: '1px solid #E5E7EB',
+                    color: 'var(--accent-primary-hover)',
+                    border: '1px solid var(--border-default)',
                     backgroundColor: 'white',
                   }}
                 >
@@ -302,15 +302,15 @@ export default function SettingsPage() {
               id="appearance"
               className="rounded-sm p-6"
               style={{
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'white',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#0f0f0f' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
                 Appearance
               </h2>
               <div>
-                <label className="block text-sm font-semibold mb-3" style={{ color: '#4B5563' }}>
+                <label className="block text-sm font-semibold mb-3" style={{ color: 'var(--color-text-secondary)' }}>
                   View Density
                 </label>
                 <div className="space-y-2">
@@ -326,10 +326,10 @@ export default function SettingsPage() {
                         defaultChecked={option.value === 'comfortable'}
                         className="mr-3"
                         style={{
-                          accentColor: '#0966C3',
+                          accentColor: 'var(--accent-primary)',
                         }}
                       />
-                      <span style={{ color: '#4B5563' }}>{option.label}</span>
+                      <span style={{ color: 'var(--color-text-secondary)' }}>{option.label}</span>
                     </label>
                   ))}
                 </div>
@@ -341,25 +341,25 @@ export default function SettingsPage() {
               id="subscription"
               className="rounded-sm p-6"
               style={{
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'white',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#0f0f0f' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
                 Subscription
               </h2>
               <div
                 className="p-4 rounded-sm flex items-start justify-between"
                 style={{
-                  backgroundColor: '#F7F8FA',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-1)',
+                  border: '1px solid var(--border-default)',
                 }}
               >
                 <div>
-                  <h3 className="font-semibold mb-1" style={{ color: '#0f0f0f' }}>
+                  <h3 className="font-semibold mb-1" style={{ color: 'var(--color-text-primary)' }}>
                     MyCaseValue Free Launch
                   </h3>
-                  <p className="text-sm" style={{ color: '#4B5563' }}>
+                  <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
                     Free access during public launch period. Premium features available during beta.
                   </p>
                 </div>
@@ -376,8 +376,8 @@ export default function SettingsPage() {
             </section>
 
             {/* Quick Links Section */}
-            <section className="rounded-sm p-6" style={{ border: '1px solid #E5E7EB', backgroundColor: 'white' }}>
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#0f0f0f' }}>
+            <section className="rounded-sm p-6" style={{ border: '1px solid var(--border-default)', backgroundColor: 'white' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
                 Quick Links
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -394,8 +394,8 @@ export default function SettingsPage() {
                     href={link.href}
                     className="settings-link-button px-4 py-3 rounded-sm text-sm font-medium transition-colors"
                     style={{
-                      color: '#004182',
-                      border: '1px solid #E5E7EB',
+                      color: 'var(--accent-primary-hover)',
+                      border: '1px solid var(--border-default)',
                       backgroundColor: 'white',
                     }}
                   >

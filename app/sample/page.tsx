@@ -310,8 +310,8 @@ export default function SampleReportPage() {
             >
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                 }}
@@ -353,8 +353,8 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                 }}
@@ -395,8 +395,8 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                 }}
@@ -592,8 +592,8 @@ export default function SampleReportPage() {
             >
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                 }}
@@ -634,8 +634,8 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                 }}
@@ -676,8 +676,8 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                 }}
@@ -874,7 +874,7 @@ export default function SampleReportPage() {
                       key={idx}
                       style={{
                         borderBottom:
-                          idx < 4 ? '1px solid #E5E7EB' : 'none',
+                          idx < 4 ? '1px solid var(--border-default)' : 'none',
                       }}
                     >
                       <td
@@ -968,8 +968,8 @@ export default function SampleReportPage() {
             >
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                 }}
@@ -1010,8 +1010,8 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                 }}
@@ -1052,8 +1052,8 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  backgroundColor: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                 }}
@@ -1075,7 +1075,7 @@ export default function SampleReportPage() {
                     fontSize: '36px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     margin: '0 0 4px 0',
                   }}
                 >
@@ -1243,7 +1243,7 @@ export default function SampleReportPage() {
                       key={idx}
                       style={{
                         borderBottom:
-                          idx < 3 ? '1px solid #E5E7EB' : 'none',
+                          idx < 3 ? '1px solid var(--border-default)' : 'none',
                         backgroundColor: idx === 0 ? 'rgba(232,23,31,0.04)' : 'transparent',
                       }}
                     >

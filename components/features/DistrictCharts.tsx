@@ -18,7 +18,7 @@ interface DistrictChartsProps {
   stats: DistrictStats;
 }
 
-const CHART_PALETTE = ['#0966C3', '#70B5F9', '#666666', '#4B5563', '#E5E7EB', '#057642', '#C37D16', '#CC1016', '#70B5F9', '#057642', '#666666'];
+const CHART_PALETTE = ['var(--accent-primary)', '#70B5F9', 'var(--color-text-secondary)', 'var(--color-text-secondary)', 'var(--border-default)', '#057642', '#C37D16', '#CC1016', '#70B5F9', '#057642', 'var(--color-text-secondary)'];
 
 export default function DistrictCharts({ stats }: DistrictChartsProps) {
   // Prepare data for top case types chart (take top 8)
@@ -41,15 +41,15 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
         <div
           className="p-6 sm:p-8"
           style={{
-            background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-0)',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
           }}
         >
           <h3
             className="text-lg font-bold mb-6"
             style={{
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-display)',
             }}
           >
@@ -61,19 +61,19 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               layout="vertical"
               margin={{ top: 5, right: 30, left: 200, bottom: 5 }}
             >
-              <XAxis type="number" stroke="#4B5563" />
-              <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-body)' }} />
+              <XAxis type="number" stroke="var(--color-text-secondary)" />
+              <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
               <Tooltip
                 contentStyle={{
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',
                 }}
               />
-              <Bar dataKey="count" fill="#0966C3" radius={[0, 8, 8, 0]} />
+              <Bar dataKey="count" fill="var(--accent-primary)" radius={[0, 8, 8, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -84,15 +84,15 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
         <div
           className="p-6 sm:p-8"
           style={{
-            background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-0)',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
           }}
         >
           <h3
             className="text-lg font-bold mb-6"
             style={{
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-display)',
             }}
           >
@@ -115,10 +115,10 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               </Pie>
               <Tooltip
                 contentStyle={{
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',
                 }}
@@ -127,7 +127,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               <Legend
                 verticalAlign="bottom"
                 height={36}
-                wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#4B5563' }}
+                wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
                 formatter={(value) => value}
               />
             </PieChart>

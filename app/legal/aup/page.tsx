@@ -21,8 +21,8 @@ export default function AUPPage() {
         {/* Header */}
         <section
           style={{
-            background: 'linear-gradient(135deg, #004182 0%, #0966C3 100%)',
-            color: '#FFFFFF',
+            background: 'linear-gradient(135deg, #004182 0%, var(--accent-primary) 100%)',
+            color: 'var(--color-surface-0)',
             padding: '3rem 1.5rem',
             marginBottom: '3rem',
           }}
@@ -64,7 +64,7 @@ export default function AUPPage() {
             margin: '0 auto',
             padding: '0 1.5rem 4rem 1.5rem',
             fontFamily: 'var(--font-body)',
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
           }}
         >
           {/* Purpose */}
@@ -73,9 +73,9 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0966C3',
+                borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -92,9 +92,9 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0966C3',
+                borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -126,9 +126,9 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0966C3',
+                borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -178,9 +178,9 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0966C3',
+                borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -200,9 +200,9 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0966C3',
+                borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -232,9 +232,9 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0966C3',
+                borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -254,9 +254,9 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0966C3',
+                borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -289,9 +289,9 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0966C3',
+                borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -308,9 +308,9 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0966C3',
+                borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -323,7 +323,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.0625rem',
                 fontWeight: 500,
-                color: '#0966C3',
+                color: 'var(--accent-primary)',
                 marginBottom: '0.5rem',
               }}
             >
@@ -334,11 +334,11 @@ export default function AUPPage() {
           {/* Footer note */}
           <div
             style={{
-              borderTop: '1px solid #E5E7EB',
+              borderTop: '1px solid var(--border-default)',
               paddingTop: '2rem',
               marginTop: '3rem',
               fontSize: '0.9375rem',
-              color: '#666666',
+              color: 'var(--color-text-secondary)',
             }}
           >
             <p style={{ lineHeight: 1.6 }}>

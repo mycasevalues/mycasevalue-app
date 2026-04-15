@@ -444,7 +444,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" aria-label="MyCaseValue home" className="flex items-center gap-2 flex-shrink-0">
               <svg width="32" height="32" viewBox="-100 -100 200 200" className="block flex-shrink-0">
-                <rect x="-100" y="-100" width="200" height="200" rx="26" fill="#0966C3" />
+                <rect x="-100" y="-100" width="200" height="200" rx="26" fill="var(--accent-primary)" />
                 <g transform="rotate(12)">
                   <polygon points="0,0 -40,-69.3 40,-69.3 80,0" fill="white" opacity="0.93" />
                   <polygon points="0,0 80,0 40,69.3 -40,69.3" fill="white" opacity="0.52" />

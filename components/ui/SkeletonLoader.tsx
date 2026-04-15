@@ -74,7 +74,7 @@ export function SkeletonCard({ className = '' }: { className?: string }) {
     <div className={className} style={{
       padding: '24px',
       borderRadius: '12px',
-      background: '#FFFFFF',
+      background: 'var(--color-surface-0)',
       border: '1px solid rgba(255,255,255,0.10)',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
@@ -112,7 +112,7 @@ export function SkeletonStatRow({ count = 4, className = '' }: { count?: number;
         <div key={i} style={{
           padding: '16px',
           borderRadius: '12px',
-          background: '#FFFFFF',
+          background: 'var(--color-surface-0)',
           border: '1px solid rgba(255,255,255,0.10)',
           textAlign: 'center',
         }}>

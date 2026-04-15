@@ -20,8 +20,8 @@ export default function InflationToggle() {
             alignItems: 'center',
             gap: '8px',
             padding: '8px 14px',
-            backgroundColor: inflationEnabled ? '#0966C3' : '#E5E7EB',
-            color: inflationEnabled ? '#FFFFFF' : '#4B5563',
+            backgroundColor: inflationEnabled ? 'var(--accent-primary)' : 'var(--border-default)',
+            color: inflationEnabled ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
             border: 'none',
             borderRadius: '8px',
             fontSize: '13px',
@@ -38,7 +38,7 @@ export default function InflationToggle() {
             width: '16px',
             height: '16px',
             borderRadius: '4px',
-            backgroundColor: inflationEnabled ? '#FFFFFF' : '#9CA3AF',
+            backgroundColor: inflationEnabled ? 'var(--color-surface-0)' : 'var(--color-text-muted)',
             position: 'relative',
           }}>
             {inflationEnabled && (
@@ -47,7 +47,7 @@ export default function InflationToggle() {
                 position: 'absolute',
                 left: '2px',
                 top: '0px',
-                color: '#0966C3',
+                color: 'var(--accent-primary)',
                 fontSize: '12px',
                 fontWeight: 'bold',
               }}>
@@ -63,13 +63,13 @@ export default function InflationToggle() {
       {inflationEnabled && (
         <div style={{
           fontSize: '12px',
-          color: '#4B5563',
+          color: 'var(--color-text-secondary)',
           fontStyle: 'italic',
           fontFamily: 'var(--font-body)',
           backgroundColor: '#F0F4F8',
           padding: '10px 12px',
           borderRadius: '6px',
-          borderLeft: '3px solid #0966C3',
+          borderLeft: '3px solid var(--accent-primary)',
           lineHeight: 1.5,
         }}>
           Inflation-adjusted to 2024 dollars using BLS CPI-U data.

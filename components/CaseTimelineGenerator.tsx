@@ -104,7 +104,7 @@ export default function CaseTimelineGenerator() {
     display: 'block',
     fontSize: '13px',
     fontWeight: 600,
-    color: '#0f0f0f',
+    color: 'var(--color-text-primary)',
     marginBottom: '6px',
     fontFamily: 'var(--font-body)',
   };
@@ -112,11 +112,11 @@ export default function CaseTimelineGenerator() {
   const inputStyle: React.CSSProperties = {
     width: '100%',
     padding: '12px 14px',
-    border: '1px solid #E5E7EB',
+    border: '1px solid var(--border-default)',
     borderRadius: '12px',
     fontSize: '14px',
-    color: '#0f0f0f',
-    backgroundColor: '#FFFFFF',
+    color: 'var(--color-text-primary)',
+    backgroundColor: 'var(--color-surface-0)',
     fontFamily: 'var(--font-body)',
     boxSizing: 'border-box' as const,
   };
@@ -124,8 +124,8 @@ export default function CaseTimelineGenerator() {
   const buttonStyle: React.CSSProperties = {
     width: '100%',
     padding: '14px',
-    backgroundColor: input.caseType && input.filingDate ? '#0966C3' : '#E5E7EB',
-    color: '#FFFFFF',
+    backgroundColor: input.caseType && input.filingDate ? 'var(--accent-primary)' : 'var(--border-default)',
+    color: 'var(--color-surface-0)',
     border: 'none',
     borderRadius: '20px',
     fontSize: '15px',
@@ -142,7 +142,7 @@ export default function CaseTimelineGenerator() {
   const markerSpacing = containerWidth / (timeline?.length || 8);
 
   return (
-    <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       <style>{`
         @media print {
           body {
@@ -157,20 +157,20 @@ export default function CaseTimelineGenerator() {
         }
       `}</style>
 
-      <div style={{ background: '#0966C3', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
+      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0966C3', flexShrink: 0 }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: 'var(--accent-primary)', flexShrink: 0 }}>
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
               <line x1="16" y1="2" x2="16" y2="6" />
               <line x1="8" y1="2" x2="8" y2="6" />
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
               Case Timeline
             </span>
           </div>
-          <h1 style={{ fontSize: '40px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
+          <h1 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
             Case Timeline Generator
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -182,8 +182,8 @@ export default function CaseTimelineGenerator() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: timeline ? '350px 1fr' : '1fr', gap: '40px', alignItems: 'start' }}>
           {/* Input Section */}
-          <div className="no-print" style={{ background: '#FFFFFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', height: 'fit-content' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+          <div className="no-print" style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', height: 'fit-content' }}>
+            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
               Case Information
             </h2>
 
@@ -236,7 +236,7 @@ export default function CaseTimelineGenerator() {
               </div>
 
               {error && (
-                <div style={{ padding: '12px 14px', borderRadius: '12px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid #E5E7EB' }}>
+                <div style={{ padding: '12px 14px', borderRadius: '12px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
                   <p style={{ fontSize: '13px', color: '#CC1019', margin: 0, fontFamily: 'var(--font-body)' }}>{error}</p>
                 </div>
               )}
@@ -255,7 +255,7 @@ export default function CaseTimelineGenerator() {
           {timeline && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
               {/* SVG Timeline */}
-              <div ref={containerRef} style={{ background: '#FFFFFF', borderRadius: '12px', padding: '40px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div ref={containerRef} style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '40px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <svg
                   ref={svgRef}
                   width="100%"
@@ -264,7 +264,7 @@ export default function CaseTimelineGenerator() {
                   viewBox={`0 0 ${containerWidth} ${svgHeight}`}
                   preserveAspectRatio="xMidYMid meet"
                 >
-                  <line x1="40" y1="60" x2={containerWidth - 40} y2="60" stroke="#E5E7EB" strokeWidth="2" />
+                  <line x1="40" y1="60" x2={containerWidth - 40} y2="60" stroke="var(--border-default)" strokeWidth="2" />
 
                   {timeline.map((m, idx) => {
                     const x = 40 + (idx * (containerWidth - 80)) / (timeline.length - 1);
@@ -273,15 +273,15 @@ export default function CaseTimelineGenerator() {
 
                     return (
                       <g key={m.name}>
-                        <line x1={x} y1="50" x2={x} y2="70" stroke={m.isUpcoming ? '#0966C3' : '#9CA3AF'} strokeWidth="2" />
-                        <circle cx={x} cy="60" r="6" fill={m.isUpcoming ? '#0966C3' : '#9CA3AF'} />
+                        <line x1={x} y1="50" x2={x} y2="70" stroke={m.isUpcoming ? 'var(--accent-primary)' : 'var(--color-text-muted)'} strokeWidth="2" />
+                        <circle cx={x} cy="60" r="6" fill={m.isUpcoming ? 'var(--accent-primary)' : 'var(--color-text-muted)'} />
                         <text
                           x={x}
                           y={textY}
                           textAnchor="middle"
                           fontSize="11"
                           fontWeight="600"
-                          fill="#0f0f0f"
+                          fill="var(--color-text-primary)"
                           style={{ fontFamily: 'var(--font-body)' }}
                         >
                           {m.name}
@@ -291,7 +291,7 @@ export default function CaseTimelineGenerator() {
                           y={textY + 14}
                           textAnchor="middle"
                           fontSize="10"
-                          fill="#4B5563"
+                          fill="var(--color-text-secondary)"
                           style={{ fontFamily: 'var(--font-body)' }}
                         >
                           {m.date}
@@ -303,8 +303,8 @@ export default function CaseTimelineGenerator() {
               </div>
 
               {/* Milestones List */}
-              <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
                   Timeline Milestones
                 </h2>
 
@@ -314,20 +314,20 @@ export default function CaseTimelineGenerator() {
                       display: 'flex',
                       alignItems: 'center',
                       padding: '16px',
-                      backgroundColor: m.isUpcoming ? '#F0F9FF' : '#F7F8FA',
+                      backgroundColor: m.isUpcoming ? '#F0F9FF' : 'var(--color-surface-1)',
                       borderRadius: '12px',
-                      borderLeft: `4px solid ${m.isUpcoming ? '#0966C3' : '#9CA3AF'}`,
+                      borderLeft: `4px solid ${m.isUpcoming ? 'var(--accent-primary)' : 'var(--color-text-muted)'}`,
                     }}>
                       <div style={{ flex: 1 }}>
-                        <p style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-body)' }}>
+                        <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>
                           {m.name}
                         </p>
-                        <p style={{ fontSize: '13px', color: '#4B5563', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
+                        <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
                           {m.date} ({Math.round(m.daysFromFiling / 30.44)} months)
                         </p>
                       </div>
                       {!m.isUpcoming && (
-                        <span style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-body)' }}>
+                        <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-body)' }}>
                           Past
                         </span>
                       )}
@@ -349,8 +349,8 @@ export default function CaseTimelineGenerator() {
                   className="no-print"
                   style={{
                     padding: '14px',
-                    backgroundColor: '#004182',
-                    color: '#FFFFFF',
+                    backgroundColor: 'var(--accent-primary-hover)',
+                    color: 'var(--color-surface-0)',
                     border: 'none',
                     borderRadius: '20px',
                     fontSize: '15px',

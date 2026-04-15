@@ -22,7 +22,7 @@ interface USChoroplethProps {
   stateData: StateData[];
 }
 
-const COLOR_RANGE = ['#EDF3FB', '#C5DAEF', '#8DB9DE', '#4A93C9', '#1A6DB5', '#004182'];
+const COLOR_RANGE = ['#EDF3FB', '#C5DAEF', '#8DB9DE', '#4A93C9', '#1A6DB5', 'var(--accent-primary-hover)'];
 
 export default function USChoropleth({ stateData }: USChoroplethProps) {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -82,13 +82,13 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
         .attr('fill', (d: any) => {
           const fips = String(d.id).padStart(2, '0');
           const sd = stateMap.get(fips);
-          return sd ? colorScale(sd.winRate) : '#E5E7EB';
+          return sd ? colorScale(sd.winRate) : 'var(--border-default)';
         })
-        .attr('stroke', '#FFFFFF')
+        .attr('stroke', 'var(--color-surface-0)')
         .attr('stroke-width', 1)
         .attr('cursor', 'pointer')
         .on('mouseenter', function (event: MouseEvent, d: any) {
-          d3.select(this).attr('stroke', '#0966C3').attr('stroke-width', 2);
+          d3.select(this).attr('stroke', 'var(--accent-primary)').attr('stroke-width', 2);
           const fips = String(d.id).padStart(2, '0');
           const sd = stateMap.get(fips);
           if (sd) {
@@ -113,7 +113,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
           }
         })
         .on('mouseleave', function () {
-          d3.select(this).attr('stroke', '#FFFFFF').attr('stroke-width', 1);
+          d3.select(this).attr('stroke', 'var(--color-surface-0)').attr('stroke-width', 1);
           setTooltip({ x: 0, y: 0, data: null });
         })
         .on('click', function (_event: MouseEvent, d: any) {
@@ -126,7 +126,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
       g.append('path')
         .datum(topojson.mesh(us, us.objects.states, (a: any, b: any) => a !== b))
         .attr('fill', 'none')
-        .attr('stroke', '#FFFFFF')
+        .attr('stroke', 'var(--color-surface-0)')
         .attr('stroke-width', 0.5)
         .attr('d', path as any);
     });
@@ -151,8 +151,8 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
             left: tooltip.x,
             top: tooltip.y,
             transform: 'translate(-50%, -100%)',
-            background: '#0966C3',
-            color: '#FFFFFF',
+            background: 'var(--accent-primary)',
+            color: 'var(--color-surface-0)',
             padding: '12px 16px',
             borderRadius: '8px',
             fontSize: '13px',
@@ -187,7 +187,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
         marginTop: '16px',
         fontSize: '12px',
         fontFamily: 'var(--font-body)',
-        color: '#4B5563',
+        color: 'var(--color-text-secondary)',
       }}>
         <span>Lower win rate</span>
         {COLOR_RANGE.map((c, i) => (

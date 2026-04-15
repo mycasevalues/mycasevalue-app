@@ -38,7 +38,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div style={{
-        padding: '48px 32px', background: '#FFFFFF', border: '1px solid #E5E7EB',
+        padding: '48px 32px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
         borderRadius: '12px', textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}>
@@ -46,10 +46,10 @@ export default function ContactForm() {
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
           <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
-        <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
           Message Sent
         </h3>
-        <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>
+        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>
           Thank you for reaching out. We typically respond within 1 business day.
         </p>
       </div>
@@ -58,9 +58,9 @@ export default function ContactForm() {
 
   const inputStyle = {
     width: '100%', padding: '12px 14px', fontSize: '14px',
-    fontFamily: 'var(--font-body)', color: '#0f0f0f',
-    border: '1px solid #E5E7EB', borderRadius: '12px',
-    background: '#FFFFFF', outline: 'none',
+    fontFamily: 'var(--font-body)', color: 'var(--color-text-primary)',
+    border: '1px solid var(--border-default)', borderRadius: '12px',
+    background: 'var(--color-surface-0)', outline: 'none',
     transition: 'border-color 200ms',
     height: '48px',
     boxSizing: 'border-box' as any,
@@ -69,7 +69,7 @@ export default function ContactForm() {
 
   const labelStyle = {
     display: 'block', fontSize: '14px', fontWeight: 600,
-    color: '#0f0f0f', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)',
     marginBottom: '8px',
   } as React.CSSProperties;
 
@@ -79,7 +79,7 @@ export default function ContactForm() {
         .contact-input:focus { border-color: #004182 !important; outline: none; }
         .contact-submit {
           display: block; padding: 0 32px; height: 48px;
-          background: #0966C3; color: #FFFFFF; border: none;
+          background: var(--accent-primary); color: var(--color-surface-0); border: none;
           border-radius: 12px; font-size: 15px; font-weight: 600;
           cursor: pointer; transition: background 200ms;
           font-family: var(--font-body); width: 100%;
@@ -92,11 +92,11 @@ export default function ContactForm() {
         }
       `}</style>
       <form onSubmit={handleSubmit} style={{
-        padding: '32px', background: '#FFFFFF', border: '1px solid #E5E7EB',
+        padding: '32px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
         borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
         display: 'flex', flexDirection: 'column', gap: '20px',
       }}>
-        <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
+        <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
           Send Us a Message
         </h2>
         {error && (

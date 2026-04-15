@@ -88,9 +88,9 @@ export default function TestimonialCarousel() {
   return (
     <section
       style={{
-        background: '#FFFFFF',
-        borderTop: '1px solid #E5E7EB',
-        borderBottom: '1px solid #E5E7EB',
+        background: 'var(--color-surface-0)',
+        borderTop: '1px solid var(--border-default)',
+        borderBottom: '1px solid var(--border-default)',
         padding: '80px 24px',
       }}
       onMouseEnter={handleMouseEnter}
@@ -105,7 +105,7 @@ export default function TestimonialCarousel() {
             style={{
               width: '60px',
               height: '4px',
-              background: '#0966C3',
+              background: 'var(--accent-primary)',
               margin: '0 auto 16px',
               borderRadius: '12px',
             }}
@@ -114,7 +114,7 @@ export default function TestimonialCarousel() {
             style={{
               fontSize: '32px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-display)',
               margin: '0 0 12px 0',
             }}
@@ -124,7 +124,7 @@ export default function TestimonialCarousel() {
           <p
             style={{
               fontSize: '16px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               margin: '0',
               fontWeight: 300,
@@ -159,8 +159,8 @@ export default function TestimonialCarousel() {
               height: '44px',
               borderRadius: '12px',
               border: 'none',
-              background: '#0966C3',
-              color: '#FFFFFF',
+              background: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -168,10 +168,10 @@ export default function TestimonialCarousel() {
               transition: 'background-color 200ms',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#0966C3';
+              e.currentTarget.style.background = 'var(--accent-primary)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#0966C3';
+              e.currentTarget.style.background = 'var(--accent-primary)';
             }}
           >
             <svg
@@ -200,8 +200,8 @@ export default function TestimonialCarousel() {
             <div
               key={currentIndex}
               style={{
-                background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
+                background: 'var(--color-surface-0)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 padding: '32px',
                 width: '100%',
@@ -217,7 +217,7 @@ export default function TestimonialCarousel() {
                     width="16"
                     height="16"
                     viewBox="0 0 24 24"
-                    fill="#0966C3"
+                    fill="var(--accent-primary)"
                     stroke="none"
                   >
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -229,7 +229,7 @@ export default function TestimonialCarousel() {
               <blockquote
                 style={{
                   fontSize: '16px',
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   fontStyle: 'italic',
                   margin: '0 0 24px 0',
@@ -246,7 +246,7 @@ export default function TestimonialCarousel() {
                   style={{
                     fontSize: '16px',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-display)',
                     margin: '0 0 2px 0',
                   }}
@@ -256,7 +256,7 @@ export default function TestimonialCarousel() {
                 <p
                   style={{
                     fontSize: '14px',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     fontFamily: 'var(--font-body)',
                     margin: '0 0 4px 0',
                     fontWeight: 500,
@@ -267,7 +267,7 @@ export default function TestimonialCarousel() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     fontFamily: 'var(--font-body)',
                     margin: 0,
                     fontWeight: 300,
@@ -291,8 +291,8 @@ export default function TestimonialCarousel() {
               height: '44px',
               borderRadius: '12px',
               border: 'none',
-              background: '#0966C3',
-              color: '#FFFFFF',
+              background: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -300,10 +300,10 @@ export default function TestimonialCarousel() {
               transition: 'background-color 200ms',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#0966C3';
+              e.currentTarget.style.background = 'var(--accent-primary)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#0966C3';
+              e.currentTarget.style.background = 'var(--accent-primary)';
             }}
           >
             <svg
@@ -338,20 +338,20 @@ export default function TestimonialCarousel() {
                 width: '10px',
                 height: '10px',
                 borderRadius: '50%',
-                border: index === currentIndex ? 'none' : '1px solid #E5E7EB',
-                background: index === currentIndex ? '#0966C3' : 'transparent',
+                border: index === currentIndex ? 'none' : '1px solid var(--border-default)',
+                background: index === currentIndex ? 'var(--accent-primary)' : 'transparent',
                 cursor: 'pointer',
                 transition: 'all 200ms',
                 padding: 0,
               }}
               onMouseEnter={(e) => {
                 if (index !== currentIndex) {
-                  e.currentTarget.style.borderColor = '#0966C3';
+                  e.currentTarget.style.borderColor = 'var(--accent-primary)';
                 }
               }}
               onMouseLeave={(e) => {
                 if (index !== currentIndex) {
-                  e.currentTarget.style.borderColor = '#E5E7EB';
+                  e.currentTarget.style.borderColor = 'var(--border-default)';
                 }
               }}
             />

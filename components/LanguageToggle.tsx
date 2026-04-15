@@ -52,7 +52,7 @@ export default function LanguageToggle() {
         fontSize: '13px',
         fontWeight: 500,
         fontFamily: 'Inter, var(--font-body)',
-        color: '#666666',
+        color: 'var(--color-text-secondary)',
         marginRight: '12px',
       }}
     >
@@ -63,7 +63,7 @@ export default function LanguageToggle() {
           border: 'none',
           cursor: 'pointer',
           padding: '4px 6px',
-          color: locale === 'en' ? '#0966C3' : '#666666',
+          color: locale === 'en' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
           fontWeight: locale === 'en' ? 600 : 500,
           transition: 'color 150ms',
           fontSize: '13px',
@@ -82,7 +82,7 @@ export default function LanguageToggle() {
           border: 'none',
           cursor: 'pointer',
           padding: '4px 6px',
-          color: locale === 'es' ? '#0966C3' : '#666666',
+          color: locale === 'es' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
           fontWeight: locale === 'es' ? 600 : 500,
           transition: 'color 150ms',
           fontSize: '13px',

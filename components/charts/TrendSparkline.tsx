@@ -97,7 +97,7 @@ export default function TrendSparkline({ nosCode, width = 80, height = 48 }: Tre
       .datum(data)
       .attr('d', line)
       .attr('fill', 'none')
-      .attr('stroke', '#0966C3')
+      .attr('stroke', 'var(--accent-primary)')
       .attr('stroke-width', 1.5);
 
     // End dot
@@ -105,7 +105,7 @@ export default function TrendSparkline({ nosCode, width = 80, height = 48 }: Tre
       .attr('cx', x(data.length - 1))
       .attr('cy', y(data[data.length - 1]))
       .attr('r', 2)
-      .attr('fill', '#0966C3');
+      .attr('fill', 'var(--accent-primary)');
 
   }, [data, width, height]);
 

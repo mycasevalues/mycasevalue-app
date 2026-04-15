@@ -153,16 +153,16 @@ export default function ApiDocsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
-        <div style={{ background: '#0966C3', padding: '80px 24px' }}>
+        <div style={{ background: 'var(--accent-primary)', padding: '80px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#0966C3',
-                color: '#FFFFFF',
+                backgroundColor: 'var(--accent-primary)',
+                color: 'var(--color-surface-0)',
                 fontSize: '11px',
                 fontWeight: 600,
                 letterSpacing: '0.08em',
@@ -176,7 +176,7 @@ export default function ApiDocsPage() {
             <h1 style={{
               fontSize: 'clamp(32px, 5vw, 52px)',
               fontWeight: 700,
-              color: '#FFFFFF',
+              color: 'var(--color-surface-0)',
               fontFamily: 'var(--font-display)',
               letterSpacing: '-1px',
               marginBottom: 12,
@@ -196,14 +196,14 @@ export default function ApiDocsPage() {
         </div>
 
         {/* Breadcrumb */}
-        <div style={{ borderBottom: '1px solid #E5E7EB', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: '#F7F8FA' }}>
+        <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
             <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
-              <Link href="/" style={{ color: '#004182', textDecoration: 'none' }}>
+              <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
                 Home
               </Link>
-              <span style={{ color: '#4B5563' }}>/</span>
-              <span style={{ color: '#4B5563' }}>API Documentation</span>
+              <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
+              <span style={{ color: 'var(--color-text-secondary)' }}>API Documentation</span>
             </nav>
           </div>
         </div>
@@ -214,7 +214,7 @@ export default function ApiDocsPage() {
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-display)',
               marginBottom: 24,
             }}>
@@ -222,7 +222,7 @@ export default function ApiDocsPage() {
             </h2>
             <p style={{
               fontSize: 16,
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
               lineHeight: 1.8,
               marginBottom: 32,
@@ -235,14 +235,14 @@ export default function ApiDocsPage() {
               <div style={{
                 padding: 32,
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
-                background: '#FFFFFF',
+                border: '1px solid var(--border-default)',
+                background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
               }}>
                 <h3 style={{
                   fontSize: 18,
                   fontWeight: 600,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-display)',
                   marginBottom: 12,
                 }}>
@@ -250,7 +250,7 @@ export default function ApiDocsPage() {
                 </h3>
                 <p style={{
                   fontSize: 14,
-                  color: '#4B5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   lineHeight: 1.6,
                   marginBottom: 16,
@@ -276,14 +276,14 @@ export default function ApiDocsPage() {
               <div style={{
                 padding: 32,
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
-                background: '#FFFFFF',
+                border: '1px solid var(--border-default)',
+                background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
               }}>
                 <h3 style={{
                   fontSize: 18,
                   fontWeight: 600,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-display)',
                   marginBottom: 12,
                 }}>
@@ -294,7 +294,7 @@ export default function ApiDocsPage() {
                     <p style={{
                       fontSize: 13,
                       fontWeight: 600,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-body)',
                       marginBottom: 4,
                     }}>
@@ -302,7 +302,7 @@ export default function ApiDocsPage() {
                     </p>
                     <p style={{
                       fontSize: 14,
-                      color: '#0966C3',
+                      color: 'var(--accent-primary)',
                       fontFamily: 'var(--font-display)',
                       fontWeight: 600,
                       margin: 0,
@@ -314,7 +314,7 @@ export default function ApiDocsPage() {
                     <p style={{
                       fontSize: 13,
                       fontWeight: 600,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-body)',
                       marginBottom: 4,
                     }}>
@@ -322,7 +322,7 @@ export default function ApiDocsPage() {
                     </p>
                     <p style={{
                       fontSize: 14,
-                      color: '#0966C3',
+                      color: 'var(--accent-primary)',
                       fontFamily: 'var(--font-display)',
                       fontWeight: 600,
                       margin: 0,
@@ -340,7 +340,7 @@ export default function ApiDocsPage() {
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-display)',
               marginBottom: 32,
             }}>
@@ -352,8 +352,8 @@ export default function ApiDocsPage() {
                 <div key={idx} style={{
                   padding: 32,
                   borderRadius: '12px',
-                  border: '1px solid #E5E7EB',
-                  background: '#FFFFFF',
+                  border: '1px solid var(--border-default)',
+                  background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 }}>
                   <div style={{ marginBottom: 24 }}>
@@ -383,7 +383,7 @@ export default function ApiDocsPage() {
                     <h3 style={{
                       fontSize: 20,
                       fontWeight: 600,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-display)',
                       marginBottom: 8,
                     }}>
@@ -391,7 +391,7 @@ export default function ApiDocsPage() {
                     </h3>
                     <p style={{
                       fontSize: 14,
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       fontFamily: 'var(--font-body)',
                       lineHeight: 1.6,
                       margin: 0,
@@ -406,7 +406,7 @@ export default function ApiDocsPage() {
                       <h4 style={{
                         fontSize: 13,
                         fontWeight: 700,
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-display)',
                         marginBottom: 12,
                         textTransform: 'uppercase',
@@ -421,7 +421,7 @@ export default function ApiDocsPage() {
                         borderRadius: '20px',
                         fontSize: 12,
                         fontFamily: 'monospace',
-                        color: '#E5E7EB',
+                        color: 'var(--border-default)',
                         wordBreak: 'break-all',
                         lineHeight: 1.6,
                         overflow: 'auto',
@@ -435,7 +435,7 @@ export default function ApiDocsPage() {
                       <h4 style={{
                         fontSize: 13,
                         fontWeight: 700,
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-display)',
                         marginBottom: 12,
                         textTransform: 'uppercase',
@@ -470,7 +470,7 @@ export default function ApiDocsPage() {
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-display)',
               marginBottom: 32,
             }}>
@@ -482,13 +482,13 @@ export default function ApiDocsPage() {
               <div style={{
                 padding: 24,
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
-                background: '#FFFFFF',
+                border: '1px solid var(--border-default)',
+                background: 'var(--color-surface-0)',
               }}>
                 <h3 style={{
                   fontSize: 16,
                   fontWeight: 600,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-display)',
                   marginBottom: 16,
                 }}>
@@ -501,7 +501,7 @@ export default function ApiDocsPage() {
                   borderRadius: '20px',
                   fontSize: 11,
                   fontFamily: 'monospace',
-                  color: '#E5E7EB',
+                  color: 'var(--border-default)',
                   wordBreak: 'break-all',
                   lineHeight: 1.5,
                   overflow: 'auto',
@@ -515,13 +515,13 @@ export default function ApiDocsPage() {
               <div style={{
                 padding: 24,
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
-                background: '#FFFFFF',
+                border: '1px solid var(--border-default)',
+                background: 'var(--color-surface-0)',
               }}>
                 <h3 style={{
                   fontSize: 16,
                   fontWeight: 600,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-display)',
                   marginBottom: 16,
                 }}>
@@ -534,7 +534,7 @@ export default function ApiDocsPage() {
                   borderRadius: '20px',
                   fontSize: 11,
                   fontFamily: 'monospace',
-                  color: '#E5E7EB',
+                  color: 'var(--border-default)',
                   wordBreak: 'break-all',
                   lineHeight: 1.5,
                   overflow: 'auto',
@@ -551,13 +551,13 @@ export default function ApiDocsPage() {
               <div style={{
                 padding: 24,
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
-                background: '#FFFFFF',
+                border: '1px solid var(--border-default)',
+                background: 'var(--color-surface-0)',
               }}>
                 <h3 style={{
                   fontSize: 16,
                   fontWeight: 600,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-display)',
                   marginBottom: 16,
                 }}>
@@ -570,7 +570,7 @@ export default function ApiDocsPage() {
                   borderRadius: '20px',
                   fontSize: 11,
                   fontFamily: 'monospace',
-                  color: '#E5E7EB',
+                  color: 'var(--border-default)',
                   wordBreak: 'break-all',
                   lineHeight: 1.5,
                   overflow: 'auto',
@@ -590,7 +590,7 @@ r = requests.get(
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-display)',
               marginBottom: 32,
             }}>
@@ -599,8 +599,8 @@ r = requests.get(
 
             <div style={{
               borderRadius: '12px',
-              border: '1px solid #E5E7EB',
-              background: '#FFFFFF',
+              border: '1px solid var(--border-default)',
+              background: 'var(--color-surface-0)',
               overflow: 'hidden',
             }}>
               <table style={{
@@ -609,13 +609,13 @@ r = requests.get(
                 fontFamily: 'var(--font-body)',
               }}>
                 <thead>
-                  <tr style={{ borderBottom: '1px solid #E5E7EB', background: '#F9FAFB' }}>
+                  <tr style={{ borderBottom: '1px solid var(--border-default)', background: '#F9FAFB' }}>
                     <th style={{
                       padding: 16,
                       fontSize: 13,
                       fontWeight: 600,
                       textAlign: 'left',
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-display)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
@@ -627,7 +627,7 @@ r = requests.get(
                       fontSize: 13,
                       fontWeight: 600,
                       textAlign: 'left',
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-display)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
@@ -639,7 +639,7 @@ r = requests.get(
                       fontSize: 13,
                       fontWeight: 600,
                       textAlign: 'left',
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-display)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
@@ -656,12 +656,12 @@ r = requests.get(
                     { code: '429', status: 'Too Many Requests', desc: 'Rate limit exceeded. Retry after specified time.' },
                     { code: '500', status: 'Server Error', desc: 'Internal server error. Contact support.' },
                   ].map((err, idx) => (
-                    <tr key={idx} style={{ borderBottom: idx < 4 ? '1px solid #E5E7EB' : 'none' }}>
+                    <tr key={idx} style={{ borderBottom: idx < 4 ? '1px solid var(--border-default)' : 'none' }}>
                       <td style={{
                         padding: 16,
                         fontSize: 14,
                         fontWeight: 600,
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                         fontFamily: 'monospace',
                       }}>
                         {err.code}
@@ -677,7 +677,7 @@ r = requests.get(
                       <td style={{
                         padding: 16,
                         fontSize: 14,
-                        color: '#4B5563',
+                        color: 'var(--color-text-secondary)',
                       }}>
                         {err.desc}
                       </td>
@@ -692,14 +692,14 @@ r = requests.get(
           <section style={{
             padding: 48,
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, #0966C3 0%, #004182 100%)',
+            background: 'linear-gradient(135deg, var(--accent-primary) 0%, #004182 100%)',
             textAlign: 'center',
             marginBottom: 64,
           }}>
             <h2 style={{
               fontSize: 28,
               fontWeight: 700,
-              color: '#FFFFFF',
+              color: 'var(--color-surface-0)',
               fontFamily: 'var(--font-display)',
               marginBottom: 12,
             }}>
@@ -719,8 +719,8 @@ r = requests.get(
               style={{
                 display: 'inline-block',
                 padding: '14px 32px',
-                backgroundColor: '#FFFFFF',
-                color: '#0966C3',
+                backgroundColor: 'var(--color-surface-0)',
+                color: 'var(--accent-primary)',
                 fontSize: 15,
                 fontWeight: 700,
                 borderRadius: '12px',

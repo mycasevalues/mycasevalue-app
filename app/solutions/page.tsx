@@ -84,7 +84,7 @@ export default function SolutionsPage() {
       {/* Hero */}
       <section
         style={{
-          background: '#0966C3',
+          background: 'var(--accent-primary)',
           color: '#FAFBFC',
           padding: '80px 24px 64px',
         }}
@@ -97,7 +97,7 @@ export default function SolutionsPage() {
               fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#004182',
+              color: 'var(--accent-primary-hover)',
               marginBottom: '16px',
             }}
           >
@@ -146,7 +146,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: '#004182',
+                  color: 'var(--accent-primary-hover)',
                   marginBottom: '4px',
                 }}
               >
@@ -169,7 +169,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: '#004182',
+                  color: 'var(--accent-primary-hover)',
                   marginBottom: '4px',
                 }}
               >
@@ -192,7 +192,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: '#004182',
+                  color: 'var(--accent-primary-hover)',
                   marginBottom: '4px',
                 }}
               >
@@ -215,7 +215,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: '#0966C3',
+                  color: 'var(--accent-primary)',
                   marginBottom: '4px',
                 }}
               >
@@ -239,7 +239,7 @@ export default function SolutionsPage() {
       {/* Free During Beta Banner */}
       <section
         style={{
-          background: 'linear-gradient(135deg, #0966C3 0%, #0966C3 100%)',
+          background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary) 100%)',
           color: '#FAFBFC',
           padding: '24px',
           textAlign: 'center',
@@ -262,7 +262,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Grid */}
-      <section style={{ padding: '80px 24px', background: '#F7F8FA' }}>
+      <section style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
         <div
           className="solutions-grid-wrap"
           style={{ maxWidth: '1120px', margin: '0 auto' }}
@@ -280,8 +280,8 @@ export default function SolutionsPage() {
                 key={s.slug}
                 href={`/solutions/${s.slug}`}
                 style={{
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '32px 24px',
                   textDecoration: 'none',
@@ -291,14 +291,14 @@ export default function SolutionsPage() {
                 className="solutions-card"
               >
                 <div style={{ marginBottom: '12px' }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
                 </div>
                 <h2
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '1.125rem',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     marginBottom: '8px',
                   }}
                 >
@@ -308,7 +308,7 @@ export default function SolutionsPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '0.875rem',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -325,7 +325,7 @@ export default function SolutionsPage() {
       <section
         style={{
           padding: '64px 24px',
-          background: '#FFFFFF',
+          background: 'var(--color-surface-0)',
           textAlign: 'center',
         }}
       >
@@ -335,7 +335,7 @@ export default function SolutionsPage() {
               fontFamily: 'var(--font-display)',
               fontSize: '1.75rem',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               marginBottom: '16px',
             }}
           >
@@ -345,7 +345,7 @@ export default function SolutionsPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '1rem',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               marginBottom: '32px',
               lineHeight: 1.6,
             }}
@@ -365,7 +365,7 @@ export default function SolutionsPage() {
               href="/search"
               style={{
                 background:
-                  '#0966C3',
+                  'var(--accent-primary)',
                 color: '#FAFBFC',
                 padding: '0.875rem 2rem',
                 borderRadius: '12px',
@@ -384,10 +384,10 @@ export default function SolutionsPage() {
               href="/pricing"
               style={{
                 background: 'transparent',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 padding: '0.875rem 2rem',
                 borderRadius: '12px',
-                border: '1.5px solid #E5E7EB',
+                border: '1.5px solid var(--border-default)',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
                 fontWeight: 600,

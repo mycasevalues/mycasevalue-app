@@ -15,24 +15,24 @@ interface ComparisonBarProps {
 
 export function ComparisonBar({
   data, primaryLabel, compareLabel,
-  primaryColor = '#0966C3', compareColor = '#F0F2F5',
+  primaryColor = 'var(--accent-primary)', compareColor = '#F0F2F5',
   unit = '%', lang = 'en',
 }: ComparisonBarProps) {
   const hasCompare = data.some(d => d.compare !== undefined);
 
   return (
-    <div className="w-full p-6" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px' }}>
+    <div className="w-full p-6" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
       <ResponsiveContainer width="100%" height={260}>
         <BarChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }} barCategoryGap="25%">
           <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
           <XAxis
             dataKey="name"
-            tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-body)' }}
-            axisLine={{ stroke: '#E5E7EB' }}
+            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
+            axisLine={{ stroke: 'var(--border-default)' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-mono)' }}
+            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}${unit}`}
@@ -40,20 +40,20 @@ export function ComparisonBar({
           <Tooltip
             cursor={{ fill: 'rgba(17,17,17,0.04)' }}
             contentStyle={{
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
+              background: 'var(--color-surface-0)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               fontSize: '13px',
               fontFamily: 'var(--font-mono)',
               padding: '8px 14px',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
             }}
             formatter={(value: number) => [`${value}${unit}`]}
           />
           {hasCompare && (
             <Legend
-              wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#4B5563' }}
+              wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
             />
           )}
           <Bar

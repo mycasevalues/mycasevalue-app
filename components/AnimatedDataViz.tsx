@@ -94,7 +94,7 @@ export default function AnimatedDataViz({
                 style={{
                   fontFamily: '"PT Mono", monospace',
                   fontSize: '12px',
-                  color: '#FFFFFF',
+                  color: 'var(--color-surface-0)',
                   fontWeight: 600,
                   animation: isVisible ? `slideInRight 0.6s ease-out ${idx * 0.1}s both` : 'none',
                 }}
@@ -116,7 +116,7 @@ export default function AnimatedDataViz({
               <div
                 style={{
                   height: '100%',
-                  background: '#0966C3',
+                  background: 'var(--accent-primary)',
                   width: '0%',
                   animation: isVisible
                     ? `fillBar 1s ease-out ${idx * 0.15}s forwards`

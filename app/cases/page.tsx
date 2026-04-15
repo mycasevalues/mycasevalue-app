@@ -216,7 +216,7 @@ export default function CasesIndexPage() {
               justifyContent: 'center',
             }}
           >
-            <SearchIcon size={20} color="#4B5563" />
+            <SearchIcon size={20} color="var(--color-text-secondary)" />
           </div>
           <input
             type="text"
@@ -239,11 +239,11 @@ export default function CasesIndexPage() {
               outline: 'none',
             }}
             onFocus={(e) => {
-              (e.target as HTMLInputElement).style.borderColor = '#0966C3';
+              (e.target as HTMLInputElement).style.borderColor = 'var(--accent-primary)';
               (e.target as HTMLInputElement).style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.08)';
             }}
             onBlur={(e) => {
-              (e.target as HTMLInputElement).style.borderColor = '#E5E7EB';
+              (e.target as HTMLInputElement).style.borderColor = 'var(--border-default)';
               (e.target as HTMLInputElement).style.boxShadow = 'none';
             }}
           />

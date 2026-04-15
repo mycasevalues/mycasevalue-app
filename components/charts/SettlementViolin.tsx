@@ -127,7 +127,7 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
       .datum(density)
       .attr('d', area)
       .attr('fill', 'rgba(10, 102, 194, 0.3)')
-      .attr('stroke', '#0966C3')
+      .attr('stroke', 'var(--accent-primary)')
       .attr('stroke-width', 1.5);
 
     // Median marker
@@ -137,7 +137,7 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
         .attr('x2', x(median))
         .attr('y1', centerY - h / 2 + 4)
         .attr('y2', centerY + h / 2 - 4)
-        .attr('stroke', '#004182')
+        .attr('stroke', 'var(--accent-primary-hover)')
         .attr('stroke-width', 2);
 
       g.append('text')
@@ -146,7 +146,7 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
         .attr('text-anchor', 'middle')
         .attr('font-size', '11px')
         .attr('font-family', 'var(--font-mono)')
-        .attr('fill', '#004182')
+        .attr('fill', 'var(--accent-primary-hover)')
         .attr('font-weight', 600)
         .text(`$${median >= 1000 ? (median / 1000).toFixed(1) + 'M' : median + 'K'}`);
     }
@@ -165,7 +165,7 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
       .selectAll('text')
       .attr('font-size', '10px')
       .attr('font-family', 'var(--font-mono)')
-      .attr('fill', '#4B5563');
+      .attr('fill', 'var(--color-text-secondary)');
 
     g.selectAll('.domain').attr('stroke', '#e5e7eb');
     g.selectAll('.tick line').attr('stroke', '#e5e7eb');

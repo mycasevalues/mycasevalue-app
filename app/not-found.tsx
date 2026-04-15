@@ -16,7 +16,7 @@ export default function NotFound() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '0',
-        background: '#F7F8FA',
+        background: 'var(--color-surface-1)',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         textAlign: 'center',
         position: 'relative',
@@ -30,15 +30,15 @@ export default function NotFound() {
           left: 0,
           right: 0,
           height: '8px',
-          background: '#0966C3',
+          background: 'var(--accent-primary)',
         }}
       />
       <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
         <div
           style={{
             maxWidth: 560,
-            background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            background: 'var(--color-surface-0)',
+            border: '1px solid var(--border-default)',
             borderRadius: '12px',
             padding: '48px 32px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
@@ -50,7 +50,7 @@ export default function NotFound() {
               fontFamily: '"PT Mono", monospace',
               fontSize: '96px',
               fontWeight: 600,
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               lineHeight: 1,
               marginBottom: '16px',
               letterSpacing: '-0.02em',
@@ -63,7 +63,7 @@ export default function NotFound() {
             style={{
               fontSize: '24px',
               fontWeight: 600,
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               margin: '0 0 12px',
               letterSpacing: '-0.01em',
             }}
@@ -74,7 +74,7 @@ export default function NotFound() {
           <p
             style={{
               fontSize: '15px',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               maxWidth: '460px',
               lineHeight: 1.6,
               margin: '0 0 32px',
@@ -119,8 +119,8 @@ export default function NotFound() {
                 alignItems: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: '#0966C3',
-                color: '#FFFFFF',
+                background: 'var(--accent-primary)',
+                color: 'var(--color-surface-0)',
                 border: 'none',
                 borderRadius: '12px',
                 fontSize: '14px',
@@ -144,9 +144,9 @@ export default function NotFound() {
                 alignItems: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: '#F7F8FA',
-                color: '#0f0f0f',
-                border: '1px solid #E5E7EB',
+                background: 'var(--color-surface-1)',
+                color: 'var(--color-text-primary)',
+                border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 fontSize: '14px',
                 fontWeight: 600,
@@ -164,14 +164,14 @@ export default function NotFound() {
           <div
             style={{
               paddingTop: '24px',
-              borderTop: '1px solid #E5E7EB',
+              borderTop: '1px solid var(--border-default)',
             }}
           >
             <p
               style={{
                 fontSize: '12px',
                 fontWeight: 600,
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
                 margin: '0 0 16px',
@@ -197,7 +197,7 @@ export default function NotFound() {
                   padding: '10px 12px',
                   background: '#F9FAFB',
                   color: '#374151',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '20px',
                   fontSize: '13px',
                   fontWeight: 500,
@@ -220,7 +220,7 @@ export default function NotFound() {
                   padding: '10px 12px',
                   background: '#F9FAFB',
                   color: '#374151',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '20px',
                   fontSize: '13px',
                   fontWeight: 500,
@@ -243,7 +243,7 @@ export default function NotFound() {
                   padding: '10px 12px',
                   background: '#F9FAFB',
                   color: '#374151',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '20px',
                   fontSize: '13px',
                   fontWeight: 500,
@@ -267,7 +267,7 @@ export default function NotFound() {
                   padding: '10px 12px',
                   background: '#F9FAFB',
                   color: '#374151',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '20px',
                   fontSize: '13px',
                   fontWeight: 500,

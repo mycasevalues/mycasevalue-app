@@ -41,16 +41,16 @@ const userTypeData = [
   { name: 'Students', value: 1600, percentage: 12 },
 ];
 
-const COLORS = ['#0966C3', '#004182', '#004182', '#5B21B6', '#4C1D95', '#D4D4D8'];
-const USER_COLORS = ['#0966C3', '#A78BFA', '#C4B5FD', '#DDD6FE'];
+const COLORS = ['var(--accent-primary)', 'var(--accent-primary-hover)', 'var(--accent-primary-hover)', '#5B21B6', '#4C1D95', '#D4D4D8'];
+const USER_COLORS = ['var(--accent-primary)', '#A78BFA', '#C4B5FD', '#DDD6FE'];
 
 export default function AnalyticsPage() {
   return (
-    <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
       <style>{`
         .metric-card {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           border-radius: 12px;
           padding: 24px;
           display: flex;
@@ -60,14 +60,14 @@ export default function AnalyticsPage() {
         .metric-value {
           font-size: 32px;
           font-weight: bold;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           margin-bottom: 8px;
           font-family: var(--font-display);
         }
 
         .metric-label {
           font-size: 14px;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           font-family: var(--font-body);
         }
 
@@ -79,8 +79,8 @@ export default function AnalyticsPage() {
         }
 
         .chart-card {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           border-radius: 12px;
           padding: 24px;
           margin-bottom: 24px;
@@ -89,16 +89,16 @@ export default function AnalyticsPage() {
         .chart-title {
           font-size: 18px;
           font-weight: 600;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           margin-bottom: 20px;
           font-family: var(--font-display);
         }
 
         .header {
-          background: #0966C3;
-          color: #FFFFFF;
+          background: var(--accent-primary);
+          color: var(--color-surface-0);
           padding: 48px 24px;
-          border-bottom: 1px solid #E5E7EB;
+          border-bottom: 1px solid var(--border-default);
         }
 
         .header-content {
@@ -147,7 +147,7 @@ export default function AnalyticsPage() {
         }
 
         .back-link:hover {
-          color: #FFFFFF;
+          color: var(--color-surface-0);
         }
 
         .charts-grid {
@@ -191,8 +191,8 @@ export default function AnalyticsPage() {
         }
 
         .tooltip-content {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           border-radius: 8px;
           padding: 12px;
           font-size: 12px;
@@ -200,15 +200,15 @@ export default function AnalyticsPage() {
         }
 
         .legend-item {
-          color: #4B5563 !important;
+          color: var(--color-text-secondary) !important;
           font-size: 12px !important;
           font-family: var(--font-body) !important;
         }
 
         .info-banner {
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
-          border-left: 4px solid #0966C3;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
+          border-left: 4px solid var(--accent-primary);
           border-radius: 12px;
           padding: 20px;
           margin-bottom: 40px;
@@ -217,14 +217,14 @@ export default function AnalyticsPage() {
         .info-banner h3 {
           font-size: 16px;
           font-weight: 600;
-          color: #0f0f0f;
+          color: var(--color-text-primary);
           margin: 0 0 8px 0;
           font-family: var(--font-display);
         }
 
         .info-banner p {
           font-size: 14px;
-          color: #4B5563;
+          color: var(--color-text-secondary);
           margin: 0;
           font-family: var(--font-body);
           line-height: 1.5;
@@ -284,18 +284,18 @@ export default function AnalyticsPage() {
             <div className="chart-title">Daily Searches (Last 30 Days)</div>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={dailySearchData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                <XAxis dataKey="day" stroke="#4B5563" style={{ fontSize: '12px', fontFamily: 'var(--font-body)' }} />
-                <YAxis stroke="#4B5563" style={{ fontSize: '12px', fontFamily: 'var(--font-body)' }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border-default)" />
+                <XAxis dataKey="day" stroke="var(--color-text-secondary)" style={{ fontSize: '12px', fontFamily: 'var(--font-body)' }} />
+                <YAxis stroke="var(--color-text-secondary)" style={{ fontSize: '12px', fontFamily: 'var(--font-body)' }} />
                 <Tooltip
                   contentStyle={{
-                    background: '#FFFFFF',
-                    border: '1px solid #E5E7EB',
+                    background: 'var(--color-surface-0)',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '20px',
                     padding: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '12px',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                   }}
                   formatter={(value) => value.toLocaleString()}
                 />
@@ -303,7 +303,7 @@ export default function AnalyticsPage() {
                 <Line
                   type="monotone"
                   dataKey="searches"
-                  stroke="#0966C3"
+                  stroke="var(--accent-primary)"
                   strokeWidth={2}
                   dot={false}
                   isAnimationActive={true}
@@ -317,22 +317,22 @@ export default function AnalyticsPage() {
             <div className="chart-title">Top Case Types Searched</div>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={caseTypeData} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                <XAxis type="number" stroke="#4B5563" style={{ fontSize: '12px', fontFamily: 'var(--font-body)' }} />
-                <YAxis dataKey="name" type="category" width={150} stroke="#4B5563" style={{ fontSize: '11px', fontFamily: 'var(--font-body)' }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--border-default)" />
+                <XAxis type="number" stroke="var(--color-text-secondary)" style={{ fontSize: '12px', fontFamily: 'var(--font-body)' }} />
+                <YAxis dataKey="name" type="category" width={150} stroke="var(--color-text-secondary)" style={{ fontSize: '11px', fontFamily: 'var(--font-body)' }} />
                 <Tooltip
                   contentStyle={{
-                    background: '#FFFFFF',
-                    border: '1px solid #E5E7EB',
+                    background: 'var(--color-surface-0)',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '20px',
                     padding: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '12px',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                   }}
                   formatter={(value) => value.toLocaleString()}
                 />
-                <Bar dataKey="value" fill="#0966C3" radius={[0, 12, 12, 0]} />
+                <Bar dataKey="value" fill="var(--accent-primary)" radius={[0, 12, 12, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -349,7 +349,7 @@ export default function AnalyticsPage() {
                   labelLine={false}
                   label={(entry) => `${entry.name} (${Math.round((entry.percent || 0) * 100)}%)`}
                   outerRadius={100}
-                  fill="#0966C3"
+                  fill="var(--accent-primary)"
                   dataKey="value"
                 >
                   {Array.from({ length: userTypeData.length }, (_, i) => (
@@ -358,13 +358,13 @@ export default function AnalyticsPage() {
                 </Pie>
                 <Tooltip
                   contentStyle={{
-                    background: '#FFFFFF',
-                    border: '1px solid #E5E7EB',
+                    background: 'var(--color-surface-0)',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '20px',
                     padding: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '12px',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                   }}
                   formatter={(value) => value.toLocaleString()}
                 />
@@ -384,7 +384,7 @@ export default function AnalyticsPage() {
                   labelLine={false}
                   label={(entry) => `${entry.name} (${Math.round((entry.percent || 0) * 100)}%)`}
                   outerRadius={100}
-                  fill="#0966C3"
+                  fill="var(--accent-primary)"
                   dataKey="value"
                 >
                   {Array.from({ length: caseTypeData.length }, (_, i) => (
@@ -393,13 +393,13 @@ export default function AnalyticsPage() {
                 </Pie>
                 <Tooltip
                   contentStyle={{
-                    background: '#FFFFFF',
-                    border: '1px solid #E5E7EB',
+                    background: 'var(--color-surface-0)',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '20px',
                     padding: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '12px',
-                    color: '#4B5563',
+                    color: 'var(--color-text-secondary)',
                   }}
                   formatter={(value) => value.toLocaleString()}
                 />
@@ -409,11 +409,11 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Footer Info */}
-        <div style={{ marginTop: '48px', padding: '24px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#0f0f0f', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
+        <div style={{ marginTop: '48px', padding: '24px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', textAlign: 'center' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
             Have questions about the data?
           </h3>
-          <p style={{ fontSize: '14px', color: '#4B5563', margin: '0 0 16px 0', fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', fontFamily: 'var(--font-body)' }}>
             Contact our research team or visit our documentation for more details about platform usage and federal court analytics.
           </p>
           <a
@@ -421,8 +421,8 @@ export default function AnalyticsPage() {
             style={{
               display: 'inline-block',
               padding: '10px 20px',
-              background: '#0966C3',
-              color: '#FFFFFF',
+              background: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               borderRadius: '20px',
               textDecoration: 'none',
               fontSize: '14px',

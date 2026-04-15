@@ -37,8 +37,8 @@ export default function NewsletterSignup() {
   return (
     <div
       style={{
-        background: '#FFFFFF',
-        border: '1px solid #E5E7EB',
+        background: 'var(--color-surface-0)',
+        border: '1px solid var(--border-default)',
         borderRadius: '12px',
         padding: '32px',
       }}
@@ -48,7 +48,7 @@ export default function NewsletterSignup() {
         style={{
           fontSize: '11px',
           fontWeight: 600,
-          color: '#0966C3',
+          color: 'var(--accent-primary)',
           textTransform: 'uppercase',
           letterSpacing: '0.08em',
           marginBottom: '8px',
@@ -63,7 +63,7 @@ export default function NewsletterSignup() {
           fontFamily: 'var(--font-display)',
           fontSize: '20px',
           fontWeight: 600,
-          color: '#0f0f0f',
+          color: 'var(--color-text-primary)',
           margin: '0 0 8px',
           lineHeight: 1.3,
         }}
@@ -76,7 +76,7 @@ export default function NewsletterSignup() {
         style={{
           fontFamily: 'var(--font-body)',
           fontSize: '14px',
-          color: '#4B5563',
+          color: 'var(--color-text-secondary)',
           margin: '0 0 24px',
           lineHeight: 1.6,
         }}
@@ -147,11 +147,11 @@ export default function NewsletterSignup() {
               height: '48px',
               padding: '12px 16px',
               borderRadius: '12px',
-              border: `4px solid ${status === 'error' ? '#0966C3' : '#E5E7EB'}`,
-              background: '#FFFFFF',
+              border: `4px solid ${status === 'error' ? 'var(--accent-primary)' : 'var(--border-default)'}`,
+              background: 'var(--color-surface-0)',
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               outline: 'none',
               transition: 'border-color 200ms',
               boxSizing: 'border-box',
@@ -166,15 +166,15 @@ export default function NewsletterSignup() {
               }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#0966C3';
+              e.currentTarget.style.background = 'var(--accent-primary)';
             }}
             style={{
               height: '48px',
               padding: '0 24px',
               borderRadius: '12px',
               border: 'none',
-              background: '#0966C3',
-              color: '#FFFFFF',
+              background: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
               fontWeight: 600,
@@ -196,7 +196,7 @@ export default function NewsletterSignup() {
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '13px',
-            color: '#0966C3',
+            color: 'var(--accent-primary)',
             margin: '12px 0 0',
           }}
         >
@@ -209,7 +209,7 @@ export default function NewsletterSignup() {
         style={{
           fontFamily: 'var(--font-body)',
           fontSize: '12px',
-          color: '#4B5563',
+          color: 'var(--color-text-secondary)',
           margin: '16px 0 0',
           lineHeight: 1.5,
         }}

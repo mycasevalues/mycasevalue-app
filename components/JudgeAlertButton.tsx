@@ -69,8 +69,8 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
         onClick={() => setIsOpen(true)}
         style={{
           padding: '10px 20px',
-          background: '#0966C3',
-          color: '#FFFFFF',
+          background: 'var(--accent-primary)',
+          color: 'var(--color-surface-0)',
           border: 'none',
           borderRadius: '8px',
           fontSize: '14px',
@@ -83,12 +83,12 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
           gap: '8px',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = '#004182';
+          e.currentTarget.style.background = 'var(--accent-primary-hover)';
           e.currentTarget.style.transform = 'translateY(-2px)';
           e.currentTarget.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.25)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.background = '#0966C3';
+          e.currentTarget.style.background = 'var(--accent-primary)';
           e.currentTarget.style.transform = 'translateY(0)';
           e.currentTarget.style.boxShadow = 'none';
         }}
@@ -127,7 +127,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
         >
           <div
             style={{
-              background: '#FFFFFF',
+              background: 'var(--color-surface-0)',
               borderRadius: '12px',
               padding: '32px',
               maxWidth: '420px',
@@ -150,10 +150,10 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
               }
             `}</style>
 
-            <h2 style={{ fontSize: '20px', fontWeight: '600', color: '#0f0f0f', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
               Set Judge Alert
             </h2>
-            <p style={{ fontSize: '14px', color: '#4B5563', margin: '0 0 24px 0', lineHeight: '1.6' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0', lineHeight: '1.6' }}>
               Get notified when Judge {judgeName} publishes new opinions.
             </p>
 
@@ -180,7 +180,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       display: 'block',
                       fontSize: '13px',
                       fontWeight: '600',
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       marginBottom: '8px',
                     }}
                   >
@@ -199,10 +199,10 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       width: '100%',
                       padding: '10px 14px',
                       fontSize: '14px',
-                      border: error ? '1px solid #CC1016' : '1px solid #E5E7EB',
+                      border: error ? '1px solid #CC1016' : '1px solid var(--border-default)',
                       borderRadius: '8px',
-                      background: '#FFFFFF',
-                      color: '#0f0f0f',
+                      background: 'var(--color-surface-0)',
+                      color: 'var(--color-text-primary)',
                       outline: 'none',
                       boxSizing: 'border-box',
                       transition: 'border-color 150ms',
@@ -210,14 +210,14 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     }}
                     onFocus={(e) => {
                       if (!error) {
-                        e.currentTarget.style.borderColor = '#0966C3';
+                        e.currentTarget.style.borderColor = 'var(--accent-primary)';
                         e.currentTarget.style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.1)';
                       }
                     }}
                     onBlur={(e) => {
                       e.currentTarget.style.boxShadow = 'none';
                       if (!error) {
-                        e.currentTarget.style.borderColor = '#E5E7EB';
+                        e.currentTarget.style.borderColor = 'var(--border-default)';
                       }
                     }}
                   />
@@ -232,7 +232,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       flex: 1,
                       padding: '10px 16px',
                       background: '#F3F4F6',
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       border: 'none',
                       borderRadius: '8px',
                       fontSize: '14px',
@@ -242,7 +242,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       transition: 'all 150ms',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#E5E7EB';
+                      e.currentTarget.style.background = 'var(--border-default)';
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = '#F3F4F6';
@@ -256,8 +256,8 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     style={{
                       flex: 1,
                       padding: '10px 16px',
-                      background: loading || !email.trim() ? '#D1D5DB' : '#0966C3',
-                      color: '#FFFFFF',
+                      background: loading || !email.trim() ? '#D1D5DB' : 'var(--accent-primary)',
+                      color: 'var(--color-surface-0)',
                       border: 'none',
                       borderRadius: '8px',
                       fontSize: '14px',
@@ -269,12 +269,12 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     }}
                     onMouseEnter={(e) => {
                       if (!loading && email.trim()) {
-                        e.currentTarget.style.background = '#004182';
+                        e.currentTarget.style.background = 'var(--accent-primary-hover)';
                         e.currentTarget.style.transform = 'translateY(-2px)';
                       }
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = '#0966C3';
+                      e.currentTarget.style.background = 'var(--accent-primary)';
                       e.currentTarget.style.transform = 'translateY(0)';
                     }}
                   >
@@ -296,7 +296,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                   border: 'none',
                   fontSize: '24px',
                   cursor: 'pointer',
-                  color: '#9CA3AF',
+                  color: 'var(--color-text-muted)',
                   padding: '4px 8px',
                   display: 'flex',
                   alignItems: 'center',

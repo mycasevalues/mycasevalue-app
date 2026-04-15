@@ -45,8 +45,8 @@ export async function GET(request: NextRequest) {
             flexDirection: 'column',
             width: '1200px',
             height: '630px',
-            background: '#0966C3',
-            color: '#ffffff',
+            background: 'var(--accent-primary)',
+            color: 'var(--color-surface-0)',
             fontFamily: '"Outfit", system-ui, sans-serif',
             padding: '60px',
             boxSizing: 'border-box',
@@ -81,7 +81,7 @@ export async function GET(request: NextRequest) {
                 fontSize: '32px',
                 fontWeight: '600',
                 letterSpacing: '-0.5px',
-                color: '#ffffff',
+                color: 'var(--color-surface-0)',
               }}
             >
               MyCaseValue
@@ -115,7 +115,7 @@ export async function GET(request: NextRequest) {
                 lineHeight: '1.1',
                 maxWidth: '900px',
                 letterSpacing: '-1px',
-                color: '#ffffff',
+                color: 'var(--color-surface-0)',
               }}
             >
               {decodeURIComponent(type as string)}
@@ -158,7 +158,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '600',
-                  color: '#0966C3',
+                  color: 'var(--accent-primary)',
                 }}
               >
                 {winRate}%
@@ -192,7 +192,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '600',
-                  color: '#0966C3',
+                  color: 'var(--accent-primary)',
                 }}
               >
                 {parseInt(cases as string).toLocaleString('en-US')}
@@ -226,7 +226,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '600',
-                  color: '#0966C3',
+                  color: 'var(--accent-primary)',
                 }}
               >
                 {decodeURIComponent(recovery as string)}
@@ -299,8 +299,8 @@ export async function GET(request: NextRequest) {
             flexDirection: 'column',
             width: '1200px',
             height: '630px',
-            background: '#0966C3',
-            color: '#ffffff',
+            background: 'var(--accent-primary)',
+            color: 'var(--color-surface-0)',
             fontFamily: 'system-ui, sans-serif',
             padding: '60px',
             boxSizing: 'border-box',
@@ -309,7 +309,7 @@ export async function GET(request: NextRequest) {
             textAlign: 'center',
           }}
         >
-          <div style={{ fontSize: '64px', fontWeight: 'bold', marginBottom: '20px', color: '#ffffff' }}>
+          <div style={{ fontSize: '64px', fontWeight: 'bold', marginBottom: '20px', color: 'var(--color-surface-0)' }}>
             MyCaseValue
           </div>
           <div style={{ fontSize: '32px', color: '#a0a9d4' }}>

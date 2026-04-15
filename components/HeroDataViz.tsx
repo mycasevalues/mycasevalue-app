@@ -133,7 +133,7 @@ const BarChart: React.FC<{ bars: BarItem[] }> = ({ bars }) => {
           return (
             <div key={bar.nos} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#0f0f0f' }}>
+                <span style={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-primary)' }}>
                   {bar.label}
                 </span>
                 <span
@@ -240,7 +240,7 @@ const RotatingCards: React.FC<{ cards: CardItem[] }> = ({ cards }) => {
             <div
               style={{
                 fontSize: '13px',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 lineHeight: 1.5,
                 marginBottom: '8px',
               }}
@@ -252,7 +252,7 @@ const RotatingCards: React.FC<{ cards: CardItem[] }> = ({ cards }) => {
           <p
             style={{
               fontSize: '13px',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               lineHeight: 1.5,
               margin: 0,
               fontStyle: 'italic',
@@ -282,7 +282,7 @@ const RotatingCards: React.FC<{ cards: CardItem[] }> = ({ cards }) => {
               borderRadius: '50%',
               border: 'none',
               cursor: 'pointer',
-              backgroundColor: idx === currentIndex ? '#0966C3' : '#D1D5DB',
+              backgroundColor: idx === currentIndex ? 'var(--accent-primary)' : '#D1D5DB',
               transition: 'background-color 0.3s ease',
             }}
             whileHover={{ scale: 1.2 }}

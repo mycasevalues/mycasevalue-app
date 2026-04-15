@@ -41,8 +41,8 @@ export default function CookieConsent() {
         left: 0,
         right: 0,
         zIndex: 9999,
-        background: '#FFFFFF',
-        borderTop: '1px solid #E5E7EB',
+        background: 'var(--color-surface-0)',
+        borderTop: '1px solid var(--border-default)',
         boxShadow: '0 -1px 8px rgba(0,0,0,0.06)',
         fontFamily: 'var(--font-body)',
         animation: 'slideUp 400ms cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -66,7 +66,7 @@ export default function CookieConsent() {
             height="18"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#4B5563"
+            stroke="var(--color-text-secondary)"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -80,7 +80,7 @@ export default function CookieConsent() {
               margin: 0,
               fontSize: '14px',
               lineHeight: '1.5',
-              color: '#0f0f0f',
+              color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -88,7 +88,7 @@ export default function CookieConsent() {
             <Link
               href="/privacy"
               style={{
-                color: '#004182',
+                color: 'var(--accent-primary-hover)',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
                 fontWeight: 500,
@@ -115,9 +115,9 @@ export default function CookieConsent() {
               fontWeight: 600,
               fontSize: '12px',
               fontFamily: 'var(--font-body)',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               background: 'transparent',
-              color: '#4B5563',
+              color: 'var(--color-text-secondary)',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',
@@ -135,8 +135,8 @@ export default function CookieConsent() {
               fontSize: '12px',
               fontFamily: 'var(--font-body)',
               border: 'none',
-              background: '#0966C3',
-              color: '#FFFFFF',
+              background: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',

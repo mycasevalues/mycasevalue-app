@@ -33,7 +33,7 @@ export default function NosExplorerError({
       <button
         onClick={() => reset()}
         style={{
-          backgroundColor: '#0966C3',
+          backgroundColor: 'var(--accent-primary)',
           color: '#fff',
           border: 'none',
           borderRadius: '8px',
@@ -48,4 +48,3 @@ export default function NosExplorerError({
     </div>
   );
 }
-

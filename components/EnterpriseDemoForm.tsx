@@ -98,8 +98,8 @@ export default function EnterpriseDemoForm() {
     return (
       <div style={{
         padding: '48px 32px',
-        background: '#FFFFFF',
-        border: '1px solid #E5E7EB',
+        background: 'var(--color-surface-0)',
+        border: '1px solid var(--border-default)',
         borderRadius: '12px',
         textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -111,7 +111,7 @@ export default function EnterpriseDemoForm() {
         <h3 style={{
           fontSize: '20px',
           fontWeight: 600,
-          color: '#0f0f0f',
+          color: 'var(--color-text-primary)',
           fontFamily: 'var(--font-display)',
           marginBottom: '8px',
         }}>
@@ -119,7 +119,7 @@ export default function EnterpriseDemoForm() {
         </h3>
         <p style={{
           fontSize: '14px',
-          color: '#4B5563',
+          color: 'var(--color-text-secondary)',
           fontFamily: 'var(--font-body)',
           lineHeight: 1.6,
         }}>
@@ -134,10 +134,10 @@ export default function EnterpriseDemoForm() {
     padding: '12px 14px',
     fontSize: '14px',
     fontFamily: 'var(--font-body)',
-    color: '#0f0f0f',
-    border: '1px solid #E5E7EB',
+    color: 'var(--color-text-primary)',
+    border: '1px solid var(--border-default)',
     borderRadius: '12px',
-    background: '#FFFFFF',
+    background: 'var(--color-surface-0)',
     outline: 'none',
     transition: 'border-color 200ms',
     height: '48px',
@@ -148,7 +148,7 @@ export default function EnterpriseDemoForm() {
     display: 'block',
     fontSize: '14px',
     fontWeight: 600,
-    color: '#0f0f0f',
+    color: 'var(--color-text-primary)',
     fontFamily: 'var(--font-body)',
     marginBottom: '8px',
   };
@@ -164,17 +164,17 @@ export default function EnterpriseDemoForm() {
     <>
       <style>{`
         .enterprise-input:focus {
-          border-color: #0966C3 !important;
+          border-color: var(--accent-primary) !important;
           outline: none;
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
         }
         .enterprise-select:focus {
-          border-color: #0966C3 !important;
+          border-color: var(--accent-primary) !important;
           outline: none;
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
         }
         .enterprise-textarea:focus {
-          border-color: #0966C3 !important;
+          border-color: var(--accent-primary) !important;
           outline: none;
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
         }
@@ -183,8 +183,8 @@ export default function EnterpriseDemoForm() {
           width: 100%;
           padding: 0 32px;
           height: 48px;
-          background: #0966C3;
-          color: #FFFFFF;
+          background: var(--accent-primary);
+          color: var(--color-surface-0);
           border: none;
           border-radius: 12px;
           font-size: 15px;
@@ -203,8 +203,8 @@ export default function EnterpriseDemoForm() {
       `}</style>
       <form onSubmit={handleSubmit} style={{
         padding: '32px',
-        background: '#FFFFFF',
-        border: '1px solid #E5E7EB',
+        background: 'var(--color-surface-0)',
+        border: '1px solid var(--border-default)',
         borderRadius: '12px',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
         display: 'flex',
@@ -219,7 +219,7 @@ export default function EnterpriseDemoForm() {
               className="enterprise-input"
               style={{
                 ...inputStyle,
-                borderColor: errors.name ? '#DC2626' : '#E5E7EB',
+                borderColor: errors.name ? '#DC2626' : 'var(--border-default)',
               }}
               type="text"
               placeholder="Your name"
@@ -235,7 +235,7 @@ export default function EnterpriseDemoForm() {
               className="enterprise-input"
               style={{
                 ...inputStyle,
-                borderColor: errors.organization ? '#DC2626' : '#E5E7EB',
+                borderColor: errors.organization ? '#DC2626' : 'var(--border-default)',
               }}
               type="text"
               placeholder="Your organization"
@@ -253,7 +253,7 @@ export default function EnterpriseDemoForm() {
             className="enterprise-input"
             style={{
               ...inputStyle,
-              borderColor: errors.email ? '#DC2626' : '#E5E7EB',
+              borderColor: errors.email ? '#DC2626' : 'var(--border-default)',
             }}
             type="email"
             placeholder="you@example.com"
@@ -271,7 +271,7 @@ export default function EnterpriseDemoForm() {
               className="enterprise-select"
               style={{
                 ...inputStyle,
-                borderColor: errors.role ? '#DC2626' : '#E5E7EB',
+                borderColor: errors.role ? '#DC2626' : 'var(--border-default)',
                 appearance: 'auto',
               }}
               value={formData.role}
@@ -296,7 +296,7 @@ export default function EnterpriseDemoForm() {
               className="enterprise-select"
               style={{
                 ...inputStyle,
-                borderColor: errors.teamSize ? '#DC2626' : '#E5E7EB',
+                borderColor: errors.teamSize ? '#DC2626' : 'var(--border-default)',
                 appearance: 'auto',
               }}
               value={formData.teamSize}
@@ -321,13 +321,13 @@ export default function EnterpriseDemoForm() {
               ...inputStyle,
               height: '100px',
               resize: 'vertical',
-              borderColor: errors.useCase ? '#DC2626' : '#E5E7EB',
+              borderColor: errors.useCase ? '#DC2626' : 'var(--border-default)',
             }}
             placeholder="How would you like to use MyCaseValue? (max 200 characters)"
             value={formData.useCase}
             onChange={e => setFormData({ ...formData, useCase: e.target.value.slice(0, 200) })}
           />
-          <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '4px' }}>
+          <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
             {formData.useCase.length}/200
           </div>
           {errors.useCase && <div style={errorStyle}>{errors.useCase}</div>}
@@ -343,7 +343,7 @@ export default function EnterpriseDemoForm() {
                 gap: '8px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#0f0f0f',
+                color: 'var(--color-text-primary)',
                 cursor: 'pointer',
               }}>
                 <input

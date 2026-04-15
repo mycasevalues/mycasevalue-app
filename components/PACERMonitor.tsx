@@ -110,7 +110,7 @@ export default function PACERMonitor() {
     <div
       style={{
         padding: '24px',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: 'var(--color-surface-0)',
         border: '1px solid #D1D5DB',
         borderRadius: '8px',
         fontFamily: 'var(--font-body)',
@@ -120,7 +120,7 @@ export default function PACERMonitor() {
         style={{
           fontSize: '18px',
           fontWeight: 600,
-          color: '#0f0f0f',
+          color: 'var(--color-text-primary)',
           marginBottom: '16px',
           fontFamily: 'var(--font-heading)',
         }}
@@ -134,7 +134,7 @@ export default function PACERMonitor() {
             display: 'block',
             fontSize: '14px',
             fontWeight: 500,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '8px',
           }}
         >
@@ -167,16 +167,16 @@ export default function PACERMonitor() {
               borderRadius: '6px',
               fontSize: '14px',
               fontFamily: 'var(--font-mono)',
-              backgroundColor: '#FFFFFF',
-              color: '#0f0f0f',
+              backgroundColor: 'var(--color-surface-0)',
+              color: 'var(--color-text-primary)',
             }}
           />
           <button
             onClick={handleAddCase}
             style={{
               padding: '10px 16px',
-              backgroundColor: '#0966C3',
-              color: '#FFFFFF',
+              backgroundColor: 'var(--accent-primary)',
+              color: 'var(--color-surface-0)',
               border: 'none',
               borderRadius: '6px',
               fontSize: '14px',
@@ -185,10 +185,10 @@ export default function PACERMonitor() {
               transition: 'background-color 0.2s',
             }}
             onMouseEnter={(e) => {
-              (e.target as HTMLButtonElement).style.backgroundColor = '#004182';
+              (e.target as HTMLButtonElement).style.backgroundColor = 'var(--accent-primary-hover)';
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLButtonElement).style.backgroundColor = '#0966C3';
+              (e.target as HTMLButtonElement).style.backgroundColor = 'var(--accent-primary)';
             }}
           >
             Add
@@ -212,7 +212,7 @@ export default function PACERMonitor() {
           style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '12px',
           }}
         >
@@ -237,7 +237,7 @@ export default function PACERMonitor() {
                   key={caseItem.id}
                   style={{
                     padding: '12px',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '6px',
                     backgroundColor: '#F9FAFB',
                     display: 'grid',
@@ -251,7 +251,7 @@ export default function PACERMonitor() {
                       style={{
                         fontSize: '13px',
                         fontWeight: 500,
-                        color: '#0f0f0f',
+                        color: 'var(--color-text-primary)',
                         margin: 0,
                         fontFamily: 'var(--font-mono)',
                       }}
@@ -346,7 +346,7 @@ export default function PACERMonitor() {
         style={{
           fontSize: '12px',
           color: '#6B7280',
-          borderTop: '1px solid #E5E7EB',
+          borderTop: '1px solid var(--border-default)',
           paddingTop: '12px',
           marginTop: '12px',
         }}

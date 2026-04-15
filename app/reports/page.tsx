@@ -63,8 +63,8 @@ export default function ReportsPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#0966C3', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+      <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ width: 32, height: 32, border: '3px solid var(--border-default)', borderTopColor: 'var(--accent-primary)', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
     );
@@ -73,26 +73,26 @@ export default function ReportsPage() {
   const hasData = reports.length > 0 || searches.length > 0;
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
       {/* Dark Navy Header */}
-      <div style={{ backgroundColor: '#0966C3', padding: '40px 20px', marginBottom: '32px' }}>
+      <div style={{ backgroundColor: 'var(--accent-primary)', padding: '40px 20px', marginBottom: '32px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 600, color: '#FFFFFF', margin: 0 }}>
+            <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
               My Reports
             </h1>
-            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0966C3', color: '#FFFFFF', padding: '4px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '4px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' }}>
               Reports
             </div>
           </div>
-          <p style={{ fontSize: '14px', color: '#FFFFFF', margin: '0 0 16px 0', opacity: 0.9 }}>
+          <p style={{ fontSize: '14px', color: 'var(--color-surface-0)', margin: '0 0 16px 0', opacity: 0.9 }}>
             Your saved case reports and search history
           </p>
           {/* Breadcrumb */}
-          <div style={{ fontSize: '12px', color: '#FFFFFF', opacity: 0.7 }}>
-            <Link href="/" style={{ color: '#FFFFFF', textDecoration: 'none', opacity: 0.7 }}>Home</Link>
+          <div style={{ fontSize: '12px', color: 'var(--color-surface-0)', opacity: 0.7 }}>
+            <Link href="/" style={{ color: 'var(--color-surface-0)', textDecoration: 'none', opacity: 0.7 }}>Home</Link>
             {' > '}
-            <Link href="/dashboard" style={{ color: '#FFFFFF', textDecoration: 'none', opacity: 0.7 }}>Dashboard</Link>
+            <Link href="/dashboard" style={{ color: 'var(--color-surface-0)', textDecoration: 'none', opacity: 0.7 }}>Dashboard</Link>
             {' > '}
             <span>Reports</span>
           </div>
@@ -130,7 +130,7 @@ export default function ReportsPage() {
           <h2 style={{
             fontSize: '24px',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '24px',
             fontFamily: 'var(--font-display)',
           }}>
@@ -154,8 +154,8 @@ export default function ReportsPage() {
               <div
                 key={feature}
                 style={{
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                   textAlign: 'center' as const,
@@ -187,7 +187,7 @@ export default function ReportsPage() {
                 <p style={{
                   fontSize: '14px',
                   fontWeight: 600,
-                  color: '#0f0f0f',
+                  color: 'var(--color-text-primary)',
                   margin: 0,
                   lineHeight: 1.4,
                 }}>
@@ -203,7 +203,7 @@ export default function ReportsPage() {
           <h2 style={{
             fontSize: '24px',
             fontWeight: 600,
-            color: '#0f0f0f',
+            color: 'var(--color-text-primary)',
             marginBottom: '24px',
             fontFamily: 'var(--font-display)',
           }}>
@@ -224,8 +224,8 @@ export default function ReportsPage() {
                 key={report.nos}
                 href={`/cases/${encodeURIComponent(report.name)}`}
                 style={{
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
                   textDecoration: 'none',
@@ -235,7 +235,7 @@ export default function ReportsPage() {
               >
                 <style>{`
                   .report-link:hover {
-                    border-color: #0966C3;
+                    border-color: var(--accent-primary);
                     box-shadow: 0 8px 24px rgba(232, 23, 31, 0.12);
                     transform: translateY(-2px);
                   }
@@ -249,7 +249,7 @@ export default function ReportsPage() {
                     <h3 style={{
                       fontSize: '16px',
                       fontWeight: 600,
-                      color: '#0f0f0f',
+                      color: 'var(--color-text-primary)',
                       margin: '0 0 8px 0',
                       fontFamily: 'var(--font-display)',
                     }}>
@@ -257,7 +257,7 @@ export default function ReportsPage() {
                     </h3>
                     <p style={{
                       fontSize: '13px',
-                      color: '#4B5563',
+                      color: 'var(--color-text-secondary)',
                       margin: 0,
                     }}>
                       Nature of Suit: {report.nos}
@@ -274,7 +274,7 @@ export default function ReportsPage() {
 
         {!hasData ? (
           /* Empty State */
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '64px 32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', textAlign: 'center' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '64px 32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', textAlign: 'center' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(0,105,151,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -283,13 +283,13 @@ export default function ReportsPage() {
                 <line x1="9" y1="14" x2="15" y2="14" />
               </svg>
             </div>
-            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 12px 0' }}>
+            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0' }}>
               No reports yet
             </h2>
-            <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
+            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
               Your saved case research reports and search history will appear here. Start by running a case lookup.
             </p>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: '#0966C3', color: '#FFFFFF', borderRadius: '20px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '20px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
               Start a Case Lookup
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </Link>
@@ -297,7 +297,7 @@ export default function ReportsPage() {
         ) : (
           <>
             {/* Tabs */}
-            <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '4px', border: '1px solid #E5E7EB' }}>
+            <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '4px', border: '1px solid var(--border-default)' }}>
               {(['reports', 'history'] as const).map((t) => (
                 <button
                   key={t}
@@ -310,8 +310,8 @@ export default function ReportsPage() {
                     fontSize: '14px',
                     fontWeight: 600,
                     cursor: 'pointer',
-                    backgroundColor: tab === t ? '#0966C3' : 'transparent',
-                    color: tab === t ? '#FFFFFF' : '#4B5563',
+                    backgroundColor: tab === t ? 'var(--accent-primary)' : 'transparent',
+                    color: tab === t ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
                     transition: 'all 0.2s',
                   }}
                 >
@@ -328,13 +328,13 @@ export default function ReportsPage() {
                     transition: all 0.2s;
                   }
                   .report-card:hover {
-                    border-left: 4px solid #0966C3;
+                    border-left: 4px solid var(--accent-primary);
                     box-shadow: 0 4px 12px rgba(232, 23, 31, 0.12);
                   }
                 `}</style>
                 {reports.length === 0 ? (
-                  <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '40px', border: '1px solid #E5E7EB', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                    <p style={{ fontSize: '14px', color: '#4B5563' }}>No saved reports yet. Reports are saved automatically when you view case data.</p>
+                  <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '40px', border: '1px solid var(--border-default)', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>No saved reports yet. Reports are saved automatically when you view case data.</p>
                   </div>
                 ) : (
                   reports.map((r) => (
@@ -342,20 +342,20 @@ export default function ReportsPage() {
                       key={r.id}
                       href={`/cases/${encodeURIComponent(r.category)}${r.district ? `?district=${encodeURIComponent(r.district)}` : ''}`}
                       className="report-card"
-                      style={{ display: 'block', backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '20px 24px', border: '1px solid #E5E7EB', borderLeft: '4px solid transparent', textDecoration: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
+                      style={{ display: 'block', backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '20px 24px', border: '1px solid var(--border-default)', borderLeft: '4px solid transparent', textDecoration: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                          <div style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', marginBottom: '4px' }}>
+                          <div style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>
                             {r.category}
                           </div>
                           {r.district && (
-                            <div style={{ fontSize: '13px', color: '#4B5563' }}>
+                            <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
                               District: {r.district}
                             </div>
                           )}
                         </div>
-                        <div className="font-mono" style={{ fontSize: '12px', color: '#4B5563' }}>
+                        <div className="font-mono" style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
                           {new Date(r.viewed_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                         </div>
                       </div>
@@ -373,33 +373,33 @@ export default function ReportsPage() {
                     transition: all 0.2s;
                   }
                   .history-card:hover {
-                    border-left: 4px solid #0966C3;
+                    border-left: 4px solid var(--accent-primary);
                     box-shadow: 0 4px 12px rgba(232, 23, 31, 0.12);
                   }
                 `}</style>
                 {searches.length === 0 ? (
-                  <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '40px', border: '1px solid #E5E7EB', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                    <p style={{ fontSize: '14px', color: '#4B5563' }}>No search history yet.</p>
+                  <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '40px', border: '1px solid var(--border-default)', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>No search history yet.</p>
                   </div>
                 ) : (
                   searches.map((s) => (
                     <div
                       key={s.id}
                       className="history-card"
-                      style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '16px 24px', border: '1px solid #E5E7EB', borderLeft: '4px solid transparent', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
+                      style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px 24px', border: '1px solid var(--border-default)', borderLeft: '4px solid transparent', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                          <div style={{ fontSize: '14px', fontWeight: 500, color: '#0f0f0f' }}>
+                          <div style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-text-primary)' }}>
                             {s.query}
                           </div>
                           {s.category && (
-                            <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '2px' }}>
+                            <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '2px' }}>
                               {s.category}
                             </div>
                           )}
                         </div>
-                        <div className="font-mono" style={{ fontSize: '12px', color: '#4B5563' }}>
+                        <div className="font-mono" style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
                           {new Date(s.searched_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                         </div>
                       </div>

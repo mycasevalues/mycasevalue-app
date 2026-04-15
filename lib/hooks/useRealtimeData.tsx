@@ -126,7 +126,7 @@ export function useRealtimeData<T extends Record<string, unknown>>({
  */
 export function RealtimeStatus({ isConnected, lastUpdated }: { isConnected: boolean; lastUpdated: Date | null }) {
   return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: isConnected ? '#15803D' : '#9CA3AF' }}>
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: isConnected ? '#15803D' : 'var(--color-text-muted)' }}>
       <span
         style={{
           width: '8px',
@@ -139,7 +139,7 @@ export function RealtimeStatus({ isConnected, lastUpdated }: { isConnected: bool
       />
       {isConnected ? 'Live' : 'Offline'}
       {lastUpdated && (
-        <span style={{ color: '#9CA3AF', marginLeft: '4px' }}>
+        <span style={{ color: 'var(--color-text-muted)', marginLeft: '4px' }}>
           · Updated {lastUpdated.toLocaleTimeString()}
         </span>
       )}

@@ -241,7 +241,7 @@ export default function DistrictHeatmapPage() {
         }
         .state-card:hover {
           box-shadow: 0 2px 8px rgba(0, 23, 46, 0.1);
-          border-color: #0966C3;
+          border-color: var(--accent-primary);
         }
       `}</style>
 
@@ -252,7 +252,7 @@ export default function DistrictHeatmapPage() {
 
       <div style={{ backgroundColor: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header */}
-        <header style={{ backgroundColor: 'var(--accent-primary)', borderBottom: '1px solid #E5E7EB' }}>
+        <header style={{ backgroundColor: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '48px 24px' }}>
             {/* Breadcrumb */}
             <nav style={{ fontSize: '14px', color: 'var(--color-surface-0)', marginBottom: '16px', opacity: 0.85, fontFamily: 'var(--font-body)' }}>
@@ -322,7 +322,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '16px',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
@@ -345,7 +345,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '16px',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
@@ -368,7 +368,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '16px',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
@@ -394,7 +394,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '16px',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
@@ -423,7 +423,7 @@ export default function DistrictHeatmapPage() {
             style={{
               padding: '24px',
               borderRadius: '12px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               backgroundColor: 'var(--color-surface-0)',
               marginBottom: '32px',
             }}
@@ -450,7 +450,7 @@ export default function DistrictHeatmapPage() {
             style={{
               padding: '24px',
               borderRadius: '12px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               backgroundColor: 'var(--color-surface-0)',
               marginBottom: '32px',
             }}
@@ -553,7 +553,7 @@ export default function DistrictHeatmapPage() {
                   width: '100%',
                   padding: '12px 16px',
                   borderRadius: '12px',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   backgroundColor: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
                   height: '48px',
@@ -590,7 +590,7 @@ export default function DistrictHeatmapPage() {
                   width: '100%',
                   padding: '12px 16px',
                   borderRadius: '12px',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid var(--border-default)',
                   backgroundColor: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
                   height: '48px',
@@ -632,7 +632,7 @@ export default function DistrictHeatmapPage() {
                     style={{
                       padding: '16px',
                       borderRadius: '12px',
-                      border: '1px solid #E5E7EB',
+                      border: '1px solid var(--border-default)',
                       backgroundColor: 'var(--color-surface-0)',
                       boxSizing: 'border-box',
                       textDecoration: 'none',
@@ -728,7 +728,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '24px',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
@@ -829,7 +829,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '24px',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
@@ -930,7 +930,7 @@ export default function DistrictHeatmapPage() {
           <div
             style={{
               borderRadius: '12px',
-              border: '1px solid #E5E7EB',
+              border: '1px solid var(--border-default)',
               padding: '32px',
               textAlign: 'center',
               marginBottom: '48px',
@@ -1008,7 +1008,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '20px',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
                 textDecoration: 'none',
                 display: 'block',
@@ -1052,7 +1052,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '20px',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
                 textDecoration: 'none',
                 display: 'block',
@@ -1096,7 +1096,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '20px',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
                 textDecoration: 'none',
                 display: 'block',
@@ -1140,7 +1140,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '20px',
                 borderRadius: '12px',
-                border: '1px solid #E5E7EB',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
                 textDecoration: 'none',
                 display: 'block',
@@ -1184,7 +1184,7 @@ export default function DistrictHeatmapPage() {
         {/* Footer Disclaimer */}
         <footer
           style={{
-            borderTop: '1px solid #E5E7EB',
+            borderTop: '1px solid var(--border-default)',
             padding: '24px 16px',
             backgroundColor: 'var(--color-surface-0)',
           }}

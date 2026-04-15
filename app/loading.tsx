@@ -7,7 +7,7 @@ export default function Loading() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#F7F8FA',
+        background: 'var(--color-surface-1)',
         gap: '24px',
         position: 'relative',
       }}
@@ -20,7 +20,7 @@ export default function Loading() {
           left: 0,
           right: 0,
           height: '4px',
-          background: '#0966C3',
+          background: 'var(--accent-primary)',
         }}
       />
       <style>{`
@@ -39,7 +39,7 @@ export default function Loading() {
         style={{
           width: '48px',
           height: '48px',
-          border: '3px solid #E5E7EB',
+          border: '3px solid var(--border-default)',
           borderTop: '3px solid #004182',
           borderRadius: '50%',
           animation: 'spin 1s linear infinite',
@@ -50,7 +50,7 @@ export default function Loading() {
       <p
         style={{
           fontSize: '14px',
-          color: '#4B5563',
+          color: 'var(--color-text-secondary)',
           margin: 0,
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         }}

@@ -599,7 +599,7 @@ export default function DecisionTree() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                   }}
                 >
                   {category.icon}
@@ -683,7 +683,7 @@ export default function DecisionTree() {
                             width: '18px',
                             height: '18px',
                             cursor: 'pointer',
-                            accentColor: '#0966C3',
+                            accentColor: 'var(--accent-primary)',
                           }}
                         />
                         <span style={{ color: 'var(--color-text-primary)', fontSize: '0.95rem' }}>
@@ -855,7 +855,7 @@ export default function DecisionTree() {
           {/* Case Type Details */}
           <div
             style={{
-              backgroundColor: '#ffffff',
+              backgroundColor: 'var(--color-surface-0)',
               border: '1px solid #e5e7eb',
               borderRadius: '8px',
               padding: '1.5rem',
@@ -896,7 +896,7 @@ export default function DecisionTree() {
                   style={{
                     fontSize: '1.75rem',
                     fontWeight: '700',
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     margin: '0',
                   }}
                 >
@@ -919,7 +919,7 @@ export default function DecisionTree() {
                   style={{
                     fontSize: '1.75rem',
                     fontWeight: '700',
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     margin: '0',
                   }}
                 >
@@ -942,7 +942,7 @@ export default function DecisionTree() {
                   style={{
                     fontSize: '1.75rem',
                     fontWeight: '700',
-                    color: '#0966C3',
+                    color: 'var(--accent-primary)',
                     margin: '0',
                   }}
                 >
@@ -980,7 +980,7 @@ export default function DecisionTree() {
                 display: 'inline-block',
                 padding: '0.75rem 1.5rem',
                 backgroundColor: 'var(--accent-primary)',
-                color: '#ffffff',
+                color: 'var(--color-surface-0)',
                 textDecoration: 'none',
                 borderRadius: '6px',
                 fontWeight: '500',
@@ -988,10 +988,10 @@ export default function DecisionTree() {
                 transition: 'background-color 0.2s ease-in',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#004182';
+                e.currentTarget.style.backgroundColor = 'var(--accent-primary-hover)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#0966C3';
+                e.currentTarget.style.backgroundColor = 'var(--accent-primary)';
               }}
             >
               View Full Case Type Report
@@ -1001,7 +1001,7 @@ export default function DecisionTree() {
           {/* Next Steps */}
           <div
             style={{
-              backgroundColor: '#ffffff',
+              backgroundColor: 'var(--color-surface-0)',
               border: '1px solid #e5e7eb',
               borderRadius: '8px',
               padding: '1.5rem',
@@ -1042,7 +1042,7 @@ export default function DecisionTree() {
           {/* Attorney Resources */}
           <div
             style={{
-              backgroundColor: '#ffffff',
+              backgroundColor: 'var(--color-surface-0)',
               border: '1px solid #e5e7eb',
               borderRadius: '8px',
               padding: '1.5rem',
@@ -1121,7 +1121,7 @@ export default function DecisionTree() {
           style={{
             padding: '0.75rem 1.5rem',
             border: '1px solid #d1d5db',
-            backgroundColor: '#ffffff',
+            backgroundColor: 'var(--color-surface-0)',
             color: 'var(--color-text-primary)',
             borderRadius: '6px',
             cursor: 'pointer',
@@ -1133,7 +1133,7 @@ export default function DecisionTree() {
             e.currentTarget.style.backgroundColor = '#f3f4f6';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#ffffff';
+            e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
           }}
         >
           Start Over
@@ -1146,7 +1146,7 @@ export default function DecisionTree() {
               style={{
                 padding: '0.75rem 1.5rem',
                 border: '1px solid #d1d5db',
-                backgroundColor: '#ffffff',
+                backgroundColor: 'var(--color-surface-0)',
                 color: 'var(--color-text-primary)',
                 borderRadius: '6px',
                 cursor: 'pointer',
@@ -1158,7 +1158,7 @@ export default function DecisionTree() {
                 e.currentTarget.style.backgroundColor = '#f3f4f6';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#ffffff';
+                e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
               }}
             >
               Back
@@ -1174,8 +1174,8 @@ export default function DecisionTree() {
                 backgroundColor:
                   currentStep === 2 && !isStep2Complete
                     ? '#d1d5db'
-                    : '#0966C3',
-                color: '#ffffff',
+                    : 'var(--accent-primary)',
+                color: 'var(--color-surface-0)',
                 border: 'none',
                 borderRadius: '6px',
                 cursor:
@@ -1188,12 +1188,12 @@ export default function DecisionTree() {
               }}
               onMouseEnter={(e) => {
                 if (currentStep !== 2 || isStep2Complete) {
-                  e.currentTarget.style.backgroundColor = '#004182';
+                  e.currentTarget.style.backgroundColor = 'var(--accent-primary-hover)';
                 }
               }}
               onMouseLeave={(e) => {
                 if (currentStep !== 2 || isStep2Complete) {
-                  e.currentTarget.style.backgroundColor = '#0966C3';
+                  e.currentTarget.style.backgroundColor = 'var(--accent-primary)';
                 }
               }}
             >

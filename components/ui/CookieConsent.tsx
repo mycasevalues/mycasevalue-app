@@ -44,7 +44,7 @@ export default function CookieConsent() {
         right: 0,
         zIndex: 300,
         padding: '1.5rem 1rem',
-        background: '#0966C3',
+        background: 'var(--accent-primary)',
         borderTop: '1px solid rgba(255, 255, 255, 0.1)',
         boxShadow: '0 -4px 12px rgba(0, 23, 46, 0.15)',
         animation: 'slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -77,15 +77,15 @@ export default function CookieConsent() {
           transform: translateY(-1px);
         }
         .cookie-banner-accept {
-          background-color: #0966C3;
-          color: #FFFFFF;
+          background-color: var(--accent-primary);
+          color: var(--color-surface-0);
         }
         .cookie-banner-accept:hover {
           background-color: #004182;
         }
         .cookie-banner-essential {
           background-color: transparent;
-          color: #FFFFFF;
+          color: var(--color-surface-0);
           border: 1.5px solid rgba(255, 255, 255, 0.3);
         }
         .cookie-banner-essential:hover {
@@ -108,7 +108,7 @@ export default function CookieConsent() {
           style={{
             margin: 0,
             fontSize: '0.9375rem',
-            color: '#FFFFFF',
+            color: 'var(--color-surface-0)',
             fontFamily: 'var(--font-body)',
             lineHeight: '1.6',
             letterSpacing: '0.3px',
@@ -154,7 +154,7 @@ export default function CookieConsent() {
             href="/legal/cookies"
             style={{
               padding: '0.625rem 1.25rem',
-              color: '#FFFFFF',
+              color: 'var(--color-surface-0)',
               textDecoration: 'none',
               fontSize: '0.9375rem',
               fontFamily: 'var(--font-body)',

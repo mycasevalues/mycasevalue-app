@@ -118,22 +118,22 @@ export default function CommandPalette({
     quickLinks.forEach((link) => {
       items.push({
         ...link,
-        categoryColor: '#004182',
+        categoryColor: 'var(--accent-primary-hover)',
         type: 'quick-link' as const,
       });
     });
 
     // Case categories (from SITS data)
     const caseCategories = [
-      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: createIcon('M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z'), color: '#004182' },
-      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: createIcon('M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zM12 4v8M8 8h8M12 16a1 1 0 1 0 0-2 1 1 0 0 0 0 2z'), color: '#004182' },
-      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: createIcon('M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'), color: '#004182' },
-      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: createIcon('M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z'), color: '#004182' },
-      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: createIcon('M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6'), color: '#004182' },
-      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: createIcon('M3 12h18M3 6h18M9 9v6M15 9v6'), color: '#004182' },
-      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: createIcon('M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'), color: '#004182' },
-      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: createIcon('M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M16 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21.5 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'), color: '#004182' },
-      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: createIcon('M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'), color: '#004182' },
+      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: createIcon('M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z'), color: 'var(--accent-primary-hover)' },
+      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: createIcon('M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zM12 4v8M8 8h8M12 16a1 1 0 1 0 0-2 1 1 0 0 0 0 2z'), color: 'var(--accent-primary-hover)' },
+      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: createIcon('M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'), color: 'var(--accent-primary-hover)' },
+      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: createIcon('M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z'), color: 'var(--accent-primary-hover)' },
+      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: createIcon('M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6'), color: 'var(--accent-primary-hover)' },
+      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: createIcon('M3 12h18M3 6h18M9 9v6M15 9v6'), color: 'var(--accent-primary-hover)' },
+      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: createIcon('M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'), color: 'var(--accent-primary-hover)' },
+      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: createIcon('M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M16 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21.5 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'), color: 'var(--accent-primary-hover)' },
+      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: createIcon('M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'), color: 'var(--accent-primary-hover)' },
     ];
 
     caseCategories.forEach((cat) => {
@@ -157,7 +157,7 @@ export default function CommandPalette({
             label: opt.label,
             description: opt.d,
             category: cat.label,
-            categoryColor: cat.color || '#4B5563',
+            categoryColor: cat.color || 'var(--color-text-secondary)',
             nos: opt.nos,
             type: 'case',
           });
@@ -212,7 +212,7 @@ export default function CommandPalette({
     ];
 
     pages.forEach((p) => {
-      items.push({ ...p, categoryColor: '#4B5563', type: 'page' as const });
+      items.push({ ...p, categoryColor: 'var(--color-text-secondary)', type: 'page' as const });
     });
 
     // Quick actions
@@ -445,8 +445,8 @@ export default function CommandPalette({
           zIndex: 9999,
           width: 'min(95vw, 560px)',
           maxHeight: '60vh',
-          background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
+          background: 'var(--color-surface-0)',
+          border: '1px solid var(--border-default)',
           borderRadius: '12px',
           boxShadow: '0 10px 20px rgba(0, 23, 46, 0.15)',
           overflow: 'hidden',
@@ -463,12 +463,12 @@ export default function CommandPalette({
             gap: '12px',
             padding: '0 16px',
             height: '48px',
-            borderBottom: '1px solid #E5E7EB',
-            background: '#FFFFFF',
+            borderBottom: '1px solid var(--border-default)',
+            background: 'var(--color-surface-0)',
           }}
         >
           {/* Search icon */}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4B5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
             <circle cx="11" cy="11" r="8" />
             <path d="M21 21l-4.35-4.35" />
           </svg>
@@ -486,8 +486,8 @@ export default function CommandPalette({
               border: 'none',
               outline: 'none',
               fontSize: '15px',
-              color: '#0f0f0f',
-              caretColor: '#004182',
+              color: 'var(--color-text-primary)',
+              caretColor: 'var(--accent-primary-hover)',
               fontFamily: 'var(--font-body)',
               height: '100%',
             }}
@@ -498,9 +498,9 @@ export default function CommandPalette({
           <kbd
             style={{
               fontSize: '11px',
-              color: '#4B5563',
-              background: '#F8F9FA',
-              border: '1px solid #E5E7EB',
+              color: 'var(--color-text-secondary)',
+              background: 'var(--color-surface-1)',
+              border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '4px 8px',
               lineHeight: 1.4,
@@ -527,7 +527,7 @@ export default function CommandPalette({
               style={{
                 padding: '24px',
                 textAlign: 'center',
-                color: '#4B5563',
+                color: 'var(--color-text-secondary)',
                 fontSize: '13px',
               }}
             >
@@ -542,7 +542,7 @@ export default function CommandPalette({
                   style={{
                     fontSize: '11px',
                     fontWeight: 600,
-                    color: '#0f0f0f',
+                    color: 'var(--color-text-primary)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.06em',
                     padding: '8px 10px 4px',
@@ -567,10 +567,10 @@ export default function CommandPalette({
                         gap: '12px',
                         padding: '11px 12px',
                         borderRadius: '12px',
-                        borderLeft: isSelected ? '3px solid #0966C3' : '3px solid transparent',
+                        borderLeft: isSelected ? '3px solid var(--accent-primary)' : '3px solid transparent',
                         cursor: 'pointer',
-                        background: isSelected ? '#F8F9FA' : 'transparent',
-                        color: isSelected ? '#0f0f0f' : '#0f0f0f',
+                        background: isSelected ? 'var(--color-surface-1)' : 'transparent',
+                        color: isSelected ? 'var(--color-text-primary)' : 'var(--color-text-primary)',
                         transition: 'all 100ms ease-out',
                       }}
                     >
@@ -584,7 +584,7 @@ export default function CommandPalette({
                             <polyline points="14 2 14 8 20 8" />
                           </svg>
                         ) : item.type === 'page' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4B5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                             <polyline points="9 22 9 12 15 12 15 22" />
                           </svg>
@@ -606,7 +606,7 @@ export default function CommandPalette({
                           style={{
                             fontSize: '13px',
                             fontWeight: 500,
-                            color: '#0f0f0f',
+                            color: 'var(--color-text-primary)',
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
@@ -619,7 +619,7 @@ export default function CommandPalette({
                           <div
                             style={{
                               fontSize: '11px',
-                              color: '#4B5563',
+                              color: 'var(--color-text-secondary)',
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
@@ -654,7 +654,7 @@ export default function CommandPalette({
                         <kbd
                           style={{
                             fontSize: '11px',
-                            color: '#004182',
+                            color: 'var(--accent-primary-hover)',
                             background: 'transparent',
                             border: '2px solid #004182',
                             borderRadius: '12px',
@@ -683,10 +683,10 @@ export default function CommandPalette({
             justifyContent: 'center',
             gap: '20px',
             padding: '10px 16px',
-            borderTop: '1px solid #E5E7EB',
+            borderTop: '1px solid var(--border-default)',
             fontSize: '10px',
-            color: '#4B5563',
-            background: '#F8F9FA',
+            color: 'var(--color-text-secondary)',
+            background: 'var(--color-surface-1)',
             fontFamily: 'var(--font-body)',
           }}
         >

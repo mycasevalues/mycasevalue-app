@@ -1,6 +1,6 @@
 export default function NosExplorerLoading() {
   return (
-    <div style={{ background: '#F7F8FA', minHeight: '100vh', padding: '2rem' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', padding: '2rem' }}>
       {/* Header skeleton */}
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{
@@ -59,4 +59,3 @@ export default function NosExplorerLoading() {
     </div>
   );
 }
-
