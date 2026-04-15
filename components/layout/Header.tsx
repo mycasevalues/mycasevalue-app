@@ -38,7 +38,8 @@ const EXPLORE_COLUMNS: MegaMenuColumn[] = [
   {
     heading: 'CASES',
     items: [
-      { label: 'Search Cases', href: '/case-search', highlight: true },
+      { label: 'Intelligence Terminal', href: '/terminal', highlight: true },
+      { label: 'Search Cases', href: '/case-search' },
       { label: 'Browse Case Types', href: '/cases' },
       { label: 'Employment & Workplace', href: '/cases/employment-workplace' },
       { label: 'Personal Injury', href: '/cases/personal-injury' },

@@ -166,8 +166,14 @@ export default function HomePage() {
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
             <Link
-              href="/cases"
+              href="/terminal"
               className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-brand-blue text-white font-semibold text-sm transition-all hover:bg-brand-blue-dark hover:shadow-lg"
+            >
+              Open Intelligence Terminal
+            </Link>
+            <Link
+              href="/cases"
+              className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-gray-200 text-gray-700 font-semibold text-sm transition-all hover:border-brand-blue hover:text-brand-blue"
             >
               Browse Case Types
             </Link>
