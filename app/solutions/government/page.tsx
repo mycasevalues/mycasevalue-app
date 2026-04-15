@@ -77,7 +77,7 @@ export default function GovernmentPage() {
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
-            Judicial System Intelligence
+            Make Judicial System Decisions with Court Performance Data
           </h1>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -87,7 +87,7 @@ export default function GovernmentPage() {
             margin: '0 auto 32px',
             lineHeight: 1.6,
           }}>
-            Support judicial oversight, policy analysis, and system improvement with comprehensive court performance data and transparency tools for federal and state agencies.
+            Inform judicial policy, resource allocation, and system improvement with data-driven analysis of federal court performance, outcomes, and judge metrics across all districts.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact?type=government" style={{

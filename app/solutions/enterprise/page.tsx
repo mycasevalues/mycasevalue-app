@@ -166,7 +166,7 @@ export default function EnterprisePage() {
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
-            MyCaseValue for Enterprise
+            Integrate Case Analytics into Your Enterprise Workflow
           </h1>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -176,7 +176,7 @@ export default function EnterprisePage() {
             margin: '0 auto 32px',
             lineHeight: 1.6,
           }}>
-            Deploy mission-critical case analytics with API access, custom dashboards, team workspaces, white-label reports, and dedicated support. Built for law firms, insurance companies, litigation funders, and law schools.
+            Empower large legal teams, insurance carriers, and litigation funders with API access, custom dashboards, SSO integration, white-label reports, and dedicated support.
           </p>
         </div>
       </section>

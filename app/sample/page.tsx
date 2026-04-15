@@ -110,7 +110,7 @@ export default function SampleReportPage() {
                 color: 'var(--color-text-inverse)',
               }}
             >
-              Sample Case Analysis Report
+              Explore a Complete Federal Case Analysis
             </h1>
             <p
               style={{
@@ -119,7 +119,7 @@ export default function SampleReportPage() {
                 margin: 0,
               }}
             >
-              Employment Discrimination (NOS 442) — Illustrative data for demonstration
+              See how MyCaseValue analyzes federal employment discrimination cases with real win rates, settlement distributions, recovery ranges, and key outcome insights.
             </p>
           </div>
         </div>

@@ -289,7 +289,7 @@ export default function DistrictHeatmapPage() {
                   fontFamily: 'var(--font-display)',
                 }}
               >
-                Federal Court Win Rates by State
+                See Which Courts Give Your Case the Best Odds
               </h1>
               <p
                 style={{
@@ -300,8 +300,7 @@ export default function DistrictHeatmapPage() {
                   fontFamily: 'var(--font-body)',
                 }}
               >
-                Explore federal court win rates by state and judicial district. Compare outcomes
-                across different jurisdictions to understand case value drivers.
+                Discover federal court win rates by state and district to make data-driven venue decisions and understand your case's best opportunities.
               </p>
             </div>
           </div>

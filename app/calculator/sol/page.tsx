@@ -85,7 +85,7 @@ export default function SOLCalculatorPage() {
             FREE TOOL
           </div>
           <h1 style={{ color: '#FFF', fontSize: 'clamp(28px, 7vw, 40px)', fontWeight: 600, margin: '0 0 12px', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
-            Statute of Limitations Calculator
+            Know When Your Federal Case Deadline Expires
           </h1>
           <p style={{ color: '#b8bcc0', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
             Check federal filing deadlines for your case type. Covers all 84 NOS codes with USC citations and tolling exceptions.

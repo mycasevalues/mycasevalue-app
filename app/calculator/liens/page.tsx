@@ -32,10 +32,10 @@ export default function LienCalculatorPage() {
             CALCULATOR
           </div>
           <h1 style={{ color: '#FFF', fontSize: 'clamp(28px, 7vw, 40px)', fontWeight: 600, margin: '0 0 12px', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
-            Lien & Subrogation Calculator
+            Calculate Your True Net Recovery After Liens
           </h1>
           <p style={{ color: '#b8bcc0', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
-            Estimate Medicare, Medicaid, and workers compensation liens to calculate your net recovery.
+            Estimate Medicare, Medicaid, and workers compensation liens to understand your actual settlement payout.
           </p>
         </div>
       </header>

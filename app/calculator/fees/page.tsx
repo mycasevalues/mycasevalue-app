@@ -56,10 +56,10 @@ export default function FeesPage() {
             REFERENCE
           </div>
           <h1 style={{ color: '#FFF', fontSize: 'clamp(28px, 7vw, 40px)', fontWeight: 600, margin: '0 0 12px', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
-            Federal Court Fee Schedule
+            Know Your Federal Court Costs Before Filing
           </h1>
           <p style={{ color: '#b8bcc0', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
-            Current filing fees, PACER costs, and fee waiver eligibility for federal courts.
+            Reference current filing fees, PACER costs, and fee waiver eligibility across all federal districts.
           </p>
         </div>
       </header>

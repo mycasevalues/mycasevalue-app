@@ -128,7 +128,7 @@ export default function DeadlinesCalculatorPage() {
             FREE TOOL
           </div>
           <h1 style={{ color: '#FFF', fontSize: 'clamp(28px, 7vw, 40px)', fontWeight: 600, margin: '0 0 12px', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
-            Court Deadline Calculator
+            Never Miss a Federal Court Deadline
           </h1>
           <p style={{ color: '#b8bcc0', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
             Calculate procedural deadlines under the Federal Rules of Civil Procedure. Visual timeline with FRCP rule citations.

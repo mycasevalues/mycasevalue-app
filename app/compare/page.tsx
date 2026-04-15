@@ -183,7 +183,7 @@ export default function ComparePage() {
             color: 'var(--color-surface-0)',
             lineHeight: 1.2,
           }}>
-            Compare Case Types
+            Compare Case Types Side-by-Side with Real Outcomes
           </h1>
           <p style={{
             fontSize: 'clamp(14px, 2vw, 16px)',
@@ -192,7 +192,7 @@ export default function ComparePage() {
             fontFamily: 'var(--font-body)',
             lineHeight: 1.5,
           }}>
-            Select up to 3 federal case types to compare outcomes side by side.
+            Analyze win rates, settlement patterns, and recovery ranges across federal case types to benchmark your case value.
           </p>
         </div>
       </header>

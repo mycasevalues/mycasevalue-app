@@ -77,7 +77,7 @@ export default function AcademicPage() {
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
-            Legal Research Infrastructure for Academia
+            Enable Empirical Legal Research with Real Federal Court Data
           </h1>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -87,7 +87,7 @@ export default function AcademicPage() {
             margin: '0 auto 32px',
             lineHeight: 1.6,
           }}>
-            Empower law school faculty and researchers with comprehensive case datasets, research tools, and institutional licensing to advance legal scholarship and education.
+            Access 5.1M+ federal cases for law school research, curriculum development, student projects, and institutional scholarship. Free institutional licensing available.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact?type=academic" style={{

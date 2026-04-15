@@ -251,7 +251,7 @@ export default function OddsPage() {
             lineHeight: 1.2,
             letterSpacing: '-0.5px',
           }}>
-            Check Your Case Odds
+            Know Your Odds Before Taking Your Case to Trial
           </h1>
           <p style={{
             color: '#b8bcc0',
@@ -261,7 +261,7 @@ export default function OddsPage() {
             lineHeight: 1.5,
             fontFamily: 'var(--font-body)',
           }}>
-            See real win rates, settlement data, and recovery ranges for your case type — instantly, using data from 5.1M+ federal cases.
+            Understand real win rates, settlement likelihood, and recovery ranges for your federal case type based on data from 5.1M+ actual cases.
           </p>
         </div>
       </header>

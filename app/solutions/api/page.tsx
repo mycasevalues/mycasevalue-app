@@ -65,7 +65,7 @@ export default function ApiPage() {
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
-            APIs for Developers
+            Add Federal Court Analytics to Your Legal Tech Platform
           </h1>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -75,7 +75,7 @@ export default function ApiPage() {
             margin: '0 auto 32px',
             lineHeight: 1.6,
           }}>
-            Build powerful case analytics applications with our developer-friendly REST API, webhooks, SDKs, and comprehensive documentation.
+            Integrate federal case outcome data with REST APIs, webhooks, SDKs, and webhooks. Comprehensive documentation, sandbox environment, and dedicated developer support included.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/solutions/api" style={{

@@ -88,7 +88,7 @@ export default function ResultsPage() {
             lineHeight: '1.2',
             fontFamily: 'var(--font-display)'
           }}>
-            Case Results
+            Analyze Your Case Results with Real Data
           </h1>
           <p style={{
             fontSize: '16px',
@@ -98,7 +98,7 @@ export default function ResultsPage() {
             fontFamily: 'var(--font-body)',
             lineHeight: '1.6'
           }}>
-            Select a case type and district to see detailed outcome data from federal court records.
+            Explore federal court outcomes, win rates, and settlement data to benchmark your case and make informed strategic decisions.
           </p>
         </div>
       </div>

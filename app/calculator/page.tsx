@@ -279,7 +279,7 @@ export default function CalculatorPage() {
             CALCULATOR
           </div>
           <h1 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)' }}>
-            Settlement Calculator
+            Estimate Your Settlement Using Real Court Data
           </h1>
           <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
             Estimate your settlement range based on federal court outcomes and case type. Our calculator uses data from 5.1M+ real federal cases to provide realistic national estimates.

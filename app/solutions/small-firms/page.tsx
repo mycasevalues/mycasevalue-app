@@ -77,7 +77,7 @@ export default function SmallFirmsPage() {
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
-            Competitive Analytics for Small Firms
+            Enterprise-Grade Case Analytics Built for Solo and Small Firms
           </h1>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -87,7 +87,7 @@ export default function SmallFirmsPage() {
             margin: '0 auto 32px',
             lineHeight: 1.6,
           }}>
-            Access enterprise-grade case research and opposing counsel intelligence without the enterprise price. Level the playing field with data-driven insights for better case valuations and strategic decisions.
+            Get the competitive advantage of large law firms without the enterprise cost. Level the playing field with data-driven settlement insights, judge analytics, and opposing counsel intelligence.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/sign-up" style={{
