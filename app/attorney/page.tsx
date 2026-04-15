@@ -499,7 +499,7 @@ export default function AttorneyPage() {
               color: 'var(--color-text-inverse)',
             }}
           >
-            Attorney Mode — Professional Legal Analytics
+            Outcome Prediction and Settlement Analytics Westlaw & LexisNexis Don't Offer
           </h1>
 
           {/* Subtitle */}
@@ -514,7 +514,7 @@ export default function AttorneyPage() {
               marginRight: 'auto',
             }}
           >
-            Advanced analytics tools for legal professionals. AI-powered predictions, judge intelligence, venue optimization, and bulk analysis. Free during public beta.
+            AI-powered case predictions, data-backed settlement ranges, judge intelligence, and venue optimization. Gain competitive intelligence enterprise platforms can't provide. Free access for all attorneys.
           </p>
         </div>
       </section>
@@ -545,7 +545,7 @@ export default function AttorneyPage() {
                 color: 'var(--color-text-primary)',
               }}
             >
-              Attorney Toolkit
+              Intelligence Tools Enterprise Platforms Don't Build
             </h2>
             <p
               style={{
@@ -555,7 +555,7 @@ export default function AttorneyPage() {
                 fontFamily: 'var(--font-body)',
               }}
             >
-              Essential tools to evaluate cases, prepare negotiations, and gain competitive intelligence.
+              Evaluate cases with real outcome data. Predict settlement ranges. Understand judge behavior. Identify optimal venues. Make decisions backed by 5.1M+ verified federal cases.
             </p>
           </div>
 
@@ -686,7 +686,7 @@ export default function AttorneyPage() {
                 color: 'var(--color-text-primary)',
               }}
             >
-              How Attorneys Use MyCaseValue
+              Replace Hours of Manual Research with Minutes of Data-Backed Insights
             </h2>
             <p
               style={{
@@ -699,7 +699,7 @@ export default function AttorneyPage() {
                 marginRight: 'auto',
               }}
             >
-              Real-world applications for case evaluation, settlement preparation, and client management.
+              From case intake to settlement negotiation, use transparent, verified federal court data to make smarter litigation decisions.
             </p>
           </div>
 
@@ -714,15 +714,15 @@ export default function AttorneyPage() {
             {[
               {
                 title: 'Pre-litigation Evaluation',
-                description: 'Before accepting a case, assess its viability and potential value using real federal court data. Compare case type outcomes across districts to determine whether to take the matter.',
+                description: 'Assess case viability in minutes. See win rates, settlement ranges, and outcomes for your specific case type and jurisdiction. Make better intake decisions and filter weak cases before investing resources.',
               },
               {
                 title: 'Settlement Negotiation Preparation',
-                description: 'Enter settlement discussions armed with comparable case data, win rates, and historical settlement ranges. Make data-backed offers supported by federal court precedent.',
+                description: 'Know the data before you negotiate. Access comparable settlements, judge tendencies, and historical ranges. Make anchored offers backed by transparent federal court data, not hunches.',
               },
               {
                 title: 'Client Expectation Management',
-                description: 'Educate clients on realistic outcomes with actual federal court statistics. Reduce surprises and disputes by setting expectations grounded in verified judicial data.',
+                description: 'Show clients real outcomes from real federal cases. Reduce conflicts and malpractice exposure by setting expectations grounded in verified judicial data, not estimates.',
               },
             ].map((useCase, index) => (
               <div
@@ -809,7 +809,7 @@ export default function AttorneyPage() {
                 color: 'var(--color-text-primary)',
               }}
             >
-              Data-Driven Advantage
+              Built on Transparency. Powered by Real Data.
             </h2>
             <p
               style={{
@@ -822,7 +822,7 @@ export default function AttorneyPage() {
                 marginRight: 'auto',
               }}
             >
-              Leverage verified federal court data for competitive intelligence and client confidence.
+              No black-box algorithms. No proprietary models. Every outcome comes from verified federal court records. Every prediction is explainable and auditable.
             </p>
           </div>
 

@@ -54,11 +54,11 @@ export default function ProSeLitigantsPage() {
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 style={{ fontSize: '2.25rem', fontWeight: 600, lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '1.5rem' }}>
-          Federal Court Data for Pro Se Litigants
+          The Data Attorneys Use, Made Accessible to Everyone
         </h1>
 
         <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
-          Representing yourself in federal court is challenging enough without having to guess at outcomes. MyCaseValue gives you access to the same federal court outcome data that attorneys use — win rates, settlement ranges, judge analytics, and case timelines — sourced from public records and presented in plain language.
+          You shouldn't have to hire an attorney to understand your case. MyCaseValue gives you the same federal court outcome data that lawyers use to evaluate cases — real win rates, settlement patterns, judge tendencies, and case timelines. All sourced from public records. All explained in plain language.
         </p>
 
         {/* Feature Cards */}
@@ -70,16 +70,16 @@ export default function ProSeLitigantsPage() {
         }}>
           {[
             {
-              title: 'Case Outcome Data',
-              description: 'Win rates, timelines by case type, and settlement statistics from 5.1M+ real federal cases.',
+              title: 'Real Outcome Data',
+              description: 'See actual win rates and settlement patterns from cases like yours. Understand what happens in your district with your case type.',
             },
             {
-              title: 'Judge Analytics',
-              description: 'Research how your judge rules on similar cases. See ruling patterns and decision tendencies.',
+              title: 'Know Your Judge',
+              description: 'Research how your specific judge rules on similar cases. See what decisions they tend to make and what outcomes litigants get.',
             },
             {
-              title: 'District Comparisons',
-              description: 'Understand local trends in your federal district. Compare outcomes across districts.',
+              title: 'Plain Language Analysis',
+              description: 'No legal jargon. No subscriptions. Everything explained in terms you can understand and use.',
             },
           ].map((feature, i) => (
             <div

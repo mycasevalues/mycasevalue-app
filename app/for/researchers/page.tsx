@@ -54,11 +54,11 @@ export default function ResearchersPage() {
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 style={{ fontSize: '2.25rem', fontWeight: 600, lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '1.5rem' }}>
-          Federal Court Data for Academic Researchers
+          The Most Comprehensive Federal Court Dataset — Ready for Citation
         </h1>
 
         <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
-          MyCaseValue provides access to 5.1 million federal case outcomes — searchable by district, case type, judge, outcome, and year. Built on public records from the FJC Integrated Database, CourtListener, and RECAP. Designed for empirical legal research.
+          5.1 million federal civil cases with standardized variables, fully sourced from public records. Built on the FJC Integrated Database, CourtListener, and RECAP. Full transparency into methodology. Designed for empirical legal research that passes peer review.
         </p>
 
         {/* Feature Cards */}
@@ -70,16 +70,16 @@ export default function ResearchersPage() {
         }}>
           {[
             {
-              title: 'Comprehensive Dataset',
-              description: 'Access all 5.1M federal civil cases with standardized variables for statistical analysis.',
+              title: 'Depth & Scale',
+              description: '5.1M cases with consistent variables across 30+ years. Rich filtering by judge, district, case type, outcome, and temporal range. Export for analysis.',
             },
             {
-              title: 'Filtering & Analysis',
-              description: 'Advanced filtering by district, case type, judge, outcome, and temporal range. Export for analysis.',
+              title: 'Academic Integrity',
+              description: 'Every case sourced from official public records (FJC IDB, CourtListener, RECAP). Methodology is fully documented and auditable for peer review.',
             },
             {
-              title: 'Citable Public Sources',
-              description: 'All data sourced from official public records (FJC IDB, CourtListener, RECAP). Fully transparent methodology.',
+              title: 'Ready to Cite',
+              description: 'Transparent data sourcing means your research passes journal standards. Include exact citations to underlying federal records.',
             },
           ].map((feature, i) => (
             <div

@@ -54,11 +54,11 @@ export default function StudentsPage() {
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 style={{ fontSize: '2.25rem', fontWeight: 600, lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '1.5rem' }}>
-          Federal Court Data for Law Students
+          From Casebooks to Real Cases — Free Access to Real Federal Court Data
         </h1>
 
         <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
-          Go beyond the casebook. Research how courts actually rule on the issues you're studying — real win rates, real timelines, real outcomes. Use MyCaseValue for moot court prep, law review research, and understanding federal court patterns.
+          Stop studying cases in a vacuum. See how federal courts actually rule on the issues you're learning. Research real win rates, real settlement patterns, real judge behavior. Free access for all law students. Perfect for moot court, law review, and understanding how the law actually works.
         </p>
 
         {/* Feature Cards */}
@@ -70,16 +70,16 @@ export default function StudentsPage() {
         }}>
           {[
             {
-              title: 'Real Outcome Data',
-              description: 'See how federal courts actually decide cases like the ones you study. Win rates and settlement data from real cases.',
+              title: 'Learn from Real Cases',
+              description: 'See how federal courts actually rule on the topics in your classes. Win rates, timelines, and outcomes from 5.1M real federal cases.',
             },
             {
-              title: 'Judge Research',
-              description: 'Understand judge decision-making patterns. Analyze how individual judges rule on specific legal issues.',
+              title: 'Smarter Moot Court Prep',
+              description: 'Research actual judge behavior and preferences. Make data-backed arguments instead of guessing how judges rule.',
             },
             {
-              title: 'Case Type Analysis',
-              description: 'Explore trends across federal case types. Understand patterns in litigation outcomes.',
+              title: 'Free Legal Education',
+              description: 'Full access at no cost while you\'re in law school. No subscriptions. No limits. Everything you need to understand real federal litigation.',
             },
           ].map((feature, i) => (
             <div

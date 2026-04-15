@@ -54,11 +54,11 @@ export default function ParalegalsPage() {
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 style={{ fontSize: '2.25rem', fontWeight: 600, lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '1.5rem' }}>
-          Federal Court Data for Paralegals
+          Cut Research Time in Half. Replace Manual Digging with Data-Backed Answers.
         </h1>
 
         <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
-          Pull federal court outcome data in minutes instead of hours. MyCaseValue lets you research judge analytics, filter by district and case type, and support your attorneys with data-driven insights — all from public records.
+          Spend less time on research tasks and more time supporting your attorneys. MyCaseValue gives you instant access to judge analytics, settlement data, and case outcomes. Get answers in minutes, not hours. Free your team to focus on higher-value work.
         </p>
 
         {/* Feature Cards */}
@@ -70,16 +70,16 @@ export default function ParalegalsPage() {
         }}>
           {[
             {
-              title: 'Quick Research',
-              description: 'Find federal court data in minutes. Search by case type, district, and outcome for instant case insights.',
+              title: 'Instant Research Results',
+              description: 'Get answers in minutes instead of hours. Search by case type, district, judge, and outcome. No more manual PACER digging.',
             },
             {
-              title: 'Judge Analytics',
-              description: 'Analyze judge ruling patterns and tendencies. Support your legal strategy with data on judicial behavior.',
+              title: 'Judge Ruling Patterns',
+              description: 'Show your attorneys exactly how judges rule on specific issues. Data-backed judge profiles save attorneys hours of pre-trial prep.',
             },
             {
-              title: 'District Data',
-              description: 'Understand local court trends and patterns. Compare outcomes across federal districts and case types.',
+              title: 'Reduce Billable Hours',
+              description: 'Less time on research tasks means lower costs per case. Improve firm profitability while giving attorneys better intel faster.',
             },
           ].map((feature, i) => (
             <div
