@@ -18,7 +18,7 @@ import {
   seedPipelineData,
 } from '@/lib/pipeline';
 
-const ADMIN_TOKEN = process.env.ADMIN_DATA_QUALITY_TOKEN;
+const ADMIN_TOKEN = process.env.ADMIN_SECRET || process.env.ADMIN_DATA_QUALITY_TOKEN;
 
 export async function POST(req: NextRequest) {
   // Auth check

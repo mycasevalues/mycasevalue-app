@@ -34,14 +34,11 @@ export async function GET(req: NextRequest) {
       .from('cases')
       .select('id, case_name, docket_number, case_type, nature_of_suit, filing_date, termination_date, status, procedural_posture, court_id', { count: 'exact' });
 
-    // Text search
+    // Text search using PostgreSQL full-text search (tsvector)
     if (q) {
-      const isDocketLike = /\d+.*-.*-\d+/.test(q);
-      if (isDocketLike) {
-        query = query.or(`case_name.ilike.%${q}%,docket_number.ilike.%${q}%`);
-      } else {
-        query = query.ilike('case_name', `%${q}%`);
-      }
+      // Convert query to tsquery format: split words, join with &
+      const tsQuery = q.trim().split(/\s+/).filter(Boolean).join(' & ');
+      query = query.textSearch('search_vector', tsQuery);
     }
 
     // Filters
