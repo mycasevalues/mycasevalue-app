@@ -79,7 +79,7 @@ const steps = [
   {
     number: '2',
     title: 'Choose Your District',
-    description: 'Pick from 95 federal judicial districts across the United States. We analyze cases from your specific district for maximum relevance.',
+    description: 'Pick from 94 federal judicial districts across the United States. We analyze cases from your specific district for maximum relevance.',
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5">
         <circle cx="11" cy="11" r="8"/>
@@ -104,7 +104,7 @@ const steps = [
 
 const trustStats = [
   { value: '5.1M+', label: 'Federal cases analyzed' },
-  { value: '95', label: 'Federal districts covered' },
+  { value: '94', label: 'Federal districts covered' },
   { value: '55+', label: 'Years of judicial data' },
   { value: '84', label: 'Case types supported' },
 ];

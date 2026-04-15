@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode. No hidden fees.',
   alternates: { canonical: `${SITE_URL}/pricing` },
   openGraph: {
-    title: 'Pricing Built for Every Budget â MyCaseValue',
+        title: 'Pricing Built for Every Budget \u2014 MyCaseValue',
     description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode.',
     type: 'website',
     url: `${SITE_URL}/pricing`,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing Built for Every Budget â MyCaseValue',
+        title: 'Pricing Built for Every Budget \u2014 MyCaseValue',
     description: 'Transparent pricing for federal court intelligence. Free, $5.99, $9.99/mo, $29.99/mo.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -110,7 +110,7 @@ const tiers: PricingTier[] = [
     description: 'Unlimited lookups with legal research and trend analysis.',
     features: [
       'Unlimited case type + district lookups',
-      'All 84 case types across all 95 districts',
+      'All 84 case types across all 94 districts',
       'Full settlement percentile ranges',
       '10-year trend data',
       'Legal document search (7 sources)',
@@ -141,7 +141,7 @@ const tiers: PricingTier[] = [
       'Regulatory alerts (Federal Register monitoring)',
       'Opposing counsel citation patterns',
       'Document intelligence (upload complaints/motions)',
-      'Venue selection optimizer (95 districts ranked)',
+      'Venue selection optimizer (94 districts ranked)',
       'Bulk analysis (up to 1,000 cases via CSV)',
       'Full API access (case data + legal docs)',
       'Team workspace (5 seats included)',
@@ -328,7 +328,7 @@ export default function PricingPage() {
         }
 
         .card-features li::before {
-          content: 'â';
+                    content: '\2713';
           color: #0966C3;
           font-weight: 600;
           flex-shrink: 0;

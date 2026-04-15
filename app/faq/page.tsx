@@ -82,7 +82,7 @@ const jsonLd = {
           name: 'What courts are covered?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'MyCaseValue covers federal civil cases across all 95 federal district courts and appellate data. This includes federal district courts, circuit courts, and appeals. State and local courts are not included in our dataset.',
+            text: 'MyCaseValue covers federal civil cases across all 94 federal district courts and appellate data. This includes federal district courts, circuit courts, and appeals. State and local courts are not included in our dataset.',
           },
         },
         {
@@ -424,11 +424,11 @@ const faqs = [
     questions: [
       {
         q: 'Does MyCaseValue cover state courts?',
-        a: 'No. MyCaseValue covers federal civil courts only. Our database includes all 95 federal districts and 13 circuit courts, but does not include state or local court cases.',
+        a: 'No. MyCaseValue covers federal civil courts only. Our database includes all 94 federal districts and 13 circuit courts, but does not include state or local court cases.',
       },
       {
         q: 'What courts are covered?',
-        a: 'MyCaseValue covers federal civil cases across all 95 federal district courts and appellate data. This includes federal district courts, circuit courts, and appeals. State and local courts are not included in our dataset.',
+        a: 'MyCaseValue covers federal civil cases across all 94 federal district courts and appellate data. This includes federal district courts, circuit courts, and appeals. State and local courts are not included in our dataset.',
       },
       {
         q: 'Why do outcomes vary by circuit?',

@@ -4,7 +4,7 @@
     "date": "2024-12-15",
     "updateType": "launch",
     "title": "MyCaseValue Platform Launch",
-    "description": "Initial release of MyCaseValue with 5.1M+ federal court cases across 84 NOS codes and 95 federal judicial districts. Data sourced from FJC Integrated Database through Q3 2024.",
+    "description": "Initial release of MyCaseValue with 5.1M+ federal court cases across 84 NOS codes and 94 federal judicial districts. Data sourced from FJC Integrated Database through Q3 2024.",
     "affectedNosCodes": [],
     "affectedDistricts": []
   },

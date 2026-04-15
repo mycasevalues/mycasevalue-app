@@ -226,7 +226,7 @@ function SignInForm() {
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </div>
             <div className="benefit-text">
-              Search and analyze cases from all 95 federal districts
+              Search and analyze cases from all 94 federal districts
             </div>
           </div>
 

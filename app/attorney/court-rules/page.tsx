@@ -145,7 +145,7 @@ export default function CourtRulesPage() {
             Federal Court Rules Quick Reference
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
-            Local rules, filing requirements, and key differences across all 95 federal districts.
+            Local rules, filing requirements, and key differences across all 94 federal districts.
           </p>
         </div>
       </div>

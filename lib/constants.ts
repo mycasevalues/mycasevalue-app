@@ -1,7 +1,7 @@
 export const PLATFORM_STATS = {
   totalCases: '5.1M+',
   totalCasesLong: '5.1 million',
-  districtCount: 95,
+  districtCount: 94,
   caseTypeCount: 84,
   dataSourceShort: 'FJC IDB · CourtListener · RECAP',
   dataSources: [

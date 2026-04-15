@@ -133,7 +133,7 @@ export default function AnnualReportCapture() {
     doc.setFont('helvetica', 'normal');
     doc.text('Comprehensive Federal Litigation Data', margin, yPosition);
     yPosition += 10;
-    doc.text('5,100,000+ Cases | 84 Case Types | 95 Districts', margin, yPosition);
+    doc.text('5,100,000+ Cases | 84 Case Types | 94 districts', margin, yPosition);
 
     yPosition = pageHeight - 60;
     doc.setFontSize(12);
@@ -716,7 +716,7 @@ export default function AnnualReportCapture() {
               }}>
                 <li>5,100,000+ analyzed federal cases</li>
                 <li>84 distinct case types covered</li>
-                <li>95 federal districts analyzed</li>
+                <li>94 federal districts analyzed</li>
                 <li>Plaintiff win rates: 28% to 62% by type</li>
                 <li>Settlement medians: $59K to $1.2M</li>
                 <li>Representation impact: 42% win rate advantage</li>

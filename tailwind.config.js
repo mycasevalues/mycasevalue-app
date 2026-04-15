@@ -137,6 +137,7 @@ module.exports = {
         'slide-in-left': 'slideInLeft 0.35s ease forwards',
         shimmer: 'shimmer 1.8s infinite linear',
         marquee: 'marquee 60s linear infinite',
+                'page-enter': 'pageEnterTw' 0.15s ease-out forwards',
       },
       keyframes: {
         fadeIn: { from: { opacity: '0' }, to: { opacity: '1' } },
@@ -150,6 +151,7 @@ module.exports = {
         slideInLeft: { from: { transform: 'translateX(-100%)' }, to: { transform: 'translateX(0)' } },
         shimmer: { from: { backgroundPosition: '-200% 0' }, to: { backgroundPosition: '200% 0' } },
         marquee: { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } },
+                pageEnterTw: { from: { opacity: '0.99' }, to: { opacity: '1' } },
       },
     },
   },

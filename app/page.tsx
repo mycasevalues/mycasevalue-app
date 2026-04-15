@@ -198,7 +198,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Stat 2: 95 Districts */}
+            {/* Stat 2: 94 districts */}
             <div className="text-center lg:border-r lg:border-gray-100 md:px-4">
               <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
                 95

@@ -41,7 +41,7 @@
     <text x="-280" y="0" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="36" font-weight="700" fill="#0966C3" text-anchor="middle">5.1M+</text>
     <text x="-280" y="32" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" font-weight="500" fill="#4B5563" text-anchor="middle" letter-spacing="0.5">FEDERAL CASES</text>
 
-    <!-- Stat 2: 95 Districts -->
+    <!-- Stat 2: 94 districts -->
     <text x="0" y="0" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="36" font-weight="700" fill="#0966C3" text-anchor="middle">95</text>
     <text x="0" y="32" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" font-weight="500" fill="#4B5563" text-anchor="middle" letter-spacing="0.5">FEDERAL DISTRICTS</text>
 

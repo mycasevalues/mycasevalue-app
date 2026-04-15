@@ -40,7 +40,7 @@
   },
   "home": {
     "heroTitle": "What is your federal case really worth?",
-    "heroSubtitle": "Win rates, settlement ranges, and judicial patterns from 5.1 million federal cases across 95 districts — sourced directly from public court records.",
+    "heroSubtitle": "Win rates, settlement ranges, and judicial patterns from 5.1 million federal cases across 94 districts — sourced directly from public court records.",
     "quickLookup": "Quick Case Lookup",
     "selectCaseType": "Select a case type",
     "selectState": "Select a state",
@@ -157,7 +157,7 @@
     },
     "districts": {
       "allDistricts": "Federal Court Districts",
-      "allJudicial": "All 95 federal judicial districts across 13 circuits"
+      "allJudicial": "All 94 federal judicial districts across 13 circuits"
     }
   },
   "districts": {

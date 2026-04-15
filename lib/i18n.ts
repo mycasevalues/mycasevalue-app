@@ -22,7 +22,7 @@ const EN = {
   hero_title_2: 'the other side already has.',
   hero_title_3: 'Now you have it too.',
   hero_sub_pre: 'Research real outcomes from',
-  hero_sub_post: 'federal court cases across 95 districts. Win rates, settlement ranges, timelines, and judge analytics \u2014 sourced from public court records.',
+  hero_sub_post: 'federal court cases across 94 districts. Win rates, settlement ranges, timelines, and judge analytics \u2014 sourced from public court records.',
   hero_cta: 'View Outcome Data',
   hero_demo: 'View a sample report',
 

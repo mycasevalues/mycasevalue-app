@@ -433,7 +433,7 @@ export default function MethodologyPage() {
               { v: '5.1M+', l: 'Federal Cases', c: '#0f0f0f' },
               { v: '55+', l: 'Years of Data', c: '#059669' },
               { v: '20+', l: 'Case Categories', c: '#0966C3' },
-              { v: '95', l: 'Federal Districts', c: '#004182' },
+              { v: '94', l: 'Federal Districts', c: '#004182' },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
                 <div className="text-3xl sm:text-4xl font-display font-extrabold mb-2" style={{ color: stat.c }}>{stat.v}</div>

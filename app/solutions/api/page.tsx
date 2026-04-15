@@ -176,7 +176,7 @@ export default function ApiPage() {
             <div style={{ padding: '24px', background: '#F7F8FA', borderRadius: '8px', border: '1px solid #E5E7EB' }}>
               <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>Case Statistics</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.6, margin: 0 }}>
-                Win rates, settlement data, and outcome predictions for 84 case types and 95 districts
+                Win rates, settlement data, and outcome predictions for 84 case types and 94 districts
               </p>
             </div>
             <div style={{ padding: '24px', background: '#F7F8FA', borderRadius: '8px', border: '1px solid #E5E7EB' }}>

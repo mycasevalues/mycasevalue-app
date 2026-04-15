@@ -195,7 +195,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'What case types does MyCaseValue cover?',
-          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue covers 84 federal case types including employment discrimination, personal injury, medical malpractice, product liability, civil rights, wrongful termination, contract disputes, FDCPA violations, and more. Data spans all 95 federal districts.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue covers 84 federal case types including employment discrimination, personal injury, medical malpractice, product liability, civil rights, wrongful termination, contract disputes, FDCPA violations, and more. Data spans all 94 federal districts.' },
         },
         {
           '@type': 'Question',
@@ -290,17 +290,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         ` }} />
         <style>{`
-          @keyframes pageEnter {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          main {
-            animation: pageEnter 0.3s ease-out;
-          }
-          @media (prefers-reduced-motion: reduce) {
-            main { animation: none; }
-          }
-        `}</style>
+                    @media (prefers-reduced-motion: reduce) {
+                                .animate-page-enter { animation: none !important; }
+                                          }
+                                          </style>
       </head>
       <body className="font-inter" style={{ background: '#ffffff', color: '#0f0f0f', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />

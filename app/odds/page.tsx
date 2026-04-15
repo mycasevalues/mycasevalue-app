@@ -1294,7 +1294,7 @@ export default function OddsPage() {
               }}>
                 {[
                   { v: '5.1M+', l: 'Cases analyzed' },
-                  { v: '95', l: 'Federal districts' },
+                  { v: '94', l: 'Federal districts' },
                   { v: '84', l: 'Case types' },
                   { v: 'Instant', l: 'No account needed' },
                 ].map((stat, i) => (

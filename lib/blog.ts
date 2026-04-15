@@ -70,7 +70,7 @@ Remember that percentile data describes past outcomes, not future ones. Settleme
   {
     slug: 'employment-discrimination-federal-courts',
     title: 'Employment Discrimination in Federal Courts: What the Data Shows',
-    description: 'An analysis of employment discrimination case outcomes across all 95 federal districts, based on FJC IDB data.',
+    description: 'An analysis of employment discrimination case outcomes across all 94 federal districts, based on FJC IDB data.',
     content: `Employment discrimination claims make up one of the largest segments of the federal civil docket. Title VII, the ADA, the ADEA, and Section 1981 drive hundreds of thousands of cases each year. Here is what the outcome data reveals about how these cases actually resolve.
 
 Across all employment discrimination case types, the win rate at trial averages approximately 38 percent. But this figure hides meaningful variation. Retaliation claims, which are easier to prove because they require showing a causal connection between protected activity and adverse action, succeed at trial roughly 42 percent of the time. Age discrimination claims under the ADEA, which require showing that age was the but-for cause of the adverse action, succeed at closer to 32 percent.
@@ -118,8 +118,8 @@ If cost is a barrier, many employment and civil rights attorneys work on conting
   {
     slug: 'how-federal-districts-differ',
     title: 'How Federal Districts Differ: A Guide to Venue Selection',
-    description: 'Why the district where your case is filed matters, and what the outcome data shows across the 95 federal judicial districts.',
-    content: `The United States has 95 federal judicial districts, and the data shows that outcomes vary meaningfully depending on where a case is filed. Understanding these differences can inform decisions about venue selection, case strategy, and realistic expectations.
+    description: 'Why the district where your case is filed matters, and what the outcome data shows across the 94 federal judicial districts.',
+    content: `The United States has 94 federal judicial districts, and the data shows that outcomes vary meaningfully depending on where a case is filed. Understanding these differences can inform decisions about venue selection, case strategy, and realistic expectations.
 
 Win rates vary significantly by district. Some districts have win rates above 45 percent for certain case types, while others hover below 25 percent. The Southern District of New York, one of the busiest commercial litigation districts, has different outcome patterns than the Eastern District of Texas, which is known for active docket management and faster case resolution. These differences are not random. They reflect local judicial culture, the composition of the judge roster, the nature of cases filed in each district, and the demographics of the jury pool.
 
@@ -847,7 +847,7 @@ The data clearly shows: in personal injury cases, settlement earlier than trial 
 
 <h2>Methodology</h2>
 
-<p>We analyzed federal court outcome data across all 95 federal districts, examining win rates at trial, settlement values, and case duration. We weighted analysis toward common case types (employment discrimination, personal injury, contract disputes, civil rights) where venue flexibility exists. Districts were ranked by aggregate win rate across all case types, adjusted for case composition and population density.</p>
+<p>We analyzed federal court outcome data across all 94 federal districts, examining win rates at trial, settlement values, and case duration. We weighted analysis toward common case types (employment discrimination, personal injury, contract disputes, civil rights) where venue flexibility exists. Districts were ranked by aggregate win rate across all case types, adjusted for case composition and population density.</p>
 
 <h2>Top 10 Favorable-Outcome Federal Districts</h2>
 
