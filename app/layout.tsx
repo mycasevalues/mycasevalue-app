@@ -29,6 +29,7 @@ const WebVitalsReporter = dynamic(() => import('../components/analytics/WebVital
 const DemoMode = dynamic(() => import('../components/DemoMode'), { ssr: false });
 const LanguageDetectBanner = dynamic(() => import('../components/LanguageDetectBanner'), { ssr: false });
 const AIChatAssistant = dynamic(() => import('../components/AIChatAssistant').then(mod => ({ default: mod.AIChatAssistant })), { ssr: false });
+const ToastContainer = dynamic(() => import('../components/ui/Toast'), { ssr: false });
 
 export const metadata: Metadata = {
   title: {
@@ -324,6 +325,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <KeyboardShortcutsHelp />
         <DemoMode />
         <AIChatAssistant />
+        <ToastContainer />
         <Analytics />
         <SpeedInsights />
         <script dangerouslySetInnerHTML={{ __html: `

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { SITS } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
 import { ArrowRightIcon, SearchIcon } from '../../components/ui/Icons';
@@ -126,6 +127,8 @@ const jsonLd = {
 
 export default function CasesIndexPage() {
   const [search, setSearch] = useState('');
+  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set());
+  const router = useRouter();
 
   const platformStats = getPlatformStats();
   const topFiledCases = getTopFiledCaseTypes();
@@ -135,6 +138,21 @@ export default function CasesIndexPage() {
     cat.sub.toLowerCase().includes(search.toLowerCase()) ||
     cat.opts.some(opt => opt.label.toLowerCase().includes(search.toLowerCase()))
   );
+
+  const handleSelectCategory = (categoryId: string) => {
+    const newSelected = new Set(selectedCategories);
+    if (newSelected.has(categoryId)) {
+      newSelected.delete(categoryId);
+    } else if (newSelected.size < 3) {
+      newSelected.add(categoryId);
+    }
+    setSelectedCategories(newSelected);
+  };
+
+  const handleCompare = () => {
+    const categoryIds = Array.from(selectedCategories).join(',');
+    router.push(`/compare?categories=${categoryIds}`);
+  };
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
@@ -340,64 +358,85 @@ export default function CasesIndexPage() {
           <StaggerGrid style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24 }}>
             {filtered.map((category) => {
               const catStats = getCategoryStats(category.id, category.opts);
+              const isSelected = selectedCategories.has(category.id);
               return (
                 <StaggerItem key={category.id}>
-                <Link href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div className="cat-card">
-                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
-                      <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
-                        {category.label}
-                      </h2>
-                      <SaveButton
-                        item={{
-                          id: `category-${category.id}`,
-                          type: 'case',
-                          label: category.label,
-                          sublabel: `${catStats.totalCases.toLocaleString()} cases · ${catStats.avgWinRate}% win rate`,
-                          href: `/cases/${category.id}`,
-                          meta: { winRate: catStats.avgWinRate, totalCases: catStats.totalCases },
-                        }}
-                      />
-                    </div>
-                    <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, marginBottom: 16 }}>{category.sub}</p>
+                <div style={{ position: 'relative', height: '100%' }}>
+                  {/* Compare Checkbox - Positioned absolutely */}
+                  <input
+                    type="checkbox"
+                    checked={isSelected}
+                    onChange={() => handleSelectCategory(category.id)}
+                    onClick={(e) => e.stopPropagation()}
+                    style={{
+                      position: 'absolute',
+                      top: 12,
+                      right: 12,
+                      width: 20,
+                      height: 20,
+                      cursor: 'pointer',
+                      zIndex: 10,
+                      accentColor: 'var(--accent-primary)',
+                    }}
+                    title="Select for comparison"
+                  />
 
-                    {/* Inline Stats */}
-                    {catStats.totalCases > 0 && (
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 16px', marginBottom: 'auto', padding: '12px 0' }}>
-                        <div>
-                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--accent-primary-hover)' }}>{catStats.totalCases.toLocaleString()}</div>
-                          <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Total Cases</div>
-                        </div>
-                        <div>
-                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: getWinRateColor(catStats.avgWinRate), display: 'flex', alignItems: 'center', gap: '4px' }}>
-                            {catStats.avgWinRate}%
-                            <ConfidenceDot n={catStats.totalCases} />
-                          </div>
-                          <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Avg Win Rate</div>
-                        </div>
-                        <div>
-                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)' }}>{catStats.avgSettlement}%</div>
-                          <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Settlement Rate</div>
-                        </div>
-                        <div>
-                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)' }}>{catStats.avgDuration}mo</div>
-                          <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Avg Duration</div>
-                        </div>
+                  <Link href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                    <div className="cat-card" style={{
+                      borderColor: isSelected ? 'var(--accent-primary)' : 'var(--border-default)',
+                      background: isSelected ? 'rgba(10, 102, 194, 0.01)' : 'var(--color-surface-0)',
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8, paddingRight: 28 }}>
+                        <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
+                          {category.label}
+                        </h2>
+                        <SaveButton
+                          item={{
+                            id: `category-${category.id}`,
+                            type: 'case',
+                            label: category.label,
+                            sublabel: `${catStats.totalCases.toLocaleString()} cases · ${catStats.avgWinRate}% win rate`,
+                            href: `/cases/${category.id}`,
+                            meta: { winRate: catStats.avgWinRate, totalCases: catStats.totalCases },
+                          }}
+                        />
                       </div>
-                    )}
+                      <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, marginBottom: 16 }}>{category.sub}</p>
 
-                    <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid var(--border-default)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      {catStats.avgWinRate > 0 && (
-                        <span style={{ fontSize: 11, fontWeight: 600, color: getWinRateColor(catStats.avgWinRate), background: getWinRateBg(catStats.avgWinRate), border: `1px solid ${getWinRateColor(catStats.avgWinRate)}`, borderRadius: '4px', padding: '2px 8px' }}>
-                          {catStats.avgWinRate}% · {getWinRateLabel(catStats.avgWinRate)}
-                        </span>
+                      {/* Inline Stats */}
+                      {catStats.totalCases > 0 && (
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 16px', marginBottom: 'auto', padding: '12px 0' }}>
+                          <div>
+                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--accent-primary-hover)' }}>{catStats.totalCases.toLocaleString()}</div>
+                            <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Total Cases</div>
+                          </div>
+                          <div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                              <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: getWinRateColor(catStats.avgWinRate) }}>
+                                {catStats.avgWinRate}%
+                              </div>
+                              {catStats.avgWinRate > 0 && (
+                                <span style={{ fontSize: 9, fontWeight: 700, color: getWinRateColor(catStats.avgWinRate), background: getWinRateBg(catStats.avgWinRate), border: `1px solid ${getWinRateColor(catStats.avgWinRate)}`, borderRadius: '2px', padding: '1px 4px', whiteSpace: 'nowrap' }}>
+                                  {getWinRateLabel(catStats.avgWinRate)}
+                                </span>
+                              )}
+                              <ConfidenceDot n={catStats.totalCases} />
+                            </div>
+                            <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Avg Win Rate</div>
+                          </div>
+                          <div>
+                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)' }}>{catStats.avgSettlement}%</div>
+                            <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Settlement Rate</div>
+                          </div>
+                          <div>
+                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)' }}>{catStats.avgDuration}mo</div>
+                            <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Avg Duration</div>
+                          </div>
+                        </div>
                       )}
-                      <span style={{ fontSize: 12, fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)', marginLeft: 'auto' }}>
-                        {catStats.totalCases > 0 ? catStats.totalCases.toLocaleString() : ''} cases
-                      </span>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
                 </StaggerItem>
               );
             })}
@@ -553,6 +592,61 @@ export default function CasesIndexPage() {
           </a>
         </div>
       </div>
+
+      {/* Floating Compare Bar */}
+      {selectedCategories.size >= 2 && (
+        <div style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          background: 'var(--accent-primary)',
+          height: '48px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '16px',
+          borderTop: '1px solid rgba(0,0,0,0.1)',
+          zIndex: 100,
+          boxShadow: '0 -2px 8px rgba(0,0,0,0.1)',
+        }}>
+          <span style={{ color: 'white', fontWeight: 600, fontSize: 15, fontFamily: 'var(--font-body)' }}>
+            Compare {selectedCategories.size} categor{selectedCategories.size === 1 ? 'y' : 'ies'}
+          </span>
+          <button
+            onClick={handleCompare}
+            style={{
+              background: 'white',
+              color: 'var(--accent-primary)',
+              border: 'none',
+              borderRadius: '6px',
+              padding: '8px 20px',
+              fontWeight: 600,
+              fontSize: 14,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              fontFamily: 'var(--font-body)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+            }}
+            onMouseEnter={(e) => {
+              (e.target as HTMLButtonElement).style.transform = 'scale(1.05)';
+              (e.target as HTMLButtonElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            }}
+            onMouseLeave={(e) => {
+              (e.target as HTMLButtonElement).style.transform = 'scale(1)';
+              (e.target as HTMLButtonElement).style.boxShadow = 'none';
+            }}
+          >
+            Compare
+            <ArrowRightIcon size={14} />
+          </button>
+        </div>
+      )}
+
+      {/* Add bottom margin when compare bar is visible */}
+      {selectedCategories.size >= 2 && <div style={{ height: '48px' }} />}
 
       {/* Footer */}
       <div style={{ background: 'var(--color-surface-1)', color: 'var(--color-text-secondary)', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid var(--border-default)' }}>

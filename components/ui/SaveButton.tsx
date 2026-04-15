@@ -7,6 +7,7 @@
  */
 
 import { useWorkspaceStore, SavedItem } from '@/store/workspace';
+import { useToastStore } from '@/store/toast';
 
 interface SaveButtonProps {
   item: Omit<SavedItem, 'savedAt'>;
@@ -16,6 +17,7 @@ interface SaveButtonProps {
 
 export default function SaveButton({ item, size = 'sm', showLabel = false }: SaveButtonProps) {
   const { saveItem, unsaveItem, isSaved } = useWorkspaceStore();
+  const { addToast } = useToastStore();
   const saved = isSaved(item.id);
 
   const handleToggle = (e: React.MouseEvent) => {
@@ -23,8 +25,10 @@ export default function SaveButton({ item, size = 'sm', showLabel = false }: Sav
     e.stopPropagation();
     if (saved) {
       unsaveItem(item.id);
+      addToast('Removed from workspace', 'info');
     } else {
       saveItem(item);
+      addToast('Saved to workspace', 'success');
     }
   };
 

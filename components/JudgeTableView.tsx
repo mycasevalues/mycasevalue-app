@@ -13,6 +13,7 @@ import { getWinRateColor } from '@/lib/color-scale';
 import { getPartyColor, getPartyLabel } from '@/lib/supabase-judges';
 import SaveButton from './ui/SaveButton';
 import HoverPreview, { JudgePreviewCard } from './ui/HoverPreview';
+import ExportDropdown from './ui/ExportDropdown';
 
 interface JudgeTableViewProps {
   judges: JudgeWithStats[];
@@ -52,8 +53,12 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
   }, [selectedIdx, judges]);
 
   return (
-    <div ref={tableRef} className="overflow-x-auto" tabIndex={0} role="grid" aria-label="Judge directory table">
-      <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
+    <div className="space-y-4">
+      <div className="flex justify-end">
+        <ExportDropdown />
+      </div>
+      <div ref={tableRef} className="overflow-x-auto" tabIndex={0} role="grid" aria-label="Judge directory table">
+        <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
         <thead>
           <tr className="bg-gray-50 border-b border-gray-200">
             <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-900 whitespace-nowrap"
@@ -186,13 +191,14 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
             );
           })}
         </tbody>
-      </table>
+        </table>
 
-      {judges.length === 0 && (
-        <div className="py-16 text-center text-sm text-gray-400">
-          No judges match your filters
-        </div>
-      )}
+        {judges.length === 0 && (
+          <div className="py-16 text-center text-sm text-gray-400">
+            No judges match your filters
+          </div>
+        )}
+      </div>
     </div>
   );
 }
