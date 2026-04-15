@@ -6,8 +6,8 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Attorney Mode — Professional Legal Intelligence Suite',
-  description: 'Advanced AI-powered tools for legal professionals. Case prediction, document analysis, opposing counsel research, PACER monitoring, and bulk analysis.',
+  title: 'Attorney Mode — AI Legal Intelligence — MyCaseValue',
+  description: 'AI-powered tools for attorneys. Case prediction, judge analytics, PACER monitoring, bulk analysis. $29.99/mo. 14-day free trial included.',
   alternates: { canonical: `${SITE_URL}/attorney` },
   openGraph: {
     title: 'Attorney Mode — Professional Legal Intelligence Suite',

@@ -6,8 +6,8 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with the MyCaseValue team for support, enterprise inquiries, or data methodology questions.',
+  title: 'Contact MyCaseValue — Support & Enterprise',
+  description: 'Contact the MyCaseValue team for support, enterprise API inquiries, partnerships, or data methodology questions.',
   alternates: { canonical: `${SITE_URL}/contact` },
   openGraph: {
     title: 'Contact Us',

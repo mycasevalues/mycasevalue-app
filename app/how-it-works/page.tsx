@@ -6,8 +6,8 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'How It Works — 3 Simple Steps',
-  description: 'Tell us your situation → We search 5.1M+ federal court cases → Get your personalized report with real outcomes, win rates, and timelines.',
+  title: 'How It Works — Research Federal Court Outcomes',
+  description: 'Research federal court outcomes in 3 steps: Select case type, search 5.1M+ cases, get personalized report with win rates & settlements.',
   alternates: { canonical: `${SITE_URL}/how-it-works` },
   openGraph: {
     title: 'How It Works — MyCaseValue',
@@ -67,8 +67,8 @@ const jsonLd = {
 const steps = [
   {
     number: '1',
-    title: 'Select Your Case Type',
-    description: 'Choose from 84 federal case categories. No legal jargon needed — we use plain English labels to describe every case type.',
+    title: 'Tell Us Your Situation',
+    description: 'No legal background required. Select your case type from 84 plain-English categories and your federal district. Takes 30 seconds.',
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
@@ -78,8 +78,8 @@ const steps = [
   },
   {
     number: '2',
-    title: 'Choose Your District',
-    description: 'Pick from 95 federal judicial districts across the United States. We analyze cases from your specific district for maximum relevance.',
+    title: 'We Search Real Cases',
+    description: 'Our engine instantly analyzes 5.1M+ federal court cases from 55+ years of public records, matching outcomes to your specific situation and district.',
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5">
         <circle cx="11" cy="11" r="8"/>
@@ -91,8 +91,8 @@ const steps = [
   },
   {
     number: '3',
-    title: 'Get Your Report',
-    description: 'Instant results with win rates, settlement ranges, timelines, judge analytics, and plain-English explanations. All from verified public records.',
+    title: 'Get Your Personalized Report',
+    description: 'Seconds later, see win rates, settlement ranges, timelines, judge analytics, and more — all explained in plain English, never legal jargon. 100% from verified federal records.',
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5">
         <line x1="12" y1="2" x2="12" y2="22"/>
@@ -139,7 +139,7 @@ export default function HowItWorksPage() {
             How It Works
           </h1>
           <p className="text-lg leading-relaxed max-w-3xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            From selecting your case type to getting a complete analysis of real federal court outcomes across 5.1M+ cases — all in minutes.
+            Get data-backed research in minutes instead of weeks. No legal background needed, no account required, free during beta.
           </p>
         </div>
       </div>
@@ -219,7 +219,7 @@ export default function HowItWorksPage() {
             What's in Your Report?
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: 'var(--color-text-secondary)' }}>
-            Get comprehensive insights from 5.1M+ federal court cases with real data about outcomes, trends, and case analytics.
+            Every stat is powered by real outcomes from 5.1M+ federal cases. See what actually happens in courts like yours — not estimates or guesses.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -273,7 +273,7 @@ export default function HowItWorksPage() {
       <section className="py-12 border-y" style={{ borderColor: 'var(--border-default)' }}>
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-center text-sm font-semibold mb-8" style={{ color: 'var(--color-text-secondary)' }}>
-            TRUSTED BY THOUSANDS OF CASE RESEARCHERS
+            POWERING SMARTER LEGAL DECISIONS
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
@@ -297,7 +297,7 @@ export default function HowItWorksPage() {
             Verified Public Sources
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: 'var(--color-text-secondary)' }}>
-            All data comes from official federal court records, ensuring accuracy and transparency.
+            Unlike traditional legal research tools, we don't estimate or filter outcomes. 100% of our data comes directly from official federal court records — auditable and transparent.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -335,7 +335,7 @@ export default function HowItWorksPage() {
             Platform Features
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: 'var(--color-text-secondary)' }}>
-            A complete suite of tools designed for legal professionals, researchers, and case evaluation.
+            Specialized tools built for outcome research — faster and more transparent than traditional enterprise legal software.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -502,7 +502,7 @@ export default function HowItWorksPage() {
             Start Exploring
           </h2>
           <p className="mb-8 max-w-2xl mx-auto text-base" style={{ color: 'var(--color-text-secondary)' }}>
-            Choose your starting point — no account required
+            Get started instantly — no account, no credit card, free during beta
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, maxWidth: 600, margin: '0 auto' }}>
             {[
@@ -571,33 +571,33 @@ export default function HowItWorksPage() {
             {[
               {
                 icon: '',
-                title: 'Instant Results',
-                description: 'Get your report in seconds, not weeks. Real-time analysis of 5.1M+ cases.',
+                title: 'Seconds, Not Weeks',
+                description: 'Get your research instantly. Traditional legal databases take hours or days. We deliver in seconds.',
               },
               {
                 icon: '',
-                title: 'Private & Secure',
-                description: 'Your searches are anonymous. We don\'t track, sell, or share your data.',
+                title: 'No Hidden Walls',
+                description: 'All features free during beta. No account required, no credit card needed, no paywall obstacles.',
               },
               {
                 icon: '',
-                title: 'Free During Public Beta',
-                description: 'All features are free during public beta. No account required, no credit card needed.',
+                title: 'Real Data Only',
+                description: 'Every number comes directly from federal court records. No proprietary estimates, no algorithmic black boxes.',
               },
               {
                 icon: '',
-                title: 'Bilingual',
-                description: 'Available in English and Spanish. Accessible to everyone.',
-              },
-              {
-                icon: '',
-                title: 'Data-Driven',
-                description: 'Every statistic comes from official federal court records with documented sources.',
+                title: 'Privacy First',
+                description: 'Your searches are completely anonymous. We never track, sell, or share your research behavior.',
               },
               {
                 icon: '',
                 title: 'Plain English',
-                description: 'No legal jargon. Results explained in language everyone can understand.',
+                description: 'No legal jargon required. Everyone can understand their results, whether you\'re a lawyer or pro se.',
+              },
+              {
+                icon: '',
+                title: 'Bilingual Access',
+                description: 'Available in English and Spanish. Legal data democratized for all communities.',
               },
             ].map((item, i) => (
               <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '12px' }}>
@@ -617,10 +617,10 @@ export default function HowItWorksPage() {
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: '#FFF3F4', borderRadius: '12px' }}>
           <h2 className="text-3xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
-            Ready to see your case data?
+            See what happens in courts like yours
           </h2>
           <p className="mb-8 max-w-2xl mx-auto text-lg" style={{ color: 'var(--color-text-secondary)' }}>
-            Start your free research — no account required
+            Free research backed by 5.1M+ real cases. No account. No credit card. No restrictions during beta.
           </p>
           <a href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold transition-all hover:shadow-lg"

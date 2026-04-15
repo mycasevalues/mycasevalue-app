@@ -23,8 +23,8 @@ import AudienceCards from '@/components/AudienceCards';
 import ProductPreview from '@/components/ProductPreview';
 
 export const metadata: Metadata = {
-  title: 'Federal Court Intelligence — Case Outcomes, Legal Research & Analytics',
-  description: 'Search 5.1 million federal case outcomes alongside 127,000+ legal documents from 7 authoritative sources. Win rates, settlement data, judge analytics, regulations, and citation networks — all in one platform.',
+  title: 'Federal Court Intelligence — MyCaseValue',
+  description: 'Search 5.1M federal cases for win rates, settlement data, judge analytics & legal research. AI-powered case prediction. Free during beta.',
   openGraph: {
     type: 'website',
     title: 'Federal Court Intelligence — Case Outcomes, Legal Research & Analytics',

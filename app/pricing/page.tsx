@@ -4,8 +4,8 @@ import { SITE_URL } from '../../lib/site-config';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Pricing Built for Every Budget',
-  description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode. No hidden fees.',
+  title: 'Federal Court Data Pricing — MyCaseValue',
+  description: 'Transparent pricing for federal court intelligence. Free, $5.99 single reports, $9.99/mo, $29.99/mo attorney mode. Start free, no card required.',
   alternates: { canonical: `${SITE_URL}/pricing` },
   openGraph: {
         title: 'Pricing Built for Every Budget \u2014 MyCaseValue',

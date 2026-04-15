@@ -6,8 +6,8 @@ import { Breadcrumbs } from '../../components/Breadcrumbs';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'About MyCaseValue — Making Federal Court Data Accessible',
-  description: 'MyCaseValue democratizes access to federal court outcome data from 5.1M+ public cases. Built on public records from FJC IDB, PACER, and CourtListener.',
+  title: 'About MyCaseValue — Federal Court Data for All',
+  description: 'Making federal court data accessible to everyone. 5.1M+ cases from FJC, PACER, CourtListener. Mission-driven legal intelligence.',
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: 'About MyCaseValue — Making Federal Court Data Accessible',
@@ -326,7 +326,7 @@ export default function AboutPage() {
         <div className="about-container">
           <h1 className="about-h1">About MyCaseValue</h1>
           <p className="about-intro">
-            An open-access intelligence layer on public federal court records. We make litigation data transparent and accessible to everyone.
+            We democratize federal court outcome data. What traditionally required legal expertise, extensive research, or expensive consulting—now takes seconds and is completely free.
           </p>
         </div>
       </div>
@@ -338,7 +338,7 @@ export default function AboutPage() {
           <div className="section">
             <div className="mission-box">
               <p className="section-text" style={{ marginBottom: 0 }}>
-                <strong>Our Mission:</strong> MyCaseValue democratizes access to federal court outcome data. We aggregate 5.1M+ cases from official public sources and transform raw court records into actionable intelligence for case evaluation, settlement negotiation, and strategic legal planning. By making outcome data transparent and accessible, we level the playing field and help people make genuinely informed decisions about their legal situations.
+                <strong>Our Mission:</strong> Empower people to make smarter legal decisions by making federal court outcome data free, transparent, and accessible to everyone. We believe that outcome research shouldn't be locked behind expensive software, legal expertise, or consulting fees. By aggregating 5.1M+ cases from official public sources, we transform raw court records into actionable intelligence—leveling the playing field between those with resources and those without.
               </p>
             </div>
           </div>
@@ -347,10 +347,10 @@ export default function AboutPage() {
           <div className="section">
             <h2 className="section-heading">What It Is</h2>
             <p className="section-text">
-              Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys. MyCaseValue makes outcome data—win rates, settlement ranges, timelines, and recovery patterns—accessible to everyone evaluating their legal options.
+              Federal court data exists in the public domain, yet it remains locked away in expensive enterprise software designed primarily for large law firms. MyCaseValue fixes this by making outcome data—win rates, settlement ranges, timelines, and recovery patterns—searchable, understandable, and free for everyone evaluating their legal options.
             </p>
             <p className="section-text">
-              We are not a law firm. We do not provide legal advice. We are a data platform, and we operate with institutional standards around privacy, accuracy, and transparency.
+              Unlike traditional legal databases that estimate outcomes or bury data behind paywalls, we publish everything directly from verified federal court records. We are not a law firm. We do not provide legal advice. We are a transparent data platform operating with the highest standards around privacy, accuracy, and accessibility.
             </p>
           </div>
 
@@ -358,25 +358,25 @@ export default function AboutPage() {
           <div className="section">
             <h2 className="section-heading">Our Data Sources</h2>
             <p className="section-text">
-              All data comes from official federal court records. We do not create or estimate any data—we aggregate and analyze public records only.
+              All data comes directly from official federal court records spanning 55+ years. Unlike proprietary platforms that estimate outcomes or apply black-box algorithms, we publish every statistic from verified, auditable public sources. We do not create, estimate, or filter data—we aggregate and analyze what federal courts have already recorded.
             </p>
             <div className="data-sources-grid">
               <div className="source-card">
                 <h3 className="source-title">Federal Judicial Center (FJC IDB)</h3>
                 <p className="source-description">
-                  The official source for federal civil case statistics since 1970. Covers case type, disposition, duration, and outcome across all 95 districts.
+                  The U.S. government's official source for federal civil case statistics since 1970. 55+ years of comprehensive data on case type, disposition, duration, and outcomes across all 95 federal districts.
                 </p>
               </div>
               <div className="source-card">
                 <h3 className="source-title">CourtListener / RECAP</h3>
                 <p className="source-description">
-                  Aggregates federal judicial opinions, oral arguments, and docket data for comprehensive case research and document analysis.
+                  Public database of federal judicial opinions, oral arguments, and real-time docket data. Provides supplementary information on case outcomes, judicial reasoning, and attorney performance data.
                 </p>
               </div>
               <div className="source-card">
                 <h3 className="source-title">PACER</h3>
                 <p className="source-description">
-                  The Federal Judiciary's official electronic records system. All docket sheets and filings are sourced from PACER.
+                  Public Access to Court Electronic Records—the Federal Judiciary's official electronic system for all federal court filings, dockets, and official records. The definitive source for live case data.
                 </p>
               </div>
             </div>
@@ -403,10 +403,10 @@ export default function AboutPage() {
             <h2 className="section-heading">About the Company</h2>
             <div className="company-info">
               <p className="company-text">
-                <strong>MyCaseValue LLC</strong> is registered in West Virginia, United States. We are a team of legal researchers, data engineers, and technologists who believe transparency drives better decisions and empowers people to advocate for themselves effectively.
+                <strong>MyCaseValue LLC</strong> is registered in West Virginia, United States. We are a team of legal researchers, data engineers, and technologists built around a simple principle: federal court data is public property, and it should be accessible—not gatekept by expensive software vendors or limited to those who can afford legal consultants.
               </p>
               <p className="company-text">
-                Our team is committed to accuracy (all data from official public records with rigorous quality checks), transparency (our methodology is fully documented and open to scrutiny), privacy (we never sell data or track individual research behavior), and accessibility (federal court data belongs to the public).
+                We operate with four core commitments: <strong>accuracy</strong> (all data from official public records with documented methodology and rigorous quality checks), <strong>transparency</strong> (our data sources and processing are fully documented and open to scrutiny), <strong>privacy</strong> (we never sell, share, or track individual research behavior), and <strong>accessibility</strong> (free access during beta, with simple plain-English interfaces for everyone).
               </p>
               <Link href="/contact" className="contact-link">
                 Get in Touch

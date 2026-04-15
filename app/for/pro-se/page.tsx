@@ -7,8 +7,8 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Pro Se Litigants Federal Court Data',
-  description: 'Access federal court outcome data as a pro se litigant. Win rates, judge analytics, settlement ranges, and case timelines sourced from public records.',
+  title: 'Federal Court Data for Pro Se Litigants — MyCaseValue',
+  description: 'Research federal court outcomes as a pro se litigant. Win rates, judge analytics, settlement ranges, timelines. Free to start.',
   alternates: { canonical: `${SITE_URL}/for/pro-se` },
   openGraph: {
     title: 'Federal Court Data for Pro Se Litigants | MyCaseValue',
