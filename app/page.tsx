@@ -82,16 +82,16 @@ const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
 
 const DIFFERENTIATION_CARDS: DifferentiationCard[] = [
   {
-    title: 'Outcomes + Legal Context',
-    description: 'Other platforms give you case outcomes OR legal research. MyCaseValue combines both — win rates backed by the actual regulations, precedents, and citation networks that drive those outcomes. See the why behind the numbers.',
+    title: 'Outcome Analytics They Don\'t Offer',
+    description: 'Enterprise platforms give you case law OR case data. MyCaseValue combines both. Get win rates, settlement ranges, judge intelligence, and AI outcome predictions—all backed by actual regulations and precedents. See the intelligence behind the outcomes, not just the outcomes.',
   },
   {
-    title: 'Seven Sources. One Search.',
-    description: 'CourtListener opinions, Federal Register rulemaking, eCFR regulations, SEC EDGAR filings, Harvard Caselaw, CanLII, and GovInfo — all indexed, cross-referenced, and searchable from a single interface. No more switching between databases.',
+    title: 'AI Case Prediction (Not Available Elsewhere)',
+    description: 'Predict case outcomes for your specific judge, district, and case type using machine learning trained on 5.1M real federal cases. No other platform combines outcome data with AI prediction at this scale and price.',
   },
   {
-    title: 'Built for Everyone',
-    description: 'Sophisticated litigation analytics have historically been priced for large firm budgets. MyCaseValue starts free and scales to $29.99/mo for full attorney tools. The public record, made accessible to every budget.',
+    title: 'A Fraction of Enterprise Pricing',
+    description: 'Professional litigation intelligence that costs $300-$500/month elsewhere? MyCaseValue is $0-$29.99/mo. Start free, upgrade only if you need attorney tools. No account required. No hidden fees. Transparent pricing from day one.',
   },
 ];
 
@@ -150,13 +150,13 @@ export default function HomePage() {
           ────────────────────────────────────────────────────────────────── */}
       <section className="px-4 md:px-8 py-12 md:py-20 text-center">
         <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-gray-900 mb-6 text-balance">
-          Federal Court Intelligence.
+          The Federal Court Intelligence
           <br />
-          <span className="text-brand-blue">One Platform.</span>
+          <span className="text-brand-blue">Enterprise Platforms Can't Match</span>
         </h1>
 
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed mb-12">
-          Case outcomes, legal research, and analytics in one place. Search 5.1 million federal cases alongside 127,000+ legal documents — opinions, regulations, SEC filings, and citation networks from 7 authoritative sources.
+          Get outcome analytics, AI case prediction, and legal research — uniquely integrated in one platform. Search 5.1M federal cases and 127K+ legal documents from 7 authoritative sources. Everything traditional legal databases charge $300-$500/month to access. Free during beta.
         </p>
 
         {/* GLOBAL SEARCH BAR */}
@@ -178,7 +178,7 @@ export default function HomePage() {
           </Link>
         </div>
         <p className="text-sm text-gray-500 mt-4">
-          Free during public beta. No account required.
+          Public beta: all features free. Join 50K+ users exploring outcomes that enterprise platforms charge thousands to access.
         </p>
       </section>
 
@@ -437,13 +437,13 @@ export default function HomePage() {
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Your case type has a track record.
+            Stop Paying Enterprise Prices
             <br />
-            Now see the law behind it.
+            <span className="text-white/90">for Incomplete Legal Intelligence</span>
           </h2>
 
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Win rates and settlement data, backed by the regulations, precedents, and citation networks that shape federal court outcomes. Free during beta.
+            Get AI-powered case prediction, federal judge analytics, settlement data, outcome trends, and integrated legal research. Everything Westlaw and LexisNexis charge thousands for, at a fraction of the cost. Free during public beta.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

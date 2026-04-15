@@ -20,7 +20,7 @@ export default function BetaBanner() {
         flexWrap: 'wrap',
       }}
     >
-      <span>MyCaseValue is in public beta. All features are free and open. No account required.</span>
+      <span>Public beta: Get federal court outcome analytics and AI prediction free—features that cost $500/month elsewhere. No account required. Join 50K+ legal professionals.</span>
       <Link
         href="/about"
         style={{

@@ -462,9 +462,9 @@ export default function PricingPage() {
 
       {/* Header */}
       <div className="pricing-header">
-        <h1 className="pricing-h1">Pricing Built for Every Budget</h1>
+        <h1 className="pricing-h1">Enterprise Intelligence. Non-Enterprise Pricing.</h1>
         <p className="pricing-subtitle">
-          Case outcomes, legal research, and analytics shouldn&apos;t cost what a junior associate earns. Pick the plan that fits.
+          Westlaw ($300-500/mo) and LexisNexis ($200-400/mo) bundle case law with dated pricing. MyCaseValue gives you federal court outcome analytics, AI prediction, and modern legal research — 10x cheaper, starting free. No commitment. Cancel anytime.
         </p>
       </div>
 
@@ -496,7 +496,7 @@ export default function PricingPage() {
         {/* Callout Section */}
         <div className="callout-section">
           <p className="callout-text">
-            Professional litigation analytics have historically been priced for large firm budgets. We built MyCaseValue for everyone else.
+            Outcome analytics, judge intelligence, and AI case prediction have been gatekept by enterprise platforms charging 10x more. MyCaseValue is built for solo attorneys, small firms, paralegals, and pro se litigants—with features Westlaw still doesn't offer.
           </p>
         </div>
 
