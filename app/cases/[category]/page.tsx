@@ -527,7 +527,7 @@ async function CategoryPage({
       {/* Category Statistics Summary Bar */}
       <div style={{
         background: 'var(--color-surface-0)',
-        padding: '40px 20px',
+        padding: '20px 20px',
         borderBottom: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -566,7 +566,7 @@ async function CategoryPage({
                     textAlign: 'center',
                   }}>
                     <div style={{
-                      fontSize: '28px',
+                      fontSize: '22px',
                       fontWeight: 600,
                       color: 'var(--accent-primary)',
                       marginBottom: '8px',
@@ -592,7 +592,7 @@ async function CategoryPage({
                     textAlign: 'center',
                   }}>
                     <div style={{
-                      fontSize: '28px',
+                      fontSize: '22px',
                       fontWeight: 600,
                       color: 'var(--accent-primary)',
                       marginBottom: '8px',
@@ -635,7 +635,7 @@ async function CategoryPage({
                     textAlign: 'center',
                   }}>
                     <div style={{
-                      fontSize: '28px',
+                      fontSize: '22px',
                       fontWeight: 600,
                       color: 'var(--accent-primary)',
                       marginBottom: '8px',
@@ -661,7 +661,7 @@ async function CategoryPage({
                     textAlign: 'center',
                   }}>
                     <div style={{
-                      fontSize: '28px',
+                      fontSize: '22px',
                       fontWeight: 600,
                       color: 'var(--accent-primary)',
                       marginBottom: '8px',

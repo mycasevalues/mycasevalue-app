@@ -414,8 +414,8 @@ export default function DistrictsPage() {
                     <Link key={district.code} href={`/districts/${district.code}`} style={{ textDecoration: 'none' }}>
                       <div style={{
                         background: 'var(--color-surface-0)',
-                        border: '1px solid #e5e7eb',
-                        borderRadius: '12px',
+                        border: '1px solid var(--border-default)',
+                        borderRadius: '8px',
                         padding: '20px',
                         transition: 'all 0.2s ease',
                         cursor: 'pointer',
@@ -450,7 +450,7 @@ export default function DistrictsPage() {
                           gridTemplateColumns: '1fr 1fr',
                           gap: 12,
                           paddingTop: 12,
-                          borderTop: '1px solid #e5e7eb',
+                          borderTop: '1px solid var(--border-default)',
                         }}>
                           <div>
                             <div style={{

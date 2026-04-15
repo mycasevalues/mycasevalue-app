@@ -14,6 +14,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import WorkspaceSidebar from './WorkspaceSidebar';
+import WorkspaceFooter from './WorkspaceFooter';
 import ResearchBreadcrumb from '../ui/ResearchBreadcrumb';
 
 // Routes that should show the workspace sidebar
@@ -87,8 +88,12 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
         </div>
 
         {/* Page content */}
-        <div className="min-h-[calc(100vh-120px)]">
-          {children}
+        <div className="flex flex-col min-h-[calc(100vh-120px)]">
+          <div className="flex-1">
+            {children}
+          </div>
+          {/* Minimal workspace footer */}
+          <WorkspaceFooter />
         </div>
       </div>
     </div>
