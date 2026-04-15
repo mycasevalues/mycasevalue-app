@@ -256,7 +256,9 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────────────────────────────
           WHO USES IT: AUDIENCE CARDS
           ────────────────────────────────────────────────────────────────── */}
-      <AudienceCards />
+      <div style={{ marginTop: '-2rem' }}>
+        <AudienceCards />
+      </div>
 
       {/* ──────────────────────────────────────────────────────────────────
           LEGAL INTELLIGENCE PREVIEW (NEW SECTION)
@@ -435,7 +437,11 @@ export default function HomePage() {
           ────────────────────────────────────────────────────────────────── */}
       <section
         data-hide-sticky-cta
-        className="px-4 md:px-8 py-16 md:py-24 bg-brand-blue text-white"
+        className="px-4 md:px-8 py-16 md:py-24 text-white"
+        style={{
+          background: 'linear-gradient(135deg, #0966C3 0%, #064B8A 50%, #0E3B6D 100%)',
+          backgroundAttachment: 'fixed',
+        }}
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">

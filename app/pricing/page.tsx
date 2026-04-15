@@ -196,7 +196,7 @@ export default function PricingPage() {
         .pricing-header {
           background: var(--accent-primary);
           color: var(--color-text-inverse);
-          padding: 3rem 1.5rem;
+          padding: 2.5rem 1.5rem;
           text-align: center;
         }
 
@@ -246,14 +246,14 @@ export default function PricingPage() {
           border-radius: var(--radius-lg);
           border: 1px solid var(--border-default);
           background: var(--color-surface-0);
-          transition: all 0.3s ease;
+          transition: all 0.2s ease;
           position: relative;
         }
 
         .pricing-card.highlighted {
           border: 2px solid var(--accent-primary);
           box-shadow: 0 8px 32px rgba(9, 102, 195, 0.15);
-          transform: scale(1.02);
+          transform: scale(1.01);
         }
 
         .pricing-card:hover {
@@ -279,6 +279,23 @@ export default function PricingPage() {
           color: var(--accent-primary);
           font-weight: 500;
           margin-bottom: 1.25rem;
+        }
+
+        .pricing-card.highlighted::before {
+          content: 'MOST POPULAR';
+          position: absolute;
+          top: -12px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: var(--accent-primary);
+          color: var(--color-text-inverse);
+          padding: 0.375rem 0.875rem;
+          border-radius: 9999px;
+          font-family: var(--font-inter);
+          font-size: 0.6875rem;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          white-space: nowrap;
         }
 
         .card-price {
