@@ -148,44 +148,46 @@ export default function HomePage() {
       {/* ──────────────────────────────────────────────────────────────────
           HERO: H1 & SUBHEADLINE
           ────────────────────────────────────────────────────────────────── */}
-      <section className="px-4 md:px-8 py-12 md:py-20 text-center">
-        <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-gray-900 mb-6 text-balance">
-          The Federal Court Intelligence
+      <section className="px-4 md:px-8 py-10 md:py-16 text-center" style={{ background: 'linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%)' }}>
+        <h1 className="font-sans text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.1] text-gray-900 mb-4 text-balance">
+          Federal Court Intelligence
           <br />
-          <span className="text-brand-blue">Enterprise Platforms Can't Match</span>
+          <span className="text-brand-blue">Enterprise Platforms Can&apos;t Match</span>
         </h1>
 
-        <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed mb-12">
-          Get outcome analytics, AI case prediction, and legal research — uniquely integrated in one platform. Search 5.1M federal cases and 127K+ legal documents from 7 authoritative sources. Everything traditional legal databases charge $300-$500/month to access. Free during beta.
+        <p className="max-w-2xl mx-auto text-base md:text-lg text-gray-500 leading-relaxed mb-8">
+          Outcome analytics, AI case prediction, and 127K+ legal documents from 7 sources.
+          <br className="hidden md:block" />
+          What costs $300–$500/month elsewhere is <strong className="text-gray-700">free during beta</strong>.
         </p>
 
         {/* GLOBAL SEARCH BAR */}
         <SearchHero />
 
         {/* CTA BUTTONS */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6">
           <Link
             href="/cases"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-brand-blue text-white font-semibold transition-colors hover:bg-brand-blue/90"
+            className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-brand-blue text-white font-semibold transition-all hover:bg-brand-blue-dark hover:shadow-lg"
           >
             Start searching free →
           </Link>
           <Link
             href="/legal/search"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full border-2 border-gray-300 text-gray-900 font-semibold transition-colors hover:border-gray-400"
+            className="inline-flex items-center justify-center px-7 py-3 rounded-full border-2 border-gray-200 text-gray-700 font-semibold transition-all hover:border-brand-blue hover:text-brand-blue"
           >
             Explore legal research
           </Link>
         </div>
-        <p className="text-sm text-gray-500 mt-4">
-          Public beta: all features free. Join 50K+ users exploring outcomes that enterprise platforms charge thousands to access.
+        <p className="text-xs text-gray-400 mt-4 tracking-wide">
+          PUBLIC BETA · ALL FEATURES FREE · NO ACCOUNT REQUIRED · 50K+ LEGAL PROFESSIONALS
         </p>
       </section>
 
       {/* ──────────────────────────────────────────────────────────────────
           TRUST BAR: 6 STATS
           ────────────────────────────────────────────────────────────────── */}
-      <section className="w-full border-y border-gray-100 bg-white py-8 md:py-10">
+      <section className="w-full border-y border-gray-100 bg-gray-50/50 py-6 md:py-8">
         <div className="px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-0">
             {/* Stat 1: 5.1M Cases */}
