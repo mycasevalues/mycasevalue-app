@@ -14,31 +14,31 @@ const CLASS_ACTION_STATS = {
     certRate: 34.2,
     avgPerMember: 2850,
     medianMembers: 15000,
-    recentSettlement: 'Galaxy Tab screen defect: $49M (2024)',
+    recentSettlement: 'Galaxy Tab screen defect: $49M (2026)',
   },
   '850': { // Securities
     certRate: 41.8,
     avgPerMember: 4200,
     medianMembers: 28000,
-    recentSettlement: 'Crypto exchange pump & dump: $125M (2024)',
+    recentSettlement: 'Crypto exchange pump & dump: $125M (2025)',
   },
   '442': { // Employment
     certRate: 28.5,
     avgPerMember: 1850,
     medianMembers: 520,
-    recentSettlement: 'Tech wage fixing: $18M (2023)',
+    recentSettlement: 'Tech wage fixing: $18M (2025)',
   },
   '480': { // Consumer Credit
     certRate: 37.9,
     avgPerMember: 340,
     medianMembers: 450000,
-    recentSettlement: 'Hidden fees settlement: $22M (2024)',
+    recentSettlement: 'Hidden fees settlement: $22M (2025)',
   },
   '485': { // TCPA
     certRate: 45.2,
     avgPerMember: 185,
     medianMembers: 980000,
-    recentSettlement: 'Robocall campaign: $8M (2024)',
+    recentSettlement: 'Robocall campaign: $8M (2026)',
   },
 };
 
@@ -51,11 +51,11 @@ const TOP_CASE_TYPES = [
 ];
 
 const RECENT_SETTLEMENTS = [
-  { name: 'Automotive seatbelt defect', amount: '$156M', members: 42000, year: 2024, nos: '365' },
-  { name: 'Data breach notification delay', amount: '$89M', members: 8500, year: 2024, nos: '370' },
-  { name: 'Labor scheduling violations', amount: '$34M', members: 1200, year: 2023, nos: '442' },
-  { name: 'Telecom billing overcharges', amount: '$67M', members: 2400000, year: 2023, nos: '480' },
-  { name: 'Insurance underwriting discrimination', amount: '$28M', members: 890, year: 2023, nos: '110' },
+  { name: 'Automotive seatbelt defect', amount: '$156M', members: 42000, year: 2025, nos: '365' },
+  { name: 'Data breach notification delay', amount: '$89M', members: 8500, year: 2026, nos: '370' },
+  { name: 'Labor scheduling violations', amount: '$34M', members: 1200, year: 2025, nos: '442' },
+  { name: 'Telecom billing overcharges', amount: '$67M', members: 2400000, year: 2025, nos: '480' },
+  { name: 'Insurance underwriting discrimination', amount: '$28M', members: 890, year: 2025, nos: '110' },
 ];
 
 const DISTRICT_RANKINGS = [
@@ -255,7 +255,7 @@ export default function ClassActionPage() {
             </div>
           </div>
           <p style={{ fontSize: '12px', color: '#666', marginTop: '12px' }}>
-            Based on class certification motions filed and decided in federal district courts (2018-2024)
+            Based on class certification motions filed and decided in federal district courts (2018-2025)
           </p>
         </section>
       </div>

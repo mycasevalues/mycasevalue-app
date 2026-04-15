@@ -58,7 +58,7 @@ export default function DataSourcesPage() {
     {
       name: 'CourtListener (Free Law Project)',
       cases: '8,500,000+',
-      coverage: '1950-2024',
+      coverage: '1950-2025',
       frequency: 'Daily',
       description: 'Opinion text, docket information, and attorney data. The largest open collection of court documents and legal opinions.',
       features: [

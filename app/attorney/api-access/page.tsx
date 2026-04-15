@@ -283,7 +283,7 @@ const ENDPOINTS: Endpoint[] = [
       "strength": "moderate"
     }
   ],
-  "methodology": "Trained on 150K+ federal cases from 2015-2024"
+  "methodology": "Trained on 150K+ federal cases from 2015-2025"
 }`,
     errorCodes: [
       { code: 400, message: 'Missing required fields or invalid values' },
