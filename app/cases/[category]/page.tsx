@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRightIcon } from '../../../components/ui/Icons';
 import { SITE_URL } from '../../../lib/site-config';
+import RelatedEntities from '../../../components/RelatedEntities';
 
 export const revalidate = 0;
 
@@ -390,7 +391,8 @@ async function CategoryPage({
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
+    <div className="flex" style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
+    <div className="flex-1 min-w-0">
       {/* Schema.org structured data */}
       <script
         type="application/ld+json"
@@ -1641,6 +1643,11 @@ async function CategoryPage({
       </div>
 
       {/* Disclaimer is in SiteFooter — no duplicate needed here */}
+    </div>
+    {/* Related Entities Panel — desktop only */}
+    <div className="hidden xl:block">
+      <RelatedEntities context={{ type: 'case', categoryId: category }} />
+    </div>
     </div>
   );
 }
