@@ -65,6 +65,22 @@ function toggleSavedCase(id: number): number[] {
   return saved;
 }
 
+// ── Recent Searches (localStorage) ──
+
+function getRecentSearches(): string[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    return JSON.parse(localStorage.getItem('mcv-recent-searches') || '[]');
+  } catch { return []; }
+}
+
+function addRecentSearch(q: string): void {
+  if (!q.trim()) return;
+  const recent = getRecentSearches().filter(s => s !== q);
+  recent.unshift(q);
+  localStorage.setItem('mcv-recent-searches', JSON.stringify(recent.slice(0, 8)));
+}
+
 // ── Ordinal suffix ──
 
 function ordinal(n: string): string {
@@ -109,8 +125,29 @@ function TerminalContent() {
   // Sidebar collapsed
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  // Load saved cases
-  useEffect(() => { setSavedCases(getSavedCases()); }, []);
+  // Compact mode
+  const [compact, setCompact] = useState(false);
+
+  // Recent searches
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+
+  // Collapsed sections in case detail
+  const [collapsedSections, setCollapsedSections] = useState<Set<string>>(new Set());
+
+  const toggleSection = (key: string) => {
+    setCollapsedSections(prev => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
+  // Load saved cases + recent searches
+  useEffect(() => {
+    setSavedCases(getSavedCases());
+    setRecentSearches(getRecentSearches());
+  }, []);
 
   // ── Search ──
   const performSearch = useCallback(async () => {
@@ -123,6 +160,12 @@ function TerminalContent() {
     if (status) p.set('status', status);
     p.set('sort', sort);
     p.set('limit', '50');
+
+    // Track recent search
+    if (query.trim()) {
+      addRecentSearch(query.trim());
+      setRecentSearches(getRecentSearches());
+    }
 
     window.history.replaceState({}, '', `/terminal?${p.toString()}`);
 
@@ -218,11 +261,26 @@ function TerminalContent() {
           </div>
           <button type="submit" className="h-8 px-3 rounded-md bg-blue-600 text-white text-xs font-medium hover:bg-blue-500 transition-colors">Search</button>
         </form>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
+          {/* Compact mode toggle */}
+          <button
+            onClick={() => setCompact(!compact)}
+            className={`h-7 px-2 rounded text-[10px] font-medium border transition-colors hidden md:flex items-center gap-1 ${compact ? 'bg-blue-600/20 text-blue-400 border-blue-500/30' : 'text-gray-500 border-gray-700 hover:border-gray-500'}`}
+            title={compact ? 'Switch to comfortable view' : 'Switch to compact view'}
+          >
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+              {compact ? (
+                <><line x1="2" y1="4" x2="14" y2="4"/><line x1="2" y1="8" x2="14" y2="8"/><line x1="2" y1="12" x2="14" y2="12"/></>
+              ) : (
+                <><rect x="2" y="2" width="12" height="4" rx="1"/><rect x="2" y="10" width="12" height="4" rx="1"/></>
+              )}
+            </svg>
+            {compact ? 'Compact' : 'Comfortable'}
+          </button>
           <span className="text-[10px] text-gray-500 hidden lg:block">
-            <kbd className="px-1 py-0.5 rounded bg-white/5 border border-white/10 text-gray-400 font-mono">↑↓</kbd> navigate
-            <kbd className="ml-2 px-1 py-0.5 rounded bg-white/5 border border-white/10 text-gray-400 font-mono">↵</kbd> open
-            <kbd className="ml-2 px-1 py-0.5 rounded bg-white/5 border border-white/10 text-gray-400 font-mono">esc</kbd> close
+            <kbd className="px-1 py-0.5 rounded bg-white/5 border border-white/10 text-gray-400 font-mono">↑↓</kbd>
+            <kbd className="ml-1 px-1 py-0.5 rounded bg-white/5 border border-white/10 text-gray-400 font-mono">↵</kbd>
+            <kbd className="ml-1 px-1 py-0.5 rounded bg-white/5 border border-white/10 text-gray-400 font-mono">esc</kbd>
           </span>
         </div>
       </div>
@@ -270,6 +328,21 @@ function TerminalContent() {
                       <button key={id} onClick={() => loadCase(id)}
                         className={`w-full text-left px-2 py-1 rounded text-[11px] truncate transition-colors ${selectedId === id ? 'bg-blue-600/20 text-blue-300' : 'text-gray-400 hover:bg-white/5'}`}>
                         Case #{id}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Recent Searches */}
+              {recentSearches.length > 0 && (
+                <div>
+                  <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-2">Recent</p>
+                  <div className="space-y-0.5">
+                    {recentSearches.slice(0, 5).map((q, i) => (
+                      <button key={i} onClick={() => { setQuery(q); performSearch(); }}
+                        className="w-full text-left px-2 py-1 rounded text-[11px] text-gray-400 hover:bg-white/5 truncate transition-colors">
+                        {q}
                       </button>
                     ))}
                   </div>
@@ -356,7 +429,7 @@ function TerminalContent() {
               <button
                 key={r.id}
                 onClick={() => loadCase(r.id)}
-                className={`w-full text-left px-3 py-2.5 border-b transition-colors ${
+                className={`w-full text-left px-3 ${compact ? 'py-1.5' : 'py-2.5'} border-b transition-colors ${
                   selectedId === r.id
                     ? 'bg-blue-600/10 border-l-2 border-l-blue-500'
                     : focusIdx === idx
@@ -366,19 +439,19 @@ function TerminalContent() {
                 style={{ borderBottomColor: '#1e2030', borderLeftColor: selectedId === r.id ? undefined : 'transparent' }}
               >
                 <div className="flex items-start justify-between gap-2">
-                  <span className="text-xs font-medium text-gray-200 leading-snug line-clamp-1">{r.caseName}</span>
+                  <span className={`${compact ? 'text-[11px]' : 'text-xs'} font-medium text-gray-200 leading-snug line-clamp-1`}>{r.caseName}</span>
                   {r.status && (
                     <span className={`flex-shrink-0 text-[9px] font-medium px-1.5 py-0.5 rounded ${r.status === 'open' ? 'bg-blue-500/10 text-blue-400' : 'bg-green-500/10 text-green-400'}`}>
                       {r.status.toUpperCase()}
                     </span>
                   )}
                 </div>
-                <div className="flex items-center gap-2 mt-1 text-[10px] text-gray-500">
+                <div className={`flex items-center gap-2 ${compact ? 'mt-0.5' : 'mt-1'} text-[10px] text-gray-500`}>
                   {r.court && <span>{r.court.abbreviation}</span>}
                   {r.docketNumber && <span>{r.docketNumber}</span>}
                   {r.filingDate && <span>{new Date(r.filingDate).getFullYear()}</span>}
                 </div>
-                {r.tags.length > 0 && (
+                {!compact && r.tags.length > 0 && (
                   <div className="flex gap-1 mt-1.5">
                     {r.tags.slice(0, 3).map(t => (
                       <span key={t.tag} className="text-[9px] px-1.5 py-0.5 rounded" style={{ background: '#1e2030', color: '#8b8fa3' }}>
@@ -444,7 +517,7 @@ function TerminalContent() {
 
                     {/* Parties */}
                     {caseDetail.parties.length > 0 && (
-                      <Panel title="Parties">
+                      <Panel title="Parties" collapsible collapsed={collapsedSections.has('parties')} onToggle={() => toggleSection('parties')}>
                         <div className="grid grid-cols-2 gap-4">
                           {['plaintiff', 'defendant'].map(role => {
                             const ps = caseDetail.parties.filter(p => p.role === role);
@@ -461,7 +534,7 @@ function TerminalContent() {
 
                     {/* Filings timeline */}
                     {caseDetail.filings.length > 0 && (
-                      <Panel title="Docket Activity">
+                      <Panel title="Docket Activity" collapsible collapsed={collapsedSections.has('filings')} onToggle={() => toggleSection('filings')}>
                         <div className="space-y-0">
                           {caseDetail.filings.slice(0, 15).map((f, i) => (
                             <div key={i} className="flex items-start gap-3 py-1.5 border-b last:border-0" style={{ borderColor: '#252833' }}>
@@ -478,7 +551,7 @@ function TerminalContent() {
 
                     {/* Related cases */}
                     {caseDetail.relatedCases.length > 0 && (
-                      <Panel title="Related Cases">
+                      <Panel title="Related Cases" collapsible collapsed={collapsedSections.has('related')} onToggle={() => toggleSection('related')}>
                         <div className="space-y-1">
                           {caseDetail.relatedCases.map(rc => (
                             <button key={rc.id} onClick={() => loadCase(rc.id)}
@@ -492,7 +565,7 @@ function TerminalContent() {
                     )}
 
                     {/* Sources */}
-                    <Panel title="Data Sources">
+                    <Panel title="Data Sources" collapsible collapsed={collapsedSections.has('sources')} onToggle={() => toggleSection('sources')}>
                       {caseDetail.sources.length > 0 ? caseDetail.sources.map((s, i) => (
                         <div key={i} className="flex justify-between text-[11px]">
                           <span className="text-gray-400 capitalize">{s.sourceName}</span>
@@ -553,11 +626,21 @@ function TerminalContent() {
 
 // ── Reusable ──
 
-function Panel({ title, children }: { title: string; children: React.ReactNode }) {
+function Panel({ title, children, collapsible, collapsed, onToggle }: { title: string; children: React.ReactNode; collapsible?: boolean; collapsed?: boolean; onToggle?: () => void }) {
   return (
-    <div className="rounded-lg border p-3" style={{ background: '#1a1c28', borderColor: '#252833' }}>
-      <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-2">{title}</p>
-      {children}
+    <div className="rounded-lg border" style={{ background: '#1a1c28', borderColor: '#252833' }}>
+      <button
+        onClick={collapsible ? onToggle : undefined}
+        className={`w-full flex items-center justify-between px-3 py-2 ${collapsible ? 'cursor-pointer hover:bg-white/[0.02]' : 'cursor-default'} transition-colors rounded-t-lg`}
+      >
+        <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest">{title}</p>
+        {collapsible && (
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.5" className={`text-gray-600 transition-transform ${collapsed ? '-rotate-90' : ''}`}>
+            <path d="M2 3.5L5 6.5L8 3.5" />
+          </svg>
+        )}
+      </button>
+      {!collapsed && <div className="px-3 pb-3">{children}</div>}
     </div>
   );
 }
