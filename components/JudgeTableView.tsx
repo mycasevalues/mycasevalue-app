@@ -6,6 +6,7 @@
  * Can be toggled alongside the existing card view.
  */
 
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { JudgeWithStats } from '@/lib/supabase-judges';
 import { getWinRateColor } from '@/lib/color-scale';
@@ -26,8 +27,32 @@ function SortIcon({ active, order }: { active: boolean; order: string }) {
 }
 
 export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOrder = 'asc' }: JudgeTableViewProps) {
+  const [selectedIdx, setSelectedIdx] = useState<number>(-1);
+  const tableRef = useRef<HTMLDivElement>(null);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (!tableRef.current?.contains(document.activeElement) && selectedIdx === -1) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setSelectedIdx(prev => Math.min(prev + 1, judges.length - 1));
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setSelectedIdx(prev => Math.max(prev - 1, 0));
+      } else if (e.key === 'Enter' && selectedIdx >= 0 && judges[selectedIdx]) {
+        window.location.href = `/judges/${judges[selectedIdx].id}`;
+      } else if (e.key === 'Escape') {
+        setSelectedIdx(-1);
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [selectedIdx, judges]);
+
   return (
-    <div className="overflow-x-auto">
+    <div ref={tableRef} className="overflow-x-auto" tabIndex={0} role="grid" aria-label="Judge directory table">
       <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
         <thead>
           <tr className="bg-gray-50 border-b border-gray-200">
@@ -69,7 +94,10 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
             return (
               <tr
                 key={judge.id}
-                className={`border-b border-gray-50 hover:bg-blue-50/50 transition-colors ${idx % 2 === 0 ? '' : 'bg-gray-25'}`}
+                className={`border-b border-gray-50 hover:bg-blue-50/50 transition-colors cursor-pointer ${
+                  selectedIdx === idx ? 'bg-blue-50 ring-1 ring-inset ring-brand-blue/30' : idx % 2 === 0 ? '' : 'bg-gray-25'
+                }`}
+                onClick={() => setSelectedIdx(idx)}
               >
                 <td className="px-3 py-2">
                   <HoverPreview
