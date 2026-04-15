@@ -100,17 +100,31 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
   );
 }
 
-/** Client component to conditionally hide footer on workspace routes */
+/** Routes where the entire global chrome (header, footer, banner) is hidden */
+function isFullScreenRoute(pathname: string): boolean {
+  return pathname === '/terminal' || pathname.startsWith('/terminal/');
+}
+
+export { isFullScreenRoute };
+
+/** Client component to conditionally hide footer on workspace/fullscreen routes */
 export function ConditionalFooter({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  if (isWorkspaceRoute(pathname)) return null;
+  if (isWorkspaceRoute(pathname) || isFullScreenRoute(pathname)) return null;
   return <>{children}</>;
 }
 
-/** Client component to conditionally hide beta banner on workspace routes */
+/** Client component to conditionally hide beta banner on workspace/fullscreen routes */
 export function ConditionalBanner({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  if (isWorkspaceRoute(pathname)) return null;
+  if (isWorkspaceRoute(pathname) || isFullScreenRoute(pathname)) return null;
+  return <>{children}</>;
+}
+
+/** Client component to conditionally hide header on fullscreen routes */
+export function ConditionalHeader({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  if (isFullScreenRoute(pathname)) return null;
   return <>{children}</>;
 }
 
