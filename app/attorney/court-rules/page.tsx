@@ -142,10 +142,10 @@ export default function CourtRulesPage() {
             </span>
           </div>
           <h1 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
-            Federal Court Rules Quick Reference
+            Never Miss a Local Rule Again
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
-            Local rules, filing requirements, and key differences across all 95 federal districts.
+            Instant access to filing requirements, page limits, and judge info across all 95 federal districts. Stay compliant, every time.
           </p>
         </div>
       </div>

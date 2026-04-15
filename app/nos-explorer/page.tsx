@@ -147,14 +147,14 @@ export default function NosExplorerPage() {
               fontSize: 'clamp(28px, 5vw, 44px)', fontWeight: 900, marginBottom: 16,
               color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
             }}>
-              NOS Code Explorer
+              Find Your Case Type. See Real Outcomes.
             </h1>
 
             <p style={{
               fontSize: 'clamp(15px, 2vw, 17px)', lineHeight: 1.6, maxWidth: 640,
               color: '#C7D1D8', fontFamily: 'var(--font-body)',
             }}>
-              Every federal civil case is assigned a Nature of Suit (NOS) code. Explore all {nosData.length} NOS codes with real outcome data from {totalCases.toLocaleString()} cases.
+              Search all {nosData.length} federal case types with actual win rates, settlement ranges, and case duration from {totalCases.toLocaleString()} real federal cases. No predictions, no guesses—just data.
             </p>
 
             <div style={{ display: 'flex', gap: 32, marginTop: 24, flexWrap: 'wrap' }}>
@@ -180,7 +180,7 @@ export default function NosExplorerPage() {
         {/* What are NOS Codes? */}
         <div style={{ marginTop: 48, padding: 32, background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2 }}>
           <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
-            What Are NOS Codes?
+            Understanding Federal Case Classifications
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
             Nature of Suit (NOS) codes are a classification system used by federal courts to categorize civil cases by their legal subject matter. Assigned at filing, these three-digit codes enable statistical analysis of court activity and help identify trends across case types.

@@ -72,10 +72,10 @@ export default function BulkAnalysisPage() {
                   margin: 0,
                 }}
               >
-                Bulk Case Analysis
+                Analyze Your Portfolio in Minutes
               </h1>
               <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: '4px 0 0 0' }}>
-                Upload a CSV file to analyze multiple cases and discover portfolio patterns
+                Upload your case data for instant risk assessment, outcome trends, and portfolio insights across all your matters.
               </p>
             </div>
           </div>

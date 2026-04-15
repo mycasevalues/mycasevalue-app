@@ -93,7 +93,7 @@ export default function ContactPage() {
                 marginBottom: 12,
               }}
             >
-              Contact Us
+              Get in Touch
             </h1>
             <p
               style={{
@@ -103,7 +103,7 @@ export default function ContactPage() {
                 lineHeight: 1.7,
               }}
             >
-              Have a question, need help with your account, or interested in enterprise access? We&apos;re here to help.
+              Questions about your account? Need help understanding case data? Want to integrate MyCaseValue into your workflow? Our team is here and ready to help.
             </p>
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function ContactPage() {
               marginBottom: 24,
             }}
           >
-            Quick Links
+            Helpful Resources
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
             {[
@@ -234,7 +234,7 @@ export default function ContactPage() {
                   marginBottom: 8,
                 }}
               >
-                General Support
+                Support & Feedback
               </h2>
               <p
                 style={{
@@ -245,7 +245,7 @@ export default function ContactPage() {
                   marginBottom: 16,
                 }}
               >
-                Account issues, billing questions, bug reports, or feature requests.
+                Account questions, technical issues, billing inquiries, or feature ideas. We read every message and respond promptly.
               </p>
               <a
                 href="mailto:support@mycasevalues.com"
@@ -287,7 +287,7 @@ export default function ContactPage() {
                   marginBottom: 8,
                 }}
               >
-                Enterprise &amp; API Access
+                Enterprise Solutions
               </h2>
               <p
                 style={{
@@ -298,7 +298,7 @@ export default function ContactPage() {
                   marginBottom: 16,
                 }}
               >
-                Bulk data licensing, custom integrations, team accounts, and API partnerships.
+                Bulk data licensing, API access, custom integrations, team accounts, and dedicated support for your firm.
               </p>
               <a
                 href="mailto:enterprise@mycasevalues.com"
@@ -340,7 +340,7 @@ export default function ContactPage() {
                   marginBottom: 8,
                 }}
               >
-                Data &amp; Methodology
+                Data Transparency
               </h2>
               <p
                 style={{
@@ -351,7 +351,7 @@ export default function ContactPage() {
                   marginBottom: 16,
                 }}
               >
-                For questions about our data sources, statistical methodology, or how we calculate case outcomes, see our detailed methodology page.
+                Want to understand our methodology? Need details about data sources or how we calculate outcomes? We provide full transparency on everything.
               </p>
               <Link
                 href="/methodology"

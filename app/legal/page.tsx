@@ -105,7 +105,7 @@ export default function LegalDataPage() {
           margin: '0 0 16px',
           lineHeight: 1.2,
         }}>
-          Case Outcomes Meet Legal Research
+          See Why Cases Actually Settle the Way They Do
         </h1>
         <p style={{
           color: 'var(--color-text-secondary)',
@@ -114,7 +114,7 @@ export default function LegalDataPage() {
           margin: '0 auto',
           lineHeight: 1.7,
         }}>
-          MyCaseValue doesn&apos;t just tell you win rates — it shows you the regulations, precedents, and citation networks behind them. Search 127,000+ legal documents from 7 authoritative sources alongside 5.1M federal case outcomes.
+          Win rates mean nothing without context. MyCaseValue integrates 5.1M federal case outcomes with the actual regulations, landmark precedents, and citation networks that drive them. See the complete legal landscape that shapes your case.
         </p>
       </div>
 
@@ -160,10 +160,10 @@ export default function LegalDataPage() {
       {/* -- How It Enhances Your Research -- */}
       <div style={{ marginBottom: 56 }}>
         <h2 style={{ fontSize: 26, fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: 8, textAlign: 'center' }}>
-          How Legal Data Powers Better Outcomes
+          Case Outcomes + Legal Context = Competitive Edge
         </h2>
         <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', textAlign: 'center', maxWidth: 560, margin: '0 auto 28px', lineHeight: 1.6 }}>
-          The legal data integration enriches every part of MyCaseValue — from case type pages to judge profiles to your exported reports.
+          Our unique integration connects what actually happened in federal courts with the legal precedents, regulations, and citation patterns that determined the outcomes.
         </p>
         <div style={{
           display: 'grid',
@@ -195,10 +195,10 @@ export default function LegalDataPage() {
       {/* -- Data sources -- */}
       <div style={{ marginBottom: 56 }}>
         <h2 style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, textAlign: 'center' }}>
-          7 Integrated Data Sources
+          7 Authoritative Sources, Unified Search
         </h2>
         <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', textAlign: 'center', maxWidth: 480, margin: '0 auto 20px' }}>
-          All indexed, cross-referenced, and searchable from a single interface.
+          Government data, court opinions, regulations, and precedents all indexed together so you can see the complete legal landscape at once.
         </p>
         <div style={{
           display: 'grid',

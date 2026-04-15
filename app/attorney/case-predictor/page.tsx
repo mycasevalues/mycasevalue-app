@@ -177,10 +177,10 @@ export default function CasePredictorPage() {
             </div>
             <div>
               <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: 0 }}>
-                AI Case Outcome Predictor
+                Forecast Your Case Outcome with Confidence
               </h1>
               <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
-                Predict case outcomes using historical federal court data and AI analysis
+                Use 5.1M+ cases to predict win rates, settlement ranges, and timeline. Make smarter decisions with data-driven insights.
               </p>
             </div>
           </div>

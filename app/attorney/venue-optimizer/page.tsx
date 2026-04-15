@@ -108,10 +108,10 @@ export default function VenueOptimizerPage() {
             </div>
             <div>
               <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
-                Venue Optimizer
+                Pick the Court That Wins Your Case
               </h1>
               <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
-                Find the optimal filing district based on case type, win rates, and settlement data
+                Analyze win rates, settlement trends, and case duration across all federal districts. Choose your venue with confidence.
               </p>
             </div>
           </div>

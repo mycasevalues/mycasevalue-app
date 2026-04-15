@@ -181,10 +181,10 @@ export default function DemandLetterPage() {
             </span>
           </div>
           <h1 style={{ fontSize: '40px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
-            AI Demand Letter Generator
+            Demand Letters That Get Results
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
-            Generate a professional settlement demand letter template with AI analysis of comparable cases and settlement data.
+            AI-powered demand letters backed by 5.1M+ federal case outcomes. Get data-driven language that strengthens your settlement position.
           </p>
         </div>
       </div>

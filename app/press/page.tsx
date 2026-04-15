@@ -78,11 +78,11 @@ export default function PressPage() {
 
   const quotes = [
     {
-      text: 'MyCaseValue democratizes access to federal court data that was previously available only to large law firms with expensive research subscriptions.',
+      text: 'Litigation outcomes shouldn\'t be a mystery. MyCaseValue makes 5.1 million federal court decisions transparent and searchable, so attorneys—regardless of firm size—can make informed decisions backed by real data.',
       author: 'Company Statement',
     },
     {
-      text: 'By making settlement ranges and win rates transparent, MyCaseValue helps level the playing field for pro se litigants and small firms.',
+      text: 'Federal court data is public, but accessing it used to require expensive subscriptions and institutional access. We\'re making it free and integrated so that small firms and pro se litigants can compete with better information.',
       author: 'Company Statement',
     },
   ];
@@ -154,7 +154,7 @@ export default function PressPage() {
                 marginBottom: 12,
               }}
             >
-              Press Kit
+              Democratizing Federal Court Data
             </h1>
             <p
               style={{
@@ -164,7 +164,7 @@ export default function PressPage() {
                 lineHeight: 1.7,
               }}
             >
-              Media resources, brand assets, and company information for journalists and media professionals.
+              Media resources, brand assets, and story background for journalists covering legal tech and federal court transparency.
             </p>
           </div>
         </div>
@@ -217,7 +217,7 @@ export default function PressPage() {
                 marginBottom: 32,
               }}
             >
-              Company Overview
+              The Story: Leveling the Playing Field
             </h2>
             <div style={{ display: 'grid', gap: 24, gridTemplateColumns: '1fr' }}>
               <p
@@ -229,7 +229,7 @@ export default function PressPage() {
                   margin: 0,
                 }}
               >
-                MyCaseValue is a legal analytics platform providing data-driven insights into federal court outcomes, helping attorneys and pro se litigants make informed litigation decisions.
+                MyCaseValue is breaking down the information asymmetry in litigation. Historically, only large law firms with six-figure legal research subscriptions could access federal court outcome data. We're changing that by making comprehensive federal court analytics—win rates, settlement ranges, case duration, judge tendencies—freely available to anyone.
               </p>
               <p
                 style={{
@@ -240,7 +240,7 @@ export default function PressPage() {
                   margin: 0,
                 }}
               >
-                Founded on the principle that court data should be accessible to everyone, the platform analyzes 5.1 million+ federal court cases across 84 case types and 95 federal judicial districts.
+                Our platform analyzes 5.1 million+ federal court cases across 84 case types and 95 federal judicial districts, sourced directly from the Federal Judicial Center, PACER, CourtListener, and other authoritative public records. We combine verified outcome data with integrated legal research to show attorneys and pro se litigants not just what happened in court, but why.
               </p>
               <p
                 style={{
@@ -251,7 +251,7 @@ export default function PressPage() {
                   margin: 0,
                 }}
               >
-                The platform combines FJC Integrated Database analysis, AI-powered research tools, and statistical modeling to deliver win rates, settlement ranges, and case outcome predictions.
+                By integrating AI-powered research tools and connecting case outcomes to the regulations and precedents that shaped them, MyCaseValue empowers attorneys to make smarter decisions and helps pro se litigants understand the legal landscape they're navigating.
               </p>
             </div>
           </section>

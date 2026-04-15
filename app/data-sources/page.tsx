@@ -157,7 +157,7 @@ export default function DataSourcesPage() {
               letterSpacing: '-1px',
               marginBottom: 12,
             }}>
-              Our Data
+              We Show You Exactly Where Every Number Comes From
             </h1>
             <p style={{
               fontSize: 18,
@@ -166,7 +166,7 @@ export default function DataSourcesPage() {
               lineHeight: 1.8,
               maxWidth: 600,
             }}>
-              Built on verified federal court records. 5.1M+ cases across 95 districts with quarterly updates from authoritative sources like FJC, PACER, and CourtListener.
+              Complete transparency. 5.1M+ federal cases analyzed with full data provenance from FJC, PACER, CourtListener, and government databases. No algorithms hiding in the background—only verified, auditable outcomes.
             </p>
           </div>
         </div>
@@ -236,7 +236,7 @@ export default function DataSourcesPage() {
               fontFamily: 'var(--font-display)',
               marginBottom: 32,
             }}>
-              Primary Data Sources
+              Our Verified Sources
             </h2>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -398,7 +398,7 @@ export default function DataSourcesPage() {
               fontFamily: 'var(--font-display)',
               marginBottom: 32,
             }}>
-              Methodology & Calculations
+              How We Calculate Outcomes
             </h2>
 
             <div style={{
@@ -645,7 +645,7 @@ export default function DataSourcesPage() {
               fontFamily: 'var(--font-display)',
               marginBottom: 32,
             }}>
-              Data Quality & Integrity
+              Built on Verification, Not Speculation
             </h2>
 
             <div style={{

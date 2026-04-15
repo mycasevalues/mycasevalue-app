@@ -138,10 +138,10 @@ export default function JudgeIntelligencePage() {
             </div>
             <div>
               <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
-                Judge Intelligence
+                Know Your Judge Before the Courtroom
               </h1>
               <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
-                Research federal judges — ruling patterns, settlement tendencies, and case statistics
+                Access detailed ruling patterns, settlement rates, and case analytics for every federal judge. Take the guesswork out of strategy.
               </p>
             </div>
           </div>
