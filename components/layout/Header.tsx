@@ -147,8 +147,12 @@ function MegaMenu({
 
   return (
     <div
-      className="fixed top-14 left-0 right-0 border-b shadow-lg z-40"
-      style={{ background: '#0c1220', borderColor: 'rgba(255,255,255,0.06)' }}
+      className="fixed top-14 left-0 right-0 z-40"
+      style={{
+        background: '#080d19',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        boxShadow: '0 12px 32px rgba(0,0,0,0.4)',
+      }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -158,14 +162,31 @@ function MegaMenu({
           display: 'grid',
           gridTemplateColumns: `repeat(${colCount}, 1fr)`,
           gap: 0,
+          position: 'relative',
         }}
       >
         {columns.map((col, i) => (
           <div
             key={col.heading}
-            className={i > 0 ? 'border-l border-white/5 pl-6' : ''}
+            style={{
+              borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+              paddingLeft: i > 0 ? 24 : 0,
+              paddingRight: i < columns.length - 1 ? 24 : 0,
+            }}
           >
-            <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-3 pb-2 border-b border-white/5">
+            <p
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 10,
+                fontWeight: 600,
+                color: 'rgba(255,255,255,0.45)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.15em',
+                marginBottom: 12,
+                paddingBottom: 8,
+                borderBottom: '1px solid rgba(255,255,255,0.05)',
+              }}
+            >
               {col.heading}
             </p>
             <div className="space-y-0.5">
@@ -173,11 +194,12 @@ function MegaMenu({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block py-1.5 px-2 -mx-2 rounded-md text-sm transition-colors ${
+                  className={`block py-1.5 px-2 -mx-2 text-[13px] transition-colors ${
                     item.highlight
-                      ? 'font-semibold text-blue-400 hover:bg-white/5'
+                      ? 'font-semibold text-[#60a5fa] hover:bg-white/5'
                       : 'text-gray-400 hover:text-white hover:bg-white/5'
                   }`}
+                  style={{ borderRadius: 4, letterSpacing: '-0.005em' }}
                 >
                   {item.label}
                 </Link>
@@ -186,20 +208,57 @@ function MegaMenu({
           </div>
         ))}
       </div>
+      {/* Mono terminal footer row */}
+      <div
+        style={{
+          borderTop: '1px solid rgba(255,255,255,0.04)',
+          padding: '8px 24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 16,
+          fontFamily: 'var(--font-mono)',
+          fontSize: 10,
+          letterSpacing: '0.15em',
+          textTransform: 'uppercase',
+          color: 'rgba(255,255,255,0.35)',
+        }}
+      >
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+          <span
+            className="animate-pulse"
+            style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }}
+            aria-hidden
+          />
+          Data live · 02:00 UTC
+        </span>
+        <span>Press <kbd style={{ fontFamily: 'var(--font-mono)', padding: '1px 5px', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 3, background: 'rgba(255,255,255,0.04)', color: 'rgba(255,255,255,0.6)' }}>Esc</kbd> to close</span>
+      </div>
     </div>
   );
 }
 
 function SimpleDropdown({ items }: { items: DropdownItem[] }) {
   return (
-    <div className="absolute top-full left-0 mt-0 rounded-lg shadow-lg z-40 whitespace-nowrap min-w-[180px]" style={{ background: '#0c1220', border: '1px solid rgba(255,255,255,0.06)' }}>
+    <div
+      className="absolute top-full left-0 mt-0 z-40 whitespace-nowrap min-w-[200px]"
+      style={{
+        background: '#080d19',
+        border: '1px solid rgba(255,255,255,0.08)',
+        borderRadius: 6,
+        boxShadow: '0 12px 32px rgba(0,0,0,0.4)',
+        overflow: 'hidden',
+      }}
+    >
       {items.map((item, i) => (
         <Link
           key={item.href}
           href={item.href}
-          className={`block px-4 py-2.5 text-sm text-gray-400 hover:bg-white/5 hover:text-white transition-colors ${
-            i === 0 ? 'rounded-t-lg' : ''
-          } ${i === items.length - 1 ? 'rounded-b-lg' : 'border-b border-white/5'}`}
+          className="block px-4 py-2.5 text-[13px] text-gray-400 hover:bg-white/5 hover:text-white transition-colors"
+          style={{
+            borderBottom: i < items.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none',
+            letterSpacing: '-0.005em',
+          }}
         >
           {item.label}
         </Link>
