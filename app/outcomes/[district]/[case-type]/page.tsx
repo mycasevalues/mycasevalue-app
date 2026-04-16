@@ -250,13 +250,20 @@ export default async function OutcomesPage({
         }
       `}</style>
 
-      {/* Header Section - Dark Navy */}
+      {/* Header Section - Institutional Dark */}
       <div style={{
-        background: 'var(--accent-primary)',
-        padding: 'clamp(20px, 4vw, 32px) 20px',
-        borderBottom: '1px solid #1a2a3a',
+        background: '#080d19',
+        padding: '40px 24px 32px',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        position: 'relative',
+        overflow: 'hidden',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
           {/* Breadcrumb */}
           <div style={{
             fontSize: '13px',
