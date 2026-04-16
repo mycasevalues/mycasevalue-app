@@ -72,7 +72,7 @@ textarea:focus-visible {
 }
 
 /* ============================================================
-   LEXISNEXIS-INSPIRED DESIGN — Global typography reset
+   BLOOMBERG-INSPIRED INSTITUTIONAL DESIGN — Global typography reset
    ============================================================ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -191,7 +191,7 @@ a:hover { text-decoration: none; color: var(--color-accent-light); }
 }
 
 /* ============================================================
-   LEXISNEXIS ALIASES — Map legacy variable names
+   BLOOMBERG ALIASES — Map legacy variable names
    ============================================================ */
 :root {
   --bg: var(--bg-base);

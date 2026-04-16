@@ -1,10 +1,10 @@
 /* ============================================================
-   MYCASEVALUE — COMPONENT STYLES (LexisNexis-Inspired Design)
+   MYCASEVALUE — COMPONENT STYLES (Bloomberg-Inspired Institutional Design)
    BEM naming: .mcv-{component}__{element}--{modifier}
    All colors via CSS custom properties from tokens.css
    ============================================================ */
 
-/* ── BUTTON — LinkedIn-Style Pill System ──────────────────── */
+/* ── BUTTON — Institutional Pill System ──────────────────── */
 .mcv-btn {
   display: inline-flex;
   align-items: center;
@@ -60,7 +60,7 @@
 
 .mcv-btn--full { width: 100%; }
 
-/* Primary — LinkedIn blue pill */
+/* Primary — Institutional primary */
 .mcv-btn--primary {
   background: var(--accent-primary);
   color: var(--color-text-inverse);
@@ -139,7 +139,7 @@
 }
 
 
-/* ── CARD — LinkedIn Visual Language ───────────────────── */
+/* ── CARD — Bloomberg-Inspired Institutional Design ──────── */
 .mcv-card {
   background: var(--bg-elevated);
   border-radius: var(--radius-md);
@@ -150,13 +150,14 @@
     transform 200ms ease;
 }
 
-/* Primary card — clean white with subtle border (LinkedIn style) */
+/* Primary card — dark surface with subtle border */
 .mcv-card--default {
   border: 1px solid var(--border-default);
   box-shadow: none;
 }
 .mcv-card--default:hover {
-  box-shadow: none;
+  border-color: rgba(255,255,255,0.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 /* Elevated card — for prominent content */

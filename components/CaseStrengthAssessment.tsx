@@ -679,7 +679,7 @@ export default function CaseStrengthAssessment() {
                 e.currentTarget.style.backgroundColor = 'rgba(59,130,246,0.08)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'white';
+                e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
               }}
             >
               Back
@@ -1029,7 +1029,7 @@ export default function CaseStrengthAssessment() {
                 e.currentTarget.style.backgroundColor = 'rgba(59,130,246,0.08)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'white';
+                e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
               }}
             >
               Assess Another Case

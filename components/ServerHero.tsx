@@ -1,6 +1,6 @@
 /**
  * ServerHero.tsx — Server Component
- * LexisNexis-inspired corporate design: clean navy hero, search-forward layout.
+ * Bloomberg-inspired institutional design: clean navy hero, search-forward layout.
  * SEO-friendly SSR content, hidden once the client component loads.
  */
 
