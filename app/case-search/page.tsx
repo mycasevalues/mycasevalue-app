@@ -402,7 +402,7 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="text-xs px-3 py-1.5 rounded-full border text-gray-500 hover:border-brand-blue hover:text-brand-blue hover:bg-blue-50/50 transition-all"
+                      className="text-xs px-3 py-1.5 rounded border text-gray-500 hover:border-brand-blue hover:text-brand-blue hover:bg-blue-50/50 transition-all"
                       style={{ borderColor: 'var(--border-default)' }}
                     >
                       {eq}
@@ -430,7 +430,7 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="text-xs px-3 py-1.5 rounded-full border text-gray-500 hover:border-brand-blue hover:text-brand-blue transition-all"
+                      className="text-xs px-3 py-1.5 rounded border text-gray-500 hover:border-brand-blue hover:text-brand-blue transition-all"
                       style={{ borderColor: 'var(--border-default)' }}
                     >
                       Try: {eq}
@@ -498,7 +498,7 @@ function CaseResultCard({ result }: { result: SearchResult }) {
         </h3>
         {result.status && (
           <span
-            className="flex-shrink-0 text-[10px] font-medium px-2 py-0.5 rounded-full uppercase tracking-wider"
+            className="flex-shrink-0 text-[10px] font-medium px-2 py-0.5 rounded uppercase tracking-wider"
             style={{
               background:
                 result.status === 'open'
@@ -544,7 +544,7 @@ function CaseResultCard({ result }: { result: SearchResult }) {
           {result.tags.slice(0, 5).map((t) => (
             <span
               key={`${t.category}-${t.tag}`}
-              className="text-[10px] px-2 py-0.5 rounded-full border"
+              className="text-[10px] px-2 py-0.5 rounded border"
               style={{
                 borderColor: 'var(--border-default)',
                 color: 'var(--color-text-secondary)',
