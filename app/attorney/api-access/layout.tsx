@@ -1,12 +1,12 @@
-import'type { Metadata } from 'next';
-import'{ ReactNode } from 'react';
+import type { Metadata } from 'next';
+import { ReactNode } from 'react';
 
-export'const metadata: Metadata = {
-' title: 'API Access',
-' description: 'Access programmatic APIs to get case statistics, win rates, settlement data, and predictive analytics. Complete API documentation with cURL examples.',
-' robots: { index: false, follow: false },
+export const metadata: Metadata = {
+  title: 'API Access — Integrate MyCaseValue Data | Developer Documentation',
+  description: 'Access programmatic APIs to get case statistics, win rates, settlement data, and predictive analytics. Complete API documentation with cURL examples.',
+  robots: { index: false, follow: false },
 };
 
-export'default function ApiAccessLayout({ children }: { children: ReactNode }) {
-' return <>{children}</>;
+export default function ApiAccessLayout({ children }: { children: ReactNode }) {
+  return <>{children}</>;
 }

@@ -1,77 +1,77 @@
-'use'client';
+'use client';
 
-export'default function LoadingPage() {
-' const shimmerStyle = {
-'   animation: 'shimmer 2s infinite',
-'   backgroundSize: '200% 100%',
-'   backgroundImage: 'linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%)',
-' };
+export default function LoadingPage() {
+  const shimmerStyle = {
+    animation: 'shimmer 2s infinite',
+    backgroundSize: '200% 100%',
+    backgroundImage: 'linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%)',
+  };
 
-' return (
-'   <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
-'     <style>{`
-'       @keyframes shimmer {
-'         0% { background-position: -200% 0; }
-'         100% { background-position: 200% 0; }
-'       }
-'     `}</style>
+  return (
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+      <style>{`
+        @keyframes shimmer {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+      `}</style>
 
-'     {/* Header skeleton */}
-'     <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
-'       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-'         {/* Breadcrumb skeleton */}
-'         <div style={{ paddingTop: '16px', paddingBottom: '16px' }}>
-'           <div style={{ ...shimmerStyle, height: '14px', width: '200px', borderRadius: '4px', marginBottom: '16px' }} />
-'         </div>
+      {/* Header skeleton */}
+      <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          {/* Breadcrumb skeleton */}
+          <div style={{ paddingTop: '16px', paddingBottom: '16px' }}>
+            <div style={{ ...shimmerStyle, height: '14px', width: '200px', borderRadius: '4px', marginBottom: '16px' }} />
+          </div>
 
-'         {/* Heading skeletons */}
-'         <div style={{ paddingTop: '0px', paddingBottom: '24px' }}>
-'           <div style={{ ...shimmerStyle, height: '12px', width: '80px', borderRadius: '4px', marginBottom: '12px' }} />
-'           <div style={{ ...shimmerStyle, height: '32px', width: '300px', borderRadius: '6px', marginBottom: '12px' }} />
-'           <div style={{ ...shimmerStyle, height: '16px', width: '250px', borderRadius: '4px', marginBottom: '12px' }} />
-'           <div style={{ ...shimmerStyle, height: '16px', width: '320px', borderRadius: '4px', marginTop: '12px' }} />
-'         </div>
-'       </div>
-'     </div>
+          {/* Heading skeletons */}
+          <div style={{ paddingTop: '0px', paddingBottom: '24px' }}>
+            <div style={{ ...shimmerStyle, height: '12px', width: '80px', borderRadius: '4px', marginBottom: '12px' }} />
+            <div style={{ ...shimmerStyle, height: '32px', width: '300px', borderRadius: '6px', marginBottom: '12px' }} />
+            <div style={{ ...shimmerStyle, height: '16px', width: '250px', borderRadius: '4px', marginBottom: '12px' }} />
+            <div style={{ ...shimmerStyle, height: '16px', width: '320px', borderRadius: '4px', marginTop: '12px' }} />
+          </div>
+        </div>
+      </div>
 
-'     {/* Main content skeleton */}
-'     <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
-'       {/* Statistics row skeleton */}
-'       <div
-'         style={{
-'           display: 'grid',
-'           gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-'           gap: '16px',
-'           marginBottom: '40px',
-'         }}
-'       >
-'         {Array.from({ length: 4 }).map((_, i) => (
-'           <div key={i} style={{ background: 'var(--color-surface-0)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
-'             <div style={{ ...shimmerStyle, height: '14px', width: '120px', borderRadius: '4px', marginBottom: '12px' }} />
-'             <div style={{ ...shimmerStyle, height: '28px', width: '80px', borderRadius: '4px', marginBottom: '8px' }} />
-'             <div style={{ ...shimmerStyle, height: '12px', width: '100px', borderRadius: '4px' }} />
-'           </div>
-'         ))}
-'       </div>
+      {/* Main content skeleton */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
+        {/* Statistics row skeleton */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '16px',
+            marginBottom: '40px',
+          }}
+        >
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div key={i} style={{ background: 'var(--color-surface-0)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+              <div style={{ ...shimmerStyle, height: '14px', width: '120px', borderRadius: '4px', marginBottom: '12px' }} />
+              <div style={{ ...shimmerStyle, height: '28px', width: '80px', borderRadius: '4px', marginBottom: '8px' }} />
+              <div style={{ ...shimmerStyle, height: '12px', width: '100px', borderRadius: '4px' }} />
+            </div>
+          ))}
+        </div>
 
-'       {/* Radar chart skeleton */}
-'       <div style={{ background: 'var(--color-surface-0)', padding: '32px', borderRadius: '8px', border: '1px solid var(--border-default)', marginBottom: '40px' }}>
-'         <div style={{ ...shimmerStyle, height: '20px', width: '150px', borderRadius: '4px', marginBottom: '16px' }} />
-'         <div style={{ ...shimmerStyle, height: '340px', width: '100%', borderRadius: '8px' }} />
-'       </div>
+        {/* Radar chart skeleton */}
+        <div style={{ background: 'var(--color-surface-0)', padding: '32px', borderRadius: '8px', border: '1px solid var(--border-default)', marginBottom: '40px' }}>
+          <div style={{ ...shimmerStyle, height: '20px', width: '150px', borderRadius: '4px', marginBottom: '16px' }} />
+          <div style={{ ...shimmerStyle, height: '340px', width: '100%', borderRadius: '8px' }} />
+        </div>
 
-'       {/* Table skeleton */}
-'       <div style={{ background: 'var(--color-surface-0)', padding: '32px', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
-'         <div style={{ ...shimmerStyle, height: '20px', width: '180px', borderRadius: '4px', marginBottom: '20px' }} />
-'         {Array.from({ length: 5 }).map((_, i) => (
-'           <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid var(--border-default)' }}>
-'             <div style={{ ...shimmerStyle, height: '14px', borderRadius: '4px' }} />
-'             <div style={{ ...shimmerStyle, height: '14px', borderRadius: '4px' }} />
-'             <div style={{ ...shimmerStyle, height: '14px', borderRadius: '4px' }} />
-'           </div>
-'         ))}
-'       </div>
-'     </div>
-'   </div>
-' );
+        {/* Table skeleton */}
+        <div style={{ background: 'var(--color-surface-0)', padding: '32px', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+          <div style={{ ...shimmerStyle, height: '20px', width: '180px', borderRadius: '4px', marginBottom: '20px' }} />
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ ...shimmerStyle, height: '14px', borderRadius: '4px' }} />
+              <div style={{ ...shimmerStyle, height: '14px', borderRadius: '4px' }} />
+              <div style={{ ...shimmerStyle, height: '14px', borderRadius: '4px' }} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }

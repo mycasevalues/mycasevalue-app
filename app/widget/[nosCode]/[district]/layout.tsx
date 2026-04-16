@@ -1,14 +1,14 @@
-import'{ ReactNode } from 'react';
+import { ReactNode } from 'react';
 
-export'const metadata = {
-' title: 'Case Settlement Widget',
-' robots: 'noindex, nofollow',
+export const metadata = {
+  title: 'Case Settlement Widget | MyCaseValue',
+  robots: 'noindex, nofollow',
 };
 
-interface'WidgetLayoutProps {
-' children: ReactNode;
+interface WidgetLayoutProps {
+  children: ReactNode;
 }
 
-export'default function WidgetLayout({ children }: WidgetLayoutProps) {
-' return <>{children}</>;
+export default function WidgetLayout({ children }: WidgetLayoutProps) {
+  return <>{children}</>;
 }
