@@ -587,23 +587,28 @@ export default function FAQPage() {
       <div className="max-w-3xl mx-auto px-6 py-12">
         <div className="space-y-12">
           {faqs.map((section, sectionIdx) => (
-            <section key={sectionIdx} style={{ borderLeftWidth: '4px', borderLeftColor: 'var(--accent-primary)', paddingLeft: '24px' }}>
-              <h2 className="text-xl font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
-                {section.category}
-              </h2>
-              <div className="space-y-3">
+            <section key={sectionIdx}>
+              <div className="flex items-baseline gap-3 mb-5 pb-3 border-b" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+                <span className="font-mono text-[10px] font-semibold tracking-[0.2em] uppercase tabular-nums" style={{ color: 'rgba(59,130,246,0.6)' }}>
+                  {String(sectionIdx + 1).padStart(2, '0')}
+                </span>
+                <h2 className="text-[17px] font-display font-semibold tracking-[-0.01em]" style={{ color: 'var(--color-text-primary)' }}>
+                  {section.category}
+                </h2>
+              </div>
+              <div className="space-y-2">
                 {section.questions.map((faq, qIdx) => (
                   <details
                     key={qIdx}
-                    className="group p-5 border transition-colors cursor-pointer"
+                    className="group p-5 border transition-colors cursor-pointer hover:border-blue-400/30"
                     style={{
                       borderColor: 'var(--border-default)',
                       background: 'var(--color-surface-0)',
-                      borderRadius: '12px',
+                      borderRadius: '6px',
                     }}
                   >
-                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: 'var(--color-text-primary)' }}>
-                      <span className="flex-1 text-base leading-relaxed pr-4">
+                    <summary className="flex items-start justify-between font-medium select-none" style={{ color: 'var(--color-text-primary)' }}>
+                      <span className="flex-1 text-[14px] leading-relaxed pr-4 tracking-[-0.005em]">
                         {faq.q}
                       </span>
                       <svg aria-hidden="true"
