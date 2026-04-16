@@ -71,13 +71,13 @@ export default function AudienceCards() {
   const secondaryCards = AUDIENCE_CARDS.slice(3);
 
   return (
-    <section id="who-uses" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-white">
+    <section id="who-uses" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-[#080d19]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-3">
             Built for Legal Professionals
           </h2>
-          <p className="text-base text-gray-500 max-w-xl mx-auto">
+          <p className="text-base text-gray-400 max-w-xl mx-auto">
             Whether you&apos;re representing yourself or preparing a complex federal brief.
           </p>
         </div>
