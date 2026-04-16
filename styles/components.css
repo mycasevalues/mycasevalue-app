@@ -270,10 +270,11 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
 
 .mcv-input__label {
   font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--fg-primary);
-  letter-spacing: 0.01em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg-secondary);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .mcv-input__wrapper {
