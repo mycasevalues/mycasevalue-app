@@ -160,13 +160,17 @@ export default function HomePage() {
       {/* ── CAPABILITIES ── */}
       <section style={{ background: 'var(--color-surface-0)' }}>
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <div className="flex items-baseline justify-between mb-10">
+          <div className="flex items-end justify-between mb-10">
             <div>
-              <p className="text-[10px] font-medium tracking-[0.25em] uppercase text-blue-400/60 mb-2">Intelligence Suite</p>
-              <h2 className="text-xl font-bold text-white">The federal court data stack</h2>
+              <p className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.25em] uppercase text-blue-400/70 mb-3 px-2 py-0.5 rounded-[3px] border border-blue-400/15 bg-blue-400/[0.04]">
+                <span className="w-1 h-1 rounded-full bg-blue-400/70" />
+                Intelligence Suite
+              </p>
+              <h2 className="text-xl md:text-2xl font-bold text-white tracking-[-0.02em]">The federal court data stack</h2>
+              <p className="text-sm text-gray-500 mt-1.5">Four core capabilities powering institutional litigation research.</p>
             </div>
-            <Link href="/platform" className="hidden md:inline-flex text-xs text-gray-400 hover:text-white transition-colors">
-              Explore platform &rarr;
+            <Link href="/platform" className="hidden md:inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-white transition-colors group">
+              Explore platform <span className="inline-block transition-transform group-hover:translate-x-0.5 text-blue-400/70">&rarr;</span>
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
