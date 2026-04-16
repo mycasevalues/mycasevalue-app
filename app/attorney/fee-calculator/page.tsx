@@ -133,8 +133,20 @@ export default function FeeCalculatorPage() {
   return (
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       {/* Header */}
-      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid var(--border-default)', padding: '18px 24px' }}>
-        <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
+      <div style={{
+        background: '#080d19',
+        color: '#fff',
+        padding: '40px 24px 32px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
           <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
             Attorney Fee Calculator
           </h1>
