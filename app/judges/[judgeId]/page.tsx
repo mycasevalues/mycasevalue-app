@@ -100,13 +100,17 @@ export default async function JudgeProfilePage({ params }: PageProps) {
     .map((s: any) => s.nos_label || s.nos_code || 'General');
 
   // Intelligence summary items from AI analysis or defaults
-  const intelligenceItems = aiAnalysis?.summary
+  const hasAiContent = aiAnalysis?.writing_style || aiAnalysis?.plaintiff_tendencies || aiAnalysis?.motion_approach;
+  const intelligenceItems = hasAiContent
     ? [
-        { topic: 'Judicial Temperament', classification: 'Classif. General', body: aiAnalysis.summary },
+        ...(aiAnalysis?.writing_style ? [{ topic: 'Writing Style & Temperament', classification: 'Classif. General §1', body: aiAnalysis.writing_style }] : []),
+        ...(aiAnalysis?.plaintiff_tendencies ? [{ topic: 'Plaintiff Tendencies', classification: 'Classif. Tendency §2', body: aiAnalysis.plaintiff_tendencies }] : []),
+        ...(aiAnalysis?.motion_approach ? [{ topic: 'Motion Approach', classification: 'Classif. Procedure §3', body: aiAnalysis.motion_approach }] : []),
+        ...(aiAnalysis?.notable_patterns ? [{ topic: 'Notable Patterns', classification: 'Classif. Pattern §4', body: aiAnalysis.notable_patterns }] : []),
       ]
     : [
-        { topic: 'Disposition Pattern', classification: 'Classif. General §1', body: `This judge resolves ${(aggregated.plaintiffWinRate || 50).toFixed(0)}% of cases in favor of plaintiffs, compared to ${(districtAveraged.plaintiffWinRate || 50).toFixed(0)}% district average. Median case duration is ${aggregated.medianDuration || 'N/A'} months.` },
-        { topic: 'Settlement Tendencies', classification: 'Classif. Settlement §2', body: `Median settlement values for cases before this judge are ${aggregated.medianSettlement ? `$${aggregated.medianSettlement.toLocaleString()}` : 'not yet available'}. Review case-type-specific data for detailed ranges.` },
+        { topic: 'Disposition Pattern', classification: 'Classif. General §1', body: `This judge resolves ${(aggregated.plaintiffWinRate || 50).toFixed(0)}% of cases in favor of plaintiffs, compared to ${(districtAveraged.plaintiffWinRate || 50).toFixed(0)}% district average. Average case duration is ${aggregated.avgDuration ? `${aggregated.avgDuration.toFixed(0)} months` : 'N/A'}.` },
+        { topic: 'Settlement Tendencies', classification: 'Classif. Settlement §2', body: `Settlement rate for cases before this judge is ${(aggregated.settlementRate || 0).toFixed(0)}%. Review case-type-specific data for detailed settlement ranges and median values.` },
         { topic: 'Case Load Analysis', classification: 'Classif. Caseload §3', body: `${aggregated.totalCases || 0} total cases on record across ${statistics.length || 0} case type categories. Volume indicates ${(aggregated.totalCases || 0) > 500 ? 'high' : (aggregated.totalCases || 0) > 100 ? 'moderate' : 'limited'} data confidence.` },
       ];
 
@@ -199,9 +203,9 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   <span style={{ color: 'var(--bdr-strong)' }}>·</span>
                   <span>{(aggregated.plaintiffWinRate || 0).toFixed(1)}% plaintiff win rate</span>
                   <span style={{ color: 'var(--bdr-strong)' }}>·</span>
-                  <span>Median {aggregated.medianDuration || '—'} mo</span>
+                  <span>Avg. {aggregated.avgDuration ? `${aggregated.avgDuration.toFixed(0)} mo` : '—'}</span>
                   <span style={{ color: 'var(--bdr-strong)' }}>·</span>
-                  <span>{aggregated.medianSettlement ? `$${aggregated.medianSettlement.toLocaleString()} median` : 'Settlement N/A'}</span>
+                  <span>{aggregated.settlementRate ? `${aggregated.settlementRate.toFixed(0)}% settlement rate` : 'Settlement N/A'}</span>
                   <span style={{ color: 'var(--bdr-strong)' }}>·</span>
                   <span style={{
                     padding: '1px 6px', background: 'var(--pos-bg)', color: 'var(--pos)',
@@ -287,9 +291,9 @@ export default async function JudgeProfilePage({ params }: PageProps) {
           <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 9 }}>
             {[
               { label: 'Cases on Record', value: `${aggregated.totalCases || 0}`, accent: 'var(--link)' },
-              { label: 'Plaintiff Win Rate', value: `${(aggregated.plaintiffWinRate || 0).toFixed(1)}%`, accent: getWinRateColor(aggregated.plaintiffWinRate || 0) },
-              { label: 'Median Duration', value: aggregated.medianDuration ? `${aggregated.medianDuration} mo` : '—', accent: 'var(--gold)' },
-              { label: 'Median Settlement', value: aggregated.medianSettlement ? `$${aggregated.medianSettlement.toLocaleString()}` : '—', accent: 'var(--pos)' },
+              { label: 'Plaintiff Win Rate', value: `${(aggregated.plaintiffWinRate || 0).toFixed(1)}%`, accent: getWinRateColor(aggregated.plaintiffWinRate || 0).border },
+              { label: 'Avg. Duration', value: aggregated.avgDuration ? `${aggregated.avgDuration.toFixed(0)} mo` : '—', accent: 'var(--gold)' },
+              { label: 'Settlement Rate', value: aggregated.settlementRate ? `${aggregated.settlementRate.toFixed(0)}%` : '—', accent: 'var(--pos)' },
             ].map(stat => (
               <div key={stat.label} style={{
                 background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
@@ -547,7 +551,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               <div style={{ ...sectionLabel, marginBottom: 6 }}>ANALYTICS VS. DISTRICT</div>
               {[
                 { label: 'Win Rate', judge: `${(aggregated.plaintiffWinRate || 0).toFixed(1)}%`, district: `${(districtAveraged.plaintiffWinRate || 0).toFixed(1)}%` },
-                { label: 'Med. Duration', judge: aggregated.medianDuration ? `${aggregated.medianDuration} mo` : '—', district: districtAveraged.medianDuration ? `${districtAveraged.medianDuration} mo` : '—' },
+                { label: 'Avg. Duration', judge: aggregated.avgDuration ? `${aggregated.avgDuration.toFixed(0)} mo` : '—', district: districtAveraged.avgDuration ? `${districtAveraged.avgDuration.toFixed(0)} mo` : '—' },
                 { label: 'Cases', judge: `${aggregated.totalCases || 0}`, district: `${districtAveraged.totalCases || 0}` },
               ].map(row => (
                 <div key={row.label} style={{

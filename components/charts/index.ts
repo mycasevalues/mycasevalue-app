@@ -1,4 +1,4 @@
-export { OutcomeDonut } from './OutcomeDonut';
+export { default as HorizontalBarChart } from './HorizontalBarChart';
 export { SettlementDistribution } from './SettlementDistribution';
 export { TimelineRange } from './TimelineRange';
 export { ComparisonBar } from './ComparisonBar';
