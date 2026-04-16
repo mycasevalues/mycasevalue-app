@@ -513,7 +513,7 @@ export default function PricingPage() {
         {/* Callout Section */}
         <div className="callout-section">
           <p className="callout-text">
-            Outcome analytics, judge intelligence, and AI case prediction have been gatekept by enterprise platforms charging 10x more. MyCaseValue is built for solo attorneys, small firms, paralegals, and pro se litigants—with features Westlaw still doesn't offer.
+            Outcome analytics, judge intelligence, and AI case prediction for solo practitioners, small firms, and litigation professionals.
           </p>
         </div>
 
