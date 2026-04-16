@@ -160,7 +160,7 @@ export function AIChatAssistant() {
               messages.map((msg) => (
                 <div key={msg.id} className={msg.role === 'user' ? 'flex justify-end' : 'flex justify-start'}>
                   <div
-                    className={msg.role === 'user' ? 'max-w-[85%] px-4 py-3 rounded-2xl text-sm text-white' : 'max-w-[85%] px-4 py-3 rounded-2xl text-sm text-gray-800 bg-gray-100'}
+                    className={msg.role === 'user' ? 'max-w-[85%] px-4 py-3 rounded-lg text-sm text-white' : 'max-w-[85%] px-4 py-3 rounded-lg text-sm text-gray-800 bg-gray-100'}
                     style={msg.role === 'user' ? { backgroundColor: 'var(--accent-primary)' } : undefined}
                   >
                     <div className="whitespace-pre-wrap leading-relaxed">{msg.content}</div>
@@ -170,7 +170,7 @@ export function AIChatAssistant() {
             )}
             {isLoading && messages[messages.length - 1]?.role === 'user' && (
               <div className="flex justify-start">
-                <div className="px-4 py-3 rounded-2xl bg-gray-100">
+                <div className="px-4 py-3 rounded-lg bg-gray-100">
                   <div className="flex items-center gap-1.5">
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
                     <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />

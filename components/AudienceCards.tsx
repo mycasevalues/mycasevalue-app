@@ -87,7 +87,7 @@ export default function AudienceCards() {
           {primaryCards.map((card) => (
             <div
               key={card.title}
-              className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="text-brand-blue mb-4">
                 {card.icon}
@@ -114,7 +114,7 @@ export default function AudienceCards() {
           {secondaryCards.map((card) => (
             <div
               key={card.title}
-              className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="text-brand-blue mb-4">
                 {card.icon}

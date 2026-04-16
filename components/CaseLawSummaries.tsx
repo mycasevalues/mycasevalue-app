@@ -69,7 +69,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
                     <div className="flex items-center gap-2 mb-2">
                       <span className="font-semibold text-gray-900">{caseItem.name}</span>
                       <span
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                        className={`inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium ${
                           relevanceColors[caseItem.relevance]
                         }`}
                       >

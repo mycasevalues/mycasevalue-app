@@ -133,7 +133,7 @@ export default function ProductPreview() {
         <div className="text-center mt-8">
           <Link
             href="/cases"
-            className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-brand-blue text-white font-semibold text-sm transition-colors hover:bg-brand-blue-dark"
+            className="inline-flex items-center justify-center px-6 py-2.5 rounded bg-brand-blue text-white font-semibold text-sm transition-colors hover:bg-brand-blue-dark"
           >
             Explore All Case Types &rarr;
           </Link>
