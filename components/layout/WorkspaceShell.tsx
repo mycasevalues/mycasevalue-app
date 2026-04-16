@@ -2,7 +2,10 @@
 
 /**
  * WorkspaceShell — Layout wrapper that provides the persistent sidebar
- * + main content area for research pages.
+ * + main content area for research/data pages.
+ *
+ * Bloomberg Law design: sidebar on data pages, no sidebar on marketing/auth.
+ * Light mode: white backgrounds, subtle borders, warm tones.
  *
  * Used on: /cases, /judges, /districts, /attorney/*, /search, /dashboard,
  * /legal/*, /trends, /nos-explorer, /compare, /calculator, /map, /odds,
@@ -76,23 +79,53 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
       {/* Main content area */}
       <div className="flex-1 min-w-0">
         {/* Mobile sidebar toggle */}
-        <div className="lg:hidden sticky top-0 z-30 flex items-center gap-3 px-4 h-12 bg-[#0c1220]/95 backdrop-blur-sm border-b border-white/5">
+        <div
+          className="lg:hidden sticky top-[52px] z-30 flex items-center gap-3 px-4"
+          style={{
+            height: 44,
+            background: '#FFFFFF',
+            borderBottom: '1px solid #E0E0E0',
+          }}
+        >
           <button
             onClick={() => setSidebarOpen(true)}
-            className="p-2 -ml-2 text-gray-400 hover:text-white rounded-lg"
+            style={{
+              padding: 6,
+              marginLeft: -6,
+              color: '#444444',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+            }}
             aria-label="Open navigation"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <span className="text-sm font-medium text-gray-300 truncate">
+          <span
+            style={{
+              fontSize: 13,
+              fontWeight: 600,
+              fontFamily: 'var(--font-inter)',
+              color: '#1A1A1A',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+            }}
+          >
             {getPageTitle(pathname)}
           </span>
         </div>
 
         {/* Research breadcrumb — desktop only */}
-        <div className="hidden lg:block px-4 py-1 border-b border-white/5" style={{ background: '#0a1020' }}>
+        <div
+          className="hidden lg:block px-4 py-1"
+          style={{
+            background: '#FFFFFF',
+            borderBottom: '1px solid #E8E8E8',
+          }}
+        >
           <ResearchBreadcrumb />
         </div>
 

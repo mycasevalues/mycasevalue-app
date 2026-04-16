@@ -37,7 +37,7 @@ const SAMPLE_CATEGORIES = [
 
 export default function ProductPreview() {
   return (
-    <section className="px-4 md:px-8 py-14 md:py-20 bg-[#0c1220]">
+    <section className="px-4 md:px-8 py-14 md:py-20 bg-[#F7F7F5]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <p className="text-xs font-semibold text-brand-blue uppercase tracking-widest mb-3">
@@ -67,13 +67,13 @@ export default function ProductPreview() {
             </div>
           </div>
 
-          <div className="bg-[#111827] border border-t-0 border-white/10 rounded-b-xl p-6 md:p-8 shadow-xl">
+          <div className="bg-[#F7F7F5] border border-t-0 border-[#E0E0E0] rounded-b-xl p-6 md:p-8 shadow-xl">
             {/* Category cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {SAMPLE_CATEGORIES.map((cat) => (
                 <div
                   key={cat.title}
-                  className="border border-white/8 rounded-xl p-4 hover:shadow-sm transition-shadow"
+                  className="border border-[#E0E0E0] rounded-xl p-4 hover:shadow-sm transition-shadow"
                 >
                   <h4 className="text-sm font-semibold text-gray-100 mb-3">
                     {cat.title}
@@ -119,7 +119,7 @@ export default function ProductPreview() {
               ))}
             </div>
 
-            <div className="mt-4 pt-4 border-t border-white/8 flex items-center justify-between">
+            <div className="mt-4 pt-4 border-t border-[#E0E0E0] flex items-center justify-between">
               <span className="text-[11px] text-gray-400">
                 Showing 3 of 84 case type categories
               </span>
@@ -133,7 +133,7 @@ export default function ProductPreview() {
         <div className="text-center mt-8">
           <Link
             href="/cases"
-            className="inline-flex items-center justify-center px-6 py-2.5 rounded bg-brand-blue text-white font-semibold text-sm transition-colors hover:bg-brand-blue-dark"
+            className="inline-flex items-center justify-center px-6 py-2.5 rounded bg-[#E65C00] text-white font-semibold text-sm transition-colors hover:bg-[#CC4F00]"
           >
             Explore All Case Types &rarr;
           </Link>

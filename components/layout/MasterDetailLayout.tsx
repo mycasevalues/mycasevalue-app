@@ -1,29 +1,23 @@
 'use client';
 
 /**
- * MasterDetailLayout — Split-pane layout for research pages.
+ * MasterDetailLayout — Bloomberg-style split-pane layout for research pages.
  *
  * Desktop: Master list (35%) | Detail panel (65%)
  * Tablet: Master list (40%) | Detail panel (60%)
  * Mobile: Full-screen list, tap to see detail (overlay)
  *
- * Used by: Judges, Cases (future), Districts (future)
+ * Light mode: white backgrounds, #E0E0E0 borders, Bloomberg palette.
  */
 
-import { useState, useCallback, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 interface MasterDetailLayoutProps {
-  /** The scrollable list panel (left side) */
   masterPanel: ReactNode;
-  /** The detail panel (right side) — shown when an item is selected */
   detailPanel: ReactNode | null;
-  /** Placeholder shown when nothing is selected */
   emptyDetail?: ReactNode;
-  /** Whether an item is currently selected (controls mobile overlay) */
   hasSelection: boolean;
-  /** Called when user wants to close the detail panel (mobile back button) */
   onCloseDetail?: () => void;
-  /** Master panel width as percentage (default: 35) */
   masterWidth?: number;
 }
 
@@ -40,30 +34,52 @@ export default function MasterDetailLayout({
       {/* Master Panel (list) */}
       <div
         className={`
-          flex-shrink-0 overflow-y-auto border-r border-white/5 bg-[#0c1220]
+          flex-shrink-0 overflow-y-auto
           ${hasSelection ? 'hidden lg:block' : 'w-full lg:w-auto'}
         `}
-        style={{ width: `${masterWidth}%`, minWidth: hasSelection ? undefined : '100%' }}
+        style={{
+          width: `${masterWidth}%`,
+          minWidth: hasSelection ? undefined : '100%',
+          background: '#FFFFFF',
+          borderRight: '1px solid #E0E0E0',
+        }}
       >
-        {/* On mobile, master takes full width when no selection */}
         <div className="lg:hidden w-full">{!hasSelection && masterPanel}</div>
-        {/* On desktop, master always shows at fixed width */}
         <div className="hidden lg:block">{masterPanel}</div>
       </div>
 
       {/* Detail Panel */}
       <div
         className={`
-          flex-1 overflow-y-auto bg-[var(--color-surface-2)]
+          flex-1 overflow-y-auto
           ${hasSelection ? 'block' : 'hidden lg:block'}
         `}
+        style={{ background: '#F7F7F5' }}
       >
         {/* Mobile back button */}
         {hasSelection && (
-          <div className="lg:hidden sticky top-0 z-10 bg-[#111827] border-b border-white/5 px-4 py-3">
+          <div
+            className="lg:hidden sticky top-0 z-10"
+            style={{
+              background: '#FFFFFF',
+              borderBottom: '1px solid #E0E0E0',
+              padding: '10px 16px',
+            }}
+          >
             <button
               onClick={onCloseDetail}
-              className="flex items-center gap-2 text-sm text-brand-blue font-medium"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                fontSize: 13,
+                fontWeight: 500,
+                fontFamily: 'var(--font-inter)',
+                color: '#0052CC',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+              }}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -74,13 +90,33 @@ export default function MasterDetailLayout({
         )}
 
         {detailPanel || emptyDetail || (
-          <div className="flex items-center justify-center h-full text-gray-400">
-            <div className="text-center">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="mx-auto mb-4 text-gray-300">
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100%',
+              color: '#888888',
+            }}
+          >
+            <div style={{ textAlign: 'center' }}>
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#CCCCCC"
+                strokeWidth="1"
+                style={{ margin: '0 auto 16px' }}
+              >
                 <path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" />
               </svg>
-              <p className="text-sm font-medium">Select an item to see details</p>
-              <p className="text-xs mt-1 text-gray-300">Click any item in the list</p>
+              <p style={{ fontSize: 14, fontWeight: 500, color: '#444444' }}>
+                Select an item to see details
+              </p>
+              <p style={{ fontSize: 12, marginTop: 4, color: '#888888' }}>
+                Click any item in the list
+              </p>
             </div>
           </div>
         )}
@@ -104,15 +140,30 @@ export function MasterListItem({
   return (
     <button
       onClick={onClick}
-      className={`
-        w-full text-left px-4 py-3 border-b border-gray-50 transition-colors
-        ${isActive
-          ? 'bg-blue-50 border-l-2 border-l-brand-blue'
-          : 'hover:bg-[var(--color-surface-2)] border-l-2 border-l-transparent'
-        }
-      `}
+      style={{
+        width: '100%',
+        textAlign: 'left',
+        padding: '10px 16px',
+        borderBottom: '1px solid #F0F0F0',
+        borderLeft: isActive ? '3px solid #E65C00' : '3px solid transparent',
+        background: isActive ? '#EFF5FF' : 'transparent',
+        cursor: 'pointer',
+        transition: 'background 80ms',
+        border: 'none',
+        borderBottomWidth: 1,
+        borderBottomStyle: 'solid',
+        borderBottomColor: '#F0F0F0',
+        borderLeftWidth: 3,
+        borderLeftStyle: 'solid',
+        borderLeftColor: isActive ? '#E65C00' : 'transparent',
+        fontFamily: 'var(--font-inter)',
+      }}
+      className="master-list-item"
     >
       {children}
+      <style>{`
+        .master-list-item:hover { background: #EFF5FF !important; }
+      `}</style>
     </button>
   );
 }
@@ -122,9 +173,16 @@ export function MasterListItem({
  */
 export function StatPill({ label, value, color }: { label: string; value: string; color?: string }) {
   return (
-    <span className="inline-flex items-center gap-1 text-xs">
-      <span className="text-gray-400">{label}</span>
-      <span className="font-mono font-semibold" style={{ color: color || 'var(--color-text-primary)' }}>
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 12 }}>
+      <span style={{ color: '#888888' }}>{label}</span>
+      <span
+        style={{
+          fontFamily: 'var(--font-mono)',
+          fontWeight: 600,
+          color: color || '#1A1A1A',
+          fontVariantNumeric: 'tabular-nums',
+        }}
+      >
         {value}
       </span>
     </span>

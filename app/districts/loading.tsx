@@ -1,12 +1,12 @@
 export default function DistrictsLoading() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: '#F7F7F5', fontFamily: 'var(--font-inter)' }}>
       {/* Navy header with title skeleton */}
-      <div style={{ background: '#080d19', padding: '48px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <div style={{ background: '#FFFFFF', padding: '48px 24px', borderBottom: '1px solid #E8E8E8' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <div style={{ height: '14px', width: '100px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '16px' }} />
-          <div style={{ height: '42px', width: '50%', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '12px' }} />
-          <div style={{ height: '14px', width: '70%', background: 'rgba(255,255,255,0.08)', borderRadius: '12px' }} />
+          <div style={{ height: '14px', width: '100px', background: '#F0F0F0', borderRadius: '12px', marginBottom: '16px' }} />
+          <div style={{ height: '42px', width: '50%', background: '#F0F0F0', borderRadius: '12px', marginBottom: '12px' }} />
+          <div style={{ height: '14px', width: '70%', background: '#E0E0E0', borderRadius: '12px' }} />
         </div>
       </div>
 
@@ -19,17 +19,17 @@ export default function DistrictsLoading() {
         }}>
           {[1, 2, 3, 4, 5, 6].map(i => (
             <div key={i} style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: ''#FFFFFF'',
+              border: '1px solid '#E0E0E0'',
               borderRadius: '12px',
               padding: '24px',
               minHeight: '160px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
             }}>
-              <div style={{ height: '20px', width: '75%', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '12px' }} />
-              <div style={{ height: '14px', width: '100%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '100%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '85%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px' }} />
+              <div style={{ height: '20px', width: '75%', background: ''#E0E0E0'', borderRadius: '12px', marginBottom: '12px' }} />
+              <div style={{ height: '14px', width: '100%', background: '#F0F0F0', borderRadius: '12px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '100%', background: '#F0F0F0', borderRadius: '12px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '85%', background: '#F0F0F0', borderRadius: '12px' }} />
             </div>
           ))}
         </div>

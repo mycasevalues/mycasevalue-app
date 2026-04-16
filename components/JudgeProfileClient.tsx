@@ -587,7 +587,7 @@ export default function JudgeProfileClient({
       {/* Section 7: CTA / Next Steps */}
       <div
         style={{
-          background: 'linear-gradient(135deg, var(--accent-primary) 0%, #1e40af 100%)',
+          background: 'linear-gradient(135deg, var(--accent-primary) 0%, #003D99 100%)',
           padding: '40px',
           borderRadius: '8px',
           color: 'var(--color-surface-0)',

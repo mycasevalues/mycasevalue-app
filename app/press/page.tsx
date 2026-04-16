@@ -124,7 +124,7 @@ export default function PressPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header Banner */}
         <div style={{
-          background: '#080d19',
+          background: '#FFFFFF',
           padding: '48px 24px 40px',
           position: 'relative',
           overflow: 'hidden',

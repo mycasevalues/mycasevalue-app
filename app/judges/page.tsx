@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic';
 const JudgeRadarPreview = dynamic(() => import('../../components/JudgeRadarPreview'), {
   ssr: false,
   loading: () => (
-    <div style={{ height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)', fontSize: 14 }}>
+    <div style={{ height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#888888', fontFamily: 'var(--font-inter)', fontSize: 14 }}>
       Loading radar preview…
     </div>
   ),
@@ -69,15 +69,15 @@ export default async function JudgesPage() {
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+    <div style={{ background: '#F7F7F5', minHeight: '100vh' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* Header */}
       <div style={{
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
-        background: '#080d19',
+        borderBottom: '1px solid #E8E8E8',
+        background: '#FFFFFF',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -89,9 +89,9 @@ export default async function JudgesPage() {
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', position: 'relative' }}>
           {/* Breadcrumb */}
           <div style={{ paddingTop: 14, display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, fontFamily: 'var(--font-mono)', letterSpacing: '0.02em' }}>
-            <Link href="/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>Home</Link>
-            <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
-            <span style={{ color: 'rgba(255,255,255,0.85)' }}>Judges</span>
+            <Link href="/" style={{ color: '#888888', textDecoration: 'none' }}>Home</Link>
+            <span style={{ color: '#CCCCCC' }}>/</span>
+            <span style={{ color: '#1A1A1A' }}>Judges</span>
           </div>
 
           <div style={{ paddingTop: 24, paddingBottom: 28 }}>
@@ -112,14 +112,14 @@ export default async function JudgesPage() {
 
             <h1 style={{
               fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, marginBottom: 10,
-              color: '#ffffff', letterSpacing: '-0.025em', fontFamily: 'var(--font-inter)', lineHeight: 1.1,
+              color: '#1A1A1A', letterSpacing: '-0.025em', fontFamily: 'var(--font-inter)', lineHeight: 1.1,
             }}>
               Federal Judge Analytics
             </h1>
 
             <p style={{
               fontSize: 15, lineHeight: 1.65, maxWidth: 640,
-              color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-inter)',
+              color: '#666666', fontFamily: 'var(--font-inter)',
             }}>
               Ruling patterns, case duration, and outcome tendencies across all 95 federal districts. Data from 5.1M+ public federal cases.
             </p>
@@ -133,7 +133,7 @@ export default async function JudgesPage() {
         <JudgeDirectoryClient initialJudges={initialJudges} initialTotal={initialTotal} />
 
         {/* Beta Notice with Radar Preview */}
-        <section style={{ padding: '40px 32px', borderRadius: 6, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', marginBottom: 48, marginTop: 48, position: 'relative' }}>
+        <section style={{ padding: '40px 32px', borderRadius: 6, border: '1px solid #E0E0E0', background: '#FFFFFF', marginBottom: 48, marginTop: 48, position: 'relative' }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
             padding: '3px 8px', marginBottom: 12,
@@ -145,10 +145,10 @@ export default async function JudgesPage() {
           }}>
             Advanced Metrics
           </div>
-          <h2 style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-inter)', marginBottom: 10, letterSpacing: '-0.02em' }}>
+          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#1A1A1A', fontFamily: 'var(--font-inter)', marginBottom: 10, letterSpacing: '-0.02em' }}>
             Analytics Radar — Multi-dimensional Profiles
           </h2>
-          <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-inter)', maxWidth: 680, margin: '0 0 28px', lineHeight: 1.65 }}>
+          <p style={{ fontSize: 13, color: '#444444', fontFamily: 'var(--font-inter)', maxWidth: 680, margin: '0 0 28px', lineHeight: 1.65 }}>
             Explore detailed judge profiles with motion grant rates, settlement patterns, and disposition metrics derived from PACER and FJC records.
           </p>
 
@@ -157,11 +157,11 @@ export default async function JudgesPage() {
         </section>
 
         {/* Disclaimer */}
-        <div style={{ padding: '20px 24px', border: '1px solid var(--border-default)', borderLeft: '3px solid rgba(59,130,246,0.3)', borderRadius: 6, background: 'var(--color-surface-0)' }}>
-          <h3 style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(96,165,250,0.8)', fontFamily: 'var(--font-mono)', marginBottom: 10 }}>
+        <div style={{ padding: '20px 24px', border: '1px solid #E0E0E0', borderLeft: '3px solid rgba(0,82,204,0.3)', borderRadius: 6, background: '#FFFFFF' }}>
+          <h3 style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: '#0052CC', fontFamily: 'var(--font-mono)', marginBottom: 10 }}>
             Data Methodology
           </h3>
-          <p style={{ fontSize: 12, lineHeight: 1.7, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-inter)', margin: 0 }}>
+          <p style={{ fontSize: 12, lineHeight: 1.7, color: '#444444', fontFamily: 'var(--font-inter)', margin: 0 }}>
             Judge analytics are derived from publicly available federal court records and PACER data. Metrics include motion grant rates, case duration, win rates, and settlement patterns. Data is updated periodically and covers active Article III judges in the 95 federal judicial districts. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>

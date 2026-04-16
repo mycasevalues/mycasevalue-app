@@ -122,9 +122,9 @@ export default async function JudgeProfilePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
       />
-      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+      <div style={{ background: '#F7F7F5', minHeight: '100vh' }}>
       {/* Header with breadcrumb */}
-      <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+      <div style={{ borderBottom: '1px solid #E0E0E0', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
           <nav
@@ -133,50 +133,50 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               paddingTop: '16px',
               paddingBottom: '16px',
               fontSize: '13px',
-              fontFamily: 'var(--font-body)',
-              color: 'var(--color-text-secondary)',
+              fontFamily: 'var(--font-inter)',
+              color: '#444444',
             }}
           >
             <ol style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0, padding: 0, listStyle: 'none' }}>
               <li>
-                <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                <Link href="/" style={{ color: '#E65C00', textDecoration: 'none' }}>
                   Home
                 </Link>
               </li>
-              <li style={{ color: '#B0B8C1' }}>›</li>
+              <li style={{ color: '#CCCCCC' }}>›</li>
               <li>
-                <Link href="/judges" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                <Link href="/judges" style={{ color: '#E65C00', textDecoration: 'none' }}>
                   Judges
                 </Link>
               </li>
-              <li style={{ color: '#B0B8C1' }}>›</li>
+              <li style={{ color: '#CCCCCC' }}>›</li>
               {judge.circuit && (
                 <>
                   <li>
-                    <Link href={`/judges?circuit=${judge.circuit}`} style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                    <Link href={`/judges?circuit=${judge.circuit}`} style={{ color: '#E65C00', textDecoration: 'none' }}>
                       {judge.circuit} Circuit
                     </Link>
                   </li>
-                  <li style={{ color: '#B0B8C1' }}>›</li>
+                  <li style={{ color: '#CCCCCC' }}>›</li>
                 </>
               )}
               {judge.district_id && (
                 <>
                   <li>
-                    <Link href={`/judges?district=${judge.district_id}`} style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                    <Link href={`/judges?district=${judge.district_id}`} style={{ color: '#E65C00', textDecoration: 'none' }}>
                       {judge.district_id}
                     </Link>
                   </li>
-                  <li style={{ color: '#B0B8C1' }}>›</li>
+                  <li style={{ color: '#CCCCCC' }}>›</li>
                 </>
               )}
-              <li style={{ color: 'var(--color-text-primary)', fontWeight: '600' }}>{judge.full_name}</li>
+              <li style={{ color: '#1A1A1A', fontWeight: '600' }}>{judge.full_name}</li>
             </ol>
           </nav>
 
           {/* Page heading */}
           <div style={{ paddingTop: '0px', paddingBottom: '24px' }}>
-            <div style={{ fontSize: '12px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)', marginBottom: '8px', letterSpacing: '0.5px', textTransform: 'uppercase', fontWeight: '600' }}>
+            <div style={{ fontSize: '12px', fontFamily: 'var(--font-inter)', color: '#444444', marginBottom: '8px', letterSpacing: '0.5px', textTransform: 'uppercase', fontWeight: '600' }}>
               JUDGE PROFILE
             </div>
             <h1
@@ -184,7 +184,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                 fontSize: '32px',
                 fontFamily: 'var(--font-heading)',
                 fontWeight: '700',
-                color: 'var(--color-text-primary)',
+                color: '#1A1A1A',
                 margin: '0 0 12px 0',
               }}
             >
@@ -193,8 +193,8 @@ export default async function JudgeProfilePage({ params }: PageProps) {
             <p
               style={{
                 fontSize: '14px',
-                fontFamily: 'var(--font-body)',
-                color: 'var(--color-text-secondary)',
+                fontFamily: 'var(--font-inter)',
+                color: '#444444',
                 margin: '0 0 12px 0',
               }}
             >
@@ -206,13 +206,13 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               <div
                 style={{
                   fontSize: '13px',
-                  fontFamily: 'var(--font-body)',
-                  color: 'var(--color-text-secondary)',
+                  fontFamily: 'var(--font-inter)',
+                  color: '#444444',
                   flex: '1 1 auto',
                 }}
               >
                 Appointed {appointmentYear || 'N/A'} by President{' '}
-                <span style={{ fontWeight: '600', color: 'var(--color-text-primary)' }}>
+                <span style={{ fontWeight: '600', color: '#1A1A1A' }}>
                   {judge.appointing_president || 'Unknown'}
                 </span>
                 {partyLabel !== '—' && (
@@ -222,7 +222,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                       marginLeft: '8px',
                       padding: '2px 8px',
                       background: partyColor,
-                      color: 'var(--color-surface-0)',
+                      color: '#FFFFFF',
                       borderRadius: '8px',
                       fontSize: '12px',
                       fontWeight: '600',
@@ -240,17 +240,17 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   alignItems: 'center',
                   gap: '6px',
                   padding: '4px 12px',
-                  background: 'rgba(59,130,246,0.08)',
-                  border: '1px solid var(--accent-primary)',
+                  background: 'rgba(0,82,204,0.04)',
+                  border: '1px solid #E65C00',
                   borderRadius: '8px',
                   fontSize: '12px',
-                  fontFamily: 'var(--font-body)',
-                  color: 'var(--accent-primary-hover)',
+                  fontFamily: 'var(--font-inter)',
+                  color: '#CC5200',
                   fontWeight: '500',
                   flexShrink: 0,
                 }}
               >
-                <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-primary)' }} />
+                <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: '#E65C00' }} />
                 Data as of {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
               </div>
 

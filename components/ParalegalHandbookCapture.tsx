@@ -153,7 +153,7 @@ export default function ParalegalHandbookCapture() {
 
       const addSubheader = (text: string) => {
         doc.setFontSize(11);
-        doc.setTextColor(0, 65, 130); // #1e40af
+        doc.setTextColor(0, 61, 153); // #003D99
         doc.setFont('helvetica', 'bold');
         doc.text(text, margin, yPosition);
         yPosition += 7;
@@ -190,7 +190,7 @@ export default function ParalegalHandbookCapture() {
       doc.text('Handbook', margin, 60);
 
       doc.setFontSize(16);
-      doc.setTextColor(0, 65, 130);
+      doc.setTextColor(0, 61, 153);
       doc.text('Professional Reference Tool', margin, 75);
 
       doc.setFontSize(9);
@@ -823,7 +823,7 @@ export default function ParalegalHandbookCapture() {
                 }))
               }
               placeholder="you@example.com"
-              className="mt-2 block w-full rounded-md border border-white/10 px-4 py-2 text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-2 block w-full rounded-md border border-[#E0E0E0] px-4 py-2 text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={state.loading}
             />
           </div>

@@ -321,7 +321,7 @@ async function CategoryPage({
       <div style={{ padding: '40px 20px', textAlign: 'center', minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <h1 style={{ fontSize: 24, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 16 }}>Data Loading Error</h1>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: 24 }}>Data for this case type is being compiled. Check back soon.</p>
-        <a href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: '#1a56db', color: '#ffffff', border: '1px solid #1a56db', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 6, textDecoration: 'none', fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', fontFamily: 'var(--font-inter)', margin: '0 auto' }}>Browse all categories</a>
+        <a href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: '#E65C00', color: '#ffffff', border: '1px solid #E65C00', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 6, textDecoration: 'none', fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', fontFamily: 'var(--font-inter)', margin: '0 auto' }}>Browse all categories</a>
       </div>
     );
   }
@@ -427,7 +427,7 @@ async function CategoryPage({
 
       {/* Hero Section */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         padding: '36px 24px 28px',
         color: 'white',
         position: 'relative',

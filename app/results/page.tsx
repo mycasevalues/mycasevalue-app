@@ -63,7 +63,7 @@ export default function ResultsPage() {
 
       {/* Header */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         paddingTop: '40px',
         paddingBottom: '32px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -154,11 +154,11 @@ export default function ResultsPage() {
                 fontSize: 13,
                 fontWeight: 600,
                 letterSpacing: '-0.005em',
-                background: '#1a56db',
+                background: '#E65C00',
                 color: '#ffffff',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-inter)',
-                border: '1px solid #1a56db',
+                border: '1px solid #E65C00',
                 boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
                 cursor: 'pointer',
                 transition: 'background-color 150ms ease, border-color 150ms ease',

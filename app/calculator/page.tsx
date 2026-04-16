@@ -273,7 +273,7 @@ export default function CalculatorPage() {
 
       {/* Header */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         color: '#fff',
         padding: '48px 24px 40px',
         position: 'relative',

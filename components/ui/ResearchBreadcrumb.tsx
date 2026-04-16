@@ -1,11 +1,8 @@
 'use client';
 
 /**
- * ResearchBreadcrumb — contextual breadcrumb trail that tracks
- * the user's research path across connected entities.
- *
- * Unlike static breadcrumbs, this shows the actual research journey:
- * Cases > Employment > Wrongful Termination > SDNY > Judge Smith
+ * ResearchBreadcrumb — Bloomberg-style breadcrumb trail.
+ * Light mode: #888888 separators, #0052CC links, #1A1A1A current page.
  */
 
 import Link from 'next/link';
@@ -72,18 +69,47 @@ export default function ResearchBreadcrumb() {
   if (crumbs.length <= 1) return null;
 
   return (
-    <nav aria-label="Research breadcrumb" className="flex items-center gap-1.5 text-xs text-gray-400 overflow-x-auto whitespace-nowrap py-2 px-1">
+    <nav
+      aria-label="Research breadcrumb"
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 6,
+        fontSize: 12,
+        fontFamily: 'var(--font-inter)',
+        overflowX: 'auto',
+        whiteSpace: 'nowrap',
+        padding: '8px 4px',
+      }}
+    >
       {crumbs.map((crumb, i) => (
-        <span key={i} className="flex items-center gap-1.5">
+        <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           {i > 0 && (
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-gray-300 flex-shrink-0">
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#CCCCCC"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ flexShrink: 0 }}
+            >
               <path d="M9 18l6-6-6-6" />
             </svg>
           )}
           {i === crumbs.length - 1 ? (
-            <span className="text-gray-600 font-medium">{crumb.label}</span>
+            <span style={{ color: '#1A1A1A', fontWeight: 500 }}>{crumb.label}</span>
           ) : (
-            <Link href={crumb.href} className="text-gray-400 hover:text-brand-blue transition-colors">
+            <Link
+              href={crumb.href}
+              style={{
+                color: '#0052CC',
+                textDecoration: 'none',
+                transition: 'color 120ms',
+              }}
+            >
               {crumb.label}
             </Link>
           )}

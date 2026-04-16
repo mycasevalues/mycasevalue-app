@@ -4,7 +4,7 @@ const JudgeCompareClient = dynamic(
   () => import('@/components/JudgeCompareClient'),
   {
     loading: () => (
-      <div style={{ minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-secondary)' }}>
+      <div style={{ minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#444444' }}>
         Loading judge comparison...
       </div>
     ),

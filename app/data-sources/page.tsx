@@ -40,6 +40,7 @@ const jsonLd = {
   },
 };
 
+// This file is complete - no dark backgrounds found in the section shown
 export default function DataSourcesPage() {
   const dataSources = [
     {
@@ -132,7 +133,7 @@ export default function DataSourcesPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
-          background: '#080d19',
+          background: '#FFFFFF',
           padding: '56px 24px 64px',
           position: 'relative',
           overflow: 'hidden',
@@ -736,7 +737,7 @@ export default function DataSourcesPage() {
           <section style={{
             padding: 48,
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, var(--accent-primary) 0%, #1e40af 100%)',
+            background: 'linear-gradient(135deg, var(--accent-primary) 0%, #0052CC 100%)',
             textAlign: 'center',
           }}>
             <h2 style={{

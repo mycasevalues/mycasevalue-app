@@ -118,7 +118,7 @@ const PRICING_TIERS = [
 const FAQ_ITEMS = [
   {
     question: 'What makes MyCaseValue suitable for enterprise deployment?',
-    answer: 'MyCaseValue is built on a scalable cloud infrastructure with 99.9% uptime SLA, role-based access control, enterprise-grade security compliance (SOC 2 Type II, GDPR, CCPA), and comprehensive audit logging. We support unlimited concurrent users, high-volume API access, and custom integrations with your existing legal technology stack.',
+    answer: 'MyCaseValue is built on a scalable cloud infrastructure with 99.9% uptime SLA, role-based access control, enterprise-grade security compliance (GDPR, CCPA), and comprehensive audit logging. We support unlimited concurrent users, high-volume API access, and custom integrations with your existing legal technology stack.',
   },
   {
     question: 'Can we white-label MyCaseValue for our clients?',
@@ -130,7 +130,7 @@ const FAQ_ITEMS = [
   },
   {
     question: 'What security and compliance standards do you meet?',
-    answer: 'We maintain SOC 2 Type II certification, GDPR compliance, CCPA compliance, and HIPAA readiness. All data is encrypted in transit (TLS 1.3) and at rest (AES-256). We provide detailed security audit reports, penetration testing cooperation, and custom data processing agreements (DPAs) for institutional clients.',
+    answer: 'We maintain enterprise-grade security with GDPR compliance, CCPA compliance, and HIPAA readiness. All data is encrypted in transit (TLS 1.3) and at rest (AES-256). We provide detailed security audit reports, penetration testing cooperation, and custom data processing agreements (DPAs) for institutional clients.',
   },
   {
     question: 'Can you integrate with our existing legal technology?',
@@ -147,7 +147,7 @@ export default function EnterprisePage() {
     <div>
       {/* Hero */}
       <section style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         color: '#fff',
         padding: '56px 24px 48px',
         position: 'relative',

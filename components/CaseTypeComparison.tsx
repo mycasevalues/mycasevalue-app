@@ -59,7 +59,7 @@ export default function CaseTypeComparison() {
   return (
     <div>
       <style>{`
-        .cmp-select:focus { border-color: #1e40af !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
+        .cmp-select:focus { border-color: #003D99 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
       `}</style>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: 16, alignItems: 'center', marginBottom: 24 }}>

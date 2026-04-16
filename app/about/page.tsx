@@ -96,7 +96,7 @@ export default function AboutPage() {
         }
 
         .about-header {
-          background: #080d19;
+          background: #FFFFFF;
           color: white;
           padding: 4rem 1.5rem;
           text-align: left;
@@ -305,17 +305,17 @@ export default function AboutPage() {
           font-weight: 600;
           letter-spacing: -0.005em;
           text-decoration: none;
-          background: #1a56db;
+          background: #E65C00;
           color: #ffffff;
-          border: 1px solid #1a56db;
+          border: 1px solid #E65C00;
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
           transition: background-color 150ms ease, border-color 150ms ease;
           margin-top: 1.5rem;
         }
 
         .contact-link:hover {
-          background: #1e40af;
-          border-color: #1e40af;
+          background: #CC5200;
+          border-color: #CC5200;
         }
 
         .breadcrumb-wrapper {

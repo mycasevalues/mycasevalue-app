@@ -1,5 +1,13 @@
 /**
- * Footer — Bloomberg-style institutional dark with mono status row.
+ * Footer — Bloomberg Law-style institutional footer.
+ *
+ * Specs:
+ * - Background: #1A1A1A (charcoal, matching nav bar)
+ * - 3-column link layout + brand column
+ * - System-status strip: mono, green dot, operational status
+ * - Data lineage row
+ * - Bottom bar: copyright, legal links
+ * - No SOC 2 badge (per mandatory rules)
  */
 
 import Link from 'next/link';
@@ -43,22 +51,23 @@ export default function Footer() {
     <footer
       role="contentinfo"
       style={{
-        background: '#060a14',
-        color: '#94a3b8',
-        borderTop: '1px solid rgba(255,255,255,0.06)',
+        background: '#1A1A1A',
+        color: 'rgba(255,255,255,0.6)',
+        borderTop: '1px solid #333333',
       }}
     >
-      {/* System-status strip — mono terminal row */}
+      {/* System-status strip */}
       <div
         style={{
-          background: '#080d19',
-          borderBottom: '1px solid rgba(255,255,255,0.04)',
+          background: '#222222',
+          borderBottom: '1px solid #333333',
           padding: '10px 24px',
         }}
       >
         <div
-          className="max-w-5xl mx-auto"
           style={{
+            maxWidth: 960,
+            margin: '0 auto',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -66,19 +75,19 @@ export default function Footer() {
             flexWrap: 'wrap',
             fontFamily: 'var(--font-mono)',
             fontSize: 10,
-            letterSpacing: '0.15em',
+            letterSpacing: '0.12em',
             textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.45)',
+            color: 'rgba(255,255,255,0.4)',
             fontVariantNumeric: 'tabular-nums',
           }}
         >
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
             <span
               className="animate-pulse"
-              style={{ width: 6, height: 6, borderRadius: '50%', background: '#22c55e' }}
+              style={{ width: 6, height: 6, borderRadius: '50%', background: '#15803D' }}
               aria-hidden
             />
-            <span style={{ color: '#22c55e' }}>All systems operational</span>
+            <span style={{ color: '#15803D' }}>All systems operational</span>
           </span>
           <span>Uptime · 99.98%</span>
           <span>Cases indexed · 5,147,392</span>
@@ -87,36 +96,41 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <span className="text-sm font-bold text-white tracking-tight">
-              MyCase<span style={{ color: '#60a5fa' }}>Value</span>
-            </span>
-            <p className="text-[11px] text-gray-500 mt-2 leading-relaxed max-w-xs">
-              Institutional-grade federal court intelligence sourced from public records.
-            </p>
-            <div
+      {/* Main footer content */}
+      <div style={{ maxWidth: 960, margin: '0 auto', padding: '40px 24px' }}>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: 32,
+            marginBottom: 32,
+          }}
+          className="footer-grid"
+        >
+          {/* Brand column */}
+          <div>
+            <span
               style={{
-                marginTop: 12,
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 6,
-                padding: '4px 8px',
-                borderRadius: 4,
-                border: '1px solid rgba(59,130,246,0.2)',
-                background: 'rgba(59,130,246,0.06)',
-                fontFamily: 'var(--font-mono)',
-                fontSize: 9,
-                fontWeight: 600,
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                color: '#60a5fa',
+                fontSize: 14,
+                fontWeight: 700,
+                color: '#FFFFFF',
+                letterSpacing: '-0.02em',
+                fontFamily: 'var(--font-inter)',
               }}
             >
-              SOC 2 TYPE II · In progress
-            </div>
+              MyCaseValue
+            </span>
+            <p
+              style={{
+                fontSize: 11,
+                color: 'rgba(255,255,255,0.45)',
+                marginTop: 8,
+                lineHeight: 1.5,
+                maxWidth: 200,
+              }}
+            >
+              Institutional-grade federal court intelligence sourced from public records.
+            </p>
           </div>
 
           {/* Link columns */}
@@ -127,15 +141,15 @@ export default function Footer() {
                   fontFamily: 'var(--font-mono)',
                   fontSize: 10,
                   fontWeight: 600,
-                  color: 'rgba(255,255,255,0.45)',
+                  color: 'rgba(255,255,255,0.4)',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.15em',
+                  letterSpacing: '0.12em',
                   marginBottom: 12,
                 }}
               >
                 {col.title}
               </p>
-              <ul className="space-y-2">
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {col.links.map((link) => (
                   <li key={link.href}>
                     {'external' in link && link.external ? (
@@ -143,14 +157,26 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                        style={{
+                          fontSize: 12,
+                          color: 'rgba(255,255,255,0.55)',
+                          textDecoration: 'none',
+                          transition: 'color 120ms',
+                        }}
+                        className="footer-link"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                        style={{
+                          fontSize: 12,
+                          color: 'rgba(255,255,255,0.55)',
+                          textDecoration: 'none',
+                          transition: 'color 120ms',
+                        }}
+                        className="footer-link"
                       >
                         {link.label}
                       </Link>
@@ -165,7 +191,7 @@ export default function Footer() {
         {/* Data lineage row */}
         <div
           style={{
-            borderTop: '1px solid rgba(255,255,255,0.05)',
+            borderTop: '1px solid #333333',
             paddingTop: 20,
             paddingBottom: 16,
             display: 'flex',
@@ -179,9 +205,9 @@ export default function Footer() {
               fontFamily: 'var(--font-mono)',
               fontSize: 10,
               fontWeight: 600,
-              letterSpacing: '0.2em',
+              letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: 'rgba(255,255,255,0.45)',
+              color: 'rgba(255,255,255,0.4)',
             }}
           >
             Data lineage
@@ -190,7 +216,7 @@ export default function Footer() {
             style={{
               fontFamily: 'var(--font-mono)',
               fontSize: 11,
-              color: 'rgba(255,255,255,0.6)',
+              color: 'rgba(255,255,255,0.5)',
               fontVariantNumeric: 'tabular-nums',
             }}
           >
@@ -200,7 +226,7 @@ export default function Footer() {
             style={{
               fontFamily: 'var(--font-mono)',
               fontSize: 10,
-              color: 'rgba(255,255,255,0.35)',
+              color: 'rgba(255,255,255,0.3)',
               marginLeft: 'auto',
               fontVariantNumeric: 'tabular-nums',
             }}
@@ -212,7 +238,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           style={{
-            borderTop: '1px solid rgba(255,255,255,0.05)',
+            borderTop: '1px solid #333333',
             paddingTop: 20,
             display: 'flex',
             flexWrap: 'wrap',
@@ -221,29 +247,48 @@ export default function Footer() {
             gap: 16,
           }}
         >
-          <p className="text-[11px] text-gray-400" style={{ margin: 0 }}>
+          <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', margin: 0 }}>
             &copy; {new Date().getFullYear()} MyCaseValue LLC · West Virginia
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-[11px] text-gray-400 hover:text-gray-300 transition-colors">
-              Privacy
-            </Link>
-            <Link href="/terms" className="text-[11px] text-gray-400 hover:text-gray-300 transition-colors">
-              Terms
-            </Link>
-            <Link href="/security" className="text-[11px] text-gray-400 hover:text-gray-300 transition-colors">
-              Security
-            </Link>
-            <Link href="/contact" className="text-[11px] text-gray-400 hover:text-gray-300 transition-colors">
-              Contact
-            </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+            {['Privacy', 'Terms', 'Security', 'Contact'].map((label) => (
+              <Link
+                key={label}
+                href={`/${label.toLowerCase()}`}
+                style={{
+                  fontSize: 11,
+                  color: 'rgba(255,255,255,0.4)',
+                  textDecoration: 'none',
+                  transition: 'color 120ms',
+                }}
+                className="footer-link"
+              >
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
 
-        <p className="text-[10px] text-gray-500 text-center mt-6" style={{ fontFamily: 'var(--font-mono)' }}>
+        {/* Disclaimer */}
+        <p
+          style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: 10,
+            color: 'rgba(255,255,255,0.3)',
+            textAlign: 'center',
+            marginTop: 24,
+          }}
+        >
           Data from public federal court records · Not legal advice
         </p>
       </div>
+
+      <style>{`
+        .footer-link:hover { color: #FFFFFF !important; }
+        @media (max-width: 640px) {
+          .footer-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+      `}</style>
     </footer>
   );
 }

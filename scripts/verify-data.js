@@ -197,8 +197,8 @@ function generateHtmlReport(results) {
       </div>
 
       <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 16px; border-radius: 4px; margin-top: 24px;">
-        <h3 style="margin: 0 0 8px 0; color: #1e40af; font-size: 14px; font-weight: 600;">Validation Criteria</h3>
-        <ul style="margin: 0; padding-left: 20px; color: #1e40af; font-size: 13px;">
+        <h3 style="margin: 0 0 8px 0; color: #0052CC; font-size: 14px; font-weight: 600;">Validation Criteria</h3>
+        <ul style="margin: 0; padding-left: 20px; color: #0052CC; font-size: 13px;">
           <li>Win rate between 0-100%</li>
           <li>Settlement range: lo &lt; md &lt; hi</li>
           <li>Case count &gt; 0</li>

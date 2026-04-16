@@ -12,7 +12,7 @@ const iconMap = {
 };
 
 const colorMap = {
-  info: { bg: 'rgba(59,130,246,0.08)', border: 'rgba(59,130,246,0.15)', text: '#1E40AF' },
+  info: { bg: 'rgba(0,82,204,0.08)', border: 'rgba(0,82,204,0.15)', text: '#0052CC' },
   success: { bg: '#ECFDF5', border: '#A7F3D0', text: '#065F46' },
   warning: { bg: 'rgba(234,179,8,0.08)', border: '#FDE68A', text: '#92400E' },
   error: { bg: '#FEF2F2', border: '#FECACA', text: '#991B1B' },

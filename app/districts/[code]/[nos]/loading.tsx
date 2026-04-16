@@ -4,14 +4,14 @@ export default function Loading() {
       {/* Breadcrumb Skeleton */}
       <nav style={{
         background: 'var(--color-surface-0)',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        borderBottom: '1px solid #E0E0E0',
         padding: '12px 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
           <div
             style={{
               height: 16,
-              background: 'var(--border-default)',
+              background: '#E0E0E0',
               borderRadius: 4,
               width: 200,
               animation: 'pulse 2s infinite',
@@ -23,14 +23,14 @@ export default function Loading() {
       {/* Hero Skeleton */}
       <header style={{
         background: 'var(--accent-primary)',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        borderBottom: '1px solid #E0E0E0',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
           <div
             style={{
               height: 28,
-              background: 'rgba(255,255,255,0.2)',
+              background: '#E8E8E8',
               borderRadius: 4,
               width: 80,
               marginBottom: 16,
@@ -40,7 +40,7 @@ export default function Loading() {
           <div
             style={{
               height: 48,
-              background: 'rgba(255,255,255,0.2)',
+              background: '#E8E8E8',
               borderRadius: 4,
               width: '70%',
               marginBottom: 24,
@@ -64,7 +64,7 @@ export default function Loading() {
               key={i}
               style={{
                 background: 'var(--color-surface-0)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                border: '1px solid #E0E0E0',
                 borderRadius: '12px',
                 padding: '20px',
               }}
@@ -72,7 +72,7 @@ export default function Loading() {
               <div
                 style={{
                   height: 12,
-                  background: 'var(--border-default)',
+                  background: '#E0E0E0',
                   borderRadius: 4,
                   marginBottom: 12,
                   animation: 'pulse 2s infinite',
@@ -81,7 +81,7 @@ export default function Loading() {
               <div
                 style={{
                   height: 32,
-                  background: 'var(--border-default)',
+                  background: '#E0E0E0',
                   borderRadius: 4,
                   animation: 'pulse 2s infinite',
                 }}

@@ -1,365 +1,379 @@
 'use client';
 
 /**
- * WorkspaceSidebar — Persistent left navigation for the research workspace.
- * Replaces mega-menu navigation for authenticated/research pages.
+ * WorkspaceSidebar — Bloomberg Law-style persistent left navigation.
  *
- * Sections:
- * 1. Search (always at top)
- * 2. Research Hub (Cases, Judges, Districts, Documents)
- * 3. Tools (grouped attorney tools)
- * 4. Workspace (saved searches, projects)
- * 5. Account
+ * Specs:
+ * - Width: 220px fixed
+ * - Background: #F7F7F5 (warm off-white)
+ * - Right border: 1px solid #E0E0E0
+ * - Section headers: 11px Inter 600 uppercase, letter-spacing 0.08em, color #444444
+ * - Links: 13px Inter 400, color #0052CC, with right-chevron arrow
+ * - Active link: 3px left orange border (#E65C00), font-weight 600
+ * - Collapsible sections: By Circuit, By State
+ * - No search box (search is in the top nav bar)
+ * - No icons on links (Bloomberg uses plain text + chevron)
  */
 
-import { useState, useCallback, useMemo } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { useResearchStore } from '@/store/research';
-import { useWorkspaceStore } from '@/store/workspace';
-import { SITS } from '@/lib/data';
+import { usePathname } from 'next/navigation';
 
-interface NavItem {
+/* ── Section / Link types ── */
+
+interface SidebarLink {
   label: string;
   href: string;
-  icon: string; // SVG path
 }
 
-interface NavSection {
+interface SidebarSection {
   title: string;
-  items: NavItem[];
+  links: SidebarLink[];
   collapsible?: boolean;
+  defaultOpen?: boolean;
 }
 
-// ── SVG icon paths (24x24 viewBox) ──
-const ICONS = {
-  search: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
-  cases: 'M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z',
-  judges: 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
-  districts: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z',
-  documents: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
-  predictor: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
-  demand: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
-  calculator: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z',
-  venue: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064',
-  workspace: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-  settings: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z',
-  help: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-  chevron: 'M19 9l-7 7-7-7',
-  pricing: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-  trends: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
-};
+/* ── Navigation Data ── */
 
-const RESEARCH_NAV: NavSection = {
-  title: 'Research',
-  items: [
-    { label: 'Cases', href: '/cases', icon: ICONS.cases },
-    { label: 'Judges', href: '/judges', icon: ICONS.judges },
-    { label: 'Districts', href: '/districts', icon: ICONS.districts },
-    { label: 'Legal Documents', href: '/legal/search', icon: ICONS.documents },
-    { label: 'Compare', href: '/compare', icon: ICONS.trends },
-    { label: 'Calculator', href: '/calculator', icon: ICONS.calculator },
-  ],
-};
+const SECTIONS: SidebarSection[] = [
+  {
+    title: 'Search & Browse',
+    links: [
+      { label: 'All Cases', href: '/cases' },
+      { label: 'Case Search', href: '/case-search' },
+      { label: 'Judges', href: '/judges' },
+      { label: 'Districts', href: '/districts' },
+      { label: 'Legal Documents', href: '/legal/search' },
+    ],
+  },
+  {
+    title: 'Federal Districts',
+    collapsible: true,
+    defaultOpen: false,
+    links: [
+      { label: 'By Circuit', href: '/districts#circuits' },
+      { label: 'S.D.N.Y.', href: '/districts/nysd' },
+      { label: 'C.D. Cal.', href: '/districts/cacd' },
+      { label: 'N.D. Ill.', href: '/districts/ilnd' },
+      { label: 'S.D. Fla.', href: '/districts/flsd' },
+      { label: 'E.D. Pa.', href: '/districts/paed' },
+      { label: 'D.N.J.', href: '/districts/njd' },
+      { label: 'N.D. Cal.', href: '/districts/cand' },
+      { label: 'View All Districts', href: '/districts' },
+    ],
+  },
+  {
+    title: 'Analytics',
+    links: [
+      { label: 'Trends', href: '/trends' },
+      { label: 'Compare', href: '/compare' },
+      { label: 'Win Rate Map', href: '/map' },
+      { label: 'Case Odds', href: '/odds' },
+      { label: 'NOS Explorer', href: '/nos-explorer' },
+    ],
+  },
+  {
+    title: 'Tools',
+    collapsible: true,
+    defaultOpen: true,
+    links: [
+      { label: 'Case Predictor', href: '/attorney/case-predictor' },
+      { label: 'Judge Intelligence', href: '/attorney/judge-intelligence' },
+      { label: 'Venue Optimizer', href: '/attorney/venue-optimizer' },
+      { label: 'Demand Letter', href: '/attorney/demand-letter' },
+      { label: 'Calculator', href: '/calculator' },
+      { label: 'All Attorney Tools', href: '/attorney' },
+    ],
+  },
+  {
+    title: 'Account',
+    links: [
+      { label: 'Dashboard', href: '/dashboard' },
+      { label: 'Settings', href: '/account' },
+      { label: 'Pricing', href: '/pricing' },
+    ],
+  },
+];
 
-const TOOLS_NAV: NavSection = {
-  title: 'Attorney Tools',
-  collapsible: true,
-  items: [
-    { label: 'Case Predictor', href: '/attorney/case-predictor', icon: ICONS.predictor },
-    { label: 'Judge Intelligence', href: '/attorney/judge-intelligence', icon: ICONS.judges },
-    { label: 'Venue Optimizer', href: '/attorney/venue-optimizer', icon: ICONS.venue },
-    { label: 'Demand Letter', href: '/attorney/demand-letter', icon: ICONS.demand },
-    { label: 'Bulk Analysis', href: '/attorney/bulk-analysis', icon: ICONS.calculator },
-    { label: 'Court Rules', href: '/attorney/court-rules', icon: ICONS.documents },
-    { label: 'All Tools', href: '/attorney', icon: ICONS.settings },
-  ],
-};
+/* ── Chevron SVG (right arrow) ── */
 
-const MORE_NAV: NavSection = {
-  title: 'More',
-  collapsible: true,
-  items: [
-    { label: 'Trends', href: '/trends', icon: ICONS.trends },
-    { label: 'NOS Explorer', href: '/nos-explorer', icon: ICONS.cases },
-    { label: 'Win Rate Map', href: '/map', icon: ICONS.districts },
-    { label: 'Case Odds', href: '/odds', icon: ICONS.predictor },
-    { label: 'Dashboard', href: '/dashboard', icon: ICONS.workspace },
-  ],
-};
-
-function SidebarIcon({ path, size = 18 }: { path: string; size?: number }) {
+function Chevron({ className }: { className?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
-      <path d={path} />
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M9 18l6-6-6-6" />
     </svg>
   );
 }
 
-function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
+/* ── Expand/Collapse chevron (down arrow) ── */
+
+function ExpandChevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{
+        transition: 'transform 150ms ease',
+        transform: open ? 'rotate(0deg)' : 'rotate(-90deg)',
+      }}
+    >
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  );
+}
+
+/* ── Single Nav Link ── */
+
+function SidebarNavLink({ link, isActive }: { link: SidebarLink; isActive: boolean }) {
   return (
     <Link
-      href={item.href}
-      className={`flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm transition-all duration-150 ${
-        isActive
-          ? 'bg-brand-blue/8 text-brand-blue font-medium border-l-2 border-brand-blue -ml-[2px]'
-          : 'text-gray-500 hover:bg-[var(--color-surface-2)] hover:text-gray-200'
-      }`}
+      href={link.href}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '6px 12px 6px 16px',
+        fontSize: 13,
+        fontFamily: 'var(--font-inter)',
+        fontWeight: isActive ? 600 : 400,
+        color: isActive ? '#1A1A1A' : '#0052CC',
+        textDecoration: 'none',
+        borderLeft: isActive ? '3px solid #E65C00' : '3px solid transparent',
+        background: isActive ? '#EEEEEB' : 'transparent',
+        transition: 'background 120ms ease, border-color 120ms ease',
+        lineHeight: '1.4',
+      }}
+      className="sidebar-link"
     >
-      <SidebarIcon path={item.icon} />
-      <span className="truncate">{item.label}</span>
+      <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        {link.label}
+      </span>
+      <Chevron className="flex-shrink-0" />
     </Link>
   );
 }
 
-function NavSectionGroup({ section }: { section: NavSection }) {
-  const [isOpen, setIsOpen] = useState(true);
+/* ── Section Group ── */
+
+function SidebarSectionGroup({ section }: { section: SidebarSection }) {
+  const [isOpen, setIsOpen] = useState(section.defaultOpen !== false);
   const pathname = usePathname();
 
   return (
-    <div className="mb-1">
-      <button
-        onClick={() => section.collapsible && setIsOpen(!isOpen)}
-        className={`flex items-center justify-between w-full px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-400 border-l-2 border-l-transparent transition-all duration-150 ${
-          section.collapsible ? 'hover:text-gray-400 hover:border-l-gray-300 cursor-pointer' : 'cursor-default'
-        }`}
-      >
-        <span>{section.title}</span>
-        {section.collapsible && (
-          <svg
-            width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-            className={`transition-transform duration-150 ${isOpen ? '' : '-rotate-90'}`}
-          >
-            <path d={ICONS.chevron} />
-          </svg>
-        )}
-      </button>
+    <div style={{ marginBottom: 4 }}>
+      {/* Section header */}
+      {section.collapsible ? (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            width: '100%',
+            padding: '8px 12px 6px 16px',
+            fontSize: 11,
+            fontFamily: 'var(--font-inter)',
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
+            color: '#444444',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            lineHeight: '1.2',
+          }}
+        >
+          <span>{section.title}</span>
+          <ExpandChevron open={isOpen} />
+        </button>
+      ) : (
+        <div
+          style={{
+            padding: '8px 12px 6px 16px',
+            fontSize: 11,
+            fontFamily: 'var(--font-inter)',
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
+            color: '#444444',
+            lineHeight: '1.2',
+          }}
+        >
+          {section.title}
+        </div>
+      )}
+
+      {/* Links */}
       {isOpen && (
-        <div className="space-y-0.5">
-          {section.items.map((item) => (
-            <NavLink
-              key={item.href}
-              item={item}
-              isActive={pathname === item.href || pathname.startsWith(item.href + '/')}
-            />
-          ))}
+        <div>
+          {section.links.map((link) => {
+            const isActive =
+              pathname === link.href ||
+              (link.href !== '/' && pathname.startsWith(link.href + '/'));
+            return (
+              <SidebarNavLink key={link.href} link={link} isActive={isActive} />
+            );
+          })}
         </div>
       )}
     </div>
   );
 }
 
-export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean; onToggle: () => void }) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const { recentSearches } = useResearchStore();
-  const { savedItems } = useWorkspaceStore();
-  const [searchQuery, setSearchQuery] = useState('');
+/* ── Main Sidebar ── */
 
-  const [showSuggestions, setShowSuggestions] = useState(false);
-
-  // Type-ahead suggestions from case type data
-  const suggestions = useMemo(() => {
-    if (searchQuery.length < 2) return [];
-    const q = searchQuery.toLowerCase();
-    const results: Array<{ label: string; href: string; category: string }> = [];
-    for (const cat of SITS) {
-      for (const opt of cat.opts) {
-        if (opt.label.toLowerCase().includes(q)) {
-          results.push({ label: opt.label, href: `/cases/${cat.id}`, category: cat.label });
-        }
-        if (results.length >= 6) break;
-      }
-      if (results.length >= 6) break;
-    }
-    // Add page suggestions
-    const pages = [
-      { label: 'Cases', href: '/cases' }, { label: 'Judges', href: '/judges' },
-      { label: 'Districts', href: '/districts' }, { label: 'Calculator', href: '/calculator' },
-      { label: 'Compare', href: '/compare' }, { label: 'Trends', href: '/trends' },
-    ];
-    for (const p of pages) {
-      if (p.label.toLowerCase().includes(q) && results.length < 8) {
-        results.push({ ...p, category: 'Page' });
-      }
-    }
-    return results;
-  }, [searchQuery]);
-
-  const handleSearch = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    setShowSuggestions(false);
-    if (searchQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-    }
-  }, [searchQuery, router]);
-
+export default function WorkspaceSidebar({
+  isOpen,
+  onToggle,
+}: {
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
   return (
     <>
       {/* Mobile overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/30 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/20 z-40 lg:hidden"
           onClick={onToggle}
           aria-hidden="true"
         />
       )}
 
-      {/* Sidebar */}
+      <style>{`
+        .sidebar-link:hover {
+          background: #EEEEEB !important;
+        }
+      `}</style>
+
       <aside
         className={`
           fixed top-0 left-0 z-40 h-full
-          bg-[#0c1220] border-r border-white/5
           transition-transform duration-200
           lg:relative lg:translate-x-0 lg:z-auto lg:h-auto
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
-        style={{ width: '272px', minWidth: '272px', flexShrink: 0 }}
+        style={{
+          width: 220,
+          minWidth: 220,
+          flexShrink: 0,
+          background: '#F7F7F5',
+          borderRight: '1px solid #E0E0E0',
+        }}
         role="navigation"
         aria-label="Workspace navigation"
       >
-        <div className="flex flex-col h-full lg:h-[calc(100vh-120px)] lg:sticky lg:top-[80px] overflow-hidden">
-          {/* Mobile only: Logo + Close */}
-          <div className="flex items-center justify-between px-4 h-14 border-b border-white/5 flex-shrink-0 lg:hidden">
-            <Link href="/" className="flex items-center gap-2 text-white">
-              <svg width="24" height="24" viewBox="-100 -100 200 200" className="flex-shrink-0">
-                <rect x="-100" y="-100" width="200" height="200" rx="26" fill="#1a56db" />
-                <g transform="rotate(12)">
-                  <polygon points="0,0 -40,-69.3 40,-69.3 80,0" fill="white" opacity="0.93" />
-                  <polygon points="0,0 80,0 40,69.3 -40,69.3" fill="white" opacity="0.52" />
-                  <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
-                </g>
-              </svg>
-              <span className="font-bold text-gray-100 text-sm">
-                MyCase<span className="text-brand-blue">Value</span>
-              </span>
+        <div
+          className="flex flex-col h-full lg:h-[calc(100vh-80px)] lg:sticky lg:top-[80px] overflow-hidden"
+        >
+          {/* Mobile: Close button header */}
+          <div
+            className="flex items-center justify-between px-4 flex-shrink-0 lg:hidden"
+            style={{
+              height: 52,
+              borderBottom: '1px solid #E0E0E0',
+              background: '#F7F7F5',
+            }}
+          >
+            <Link
+              href="/"
+              style={{
+                fontFamily: 'var(--font-inter)',
+                fontSize: 14,
+                fontWeight: 700,
+                color: '#1A1A1A',
+                textDecoration: 'none',
+              }}
+            >
+              MyCaseValue
             </Link>
             <button
               onClick={onToggle}
-              className="p-2 text-gray-500 hover:text-gray-300 rounded-lg"
+              style={{
+                padding: 6,
+                color: '#444444',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+              }}
               aria-label="Close sidebar"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
 
-          {/* Search */}
-          <div className="px-3 py-2 border-b border-white/5 flex-shrink-0 shadow-sm">
-            <form onSubmit={handleSearch} role="search" aria-label="Search federal court records">
-              <div className="relative">
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
-                  <SidebarIcon path={ICONS.search} size={16} />
-                </div>
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => { setSearchQuery(e.target.value); setShowSuggestions(true); }}
-                  onFocus={() => setShowSuggestions(true)}
-                  onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-                  placeholder="Search cases, judges..."
-                  className="w-full pl-9 pr-3 py-2 text-sm bg-[#111827] border border-white/10 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-colors"
-                  aria-label="Search"
-                  autoComplete="off"
-                />
-                {/* Type-ahead suggestions */}
-                {showSuggestions && suggestions.length > 0 && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#111827] border border-white/10 rounded-lg shadow-lg z-50 overflow-hidden">
-                    {suggestions.map((s, i) => (
-                      <Link
-                        key={i}
-                        href={s.href}
-                        className="flex items-center justify-between px-3 py-2 text-xs hover:bg-white/5 transition-colors"
-                        onClick={() => { setSearchQuery(''); setShowSuggestions(false); }}
-                      >
-                        <span className="text-gray-200 font-medium truncate">{s.label}</span>
-                        <span className="text-[10px] text-gray-400 flex-shrink-0 ml-2">{s.category}</span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </form>
+          {/* Scrollable nav sections */}
+          <div
+            className="flex-1 overflow-y-auto"
+            style={{ paddingTop: 8, paddingBottom: 12 }}
+          >
+            {SECTIONS.map((section) => (
+              <SidebarSectionGroup key={section.title} section={section} />
+            ))}
           </div>
 
-          {/* Navigation sections */}
-          <div className="flex-1 overflow-y-auto px-2 py-3 space-y-2">
-            <NavSectionGroup section={RESEARCH_NAV} />
-            <NavSectionGroup section={TOOLS_NAV} />
-            <NavSectionGroup section={MORE_NAV} />
-
-            {/* Recent searches */}
-            {recentSearches.length > 0 && (
-              <div className="mb-1">
-                <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
-                  Recent
-                </div>
-                <div className="space-y-0.5">
-                  {recentSearches.slice(0, 5).map((search, i) => (
-                    <Link
-                      key={i}
-                      href={`/search?q=${encodeURIComponent(search.query)}`}
-                      className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm text-gray-500 hover:bg-[var(--color-surface-2)] hover:text-gray-300 transition-colors"
-                    >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="flex-shrink-0 text-gray-400">
-                        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span className="truncate text-xs">{search.query}</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Saved Items */}
-            {savedItems.length > 0 && (
-              <div className="mb-1">
-                <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
-                  Saved ({savedItems.length})
-                </div>
-                <div className="space-y-0.5">
-                  {savedItems.slice(0, 5).map((item) => (
-                    <Link
-                      key={item.id}
-                      href={item.href}
-                      className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm text-gray-500 hover:bg-[var(--color-surface-2)] hover:text-gray-300 transition-colors"
-                    >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1.5" className="flex-shrink-0 text-brand-blue">
-                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                      </svg>
-                      <div className="min-w-0 flex-1">
-                        <span className="truncate text-xs block">{item.label}</span>
-                        {item.sublabel && <span className="truncate text-[10px] text-gray-400 block">{item.sublabel}</span>}
-                      </div>
-                    </Link>
-                  ))}
-                  {savedItems.length > 5 && (
-                    <Link href="/dashboard" className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-xs text-brand-blue hover:bg-white/5 transition-colors">
-                      View all {savedItems.length} saved →
-                    </Link>
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Bottom section: Pricing + Help + Keyboard hint */}
-          <div className="flex-shrink-0 border-t border-white/5 px-2 py-3 space-y-0.5">
-            <NavLink
-              item={{ label: 'Pricing', href: '/pricing', icon: ICONS.pricing }}
-              isActive={pathname === '/pricing'}
-            />
-            <NavLink
-              item={{ label: 'Help & Methodology', href: '/methodology', icon: ICONS.help }}
-              isActive={pathname === '/methodology'}
-            />
-            <div className="flex items-center gap-2 px-3 py-2 text-xs text-gray-400 mt-1.5 pt-1.5 border-t border-white/5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="flex-shrink-0">
-                <path d="M12 6v12m6-6H6" />
-              </svg>
-              <span className="text-[11px]">Press ? for shortcuts</span>
-            </div>
+          {/* Bottom: Help + Methodology */}
+          <div
+            className="flex-shrink-0"
+            style={{
+              borderTop: '1px solid #E0E0E0',
+              padding: '8px 0',
+            }}
+          >
+            <Link
+              href="/methodology"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '6px 12px 6px 16px',
+                fontSize: 12,
+                fontFamily: 'var(--font-inter)',
+                fontWeight: 400,
+                color: '#666666',
+                textDecoration: 'none',
+              }}
+              className="sidebar-link"
+            >
+              Help & Methodology
+              <Chevron />
+            </Link>
+            <Link
+              href="/glossary"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '6px 12px 6px 16px',
+                fontSize: 12,
+                fontFamily: 'var(--font-inter)',
+                fontWeight: 400,
+                color: '#666666',
+                textDecoration: 'none',
+              }}
+              className="sidebar-link"
+            >
+              Glossary
+              <Chevron />
+            </Link>
           </div>
         </div>
       </aside>

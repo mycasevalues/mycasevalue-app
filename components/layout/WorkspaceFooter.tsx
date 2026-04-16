@@ -5,18 +5,52 @@ import Link from 'next/link';
 export default function WorkspaceFooter() {
   return (
     <footer
-      className="border-t border-white/5"
-      style={{ height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#060a14' }}
+      style={{
+        height: 36,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: '#F7F7F5',
+        borderTop: '1px solid #E0E0E0',
+      }}
       role="contentinfo"
     >
-      <div style={{ fontSize: '11px', color: '#6b7280', display: 'flex', alignItems: 'center', gap: '12px', whiteSpace: 'nowrap' }}>
+      <div
+        style={{
+          fontSize: 11,
+          fontFamily: 'var(--font-inter)',
+          color: '#888888',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 12,
+          whiteSpace: 'nowrap',
+        }}
+      >
         <span>&copy; 2026 MyCaseValue LLC</span>
-        <span style={{ color: '#374151' }}>&middot;</span>
-        <Link href="/privacy" className="hover:text-gray-400 transition-colors" style={{ color: '#6b7280', textDecoration: 'none' }}>Privacy</Link>
-        <span style={{ color: '#374151' }}>&middot;</span>
-        <Link href="/terms" className="hover:text-gray-400 transition-colors" style={{ color: '#6b7280', textDecoration: 'none' }}>Terms</Link>
-        <span style={{ color: '#374151' }}>&middot;</span>
-        <Link href="/methodology" className="hover:text-gray-400 transition-colors" style={{ color: '#6b7280', textDecoration: 'none' }}>Methodology</Link>
+        <span style={{ color: '#CCCCCC' }}>&middot;</span>
+        <Link
+          href="/privacy"
+          style={{ color: '#888888', textDecoration: 'none', transition: 'color 120ms' }}
+          className="hover:!text-[#0052CC]"
+        >
+          Privacy
+        </Link>
+        <span style={{ color: '#CCCCCC' }}>&middot;</span>
+        <Link
+          href="/terms"
+          style={{ color: '#888888', textDecoration: 'none', transition: 'color 120ms' }}
+          className="hover:!text-[#0052CC]"
+        >
+          Terms
+        </Link>
+        <span style={{ color: '#CCCCCC' }}>&middot;</span>
+        <Link
+          href="/methodology"
+          style={{ color: '#888888', textDecoration: 'none', transition: 'color 120ms' }}
+          className="hover:!text-[#0052CC]"
+        >
+          Methodology
+        </Link>
       </div>
     </footer>
   );

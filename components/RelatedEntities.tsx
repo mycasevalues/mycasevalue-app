@@ -28,7 +28,7 @@ interface RelatedEntitiesProps {
 
 function SectionHeader({ title, count }: { title: string; count?: number }) {
   return (
-    <div className="flex items-center justify-between px-4 py-2 border-b border-white/5">
+    <div className="flex items-center justify-between px-4 py-2 border-b border-[#E0E0E0]">
       <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">{title}</span>
       {count != null && <span className="text-[10px] text-gray-400 bg-[rgba(255,255,255,0.04)] px-1.5 py-0.5 rounded">{count}</span>}
     </div>
@@ -68,10 +68,10 @@ export default function RelatedEntities({ context }: RelatedEntitiesProps) {
   if (relatedCaseTypes.length === 0 && relatedDistricts.length === 0) return null;
 
   return (
-    <div className="border-l border-white/5 bg-[#111827]" style={{ width: '260px', minWidth: '260px', flexShrink: 0 }}>
+    <div className="border-l border-[#E0E0E0] bg-[#F7F7F5]" style={{ width: '260px', minWidth: '260px', flexShrink: 0 }}>
       <div className="sticky top-[80px] h-[calc(100vh-120px)] overflow-y-auto">
         {/* Header */}
-        <div className="px-4 py-3 border-b border-white/5">
+        <div className="px-4 py-3 border-b border-[#E0E0E0]">
           <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500">Related</h3>
         </div>
 

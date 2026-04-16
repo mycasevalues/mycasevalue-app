@@ -315,7 +315,7 @@ function SearchPageInner() {
       `}</style>
       {/* Dark Institutional Header */}
       <div className="search-header" style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         color: '#fff',
         padding: '40px 24px 32px',
         position: 'relative',
@@ -669,7 +669,7 @@ function SearchPageInner() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-                e.currentTarget.style.color = '#111827';
+                e.currentTarget.style.color = '#1A1A1A';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'transparent';

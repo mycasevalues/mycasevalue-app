@@ -52,7 +52,7 @@ export default async function Image({
             display: 'flex',
             width: '100%',
             height: '100%',
-            background: '#1a56db',
+            background: '#1A1A1A',
             color: '#ffffff',
             fontFamily: 'Inter, sans-serif',
             alignItems: 'center',
@@ -81,7 +81,7 @@ export default async function Image({
           flexDirection: 'column',
           width: '100%',
           height: '100%',
-          background: '#1a56db',
+          background: '#1A1A1A',
           color: '#ffffff',
           fontFamily: 'Inter, sans-serif',
           padding: '60px',
@@ -98,7 +98,7 @@ export default async function Image({
             right: '-100px',
             width: '400px',
             height: '400px',
-            background: 'rgba(10, 102, 194, 0.1)',
+            background: 'rgba(0, 82, 204, 0.1)',
             borderRadius: '50%',
           }}
         />
@@ -171,8 +171,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(10, 102, 194, 0.1)',
-              border: '1px solid rgba(10, 102, 194, 0.25)',
+              background: 'rgba(0, 82, 204, 0.1)',
+              border: '1px solid rgba(0, 82, 204, 0.25)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -194,7 +194,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#1a56db',
+                color: '#0052CC',
               }}
             >
               {winRate}%
@@ -205,8 +205,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(10, 102, 194, 0.1)',
-              border: '1px solid rgba(10, 102, 194, 0.25)',
+              background: 'rgba(0, 82, 204, 0.1)',
+              border: '1px solid rgba(0, 82, 204, 0.25)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -228,7 +228,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#1a56db',
+                color: '#0052CC',
               }}
             >
               {caseCount}
@@ -239,8 +239,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(10, 102, 194, 0.1)',
-              border: '1px solid rgba(10, 102, 194, 0.25)',
+              background: 'rgba(0, 82, 204, 0.1)',
+              border: '1px solid rgba(0, 82, 204, 0.25)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -262,7 +262,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#1a56db',
+                color: '#0052CC',
               }}
             >
               {recovery}

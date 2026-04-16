@@ -153,7 +153,7 @@ export default function IntegrationsPage() {
           left: 0;
           right: 0;
           height: 3px;
-          background: #1a56db;
+          background: #E65C00;
           border-radius: 12px 4px 0 0;
         }
         .breadcrumb-link:hover {
@@ -189,7 +189,7 @@ export default function IntegrationsPage() {
 
       {/* Header */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         color: '#fff',
         padding: '48px 24px 40px',
         position: 'relative',

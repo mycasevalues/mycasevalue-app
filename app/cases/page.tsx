@@ -88,7 +88,7 @@ function getTopWinRateCaseTypes(): Array<{ nos: string; label: string; wr: numbe
 // Get color for win rate — matches lib/color-scale.ts palette
 function getWinRateColor(wr: number): string {
   if (wr >= 65) return '#057642';
-  if (wr >= 50) return '#1a56db';
+  if (wr >= 50) return '#0052CC';
   if (wr >= 35) return '#C37D16';
   if (wr >= 20) return '#CC1016';
   return '#8C1515';
@@ -160,11 +160,11 @@ export default function CasesIndexPage() {
 
       {/* Header */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         padding: '28px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid #E0E0E0',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -180,19 +180,19 @@ export default function CasesIndexPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: '#0052CC',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#15803D' }} />
             Case Intelligence
           </div>
           <h1 className="font-inter" style={{
             fontSize: 'clamp(26px, 4vw, 32px)', fontWeight: 700,
-            color: '#ffffff', margin: '0 0 10px', letterSpacing: '-0.025em', lineHeight: 1.1,
+            color: '#1A1A1A', margin: '0 0 10px', letterSpacing: '-0.025em', lineHeight: 1.1,
           }}>
             Federal Case Analytics
           </h1>
           <p style={{
-            fontSize: 15, color: 'rgba(255,255,255,0.6)', margin: 0, lineHeight: 1.6, maxWidth: 640,
+            fontSize: 15, color: '#666666', margin: 0, lineHeight: 1.6, maxWidth: 640,
             fontFamily: 'var(--font-inter)',
           }}>
             Outcome data and litigation intelligence across 84 federal case types. Win rates, settlements, and duration benchmarks from 5.1M+ cases.
@@ -201,7 +201,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Platform Statistics Bar */}
-      <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '16px 24px' }}>
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid var(--border-default)', padding: '16px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
             <DataFreshness />
@@ -216,7 +216,7 @@ export default function CasesIndexPage() {
             </div>
           </div>
           <div>
-            <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--accent-primary-hover)', marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: '#CC5200', marginBottom: 4 }}>
               {platformStats.totalNOS}
             </div>
             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -274,9 +274,9 @@ export default function CasesIndexPage() {
               fontSize: '15px',
               border: '1px solid var(--border-default)',
               borderRadius: '12px',
-              background: 'var(--color-surface-0)',
-              color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-body)',
+              background: '#FFFFFF',
+              color: '#1A1A1A',
+              fontFamily: 'var(--font-inter)',
               boxSizing: 'border-box',
               transition: 'border-color 0.2s, box-shadow 0.2s',
               outline: 'none',
@@ -294,7 +294,7 @@ export default function CasesIndexPage() {
 
         <style dangerouslySetInnerHTML={{ __html: `
           .cat-card {
-            background: var(--color-surface-0);
+            background: #FFFFFF;
             border: 1px solid var(--border-default);
             border-radius: var(--radius-md);
             padding: 32px;
@@ -304,11 +304,11 @@ export default function CasesIndexPage() {
             flex-direction: column;
           }
           .cat-card:hover {
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 1px var(--accent-primary);
+            border-color: #0052CC;
+            box-shadow: 0 0 0 1px #0052CC;
           }
           .cat-card-arrow {
-            color: var(--accent-primary);
+            color: #E65C00;
             transition: transform 0.2s ease;
             margin-left: auto;
           }
@@ -316,16 +316,16 @@ export default function CasesIndexPage() {
             transform: translateX(4px);
           }
           .clear-search-btn:hover {
-            background: var(--color-surface-1);
+            background: #F7F7F5;
             border-color: var(--color-border-medium);
           }
           .cta-link:hover {
-            background: var(--accent-primary-hover);
+            background: #CC5200;
             box-shadow: none;
             transform: translateY(-2px);
           }
           .stat-bar {
-            background: var(--color-surface-0);
+            background: #FFFFFF;
             border: 1px solid var(--border-default);
             border-radius: var(--radius-lg);
             height: 8px;
@@ -335,11 +335,11 @@ export default function CasesIndexPage() {
           }
           .stat-bar-fill {
             height: 100%;
-            background: var(--accent-primary-hover);
+            background: #CC5200;
             transition: width 0.3s ease;
           }
           .quick-link-card {
-            background: var(--color-surface-0);
+            background: #FFFFFF;
             border: 1px solid var(--border-default);
             border-radius: var(--radius-lg);
             padding: 20px;
@@ -353,14 +353,14 @@ export default function CasesIndexPage() {
             gap: 12px;
           }
           .quick-link-card:hover {
-            border-color: var(--accent-primary);
+            border-color: #E65C00;
             box-shadow: var(--shadow-lg);
           }
         `}} />
 
         {filtered.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-            <p style={{ fontSize: 18, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: 18, color: '#444444', fontFamily: 'var(--font-inter)' }}>
               No case types match &ldquo;{search}&rdquo;
             </p>
             <button
@@ -373,9 +373,9 @@ export default function CasesIndexPage() {
                 fontWeight: 600,
                 border: '1px solid var(--border-default)',
                 borderRadius: 8,
-                background: 'var(--color-surface-0)',
-                color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-body)',
+                background: '#FFFFFF',
+                color: '#1A1A1A',
+                fontFamily: 'var(--font-inter)',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
                 textTransform: 'uppercase',
@@ -413,11 +413,11 @@ export default function CasesIndexPage() {
 
                   <Link href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
                     <div className="cat-card" style={{
-                      borderColor: isSelected ? 'var(--accent-primary)' : 'var(--border-default)',
-                      background: isSelected ? 'rgba(10, 102, 194, 0.01)' : 'var(--color-surface-0)',
+                      borderColor: isSelected ? '#E65C00' : 'var(--border-default)',
+                      background: isSelected ? '#EFF5FF' : '#FFFFFF',
                     }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8, paddingRight: 28 }}>
-                        <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
+                        <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#1A1A1A', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
                           {category.label}
                         </h2>
                         <SaveButton
@@ -431,14 +431,14 @@ export default function CasesIndexPage() {
                           }}
                         />
                       </div>
-                      <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, marginBottom: 16 }}>{category.sub}</p>
+                      <p style={{ fontSize: 14, color: '#444444', margin: 0, lineHeight: 1.5, marginBottom: 16 }}>{category.sub}</p>
 
                       {/* Inline Stats */}
                       {catStats.totalCases > 0 && (
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 16px', marginBottom: 'auto', padding: '12px 0' }}>
                           <div>
-                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--accent-primary-hover)' }}>{catStats.totalCases.toLocaleString()}</div>
-                            <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Total Cases</div>
+                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: '#CC5200' }}>{catStats.totalCases.toLocaleString()}</div>
+                            <div style={{ fontSize: 11, color: '#444444', fontWeight: 500 }}>Total Cases</div>
                           </div>
                           <div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -452,15 +452,15 @@ export default function CasesIndexPage() {
                               )}
                               <ConfidenceDot n={catStats.totalCases} />
                             </div>
-                            <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Avg Win Rate</div>
+                            <div style={{ fontSize: 11, color: '#444444', fontWeight: 500 }}>Avg Win Rate</div>
                           </div>
                           <div>
-                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)' }}>{catStats.avgSettlement}%</div>
-                            <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Settlement Rate</div>
+                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: '#1A1A1A' }}>{catStats.avgSettlement}%</div>
+                            <div style={{ fontSize: 11, color: '#444444', fontWeight: 500 }}>Settlement Rate</div>
                           </div>
                           <div>
-                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)' }}>{catStats.avgDuration}mo</div>
-                            <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Avg Duration</div>
+                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: '#1A1A1A' }}>{catStats.avgDuration}mo</div>
+                            <div style={{ fontSize: 11, color: '#444444', fontWeight: 500 }}>Avg Duration</div>
                           </div>
                         </div>
                       )}
@@ -476,30 +476,30 @@ export default function CasesIndexPage() {
         {/* Most-Filed Case Types Section */}
         {filtered.length !== 0 && topFiledCases.length > 0 && (
           <div style={{ marginTop: 80 }}>
-            <h2 className="font-display" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 32, letterSpacing: '-0.3px' }}>
+            <h2 className="font-display" style={{ fontSize: 28, fontWeight: 600, color: '#1A1A1A', marginBottom: 32, letterSpacing: '-0.3px' }}>
               Most-Filed Case Types
             </h2>
             <div style={{ display: 'grid', gap: 12 }}>
               {topFiledCases.map((caseType, idx) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 80px 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <div style={{ background: '#FFFFFF', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 80px 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#1A1A1A' }}>
                       #{idx + 1}
                     </div>
                     <div>
-                      <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 2 }}>
+                      <div style={{ fontSize: 15, fontWeight: 600, color: '#1A1A1A', marginBottom: 2 }}>
                         {caseType.label}
                       </div>
-                      <div style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>
+                      <div style={{ fontSize: 12, color: '#444444' }}>
                         {caseType.categoryLabel}
                       </div>
                     </div>
                     <TrendSparkline nosCode={caseType.nos} width={80} height={32} />
                     <div style={{ textAlign: 'right' }}>
-                      <div className="font-mono" style={{ fontSize: 16, fontWeight: 600, color: 'var(--accent-primary-hover)' }}>
+                      <div className="font-mono" style={{ fontSize: 16, fontWeight: 600, color: '#CC5200' }}>
                         {caseType.total.toLocaleString()}
                       </div>
-                      <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>Cases</div>
+                      <div style={{ fontSize: 11, color: '#444444', fontWeight: 500 }}>Cases</div>
                     </div>
                   </div>
                 </Link>
@@ -511,17 +511,17 @@ export default function CasesIndexPage() {
         {/* Highest Win Rate Case Types Section */}
         {filtered.length !== 0 && topWinRateCases.length > 0 && (
           <div style={{ marginTop: 80 }}>
-            <h2 className="font-display" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 32, letterSpacing: '-0.3px' }}>
+            <h2 className="font-display" style={{ fontSize: 28, fontWeight: 600, color: '#1A1A1A', marginBottom: 32, letterSpacing: '-0.3px' }}>
               Highest Win Rate Case Types
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
               {topWinRateCases.map((caseType) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: 20, height: '100%', transition: 'all 0.2s ease', cursor: 'pointer' }}>
-                    <div style={{ fontSize: 14, color: 'var(--color-text-secondary)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 500 }}>
+                  <div style={{ background: '#FFFFFF', border: '1px solid var(--border-default)', borderRadius: '12px', padding: 20, height: '100%', transition: 'all 0.2s ease', cursor: 'pointer' }}>
+                    <div style={{ fontSize: 14, color: '#444444', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 500 }}>
                       {caseType.categoryLabel}
                     </div>
-                    <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 16 }}>
+                    <div style={{ fontSize: 16, fontWeight: 600, color: '#1A1A1A', marginBottom: 16 }}>
                       {caseType.label}
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
@@ -529,11 +529,11 @@ export default function CasesIndexPage() {
                         <div className="font-mono" style={{ fontSize: 32, fontWeight: 600, color: getWinRateColor(caseType.wr) }}>
                           {caseType.wr}%
                         </div>
-                        <div style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>Win Rate</div>
+                        <div style={{ fontSize: 12, color: '#444444' }}>Win Rate</div>
                       </div>
                       <TrendSparkline nosCode={caseType.nos} width={100} height={40} />
                     </div>
-                    <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', fontWeight: 500 }}>
+                    <div style={{ fontSize: 11, color: '#444444', fontWeight: 500 }}>
                       {caseType.total.toLocaleString()} cases analyzed
                     </div>
                   </div>
@@ -546,60 +546,60 @@ export default function CasesIndexPage() {
         {/* Quick Links Section */}
         {filtered.length !== 0 && (
           <div style={{ marginTop: 80, marginBottom: 40 }}>
-            <h2 className="font-display" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 32, letterSpacing: '-0.3px' }}>
+            <h2 className="font-display" style={{ fontSize: 28, fontWeight: 600, color: '#1A1A1A', marginBottom: 32, letterSpacing: '-0.3px' }}>
               Quick Links
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
               <Link href="/search" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary-hover)" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#CC5200" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="m21 21-4.35-4.35"></path>
                   </svg>
-                  <div style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>Search Cases</div>
-                  <div style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>Find outcomes by keyword</div>
+                  <div style={{ fontWeight: 600, color: '#1A1A1A' }}>Search Cases</div>
+                  <div style={{ fontSize: 12, color: '#444444' }}>Find outcomes by keyword</div>
                 </div>
               </Link>
 
               <Link href="/calculator" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#15803D" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"></rect>
                     <path d="M8 6h8M8 10h8M8 14h8M8 18h8"></path>
                   </svg>
-                  <div style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>Estimate Value</div>
-                  <div style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>Calculate case value</div>
+                  <div style={{ fontWeight: 600, color: '#1A1A1A' }}>Estimate Value</div>
+                  <div style={{ fontSize: 12, color: '#444444' }}>Calculate case value</div>
                 </div>
               </Link>
 
               <Link href="/compare" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E65C00" strokeWidth="2">
                     <path d="M12 3v18M3 9h6M15 9h6M3 15h6M15 15h6"></path>
                   </svg>
-                  <div style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>Compare Cases</div>
-                  <div style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>Side-by-side analysis</div>
+                  <div style={{ fontWeight: 600, color: '#1A1A1A' }}>Compare Cases</div>
+                  <div style={{ fontSize: 12, color: '#444444' }}>Side-by-side analysis</div>
                 </div>
               </Link>
 
               <Link href="/trends" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" strokeWidth="2">
                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                   </svg>
-                  <div style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>View Trends</div>
-                  <div style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>Win rate trends</div>
+                  <div style={{ fontWeight: 600, color: '#1A1A1A' }}>View Trends</div>
+                  <div style={{ fontSize: 12, color: '#444444' }}>Win rate trends</div>
                 </div>
               </Link>
 
               <Link href="/map" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary-hover)" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#CC5200" strokeWidth="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
-                  <div style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>Circuit Map</div>
-                  <div style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>By court circuit</div>
+                  <div style={{ fontWeight: 600, color: '#1A1A1A' }}>Circuit Map</div>
+                  <div style={{ fontSize: 12, color: '#444444' }}>By court circuit</div>
                 </div>
               </Link>
             </div>
@@ -608,15 +608,15 @@ export default function CasesIndexPage() {
       </div>
 
       {/* CTA */}
-      <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', padding: '60px 20px', textAlign: 'center' }}>
+      <div style={{ background: '#FFFFFF', border: '1px solid var(--border-default)', padding: '60px 20px', textAlign: 'center' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 className="font-display" style={{ fontSize: 32, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
+          <h2 className="font-display" style={{ fontSize: 32, fontWeight: 600, color: '#1A1A1A', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
             Ready to research your case?
           </h2>
-          <p style={{ fontSize: 18, color: 'var(--color-text-secondary)', margin: '0 0 32px', lineHeight: 1.6 }}>
+          <p style={{ fontSize: 18, color: '#444444', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '12px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
+          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#E65C00', color: '#FFFFFF', borderRadius: '12px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
             Start Researching
             <ArrowRightIcon size={14} />
           </a>
@@ -630,7 +630,7 @@ export default function CasesIndexPage() {
           bottom: 0,
           left: 0,
           right: 0,
-          background: 'var(--accent-primary)',
+          background: '#E65C00',
           height: '48px',
           display: 'flex',
           alignItems: 'center',
@@ -640,14 +640,14 @@ export default function CasesIndexPage() {
           zIndex: 100,
           boxShadow: '0 -2px 8px rgba(0,0,0,0.1)',
         }}>
-          <span style={{ color: 'white', fontWeight: 600, fontSize: 15, fontFamily: 'var(--font-body)' }}>
+          <span style={{ color: 'white', fontWeight: 600, fontSize: 15, fontFamily: 'var(--font-inter)' }}>
             Compare {selectedCategories.size} categor{selectedCategories.size === 1 ? 'y' : 'ies'}
           </span>
           <button
             onClick={handleCompare}
             style={{
-              background: 'var(--color-surface-0)',
-              color: 'var(--accent-primary)',
+              background: '#FFFFFF',
+              color: '#E65C00',
               border: 'none',
               borderRadius: '8px',
               padding: '8px 20px',
@@ -655,7 +655,7 @@ export default function CasesIndexPage() {
               fontSize: 14,
               cursor: 'pointer',
               transition: 'all 0.2s ease',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-inter)',
               display: 'flex',
               alignItems: 'center',
               gap: '8px',
@@ -679,7 +679,7 @@ export default function CasesIndexPage() {
       {selectedCategories.size >= 2 && <div style={{ height: '48px' }} />}
 
       {/* Footer */}
-      <div style={{ background: 'var(--color-surface-1)', color: 'var(--color-text-secondary)', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid var(--border-default)' }}>
+      <div style={{ background: '#F7F7F5', color: '#444444', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ margin: 0 }}>
             <strong>Legal Disclaimer:</strong> This data is for research purposes only and is not legal advice. MyCaseValue provides historical federal court outcome data from public records. This does not constitute a prediction of any case outcome. Consult a qualified attorney for legal advice. © {new Date().getFullYear()} MyCaseValue LLC.

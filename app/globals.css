@@ -28,17 +28,17 @@
   width: auto;
   height: auto;
   overflow: visible;
-  background: var(--color-accent);
+  background: var(--bl-cta);
   color: #ffffff;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 3px;
   font-size: 13px;
   font-weight: 600;
   z-index: 9999;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Screen reader only — visually hidden but accessible to assistive technologies */
+/* Screen reader only */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -51,70 +51,69 @@
   border: 0;
 }
 
-/* Global focus-visible style — blue outline for keyboard navigation */
+/* Global focus-visible — Bloomberg blue outline for keyboard navigation */
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--bl-link);
   outline-offset: 2px;
 }
 
-/* Enhanced focus style for interactive elements with box-shadow */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--bl-link);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px var(--accent-secondary-subtle);
+  box-shadow: 0 0 0 4px rgba(0,82,204,0.10);
 }
 
-/* Don't show outline on focus for mouse users (except focus-visible) */
 *:focus:not(:focus-visible) {
   outline: none;
 }
 
 /* ============================================================
-   BLOOMBERG-INSPIRED INSTITUTIONAL DESIGN — Global typography reset
+   BLOOMBERG LAW DESIGN — Global typography reset
    ============================================================ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: var(--font-body);
-  font-size: var(--text-body);
-  line-height: 1.5;
-  color: var(--color-text-primary);
-  background: var(--color-surface-1);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--bl-text-primary);
+  background: var(--bl-surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  color: var(--color-text-primary);
+  color: var(--bl-text-primary);
 }
-h1 { font-size: var(--text-h1); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; }
-h2 { font-size: var(--text-h2); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
-h3 { font-size: var(--text-h3); font-weight: 600; line-height: 1.3; }
-h4 { font-size: var(--text-h4); font-weight: 600; line-height: 1.4; }
-h5 { font-size: 0.875rem; font-weight: 600; }
+h1 { font-size: 22px; font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; }
+h2 { font-size: 17px; font-weight: 700; line-height: 1.3; }
+h3 { font-size: 15px; font-weight: 700; line-height: 1.4; }
+h4 { font-size: 14px; font-weight: 600; line-height: 1.4; }
+h5 { font-size: 13px; font-weight: 600; }
 p { margin-bottom: 1rem; }
 
 /* Mobile-responsive heading sizes */
 @media (max-width: 768px) {
-  h1 { font-size: 32px; }
-  h2 { font-size: 24px; }
-  h3 { font-size: 20px; }
+  h1 { font-size: 20px; }
+  h2 { font-size: 16px; }
+  h3 { font-size: 15px; }
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 28px; }
-  h2 { font-size: 20px; }
-  h3 { font-size: 18px; }
-  h4 { font-size: 16px; }
+  h1 { font-size: 18px; }
+  h2 { font-size: 15px; }
+  h3 { font-size: 14px; }
+  h4 { font-size: 13px; }
 }
+
 p:last-child { margin-bottom: 0; }
-a { color: var(--color-text-accent); text-decoration: none; }
-a:hover { text-decoration: none; color: var(--color-accent-light); }
+a { color: var(--bl-link); text-decoration: none; }
+a:hover { text-decoration: none; color: var(--bl-link-hover); }
 
 /* Touch-friendly form inputs on mobile */
 @media (pointer: coarse) {
@@ -133,17 +132,15 @@ a:hover { text-decoration: none; color: var(--color-accent-light); }
   .auth-btn { min-height: 48px; }
 }
 
-/* Reduced-motion: canonical rule is in tokens.css */
-
 /* ============================================================
    TAILWIND LAYER UTILITIES
    ============================================================ */
 @layer utilities {
   .skeleton {
-    background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+    background: linear-gradient(90deg, #F0F0F0 25%, #E8E8E8 50%, #F0F0F0 75%);
     background-size: 400% 100%;
     animation: shimmer 1.8s infinite linear;
-    border-radius: 4px;
+    border-radius: 2px;
   }
 
   .font-display {
@@ -153,54 +150,51 @@ a:hover { text-decoration: none; color: var(--color-accent-light); }
   .font-mono {
     font-family: var(--font-mono);
   }
-
 }
 
 /* ============================================================
-   BRAND IDENTITY SYSTEM — CSS Variables
+   BRAND IDENTITY SYSTEM — Bloomberg Law Light Mode
    ============================================================ */
 :root {
-  /* Dark surfaces */
-  --color-navy:          #1a56db;
-  --color-panel:         #274464;
-  --color-panel-border:  #284565;
-  --color-navy-dark:     #122840;
-  --color-navy-light:    #2A5080;
+  /* Surfaces — Bloomberg light */
+  --color-navy:          #1A1A1A;
+  --color-panel:         #F7F7F5;
+  --color-panel-border:  #E0E0E0;
+  --color-navy-dark:     #111111;
+  --color-navy-light:    #333333;
 
-  /* Brand blue */
-  --color-blue:          #1a56db;
-  --color-blue-dark:     #1e40af;
-  --color-blue-mid:      #3b82f6;
-  --color-blue-pale:     rgba(59,130,246,0.08);
+  /* Brand — Bloomberg orange CTA + blue links */
+  --color-blue:          #0052CC;
+  --color-blue-dark:     #003D99;
+  --color-blue-mid:      #0052CC;
+  --color-blue-pale:     rgba(0,82,204,0.08);
 
-  /* Text on dark */
+  /* Text on light */
   --text-white:          #FFFFFF;
-  --text-link:           rgba(255,255,255,0.08);
-  --text-muted-dark:     rgba(213, 216, 220, 0.6);
-  --text-dim-dark:       rgba(213, 216, 220, 0.35);
-  --text-sep:            rgba(213, 216, 220, 0.4);
+  --text-link:           #0052CC;
+  --text-muted-dark:     #888888;
+  --text-dim-dark:       #AAAAAA;
+  --text-sep:            #E8E8E8;
 
-  /* Borders on dark */
-  --border-dark:         rgba(255, 255, 255, 0.08);
-  --border-dark-subtle:  rgba(255, 255, 255, 0.06);
+  /* Borders on light */
+  --border-dark:         #E0E0E0;
+  --border-dark-subtle:  #E8E8E8;
 
-  /* Card background on dark */
-  --surface-card-dark:   rgba(255, 255, 255, 0.05);
+  /* Card background */
+  --surface-card-dark:   #FFFFFF;
 
   /* Light surfaces */
-  --color-surface-1:     #080d19;
-  --color-surface-2:     #111827;
+  --color-surface-1:     #FFFFFF;
+  --color-surface-2:     #F5F5F5;
 }
 
-/* ============================================================
-   BLOOMBERG ALIASES — Map legacy variable names
-   ============================================================ */
+/* Bloomberg aliases */
 :root {
   --bg: var(--bg-base);
   --bg-muted: var(--bg-alt);
   --bg-inverted: var(--bg-dark);
   --fg: var(--fg-primary);
-  --fg-inverted: var(--color-surface-1);
+  --fg-inverted: var(--bl-nav-text);
   --accent: var(--accent-primary);
   --accent-mid: var(--accent-primary-hover);
   --accent-bg: var(--accent-primary-subtle);
@@ -209,7 +203,7 @@ a:hover { text-decoration: none; color: var(--color-accent-light); }
   --border-muted: var(--border-subtle);
   --gradient-accent-h: var(--gradient-accent);
   --shadow-glow: var(--shadow-accent);
-  --shadow-2xl: 0 25px 50px rgba(0,0,0,0.15);
+  --shadow-2xl: 0 25px 50px rgba(0,0,0,0.10);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -218,7 +212,7 @@ a:hover { text-decoration: none; color: var(--color-accent-light); }
 }
 
 select {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239CA3AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23888888' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
   background-position: right 8px center;
   background-repeat: no-repeat;
   background-size: 16px;
@@ -230,31 +224,18 @@ html {
 }
 
 /* ============================================================
-   CURSOR STYLING — hand on interactive, arrow everywhere else
+   CURSOR STYLING
    ============================================================ */
-button,
-a,
-[role="button"],
-[role="tab"],
-[role="link"],
-label[for],
-select,
-input[type="checkbox"],
-input[type="radio"],
-input[type="range"],
-summary {
+button, a, [role="button"], [role="tab"], [role="link"],
+label[for], select, input[type="checkbox"], input[type="radio"],
+input[type="range"], summary {
   cursor: pointer !important;
 }
 
-/* Override cursor for non-interactive elements that might inherit pointer */
-input[type="text"],
-input[type="email"],
-input[type="search"],
-textarea {
+input[type="text"], input[type="email"], input[type="search"], textarea {
   cursor: text !important;
 }
 
-/* Ensure non-clickable elements stay as default arrow */
 div:not([role="button"]):not(.cursor-pointer),
 span:not([role="button"]),
 p, h1, h2, h3, h4, h5, h6,
@@ -262,7 +243,6 @@ section, article, header, footer, main, nav {
   cursor: default;
 }
 
-/* Full-screen optimization: ensure content fills viewport on all devices */
 html, body {
   min-height: 100vh;
   min-height: 100dvh;
@@ -271,56 +251,55 @@ html, body {
 }
 
 ::selection {
-  background: rgba(26,86,219,0.35);
-  color: #ffffff;
+  background: rgba(0,82,204,0.20);
+  color: #1A1A1A;
 }
 
 ::-moz-selection {
-  background: rgba(26,86,219,0.35);
-  color: #ffffff;
+  background: rgba(0,82,204,0.20);
+  color: #1A1A1A;
 }
 
-/* Institutional dark scrollbar — narrow, restrained */
+/* Bloomberg light scrollbar — clean, minimal */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #060a14;
+  background: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.12);
+  background: #CCCCCC;
   border-radius: 2px;
   transition: all 0.2s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255,255,255,0.25);
+  background: #AAAAAA;
 }
 
 ::-webkit-scrollbar-corner {
-  background: #060a14;
+  background: #F5F5F5;
 }
 
-
 /* ============================================================
-   ACCESSIBILITY — Institutional blue focus rings
+   ACCESSIBILITY — Bloomberg blue focus rings
    ============================================================ */
 *:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #0052CC;
   outline-offset: 2px;
   border-radius: 2px;
 }
 
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #0052CC;
   outline-offset: 2px;
 }
 
 /* ============================================================
-   TYPOGRAPHY
+   TYPOGRAPHY — Bloomberg institutional
    ============================================================ */
 h1, h2, h3 {
   font-family: var(--font-display);
@@ -328,9 +307,8 @@ h1, h2, h3 {
   letter-spacing: -0.01em;
 }
 
-
 /* ============================================================
-   FORM ELEMENTS & INTERACTIONS
+   FORM ELEMENTS & INTERACTIONS — Light mode
    ============================================================ */
 button, [role="button"], a {
   transition: all var(--duration-base) ease;
@@ -346,7 +324,7 @@ input, textarea, select {
               background-color var(--duration-base) ease;
 }
 
-/* Dark mode form inputs — institutional dark surfaces */
+/* Light mode form inputs — Bloomberg clean style */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -357,48 +335,52 @@ input[type="number"],
 input[type="date"],
 textarea,
 select {
-  background-color: var(--color-surface-0) !important;
-  color: var(--color-text-primary) !important;
-  border-color: rgba(255,255,255,0.1) !important;
+  background-color: #FFFFFF !important;
+  color: #1A1A1A !important;
+  border-color: #E0E0E0 !important;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--color-text-muted) !important;
+  color: #888888 !important;
 }
 
 input:hover, textarea:hover, select:hover {
-  border-color: rgba(255,255,255,0.2) !important;
+  border-color: #CCCCCC !important;
 }
 
 input:focus, textarea:focus, select:focus {
-  border-color: var(--color-accent) !important;
-  box-shadow: 0 0 0 3px rgba(26,86,219,0.15) !important;
+  border-color: #0052CC !important;
+  box-shadow: 0 0 0 3px rgba(0,82,204,0.10) !important;
 }
 
-/* Dark mode table styling */
+/* Light mode table styling — Bloomberg */
 table {
-  border-color: rgba(255,255,255,0.08);
+  border-color: #E8E8E8;
 }
 
 th {
-  background-color: var(--color-surface-0);
-  color: var(--color-text-primary);
-  border-color: rgba(255,255,255,0.08);
+  background-color: #F5F5F5;
+  color: #444444;
+  border-color: #E0E0E0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 td {
-  border-color: rgba(255,255,255,0.06);
-  color: var(--color-text-secondary);
+  border-color: #E8E8E8;
+  color: var(--bl-text-primary);
 }
 
 tr:hover td {
-  background-color: rgba(255,255,255,0.02);
+  background-color: #EFF5FF;
 }
 
-/* Dark mode HR */
 hr {
-  border-color: rgba(255,255,255,0.08);
+  border-color: #E8E8E8;
 }
 
 /* ============================================================
@@ -423,7 +405,6 @@ hr {
    KEYFRAME ANIMATIONS
    ============================================================ */
 
-/* Scroll & entrance animations */
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
@@ -434,16 +415,14 @@ hr {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* SVG & drawing animations */
 @keyframes radialFill {
   from { stroke-dashoffset: var(--circumference, 188); }
   to { stroke-dashoffset: var(--progress-offset, 94); }
 }
 
-/* Pulse & glow animations */
 @keyframes livePulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 8px rgba(7, 135, 74, 0.3); }
-  50% { transform: scale(1.2); box-shadow: 0 0 16px rgba(7, 135, 74, 0.5); }
+  0%, 100% { transform: scale(1); box-shadow: 0 0 8px rgba(21, 128, 61, 0.3); }
+  50% { transform: scale(1.2); box-shadow: 0 0 16px rgba(21, 128, 61, 0.5); }
 }
 
 @keyframes breathe {
@@ -451,7 +430,6 @@ hr {
   50% { opacity: 1; transform: scale(1.02); }
 }
 
-/* Shimmer animations */
 @keyframes shimmer {
   from { background-position: -400px 0; }
   to { background-position: 400px 0; }
@@ -462,20 +440,17 @@ hr {
   to { transform: translateX(100%); }
 }
 
-/* Movement & float animations */
 @keyframes trendBounce {
   0% { transform: translateY(8px); opacity: 0; }
   50% { transform: translateY(-2px); }
   100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Gradient & special effects */
 @keyframes dividerGlow {
   0% { left: -60%; }
   100% { left: 160%; }
 }
 
-/* Form & component specific */
 @keyframes quizSlideIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
@@ -490,17 +465,12 @@ hr {
 /* ============================================================
    RESPONSIVE DESIGN
    ============================================================ */
-
-/* Grid layouts */
 @media (max-width: 640px) {
   .stats-grid {
     grid-template-columns: 1fr 1fr !important;
   }
 }
 
-/* ============================================================
-   ACCESSIBLE TOUCH TARGETS (44px minimum)
-   ============================================================ */
 @media (max-width: 640px) {
   button, a, [role="button"] {
     min-height: 44px;
@@ -508,32 +478,24 @@ hr {
   }
 }
 
-/* ============================================================
-   MOBILE-FIRST OPTIMIZATIONS
-   ============================================================ */
 @media (max-width: 640px) {
-  /* Better text sizing on small screens */
   .font-display {
     letter-spacing: -0.5px;
   }
 
-  /* Footer payment badges wrap nicely */
   footer .flex {
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  /* Prevent horizontal scroll */
   body {
     overflow-x: hidden;
   }
 
-  /* Larger tap targets for select dropdowns */
   select, input[type="text"], input[type="email"] {
     font-size: 16px;
   }
 
-  /* Range sliders: larger thumb for touch on mobile */
   input[type="range"]::-webkit-slider-thumb {
     width: 28px !important;
     height: 28px !important;
@@ -543,7 +505,6 @@ hr {
     height: 28px !important;
   }
 
-  /* Ensure all images and SVGs respect container */
   img, svg {
     max-width: 100%;
     height: auto;
@@ -552,7 +513,7 @@ hr {
 
 
 /* ============================================================
-   REDUCED MOTION — Accessibility support
+   REDUCED MOTION
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -576,7 +537,7 @@ hr {
 
 
 /* ============================================================
-   STAT GLOW — Subtle color emphasis on stats
+   STAT GLOW
    ============================================================ */
 .stat-glow {
   position: relative;
@@ -588,40 +549,35 @@ hr {
 /* ============================================================
    ADDITIONAL POLISH
    ============================================================ */
-
-/* Light option styling in selects */
 select option {
-  background: var(--bg-elevated);
-  color: var(--fg-primary);
+  background: #FFFFFF;
+  color: #1A1A1A;
   padding: 8px 12px;
 }
 
-/* Improved focus visibility for accessibility */
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #0052CC;
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
-/* Smoother scroll behavior */
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
 
-
-/* Better range input styling — corporate clean */
+/* Range input — Bloomberg clean */
 input[type="range"] {
   -webkit-appearance: none;
   height: 6px;
   border-radius: 3px;
-  background: var(--border-default);
+  background: #E0E0E0;
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--accent-secondary);
+  background: #0052CC;
   cursor: pointer;
   box-shadow: 0 1px 4px rgba(0,0,0,0.15);
   border: 2px solid #FFFFFF;
@@ -630,7 +586,7 @@ input[type="range"]::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--accent-secondary);
+  background: #0052CC;
   cursor: pointer;
   box-shadow: 0 1px 4px rgba(0,0,0,0.15);
   border: 2px solid #FFFFFF;
@@ -673,13 +629,6 @@ input[type="range"]::-moz-range-thumb {
     color: #666;
   }
 
-  .glass-light, .glass-medium, .glass-heavy, .glass-card {
-    border: 1px solid #ddd !important;
-    background: #fafafa !important;
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
   h1, h2, h3, h4 {
     page-break-after: avoid;
     break-after: avoid;
@@ -688,30 +637,17 @@ input[type="range"]::-moz-range-thumb {
 
   table { page-break-inside: avoid; break-inside: avoid; }
 
-  .text-gradient-accent, .text-gradient-hero, .text-gradient-premium {
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    -webkit-text-fill-color: #1a1a1a !important;
-    color: #1a1a1a !important;
-  }
-
   @page {
     margin: 1.5cm 2cm;
-    @top-center { content: "MyCaseValue — Federal Court Outcome Data"; font-size: 8pt; color: #999; }
+    @top-center { content: "MyCaseValue — Federal Court Intelligence"; font-size: 8pt; color: #999; }
     @bottom-center { content: "Page " counter(page) " of " counter(pages); font-size: 8pt; color: #999; }
-  }
-
-  [style*="background: linear-gradient"] {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
   }
 }
 
 /* ============================================================
-   VISUAL ENHANCEMENTS
+   VISUAL ENHANCEMENTS — Light mode
    ============================================================ */
 
-/* Success check animation */
 .success-check-path {
   stroke-dasharray: 40;
   stroke-dashoffset: 40;
@@ -734,7 +670,6 @@ input[type="range"]::-moz-range-thumb {
   100% { opacity: 1; transform: scale(1); }
 }
 
-/* Smooth number transition */
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
@@ -764,9 +699,7 @@ input[type="range"]::-moz-range-thumb {
   50% { background-position: 100% 50%; }
 }
 
-/* ============================================================
-   COMPARISON PULSE
-   ============================================================ */
+/* Comparison pulse */
 .comparison-pulse {
   animation: compPulse 2s ease-in-out infinite;
 }
@@ -775,9 +708,7 @@ input[type="range"]::-moz-range-thumb {
   50% { opacity: 1; transform: scale(1.02); }
 }
 
-/* ============================================================
-   LOCKED CONTENT SHIMMER
-   ============================================================ */
+/* Locked content shimmer */
 .locked-shimmer {
   position: relative;
   overflow: hidden;
@@ -789,7 +720,7 @@ input[type="range"]::-moz-range-thumb {
   background: linear-gradient(
     110deg,
     transparent 25%,
-    rgba(0,105,151,0.04) 37%,
+    rgba(0,82,204,0.04) 37%,
     transparent 63%
   );
   background-size: 200% 100%;
@@ -800,11 +731,7 @@ input[type="range"]::-moz-range-thumb {
   100% { background-position: -200% 0; }
 }
 
-/* ============================================================
-   WIZARD STEP TRANSITIONS & MICRO-INTERACTIONS
-   ============================================================ */
-
-/* Staggered list item entrances */
+/* Staggered list entrance */
 @keyframes staggerIn {
   0% { opacity: 0; transform: translateY(12px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -821,7 +748,7 @@ input[type="range"]::-moz-range-thumb {
 .stagger > *:nth-child(9) { animation: staggerIn 0.4s ease 0.45s both; }
 .stagger > *:nth-child(10) { animation: staggerIn 0.4s ease 0.5s both; }
 
-/* Prefers reduced motion */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .success-check-path,
   .success-check-burst,
@@ -845,17 +772,15 @@ input[type="range"]::-moz-range-thumb {
   animation: feedPulse 2s ease-in-out infinite;
 }
 
-/* Dashboard metric counter animation */
 @keyframes counterGlow {
   0%, 100% { text-shadow: none; }
-  50% { text-shadow: 0 0 8px rgba(0,105,151,0.2); }
+  50% { text-shadow: 0 0 8px rgba(0,82,204,0.15); }
 }
 
 .metric-glow {
   animation: counterGlow 3s ease-in-out infinite;
 }
 
-/* Value Calculator ROI emphasis */
 @keyframes roiPulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
@@ -867,12 +792,10 @@ input[type="range"]::-moz-range-thumb {
 
 
 /* ============================================================
-   LEXISNEXIS AESTHETIC — Clean Corporate Effects
+   BLOOMBERG INSTITUTIONAL — Clean grid overlay for hero
    ============================================================ */
-
-/* Hero section background — institutional dark with grid overlay */
 .mesh-bg {
-  background: #080d19;
+  background: var(--bl-surface);
   position: relative;
   overflow: hidden;
 }
@@ -883,18 +806,14 @@ input[type="range"]::-moz-range-thumb {
   opacity: 0.03;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 /* ============================================================
-   INSTITUTIONAL FORM CONTROLS
-   Bloomberg-style flat inputs — 6px radius, mono focus ring.
-   Scoped so we don't break component-library inputs that opt-out
-   via .ui-input or .ignore-institutional.
+   INSTITUTIONAL FORM CONTROLS — Bloomberg light mode
    ============================================================ */
-
 input[type="text"]:not(.ui-input):not(.ignore-institutional),
 input[type="email"]:not(.ui-input):not(.ignore-institutional),
 input[type="search"]:not(.ui-input):not(.ignore-institutional),
@@ -908,10 +827,10 @@ select:not(.ui-input):not(.ignore-institutional) {
   font-size: 14px;
   line-height: 1.5;
   padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid var(--border-default);
-  background: var(--color-surface-0);
-  color: var(--color-text-primary);
+  border-radius: 3px;
+  border: 1px solid #E0E0E0;
+  background: #FFFFFF;
+  color: #1A1A1A;
   transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
   -webkit-appearance: none;
   appearance: none;
@@ -923,7 +842,7 @@ input[type="search"]:not(.ui-input):not(.ignore-institutional):hover,
 input[type="number"]:not(.ui-input):not(.ignore-institutional):hover,
 textarea:not(.ui-input):not(.ignore-institutional):hover,
 select:not(.ui-input):not(.ignore-institutional):hover {
-  border-color: rgba(26, 86, 219, 0.4);
+  border-color: #CCCCCC;
 }
 
 input[type="text"]:not(.ui-input):not(.ignore-institutional):focus,
@@ -936,71 +855,69 @@ input[type="password"]:not(.ui-input):not(.ignore-institutional):focus,
 textarea:not(.ui-input):not(.ignore-institutional):focus,
 select:not(.ui-input):not(.ignore-institutional):focus {
   outline: none;
-  border-color: #1a56db;
-  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.15);
+  border-color: #0052CC;
+  box-shadow: 0 0 0 3px rgba(0,82,204,0.10);
 }
 
 input:not(.ui-input):not(.ignore-institutional)::placeholder,
 textarea:not(.ui-input):not(.ignore-institutional)::placeholder {
-  color: var(--color-text-muted);
+  color: #888888;
   opacity: 1;
 }
 
-/* Tabular numerals for number inputs (financial/metric feel) */
 input[type="number"]:not(.ui-input):not(.ignore-institutional) {
   font-feature-settings: 'tnum' 1;
   font-variant-numeric: tabular-nums;
 }
 
-/* Labels — mono eyebrow style */
+/* Labels — Bloomberg uppercase section style */
 .institutional-label {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 10px;
+  font-family: var(--font-body);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: #444444;
   margin-bottom: 6px;
 }
 
-/* Field hint / error / helper text */
 .institutional-hint {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #888888;
   margin-top: 6px;
 }
 .institutional-hint.is-error {
-  color: #ef4444;
+  color: #B91C1C;
 }
 .institutional-hint.is-success {
-  color: #22c55e;
+  color: #15803D;
 }
 
-/* Checkbox + radio — flat institutional */
+/* Checkbox + radio — Bloomberg flat */
 input[type="checkbox"]:not(.ui-input):not(.ignore-institutional),
 input[type="radio"]:not(.ui-input):not(.ignore-institutional) {
   width: 16px;
   height: 16px;
-  border: 1px solid var(--border-default);
+  border: 1px solid #E0E0E0;
   border-radius: 3px;
-  background: var(--color-surface-0);
+  background: #FFFFFF;
   cursor: pointer;
-  accent-color: #1a56db;
+  accent-color: #0052CC;
 }
 input[type="radio"]:not(.ui-input):not(.ignore-institutional) {
   border-radius: 50%;
 }
 
-/* Focus-visible — always show on keyboard focus for a11y */
+/* Focus-visible — keyboard nav */
 button:focus-visible,
 a:focus-visible,
 [role="button"]:focus-visible {
-  outline: 2px solid #60a5fa;
+  outline: 2px solid #0052CC;
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 /* Clean page entrance */
@@ -1012,23 +929,15 @@ a:focus-visible,
   animation: cinematicReveal 0.6s ease forwards;
 }
 
-/* Fade in up animation — subtle entrance for content */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in-up {
   animation: fadeInUp 300ms ease forwards;
 }
 
-/* Stagger animation for lists — cascade effect on nth-child */
 .animate-stagger > * {
   opacity: 0;
   animation: fadeInUp 300ms ease forwards;
@@ -1045,7 +954,7 @@ a:focus-visible,
 .animate-stagger > *:nth-child(10) { animation-delay: 450ms; }
 
 
-/* Data grid — stagger children entrance */
+/* Data grid stagger */
 .data-grid-stagger > * {
   opacity: 0;
   animation: sectionReveal 0.5s ease forwards;
@@ -1068,9 +977,9 @@ a:focus-visible,
 
 /* Pulsing live indicator */
 @keyframes liveBeacon {
-  0% { box-shadow: 0 0 0 0 rgba(7,135,74,0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(7,135,74,0); }
-  100% { box-shadow: 0 0 0 0 rgba(7,135,74,0); }
+  0% { box-shadow: 0 0 0 0 rgba(21,128,61,0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(21,128,61,0); }
+  100% { box-shadow: 0 0 0 0 rgba(21,128,61,0); }
 }
 .live-beacon {
   width: 8px;
@@ -1081,25 +990,24 @@ a:focus-visible,
 }
 
 
-/* Global accessible focus for all interactive elements */
+/* Global accessible focus */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 [role="button"]:focus-visible {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid #0052CC;
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
-/* Uniform button press feedback */
+/* Button press feedback */
 button:active:not(:disabled),
 [role="button"]:active:not(:disabled) {
   transform: scale(0.98);
   transition: transform 0.1s ease;
 }
 
-/* Disabled state consistency */
 button:disabled,
 [role="button"][aria-disabled="true"] {
   opacity: 0.5;
@@ -1108,14 +1016,11 @@ button:disabled,
 }
 
 
-/* Ripple click effect */
 @keyframes ripple {
   0% { transform: scale(0); opacity: 0.35; }
   100% { transform: scale(4); opacity: 0; }
 }
 
-
-/* Number ticker animation */
 @keyframes tickerSlide {
   0% { transform: translateY(100%); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
@@ -1126,7 +1031,6 @@ button:disabled,
 }
 
 
-/* Subtle shake for errors */
 @keyframes subtleShake {
   0%, 100% { transform: translateX(0); }
   20% { transform: translateX(-4px); }
@@ -1139,28 +1043,25 @@ button:disabled,
 }
 
 
-/* Skeleton loading shimmer */
 @keyframes skeleton-shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
 
-/* Stat emphasis */
 @keyframes stat-glow {
   0%, 100% { text-shadow: none; }
-  50% { text-shadow: 0 0 12px rgba(0,105,151,0.15); }
+  50% { text-shadow: 0 0 12px rgba(0,82,204,0.10); }
 }
 .stat-glow { animation: stat-glow 3s ease-in-out infinite; }
 
-/* Skeleton premium loading shimmer */
+/* Skeleton premium loading — light mode */
 .skeleton-premium {
-  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+  background: linear-gradient(90deg, #F0F0F0 25%, #E8E8E8 50%, #F0F0F0 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.5s ease-in-out infinite;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
-/* Counter tick animation */
 @keyframes counterTick {
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -1170,7 +1071,6 @@ button:disabled,
 }
 
 
-/* Reduce motion — respect user preference */
 @media (prefers-reduced-motion: reduce) {
   .cinematic-enter,
   .ticker-slide,
@@ -1183,30 +1083,27 @@ button:disabled,
 }
 
 /* ============================================================
-   SERVER-SIDE RENDERING COMPONENTS
+   SERVER-SIDE RENDERING — Bloomberg light hover
    ============================================================ */
-
-/* Outcome page navigation cards — hover via CSS (server component safe) */
 .outcome-nav-card:hover {
-  border-color: var(--accent-secondary-border) !important;
+  border-color: #0052CC !important;
   transform: translateY(-1px);
 }
 
-/* Auth pages — CSS-only focus/hover for Server Components */
+/* Auth pages — Bloomberg light */
 .auth-input {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .auth-input:focus {
-  border-color: var(--accent-secondary) !important;
-  box-shadow: 0 0 0 3px var(--accent-secondary-subtle) !important;
+  border-color: #0052CC !important;
+  box-shadow: 0 0 0 3px rgba(0,82,204,0.10) !important;
   outline: none;
 }
 .auth-btn {
   transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 .auth-btn:hover {
-  background-color: var(--accent-primary-hover) !important;
-  box-shadow: var(--shadow-accent);
+  background-color: var(--bl-cta-hover) !important;
 }
 .auth-btn:active {
   transform: scale(0.98);
@@ -1215,7 +1112,7 @@ button:disabled,
   transition: color 0.2s ease;
 }
 .auth-link:hover {
-  color: var(--accent-secondary-hover) !important;
+  color: var(--bl-link-hover) !important;
 }
 
 /* ============================================================
@@ -1235,30 +1132,13 @@ button:disabled,
     line-height: 1.6 !important;
   }
 
-  h1 {
-    font-size: 18pt !important;
-    page-break-after: avoid !important;
-  }
+  h1 { font-size: 18pt !important; page-break-after: avoid !important; }
+  h2 { font-size: 14pt !important; page-break-after: avoid !important; }
+  h3, h4, h5, h6 { font-size: 12pt !important; page-break-after: avoid !important; }
 
-  h2 {
-    font-size: 14pt !important;
-    page-break-after: avoid !important;
-  }
+  a { color: #000 !important; text-decoration: underline !important; }
 
-  h3, h4, h5, h6 {
-    font-size: 12pt !important;
-    page-break-after: avoid !important;
-  }
-
-  a {
-    color: #000 !important;
-    text-decoration: underline !important;
-  }
-
-  section {
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-  }
+  section { break-inside: avoid !important; page-break-inside: avoid !important; }
 
   * {
     box-shadow: none !important;
@@ -1270,26 +1150,16 @@ button:disabled,
     transition: none !important;
   }
 
-  table, table * {
-    border: 1px solid #000 !important;
-  }
-
-  tr, td, th {
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-  }
-
-  img {
-    max-width: 100% !important;
-    page-break-inside: avoid !important;
-  }
+  table, table * { border: 1px solid #000 !important; }
+  tr, td, th { break-inside: avoid !important; page-break-inside: avoid !important; }
+  img { max-width: 100% !important; page-break-inside: avoid !important; }
 }
 
-/* ── LEXIS+ STYLE HOVER EFFECTS ───────────────────── */
+/* ── BLOOMBERG HOVER EFFECTS ───────────────────── */
 .tool-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  border-color: rgba(9, 102, 195, 0.3) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-color: #0052CC !important;
 }
 
 .tool-card {
@@ -1306,25 +1176,22 @@ button:disabled,
   }
 }
 
-/* Trusted section responsive */
 @media (max-width: 768px) {
   .trusted-grid {
     grid-template-columns: 1fr !important;
   }
 }
 
-/* Hero section responsive — stack to single column on mobile */
 @media (max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
   }
   .hero-grid h1 {
-    font-size: 32px !important;
+    font-size: 20px !important;
   }
 }
 
-/* Contact form responsive — stack name/email fields on mobile */
 @media (max-width: 640px) {
   .contact-form-row {
     grid-template-columns: 1fr !important;
@@ -1334,7 +1201,6 @@ button:disabled,
   }
 }
 
-/* TabbedFeatures data table responsive */
 @media (max-width: 640px) {
   .tabbed-data-grid-5 {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -1351,10 +1217,10 @@ button:disabled,
 }
 .testimonial-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* Link underline animation */
+/* Link underline animation — Bloomberg blue */
 .nav-link-animated {
   position: relative;
 }
@@ -1365,18 +1231,12 @@ button:disabled,
   left: 50%;
   width: 0;
   height: 2px;
-  background: #1a56db;
+  background: #E65C00;
   transition: all 200ms ease;
   transform: translateX(-50%);
 }
 .nav-link-animated:hover::after {
   width: 100%;
-}
-
-/* Button press effect */
-a[style*="background: #1a56db"]:active,
-a[style*="background: rgb(9, 102, 195)"]:active {
-  transform: scale(0.98);
 }
 
 /* Smooth page transitions */
@@ -1385,12 +1245,7 @@ a[style*="background: rgb(9, 102, 195)"]:active {
   animation: fadeInUp 0.4s ease-out;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Card entrance animations for intersection observer */
+/* Card entrance animations */
 .card-animate {
   opacity: 0;
   transform: translateY(16px);
@@ -1401,7 +1256,7 @@ a[style*="background: rgb(9, 102, 195)"]:active {
   transform: translateY(0);
 }
 
-/* ── Scroll-reveal utility classes ────────────────── */
+/* Scroll-reveal */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(24px);
@@ -1413,14 +1268,13 @@ a[style*="background: rgb(9, 102, 195)"]:active {
   transform: translateY(0);
 }
 
-/* Related cards hover */
+/* Related cards hover — Bloomberg blue */
 .related-card:hover {
-  border-color: #1a56db !important;
+  border-color: #0052CC !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
 }
 
-/* Related grid responsive */
 @media (max-width: 768px) {
   .related-grid { grid-template-columns: 1fr 1fr !important; }
 }
@@ -1429,7 +1283,7 @@ a[style*="background: rgb(9, 102, 195)"]:active {
 }
 
 /* ============================================================
-   MOBILE GRID OVERRIDES — 375px viewport fixes
+   MOBILE GRID OVERRIDES
    ============================================================ */
 @media (max-width: 640px) {
   .metrics-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
@@ -1439,33 +1293,22 @@ a[style*="background: rgb(9, 102, 195)"]:active {
 }
 
 /* ============================================================
-   PRINT STYLES — Professional report printing
+   PRINT — Professional report
    ============================================================ */
 @media print {
-  /* Hide non-content elements */
   nav, footer, .back-to-top, .cookie-consent, .upgrade-banner-grid, .testimonial-card {
     display: none !important;
   }
 
-  /* Clean background and text for printing */
-  body {
-    background: white !important;
-    color: black !important;
-  }
+  body { background: white !important; color: black !important; }
 
-  /* Remove all shadows and decorative effects */
-  * {
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
+  * { box-shadow: none !important; text-shadow: none !important; }
 
-  /* Ensure all text is readable in black */
   h1, h2, h3, h4, h5, h6, p, span, a, div {
     color: black !important;
     background: white !important;
   }
 
-  /* Show URLs after links */
   a[href]::after {
     content: " (" attr(href) ")";
     font-size: 0.8em;
@@ -1473,60 +1316,32 @@ a[style*="background: rgb(9, 102, 195)"]:active {
     word-break: break-word;
   }
 
-  /* Skip internal links in print */
   a[href="#"]::after,
   a[href*="javascript"]::after {
     content: "" !important;
   }
 
-  /* Page breaks before major sections */
-  section {
-    page-break-inside: avoid;
-    margin-bottom: 2em;
-  }
-
-  /* Prevent orphaned content */
-  h2, h3 {
-    page-break-after: avoid;
-  }
-
-  /* Optimize spacing for print */
-  p, li {
-    orphans: 3;
-    widows: 3;
-  }
-
-  /* Print-friendly link styling */
-  a {
-    text-decoration: underline;
-    color: black !important;
-  }
-
-  /* Stat cards remain visible and inline */
-  .win-rate-grid {
-    page-break-inside: avoid;
-  }
-
-  /* Remove animations and transitions */
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
+  section { page-break-inside: avoid; margin-bottom: 2em; }
+  h2, h3 { page-break-after: avoid; }
+  p, li { orphans: 3; widows: 3; }
+  a { text-decoration: underline; color: black !important; }
+  .win-rate-grid { page-break-inside: avoid; }
+  * { animation: none !important; transition: none !important; }
 }
 
-/* ── Design System Utility Classes ── */
+/* ── Design System Utility Classes — Bloomberg light ── */
 .text-label {
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 500;
-  color: var(--color-text-secondary);
+  font-weight: 600;
+  color: #444444;
 }
 
 .text-data {
   font-family: var(--font-mono);
-  font-size: var(--text-data);
+  font-size: 13px;
 }
 
 .text-data-lg {
@@ -1536,12 +1351,12 @@ a[style*="background: rgb(9, 102, 195)"]:active {
 
 .section-divider {
   border: none;
-  border-top: 1px solid var(--color-border-light);
+  border-top: 1px solid #E8E8E8;
   margin: var(--space-section) 0;
 }
 
 .section-heading {
-  border-bottom: 2px solid var(--color-border-medium);
+  border-bottom: 2px solid #E0E0E0;
   padding-bottom: 0.75rem;
   margin-bottom: 1.5rem;
 }
@@ -1561,16 +1376,16 @@ a[style*="background: rgb(9, 102, 195)"]:active {
 .badge {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: var(--text-caption);
+  font-size: 12px;
   font-weight: 500;
   padding: 2px 8px;
-  border-radius: var(--radius-sm);
+  border-radius: 2px;
 }
 
 .badge-federal {
-  background: var(--color-badge-bg-federal);
-  color: var(--color-badge-federal);
-  border: 1px solid rgba(59,130,246,0.15);
+  background: rgba(0,82,204,0.08);
+  color: #0052CC;
+  border: 1px solid rgba(0,82,204,0.15);
 }
 
 .badge-positive {
@@ -1589,13 +1404,13 @@ a[style*="background: rgb(9, 102, 195)"]:active {
 }
 
 .btn-primary {
-  background: var(--color-accent);
+  background: var(--bl-cta);
   color: white;
   font-family: var(--font-body);
-  font-size: var(--text-body);
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   padding: 0.625rem 1.25rem;
-  border-radius: var(--radius-md);
+  border-radius: 3px;
   border: none;
   cursor: pointer;
   transition: background var(--duration-fast), opacity var(--duration-fast);
@@ -1603,36 +1418,36 @@ a[style*="background: rgb(9, 102, 195)"]:active {
   display: inline-block;
 }
 .btn-primary:hover {
-  background: var(--color-accent-dark);
+  background: var(--bl-cta-hover);
   text-decoration: none;
   color: white;
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-text-primary);
+  color: var(--bl-text-primary);
   font-family: var(--font-body);
-  font-size: var(--text-body);
+  font-size: 14px;
   font-weight: 500;
   padding: 0.625rem 1.25rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border-medium);
+  border-radius: 3px;
+  border: 1px solid #E0E0E0;
   cursor: pointer;
   transition: background var(--duration-fast), opacity var(--duration-fast);
   text-decoration: none;
   display: inline-block;
 }
 .btn-secondary:hover {
-  background: var(--color-surface-1);
+  background: #F5F5F5;
   text-decoration: none;
 }
 
 .btn-ghost {
   background: none;
   border: none;
-  color: var(--color-text-accent);
+  color: var(--bl-link);
   font-family: var(--font-body);
-  font-size: var(--text-body);
+  font-size: 14px;
   font-weight: 500;
   padding: 0.625rem 1.25rem;
   cursor: pointer;
@@ -1644,7 +1459,7 @@ a[style*="background: rgb(9, 102, 195)"]:active {
 }
 
 /* ============================================================
-   DARK MODE — Form element backgrounds
+   LIGHT MODE — Form element backgrounds
    ============================================================ */
 input[type="text"],
 input[type="email"],
@@ -1655,18 +1470,17 @@ input[type="url"],
 input[type="number"],
 select,
 textarea {
-  background-color: var(--color-surface-0) !important;
-  color: var(--color-text-primary) !important;
-  border-color: var(--border-default) !important;
+  background-color: #FFFFFF !important;
+  color: #1A1A1A !important;
+  border-color: #E0E0E0 !important;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--color-text-muted) !important;
+  color: #888888 !important;
 }
 
-/* Select dropdown arrow for dark mode */
 select option {
-  background: var(--color-surface-0);
-  color: var(--color-text-primary);
+  background: #FFFFFF;
+  color: #1A1A1A;
 }

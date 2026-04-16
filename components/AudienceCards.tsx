@@ -71,7 +71,7 @@ export default function AudienceCards() {
   const secondaryCards = AUDIENCE_CARDS.slice(3);
 
   return (
-    <section id="who-uses" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-[#080d19]">
+    <section id="who-uses" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-[#F7F7F5]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-3">
@@ -87,7 +87,7 @@ export default function AudienceCards() {
           {primaryCards.map((card) => (
             <div
               key={card.title}
-              className="bg-[#111827] border border-white/5 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-[#F7F7F5] border border-[#E0E0E0] rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="text-brand-blue mb-4">
                 {card.icon}
@@ -114,7 +114,7 @@ export default function AudienceCards() {
           {secondaryCards.map((card) => (
             <div
               key={card.title}
-              className="bg-[#111827] border border-white/5 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-[#F7F7F5] border border-[#E0E0E0] rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="text-brand-blue mb-4">
                 {card.icon}

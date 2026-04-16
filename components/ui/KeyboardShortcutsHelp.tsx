@@ -93,9 +93,9 @@ export default function KeyboardShortcutsHelp() {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
 
       {/* Modal */}
-      <div className="relative bg-[#0c1220] rounded-xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden">
+      <div className="relative bg-[#F7F7F5] rounded-xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/5">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#E0E0E0]">
           <h2 className="text-lg font-semibold text-gray-100">Keyboard Shortcuts</h2>
           <button
             onClick={() => setIsOpen(false)}
@@ -122,7 +122,7 @@ export default function KeyboardShortcutsHelp() {
                       {shortcut.keys.map((key, ki) => (
                         <span key={ki}>
                           {ki > 0 && <span className="text-gray-300 text-xs mx-0.5">+</span>}
-                          <kbd className="inline-flex items-center justify-center min-w-[24px] h-6 px-1.5 text-xs font-mono font-medium text-gray-600 bg-[rgba(255,255,255,0.04)] border border-white/10 rounded">
+                          <kbd className="inline-flex items-center justify-center min-w-[24px] h-6 px-1.5 text-xs font-mono font-medium text-gray-600 bg-[rgba(255,255,255,0.04)] border border-[#E0E0E0] rounded">
                             {key}
                           </kbd>
                         </span>
@@ -136,9 +136,9 @@ export default function KeyboardShortcutsHelp() {
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-3 border-t border-white/5 bg-[var(--color-surface-2)]">
+        <div className="px-6 py-3 border-t border-[#E0E0E0] bg-[var(--color-surface-2)]">
           <p className="text-[11px] text-gray-400 text-center">
-            Press <kbd className="px-1 py-0.5 text-[10px] bg-[#111827] border border-white/10 rounded font-mono">?</kbd> anytime to toggle this panel
+            Press <kbd className="px-1 py-0.5 text-[10px] bg-[#1A1A1A] border border-[#E0E0E0] rounded font-mono">?</kbd> anytime to toggle this panel
           </p>
         </div>
       </div>

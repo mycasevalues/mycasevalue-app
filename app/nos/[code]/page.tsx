@@ -363,7 +363,7 @@ export default async function NOSPage({ params }: PageProps) {
       <DemoNOSPage />
       <style>{`
         .nos-header {
-          background: #080d19;
+          background: #FFFFFF;
           color: #ffffff;
           position: relative;
           overflow: hidden;
@@ -408,7 +408,7 @@ export default async function NOSPage({ params }: PageProps) {
         .nos-badge {
           display: inline-block;
           padding: 8px 14px;
-          background: #1a56db;
+          background: #E65C00;
           color: var(--color-text-inverse);
           border-radius: 12px;
           font-size: 12px;
@@ -559,7 +559,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .cta-button {
-          background: #1a56db;
+          background: #E65C00;
           color: var(--color-text-inverse);
           padding: 14px 28px;
           border-radius: 12px;
@@ -572,7 +572,7 @@ export default async function NOSPage({ params }: PageProps) {
           text-transform: uppercase;
           letter-spacing: 0.5px;
           transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-          box-shadow: 0 2px 8px rgba(10, 102, 194, 0.2);
+          box-shadow: 0 2px 8px rgba(230, 92, 0, 0.2);
         }
 
         .cta-button:hover {
@@ -645,6 +645,7 @@ export default async function NOSPage({ params }: PageProps) {
           height: 10px;
           border-radius: 12px;
           flex-shrink: 0;
+          background: #E65C00;
         }
 
         .recovery-range-bar {
@@ -676,7 +677,7 @@ export default async function NOSPage({ params }: PageProps) {
           top: 10px;
           width: 2px;
           height: 20px;
-          background: #1a56db;
+          background: #E65C00;
           transform: translateX(-50%);
           z-index: 10;
         }
@@ -701,7 +702,7 @@ export default async function NOSPage({ params }: PageProps) {
         .factor-dot {
           width: 8px;
           height: 8px;
-          background: #1a56db;
+          background: #E65C00;
           border-radius: 50%;
           margin-top: 4px;
           flex-shrink: 0;

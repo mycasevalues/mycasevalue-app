@@ -95,7 +95,7 @@ export default function AnalyticsPage() {
         }
 
         .header {
-          background: #080d19;
+          background: #FFFFFF;
           color: #ffffff;
           padding: 48px 24px 40px;
           border-bottom: 1px solid rgba(255,255,255,0.06);

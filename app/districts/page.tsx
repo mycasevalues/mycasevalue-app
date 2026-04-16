@@ -278,42 +278,42 @@ export default function DistrictsPage() {
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+    <div style={{ background: '#FFFFFF', minHeight: '100vh' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <style>{`
-        a.lex-link { color: var(--accent-primary); text-decoration: none; font-weight: 500; }
+        a.lex-link { color: '#E65C00'; text-decoration: none; font-weight: 500; }
         a.lex-link:hover { text-decoration: underline; }
       `}</style>
 
       {/* Breadcrumb */}
       <nav style={{
-        background: 'var(--color-surface-0)',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        background: '#FFFFFF',
+        borderBottom: '1px solid #E0E0E0',
         padding: '12px 0',
         fontSize: 13,
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-inter)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
           <Link href="/" className="lex-link" style={{ fontWeight: 500 }}>Home</Link>
-          <span style={{ color: '#e5e7eb', margin: '0 8px' }}>›</span>
-          <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>Districts</span>
+          <span style={{ color: '#AAAAAA', margin: '0 8px' }}>›</span>
+          <span style={{ color: '#1A1A1A', fontWeight: 600 }}>Districts</span>
         </div>
       </nav>
 
       {/* Hero */}
       <header style={{
-        background: '#080d19',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        background: '#FFFFFF',
+        borderBottom: '1px solid #E0E0E0',
         padding: '28px 0 32px',
         position: 'relative',
         overflow: 'hidden',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)', position: 'relative' }}>
@@ -321,17 +321,17 @@ export default function DistrictsPage() {
             display: 'inline-flex', alignItems: 'center', gap: 6,
             padding: '4px 10px', marginBottom: 12,
             borderRadius: 999,
-            border: '1px solid rgba(59,130,246,0.2)',
-            background: 'rgba(59,130,246,0.08)',
+            border: '1px solid rgba(0,82,204,0.2)',
+            background: 'rgba(0,82,204,0.06)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: '#0052CC',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
             Venue Intelligence
           </div>
           <h1 style={{
-            color: '#ffffff',
+            color: '#1A1A1A',
             fontFamily: 'var(--font-inter)',
             letterSpacing: '-0.025em',
             fontSize: 'clamp(26px, 4vw, 32px)',
@@ -343,7 +343,7 @@ export default function DistrictsPage() {
           </h1>
 
           <p style={{
-            color: 'rgba(255,255,255,0.6)',
+            color: '#666666',
             fontFamily: 'var(--font-inter)',
             fontSize: 15,
             lineHeight: 1.6,
@@ -370,13 +370,13 @@ export default function DistrictsPage() {
                 gap: 14,
                 marginBottom: 20,
                 paddingBottom: 12,
-                borderBottom: '1px solid rgba(255,255,255,0.08)',
+                borderBottom: '1px solid #E0E0E0',
               }}>
                 <span style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: 10,
                   fontWeight: 600,
-                  color: 'rgba(96,165,250,0.8)',
+                  color: '#0052CC',
                   letterSpacing: '0.2em',
                   textTransform: 'uppercase',
                 }}>
@@ -385,7 +385,7 @@ export default function DistrictsPage() {
                 <h2 style={{
                   fontSize: 'clamp(18px, 3vw, 22px)',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: '#1A1A1A',
                   margin: 0,
                   fontFamily: 'var(--font-inter)',
                   letterSpacing: '-0.02em',
@@ -393,9 +393,9 @@ export default function DistrictsPage() {
                   {circuit.name}
                 </h2>
                 <span style={{
-                  color: 'var(--color-text-muted)',
+                  color: '#888888',
                   padding: '2px 8px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid #E0E0E0',
                   borderRadius: 3,
                   fontSize: 10,
                   fontWeight: 600,
@@ -413,7 +413,7 @@ export default function DistrictsPage() {
                   }}>
                     <div style={{
                       fontSize: 9,
-                      color: 'var(--color-text-muted)',
+                      color: '#888888',
                       textTransform: 'uppercase',
                       letterSpacing: '0.2em',
                       fontFamily: 'var(--font-mono)',
@@ -425,7 +425,7 @@ export default function DistrictsPage() {
                     <div style={{
                       fontSize: 18,
                       fontWeight: 600,
-                      color: '#22c55e',
+                      color: '#15803D',
                       fontFamily: 'var(--font-mono)',
                       fontVariantNumeric: 'tabular-nums',
                     }}>
@@ -448,8 +448,8 @@ export default function DistrictsPage() {
                   return (
                     <Link key={district.code} href={`/districts/${district.code}`} style={{ textDecoration: 'none' }} className="district-card-link">
                       <div style={{
-                        background: 'var(--color-surface-0)',
-                        border: '1px solid var(--border-default)',
+                        background: '#FFFFFF',
+                        border: '1px solid #E0E0E0',
                         borderRadius: '6px',
                         padding: '16px 18px',
                         transition: 'border-color 150ms ease, background-color 150ms ease',
@@ -463,7 +463,7 @@ export default function DistrictsPage() {
                           <h3 style={{
                             fontSize: 14,
                             fontWeight: 600,
-                            color: 'var(--color-text-primary)',
+                            color: '#1A1A1A',
                             margin: 0,
                             fontFamily: 'var(--font-inter)',
                             letterSpacing: '-0.01em',
@@ -473,14 +473,14 @@ export default function DistrictsPage() {
                           </h3>
                           <div style={{
                             fontSize: 10,
-                            color: 'rgba(96,165,250,0.8)',
+                            color: '#0052CC',
                             fontWeight: 600,
                             fontFamily: 'var(--font-mono)',
                             letterSpacing: '0.1em',
                             flexShrink: 0,
                             padding: '2px 6px',
                             borderRadius: 3,
-                            background: 'rgba(59,130,246,0.08)',
+                            background: 'rgba(0,82,204,0.06)',
                           }}>
                             {district.code}
                           </div>
@@ -491,12 +491,12 @@ export default function DistrictsPage() {
                           gridTemplateColumns: '1fr 1fr',
                           gap: 10,
                           paddingTop: 10,
-                          borderTop: '1px solid var(--border-default)',
+                          borderTop: '1px solid #E0E0E0',
                         }}>
                           <div>
                             <div style={{
                               fontSize: 9,
-                              color: 'var(--color-text-muted)',
+                              color: '#888888',
                               textTransform: 'uppercase',
                               letterSpacing: '0.2em',
                               marginBottom: 2,
@@ -508,7 +508,7 @@ export default function DistrictsPage() {
                             <div style={{
                               fontSize: 16,
                               fontWeight: 600,
-                              color: 'var(--color-text-primary)',
+                              color: '#1A1A1A',
                               fontFamily: 'var(--font-mono)',
                               fontVariantNumeric: 'tabular-nums',
                             }}>
@@ -518,7 +518,7 @@ export default function DistrictsPage() {
                           <div>
                             <div style={{
                               fontSize: 9,
-                              color: 'var(--color-text-muted)',
+                              color: '#888888',
                               textTransform: 'uppercase',
                               letterSpacing: '0.2em',
                               marginBottom: 2,
@@ -530,7 +530,7 @@ export default function DistrictsPage() {
                             <div style={{
                               fontSize: 16,
                               fontWeight: 600,
-                              color: 'var(--color-text-primary)',
+                              color: '#1A1A1A',
                               fontFamily: 'var(--font-mono)',
                               fontVariantNumeric: 'tabular-nums',
                             }}>
@@ -542,7 +542,7 @@ export default function DistrictsPage() {
                         <div style={{
                           marginTop: 10,
                           fontSize: 10,
-                          color: 'var(--color-text-muted)',
+                          color: '#888888',
                           fontFamily: 'var(--font-mono)',
                           letterSpacing: '0.05em',
                           textTransform: 'uppercase',
@@ -563,15 +563,15 @@ export default function DistrictsPage() {
 
       {/* Data Info Section */}
       <section style={{
-        background: 'var(--color-surface-0)',
-        borderTop: '1px solid #e5e7eb',
+        background: '#FFFFFF',
+        borderTop: '1px solid #E0E0E0',
         padding: 'clamp(32px, 5vw, 48px) 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
           <h2 style={{
             fontSize: 18,
             fontWeight: 700,
-            color: 'var(--color-text-primary)',
+            color: '#1A1A1A',
             margin: '0 0 16px',
             fontFamily: 'var(--font-display)',
           }}>
@@ -579,11 +579,11 @@ export default function DistrictsPage() {
           </h2>
           <p style={{
             fontSize: 14,
-            color: 'var(--color-text-secondary)',
+            color: '#444444',
             lineHeight: 1.7,
             margin: '0 0 12px',
             maxWidth: 800,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-inter)',
           }}>
             Win rates shown are derived from the Federal Judicial Center Integrated Database covering {(totalCasesAllDistricts / 1_000_000).toFixed(1)}M+ federal civil cases filed 2000–2024.
             Rates are weighted averages across all case types within each district. Individual case type outcomes vary significantly.
@@ -591,9 +591,9 @@ export default function DistrictsPage() {
           </p>
           <p style={{
             fontSize: 13,
-            color: 'var(--color-text-secondary)',
+            color: '#444444',
             margin: 0,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-inter)',
           }}>
             This is not legal advice. See our{' '}
             <Link href="/disclaimer" className="lex-link">disclaimer</Link>

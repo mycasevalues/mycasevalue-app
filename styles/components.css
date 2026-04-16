@@ -1,10 +1,10 @@
 /* ============================================================
-   MYCASEVALUE — COMPONENT STYLES (Bloomberg-Inspired Institutional Design)
+   MYCASEVALUE — COMPONENT STYLES (Bloomberg Law Design System)
    BEM naming: .mcv-{component}__{element}--{modifier}
    All colors via CSS custom properties from tokens.css
    ============================================================ */
 
-/* ── BUTTON — Institutional Pill System ──────────────────── */
+/* ── BUTTON — Bloomberg Rectangular System ──────────────────── */
 .mcv-btn {
   display: inline-flex;
   align-items: center;
@@ -16,7 +16,7 @@
   height: 36px;
   padding: 0 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 3px;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
@@ -46,11 +46,11 @@
   transform: scale(0.98);
 }
 
-/* Sizes — all meet 44px minimum touch target on coarse pointers */
-.mcv-btn--xs { height: 28px; padding: 0 10px; font-size: 12px; border-radius: 4px; }
-.mcv-btn--sm { height: 32px; padding: 0 12px; font-size: 13px; border-radius: 5px; }
-.mcv-btn--md { height: 36px; padding: 0 16px; font-size: 14px; border-radius: 6px; }
-.mcv-btn--lg { height: 44px; padding: 0 24px; font-size: 14px; border-radius: 6px; }
+/* Sizes — Bloomberg tight rectangular */
+.mcv-btn--xs { height: 28px; padding: 0 10px; font-size: 12px; border-radius: 2px; }
+.mcv-btn--sm { height: 32px; padding: 0 12px; font-size: 13px; border-radius: 3px; }
+.mcv-btn--md { height: 36px; padding: 0 16px; font-size: 14px; border-radius: 3px; }
+.mcv-btn--lg { height: 44px; padding: 0 24px; font-size: 14px; border-radius: 3px; }
 
 @media (pointer: coarse) {
   .mcv-btn--xs { min-height: 44px; }
@@ -60,69 +60,68 @@
 
 .mcv-btn--full { width: 100%; }
 
-/* Primary — Institutional primary */
+/* Primary — Bloomberg orange CTA */
 .mcv-btn--primary {
-  background: var(--accent-primary);
-  color: var(--color-text-inverse);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  background: var(--bl-cta);
+  color: var(--bl-cta-text);
 }
 .mcv-btn--primary:hover:not(:disabled) {
-  background: var(--accent-primary-hover);
+  background: var(--bl-cta-hover);
 }
 
 /* Secondary — ghost outline */
 .mcv-btn--secondary {
   background: transparent;
-  color: var(--accent-primary);
-  border: 1px solid var(--accent-primary);
+  color: var(--bl-link);
+  border: 1px solid var(--bl-link);
 }
 .mcv-btn--secondary:hover:not(:disabled) {
-  background: var(--accent-primary-subtle);
-  border-color: var(--accent-primary-hover);
-  color: var(--accent-primary-hover);
+  background: rgba(0,82,204,0.06);
+  border-color: var(--bl-link-hover);
+  color: var(--bl-link-hover);
 }
 
 /* Ghost — borderless */
 .mcv-btn--ghost {
   background: transparent;
-  color: var(--fg-secondary);
+  color: var(--bl-text-secondary);
   font-weight: 500;
   font-size: 14px;
   height: 32px;
   padding: 0 12px;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 .mcv-btn--ghost:hover:not(:disabled) {
-  background: var(--bg-hover);
-  color: var(--fg-primary);
+  background: #F5F5F5;
+  color: var(--bl-text-primary);
 }
 
-/* Accent — same as primary (backwards compat) */
+/* Accent — same as primary */
 .mcv-btn--accent {
-  background: var(--accent-primary);
-  color: var(--color-text-inverse);
+  background: var(--bl-cta);
+  color: var(--bl-cta-text);
 }
 .mcv-btn--accent:hover:not(:disabled) {
-  background: var(--accent-primary-hover);
+  background: var(--bl-cta-hover);
 }
 
 /* Danger */
 .mcv-btn--danger {
   background: var(--danger);
-  color: var(--color-text-inverse);
+  color: #FFFFFF;
 }
 .mcv-btn--danger:hover:not(:disabled) {
   background: #990C13;
 }
 
-/* Dark mode button variant — for use on dark backgrounds */
+/* Dark ghost — for use on dark backgrounds (nav, footer) */
 .mcv-btn--dark-ghost {
   background: transparent;
   color: rgba(255,255,255,0.85);
   border: 1px solid rgba(255,255,255,0.20);
 }
 .mcv-btn--dark-ghost:hover:not(:disabled) {
-  background: rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.40);
   color: #ffffff;
 }
@@ -142,55 +141,55 @@
 }
 
 
-/* ── CARD — Bloomberg-Inspired Institutional Design ──────── */
+/* ── CARD — Bloomberg Flat Card System ──────────────────────── */
 .mcv-card {
-  background: var(--bg-elevated);
-  border-radius: 6px;
+  background: #FFFFFF;
+  border-radius: 4px;
   padding: 20px;
   transition:
     box-shadow 150ms ease,
     border-color 150ms ease;
 }
 
-/* Primary card — dark surface with subtle border */
+/* Default card */
 .mcv-card--default {
-  border: 1px solid var(--border-default);
+  border: 1px solid #E0E0E0;
   box-shadow: none;
 }
 .mcv-card--default:hover {
-  border-color: rgba(255,255,255,0.12);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-color: #CCCCCC;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* Elevated card — for prominent content */
+/* Elevated card */
 .mcv-card--elevated {
-  border: 1px solid var(--border-default);
+  border: 1px solid #E0E0E0;
   box-shadow: var(--shadow-sm);
 }
 .mcv-card--elevated:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
 }
 
-/* Surface card — for data displays */
+/* Surface card */
 .mcv-card--surface {
-  background: var(--bg-base);
+  background: #F5F5F5;
   border: none;
   box-shadow: none;
 }
 
-/* Outlined card — borderless variant (renamed from outlined) */
+/* Outlined card */
 .mcv-card--outlined {
-  border: 1px solid var(--border-default);
+  border: 1px solid #E0E0E0;
   box-shadow: none;
 }
 .mcv-card--outlined:hover {
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 1px var(--accent-primary);
+  border-color: #0052CC;
+  box-shadow: 0 0 0 1px #0052CC;
 }
 
-/* Interactive card — clickable with hover state */
+/* Interactive card */
 .mcv-card--interactive {
-  border: 1px solid var(--border-default);
+  border: 1px solid #E0E0E0;
   box-shadow: none;
   cursor: pointer;
   transition:
@@ -199,22 +198,22 @@
     background-color 150ms ease;
 }
 .mcv-card--interactive:hover {
-  border-color: rgba(59,130,246,0.40);
-  background: rgba(59,130,246,0.02);
+  border-color: #0052CC;
+  background: rgba(0,82,204,0.02);
 }
 .mcv-card--interactive:active {
-  background: rgba(59,130,246,0.04);
+  background: rgba(0,82,204,0.04);
 }
 
-/* Featured card — highlighted with accent border */
+/* Featured card — Bloomberg orange accent */
 .mcv-card--accent {
-  border: 2px solid var(--accent-primary);
+  border: 2px solid #E65C00;
 }
 
 .mcv-card__header {
   padding-bottom: 12px;
   margin-bottom: 12px;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid #E8E8E8;
 }
 
 .mcv-card__body {
@@ -224,17 +223,17 @@
 .mcv-card__footer {
   padding-top: 12px;
   margin-top: 12px;
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid #E8E8E8;
 }
 
 
-/* ── SECTION LABEL — Bloomberg Institutional Eyebrow ──────── */
+/* ── SECTION LABEL — Bloomberg Uppercase Eyebrow ──────────── */
 .mcv-section-label {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  color: var(--accent-primary);
-  letter-spacing: 0.2em;
+  color: #444444;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   background: none;
   border: none;
@@ -249,19 +248,19 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: currentColor;
+  background: #E65C00;
   opacity: 0.7;
   flex-shrink: 0;
 }
 
-/* ── HEADINGS — Inter LinkedIn Proportions ────────────────── */
-h1, .mcv-h1 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-h1); line-height: 1.25; color: var(--color-text-primary); }
-h2, .mcv-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-h2); line-height: 1.3;  color: var(--color-text-primary); }
-h3, .mcv-h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-h3); line-height: 1.4;  color: var(--color-text-primary); }
-h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var(--text-h4); line-height: 1.4;  color: var(--color-text-primary); }
+/* ── HEADINGS — Plus Jakarta Sans for Bloomberg ─────────────── */
+h1, .mcv-h1 { font-family: var(--font-display); font-weight: 800; font-size: 22px; line-height: 1.2; color: #1A1A1A; }
+h2, .mcv-h2 { font-family: var(--font-display); font-weight: 700; font-size: 17px; line-height: 1.3; color: #1A1A1A; }
+h3, .mcv-h3 { font-family: var(--font-display); font-weight: 700; font-size: 15px; line-height: 1.4; color: #1A1A1A; }
+h4, .mcv-h4 { font-family: var(--font-display); font-weight: 600; font-size: 14px; line-height: 1.4; color: #1A1A1A; }
 
 
-/* ── INPUT — Clean Corporate ─────────────────────────────── */
+/* ── INPUT — Bloomberg Clean Light ─────────────────────────── */
 .mcv-input-group {
   display: flex;
   flex-direction: column;
@@ -270,10 +269,10 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
 
 .mcv-input__label {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  color: var(--fg-secondary);
-  letter-spacing: 0.02em;
+  color: #444444;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -288,7 +287,7 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
   left: 14px;
   display: flex;
   align-items: center;
-  color: var(--fg-subtle);
+  color: #888888;
   pointer-events: none;
   z-index: 1;
 }
@@ -299,10 +298,10 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
   padding: 0 14px;
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--fg-primary);
-  background: var(--bg-input);
-  border: 1px solid var(--border-default);
-  border-radius: 6px;
+  color: #1A1A1A;
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 3px;
   transition:
     border-color 150ms ease,
     box-shadow 150ms ease,
@@ -315,21 +314,20 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
 }
 
 .mcv-input::placeholder {
-  color: var(--fg-subtle);
+  color: #888888;
 }
 
 .mcv-input:hover {
-  border-color: var(--accent-secondary-border);
-  transition: border-color 200ms ease, box-shadow 200ms ease;
+  border-color: #CCCCCC;
 }
 
 .mcv-input:focus {
-  border-color: var(--accent-secondary);
-  box-shadow: 0 0 0 3px var(--accent-secondary-subtle);
+  border-color: #0052CC;
+  box-shadow: 0 0 0 3px rgba(0,82,204,0.10);
 }
 
 .mcv-input:focus-visible {
-  outline: 2px solid var(--border-focus);
+  outline: 2px solid #0052CC;
   outline-offset: 2px;
 }
 
@@ -357,12 +355,12 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
 
 .mcv-input__hint {
   font-size: 13px;
-  color: var(--fg-subtle);
+  color: #888888;
   margin: 0;
 }
 
 
-/* ── BADGE — Bloomberg Institutional Tag ─────────────────── */
+/* ── BADGE — Bloomberg Tag ─────────────────────────────────── */
 .mcv-badge {
   display: inline-flex;
   align-items: center;
@@ -370,7 +368,7 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
   font-family: var(--font-mono);
   font-weight: 600;
   white-space: nowrap;
-  border-radius: 3px;
+  border-radius: 2px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-variant-numeric: tabular-nums;
@@ -392,35 +390,30 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
   align-items: center;
 }
 
-/* Badge variants */
-.mcv-badge--default  { background: var(--bg-hover); color: var(--fg-secondary); transition: background-color 150ms ease; }
-.mcv-badge--default:hover { background-color: var(--border-subtle); }
-.mcv-badge--success  { background: var(--success-subtle); color: var(--success); transition: background-color 150ms ease; }
-.mcv-badge--success:hover { background-color: var(--success); opacity: 0.8; }
-.mcv-badge--warning  { background: var(--warning-subtle); color: var(--warning); transition: background-color 150ms ease; }
-.mcv-badge--warning:hover { background-color: var(--warning); opacity: 0.8; }
-.mcv-badge--danger   { background: var(--danger-subtle); color: var(--danger); transition: background-color 150ms ease; }
-.mcv-badge--danger:hover { background-color: var(--danger); opacity: 0.8; }
-.mcv-badge--info     { background: var(--info-subtle); color: var(--info); transition: background-color 150ms ease; }
-.mcv-badge--info:hover { background-color: var(--info); opacity: 0.8; }
-.mcv-badge--accent   { background: var(--accent-primary-subtle); color: var(--accent-primary); transition: background-color 150ms ease; }
-.mcv-badge--accent:hover { background-color: var(--accent-primary); opacity: 0.8; }
-.mcv-badge--outline  { background: transparent; color: var(--fg-secondary); border: 1px solid var(--border-default); transition: background-color 150ms ease, border-color 150ms ease; }
-.mcv-badge--outline:hover { background-color: var(--bg-hover); border-color: var(--accent-primary); }
+/* Badge variants — light mode */
+.mcv-badge--default  { background: #F5F5F5; color: #555555; transition: background-color 150ms ease; }
+.mcv-badge--default:hover { background-color: #E8E8E8; }
+.mcv-badge--success  { background: var(--success-subtle); color: var(--success); }
+.mcv-badge--warning  { background: var(--warning-subtle); color: var(--warning); }
+.mcv-badge--danger   { background: var(--danger-subtle); color: var(--danger); }
+.mcv-badge--info     { background: rgba(0,82,204,0.08); color: #0052CC; }
+.mcv-badge--accent   { background: rgba(230,92,0,0.08); color: #E65C00; }
+.mcv-badge--outline  { background: transparent; color: #555555; border: 1px solid #E0E0E0; }
+.mcv-badge--outline:hover { background-color: #F5F5F5; border-color: #0052CC; }
 
 
-/* ── STAT CARD — Bloomberg Terminal Metric ────────────────── */
+/* ── STAT CARD — Bloomberg Data Metric ──────────────────────── */
 .mcv-stat-card {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 4px;
   padding: 20px;
   transition: border-color 150ms ease, background-color 150ms ease;
   position: relative;
 }
 
 .mcv-stat-card:hover {
-  border-color: rgba(59,130,246,0.25);
+  border-color: #0052CC;
 }
 
 .mcv-stat-card__header {
@@ -438,18 +431,18 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
 
 .mcv-stat-card__label {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  color: var(--fg-subtle);
+  color: #444444;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
 }
 
 .mcv-stat-card__value {
   font-family: var(--font-mono);
   font-size: 28px;
   font-weight: 700;
-  color: var(--fg-primary);
+  color: #1A1A1A;
   line-height: 1;
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
@@ -470,17 +463,17 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
 
 .mcv-stat-card__sublabel {
   font-size: 12px;
-  color: var(--fg-subtle);
+  color: #888888;
 }
 
 
-/* ── AUTH PAGE STYLES (Server Component safe) ────────────── */
+/* ── AUTH PAGE STYLES — Bloomberg light ──────────────────────── */
 .auth-input {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .auth-input:focus {
-  border-color: var(--accent-secondary) !important;
-  box-shadow: 0 0 0 3px var(--accent-secondary-subtle) !important;
+  border-color: #0052CC !important;
+  box-shadow: 0 0 0 3px rgba(0,82,204,0.10) !important;
   outline: none;
 }
 
@@ -488,7 +481,7 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
   transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 .auth-btn:hover {
-  background-color: var(--accent-primary-hover) !important;
+  background-color: var(--bl-cta-hover) !important;
 }
 .auth-btn:active {
   transform: scale(0.98);
@@ -498,11 +491,11 @@ h4, .mcv-h4 { font-family: var(--font-display); font-weight: 500; font-size: var
   transition: color 0.2s ease;
 }
 .auth-link:hover {
-  color: var(--accent-secondary-hover) !important;
+  color: var(--bl-link-hover) !important;
 }
 
 
-/* ── PRINT STYLES ────────────────────────────────────────── */
+/* ── PRINT STYLES ───────────────────────────────────────────── */
 @media print {
   .no-print { display: none !important; }
   .mcv-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; background: white; }

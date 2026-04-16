@@ -4,11 +4,11 @@ export default function LoadingPage() {
   const shimmerStyle = {
     animation: 'shimmer 2s infinite',
     backgroundSize: '200% 100%',
-    backgroundImage: 'linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%)',
+    backgroundImage: 'linear-gradient(90deg, #F5F5F5 0%, #E8E8E8 50%, #F5F5F5 100%)',
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+    <div style={{ background: '#F7F7F5', minHeight: '100vh' }}>
       <style>{`
         @keyframes shimmer {
           0% { background-position: -200% 0; }
@@ -17,7 +17,7 @@ export default function LoadingPage() {
       `}</style>
 
       {/* Header skeleton */}
-      <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+      <div style={{ borderBottom: '1px solid #E0E0E0', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb skeleton */}
           <div style={{ paddingTop: '16px', paddingBottom: '16px' }}>
@@ -46,7 +46,7 @@ export default function LoadingPage() {
           }}
         >
           {Array.from({ length: 4 }).map((_, i) => (
-            <div key={i} style={{ background: 'var(--color-surface-0)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+            <div key={i} style={{ background: '#FFFFFF', padding: '24px', borderRadius: '8px', border: '1px solid #E0E0E0' }}>
               <div style={{ ...shimmerStyle, height: '14px', width: '120px', borderRadius: '4px', marginBottom: '12px' }} />
               <div style={{ ...shimmerStyle, height: '28px', width: '80px', borderRadius: '4px', marginBottom: '8px' }} />
               <div style={{ ...shimmerStyle, height: '12px', width: '100px', borderRadius: '4px' }} />
@@ -55,16 +55,16 @@ export default function LoadingPage() {
         </div>
 
         {/* Radar chart skeleton */}
-        <div style={{ background: 'var(--color-surface-0)', padding: '32px', borderRadius: '8px', border: '1px solid var(--border-default)', marginBottom: '40px' }}>
+        <div style={{ background: '#FFFFFF', padding: '32px', borderRadius: '8px', border: '1px solid #E0E0E0', marginBottom: '40px' }}>
           <div style={{ ...shimmerStyle, height: '20px', width: '150px', borderRadius: '4px', marginBottom: '16px' }} />
           <div style={{ ...shimmerStyle, height: '340px', width: '100%', borderRadius: '8px' }} />
         </div>
 
         {/* Table skeleton */}
-        <div style={{ background: 'var(--color-surface-0)', padding: '32px', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+        <div style={{ background: '#FFFFFF', padding: '32px', borderRadius: '8px', border: '1px solid #E0E0E0' }}>
           <div style={{ ...shimmerStyle, height: '20px', width: '180px', borderRadius: '4px', marginBottom: '20px' }} />
           {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid var(--border-default)' }}>
+            <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid #E0E0E0' }}>
               <div style={{ ...shimmerStyle, height: '14px', borderRadius: '4px' }} />
               <div style={{ ...shimmerStyle, height: '14px', borderRadius: '4px' }} />
               <div style={{ ...shimmerStyle, height: '14px', borderRadius: '4px' }} />

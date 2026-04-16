@@ -2,7 +2,7 @@ export default function UpgradeBanner() {
   return (
     <section
       style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         padding: '64px 24px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',
@@ -59,22 +59,22 @@ export default function UpgradeBanner() {
           align-items: center;
           justify-content: center;
           padding: 10px 20px;
-          background: #1a56db;
+          background: #E65C00;
           color: #ffffff;
-          border-radius: 6px;
+          border-radius: 3px;
           font-weight: 600;
           font-size: 13px;
           letter-spacing: -0.005em;
           text-decoration: none;
           font-family: var(--font-inter);
-          border: 1px solid #1a56db;
+          border: 1px solid #E65C00;
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
           cursor: pointer;
           transition: background-color 150ms ease, border-color 150ms ease;
         }
         .upgrade-btn-primary:hover {
-          background: #1e40af;
-          border-color: #1e40af;
+          background: #CC4F00;
+          border-color: #CC4F00;
         }
         .upgrade-btn-secondary {
           display: inline-flex;

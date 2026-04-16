@@ -366,7 +366,7 @@ export default function DevelopersPage() {
 
       {/* Hero Section */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         color: '#fff',
         padding: '48px 24px 40px',
         position: 'relative',
@@ -890,7 +890,7 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: 'linear-gradient(135deg, var(--accent-primary) 0%, #1e40af 100%)',
+              background: 'linear-gradient(135deg, var(--accent-primary) 0%, #CC4F00 100%)',
               borderRadius: '12px',
               padding: '32px',
               textAlign: 'center',

@@ -132,7 +132,7 @@ export default function CourtRulesPage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       {/* Header */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         color: '#fff',
         padding: '40px 24px 32px',
         position: 'relative',

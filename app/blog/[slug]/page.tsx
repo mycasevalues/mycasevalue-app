@@ -437,7 +437,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       {/* Header */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',

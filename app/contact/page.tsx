@@ -66,7 +66,7 @@ export default function ContactPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header Banner */}
         <div style={{
-          background: '#080d19',
+          background: '#FFFFFF',
           padding: '56px 24px',
           position: 'relative',
           overflow: 'hidden',
@@ -216,7 +216,7 @@ export default function ContactPage() {
 
         <style>{`
           .contact-quick-link:hover {
-            border-color: #1e40af !important;
+            border-color: #0052CC !important;
             box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
             transform: translateY(-4px);
           }
@@ -406,7 +406,7 @@ export default function ContactPage() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '8px' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0052CC" strokeWidth="2">
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>

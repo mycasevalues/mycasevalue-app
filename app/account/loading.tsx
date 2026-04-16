@@ -1,7 +1,7 @@
 export default function AccountLoading() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
-      <div style={{ background: '#080d19', padding: '48px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <div style={{ background: '#FFFFFF', padding: '48px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ height: '32px', width: '180px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '8px' }} />
           <div style={{ height: '16px', width: '280px', background: 'rgba(255,255,255,0.08)', borderRadius: '12px' }} />

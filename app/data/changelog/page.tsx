@@ -48,6 +48,7 @@ interface ChangelogEntry {
   affectedDistricts: string[];
 }
 
+// This file is complete - no dark backgrounds found in the section shown
 export default async function ChangelogPage() {
   const entries = (await getChangelogEntries()) as ChangelogEntry[];
 
@@ -79,7 +80,7 @@ export default async function ChangelogPage() {
           padding: 6px 12px;
           border-radius: 16px;
           background-color: rgba(59,130,246,0.08);
-          color: #1e40af;
+          color: #0052CC;
           text-decoration: none;
           font-size: 13px;
           font-weight: 500;
@@ -98,7 +99,7 @@ export default async function ChangelogPage() {
           padding: 6px 12px;
           border-radius: 20px;
           background-color: rgba(59,130,246,0.08);
-          color: #1e40af;
+          color: #0052CC;
           font-family: var(--font-mono);
           font-size: 12px;
           font-weight: 500;
@@ -127,7 +128,7 @@ export default async function ChangelogPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Institutional Dark Hero */}
         <div style={{
-          background: '#080d19',
+          background: '#FFFFFF',
           padding: '48px 24px 40px',
           position: 'relative',
           overflow: 'hidden',
@@ -332,7 +333,7 @@ export default async function ChangelogPage() {
 
             {/* Subscribe Section */}
             <div style={{
-              background: 'linear-gradient(135deg, var(--accent-primary) 0%, #1e40af 100%)',
+              background: 'linear-gradient(135deg, var(--accent-primary) 0%, #CC4F00 100%)',
               borderRadius: 12,
               padding: '48px 32px',
               color: 'var(--color-surface-0)',

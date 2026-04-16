@@ -118,8 +118,8 @@ export default async function OutcomesPage({
             borderRadius: 6,
             fontWeight: 600,
             color: '#ffffff',
-            background: '#1a56db',
-            border: '1px solid #1a56db',
+            background: '#E65C00',
+            border: '1px solid #E65C00',
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
             textDecoration: 'none',
             fontSize: 13,
@@ -252,7 +252,7 @@ export default async function OutcomesPage({
 
       {/* Header Section - Institutional Dark */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         padding: '40px 24px 32px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',
@@ -889,7 +889,7 @@ export default async function OutcomesPage({
                   textAlign: 'center',
                   transition: 'all 0.3s ease',
                   display: 'block',
-                  border: '1px solid #1e40af',
+                  border: '1px solid #0052CC',
                 }}
 
               >

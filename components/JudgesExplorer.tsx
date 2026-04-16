@@ -145,17 +145,17 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
   return (
     <div>
       <style>{`
-        .je-input:focus { border-color: #1e40af !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
-        .je-select:focus { border-color: #1e40af !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
-        .je-card:hover { border-color: #1e40af !important; box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; }
+        .je-input:focus { border-color: #003D99 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
+        .je-select:focus { border-color: #003D99 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
+        .je-card:hover { border-color: #003D99 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; }
         .je-th { cursor: pointer; user-select: none; white-space: nowrap; }
-        .je-th:hover { color: #1e40af !important; }
+        .je-th:hover { color: #003D99 !important; }
         .je-tr:hover { background: var(--color-surface-1) !important; }
         .je-view-btn { border: 1px solid var(--border-default); background: var(--color-surface-0); padding: 6px 12px; cursor: pointer; font-size: 12px; font-weight: 600; transition: all 0.15s; }
         .je-view-btn:hover { background: var(--color-surface-1); }
         .je-view-btn.active { background: var(--accent-primary); color: var(--color-surface-0); border-color: var(--accent-primary); }
         .je-page-btn { border: 1px solid var(--border-default); background: var(--color-surface-0); padding: 6px 12px; cursor: pointer; font-size: 13px; font-family: var(--font-mono); min-width: 36px; transition: all 0.15s; }
-        .je-page-btn:hover { background: var(--color-surface-1); border-color: #1e40af; }
+        .je-page-btn:hover { background: var(--color-surface-1); border-color: #003D99; }
         .je-page-btn.active { background: var(--accent-primary); color: var(--color-surface-0); border-color: var(--accent-primary); }
         .je-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
         @media (max-width: 768px) {

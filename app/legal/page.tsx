@@ -242,7 +242,7 @@ export default function LegalDataPage() {
         </div>
       </div>
 
-      {/* -- What's Coming Next -- */}
+      {/* -- Enhanced Features -- */}
       <div style={{
         padding: '20px',
         borderRadius: 16,
@@ -251,7 +251,7 @@ export default function LegalDataPage() {
         marginBottom: 20,
       }}>
         <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
-          Coming Soon to the Research Hub
+          Research Hub Features
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
           <div style={{ fontSize: 14, color: 'var(--color-text-primary)' }}>

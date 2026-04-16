@@ -156,7 +156,7 @@ export default function ApiDocsPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
-          background: '#080d19',
+          background: '#FFFFFF',
           padding: '56px 24px 48px',
           position: 'relative',
           overflow: 'hidden',
@@ -701,7 +701,7 @@ r = requests.get(
           <section style={{
             padding: 48,
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, var(--accent-primary) 0%, #1e40af 100%)',
+            background: 'linear-gradient(135deg, var(--accent-primary) 0%, #CC4F00 100%)',
             textAlign: 'center',
             marginBottom: 64,
           }}>

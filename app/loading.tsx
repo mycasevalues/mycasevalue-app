@@ -20,7 +20,7 @@ export default function Loading() {
           left: 0,
           right: 0,
           height: '4px',
-          background: '#080d19',
+          background: '#FFFFFF',
         }}
       />
       <style>{`
@@ -40,7 +40,7 @@ export default function Loading() {
           width: '48px',
           height: '48px',
           border: '3px solid var(--border-default)',
-          borderTop: '3px solid #1e40af',
+          borderTop: '3px solid #0052CC',
           borderRadius: '50%',
           animation: 'spin 1s linear infinite',
         }}

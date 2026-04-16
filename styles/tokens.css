@@ -1,83 +1,125 @@
 /* ============================================================
-   MYCASEVALUE DESIGN SYSTEM — Bloomberg-Grade Legal Intelligence Platform
+   MYCASEVALUE DESIGN SYSTEM — Bloomberg Law Mirror
    ============================================================
-   Inter (headings + body) / PT Mono (data).
-   Brand Blue primary (#1a56db).
-   Professional, institutional aesthetic.
+   Typography: Plus Jakarta Sans 800 (headlines), Inter (UI/body),
+   IBM Plex Mono (ALL data: currency, %, counts, dates).
+   Bloomberg Law design language: charcoal nav, white surfaces,
+   orange CTAs, blue links, flat institutional aesthetic.
    ============================================================ */
 
 :root {
-  /* Brand — deeper navy for institutional feel */
-  --color-navy:        #0f2240;
-  --color-navy-dark:   #0a1628;
-  --color-navy-light:  #1a3a5c;
+  /* ── BLOOMBERG LAW COLOR TOKENS ── */
 
-  /* Accent — restrained blue */
-  --color-accent:      #1a56db;
-  --color-accent-dark: #1e40af;
-  --color-accent-light:rgba(96,165,250,0.15);
+  /* Navigation — charcoal black bar */
+  --bl-nav:            #1A1A1A;
+  --bl-nav-text:       #FFFFFF;
+  --bl-nav-border:     #333333;
 
-  /* Terminal accents — Bloomberg-inspired data colors */
-  --color-terminal-green:  #22c55e;
-  --color-terminal-amber:  #f59e0b;
-  --color-terminal-red:    #ef4444;
-  --color-terminal-cyan:   #06b6d4;
+  /* Surfaces — light mode */
+  --bl-surface:        #FFFFFF;
+  --bl-surface-alt:    #F5F5F5;
 
-  /* Surfaces — dark mode */
-  --color-surface-0:   #0c1220;
-  --color-surface-1:   #080d19;
-  --color-surface-2:   #111827;
-  --color-surface-nav: #0f2240;
+  /* Text */
+  --bl-text-primary:   #1A1A1A;
+  --bl-text-secondary: #555555;
+  --bl-text-muted:     #888888;
 
-  /* Text — light on dark */
-  --color-text-primary:   #e5e7eb;
-  --color-text-secondary: #9ca3af;
-  --color-text-muted:     #6b7280;
+  /* Links — Bloomberg blue */
+  --bl-link:           #0052CC;
+  --bl-link-hover:     #003D99;
+
+  /* CTA — Bloomberg orange (ALL primary CTAs) */
+  --bl-cta:            #E65C00;
+  --bl-cta-hover:      #CC4F00;
+  --bl-cta-text:       #FFFFFF;
+
+  /* Sidebar */
+  --bl-sidebar-bg:     #F7F7F5;
+  --bl-sidebar-border: #E0E0E0;
+  --bl-sidebar-header: #444444;
+  --bl-sidebar-link:   #0052CC;
+  --bl-sidebar-link-arrow: #0052CC;
+
+  /* Dividers & Accents */
+  --bl-divider:        #E8E8E8;
+  --bl-accent-bar:     #E65C00;
+
+  /* Row highlight (Bloomberg table hover) */
+  --bl-row-hover:      #EFF5FF;
+
+  /* ── LEGACY COMPAT — mapped to Bloomberg tokens ── */
+
+  /* Brand colors — mapped to Bloomberg */
+  --color-navy:        #1A1A1A;
+  --color-navy-dark:   #111111;
+  --color-navy-light:  #333333;
+
+  /* Accent — Bloomberg orange for CTAs */
+  --color-accent:      #E65C00;
+  --color-accent-dark: #CC4F00;
+  --color-accent-light: rgba(230,92,0,0.10);
+
+  /* Terminal accents — data visualization colors */
+  --color-terminal-green:  #15803D;
+  --color-terminal-amber:  #B45309;
+  --color-terminal-red:    #B91C1C;
+  --color-terminal-cyan:   #0052CC;
+
+  /* Surfaces — light mode */
+  --color-surface-0:   #FFFFFF;
+  --color-surface-1:   #FFFFFF;
+  --color-surface-2:   #F5F5F5;
+  --color-surface-nav: #1A1A1A;
+
+  /* Text — dark on light */
+  --color-text-primary:   #1A1A1A;
+  --color-text-secondary: #555555;
+  --color-text-muted:     #888888;
   --color-text-inverse:   #FFFFFF;
-  --color-text-accent:    #60a5fa;
+  --color-text-accent:    #0052CC;
 
-  /* Borders — dark mode */
-  --color-border-light:   rgba(255,255,255,0.08);
-  --color-border-medium:  rgba(255,255,255,0.12);
-  --color-border-dark:    rgba(255,255,255,0.2);
-  --color-border-navy:    rgba(255,255,255,0.12);
+  /* Borders — light mode */
+  --color-border-light:   #E8E8E8;
+  --color-border-medium:  #E0E0E0;
+  --color-border-dark:    #CCCCCC;
+  --color-border-navy:    #E0E0E0;
 
   /* Data / Semantic */
   --color-data-positive: #15803D;
   --color-data-negative: #B91C1C;
   --color-data-neutral:  #B45309;
-  --color-data-bg-pos:   rgba(34,197,94,0.06);
-  --color-data-bg-neg:   rgba(239,68,68,0.06);
-  --color-data-bg-neu:   rgba(234,179,8,0.06);
+  --color-data-bg-pos:   rgba(21,128,61,0.08);
+  --color-data-bg-neg:   rgba(185,28,28,0.08);
+  --color-data-bg-neu:   rgba(180,83,9,0.08);
 
   /* Status badges */
-  --color-badge-federal:    #1E3A5F;
-  --color-badge-bg-federal: rgba(59,130,246,0.08);
+  --color-badge-federal:    #0052CC;
+  --color-badge-bg-federal: rgba(0,82,204,0.08);
 
-  /* ── LEGACY COMPAT (mapped to new tokens) ── */
-  --bg-base:          var(--color-surface-1);
-  --bg-elevated:      var(--color-surface-0);
-  --bg-input:         var(--color-surface-0);
-  --bg-hover:         var(--color-surface-1);
-  --bg-selection:     rgba(96,165,250,0.25);
-  --bg-dark:          var(--color-navy);
-  --bg-alt:           var(--color-surface-1);
+  /* ── LEGACY COMPAT (mapped to Bloomberg tokens) ── */
+  --bg-base:          var(--bl-surface);
+  --bg-elevated:      var(--bl-surface);
+  --bg-input:         var(--bl-surface);
+  --bg-hover:         var(--bl-surface-alt);
+  --bg-selection:     rgba(0,82,204,0.15);
+  --bg-dark:          var(--bl-nav);
+  --bg-alt:           var(--bl-surface-alt);
 
-  --fg-primary:       var(--color-text-primary);
-  --fg-secondary:     var(--color-text-secondary);
-  --fg-subtle:        var(--color-text-muted);
-  --fg-link:          var(--color-text-accent);
-  --fg-on-dark:       var(--color-text-inverse);
+  --fg-primary:       var(--bl-text-primary);
+  --fg-secondary:     var(--bl-text-secondary);
+  --fg-subtle:        var(--bl-text-muted);
+  --fg-link:          var(--bl-link);
+  --fg-on-dark:       var(--bl-nav-text);
 
-  --accent-primary:         var(--color-accent);
-  --accent-primary-hover:   var(--color-accent-dark);
-  --accent-primary-subtle:  var(--color-accent-light);
-  --accent-primary-border:  rgba(10,102,194,0.30);
+  --accent-primary:         var(--bl-cta);
+  --accent-primary-hover:   var(--bl-cta-hover);
+  --accent-primary-subtle:  rgba(230,92,0,0.08);
+  --accent-primary-border:  rgba(230,92,0,0.30);
 
-  --accent-secondary:       var(--color-navy);
-  --accent-secondary-hover: var(--color-navy-dark);
-  --accent-secondary-subtle: rgba(27,58,92,0.08);
-  --accent-secondary-border: rgba(27,58,92,0.30);
+  --accent-secondary:       var(--bl-link);
+  --accent-secondary-hover: var(--bl-link-hover);
+  --accent-secondary-subtle: rgba(0,82,204,0.08);
+  --accent-secondary-border: rgba(0,82,204,0.30);
 
   --outcome-win:          var(--color-data-positive);
   --outcome-settle:       var(--color-data-neutral);
@@ -89,80 +131,79 @@
   --warning-subtle:       var(--color-data-bg-neu);
   --danger:               var(--color-data-negative);
   --danger-subtle:        var(--color-data-bg-neg);
-  --info:                 var(--color-navy);
-  --info-subtle:          rgba(27,58,92,0.08);
+  --info:                 var(--bl-link);
+  --info-subtle:          rgba(0,82,204,0.08);
 
   --border-default:   var(--color-border-light);
   --border-subtle:    var(--color-border-light);
-  --border-focus:     var(--color-accent);
+  --border-focus:     var(--bl-link);
 
   /* ── TYPOGRAPHY ── */
-  --font-display: var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-body:    var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-mono:    var(--font-pt-mono), 'Menlo', monospace;
+  --font-display: var(--font-jakarta), 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body:    var(--font-inter), 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono:    var(--font-plex-mono), 'IBM Plex Mono', 'Menlo', monospace;
 
-  /* Legacy aliases — keep existing var(--font-montserrat) / var(--font-roboto) refs working */
+  /* Legacy aliases */
   --font-montserrat: var(--font-inter);
   --font-roboto:     var(--font-inter);
 
-  /* Heading Scale — Bloomberg institutional proportions */
-  --text-h1: 1.875rem;    /* 30px — Inter 700 */
-  --text-h2: 1.375rem;    /* 22px — Inter 600 */
-  --text-h3: 1.0625rem;   /* 17px — Inter 600 */
-  --text-h4: 0.9375rem;   /* 15px — Inter 600 */
-  --text-h5: 0.8125rem;   /* 13px — Inter 600 */
+  /* Heading Scale — Bloomberg institutional */
+  --text-h1: 22px;     /* Plus Jakarta Sans 800 */
+  --text-h2: 17px;     /* Plus Jakarta Sans 700 */
+  --text-h3: 15px;     /* Plus Jakarta Sans 700 */
+  --text-h4: 14px;     /* Inter 600 */
+  --text-h5: 13px;     /* Inter 600 */
 
-  /* Body Scale — Inter */
-  --text-body-lg: 0.9375rem;       /* 16px */
-  --text-body:    0.875rem;  /* 15px — Inter 400 */
-  --text-body-sm: 0.8125rem;  /* 13px — Inter 400 */
-  --text-caption: 0.75rem;    /* 12px */
+  /* Body Scale */
+  --text-body-lg: 15px;
+  --text-body:    14px;     /* Inter 400, line-height 1.6 */
+  --text-body-sm: 13px;
+  --text-caption: 12px;
 
-  /* Data Scale — PT Mono */
+  /* Data Scale — IBM Plex Mono */
   --text-data-lg: 1.5rem;
-  --text-data:    0.9375rem;
-  --text-data-sm: 0.8125rem;
+  --text-data:    13px;
+  --text-data-sm: 12px;
 
   /* Spacing — Bloomberg institutional 4px grid */
   --space-0:       0;
-  --space-1:       0.25rem; /* 4px */
-  --space-2:       0.5rem;  /* 8px */
-  --space-3:       0.75rem; /* 12px */
-  --space-4:       1rem;    /* 16px */
-  --space-5:       1.25rem; /* 20px */
-  --space-6:       1.5rem;  /* 24px */
-  --space-8:       2rem;    /* 32px */
-  --space-12:      3rem;    /* 48px */
-  --space-16:      4rem;    /* 64px */
-  /* Semantic aliases */
-  --space-section: 3rem;
-  --space-block:   1.5rem;
-  --space-element: 0.75rem;
-  --space-tight:   0.75rem;
+  --space-1:       4px;
+  --space-2:       8px;
+  --space-3:       12px;
+  --space-4:       16px;
+  --space-5:       20px;
+  --space-6:       24px;
+  --space-8:       32px;
+  --space-12:      48px;
+  --space-16:      64px;
+  --space-section: 48px;
+  --space-block:   24px;
+  --space-element: 12px;
+  --space-tight:   12px;
 
   --container-max: 1280px;
   --container-wide: 1440px;
   --container-narrow: 960px;
 
-  /* Radius */
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 8px;
+  /* Radius — Bloomberg flat aesthetic */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 4px;
 
   /* Legacy radius compat */
   --r-sm: 2px;
-  --r-md: 4px;
-  --r-card: 6px;
+  --r-md: 3px;
+  --r-card: 4px;
 
-  /* Shadows — Bloomberg dark mode (layered transparency) */
-  --shadow-xs:        0 1px 2px rgba(0,0,0,0.3);
-  --shadow-sm:        0 1px 3px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
-  --shadow-md:        0 4px 12px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05);
-  --shadow-lg:        0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
-  --shadow-xl:        0 16px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
-  --shadow-glow-blue: 0 0 0 3px rgba(26,86,219,0.15);
-  --shadow-glow-green:0 0 0 3px rgba(34,197,94,0.15);
+  /* Shadows — Bloomberg light mode (subtle) */
+  --shadow-xs:        0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm:        0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:        0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg:        0 8px 24px rgba(0,0,0,0.10);
+  --shadow-xl:        0 16px 48px rgba(0,0,0,0.12);
+  --shadow-glow-blue: 0 0 0 3px rgba(0,82,204,0.15);
+  --shadow-glow-green:0 0 0 3px rgba(21,128,61,0.15);
 
   /* Motion — institutional (snappier than consumer apps) */
   --duration-instant: 80ms;
@@ -177,40 +218,39 @@
   --z-critical:   9999;
 
   /* Links */
-  --color-link:           var(--color-text-accent);
-  --color-link-hover:     var(--color-accent-dark);
+  --color-link:           var(--bl-link);
+  --color-link-hover:     var(--bl-link-hover);
 
-  /* CTA */
-  --gradient-cta:         var(--color-accent);
-  --gradient-cta-hover:   var(--color-accent-dark);
-  /* Institutional / Bloomberg Law palette — flat colors, no gradients */
-  --color-hero-bg: #080d19;
-  --gradient-hero: #080d19;
-  --gradient-accent: #1a56db;
-  --institutional-dark: #080d19;
-  --institutional-blue: #1a56db;
-  --institutional-blue-hover: #1e40af;
+  /* CTA — Bloomberg orange, flat (no gradients) */
+  --gradient-cta:         var(--bl-cta);
+  --gradient-cta-hover:   var(--bl-cta-hover);
+  --color-hero-bg:        var(--bl-surface);
+  --gradient-hero:        var(--bl-surface);
+  --gradient-accent:      var(--bl-cta);
+  --institutional-dark:   var(--bl-nav);
+  --institutional-blue:   var(--bl-cta);
+  --institutional-blue-hover: var(--bl-cta-hover);
 
-  /* Terminal accents — tuned for DARK surfaces (hero, status strips) */
-  --accent-terminal-green: #22c55e;
-  --accent-terminal-amber: #f59e0b;
-  --accent-terminal-red: #ef4444;
-  --accent-terminal-blue: #60a5fa;
+  /* Terminal accents — for light surfaces (WCAG AA) */
+  --accent-terminal-green: #15803D;
+  --accent-terminal-amber: #B45309;
+  --accent-terminal-red: #B91C1C;
+  --accent-terminal-blue: #0052CC;
 
-  /* A11y-tuned variants for LIGHT surfaces (body, cards) — WCAG AA */
+  /* Light surface variants (same as above for light mode) */
   --accent-terminal-green-on-light: #15803d;
   --accent-terminal-amber-on-light: #b45309;
   --accent-terminal-red-on-light: #b91c1c;
-  --accent-terminal-blue-on-light: #2563eb;
+  --accent-terminal-blue-on-light: #0052CC;
 }
 
 /* High Contrast Mode */
 @media (prefers-contrast: high) {
   :root {
-    --color-text-secondary: #d1d5db;
-    --color-border-light: rgba(255,255,255,0.2);
-    --color-border-medium: rgba(255,255,255,0.3);
-    --border-focus: #4C1D95;
+    --bl-text-secondary: #333333;
+    --color-border-light: #AAAAAA;
+    --color-border-medium: #999999;
+    --border-focus: #003D99;
     --color-data-positive: #166534;
     --color-data-neutral: #92400E;
     --color-data-negative: #991B1B;
@@ -242,20 +282,20 @@
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--bl-link);
   outline-offset: 2px;
 }
 
 ::selection {
   background: var(--bg-selection);
-  color: var(--color-text-primary);
+  color: var(--bl-text-primary);
 }
 
 .skip-to-content {
   position: absolute; top: -100%; left: 0;
   z-index: var(--z-critical);
   padding: 8px 16px;
-  background: var(--color-accent);
+  background: var(--bl-cta);
   color: #fff; font-weight: 700;
   text-decoration: none;
   border-radius: 0 0 var(--radius-md) 0;

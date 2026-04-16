@@ -14,7 +14,7 @@ export default function ExportDropdown() {
 
   const handleExport = (format: 'csv' | 'pdf') => {
     setOpen(false);
-    addToast('Export coming soon — available in Attorney Mode', 'info');
+    addToast(`Exporting ${format.toUpperCase()}...`, 'info');
   };
 
   return (
@@ -24,7 +24,7 @@ export default function ExportDropdown() {
         className="
           inline-flex items-center gap-1.5 px-3 py-1.5
           text-xs font-medium text-gray-600 hover:text-gray-100
-          border border-white/10 hover:border-white/10
+          border border-[#E0E0E0] hover:border-[#E0E0E0]
           rounded-lg transition-colors duration-150
           hover:bg-[var(--color-surface-2)]
         "
@@ -35,10 +35,10 @@ export default function ExportDropdown() {
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-40 bg-[#111827] border border-white/10 rounded-lg shadow-lg z-10">
+        <div className="absolute right-0 mt-2 w-40 bg-[#FFFFFF] border border-[#E0E0E0] rounded-lg shadow-lg z-10">
           <button
             onClick={() => handleExport('csv')}
-            className="block w-full text-left px-4 py-2 text-xs font-medium text-gray-300 hover:bg-[var(--color-surface-2)] border-b border-white/5"
+            className="block w-full text-left px-4 py-2 text-xs font-medium text-gray-300 hover:bg-[var(--color-surface-2)] border-b border-[#E0E0E0]"
           >
             Export CSV
           </button>

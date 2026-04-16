@@ -20,7 +20,7 @@ export default function Error({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      background: 'var(--color-surface-1)',
+      background: '#F7F7F5',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
       padding: '24px',
       position: 'relative',
@@ -38,8 +38,8 @@ export default function Error({
         <div style={{
           maxWidth: 480,
           textAlign: 'center',
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: ''#FFFFFF'',
+          border: '1px solid '#E0E0E0'',
           borderRadius: '12px',
           padding: '48px 32px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
@@ -55,7 +55,7 @@ export default function Error({
             justifyContent: 'center',
             marginBottom: 24,
           }}>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0052CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="10" />
               <line x1="12" y1="8" x2="12" y2="12" />
               <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -65,7 +65,7 @@ export default function Error({
           <h1 style={{
             fontSize: '24px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: ''#1A1A1A'',
             margin: '0 0 8px',
             letterSpacing: '-0.01em',
           }}>
@@ -74,7 +74,7 @@ export default function Error({
 
           <p style={{
             fontSize: '15px',
-            color: 'var(--color-text-secondary)',
+            color: ''#444444'',
             lineHeight: 1.6,
             margin: '0 0 24px',
             maxWidth: 400,
@@ -94,7 +94,7 @@ export default function Error({
                 gap: 8,
                 padding: '12px 24px',
                 background: 'var(--accent-primary)',
-                color: 'var(--color-surface-0)',
+                color: ''#FFFFFF'',
                 border: 'none',
                 borderRadius: '12px',
                 fontSize: '14px',
@@ -118,9 +118,9 @@ export default function Error({
                 alignItems: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: 'var(--color-surface-1)',
-                color: 'var(--color-text-primary)',
-                border: '1px solid var(--border-default)',
+                background: '#F7F7F5',
+                color: ''#1A1A1A'',
+                border: '1px solid '#E0E0E0'',
                 borderRadius: '12px',
                 fontSize: '14px',
                 fontWeight: 600,

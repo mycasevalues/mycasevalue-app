@@ -89,13 +89,13 @@ function SignInForm() {
           text-align: center;
         }
         .auth-input:focus {
-          border-color: #1e40af !important;
+          border-color: #0052CC !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15) !important;
+          box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.15) !important;
         }
         .auth-btn {
-          background: #1a56db;
-          border: 1px solid #1a56db;
+          background: #E65C00;
+          border: 1px solid #E65C00;
           color: #ffffff;
           border-radius: 6px;
           font-size: 13px;
@@ -105,11 +105,11 @@ function SignInForm() {
           transition: background-color 150ms ease, border-color 150ms ease;
         }
         .auth-btn:hover:not(:disabled) {
-          background: #1e40af;
-          border-color: #1e40af;
+          background: #CC5200;
+          border-color: #CC5200;
         }
         .auth-link:hover {
-          color: #1e40af !important;
+          color: #0052CC !important;
         }
         .checkbox-wrapper {
           display: flex;

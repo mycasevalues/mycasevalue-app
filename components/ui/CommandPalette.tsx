@@ -27,7 +27,7 @@ interface CommandPaletteProps {
 
 /* ── SVG Icon helper function ─────────────────────────────────── */
 const createIcon = (pathD: string) => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#003D99" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d={pathD} />
   </svg>
 );
@@ -400,7 +400,7 @@ export default function CommandPalette({
         }
       }
       [data-command-palette-animation] ~ * input:focus {
-        outline: 2px solid #1e40af;
+        outline: 2px solid #003D99;
         outline-offset: 0;
       }
     `;
@@ -589,12 +589,12 @@ export default function CommandPalette({
                             <polyline points="9 22 9 12 15 12 15 22" />
                           </svg>
                         ) : item.type === 'quick-link' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#003D99" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                           </svg>
                         ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#003D99" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                           </svg>
                         )}
@@ -656,7 +656,7 @@ export default function CommandPalette({
                             fontSize: '11px',
                             color: 'var(--accent-primary-hover)',
                             background: 'transparent',
-                            border: '2px solid #1e40af',
+                            border: '2px solid #003D99',
                             borderRadius: '12px',
                             padding: '4px 8px',
                             lineHeight: 1.4,

@@ -214,7 +214,7 @@ export default function PlatformPage() {
 
         .flow-desc {
           font-size: 13px;
-          color: #1e40af;
+          color: #003D99;
           line-height: 1.5;
         }
 
@@ -229,7 +229,7 @@ export default function PlatformPage() {
         }
 
         .comparison-table th {
-          background: #1a56db;
+          background: #1A1A1A;
           color: white;
           padding: 16px;
           text-align: left;
@@ -368,7 +368,7 @@ export default function PlatformPage() {
           position: absolute;
           top: -12px;
           left: 24px;
-          background: #1a56db;
+          background: #E65C00;
           color: white;
           padding: 4px 12px;
           border-radius: 20px;
@@ -404,7 +404,7 @@ export default function PlatformPage() {
           content: '';
           width: 6px;
           height: 6px;
-          background: #1a56db;
+          background: #E65C00;
           border-radius: 50%;
           flex-shrink: 0;
           margin-top: 2px;
@@ -495,7 +495,7 @@ export default function PlatformPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
-          background: '#080d19',
+          background: '#FFFFFF',
           color: '#fff',
           padding: '56px 24px 48px',
           position: 'relative',
@@ -1375,7 +1375,7 @@ export default function PlatformPage() {
         {/* CTA Section */}
         <div style={{
           padding: '64px 24px',
-          background: '#080d19',
+          background: '#FFFFFF',
           position: 'relative',
           overflow: 'hidden',
           borderTop: '1px solid rgba(255,255,255,0.06)',

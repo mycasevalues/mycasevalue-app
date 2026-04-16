@@ -156,7 +156,7 @@ export default function BlogPage() {
           left: 0;
           right: 0;
           height: 0;
-          background: #1a56db;
+          background: #0052CC;
           border-radius: 12px 12px 0 0;
           transition: height 0.3s ease;
         }
@@ -300,7 +300,7 @@ export default function BlogPage() {
 
       {/* Header */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         padding: '40px 24px 48px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',

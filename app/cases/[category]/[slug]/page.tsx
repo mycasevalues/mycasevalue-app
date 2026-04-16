@@ -173,13 +173,13 @@ export default async function CaseTypeDetailPage({
               display: 'inline-block',
               padding: '10px 20px',
               borderRadius: 6,
-              background: '#1a56db',
+              background: '#E65C00',
               color: '#ffffff',
               textDecoration: 'none',
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '-0.005em',
-              border: '1px solid #1a56db',
+              border: '1px solid #E65C00',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
               fontFamily: 'var(--font-inter)',
             }}
@@ -467,20 +467,20 @@ export default async function CaseTypeDetailPage({
             display: inline-block;
             padding: 10px 20px;
             border-radius: 6px;
-            background: #1a56db;
+            background: #E65C00;
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
             font-size: 13px;
             letter-spacing: -0.005em;
-            border: 1px solid #1a56db;
+            border: 1px solid #E65C00;
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
             font-family: var(--font-inter);
             transition: background-color 150ms ease, border-color 150ms ease;
           }
           .cta-button:hover {
-            background-color: #1e40af;
-            border-color: #1e40af;
+            background-color: #CC4F00;
+            border-color: #CC4F00;
           }
 
           @media (max-width: 768px) {

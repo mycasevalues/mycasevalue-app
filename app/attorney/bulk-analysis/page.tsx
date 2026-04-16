@@ -11,7 +11,7 @@ export default function BulkAnalysisPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         color: '#fff',
         padding: '40px 24px 32px',
         position: 'relative',

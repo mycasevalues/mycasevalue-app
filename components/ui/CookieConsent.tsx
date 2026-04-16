@@ -44,7 +44,7 @@ export default function CookieConsent() {
         right: 0,
         zIndex: 300,
         padding: '1.5rem 1rem',
-        background: '#0c1220',
+        background: '#F7F7F5',
         borderTop: '1px solid rgba(255, 255, 255, 0.1)',
         boxShadow: '0 -4px 12px rgba(0, 23, 46, 0.15)',
         animation: 'slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -81,7 +81,7 @@ export default function CookieConsent() {
           color: var(--color-surface-0);
         }
         .cookie-banner-accept:hover {
-          background-color: #1e40af;
+          background-color: #CC4F00;
         }
         .cookie-banner-essential {
           background-color: transparent;

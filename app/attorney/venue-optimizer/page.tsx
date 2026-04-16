@@ -93,7 +93,7 @@ export default function VenueOptimizerPage() {
       </style>
       {/* Header */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         color: '#fff',
         padding: '40px 24px 32px',
         position: 'relative',

@@ -1,5 +1,11 @@
 'use client';
 
+/**
+ * SearchHero — Bloomberg-style search bar for the homepage context bar.
+ * Light mode: white input, orange SEARCH button, subtle border.
+ * Also supports dark variant for potential use in dark sections.
+ */
+
 import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -30,67 +36,104 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
     <div>
       <form onSubmit={handleSubmit} role="search" aria-label="Search federal court records">
         <div
-          className="flex rounded-md overflow-hidden border transition-all focus-within:border-blue-400/60 focus-within:shadow-[0_0_0_3px_rgba(59,130,246,0.1)]"
           style={{
-            background: dark ? 'rgba(255,255,255,0.04)' : '#fff',
-            borderColor: dark ? 'rgba(255,255,255,0.10)' : '#e5e7eb',
-            boxShadow: dark ? 'none' : '0 1px 3px rgba(0,0,0,0.06)',
+            display: 'flex',
+            height: 38,
+            borderRadius: 2,
+            overflow: 'hidden',
+            border: dark ? '1px solid rgba(255,255,255,0.10)' : '1px solid #CCCCCC',
+            background: dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF',
+            transition: 'border-color 120ms',
           }}
         >
-          <svg
-            className="ml-4 mt-3.5 flex-shrink-0"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke={dark ? '#6b7280' : '#9ca3af'}
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <path d="m21 21-4.35-4.35" />
-          </svg>
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search cases, judges, districts, or case numbers..."
             aria-label="Search federal court records"
-            className="flex-1 h-11 px-3 bg-transparent border-none outline-none text-sm"
-            style={{ color: dark ? '#e5e7eb' : '#111827' }}
+            className="ignore-institutional"
+            style={{
+              flex: 1,
+              height: 38,
+              padding: '0 12px',
+              background: 'transparent',
+              border: 'none',
+              outline: 'none',
+              fontSize: 13,
+              fontFamily: 'var(--font-inter)',
+              color: dark ? '#E5E7EB' : '#1A1A1A',
+            }}
           />
           <button
             type="submit"
-            className="h-11 px-5 font-semibold text-[13px] transition-colors flex-shrink-0 inline-flex items-center gap-1.5 tracking-[-0.005em]"
             style={{
-              background: dark ? '#1a56db' : '#1a56db',
-              color: '#fff',
+              height: 38,
+              padding: '0 16px',
+              background: '#E65C00',
+              color: '#FFFFFF',
+              border: 'none',
+              fontSize: 13,
+              fontWeight: 600,
+              fontFamily: 'var(--font-inter)',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
             }}
           >
-            Search
-            <kbd className="hidden sm:inline-flex items-center justify-center h-4 px-1 rounded-[3px] bg-white/15 text-[9px] font-mono font-semibold text-white/80 border border-white/15">⏎</kbd>
+            SEARCH
           </button>
         </div>
       </form>
 
-      <div className="flex flex-wrap items-center gap-2 mt-3">
-        <span className="text-[10px] font-mono tracking-[0.15em] uppercase" style={{ color: dark ? '#4b5563' : '#9ca3af' }}>Try</span>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          gap: 6,
+          marginTop: 10,
+        }}
+      >
+        <span
+          style={{
+            fontSize: 10,
+            fontFamily: 'var(--font-mono)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            color: dark ? '#4B5563' : '#888888',
+          }}
+        >
+          Try:
+        </span>
         {EXAMPLES.map((ex) => (
           <button
             key={ex}
             onClick={() => handleExample(ex)}
-            className="text-[11px] px-2.5 py-1 rounded-[4px] border transition-all cursor-pointer hover:border-blue-400/40 hover:text-blue-400"
             style={{
-              borderColor: dark ? 'rgba(255,255,255,0.08)' : '#e5e7eb',
-              color: dark ? '#6b7280' : '#9ca3af',
+              fontSize: 11,
+              padding: '3px 8px',
+              borderRadius: 2,
+              border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid #E0E0E0',
+              color: dark ? '#6B7280' : '#0052CC',
               background: 'transparent',
+              cursor: 'pointer',
+              fontFamily: 'var(--font-inter)',
+              transition: 'border-color 120ms, background 120ms',
             }}
+            className="search-example-pill"
           >
             {ex}
           </button>
         ))}
       </div>
+
+      <style>{`
+        .search-example-pill:hover {
+          border-color: #0052CC !important;
+          background: rgba(0,82,204,0.04) !important;
+        }
+      `}</style>
     </div>
   );
 }

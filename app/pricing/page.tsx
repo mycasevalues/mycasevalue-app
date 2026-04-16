@@ -191,25 +191,16 @@ const faqItems = [
 
 export default function PricingPage() {
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+    <div style={{ background: '#FFFFFF', minHeight: '100vh' }}>
       <style>{`
         .pricing-header {
-          background: #080d19;
-          color: #ffffff;
+          background: #F7F7F5;
+          color: #1A1A1A;
           padding: 3rem 1.5rem 3.5rem;
           text-align: center;
           position: relative;
           overflow: hidden;
-          border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .pricing-header::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          opacity: 0.03;
-          pointer-events: none;
-          background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
-          background-size: 60px 60px;
+          border-bottom: 1px solid #E0E0E0;
         }
         .pricing-header > * { position: relative; }
 
@@ -219,39 +210,39 @@ export default function PricingPage() {
           gap: 6px;
           padding: 4px 10px;
           margin-bottom: 14px;
-          border-radius: 999px;
-          border: 1px solid rgba(59,130,246,0.2);
-          background: rgba(59,130,246,0.08);
+          border-radius: 2px;
+          border: 1px solid #E0E0E0;
+          background: #FFFFFF;
           font-family: var(--font-mono);
           font-size: 10px;
           font-weight: 600;
-          letter-spacing: 0.15em;
+          letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: #60a5fa;
+          color: #E65C00;
         }
         .pricing-eyebrow-dot {
           width: 4px;
           height: 4px;
           border-radius: 50%;
-          background: #22c55e;
+          background: #15803D;
           animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
 
         .pricing-h1 {
-          font-family: var(--font-inter);
+          font-family: var(--font-jakarta, var(--font-inter));
           font-size: clamp(1.75rem, 4vw, 2.25rem);
           font-weight: 700;
           letter-spacing: -0.025em;
           line-height: 1.1;
           margin-bottom: 0.75rem;
-          color: #ffffff;
+          color: #1A1A1A;
         }
 
         .pricing-subtitle {
           font-family: var(--font-inter);
           font-size: 0.9375rem;
           line-height: 1.65;
-          color: rgba(255, 255, 255, 0.6);
+          color: #666666;
           max-width: 42rem;
           margin: 0 auto 1.5rem;
         }
@@ -280,25 +271,26 @@ export default function PricingPage() {
           display: flex;
           flex-direction: column;
           padding: 1.75rem;
-          border-radius: 6px;
-          border: 1px solid var(--border-default);
-          background: var(--color-surface-0);
-          transition: border-color 150ms ease, background-color 150ms ease;
+          border-radius: 4px;
+          border: 1px solid #E0E0E0;
+          background: #FFFFFF;
+          transition: border-color 150ms ease, box-shadow 150ms ease;
           position: relative;
         }
 
         .pricing-card.highlighted {
-          border: 1px solid rgba(59,130,246,0.4);
-          background: rgba(59,130,246,0.02);
+          border: 2px solid #E65C00;
+          background: #FFFFFF;
         }
 
         .pricing-card:hover {
-          border-color: rgba(59,130,246,0.3);
-          background: rgba(59,130,246,0.02);
+          border-color: #0052CC;
+          box-shadow: 0 2px 8px rgba(0,82,204,0.08);
         }
 
         .pricing-card.highlighted:hover {
-          border-color: rgba(59,130,246,0.6);
+          border-color: #E65C00;
+          box-shadow: 0 2px 12px rgba(230,92,0,0.12);
         }
 
         .card-name {
@@ -313,9 +305,9 @@ export default function PricingPage() {
         .card-best-for {
           font-family: var(--font-mono);
           font-size: 10px;
-          color: #60a5fa;
+          color: #E65C00;
           font-weight: 600;
-          letter-spacing: 0.15em;
+          letter-spacing: 0.12em;
           text-transform: uppercase;
           margin-bottom: 1.25rem;
         }
@@ -326,7 +318,7 @@ export default function PricingPage() {
           top: -10px;
           left: 50%;
           transform: translateX(-50%);
-          background: #1a56db;
+          background: #E65C00;
           color: #ffffff;
           padding: 0.25rem 0.625rem;
           border-radius: 3px;
@@ -399,31 +391,29 @@ export default function PricingPage() {
           justify-content: center;
           gap: 6px;
           padding: 0.625rem 1.25rem;
-          border-radius: 6px;
+          border-radius: 3px;
           font-family: var(--font-inter);
           font-size: 13px;
           font-weight: 600;
           letter-spacing: -0.005em;
           text-decoration: none;
-          transition: background-color 150ms ease, border-color 150ms ease;
+          transition: background-color 120ms ease;
           width: 100%;
           text-align: center;
-          background: #1a56db;
-          color: #ffffff;
-          border: 1px solid #1a56db;
-          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+          background: #E65C00;
+          color: #FFFFFF;
+          border: none;
           cursor: pointer;
         }
 
         .card-cta:hover {
-          background: #1e40af;
-          border-color: #1e40af;
+          background: #CC5200;
         }
 
         .callout-section {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
-          border-radius: var(--radius-lg);
+          background: #F7F7F5;
+          border: 1px solid #E0E0E0;
+          border-radius: 4px;
           padding: 2.5rem;
           margin-bottom: 4rem;
           max-width: 56rem;
@@ -455,9 +445,9 @@ export default function PricingPage() {
         }
 
         .faq-item {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
-          border-radius: var(--radius-lg);
+          background: #FFFFFF;
+          border: 1px solid #E0E0E0;
+          border-radius: 4px;
           padding: 1.5rem;
           margin-bottom: 1rem;
         }
@@ -592,8 +582,8 @@ export default function PricingPage() {
               fontSize: '0.875rem',
               fontWeight: '600',
               textDecoration: 'none',
-              background: 'var(--accent-primary)',
-              color: 'var(--color-text-inverse)',
+              background: '#E65C00',
+              color: '#FFFFFF',
               transition: 'all 0.3s ease',
             }}
             className="hover:opacity-90"

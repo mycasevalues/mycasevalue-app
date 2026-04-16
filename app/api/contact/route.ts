@@ -123,12 +123,12 @@ export async function POST(req: NextRequest) {
           <style>
             body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
             .container { max-width: 600px; margin: 0 auto; background: #f9fafb; }
-            .header { background: #1a56db; color: white; padding: 24px; text-align: center; }
+            .header { background: #1A1A1A; color: white; padding: 24px; text-align: center; }
             .content { background: white; padding: 32px 24px; }
             .field { margin-bottom: 24px; }
-            .label { font-weight: 600; color: #1a56db; margin-bottom: 8px; font-size: 14px; }
+            .label { font-weight: 600; color: #0052CC; margin-bottom: 8px; font-size: 14px; }
             .value { color: #4B5563; font-size: 15px; line-height: 1.6; }
-            .message-box { background: #f3f4f6; padding: 16px; border-left: 4px solid #1a56db; border-radius: 4px; }
+            .message-box { background: #f3f4f6; padding: 16px; border-left: 4px solid #E65C00; border-radius: 4px; }
             .footer { background: #f9fafb; padding: 16px 24px; border-top: 1px solid #e5e7eb; font-size: 13px; color: #6b7280; }
           </style>
         </head>

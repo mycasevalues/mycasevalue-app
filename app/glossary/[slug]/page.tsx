@@ -24,7 +24,7 @@ const styles = `
     transition: all 200ms ease;
   }
   .glossary-case-type-link:hover {
-    background-color: #1e40af !important;
+    background-color: #CC4F00 !important;
   }
 
   .glossary-back-link {

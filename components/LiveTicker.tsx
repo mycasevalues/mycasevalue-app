@@ -1,12 +1,8 @@
 'use client';
 
 /**
- * LiveTicker — Bloomberg-style scrolling ticker strip for the top of the app.
- *
- * Displays federal court data pulses as a continuously scrolling mono row:
- *   "S.D.N.Y. · 1,847 new cases YTD · ↑3.2%"  "C.D.Cal · median award $47k ↓1.1%"
- *
- * Purely CSS keyframe animation — no JS jitter, tabular-nums for Bloomberg feel.
+ * LiveTicker — Bloomberg-style scrolling ticker strip below the nav.
+ * Charcoal background matching the nav bar.
  */
 
 import { memo } from 'react';
@@ -32,9 +28,9 @@ const DEFAULT_ITEMS: TickerItem[] = [
 ];
 
 function dirColor(dir?: 'up' | 'down' | 'flat') {
-  if (dir === 'up') return '#22c55e';
-  if (dir === 'down') return '#ef4444';
-  return 'rgba(255,255,255,0.5)';
+  if (dir === 'up') return '#15803D';
+  if (dir === 'down') return '#B91C1C';
+  return '#888888';
 }
 
 function dirArrow(dir?: 'up' | 'down' | 'flat') {
@@ -60,9 +56,7 @@ function TickerRow({ items, ariaHidden = false }: { items: TickerItem[]; ariaHid
               </span>
             </>
           )}
-          <span className="ticker-dot" aria-hidden>
-            ·
-          </span>
+          <span className="ticker-dot" aria-hidden>·</span>
         </span>
       ))}
     </div>
@@ -80,8 +74,8 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
         .live-ticker-strip {
           position: relative;
           overflow: hidden;
-          background: #060a14;
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          background: #222222;
+          border-bottom: 1px solid #333333;
           height: 28px;
           display: flex;
           align-items: center;
@@ -93,10 +87,10 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
           inset: 0;
           background: linear-gradient(
             90deg,
-            #060a14 0%,
+            #222222 0%,
             transparent 4%,
             transparent 96%,
-            #060a14 100%
+            #222222 100%
           );
           pointer-events: none;
           z-index: 2;
@@ -111,21 +105,21 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
           align-items: center;
           gap: 6px;
           padding: 0 12px;
-          background: #080d19;
-          border-right: 1px solid rgba(255,255,255,0.08);
+          background: #222222;
+          border-right: 1px solid #333333;
           font-family: var(--font-mono);
           font-size: 10px;
           font-weight: 600;
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: #22c55e;
+          color: #15803D;
           white-space: nowrap;
         }
         .live-ticker-dot {
           width: 6px;
           height: 6px;
           border-radius: 50%;
-          background: #22c55e;
+          background: #15803D;
         }
         .ticker-track {
           display: flex;
@@ -152,7 +146,7 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
           padding: 0 14px;
         }
         .ticker-label {
-          color: #60a5fa;
+          color: #E65C00;
           font-weight: 700;
           letter-spacing: 0.02em;
         }
@@ -182,9 +176,7 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
           100% { transform: translateX(-50%); }
         }
         @media (prefers-reduced-motion: reduce) {
-          .ticker-track {
-            animation: none;
-          }
+          .ticker-track { animation: none; }
         }
         @media (max-width: 640px) {
           .live-ticker-strip { height: 26px; }

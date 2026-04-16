@@ -16,7 +16,7 @@ export default function ServerHero() {
     <section className="server-hero-content" aria-label="Hero section">
       {/* ── VISUAL 1: HERO — Bloomberg-style institutional ────────── */}
       <div style={{
-        background: '#080d19',
+        background: '#FFFFFF',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: '64px 24px 56px',
         position: 'relative',
@@ -239,7 +239,7 @@ export default function ServerHero() {
       <TrustBar />
 
       {/* ── VISUAL 3: STATS BAR — Terminal metrics strip ────────────── */}
-      <div style={{ background: '#080d19', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '0', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: '#FFFFFF', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '0', position: 'relative', overflow: 'hidden' }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.025, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -286,7 +286,7 @@ export default function ServerHero() {
       {/* Quick Lookup is now embedded in the hero card above */}
 
       {/* ── VISUAL 7: INTEGRATED CASE RESEARCH ─────────────── */}
-      <div style={{ background: '#080d19', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -314,9 +314,9 @@ export default function ServerHero() {
           </p>
           <a href="/search" style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
-            padding: '10px 20px', background: '#1a56db', color: '#ffffff', borderRadius: 6,
+            padding: '10px 20px', background: '#E65C00', color: '#ffffff', borderRadius: '3px',
             fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', textDecoration: 'none',
-            fontFamily: 'var(--font-inter)', border: '1px solid #1a56db',
+            fontFamily: 'var(--font-inter)', border: '1px solid #E65C00',
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
             transition: 'background-color 150ms ease, border-color 150ms ease',
           }}>
@@ -623,7 +623,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── AWARDS / TRUST BADGES GRID ───────────────────── */}
-      <div style={{ background: '#080d19', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -793,7 +793,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── BOTTOM CTA ────────────────── */}
-      <div style={{ background: '#080d19', padding: '80px 24px', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div style={{ background: '#FFFFFF', padding: '80px 24px', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -822,10 +822,10 @@ export default function ServerHero() {
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="/sign-up" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '10px 20px', background: '#1a56db',
-              color: '#ffffff', borderRadius: 6, fontWeight: 600, fontSize: 13,
+              padding: '10px 20px', background: '#E65C00',
+              color: '#ffffff', borderRadius: '3px', fontWeight: 600, fontSize: 13,
               fontFamily: 'var(--font-inter)', textDecoration: 'none',
-              letterSpacing: '-0.005em', border: '1px solid #1a56db',
+              letterSpacing: '-0.005em', border: '1px solid #E65C00',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
               transition: 'background-color 150ms ease, border-color 150ms ease',
             }}>

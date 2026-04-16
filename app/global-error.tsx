@@ -64,7 +64,7 @@ export default function GlobalError({
                 marginBottom: 24,
               }}
             >
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0052CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="12" y1="8" x2="12" y2="12" />
                 <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -113,7 +113,7 @@ export default function GlobalError({
 
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
               <style>{`
-                .ge-btn-primary:hover { background: #1e40af !important; }
+                .ge-btn-primary:hover { background: #CC4F00 !important; }
                 .ge-btn-secondary:hover { background: rgba(255,255,255,0.1) !important; }
               `}</style>
               <button

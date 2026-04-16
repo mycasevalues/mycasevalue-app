@@ -9,58 +9,72 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          navy:        '#0f2240',   // page bg / dark section bg
-          panel:       '#1a3a5c',   // raised card on dark
-          border:      '#1e3a5f',   // panel edge on dark
-          blue:        '#1a56db',   // primary CTA
-          'blue-dark': '#1e40af',   // button hover
-          'blue-mid':  '#3b82f6',   // borders / focus rings
-          'blue-pale': 'rgba(59,130,246,0.08)',   // tints / selected states (dark-mode)
-          white:       '#FFFFFF',   // section headers
-          link:        '#E5E7EB',   // nav links / body on dark
-          muted:       'rgba(213,216,220,0.6)',   // secondary / copyright
-          dim:         'rgba(213,216,220,0.35)',   // disclaimer / fine print
-          sep:         'rgba(213,216,220,0.4)',    // | separator
-          // Dark surfaces
-          surface:     '#0c1220',
-          'surface-2': '#111827',
-          ink:         '#e5e7eb',   // heading text on dark
-          'ink-2':     '#d1d5db',   // body text on dark
-          gray:        '#9CA3AF',
-          'text-secondary': '#9CA3AF',
-          'text-muted': '#6B7280',
+          navy:        '#1A1A1A',   // Bloomberg charcoal (nav, footer)
+          panel:       '#F7F7F5',   // sidebar bg
+          border:      '#E0E0E0',   // panel edge
+          blue:        '#0052CC',   // Bloomberg blue (links)
+          'blue-dark': '#003D99',   // link hover
+          'blue-mid':  '#0052CC',   // borders / focus rings
+          'blue-pale': 'rgba(0,82,204,0.08)',   // tints / selected states
+          white:       '#FFFFFF',   // surface
+          link:        '#0052CC',   // link color
+          muted:       '#888888',   // secondary / muted text
+          dim:         '#AAAAAA',   // disclaimer / fine print
+          sep:         '#E8E8E8',   // separator
+          surface:     '#FFFFFF',   // main bg
+          'surface-2': '#F5F5F5',   // alt bg
+          ink:         '#1A1A1A',   // heading text
+          'ink-2':     '#555555',   // body text
+          gray:        '#888888',
+          'text-secondary': '#555555',
+          'text-muted': '#888888',
+          // Bloomberg CTA orange
+          cta:         '#E65C00',
+          'cta-hover': '#CC4F00',
         },
-        // Data / status colors
+        // Data / status colors (unchanged)
         data: {
           positive:    '#15803D',
           negative:    '#B91C1C',
           neutral:     '#B45309',
-          'bg-pos':    'rgba(34,197,94,0.06)',
-          'bg-neg':    'rgba(239,68,68,0.06)',
-          'bg-neu':    'rgba(234,179,8,0.06)',
+          'bg-pos':    'rgba(21,128,61,0.08)',
+          'bg-neg':    'rgba(185,28,28,0.08)',
+          'bg-neu':    'rgba(180,83,9,0.08)',
         },
-        // Legacy compat — mapped to brand tokens (consolidated)
-        navy: { DEFAULT: '#0f2240', dark: '#1e40af', light: '#3b82f6' },
-        midnight: { DEFAULT: '#0f2240', 50: '#3b82f6', 100: '#1a56db', 200: '#1e40af', 800: '#111827', 900: '#e5e7eb' },
+        // Legacy compat — mapped to Bloomberg tokens
+        navy: { DEFAULT: '#1A1A1A', dark: '#111111', light: '#333333' },
+        midnight: { DEFAULT: '#1A1A1A', 50: '#0052CC', 100: '#E65C00', 200: '#CC4F00', 800: '#F5F5F5', 900: '#1A1A1A' },
         outcome: {
           win: '#15803D',
-          'win-bg': 'rgba(34,197,94,0.06)',
+          'win-bg': 'rgba(21,128,61,0.08)',
           'win-border': 'rgba(21,128,61,0.25)',
           loss: '#B91C1C',
-          'loss-bg': 'rgba(239,68,68,0.06)',
+          'loss-bg': 'rgba(185,28,28,0.08)',
           'loss-border': 'rgba(185,28,28,0.25)',
           mixed: '#B45309',
-          'mixed-bg': 'rgba(234,179,8,0.06)',
+          'mixed-bg': 'rgba(180,83,9,0.08)',
           'mixed-border': 'rgba(180,83,9,0.25)',
-          neutral: '#9CA3AF',
-          'neutral-bg': 'rgba(255,255,255,0.04)',
-          'neutral-border': 'rgba(255,255,255,0.1)',
+          neutral: '#888888',
+          'neutral-bg': 'rgba(0,0,0,0.03)',
+          'neutral-border': 'rgba(0,0,0,0.08)',
+        },
+        // Bloomberg-specific
+        bl: {
+          nav:       '#1A1A1A',
+          surface:   '#FFFFFF',
+          'surface-alt': '#F5F5F5',
+          link:      '#0052CC',
+          cta:       '#E65C00',
+          'cta-hover': '#CC4F00',
+          divider:   '#E8E8E8',
+          sidebar:   '#F7F7F5',
+          'row-hover': '#EFF5FF',
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-        body: ['var(--font-inter)', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-        display: ['var(--font-inter)', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        body: ['var(--font-inter)', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        display: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
         data: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
         inter: ['var(--font-inter)', 'Inter', 'sans-serif'],
@@ -77,50 +91,49 @@ module.exports = {
         'data-lg': ['2rem', { lineHeight: '1', letterSpacing: '-0.02em' }],
         'data-sm': ['1.25rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
         'brand-display': ['56px', { lineHeight: '1.05', letterSpacing: '-2.5px', fontWeight: '800' }],
-        'brand-h1': ['36px', { lineHeight: '1.1', letterSpacing: '-1.2px', fontWeight: '800' }],
-        'brand-h2': ['24px', { lineHeight: '1.2', letterSpacing: '-0.6px', fontWeight: '700' }],
-        'brand-h3': ['18px', { lineHeight: '1.3', letterSpacing: '-0.3px', fontWeight: '700' }],
-        'brand-body': ['15px', { lineHeight: '1.7', fontWeight: '400' }],
-        'brand-label': ['10px', { lineHeight: '1', letterSpacing: '0.16em', fontWeight: '600' }],
-        'brand-data': ['26px', { lineHeight: '1', letterSpacing: '-0.5px', fontWeight: '600' }],
+        'brand-h1': ['22px', { lineHeight: '1.2', letterSpacing: '-0.3px', fontWeight: '800' }],
+        'brand-h2': ['17px', { lineHeight: '1.3', letterSpacing: '-0.1px', fontWeight: '700' }],
+        'brand-h3': ['15px', { lineHeight: '1.4', fontWeight: '700' }],
+        'brand-body': ['14px', { lineHeight: '1.6', fontWeight: '400' }],
+        'brand-label': ['11px', { lineHeight: '1', letterSpacing: '0.08em', fontWeight: '600' }],
+        'brand-data': ['13px', { lineHeight: '1', letterSpacing: '0', fontWeight: '400' }],
       },
       boxShadow: {
-        card: '0 1px 3px rgba(0,0,0,0.08)',
-        'card-hover': '0 4px 16px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.06)',
-        'card-elevated': '0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06)',
-        'glow-accent': '0 2px 12px rgba(124,58,237,0.15)',
-        glass: '0 1px 3px rgba(0,0,0,0.08)',
-        accent: '0 2px 8px rgba(124,58,237,0.15)',
-        'accent-lg': '0 4px 16px rgba(124,58,237,0.20)',
-        'inner-sm': 'inset 0 1px 2px rgba(0,0,0,0.06)',
-        'brand-nav': '0 1px 3px rgba(0,0,0,.07), 0 8px 28px rgba(0,0,0,.10), 0 32px 72px rgba(0,0,0,.09)',
-        'brand-mock': '0 2px 8px rgba(0,0,0,.07), 0 16px 40px rgba(6,13,26,.12), 0 40px 72px rgba(6,13,26,.09)',
-        'brand-card': '0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.08)',
-        'brand-btn': '0 3px 12px rgba(10,102,194,.22)',
-        'brand-btn-lg': '0 4px 18px rgba(10,102,194,.28)',
+        card: '0 1px 3px rgba(0,0,0,0.06)',
+        'card-hover': '0 2px 6px rgba(0,0,0,0.08)',
+        'card-elevated': '0 4px 12px rgba(0,0,0,0.08)',
+        'glow-accent': '0 2px 12px rgba(230,92,0,0.15)',
+        glass: '0 1px 3px rgba(0,0,0,0.06)',
+        accent: '0 2px 8px rgba(230,92,0,0.15)',
+        'accent-lg': '0 4px 16px rgba(230,92,0,0.20)',
+        'inner-sm': 'inset 0 1px 2px rgba(0,0,0,0.04)',
+        'brand-nav': '0 1px 3px rgba(0,0,0,0.08)',
+        'brand-mock': '0 2px 8px rgba(0,0,0,0.06), 0 16px 40px rgba(0,0,0,0.08)',
+        'brand-card': '0 1px 3px rgba(0,0,0,0.06)',
+        'brand-btn': '0 2px 6px rgba(230,92,0,0.20)',
+        'brand-btn-lg': '0 4px 12px rgba(230,92,0,0.25)',
       },
       spacing: {
-        // Base-8 scale — use these values only, no arbitrary spacing
         '0':  '0px',
-        '1':  '4px',    // Micro — icon-to-label gaps
-        '2':  '8px',    // XS — inline spacing
-        '3':  '12px',   // SM — nav link stack gap
-        '4':  '16px',   // MD — default padding
-        '6':  '24px',   // LG — card internal padding
-        '7':  '28px',   // CTA box vertical padding
-        '8':  '32px',   // XL — component gaps
-        '12': '48px',   // 2XL — content section gaps
-        '14': '56px',   // Grid — footer column gap
-        '16': '64px',   // Page — footer top padding
+        '1':  '4px',
+        '2':  '8px',
+        '3':  '12px',
+        '4':  '16px',
+        '6':  '24px',
+        '7':  '28px',
+        '8':  '32px',
+        '12': '48px',
+        '14': '56px',
+        '16': '64px',
       },
       borderRadius: {
-        'btn': '20px',    // pill — all primary buttons
-        'card': '12px',   // cards, panels, CTA box
-        'icon': '36%',    // cube mark tile only
-        sm: '4px',
-        md: '8px',
-        lg: '12px',
-        xl: '20px',
+        'btn': '3px',     // Bloomberg tight rectangular buttons
+        'card': '4px',    // Bloomberg near-flat cards
+        'icon': '36%',
+        sm: '2px',
+        md: '3px',
+        lg: '4px',
+        xl: '4px',
         full: '9999px',
         badge: '2px',
         pill: '9999px',

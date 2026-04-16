@@ -112,7 +112,7 @@ export function AIChatAssistant() {
         <button
           onClick={() => setIsOpen(true)}
           className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded-lg text-white shadow-lg hover:shadow-xl transition-all"
-          style={{ backgroundColor: '#0c1220', fontFamily: 'Inter, system-ui, sans-serif' }}
+          style={{ backgroundColor: '#FFFFFF', fontFamily: 'Inter, system-ui, sans-serif' }}
           aria-label="Open AI Assistant"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -124,10 +124,10 @@ export function AIChatAssistant() {
 
       {isOpen && (
         <div
-          className="fixed bottom-6 right-6 z-50 flex flex-col bg-[#111827] border border-white/10 shadow-2xl overflow-hidden"
+          className="fixed bottom-6 right-6 z-50 flex flex-col bg-[#FFFFFF] border border-[#E0E0E0] shadow-2xl overflow-hidden"
           style={{ width: '400px', maxWidth: 'calc(100vw - 48px)', height: '560px', maxHeight: 'calc(100vh - 48px)', borderRadius: '16px', fontFamily: 'Inter, system-ui, sans-serif' }}
         >
-          <div className="flex items-center justify-between px-5 py-4 border-b border-white/10" style={{ backgroundColor: '#0c1220' }}>
+          <div className="flex items-center justify-between px-5 py-4 border-b border-[#E0E0E0]" style={{ backgroundColor: '#FFFFFF' }}>
             <div className="flex items-center gap-3">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -150,7 +150,7 @@ export function AIChatAssistant() {
                 <p className="text-sm text-gray-500 text-center mt-4">Ask me anything about federal court data, settlement values, or using MyCaseValue tools.</p>
                 <div className="space-y-2">
                   {STARTER_QUESTIONS.map((q) => (
-                    <button key={q} onClick={() => sendMessage(q)} className="w-full text-left px-4 py-3 rounded-xl text-sm text-gray-300 bg-[var(--color-surface-2)] hover:bg-[rgba(255,255,255,0.04)] transition-colors border border-white/10">
+                    <button key={q} onClick={() => sendMessage(q)} className="w-full text-left px-4 py-3 rounded-xl text-sm text-gray-300 bg-[var(--color-surface-2)] hover:bg-[rgba(255,255,255,0.04)] transition-colors border border-[#E0E0E0]">
                       {q}
                     </button>
                   ))}
@@ -161,7 +161,7 @@ export function AIChatAssistant() {
                 <div key={msg.id} className={msg.role === 'user' ? 'flex justify-end' : 'flex justify-start'}>
                   <div
                     className={msg.role === 'user' ? 'max-w-[85%] px-4 py-3 rounded-lg text-sm text-white' : 'max-w-[85%] px-4 py-3 rounded-lg text-sm text-gray-200 bg-[rgba(255,255,255,0.04)]'}
-                    style={msg.role === 'user' ? { backgroundColor: '#0c1220' } : undefined}
+                    style={msg.role === 'user' ? { backgroundColor: '#FFFFFF' } : undefined}
                   >
                     <div className="whitespace-pre-wrap leading-relaxed">{msg.content}</div>
                   </div>
@@ -182,10 +182,10 @@ export function AIChatAssistant() {
             <div ref={messagesEndRef} />
           </div>
 
-          <div className="border-t border-white/10 px-4 py-3">
+          <div className="border-t border-[#E0E0E0] px-4 py-3">
             <form onSubmit={onSubmit} className="flex items-center gap-2">
-              <input ref={inputRef} type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Ask about case values..." className="flex-1 px-4 py-2.5 rounded-lg border border-white/10 text-sm focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400" disabled={isLoading} />
-              <button type="submit" disabled={!inputValue.trim() || isLoading} className="p-2.5 rounded-full text-white transition-colors disabled:opacity-50" style={{ backgroundColor: '#0c1220' }} aria-label="Send message">
+              <input ref={inputRef} type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Ask about case values..." className="flex-1 px-4 py-2.5 rounded-lg border border-[#E0E0E0] text-sm focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400" disabled={isLoading} />
+              <button type="submit" disabled={!inputValue.trim() || isLoading} className="p-2.5 rounded-full text-white transition-colors disabled:opacity-50" style={{ backgroundColor: '#FFFFFF' }} aria-label="Send message">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
                 </svg>

@@ -108,7 +108,7 @@ export default function StateCourtContext({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="rounded-lg border border-white/10 bg-[#111827] p-6"
+        className="rounded-lg border border-[#E0E0E0] bg-[#F7F7F5] p-6"
       >
         <div className="text-sm text-gray-400">
           <p className="font-semibold text-gray-100 mb-2">State Court Comparison</p>
@@ -126,7 +126,7 @@ export default function StateCourtContext({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border border-white/10 bg-[#111827] p-6"
+      className="rounded-lg border border-[#E0E0E0] bg-[#F7F7F5] p-6"
     >
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-gray-100">Federal vs State Court Outcomes</h2>
@@ -170,7 +170,7 @@ export default function StateCourtContext({
               </div>
             </div>
 
-            <div className="pt-2 border-t border-white/10">
+            <div className="pt-2 border-t border-[#E0E0E0]">
               <div className="flex justify-between text-sm mb-2">
                 <span className="text-gray-300">Median Award</span>
                 <span className="font-mono font-semibold text-gray-100">{federalMedianAward}</span>
@@ -219,7 +219,7 @@ export default function StateCourtContext({
               </div>
             </div>
 
-            <div className="pt-2 border-t border-white/10">
+            <div className="pt-2 border-t border-[#E0E0E0]">
               <div className="flex justify-between text-sm mb-2">
                 <span className="text-gray-300">Median Award</span>
                 <span className="font-mono font-semibold text-gray-100">{stateData.medianAward}</span>
@@ -234,7 +234,7 @@ export default function StateCourtContext({
       </div>
 
       {/* Key Difference Callout */}
-      <div className="mt-6 pt-6 border-t border-white/10">
+      <div className="mt-6 pt-6 border-t border-[#E0E0E0]">
         <div className="bg-blue-50 rounded-lg p-4">
           <p className="text-sm text-gray-300">
             <span className="font-semibold text-gray-100">Key Difference:</span>{' '}
