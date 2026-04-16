@@ -624,8 +624,8 @@ export default function FAQPage() {
                         <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </summary>
-                    <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                    <div className="pt-4 mt-4 border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+                      <p className="text-[13px] leading-[1.65]" style={{ color: 'var(--color-text-secondary)' }}>
                         {faq.a}
                       </p>
                     </div>
