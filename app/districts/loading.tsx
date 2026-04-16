@@ -19,14 +19,14 @@ export default function DistrictsLoading() {
         }}>
           {[1, 2, 3, 4, 5, 6].map(i => (
             <div key={i} style={{
-              background: ''#FFFFFF'',
-              border: '1px solid '#E0E0E0'',
+              background: '#FFFFFF',
+              border: '1px solid #E0E0E0',
               borderRadius: '12px',
               padding: '24px',
               minHeight: '160px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
             }}>
-              <div style={{ height: '20px', width: '75%', background: ''#E0E0E0'', borderRadius: '12px', marginBottom: '12px' }} />
+              <div style={{ height: '20px', width: '75%', background: '#E0E0E0', borderRadius: '12px', marginBottom: '12px' }} />
               <div style={{ height: '14px', width: '100%', background: '#F0F0F0', borderRadius: '12px', marginBottom: '8px' }} />
               <div style={{ height: '14px', width: '100%', background: '#F0F0F0', borderRadius: '12px', marginBottom: '8px' }} />
               <div style={{ height: '14px', width: '85%', background: '#F0F0F0', borderRadius: '12px' }} />

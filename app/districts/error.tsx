@@ -38,8 +38,8 @@ export default function Error({
         <div style={{
           maxWidth: 480,
           textAlign: 'center',
-          background: ''#FFFFFF'',
-          border: '1px solid '#E0E0E0'',
+          background: '#FFFFFF',
+          border: '1px solid #E0E0E0',
           borderRadius: '12px',
           padding: '48px 32px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
@@ -65,7 +65,7 @@ export default function Error({
           <h1 style={{
             fontSize: '24px',
             fontWeight: 600,
-            color: ''#1A1A1A'',
+            color: '#1A1A1A',
             margin: '0 0 8px',
             letterSpacing: '-0.01em',
           }}>
@@ -74,7 +74,7 @@ export default function Error({
 
           <p style={{
             fontSize: '15px',
-            color: ''#444444'',
+            color: '#444444',
             lineHeight: 1.6,
             margin: '0 0 24px',
             maxWidth: 400,
@@ -94,7 +94,7 @@ export default function Error({
                 gap: 8,
                 padding: '12px 24px',
                 background: 'var(--accent-primary)',
-                color: ''#FFFFFF'',
+                color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '12px',
                 fontSize: '14px',
@@ -119,8 +119,8 @@ export default function Error({
                 gap: 8,
                 padding: '12px 24px',
                 background: '#F7F7F5',
-                color: ''#1A1A1A'',
-                border: '1px solid '#E0E0E0'',
+                color: '#1A1A1A',
+                border: '1px solid #E0E0E0',
                 borderRadius: '12px',
                 fontSize: '14px',
                 fontWeight: 600,
