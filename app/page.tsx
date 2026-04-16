@@ -146,34 +146,53 @@ export default function HomePage() {
 
       {/* ── CAPABILITIES ── */}
       <section style={{ background: 'var(--color-surface-0)' }}>
-        <div className="max-w-6xl mx-auto px-6 py-14">
-          <h2 className="text-base font-semibold text-gray-100 mb-8">Platform</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="flex items-baseline justify-between mb-10">
+            <div>
+              <p className="text-[10px] font-medium tracking-[0.25em] uppercase text-blue-400/60 mb-2">Intelligence Suite</p>
+              <h2 className="text-xl font-bold text-white">The federal court data stack</h2>
+            </div>
+            <Link href="/platform" className="hidden md:inline-flex text-xs text-gray-400 hover:text-white transition-colors">
+              Explore platform &rarr;
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
             {[
-              { title: 'Case Outcomes', desc: 'Win rates, settlement ranges, and disposition analytics across 84 case types.' },
-              { title: 'Judge Intelligence', desc: 'Ruling patterns, case duration, and outcome tendencies for federal judges.' },
-              { title: 'Venue Analysis', desc: 'Compare districts by performance, timelines, and historical outcomes.' },
-              { title: 'Document Search', desc: 'Full-text search across opinions, regulations, and filings from 7 sources.' },
+              { title: 'Case Outcomes', desc: 'Win rates, settlement ranges, and disposition analytics across 84 case types.', href: '/cases' },
+              { title: 'Judge Intelligence', desc: 'Ruling patterns, case duration, and outcome tendencies for federal judges.', href: '/judges' },
+              { title: 'Venue Analysis', desc: 'Compare districts by performance, timelines, and historical outcomes.', href: '/districts' },
+              { title: 'Document Search', desc: 'Full-text search across opinions, regulations, and filings from 7 sources.', href: '/case-search' },
             ].map((cap) => (
-              <div key={cap.title}>
-                <h3 className="text-sm font-semibold text-gray-100 mb-1.5">{cap.title}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{cap.desc}</p>
-              </div>
+              <Link
+                key={cap.title}
+                href={cap.href}
+                className="group p-6 bg-[#0c1220] hover:bg-[#111827] transition-colors"
+              >
+                <h3 className="text-sm font-semibold text-gray-100 mb-2 group-hover:text-white transition-colors">{cap.title}</h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-4">{cap.desc}</p>
+                <span className="text-[11px] text-blue-400/60 group-hover:text-blue-400 transition-colors">View &rarr;</span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: '#080d19' }}>
-        <div className="max-w-4xl mx-auto px-6 py-14 flex flex-col md:flex-row items-center justify-between gap-6">
+      <section style={{ background: 'var(--gradient-hero)' }}>
+        <div className="max-w-4xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h2 className="text-lg font-bold text-white mb-1">Start researching.</h2>
-            <p className="text-sm text-gray-500">Free during beta. No account required.</p>
+            <p className="text-[10px] font-medium tracking-[0.25em] uppercase text-blue-400/60 mb-2">Public Beta</p>
+            <h2 className="text-xl font-bold text-white mb-1">Research federal litigation like institutions do.</h2>
+            <p className="text-sm text-gray-400">Free during beta &middot; No account required &middot; Instant results</p>
           </div>
-          <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-transparent text-gray-300 border border-white/20 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors flex-shrink-0">
-            Browse Cases
-          </Link>
+          <div className="flex gap-3 flex-shrink-0">
+            <Link href="/case-search" className="inline-flex h-10 items-center px-5 bg-[#1a56db] hover:bg-[#1e40af] text-white text-sm font-semibold rounded transition-colors">
+              Start Searching
+            </Link>
+            <Link href="/cases" className="inline-flex h-10 items-center px-5 bg-transparent text-gray-300 border border-white/20 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors">
+              Browse Cases
+            </Link>
+          </div>
         </div>
       </section>
 
