@@ -361,9 +361,9 @@ export default function Header() {
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${
           headerTransparent
             ? 'bg-transparent border-b border-white/5'
-            : 'border-b border-white/5'
+            : 'border-b border-white/10 backdrop-blur-md'
         }`}
-        style={{ background: headerTransparent ? 'transparent' : '#0c1220' }}
+        style={{ background: headerTransparent ? 'transparent' : 'rgba(12,18,32,0.85)' }}
         role="banner"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
