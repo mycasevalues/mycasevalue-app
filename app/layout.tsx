@@ -7,6 +7,7 @@ import Header from '../components/layout/Header';
 import BetaBanner from '../components/BetaBanner';
 import Footer from '../components/layout/Footer';
 import WorkspaceShell, { ConditionalFooter, ConditionalBanner, ConditionalHeader } from '../components/layout/WorkspaceShell';
+import LiveTicker from '../components/LiveTicker';
 import ReferralCapture from '../components/ReferralCapture';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -309,6 +310,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AnalyticsProvider>
             <LanguageDetectBanner />
             <ConditionalBanner><BetaBanner /></ConditionalBanner>
+            <ConditionalHeader><LiveTicker /></ConditionalHeader>
             <ConditionalHeader><Header /></ConditionalHeader>
             <WorkspaceShell>
               <main id="main-content">
