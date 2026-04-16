@@ -269,8 +269,13 @@ html, body {
 }
 
 ::selection {
-  background: var(--bg-selection);
-  color: var(--fg-primary);
+  background: rgba(26,86,219,0.35);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(26,86,219,0.35);
+  color: #ffffff;
 }
 
 /* Institutional dark scrollbar — narrow, restrained */
