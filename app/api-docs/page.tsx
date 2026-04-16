@@ -155,42 +155,51 @@ export default function ApiDocsPage() {
       />
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
-        <div style={{ background: 'var(--gradient-hero)', padding: '80px 24px' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 16 }}>
-              <span style={{
-                display: 'inline-block',
-                padding: '6px 12px',
-                backgroundColor: 'var(--accent-primary)',
-                color: 'var(--color-surface-0)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                borderRadius: '12px',
-                fontFamily: 'var(--font-display)',
-              }}>
-                API DOCUMENTATION
-              </span>
+        <div style={{
+          background: '#080d19',
+          padding: '56px 24px 48px',
+          position: 'relative',
+          overflow: 'hidden',
+          borderBottom: '1px solid rgba(255,255,255,0.06)',
+        }}>
+          <div aria-hidden style={{
+            position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }} />
+          <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '4px 10px', marginBottom: 16,
+              borderRadius: 999,
+              border: '1px solid rgba(59,130,246,0.2)',
+              background: 'rgba(59,130,246,0.08)',
+              fontFamily: 'var(--font-mono)', fontSize: 10,
+              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              color: '#60a5fa',
+            }}>
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+              API Documentation
             </div>
             <h1 style={{
-              fontSize: 'clamp(32px, 5vw, 52px)',
+              fontFamily: 'var(--font-inter)',
+              fontSize: 'clamp(32px, 4.5vw, 44px)',
               fontWeight: 700,
-              color: 'var(--color-surface-0)',
-              fontFamily: 'var(--font-display)',
-              letterSpacing: '-1px',
-              marginBottom: 12,
+              color: '#ffffff',
+              letterSpacing: '-0.03em',
+              lineHeight: 1.1,
+              marginBottom: 16,
             }}>
-              MyCaseValue API
+              MyCaseValue API reference
             </h1>
             <p style={{
-              fontSize: 18,
-              color: 'rgba(255,255,255,0.8)',
+              fontSize: 'clamp(15px, 1.5vw, 17px)',
+              color: 'rgba(255,255,255,0.7)',
               fontFamily: 'var(--font-body)',
-              lineHeight: 1.8,
+              lineHeight: 1.6,
               maxWidth: 600,
             }}>
-              Programmatic access to federal court outcome data. Integrate real case analytics, AI predictions, and comprehensive court statistics into your applications.
+              Programmatic access to federal court outcome data. <span style={{ fontFamily: 'var(--font-mono)', color: '#60a5fa' }}>v1.0</span> · REST · Bearer auth · JSON
             </p>
           </div>
         </div>
