@@ -40,7 +40,7 @@ export default function MasterDetailLayout({
       {/* Master Panel (list) */}
       <div
         className={`
-          flex-shrink-0 overflow-y-auto border-r border-gray-100 bg-white
+          flex-shrink-0 overflow-y-auto border-r border-gray-100 bg-[#0c1220]
           ${hasSelection ? 'hidden lg:block' : 'w-full lg:w-auto'}
         `}
         style={{ width: `${masterWidth}%`, minWidth: hasSelection ? undefined : '100%' }}

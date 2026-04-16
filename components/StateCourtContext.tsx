@@ -108,7 +108,7 @@ export default function StateCourtContext({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="rounded-lg border border-white/10 bg-white p-6"
+        className="rounded-lg border border-white/10 bg-[#111827] p-6"
       >
         <div className="text-sm text-gray-600">
           <p className="font-semibold text-gray-100 mb-2">State Court Comparison</p>
@@ -126,7 +126,7 @@ export default function StateCourtContext({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border border-white/10 bg-white p-6"
+      className="rounded-lg border border-white/10 bg-[#111827] p-6"
     >
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-gray-100">Federal vs State Court Outcomes</h2>

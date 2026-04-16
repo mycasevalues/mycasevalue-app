@@ -360,7 +360,7 @@ export default function MethodologyPage() {
                 icon: 'building'
               },
             ].map((source, i) => (
-              <div key={i} className="source-card p-5 bg-white" style={{ borderRadius: '12px' }}>
+              <div key={i} className="source-card p-5 bg-[#111827]" style={{ borderRadius: '12px' }}>
                 <div className="flex items-start gap-3 mb-3">
                   <div className="text-2xl flex-shrink-0">
                     {source.icon === 'database' && '-'}

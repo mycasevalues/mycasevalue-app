@@ -26,7 +26,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="rounded-lg border border-white/10 bg-white p-6"
+        className="rounded-lg border border-white/10 bg-[#111827] p-6"
       >
         <h2 className="text-lg font-semibold text-gray-100 mb-3">Relevant Case Law</h2>
         <div className="text-sm text-gray-600">
@@ -45,7 +45,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border border-white/10 bg-white p-6"
+      className="rounded-lg border border-white/10 bg-[#111827] p-6"
     >
       <h2 className="text-lg font-semibold text-gray-100 mb-6">Relevant Case Law</h2>
 

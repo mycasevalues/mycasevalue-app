@@ -55,9 +55,9 @@ export function StatCard({
   return (
     <div
       className={cn(
-        variant === 'card' && 'border border-brand-rule rounded-[10px] p-6 bg-white',
+        variant === 'card' && 'border border-brand-rule rounded-[10px] p-6 bg-[#111827]',
         variant === 'inline' && 'py-5 px-6',
-        variant === 'large' && 'border border-brand-rule rounded-[10px] p-8 bg-white',
+        variant === 'large' && 'border border-brand-rule rounded-[10px] p-8 bg-[#111827]',
         className
       )}
     >
@@ -111,7 +111,7 @@ export function StatBar({ stats, className }: StatBarProps) {
   return (
     <div
       className={cn(
-        'grid border-t border-brand-rule bg-white',
+        'grid border-t border-brand-rule bg-[#111827]',
         `grid-cols-${Math.min(stats.length, 4)}`,
         className
       )}
