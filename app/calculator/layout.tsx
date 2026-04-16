@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Settlement Calculator — Estimate Case Value | MyCaseValue',
+  title: 'Settlement Calculator — Federal Case Valuation',
   description: 'Free federal court settlement calculator. Estimate your case value based on 5.1M+ real outcomes, case type, district, and damage amount. Instant results.',
   openGraph: {
     title: 'Settlement Calculator — Estimate Case Value',
