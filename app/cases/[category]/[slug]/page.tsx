@@ -171,15 +171,17 @@ export default async function CaseTypeDetailPage({
             href={`/cases/${category}`}
             style={{
               display: 'inline-block',
-              padding: '12px 32px',
-              borderRadius: '12px',
-              background: 'var(--gradient-hero)',
-              color: 'var(--color-text-inverse)',
+              padding: '10px 20px',
+              borderRadius: 6,
+              background: '#1a56db',
+              color: '#ffffff',
               textDecoration: 'none',
-              fontWeight: '600',
-              fontSize: '14px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.5px',
+              fontWeight: 600,
+              fontSize: 13,
+              letterSpacing: '-0.005em',
+              border: '1px solid #1a56db',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
+              fontFamily: 'var(--font-inter)',
             }}
           >
             Back to {getCategoryLabel(category)}
@@ -463,20 +465,22 @@ export default async function CaseTypeDetailPage({
         <style>{`
           .cta-button {
             display: inline-block;
-            padding: 14px 36px;
-            border-radius: 12px;
-            background: var(--gradient-hero);
-            color: var(--color-text-inverse);
+            padding: 10px 20px;
+            border-radius: 6px;
+            background: #1a56db;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: background-color 0.2s ease, transform 0.2s ease;
+            font-size: 13px;
+            letter-spacing: -0.005em;
+            border: 1px solid #1a56db;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+            font-family: var(--font-inter);
+            transition: background-color 150ms ease, border-color 150ms ease;
           }
           .cta-button:hover {
-            background-color: var(--accent-primary-hover);
-            transform: translateY(-1px);
+            background-color: #1e40af;
+            border-color: #1e40af;
           }
 
           @media (max-width: 768px) {
