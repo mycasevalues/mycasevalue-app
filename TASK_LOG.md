@@ -802,4 +802,44 @@ All forbidden Bloomberg colors eliminated from both target files. All Westlaw to
 
 ### Session Gate: PASS
 
+---
+
+## Session 10 — OutcomeDonut / PieChart Sweep
+
+**Commit:** `[Session 10] Sweep: Replace all PieChart usage with HorizontalBarChart, deprecate OutcomeDonut` — sha: 9c590130
+
+**Risk Level:** LOW — Chart component swap, no layout or data changes
+
+### Files Modified (3)
+
+**components/features/DistrictCharts.tsx**
+- Removed PieChart/Pie/Cell/Legend imports from recharts
+- Added HorizontalBarChart import
+- Removed CHART_PALETTE constant (no longer needed)
+- Converted category breakdown from PieChart to HorizontalBarChart
+- Data transformation: count → percentage of total
+
+**app/analytics/page.tsx**
+- Removed PieChart/Pie/Cell imports from recharts
+- Added HorizontalBarChart import
+- Removed COLORS and USER_COLORS constants
+- Added caseTypeBarData and userTypeBarData transformations
+- Replaced "User Types Distribution" PieChart with HorizontalBarChart
+- Replaced "Case Type Distribution" PieChart with HorizontalBarChart
+
+**components/charts/OutcomeDonut.tsx**
+- Added @deprecated JSDoc comment
+- File NOT deleted (per session instructions) — retained for backward compatibility
+
+### Verification Results
+
+1. **Grep: OutcomeDonut only in its own file** → PASS (+ comments in 3 other files, no imports/usage)
+2. **Grep: PieChart only in OutcomeDonut.tsx** → PASS (zero active usage elsewhere)
+3. **HorizontalBarChart used in DistrictCharts.tsx** → PASS
+4. **HorizontalBarChart used in analytics/page.tsx** → PASS
+5. **@deprecated JSDoc on OutcomeDonut** → PASS
+6. **npm run build → Webpack compilation** → PASS (pre-existing TS error unrelated)
+
+### Session Gate: PASS
+
 Last updated: 2026-04-16
