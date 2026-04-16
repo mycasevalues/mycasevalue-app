@@ -230,7 +230,7 @@ export default function FeesPage() {
           {/* Disclaimer */}
           <div style={{
             padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 6,
-            fontSize: 12, color: '#78350F', lineHeight: 1.6, fontFamily: 'var(--font-body)',
+            fontSize: 12, color: '#fde68a', lineHeight: 1.6, fontFamily: 'var(--font-body)',
           }}>
             <strong>Important:</strong> Fee amounts are current as of December 2024. Fees are set by the Judicial Conference and may change. Always verify fees with the specific court before filing. Local district fees (e.g., pro hac vice, attorney admission) vary and are set by individual courts.
           </div>

@@ -603,7 +603,7 @@ export default function SOLCalculatorPage() {
                     </svg>
                     <div>
                       <p style={{ fontSize: '13px', fontWeight: 600, color: '#f87171', margin: '0 0 4px' }}>Statute Expired</p>
-                      <p style={{ fontSize: '12px', color: '#7F1D1D', margin: 0 }}>
+                      <p style={{ fontSize: '12px', color: '#fca5a5', margin: 0 }}>
                         This deadline has passed. Consult an attorney immediately about possible exceptions.
                       </p>
                     </div>
@@ -617,7 +617,7 @@ export default function SOLCalculatorPage() {
                     </svg>
                     <div>
                       <p style={{ fontSize: '13px', fontWeight: 600, color: '#fbbf24', margin: '0 0 4px' }}>Deadline in {daysRemaining} Days</p>
-                      <p style={{ fontSize: '12px', color: '#78350F', margin: 0 }}>
+                      <p style={{ fontSize: '12px', color: '#fde68a', margin: 0 }}>
                         You are within 90 days of the filing deadline. Act immediately.
                       </p>
                     </div>

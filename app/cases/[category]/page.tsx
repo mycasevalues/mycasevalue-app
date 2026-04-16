@@ -220,7 +220,7 @@ export async function generateMetadata({
 }
 
 const categoryColors: Record<string, string> = {
-  work: '#000000',
+  work: '#94a3b8',
   injury: 'var(--accent-primary)',
   consumer: '#2563EB',
   rights: 'var(--accent-primary)',

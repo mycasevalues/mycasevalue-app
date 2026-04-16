@@ -679,12 +679,12 @@ function SearchPageInner() {
           onMouseEnter={(e) => e.currentTarget.style.background = '#E0F2FE'}
           onMouseLeave={(e) => e.currentTarget.style.background = '#F0F9FF'}
         >
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#0369A1', flexShrink: 0 }}>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#38bdf8', flexShrink: 0 }}>
             <circle cx="12" cy="12" r="10" />
             <path d="M12 16v-4m0-4h.01" />
           </svg>
-          <span style={{ fontSize: '13px', fontWeight: '600', color: '#0369A1', margin: 0, flex: 1, textAlign: 'left' }}>Search Tips</span>
-          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0369A1', transform: tipsExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 150ms' }}>
+          <span style={{ fontSize: '13px', fontWeight: '600', color: '#38bdf8', margin: 0, flex: 1, textAlign: 'left' }}>Search Tips</span>
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#38bdf8', transform: tipsExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 150ms' }}>
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </button>
@@ -1092,7 +1092,7 @@ function SearchPageInner() {
                 const highlights = [
                   { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: 'var(--accent-primary)' },
                   { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#34d399' },
-                  { title: 'Fastest Resolution', value: fastestResolution?.label || 'N/A', display: fastestResolution ? `${fastestResolution.mo} months` : 'N/A', color: '#0369A1' },
+                  { title: 'Fastest Resolution', value: fastestResolution?.label || 'N/A', display: fastestResolution ? `${fastestResolution.mo} months` : 'N/A', color: '#38bdf8' },
                   { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `${fmtK(highestRecovery.rngMd)} median` : 'N/A', color: 'var(--accent-primary)' },
                 ];
 

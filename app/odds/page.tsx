@@ -1253,10 +1253,10 @@ export default function OddsPage() {
                 border: '1px solid #FCD34D',
                 borderRadius: 8,
               }}>
-                <p style={{ fontSize: 13, color: '#78350F', margin: '0 0 8px', lineHeight: 1.6, fontWeight: 600 }}>
+                <p style={{ fontSize: 13, color: '#fde68a', margin: '0 0 8px', lineHeight: 1.6, fontWeight: 600 }}>
                   Statistical estimate based on historical data — not a prediction of your case outcome.
                 </p>
-                <p style={{ fontSize: 12, color: '#78350F', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ fontSize: 12, color: '#fde68a', margin: 0, lineHeight: 1.6 }}>
                   Data sourced from the Federal Judicial Center Integrated Database (2000–2024). Individual outcomes vary based on case facts, jurisdiction, and representation. This is not legal advice.{' '}
                   <Link href="/methodology" className="odds-link" style={{ color: '#fbbf24' }}>Learn about our methodology</Link>
                 </p>

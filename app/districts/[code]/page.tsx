@@ -764,7 +764,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   borderLeft: '3px solid #D97706',
                   borderRadius: '6px',
                   fontSize: 12,
-                  color: '#78350F',
+                  color: '#fde68a',
                   lineHeight: 1.5,
                   fontFamily: 'var(--font-body)',
                 }}>

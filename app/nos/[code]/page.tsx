@@ -852,7 +852,7 @@ export default async function NOSPage({ params }: PageProps) {
               borderLeft: '3px solid #D97706',
               borderRadius: '6px',
               fontSize: '12px',
-              color: '#78350F',
+              color: '#fde68a',
               lineHeight: '1.5',
               fontFamily: 'var(--font-body)'
             }}>
@@ -868,7 +868,7 @@ export default async function NOSPage({ params }: PageProps) {
               borderLeft: '3px solid #D97706',
               borderRadius: '6px',
               fontSize: '12px',
-              color: '#78350F',
+              color: '#fde68a',
               lineHeight: '1.5',
               fontFamily: 'var(--font-body)'
             }}>

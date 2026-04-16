@@ -255,8 +255,8 @@ export default function TranslatePage() {
                 }
               }
               return relatedTerms.size > 0 ? (
-                <div className="mt-8 p-6 sm:p-8 border" style={{ borderColor: '#BAE6FD', background: 'rgba(59,130,246,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '12px' }}>
-                  <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#0369A1', fontFamily: 'var(--font-display)' }}>
+                <div className="mt-8 p-6 sm:p-8 border" style={{ borderColor: 'rgba(59,130,246,0.15)', background: 'rgba(59,130,246,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '12px' }}>
+                  <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#38bdf8', fontFamily: 'var(--font-display)' }}>
                     Related Legal Concepts
                   </h2>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '8px' }}>
@@ -270,7 +270,7 @@ export default function TranslatePage() {
                           border: '1px solid #BAE6FD',
                           borderRadius: '8px',
                           fontSize: '12px',
-                          color: '#0369A1',
+                          color: '#38bdf8',
                           cursor: 'pointer',
                           transition: 'all 150ms',
                           fontFamily: 'var(--font-body)',

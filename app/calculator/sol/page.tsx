@@ -236,7 +236,7 @@ export default function SOLCalculatorPage() {
               {/* Disclaimer */}
               <div style={{
                 padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 6,
-                fontSize: 12, color: '#78350F', lineHeight: 1.6, fontFamily: 'var(--font-body)',
+                fontSize: 12, color: '#fde68a', lineHeight: 1.6, fontFamily: 'var(--font-body)',
               }}>
                 <strong>Important:</strong> SOL rules are complex and exceptions apply. Tolling provisions, discovery rules, and equitable doctrines can extend or shorten deadlines. Consult an attorney before relying on this information.
               </div>

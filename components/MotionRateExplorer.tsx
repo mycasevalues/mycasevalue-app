@@ -230,7 +230,7 @@ export default function MotionRateExplorer() {
     borderRadius: '8px',
     padding: '16px',
     fontSize: '13px',
-    color: '#78350F',
+    color: '#fde68a',
     lineHeight: 1.6,
     marginTop: '32px',
   };

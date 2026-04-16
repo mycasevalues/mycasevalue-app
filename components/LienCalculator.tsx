@@ -537,22 +537,22 @@ export default function LienCalculator() {
                 Medicare Lien (Estimated Range)
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: '#78350F', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: '#fde68a', fontFamily: 'var(--font-body)' }}>
                   Low (negotiated reduction):
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#78350F', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ fontSize: 13, fontWeight: 600, color: '#fde68a', fontFamily: 'var(--font-mono)' }}>
                   {formatCurrency(result.medicareLiensLow)}
                 </div>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: '#78350F', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: '#fde68a', fontFamily: 'var(--font-body)' }}>
                   High (full conditional payment):
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#78350F', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ fontSize: 13, fontWeight: 600, color: '#fde68a', fontFamily: 'var(--font-mono)' }}>
                   {formatCurrency(result.medicareLiensHigh)}
                 </div>
               </div>
-              <div style={{ fontSize: 12, color: '#78350F', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
+              <div style={{ fontSize: 12, color: '#fde68a', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
                 Medicare Secondary Payer (MSP) rules allow for negotiated reduction of conditional payments. The amount shown as "low" reflects typical settlement negotiations where roughly 1/3 of the net settlement is allocated to reduce the Medicare lien.
               </div>
             </div>
@@ -696,7 +696,7 @@ export default function LienCalculator() {
             borderLeft: '3px solid #D97706',
             borderRadius: 6,
             fontSize: 12,
-            color: '#78350F',
+            color: '#fde68a',
             lineHeight: 1.6,
             fontFamily: 'var(--font-body)',
           }}>
