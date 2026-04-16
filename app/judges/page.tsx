@@ -75,28 +75,53 @@ export default async function JudgesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* Header */}
-      <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--gradient-hero)' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
+      <div style={{
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        background: '#080d19',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', position: 'relative' }}>
           {/* Breadcrumb */}
-          <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
-            <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Home</Link>
-            <span style={{ color: 'rgba(255,255,255,0.4)' }}>/</span>
-            <span style={{ color: 'var(--color-text-inverse)' }}>Judges</span>
+          <div style={{ paddingTop: 14, display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, fontFamily: 'var(--font-mono)', letterSpacing: '0.02em' }}>
+            <Link href="/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>Home</Link>
+            <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
+            <span style={{ color: 'rgba(255,255,255,0.85)' }}>Judges</span>
           </div>
 
-          <div style={{ paddingTop: 16, paddingBottom: 20 }}>
-            <h1 style={{
-              fontSize: 'clamp(22px, 3vw, 28px)', fontWeight: 900, marginBottom: 8,
-              color: 'var(--color-text-inverse)', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
+          <div style={{ paddingTop: 24, paddingBottom: 28 }}>
+            {/* Eyebrow */}
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '4px 10px', marginBottom: 14,
+              borderRadius: 999,
+              border: '1px solid rgba(59,130,246,0.2)',
+              background: 'rgba(59,130,246,0.08)',
+              fontFamily: 'var(--font-mono)', fontSize: 10,
+              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              color: '#60a5fa',
             }}>
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
               Judge Intelligence
+            </div>
+
+            <h1 style={{
+              fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, marginBottom: 10,
+              color: '#ffffff', letterSpacing: '-0.025em', fontFamily: 'var(--font-inter)', lineHeight: 1.1,
+            }}>
+              Federal Judge Analytics
             </h1>
 
             <p style={{
-              fontSize: 14, lineHeight: 1.5, maxWidth: 640,
-              color: '#C7D1D8', fontFamily: 'var(--font-body)',
+              fontSize: 15, lineHeight: 1.65, maxWidth: 640,
+              color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-inter)',
             }}>
-              Ruling patterns, case duration, and outcome tendencies across 95 federal districts.
+              Ruling patterns, case duration, and outcome tendencies across all 95 federal districts. Data from 5.1M+ public federal cases.
             </p>
           </div>
         </div>
