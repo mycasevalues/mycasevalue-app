@@ -94,11 +94,19 @@ function SignInForm() {
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15) !important;
         }
         .auth-btn {
-          background: var(--gradient-hero);
+          background: #1a56db;
+          border: 1px solid #1a56db;
+          color: #ffffff;
+          border-radius: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: -0.005em;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+          transition: background-color 150ms ease, border-color 150ms ease;
         }
         .auth-btn:hover:not(:disabled) {
-          opacity: 0.9;
-          transform: translateY(-1px);
+          background: #1e40af;
+          border-color: #1e40af;
         }
         .auth-link:hover {
           color: #1e40af !important;
