@@ -178,24 +178,46 @@ export default function TrendsPage() {
       {/* Header */}
       <div
         style={{
-          borderBottom: '1px solid var(--border-default)',
-          background: 'var(--accent-primary)',
+          borderBottom: '1px solid rgba(255,255,255,0.06)',
+          background: '#080d19',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
-        <div className="max-w-6xl mx-auto px-6 py-6">
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div className="max-w-6xl mx-auto px-6" style={{ position: 'relative', padding: '28px 24px 32px' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 14,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Filing Trends
+          </div>
           <h1
-            className="font-display font-extrabold mb-2"
+            className="font-inter"
             style={{
-              color: 'var(--color-text-inverse)',
-              letterSpacing: '-1.5px',
-              fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
-              lineHeight: '1.2',
+              color: '#ffffff',
+              letterSpacing: '-0.025em',
+              fontSize: 'clamp(26px, 4vw, 32px)',
+              fontWeight: 700,
+              lineHeight: 1.1,
+              marginBottom: 10,
             }}
           >
             Federal Court Filing Trends
           </h1>
-          <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
-            Case statistics from {totalCases.toLocaleString()} federal cases across {trends.length} types.
+          <p className="leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-inter)', fontSize: 15, lineHeight: 1.65 }}>
+            Filing patterns and year-over-year shifts across {trends.length} case types, drawn from {totalCases.toLocaleString()} federal cases.
           </p>
         </div>
       </div>
