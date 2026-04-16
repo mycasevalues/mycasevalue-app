@@ -49,7 +49,8 @@ export default function HomePage() {
               <h1 className="text-3xl md:text-4xl lg:text-[3rem] font-bold text-white leading-[1.05] tracking-[-0.025em] mb-5">
                 Litigation intelligence
                 <br />
-                from public court records.
+                <span className="text-gray-400">from public </span>
+                <span className="text-white">court records.</span>
               </h1>
               <p className="text-[15px] text-gray-400 leading-relaxed max-w-md mb-8">
                 Case outcomes, judge analytics, and settlement data across all {SITE_METRICS.districtCourts} federal
