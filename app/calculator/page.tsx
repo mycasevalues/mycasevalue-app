@@ -272,13 +272,53 @@ export default function CalculatorPage() {
       </div>
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--gradient-hero)', padding: '18px 24px' }}>
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl sm:text-3xl font-black mb-2" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)' }}>
-            Estimate Your Settlement Using Real Court Data
+      <div style={{
+        background: '#080d19',
+        color: '#fff',
+        padding: '48px 24px 40px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div className="max-w-3xl mx-auto" style={{ position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Settlement Calculator
+          </div>
+          <h1 style={{
+            fontFamily: 'var(--font-inter)',
+            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.1,
+            marginBottom: 16,
+            color: '#ffffff',
+          }}>
+            Estimate settlement value from court data
           </h1>
-          <p className="text-base leading-relaxed max-w-2xl sm:text-base" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
-            Estimate your settlement range based on federal court outcomes and case type. Our calculator uses data from 5.1M+ real federal cases to provide realistic national estimates.
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '1rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.6,
+            maxWidth: 560,
+            margin: 0,
+          }}>
+            Range estimates derived from <span style={{ fontFamily: 'var(--font-mono)', color: '#60a5fa' }}>5.1M+</span> federal cases. National benchmarks by case type, severity, and evidence quality.
           </p>
         </div>
       </div>
