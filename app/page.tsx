@@ -97,8 +97,9 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-                <div className="px-4 py-2 text-[10px] text-gray-400">
-                  Showing 5 of 84 case types &middot; Source: FJC IDB, CourtListener
+                <div className="flex items-center justify-between px-4 py-2 text-[10px] text-gray-500 font-mono tabular-nums">
+                  <span>5 of 84 case types</span>
+                  <span className="text-gray-600">FJC IDB &middot; CourtListener</span>
                 </div>
               </div>
             </div>
