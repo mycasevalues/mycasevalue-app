@@ -188,57 +188,63 @@ export default function IntegrationsPage() {
       />
 
       {/* Header */}
-      <div style={{ background: 'var(--gradient-hero)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+      <div style={{
+        background: '#080d19',
+        color: '#fff',
+        padding: '48px 24px 40px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative' }}>
           {/* Breadcrumb */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontSize: '14px' }}>
-            <Link href="/" className="breadcrumb-link" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s ease' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', fontFamily: 'var(--font-mono)', fontSize: '12px', letterSpacing: '0.02em' }}>
+            <Link href="/" className="breadcrumb-link" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s ease' }}>
               Home
             </Link>
-            <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
-            <span style={{ color: 'var(--color-text-inverse)' }}>Integrations</span>
+            <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
+            <span style={{ color: 'rgba(255,255,255,0.85)' }}>Integrations</span>
           </div>
 
           <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '6px 12px',
-            borderRadius: '12px',
-            fontSize: '11px',
-            fontWeight: 600,
-            letterSpacing: '1.5px',
-            textTransform: 'uppercase' as const,
-            marginBottom: '16px',
-            background: 'rgba(255,255,255,0.15)',
-            color: 'rgba(255,255,255,0.9)',
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <polyline points="16 18 22 12 16 6" />
-              <polyline points="8 6 2 12 8 18" />
-            </svg>
-            INTEGRATIONS
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Integrations
           </div>
 
           <h1 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(28px, 5vw, 42px)',
-            fontWeight: 600,
-            color: 'var(--color-text-inverse)',
-            margin: '0 0 16px 0',
-            letterSpacing: '-1.5px',
-            lineHeight: 1.15,
+            fontFamily: 'var(--font-inter)',
+            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.1,
+            marginBottom: 16,
+            color: '#ffffff',
           }}>
-            Connect Your Legal Workflow
+            Connect your legal workflow
           </h1>
           <p style={{
-            fontSize: '18px',
+            fontFamily: 'var(--font-body)',
+            fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             maxWidth: '640px',
             lineHeight: 1.6,
             margin: 0,
           }}>
-            Integrate federal court analytics into the tools you already use. REST API, data exports, and direct connections to case management platforms.
+            REST API, data exports, and direct connections to case management platforms. Plug federal court analytics into the tools you already use.
           </p>
         </div>
       </div>
