@@ -467,4 +467,52 @@ All forbidden Bloomberg colors eliminated from both target files. All Westlaw to
 
 ### Session Gate: PASS
 
+---
+
+## Westlaw Precision Redesign — Session 4: Rebuild WorkspaceSidebar (Westlaw content-type panel)
+**Date:** 2026-04-16
+**Target files:** components/layout/WorkspaceSidebar.tsx (FULL REBUILD)
+**Status:** COMPLETE
+
+### Changes Made
+
+#### components/layout/WorkspaceSidebar.tsx (FULL REBUILD — 382 → 530 lines)
+
+**Two modes implemented:**
+
+**1. RESULTS mode** (for /cases, /judges, /districts, /attorney):
+- **Search Within Results** (CRITICAL new feature): Compact search input at top, 28px height, `var(--bdr-strong)` border, blue search button (30px, `var(--link)` bg), 10px magnifying glass SVG
+- **Content Types header:** 40px, `var(--tbl-hdr)` bg, "Content Types" 11px uppercase + "Clear all" link
+- **Content type list:** 6 items (Court Cases 5.1M, Judge Profiles 3.4K, District Analytics 94, Settlement Records 890K, Attorney Records 42K, Secondary Sources 14). Active: `var(--link-light)` bg + 3px `var(--link)` left border, font-weight 600. Hover: `rgba(10,80,162,0.06)`. Counts in font-mono 10px.
+- **Filter sections** (4): Outcome (expanded), Judge (collapsed), Date Filed (collapsed), Motion Type (collapsed). Each with expand/collapse toggle (▴/▾), checkbox items (13px square, blue checked state with ✓), counts in font-mono 10px. Judge section has "+ 3,395 more" link.
+
+**2. TOC mode** (for /districts/[code] and /judges/[id]):
+- **Page Contents header:** 40px, `var(--tbl-hdr)` bg + "Print" link
+- **District TOC:** Overview, Judges, Case Analytics, Case Type Distribution (indented), Settlement Data, Attorneys, Court Information
+- **Judge TOC:** Intelligence Summary, Judicial Profile, Career (indented), Education (indented), Case Analytics, Case Type (indented), Disposition (indented), Settlement Data, Case History, CaseCite™
+- **Active state:** `var(--link-light)` bg + 3px `var(--gold)` left border
+- **Top-level items:** font-baskerville 12px, sub-items: font-sans 11px indented 24px
+
+**Common elements:**
+- Width: 258px (results), 202px (detail) — dynamic via `sidebarWidth`
+- Background: `var(--sidebar)` (#F9F8F6), border-right: `var(--bdr)`
+- Sticky bottom: Help & Support + Documentation links, 12px `var(--text3)`
+- Sticky height calc adjusted to 94px (54px topnav + 40px browse nav)
+- Mobile overlay + close button preserved (same interface: `isOpen`, `onToggle`)
+- **All hardcoded Bloomberg hex removed** — zero instances of #E65C00, #1A1A1A, #0052CC
+
+### Verification Results
+
+1. **grep "#E65C00" WorkspaceSidebar.tsx** → PASS (zero)
+2. **grep "#1A1A1A" WorkspaceSidebar.tsx** → PASS (zero)
+3. **grep "#0052CC" WorkspaceSidebar.tsx** → PASS (zero)
+4. **"Search within results" field present** → PASS (input + blue search button)
+5. **"Content Types" header present** → PASS
+6. **Active content type: 3px solid var(--link) left border** → PASS
+7. **TOC active: 3px solid var(--gold) left border** → PASS
+8. **Width 258px (results) / 202px (detail)** → PASS
+9. **npm run build** → Webpack compilation PASS (pre-existing TS error unrelated)
+
+### Session Gate: PASS
+
 Last updated: 2026-04-16
