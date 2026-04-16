@@ -6,11 +6,11 @@ import { Breadcrumbs } from '../../components/Breadcrumbs';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'About the Platform — Federal Court Data for All',
+  title: 'About',
   description: 'Making federal court data accessible to everyone. 5.1M+ cases from FJC, PACER, CourtListener. Mission-driven legal intelligence.',
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
-    title: 'About the Platform — Making Federal Court Data Accessible',
+    title: 'About',
     description: 'MyCaseValue aggregates 5.1M+ federal court cases to help you research real outcomes, win rates, and settlement data.',
     type: 'website',
     url: `${SITE_URL}/about`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About the Platform — Making Federal Court Data Accessible',
+    title: 'About',
     description: 'MyCaseValue democratizes federal court outcome data. Free access to win rates, settlement ranges, and timelines from 5.1M+ public federal civil cases.',
     images: [`${SITE_URL}/og-image.png`],
   },
