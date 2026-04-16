@@ -204,7 +204,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden" style={{ background: 'var(--gradient-hero)' }}>
+      <section className="relative overflow-hidden" style={{ background: '#080d19', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
