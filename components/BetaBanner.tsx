@@ -4,34 +4,31 @@ export default function BetaBanner() {
   return (
     <div
       style={{
-        background: 'var(--accent-primary)',
-        color: 'var(--color-surface-0)',
-        minHeight: '36px',
+        background: '#0f2240',
+        color: 'rgba(255,255,255,0.7)',
+        minHeight: '32px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '16px',
-        padding: '8px 24px',
-        fontFamily: 'var(--font-display)',
-        fontSize: '13px',
-        fontWeight: 500,
+        gap: '12px',
+        padding: '6px 24px',
+        fontSize: '12px',
+        fontWeight: 400,
         lineHeight: 1.4,
         textAlign: 'center',
-        flexWrap: 'wrap',
+        letterSpacing: '0.01em',
       }}
     >
-      <span>
-        Public beta: Federal court analytics, judge intelligence, and case
-        outcome data. Free during beta, no account required.
-      </span>
+      <span>Public beta</span>
+      <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+      <span>Free access to federal court analytics and case intelligence</span>
       <Link
         href="/about"
         style={{
-          color: 'var(--color-surface-0)',
+          color: 'rgba(255,255,255,0.5)',
           textDecoration: 'underline',
-          fontSize: '13px',
-          fontWeight: 500,
-          whiteSpace: 'nowrap',
+          fontSize: '12px',
+          fontWeight: 400,
         }}
       >
         Learn more

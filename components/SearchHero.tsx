@@ -3,83 +3,89 @@
 import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const EXAMPLE_QUERIES = [
-  'Securities fraud cases in SDNY',
+const EXAMPLES = [
+  'Securities fraud',
   'Employment discrimination',
-  'Patent infringement verdicts',
-  'Product liability filings',
+  'Patent infringement',
+  'Product liability',
   'ERISA class actions',
 ];
 
-export function SearchHero() {
+export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
   const router = useRouter();
   const [query, setQuery] = useState('');
+  const dark = variant === 'dark';
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (query.trim()) {
-      router.push(`/case-search?q=${encodeURIComponent(query)}`);
-    } else {
-      router.push('/case-search');
-    }
+    router.push(query.trim() ? `/case-search?q=${encodeURIComponent(query)}` : '/case-search');
   };
 
-  const handleExampleClick = (example: string) => {
-    setQuery(example);
-    router.push(`/case-search?q=${encodeURIComponent(example)}`);
+  const handleExample = (q: string) => {
+    setQuery(q);
+    router.push(`/case-search?q=${encodeURIComponent(q)}`);
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <form
-        onSubmit={handleSubmit}
-        role="search"
-        aria-label="Search federal court records"
-        className="mb-4"
-      >
-        <div className="flex shadow-lg rounded-2xl overflow-hidden bg-white border border-gray-200 focus-within:border-brand-blue focus-within:ring-2 focus-within:ring-brand-blue/10 transition-all">
-          <div className="flex items-center pl-5 text-gray-400">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.35-4.35" />
-            </svg>
-          </div>
+    <div>
+      <form onSubmit={handleSubmit} role="search" aria-label="Search federal court records">
+        <div
+          className="flex rounded-lg overflow-hidden border transition-all focus-within:ring-2"
+          style={{
+            background: dark ? 'rgba(255,255,255,0.07)' : '#fff',
+            borderColor: dark ? 'rgba(255,255,255,0.12)' : '#e5e7eb',
+            boxShadow: dark ? 'none' : '0 1px 3px rgba(0,0,0,0.06)',
+          }}
+        >
+          <svg
+            className="ml-4 mt-3.5 flex-shrink-0"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={dark ? '#6b7280' : '#9ca3af'}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search cases, judges, districts, or legal topics..."
-            aria-label="Search federal court cases, judges, districts, or case types"
-            className="flex-1 h-14 px-4 border-none outline-none text-gray-900 placeholder:text-gray-400 text-sm"
+            placeholder="Search cases, judges, districts..."
+            aria-label="Search federal court records"
+            className="flex-1 h-11 px-3 bg-transparent border-none outline-none text-sm"
+            style={{ color: dark ? '#e5e7eb' : '#111827' }}
           />
           <button
             type="submit"
-            className="bg-brand-blue text-white font-semibold px-6 text-sm hover:bg-brand-blue-dark transition-colors flex items-center justify-center"
-            aria-label="Search"
+            className="h-11 px-5 font-semibold text-sm transition-colors flex-shrink-0"
+            style={{
+              background: dark ? 'rgba(255,255,255,0.1)' : '#0966C3',
+              color: dark ? '#e5e7eb' : '#fff',
+            }}
           >
             Search
           </button>
         </div>
       </form>
 
-      {/* Example queries */}
-      <div className="flex flex-wrap justify-center gap-2">
-        {EXAMPLE_QUERIES.map((example) => (
+      <div className="flex flex-wrap gap-2 mt-3">
+        {EXAMPLES.map((ex) => (
           <button
-            key={example}
-            onClick={() => handleExampleClick(example)}
-            className="text-xs px-3 py-1.5 rounded-full border border-gray-200 text-gray-500 hover:border-brand-blue hover:text-brand-blue hover:bg-blue-50/50 transition-all cursor-pointer"
+            key={ex}
+            onClick={() => handleExample(ex)}
+            className="text-[11px] px-2.5 py-1 rounded border transition-all cursor-pointer"
+            style={{
+              borderColor: dark ? 'rgba(255,255,255,0.1)' : '#e5e7eb',
+              color: dark ? '#6b7280' : '#9ca3af',
+              background: 'transparent',
+            }}
           >
-            {example}
+            {ex}
           </button>
         ))}
       </div>
