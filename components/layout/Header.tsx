@@ -535,7 +535,7 @@ export default function Header() {
                 <>
                   <Link
                     href="/sign-in"
-                    className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                    className="text-[13px] font-medium text-gray-400 hover:text-white transition-colors px-2"
                   >
                     Sign In
                   </Link>
