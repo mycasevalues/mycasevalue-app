@@ -108,10 +108,10 @@ export default function StateCourtContext({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="rounded-lg border border-gray-200 bg-white p-6"
+        className="rounded-lg border border-white/10 bg-white p-6"
       >
         <div className="text-sm text-gray-600">
-          <p className="font-semibold text-gray-900 mb-2">State Court Comparison</p>
+          <p className="font-semibold text-gray-100 mb-2">State Court Comparison</p>
           <p>
             State court analysis not yet available for NOS {nosCode}. Check back soon for comparative
             insights.
@@ -126,10 +126,10 @@ export default function StateCourtContext({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border border-gray-200 bg-white p-6"
+      className="rounded-lg border border-white/10 bg-white p-6"
     >
       <div className="mb-6">
-        <h2 className="text-lg font-semibold text-gray-900">Federal vs State Court Outcomes</h2>
+        <h2 className="text-lg font-semibold text-gray-100">Federal vs State Court Outcomes</h2>
         <p className="text-sm text-gray-600 mt-2">
           State court data sourced from CourtListener state court opinions
         </p>
@@ -138,7 +138,7 @@ export default function StateCourtContext({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Federal Data Column */}
         <div className="space-y-4">
-          <h3 className="text-sm font-semibold text-gray-900 flex items-center">
+          <h3 className="text-sm font-semibold text-gray-100 flex items-center">
             <span className="inline-block w-3 h-3 rounded-full bg-[var(--accent-primary)] mr-2"></span>
             Federal Court
           </h3>
@@ -147,7 +147,7 @@ export default function StateCourtContext({
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-sm text-gray-700">Win Rate</span>
-                <span className="text-sm font-mono font-semibold text-gray-900">{federalWinRate.toFixed(1)}%</span>
+                <span className="text-sm font-mono font-semibold text-gray-100">{federalWinRate.toFixed(1)}%</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
@@ -160,7 +160,7 @@ export default function StateCourtContext({
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-sm text-gray-700">Settlement Rate</span>
-                <span className="text-sm font-mono font-semibold text-gray-900">{federalSettlement.toFixed(1)}%</span>
+                <span className="text-sm font-mono font-semibold text-gray-100">{federalSettlement.toFixed(1)}%</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
@@ -170,14 +170,14 @@ export default function StateCourtContext({
               </div>
             </div>
 
-            <div className="pt-2 border-t border-gray-200">
+            <div className="pt-2 border-t border-white/10">
               <div className="flex justify-between text-sm mb-2">
                 <span className="text-gray-700">Median Award</span>
-                <span className="font-mono font-semibold text-gray-900">{federalMedianAward}</span>
+                <span className="font-mono font-semibold text-gray-100">{federalMedianAward}</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-700">Median Duration</span>
-                <span className="font-mono font-semibold text-gray-900">{federalMedianDuration} months</span>
+                <span className="font-mono font-semibold text-gray-100">{federalMedianDuration} months</span>
               </div>
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function StateCourtContext({
 
         {/* State Court Data Column */}
         <div className="space-y-4">
-          <h3 className="text-sm font-semibold text-gray-900 flex items-center">
+          <h3 className="text-sm font-semibold text-gray-100 flex items-center">
             <span className="inline-block w-3 h-3 rounded-full bg-[#7c3aed] mr-2"></span>
             State Court
           </h3>
@@ -194,7 +194,7 @@ export default function StateCourtContext({
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-sm text-gray-700">Win Rate</span>
-                <span className="text-sm font-mono font-semibold text-gray-900">{stateData.winRate.toFixed(1)}%</span>
+                <span className="text-sm font-mono font-semibold text-gray-100">{stateData.winRate.toFixed(1)}%</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
@@ -207,7 +207,7 @@ export default function StateCourtContext({
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-sm text-gray-700">Settlement Rate</span>
-                <span className="text-sm font-mono font-semibold text-gray-900">
+                <span className="text-sm font-mono font-semibold text-gray-100">
                   {stateData.settlementRate.toFixed(1)}%
                 </span>
               </div>
@@ -219,14 +219,14 @@ export default function StateCourtContext({
               </div>
             </div>
 
-            <div className="pt-2 border-t border-gray-200">
+            <div className="pt-2 border-t border-white/10">
               <div className="flex justify-between text-sm mb-2">
                 <span className="text-gray-700">Median Award</span>
-                <span className="font-mono font-semibold text-gray-900">{stateData.medianAward}</span>
+                <span className="font-mono font-semibold text-gray-100">{stateData.medianAward}</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-700">Median Duration</span>
-                <span className="font-mono font-semibold text-gray-900">{stateData.medianDuration} months</span>
+                <span className="font-mono font-semibold text-gray-100">{stateData.medianDuration} months</span>
               </div>
             </div>
           </div>
@@ -234,10 +234,10 @@ export default function StateCourtContext({
       </div>
 
       {/* Key Difference Callout */}
-      <div className="mt-6 pt-6 border-t border-gray-200">
+      <div className="mt-6 pt-6 border-t border-white/10">
         <div className="bg-blue-50 rounded-lg p-4">
           <p className="text-sm text-gray-700">
-            <span className="font-semibold text-gray-900">Key Difference:</span>{' '}
+            <span className="font-semibold text-gray-100">Key Difference:</span>{' '}
             {federalWinRate > stateData.winRate
               ? `Federal courts show ${(federalWinRate - stateData.winRate).toFixed(1)}% higher win rate on average.`
               : `State courts show ${(stateData.winRate - federalWinRate).toFixed(1)}% higher win rate on average.`}

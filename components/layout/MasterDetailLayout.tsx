@@ -60,7 +60,7 @@ export default function MasterDetailLayout({
       >
         {/* Mobile back button */}
         {hasSelection && (
-          <div className="lg:hidden sticky top-0 z-10 bg-white border-b border-gray-100 px-4 py-3">
+          <div className="lg:hidden sticky top-0 z-10 bg-[#111827] border-b border-gray-100 px-4 py-3">
             <button
               onClick={onCloseDetail}
               className="flex items-center gap-2 text-sm text-brand-blue font-medium"

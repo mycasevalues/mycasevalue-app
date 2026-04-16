@@ -60,8 +60,8 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
       <div ref={tableRef} className="overflow-x-auto" tabIndex={0} role="grid" aria-label="Judge directory table">
         <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
         <thead>
-          <tr className="bg-gray-50 border-b border-gray-200">
-            <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-900 whitespace-nowrap"
+          <tr className="bg-gray-50 border-b border-white/10">
+            <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-100 whitespace-nowrap"
                 onClick={() => onSort?.('name')}>
               Judge <SortIcon active={sortBy === 'name'} order={sortOrder} />
             </th>
@@ -71,11 +71,11 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
             <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide whitespace-nowrap">
               Circuit
             </th>
-            <th className="text-right px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-900 whitespace-nowrap"
+            <th className="text-right px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-100 whitespace-nowrap"
                 onClick={() => onSort?.('cases')}>
               Cases <SortIcon active={sortBy === 'cases'} order={sortOrder} />
             </th>
-            <th className="text-right px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-900 whitespace-nowrap"
+            <th className="text-right px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-100 whitespace-nowrap"
                 onClick={() => onSort?.('winRate')}>
               Win % <SortIcon active={sortBy === 'winRate'} order={sortOrder} />
             </th>
@@ -119,7 +119,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
                   >
                     <Link
                       href={`/judges/${judge.id}`}
-                      className="text-sm font-semibold text-gray-900 hover:text-brand-blue transition-colors"
+                      className="text-sm font-semibold text-gray-100 hover:text-brand-blue transition-colors"
                     >
                       {judge.full_name}
                     </Link>
@@ -131,7 +131,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
                 <td className="px-3 py-2 text-xs text-gray-500 whitespace-nowrap">
                   {judge.circuit ? `${judge.circuit} Circuit` : '—'}
                 </td>
-                <td className="px-3 py-2 text-right font-mono text-xs font-semibold text-gray-900">
+                <td className="px-3 py-2 text-right font-mono text-xs font-semibold text-gray-100">
                   {judge.total_cases_handled > 0 ? judge.total_cases_handled.toLocaleString() : '—'}
                 </td>
                 <td className="px-3 py-2 text-right">

@@ -103,7 +103,7 @@ function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
       className={`flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm transition-all duration-150 ${
         isActive
           ? 'bg-brand-blue/8 text-brand-blue font-medium border-l-2 border-brand-blue -ml-[2px]'
-          : 'text-gray-500 hover:bg-gray-50 hover:text-gray-800'
+          : 'text-gray-500 hover:bg-gray-50 hover:text-gray-200'
       }`}
     >
       <SidebarIcon path={item.icon} />
@@ -230,7 +230,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
                   <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
                 </g>
               </svg>
-              <span className="font-bold text-gray-900 text-sm">
+              <span className="font-bold text-gray-100 text-sm">
                 MyCase<span className="text-brand-blue">Value</span>
               </span>
             </Link>
@@ -259,21 +259,21 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
                   onFocus={() => setShowSuggestions(true)}
                   onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                   placeholder="Search cases, judges..."
-                  className="w-full pl-9 pr-3 py-2 text-sm bg-gray-50 border border-gray-200 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-colors"
+                  className="w-full pl-9 pr-3 py-2 text-sm bg-[#111827] border border-white/10 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-colors"
                   aria-label="Search"
                   autoComplete="off"
                 />
                 {/* Type-ahead suggestions */}
                 {showSuggestions && suggestions.length > 0 && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden">
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-[#111827] border border-white/10 rounded-lg shadow-lg z-50 overflow-hidden">
                     {suggestions.map((s, i) => (
                       <Link
                         key={i}
                         href={s.href}
-                        className="flex items-center justify-between px-3 py-2 text-xs hover:bg-blue-50 transition-colors"
+                        className="flex items-center justify-between px-3 py-2 text-xs hover:bg-white/5 transition-colors"
                         onClick={() => { setSearchQuery(''); setShowSuggestions(false); }}
                       >
-                        <span className="text-gray-800 font-medium truncate">{s.label}</span>
+                        <span className="text-gray-200 font-medium truncate">{s.label}</span>
                         <span className="text-[10px] text-gray-400 flex-shrink-0 ml-2">{s.category}</span>
                       </Link>
                     ))}
@@ -335,7 +335,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
                     </Link>
                   ))}
                   {savedItems.length > 5 && (
-                    <Link href="/dashboard" className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-xs text-brand-blue hover:bg-blue-50 transition-colors">
+                    <Link href="/dashboard" className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-xs text-brand-blue hover:bg-white/5 transition-colors">
                       View all {savedItems.length} saved →
                     </Link>
                   )}

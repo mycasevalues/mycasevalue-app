@@ -130,7 +130,7 @@ export function Breadcrumb() {
                 // Current page: not a link, styled differently
                 <span
                   aria-current="page"
-                  className="text-gray-900 font-medium"
+                  className="text-gray-100 font-medium"
                 >
                   {crumb.label}
                 </span>

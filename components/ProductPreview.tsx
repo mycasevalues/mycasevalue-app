@@ -43,7 +43,7 @@ export default function ProductPreview() {
           <p className="text-xs font-semibold text-brand-blue uppercase tracking-widest mb-3">
             Preview
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-3">
             See What the Data Looks Like
           </h2>
           <p className="text-base text-gray-500 max-w-xl mx-auto">
@@ -67,7 +67,7 @@ export default function ProductPreview() {
             </div>
           </div>
 
-          <div className="bg-white border border-t-0 border-gray-200 rounded-b-xl p-6 md:p-8 shadow-xl">
+          <div className="bg-[#111827] border border-t-0 border-white/10 rounded-b-xl p-6 md:p-8 shadow-xl">
             {/* Category cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {SAMPLE_CATEGORIES.map((cat) => (
@@ -75,7 +75,7 @@ export default function ProductPreview() {
                   key={cat.title}
                   className="border border-gray-100 rounded-xl p-4 hover:shadow-sm transition-shadow"
                 >
-                  <h4 className="text-sm font-semibold text-gray-900 mb-3">
+                  <h4 className="text-sm font-semibold text-gray-100 mb-3">
                     {cat.title}
                   </h4>
                   <div className="grid grid-cols-2 gap-y-3 gap-x-2">

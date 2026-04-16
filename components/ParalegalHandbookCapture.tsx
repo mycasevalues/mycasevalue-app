@@ -785,7 +785,7 @@ export default function ParalegalHandbookCapture() {
 
   return (
     <section className="rounded-lg border-2 border-blue-200 bg-blue-50 p-8">
-      <h2 className="mb-4 text-2xl font-bold text-gray-900">
+      <h2 className="mb-4 text-2xl font-bold text-gray-100">
         Download the Complete Handbook
       </h2>
       <p className="mb-6 text-gray-700">
@@ -823,7 +823,7 @@ export default function ParalegalHandbookCapture() {
                 }))
               }
               placeholder="you@example.com"
-              className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={state.loading}
             />
           </div>

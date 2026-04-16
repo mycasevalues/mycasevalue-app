@@ -96,7 +96,7 @@ export default function KeyboardShortcutsHelp() {
       <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-          <h2 className="text-lg font-semibold text-gray-900">Keyboard Shortcuts</h2>
+          <h2 className="text-lg font-semibold text-gray-100">Keyboard Shortcuts</h2>
           <button
             onClick={() => setIsOpen(false)}
             className="p-1 text-gray-400 hover:text-gray-600 rounded"
@@ -122,7 +122,7 @@ export default function KeyboardShortcutsHelp() {
                       {shortcut.keys.map((key, ki) => (
                         <span key={ki}>
                           {ki > 0 && <span className="text-gray-300 text-xs mx-0.5">+</span>}
-                          <kbd className="inline-flex items-center justify-center min-w-[24px] h-6 px-1.5 text-xs font-mono font-medium text-gray-600 bg-gray-100 border border-gray-200 rounded">
+                          <kbd className="inline-flex items-center justify-center min-w-[24px] h-6 px-1.5 text-xs font-mono font-medium text-gray-600 bg-gray-100 border border-white/10 rounded">
                             {key}
                           </kbd>
                         </span>
@@ -138,7 +138,7 @@ export default function KeyboardShortcutsHelp() {
         {/* Footer */}
         <div className="px-6 py-3 border-t border-gray-100 bg-gray-50">
           <p className="text-[11px] text-gray-400 text-center">
-            Press <kbd className="px-1 py-0.5 text-[10px] bg-white border border-gray-200 rounded font-mono">?</kbd> anytime to toggle this panel
+            Press <kbd className="px-1 py-0.5 text-[10px] bg-[#111827] border border-white/10 rounded font-mono">?</kbd> anytime to toggle this panel
           </p>
         </div>
       </div>

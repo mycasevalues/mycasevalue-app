@@ -47,7 +47,7 @@ export function ToolResultCard({
   if (loading) {
     return (
       <div
-        className="bg-white border border-gray-200 overflow-hidden"
+        className="bg-[#111827] border border-white/10 overflow-hidden"
         style={{ borderRadius: '12px' }}
       >
         <div className="p-8">
@@ -66,15 +66,15 @@ export function ToolResultCard({
 
   return (
     <div
-      className="bg-white border border-gray-200 overflow-hidden"
+      className="bg-[#111827] border border-white/10 overflow-hidden"
       style={{ borderRadius: '12px' }}
     >
       {/* Header */}
       <div
-        className="flex items-center justify-between px-8 py-6 border-b border-gray-200"
+        className="flex items-center justify-between px-8 py-6 border-b border-white/10"
         style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
       >
-        <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
+        <h2 className="text-xl font-semibold text-gray-100">{title}</h2>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3">

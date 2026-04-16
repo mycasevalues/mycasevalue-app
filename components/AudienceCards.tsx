@@ -74,7 +74,7 @@ export default function AudienceCards() {
     <section id="who-uses" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-3">
             Built for Legal Professionals
           </h2>
           <p className="text-base text-gray-500 max-w-xl mx-auto">
@@ -87,12 +87,12 @@ export default function AudienceCards() {
           {primaryCards.map((card) => (
             <div
               key={card.title}
-              className="bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-[#111827] border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="text-brand-blue mb-4">
                 {card.icon}
               </div>
-              <h3 className="text-base font-semibold text-gray-900 mb-3">
+              <h3 className="text-base font-semibold text-gray-100 mb-3">
                 {card.title}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
@@ -114,12 +114,12 @@ export default function AudienceCards() {
           {secondaryCards.map((card) => (
             <div
               key={card.title}
-              className="bg-white border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-[#111827] border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
               <div className="text-brand-blue mb-4">
                 {card.icon}
               </div>
-              <h3 className="text-base font-semibold text-gray-900 mb-3">
+              <h3 className="text-base font-semibold text-gray-100 mb-3">
                 {card.title}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
