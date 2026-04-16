@@ -1,270 +1,339 @@
 /* ============================================================
-   MYCASEVALUE DESIGN SYSTEM — Bloomberg Law Mirror
+   MYCASEVALUE DESIGN SYSTEM — Enterprise Token Layer
    ============================================================
+   Bloomberg Law × Lex Machina × Tier-1 Financial Terminal.
+   Every pixel deliberate. No decoration without information.
+   The data IS the design. The interface recedes.
+
    Typography: Plus Jakarta Sans 800 (headlines), Inter (UI/body),
    IBM Plex Mono (ALL data: currency, %, counts, dates).
-   Bloomberg Law design language: charcoal nav, white surfaces,
-   orange CTAs, blue links, flat institutional aesthetic.
+
+   Base grid: 8px. Every spacing value is a multiple of 4 or 8.
    ============================================================ */
 
 :root {
-  /* ── BLOOMBERG LAW COLOR TOKENS ── */
-
-  /* Navigation — charcoal black bar */
-  --bl-nav:            #1A1A1A;
-  --bl-nav-text:       #FFFFFF;
-  --bl-nav-border:     #333333;
-
-  /* Surfaces — light mode */
-  --bl-surface:        #FFFFFF;
-  --bl-surface-alt:    #F5F5F5;
-
-  /* Text */
-  --bl-text-primary:   #1A1A1A;
-  --bl-text-secondary: #555555;
-  --bl-text-muted:     #888888;
-
-  /* Links — Bloomberg blue */
-  --bl-link:           #0052CC;
-  --bl-link-hover:     #003D99;
-
-  /* CTA — Bloomberg orange (ALL primary CTAs) */
-  --bl-cta:            #E65C00;
-  --bl-cta-hover:      #CC4F00;
-  --bl-cta-text:       #FFFFFF;
-
-  /* Sidebar */
-  --bl-sidebar-bg:     #F7F7F5;
-  --bl-sidebar-border: #E0E0E0;
-  --bl-sidebar-header: #444444;
-  --bl-sidebar-link:   #0052CC;
-  --bl-sidebar-link-arrow: #0052CC;
-
-  /* Dividers & Accents */
-  --bl-divider:        #E8E8E8;
-  --bl-accent-bar:     #E65C00;
-
-  /* Row highlight (Bloomberg table hover) */
-  --bl-row-hover:      #EFF5FF;
-
-  /* ── LEGACY COMPAT — mapped to Bloomberg tokens ── */
-
-  /* Brand colors — mapped to Bloomberg */
-  --color-navy:        #1A1A1A;
-  --color-navy-dark:   #111111;
-  --color-navy-light:  #333333;
-
-  /* Accent — Bloomberg orange for CTAs */
-  --color-accent:      #E65C00;
-  --color-accent-dark: #CC4F00;
-  --color-accent-light: rgba(230,92,0,0.10);
-
-  /* Terminal accents — data visualization colors */
-  --color-terminal-green:  #15803D;
-  --color-terminal-amber:  #B45309;
-  --color-terminal-red:    #B91C1C;
-  --color-terminal-cyan:   #0052CC;
-
-  /* Surfaces — light mode */
-  --color-surface-0:   #FFFFFF;
-  --color-surface-1:   #FFFFFF;
-  --color-surface-2:   #F5F5F5;
-  --color-surface-nav: #1A1A1A;
-
-  /* Text — dark on light */
-  --color-text-primary:   #1A1A1A;
-  --color-text-secondary: #555555;
-  --color-text-muted:     #888888;
-  --color-text-inverse:   #FFFFFF;
-  --color-text-accent:    #0052CC;
-
-  /* Borders — light mode */
-  --color-border-light:   #E8E8E8;
-  --color-border-medium:  #E0E0E0;
-  --color-border-dark:    #CCCCCC;
-  --color-border-navy:    #E0E0E0;
-
-  /* Data / Semantic */
-  --color-data-positive: #15803D;
-  --color-data-negative: #B91C1C;
-  --color-data-neutral:  #B45309;
-  --color-data-bg-pos:   rgba(21,128,61,0.08);
-  --color-data-bg-neg:   rgba(185,28,28,0.08);
-  --color-data-bg-neu:   rgba(180,83,9,0.08);
-
-  /* Status badges */
-  --color-badge-federal:    #0052CC;
-  --color-badge-bg-federal: rgba(0,82,204,0.08);
-
-  /* ── LEGACY COMPAT (mapped to Bloomberg tokens) ── */
-  --bg-base:          var(--bl-surface);
-  --bg-elevated:      var(--bl-surface);
-  --bg-input:         var(--bl-surface);
-  --bg-hover:         var(--bl-surface-alt);
-  --bg-selection:     rgba(0,82,204,0.15);
-  --bg-dark:          var(--bl-nav);
-  --bg-alt:           var(--bl-surface-alt);
-
-  --fg-primary:       var(--bl-text-primary);
-  --fg-secondary:     var(--bl-text-secondary);
-  --fg-subtle:        var(--bl-text-muted);
-  --fg-link:          var(--bl-link);
-  --fg-on-dark:       var(--bl-nav-text);
-
-  --accent-primary:         var(--bl-cta);
-  --accent-primary-hover:   var(--bl-cta-hover);
-  --accent-primary-subtle:  rgba(230,92,0,0.08);
-  --accent-primary-border:  rgba(230,92,0,0.30);
-
-  --accent-secondary:       var(--bl-link);
-  --accent-secondary-hover: var(--bl-link-hover);
-  --accent-secondary-subtle: rgba(0,82,204,0.08);
-  --accent-secondary-border: rgba(0,82,204,0.30);
-
-  --outcome-win:          var(--color-data-positive);
-  --outcome-settle:       var(--color-data-neutral);
-  --outcome-loss:         var(--color-data-negative);
-
-  --success:              var(--color-data-positive);
-  --success-subtle:       var(--color-data-bg-pos);
-  --warning:              var(--color-data-neutral);
-  --warning-subtle:       var(--color-data-bg-neu);
-  --danger:               var(--color-data-negative);
-  --danger-subtle:        var(--color-data-bg-neg);
-  --info:                 var(--bl-link);
-  --info-subtle:          rgba(0,82,204,0.08);
-
-  --border-default:   var(--color-border-light);
-  --border-subtle:    var(--color-border-light);
-  --border-focus:     var(--bl-link);
-
-  /* ── TYPOGRAPHY ── */
-  --font-display: var(--font-jakarta), 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-body:    var(--font-inter), 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-mono:    var(--font-plex-mono), 'IBM Plex Mono', 'Menlo', monospace;
-
-  /* Legacy aliases */
-  --font-montserrat: var(--font-inter);
-  --font-roboto:     var(--font-inter);
-
-  /* Heading Scale — Bloomberg institutional */
-  --text-h1: 22px;     /* Plus Jakarta Sans 800 */
-  --text-h2: 17px;     /* Plus Jakarta Sans 700 */
-  --text-h3: 15px;     /* Plus Jakarta Sans 700 */
-  --text-h4: 14px;     /* Inter 600 */
-  --text-h5: 13px;     /* Inter 600 */
-
-  /* Body Scale */
-  --text-body-lg: 15px;
-  --text-body:    14px;     /* Inter 400, line-height 1.6 */
-  --text-body-sm: 13px;
-  --text-caption: 12px;
-
-  /* Data Scale — IBM Plex Mono */
-  --text-data-lg: 1.5rem;
-  --text-data:    13px;
-  --text-data-sm: 12px;
-
-  /* Spacing — Bloomberg institutional 4px grid */
-  --space-0:       0;
-  --space-1:       4px;
-  --space-2:       8px;
-  --space-3:       12px;
-  --space-4:       16px;
-  --space-5:       20px;
-  --space-6:       24px;
-  --space-8:       32px;
-  --space-12:      48px;
-  --space-16:      64px;
+  /* ── SPACING (8px base grid) ── */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
   --space-section: 48px;
   --space-block:   24px;
   --space-element: 12px;
   --space-tight:   12px;
 
-  --container-max: 1280px;
-  --container-wide: 1440px;
-  --container-narrow: 960px;
+  /* ── CHROME (nav, footer, dark UI) ── */
+  --chrome-bg:         #111111;
+  --chrome-border:     #2A2A2A;
+  --chrome-text:       #E8E8E8;
+  --chrome-text-muted: #888888;
+  --chrome-hover:      #1E1E1E;
+  --chrome-active:     #252525;
 
-  /* Radius — Bloomberg flat aesthetic */
-  --radius-sm: 2px;
-  --radius-md: 3px;
-  --radius-lg: 4px;
-  --radius-xl: 4px;
+  /* ── SURFACE (content areas, panels) ── */
+  --surface-primary:      #FFFFFF;
+  --surface-secondary:    #F8F8F6;
+  --surface-tertiary:     #F2F2EF;
+  --surface-border:       #E4E4E0;
+  --surface-border-strong:#CCCCC6;
+  --surface-hover:        #F0F4FF;
 
-  /* Legacy radius compat */
-  --r-sm: 2px;
-  --r-md: 3px;
+  /* ── TEXT ── */
+  --text-primary:    #0F0F0F;
+  --text-secondary:  #444444;
+  --text-tertiary:   #777777;
+  --text-placeholder:#AAAAAA;
+  --text-disabled:   #CCCCCC;
+
+  /* ── ACCENT (Bloomberg orange — used with restraint) ── */
+  --accent:        #D4500A;
+  --accent-hover:  #B84309;
+  --accent-active: #9C3907;
+  --accent-subtle: #FDF2EC;
+  --accent-border: #F0C4A8;
+
+  /* ── LINK ── */
+  --link:         #0A50A0;
+  --link-hover:   #083D7A;
+  --link-visited: #5B2D8E;
+
+  /* ── DATA (semantic colors for metrics) ── */
+  --data-positive:    #1A6B3A;
+  --data-positive-bg: #EBF5EF;
+  --data-negative:    #B02020;
+  --data-negative-bg: #FAEAEA;
+  --data-neutral:     #444444;
+  --data-highlight:   #1A4F8A;
+
+  /* ── TABLE ── */
+  --table-header-bg:     #F4F4F1;
+  --table-row-alt:       #FAFAF8;
+  --table-row-hover:     #EDF2FB;
+  --table-row-selected:  #E4EDF8;
+  --table-border:        #E4E4E0;
+  --table-border-strong: #C8C8C2;
+  --table-sort-active:   #0A50A0;
+
+  /* ── STATUS ── */
+  --status-active-bg:   #EBF5EF;
+  --status-active-text: #1A6B3A;
+  --status-active-dot:  #2A9A54;
+  --status-closed-bg:   #F4F4F1;
+  --status-closed-text: #555555;
+  --status-pending-bg:  #FFF8E8;
+  --status-pending-text:#7A5500;
+
+  /* ── TYPOGRAPHY — Font Stacks ── */
+  --font-display: var(--font-jakarta), 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body:    var(--font-inter), 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono:    var(--font-plex-mono), 'IBM Plex Mono', 'Menlo', monospace;
+
+  /* ── TYPOGRAPHY — Composite Font Shorthand Tokens ── */
+  /* Display — page h1 only */
+  --type-display:    700 24px/1.2 var(--font-display);
+  --type-display-sm: 700 20px/1.25 var(--font-display);
+
+  /* Heading */
+  --type-heading-lg: 600 17px/1.3 var(--font-display);
+  --type-heading-md: 600 15px/1.35 var(--font-display);
+  --type-heading-sm: 600 13px/1.4 var(--font-display);
+
+  /* Body — Inter */
+  --type-body-lg: 400 15px/1.6 var(--font-body);
+  --type-body-md: 400 13px/1.6 var(--font-body);
+  --type-body-sm: 400 12px/1.5 var(--font-body);
+
+  /* Label — uppercase tracking for headers, section labels */
+  --type-label-lg: 600 12px/1 var(--font-body);
+  --type-label-md: 600 11px/1 var(--font-body);
+  --type-label-sm: 500 10px/1 var(--font-body);
+
+  /* Data — IBM Plex Mono for ALL numeric output */
+  --type-data-xl: 500 28px/1 var(--font-mono);
+  --type-data-lg: 500 18px/1 var(--font-mono);
+  --type-data-md: 400 13px/1 var(--font-mono);
+  --type-data-sm: 400 12px/1 var(--font-mono);
+  --type-data-xs: 400 11px/1 var(--font-mono);
+
+  /* Navigation */
+  --type-nav:    500 13px/1 var(--font-body);
+  --type-nav-sm: 400 12px/1 var(--font-body);
+
+  /* Individual heading sizes (legacy compat) */
+  --text-h1: 24px;
+  --text-h2: 17px;
+  --text-h3: 15px;
+  --text-h4: 14px;
+  --text-h5: 13px;
+  --text-body-lg: 15px;
+  --text-body:    14px;
+  --text-body-sm: 13px;
+  --text-caption: 12px;
+  --text-data-lg: 1.5rem;
+  --text-data:    13px;
+  --text-data-sm: 12px;
+
+  /* ── BORDER RADIUS ── */
+  --radius-none: 0px;
+  --radius-xs:   2px;   /* buttons, inputs, pills */
+  --radius-sm:   3px;   /* chips, badges */
+  --radius-md:   4px;   /* cards, panels */
+  --radius-lg:   6px;   /* modals, dropdowns */
+
+  /* Legacy compat */
+  --r-sm:   2px;
+  --r-md:   3px;
   --r-card: 4px;
 
-  /* Shadows — Bloomberg light mode (subtle) */
-  --shadow-xs:        0 1px 2px rgba(0,0,0,0.05);
-  --shadow-sm:        0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md:        0 4px 12px rgba(0,0,0,0.08);
-  --shadow-lg:        0 8px 24px rgba(0,0,0,0.10);
-  --shadow-xl:        0 16px 48px rgba(0,0,0,0.12);
-  --shadow-glow-blue: 0 0 0 3px rgba(0,82,204,0.15);
-  --shadow-glow-green:0 0 0 3px rgba(21,128,61,0.15);
+  /* ── SHADOWS ── */
+  --shadow-xs:    0 1px 2px rgba(0,0,0,0.06);
+  --shadow-sm:    0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  --shadow-md:    0 4px 12px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04);
+  --shadow-lg:    0 8px 24px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+  --shadow-xl:    0 16px 48px rgba(0,0,0,0.12);
+  --shadow-focus: 0 0 0 3px rgba(212,80,10,0.25);
 
-  /* Motion — institutional (snappier than consumer apps) */
+  /* Legacy compat */
+  --shadow-glow-blue:  0 0 0 3px rgba(10,80,160,0.15);
+  --shadow-glow-green: 0 0 0 3px rgba(26,107,58,0.15);
+
+  /* ── TRANSITIONS ── */
+  --transition-fast: 100ms ease;
+  --transition-base: 150ms ease;
+  --transition-slow: 250ms ease;
+
+  /* Legacy motion tokens */
   --duration-instant: 80ms;
-  --duration-fast:    120ms;
-  --duration-base:    180ms;
-  --duration-slow:    240ms;
+  --duration-fast:    100ms;
+  --duration-base:    150ms;
+  --duration-slow:    250ms;
   --ease-out:         cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out:      cubic-bezier(0.4, 0, 0.2, 1);
   --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* Z-Index */
-  --z-critical:   9999;
+  /* ── LAYOUT ── */
+  --container-max:    1200px;
+  --container-wide:   1440px;
+  --container-narrow: 960px;
+  --sidebar-width:    224px;
+  --rightrail-width:  248px;
+  --topnav-height:    52px;
+  --contextbar-height:40px;
 
-  /* Links */
-  --color-link:           var(--bl-link);
-  --color-link-hover:     var(--bl-link-hover);
+  /* ── Z-INDEX ── */
+  --z-base:      1;
+  --z-sticky:    10;
+  --z-topnav:    200;
+  --z-dropdown:  300;
+  --z-tooltip:   400;
+  --z-modal:     500;
+  --z-critical:  9999;
 
-  /* CTA — Bloomberg orange, flat (no gradients) */
-  --gradient-cta:         var(--bl-cta);
-  --gradient-cta-hover:   var(--bl-cta-hover);
-  --color-hero-bg:        var(--bl-surface);
-  --gradient-hero:        var(--bl-surface);
-  --gradient-accent:      var(--bl-cta);
-  --institutional-dark:   var(--bl-nav);
-  --institutional-blue:   var(--bl-cta);
-  --institutional-blue-hover: var(--bl-cta-hover);
+  /* ── BACKWARD COMPAT — old --bl-* mapped to new tokens ── */
+  --bl-nav:            var(--chrome-bg);
+  --bl-nav-text:       var(--chrome-text);
+  --bl-nav-border:     var(--chrome-border);
+  --bl-surface:        var(--surface-primary);
+  --bl-surface-alt:    var(--surface-secondary);
+  --bl-text-primary:   var(--text-primary);
+  --bl-text-secondary: var(--text-secondary);
+  --bl-text-muted:     var(--text-tertiary);
+  --bl-link:           var(--link);
+  --bl-link-hover:     var(--link-hover);
+  --bl-cta:            var(--accent);
+  --bl-cta-hover:      var(--accent-hover);
+  --bl-cta-text:       #FFFFFF;
+  --bl-sidebar-bg:     var(--surface-secondary);
+  --bl-sidebar-border: var(--surface-border);
+  --bl-sidebar-header: var(--text-secondary);
+  --bl-sidebar-link:   var(--link);
+  --bl-sidebar-link-arrow: var(--link);
+  --bl-divider:        var(--surface-border);
+  --bl-accent-bar:     var(--accent);
+  --bl-row-hover:      var(--table-row-hover);
 
-  /* Terminal accents — for light surfaces (WCAG AA) */
-  --accent-terminal-green: #15803D;
+  /* Legacy color compat */
+  --color-navy:        var(--chrome-bg);
+  --color-navy-dark:   #0A0A0A;
+  --color-navy-light:  #2A2A2A;
+  --color-accent:      var(--accent);
+  --color-accent-dark: var(--accent-hover);
+  --color-accent-light:rgba(212,80,10,0.10);
+  --color-terminal-green:  var(--data-positive);
+  --color-terminal-amber:  #B45309;
+  --color-terminal-red:    var(--data-negative);
+  --color-terminal-cyan:   var(--link);
+  --color-surface-0:   var(--surface-primary);
+  --color-surface-1:   var(--surface-primary);
+  --color-surface-2:   var(--surface-secondary);
+  --color-surface-nav: var(--chrome-bg);
+  --color-text-primary:   var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted:     var(--text-tertiary);
+  --color-text-inverse:   #FFFFFF;
+  --color-text-accent:    var(--link);
+  --color-border-light:   var(--surface-border);
+  --color-border-medium:  var(--surface-border);
+  --color-border-dark:    var(--surface-border-strong);
+  --color-border-navy:    var(--surface-border);
+  --color-data-positive: var(--data-positive);
+  --color-data-negative: var(--data-negative);
+  --color-data-neutral:  #B45309;
+  --color-data-bg-pos:   var(--data-positive-bg);
+  --color-data-bg-neg:   var(--data-negative-bg);
+  --color-data-bg-neu:   rgba(180,83,9,0.08);
+  --color-badge-federal:    var(--link);
+  --color-badge-bg-federal: rgba(10,80,160,0.08);
+
+  /* Legacy semantic compat */
+  --bg-base:          var(--surface-primary);
+  --bg-elevated:      var(--surface-primary);
+  --bg-input:         var(--surface-primary);
+  --bg-hover:         var(--surface-secondary);
+  --bg-selection:     rgba(10,80,160,0.15);
+  --bg-dark:          var(--chrome-bg);
+  --bg-alt:           var(--surface-secondary);
+  --fg-primary:       var(--text-primary);
+  --fg-secondary:     var(--text-secondary);
+  --fg-subtle:        var(--text-tertiary);
+  --fg-link:          var(--link);
+  --fg-on-dark:       var(--chrome-text);
+  --accent-primary:         var(--accent);
+  --accent-primary-hover:   var(--accent-hover);
+  --accent-primary-subtle:  var(--accent-subtle);
+  --accent-primary-border:  var(--accent-border);
+  --accent-secondary:       var(--link);
+  --accent-secondary-hover: var(--link-hover);
+  --accent-secondary-subtle: rgba(10,80,160,0.08);
+  --accent-secondary-border: rgba(10,80,160,0.30);
+  --outcome-win:          var(--data-positive);
+  --outcome-settle:       #B45309;
+  --outcome-loss:         var(--data-negative);
+  --success:              var(--data-positive);
+  --success-subtle:       var(--data-positive-bg);
+  --warning:              #B45309;
+  --warning-subtle:       rgba(180,83,9,0.08);
+  --danger:               var(--data-negative);
+  --danger-subtle:        var(--data-negative-bg);
+  --info:                 var(--link);
+  --info-subtle:          rgba(10,80,160,0.08);
+  --border-default:   var(--surface-border);
+  --border-subtle:    var(--surface-border);
+  --border-focus:     var(--link);
+  --color-link:           var(--link);
+  --color-link-hover:     var(--link-hover);
+  --gradient-cta:         var(--accent);
+  --gradient-cta-hover:   var(--accent-hover);
+  --color-hero-bg:        var(--surface-primary);
+  --gradient-hero:        var(--surface-primary);
+  --gradient-accent:      var(--accent);
+  --institutional-dark:   var(--chrome-bg);
+  --institutional-blue:   var(--accent);
+  --institutional-blue-hover: var(--accent-hover);
+  --accent-terminal-green: var(--data-positive);
   --accent-terminal-amber: #B45309;
-  --accent-terminal-red: #B91C1C;
-  --accent-terminal-blue: #0052CC;
+  --accent-terminal-red:   var(--data-negative);
+  --accent-terminal-blue:  var(--link);
+  --accent-terminal-green-on-light: var(--data-positive);
+  --accent-terminal-amber-on-light: #B45309;
+  --accent-terminal-red-on-light:   var(--data-negative);
+  --accent-terminal-blue-on-light:  var(--link);
 
-  /* Light surface variants (same as above for light mode) */
-  --accent-terminal-green-on-light: #15803d;
-  --accent-terminal-amber-on-light: #b45309;
-  --accent-terminal-red-on-light: #b91c1c;
-  --accent-terminal-blue-on-light: #0052CC;
+  /* Legacy font aliases */
+  --font-montserrat: var(--font-inter);
+  --font-roboto:     var(--font-inter);
 }
 
-/* High Contrast Mode */
+/* ── High Contrast Mode ── */
 @media (prefers-contrast: high) {
   :root {
-    --bl-text-secondary: #333333;
-    --color-border-light: #AAAAAA;
-    --color-border-medium: #999999;
-    --border-focus: #003D99;
-    --color-data-positive: #166534;
-    --color-data-neutral: #92400E;
-    --color-data-negative: #991B1B;
+    --text-secondary:  #333333;
+    --text-tertiary:   #555555;
+    --surface-border:  #AAAAAA;
+    --surface-border-strong: #999999;
+    --link:            #073F78;
+    --data-positive:   #145C30;
+    --data-negative:   #8A1818;
   }
 }
 
-/* Accessibility */
+/* ── Touch targets (WCAG 2.5.5) ── */
 @media (pointer: coarse) {
-  button, [role="button"], a, input[type="checkbox"], input[type="radio"], select, summary {
+  button, [role="button"], a, input[type="checkbox"],
+  input[type="radio"], select, summary {
     min-height: 44px;
     min-width: 44px;
   }
 }
 
+/* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -274,28 +343,31 @@
   }
 }
 
+/* ── iOS font zoom prevention ── */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  select, textarea, input[type="text"], input[type="email"], input[type="number"],
-  input[type="tel"], input[type="url"], input[type="search"] {
+  select, textarea, input[type="text"], input[type="email"],
+  input[type="number"], input[type="tel"], input[type="url"],
+  input[type="search"] {
     font-size: max(16px, 1em);
   }
 }
 
+/* ── Global focus-visible ── */
 :focus-visible {
-  outline: 2px solid var(--bl-link);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
 ::selection {
   background: var(--bg-selection);
-  color: var(--bl-text-primary);
+  color: var(--text-primary);
 }
 
 .skip-to-content {
   position: absolute; top: -100%; left: 0;
   z-index: var(--z-critical);
   padding: 8px 16px;
-  background: var(--bl-cta);
+  background: var(--accent);
   color: #fff; font-weight: 700;
   text-decoration: none;
   border-radius: 0 0 var(--radius-md) 0;

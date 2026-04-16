@@ -1,23 +1,21 @@
 /**
- * MyCaseValue Homepage — Bloomberg Law design system.
+ * MyCaseValue Homepage — Enterprise-grade intelligence hub.
  *
  * Structure:
- * 1. Search context bar (secondary, below ticker)
- * 2. 3×2 Category card grid — top case type categories
- * 3. Coverage stats row
- * 4. "Recently Updated" flat data table
- * 5. Data sources bar
- * 6. CTA strip
- * 7. Disclaimer
+ * 1. ContextBar (full-width)
+ * 2. Hero section (centered, search-forward)
+ * 3. Browse All Content (6-card grid)
+ * 4. Recently Updated (DataTable — 10 rows)
+ * 5. What's Happening strip (3-col)
+ * 6. Footer (handled by layout)
  *
- * No hero banner. Data-forward, light mode, institutional feel.
+ * No sidebar. Full-width. The data IS the design.
  */
 
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE_URL } from '@/lib/site-config';
 import { SITE_METRICS } from '@/lib/site-metrics';
-import { SearchHero } from '@/components/SearchHero';
 
 export const metadata: Metadata = {
   title: 'MyCaseValue — Federal Court Intelligence Platform',
@@ -26,787 +24,447 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'MyCaseValue | Federal Court Intelligence',
-    images: [
-      {
-        url: `${SITE_URL}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: 'MyCaseValue',
-      },
-    ],
-    description:
-      'Litigation intelligence from public federal court records.',
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue' }],
+    description: 'Litigation intelligence from public federal court records.',
     url: SITE_URL,
   },
 };
 
-/* ── Static data for the category cards ── */
+/* ── Static data ── */
 
-const CATEGORIES = [
+const BROWSE_CARDS = [
   {
-    title: 'Employment & Workplace',
-    count: '1.3M+ cases',
-    winRate: '50%',
-    href: '/cases/employment-workplace',
-    description: 'Discrimination, wrongful termination, FLSA, and more',
+    icon: 'scales',
+    title: 'Federal Districts',
+    description: '94 districts, 12 circuits. Filter by case load, judge roster, and case type distribution.',
+    stat: '94 districts',
+    href: '/districts',
   },
   {
-    title: 'Personal Injury',
-    count: '1.5M+ cases',
-    winRate: '48%',
-    href: '/cases/personal-injury',
-    description: 'Motor vehicle, medical malpractice, products liability',
+    icon: 'person',
+    title: 'Judges',
+    description: 'Judicial analytics for every active and senior federal judge. Win rates, median durations, case history.',
+    stat: '3,400+ judges',
+    href: '/judges',
   },
   {
-    title: 'Civil Rights',
-    count: '1.2M+ cases',
-    winRate: '37%',
-    href: '/cases/civil-rights',
-    description: 'Section 1983, voting rights, ADA, housing discrimination',
+    icon: 'chart',
+    title: 'Case Analytics',
+    description: 'Disposition breakdowns, win rates, and timeline data across all case types and jurisdictions.',
+    stat: `${SITE_METRICS.totalCases} cases`,
+    href: '/cases',
   },
   {
-    title: 'Consumer Protection',
-    count: '2.1M+ cases',
-    winRate: '45%',
-    href: '/cases/consumer-protection',
-    description: 'TCPA, FDCPA, fraud, deceptive practices',
+    icon: 'currency',
+    title: 'Settlement Ranges',
+    description: 'Median and mean settlement data by case type, district, and year. Updated weekly from public records.',
+    stat: 'Updated weekly',
+    href: '/outcomes',
   },
   {
-    title: 'Business Disputes',
-    count: '890K+ cases',
-    winRate: '52%',
-    href: '/cases/business-disputes',
-    description: 'Contract, fraud, trade secrets, partnership disputes',
+    icon: 'briefcase',
+    title: 'Attorneys',
+    description: 'Performance analytics for attorneys appearing in federal court. Track opposing counsel, firm patterns, win rates.',
+    stat: '120,000+ attorneys',
+    href: '/attorney',
   },
   {
-    title: 'Intellectual Property',
-    count: '680K+ cases',
-    winRate: '46%',
-    href: '/cases/intellectual-property',
-    description: 'Patent, trademark, copyright, trade dress',
+    icon: 'filter',
+    title: 'Practice Areas',
+    description: 'Navigate by claim type, statute, and outcome. 14 categories covering the full federal civil docket.',
+    stat: '14 categories',
+    href: '/cases',
   },
 ];
 
-/* ── Recently Updated data ── */
-
-const RECENT_UPDATES = [
-  {
-    district: 'S.D.N.Y.',
-    caseType: 'Securities Fraud',
-    metric: 'Median award updated',
-    value: '$142,500',
-    date: 'Apr 2026',
-    href: '/districts/SDNY',
-  },
-  {
-    district: 'C.D. Cal.',
-    caseType: 'Employment',
-    metric: 'Win rate revised',
-    value: '47.2%',
-    date: 'Apr 2026',
-    href: '/districts/CACD',
-  },
-  {
-    district: 'N.D. Ill.',
-    caseType: 'Civil Rights',
-    metric: 'Settlement range updated',
-    value: '$18,000–$95,000',
-    date: 'Apr 2026',
-    href: '/districts/NDIL',
-  },
-  {
-    district: 'D.N.J.',
-    caseType: 'Consumer Protection',
-    metric: 'Case volume updated',
-    value: '3,241 cases',
-    date: 'Mar 2026',
-    href: '/districts/NJDN',
-  },
-  {
-    district: 'E.D. Pa.',
-    caseType: 'Personal Injury',
-    metric: 'Disposition time updated',
-    value: '12.8 months',
-    date: 'Mar 2026',
-    href: '/districts/EDPA',
-  },
+const RECENT_CASES = [
+  { id: '1:24-cv-08912', district: 'S.D.N.Y.', type: 'Securities Fraud', filed: 'Apr 14, 2026', status: 'Active', href: '/districts/SDNY' },
+  { id: '2:24-cv-04221', district: 'C.D. Cal.', type: 'Employment', filed: 'Apr 13, 2026', status: 'Active', href: '/districts/CACD' },
+  { id: '1:24-cv-01893', district: 'N.D. Ill.', type: 'Civil Rights', filed: 'Apr 12, 2026', status: 'Active', href: '/districts/NDIL' },
+  { id: '3:24-cv-00741', district: 'D.N.J.', type: 'Consumer Protection', filed: 'Apr 11, 2026', status: 'Pending', href: '/districts/NJDN' },
+  { id: '2:24-cv-03102', district: 'E.D. Pa.', type: 'Personal Injury', filed: 'Apr 10, 2026', status: 'Active', href: '/districts/EDPA' },
+  { id: '1:24-cv-06221', district: 'S.D. Fla.', type: 'Insurance', filed: 'Apr 9, 2026', status: 'Closed', href: '/districts/SDFL' },
+  { id: '4:24-cv-00892', district: 'S.D. Tex.', type: 'Patent', filed: 'Apr 8, 2026', status: 'Active', href: '/districts/SDTX' },
+  { id: '1:24-cv-02341', district: 'D. Mass.', type: 'Contract', filed: 'Apr 7, 2026', status: 'Active', href: '/districts/MAD' },
+  { id: '3:24-cv-01120', district: 'N.D. Cal.', type: 'Antitrust', filed: 'Apr 6, 2026', status: 'Pending', href: '/districts/CAND' },
+  { id: '1:24-cv-04501', district: 'D.D.C.', type: 'Administrative', filed: 'Apr 5, 2026', status: 'Active', href: '/districts/DCD' },
 ];
+
+const WHATS_HAPPENING = {
+  districts: [
+    { label: 'S.D.N.Y. — 1,204 new filings', href: '/districts/SDNY' },
+    { label: 'C.D. Cal. — 987 new filings', href: '/districts/CACD' },
+    { label: 'N.D. Ill. — 743 new filings', href: '/districts/NDIL' },
+  ],
+  caseTypes: [
+    { label: 'Employment — up 12% this quarter', href: '/cases/employment-workplace' },
+    { label: 'Consumer Protection — up 8%', href: '/cases/consumer-protection' },
+    { label: 'Civil Rights — steady volume', href: '/cases/civil-rights' },
+  ],
+  judges: [
+    { label: 'Hon. Jesse M. Furman — 142 cases', href: '/judges' },
+    { label: 'Hon. Otis D. Wright II — 128 cases', href: '/judges' },
+    { label: 'Hon. Matthew F. Kennelly — 119 cases', href: '/judges' },
+  ],
+};
+
+/* ── SVG Icons ── */
+function CardIcon({ type }: { type: string }) {
+  const s = { width: 20, height: 20, viewBox: '0 0 24 24', fill: 'none', stroke: 'var(--link)', strokeWidth: 1.5, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+  switch (type) {
+    case 'scales': return <svg {...s}><path d="M12 3v18M3 7l9-4 9 4M3 7v4l9 4 9-4V7" /></svg>;
+    case 'person': return <svg {...s}><circle cx="12" cy="7" r="4" /><path d="M5.5 21a6.5 6.5 0 0113 0" /></svg>;
+    case 'chart': return <svg {...s}><rect x="3" y="12" width="4" height="9" rx="1" /><rect x="10" y="7" width="4" height="14" rx="1" /><rect x="17" y="3" width="4" height="18" rx="1" /></svg>;
+    case 'currency': return <svg {...s}><path d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6" /></svg>;
+    case 'briefcase': return <svg {...s}><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" /></svg>;
+    case 'filter': return <svg {...s}><path d="M3 4h18l-7 8v6l-4 2V12L3 4z" /></svg>;
+    default: return null;
+  }
+}
+
+function StatusBadge({ status }: { status: string }) {
+  const cls = status === 'Active' ? 'badge-active' : status === 'Pending' ? 'badge-pending' : 'badge-closed';
+  return <span className={`badge ${cls}`}>{status}</span>;
+}
 
 export default function HomePage() {
   return (
-    <main style={{ fontFamily: 'var(--font-inter)', background: '#FFFFFF' }}>
+    <main style={{ fontFamily: 'var(--font-body)' }}>
 
-      {/* ── 1. SEARCH CONTEXT BAR ── */}
+      {/* ── CONTEXT BAR ── */}
       <section
         style={{
-          background: '#F7F7F5',
-          borderBottom: '1px solid #E0E0E0',
-          padding: '20px 0',
+          height: 40,
+          background: 'var(--surface-secondary)',
+          borderBottom: '1px solid var(--surface-border)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '0 var(--space-6)',
         }}
       >
-        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-            <h1
-              style={{
-                fontSize: 18,
-                fontWeight: 700,
-                fontFamily: 'var(--font-jakarta, var(--font-inter))',
-                color: '#1A1A1A',
-                margin: 0,
-                letterSpacing: '-0.02em',
-              }}
-            >
-              Federal Court Intelligence
-            </h1>
+        <span style={{ font: 'var(--type-body-sm)', color: 'var(--text-tertiary)' }}>
+          <span style={{ fontFamily: 'var(--font-mono)', fontVariantNumeric: 'tabular-nums' }}>5,100,000+</span> federal cases · <span style={{ fontFamily: 'var(--font-mono)' }}>94</span> districts · Updated daily
+        </span>
+        <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
+          {['All Circuits', 'All Case Types', 'All Years'].map((pill) => (
             <span
+              key={pill}
               style={{
-                fontSize: 10,
-                fontFamily: 'var(--font-mono)',
-                fontWeight: 600,
-                color: '#15803D',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                padding: '2px 6px',
-                background: 'rgba(21,128,61,0.08)',
-                borderRadius: 2,
+                height: 24, padding: '0 10px',
+                background: 'var(--surface-primary)',
+                border: '1px solid var(--surface-border-strong)',
+                borderRadius: 'var(--radius-sm)',
+                font: 'var(--type-label-sm)',
+                color: 'var(--text-secondary)',
+                display: 'inline-flex', alignItems: 'center',
+                letterSpacing: '0.07em', textTransform: 'uppercase',
               }}
             >
-              Live
+              {pill}
             </span>
-          </div>
-          <div style={{ maxWidth: 640 }}>
-            <SearchHero variant="light" />
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. COVERAGE STATS ROW ── */}
-      <section
-        style={{
-          borderBottom: '1px solid #E8E8E8',
-          padding: '16px 0',
-          background: '#FFFFFF',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 960,
-            margin: '0 auto',
-            padding: '0 24px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '24px 48px',
-            alignItems: 'baseline',
-          }}
-        >
-          {[
-            { value: SITE_METRICS.totalCases, label: 'Federal Cases' },
-            { value: String(SITE_METRICS.districtCourts), label: 'District Courts' },
-            { value: String(SITE_METRICS.caseTypes), label: 'Case Types' },
-            { value: '7', label: 'Public Data Sources' },
-            { value: SITE_METRICS.yearsOfData, label: 'Years of Data' },
-          ].map((m) => (
-            <div key={m.label} style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-              <span
-                style={{
-                  fontSize: 20,
-                  fontWeight: 700,
-                  fontFamily: 'var(--font-mono)',
-                  color: '#1A1A1A',
-                  letterSpacing: '-0.02em',
-                  fontVariantNumeric: 'tabular-nums',
-                }}
-              >
-                {m.value}
-              </span>
-              <span
-                style={{
-                  fontSize: 11,
-                  fontWeight: 500,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                  color: '#888888',
-                }}
-              >
-                {m.label}
-              </span>
-            </div>
           ))}
         </div>
       </section>
 
-      {/* ── 3. CATEGORY CARD GRID (3×2) ── */}
-      <section style={{ padding: '32px 0', background: '#FFFFFF' }}>
-        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
-          {/* Section label */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: 16,
-            }}
-          >
-            <span
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                color: '#444444',
-              }}
-            >
-              Browse by Case Type
-            </span>
-            <Link
-              href="/cases"
-              style={{
-                fontSize: 12,
-                fontWeight: 500,
-                color: '#0052CC',
-                textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 4,
-              }}
-            >
-              View all {SITE_METRICS.caseTypes} types
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+      {/* ── HERO ── */}
+      <section style={{ background: 'var(--surface-primary)', paddingBottom: 'var(--space-12)' }}>
+        <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center', padding: 'var(--space-16) var(--space-8) 0' }}>
+          {/* Eyebrow */}
+          <p style={{
+            font: 'var(--type-label-sm)', letterSpacing: '0.14em', textTransform: 'uppercase',
+            color: 'var(--text-tertiary)', marginBottom: 'var(--space-4)',
+          }}>
+            Federal Court Intelligence Platform
+          </p>
+
+          {/* Headline */}
+          <h1 style={{
+            fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 42, lineHeight: 1.1,
+            color: 'var(--text-primary)', letterSpacing: '-0.03em', margin: 0,
+          }}>
+            The Federal Court Record.
+          </h1>
+          <p style={{
+            fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 42, lineHeight: 1.1,
+            color: 'var(--accent)', letterSpacing: '-0.03em', margin: '0 0 var(--space-4)',
+          }}>
+            Open to Everyone.
+          </p>
+
+          {/* Body */}
+          <p style={{
+            font: 'var(--type-body-lg)', color: 'var(--text-secondary)', lineHeight: 1.65,
+            maxWidth: 520, margin: '0 auto',
+          }}>
+            5.1 million federal cases across 94 districts. Win rates, settlement ranges, judge analytics, and case timelines — for every litigant, every attorney, every researcher.
+          </p>
+
+          {/* CTAs */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', marginTop: 'var(--space-6)' }}>
+            <Link href="/case-search" className="btn-primary" style={{ fontSize: 14 }}>
+              Search All Cases
+            </Link>
+            <Link href="/districts" className="btn-secondary" style={{ fontSize: 14 }}>
+              Browse Districts →
             </Link>
           </div>
 
-          {/* Grid */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-              gap: 12,
-            }}
-          >
-            {CATEGORIES.map((cat) => (
-              <Link
-                key={cat.title}
-                href={cat.href}
-                style={{
-                  display: 'block',
-                  padding: '16px 18px',
-                  background: '#FFFFFF',
-                  border: '1px solid #E0E0E0',
-                  borderRadius: 4,
-                  textDecoration: 'none',
-                  transition: 'border-color 120ms, box-shadow 120ms',
-                }}
-                className="homepage-card"
-              >
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 6 }}>
-                  <h3
-                    style={{
-                      fontSize: 14,
-                      fontWeight: 600,
-                      color: '#1A1A1A',
-                      margin: 0,
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {cat.title}
-                  </h3>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CCCCCC" strokeWidth="2" style={{ flexShrink: 0, marginTop: 2 }}>
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </div>
-                <p
-                  style={{
-                    fontSize: 12,
-                    color: '#666666',
-                    margin: '0 0 10px 0',
-                    lineHeight: 1.4,
-                  }}
-                >
-                  {cat.description}
-                </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 16,
-                    paddingTop: 10,
-                    borderTop: '1px solid #F0F0F0',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: 12,
-                      fontFamily: 'var(--font-mono)',
-                      fontWeight: 600,
-                      color: '#1A1A1A',
-                      fontVariantNumeric: 'tabular-nums',
-                    }}
-                  >
-                    {cat.count}
-                  </span>
-                  <span style={{ color: '#E0E0E0', fontSize: 10 }}>|</span>
-                  <span
-                    style={{
-                      fontSize: 12,
-                      fontFamily: 'var(--font-mono)',
-                      fontWeight: 600,
-                      color: '#15803D',
-                      fontVariantNumeric: 'tabular-nums',
-                    }}
-                  >
-                    {cat.winRate} win rate
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4. RECENTLY UPDATED TABLE ── */}
-      <section
-        style={{
-          padding: '32px 0',
-          background: '#F7F7F5',
-          borderTop: '1px solid #E0E0E0',
-          borderBottom: '1px solid #E0E0E0',
-        }}
-      >
-        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginBottom: 12,
-            }}
-          >
-            <span
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                color: '#444444',
-              }}
-            >
-              Recently Updated
-            </span>
-            <span
-              style={{
-                fontSize: 11,
-                fontFamily: 'var(--font-mono)',
-                color: '#888888',
-                fontVariantNumeric: 'tabular-nums',
-              }}
-            >
-              Last sync: April 2026
-            </span>
-          </div>
-
-          {/* Table */}
-          <div
-            style={{
-              background: '#FFFFFF',
-              border: '1px solid #E0E0E0',
-              borderRadius: 4,
-              overflow: 'hidden',
-            }}
-          >
-            {/* Table header */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '100px 1fr 1fr 120px 80px',
-                gap: 0,
-                padding: '8px 16px',
-                background: '#F5F5F5',
-                borderBottom: '1px solid #E8E8E8',
-                fontSize: 10,
-                fontWeight: 600,
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                color: '#666666',
-              }}
-            >
-              <span>District</span>
-              <span>Case Type</span>
-              <span>Update</span>
-              <span style={{ textAlign: 'right' }}>Value</span>
-              <span style={{ textAlign: 'right' }}>Date</span>
-            </div>
-
-            {/* Table rows */}
-            {RECENT_UPDATES.map((row, i) => (
-              <Link
-                key={i}
-                href={row.href}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '100px 1fr 1fr 120px 80px',
-                  gap: 0,
-                  padding: '10px 16px',
-                  borderBottom: i < RECENT_UPDATES.length - 1 ? '1px solid #F0F0F0' : 'none',
-                  textDecoration: 'none',
-                  fontSize: 13,
-                  color: '#1A1A1A',
-                  transition: 'background 80ms',
-                }}
-                className="homepage-table-row"
-              >
-                <span
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontWeight: 600,
-                    fontSize: 12,
-                    color: '#E65C00',
-                  }}
-                >
-                  {row.district}
-                </span>
-                <span style={{ color: '#1A1A1A', fontSize: 13 }}>{row.caseType}</span>
-                <span style={{ color: '#666666', fontSize: 12 }}>{row.metric}</span>
-                <span
-                  style={{
-                    textAlign: 'right',
-                    fontFamily: 'var(--font-mono)',
-                    fontWeight: 600,
-                    fontSize: 12,
-                    color: '#1A1A1A',
-                    fontVariantNumeric: 'tabular-nums',
-                  }}
-                >
-                  {row.value}
-                </span>
-                <span
-                  style={{
-                    textAlign: 'right',
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: 11,
-                    color: '#888888',
-                    fontVariantNumeric: 'tabular-nums',
-                  }}
-                >
-                  {row.date}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 5. CAPABILITIES (4 card row) ── */}
-      <section style={{ padding: '32px 0', background: '#FFFFFF' }}>
-        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
-          <span
-            style={{
-              display: 'block',
-              fontSize: 11,
-              fontWeight: 600,
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
-              color: '#444444',
-              marginBottom: 16,
-            }}
-          >
-            Intelligence Suite
-          </span>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-              gap: 12,
-            }}
-          >
-            {[
-              {
-                title: 'Case Outcomes',
-                desc: 'Win rates, settlement ranges, and disposition analytics across 84 case types.',
-                href: '/cases',
-                meta: '84 case types',
-              },
-              {
-                title: 'Judge Intelligence',
-                desc: 'Ruling patterns, case duration, and outcome tendencies for federal judges.',
-                href: '/judges',
-                meta: '3,400+ judges',
-              },
-              {
-                title: 'Venue Analysis',
-                desc: 'Compare districts by performance, timelines, and historical outcomes.',
-                href: '/districts',
-                meta: '94 districts',
-              },
-              {
-                title: 'Document Search',
-                desc: 'Full-text search across opinions, regulations, and filings from 7 sources.',
-                href: '/case-search',
-                meta: '7 data sources',
-              },
-            ].map((cap) => (
-              <Link
-                key={cap.title}
-                href={cap.href}
-                style={{
-                  display: 'block',
-                  padding: '16px 18px',
-                  background: '#FFFFFF',
-                  border: '1px solid #E0E0E0',
-                  borderRadius: 4,
-                  textDecoration: 'none',
-                  transition: 'border-color 120ms, box-shadow 120ms',
-                }}
-                className="homepage-card"
-              >
-                <h3
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 600,
-                    color: '#1A1A1A',
-                    margin: '0 0 6px 0',
-                  }}
-                >
-                  {cap.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: 12,
-                    color: '#666666',
-                    margin: '0 0 10px 0',
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {cap.desc}
-                </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    paddingTop: 10,
-                    borderTop: '1px solid #F0F0F0',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: 11,
-                      fontFamily: 'var(--font-mono)',
-                      color: '#888888',
-                      fontVariantNumeric: 'tabular-nums',
-                    }}
-                  >
-                    {cap.meta}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 12,
-                      color: '#0052CC',
-                      fontWeight: 500,
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 2,
-                    }}
-                  >
-                    View
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 6. DATA SOURCES BAR ── */}
-      <section
-        style={{
-          background: '#F7F7F5',
-          borderTop: '1px solid #E0E0E0',
-          borderBottom: '1px solid #E0E0E0',
-          padding: '20px 0',
-        }}
-      >
-        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'flex-start',
-              gap: 24,
-            }}
-          >
-            <div style={{ width: 160, flexShrink: 0 }}>
-              <span
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  color: '#444444',
-                }}
-              >
-                Data Sources
-              </span>
-              <p style={{ fontSize: 11, color: '#888888', marginTop: 4, lineHeight: 1.4 }}>
-                All data from official federal court and agency records.
-              </p>
-            </div>
-            <div
-              style={{
-                flex: 1,
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
-                gap: '8px 24px',
-              }}
-            >
-              {SITE_METRICS.dataSources.map((src) => (
-                <div
-                  key={src.name}
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    padding: '4px 0 4px 10px',
-                    borderLeft: '2px solid #E0E0E0',
-                  }}
-                >
-                  <span style={{ fontSize: 12, fontWeight: 500, color: '#1A1A1A' }}>
-                    {src.name}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 10,
-                      fontFamily: 'var(--font-mono)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.06em',
-                      color: '#888888',
-                      marginTop: 1,
-                    }}
-                  >
-                    {src.category}
-                  </span>
+          {/* Stats ticker */}
+          <div style={{ marginTop: 'var(--space-8)' }}>
+            <hr style={{ border: 'none', borderTop: '1px solid var(--surface-border)', marginBottom: 'var(--space-6)' }} />
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-4)' }}>
+              {[
+                { value: '5,100,000+', label: 'Cases' },
+                { value: '94', label: 'Districts' },
+                { value: '3,400+', label: 'Judges' },
+                { value: 'Updated', label: 'Daily' },
+              ].map((s) => (
+                <div key={s.label} style={{ textAlign: 'center' }}>
+                  <div style={{
+                    fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 500,
+                    color: 'var(--text-primary)', fontVariantNumeric: 'tabular-nums',
+                  }}>
+                    {s.value}
+                  </div>
+                  <div style={{
+                    font: 'var(--type-label-sm)', letterSpacing: '0.07em', textTransform: 'uppercase',
+                    color: 'var(--text-tertiary)', marginTop: 4,
+                  }}>
+                    {s.label}
+                  </div>
                 </div>
               ))}
             </div>
+            <hr style={{ border: 'none', borderTop: '1px solid var(--surface-border)', marginTop: 'var(--space-6)' }} />
           </div>
         </div>
       </section>
 
-      {/* ── 7. CTA STRIP ── */}
-      <section style={{ background: '#1A1A1A', padding: '24px 0' }}>
-        <div
-          style={{
-            maxWidth: 960,
-            margin: '0 auto',
-            padding: '0 24px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: 16,
-          }}
-        >
-          <div>
-            <h2
-              style={{
-                fontSize: 16,
-                fontWeight: 700,
-                color: '#FFFFFF',
-                margin: '0 0 4px 0',
-                letterSpacing: '-0.01em',
-              }}
-            >
-              Research federal litigation like institutions do.
+      {/* ── BROWSE ALL CONTENT ── */}
+      <section style={{ background: 'var(--surface-primary)', padding: 'var(--space-10) 0' }}>
+        <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 var(--space-8)' }}>
+          {/* Heading */}
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--space-4)' }}>
+            <h2 style={{
+              fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 17,
+              color: 'var(--text-primary)', letterSpacing: '-0.01em', margin: 0,
+            }}>
+              Browse All Content
             </h2>
-            <p
-              style={{
-                fontSize: 12,
-                fontFamily: 'var(--font-mono)',
-                color: 'rgba(255,255,255,0.5)',
-                margin: 0,
-                fontVariantNumeric: 'tabular-nums',
-              }}
-            >
-              Free during beta &middot; No account required &middot; Sub-second search
-            </p>
+            <Link href="/cases" style={{ font: 'var(--type-body-md)', color: 'var(--link)' }}>View all →</Link>
           </div>
-          <div style={{ display: 'flex', gap: 10, flexShrink: 0 }}>
-            <Link
-              href="/case-search"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                height: 36,
-                padding: '0 18px',
-                background: '#E65C00',
-                color: '#FFFFFF',
-                fontSize: 13,
-                fontWeight: 600,
-                borderRadius: 3,
-                textDecoration: 'none',
-                transition: 'background 120ms',
-              }}
-            >
-              Start Searching
-            </Link>
-            <Link
-              href="/cases"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                height: 36,
-                padding: '0 18px',
-                background: 'transparent',
-                color: '#FFFFFF',
-                fontSize: 13,
-                fontWeight: 500,
-                borderRadius: 3,
-                border: '1px solid rgba(255,255,255,0.2)',
-                textDecoration: 'none',
-                transition: 'border-color 120ms',
-              }}
-            >
-              Browse Cases
-            </Link>
+
+          {/* 3-col grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-4)' }}>
+            {BROWSE_CARDS.map((card) => (
+              <Link
+                key={card.title}
+                href={card.href}
+                className="homepage-card"
+                style={{
+                  display: 'block', position: 'relative', overflow: 'hidden',
+                  background: 'var(--surface-primary)', border: '1px solid var(--surface-border)',
+                  borderRadius: 'var(--radius-md)', padding: 'var(--space-5)',
+                  textDecoration: 'none', boxShadow: 'var(--shadow-xs)',
+                  transition: 'all 150ms ease',
+                }}
+              >
+                {/* Left accent bar */}
+                <div style={{
+                  position: 'absolute', top: 0, left: 0, width: 3, height: 40,
+                  background: 'var(--link)', borderRadius: '0 0 var(--radius-xs) 0',
+                }} />
+
+                <CardIcon type={card.icon} />
+
+                <h3 style={{
+                  fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 14,
+                  color: 'var(--text-primary)', marginTop: 'var(--space-3)',
+                  letterSpacing: '-0.01em',
+                }}>
+                  {card.title}
+                </h3>
+                <p style={{
+                  font: 'var(--type-body-sm)', color: 'var(--text-tertiary)',
+                  marginTop: 'var(--space-1)', lineHeight: 1.5,
+                }}>
+                  {card.description}
+                </p>
+
+                {/* Stat row */}
+                <div style={{
+                  marginTop: 'var(--space-4)', paddingTop: 'var(--space-3)',
+                  borderTop: '1px solid var(--surface-border)',
+                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                }}>
+                  <span style={{
+                    fontFamily: 'var(--font-mono)', fontSize: 13,
+                    color: 'var(--link)', fontVariantNumeric: 'tabular-nums',
+                  }}>
+                    {card.stat}
+                  </span>
+                  <span className="card-arrow" style={{ color: 'var(--text-tertiary)', transition: 'color 150ms ease' }}>→</span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── 8. DISCLAIMER ── */}
-      <div
-        style={{
-          padding: '10px 24px',
-          borderTop: '1px solid #E8E8E8',
-          background: '#FFFFFF',
-          textAlign: 'center',
-        }}
-      >
-        <p
-          style={{
-            fontSize: 10,
-            color: '#888888',
-            margin: 0,
-            letterSpacing: '0.02em',
-          }}
-        >
-          Sourced from public federal court records. For informational purposes only &middot; Not legal advice.
+      {/* ── RECENTLY UPDATED TABLE ── */}
+      <section style={{ background: 'var(--surface-secondary)', padding: 'var(--space-10) 0', borderTop: '1px solid var(--surface-border)' }}>
+        <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 var(--space-8)' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--space-4)' }}>
+            <h2 style={{
+              fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 17,
+              color: 'var(--text-primary)', letterSpacing: '-0.01em', margin: 0,
+            }}>
+              Recently Updated
+            </h2>
+            <Link href="/cases" style={{ font: 'var(--type-body-md)', color: 'var(--link)' }}>View all →</Link>
+          </div>
+
+          {/* DataTable */}
+          <div style={{
+            background: 'var(--surface-primary)', border: '1px solid var(--surface-border)',
+            borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-xs)',
+          }}>
+            {/* Toolbar */}
+            <div style={{
+              height: 44, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              padding: '0 var(--space-4)', borderBottom: '1px solid var(--table-border)',
+            }}>
+              <span style={{ font: 'var(--type-body-sm)', color: 'var(--text-tertiary)' }}>
+                Showing <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text-primary)' }}>10</span> most recent updates
+              </span>
+            </div>
+
+            {/* Header */}
+            <div style={{
+              display: 'grid', gridTemplateColumns: '140px 100px 1fr 120px 80px',
+              height: 36, background: 'var(--table-header-bg)',
+              borderBottom: '2px solid var(--table-border-strong)',
+              alignItems: 'center', padding: '0 var(--space-3)',
+            }}>
+              {['Case ID', 'District', 'Case Type', 'Filed', 'Status'].map((col, i) => (
+                <span key={col} style={{
+                  font: 'var(--type-label-md)', letterSpacing: '0.07em', textTransform: 'uppercase',
+                  color: 'var(--text-tertiary)', whiteSpace: 'nowrap', userSelect: 'none',
+                  textAlign: i === 3 ? 'right' : 'left',
+                  paddingRight: i === 3 ? 'var(--space-3)' : 0,
+                }}>
+                  {col}
+                </span>
+              ))}
+            </div>
+
+            {/* Rows */}
+            {RECENT_CASES.map((row, i) => (
+              <Link
+                key={row.id}
+                href={row.href}
+                className="homepage-table-row"
+                style={{
+                  display: 'grid', gridTemplateColumns: '140px 100px 1fr 120px 80px',
+                  height: 44, alignItems: 'center', padding: '0 var(--space-3)',
+                  borderBottom: i < RECENT_CASES.length - 1 ? `1px solid var(--table-border)` : 'none',
+                  background: i % 2 === 0 ? 'var(--surface-primary)' : 'var(--table-row-alt)',
+                  textDecoration: 'none', transition: 'background 100ms ease',
+                }}
+              >
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--link)', fontWeight: 500 }}>{row.id}</span>
+                <span style={{ font: 'var(--type-body-sm)', color: 'var(--text-primary)' }}>{row.district}</span>
+                <span style={{ font: 'var(--type-body-md)', color: 'var(--text-primary)' }}>{row.type}</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--text-secondary)', textAlign: 'right', paddingRight: 'var(--space-3)', fontVariantNumeric: 'tabular-nums' }}>{row.filed}</span>
+                <StatusBadge status={row.status} />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHAT'S HAPPENING STRIP ── */}
+      <section style={{ background: 'var(--surface-primary)', padding: 'var(--space-8) 0', borderTop: '1px solid var(--surface-border)' }}>
+        <div style={{ maxWidth: 'var(--container-max)', margin: '0 auto', padding: '0 var(--space-8)' }}>
+          <div style={{
+            background: 'var(--surface-secondary)', border: '1px solid var(--surface-border)',
+            borderRadius: 'var(--radius-md)', padding: 'var(--space-5)',
+            display: 'grid', gridTemplateColumns: '1fr 1px 1fr 1px 1fr', gap: 0,
+          }}>
+            {[
+              { heading: 'Most Active Districts', items: WHATS_HAPPENING.districts },
+              null,
+              { heading: 'Trending Case Types', items: WHATS_HAPPENING.caseTypes },
+              null,
+              { heading: 'Notable Judges', items: WHATS_HAPPENING.judges },
+            ].map((col, i) => {
+              if (!col) return <div key={i} style={{ background: 'var(--surface-border)' }} />;
+              return (
+                <div key={col.heading} style={{ padding: '0 var(--space-6)' }}>
+                  <h3 style={{
+                    font: 'var(--type-label-sm)', letterSpacing: '0.09em', textTransform: 'uppercase',
+                    color: 'var(--text-tertiary)', marginBottom: 'var(--space-3)',
+                  }}>
+                    {col.heading}
+                  </h3>
+                  {col.items.map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      style={{
+                        display: 'block', height: 28,
+                        font: 'var(--type-body-md)', color: 'var(--link)',
+                        overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                        lineHeight: '28px', textDecoration: 'none',
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── DISCLAIMER ── */}
+      <div style={{
+        padding: '10px var(--space-6)', borderTop: '1px solid var(--surface-border)',
+        background: 'var(--surface-primary)', textAlign: 'center',
+      }}>
+        <p style={{ fontSize: 10, color: 'var(--text-tertiary)', margin: 0, letterSpacing: '0.02em' }}>
+          Federal court data sourced from FJC IDB, CourtListener, RECAP, and PACER. For informational purposes only · Not legal advice.
         </p>
       </div>
 
-      {/* Hover styles for cards and table rows */}
+      {/* Hover styles */}
       <style>{`
         .homepage-card:hover {
-          border-color: #0052CC !important;
-          box-shadow: 0 2px 8px rgba(0,82,204,0.08) !important;
+          border-color: var(--link) !important;
+          box-shadow: var(--shadow-sm) !important;
+          transform: translateY(-1px);
+        }
+        .homepage-card:hover .card-arrow {
+          color: var(--link) !important;
+        }
+        .homepage-card:active {
+          transform: translateY(0);
+          box-shadow: var(--shadow-xs) !important;
         }
         .homepage-table-row:hover {
-          background: #EFF5FF !important;
+          background: var(--table-row-hover) !important;
+        }
+        @media (max-width: 768px) {
+          .homepage-card { /* handled by grid auto-fill */ }
         }
         @media (max-width: 640px) {
           .homepage-table-row {
-            grid-template-columns: 80px 1fr 100px !important;
+            grid-template-columns: 100px 1fr 80px !important;
           }
-          .homepage-table-row > span:nth-child(3),
-          .homepage-table-row > span:nth-child(5) {
+          .homepage-table-row > span:nth-child(2),
+          .homepage-table-row > span:nth-child(4) {
             display: none !important;
           }
         }

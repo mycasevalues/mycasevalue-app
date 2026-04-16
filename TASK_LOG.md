@@ -284,4 +284,40 @@
 **Fix:** Changed Suspense fallback background to `#F7F7F5` (neutral surface color matching the app background). The page already had proper Suspense wrapping — no skeleton UI was present, just a colored background.
 **Files changed:** `app/sign-in/page.tsx`
 
+---
+
+## Phase 12 — Enterprise Polish Pass (Bloomberg × Lex Machina × Financial Terminal)
+
+### Foundation: Design Token Layer v2 [DONE]
+- Rewrote `styles/tokens.css` — full semantic token system replacing --bl-* naming
+  - Chrome: --chrome-bg #111111, --chrome-border #2A2A2A, --chrome-text #E8E8E8
+  - Surface: --surface-primary #FFFFFF, --surface-secondary #F8F8F6, --surface-tertiary #F2F2EF
+  - Text: --text-primary #0F0F0F, --text-secondary #444444, --text-tertiary #777777
+  - Accent: #D4500A (was #E65C00), Link: #0A50A0 (was #0052CC)
+  - Data semantic: --data-positive #1A6B3A, --data-negative #B02020
+  - Table tokens: --table-header-bg, --table-row-alt, --table-row-hover
+  - Status tokens: --status-active-*, --status-closed-*, --status-pending-*
+  - Composite typography tokens: --type-display, --type-data-xl, etc.
+  - Layout tokens: --sidebar-width 224px, --rightrail-width 248px, --topnav-height 52px
+  - Shadow system: --shadow-xs through --shadow-lg, --shadow-focus (orange ring)
+  - Transition system: --transition-fast 100ms, --transition-base 150ms
+  - All old --bl-* tokens preserved as backward-compat aliases
+- Rewrote `app/globals.css` — consolidated from ~1487 lines, removed duplication
+  - Body bg: var(--surface-secondary)
+  - Focus rings: orange accent with --shadow-focus
+  - Scrollbar: 4px width, transparent track
+  - New status badge classes (.badge-active, .badge-closed, .badge-pending)
+  - All hardcoded hex replaced with token references
+  - New @keyframes barFill for HorizontalBarChart
+
+### PAGE 1 GATE: Homepage (/) [DONE]
+- Rewrote `app/page.tsx` — enterprise data-terminal homepage
+  - ContextBar: 40px, filter pills (All Circuits, All Case Types, All Years)
+  - Hero: centered, eyebrow + h1 "The Federal Court Record. Open to Everyone." + dual CTAs + 4-stat ticker
+  - Browse All Content: 3-col grid, 6 cards with SVG icons, left accent bars, stat rows
+  - Recently Updated DataTable: 10 rows, proper header, alternating rows, status badges
+  - What's Happening strip: 3-col (Most Active Districts, Trending Case Types, Notable Judges)
+  - Disclaimer with data source citation
+  - All colors use token variables, zero hardcoded hex
+
 Last updated: 2026-04-16
