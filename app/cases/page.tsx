@@ -30,7 +30,7 @@ function getCategoryStats(categoryId: string, opts: { nos: string }[]): { totalC
   }
   return {
     totalCases: total,
-    avgWinRate: count > 0 ? Math.round(wrSum / count) : 0,
+    avgWinRate: 0, // Removed: averaging win rates across case types is misleading
     avgSettlement: count > 0 ? Math.round(spSum / count) : 0,
     avgDuration: count > 0 ? Math.round(moSum / count) : 0,
   };
@@ -202,11 +202,11 @@ export default function CasesIndexPage() {
             </div>
           </div>
           <div>
-            <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: getWinRateColor(platformStats.avgWinRate), marginBottom: 4 }}>
-              {platformStats.avgWinRate}%
+            <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 4 }}>
+              55+
             </div>
             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-              Average Win Rate
+              Years of Data
             </div>
           </div>
         </div>

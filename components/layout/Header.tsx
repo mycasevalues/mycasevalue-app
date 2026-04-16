@@ -733,7 +733,7 @@ export default function Header() {
               <Link
                 href="/sign-up"
                 onClick={() => setMobileOpen(false)}
-                className="block py-3 px-4 rounded-full bg-brand-blue text-white font-semibold text-sm text-center hover:bg-brand-blue-dark transition-colors"
+                className="block py-3 px-4 rounded bg-brand-blue text-white font-semibold text-sm text-center hover:bg-brand-blue-dark transition-colors"
               >
                 Get Started
               </Link>

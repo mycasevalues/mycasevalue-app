@@ -102,8 +102,8 @@ function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
       href={item.href}
       className={`flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm transition-all duration-150 ${
         isActive
-          ? 'bg-blue-50 text-brand-blue font-semibold'
-          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+          ? 'bg-brand-blue/8 text-brand-blue font-medium border-l-2 border-brand-blue -ml-[2px]'
+          : 'text-gray-500 hover:bg-gray-50 hover:text-gray-800'
       }`}
     >
       <SidebarIcon path={item.icon} />
