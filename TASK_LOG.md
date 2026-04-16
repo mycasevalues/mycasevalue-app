@@ -842,4 +842,43 @@ All forbidden Bloomberg colors eliminated from both target files. All Westlaw to
 
 ### Session Gate: PASS
 
+---
+
+## Session 11 — WorkspaceShell + BrowseNav Wiring
+
+**Commit:** `[Session 11] Shell: Wire BrowseNav into layout, rebuild WorkspaceShell to Westlaw design` — sha: e9a61bc9
+
+**Risk Level:** HIGH — WorkspaceShell renders on every workspace route
+
+### Files Modified (2)
+
+**app/layout.tsx**
+- Imported BrowseNav from components/layout/BrowseNav
+- Added `<ConditionalHeader><BrowseNav /></ConditionalHeader>` after Header
+- Dual nav now visible: Header (54px) + BrowseNav (40px) = 94px total
+
+**components/layout/WorkspaceShell.tsx** — Full rebuild from Bloomberg to Westlaw
+- Updated JSDoc: Westlaw Precision workspace layout wrapper
+- Added `isDetailPage()` — detects detail pages (/districts/[code], /judges/[id], /case/[id]) that have their own three-column layout
+- Detail page mode: ContextBar + children + WorkspaceFooter (NO WorkspaceSidebar — prevents double sidebar)
+- Listing page mode: WorkspaceSidebar + ContextBar + children + WorkspaceFooter
+- New ContextBar component: 32px height, var(--surf) bg, breadcrumb trail with › separators, var(--link) links, var(--font-ui)
+- Inline breadcrumb helper (pathToCrumbs) replaces import of Bloomberg-styled ResearchBreadcrumb
+- Mobile toggle: updated to 94px top offset, var(--card) bg, var(--bdr) border, var(--text1)/var(--text2) colors, var(--font-ui)
+- Removed all Bloomberg hex values (#FFFFFF, #E0E0E0, #444444, #1A1A1A, #E8E8E8)
+- Preserved: WORKSPACE_ROUTES list, isWorkspaceRoute, isFullScreenRoute, ConditionalFooter, ConditionalBanner, ConditionalHeader exports
+
+### Verification Results
+
+1. **Dual nav visible (Header + BrowseNav)** → PASS (both in layout.tsx, ConditionalHeader-wrapped)
+2. **Three-column layout on detail pages** → PASS (WorkspaceShell passes through, no double sidebar)
+3. **Context bar present** → PASS (32px, var(--surf), breadcrumb trail with › separators)
+4. **No Bloomberg hex in WorkspaceShell** → PASS (zero instances)
+5. **WorkspaceSidebar on listing pages** → PASS (results mode preserved)
+6. **All workspace routes preserved** → PASS (WORKSPACE_ROUTES unchanged)
+7. **Conditional exports preserved** → PASS (ConditionalFooter, ConditionalBanner, ConditionalHeader)
+8. **npm run build → Webpack compilation** → PASS (pre-existing TS error unrelated)
+
+### Session Gate: PASS
+
 Last updated: 2026-04-16
