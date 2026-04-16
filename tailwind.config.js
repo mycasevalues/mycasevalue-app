@@ -40,8 +40,8 @@ module.exports = {
           'bg-neu':    '#FFFBEB',
         },
         // Legacy compat — mapped to brand tokens (consolidated)
-        navy: { DEFAULT: '#0966C3', dark: '#004182', light: '#1577D5' },
-        midnight: { DEFAULT: '#0966C3', 50: '#1577D5', 100: '#0966C3', 200: '#004182', 800: '#F7F8FA', 900: '#FFFFFF' },
+        navy: { DEFAULT: '#0f2240', dark: '#1e40af', light: '#3b82f6' },
+        midnight: { DEFAULT: '#0f2240', 50: '#3b82f6', 100: '#1a56db', 200: '#1e40af', 800: '#F7F8FA', 900: '#FFFFFF' },
         outcome: {
           win: '#15803D',
           'win-bg': '#F0FDF4',
