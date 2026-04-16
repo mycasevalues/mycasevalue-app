@@ -207,21 +207,21 @@ export default function AboutPage() {
         .source-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 6px;
           padding: 1.5rem;
-          transition: all 0.2s ease;
+          transition: border-color 150ms ease, background-color 150ms ease;
         }
 
         .source-card:hover {
-          border-color: var(--accent-primary);
-          box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
-          transform: translateY(-2px);
+          border-color: rgba(59,130,246,0.3);
+          background: rgba(59,130,246,0.02);
         }
 
         .source-title {
           font-family: var(--font-inter);
-          font-size: 1rem;
+          font-size: 0.9375rem;
           font-weight: 600;
+          letter-spacing: -0.01em;
           color: var(--color-text-primary);
           margin-bottom: 0.75rem;
         }
