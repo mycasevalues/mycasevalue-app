@@ -254,27 +254,30 @@ export default async function DistrictPage({ params }: PageProps) {
 
       {/* Hero Section */}
       <header style={{
-        background: 'var(--gradient-hero)',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
-        padding: 'clamp(32px, 6vw, 56px) 0',
+        background: '#080d19',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        padding: '48px 0 40px',
+        position: 'relative',
+        overflow: 'hidden',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)', position: 'relative' }}>
           <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 8,
-            background: 'var(--accent-primary)',
-            color: 'var(--color-text-inverse)',
-            padding: '4px 12px',
-            borderRadius: 8,
-            fontSize: 11,
-            fontWeight: 600,
-            letterSpacing: '0.5px',
-            textTransform: 'uppercase',
-            marginBottom: 16,
-            fontFamily: 'var(--font-body)',
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
           }}>
-            Circuit {districtMeta.circuit}
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            C{String(districtMeta.circuit).padStart(2, '0')} · Circuit {districtMeta.circuit}
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '16px' }}>
