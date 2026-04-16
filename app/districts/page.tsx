@@ -305,32 +305,52 @@ export default function DistrictsPage() {
 
       {/* Hero */}
       <header style={{
-        background: 'var(--gradient-hero)',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
-        padding: '20px 0',
+        background: '#080d19',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        padding: '28px 0 32px',
+        position: 'relative',
+        overflow: 'hidden',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
-          <h1 style={{
-            color: 'var(--color-text-inverse)',
-            fontFamily: 'var(--font-display)',
-            letterSpacing: '-1.5px',
-            fontSize: 'clamp(24px, 4vw, 32px)',
-            lineHeight: 1.2,
-            fontWeight: 600,
-            margin: '0 0 8px',
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)', position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 12,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
           }}>
-            District Court Analytics
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Venue Intelligence
+          </div>
+          <h1 style={{
+            color: '#ffffff',
+            fontFamily: 'var(--font-inter)',
+            letterSpacing: '-0.025em',
+            fontSize: 'clamp(26px, 4vw, 32px)',
+            lineHeight: 1.1,
+            fontWeight: 700,
+            margin: '0 0 10px',
+          }}>
+            Federal District Courts
           </h1>
 
           <p style={{
-            color: 'rgba(255,255,255,0.7)',
-            fontFamily: 'var(--font-body)',
-            fontSize: 14,
-            lineHeight: 1.5,
+            color: 'rgba(255,255,255,0.6)',
+            fontFamily: 'var(--font-inter)',
+            fontSize: 15,
+            lineHeight: 1.6,
             maxWidth: 700,
             margin: 0,
           }}>
-            All {totalDistricts} federal districts across {CIRCUITS.length} circuits with case outcome data.
+            All {totalDistricts} federal judicial districts across {CIRCUITS.length} circuits. Outcome data, venue analysis, and settlement patterns by jurisdiction.
           </p>
         </div>
       </header>
