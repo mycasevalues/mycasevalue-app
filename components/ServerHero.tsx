@@ -793,32 +793,52 @@ export default function ServerHero() {
       </div>
 
       {/* ── BOTTOM CTA ────────────────── */}
-      <div style={{ background: 'var(--gradient-hero)', padding: '80px 24px' }}>
-        <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', marginBottom: '16px' }}>
-            Start Researching Today
+      <div style={{ background: '#080d19', padding: '80px 24px', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Free · No Account Required
+          </div>
+          <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 36px)', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-inter)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.1 }}>
+            Start researching today
           </h2>
-          <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: '480px', margin: '0 auto 32px', lineHeight: 1.7 }}>
+          <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: 480, margin: '0 auto 32px', lineHeight: 1.7 }}>
             Free basic reports. No account required. See real federal court outcome data in under 60 seconds.
           </p>
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="/sign-up" className="hero-cta-primary" style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              padding: '1rem 2rem', background: 'var(--accent-primary)',
-              color: 'var(--color-surface-1)', borderRadius: '12px', fontWeight: 600, fontSize: '0.875rem',
-              fontFamily: 'var(--font-body)', textDecoration: 'none', textTransform: 'uppercase',
-              letterSpacing: '0.04em', transition: 'background 200ms',
+          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="/sign-up" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              padding: '10px 20px', background: '#1a56db',
+              color: '#ffffff', borderRadius: 6, fontWeight: 600, fontSize: 13,
+              fontFamily: 'var(--font-inter)', textDecoration: 'none',
+              letterSpacing: '-0.005em', border: '1px solid #1a56db',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
+              transition: 'background-color 150ms ease, border-color 150ms ease',
             }}>
               Start Researching
             </a>
             <a href="/pricing" style={{
               display: 'inline-flex', alignItems: 'center',
-              padding: '1rem 2rem', background: 'transparent', color: 'var(--color-surface-1)',
-              border: '1.5px solid rgba(255,255,255,0.5)', borderRadius: '12px',
-              fontWeight: 600, fontSize: '0.875rem', fontFamily: 'var(--font-body)',
-              textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.04em',
-              transition: 'all 200ms',
-            }} className="hero-cta-secondary">
+              padding: '10px 20px', background: 'transparent', color: '#ffffff',
+              border: '1px solid rgba(255,255,255,0.2)', borderRadius: 6,
+              fontWeight: 600, fontSize: 13, fontFamily: 'var(--font-inter)',
+              textDecoration: 'none', letterSpacing: '-0.005em',
+              transition: 'border-color 150ms ease, background-color 150ms ease',
+            }}>
               View Pricing
             </a>
           </div>
