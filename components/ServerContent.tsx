@@ -126,7 +126,7 @@ export default function ServerContent() {
                 <div
                   style={{
                     flexShrink: 0,
-                    fontFamily: '"PT Mono", monospace',
+                    fontFamily: 'var(--font-mono)',
                     fontSize: '18px',
                     fontWeight: 600,
                     color: 'var(--accent-primary)',
@@ -756,7 +756,7 @@ export default function ServerContent() {
                       top: '-12px',
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      fontFamily: '"PT Mono", monospace',
+                      fontFamily: 'var(--font-mono)',
                       fontSize: '10px',
                       fontWeight: 600,
                       letterSpacing: '1px',

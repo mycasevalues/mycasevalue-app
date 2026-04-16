@@ -429,7 +429,7 @@ export default function PlatformPage() {
           font-size: clamp(20px, 3vw, 32px);
           font-weight: 700;
           margin-bottom: 8px;
-          font-family: var(--font-pt-mono);
+          font-family: var(--font-mono);
         }
 
         .market-label {

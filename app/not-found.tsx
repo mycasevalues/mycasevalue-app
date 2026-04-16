@@ -47,7 +47,7 @@ export default function NotFound() {
           {/* 404 Number */}
           <div
             style={{
-              fontFamily: '"PT Mono", monospace',
+              fontFamily: 'var(--font-mono)',
               fontSize: '96px',
               fontWeight: 600,
               color: 'var(--color-text-secondary)',

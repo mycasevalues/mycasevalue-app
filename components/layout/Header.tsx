@@ -27,8 +27,8 @@ import { createBrowserClient } from '@supabase/ssr';
 const SEARCH_SUGGESTIONS = [
   { label: 'Employment Discrimination', href: '/cases/employment-workplace/employment-discrimination', type: 'case' },
   { label: 'Personal Injury', href: '/cases/personal-injury', type: 'case' },
-  { label: 'Southern District of New York', href: '/districts/nysd', type: 'district' },
-  { label: 'Central District of California', href: '/districts/cacd', type: 'district' },
+  { label: 'Southern District of New York', href: '/districts/SDNY', type: 'district' },
+  { label: 'Central District of California', href: '/districts/CACD', type: 'district' },
   { label: 'Civil Rights', href: '/cases/civil-rights', type: 'case' },
   { label: 'Consumer Protection', href: '/cases/consumer-protection', type: 'case' },
   { label: 'Browse All Judges', href: '/judges', type: 'judge' },

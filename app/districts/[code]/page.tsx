@@ -16,6 +16,49 @@ interface PageProps {
   params: Promise<{ code: string }>;
 }
 
+// Alias map: common alternative slugs → canonical DISTRICTS_MAP keys
+// Handles reversed state+direction format (nysd→SDNY) and missing-DN suffixes (njd→NJDN)
+const SLUG_ALIASES: Record<string, string> = {
+  'NYSD': 'SDNY', 'NYED': 'EDNY', 'NYND': 'NDNY', 'NYWD': 'WDNY',
+  'ILND': 'NDIL', 'ILCD': 'CDIL', 'ILSD': 'SDIL',
+  'TXED': 'EDTX', 'TXND': 'NDTX', 'TXSD': 'SDTX', 'TXWD': 'WDTX',
+  'FLND': 'NDFL', 'FLMD': 'MDFL', 'FLSD': 'SDFL',
+  'PAED': 'EDPA', 'PAMD': 'MDPA', 'PAWD': 'WDPA',
+  'CAED': 'CAED', 'CASD': 'CASD',
+  'LAED': 'EDLA', 'LAMD': 'MDLA', 'LAWD': 'WDLA',
+  'MSND': 'NDMS', 'MSSD': 'SDMS',
+  'VAND': 'EDVA', 'VAED': 'EDVA', 'VAWD': 'WDVA',
+  'WVND': 'NDWV', 'WVSD': 'SDWV',
+  'NCED': 'EDNC', 'NCMD': 'MDNC', 'NCWD': 'WDNC',
+  'KYED': 'EDKY', 'KYWD': 'WDKY',
+  'MIED': 'EDMI', 'MIWD': 'WDMI',
+  'OHND': 'NDOH', 'OHSD': 'SDOH',
+  'TNED': 'EDTN', 'TNMD': 'MDTN', 'TNWD': 'WDTN',
+  'INED': 'NDIN', 'INND': 'NDIN', 'INSD': 'SDIN',
+  'WIED': 'EDWI', 'WIWD': 'WDWI',
+  'ARED': 'EDAR', 'ARWD': 'WDAR',
+  'IAND': 'NDIA', 'IASD': 'SDIA',
+  'MOED': 'EDMO', 'MOWD': 'WDMO',
+  'ALED': 'NDAL', 'ALND': 'NDAL', 'ALMD': 'MDAL', 'ALSD': 'SDAL',
+  'GAED': 'NDGA', 'GAND': 'NDGA', 'GAMD': 'MDGA', 'GASD': 'SDGA',
+  'WAED': 'EDWA', 'WAWD': 'WDWA',
+  'OKED': 'EDOK', 'OKND': 'NDOK', 'OKWD': 'WDOK',
+  // Missing-suffix aliases (3-letter codes → 4-letter canonical)
+  'NJD': 'NJDN', 'MED': 'MEDN', 'NHD': 'NHDN', 'MAD': 'MADN', 'RID': 'RIDN',
+  'PRD': 'PRDN', 'VTD': 'VTDN', 'CTD': 'CTDN', 'DED': 'DEDN', 'VID': 'VIDN',
+  'MDD': 'MDDN', 'SCD': 'SCDN', 'MND': 'MNDN', 'NED': 'NEDN', 'NDD': 'NDDN',
+  'SDD': 'SDDN', 'AKD': 'AKDN', 'AZD': 'AZDN', 'GUD': 'GUDN', 'HID': 'HIDN',
+  'IDD': 'IDDN', 'MTD': 'MTDN', 'NVD': 'NVDN', 'MPD': 'MPDN', 'ORD': 'ORDN',
+  'COD': 'CODN', 'KSD': 'KSDN', 'NMD': 'NMDN', 'UTD': 'UTDN', 'WYD': 'WYDN',
+  'DCD': 'DCDN',
+};
+
+/** Resolve a URL slug to its canonical DISTRICTS_MAP key */
+function resolveDistrictCode(raw: string): string {
+  const upper = raw.toUpperCase();
+  return SLUG_ALIASES[upper] || upper;
+}
+
 // District metadata mapping
 const DISTRICTS_MAP: Record<string, { name: string; fullName: string; circuit: number; states: string[] }> = {
   'MEDN': { name: 'D. Me.', fullName: 'District of Maine', circuit: 1, states: ['ME'] },
@@ -121,7 +164,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { code } = await params;
-  const upperCode = code.toUpperCase();
+  const upperCode = resolveDistrictCode(code);
   const districtMeta = DISTRICTS_MAP[upperCode];
 
   if (!districtMeta) {
@@ -190,7 +233,7 @@ function getTopCaseTypesForDistrict(code: string) {
 
 export default async function DistrictPage({ params }: PageProps) {
   const { code } = await params;
-  const upperCode = code.toUpperCase();
+  const upperCode = resolveDistrictCode(code);
   const districtMeta = DISTRICTS_MAP[upperCode];
 
   if (!districtMeta) {

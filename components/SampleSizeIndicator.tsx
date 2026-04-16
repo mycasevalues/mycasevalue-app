@@ -14,7 +14,7 @@ export default function SampleSizeIndicator({ count }: SampleSizeIndicatorProps)
   return (
     <span
       style={{
-        fontFamily: '"PT Mono", monospace',
+        fontFamily: 'var(--font-mono)',
         fontSize: '12px',
         color: 'var(--color-text-muted)',
         marginLeft: '8px',

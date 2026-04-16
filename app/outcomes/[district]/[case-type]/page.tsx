@@ -493,7 +493,7 @@ export default async function OutcomesPage({
                       fontSize: '16px',
                       fontWeight: 600,
                       color: outcome.color,
-                      fontFamily: "'PT Mono', monospace",
+                      fontFamily: 'var(--font-mono)',
                     }}>
                       {outcome.value}%
                     </span>

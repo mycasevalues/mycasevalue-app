@@ -212,4 +212,76 @@
 
 ---
 
+## Phase 11 — Post-Redesign Bug Fixes (from BUGS.md QA audit)
+
+### FIX GROUP 1 — CRITICAL: District slug mismatch (BUG-001, BUG-002, BUG-003)
+**Root cause:** Sidebar, header search, and homepage linked to reversed slug format (`nysd` = state+direction) but DISTRICTS_MAP uses `SDNY` (direction+state). Simple `toUpperCase()` was already present but didn't fix the ordering mismatch.
+**Fix (two-pronged):**
+1. Added `SLUG_ALIASES` map + `resolveDistrictCode()` function in `app/districts/[code]/page.tsx` — maps ~80 alternative slug formats (reversed order, missing DN suffix) to canonical DISTRICTS_MAP keys. Both `generateMetadata` and `DistrictPage` now use `resolveDistrictCode()` instead of raw `toUpperCase()`.
+2. Updated all link hrefs to use canonical codes:
+   - `components/layout/WorkspaceSidebar.tsx`: nysd→SDNY, cacd→CACD, ilnd→NDIL, flsd→SDFL, paed→EDPA, njd→NJDN, cand→CAND
+   - `components/layout/Header.tsx`: nysd→SDNY, cacd→CACD
+   - `app/page.tsx`: nysd→SDNY, cacd→CACD, ilnd→NDIL, njd→NJDN, paed→EDPA
+**Files changed:** `app/districts/[code]/page.tsx`, `components/layout/WorkspaceSidebar.tsx`, `components/layout/Header.tsx`, `app/page.tsx`
+**Verification:** Zero instances of old-format slugs remain in codebase. Both `/districts/nysd` (alias) and `/districts/SDNY` (canonical) will resolve.
+
+### FIX GROUP 2 — CRITICAL: Judge detail pages 404 (BUG-004, also fixes BUG-014)
+**Root cause:** `generateStaticParams` pre-built pages from `mockJudgesData.judges` IDs, but deployed Vercel build didn't serve these as dynamic fallbacks. Real Supabase judge IDs weren't pre-generated, so all judge detail links from the index table produced 404.
+**Fix:**
+1. Removed `generateStaticParams()` entirely from `app/judges/[judgeId]/page.tsx`
+2. Added `export const dynamic = 'force-dynamic'` — judge data fetched at request time from Supabase via `getJudgeById()`
+3. Removed conflicting `export const revalidate = 604800` (can't coexist with force-dynamic)
+4. Kept `mockJudgesData` import for district average calculation (fallback data)
+**Side-effect fix (BUG-014):** With dynamic rendering, Next.js streaming properly replaces the loading skeleton with either the profile or `notFound()` — no more shimmer+404 overlap.
+**Files changed:** `app/judges/[judgeId]/page.tsx`
+
+### FIX GROUP 3 — HIGH: Auth URL redirects (BUG-006)
+**Root cause:** Auth routes are `/sign-in` and `/sign-up` but users commonly type `/login` and `/signup`.
+**Fix:** Added permanent redirects in `next.config.js`:
+- `/login` → `/sign-in`
+- `/signup` → `/sign-up`
+**Files changed:** `next.config.js`
+
+### FIX GROUP 7 — LOW: Singular URL redirects (BUG-015)
+**Root cause:** No redirects from `/district` → `/districts`, `/judge` → `/judges`, `/case` → `/cases`.
+**Fix:** Added permanent redirects in `next.config.js` (with path passthrough for `/district/:path*` and `/judge/:path*`).
+**Files changed:** `next.config.js`
+
+### FIX GROUP 4 — HIGH: Attorney page layout (BUG-007, BUG-008)
+**Root cause:** `app/attorney/page.tsx` had a full-width orange (#E65C00) hero banner that visually overrode the dark header. `app/attorney/layout.tsx` imported `AttorneyToolsNav` which added a duplicate horizontal nav on mobile.
+**Fix:**
+1. Replaced the orange hero section in `app/attorney/page.tsx` with a workspace-consistent white header section (breadcrumb + title + subtitle on #FFFFFF background with #E0E0E0 border). Matches `/districts`, `/judges`, `/cases` workspace pages.
+2. Removed `AttorneyToolsNav` import from `app/attorney/layout.tsx` — sidebar already provides attorney tool navigation. Layout now passes children through directly.
+3. Removed unused `BackIcon` component from attorney page.
+**Files changed:** `app/attorney/page.tsx`, `app/attorney/layout.tsx`
+
+### FIX GROUP 5 — MEDIUM: IBM Plex Mono font (BUG-011, BUG-012)
+**Root cause:** `lib/fonts.ts` loaded JetBrains Mono woff2 files under the `plexMono` variable name, so `--font-mono` resolved to JetBrains Mono instead of IBM Plex Mono. Additionally, 10 files hardcoded `fontFamily: '"PT Mono", monospace'` instead of using `var(--font-mono)`.
+**Fix:**
+1. Downloaded real IBM Plex Mono woff2 files (400/500/600/700 latin) from @fontsource/ibm-plex-mono to `public/fonts/ibm-plex-mono-*.woff2`
+2. Updated `lib/fonts.ts` to load `ibm-plex-mono-*.woff2` files instead of `jetbrains-mono-*.woff2`
+3. Replaced all hardcoded "PT Mono" references across 7 files with `var(--font-mono)`:
+   - `components/SampleSizeIndicator.tsx`
+   - `components/AnimatedDataViz.tsx`
+   - `components/ServerContent.tsx` (2 instances)
+   - `app/not-found.tsx`
+   - `app/error.tsx`
+   - `app/outcomes/[district]/[case-type]/page.tsx`
+   - `app/es/pricing/page.tsx` (3 instances)
+4. Updated `app/platform/page.tsx`: `--font-pt-mono` → `--font-mono`
+5. Updated `styles/fonts.css` comment to reference IBM Plex Mono
+**Files changed:** `lib/fonts.ts`, `public/fonts/ibm-plex-mono-*.woff2` (4 new), 8 component/page files
+**Verification:** Zero instances of "PT Mono" or "pt-mono" remain in codebase. `--font-mono` chain: `var(--font-plex-mono)` → IBM Plex Mono font files
+
+### FIX GROUP 6 — MEDIUM: Header color on workspace routes (BUG-009, BUG-010)
+**Investigation:** `ConditionalHeader` (WorkspaceShell.tsx line 160-164) only hides the header on full-screen routes (`/terminal`). The dark #1A1A1A header IS rendered on all workspace routes including `/districts` and `/cases/*`. The `<Header />` component is wrapped in `<ConditionalHeader>` in `app/layout.tsx` (line 314), which returns children for all non-terminal routes.
+**Root cause of false positive:** WebFetch audit parser identified the white content area at the top of workspace pages as "the header". The actual dark `<Header />` is rendered above WorkspaceShell in the DOM.
+**Decision:** Closed as **BY DESIGN**. The dark header renders on all routes; workspace pages have white content areas below it.
+**Files changed:** None
+
+### FIX GROUP 8 — LOW: Sign-in skeleton flash (BUG-013)
+**Root cause:** Suspense fallback in `app/sign-in/page.tsx` used `background: 'var(--accent-primary)'` (orange) which flashed the accent color before the auth form hydrated.
+**Fix:** Changed Suspense fallback background to `#F7F7F5` (neutral surface color matching the app background). The page already had proper Suspense wrapping — no skeleton UI was present, just a colored background.
+**Files changed:** `app/sign-in/page.tsx`
+
 Last updated: 2026-04-16

@@ -9,15 +9,11 @@ import JudgeProfileClient from '@/components/JudgeProfileClient';
 import JudgeAlertButton from '@/components/JudgeAlertButton';
 import { SITE_URL } from '@/lib/site-config';
 
+// Dynamic rendering — judge data fetched at request time from Supabase
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   params: Promise<{ judgeId: string }>;
-}
-
-// Generate static params for mock judges
-export async function generateStaticParams() {
-  return mockJudgesData.judges.map((judge) => ({
-    judgeId: judge.id,
-  }));
 }
 
 // Generate metadata for SEO
@@ -62,8 +58,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
   };
 }
-
-export const revalidate = 604800; // ISR: revalidate every 7 days
 
 export default async function JudgeProfilePage({ params }: PageProps) {
   const { judgeId } = await params;

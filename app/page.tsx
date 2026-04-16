@@ -96,7 +96,7 @@ const RECENT_UPDATES = [
     metric: 'Median award updated',
     value: '$142,500',
     date: 'Apr 2026',
-    href: '/districts/nysd',
+    href: '/districts/SDNY',
   },
   {
     district: 'C.D. Cal.',
@@ -104,7 +104,7 @@ const RECENT_UPDATES = [
     metric: 'Win rate revised',
     value: '47.2%',
     date: 'Apr 2026',
-    href: '/districts/cacd',
+    href: '/districts/CACD',
   },
   {
     district: 'N.D. Ill.',
@@ -112,7 +112,7 @@ const RECENT_UPDATES = [
     metric: 'Settlement range updated',
     value: '$18,000–$95,000',
     date: 'Apr 2026',
-    href: '/districts/ilnd',
+    href: '/districts/NDIL',
   },
   {
     district: 'D.N.J.',
@@ -120,7 +120,7 @@ const RECENT_UPDATES = [
     metric: 'Case volume updated',
     value: '3,241 cases',
     date: 'Mar 2026',
-    href: '/districts/njd',
+    href: '/districts/NJDN',
   },
   {
     district: 'E.D. Pa.',
@@ -128,7 +128,7 @@ const RECENT_UPDATES = [
     metric: 'Disposition time updated',
     value: '12.8 months',
     date: 'Mar 2026',
-    href: '/districts/paed',
+    href: '/districts/EDPA',
   },
 ];
 

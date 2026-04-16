@@ -92,7 +92,7 @@ export default function AnimatedDataViz({
               </label>
               <span
                 style={{
-                  fontFamily: '"PT Mono", monospace',
+                  fontFamily: 'var(--font-mono)',
                   fontSize: '12px',
                   color: 'var(--color-surface-0)',
                   fontWeight: 600,

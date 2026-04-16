@@ -3,9 +3,9 @@
    ============================================================
    Inter loaded via next/font/google in app/layout.tsx (self-hosted
    at build time, zero external requests, GDPR compliant).
-   JetBrains Mono loaded via next/font/local for data values.
+   IBM Plex Mono loaded via next/font/local for data values.
 
-   CSS variables --font-inter and --font-pt-mono are set on <html>
+   CSS variables --font-inter and --font-plex-mono are set on <html>
    and referenced in tokens.css via --font-display, --font-body,
    and --font-mono.
    ============================================================ */

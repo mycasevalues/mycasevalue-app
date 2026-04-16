@@ -120,10 +120,6 @@ const CheckIcon = () => (
   </svg>
 );
 
-const BackIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-);
-
 const FeatureCard = ({
   icon,
   title,
@@ -434,64 +430,49 @@ export default function AttorneyPage() {
           transform: translateY(-2px);
         }
         .attorney-breadcrumb-link:hover {
-          color: #FFFFFF !important;
+          color: #E65C00 !important;
         }
       `}} />
-      {/* Header Section */}
+      {/* Header Section — workspace-consistent (no orange banner) */}
       <section
         style={{
-          backgroundColor: '#E65C00',
-          border: 'none',
-          padding: '20px 20px',
-          textAlign: 'center',
+          backgroundColor: '#FFFFFF',
+          borderBottom: '1px solid #E0E0E0',
+          padding: '32px 24px',
         }}
       >
-        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'left', marginBottom: '24px' }}>
-          {/* Breadcrumb Navigation */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '14px', fontFamily: 'var(--font-inter)' }}>
-            <a href="/" className="attorney-breadcrumb-link" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s ease' }}>Home</a>
-            <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
-            <span style={{ color: '#FFFFFF' }}>Find an Attorney</span>
-          </div>
-          <Link href="/dashboard" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-            <BackIcon />
-            Dashboard
-          </Link>
-        </div>
-        <div
-          style={{
-            maxWidth: '1000px',
-            margin: '0 auto',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '24px',
-          }}
-        >
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          {/* Breadcrumb */}
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '13px', fontFamily: 'var(--font-inter)' }}>
+            <Link href="/" style={{ color: '#E65C00', textDecoration: 'none' }}>Home</Link>
+            <span style={{ color: '#CCCCCC' }}>›</span>
+            <span style={{ color: '#1A1A1A', fontWeight: 600 }}>Attorney Tools</span>
+          </nav>
 
           {/* Title */}
           <h1
             style={{
-              margin: 0,
-              fontSize: '26px',
-              fontWeight: '600',
+              margin: '0 0 8px',
+              fontSize: 'clamp(24px, 4vw, 32px)',
+              fontWeight: '700',
               fontFamily: 'var(--font-display)',
               lineHeight: '1.2',
-              color: '#FFFFFF',
+              color: '#1A1A1A',
+              letterSpacing: '-0.5px',
             }}
           >
-            Outcome Prediction and Settlement Analytics
+            Attorney Tools
           </h1>
 
           {/* Subtitle */}
           <p
             style={{
               margin: 0,
-              fontSize: '14px',
-              color: 'rgba(255,255,255,0.7)',
-              lineHeight: '1.4',
+              fontSize: '15px',
+              color: '#444444',
+              lineHeight: '1.5',
               maxWidth: '700px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
+              fontFamily: 'var(--font-inter)',
             }}
           >
             AI-powered case predictions, data-backed settlement ranges, judge intelligence, and venue optimization.

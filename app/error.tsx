@@ -165,7 +165,7 @@ export default function Error({
               <motion.p
                 variants={itemVariants}
                 style={{
-                  fontFamily: '"PT Mono", monospace',
+                  fontFamily: 'var(--font-mono)',
                   fontSize: '12px',
                   color: 'var(--color-text-secondary)',
                   margin: '0 0 24px',

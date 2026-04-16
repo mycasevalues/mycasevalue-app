@@ -169,6 +169,15 @@ const nextConfig = {
     { source: '/:path*', has: [{ type: 'host', value: 'mycasevalues.com' }], destination: 'https://www.mycasevalues.com/:path*', permanent: true },
     { source: '/case-types', destination: '/cases', permanent: true },
     { source: '/case-types/:path*', destination: '/cases/:path*', permanent: true },
+    // Auth URL aliases (BUG-006)
+    { source: '/login', destination: '/sign-in', permanent: true },
+    { source: '/signup', destination: '/sign-up', permanent: true },
+    // Singular → plural route redirects (BUG-015)
+    { source: '/district', destination: '/districts', permanent: true },
+    { source: '/district/:path*', destination: '/districts/:path*', permanent: true },
+    { source: '/judge', destination: '/judges', permanent: true },
+    { source: '/judge/:path*', destination: '/judges/:path*', permanent: true },
+    { source: '/case', destination: '/cases', permanent: true },
   ],
 };
 

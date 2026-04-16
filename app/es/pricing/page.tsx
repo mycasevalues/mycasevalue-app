@@ -132,7 +132,7 @@ export default function SpanishPricingPage() {
                 Informe Individual
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: 'var(--color-text-primary)', fontFamily: 'PT Mono' }}>
+                <span className="text-4xl font-extrabold" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
                   $5.99
                 </span>
                 <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
@@ -186,7 +186,7 @@ export default function SpanishPricingPage() {
                 Informes Ilimitados
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: 'var(--accent-primary)', fontFamily: 'PT Mono' }}>
+                <span className="text-4xl font-extrabold" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                   $9.99
                 </span>
                 <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
@@ -234,7 +234,7 @@ export default function SpanishPricingPage() {
                 Modo Abogado
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'PT Mono' }}>
+                <span className="text-4xl font-extrabold" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>
                   $29.99
                 </span>
                 <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
