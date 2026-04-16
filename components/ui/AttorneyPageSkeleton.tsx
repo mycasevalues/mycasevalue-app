@@ -86,8 +86,8 @@ export default function AttorneyPageSkeleton({
                 <div style={{ height: 24, width: 60, background: '#F0F3F5', borderRadius: 2 }} />
               </div>
               {/* Card body lines */}
-              <div style={{ height: 14, width: '90%', background: '#F0F1F2', borderRadius: 2, marginBottom: 10 }} />
-              <div style={{ height: 14, width: '75%', background: '#F0F1F2', borderRadius: 2, marginBottom: 10 }} />
+              <div style={{ height: 14, width: '90%', background: 'rgba(255,255,255,0.04)', borderRadius: 2, marginBottom: 10 }} />
+              <div style={{ height: 14, width: '75%', background: 'rgba(255,255,255,0.04)', borderRadius: 2, marginBottom: 10 }} />
               <div style={{ height: 14, width: '60%', background: 'var(--color-surface-1)', borderRadius: 2, marginBottom: 16 }} />
               {/* Card footer bar */}
               <div style={{ height: 8, width: '100%', background: 'var(--color-surface-1)', borderRadius: 2 }}>

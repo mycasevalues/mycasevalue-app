@@ -299,7 +299,7 @@ export default function MotionRateExplorer() {
                 <th
                   style={thStyle}
                   onClick={() => handleSort('motion')}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#F3F4F6')}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F9FAFB')}
                 >
                   Motion Type
@@ -312,7 +312,7 @@ export default function MotionRateExplorer() {
                 <th
                   style={thStyle}
                   onClick={() => handleSort('caseType')}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#F3F4F6')}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F9FAFB')}
                 >
                   Case Type
@@ -325,7 +325,7 @@ export default function MotionRateExplorer() {
                 <th
                   style={thStyle}
                   onClick={() => handleSort('grantRate')}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#F3F4F6')}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F9FAFB')}
                 >
                   Grant Rate
@@ -338,7 +338,7 @@ export default function MotionRateExplorer() {
                 <th
                   style={thStyle}
                   onClick={() => handleSort('sampleSize')}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#F3F4F6')}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F9FAFB')}
                 >
                   Sample Size

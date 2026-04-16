@@ -643,7 +643,7 @@ function SearchPageInner() {
                 padding: 0,
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#F3F4F6';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
                 e.currentTarget.style.color = '#111827';
               }}
               onMouseLeave={(e) => {

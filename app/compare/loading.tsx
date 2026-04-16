@@ -32,7 +32,7 @@ export default function CompareLoading() {
               {/* Card content rows */}
               {[1, 2, 3, 4, 5].map(j => (
                 <div key={j} style={{ marginBottom: j === 5 ? 0 : '16px' }}>
-                  <div style={{ height: '12px', width: '60%', background: '#F0F1F2', borderRadius: '12px', marginBottom: '6px' }} />
+                  <div style={{ height: '12px', width: '60%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', marginBottom: '6px' }} />
                   <div style={{ height: '16px', width: '90%', background: 'var(--border-default)', borderRadius: '12px' }} />
                 </div>
               ))}

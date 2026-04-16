@@ -11,9 +11,9 @@ export default function AboutLoading() {
         {[1, 2, 3].map(i => (
           <div key={i} style={{ marginBottom: '32px' }}>
             <div style={{ height: '24px', width: '40%', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '16px' }} />
-            <div style={{ height: '14px', width: '100%', background: '#F0F1F2', borderRadius: '12px', marginBottom: '8px' }} />
-            <div style={{ height: '14px', width: '90%', background: '#F0F1F2', borderRadius: '12px', marginBottom: '8px' }} />
-            <div style={{ height: '14px', width: '75%', background: '#F0F1F2', borderRadius: '12px' }} />
+            <div style={{ height: '14px', width: '100%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', marginBottom: '8px' }} />
+            <div style={{ height: '14px', width: '90%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', marginBottom: '8px' }} />
+            <div style={{ height: '14px', width: '75%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px' }} />
           </div>
         ))}
       </div>

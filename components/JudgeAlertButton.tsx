@@ -231,7 +231,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     style={{
                       flex: 1,
                       padding: '10px 16px',
-                      background: '#F3F4F6',
+                      background: 'rgba(255,255,255,0.05)',
                       color: 'var(--color-text-secondary)',
                       border: 'none',
                       borderRadius: '8px',
@@ -245,7 +245,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       e.currentTarget.style.background = 'var(--border-default)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = '#F3F4F6';
+                      e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
                     }}
                   >
                     Cancel

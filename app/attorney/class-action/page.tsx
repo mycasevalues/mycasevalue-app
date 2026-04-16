@@ -159,7 +159,7 @@ export default function ClassActionPage() {
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>
-                  <tr style={{ background: '#F3F4F6', borderBottom: `1px solid ${borderColor}` }}>
+                  <tr style={{ background: 'rgba(255,255,255,0.05)', borderBottom: `1px solid ${borderColor}` }}>
                     <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: textColor }}>Case Name</th>
                     <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: textColor }}>Settlement</th>
                     <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: textColor }}>Class Members</th>
@@ -196,7 +196,7 @@ export default function ClassActionPage() {
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>
-                  <tr style={{ background: '#F3F4F6', borderBottom: `1px solid ${borderColor}` }}>
+                  <tr style={{ background: 'rgba(255,255,255,0.05)', borderBottom: `1px solid ${borderColor}` }}>
                     <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: textColor }}>District</th>
                     <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, color: textColor }}>Approvals</th>
                     <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, color: textColor }}>Denials</th>

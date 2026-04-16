@@ -690,7 +690,7 @@ export default function DataSourcesPage() {
                     width: 32,
                     height: 32,
                     borderRadius: '8px',
-                    backgroundColor: '#F3F4F6',
+                    backgroundColor: 'rgba(255,255,255,0.05)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

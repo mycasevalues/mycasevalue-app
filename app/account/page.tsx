@@ -424,7 +424,7 @@ export default function AccountPage() {
                   </thead>
                   <tbody>
                     {apiKeys.map((key) => (
-                      <tr key={key.id} style={{ borderBottom: '1px solid #F3F4F6' }}>
+                      <tr key={key.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                         <td style={{ padding: '10px 0', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)' }}>
                           {key.prefix}...
                         </td>

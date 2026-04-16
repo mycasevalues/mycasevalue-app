@@ -14,8 +14,8 @@ export default function AccountLoading() {
             padding: '28px', marginBottom: '16px',
           }}>
             <div style={{ height: '18px', width: '30%', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '16px' }} />
-            <div style={{ height: '14px', width: '60%', background: '#F0F1F2', borderRadius: '12px', marginBottom: '8px' }} />
-            <div style={{ height: '14px', width: '45%', background: '#F0F1F2', borderRadius: '12px' }} />
+            <div style={{ height: '14px', width: '60%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', marginBottom: '8px' }} />
+            <div style={{ height: '14px', width: '45%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px' }} />
           </div>
         ))}
       </div>

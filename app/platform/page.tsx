@@ -240,7 +240,7 @@ export default function PlatformPage() {
 
         .comparison-table td {
           padding: 14px 16px;
-          border-bottom: 1px solid #F3F4F6;
+          border-bottom: 1px solid rgba(255,255,255,0.05);
           font-size: 14px;
         }
 

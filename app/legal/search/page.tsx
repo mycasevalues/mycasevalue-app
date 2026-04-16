@@ -207,7 +207,7 @@ export default function LegalSearchPage() {
             style={{
               padding: '14px 18px',
               borderRadius: 12,
-              background: showFilters ? '#E8F4FD' : '#F3F4F6',
+              background: showFilters ? '#E8F4FD' : 'rgba(255,255,255,0.05)',
               color: showFilters ? 'var(--accent-primary)' : '#6B7280',
               fontSize: 14,
               fontWeight: 500,
@@ -336,7 +336,7 @@ export default function LegalSearchPage() {
                 fontSize: 11,
                 fontWeight: 500,
                 color: '#6B7280',
-                background: '#F3F4F6',
+                background: 'rgba(255,255,255,0.05)',
                 textTransform: 'capitalize',
               }}>
                 {doc.type}
@@ -403,7 +403,7 @@ export default function LegalSearchPage() {
               padding: '10px 18px',
               borderRadius: 10,
               border: '1px solid #D1D5DB',
-              background: page <= 1 ? '#F3F4F6' : 'var(--color-surface-0)',
+              background: page <= 1 ? 'rgba(255,255,255,0.05)' : 'var(--color-surface-0)',
               color: page <= 1 ? 'var(--color-text-muted)' : '#374151',
               fontSize: 14,
               cursor: page <= 1 ? 'not-allowed' : 'pointer',
@@ -418,7 +418,7 @@ export default function LegalSearchPage() {
               padding: '10px 18px',
               borderRadius: 10,
               border: '1px solid #D1D5DB',
-              background: page >= totalPages ? '#F3F4F6' : 'var(--color-surface-0)',
+              background: page >= totalPages ? 'rgba(255,255,255,0.05)' : 'var(--color-surface-0)',
               color: page >= totalPages ? 'var(--color-text-muted)' : '#374151',
               fontSize: 14,
               cursor: page >= totalPages ? 'not-allowed' : 'pointer',

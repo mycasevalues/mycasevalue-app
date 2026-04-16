@@ -17,7 +17,7 @@ export default function SearchLoading() {
             padding: '20px', marginBottom: '12px',
           }}>
             <div style={{ height: '18px', width: '60%', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '8px' }} />
-            <div style={{ height: '14px', width: '80%', background: '#F0F1F2', borderRadius: '12px' }} />
+            <div style={{ height: '14px', width: '80%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px' }} />
           </div>
         ))}
       </div>

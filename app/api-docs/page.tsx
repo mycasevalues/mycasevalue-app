@@ -260,7 +260,7 @@ export default function ApiDocsPage() {
                 <code style={{
                   display: 'block',
                   padding: 12,
-                  backgroundColor: '#F3F4F6',
+                  backgroundColor: 'rgba(255,255,255,0.05)',
                   borderRadius: '20px',
                   fontSize: 13,
                   fontFamily: 'monospace',
@@ -446,7 +446,7 @@ export default function ApiDocsPage() {
                       <code style={{
                         display: 'block',
                         padding: 16,
-                        backgroundColor: '#F3F4F6',
+                        backgroundColor: 'rgba(255,255,255,0.05)',
                         borderRadius: '20px',
                         fontSize: 12,
                         fontFamily: 'monospace',

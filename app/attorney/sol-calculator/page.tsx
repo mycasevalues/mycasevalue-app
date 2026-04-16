@@ -716,7 +716,7 @@ export default function SOLCalculatorPage() {
                 </ul>
               </div>
 
-              <div style={{ padding: '14px', background: '#F3F4F6', borderRadius: '8px', borderLeft: '4px solid var(--accent-primary)' }}>
+              <div style={{ padding: '14px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', borderLeft: '4px solid var(--accent-primary)' }}>
                 <p style={{ fontSize: '12px', color: '#374151', margin: 0, lineHeight: 1.5 }}>
                   <strong>Disclaimer:</strong> This tool provides general information about statutory deadlines. Statute of limitations rules vary significantly by state and claim type. Tolling, discovery rules, and equitable estoppel may apply. Consult a licensed attorney in your jurisdiction immediately—missing a deadline can be catastrophic.
                 </p>

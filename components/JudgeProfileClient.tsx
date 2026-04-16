@@ -498,7 +498,7 @@ export default function JudgeProfileClient({
                               style={{
                                 display: 'inline-block',
                                 padding: '2px 8px',
-                                background: '#F3F4F6',
+                                background: 'rgba(255,255,255,0.05)',
                                 border: '1px solid #D1D5DB',
                                 borderRadius: '3px',
                                 color: 'var(--color-text-secondary)',

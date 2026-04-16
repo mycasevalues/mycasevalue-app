@@ -520,7 +520,7 @@ export default async function DistrictCaseTypePage({
         `}</style>
         <div
           style={{
-            background: '#F3F4F6',
+            background: 'rgba(255,255,255,0.05)',
             borderRadius: '12px',
             padding: '32px 24px',
             textAlign: 'center',

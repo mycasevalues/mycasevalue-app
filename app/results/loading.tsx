@@ -26,8 +26,8 @@ export default function ResultsLoading() {
 
             {/* Description lines */}
             <div style={{ marginBottom: '16px' }}>
-              <div style={{ height: '14px', width: '100%', background: '#F0F1F2', borderRadius: '12px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '95%', background: '#F0F1F2', borderRadius: '12px' }} />
+              <div style={{ height: '14px', width: '100%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '95%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px' }} />
             </div>
 
             {/* Statistics placeholders */}
@@ -35,7 +35,7 @@ export default function ResultsLoading() {
               {[1, 2, 3].map(j => (
                 <div key={j} style={{ flex: 1 }}>
                   <div style={{ height: '16px', width: '60%', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '6px' }} />
-                  <div style={{ height: '12px', width: '40%', background: '#F0F1F2', borderRadius: '12px' }} />
+                  <div style={{ height: '12px', width: '40%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px' }} />
                 </div>
               ))}
             </div>

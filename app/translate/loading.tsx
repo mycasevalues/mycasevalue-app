@@ -13,7 +13,7 @@ export default function Loading() {
         {[1,2,3].map(i => (
           <div key={i} className="sp" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2, padding: 24, marginBottom: 16, animationDelay: `${i*150}ms` }}>
             <div style={{ height: 16, width: '45%', background: 'var(--border-default)', borderRadius: 2, marginBottom: 12 }} />
-            <div style={{ height: 14, width: '80%', background: '#F0F1F2', borderRadius: 2, marginBottom: 8 }} />
+            <div style={{ height: 14, width: '80%', background: 'rgba(255,255,255,0.04)', borderRadius: 2, marginBottom: 8 }} />
             <div style={{ height: 14, width: '60%', background: 'var(--color-surface-1)', borderRadius: 2 }} />
           </div>
         ))}

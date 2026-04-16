@@ -17,7 +17,7 @@ export default function DashboardLoading() {
               background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '24px',
             }}>
               <div style={{ height: '14px', width: '60%', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '12px' }} />
-              <div style={{ height: '28px', width: '40%', background: '#F0F1F2', borderRadius: '12px' }} />
+              <div style={{ height: '28px', width: '40%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px' }} />
             </div>
           ))}
         </div>

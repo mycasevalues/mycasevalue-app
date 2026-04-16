@@ -354,7 +354,7 @@ export default function LegalDashboardPage() {
                 const fresh = src.status === 'healthy' ? 'current' : src.status === 'degraded' ? 'stale' : 'unavailable';
                 const freshColor = fresh === 'current' ? '#15803D' : fresh === 'stale' ? '#B45309' : '#DC2626';
                 return (
-                  <div key={src.key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid #F3F4F6' }}>
+                  <div key={src.key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <span style={{ fontSize: 13, color: src.color, fontWeight: 500 }}>{src.name}</span>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                       <span style={{ fontSize: 12, color: '#6B7280' }}>synced {src.lastSync}</span>

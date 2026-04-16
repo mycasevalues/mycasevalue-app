@@ -198,7 +198,7 @@ export default function DeadlineCalculatorPage() {
             {caseFiledDate && (
               <div>
                 <label style={labelStyle}>Case Filed</label>
-                <div style={{ padding: '12px 14px', height: '42px', display: 'flex', alignItems: 'center', fontSize: '14px', color: 'var(--color-text-primary)', fontWeight: 500, background: '#F3F4F6', borderRadius: '12px' }}>
+                <div style={{ padding: '12px 14px', height: '42px', display: 'flex', alignItems: 'center', fontSize: '14px', color: 'var(--color-text-primary)', fontWeight: 500, background: 'rgba(255,255,255,0.05)', borderRadius: '12px' }}>
                   {new Date(caseFiledDate).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })}
                 </div>
               </div>
@@ -420,7 +420,7 @@ export default function DeadlineCalculatorPage() {
                 ))}
               </div>
 
-              <div style={{ marginTop: '20px', padding: '14px', background: '#F3F4F6', borderRadius: '8px', borderLeft: '4px solid var(--accent-primary)' }}>
+              <div style={{ marginTop: '20px', padding: '14px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', borderLeft: '4px solid var(--accent-primary)' }}>
                 <p style={{ fontSize: '12px', color: '#374151', margin: 0, lineHeight: 1.5 }}>
                   <strong>Disclaimer:</strong> These are default Federal Rules of Civil Procedure deadlines. Individual judges may modify deadlines through scheduling orders, and state courts have different rules. Always check the scheduling order entered in your case and local rules of court. Missing a deadline can result in sanctions, dismissal, or default judgment.
                 </p>

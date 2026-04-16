@@ -104,7 +104,7 @@ export default function NotFound() {
               transition: all 200ms ease;
             }
             .notfound-link-tertiary:hover {
-              background: #F3F4F6 !important;
+              background: rgba(255,255,255,0.05) !important;
               border-color: #D1D5DB !important;
             }
           `}</style>

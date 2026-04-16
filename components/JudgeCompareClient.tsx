@@ -391,7 +391,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                               background: 'none',
                               textAlign: 'left',
                               cursor: 'pointer',
-                              borderBottom: '1px solid #F3F4F6',
+                              borderBottom: '1px solid rgba(255,255,255,0.05)',
                               fontFamily: 'var(--font-body)',
                               fontSize: 14,
                             }}

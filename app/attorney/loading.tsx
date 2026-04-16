@@ -18,8 +18,8 @@ export default function AttorneyLoading() {
               borderRadius: '12px', padding: '28px', height: '180px',
             }}>
               <div style={{ height: '18px', width: '60%', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '12px' }} />
-              <div style={{ height: '14px', width: '90%', background: '#F0F1F2', borderRadius: '12px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '70%', background: '#F0F1F2', borderRadius: '12px' }} />
+              <div style={{ height: '14px', width: '90%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '70%', background: 'rgba(255,255,255,0.04)', borderRadius: '12px' }} />
             </div>
           ))}
         </div>

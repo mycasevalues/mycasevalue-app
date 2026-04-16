@@ -164,7 +164,7 @@ export default function ReferralPage() {
               </thead>
               <tbody>
                 {rewards.map((r) => (
-                  <tr key={r.count} style={{ borderBottom: '1px solid #F3F4F6' }}>
+                  <tr key={r.count} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '12px 0', fontWeight: 500, color: 'var(--color-text-primary)' }}>{r.count}</td>
                     <td style={{ padding: '12px 0', color: 'var(--accent-primary-hover)', fontWeight: 500 }}>{r.reward}</td>
                   </tr>

@@ -604,7 +604,7 @@ export default function CaseStrengthAssessment() {
                   }}
                   onMouseEnter={(e) => {
                     if (answers[currentQuestion.id] !== option.value) {
-                      e.currentTarget.style.backgroundColor = '#F3F4F6';
+                      e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)';
                     }
                   }}
                   onMouseLeave={(e) => {

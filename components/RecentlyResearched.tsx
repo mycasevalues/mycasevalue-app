@@ -248,7 +248,7 @@ export default function RecentlyResearched() {
           marginTop: '10px',
           width: '100%',
           padding: '6px 10px',
-          backgroundColor: '#F3F4F6',
+          backgroundColor: 'rgba(255,255,255,0.05)',
           color: '#6B7280',
           border: '1px solid #D1D5DB',
           borderRadius: '4px',
@@ -261,7 +261,7 @@ export default function RecentlyResearched() {
           (e.target as HTMLButtonElement).style.backgroundColor = 'var(--border-default)';
         }}
         onMouseLeave={(e) => {
-          (e.target as HTMLButtonElement).style.backgroundColor = '#F3F4F6';
+          (e.target as HTMLButtonElement).style.backgroundColor = 'rgba(255,255,255,0.05)';
         }}
       >
         Clear History

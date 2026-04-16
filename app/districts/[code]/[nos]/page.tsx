@@ -677,7 +677,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
         {/* Placeholder Sections */}
         <section style={{ marginTop: 56 }}>
           <div style={{
-            background: '#F3F4F6',
+            background: 'rgba(255,255,255,0.05)',
             border: '1px dashed #D1D5DB',
             borderRadius: '12px',
             padding: '24px',

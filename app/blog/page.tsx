@@ -186,7 +186,7 @@ export default function BlogPage() {
         }
 
         .featured-image-placeholder {
-          background: #F0F1F2;
+          background: rgba(255,255,255,0.04);
           display: flex;
           align-items: center;
           justify-content: center;
