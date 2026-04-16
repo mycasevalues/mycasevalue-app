@@ -109,13 +109,14 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   className="breadcrumbs-separator"
                   style={{
                     color: 'var(--color-text-muted)',
-                    margin: '0 8px',
-                    fontSize: '13px',
-                    fontFamily: 'var(--font-body)',
+                    margin: '0 10px',
+                    fontSize: '11px',
+                    opacity: 0.5,
+                    fontFamily: 'var(--font-mono)',
                   }}
                   aria-hidden="true"
                 >
-                  ›
+                  /
                 </span>
               )}
 
