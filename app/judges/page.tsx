@@ -75,7 +75,7 @@ export default async function JudgesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* Header */}
-      <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--accent-primary)' }}>
+      <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--gradient-hero)' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
           <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>

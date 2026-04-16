@@ -254,7 +254,7 @@ export default async function DistrictPage({ params }: PageProps) {
 
       {/* Hero Section */}
       <header style={{
-        background: 'var(--accent-primary)',
+        background: 'var(--gradient-hero)',
         borderBottom: '1px solid #e5e7eb',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>

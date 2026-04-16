@@ -305,7 +305,7 @@ export default function DistrictsPage() {
 
       {/* Hero */}
       <header style={{
-        background: 'var(--accent-primary)',
+        background: 'var(--gradient-hero)',
         borderBottom: '1px solid #e5e7eb',
         padding: '20px 0',
       }}>

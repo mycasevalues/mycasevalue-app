@@ -173,7 +173,7 @@ export default async function CaseTypeDetailPage({
               display: 'inline-block',
               padding: '12px 32px',
               borderRadius: '12px',
-              background: 'var(--accent-primary)',
+              background: 'var(--gradient-hero)',
               color: 'var(--color-text-inverse)',
               textDecoration: 'none',
               fontWeight: '600',

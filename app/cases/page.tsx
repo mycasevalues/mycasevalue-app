@@ -159,7 +159,7 @@ export default function CasesIndexPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '24px 24px' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '24px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h1 className="font-display" style={{ fontSize: 32, fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 8px', letterSpacing: '-0.5px' }}>
             Case Analytics
