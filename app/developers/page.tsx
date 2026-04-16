@@ -365,56 +365,54 @@ export default function DevelopersPage() {
       `}</style>
 
       {/* Hero Section */}
-      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid var(--border-default)', padding: '32px 20px' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <div
-            style={{
-              background: 'rgba(10, 102, 194, 0.15)',
-              padding: '6px 14px',
-              borderRadius: '12px',
-              border: '1px solid var(--accent-primary)',
-              display: 'inline-block',
-              marginBottom: '16px',
-            }}
-          >
-            <span
-              style={{
-                fontSize: '12px',
-                fontWeight: 600,
-                color: 'var(--accent-primary)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px',
-                fontFamily: 'var(--font-heading)',
-              }}
-            >
-              API & INTEGRATIONS
-            </span>
+      <div style={{
+        background: '#080d19',
+        color: '#fff',
+        padding: '48px 24px 40px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            API & Integrations
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px' }}>
-            <div>
-              <h1
-                style={{
-                  fontSize: '36px',
-                  fontWeight: 700,
-                  color: 'var(--color-surface-0)',
-                  margin: '0 0 8px',
-                  fontFamily: 'var(--font-heading)',
-                }}
-              >
-                MyCaseValue REST API
-              </h1>
-              <p
-                style={{
-                  fontSize: '16px',
-                  color: '#B0B8C0',
-                  margin: 0,
-                  lineHeight: 1.5,
-                }}
-              >
-                Programmatic access to comprehensive case statistics, win rates, settlement data, and AI-powered predictive analytics.
-              </p>
-            </div>
-          </div>
+          <h1 style={{
+            fontFamily: 'var(--font-inter)',
+            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.1,
+            marginBottom: 16,
+            color: '#ffffff',
+          }}>
+            MyCaseValue REST API
+          </h1>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '1rem',
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.6,
+            maxWidth: 640,
+            margin: 0,
+          }}>
+            Programmatic access to federal case statistics, win rates, settlement data, and predictive analytics. <span style={{ fontFamily: 'var(--font-mono)', color: '#60a5fa' }}>v1.0</span> · Bearer auth · JSON
+          </p>
         </div>
       </div>
 
