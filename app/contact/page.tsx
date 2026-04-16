@@ -65,45 +65,55 @@ export default function ContactPage() {
       />
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header Banner */}
-        <div style={{ background: 'var(--gradient-hero)', padding: '64px 24px' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 16 }}>
-              <span style={{
-                display: 'inline-block',
-                padding: '6px 12px',
-                backgroundColor: 'var(--accent-primary)',
-                color: 'var(--color-surface-0)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                borderRadius: '12px',
-                fontFamily: 'var(--font-display)',
-              }}>
-                CONTACT US
-              </span>
+        <div style={{
+          background: '#080d19',
+          padding: '56px 24px',
+          position: 'relative',
+          overflow: 'hidden',
+          borderBottom: '1px solid rgba(255,255,255,0.06)',
+        }}>
+          <div aria-hidden style={{
+            position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }} />
+          <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '4px 10px', marginBottom: 14,
+              borderRadius: 999,
+              border: '1px solid rgba(59,130,246,0.2)',
+              background: 'rgba(59,130,246,0.08)',
+              fontFamily: 'var(--font-mono)', fontSize: 10,
+              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              color: '#60a5fa',
+            }}>
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+              Contact
             </div>
             <h1
               style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
-                fontWeight: 600,
-                color: 'var(--color-surface-0)',
-                fontFamily: 'var(--font-display)',
-                letterSpacing: '-1px',
-                marginBottom: 12,
+                fontSize: 'clamp(28px, 4vw, 36px)',
+                fontWeight: 700,
+                color: '#ffffff',
+                fontFamily: 'var(--font-inter)',
+                letterSpacing: '-0.025em',
+                marginBottom: 10,
+                lineHeight: 1.1,
               }}
             >
-              Contact
+              Get in Touch
             </h1>
             <p
               style={{
-                fontSize: 16,
-                color: 'rgba(255,255,255,0.7)',
-                fontFamily: 'var(--font-body)',
-                lineHeight: 1.7,
+                fontSize: 15,
+                color: 'rgba(255,255,255,0.6)',
+                fontFamily: 'var(--font-inter)',
+                lineHeight: 1.65,
+                maxWidth: 560,
               }}
             >
-              Questions, feedback, or partnership inquiries.
+              Questions about data methodology, enterprise API access, partnerships, or general support — our team typically responds within one business day.
             </p>
           </div>
         </div>
