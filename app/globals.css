@@ -186,8 +186,8 @@ a:hover { text-decoration: underline; color: var(--color-accent-dark); }
   --surface-card-dark:   rgba(255, 255, 255, 0.05);
 
   /* Light surfaces */
-  --color-surface-1:     #F7F8FA;
-  --color-surface-2:     #EEF0F4;
+  --color-surface-1:     #080d19;
+  --color-surface-2:     #111827;
 }
 
 /* ============================================================

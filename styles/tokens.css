@@ -17,23 +17,23 @@
   --color-accent-dark: #1e40af;
   --color-accent-light:#eff6ff;
 
-  /* Surfaces — cooler, slightly more contrast */
-  --color-surface-0:   #FFFFFF;
-  --color-surface-1:   #f8f9fb;
-  --color-surface-2:   #f0f1f5;
+  /* Surfaces — dark mode */
+  --color-surface-0:   #0c1220;
+  --color-surface-1:   #080d19;
+  --color-surface-2:   #111827;
   --color-surface-nav: #0f2240;
 
-  /* Text — stronger primary, refined secondary */
-  --color-text-primary:   #111827;
-  --color-text-secondary: #4b5563;
-  --color-text-muted:     #9ca3af;
+  /* Text — light on dark */
+  --color-text-primary:   #e5e7eb;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted:     #6b7280;
   --color-text-inverse:   #FFFFFF;
-  --color-text-accent:    #1e40af;
+  --color-text-accent:    #60a5fa;
 
-  /* Borders */
-  --color-border-light:   #E5E7EB;
-  --color-border-medium:  #D1D5DB;
-  --color-border-dark:    #9CA3AF;
+  /* Borders — dark mode */
+  --color-border-light:   rgba(255,255,255,0.08);
+  --color-border-medium:  rgba(255,255,255,0.12);
+  --color-border-dark:    rgba(255,255,255,0.2);
   --color-border-navy:    rgba(255,255,255,0.12);
 
   /* Data / Semantic */

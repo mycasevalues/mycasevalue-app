@@ -344,15 +344,14 @@ export default function Header() {
   const hasBlur = scrollY > 10;
   const isHome = pathname === '/';
 
-  // On homepage: dark header matching hero, becomes white on scroll
-  // On other pages: always solid white
+  // Dark header everywhere — matches dark mode site
   const headerTransparent = isHome && !hasBlur;
 
   const navLinkClass = (section: string) =>
     `flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${
       activeSection === section
-        ? headerTransparent ? 'text-white' : 'text-brand-blue'
-        : headerTransparent ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
+        ? 'text-white'
+        : 'text-gray-400 hover:text-white'
     }`;
 
   return (
@@ -361,8 +360,9 @@ export default function Header() {
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${
           headerTransparent
             ? 'bg-transparent border-b border-white/5'
-            : 'bg-white/95 backdrop-blur-sm border-b border-gray-200/60 shadow-sm'
+            : 'border-b border-white/5'
         }`}
+        style={{ background: headerTransparent ? 'transparent' : '#0c1220' }}
         role="banner"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -386,7 +386,7 @@ export default function Header() {
                     width="200"
                     height="200"
                     rx="26"
-                    fill={headerTransparent ? 'rgba(255,255,255,0.25)' : 'var(--accent-primary)'}
+                    fill="rgba(255,255,255,0.2)"
                   />
                   <g transform="rotate(12)">
                     <polygon
@@ -406,8 +406,8 @@ export default function Header() {
                     />
                   </g>
                 </svg>
-                <span className={`font-inter text-sm font-bold hidden sm:block tracking-tight transition-colors ${headerTransparent ? 'text-white/90' : 'text-gray-900'}`}>
-                  MyCase<span className={headerTransparent ? 'text-white' : 'text-brand-blue'}>Value</span>
+                <span className="font-inter text-sm font-bold hidden sm:block tracking-tight text-white/90">
+                  MyCase<span className="text-white">Value</span>
                 </span>
               </Link>
             </div>
@@ -530,13 +530,13 @@ export default function Header() {
                 <>
                   <Link
                     href="/sign-in"
-                    className={`text-sm font-medium transition-colors ${headerTransparent ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                    className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
                   >
                     Sign In
                   </Link>
                   <Link
                     href="/sign-up"
-                    className={`px-4 py-1.5 rounded text-sm font-medium transition-colors ${headerTransparent ? 'bg-white/10 text-white border border-white/20 hover:bg-white/20' : 'bg-gray-900 text-white hover:bg-gray-800'}`}
+                    className="px-4 py-1.5 rounded text-sm font-medium bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors"
                   >
                     Get Started
                   </Link>
