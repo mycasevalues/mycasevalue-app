@@ -4,7 +4,7 @@ import { SITE_URL } from '../../lib/site-config';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Pricing',
+  title: 'Pricing — Federal Court Intelligence Plans',
   description: 'Transparent pricing for federal court intelligence. Free, $5.99 single reports, $9.99/mo, $29.99/mo attorney mode. Start free, no card required.',
   alternates: { canonical: `${SITE_URL}/pricing` },
   openGraph: {
