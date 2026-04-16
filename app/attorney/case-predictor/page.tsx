@@ -161,26 +161,47 @@ export default function CasePredictorPage() {
         `}
       </style>
       {/* Header */}
-      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid var(--border-default)', padding: '20px 20px' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <Link href="/" style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-            Home &gt; Attorney Tools &gt; Case Predictor
+      <div style={{
+        background: '#080d19',
+        color: '#fff',
+        padding: '40px 24px 32px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative' }}>
+          <Link href="/attorney" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', letterSpacing: '0.02em', display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 16 }}>
+            Home / Attorney / Case Predictor
           </Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M8 10h.01M16 10h.01" />
-                <path d="M9 16c1-1 3-1 6 0" />
-              </svg>
-            </div>
-            <div>
-              <h1 className="font-display" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: 0 }}>
-                Forecast Your Case Outcome with Confidence
-              </h1>
-            </div>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Case Predictor
           </div>
+          <h1 className="font-display" style={{
+            fontFamily: 'var(--font-inter)',
+            fontSize: 'clamp(24px, 3.5vw, 30px)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.1,
+            color: '#ffffff',
+            margin: 0,
+          }}>
+            Forecast outcomes with confidence
+          </h1>
         </div>
       </div>
 
