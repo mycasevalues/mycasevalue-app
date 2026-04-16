@@ -732,4 +732,74 @@ All forbidden Bloomberg colors eliminated from both target files. All Westlaw to
 
 ### Session Gate: PASS
 
+---
+
+## Session 9 — Judge Profile Rebuild
+
+**Commit:** `[Session 9] Judges: Rebuild judge profile to Westlaw document view` — sha: 15f08224
+
+**Risk Level:** HIGH — Judge detail page complete layout rebuild, dynamic routing preserved
+
+### File Modified (1)
+
+**app/judges/[judgeId]/page.tsx** — Full rebuild from Bloomberg card layout to Westlaw three-column document view
+
+**New layout:**
+- Three-column: Left TOC (202px) | Main content (flex:1) | Right rail (232px)
+- Both sidebars: sticky, top: 94px, bg var(--sidebar), border var(--bdr)
+- Responsive: sidebars hide at ≤1024px
+
+**Preserved (ALL data fetching intact):**
+- `export const dynamic = 'force-dynamic'` (no generateStaticParams)
+- All Supabase fetching: getJudgeById, getJudgeStatistics, getJudgeOpinions, getJudgeAIAnalysis
+- aggregateJudgeStats helper
+- mockJudgesData for district averages
+- JSON-LD structured data
+- notFound() handling
+- JudgeProfileClient for interactive tab content
+- JudgeAlertButton
+
+**New components used:**
+- HorizontalBarChart (Session 5) — replaces any donut/pie charts
+- ResearchOrganizer (Session 5) — in right rail
+- ResearchPath (Session 5) — in right rail with district → judge path
+- CaseCiteFlag + CaseCiteFlagGroup (Session 5) — in CaseCite box
+
+**New elements:**
+- Breadcrumb: Home › Federal Judges › [Name] (11px font-ui, › separator)
+- Page header: "Hon. [Full Name]" font-legal 21px + subhead (position · district · appointment · party badge) + meta row (font-mono)
+- "Noted For" practice area tags: derived from statistics (>5 cases, sorted by volume, top 6)
+- CaseCite box ABOVE stat blocks: --ab bg, CaseCiteFlagGroup, green "No Negative Treatment" + blue "Cited in N Subsequent Cases"
+- 4 stat blocks: Cases on Record, Plaintiff Win Rate (color-coded), Median Duration, Median Settlement
+- GoldTabBar: Overview | Case History (N) | Analytics | Settlement Data | CaseCite™ (N) — 3px solid var(--gold) active
+- Intelligence Summary: numbered blue circles (20px bg var(--link)), topic heading (10px uppercase) + classification (font-mono 9px), body text (12px font-ui), separator #F2EFE8
+- Left TOC: 19 items with sub-items for Judicial Profile, Case Analytics, Settlement Data, Case History, CaseCite™. Active = link-light bg + 3px gold left border
+- Right rail: Selected Topics, Related Judges (from mockJudgesData), Analytics vs. District (3-col comparison grid), ResearchOrganizer, ResearchPath, Download Report (gold), Add to Keep List (link border)
+- Two-column overview: HorizontalBarChart (58%) + Career Timeline (border-left dots) + Judicial Profile key-values
+- DataAttribution below every section
+
+**Removed:**
+- Bloomberg hex colors (#E65C00, #1A1A1A, #0052CC, etc.)
+- Blue pill badges, rounded-full borders
+- 12px border-radius cards → 2px
+- Any PieChart/OutcomeDonut references
+
+### Verification Results
+
+1. **Judge name in font-baskerville (font-legal)** → PASS
+2. **CaseCite box ABOVE stat blocks** → PASS (--ab bg, CaseCiteFlagGroup rendered before stat grid)
+3. **Intelligence Summary present** → PASS (numbered blue circles + classification links)
+4. **"Noted For" tags derived from statistics** → PASS
+5. **No PieChart/OutcomeDonut** → PASS (zero instances)
+6. **HorizontalBarChart present** → PASS (imported and rendered)
+7. **Three-column layout** → PASS (202px TOC + flex:1 main + 232px rail)
+8. **GoldTabBar (gold not orange)** → PASS (border-bottom: 3px solid var(--gold))
+9. **No Bloomberg hex** → PASS (zero instances of #E65C00, #1A1A1A, #0052CC, #333333, #F7F7F5, #888888)
+10. **dynamic = 'force-dynamic' preserved** → PASS (no generateStaticParams)
+11. **All Supabase data fetching preserved** → PASS
+12. **ResearchOrganizer + ResearchPath in right rail** → PASS
+13. **npm run build → Webpack compilation** → PASS (pre-existing TS error unrelated)
+
+### Session Gate: PASS
+
 Last updated: 2026-04-16
