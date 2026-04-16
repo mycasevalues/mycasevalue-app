@@ -202,10 +202,10 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Content */}
-                  <h2 className="font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)', fontSize: '20px', fontWeight: '600' }}>
+                  <h2 className="font-display font-semibold mb-3 tracking-[-0.01em]" style={{ color: 'var(--color-text-primary)', fontSize: '17px' }}>
                     {step.title}
                   </h2>
-                  <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '15px', fontWeight: '300', lineHeight: '1.7' }}>
+                  <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '13px', fontWeight: '400', lineHeight: '1.6' }}>
                     {step.description}
                   </p>
                 </div>
