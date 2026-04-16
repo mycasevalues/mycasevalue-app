@@ -5,7 +5,7 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Data Methodology — MyCaseValue Federal Court Processing',
+  title: 'Methodology — MyCaseValue Federal Court Processing',
   description: 'Learn how MyCaseValue processes data from FJC IDB, PACER, and CourtListener. Transparent methodology for 5.1M+ case outcome statistics.',
   alternates: { canonical: `${SITE_URL}/methodology` },
   openGraph: {
@@ -260,10 +260,10 @@ export default function MethodologyPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px' }}>
-            Data Methodology
+            Methodology
           </h1>
           <p className="text-base sm:text-lg leading-relaxed max-w-2xl" style={{ color: '#CCCCCC' }}>
-            How MyCaseValue processes and presents aggregate outcome data from public federal court records with complete transparency.
+            Data processing, classification methodology, and quality standards.
           </p>
         </div>
       </div>

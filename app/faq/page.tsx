@@ -571,10 +571,10 @@ export default function FAQPage() {
             FAQ
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px' }}>
-            Frequently Asked Questions
+            Common Questions
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--color-surface-0)' }}>
-            Get answers to common questions about MyCaseValue, federal court data, and how to use outcome statistics.
+            Platform capabilities, data sources, and usage.
           </p>
         </div>
       </div>

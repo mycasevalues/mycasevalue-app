@@ -6,19 +6,19 @@ import { Breadcrumbs } from '../../components/Breadcrumbs';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'About MyCaseValue — Federal Court Data for All',
+  title: 'About the Platform — Federal Court Data for All',
   description: 'Making federal court data accessible to everyone. 5.1M+ cases from FJC, PACER, CourtListener. Mission-driven legal intelligence.',
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
-    title: 'About MyCaseValue — Making Federal Court Data Accessible',
+    title: 'About the Platform — Making Federal Court Data Accessible',
     description: 'MyCaseValue aggregates 5.1M+ federal court cases to help you research real outcomes, win rates, and settlement data.',
     type: 'website',
     url: `${SITE_URL}/about`,
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'About MyCaseValue' }],
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'About the Platform' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About MyCaseValue — Making Federal Court Data Accessible',
+    title: 'About the Platform — Making Federal Court Data Accessible',
     description: 'MyCaseValue democratizes federal court outcome data. Free access to win rates, settlement ranges, and timelines from 5.1M+ public federal civil cases.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -324,9 +324,9 @@ export default function AboutPage() {
       {/* Header */}
       <div className="about-header">
         <div className="about-container">
-          <h1 className="about-h1">About MyCaseValue</h1>
+          <h1 className="about-h1">About the Platform</h1>
           <p className="about-intro">
-            We democratize federal court outcome data. What traditionally required legal expertise, extensive research, or expensive consulting—now takes seconds and is completely free.
+            Federal court intelligence built from public records. Making litigation data accessible, transparent, and actionable.
           </p>
         </div>
       </div>

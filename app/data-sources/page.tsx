@@ -157,7 +157,7 @@ export default function DataSourcesPage() {
               letterSpacing: '-1px',
               marginBottom: 12,
             }}>
-              We Show You Exactly Where Every Number Comes From
+              Data Sources &amp; Provenance
             </h1>
             <p style={{
               fontSize: 18,

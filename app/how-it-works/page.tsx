@@ -6,11 +6,11 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'How It Works — Research Federal Court Outcomes',
+  title: 'Platform Overview — Research Federal Court Outcomes',
   description: 'Research federal court outcomes in 3 steps: Select case type, search 5.1M+ cases, get personalized report with win rates & settlements.',
   alternates: { canonical: `${SITE_URL}/how-it-works` },
   openGraph: {
-    title: 'How It Works — MyCaseValue',
+    title: 'Platform Overview — MyCaseValue',
     description: 'Three simple steps to research real federal court outcomes. Select your case type, we analyze 5.1M+ cases, you get a personalized report.',
     type: 'website',
     url: `${SITE_URL}/how-it-works`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How It Works — MyCaseValue | 3 Simple Steps',
+    title: 'Platform Overview — MyCaseValue | 3 Simple Steps',
     description: 'Tell us your situation → We search 5.1M+ federal court cases → Get your personalized report with real outcomes, win rates, and timelines.',
   },
 };
@@ -30,7 +30,7 @@ const jsonLd = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-        { '@type': 'ListItem', position: 2, name: 'How It Works', item: `${SITE_URL}/how-it-works` },
+        { '@type': 'ListItem', position: 2, name: 'Platform Overview', item: `${SITE_URL}/how-it-works` },
       ],
     },
     {
@@ -136,10 +136,10 @@ export default function HowItWorksPage() {
             HOW IT WORKS
           </div>
           <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px' }}>
-            How It Works
+            Platform Overview
           </h1>
           <p className="text-lg leading-relaxed max-w-3xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            Get data-backed research in minutes instead of weeks. No legal background needed, no account required, free during beta.
+            How MyCaseValue transforms public federal court records into actionable litigation intelligence.
           </p>
         </div>
       </div>
@@ -152,7 +152,7 @@ export default function HowItWorksPage() {
               Home
             </a>
             <span style={{ margin: '0 8px', color: 'var(--border-default)' }}>›</span>
-            <span>How It Works</span>
+            <span>Platform Overview</span>
           </nav>
         </div>
       </div>

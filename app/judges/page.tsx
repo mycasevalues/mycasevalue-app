@@ -17,19 +17,19 @@ const JudgeRadarPreview = dynamic(() => import('../../components/JudgeRadarPrevi
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: 'Federal Judge Directory & Analytics — MyCaseValue',
+  title: 'Judge Intelligence & Analytics — MyCaseValue',
   description: 'Research federal judges across 95 districts. Win rates, motion rates, settlement patterns, case duration. Data from 5.1M+ federal cases.',
   alternates: { canonical: `${SITE_URL}/judges` },
   openGraph: {
-    title: 'Federal Judge Directory — Statistics & Analytics',
+    title: 'Judge Intelligence — Statistics & Analytics',
     description: 'Research federal judges across all 13 circuits and 95 districts with comprehensive analytics.',
     type: 'website',
     url: `${SITE_URL}/judges`,
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'Federal Judge Directory - MyCaseValue' }],
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'Judge Intelligence - MyCaseValue' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Judge Directory — Statistics & Analytics | MyCaseValue',
+    title: 'Judge Intelligence — Statistics & Analytics | MyCaseValue',
     description: 'Research federal judges across 95 districts with comprehensive statistics. Compare win rates, motion grant rates, settlement patterns, and case duration for 5.1M+ cases.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -89,14 +89,14 @@ export default async function JudgesPage() {
               fontSize: 'clamp(22px, 3vw, 28px)', fontWeight: 900, marginBottom: 8,
               color: 'var(--color-text-inverse)', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
             }}>
-              Federal Judge Directory
+              Judge Intelligence
             </h1>
 
             <p style={{
               fontSize: 14, lineHeight: 1.5, maxWidth: 640,
               color: '#C7D1D8', fontFamily: 'var(--font-body)',
             }}>
-              Research judges across 95 federal districts with win rates, motion rates, and settlement data.
+              Ruling patterns, case duration, and outcome tendencies across 95 federal districts.
             </p>
           </div>
         </div>

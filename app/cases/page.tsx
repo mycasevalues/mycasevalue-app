@@ -113,14 +113,14 @@ function getWinRateLabel(wr: number): string {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'Federal Court Case Categories',
+  name: 'Federal Court Case Analytics',
   description: 'Browse federal court outcome data across 10 major case types.',
   url: `${SITE_URL}/cases`,
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Case Categories', item: `${SITE_URL}/cases` },
+      { '@type': 'ListItem', position: 2, name: 'Case Analytics', item: `${SITE_URL}/cases` },
     ],
   },
 };
@@ -162,10 +162,10 @@ export default function CasesIndexPage() {
       <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '24px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h1 className="font-display" style={{ fontSize: 32, fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 8px', letterSpacing: '-0.5px' }}>
-            Case Categories
+            Case Analytics
           </h1>
           <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5, maxWidth: 600 }}>
-            Browse 10 major case categories with outcomes from 5.1M+ federal cases.
+            Outcome data and litigation intelligence across 84 federal case types.
           </p>
         </div>
       </div>
@@ -198,7 +198,7 @@ export default function CasesIndexPage() {
               {platformStats.totalCategories}
             </div>
             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-              Case Categories
+              Case Analytics
             </div>
           </div>
           <div>

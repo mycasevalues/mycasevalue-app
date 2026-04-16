@@ -93,7 +93,7 @@ export default function ContactPage() {
                 marginBottom: 12,
               }}
             >
-              Get in Touch
+              Contact
             </h1>
             <p
               style={{
@@ -103,7 +103,7 @@ export default function ContactPage() {
                 lineHeight: 1.7,
               }}
             >
-              Questions about your account? Need help understanding case data? Want to integrate MyCaseValue into your workflow? Our team is here and ready to help.
+              Questions, feedback, or partnership inquiries.
             </p>
           </div>
         </div>

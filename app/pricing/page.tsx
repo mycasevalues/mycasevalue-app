@@ -481,7 +481,7 @@ export default function PricingPage() {
       <div className="pricing-header">
         <h1 className="pricing-h1">Enterprise Intelligence. Non-Enterprise Pricing.</h1>
         <p className="pricing-subtitle">
-          Westlaw ($300-500/mo) and LexisNexis ($200-400/mo) bundle case law with dated pricing. MyCaseValue gives you federal court outcome analytics, AI prediction, and modern legal research — 10x cheaper, starting free. No commitment. Cancel anytime.
+          Federal court outcome analytics, AI case prediction, and litigation research. Transparent pricing, no long-term contracts.
         </p>
       </div>
 

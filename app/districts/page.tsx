@@ -8,11 +8,11 @@ import DistrictsMapToggle from '../../components/DistrictsMapToggle';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Federal Court Districts & Circuits — MyCaseValue',
+  title: 'District Court Analytics & Circuits — MyCaseValue',
   description: 'All 95 federal judicial districts across 13 circuits. Explore win rates, case outcomes, and settlement data by jurisdiction. 5.1M+ cases.',
   alternates: { canonical: `${SITE_URL}/districts` },
   openGraph: {
-    title: 'Federal Court Districts — All 95 Judicial Districts',
+    title: 'District Court Analytics — All 95 Judicial Districts',
     description: 'Explore all 95 federal judicial districts across 13 circuits with case outcomes, win rates, and settlement data by jurisdiction.',
     type: 'website',
     url: `${SITE_URL}/districts`,
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: 'Federal Court Districts',
+        alt: 'District Court Analytics',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Districts',
+    title: 'District Court Analytics',
     description: 'Explore all 95 federal judicial districts with case outcomes data.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -269,7 +269,7 @@ export default function DistrictsPage() {
       },
       {
         '@type': 'CollectionPage',
-        name: 'Federal Court Districts',
+        name: 'District Court Analytics',
         description: 'Explore federal court districts across the United States. View case statistics, filing trends, and outcome data by district.',
         url: `${SITE_URL}/districts`,
         isPartOf: { '@type': 'WebSite', name: 'MyCaseValue', url: SITE_URL },
@@ -319,7 +319,7 @@ export default function DistrictsPage() {
             fontWeight: 600,
             margin: '0 0 8px',
           }}>
-            Federal Court Districts
+            District Court Analytics
           </h1>
 
           <p style={{
