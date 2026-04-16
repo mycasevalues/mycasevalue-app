@@ -123,22 +123,21 @@ export default function HowItWorksPage() {
       />
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)' }}>
-        <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(10, 102, 194, 0.1)', color: 'var(--accent-primary)', borderRadius: '12px' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
-              <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
-              <polyline points="12 12 20 7.5"></polyline>
-              <polyline points="12 12 12 21"></polyline>
-              <polyline points="12 12 4 7.5"></polyline>
-            </svg>
-            HOW IT WORKS
+      <div className="relative overflow-hidden" style={{ background: '#080d19' }}>
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div className="relative max-w-5xl mx-auto px-6 py-16 sm:py-20">
+          <div className="inline-flex items-center gap-2 px-2 py-1 text-[10px] font-semibold tracking-[0.25em] uppercase mb-5 rounded-[3px] border"
+            style={{ background: 'rgba(26,86,219,0.08)', color: '#60a5fa', borderColor: 'rgba(26,86,219,0.2)' }}>
+            <span className="w-1 h-1 rounded-full bg-blue-400/80" />
+            Methodology
           </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-bold mb-4 tracking-[-0.025em]" style={{ color: 'white', lineHeight: '1.1' }}>
             Platform Overview
           </h1>
-          <p className="text-lg leading-relaxed max-w-3xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
+          <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
             How MyCaseValue transforms public federal court records into actionable litigation intelligence.
           </p>
         </div>
