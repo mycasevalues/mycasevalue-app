@@ -320,4 +320,18 @@
   - Disclaimer with data source citation
   - All colors use token variables, zero hardcoded hex
 
+### PAGE 2 GATE: Districts Index (/districts) [DONE]
+- Rewrote `app/districts/page.tsx` — enterprise DataTable layout
+  - ContextBar: breadcrumb + district/case count summary
+  - Page Header: h1 + subtitle using --type-display token
+  - Circuit Filter Bar: "All Circuits" active pill + per-circuit filter pills
+  - 7-column DataTable: District Name (link, 280px), Code (mono, 72px), Circuit (badge, 80px), Active Cases (right-aligned, 120px), Median Duration (120px), Plaintiff Win% (color-coded, 110px), Top Case Type (remainder)
+  - Alternating row backgrounds (var(--table-row-alt))
+  - Hover state via existing tr:hover td rule
+  - Table toolbar: row count + sort indicator
+  - Footer: source attribution (FJC IDB, CourtListener, PACER)
+  - About This Data section with methodology + disclaimer links
+  - All 95 districts with deterministic data from hash function
+  - All colors use token variables, zero hardcoded hex
+
 Last updated: 2026-04-16
