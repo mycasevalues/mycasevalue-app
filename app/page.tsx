@@ -12,8 +12,8 @@ import { SITE_METRICS } from '@/lib/site-metrics';
 import { SearchHero } from '@/components/SearchHero';
 
 export const metadata: Metadata = {
-  title: 'MyCaseValue | Federal Court Intelligence',
-  description: 'Litigation intelligence from public federal court records. Case outcomes, judge analytics, and settlement data across 94 federal districts.',
+  title: 'MyCaseValue — Federal Court Intelligence Platform',
+  description: 'Institutional-grade litigation intelligence from public federal court records. Case outcomes, judge analytics, venue analysis, and settlement data across all 94 federal districts.',
   openGraph: {
     type: 'website',
     title: 'MyCaseValue | Federal Court Intelligence',
