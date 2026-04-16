@@ -456,7 +456,7 @@ export function BulkAnalysisTool() {
               border: '1px solid var(--border-default)',
             }}
           >
-            <p style={{ fontSize: '13px', color: '#DC2626', margin: 0 }}>{error}</p>
+            <p style={{ fontSize: '13px', color: '#f87171', margin: 0 }}>{error}</p>
           </div>
         )}
       </div>
@@ -482,7 +482,7 @@ export function BulkAnalysisTool() {
               {
                 label: 'Portfolio Win Rate',
                 value: `${result.summary.portfolioAvgWinRate}%`,
-                color: '#059669',
+                color: '#34d399',
               },
               {
                 label: 'Avg Case Duration',
@@ -779,7 +779,7 @@ export function BulkAnalysisTool() {
                         style={{
                           padding: '12px 16px',
                           textAlign: 'center',
-                          color: '#059669',
+                          color: '#34d399',
                           fontWeight: 500,
                         }}
                       >

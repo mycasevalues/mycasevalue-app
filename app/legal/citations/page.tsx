@@ -28,9 +28,9 @@ interface Citation {
 
 const CATEGORIES = [
   { key: 'constitutional', label: 'Constitutional', color: 'var(--accent-primary)' },
-  { key: 'civil_rights', label: 'Civil Rights', color: '#7C3AED' },
-  { key: 'criminal', label: 'Criminal Law', color: '#DC2626' },
-  { key: 'regulatory', label: 'Regulatory', color: '#059669' },
+  { key: 'civil_rights', label: 'Civil Rights', color: '#a78bfa' },
+  { key: 'criminal', label: 'Criminal Law', color: '#f87171' },
+  { key: 'regulatory', label: 'Regulatory', color: '#34d399' },
   { key: 'corporate', label: 'Corporate', color: '#D97706' },
 ];
 
@@ -398,13 +398,13 @@ export default function CitationsPage() {
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Landmark Cases</div>
         </div>
         <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
-          <div style={{ fontSize: 28, fontWeight: 700, color: '#7C3AED', fontFamily: 'var(--font-mono, monospace)' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: '#a78bfa', fontFamily: 'var(--font-mono, monospace)' }}>
             {CITATIONS.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Citation Links</div>
         </div>
         <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
-          <div style={{ fontSize: 28, fontWeight: 700, color: '#059669', fontFamily: 'var(--font-mono, monospace)' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: '#34d399', fontFamily: 'var(--font-mono, monospace)' }}>
             {CATEGORIES.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Legal Categories</div>

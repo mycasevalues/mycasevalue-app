@@ -298,7 +298,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
             </h4>
             <div style={{ display: 'flex', gap: '8px' }}>
               {[
-                { label: 'Early', value: attorney.trialVsSettlement.earlySettlementRate, color: '#059669' },
+                { label: 'Early', value: attorney.trialVsSettlement.earlySettlementRate, color: '#34d399' },
                 { label: 'Standard', value: attorney.trialVsSettlement.settlementRate - attorney.trialVsSettlement.earlySettlementRate, color: '#B86E00' },
                 { label: 'Late', value: 100 - attorney.trialVsSettlement.settlementRate, color: 'var(--accent-primary)' },
               ].map((s) => (

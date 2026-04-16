@@ -261,7 +261,7 @@ export default function APIAccessForm() {
               backgroundColor: 'rgba(239, 68, 68, 0.1)',
               border: '1px solid #FCA5A5',
               borderRadius: '8px',
-              color: '#DC2626',
+              color: '#f87171',
               fontSize: '13px',
             }}
           >

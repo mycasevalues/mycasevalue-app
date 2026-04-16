@@ -630,10 +630,10 @@ export default function SOLCalculatorPage() {
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <div>
-                      <p style={{ fontSize: '13px', fontWeight: 600, color: '#065F46', margin: '0 0 4px' }}>
+                      <p style={{ fontSize: '13px', fontWeight: 600, color: '#34d399', margin: '0 0 4px' }}>
                         {daysRemaining} days remaining
                       </p>
-                      <p style={{ fontSize: '12px', color: '#047857', margin: 0 }}>
+                      <p style={{ fontSize: '12px', color: '#34d399', margin: 0 }}>
                         You have sufficient time to prepare your case.
                       </p>
                     </div>
@@ -683,7 +683,7 @@ export default function SOLCalculatorPage() {
                     <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       Discovery Rule
                     </h3>
-                    <p style={{ fontSize: '15px', fontWeight: 600, color: '#059669', margin: 0 }}>
+                    <p style={{ fontSize: '15px', fontWeight: 600, color: '#34d399', margin: 0 }}>
                       Applies
                     </p>
                   </div>

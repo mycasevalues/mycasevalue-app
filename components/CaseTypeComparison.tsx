@@ -148,10 +148,10 @@ export default function CaseTypeComparison() {
               <div key={m.label} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', padding: '12px 16px', borderTop: '1px solid #F0F0F0', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#FAFAFA' }}>
                 <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>{m.label}</div>
                 <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 600, color: aWins ? '#059669' : 'var(--color-text-primary)' }}>
-                  {m.a} {aWins && <span style={{ fontSize: 10, color: '#059669' }}>●</span>}
+                  {m.a} {aWins && <span style={{ fontSize: 10, color: '#34d399' }}>●</span>}
                 </div>
                 <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 600, color: bWins ? '#059669' : 'var(--color-text-primary)' }}>
-                  {m.b} {bWins && <span style={{ fontSize: 10, color: '#059669' }}>●</span>}
+                  {m.b} {bWins && <span style={{ fontSize: 10, color: '#34d399' }}>●</span>}
                 </div>
               </div>
             );

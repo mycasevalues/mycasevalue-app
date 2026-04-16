@@ -329,7 +329,7 @@ export default function DashboardTabs({
                 Delete Account
               </button>
             ) : (
-              <div style={{ padding: '16px', background: '#FEF0EF', borderRadius: 8, border: '1px solid #CC1016' }}>
+              <div style={{ padding: '16px', background: 'rgba(239,68,68,0.06)', borderRadius: 8, border: '1px solid #CC1016' }}>
                 <p style={{ fontSize: '13px', fontWeight: 600, color: '#CC1016', marginBottom: 10 }}>Are you sure? This will permanently delete all your data.</p>
                 <div style={{ display: 'flex', gap: 8 }}>
                   <button style={{ padding: '8px 16px', background: '#CC1016', color: '#FFF', border: 'none', borderRadius: 8, fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>

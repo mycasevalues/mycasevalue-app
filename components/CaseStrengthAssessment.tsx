@@ -647,7 +647,7 @@ export default function CaseStrengthAssessment() {
                   backgroundColor: '#ECFDF5',
                   borderLeft: '4px solid #10B981',
                   fontSize: '13px',
-                  color: '#065F46',
+                  color: '#34d399',
                 }}
               >
                 +{currentQuestion.points} points if yes
@@ -827,7 +827,7 @@ export default function CaseStrengthAssessment() {
                 <p
                   style={{
                     fontSize: '14px',
-                    color: '#065F46',
+                    color: '#34d399',
                     margin: '0',
                   }}
                 >

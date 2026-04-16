@@ -1363,7 +1363,7 @@ export default function PlatformPage() {
         </div>
 
         {/* CTA Section */}
-        <div style={{ padding: '80px 24px', background: 'var(--accent-primary)' }}>
+        <div style={{ padding: '80px 24px', background: 'var(--gradient-hero)' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
             <h2 style={{
               fontSize: 'clamp(28px, 4vw, 40px)',

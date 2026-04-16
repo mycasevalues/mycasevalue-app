@@ -49,7 +49,7 @@ export default function SpanishPage() {
       </div>
 
       {/* Breadcrumb Navigation Header */}
-      <div className="border-b" style={{ background: 'var(--accent-primary)', borderColor: 'var(--border-default)', padding: '12px 24px' }}>
+      <div className="border-b" style={{ background: 'var(--gradient-hero)', borderColor: 'var(--border-default)', padding: '12px 24px' }}>
         <div className="max-w-7xl mx-auto px-6">
           <nav className="flex items-center gap-2 text-sm">
             <span style={{ color: 'var(--color-surface-0)' }} className="opacity-80">Inicio</span>

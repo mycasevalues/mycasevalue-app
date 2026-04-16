@@ -60,7 +60,7 @@ export default function HomePage() {
               </div>
 
               <div className="flex items-center gap-8">
-                <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-white text-gray-100 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors">
+                <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-transparent text-gray-300 border border-white/20 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors">
                   Browse Cases
                 </Link>
                 <Link href="/judges" className="text-sm text-gray-400 hover:text-white transition-colors">
@@ -171,7 +171,7 @@ export default function HomePage() {
             <h2 className="text-lg font-bold text-white mb-1">Start researching.</h2>
             <p className="text-sm text-gray-500">Free during beta. No account required.</p>
           </div>
-          <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-white text-gray-100 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors flex-shrink-0">
+          <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-transparent text-gray-300 border border-white/20 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors flex-shrink-0">
             Browse Cases
           </Link>
         </div>

@@ -331,7 +331,7 @@ export default function MethodologyPage() {
                 name: 'CourtListener (Free Law Project)',
                 description: 'We query the CourtListener API and RECAP Archive in real time to surface related federal court opinions and docket records alongside our aggregate outcome data. CourtListener covers 471 jurisdictions with 10M+ opinions.',
                 badge: 'Supplementary',
-                color: '#059669',
+                color: '#34d399',
                 url: 'https://www.courtlistener.com/',
                 icon: 'scale'
               },

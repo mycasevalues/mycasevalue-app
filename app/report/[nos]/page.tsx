@@ -480,7 +480,7 @@ export default async function ReportPage({
             </div>
             <div style={{ display: 'flex', gap: '16px', marginTop: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
               {[
-                { label: 'Plaintiff Win', value: winRate, color: '#059669' },
+                { label: 'Plaintiff Win', value: winRate, color: '#34d399' },
                 { label: 'Settlement', value: settlementRate, color: '#D97706' },
                 { label: 'Other/Dismissed', value: dismissRate, color: 'var(--accent-primary)' },
               ].map((item) => (

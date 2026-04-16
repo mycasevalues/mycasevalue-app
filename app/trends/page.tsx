@@ -739,7 +739,7 @@ export default function TrendsPage() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-semibold lex-link">{t.label}</span>
-                      <span className="text-sm font-bold" style={{ color: '#059669' }}>{t.months}mo</span>
+                      <span className="text-sm font-bold" style={{ color: '#34d399' }}>{t.months}mo</span>
                     </div>
                     <div className="h-1.5 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '12px' }}>
                       <div

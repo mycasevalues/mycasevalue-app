@@ -118,7 +118,7 @@ export default function ReportsPage() {
           <p style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: '#059669',
+            color: '#34d399',
             margin: 0,
           }}>
             All Reports Free During Beta — Explore unlimited case research, settlement data, and judge analytics at no cost.

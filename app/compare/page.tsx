@@ -479,7 +479,7 @@ export default function ComparePage() {
                             <div style={{ fontSize: 16, fontWeight: 700, color: '#057642', fontFamily: 'var(--font-mono)' }}>{s.attorneyWR}%</div>
                             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>w/ attorney</div>
                           </div>
-                          <div style={{ flex: 1, padding: '8px', background: '#FEF0EF', borderRadius: 6, textAlign: 'center' }}>
+                          <div style={{ flex: 1, padding: '8px', background: 'rgba(239,68,68,0.06)', borderRadius: 6, textAlign: 'center' }}>
                             <div style={{ fontSize: 16, fontWeight: 700, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{s.proSeWR}%</div>
                             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>pro se</div>
                           </div>

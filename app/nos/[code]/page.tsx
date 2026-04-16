@@ -1240,7 +1240,7 @@ export default async function NOSPage({ params }: PageProps) {
                 {/* Pro Se */}
                 <div style={{
                   padding: '20px',
-                  background: '#FEF0EF',
+                  background: 'rgba(239,68,68,0.06)',
                   border: '1px solid #CC1016',
                   borderRadius: '12px',
                 }}>

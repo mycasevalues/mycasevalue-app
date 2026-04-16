@@ -379,7 +379,7 @@ export default function MotionAnalyticsPage() {
                           style={{
                             height: '100%',
                             width: `${Math.min(motion.grantRate, 100)}%`,
-                            background: '#057642',
+                            background: '#15803D',
                             borderRadius: '2px',
                           }}
                         />

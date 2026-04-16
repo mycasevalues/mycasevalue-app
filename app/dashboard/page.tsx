@@ -528,7 +528,7 @@ export default async function DashboardPage() {
             </div>
             <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>Uptime Status</p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600, color: '#059669', margin: 0 }}>100% [x]</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600, color: '#34d399', margin: 0 }}>100% [x]</p>
             </div>
           </div>
 
@@ -771,7 +771,7 @@ export default async function DashboardPage() {
                 { label: 'Search Cases', href: '/search', color: 'var(--accent-primary)' },
                 { label: 'Browse Districts', href: '/districts', color: 'var(--accent-primary-hover)' },
                 { label: 'View Judges', href: '/judges', color: 'var(--color-text-primary)' },
-                { label: 'Case Calculator', href: '/calculator', color: '#059669' },
+                { label: 'Case Calculator', href: '/calculator', color: '#34d399' },
                 { label: 'Trends & Data', href: '/trends', color: '#B86E00' },
               ].map((link) => (
                 <Link key={link.href} href={link.href} style={{ display: 'block', padding: '16px', borderRadius: '12px', border: '1px solid var(--border-default)', textDecoration: 'none', textAlign: 'center', transition: 'all 0.2s ease', background: 'var(--color-surface-1)' }}>
@@ -847,14 +847,14 @@ export default async function DashboardPage() {
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Employment Discrimination (NOS 442) · S.D.N.Y.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Analysis completed 2 hours ago</p>
                   </div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#059669', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>76% win rate</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>76% win rate</div>
                 </div>
                 <div style={{ padding: '12px 0', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Personal Injury — Auto (NOS 350) · C.D. Cal.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Report generated 5 hours ago</p>
                   </div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#059669', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>63% settlement</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>63% settlement</div>
                 </div>
                 <div style={{ padding: '12px 0', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
@@ -868,14 +868,14 @@ export default async function DashboardPage() {
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Contract Dispute (NOS 110) · S.D. Tex.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Settlement analysis 12 hours ago</p>
                   </div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#059669', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>58% favorable</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>58% favorable</div>
                 </div>
                 <div style={{ padding: '12px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Products Liability (NOS 367) · E.D. Pa.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Historical case analysis 1 day ago</p>
                   </div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#059669', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>71% win rate</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>71% win rate</div>
                 </div>
               </div>
             )}
@@ -894,10 +894,10 @@ export default async function DashboardPage() {
                 { name: 'Supabase', status: 'Connected', icon: '●' },
               ].map((item, i) => (
                 <div key={i} style={{ padding: '16px', borderRadius: '20px', border: '1px solid var(--border-default)', display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: 'var(--color-surface-1)' }}>
-                  <div style={{ fontSize: '16px', color: '#059669' }}>{item.icon}</div>
+                  <div style={{ fontSize: '16px', color: '#34d399' }}>{item.icon}</div>
                   <div style={{ flex: 1 }}>
                     <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.03em' }}>{item.name}</p>
-                    <p style={{ fontSize: '12px', color: '#059669', fontWeight: 600, margin: '4px 0 0' }}>{item.status}</p>
+                    <p style={{ fontSize: '12px', color: '#34d399', fontWeight: 600, margin: '4px 0 0' }}>{item.status}</p>
                   </div>
                 </div>
               ))}

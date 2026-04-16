@@ -340,7 +340,7 @@ export default function APISandbox() {
                     marginBottom: '4px',
                   }}
                 >
-                  {param.name} {param.required && <span style={{ color: '#DC2626' }}>*</span>}
+                  {param.name} {param.required && <span style={{ color: '#f87171' }}>*</span>}
                 </label>
                 <input
                   type={param.type === 'integer' ? 'number' : param.type === 'boolean' ? 'text' : 'text'}

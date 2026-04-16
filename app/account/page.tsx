@@ -438,7 +438,7 @@ export default function AccountPage() {
                           <button
                             onClick={() => handleRevokeApiKey(key.id)}
                             className="revoke-btn"
-                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: '#DC2626', backgroundColor: 'transparent', border: '1px solid #FECACA', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s' }}
+                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: '#f87171', backgroundColor: 'transparent', border: '1px solid #FECACA', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s' }}
                           >
                             Revoke
                           </button>

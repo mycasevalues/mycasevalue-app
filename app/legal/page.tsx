@@ -28,7 +28,7 @@ const FEATURES = [
         <line x1="12" y1="14" x2="7.5" y2="16.5" /><line x1="12" y1="14" x2="16.5" y2="16.5" />
       </svg>
     ),
-    color: '#7C3AED',
+    color: '#a78bfa',
     bg: '#F5F3FF',
   },
   {
@@ -41,18 +41,18 @@ const FEATURES = [
         <line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" />
       </svg>
     ),
-    color: '#059669',
+    color: '#34d399',
     bg: 'rgba(34,197,94,0.06)',
   },
 ];
 
 const SOURCES = [
   { name: 'CourtListener', records: '500k+', type: 'Legal Opinions', color: '#1E3A5F', description: 'Federal and state court opinions with full text and metadata' },
-  { name: 'Federal Register', records: 'Daily', type: 'Regulations', color: '#7C3AED', description: 'Proposed and final rules, notices, and presidential documents' },
+  { name: 'Federal Register', records: 'Daily', type: 'Regulations', color: '#a78bfa', description: 'Proposed and final rules, notices, and presidential documents' },
   { name: 'eCFR', records: '~200k', type: 'Federal Code', color: '#0D9488', description: 'Electronic Code of Federal Regulations — current regulatory text' },
   { name: 'EDGAR', records: 'Millions', type: 'SEC Filings', color: '#D97706', description: '10-K, 10-Q, 8-K, and other corporate filings and disclosures' },
-  { name: 'Caselaw Access', records: '6.7M', type: 'US Cases', color: '#059669', description: 'Harvard Law Library digitized caselaw spanning 360+ years' },
-  { name: 'CanLII', records: '100k+', type: 'Canadian Law', color: '#DC2626', description: 'Canadian court decisions and legislation for cross-border research' },
+  { name: 'Caselaw Access', records: '6.7M', type: 'US Cases', color: '#34d399', description: 'Harvard Law Library digitized caselaw spanning 360+ years' },
+  { name: 'CanLII', records: '100k+', type: 'Canadian Law', color: '#f87171', description: 'Canadian court decisions and legislation for cross-border research' },
   { name: 'GovInfo', records: 'Millions', type: 'Gov Documents', color: 'var(--color-text-muted)', description: 'Congressional records, federal reports, and government publications' },
 ];
 

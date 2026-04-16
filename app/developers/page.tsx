@@ -606,7 +606,7 @@ export default function DevelopersPage() {
                               style={{
                                 fontSize: '11px',
                                 fontWeight: 600,
-                                color: '#DC2626',
+                                color: '#f87171',
                                 textTransform: 'uppercase',
                                 letterSpacing: '0.5px',
                               }}

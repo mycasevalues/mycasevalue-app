@@ -729,7 +729,7 @@ export default function CalculatorPage() {
                 <p className="text-2xl font-black" style={{ color: '#057642', fontFamily: 'var(--font-mono)' }}>{results.attorneyWinRate}%</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>win rate</p>
               </div>
-              <div className="p-5" style={{ background: '#FEF0EF', border: '1px solid #CC1016', borderRadius: '12px' }}>
+              <div className="p-5" style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid #CC1016', borderRadius: '12px' }}>
                 <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>Pro Se</p>
                 <p className="text-2xl font-black" style={{ color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{results.proSeWinRate}%</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>win rate</p>
@@ -771,7 +771,7 @@ export default function CalculatorPage() {
                   {results.breakdown.attorneyMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Attorney representation boost</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: '#059669', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.attorneyMult.toFixed(2)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: '#34d399', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.attorneyMult.toFixed(2)}</td>
                     </tr>
                   )}
                   {results.breakdown.evidenceMult !== 1 && (

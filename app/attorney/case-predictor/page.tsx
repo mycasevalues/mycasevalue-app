@@ -363,7 +363,7 @@ export default function CasePredictorPage() {
                     {[
                       { val: 'weak', label: 'Weak', color: '#EA2143' },
                       { val: 'moderate', label: 'Moderate', color: '#E89558' },
-                      { val: 'strong', label: 'Strong', color: '#059669' },
+                      { val: 'strong', label: 'Strong', color: '#34d399' },
                     ].map((opt) => (
                       <button
                         key={opt.val}
@@ -568,10 +568,10 @@ export default function CasePredictorPage() {
                       AI Strategic Insights
                     </h3>
                   </div>
-                  <div style={{ fontSize: '13px', color: '#5B21B6', lineHeight: 1.7, fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap' }}>
+                  <div style={{ fontSize: '13px', color: '#a78bfa', lineHeight: 1.7, fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap' }}>
                     {p.aiInsights}
                   </div>
-                  <p style={{ fontSize: '10px', color: '#6B21A8', margin: '12px 0 0', fontFamily: 'var(--font-body)' }}>
+                  <p style={{ fontSize: '10px', color: '#a78bfa', margin: '12px 0 0', fontFamily: 'var(--font-body)' }}>
                     AI-generated analysis based on historical patterns. Review with legal judgment.
                   </p>
                 </div>
@@ -630,7 +630,7 @@ export default function CasePredictorPage() {
 
         {/* Free-During-Beta Badge */}
         <div style={{ marginTop: '32px', padding: '16px 20px', background: 'linear-gradient(135deg, rgba(21, 128, 61, 0.08) 0%, rgba(21, 128, 61, 0.04) 100%)', border: '1px solid rgba(21, 128, 61, 0.20)', borderRadius: '12px', textAlign: 'center' }}>
-          <span style={{ fontSize: '12px', fontWeight: 600, color: '#059669', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+          <span style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
             Free During Beta
           </span>
         </div>

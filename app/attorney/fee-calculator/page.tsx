@@ -443,7 +443,7 @@ export default function FeeCalculatorPage() {
 
               {/* Lodestar (if applicable) */}
               {feeData.lodestar && (
-                <div style={{ ...cardStyle, borderColor: '#D97706' }}>
+                <div style={{ ...cardStyle, borderColor: 'rgba(245,158,11,0.3)' }}>
                   <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>
                     Lodestar Calculation (Fee-Shifting)
                   </h3>

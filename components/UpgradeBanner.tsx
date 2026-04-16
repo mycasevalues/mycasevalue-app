@@ -2,7 +2,7 @@ export default function UpgradeBanner() {
   return (
     <section
       style={{
-        background: 'var(--accent-primary)',
+        background: 'var(--gradient-hero)',
         padding: '64px 24px',
         borderBottom: '1px solid var(--border-default)',
       }}

@@ -393,7 +393,7 @@ export default function DistrictsExplorer({
           <div className="stat-label">Highest Win Rate</div>
           {stats.highestWinRate ? (
             <>
-              <div className="stat-value" style={{ color: '#059669' }}>
+              <div className="stat-value" style={{ color: '#34d399' }}>
                 {stats.highestWinRate.winRate}%
               </div>
               <div className="stat-meta">{stats.highestWinRate.name}</div>

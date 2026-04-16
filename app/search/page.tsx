@@ -1091,7 +1091,7 @@ function SearchPageInner() {
 
                 const highlights = [
                   { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: 'var(--accent-primary)' },
-                  { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#059669' },
+                  { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#34d399' },
                   { title: 'Fastest Resolution', value: fastestResolution?.label || 'N/A', display: fastestResolution ? `${fastestResolution.mo} months` : 'N/A', color: '#0369A1' },
                   { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `${fmtK(highestRecovery.rngMd)} median` : 'N/A', color: 'var(--accent-primary)' },
                 ];

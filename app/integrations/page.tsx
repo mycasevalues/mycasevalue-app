@@ -667,16 +667,16 @@ export default function IntegrationsPage() {
               <span style={{ color: 'var(--border-default)' }}>(</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
-              <span style={{ color: '#059669' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
+              <span style={{ color: '#34d399' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
               <span style={{ color: 'var(--border-default)' }}>,</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
               <span style={{ color: 'var(--border-default)' }}>{'{ '}</span>
               <span style={{ color: 'var(--color-text-inverse)' }}>headers</span>
               <span style={{ color: 'var(--border-default)' }}>{': { '}</span>
-              <span style={{ color: '#059669' }}>{`'Authorization'`}</span>
+              <span style={{ color: '#34d399' }}>{`'Authorization'`}</span>
               <span style={{ color: 'var(--border-default)' }}>{': '}</span>
-              <span style={{ color: '#059669' }}>{`'Bearer YOUR_API_KEY'`}</span>
+              <span style={{ color: '#34d399' }}>{`'Bearer YOUR_API_KEY'`}</span>
               <span style={{ color: 'var(--border-default)' }}>{' } }'}</span>
             </div>
             <div>

@@ -460,7 +460,7 @@ export default function OddsPage() {
                   </h3>
                   <div style={{ display: 'grid', gap: 16 }}>
                     {[
-                      { label: 'Won at Trial', value: results.winRate, color: '#059669' },
+                      { label: 'Won at Trial', value: results.winRate, color: '#34d399' },
                       { label: 'Settled', value: results.settlementRate, color: '#D97706' },
                       { label: 'Dismissed', value: results.dismissalRate, color: 'var(--accent-primary)' },
                     ].map(item => (
@@ -732,7 +732,7 @@ export default function OddsPage() {
                       }}
                     >
                       <div className="outcome-donut-inner">
-                        <div style={{ fontSize: 24, fontWeight: 600, color: '#059669', fontFamily: 'var(--font-mono)' }}>
+                        <div style={{ fontSize: 24, fontWeight: 600, color: '#34d399', fontFamily: 'var(--font-mono)' }}>
                           {favorablePercentage.toFixed(1)}%
                         </div>
                         <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 }}>
@@ -748,7 +748,7 @@ export default function OddsPage() {
                     gap: 24,
                   }}>
                     {[
-                      { label: 'Win', color: '#059669', pct: results.winRate },
+                      { label: 'Win', color: '#34d399', pct: results.winRate },
                       { label: 'Settlement', color: '#D97706', pct: results.settlementRate },
                       { label: 'Dismissed/Other', color: 'var(--color-text-muted)', pct: results.dismissalRate },
                     ].map(item => (
@@ -1190,7 +1190,7 @@ export default function OddsPage() {
                       <div style={{ fontSize: 28, fontWeight: 700, color: '#057642', fontFamily: 'var(--font-mono)' }}>{attyData.rwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.rn ?? 0).toLocaleString()} cases</div>
                     </div>
-                    <div style={{ padding: 16, background: '#FEF0EF', border: '1px solid #CC1016', borderRadius: 8, textAlign: 'center' }}>
+                    <div style={{ padding: 16, background: 'rgba(239,68,68,0.06)', border: '1px solid #CC1016', borderRadius: 8, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Pro Se</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{attyData.pwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.pn ?? 0).toLocaleString()} cases</div>
