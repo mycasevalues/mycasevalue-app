@@ -202,9 +202,9 @@ export default function HomePage() {
       </section>
 
       {/* ── DISCLAIMER ── */}
-      <div className="px-6 py-3" style={{ background: '#060a14' }}>
-        <p className="text-[10px] text-gray-600 text-center">
-          Data from public federal court records for informational purposes only. Not legal advice.
+      <div className="px-6 py-3 border-t" style={{ background: '#060a14', borderColor: 'rgba(255,255,255,0.04)' }}>
+        <p className="text-[10px] text-gray-600 text-center tracking-wide">
+          Sourced from public federal court records. For informational purposes only &middot; Not legal advice.
         </p>
       </div>
     </main>
