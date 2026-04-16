@@ -184,15 +184,17 @@ export default async function DistrictCaseTypePage({
             href={`/cases/${category}/${slug}`}
             style={{
               display: 'inline-block',
-              padding: '12px 32px',
-              borderRadius: '12px',
-              background: 'var(--gradient-hero)',
-              color: 'var(--color-text-inverse)',
+              padding: '10px 20px',
+              borderRadius: 6,
+              background: '#1a56db',
+              color: '#ffffff',
               textDecoration: 'none',
-              fontWeight: '600',
-              fontSize: '14px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.5px',
+              fontWeight: 600,
+              fontSize: 13,
+              letterSpacing: '-0.005em',
+              border: '1px solid #1a56db',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
+              fontFamily: 'var(--font-inter)',
             }}
           >
             Back to {caseType?.label || 'Case Type'}
