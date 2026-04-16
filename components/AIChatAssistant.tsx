@@ -111,7 +111,7 @@ export function AIChatAssistant() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded-full text-white shadow-lg hover:shadow-xl transition-all"
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded-lg text-white shadow-lg hover:shadow-xl transition-all"
           style={{ backgroundColor: 'var(--accent-primary)', fontFamily: 'Inter, system-ui, sans-serif' }}
           aria-label="Open AI Assistant"
         >
@@ -184,7 +184,7 @@ export function AIChatAssistant() {
 
           <div className="border-t border-gray-200 px-4 py-3">
             <form onSubmit={onSubmit} className="flex items-center gap-2">
-              <input ref={inputRef} type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Ask about case values..." className="flex-1 px-4 py-2.5 rounded-full border border-gray-200 text-sm focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400" disabled={isLoading} />
+              <input ref={inputRef} type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Ask about case values..." className="flex-1 px-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400" disabled={isLoading} />
               <button type="submit" disabled={!inputValue.trim() || isLoading} className="p-2.5 rounded-full text-white transition-colors disabled:opacity-50" style={{ backgroundColor: 'var(--accent-primary)' }} aria-label="Send message">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
