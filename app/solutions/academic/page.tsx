@@ -105,37 +105,40 @@ export default function AcademicPage() {
           }}>
             Access 5.1M+ federal cases for law school research, curriculum development, student projects, and institutional scholarship. Free institutional licensing available.
           </p>
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact?type=academic" style={{
-              background: 'var(--accent-primary)',
-              color: 'var(--color-surface-1)',
-              padding: '0.875rem 2rem',
-              borderRadius: '12px',
+              background: '#1a56db',
+              color: '#ffffff',
+              padding: '10px 20px',
+              borderRadius: 6,
               textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-inter)',
               fontWeight: 600,
-              fontSize: '0.875rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.04em',
-              display: 'inline-block',
+              fontSize: 13,
+              letterSpacing: '-0.005em',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 6,
+              border: '1px solid #1a56db',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
             }}>
-              Get Institutional License
+              Get institutional license
+              <span style={{ fontSize: 14 }}>→</span>
             </Link>
-            <Link href="/contact" style={{
+            <Link href="/methodology" style={{
               background: 'transparent',
-              color: 'var(--color-surface-1)',
-              padding: '0.875rem 2rem',
-              borderRadius: '12px',
-              border: '1.5px solid rgba(255,255,255,0.5)',
+              color: 'rgba(255,255,255,0.85)',
+              padding: '10px 20px',
+              borderRadius: 6,
+              border: '1px solid rgba(255,255,255,0.2)',
               textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-inter)',
               fontWeight: 600,
-              fontSize: '0.875rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              fontSize: 13,
+              letterSpacing: '-0.005em',
               display: 'inline-block',
             }}>
-              View Documentation
+              View methodology
             </Link>
           </div>
         </div>
