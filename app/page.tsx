@@ -61,12 +61,12 @@ export default function HomePage() {
                 <SearchHero variant="dark" />
               </div>
 
-              <div className="flex items-center gap-8">
-                <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-transparent text-gray-300 border border-white/20 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] hover:border-white/40 hover:text-white transition-all">
+              <div className="flex items-center gap-6">
+                <Link href="/cases" className="inline-flex h-10 items-center px-5 bg-transparent text-gray-200 border border-white/15 text-[13px] font-semibold rounded-md hover:bg-white/[0.03] hover:border-white/30 hover:text-white transition-all tracking-[-0.005em]">
                   Browse Cases
                 </Link>
-                <Link href="/judges" className="text-sm text-gray-400 hover:text-white transition-colors group">
-                  Judge Intelligence <span className="inline-block transition-transform group-hover:translate-x-0.5">&rarr;</span>
+                <Link href="/judges" className="text-[13px] text-gray-400 hover:text-white transition-colors group inline-flex items-center gap-1.5 tracking-[-0.005em]">
+                  Judge Intelligence <span className="inline-block transition-transform group-hover:translate-x-0.5 text-blue-400/70 group-hover:text-blue-400">&rarr;</span>
                 </Link>
               </div>
             </div>
