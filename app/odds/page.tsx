@@ -150,7 +150,7 @@ export default function OddsPage() {
         .odds-select:hover { border-color: var(--accent-primary-hover); }
         .odds-select:focus { outline: none; border-color: var(--accent-primary-hover); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         .odds-btn {
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
           color: var(--color-text-inverse);
           border: none;
           border-radius: 12px;

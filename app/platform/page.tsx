@@ -229,7 +229,7 @@ export default function PlatformPage() {
         }
 
         .comparison-table th {
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
           color: white;
           padding: 16px;
           text-align: left;
@@ -368,7 +368,7 @@ export default function PlatformPage() {
           position: absolute;
           top: -12px;
           left: 24px;
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
           color: white;
           padding: 4px 12px;
           border-radius: 20px;
@@ -404,7 +404,7 @@ export default function PlatformPage() {
           content: '';
           width: 6px;
           height: 6px;
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
           border-radius: 50%;
           flex-shrink: 0;
           margin-top: 2px;

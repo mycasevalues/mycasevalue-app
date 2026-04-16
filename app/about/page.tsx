@@ -96,7 +96,7 @@ export default function AboutPage() {
         }
 
         .about-header {
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
           color: var(--color-surface-0);
           padding: 3rem 1.5rem;
           text-align: left;
@@ -270,7 +270,7 @@ export default function AboutPage() {
           font-size: 0.875rem;
           font-weight: 600;
           text-decoration: none;
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
           color: var(--color-surface-0);
           transition: all 0.3s ease;
           margin-top: 1.5rem;

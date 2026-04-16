@@ -153,7 +153,7 @@ export default function TrendsPage() {
         a.lex-link:hover { text-decoration: underline; }
         .lex-card { background: var(--color-surface-0); border: 1px solid var(--border-default); border-radius: 12px; }
         .lex-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .lex-btn-primary { background: var(--accent-primary); color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; }
+        .lex-btn-primary { background: var(--gradient-hero); color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; }
         .lex-btn-primary:hover { background: var(--accent-primary-hover); }
         .lex-badge { background: rgba(10, 102, 194, 0.1); color: var(--accent-primary); border-radius: 12px; }
         h1 { font-family: var(--font-display); }

@@ -233,7 +233,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           margin-top: 8px;
         }
         .comparison-fill {
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
           height: 100%;
           border-radius: 4px;
         }

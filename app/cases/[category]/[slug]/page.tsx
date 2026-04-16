@@ -465,7 +465,7 @@ export default async function CaseTypeDetailPage({
             display: inline-block;
             padding: 14px 36px;
             border-radius: 12px;
-            background: var(--accent-primary);
+            background: var(--gradient-hero);
             color: var(--color-text-inverse);
             text-decoration: none;
             font-weight: 600;

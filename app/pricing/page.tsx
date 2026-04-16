@@ -194,7 +194,7 @@ export default function PricingPage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       <style>{`
         .pricing-header {
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
           color: var(--color-text-inverse);
           padding: 2.5rem 1.5rem;
           text-align: center;
@@ -287,7 +287,7 @@ export default function PricingPage() {
           top: -12px;
           left: 50%;
           transform: translateX(-50%);
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
           color: var(--color-text-inverse);
           padding: 0.375rem 0.875rem;
           border-radius: 9999px;
@@ -365,7 +365,7 @@ export default function PricingPage() {
           transition: all 0.3s ease;
           width: 100%;
           text-align: center;
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
           color: var(--color-text-inverse);
           border: none;
           cursor: pointer;

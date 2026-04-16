@@ -94,7 +94,7 @@ function SignInForm() {
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15) !important;
         }
         .auth-btn {
-          background: var(--accent-primary);
+          background: var(--gradient-hero);
         }
         .auth-btn:hover:not(:disabled) {
           opacity: 0.9;
