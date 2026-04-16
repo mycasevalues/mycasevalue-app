@@ -28,12 +28,14 @@
   width: auto;
   height: auto;
   overflow: visible;
-  background: var(--color-navy);
-  color: var(--color-text-inverse);
+  background: var(--color-accent);
+  color: #ffffff;
   padding: 8px 16px;
-  border-radius: 12px;
-  font-size: 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
   z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 /* Screen reader only — visually hidden but accessible to assistive technologies */
@@ -1027,7 +1029,7 @@ button:disabled,
   background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.5s ease-in-out infinite;
-  border-radius: 12px;
+  border-radius: 4px;
 }
 
 /* Counter tick animation */
