@@ -380,4 +380,43 @@
 ### Session Gate: PASS
 All forbidden Bloomberg colors eliminated from both target files. All Westlaw tokens in place. Build compiles successfully.
 
+---
+
+## Westlaw Precision Redesign — Session 2: Font System — Add Libre Baskerville + Source Sans 3
+**Date:** 2026-04-16
+**Target files:** lib/fonts.ts, app/layout.tsx, styles/tokens.css (addition), public/fonts/ (new files)
+**Status:** COMPLETE
+
+### Changes Made
+
+#### New font files (public/fonts/)
+- `libre-baskerville-400.woff2` (20KB) — Latin subset, weight 400
+- `libre-baskerville-700.woff2` (20KB) — Latin subset, weight 700
+- `source-sans-3-400.woff2` (16KB) — Latin subset, weight 400
+- `source-sans-3-600.woff2` (16KB) — Latin subset, weight 600
+
+#### lib/fonts.ts
+- Added `baskerville` localFont definition with `--font-baskerville` CSS variable (weights 400, 700)
+- Added `sourceSans` localFont definition with `--font-sans` CSS variable (weights 400, 600)
+- Updated `fontVariables` array to include `baskerville.variable` and `sourceSans.variable`
+
+#### app/layout.tsx
+- Added `baskerville` and `sourceSans` to imports from `lib/fonts`
+- Added `${baskerville.variable} ${sourceSans.variable}` to `<html>` className
+
+#### styles/tokens.css (addition only)
+- Added `--font-legal` token: `var(--font-baskerville), 'Libre Baskerville', Georgia, serif` — for legal entity names (case names, judge names, court names)
+- Added `--font-ui` token: `var(--font-sans), 'Source Sans 3', Inter, system-ui, sans-serif` — for UI elements
+- Kept `--font-display` as Plus Jakarta Sans for page-level h1
+
+### Verification Results
+
+1. **Font files exist in public/fonts/** → PASS (4 woff2 files present, correct sizes)
+2. **grep "libre-baskerville" lib/fonts.ts** → PASS (both weight files referenced)
+3. **grep "baskerville" app/layout.tsx** → PASS (imported and in className)
+4. **grep "font-legal" styles/tokens.css** → PASS (token defined)
+5. **npm run build** → Webpack compilation PASS. Pre-existing TS error in app/districts/page.tsx:188 (unrelated)
+
+### Session Gate: PASS
+
 Last updated: 2026-04-16

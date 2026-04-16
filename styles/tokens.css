@@ -153,6 +153,10 @@
   --font-body:    var(--font-inter), 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-mono:    var(--font-plex-mono), 'IBM Plex Mono', 'Menlo', monospace;
 
+  /* ── Westlaw Precision font additions ── */
+  --font-legal:   var(--font-baskerville), 'Libre Baskerville', Georgia, serif;
+  --font-ui:      var(--font-sans), 'Source Sans 3', Inter, system-ui, sans-serif;
+
   /* ── TYPOGRAPHY — Composite Font Shorthand Tokens ── */
   /* Display — page h1 only */
   --type-display:    700 24px/1.2 var(--font-display);

@@ -14,7 +14,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME } from '../lib/site-config';
-import { inter, jakarta, plexMono } from '../lib/fonts';
+import { inter, jakarta, plexMono, baskerville, sourceSans } from '../lib/fonts';
 
 // Dynamic imports for client-side only components to improve initial page load
 // These components are non-critical and loaded after hydration
@@ -248,7 +248,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${inter.variable} ${jakarta.variable} ${plexMono.variable}`}>
+    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${inter.variable} ${jakarta.variable} ${plexMono.variable} ${baskerville.variable} ${sourceSans.variable}`}>
       <head>
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
