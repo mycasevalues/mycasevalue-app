@@ -1,44 +1,44 @@
-import { ImageResponse } from '@vercel/og';
+import'{ ImageResponse } from '@vercel/og';
 
-export const runtime = 'edge';
+export'const runtime = 'edge';
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const rate = searchParams.get('rate');
+export'async function GET(request: Request) {
+' const { searchParams } = new URL(request.url);
+' const rate = searchParams.get('rate');
 
-  // Parse rate as a number, default to 50 if invalid
-  const rateNum = rate ? parseFloat(rate) : 50;
-  const displayRate = Math.min(Math.max(rateNum, 0), 100);
+' // Parse rate as a number, default to 50 if invalid
+' const rateNum = rate ? parseFloat(rate) : 50;
+' const displayRate = Math.min(Math.max(rateNum, 0), 100);
 
-  // Format text: 100 shows smaller, others centered
-  const isHundred = displayRate === 100;
-  const fontSize = isHundred ? 16 : 24;
-  const displayText = Math.round(displayRate).toString();
+' // Format text: 100 shows smaller, others centered
+' const isHundred = displayRate === 100;
+' const fontSize = isHundred ? 16 : 24;
+' const displayText = Math.round(displayRate).toString();
 
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: '100%',
-          height: '100%',
-          backgroundColor: '#1a56db',
-          borderRadius: '6px',
-          color: 'white',
-          fontFamily: 'monospace',
-          fontWeight: 'bold',
-          fontSize: `${fontSize}px`,
-          lineHeight: 1,
-        }}
-      >
-        {displayText}
-      </div>
-    ),
-    {
-      width: 32,
-      height: 32,
-    }
-  );
+' return new ImageResponse(
+'   (
+'     <div
+'       style={{
+'         display: 'flex',
+'         alignItems: 'center',
+'         justifyContent: 'center',
+'         width: '100%',
+'         height: '100%',
+'         backgroundColor: '#1a56db',
+'         borderRadius: '6px',
+'         color: 'white',
+'         fontFamily: 'monospace',
+'         fontWeight: 'bold',
+'         fontSize: `${fontSize}px`,
+'         lineHeight: 1,
+'       }}
+'     >
+'       {displayText}
+'     </div>
+'   ),
+'   {
+'     width: 32,
+'     height: 32,
+'   }
+' );
 }

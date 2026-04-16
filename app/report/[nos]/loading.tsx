@@ -1,2 +1,2 @@
-import ReportSkeleton from '../../../components/ui/ReportSkeleton';
-export default function Loading() { return <ReportSkeleton />; }
+import'ReportSkeleton from '../../../components/ui/ReportSkeleton';
+export'default function Loading() { return <ReportSkeleton />; }

@@ -1,27 +1,27 @@
-import type { Metadata } from 'next';
-import { ReactNode } from 'react';
-import { SITE_URL } from '../../../lib/site-config';
+import'type { Metadata } from 'next';
+import'{ ReactNode } from 'react';
+import'{ SITE_URL } from '../../../lib/site-config';
 
-export const metadata: Metadata = {
-  title: 'AI Case Outcome Predictor | Attorney Mode',
-  description: 'Predict case outcomes using AI analysis of historical federal court data, case factors, and legal precedents.',
-  robots: { index: false, follow: false },
-  alternates: { canonical: `${SITE_URL}/attorney/case-predictor` },
-  openGraph: {
-    title: 'AI Case Outcome Predictor | Attorney Mode',
-    description: 'Predict case outcomes using AI analysis of historical federal court data and legal precedents.',
-    url: `${SITE_URL}/attorney/case-predictor`,
-    type: 'website',
-    siteName: 'MyCaseValue',
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'AI Case Outcome Predictor | Attorney Mode',
-    description: 'Predict case outcomes using AI analysis of federal court data.',
-  },
+export'const metadata: Metadata = {
+' title: 'AI Case Outcome Predictor | Attorney Mode',
+' description: 'Predict case outcomes using AI analysis of historical federal court data, case factors, and legal precedents.',
+' robots: { index: false, follow: false },
+' alternates: { canonical: `${SITE_URL}/attorney/case-predictor` },
+' openGraph: {
+'   title: 'AI Case Outcome Predictor | Attorney Mode',
+'   description: 'Predict case outcomes using AI analysis of historical federal court data and legal precedents.',
+'   url: `${SITE_URL}/attorney/case-predictor`,
+'   type: 'website',
+'   siteName: 'MyCaseValue',
+'   images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+' },
+' twitter: {
+'   card: 'summary_large_image',
+'   title: 'AI Case Outcome Predictor | Attorney Mode',
+'   description: 'Predict case outcomes using AI analysis of federal court data.',
+' },
 };
 
-export default function CasePredictorLayout({ children }: { children: ReactNode }) {
-  return <>{children}</>;
+export'default function CasePredictorLayout({ children }: { children: ReactNode }) {
+' return <>{children}</>;
 }
