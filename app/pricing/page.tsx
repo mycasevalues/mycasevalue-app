@@ -279,55 +279,57 @@ export default function PricingPage() {
         .pricing-card {
           display: flex;
           flex-direction: column;
-          padding: 2rem;
-          border-radius: var(--radius-lg);
+          padding: 1.75rem;
+          border-radius: 6px;
           border: 1px solid var(--border-default);
           background: var(--color-surface-0);
-          transition: all 0.2s ease;
+          transition: border-color 150ms ease, background-color 150ms ease;
           position: relative;
         }
 
         .pricing-card.highlighted {
-          border: 2px solid var(--accent-primary);
-          box-shadow: 0 8px 32px rgba(9, 102, 195, 0.15);
-          transform: scale(1.01);
+          border: 1px solid rgba(59,130,246,0.4);
+          background: rgba(59,130,246,0.02);
         }
 
         .pricing-card:hover {
-          border-color: var(--accent-primary);
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+          border-color: rgba(59,130,246,0.3);
+          background: rgba(59,130,246,0.02);
         }
 
         .pricing-card.highlighted:hover {
-          box-shadow: 0 12px 40px rgba(9, 102, 195, 0.2);
+          border-color: rgba(59,130,246,0.6);
         }
 
         .card-name {
           font-family: var(--font-inter);
-          font-size: 1.25rem;
+          font-size: 1.0625rem;
           font-weight: 600;
+          letter-spacing: -0.01em;
           color: var(--color-text-primary);
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.375rem;
         }
 
         .card-best-for {
-          font-family: var(--font-inter);
-          font-size: 0.875rem;
-          color: var(--accent-primary);
-          font-weight: 500;
+          font-family: var(--font-mono);
+          font-size: 10px;
+          color: #60a5fa;
+          font-weight: 600;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
           margin-bottom: 1.25rem;
         }
 
         .pricing-card.highlighted::before {
           content: 'MOST POPULAR';
           position: absolute;
-          top: -12px;
+          top: -10px;
           left: 50%;
           transform: translateX(-50%);
-          background: var(--gradient-hero);
-          color: var(--color-text-inverse);
-          padding: 0.375rem 0.875rem;
-          border-radius: 9999px;
+          background: #1a56db;
+          color: #ffffff;
+          padding: 0.25rem 0.625rem;
+          border-radius: 3px;
           font-family: var(--font-inter);
           font-size: 0.6875rem;
           font-weight: 700;
@@ -336,11 +338,13 @@ export default function PricingPage() {
         }
 
         .card-price {
-          font-family: var(--font-inter);
-          font-size: 2.5rem;
+          font-family: var(--font-mono);
+          font-size: 2.25rem;
           font-weight: 600;
-          color: var(--accent-primary);
+          color: var(--color-text-primary);
+          font-variant-numeric: tabular-nums;
           line-height: 1;
+          letter-spacing: -0.02em;
           margin-bottom: 0.25rem;
         }
 
