@@ -241,7 +241,7 @@ export default function ResearchMemoPage() {
                 </div>
               </div>
 
-              <div style={{ padding: '16px', background: '#FEF3C7', borderLeft: '3px solid #D97706', borderRadius: 6, fontSize: 12, color: '#78350F', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 6, fontSize: 12, color: '#78350F', lineHeight: 1.6 }}>
                 <strong>Important:</strong> AI-generated research memo for attorney review only — not a substitute for primary legal research. All citations and legal standards must be independently verified through Westlaw, LexisNexis, or other authoritative legal databases.
               </div>
             </div>

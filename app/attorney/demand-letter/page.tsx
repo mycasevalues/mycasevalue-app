@@ -467,7 +467,7 @@ export default function DemandLetterPage() {
               </div>
 
               {/* Disclaimer */}
-              <div style={{ background: 'linear-gradient(135deg, #FEF3C7 0%, #FEE2BE 100%)', borderRadius: '12px', padding: '16px', border: '1px solid #FCD34D' }}>
+              <div style={{ background: 'linear-gradient(135deg, rgba(234,179,8,0.1) 0%, #FEE2BE 100%)', borderRadius: '12px', padding: '16px', border: '1px solid #FCD34D' }}>
                 <div style={{ display: 'flex', gap: '12px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#B86E00', flexShrink: 0, marginTop: '2px' }}>
                     <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z" />

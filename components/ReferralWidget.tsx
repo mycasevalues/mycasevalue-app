@@ -108,7 +108,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
         style={{
           padding: '16px',
           borderRadius: '8px',
-          backgroundColor: '#FEE2E2',
+          backgroundColor: 'rgba(239,68,68,0.1)',
           color: '#991B1B',
           border: '1px solid #FECACA',
         }}
@@ -124,8 +124,8 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
         style={{
           padding: '20px',
           borderRadius: '8px',
-          backgroundColor: '#EFF6FF',
-          border: '1px solid #BFDBFE',
+          backgroundColor: 'rgba(59,130,246,0.08)',
+          border: '1px solid rgba(59,130,246,0.15)',
         }}
       >
         <h3 style={{ margin: '0 0 8px 0', color: '#1E40AF' }}>
@@ -305,7 +305,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
         style={{
           marginTop: '16px',
           padding: '12px',
-          backgroundColor: '#FEF3C7',
+          backgroundColor: 'rgba(234,179,8,0.1)',
           borderRadius: '4px',
           border: '1px solid #FCD34D',
           fontSize: '13px',

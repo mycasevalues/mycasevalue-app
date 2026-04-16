@@ -724,7 +724,7 @@ export default function CalculatorPage() {
 
             {/* Attorney Impact & Sample Size */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-              <div className="p-5" style={{ background: '#E8F3EB', border: '1px solid #057642', borderRadius: '12px' }}>
+              <div className="p-5" style={{ background: 'rgba(34,197,94,0.1)', border: '1px solid #057642', borderRadius: '12px' }}>
                 <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>With Attorney</p>
                 <p className="text-2xl font-black" style={{ color: '#057642', fontFamily: 'var(--font-mono)' }}>{results.attorneyWinRate}%</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>win rate</p>

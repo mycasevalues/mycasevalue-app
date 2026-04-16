@@ -94,7 +94,7 @@ export default function PACERMonitor() {
   const getStatusColor = (status: string): { bg: string; text: string } => {
     switch (status) {
       case 'active':
-        return { bg: '#E8F3EB', text: '#057642' };
+        return { bg: 'rgba(34,197,94,0.1)', text: '#057642' };
       case 'inactive':
         return { bg: '#FDF4EC', text: '#B24020' };
       case 'closed':

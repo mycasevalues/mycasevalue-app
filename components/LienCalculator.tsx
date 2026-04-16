@@ -515,7 +515,7 @@ export default function LienCalculator() {
             )}
 
             {/* Net Before Liens */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: '#E8F3EB', borderBottom: '1px solid #D1E8D6' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'rgba(34,197,94,0.1)', borderBottom: '1px solid #D1E8D6' }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)' }}>
                 Net Before Liens
               </div>
@@ -532,7 +532,7 @@ export default function LienCalculator() {
 
           {/* Medicare Lien */}
           {(result.medicareLiensHigh > 0) && (
-            <div style={{ background: '#FEF3C7', borderLeft: '4px solid #F59E0B', borderRadius: 8, padding: 16, marginBottom: 16 }}>
+            <div style={{ background: 'rgba(234,179,8,0.1)', borderLeft: '4px solid #F59E0B', borderRadius: 8, padding: 16, marginBottom: 16 }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, fontFamily: 'var(--font-display)' }}>
                 Medicare Lien (Estimated Range)
               </div>
@@ -560,7 +560,7 @@ export default function LienCalculator() {
 
           {/* Medicaid Lien */}
           {(result.medicaidLiensHigh > 0) && (
-            <div style={{ background: '#F0FDF4', borderLeft: '4px solid #10B981', borderRadius: 8, padding: 16, marginBottom: 16 }}>
+            <div style={{ background: 'rgba(34,197,94,0.06)', borderLeft: '4px solid #10B981', borderRadius: 8, padding: 16, marginBottom: 16 }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, fontFamily: 'var(--font-display)' }}>
                 Medicaid Lien (Estimated Range)
               </div>
@@ -588,7 +588,7 @@ export default function LienCalculator() {
 
           {/* Workers Comp Lien */}
           {(result.workersCompLiens > 0) && (
-            <div style={{ background: '#EFF6FF', borderLeft: '4px solid #3B82F6', borderRadius: 8, padding: 16, marginBottom: 16 }}>
+            <div style={{ background: 'rgba(59,130,246,0.08)', borderLeft: '4px solid #3B82F6', borderRadius: 8, padding: 16, marginBottom: 16 }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, fontFamily: 'var(--font-display)' }}>
                 Workers Compensation Lien
               </div>
@@ -692,7 +692,7 @@ export default function LienCalculator() {
           <div style={{
             marginTop: 24,
             padding: 16,
-            background: '#FEF3C7',
+            background: 'rgba(234,179,8,0.1)',
             borderLeft: '3px solid #D97706',
             borderRadius: 6,
             fontSize: 12,

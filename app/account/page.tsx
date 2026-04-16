@@ -401,7 +401,7 @@ export default function AccountPage() {
             )}
 
             {newApiKey && (
-              <div style={{ padding: '14px', borderRadius: '12px', marginBottom: '16px', backgroundColor: '#F0F7FF', border: '1px solid #B3D4FC' }}>
+              <div style={{ padding: '14px', borderRadius: '12px', marginBottom: '16px', backgroundColor: 'rgba(59,130,246,0.06)', border: '1px solid #B3D4FC' }}>
                 <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 8px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Your New API Key (copy now)
                 </p>

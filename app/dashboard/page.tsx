@@ -861,7 +861,7 @@ export default async function DashboardPage() {
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Patent Infringement (NOS 830) · N.D. Cal.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Judge intelligence report 8 hours ago</p>
                   </div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#D97706', backgroundColor: '#FEF3C7', padding: '4px 12px', borderRadius: '6px' }}>Moderate risk</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#D97706', backgroundColor: 'rgba(234,179,8,0.1)', padding: '4px 12px', borderRadius: '6px' }}>Moderate risk</div>
                 </div>
                 <div style={{ padding: '12px 0', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>

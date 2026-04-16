@@ -311,7 +311,7 @@ export default function IntegrationsPage() {
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
                   borderRadius: '12px',
-                  background: integration.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
+                  background: integration.status === 'Available' ? 'rgba(34,197,94,0.06)' : 'rgba(232, 23, 31, 0.06)',
                   color: integration.status === 'Available' ? '#059669' : 'var(--accent-primary)',
                   border: integration.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                 }}>
@@ -502,7 +502,7 @@ export default function IntegrationsPage() {
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
                   borderRadius: '12px',
-                  background: capability.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
+                  background: capability.status === 'Available' ? 'rgba(34,197,94,0.06)' : 'rgba(232, 23, 31, 0.06)',
                   color: capability.status === 'Available' ? '#059669' : 'var(--accent-primary)',
                   border: capability.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                   display: 'inline-block',

@@ -64,7 +64,7 @@ function getStatusColor(
   switch (status) {
     case 'operational':
       return {
-        bg: '#E8F3EB',
+        bg: 'rgba(34,197,94,0.1)',
         text: '#057642',
         indicator: '#057642',
       };

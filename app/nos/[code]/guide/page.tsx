@@ -461,7 +461,7 @@ export default async function GuidePage({ params }: PageProps) {
           }}>
             <div style={{
               padding: '20px',
-              backgroundColor: '#E8F3EB',
+              backgroundColor: 'rgba(34,197,94,0.1)',
               border: '1px solid #057642',
               borderRadius: '8px',
             }}>

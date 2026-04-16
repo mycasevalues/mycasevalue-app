@@ -212,7 +212,7 @@ export default function NegotiationPage() {
               </div>
 
               {/* BATNA */}
-              <div style={{ background: r.batna > parseInt(currentOffer) ? '#E8F3EB' : '#FEF0EF', borderRadius: '12px', padding: '24px', border: `1px solid ${r.batna > parseInt(currentOffer) ? '#057642' : '#CC1016'}` }}>
+              <div style={{ background: r.batna > parseInt(currentOffer) ? 'rgba(34,197,94,0.1)' : '#FEF0EF', borderRadius: '12px', padding: '24px', border: `1px solid ${r.batna > parseInt(currentOffer) ? '#057642' : '#CC1016'}` }}>
                 <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>BATNA (Best Alternative to Negotiated Agreement)</div>
                 <div style={{ fontSize: '32px', fontWeight: 600, color: r.batna > parseInt(currentOffer) ? '#057642' : '#CC1016', fontFamily: 'var(--font-mono)' }}>
                   {formatMoney(r.batna)}
@@ -237,7 +237,7 @@ export default function NegotiationPage() {
                     <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Target</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.target)}</div>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '16px', background: '#E8F3EB', borderRadius: 10 }}>
+                  <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(34,197,94,0.1)', borderRadius: 10 }}>
                     <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Ceiling</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: '#057642', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.ceiling)}</div>
                   </div>
@@ -264,7 +264,7 @@ export default function NegotiationPage() {
               </div>
 
               {/* Disclaimer */}
-              <div style={{ padding: '16px', background: '#FEF3C7', borderLeft: '3px solid #D97706', borderRadius: 6, fontSize: 12, color: '#78350F', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 6, fontSize: 12, color: '#78350F', lineHeight: 1.6 }}>
                 <strong>Important:</strong> AI-generated negotiation intelligence — for attorney use only. Historical data provides context but does not predict specific case outcomes. All negotiation strategies should account for case-specific factors not captured in aggregate data.
               </div>
             </div>

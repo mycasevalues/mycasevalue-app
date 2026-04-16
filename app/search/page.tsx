@@ -538,7 +538,7 @@ function SearchPageInner() {
                     </div>
                   )}
                   {aiResult.parameters.nosCode && (
-                    <div style={{ padding: '8px 12px', background: '#FEF3C7', border: '1px solid #FCD34D', borderRadius: '6px' }}>
+                    <div style={{ padding: '8px 12px', background: 'rgba(234,179,8,0.1)', border: '1px solid #FCD34D', borderRadius: '6px' }}>
                       <p style={{ fontSize: '11px', fontWeight: '500', color: '#92400E', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         NOS Code: <strong>{aiResult.parameters.nosCode}</strong>
                       </p>

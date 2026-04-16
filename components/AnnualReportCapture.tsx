@@ -613,7 +613,7 @@ export default function AnnualReportCapture() {
             {error && (
               <div style={{
                 padding: '12px',
-                background: '#FEE2E2',
+                background: 'rgba(239,68,68,0.1)',
                 border: '1px solid #FCA5A5',
                 borderRadius: '8px',
                 fontSize: '13px',

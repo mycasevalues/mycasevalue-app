@@ -51,7 +51,7 @@ const PIPELINE_EVENTS: PipelineEvent[] = [
 ];
 
 const STATUS_STYLES: Record<string, { bg: string; color: string; label: string }> = {
-  healthy: { bg: '#F0FDF4', color: '#15803D', label: 'Healthy' },
+  healthy: { bg: 'rgba(34,197,94,0.06)', color: '#15803D', label: 'Healthy' },
   degraded: { bg: 'rgba(234,179,8,0.08)', color: '#B45309', label: 'Degraded' },
   offline: { bg: '#FEF2F2', color: '#B91C1C', label: 'Offline' },
 };
@@ -59,7 +59,7 @@ const STATUS_STYLES: Record<string, { bg: string; color: string; label: string }
 const EVENT_STYLES: Record<string, { bg: string; color: string; icon: string }> = {
   ingestion: { bg: '#E8F4FD', color: 'var(--accent-primary)', icon: '\u2B07' },
   processing: { bg: '#F5F3FF', color: '#7C3AED', icon: '\u2699' },
-  embedding: { bg: '#F0FDF4', color: '#059669', icon: '\u2728' },
+  embedding: { bg: 'rgba(34,197,94,0.06)', color: '#059669', icon: '\u2728' },
   error: { bg: '#FEF2F2', color: '#DC2626', icon: '\u26A0' },
 };
 
@@ -112,7 +112,7 @@ export default function LegalDashboardPage() {
         <div style={{
           padding: '8px 16px',
           borderRadius: 10,
-          background: '#F0FDF4',
+          background: 'rgba(34,197,94,0.06)',
           border: '1px solid #BBF7D0',
           fontSize: 13,
           color: '#15803D',
@@ -395,7 +395,7 @@ export default function LegalDashboardPage() {
                     fontSize: 10,
                     fontWeight: 600,
                     color: '#15803D',
-                    background: '#F0FDF4',
+                    background: 'rgba(34,197,94,0.06)',
                   }}>
                     Active
                   </span>

@@ -429,7 +429,7 @@ export default function FeeCalculatorPage() {
                         ${feeData.hybrid.hourlyRate}/hr
                       </div>
                     </div>
-                    <div style={{ padding: '12px', background: '#FEF3C7', borderRadius: '8px', border: '1px solid #FCD34D' }}>
+                    <div style={{ padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '8px', border: '1px solid #FCD34D' }}>
                       <div style={{ fontSize: '12px', color: '#92400E', fontWeight: 600, marginBottom: '4px' }}>
                         Estimated Total (Case Completion)
                       </div>

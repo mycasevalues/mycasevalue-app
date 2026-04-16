@@ -390,7 +390,7 @@ export default function APISandbox() {
         <div
           style={{
             padding: '12px',
-            backgroundColor: '#FEE2E2',
+            backgroundColor: 'rgba(239,68,68,0.1)',
             border: '1px solid #FECACA',
             borderRadius: '6px',
             marginBottom: '16px',

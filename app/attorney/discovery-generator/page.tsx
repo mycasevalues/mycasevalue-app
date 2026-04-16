@@ -327,7 +327,7 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               {/* Disclaimer */}
-              <div style={{ padding: '16px', background: '#FEF3C7', borderLeft: '3px solid #D97706', borderRadius: 6, fontSize: 12, color: '#78350F', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 6, fontSize: 12, color: '#78350F', lineHeight: 1.6 }}>
                 <strong>Important:</strong> Must be reviewed by a licensed attorney and conformed to local court rules before filing. Discovery requests may need to be modified based on local rules regarding number limits, format requirements, and meet-and-confer obligations.
               </div>
             </div>

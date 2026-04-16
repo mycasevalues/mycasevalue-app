@@ -320,7 +320,7 @@ export default function DeadlinesCalculatorPage() {
 
               {/* Disclaimer */}
               <div style={{
-                padding: '16px', background: '#FEF3C7', borderLeft: '3px solid #D97706', borderRadius: 6,
+                padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 6,
                 fontSize: 12, color: '#78350F', lineHeight: 1.6, fontFamily: 'var(--font-body)',
               }}>
                 <strong>Important:</strong> Based on FRCP default rules — local rules and scheduling orders may modify these deadlines. Weekend and holiday adjustments per FRCP 6(a) are not computed here. Always verify deadlines with the applicable local rules and any court-specific orders.

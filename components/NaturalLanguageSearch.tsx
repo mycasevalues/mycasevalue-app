@@ -489,7 +489,7 @@ export default function NaturalLanguageSearch() {
         <div
           style={{
             padding: '12px',
-            background: '#FEE2E2',
+            background: 'rgba(239,68,68,0.1)',
             border: '1px solid #FCA5A5',
             borderRadius: '6px',
             color: '#991B1B',

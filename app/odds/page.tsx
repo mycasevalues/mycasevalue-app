@@ -1185,7 +1185,7 @@ export default function OddsPage() {
                     Attorney Representation Impact
                   </h3>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
-                    <div style={{ padding: 16, background: '#E8F3EB', border: '1px solid #057642', borderRadius: 8, textAlign: 'center' }}>
+                    <div style={{ padding: 16, background: 'rgba(34,197,94,0.1)', border: '1px solid #057642', borderRadius: 8, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>With Attorney</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: '#057642', fontFamily: 'var(--font-mono)' }}>{attyData.rwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.rn ?? 0).toLocaleString()} cases</div>
@@ -1249,7 +1249,7 @@ export default function OddsPage() {
               {/* Disclaimer */}
               <section style={{
                 padding: 'clamp(16px, 4vw, 32px)',
-                background: '#FEF3C7',
+                background: 'rgba(234,179,8,0.1)',
                 border: '1px solid #FCD34D',
                 borderRadius: 8,
               }}>

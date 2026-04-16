@@ -702,7 +702,7 @@ export default function IntakeFormGenerator() {
               ))}
             </ul>
 
-            <div style={{ marginTop: '20px', padding: '12px', background: '#FEF3C7', borderRadius: '8px', border: '1px solid #FCD34D' }}>
+            <div style={{ marginTop: '20px', padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '8px', border: '1px solid #FCD34D' }}>
               <p style={{ fontSize: '12px', color: '#92400E', margin: 0, fontFamily: 'var(--font-body)' }}>
                 <strong>Note:</strong> Each section contains numbered fields with blank lines formatted for printing.
               </p>

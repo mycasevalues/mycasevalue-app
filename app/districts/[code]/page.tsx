@@ -760,7 +760,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 <div style={{
                   marginTop: '16px',
                   padding: '12px 16px',
-                  background: '#FEF3C7',
+                  background: 'rgba(234,179,8,0.1)',
                   borderLeft: '3px solid #D97706',
                   borderRadius: '6px',
                   fontSize: 12,

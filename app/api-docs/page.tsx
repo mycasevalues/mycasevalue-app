@@ -361,7 +361,7 @@ export default function ApiDocsPage() {
                       <span style={{
                         display: 'inline-block',
                         padding: '4px 10px',
-                        backgroundColor: endpoint.method === 'GET' ? '#DBEAFE' : '#FEE2E2',
+                        backgroundColor: endpoint.method === 'GET' ? '#DBEAFE' : 'rgba(239,68,68,0.1)',
                         color: endpoint.method === 'GET' ? '#0369A1' : '#991B1B',
                         fontSize: '11px',
                         fontWeight: 700,

@@ -387,7 +387,7 @@ export default function CaseTimelinePage() {
                     </div>
                   </div>
 
-                  <div style={{ background: '#F0F9FF', padding: '12px', borderRadius: '8px', border: '1px solid #BFDBFE' }}>
+                  <div style={{ background: '#F0F9FF', padding: '12px', borderRadius: '8px', border: '1px solid rgba(59,130,246,0.15)' }}>
                     <p style={{ fontSize: '12px', color: '#1E40AF', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
                       {timeline.statisticalContext}
                     </p>
@@ -421,7 +421,7 @@ export default function CaseTimelinePage() {
                       }} />
 
                       {/* Card */}
-                      <div style={{ padding: '12px', borderLeft: `3px solid ${phaseColors[milestone.phase]}`, background: milestone.completed ? '#F0FDF4' : 'var(--color-surface-1)', borderRadius: '8px' }}>
+                      <div style={{ padding: '12px', borderLeft: `3px solid ${phaseColors[milestone.phase]}`, background: milestone.completed ? 'rgba(34,197,94,0.06)' : 'var(--color-surface-1)', borderRadius: '8px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', marginBottom: '4px' }}>
                           <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>
                             {milestone.name}

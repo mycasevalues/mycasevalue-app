@@ -986,7 +986,7 @@ export default function CaseStrengthAssessment() {
           <div
             style={{
               padding: '16px',
-              backgroundColor: '#FEF3C7',
+              backgroundColor: 'rgba(234,179,8,0.1)',
               borderLeft: '4px solid #F59E0B',
               borderRadius: '4px',
               marginBottom: '24px',

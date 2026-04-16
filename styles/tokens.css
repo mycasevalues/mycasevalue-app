@@ -40,13 +40,13 @@
   --color-data-positive: #15803D;
   --color-data-negative: #B91C1C;
   --color-data-neutral:  #B45309;
-  --color-data-bg-pos:   #F0FDF4;
-  --color-data-bg-neg:   #FEF2F2;
-  --color-data-bg-neu:   #FFFBEB;
+  --color-data-bg-pos:   rgba(34,197,94,0.06);
+  --color-data-bg-neg:   rgba(239,68,68,0.06);
+  --color-data-bg-neu:   rgba(234,179,8,0.06);
 
   /* Status badges */
   --color-badge-federal:    #1E3A5F;
-  --color-badge-bg-federal: #EFF6FF;
+  --color-badge-bg-federal: rgba(59,130,246,0.08);
 
   /* ── LEGACY COMPAT (mapped to new tokens) ── */
   --bg-base:          var(--color-surface-1);

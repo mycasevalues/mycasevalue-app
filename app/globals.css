@@ -1384,7 +1384,7 @@ a[style*="background: rgb(9, 102, 195)"]:active {
 .badge-federal {
   background: var(--color-badge-bg-federal);
   color: var(--color-badge-federal);
-  border: 1px solid #BFDBFE;
+  border: 1px solid rgba(59,130,246,0.15);
 }
 
 .badge-positive {

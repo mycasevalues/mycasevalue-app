@@ -519,7 +519,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .disclaimer-box {
-          background: #FEF3C7;
+          background: rgba(234,179,8,0.1);
           border: 1px solid #FCD34D;
           border-radius: 12px;
           padding: 16px;
@@ -848,7 +848,7 @@ export default async function NOSPage({ params }: PageProps) {
             <div style={{
               marginTop: '24px',
               padding: '14px 16px',
-              backgroundColor: '#FEF3C7',
+              backgroundColor: 'rgba(234,179,8,0.1)',
               borderLeft: '3px solid #D97706',
               borderRadius: '6px',
               fontSize: '12px',
@@ -864,7 +864,7 @@ export default async function NOSPage({ params }: PageProps) {
             <div style={{
               marginTop: '24px',
               padding: '14px 16px',
-              backgroundColor: '#FEF3C7',
+              backgroundColor: 'rgba(234,179,8,0.1)',
               borderLeft: '3px solid #D97706',
               borderRadius: '6px',
               fontSize: '12px',

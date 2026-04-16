@@ -85,7 +85,7 @@ export default function DataAlertSubscribe({
       {isSuccess ? (
         <div
           style={{
-            backgroundColor: '#E8F3EB',
+            backgroundColor: 'rgba(34,197,94,0.1)',
             border: '1px solid #057642',
             borderRadius: '6px',
             padding: '12px',

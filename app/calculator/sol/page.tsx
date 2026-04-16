@@ -174,7 +174,7 @@ export default function SOLCalculatorPage() {
               {/* Days Remaining (if date entered) */}
               {daysRemaining !== null && deadlineDate && (
                 <div style={{
-                  background: isExpired ? '#FEF0EF' : daysRemaining <= 90 ? '#FEF3C7' : '#E8F3EB',
+                  background: isExpired ? '#FEF0EF' : daysRemaining <= 90 ? 'rgba(234,179,8,0.1)' : 'rgba(34,197,94,0.1)',
                   border: `1px solid ${isExpired ? '#CC1016' : daysRemaining <= 90 ? '#D97706' : '#057642'}`,
                   borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center',
                 }}>
@@ -235,7 +235,7 @@ export default function SOLCalculatorPage() {
 
               {/* Disclaimer */}
               <div style={{
-                padding: '16px', background: '#FEF3C7', borderLeft: '3px solid #D97706', borderRadius: 6,
+                padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 6,
                 fontSize: 12, color: '#78350F', lineHeight: 1.6, fontFamily: 'var(--font-body)',
               }}>
                 <strong>Important:</strong> SOL rules are complex and exceptions apply. Tolling provisions, discovery rules, and equitable doctrines can extend or shorten deadlines. Consult an attorney before relying on this information.

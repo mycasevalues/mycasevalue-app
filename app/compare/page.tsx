@@ -475,7 +475,7 @@ export default function ComparePage() {
                       {/* Attorney Impact */}
                       {s.attorneyWR !== null && s.proSeWR !== null && (
                         <div style={{ display: 'flex', gap: 8 }}>
-                          <div style={{ flex: 1, padding: '8px', background: '#E8F3EB', borderRadius: 6, textAlign: 'center' }}>
+                          <div style={{ flex: 1, padding: '8px', background: 'rgba(34,197,94,0.1)', borderRadius: 6, textAlign: 'center' }}>
                             <div style={{ fontSize: 16, fontWeight: 700, color: '#057642', fontFamily: 'var(--font-mono)' }}>{s.attorneyWR}%</div>
                             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>w/ attorney</div>
                           </div>

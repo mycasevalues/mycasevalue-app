@@ -42,7 +42,7 @@ const FEATURES = [
       </svg>
     ),
     color: '#059669',
-    bg: '#F0FDF4',
+    bg: 'rgba(34,197,94,0.06)',
   },
 ];
 

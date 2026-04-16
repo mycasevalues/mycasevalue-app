@@ -597,7 +597,7 @@ export default function SOLCalculatorPage() {
 
                 {/* Warning Banner */}
                 {isExpired && (
-                  <div style={{ background: '#FEE2E2', border: '1px solid #FCA5A5', borderRadius: '12px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid #FCA5A5', borderRadius: '12px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DC2626" strokeWidth="2" style={{ flexShrink: 0 }}>
                       <circle cx="12" cy="12" r="10" /><path d="M12 8v4M12 16h.01" />
                     </svg>
@@ -611,7 +611,7 @@ export default function SOLCalculatorPage() {
                 )}
 
                 {isWarning && !isExpired && (
-                  <div style={{ background: '#FEF3C7', border: '1px solid #FDE68A', borderRadius: '12px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <div style={{ background: 'rgba(234,179,8,0.1)', border: '1px solid #FDE68A', borderRadius: '12px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2" style={{ flexShrink: 0 }}>
                       <path d="M12 2v20M2 10h20" />
                     </svg>
@@ -625,7 +625,7 @@ export default function SOLCalculatorPage() {
                 )}
 
                 {!isWarning && !isExpired && daysRemaining && daysRemaining > 0 && (
-                  <div style={{ background: '#D1FAE5', border: '1px solid #6EE7B7', borderRadius: '12px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <div style={{ background: 'rgba(34,197,94,0.12)', border: '1px solid #6EE7B7', borderRadius: '12px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" style={{ flexShrink: 0 }}>
                       <polyline points="20 6 9 17 4 12" />
                     </svg>

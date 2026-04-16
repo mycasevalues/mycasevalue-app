@@ -164,7 +164,7 @@ export default function FeesPage() {
           {/* IFP Fee Waiver Section */}
           <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-              <div style={{ width: 36, height: 36, borderRadius: 8, background: '#E8F3EB', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>
+              <div style={{ width: 36, height: 36, borderRadius: 8, background: 'rgba(34,197,94,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>
                 &#9733;
               </div>
               <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-display)' }}>
@@ -229,7 +229,7 @@ export default function FeesPage() {
 
           {/* Disclaimer */}
           <div style={{
-            padding: '16px', background: '#FEF3C7', borderLeft: '3px solid #D97706', borderRadius: 6,
+            padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 6,
             fontSize: 12, color: '#78350F', lineHeight: 1.6, fontFamily: 'var(--font-body)',
           }}>
             <strong>Important:</strong> Fee amounts are current as of December 2024. Fees are set by the Judicial Conference and may change. Always verify fees with the specific court before filing. Local district fees (e.g., pro hac vice, attorney admission) vary and are set by individual courts.

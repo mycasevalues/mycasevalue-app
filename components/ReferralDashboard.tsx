@@ -168,7 +168,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
           padding: '20px',
           borderRadius: '8px',
           backgroundColor: 'rgba(59,130,246,0.1)',
-          border: '1px solid #BFDBFE',
+          border: '1px solid rgba(59,130,246,0.15)',
         }}
       >
         <h3 style={{ margin: '0 0 8px 0', color: 'var(--accent-primary)', fontFamily: 'var(--font-heading)' }}>
@@ -462,7 +462,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
           padding: '12px',
           backgroundColor: 'rgba(59,130,246,0.08)',
           borderRadius: '8px',
-          border: '1px solid #BFDBFE',
+          border: '1px solid rgba(59,130,246,0.15)',
           fontSize: '13px',
           color: 'var(--accent-primary-hover)',
           fontFamily: 'var(--font-body)',
