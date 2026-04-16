@@ -167,25 +167,31 @@ export default function HowItWorksPage() {
             {steps.map((step, idx) => (
               <div key={idx} className="relative">
                 {/* Card */}
-                <div className="border h-full transition-all duration-300 hover:shadow-md animate-in fade-in slide-in-from-bottom-4"
+                <div className="border h-full transition-all duration-200 hover:border-blue-400/40 animate-in fade-in slide-in-from-bottom-4 relative"
                   style={{
                     borderColor: 'var(--border-default)',
                     background: 'var(--color-surface-0)',
-                    borderRadius: '12px',
-                    padding: '32px',
-                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                    borderRadius: '8px',
+                    padding: '28px',
                     animationDelay: `${idx * 100}ms`,
                   }}>
 
+                  {/* Step number — Bloomberg-style mono */}
+                  <div className="absolute top-5 right-5 font-mono text-[10px] font-semibold tracking-[0.2em] uppercase"
+                    style={{ color: 'rgba(59,130,246,0.5)' }}>
+                    Step {step.number}
+                  </div>
+
                   {/* Step number circle */}
-                  <div className="inline-flex items-center justify-center font-display font-bold mb-6"
+                  <div className="inline-flex items-center justify-center font-mono font-bold mb-6 tabular-nums"
                     style={{
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '12px',
-                      background: 'var(--accent-primary)',
-                      color: 'var(--color-surface-0)',
-                      fontSize: '18px',
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '6px',
+                      background: 'rgba(26,86,219,0.12)',
+                      color: '#60a5fa',
+                      fontSize: '16px',
+                      border: '1px solid rgba(26,86,219,0.25)',
                     }}>
                     {step.number}
                   </div>
