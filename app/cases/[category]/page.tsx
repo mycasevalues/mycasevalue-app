@@ -427,7 +427,7 @@ async function CategoryPage({
 
       {/* Hero Section */}
       <div style={{
-        background: 'var(--accent-primary)',
+        background: 'var(--gradient-hero)',
         padding: '16px 20px',
         color: 'white',
       }}>

@@ -121,7 +121,7 @@ export default async function OutcomesPage({
             borderRadius: '12px',
             fontWeight: 600,
             color: 'var(--color-text-inverse)',
-            background: 'var(--accent-primary)',
+            background: 'var(--gradient-hero)',
             textDecoration: 'none',
             fontSize: '14px',
             fontFamily: 'var(--font-body)',

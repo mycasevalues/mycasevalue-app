@@ -32,7 +32,7 @@ export default function Error({
         left: 0,
         right: 0,
         height: '8px',
-        background: 'var(--accent-primary)',
+        background: 'var(--gradient-hero)',
       }} />
       <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
         <div style={{

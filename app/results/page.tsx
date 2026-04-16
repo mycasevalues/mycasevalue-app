@@ -62,7 +62,7 @@ export default function ResultsPage() {
       </div>
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', paddingTop: '24px', paddingBottom: '24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--gradient-hero)', paddingTop: '24px', paddingBottom: '24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <div style={{ marginBottom: '16px' }}>
             <span style={{
