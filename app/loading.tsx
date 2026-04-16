@@ -20,7 +20,7 @@ export default function Loading() {
           left: 0,
           right: 0,
           height: '4px',
-          background: 'var(--gradient-hero)',
+          background: '#080d19',
         }}
       />
       <style>{`
