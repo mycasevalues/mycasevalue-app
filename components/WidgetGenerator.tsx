@@ -142,7 +142,7 @@ export default function WidgetGenerator() {
                     }}
                     onMouseEnter={(e) => {
                       if (selectedNos !== type.nos) {
-                        e.currentTarget.style.backgroundColor = '#f9fafb';
+                        e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
                       }
                     }}
                     onMouseLeave={(e) => {

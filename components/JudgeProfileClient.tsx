@@ -622,7 +622,7 @@ export default function JudgeProfileClient({
               fontSize: '14px',
               transition: 'background-color 0.2s ease',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#F0F0F0')}
+            onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.06)')}
             onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--color-surface-0)')}
           >
             View District Judges

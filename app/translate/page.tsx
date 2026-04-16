@@ -277,7 +277,7 @@ export default function TranslatePage() {
                           fontWeight: '500',
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.background = '#E0F2FE';
+                          e.currentTarget.style.background = 'rgba(59,130,246,0.08)';
                           e.currentTarget.style.borderColor = '#0369A1';
                         }}
                         onMouseLeave={(e) => {

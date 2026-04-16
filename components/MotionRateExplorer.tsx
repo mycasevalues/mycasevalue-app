@@ -300,7 +300,7 @@ export default function MotionRateExplorer() {
                   style={thStyle}
                   onClick={() => handleSort('motion')}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F9FAFB')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-surface-0)')}
                 >
                   Motion Type
                   {sortKey === 'motion' && (
@@ -313,7 +313,7 @@ export default function MotionRateExplorer() {
                   style={thStyle}
                   onClick={() => handleSort('caseType')}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F9FAFB')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-surface-0)')}
                 >
                   Case Type
                   {sortKey === 'caseType' && (
@@ -326,7 +326,7 @@ export default function MotionRateExplorer() {
                   style={thStyle}
                   onClick={() => handleSort('grantRate')}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F9FAFB')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-surface-0)')}
                 >
                   Grant Rate
                   {sortKey === 'grantRate' && (
@@ -339,7 +339,7 @@ export default function MotionRateExplorer() {
                   style={thStyle}
                   onClick={() => handleSort('sampleSize')}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F9FAFB')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-surface-0)')}
                 >
                   Sample Size
                   {sortKey === 'sampleSize' && (

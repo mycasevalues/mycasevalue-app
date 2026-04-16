@@ -163,7 +163,7 @@ const TabbedFeatures: React.FC = () => {
                 }}
                 onMouseEnter={(e) => {
                   if (activeTab !== index) {
-                    e.currentTarget.style.backgroundColor = '#F8F8F8';
+                    e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.04)';
                   }
                 }}
                 onMouseLeave={(e) => {

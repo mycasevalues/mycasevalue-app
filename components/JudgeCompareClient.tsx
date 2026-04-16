@@ -396,7 +396,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                               fontSize: 14,
                             }}
                             onMouseEnter={(e) => {
-                              (e.target as HTMLElement).style.background = '#F9FAFB';
+                              (e.target as HTMLElement).style.background = 'var(--color-surface-0)';
                             }}
                             onMouseLeave={(e) => {
                               (e.target as HTMLElement).style.background = 'none';

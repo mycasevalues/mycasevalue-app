@@ -401,7 +401,7 @@ function SearchPageInner() {
                   fontWeight: '500',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#F0F6FB';
+                  e.currentTarget.style.background = 'rgba(59,130,246,0.06)';
                   e.currentTarget.style.borderColor = 'var(--accent-primary-hover)';
                   e.currentTarget.style.color = '#004D7A';
                 }}
@@ -531,7 +531,7 @@ function SearchPageInner() {
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                   {aiResult.parameters.caseType && (
-                    <div style={{ padding: '8px 12px', background: '#F0F6FB', border: '1px solid #BAE6FD', borderRadius: '6px' }}>
+                    <div style={{ padding: '8px 12px', background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)', borderRadius: '6px' }}>
                       <p style={{ fontSize: '11px', fontWeight: '500', color: '#60a5fa', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         Case Type: <strong>{aiResult.parameters.caseType}</strong>
                       </p>
@@ -552,7 +552,7 @@ function SearchPageInner() {
                     </div>
                   )}
                   {aiResult.parameters.district && (
-                    <div style={{ padding: '8px 12px', background: '#F5E6FF', border: '1px solid #D8B4FE', borderRadius: '6px' }}>
+                    <div style={{ padding: '8px 12px', background: 'rgba(139,92,246,0.06)', border: '1px solid rgba(139,92,246,0.15)', borderRadius: '6px' }}>
                       <p style={{ fontSize: '11px', fontWeight: '500', color: '#6B21A8', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         District: <strong>{aiResult.parameters.district}</strong>
                       </p>
@@ -661,7 +661,7 @@ function SearchPageInner() {
       </form>
 
       {/* Search Tips Section */}
-      <div style={{ marginBottom: '24px', background: 'rgba(59,130,246,0.06)', border: '1px solid #BAE6FD', borderRadius: '12px', overflow: 'hidden' }}>
+      <div style={{ marginBottom: '24px', background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)', borderRadius: '12px', overflow: 'hidden' }}>
         <button
           onClick={() => setTipsExpanded(!tipsExpanded)}
           style={{
@@ -676,8 +676,8 @@ function SearchPageInner() {
             fontFamily: 'var(--font-body)',
             transition: 'background 150ms',
           }}
-          onMouseEnter={(e) => e.currentTarget.style.background = '#E0F2FE'}
-          onMouseLeave={(e) => e.currentTarget.style.background = '#F0F9FF'}
+          onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(59,130,246,0.08)'}
+          onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(59,130,246,0.04)'}
         >
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#38bdf8', flexShrink: 0 }}>
             <circle cx="12" cy="12" r="10" />
@@ -750,7 +750,7 @@ function SearchPageInner() {
                 }}
                 onMouseEnter={(e) => {
                   if (selectedCategory !== null) {
-                    e.currentTarget.style.background = '#F0F6FB';
+                    e.currentTarget.style.background = 'rgba(59,130,246,0.06)';
                     e.currentTarget.style.borderColor = 'var(--accent-primary-hover)';
                     e.currentTarget.style.color = 'var(--accent-primary)';
                   }
@@ -783,7 +783,7 @@ function SearchPageInner() {
                   }}
                   onMouseEnter={(e) => {
                     if (selectedCategory !== cat.id) {
-                      e.currentTarget.style.background = '#F0F6FB';
+                      e.currentTarget.style.background = 'rgba(59,130,246,0.06)';
                       e.currentTarget.style.borderColor = 'var(--accent-primary-hover)';
                       e.currentTarget.style.color = 'var(--accent-primary)';
                     }
@@ -943,7 +943,7 @@ function SearchPageInner() {
                     fontWeight: '500',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = '#F0F6FB';
+                    e.currentTarget.style.background = 'rgba(59,130,246,0.06)';
                     e.currentTarget.style.borderColor = 'var(--accent-primary-hover)';
                     e.currentTarget.style.color = '#004D7A';
                   }}
@@ -1047,7 +1047,7 @@ function SearchPageInner() {
                       <span style={{ color: avgWr >= 50 ? '#059669' : avgWr >= 35 ? '#D97706' : 'var(--accent-primary)', fontWeight: 600 }}>{avgWr}% win</span>
                       <span style={{ color: 'var(--color-text-secondary)' }}>{totalCases >= 1000 ? `${(totalCases / 1000).toFixed(0)}K cases` : `${totalCases} cases`}</span>
                     </div>
-                    <div style={{ height: 3, background: '#F0F3F5', borderRadius: 2, marginTop: 8, overflow: 'hidden' }}>
+                    <div style={{ height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, marginTop: 8, overflow: 'hidden' }}>
                       <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#059669' : avgWr >= 35 ? '#D97706' : 'var(--accent-primary)', borderRadius: 2 }} />
                     </div>
                   </Link>

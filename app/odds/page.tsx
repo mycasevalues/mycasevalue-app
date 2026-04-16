@@ -1090,7 +1090,7 @@ export default function OddsPage() {
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
+                        (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)';
                         (e.currentTarget as HTMLElement).style.borderColor = 'var(--accent-primary-hover)';
                       }}
                       onMouseLeave={(e) => {
@@ -1114,7 +1114,7 @@ export default function OddsPage() {
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
+                        (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)';
                         (e.currentTarget as HTMLElement).style.borderColor = 'var(--accent-primary-hover)';
                       }}
                       onMouseLeave={(e) => {
@@ -1138,7 +1138,7 @@ export default function OddsPage() {
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
+                        (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)';
                         (e.currentTarget as HTMLElement).style.borderColor = 'var(--accent-primary-hover)';
                       }}
                       onMouseLeave={(e) => {
@@ -1162,7 +1162,7 @@ export default function OddsPage() {
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
+                        (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)';
                         (e.currentTarget as HTMLElement).style.borderColor = 'var(--accent-primary-hover)';
                       }}
                       onMouseLeave={(e) => {

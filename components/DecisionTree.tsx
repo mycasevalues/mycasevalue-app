@@ -1130,7 +1130,7 @@ export default function DecisionTree() {
             transition: 'all 0.2s ease-in',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#f3f4f6';
+            e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';
@@ -1155,7 +1155,7 @@ export default function DecisionTree() {
                 transition: 'all 0.2s ease-in',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#f3f4f6';
+                e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'var(--color-surface-0)';

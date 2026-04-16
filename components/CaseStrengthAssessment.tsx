@@ -676,7 +676,7 @@ export default function CaseStrengthAssessment() {
                 transition: 'all 0.2s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#E7F3FF';
+                e.currentTarget.style.backgroundColor = 'rgba(59,130,246,0.08)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'white';
@@ -1026,7 +1026,7 @@ export default function CaseStrengthAssessment() {
                 transition: 'all 0.2s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#E7F3FF';
+                e.currentTarget.style.backgroundColor = 'rgba(59,130,246,0.08)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'white';

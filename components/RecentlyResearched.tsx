@@ -209,7 +209,7 @@ export default function RecentlyResearched() {
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget;
-              el.style.backgroundColor = '#F9FAFB';
+              el.style.backgroundColor = 'var(--color-surface-0)';
               el.style.borderColor = 'var(--border-default)';
             }}
           >
