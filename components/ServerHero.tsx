@@ -286,19 +286,39 @@ export default function ServerHero() {
       {/* Quick Lookup is now embedded in the hero card above */}
 
       {/* ── VISUAL 7: INTEGRATED CASE RESEARCH ─────────────── */}
-      <div style={{ background: 'var(--gradient-hero)', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', marginBottom: '16px' }}>
+      <div style={{ background: '#080d19', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Integrated Workflow
+          </div>
+          <h2 style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-inter)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
             From research to action — without friction
           </h2>
-          <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto 28px', lineHeight: 1.7 }}>
+          <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: 600, margin: '0 auto 28px', lineHeight: 1.7 }}>
             Everything case research touches, connected in one place. Explore outcomes, develop strategy, and make informed decisions.
           </p>
-          <a href="/search" className="hero-cta-primary" style={{
-            display: 'inline-flex', alignItems: 'center', gap: '8px',
-            padding: '1rem 1.5rem', background: 'var(--accent-primary)', color: 'var(--color-surface-1)', borderRadius: '0.25rem',
-            fontWeight: 600, fontSize: '1.25rem', textDecoration: 'none',
-            fontFamily: 'var(--font-display)', transition: 'background 200ms',
+          <a href="/search" style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            padding: '10px 20px', background: '#1a56db', color: '#ffffff', borderRadius: 6,
+            fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', textDecoration: 'none',
+            fontFamily: 'var(--font-inter)', border: '1px solid #1a56db',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
+            transition: 'background-color 150ms ease, border-color 150ms ease',
           }}>
             Start Researching
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
