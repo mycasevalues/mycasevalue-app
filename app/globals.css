@@ -159,14 +159,14 @@ a:hover { text-decoration: underline; color: var(--color-accent-dark); }
    ============================================================ */
 :root {
   /* Dark surfaces */
-  --color-navy:          #0966C3;
+  --color-navy:          #1a56db;
   --color-panel:         #274464;
   --color-panel-border:  #284565;
   --color-navy-dark:     #122840;
   --color-navy-light:    #2A5080;
 
   /* Brand blue */
-  --color-blue:          #0966C3;
+  --color-blue:          #1a56db;
   --color-blue-dark:     #004182;
   --color-blue-mid:      #1577D5;
   --color-blue-pale:     #E8F4FD;
@@ -297,12 +297,12 @@ html, body {
    ACCESSIBILITY — Focus states with red accent
    ============================================================ */
 *:focus-visible {
-  outline: 2px solid #0966C3;
+  outline: 2px solid #1a56db;
   outline-offset: 2px;
 }
 
 button:focus-visible, a:focus-visible, input:focus-visible {
-  outline: 2px solid #0966C3;
+  outline: 2px solid #1a56db;
   outline-offset: 2px;
 }
 
@@ -540,7 +540,7 @@ select option {
 
 /* Improved focus visibility for accessibility */
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 2px solid #0966C3;
+  outline: 2px solid #1a56db;
   outline-offset: 2px;
   border-radius: 12px;
 }
@@ -901,7 +901,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 [role="button"]:focus-visible {
-  outline: 2px solid #0966C3;
+  outline: 2px solid #1a56db;
   outline-offset: 2px;
   border-radius: 12px;
 }
@@ -1179,7 +1179,7 @@ button:disabled,
   left: 50%;
   width: 0;
   height: 2px;
-  background: #0966C3;
+  background: #1a56db;
   transition: all 200ms ease;
   transform: translateX(-50%);
 }
@@ -1188,7 +1188,7 @@ button:disabled,
 }
 
 /* Button press effect */
-a[style*="background: #0966C3"]:active,
+a[style*="background: #1a56db"]:active,
 a[style*="background: rgb(9, 102, 195)"]:active {
   transform: scale(0.98);
 }
@@ -1229,7 +1229,7 @@ a[style*="background: rgb(9, 102, 195)"]:active {
 
 /* Related cards hover */
 .related-card:hover {
-  border-color: #0966C3 !important;
+  border-color: #1a56db !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
 }

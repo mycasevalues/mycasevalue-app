@@ -676,7 +676,7 @@ export default async function DashboardPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {features.map((feature, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a56db" strokeWidth="2.5">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <span style={{ fontSize: '14px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>{feature}</span>

@@ -64,7 +64,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             type="submit"
             className="h-11 px-5 font-semibold text-sm transition-colors flex-shrink-0"
             style={{
-              background: dark ? 'rgba(255,255,255,0.1)' : '#0966C3',
+              background: dark ? 'rgba(255,255,255,0.1)' : '#1a56db',
               color: dark ? '#e5e7eb' : '#fff',
             }}
           >

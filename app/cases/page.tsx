@@ -88,7 +88,7 @@ function getTopWinRateCaseTypes(): Array<{ nos: string; label: string; wr: numbe
 // Get color for win rate — matches lib/color-scale.ts palette
 function getWinRateColor(wr: number): string {
   if (wr >= 65) return '#057642';
-  if (wr >= 50) return '#0966C3';
+  if (wr >= 50) return '#1a56db';
   if (wr >= 35) return '#C37D16';
   if (wr >= 20) return '#CC1016';
   return '#8C1515';

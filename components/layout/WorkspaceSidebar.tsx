@@ -223,7 +223,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
           <div className="flex items-center justify-between px-4 h-14 border-b border-gray-100 flex-shrink-0 lg:hidden">
             <Link href="/" className="flex items-center gap-2">
               <svg width="24" height="24" viewBox="-100 -100 200 200" className="flex-shrink-0">
-                <rect x="-100" y="-100" width="200" height="200" rx="26" fill="#0966C3" />
+                <rect x="-100" y="-100" width="200" height="200" rx="26" fill="#1a56db" />
                 <g transform="rotate(12)">
                   <polygon points="0,0 -40,-69.3 40,-69.3 80,0" fill="white" opacity="0.93" />
                   <polygon points="0,0 80,0 40,69.3 -40,69.3" fill="white" opacity="0.52" />
