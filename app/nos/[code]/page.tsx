@@ -363,8 +363,25 @@ export default async function NOSPage({ params }: PageProps) {
       <DemoNOSPage />
       <style>{`
         .nos-header {
-          background: var(--gradient-hero);
-          color: var(--color-text-inverse);
+          background: #080d19;
+          color: #ffffff;
+          position: relative;
+          overflow: hidden;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nos-header::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          opacity: 0.03;
+          pointer-events: none;
+          background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+          background-size: 60px 60px;
+        }
+
+        .nos-header > * {
+          position: relative;
         }
 
         .breadcrumb {
