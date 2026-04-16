@@ -386,7 +386,7 @@ export default function Header() {
                     width="200"
                     height="200"
                     rx="26"
-                    fill={headerTransparent ? 'rgba(255,255,255,0.15)' : 'var(--accent-primary)'}
+                    fill={headerTransparent ? 'rgba(255,255,255,0.25)' : 'var(--accent-primary)'}
                   />
                   <g transform="rotate(12)">
                     <polygon
@@ -406,8 +406,8 @@ export default function Header() {
                     />
                   </g>
                 </svg>
-                <span className={`font-inter text-sm font-bold hidden sm:block tracking-tight ${headerTransparent ? 'text-white' : 'text-gray-900'}`}>
-                  MyCase<span className={headerTransparent ? 'text-blue-300' : 'text-brand-blue'}>Value</span>
+                <span className={`font-inter text-sm font-bold hidden sm:block tracking-tight transition-colors ${headerTransparent ? 'text-white/90' : 'text-gray-900'}`}>
+                  MyCase<span className={headerTransparent ? 'text-white' : 'text-brand-blue'}>Value</span>
                 </span>
               </Link>
             </div>
