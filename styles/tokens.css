@@ -100,14 +100,14 @@
   --font-roboto:     var(--font-inter);
 
   /* Heading Scale — Inter (LinkedIn proportions) */
-  --text-h1: 2rem;       /* 32px — Inter 700 */
-  --text-h2: 1.5rem;     /* 24px — Inter 600 */
-  --text-h3: 1.125rem;   /* 18px — Inter 600 */
+  --text-h1: 1.75rem;       /* 32px — Inter 700 */
+  --text-h2: 1.25rem;     /* 24px — Inter 600 */
+  --text-h3: 1rem;   /* 18px — Inter 600 */
   --text-h4: 1rem;       /* 16px — Inter 500 */
 
   /* Body Scale — Inter */
-  --text-body-lg: 1rem;       /* 16px */
-  --text-body:    0.9375rem;  /* 15px — Inter 400 */
+  --text-body-lg: 0.9375rem;       /* 16px */
+  --text-body:    0.875rem;  /* 15px — Inter 400 */
   --text-body-sm: 0.8125rem;  /* 13px — Inter 400 */
   --text-caption: 0.75rem;    /* 12px */
 
@@ -117,9 +117,9 @@
   --text-data-sm: 0.8125rem;
 
   /* Spacing */
-  --space-section: 5rem;
-  --space-block:   2.5rem;
-  --space-element: 1.25rem;
+  --space-section: 3rem;
+  --space-block:   1.5rem;
+  --space-element: 0.75rem;
   --space-tight:   0.75rem;
 
   --container-max: 1280px;
@@ -128,8 +128,8 @@
 
   /* Radius */
   --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
   --radius-xl: 8px;
 
   /* Legacy radius compat */
