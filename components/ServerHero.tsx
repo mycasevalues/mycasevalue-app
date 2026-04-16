@@ -623,10 +623,28 @@ export default function ServerHero() {
       </div>
 
       {/* ── AWARDS / TRUST BADGES GRID ───────────────────── */}
-      <div style={{ background: 'var(--gradient-hero)', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-        <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', marginBottom: '40px' }}>
-            Trusted Data Sources &amp; Standards
+      <div style={{ background: '#080d19', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Data Provenance
+          </div>
+          <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 28px)', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-inter)', marginBottom: 40, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
+            Trusted data sources &amp; standards
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }} className="awards-grid">
             {[
