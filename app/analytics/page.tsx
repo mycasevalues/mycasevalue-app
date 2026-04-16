@@ -95,23 +95,61 @@ export default function AnalyticsPage() {
         }
 
         .header {
-          background: var(--gradient-hero);
-          color: var(--color-surface-0);
-          padding: 48px 24px;
-          border-bottom: 1px solid var(--border-default);
+          background: #080d19;
+          color: #ffffff;
+          padding: 48px 24px 40px;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .header::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          opacity: 0.03;
+          pointer-events: none;
+          background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+          background-size: 60px 60px;
         }
 
         .header-content {
           max-width: 1200px;
           margin: 0 auto;
+          position: relative;
+        }
+
+        .header-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 4px 10px;
+          margin-bottom: 16px;
+          border-radius: 999px;
+          border: 1px solid rgba(59,130,246,0.2);
+          background: rgba(59,130,246,0.08);
+          font-family: var(--font-mono);
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: #60a5fa;
+        }
+
+        .header-eyebrow-dot {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: #22c55e;
         }
 
         .header h1 {
-          font-size: 36px;
-          font-weight: bold;
-          margin: 0 0 8px 0;
-          font-family: var(--font-display);
-          letter-spacing: -1px;
+          font-size: clamp(28px, 4vw, 36px);
+          font-weight: 700;
+          margin: 0 0 16px 0;
+          font-family: var(--font-inter);
+          letter-spacing: -0.025em;
+          line-height: 1.1;
         }
 
         .header p {
@@ -119,6 +157,7 @@ export default function AnalyticsPage() {
           margin: 0;
           font-size: 16px;
           font-family: var(--font-body);
+          line-height: 1.6;
         }
 
         .container {
@@ -238,8 +277,12 @@ export default function AnalyticsPage() {
             <ArrowLeftIcon size={16} />
             Back to Blog
           </Link>
-          <h1>Platform Analytics Dashboard</h1>
-          <p>Real-time insights into federal court research activity and platform usage</p>
+          <div className="header-eyebrow">
+            <span className="header-eyebrow-dot animate-pulse" />
+            Platform Analytics
+          </div>
+          <h1>Platform usage intelligence</h1>
+          <p>Real-time insights into federal court research activity and platform engagement</p>
         </div>
       </div>
 
