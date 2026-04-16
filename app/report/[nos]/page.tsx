@@ -227,7 +227,7 @@ export default async function ReportPage({
       <style>{`
         .report-breadcrumb-link { color: var(--color-text-inverse); text-decoration: none; transition: opacity 0.2s ease; font-weight: 500; }
         .report-breadcrumb-link:hover { opacity: 0.8; }
-        .report-nos-badge { display: inline-block; padding: 6px 12px; background: var(--gradient-hero); color: var(--color-text-inverse); border-radius: 12px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-body); margin-top: 8px; }
+        .report-nos-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(59,130,246,0.08); color: #60a5fa; border: 1px solid rgba(59,130,246,0.2); border-radius: 999px; font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; font-family: var(--font-mono); margin-top: 8px; }
 
         @media (max-width: 768px) {
           h1 {
@@ -251,7 +251,7 @@ export default async function ReportPage({
           }
 
           /* Ensure header prints cleanly */
-          div[style*="background: var(--gradient-hero)"] {
+          div[style*="background: #080d19"] {
             background: var(--color-surface-1) !important;
             border: none !important;
             color: black !important;
@@ -317,7 +317,7 @@ export default async function ReportPage({
           }
 
           /* Add MyCaseValue branding to printed header */
-          div[style*="background: var(--gradient-hero)"]::before {
+          div[style*="background: #080d19"]::before {
             content: "MyCaseValue.com";
             display: block;
             font-size: 10px;
@@ -437,8 +437,8 @@ export default async function ReportPage({
             <style>{`
               .win-rate-grid { grid-template-columns: repeat(3, 1fr); }
               @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 16px; } }
-              .report-cta-btn { display: inline-block; padding: 14px 36px; background: var(--gradient-hero); color: var(--color-text-inverse); border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 16px; font-family: var(--font-display); transition: all 0.2s ease; box-shadow: none; }
-              .report-cta-btn:hover { background: var(--accent-primary-hover); box-shadow: none; }
+              .report-cta-btn { display: inline-block; padding: 10px 20px; background: #1a56db; color: #ffffff; border: 1px solid #1a56db; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 13px; letter-spacing: -0.005em; font-family: var(--font-inter); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
+              .report-cta-btn:hover { background: #1e40af; border-color: #1e40af; }
               .report-red-link { font-size: 14px; font-weight: 500; color: var(--accent-primary); text-decoration: none; font-family: var(--font-body); transition: color 0.2s ease; }
               .report-red-link:hover { color: var(--accent-primary-hover); }
               .report-related-case { text-decoration: none; color: var(--accent-primary); transition: all 0.2s ease; display: block; }
@@ -574,7 +574,7 @@ export default async function ReportPage({
               </div>
             );
           })()}
-          <style>{`.yoy-bar { background: var(--gradient-hero); } .yoy-bar:hover { background: var(--accent-primary-hover) !important; opacity: 0.8 !important; }`}</style>
+          <style>{`.yoy-bar { background: #1a56db; transition: background-color 150ms ease; } .yoy-bar:hover { background: #1e40af !important; }`}</style>
           <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px', textAlign: 'center', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
             Deterministic projection based on historical case volume patterns
           </p>
