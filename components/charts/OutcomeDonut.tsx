@@ -1,5 +1,11 @@
 'use client';
 
+/**
+ * @deprecated Use HorizontalBarChart instead. This component is retained
+ * for backward compatibility only and will be removed in a future session.
+ * All new visualizations must use components/charts/HorizontalBarChart.tsx.
+ */
+
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 

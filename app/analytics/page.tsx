@@ -5,9 +5,6 @@ import {
   Line,
   BarChart,
   Bar,
-  PieChart,
-  Pie,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -17,6 +14,7 @@ import {
 } from 'recharts';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '../../components/ui/Icons';
+import HorizontalBarChart from '../../components/charts/HorizontalBarChart';
 
 // Mock data for analytics
 const dailySearchData = Array.from({ length: 30 }, (_, i) => ({
@@ -41,8 +39,16 @@ const userTypeData = [
   { name: 'Students', value: 1600, percentage: 12 },
 ];
 
-const COLORS = ['var(--accent-primary)', 'var(--accent-primary-hover)', 'var(--accent-primary-hover)', '#5B21B6', '#4C1D95', '#D4D4D8'];
-const USER_COLORS = ['var(--accent-primary)', '#A78BFA', '#C4B5FD', '#DDD6FE'];
+// Data transformed for HorizontalBarChart
+const caseTypeBarData = caseTypeData.map((d) => ({
+  label: d.name,
+  percentage: d.percentage,
+}));
+
+const userTypeBarData = userTypeData.map((d) => ({
+  label: d.name,
+  percentage: d.percentage,
+}));
 
 export default function AnalyticsPage() {
   return (
@@ -380,74 +386,23 @@ export default function AnalyticsPage() {
             </ResponsiveContainer>
           </div>
 
-          {/* User Types Pie Chart */}
+          {/* User Types Distribution — HorizontalBarChart */}
           <div className="chart-card">
-            <div className="chart-title">User Types Distribution</div>
-            <ResponsiveContainer width="100%" height={300}>
-              <PieChart>
-                <Pie
-                  data={userTypeData}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  label={(entry) => `${entry.name} (${Math.round((entry.percent || 0) * 100)}%)`}
-                  outerRadius={100}
-                  fill="var(--accent-primary)"
-                  dataKey="value"
-                >
-                  {Array.from({ length: userTypeData.length }, (_, i) => (
-                    <Cell key={`cell-${i}`} fill={USER_COLORS[i % USER_COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip
-                  contentStyle={{
-                    background: 'var(--color-surface-0)',
-                    border: '1px solid var(--border-default)',
-                    borderRadius: '20px',
-                    padding: '12px',
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '12px',
-                    color: 'var(--color-text-secondary)',
-                  }}
-                  formatter={(value) => value.toLocaleString()}
-                />
-              </PieChart>
-            </ResponsiveContainer>
+            <HorizontalBarChart
+              data={userTypeBarData}
+              title="User Types Distribution"
+              animate
+            />
           </div>
 
-          {/* Case Type Distribution Pie Chart */}
+          {/* Case Type Distribution — HorizontalBarChart */}
           <div className="chart-card">
-            <div className="chart-title">Case Type Distribution</div>
-            <ResponsiveContainer width="100%" height={300}>
-              <PieChart>
-                <Pie
-                  data={caseTypeData}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  label={(entry) => `${entry.name} (${Math.round((entry.percent || 0) * 100)}%)`}
-                  outerRadius={100}
-                  fill="var(--accent-primary)"
-                  dataKey="value"
-                >
-                  {Array.from({ length: caseTypeData.length }, (_, i) => (
-                    <Cell key={`cell-${i}`} fill={COLORS[i % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip
-                  contentStyle={{
-                    background: 'var(--color-surface-0)',
-                    border: '1px solid var(--border-default)',
-                    borderRadius: '20px',
-                    padding: '12px',
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '12px',
-                    color: 'var(--color-text-secondary)',
-                  }}
-                  formatter={(value) => value.toLocaleString()}
-                />
-              </PieChart>
-            </ResponsiveContainer>
+            <HorizontalBarChart
+              data={caseTypeBarData}
+              title="Case Type Distribution"
+              animate
+              dataSources="PACER filing records"
+            />
           </div>
         </div>
 

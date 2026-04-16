@@ -7,18 +7,13 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-  Legend,
 } from 'recharts';
 import { DistrictStats } from '../../lib/districts';
+import HorizontalBarChart from '../charts/HorizontalBarChart';
 
 interface DistrictChartsProps {
   stats: DistrictStats;
 }
-
-const CHART_PALETTE = ['var(--accent-primary)', '#70B5F9', 'var(--color-text-secondary)', 'var(--color-text-secondary)', 'var(--border-default)', '#057642', '#C37D16', '#CC1016', '#70B5F9', '#057642', 'var(--color-text-secondary)'];
 
 export default function DistrictCharts({ stats }: DistrictChartsProps) {
   // Prepare data for top case types chart (take top 8)
@@ -28,10 +23,11 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
     winRate: ct.winRate,
   }));
 
-  // Prepare data for category breakdown pie chart
-  const categoryData = stats.caseTypeBreakdown.map((item) => ({
-    name: item.category,
-    value: item.count,
+  // Prepare data for category breakdown — HorizontalBarChart format
+  const totalCases = stats.caseTypeBreakdown.reduce((sum, item) => sum + item.count, 0);
+  const categoryBarData = stats.caseTypeBreakdown.map((item) => ({
+    label: item.category,
+    percentage: totalCases > 0 ? (item.count / totalCases) * 100 : 0,
   }));
 
   return (
@@ -79,59 +75,22 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
         </div>
       )}
 
-      {/* Category Breakdown Pie Chart */}
-      {categoryData.length > 0 && (
+      {/* Category Breakdown — HorizontalBarChart */}
+      {categoryBarData.length > 0 && (
         <div
           className="p-6 sm:p-8"
           style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
-            borderRadius: '12px',
+            background: 'var(--card, #FFFFFF)',
+            border: '1px solid var(--bdr, #E2E0DA)',
+            borderRadius: 2,
           }}
         >
-          <h3
-            className="text-lg font-bold mb-6"
-            style={{
-              color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
-            }}
-          >
-            Case Distribution by Category
-          </h3>
-          <ResponsiveContainer width="100%" height={400}>
-            <PieChart>
-              <Pie
-                data={categoryData}
-                cx="50%"
-                cy="50%"
-                innerRadius={80}
-                outerRadius={140}
-                paddingAngle={2}
-                dataKey="value"
-              >
-                {categoryData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={CHART_PALETTE[index % CHART_PALETTE.length]} />
-                ))}
-              </Pie>
-              <Tooltip
-                contentStyle={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
-                  color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '13px',
-                }}
-                formatter={(value: number) => [value.toLocaleString(), 'Cases']}
-              />
-              <Legend
-                verticalAlign="bottom"
-                height={36}
-                wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
-                formatter={(value) => value}
-              />
-            </PieChart>
-          </ResponsiveContainer>
+          <HorizontalBarChart
+            data={categoryBarData}
+            title="Case Distribution by Category"
+            animate
+            dataSources="PACER filing records"
+          />
         </div>
       )}
     </div>
