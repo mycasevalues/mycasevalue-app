@@ -556,25 +556,29 @@ export default function FAQPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--gradient-hero)' }}>
-        <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
+      <div className="relative overflow-hidden border-b" style={{ borderColor: 'rgba(255,255,255,0.06)', background: '#080d19' }}>
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div className="relative max-w-3xl mx-auto px-6 py-16 sm:py-20">
           {/* Breadcrumb */}
-          <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: 'var(--color-surface-0)' }}>
-            <a href="/" className="hover:opacity-80 transition-opacity">Home</a>
-            <span>/</span>
-            <span>FAQ</span>
+          <nav className="mb-6 flex items-center gap-2 text-[12px] font-mono" style={{ color: 'rgba(255,255,255,0.4)' }}>
+            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <span className="opacity-50">/</span>
+            <span className="text-gray-300">FAQ</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(59,130,246,0.15)', color: '#60a5fa', borderRadius: '8px' }}>
-            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-surface-0)" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            FAQ
+          <div className="inline-flex items-center gap-2 px-2 py-1 text-[10px] font-semibold tracking-[0.25em] uppercase mb-5 rounded-[3px] border"
+            style={{ background: 'rgba(26,86,219,0.08)', color: '#60a5fa', borderColor: 'rgba(26,86,219,0.2)' }}>
+            <span className="w-1 h-1 rounded-full bg-blue-400/80" />
+            Frequently Asked
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-bold mb-4 tracking-[-0.025em]" style={{ color: 'white', lineHeight: '1.1' }}>
             Common Questions
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--color-surface-0)' }}>
-            Platform capabilities, data sources, and usage.
+          <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            Platform capabilities, data sources, methodology, and typical usage patterns.
           </p>
         </div>
       </div>
