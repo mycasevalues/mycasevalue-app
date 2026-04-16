@@ -105,7 +105,7 @@ export default function CaseDetailPage() {
     return (
       <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 text-center">
-          <div className="text-3xl mb-3 opacity-40">&#x2696;</div>
+          
           <h1 className="text-lg font-semibold text-gray-900 mb-2">{error || 'Case not found'}</h1>
           <p className="text-sm text-gray-500 mb-4">
             The case you are looking for may not exist in our database yet.

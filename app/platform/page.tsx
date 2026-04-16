@@ -831,7 +831,7 @@ export default function PlatformPage() {
               {[
                 { icon: '∴', title: 'Case Outcome Search', desc: 'Natural language search across 5.1M+ federal cases with instant results' },
                 { icon: '↔', title: 'Settlement Range Calculator', desc: 'AI-predicted settlement ranges based on case type, jurisdiction, and judge' },
-                { icon: '☆', title: 'Win Rate Analytics', desc: 'Historical win rates by case type, district, and attorney characteristics' },
+                { icon: '', title: 'Win Rate Analytics', desc: 'Historical win rates by case type, district, and attorney characteristics' },
                 { icon: '█', title: 'Judge Analytics', desc: 'Judge-specific ruling patterns, settlement tendencies, and trial history' },
                 { icon: '‖', title: 'Real-Time Monitoring', desc: 'Active case tracking with docket updates and status notifications' },
                 { icon: 'M', title: 'Multi-Language Support', desc: 'English and Spanish interfaces for broader user accessibility' },
@@ -841,7 +841,7 @@ export default function PlatformPage() {
                 { icon: '∞', title: 'Custom Cohort Analysis', desc: 'Build and analyze specific case populations with filters' },
                 { icon: '>', title: 'API Integration', desc: 'RESTful API for enterprise system integration' },
                 { icon: '◈', title: 'Bulk Export', desc: 'Download case data in multiple formats (CSV, JSON, PDF)' },
-                { icon: '⌘', title: 'Natural Language Queries', desc: 'Ask questions in plain English, get data-driven answers' },
+                { icon: '', title: 'Natural Language Queries', desc: 'Ask questions in plain English, get data-driven answers' },
                 { icon: '◆', title: 'Precedent Finder', desc: 'Identify relevant historical cases with citation linking' },
                 { icon: '◇', title: 'Settlement Distribution', desc: 'Visualize settlement percentile distributions by case variables' },
                 { icon: '⬥', title: 'Risk Assessment', desc: 'AI-powered case risk scoring based on comparable outcomes' },

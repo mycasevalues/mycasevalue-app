@@ -386,7 +386,7 @@ function CaseSearchContent() {
                 className="rounded-xl border p-8 text-center"
                 style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
               >
-                <div className="text-3xl mb-3 opacity-40">&#x2696;</div>
+                
                 <h3 className="text-base font-semibold text-gray-900 mb-2">
                   Search Federal Court Records
                 </h3>
