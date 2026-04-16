@@ -42,8 +42,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Copy */}
             <div>
-              <p className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.25em] uppercase text-blue-400/70 mb-5">
-                <span className="w-1 h-1 rounded-full bg-blue-400/70"></span>
+              <p className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.25em] uppercase text-blue-400/80 mb-5 px-2 py-1 rounded-[3px] bg-blue-400/[0.06] border border-blue-400/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400/80 animate-pulse"></span>
                 Federal Court Intelligence
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-[3rem] font-bold text-white leading-[1.05] tracking-[-0.025em] mb-5">
