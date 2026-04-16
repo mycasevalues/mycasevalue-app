@@ -541,9 +541,10 @@ export default function Header() {
                   </Link>
                   <Link
                     href="/sign-up"
-                    className="px-4 py-1.5 rounded text-sm font-medium bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors"
+                    className="inline-flex items-center gap-1.5 h-8 px-3 rounded-md text-[13px] font-semibold bg-[#1a56db] text-white border border-[#1a56db] hover:bg-[#1e40af] hover:border-[#1e40af] transition-colors"
                   >
                     Get Started
+                    <span className="text-[10px] opacity-70">&rarr;</span>
                   </Link>
                 </>
               )}
