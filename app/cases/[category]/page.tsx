@@ -321,7 +321,7 @@ async function CategoryPage({
       <div style={{ padding: '40px 20px', textAlign: 'center', minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <h1 style={{ fontSize: 24, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 16 }}>Data Loading Error</h1>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: 24 }}>Data for this case type is being compiled. Check back soon.</p>
-        <a href="/cases" className="inline-block px-6 py-3 font-semibold text-white" style={{ background: 'var(--gradient-hero)', borderRadius: '12px', textDecoration: 'none', display: 'inline-block' }}>Browse all categories</a>
+        <a href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: '#1a56db', color: '#ffffff', border: '1px solid #1a56db', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 6, textDecoration: 'none', fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', fontFamily: 'var(--font-inter)', margin: '0 auto' }}>Browse all categories</a>
       </div>
     );
   }
