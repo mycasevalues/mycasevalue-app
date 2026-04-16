@@ -37,10 +37,10 @@ svg text { -webkit-font-smoothing: antialiased; }
 }
 
 /* Firefox scrollbar styling */
-* { scrollbar-width: thin; scrollbar-color: #c1c1c1 transparent; }
+* { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.15) transparent; }
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #999; }
 
 /* Normalize form elements across browsers */

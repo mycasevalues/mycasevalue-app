@@ -15,46 +15,46 @@ module.exports = {
           blue:        '#1a56db',   // primary CTA
           'blue-dark': '#1e40af',   // button hover
           'blue-mid':  '#3b82f6',   // borders / focus rings
-          'blue-pale': '#eff6ff',   // tints / selected states
+          'blue-pale': 'rgba(59,130,246,0.08)',   // tints / selected states (dark-mode)
           white:       '#FFFFFF',   // section headers
           link:        '#E5E7EB',   // nav links / body on dark
           muted:       'rgba(213,216,220,0.6)',   // secondary / copyright
           dim:         'rgba(213,216,220,0.35)',   // disclaimer / fine print
           sep:         'rgba(213,216,220,0.4)',    // | separator
-          // Light surface (for non-dark sections)
-          surface:     '#F7F8FA',
-          'surface-2': '#EEF0F4',
-          ink:         '#0f0f0f',   // heading text on white
-          'ink-2':     '#0f0f0f',   // body text on white
-          gray:        '#4B5563',
-          'text-secondary': '#4B5563',
-          'text-muted': '#9CA3AF',
+          // Dark surfaces
+          surface:     '#0c1220',
+          'surface-2': '#111827',
+          ink:         '#e5e7eb',   // heading text on dark
+          'ink-2':     '#d1d5db',   // body text on dark
+          gray:        '#9CA3AF',
+          'text-secondary': '#9CA3AF',
+          'text-muted': '#6B7280',
         },
         // Data / status colors
         data: {
           positive:    '#15803D',
           negative:    '#B91C1C',
           neutral:     '#B45309',
-          'bg-pos':    '#F0FDF4',
-          'bg-neg':    '#FEF2F2',
-          'bg-neu':    '#FFFBEB',
+          'bg-pos':    'rgba(34,197,94,0.06)',
+          'bg-neg':    'rgba(239,68,68,0.06)',
+          'bg-neu':    'rgba(234,179,8,0.06)',
         },
         // Legacy compat — mapped to brand tokens (consolidated)
         navy: { DEFAULT: '#0f2240', dark: '#1e40af', light: '#3b82f6' },
-        midnight: { DEFAULT: '#0f2240', 50: '#3b82f6', 100: '#1a56db', 200: '#1e40af', 800: '#F7F8FA', 900: '#FFFFFF' },
+        midnight: { DEFAULT: '#0f2240', 50: '#3b82f6', 100: '#1a56db', 200: '#1e40af', 800: '#111827', 900: '#e5e7eb' },
         outcome: {
           win: '#15803D',
-          'win-bg': '#F0FDF4',
+          'win-bg': 'rgba(34,197,94,0.06)',
           'win-border': 'rgba(21,128,61,0.25)',
           loss: '#B91C1C',
-          'loss-bg': '#FEF2F2',
+          'loss-bg': 'rgba(239,68,68,0.06)',
           'loss-border': 'rgba(185,28,28,0.25)',
           mixed: '#B45309',
-          'mixed-bg': '#FFFBEB',
+          'mixed-bg': 'rgba(234,179,8,0.06)',
           'mixed-border': 'rgba(180,83,9,0.25)',
           neutral: '#9CA3AF',
-          'neutral-bg': '#F7F8FA',
-          'neutral-border': '#D1D5DB',
+          'neutral-bg': 'rgba(255,255,255,0.04)',
+          'neutral-border': 'rgba(255,255,255,0.1)',
         },
       },
       fontFamily: {
