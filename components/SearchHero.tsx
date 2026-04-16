@@ -55,7 +55,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search cases, judges, districts..."
+            placeholder="Search cases, judges, districts, or case numbers..."
             aria-label="Search federal court records"
             className="flex-1 h-11 px-3 bg-transparent border-none outline-none text-sm"
             style={{ color: dark ? '#e5e7eb' : '#111827' }}
