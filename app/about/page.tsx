@@ -358,9 +358,22 @@ export default function AboutPage() {
       {/* Header */}
       <div className="about-header">
         <div className="about-container">
-          <h1 className="about-h1">About the Platform</h1>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            About MyCaseValue
+          </div>
+          <h1 className="about-h1">Federal court intelligence, democratized</h1>
           <p className="about-intro">
-            Federal court intelligence built from public records. Making litigation data accessible, transparent, and actionable.
+            Built from public records, refined into actionable insight. Our mission is to make litigation outcome data accessible, transparent, and rigorous — for everyone from solo practitioners to AmLaw firms.
           </p>
         </div>
       </div>
