@@ -57,8 +57,20 @@ export default function PacerMonitorPage() {
         input:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
       `}</style>
-      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid var(--border-default)', padding: '18px 20px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+      <div style={{
+        background: '#080d19',
+        color: '#fff',
+        padding: '40px 24px 32px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>
           <h1 className="font-display" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 4px 0' }}>PACER Monitoring</h1>
           <p style={{ fontSize: '14px', color: '#B0B8C0', margin: 0 }}>Real-time alerts on case developments, filings, and motions</p>
         </div>
