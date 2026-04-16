@@ -135,7 +135,7 @@ export default function ResetPasswordPage() {
           animation: fadeIn 0.4s ease-out;
         }
         .auth-input:focus {
-          border-color: #004182 !important;
+          border-color: #1e40af !important;
           outline: none;
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1) !important;
         }
@@ -207,7 +207,7 @@ export default function ResetPasswordPage() {
                 margin: '0 auto 20px',
               }}
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>

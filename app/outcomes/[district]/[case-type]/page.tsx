@@ -882,7 +882,7 @@ export default async function OutcomesPage({
                   textAlign: 'center',
                   transition: 'all 0.3s ease',
                   display: 'block',
-                  border: '1px solid #004182',
+                  border: '1px solid #1e40af',
                 }}
 
               >

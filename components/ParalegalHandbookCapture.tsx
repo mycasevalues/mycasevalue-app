@@ -153,7 +153,7 @@ export default function ParalegalHandbookCapture() {
 
       const addSubheader = (text: string) => {
         doc.setFontSize(11);
-        doc.setTextColor(0, 65, 130); // #004182
+        doc.setTextColor(0, 65, 130); // #1e40af
         doc.setFont('helvetica', 'bold');
         doc.text(text, margin, yPosition);
         yPosition += 7;

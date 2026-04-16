@@ -61,7 +61,7 @@ export default function MethodologyCapture() {
     // Define fonts and colors
     const colors = {
       primary: [10, 102, 194], // var(--accent-primary)
-      darkBlue: [0, 65, 130], // #004182
+      darkBlue: [0, 65, 130], // #1e40af
       black: [15, 15, 15], // var(--color-text-primary)
       darkGray: [75, 85, 99], // var(--color-text-secondary)
       lightGray: [229, 231, 235], // var(--border-default)
@@ -492,7 +492,7 @@ export default function MethodologyCapture() {
           transition: all 0.2s ease;
         }
         .form-button:hover:not(:disabled) {
-          background-color: #004182;
+          background-color: #1e40af;
           box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
         }
         .form-button:disabled {

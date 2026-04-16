@@ -209,7 +209,7 @@ export default function QuickLookupForm() {
       {/* Styles */}
       <style dangerouslySetInnerHTML={{ __html: `
         .quick-lookup-select:focus {
-          border-color: #004182 !important;
+          border-color: #1e40af !important;
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1) !important;
           outline: none;
         }

@@ -727,7 +727,7 @@ export default function DataSourcesPage() {
           <section style={{
             padding: 48,
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, var(--accent-primary) 0%, #004182 100%)',
+            background: 'linear-gradient(135deg, var(--accent-primary) 0%, #1e40af 100%)',
             textAlign: 'center',
           }}>
             <h2 style={{

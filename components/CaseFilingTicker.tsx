@@ -144,7 +144,7 @@ export default function CaseFilingTicker() {
             }
 
             .ticker-link:hover {
-              color: #004182;
+              color: #1e40af;
               text-decoration: underline;
             }
 

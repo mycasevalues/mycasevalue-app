@@ -63,13 +63,13 @@ export default function TermsPage() {
         }
 
         .legal-toc-link:hover {
-          color: #004182;
-          border-left-color: #004182;
+          color: #1e40af;
+          border-left-color: #1e40af;
         }
 
         .legal-toc-link.active {
-          color: #004182;
-          border-left-color: #004182;
+          color: #1e40af;
+          border-left-color: #1e40af;
           font-weight: 600;
         }
 
@@ -105,7 +105,7 @@ export default function TermsPage() {
         }
 
         .legal-contact-email {
-          color: #004182;
+          color: #1e40af;
           text-decoration: none;
         }
 
@@ -139,7 +139,7 @@ export default function TermsPage() {
           .legal-toc-link:hover,
           .legal-toc-link.active {
             border-left: none;
-            border-bottom-color: #004182;
+            border-bottom-color: #1e40af;
           }
 
           .legal-content {

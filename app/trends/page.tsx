@@ -881,7 +881,7 @@ export default function TrendsPage() {
                         className="w-full transition-all"
                         style={{
                           height: `${(v.volume / maxVol) * 100}%`,
-                          background: 'linear-gradient(180deg, var(--accent-primary), #004182)',
+                          background: 'linear-gradient(180deg, var(--accent-primary), #1e40af)',
                         }}
                       />
                     </div>

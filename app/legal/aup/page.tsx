@@ -21,7 +21,7 @@ export default function AUPPage() {
         {/* Header */}
         <section
           style={{
-            background: 'linear-gradient(135deg, #004182 0%, var(--accent-primary) 100%)',
+            background: 'linear-gradient(135deg, #1e40af 0%, var(--accent-primary) 100%)',
             color: 'var(--color-surface-0)',
             padding: '1.5rem 1.5rem',
             marginBottom: '1.5rem',

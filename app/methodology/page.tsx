@@ -93,7 +93,7 @@ export default function MethodologyPage() {
           border-radius: 12px;
         }
         .public-domain-callout {
-          border-left: 3px solid #004182;
+          border-left: 3px solid #1e40af;
           background: #F0F9FF;
           padding: 1.5rem;
           border-radius: 12px;
@@ -237,7 +237,7 @@ export default function MethodologyPage() {
         .related-title {
           font-weight: 600;
           font-size: 0.875rem;
-          color: #004182;
+          color: #1e40af;
           font-family: var(--font-inter, 'Inter', sans-serif);
         }
       `}</style>

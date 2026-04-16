@@ -194,7 +194,7 @@ export default function EnterpriseDemoForm() {
           font-family: var(--font-body);
         }
         .enterprise-submit:hover:not(:disabled) {
-          background: #004182;
+          background: #1e40af;
         }
         .enterprise-submit:disabled {
           opacity: 0.6;

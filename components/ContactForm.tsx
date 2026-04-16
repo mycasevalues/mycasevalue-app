@@ -76,7 +76,7 @@ export default function ContactForm() {
   return (
     <>
       <style>{`
-        .contact-input:focus { border-color: #004182 !important; outline: none; }
+        .contact-input:focus { border-color: #1e40af !important; outline: none; }
         .contact-submit {
           display: block; padding: 0 32px; height: 48px;
           background: var(--accent-primary); color: var(--color-surface-0); border: none;

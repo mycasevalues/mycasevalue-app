@@ -81,7 +81,7 @@ const steps = [
     title: 'We Search Real Cases',
     description: 'Our engine instantly analyzes 5.1M+ federal court cases from 55+ years of public records, matching outcomes to your specific situation and district.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="1.5">
         <circle cx="11" cy="11" r="8"/>
         <path d="m21 21-4.35-4.35"/>
         <circle cx="8" cy="8" r="1"/>
@@ -94,7 +94,7 @@ const steps = [
     title: 'Get Your Personalized Report',
     description: 'Seconds later, see win rates, settlement ranges, timelines, judge analytics, and more — all explained in plain English, never legal jargon. 100% from verified federal records.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="1.5">
         <line x1="12" y1="2" x2="12" y2="22"/>
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
       </svg>
@@ -410,7 +410,7 @@ export default function HowItWorksPage() {
                     justifyContent: 'center',
                   }}
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004182" strokeWidth="1.5">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth="1.5">
                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
                     <polyline points="13 2 13 9 20 9" />
                   </svg>
@@ -429,7 +429,7 @@ export default function HowItWorksPage() {
 
       <style>{`
         .feature-card:hover {
-          border-color: #004182 !important;
+          border-color: #1e40af !important;
           box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
           transform: translateY(-4px);
         }

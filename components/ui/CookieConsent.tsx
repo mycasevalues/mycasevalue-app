@@ -81,7 +81,7 @@ export default function CookieConsent() {
           color: var(--color-surface-0);
         }
         .cookie-banner-accept:hover {
-          background-color: #004182;
+          background-color: #1e40af;
         }
         .cookie-banner-essential {
           background-color: transparent;

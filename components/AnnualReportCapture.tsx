@@ -511,7 +511,7 @@ export default function AnnualReportCapture() {
     <>
       <style>{`
         .annual-report-input:focus {
-          border-color: #004182 !important;
+          border-color: #1e40af !important;
           outline: none;
         }
         .annual-report-submit {
@@ -530,7 +530,7 @@ export default function AnnualReportCapture() {
           width: 100%;
         }
         .annual-report-submit:hover {
-          background: #004182;
+          background: #1e40af;
         }
         .annual-report-submit:disabled {
           background: #B0C8E1;

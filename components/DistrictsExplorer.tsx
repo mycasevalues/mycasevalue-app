@@ -155,7 +155,7 @@ export default function DistrictsExplorer({
           display: block;
         }
         .district-card:hover {
-          border-color: #004182;
+          border-color: #1e40af;
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
@@ -171,7 +171,7 @@ export default function DistrictsExplorer({
           min-width: 140px;
         }
         .circuit-card:hover {
-          border-color: #004182;
+          border-color: #1e40af;
           box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .circuit-card.active {
@@ -202,7 +202,7 @@ export default function DistrictsExplorer({
         .circuit-card-rate {
           font-size: 14px;
           font-weight: 600;
-          color: #004182;
+          color: #1e40af;
           font-family: var(--font-mono);
         }
         .circuits-scroll {
@@ -275,7 +275,7 @@ export default function DistrictsExplorer({
         .control-input:focus,
         .control-select:focus {
           outline: none;
-          border-color: #004182;
+          border-color: #1e40af;
           box-shadow: 0 0 0 3px rgba(0,105,151,0.1);
         }
         @media (max-width: 768px) {

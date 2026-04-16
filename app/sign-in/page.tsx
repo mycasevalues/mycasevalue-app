@@ -89,7 +89,7 @@ function SignInForm() {
           text-align: center;
         }
         .auth-input:focus {
-          border-color: #004182 !important;
+          border-color: #1e40af !important;
           outline: none;
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15) !important;
         }
@@ -101,7 +101,7 @@ function SignInForm() {
           transform: translateY(-1px);
         }
         .auth-link:hover {
-          color: #004182 !important;
+          color: #1e40af !important;
         }
         .checkbox-wrapper {
           display: flex;

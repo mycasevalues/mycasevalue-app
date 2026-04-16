@@ -214,7 +214,7 @@ export default function PlatformPage() {
 
         .flow-desc {
           font-size: 13px;
-          color: #004182;
+          color: #1e40af;
           line-height: 1.5;
         }
 
