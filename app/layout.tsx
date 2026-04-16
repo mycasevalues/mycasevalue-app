@@ -4,6 +4,7 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 import Header from '../components/layout/Header';
+import BrowseNav from '../components/layout/BrowseNav';
 import BetaBanner from '../components/BetaBanner';
 import Footer from '../components/layout/Footer';
 import WorkspaceShell, { ConditionalFooter, ConditionalBanner, ConditionalHeader } from '../components/layout/WorkspaceShell';
@@ -312,6 +313,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <ConditionalBanner><BetaBanner /></ConditionalBanner>
             <ConditionalHeader><LiveTicker /></ConditionalHeader>
             <ConditionalHeader><Header /></ConditionalHeader>
+            <ConditionalHeader><BrowseNav /></ConditionalHeader>
             <WorkspaceShell>
               <main id="main-content">
                 {children}
