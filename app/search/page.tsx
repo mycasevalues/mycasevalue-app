@@ -36,7 +36,7 @@ const SkeletonResultCard = () => (
       <div style={{
         height: '20px',
         width: '60%',
-        background: '#E8EAED',
+        background: 'rgba(255,255,255,0.06)',
         borderRadius: '12px',
         flex: '1 1 auto',
         minWidth: '150px',
@@ -44,7 +44,7 @@ const SkeletonResultCard = () => (
       <div style={{
         height: '20px',
         width: '20%',
-        background: '#E8EAED',
+        background: 'rgba(255,255,255,0.06)',
         borderRadius: '12px',
         minWidth: '50px',
       }} />
@@ -52,7 +52,7 @@ const SkeletonResultCard = () => (
     <div style={{
       height: '14px',
       width: '40%',
-      background: '#E8EAED',
+      background: 'rgba(255,255,255,0.06)',
       borderRadius: '12px',
     }} />
   </div>

@@ -298,7 +298,7 @@ function CaseSearchContent() {
               {/* Apply button */}
               <button
                 onClick={() => performSearch(1)}
-                className="w-full h-9 rounded-md bg-gray-100 text-sm font-medium text-gray-700 hover:bg-gray-200 transition-colors"
+                className="w-full h-9 rounded-md bg-gray-100 text-sm font-medium text-gray-300 hover:bg-gray-200 transition-colors"
               >
                 Apply Filters
               </button>
@@ -319,7 +319,7 @@ function CaseSearchContent() {
                       result{total !== 1 ? 's' : ''}
                       {query ? (
                         <>
-                          {' '}for &ldquo;<span className="font-medium text-gray-700">{query}</span>&rdquo;
+                          {' '}for &ldquo;<span className="font-medium text-gray-300">{query}</span>&rdquo;
                         </>
                       ) : null}
                     </>
@@ -402,7 +402,7 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="text-xs px-3 py-1.5 rounded border text-gray-500 hover:border-brand-blue hover:text-brand-blue hover:bg-blue-50/50 transition-all"
+                      className="text-xs px-3 py-1.5 rounded border text-gray-500 hover:border-brand-blue hover:text-brand-blue hover:bg-white/5 transition-all"
                       style={{ borderColor: 'var(--border-default)' }}
                     >
                       {eq}
@@ -502,16 +502,16 @@ function CaseResultCard({ result }: { result: SearchResult }) {
             style={{
               background:
                 result.status === 'open'
-                  ? '#EFF6FF'
+                  ? 'rgba(30,64,175,0.15)'
                   : result.status === 'closed'
-                  ? '#F0FDF4'
-                  : '#F7F8FA',
+                  ? 'rgba(22,101,52,0.15)'
+                  : 'rgba(255,255,255,0.05)',
               color:
                 result.status === 'open'
-                  ? '#1E40AF'
+                  ? '#60a5fa'
                   : result.status === 'closed'
-                  ? '#166534'
-                  : '#4B5563',
+                  ? '#4ade80'
+                  : '#9ca3af',
             }}
           >
             {result.status}

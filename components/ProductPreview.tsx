@@ -37,7 +37,7 @@ const SAMPLE_CATEGORIES = [
 
 export default function ProductPreview() {
   return (
-    <section className="px-4 md:px-8 py-14 md:py-20 bg-gray-50">
+    <section className="px-4 md:px-8 py-14 md:py-20 bg-[#0c1220]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <p className="text-xs font-semibold text-brand-blue uppercase tracking-widest mb-3">
@@ -73,7 +73,7 @@ export default function ProductPreview() {
               {SAMPLE_CATEGORIES.map((cat) => (
                 <div
                   key={cat.title}
-                  className="border border-gray-100 rounded-xl p-4 hover:shadow-sm transition-shadow"
+                  className="border border-white/8 rounded-xl p-4 hover:shadow-sm transition-shadow"
                 >
                   <h4 className="text-sm font-semibold text-gray-100 mb-3">
                     {cat.title}
@@ -119,7 +119,7 @@ export default function ProductPreview() {
               ))}
             </div>
 
-            <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
+            <div className="mt-4 pt-4 border-t border-white/8 flex items-center justify-between">
               <span className="text-[11px] text-gray-400">
                 Showing 3 of 84 case type categories
               </span>
