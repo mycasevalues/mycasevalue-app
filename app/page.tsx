@@ -99,8 +99,8 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-                <div className="flex items-center justify-between px-4 py-2 text-[10px] text-gray-500 font-mono tabular-nums">
-                  <span>5 of 84 case types</span>
+                <div className="flex items-center justify-between px-4 py-2 text-[10px] text-gray-500 font-mono tabular-nums border-t" style={{ borderColor: 'rgba(255,255,255,0.04)', background: 'rgba(0,0,0,0.2)' }}>
+                  <span className="uppercase tracking-[0.15em]">5 of 84 case types</span>
                   <span className="text-gray-600">FJC IDB &middot; CourtListener</span>
                 </div>
               </div>
