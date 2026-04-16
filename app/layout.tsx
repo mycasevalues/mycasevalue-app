@@ -301,7 +301,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-inter" style={{ background: 'var(--color-surface-1)', color: 'var(--color-text-primary)', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />
         <a href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-brand-blue focus:rounded focus:shadow-lg">
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#111827] focus:text-brand-blue focus:rounded focus:shadow-lg">
           Skip to main content
         </a>
         <ReferralCapture />

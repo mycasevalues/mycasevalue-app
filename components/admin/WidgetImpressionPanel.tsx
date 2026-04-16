@@ -68,8 +68,8 @@ export default function WidgetImpressionPanel() {
   const maxImpressions = Math.max(...chartData.map((d) => d.impressions));
 
   return (
-    <div style={{ padding: '24px', backgroundColor: '#fff', borderRadius: '8px', border: '1px solid #e5e7eb' }}>
-      <h2 style={{ fontSize: '20px', fontWeight: 600, color: '#1f2937', marginBottom: '24px' }}>
+    <div style={{ padding: '24px', backgroundColor: '#fff', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' }}>
+      <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '24px' }}>
         Widget Impressions & Embeds
       </h2>
 
@@ -82,10 +82,10 @@ export default function WidgetImpressionPanel() {
               padding: '16px',
               backgroundColor: '#f9fafb',
               borderRadius: '6px',
-              border: '1px solid #e5e7eb',
+              border: '1px solid rgba(255,255,255,0.08)',
             }}
           >
-            <p style={{ fontSize: '12px', color: '#6b7280', marginBottom: '8px' }}>
+            <p style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginBottom: '8px' }}>
               {metric.label}
             </p>
             <p style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)' }}>
@@ -97,7 +97,7 @@ export default function WidgetImpressionPanel() {
 
       {/* Chart Section */}
       <div style={{ marginBottom: '32px' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1f2937', marginBottom: '16px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '16px' }}>
           Impressions Over Time (Last 30 Days)
         </h3>
         <div style={{ backgroundColor: '#f9fafb', padding: '16px', borderRadius: '6px', minHeight: '250px', position: 'relative' }}>
@@ -175,7 +175,7 @@ export default function WidgetImpressionPanel() {
 
       {/* Top Domains */}
       <div style={{ marginBottom: '32px' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1f2937', marginBottom: '16px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '16px' }}>
           Top 5 Embedding Domains
         </h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -184,10 +184,10 @@ export default function WidgetImpressionPanel() {
             return (
               <div key={index}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
-                  <span style={{ fontSize: '14px', color: '#374151', fontWeight: 500 }}>
+                  <span style={{ fontSize: '14px', color: 'var(--color-text-primary)', fontWeight: 500 }}>
                     {domain.domain}
                   </span>
-                  <span style={{ fontSize: '14px', color: '#6b7280' }}>
+                  <span style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>
                     {domain.impressions.toLocaleString()} ({percentage.toFixed(1)}%)
                   </span>
                 </div>
@@ -209,7 +209,7 @@ export default function WidgetImpressionPanel() {
 
       {/* Top Case Types */}
       <div>
-        <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#1f2937', marginBottom: '16px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '16px' }}>
           Most Popular Case Types (Top 5)
         </h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -218,10 +218,10 @@ export default function WidgetImpressionPanel() {
             return (
               <div key={index}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
-                  <span style={{ fontSize: '14px', color: '#374151', fontWeight: 500 }}>
+                  <span style={{ fontSize: '14px', color: 'var(--color-text-primary)', fontWeight: 500 }}>
                     {caseType.caseType}
                   </span>
-                  <span style={{ fontSize: '14px', color: '#6b7280' }}>
+                  <span style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>
                     {caseType.impressions.toLocaleString()} ({percentage.toFixed(1)}%)
                   </span>
                 </div>

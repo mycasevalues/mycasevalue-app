@@ -80,7 +80,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
       style={{
         padding: '24px',
         backgroundColor: 'var(--color-surface-0)',
-        border: '1px solid #D1D5DB',
+        border: '1px solid rgba(255,255,255,0.1)',
         borderRadius: '8px',
         fontFamily: 'var(--font-body)',
       }}
@@ -128,7 +128,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
             style={{
               width: '100%',
               padding: '10px 12px',
-              border: '1px solid #D1D5DB',
+              border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '6px',
               fontSize: '14px',
               minHeight: '100px',
@@ -147,7 +147,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
         <p
           style={{
             fontSize: '12px',
-            color: '#6B7280',
+            color: 'var(--color-text-muted)',
             margin: '8px 0 0 0',
           }}
         >
@@ -162,7 +162,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
             padding: '6px 12px',
             backgroundColor: 'rgba(255,255,255,0.05)',
             color: 'var(--color-text-primary)',
-            border: '1px solid #D1D5DB',
+            border: '1px solid rgba(255,255,255,0.1)',
             borderRadius: '4px',
             fontSize: '12px',
             fontWeight: 500,
@@ -314,7 +314,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                       style={{
                         padding: '12px 8px',
                         textAlign: 'center',
-                        color: '#6B7280',
+                        color: 'var(--color-text-muted)',
                       }}
                     >
                       {district.caseCount.toLocaleString()}
@@ -331,7 +331,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
         <p
           style={{
             fontSize: '14px',
-            color: '#6B7280',
+            color: 'var(--color-text-muted)',
             margin: 0,
           }}
         >

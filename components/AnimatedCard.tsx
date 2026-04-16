@@ -20,7 +20,7 @@ export default function AnimatedCard({ children, delay = 0, className, hover = t
       whileHover={hover ? { y: -2, boxShadow: '0 8px 30px rgba(0,0,0,0.08)' } : undefined}
       style={{
         borderRadius: 12,
-        border: '1px solid #e5e7eb',
+        border: '1px solid rgba(255,255,255,0.08)',
         backgroundColor: '#fff',
         padding: 24,
         ...style,

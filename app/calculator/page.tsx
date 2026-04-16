@@ -895,7 +895,7 @@ export default function CalculatorPage() {
               const realCtx = getRealDataForCategory(caseType);
               if (!realCtx) return null;
               return (
-                <div className="mb-6 p-6" style={{ background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '12px' }}>
+                <div className="mb-6 p-6" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid #BAE6FD', borderRadius: '12px' }}>
                   <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-body)' }}>
                     How This Compares to Federal Data
                   </h3>
@@ -982,7 +982,7 @@ export default function CalculatorPage() {
 
             {/* Results disclaimer */}
             <div className="p-4 rounded" style={{
-              color: '#92400E',
+              color: '#fbbf24',
               fontFamily: 'var(--font-body)',
               background: 'rgba(234,179,8,0.08)',
               border: '1px solid #FCD34D',

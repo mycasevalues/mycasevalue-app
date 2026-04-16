@@ -343,7 +343,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
               paddingTop: '24px',
               borderTop: '1px solid var(--border-default)',
               fontSize: '13px',
-              color: '#666',
+              color: 'var(--color-text-secondary)',
             }}
           >
             <p style={{ margin: 0 }}>

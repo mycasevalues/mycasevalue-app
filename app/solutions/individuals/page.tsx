@@ -57,7 +57,7 @@ export default function IndividualsPage() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '40px 24px 32px' }}>
+      <section style={{ background: 'var(--gradient-hero)', color: '#fff', padding: '40px 24px 32px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -258,7 +258,7 @@ export default function IndividualsPage() {
           }}>
             <div style={{
               fontSize: '14px',
-              color: '#374151',
+              color: 'var(--color-text-primary)',
               fontWeight: 500,
               marginBottom: '12px',
             }}>
@@ -266,7 +266,7 @@ export default function IndividualsPage() {
             </div>
             <code style={{
               display: 'block',
-              background: '#F9FAFB',
+              background: 'var(--color-surface-0)',
               padding: '12px',
               borderRadius: '6px',
               fontSize: '12px',
@@ -279,7 +279,7 @@ export default function IndividualsPage() {
             </code>
             <p style={{
               fontSize: '12px',
-              color: '#6B7280',
+              color: 'var(--color-text-muted)',
               marginTop: '12px',
               margin: '12px 0 0 0',
             }}>

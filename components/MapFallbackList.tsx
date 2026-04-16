@@ -144,7 +144,7 @@ export default function MapFallbackList({
       <p
         style={{
           fontSize: '12px',
-          color: '#666',
+          color: 'var(--color-text-secondary)',
           marginTop: '16px',
           marginBottom: 0,
           textAlign: 'center',

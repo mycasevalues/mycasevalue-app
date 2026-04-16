@@ -242,7 +242,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
       {/* Breadcrumb */}
       <nav style={{
         background: 'var(--color-surface-0)',
-        borderBottom: '1px solid #e5e7eb',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
         padding: '12px 0',
         fontSize: 13,
         fontFamily: 'var(--font-body)',
@@ -261,7 +261,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
       {/* Hero Section */}
       <header style={{
         background: 'var(--accent-primary)',
-        borderBottom: '1px solid #e5e7eb',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
@@ -430,7 +430,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
 
           <div style={{
             background: 'var(--color-surface-0)',
-            border: '1px solid #e5e7eb',
+            border: '1px solid rgba(255,255,255,0.08)',
             borderRadius: '12px',
             padding: '24px',
           }}>
@@ -504,7 +504,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
 
           <div style={{
             background: 'var(--color-surface-0)',
-            border: '1px solid #e5e7eb',
+            border: '1px solid rgba(255,255,255,0.08)',
             borderRadius: '12px',
             padding: '24px',
           }}>
@@ -584,7 +584,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             <Link href={`/districts/${district}`} style={{
               display: 'block',
               background: 'var(--color-surface-0)',
-              border: '1px solid #e5e7eb',
+              border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '12px',
               padding: '20px',
               textDecoration: 'none',
@@ -611,7 +611,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             <Link href={`/nos/${nos}`} style={{
               display: 'block',
               background: 'var(--color-surface-0)',
-              border: '1px solid #e5e7eb',
+              border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '12px',
               padding: '20px',
               textDecoration: 'none',
@@ -641,7 +641,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
         <section>
           <div style={{
             background: 'var(--color-surface-0)',
-            border: '1px solid #e5e7eb',
+            border: '1px solid rgba(255,255,255,0.08)',
             borderRadius: '12px',
             padding: 'clamp(24px, 4vw, 32px)',
           }}>
@@ -694,7 +694,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             </div>
             <div style={{
               fontSize: 13,
-              color: '#6B7280',
+              color: 'var(--color-text-muted)',
               fontFamily: 'var(--font-body)',
             }}>
               Coming soon — Recent federal court decisions related to {nosInfo.label}

@@ -387,8 +387,8 @@ export default function CaseTimelinePage() {
                     </div>
                   </div>
 
-                  <div style={{ background: '#F0F9FF', padding: '12px', borderRadius: '8px', border: '1px solid rgba(59,130,246,0.15)' }}>
-                    <p style={{ fontSize: '12px', color: '#1E40AF', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
+                  <div style={{ background: 'rgba(59,130,246,0.06)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(59,130,246,0.15)' }}>
+                    <p style={{ fontSize: '12px', color: '#60a5fa', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
                       {timeline.statisticalContext}
                     </p>
                   </div>

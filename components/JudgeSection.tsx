@@ -27,7 +27,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
     <section style={{ marginTop: 56, marginBottom: 56 }}>
       <div style={{
         background: 'var(--color-surface-0)',
-        border: '1px solid #e5e7eb',
+        border: '1px solid rgba(255,255,255,0.08)',
         borderRadius: '12px',
         padding: 'clamp(24px, 4vw, 32px)',
       }}>
@@ -66,7 +66,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                 key={judge.id}
                 style={{
                   background: 'var(--color-surface-1)',
-                  border: '1px solid #e5e7eb',
+                  border: '1px solid rgba(255,255,255,0.08)',
                   borderRadius: '10px',
                   padding: '16px',
                   display: 'flex',

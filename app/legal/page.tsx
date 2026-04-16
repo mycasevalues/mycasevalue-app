@@ -53,7 +53,7 @@ const SOURCES = [
   { name: 'EDGAR', records: 'Millions', type: 'SEC Filings', color: '#D97706', description: '10-K, 10-Q, 8-K, and other corporate filings and disclosures' },
   { name: 'Caselaw Access', records: '6.7M', type: 'US Cases', color: '#059669', description: 'Harvard Law Library digitized caselaw spanning 360+ years' },
   { name: 'CanLII', records: '100k+', type: 'Canadian Law', color: '#DC2626', description: 'Canadian court decisions and legislation for cross-border research' },
-  { name: 'GovInfo', records: 'Millions', type: 'Gov Documents', color: '#6B7280', description: 'Congressional records, federal reports, and government publications' },
+  { name: 'GovInfo', records: 'Millions', type: 'Gov Documents', color: 'var(--color-text-muted)', description: 'Congressional records, federal reports, and government publications' },
 ];
 
 const USE_CASES = [
@@ -234,7 +234,7 @@ export default function LegalDataPage() {
                 {src.records}
               </div>
               <div style={{ fontSize: 11, color: 'var(--color-text-muted)', marginBottom: 6 }}>records</div>
-              <div style={{ fontSize: 12, color: '#6B7280', lineHeight: 1.5 }}>
+              <div style={{ fontSize: 12, color: 'var(--color-text-muted)', lineHeight: 1.5 }}>
                 {src.description}
               </div>
             </div>
@@ -254,13 +254,13 @@ export default function LegalDataPage() {
           Coming Soon to the Research Hub
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
-          <div style={{ fontSize: 14, color: '#374151' }}>
+          <div style={{ fontSize: 14, color: 'var(--color-text-primary)' }}>
             <strong style={{ color: 'var(--accent-primary)' }}>Regulatory Alerts</strong> — Get notified when Federal Register rulemaking affects your case types
           </div>
-          <div style={{ fontSize: 14, color: '#374151' }}>
+          <div style={{ fontSize: 14, color: 'var(--color-text-primary)' }}>
             <strong style={{ color: 'var(--accent-primary)' }}>Citation-Backed Reports</strong> — PDF exports with the legal landscape section showing relevant precedents
           </div>
-          <div style={{ fontSize: 14, color: '#374151' }}>
+          <div style={{ fontSize: 14, color: 'var(--color-text-primary)' }}>
             <strong style={{ color: 'var(--accent-primary)' }}>Case Page Integration</strong> — Related regulations and landmark precedents on every case type page
           </div>
         </div>

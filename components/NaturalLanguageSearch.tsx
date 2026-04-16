@@ -422,7 +422,7 @@ export default function NaturalLanguageSearch() {
       <p
         style={{
           fontSize: '14px',
-          color: '#666',
+          color: 'var(--color-text-secondary)',
           fontFamily: 'var(--font-body)',
           marginBottom: '16px',
         }}
@@ -444,7 +444,7 @@ export default function NaturalLanguageSearch() {
               padding: '12px',
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
-              border: '1px solid #D1D5DB',
+              border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '8px',
               outline: 'none',
               transition: 'border-color 0.2s',
@@ -492,7 +492,7 @@ export default function NaturalLanguageSearch() {
             background: 'rgba(239,68,68,0.1)',
             border: '1px solid #FCA5A5',
             borderRadius: '6px',
-            color: '#991B1B',
+            color: '#f87171',
             fontSize: '14px',
             fontFamily: 'var(--font-body)',
             marginBottom: '16px',
@@ -509,7 +509,7 @@ export default function NaturalLanguageSearch() {
             style={{
               fontSize: '12px',
               textTransform: 'uppercase',
-              color: '#666',
+              color: 'var(--color-text-secondary)',
               fontWeight: '600',
               fontFamily: 'var(--font-body)',
               marginBottom: '8px',
@@ -530,7 +530,7 @@ export default function NaturalLanguageSearch() {
             style={{
               fontSize: '12px',
               textTransform: 'uppercase',
-              color: '#666',
+              color: 'var(--color-text-secondary)',
               fontWeight: '600',
               fontFamily: 'var(--font-body)',
               marginBottom: '12px',
@@ -544,7 +544,7 @@ export default function NaturalLanguageSearch() {
                 key={result.code}
                 style={{
                   padding: '12px',
-                  background: '#F9FAFB',
+                  background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '8px',
                 }}
@@ -564,7 +564,7 @@ export default function NaturalLanguageSearch() {
                   <div
                     style={{
                       fontSize: '12px',
-                      color: '#666',
+                      color: 'var(--color-text-secondary)',
                       fontFamily: 'var(--font-mono)',
                     }}
                   >
@@ -573,12 +573,12 @@ export default function NaturalLanguageSearch() {
                   </div>
                 )}
                 {result.sp && (
-                  <div style={{ fontSize: '12px', color: '#666', fontFamily: 'var(--font-mono)' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                     Settlement Rate: {result.sp.toFixed(1)}%
                   </div>
                 )}
                 {result.total && (
-                  <div style={{ fontSize: '12px', color: '#666', fontFamily: 'var(--font-mono)' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                     Total Cases: {result.total.toLocaleString()}
                   </div>
                 )}

@@ -617,7 +617,7 @@ export default function AnnualReportCapture() {
                 border: '1px solid #FCA5A5',
                 borderRadius: '8px',
                 fontSize: '13px',
-                color: '#991B1B',
+                color: '#f87171',
               }}>
                 {error}
               </div>
@@ -633,7 +633,7 @@ export default function AnnualReportCapture() {
 
             <p style={{
               fontSize: '12px',
-              color: '#6B7280',
+              color: 'var(--color-text-muted)',
               lineHeight: 1.5,
               textAlign: 'center',
             }}>
@@ -728,7 +728,7 @@ export default function AnnualReportCapture() {
               paddingTop: '16px',
               borderTop: '1px solid var(--border-default)',
               fontSize: '12px',
-              color: '#6B7280',
+              color: 'var(--color-text-muted)',
             }}>
               <strong>Format:</strong> PDF (4.2 MB) | <strong>Updated:</strong> April 2026
             </div>

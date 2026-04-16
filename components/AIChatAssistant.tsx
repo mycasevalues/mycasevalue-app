@@ -150,7 +150,7 @@ export function AIChatAssistant() {
                 <p className="text-sm text-gray-500 text-center mt-4">Ask me anything about federal court data, settlement values, or using MyCaseValue tools.</p>
                 <div className="space-y-2">
                   {STARTER_QUESTIONS.map((q) => (
-                    <button key={q} onClick={() => sendMessage(q)} className="w-full text-left px-4 py-3 rounded-xl text-sm text-gray-700 bg-[var(--color-surface-2)] hover:bg-[rgba(255,255,255,0.04)] transition-colors border border-white/10">
+                    <button key={q} onClick={() => sendMessage(q)} className="w-full text-left px-4 py-3 rounded-xl text-sm text-gray-300 bg-[var(--color-surface-2)] hover:bg-[rgba(255,255,255,0.04)] transition-colors border border-white/10">
                       {q}
                     </button>
                   ))}

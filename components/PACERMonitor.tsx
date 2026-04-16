@@ -111,7 +111,7 @@ export default function PACERMonitor() {
       style={{
         padding: '24px',
         backgroundColor: 'var(--color-surface-0)',
-        border: '1px solid #D1D5DB',
+        border: '1px solid rgba(255,255,255,0.1)',
         borderRadius: '8px',
         fontFamily: 'var(--font-body)',
       }}
@@ -222,7 +222,7 @@ export default function PACERMonitor() {
           <p
             style={{
               fontSize: '14px',
-              color: '#6B7280',
+              color: 'var(--color-text-muted)',
               margin: 0,
             }}
           >
@@ -261,7 +261,7 @@ export default function PACERMonitor() {
                     <p
                       style={{
                         fontSize: '12px',
-                        color: '#6B7280',
+                        color: 'var(--color-text-muted)',
                         margin: '4px 0 0 0',
                       }}
                     >
@@ -272,7 +272,7 @@ export default function PACERMonitor() {
                     <p
                       style={{
                         fontSize: '12px',
-                        color: '#6B7280',
+                        color: 'var(--color-text-muted)',
                         margin: 0,
                       }}
                     >
@@ -283,7 +283,7 @@ export default function PACERMonitor() {
                     <p
                       style={{
                         fontSize: '12px',
-                        color: '#6B7280',
+                        color: 'var(--color-text-muted)',
                         margin: 0,
                       }}
                     >
@@ -345,7 +345,7 @@ export default function PACERMonitor() {
       <div
         style={{
           fontSize: '12px',
-          color: '#6B7280',
+          color: 'var(--color-text-muted)',
           borderTop: '1px solid var(--border-default)',
           paddingTop: '12px',
           marginTop: '12px',

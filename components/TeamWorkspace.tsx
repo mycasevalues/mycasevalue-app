@@ -1214,7 +1214,7 @@ export default function TeamWorkspace() {
                 >
                   {member.role}
                 </span>
-                <p style={{ fontSize: '10px', color: '#6B7280', margin: 0 }}>{member.lastActive}</p>
+                <p style={{ fontSize: '10px', color: 'var(--color-text-muted)', margin: 0 }}>{member.lastActive}</p>
               </div>
             ))}
           </div>

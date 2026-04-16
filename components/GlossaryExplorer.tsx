@@ -303,7 +303,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
           <p
             style={{
               fontSize: '16px',
-              color: '#666',
+              color: 'var(--color-text-secondary)',
               marginBottom: '12px',
             }}
           >

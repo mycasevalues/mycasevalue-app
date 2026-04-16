@@ -357,7 +357,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                       style={{
                         width: '100%',
                         padding: '10px 12px',
-                        border: '1px solid #D1D5DB',
+                        border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: 4,
                         fontFamily: 'var(--font-body)',
                         fontSize: 14,
@@ -372,7 +372,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                           left: 0,
                           right: 0,
                           background: 'var(--color-surface-0)',
-                          border: '1px solid #D1D5DB',
+                          border: '1px solid rgba(255,255,255,0.1)',
                           borderTop: 'none',
                           borderRadius: '0 0 4px 4px',
                           zIndex: 10,
@@ -405,7 +405,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                             <div style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>
                               {result.full_name}
                             </div>
-                            <div style={{ fontSize: 12, color: '#6B7280' }}>
+                            <div style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>
                               {result.district_id} • {result.plaintiff_win_rate.toFixed(1)}% win rate
                             </div>
                           </button>
@@ -453,7 +453,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                   <div
                     style={{
                       fontSize: 12,
-                      color: '#6B7280',
+                      color: 'var(--color-text-muted)',
                       fontFamily: 'var(--font-body)',
                       marginBottom: '12px',
                       lineHeight: 1.5,
@@ -567,7 +567,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                     <div
                       style={{
                         fontSize: 12,
-                        color: '#6B7280',
+                        color: 'var(--color-text-muted)',
                         marginTop: 4,
                         fontFamily: 'var(--font-body)',
                       }}
@@ -601,7 +601,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                       fontWeight: 600,
                       fontSize: 13,
                       color: 'var(--color-text-primary)',
-                      background: '#F9FAFB',
+                      background: 'var(--color-surface-0)',
                       fontFamily: 'var(--font-body)',
                       minWidth: 160,
                     }}

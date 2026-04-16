@@ -215,7 +215,7 @@ export default function AdminPage() {
           <h1 style={{ fontSize: '32px', fontWeight: 'bold', margin: '0 0 8px 0', color: COLORS.black }}>
             {getSectionTitle(activeSection)}
           </h1>
-          <p style={{ fontSize: '14px', color: '#666', margin: 0 }}>
+          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
             {getSectionDescription(activeSection)}
           </p>
         </header>
@@ -314,13 +314,13 @@ export default function AdminPage() {
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
                     <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Action
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         User
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Time
                       </th>
                     </tr>
@@ -330,7 +330,7 @@ export default function AdminPage() {
                       <tr key={log.id} style={{ borderBottom: '1px solid #f0f0f0' }}>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{log.action}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{log.user}</td>
-                        <td style={{ padding: '12px 0', fontSize: '14px', color: '#666' }}>{log.timestamp}</td>
+                        <td style={{ padding: '12px 0', fontSize: '14px', color: 'var(--color-text-secondary)' }}>{log.timestamp}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -357,23 +357,23 @@ export default function AdminPage() {
               <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
                 Blog Editor
               </h2>
-              <p style={{ fontSize: '14px', color: '#666', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Manage blog posts and articles
               </p>
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
                     <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Title
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Status
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Date
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Action
                       </th>
                     </tr>
@@ -397,7 +397,7 @@ export default function AdminPage() {
                             {post.status}
                           </span>
                         </td>
-                        <td style={{ padding: '12px 0', fontSize: '14px', color: '#666' }}>{post.date}</td>
+                        <td style={{ padding: '12px 0', fontSize: '14px', color: 'var(--color-text-secondary)' }}>{post.date}</td>
                         <td style={{ padding: '12px 0' }}>
                           <button
                             style={{
@@ -435,12 +435,12 @@ export default function AdminPage() {
               <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
                 Changelog Editor
               </h2>
-              <p style={{ fontSize: '14px', color: '#666', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Add and manage platform updates
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#333', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '6px' }}>
                     Title
                   </label>
                   <input
@@ -457,7 +457,7 @@ export default function AdminPage() {
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#333', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '6px' }}>
                     Update Type
                   </label>
                   <select
@@ -477,7 +477,7 @@ export default function AdminPage() {
                 </div>
               </div>
               <div style={{ marginBottom: '16px' }}>
-                <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#333', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '6px' }}>
                   Description
                 </label>
                 <textarea
@@ -508,7 +508,7 @@ export default function AdminPage() {
               >
                 Add Changelog Entry
               </button>
-              <p style={{ fontSize: '12px', color: '#666', margin: '12px 0 0 0' }}>
+              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '12px 0 0 0' }}>
                 TODO: Integrate with Supabase to persist changelog entries
               </p>
             </div>
@@ -526,7 +526,7 @@ export default function AdminPage() {
               <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
                 What's New Editor
               </h2>
-              <p style={{ fontSize: '14px', color: '#666', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Manage featured news and updates for homepage
               </p>
               <div style={{ padding: '32px', backgroundColor: '#f9f9f9', borderRadius: '6px', textAlign: 'center' }}>
@@ -553,7 +553,7 @@ export default function AdminPage() {
               <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
                 Manual Refresh Triggers
               </h2>
-              <p style={{ fontSize: '14px', color: '#666', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Manually trigger data refreshes for each source
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
@@ -575,7 +575,7 @@ export default function AdminPage() {
                   </button>
                 ))}
               </div>
-              <p style={{ fontSize: '12px', color: '#666', margin: '12px 0 0 0' }}>
+              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '12px 0 0 0' }}>
                 TODO: Implement actual API calls to refresh data sources
               </p>
             </div>
@@ -632,13 +632,13 @@ export default function AdminPage() {
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
                     <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Data Source
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Last Refresh
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Status
                       </th>
                     </tr>
@@ -647,7 +647,7 @@ export default function AdminPage() {
                     {dataSources.map((source) => (
                       <tr key={source.name} style={{ borderBottom: '1px solid #f0f0f0' }}>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{source.name}</td>
-                        <td style={{ padding: '12px 0', fontSize: '14px', color: '#666' }}>{source.lastRefresh}</td>
+                        <td style={{ padding: '12px 0', fontSize: '14px', color: 'var(--color-text-secondary)' }}>{source.lastRefresh}</td>
                         <td style={{ padding: '12px 0' }}>
                           <span
                             style={{
@@ -686,11 +686,11 @@ export default function AdminPage() {
               <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
                 Local Rules JSON Editor
               </h2>
-              <p style={{ fontSize: '14px', color: '#666', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Edit local rules data in JSON format
               </p>
 
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#333', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '6px' }}>
                 Rules JSON
               </label>
               <textarea
@@ -763,7 +763,7 @@ export default function AdminPage() {
                 </p>
               </div>
 
-              <p style={{ fontSize: '12px', color: '#666', margin: '12px 0 0 0' }}>
+              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '12px 0 0 0' }}>
                 TODO: Persist rules to Supabase when saved
               </p>
             </div>
@@ -787,7 +787,7 @@ export default function AdminPage() {
               </h2>
 
               <div style={{ marginBottom: '16px' }}>
-                <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#333', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '6px' }}>
                   Search Users
                 </label>
                 <input
@@ -810,16 +810,16 @@ export default function AdminPage() {
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
                     <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Email
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Role
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Last Active
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Admin
                       </th>
                     </tr>
@@ -829,7 +829,7 @@ export default function AdminPage() {
                       <tr key={user.id} style={{ borderBottom: '1px solid #f0f0f0' }}>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{user.email}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{user.role}</td>
-                        <td style={{ padding: '12px 0', fontSize: '14px', color: '#666' }}>{user.lastActive}</td>
+                        <td style={{ padding: '12px 0', fontSize: '14px', color: 'var(--color-text-secondary)' }}>{user.lastActive}</td>
                         <td style={{ padding: '12px 0' }}>
                           <input
                             type="checkbox"
@@ -846,7 +846,7 @@ export default function AdminPage() {
                 </table>
               </div>
 
-              <p style={{ fontSize: '12px', color: '#666', margin: '12px 0 0 0' }}>
+              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '12px 0 0 0' }}>
                 TODO: Add Supabase integration for user management
               </p>
             </div>
@@ -917,13 +917,13 @@ export default function AdminPage() {
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
                     <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Recipient
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Subject
                       </th>
-                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: '#666' }}>
+                      <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Sent
                       </th>
                     </tr>
@@ -933,7 +933,7 @@ export default function AdminPage() {
                       <tr key={email.id} style={{ borderBottom: '1px solid #f0f0f0' }}>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{email.recipient}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{email.subject}</td>
-                        <td style={{ padding: '12px 0', fontSize: '14px', color: '#666' }}>{email.sent}</td>
+                        <td style={{ padding: '12px 0', fontSize: '14px', color: 'var(--color-text-secondary)' }}>{email.sent}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -954,11 +954,11 @@ export default function AdminPage() {
               <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
                 Send Test Email
               </h2>
-              <p style={{ fontSize: '14px', color: '#666', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Send a test digest email to preview content
               </p>
               <div style={{ marginBottom: '16px' }}>
-                <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: '#333', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '6px' }}>
                   Recipient Email
                 </label>
                 <input
@@ -988,7 +988,7 @@ export default function AdminPage() {
               >
                 Send Test Digest
               </button>
-              <p style={{ fontSize: '12px', color: '#666', margin: '12px 0 0 0' }}>
+              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '12px 0 0 0' }}>
                 TODO: Integrate with Resend email service
               </p>
             </div>

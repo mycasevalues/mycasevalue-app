@@ -77,7 +77,7 @@ export default function DataAlertSubscribe({
       style={{
         padding: '16px',
         backgroundColor: 'var(--color-surface-0)',
-        border: '1px solid #D1D5DB',
+        border: '1px solid rgba(255,255,255,0.1)',
         borderRadius: '8px',
         fontFamily: 'var(--font-body)',
       }}
@@ -165,7 +165,7 @@ export default function DataAlertSubscribe({
                   style={{
                     width: '100%',
                     padding: '8px 10px',
-                    border: '1px solid #D1D5DB',
+                    border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: '4px',
                     fontSize: '13px',
                     fontFamily: 'var(--font-body)',
@@ -194,7 +194,7 @@ export default function DataAlertSubscribe({
                   style={{
                     width: '100%',
                     padding: '8px 10px',
-                    border: '1px solid #D1D5DB',
+                    border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: '4px',
                     fontSize: '13px',
                     fontFamily: 'var(--font-body)',
@@ -212,7 +212,7 @@ export default function DataAlertSubscribe({
               <div
                 style={{
                   fontSize: '12px',
-                  color: '#6B7280',
+                  color: 'var(--color-text-muted)',
                   marginBottom: '16px',
                   backgroundColor: '#F9FAFB',
                   padding: '8px 10px',
@@ -252,7 +252,7 @@ export default function DataAlertSubscribe({
                     padding: '8px 14px',
                     backgroundColor: 'rgba(255,255,255,0.05)',
                     color: 'var(--color-text-primary)',
-                    border: '1px solid #D1D5DB',
+                    border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: '4px',
                     fontSize: '13px',
                     fontWeight: 500,

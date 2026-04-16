@@ -774,7 +774,7 @@ export default function ComparePage() {
             <section style={{
               marginTop: 48,
               padding: 'clamp(24px, 5vw, 32px)',
-              background: '#F0F9FF',
+              background: 'rgba(59,130,246,0.06)',
               border: '1px solid #BAE6FD',
               borderRadius: 4,
             }}>

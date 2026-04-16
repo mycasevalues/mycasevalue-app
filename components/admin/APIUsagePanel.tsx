@@ -90,7 +90,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             border: '1px solid var(--border-default)',
           }}
         >
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: '#6B7280', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             API Keys Generated
           </p>
           <p
@@ -114,7 +114,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             border: '1px solid var(--border-default)',
           }}
         >
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: '#6B7280', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Requests (Last 24h)
           </p>
           <p
@@ -138,7 +138,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             border: '1px solid var(--border-default)',
           }}
         >
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: '#6B7280', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Rate Limit Violations (1h)
           </p>
           <p
@@ -238,7 +238,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '0.75rem',
-                    color: '#6B7280',
+                    color: 'var(--color-text-muted)',
                     margin: 0,
                   }}
                 >
@@ -331,7 +331,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '0.75rem',
-                    color: '#6B7280',
+                    color: 'var(--color-text-muted)',
                     margin: 0,
                   }}
                 >
@@ -348,11 +348,11 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
           style={{
             marginTop: '16px',
             padding: '12px',
-            background: '#DBEAFE',
+            background: 'rgba(59,130,246,0.08)',
             border: '1px solid #93C5FD',
             borderRadius: '6px',
             fontSize: '0.75rem',
-            color: '#1E40AF',
+            color: '#60a5fa',
             fontFamily: 'var(--font-body)',
           }}
         >

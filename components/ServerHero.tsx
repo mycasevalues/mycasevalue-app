@@ -16,8 +16,8 @@ export default function ServerHero() {
     <section className="server-hero-content" aria-label="Hero section">
       {/* ── VISUAL 1: HERO — Clean LexisNexis-style ────────── */}
       <div style={{
-        background: 'var(--accent-primary)',
-        borderBottom: '3px solid var(--accent-primary)',
+        background: 'var(--gradient-hero)',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
         padding: '64px 24px 56px',
         position: 'relative',
       }}>
@@ -231,7 +231,7 @@ export default function ServerHero() {
       <TrustBar />
 
       {/* ── VISUAL 3: STATS BAR — Corporate style ────────────── */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid rgba(255,255,255,0.1)', padding: '0' }}>
+      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '0' }}>
         <div style={{
           maxWidth: '1280px',
           margin: '0 auto',
@@ -271,7 +271,7 @@ export default function ServerHero() {
       {/* Quick Lookup is now embedded in the hero card above */}
 
       {/* ── VISUAL 7: INTEGRATED CASE RESEARCH ─────────────── */}
-      <div style={{ background: 'var(--accent-primary)', padding: '64px 24px', borderBottom: '3px solid var(--accent-primary)' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', marginBottom: '16px' }}>
             From research to action — without friction
@@ -588,7 +588,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── AWARDS / TRUST BADGES GRID ───────────────────── */}
-      <div style={{ background: 'var(--accent-primary)', padding: '64px 24px', borderBottom: '3px solid var(--accent-primary)' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', marginBottom: '40px' }}>
             Trusted Data Sources &amp; Standards
@@ -740,7 +740,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── BOTTOM CTA ────────────────── */}
-      <div style={{ background: 'var(--accent-primary)', padding: '80px 24px' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '80px 24px' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', marginBottom: '16px' }}>
             Start Researching Today

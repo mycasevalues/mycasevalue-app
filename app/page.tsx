@@ -60,7 +60,7 @@ export default function HomePage() {
               </div>
 
               <div className="flex items-center gap-8">
-                <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-white text-gray-900 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors">
+                <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-white text-gray-100 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors">
                   Browse Cases
                 </Link>
                 <Link href="/judges" className="text-sm text-gray-400 hover:text-white transition-colors">
@@ -97,7 +97,7 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-                <div className="px-4 py-2 text-[10px] text-gray-600">
+                <div className="px-4 py-2 text-[10px] text-gray-400">
                   Showing 5 of 84 case types &middot; Source: FJC IDB, CourtListener
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default function HomePage() {
       {/* ── CAPABILITIES ── */}
       <section style={{ background: '#f8f9fb' }}>
         <div className="max-w-6xl mx-auto px-6 py-14">
-          <h2 className="text-base font-semibold text-gray-900 mb-8">Platform</h2>
+          <h2 className="text-base font-semibold text-gray-100 mb-8">Platform</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: 'Case Outcomes', desc: 'Win rates, settlement ranges, and disposition analytics across 84 case types.' },
@@ -156,7 +156,7 @@ export default function HomePage() {
               { title: 'Document Search', desc: 'Full-text search across opinions, regulations, and filings from 7 sources.' },
             ].map((cap) => (
               <div key={cap.title}>
-                <h3 className="text-sm font-semibold text-gray-900 mb-1.5">{cap.title}</h3>
+                <h3 className="text-sm font-semibold text-gray-100 mb-1.5">{cap.title}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed">{cap.desc}</p>
               </div>
             ))}
@@ -171,7 +171,7 @@ export default function HomePage() {
             <h2 className="text-lg font-bold text-white mb-1">Start researching.</h2>
             <p className="text-sm text-gray-500">Free during beta. No account required.</p>
           </div>
-          <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-white text-gray-900 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors flex-shrink-0">
+          <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-white text-gray-100 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors flex-shrink-0">
             Browse Cases
           </Link>
         </div>

@@ -232,7 +232,7 @@ export default function DemandPackageGenerator() {
           <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
             Demand Letter Data Package
           </h1>
-          <p style={{ fontSize: '16px', color: '#666', marginBottom: '24px' }}>
+          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
             Generate professional research data packages with federal court statistics for inclusion in demand letters.
           </p>
         </div>
@@ -409,7 +409,7 @@ function PreviewContent({
         <h1 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--accent-primary)', margin: '0 0 8px 0' }}>
           MyCaseValue Research Data Package
         </h1>
-        <p style={{ margin: '0', color: '#666', fontSize: '14px' }}>
+        <p style={{ margin: '0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
           Generated: {generatedDate}
         </p>
       </div>
@@ -440,7 +440,7 @@ function PreviewContent({
             <strong>{winRate.toFixed(1)}%</strong> of plaintiffs win or settle favorably in {caseType.label} cases
             nationwide.
           </p>
-          <p style={{ margin: '4px 0', color: '#666', fontSize: '13px' }}>
+          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
             District-specific outcomes may vary based on local judicial culture and case composition.
           </p>
         </div>
@@ -457,7 +457,7 @@ function PreviewContent({
           <p style={{ margin: '4px 0' }}>
             <strong>Interquartile Range (IQR):</strong> {lowFormatted} to {highFormatted}
           </p>
-          <p style={{ margin: '4px 0', color: '#666', fontSize: '13px' }}>
+          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
             50% of settlements fall within this range. Cases with greater injury, documented damages, or stronger liability
             tend to settle higher.
           </p>
@@ -472,7 +472,7 @@ function PreviewContent({
           <p style={{ margin: '4px 0' }}>
             <strong>{timeToResolution} months</strong> is the median time from filing to resolution in {caseType.label} cases.
           </p>
-          <p style={{ margin: '4px 0', color: '#666', fontSize: '13px' }}>
+          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
             Cases that settle typically resolve faster than those proceeding to trial or summary judgment.
           </p>
         </div>
@@ -493,7 +493,7 @@ function PreviewContent({
             <p style={{ margin: '4px 0', fontWeight: '600', color: 'var(--accent-primary)' }}>
               Representation Impact: +{attorneyData.rwr - attorneyData.pwr} percentage points
             </p>
-            <p style={{ margin: '8px 0 4px 0', color: '#666', fontSize: '13px' }}>
+            <p style={{ margin: '8px 0 4px 0', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
               This data demonstrates the significant advantage of attorney representation in federal litigation. Plaintiffs
               represented by counsel achieve substantially higher win rates and settlement values than self-represented litigants.
             </p>
@@ -512,7 +512,7 @@ function PreviewContent({
           <p style={{ margin: '4px 0' }}>
             <strong>Total Cases Analyzed:</strong> {casesFormatted}
           </p>
-          <p style={{ margin: '8px 0 4px 0', color: '#666', fontSize: '13px' }}>
+          <p style={{ margin: '8px 0 4px 0', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
             Data derived from federal court records spanning 2010-2025. Settlement amounts based on reported values in cases
             with available damage data.
           </p>
@@ -566,7 +566,7 @@ function PreviewContent({
       </div>
 
       <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid #e5e7eb' }}>
-        <p style={{ fontSize: '12px', color: '#666', margin: '0' }}>
+        <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '0' }}>
           MyCaseValue - Federal Case Outcome Research
         </p>
       </div>

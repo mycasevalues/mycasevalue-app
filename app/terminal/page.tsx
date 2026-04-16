@@ -295,10 +295,10 @@ function TerminalContent() {
                 <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-2">Filters</p>
                 <div className="space-y-2">
                   <input type="text" value={court} onChange={e => setCourt(e.target.value)} placeholder="Court (e.g. SDNY)"
-                    className="w-full h-7 px-2 rounded text-xs border outline-none focus:border-blue-500 text-gray-300 placeholder:text-gray-600"
+                    className="w-full h-7 px-2 rounded text-xs border outline-none focus:border-blue-500 text-gray-300 placeholder:text-gray-400"
                     style={{ background: '#1e2030', borderColor: '#303347' }} />
                   <input type="text" value={caseType} onChange={e => setCaseType(e.target.value)} placeholder="Case type"
-                    className="w-full h-7 px-2 rounded text-xs border outline-none focus:border-blue-500 text-gray-300 placeholder:text-gray-600"
+                    className="w-full h-7 px-2 rounded text-xs border outline-none focus:border-blue-500 text-gray-300 placeholder:text-gray-400"
                     style={{ background: '#1e2030', borderColor: '#303347' }} />
                   <select value={status} onChange={e => setStatus(e.target.value)}
                     className="w-full h-7 px-2 rounded text-xs border outline-none text-gray-300"

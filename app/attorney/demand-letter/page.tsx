@@ -478,7 +478,7 @@ export default function DemandLetterPage() {
                     <p style={{ fontSize: '12px', fontWeight: '600', color: '#B86E00', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>
                       Important Disclaimer
                     </p>
-                    <p style={{ fontSize: '12px', color: '#92400E', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: '12px', color: '#fbbf24', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
                       AI-generated template — must be reviewed and modified by a licensed attorney before use.
                     </p>
                   </div>

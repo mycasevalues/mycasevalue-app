@@ -152,7 +152,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
           padding: '16px',
           borderRadius: '8px',
           backgroundColor: 'rgba(239,68,68,0.1)',
-          color: '#991B1B',
+          color: '#f87171',
           border: '1px solid #FECACA',
         }}
       >

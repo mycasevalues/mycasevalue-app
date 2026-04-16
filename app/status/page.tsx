@@ -129,7 +129,7 @@ export default function StatusPage() {
           <p
             style={{
               fontSize: '16px',
-              color: '#6B7280',
+              color: 'var(--color-text-muted)',
               margin: 0,
             }}
           >
@@ -279,7 +279,7 @@ export default function StatusPage() {
                     <p
                       style={{
                         fontSize: '13px',
-                        color: '#6B7280',
+                        color: 'var(--color-text-muted)',
                         margin: 0,
                       }}
                     >
@@ -311,7 +311,7 @@ export default function StatusPage() {
                     <div
                       style={{
                         fontSize: '12px',
-                        color: '#6B7280',
+                        color: 'var(--color-text-muted)',
                       }}
                     >
                       {service.responseTime}ms
@@ -350,7 +350,7 @@ export default function StatusPage() {
               borderRadius: '6px',
               padding: '16px',
               textAlign: 'center',
-              color: '#6B7280',
+              color: 'var(--color-text-muted)',
               fontSize: '14px',
             }}
           >

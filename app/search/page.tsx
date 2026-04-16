@@ -532,21 +532,21 @@ function SearchPageInner() {
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                   {aiResult.parameters.caseType && (
                     <div style={{ padding: '8px 12px', background: '#F0F6FB', border: '1px solid #BAE6FD', borderRadius: '6px' }}>
-                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#1E40AF', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#60a5fa', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         Case Type: <strong>{aiResult.parameters.caseType}</strong>
                       </p>
                     </div>
                   )}
                   {aiResult.parameters.nosCode && (
                     <div style={{ padding: '8px 12px', background: 'rgba(234,179,8,0.1)', border: '1px solid #FCD34D', borderRadius: '6px' }}>
-                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#92400E', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#fbbf24', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         NOS Code: <strong>{aiResult.parameters.nosCode}</strong>
                       </p>
                     </div>
                   )}
                   {aiResult.parameters.settlementMinimum && (
-                    <div style={{ padding: '8px 12px', background: '#DCFCE7', border: '1px solid #86EFAC', borderRadius: '6px' }}>
-                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#166534', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                    <div style={{ padding: '8px 12px', background: 'rgba(34,197,94,0.08)', border: '1px solid #86EFAC', borderRadius: '6px' }}>
+                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#4ade80', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         Settlement Min: <strong>${aiResult.parameters.settlementMinimum.toLocaleString()}</strong>
                       </p>
                     </div>
@@ -632,7 +632,7 @@ function SearchPageInner() {
                 height: '24px',
                 border: 'none',
                 background: 'transparent',
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -661,13 +661,13 @@ function SearchPageInner() {
       </form>
 
       {/* Search Tips Section */}
-      <div style={{ marginBottom: '24px', background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '12px', overflow: 'hidden' }}>
+      <div style={{ marginBottom: '24px', background: 'rgba(59,130,246,0.06)', border: '1px solid #BAE6FD', borderRadius: '12px', overflow: 'hidden' }}>
         <button
           onClick={() => setTipsExpanded(!tipsExpanded)}
           style={{
             width: '100%',
             padding: '12px 16px',
-            background: '#F0F9FF',
+            background: 'rgba(59,130,246,0.06)',
             border: 'none',
             cursor: 'pointer',
             display: 'flex',
@@ -716,7 +716,7 @@ function SearchPageInner() {
           <p style={{ color: 'var(--color-text-secondary)', fontSize: 16, margin: 0, marginBottom: 8, fontFamily: 'var(--font-body)' }}>
             No case types match your search
           </p>
-          <p style={{ color: '#6B7280', fontSize: 14, margin: 0, marginBottom: 16, fontFamily: 'var(--font-body)' }}>
+          <p style={{ color: 'var(--color-text-muted)', fontSize: 14, margin: 0, marginBottom: 16, fontFamily: 'var(--font-body)' }}>
             for &ldquo;{query}&rdquo;
           </p>
           <Link href="/cases" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none', fontSize: 14 }}>Browse all categories &rarr;</Link>

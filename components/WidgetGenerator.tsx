@@ -75,7 +75,7 @@ export default function WidgetGenerator() {
       backgroundColor: '#fff',
       borderRadius: '12px',
       padding: '32px',
-      border: '1px solid #e5e7eb',
+      border: '1px solid rgba(255,255,255,0.08)',
     }}>
       {/* Left column: Configuration */}
       <div>
@@ -83,7 +83,7 @@ export default function WidgetGenerator() {
           <h3 style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: '#1f2937',
+            color: 'var(--color-text-primary)',
             marginBottom: '16px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -150,7 +150,7 @@ export default function WidgetGenerator() {
                     }}
                   >
                     <div style={{ fontWeight: 500, color: 'inherit' }}>{type.label}</div>
-                    <div style={{ fontSize: '12px', color: '#9ca3af', marginTop: '2px' }}>
+                    <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginTop: '2px' }}>
                       {type.category} • NOS {type.nos}
                     </div>
                   </div>
@@ -177,7 +177,7 @@ export default function WidgetGenerator() {
           <h3 style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: '#1f2937',
+            color: 'var(--color-text-primary)',
             marginBottom: '16px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -218,7 +218,7 @@ export default function WidgetGenerator() {
           <h3 style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: '#1f2937',
+            color: 'var(--color-text-primary)',
             marginBottom: '16px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -240,7 +240,7 @@ export default function WidgetGenerator() {
                   borderRadius: '6px',
                   boxSizing: 'border-box',
                   resize: 'none',
-                  color: '#374151',
+                  color: 'var(--color-text-primary)',
                   backgroundColor: '#f9fafb',
                 }}
               />
@@ -267,7 +267,7 @@ export default function WidgetGenerator() {
               padding: '16px',
               backgroundColor: '#f3f4f6',
               borderRadius: '6px',
-              color: '#9ca3af',
+              color: 'var(--color-text-muted)',
               fontSize: '14px',
               textAlign: 'center',
             }}>
@@ -293,7 +293,7 @@ export default function WidgetGenerator() {
         <h3 style={{
           fontSize: '14px',
           fontWeight: 600,
-          color: '#1f2937',
+          color: 'var(--color-text-primary)',
           marginBottom: '16px',
           textTransform: 'uppercase',
           letterSpacing: '0.5px',
@@ -304,7 +304,7 @@ export default function WidgetGenerator() {
           padding: '32px',
           backgroundColor: '#f9fafb',
           borderRadius: '8px',
-          border: '1px solid #e5e7eb',
+          border: '1px solid rgba(255,255,255,0.08)',
           minHeight: '400px',
           display: 'flex',
           alignItems: 'center',
@@ -316,7 +316,7 @@ export default function WidgetGenerator() {
               <div style={{
                 marginBottom: '16px',
                 fontSize: '12px',
-                color: '#9ca3af',
+                color: 'var(--color-text-muted)',
                 textAlign: 'center',
               }}>
                 {dimensions.width}×{dimensions.height}px
@@ -333,7 +333,7 @@ export default function WidgetGenerator() {
           ) : (
             <div style={{
               textAlign: 'center',
-              color: '#9ca3af',
+              color: 'var(--color-text-muted)',
             }}>
               <div style={{ fontSize: '16px', marginBottom: '8px' }}>Select a case type to preview</div>
               <div style={{ fontSize: '13px' }}>The widget will appear here</div>

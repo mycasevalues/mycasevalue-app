@@ -35,12 +35,12 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
         padding: '12px',
         boxSizing: 'border-box',
         backgroundColor: '#fff',
-        border: '1px solid #e5e7eb',
+        border: '1px solid rgba(255,255,255,0.08)',
         borderRadius: '6px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#9ca3af',
+        color: 'var(--color-text-muted)',
       }}>
         Case type not found
       </div>
@@ -73,7 +73,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
       padding: '16px',
       boxSizing: 'border-box',
       backgroundColor: '#fff',
-      border: '1px solid #e5e7eb',
+      border: '1px solid rgba(255,255,255,0.08)',
       borderRadius: '6px',
       display: 'flex',
       flexDirection: 'column',
@@ -88,7 +88,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
       <div style={{
         fontSize: '15px',
         fontWeight: 600,
-        color: '#1f2937',
+        color: 'var(--color-text-primary)',
       }}>
         {caseTypeLabel}
       </div>
@@ -106,14 +106,14 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
         }}>
           {winRate.toFixed(0)}%
         </div>
-        <div style={{ fontSize: '11px', color: '#6b7280' }}>
+        <div style={{ fontSize: '11px', color: 'var(--color-text-muted)' }}>
           favorable outcomes
         </div>
       </div>
 
       {/* Settlement range bar */}
       <div style={{ marginTop: '8px' }}>
-        <div style={{ fontSize: '11px', color: '#6b7280', marginBottom: '6px' }}>
+        <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '6px' }}>
           Settlement Range (P25–P75)
         </div>
         <div style={{
@@ -156,7 +156,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
               top: '50%',
               transform: 'translateY(-50%)',
               fontSize: '10px',
-              color: '#374151',
+              color: 'var(--color-text-primary)',
               fontWeight: 500,
               marginLeft: '4px',
             }}
@@ -170,7 +170,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
               top: '50%',
               transform: 'translateY(-50%)',
               fontSize: '10px',
-              color: '#374151',
+              color: 'var(--color-text-primary)',
               fontWeight: 500,
               marginRight: '4px',
               textAlign: 'right',
@@ -189,26 +189,26 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
         marginTop: '8px',
       }}>
         <div>
-          <div style={{ fontSize: '11px', color: '#6b7280', marginBottom: '2px' }}>
+          <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '2px' }}>
             Median Settlement
           </div>
           <div style={{
             fontFamily: '"Courier New", monospace',
             fontSize: '14px',
             fontWeight: 600,
-            color: '#1f2937',
+            color: 'var(--color-text-primary)',
           }}>
             {formatSettlementAmount(medianSettlement, { compact: true })}
           </div>
         </div>
         <div>
-          <div style={{ fontSize: '11px', color: '#6b7280', marginBottom: '2px' }}>
+          <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '2px' }}>
             Avg. Duration
           </div>
           <div style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: '#1f2937',
+            color: 'var(--color-text-primary)',
           }}>
             {avgDuration} {avgDuration === 1 ? 'month' : 'months'}
           </div>

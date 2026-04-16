@@ -85,7 +85,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[11px] text-gray-600">
+          <p className="text-[11px] text-gray-400">
             &copy; {new Date().getFullYear()} MyCaseValue LLC &middot; West Virginia
           </p>
           <div className="flex items-center gap-6">
@@ -95,7 +95,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="text-[10px] text-gray-700 text-center mt-4">
+        <p className="text-[10px] text-gray-300 text-center mt-4">
           Data from public federal court records. Not legal advice.
         </p>
       </div>

@@ -57,7 +57,7 @@ export default function GovernmentPage() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '40px 24px 32px' }}>
+      <section style={{ background: 'var(--gradient-hero)', color: '#fff', padding: '40px 24px 32px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',

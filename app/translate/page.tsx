@@ -139,7 +139,7 @@ export default function TranslatePage() {
         {/* Translator Form */}
         <div className="p-6 sm:p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '12px' }}>
           {/* Free Access Banner */}
-          <div className="mb-8 p-4 flex items-center gap-3" style={{ background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '12px' }}>
+          <div className="mb-8 p-4 flex items-center gap-3" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid #BAE6FD', borderRadius: '12px' }}>
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#059669', flexShrink: 0 }} />
             <p className="text-sm" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-body)', margin: 0 }}>
               <strong>Unlimited translations</strong> — all features are free during launch
@@ -255,7 +255,7 @@ export default function TranslatePage() {
                 }
               }
               return relatedTerms.size > 0 ? (
-                <div className="mt-8 p-6 sm:p-8 border" style={{ borderColor: '#BAE6FD', background: '#F0F9FF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '12px' }}>
+                <div className="mt-8 p-6 sm:p-8 border" style={{ borderColor: '#BAE6FD', background: 'rgba(59,130,246,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '12px' }}>
                   <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#0369A1', fontFamily: 'var(--font-display)' }}>
                     Related Legal Concepts
                   </h2>

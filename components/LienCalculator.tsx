@@ -593,14 +593,14 @@ export default function LienCalculator() {
                 Workers Compensation Lien
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: '#1E40AF', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: '#60a5fa', fontFamily: 'var(--font-body)' }}>
                   Reimbursement amount:
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#1E40AF', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ fontSize: 13, fontWeight: 600, color: '#60a5fa', fontFamily: 'var(--font-mono)' }}>
                   {formatCurrency(result.workersCompLiens)}
                 </div>
               </div>
-              <div style={{ fontSize: 12, color: '#1E40AF', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
+              <div style={{ fontSize: 12, color: '#60a5fa', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
                 Workers compensation liens are generally enforced as stated but may be subject to reduction under applicable state law or settlement negotiation.
               </div>
             </div>

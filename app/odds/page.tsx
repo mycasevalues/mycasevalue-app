@@ -552,7 +552,7 @@ export default function OddsPage() {
                             {results.recoveryLow !== null ? fmtK(results.recoveryLow) : '–'}
                           </p>
                         </div>
-                        <div style={{ background: '#F0F9FF', borderRadius: 2, padding: '8px 0' }}>
+                        <div style={{ background: 'rgba(59,130,246,0.06)', borderRadius: 2, padding: '8px 0' }}>
                           <p style={{ fontSize: 11, color: 'var(--accent-primary-hover)', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 }}>Median</p>
                           <p style={{ fontSize: 28, fontWeight: 600, color: 'var(--accent-primary-hover)', margin: 0, fontFamily: 'var(--font-mono)' }}>
                             {fmtK(results.recoveryMedian)}
@@ -1258,7 +1258,7 @@ export default function OddsPage() {
                 </p>
                 <p style={{ fontSize: 12, color: '#78350F', margin: 0, lineHeight: 1.6 }}>
                   Data sourced from the Federal Judicial Center Integrated Database (2000–2024). Individual outcomes vary based on case facts, jurisdiction, and representation. This is not legal advice.{' '}
-                  <Link href="/methodology" className="odds-link" style={{ color: '#92400E' }}>Learn about our methodology</Link>
+                  <Link href="/methodology" className="odds-link" style={{ color: '#fbbf24' }}>Learn about our methodology</Link>
                 </p>
               </section>
             </div>

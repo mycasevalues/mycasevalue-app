@@ -499,7 +499,7 @@ export default function JudgeProfileClient({
                                 display: 'inline-block',
                                 padding: '2px 8px',
                                 background: 'rgba(255,255,255,0.05)',
-                                border: '1px solid #D1D5DB',
+                                border: '1px solid rgba(255,255,255,0.1)',
                                 borderRadius: '3px',
                                 color: 'var(--color-text-secondary)',
                                 fontSize: '11px',

@@ -207,7 +207,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
             </svg>
             <div>
               <p style={{ margin: 0, fontSize: '13px', fontWeight: 600 }}>LinkedIn</p>
-              <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#666' }}>Post to your feed</p>
+              <p style={{ margin: '2px 0 0', fontSize: '12px', color: 'var(--color-text-secondary)' }}>Post to your feed</p>
             </div>
           </button>
 
@@ -243,7 +243,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
             </svg>
             <div>
               <p style={{ margin: 0, fontSize: '13px', fontWeight: 600 }}>X/Twitter</p>
-              <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#666' }}>Share on X</p>
+              <p style={{ margin: '2px 0 0', fontSize: '12px', color: 'var(--color-text-secondary)' }}>Share on X</p>
             </div>
           </button>
         </div>

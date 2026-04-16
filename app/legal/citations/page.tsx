@@ -179,7 +179,7 @@ export default function CitationsPage() {
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '20px 16px 40px' }}>
 
       {/* Breadcrumb */}
-      <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 24 }}>
+      <nav style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 24 }}>
         <Link href="/legal" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Research Hub</Link>
         <span style={{ margin: '0 8px' }}>/</span>
         <span>Citation Explorer</span>
@@ -190,7 +190,7 @@ export default function CitationsPage() {
         <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
           Citation Explorer
         </h1>
-        <p style={{ fontSize: 15, color: '#6B7280', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
+        <p style={{ fontSize: 15, color: 'var(--color-text-muted)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
           Explore how landmark cases cite each other. See precedent chains, identify the most-cited rulings, and trace how legal doctrine evolves over time.
         </p>
       </div>
@@ -353,13 +353,13 @@ export default function CitationsPage() {
             <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
               {selected.name}
             </h3>
-            <div style={{ fontSize: 13, color: '#6B7280', marginBottom: 8 }}>
+            <div style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 8 }}>
               {selected.court} &middot; {selected.year}
             </div>
             <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: '0 0 12px' }}>
               {selected.significance}
             </p>
-            <div style={{ fontSize: 12, fontWeight: 600, color: '#6B7280', marginBottom: 6 }}>
+            <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 6 }}>
               Citations ({getConnections(selected.id).length})
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -395,25 +395,25 @@ export default function CitationsPage() {
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono, monospace)' }}>
             {NODES.length}
           </div>
-          <div style={{ fontSize: 13, color: '#6B7280' }}>Landmark Cases</div>
+          <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Landmark Cases</div>
         </div>
         <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: '#7C3AED', fontFamily: 'var(--font-mono, monospace)' }}>
             {CITATIONS.length}
           </div>
-          <div style={{ fontSize: 13, color: '#6B7280' }}>Citation Links</div>
+          <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Citation Links</div>
         </div>
         <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: '#059669', fontFamily: 'var(--font-mono, monospace)' }}>
             {CATEGORIES.length}
           </div>
-          <div style={{ fontSize: 13, color: '#6B7280' }}>Legal Categories</div>
+          <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Legal Categories</div>
         </div>
         <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: '#D97706', fontFamily: 'var(--font-mono, monospace)' }}>
             {new Date().getFullYear() - Math.min(...NODES.map(n => n.year))}+
           </div>
-          <div style={{ fontSize: 13, color: '#6B7280' }}>Years of Precedent</div>
+          <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Years of Precedent</div>
         </div>
       </div>
 
@@ -439,7 +439,7 @@ export default function CitationsPage() {
                 <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)' }}>{node.name}</span>
                 <span style={{ fontSize: 12, color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono, monospace)' }}>{node.year}</span>
               </div>
-              <div style={{ fontSize: 13, color: '#6B7280', marginBottom: 6 }}>{node.significance}</div>
+              <div style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 6 }}>{node.significance}</div>
               <div style={{ display: 'flex', gap: 6 }}>
                 <span style={{
                   padding: '2px 8px',

@@ -97,7 +97,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
   if (loading) {
     return (
       <div style={{ padding: '16px', textAlign: 'center' }}>
-        <p style={{ color: '#666' }}>Loading referral information...</p>
+        <p style={{ color: 'var(--color-text-secondary)' }}>Loading referral information...</p>
       </div>
     );
   }
@@ -109,7 +109,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
           padding: '16px',
           borderRadius: '8px',
           backgroundColor: 'rgba(239,68,68,0.1)',
-          color: '#991B1B',
+          color: '#f87171',
           border: '1px solid #FECACA',
         }}
       >
@@ -128,7 +128,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
           border: '1px solid rgba(59,130,246,0.15)',
         }}
       >
-        <h3 style={{ margin: '0 0 8px 0', color: '#1E40AF' }}>
+        <h3 style={{ margin: '0 0 8px 0', color: '#60a5fa' }}>
           Referral Link Not Set
         </h3>
         <p style={{ margin: '0 0 16px 0', color: '#1E3A8A', fontSize: '14px' }}>
@@ -182,7 +182,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
         border: '1px solid #E9ECEF',
       }}
     >
-      <h3 style={{ margin: '0 0 16px 0', color: '#212529', fontSize: '18px' }}>
+      <h3 style={{ margin: '0 0 16px 0', color: 'var(--color-text-primary)', fontSize: '18px' }}>
         Share Your Referral Link
       </h3>
 
@@ -309,7 +309,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
           borderRadius: '4px',
           border: '1px solid #FCD34D',
           fontSize: '13px',
-          color: '#92400E',
+          color: '#fbbf24',
         }}
       >
         <strong>Share your link:</strong> Send it to friends, family, or

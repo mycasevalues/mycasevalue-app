@@ -263,7 +263,7 @@ function ProgressBar({ current, total }: { current: number; total: number }) {
           }}
         />
       </div>
-      <p style={{ marginTop: '8px', fontSize: '13px', color: '#6B7280', margin: '8px 0 0 0' }}>
+      <p style={{ marginTop: '8px', fontSize: '13px', color: 'var(--color-text-muted)', margin: '8px 0 0 0' }}>
         Step {current} of {total}
       </p>
     </div>
@@ -335,7 +335,7 @@ function CircularGauge({ score }: { score: number }) {
           <div
             style={{
               fontSize: '12px',
-              color: '#6B7280',
+              color: 'var(--color-text-muted)',
               marginTop: '4px',
             }}
           >
@@ -435,7 +435,7 @@ export default function CaseStrengthAssessment() {
           <p
             style={{
               fontSize: '16px',
-              color: '#6B7280',
+              color: 'var(--color-text-muted)',
               maxWidth: '600px',
               margin: '0 auto 0 auto',
             }}
@@ -501,7 +501,7 @@ export default function CaseStrengthAssessment() {
                 <p
                   style={{
                     fontSize: '14px',
-                    color: '#6B7280',
+                    color: 'var(--color-text-muted)',
                     margin: '0',
                     lineHeight: '1.5',
                   }}
@@ -554,7 +554,7 @@ export default function CaseStrengthAssessment() {
             <p
               style={{
                 fontSize: '14px',
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 margin: '0',
               }}
             >
@@ -796,7 +796,7 @@ export default function CaseStrengthAssessment() {
               <p
                 style={{
                   fontSize: '16px',
-                  color: '#6B7280',
+                  color: 'var(--color-text-muted)',
                   margin: '0 0 8px 0',
                 }}
               >
@@ -911,7 +911,7 @@ export default function CaseStrengthAssessment() {
             <p
               style={{
                 fontSize: '14px',
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 marginBottom: '8px',
                 margin: '0 0 8px 0',
               }}
@@ -995,7 +995,7 @@ export default function CaseStrengthAssessment() {
             <p
               style={{
                 fontSize: '12px',
-                color: '#92400E',
+                color: '#fbbf24',
                 margin: '0',
                 lineHeight: '1.5',
               }}

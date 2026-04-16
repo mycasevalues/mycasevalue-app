@@ -23,7 +23,7 @@ export default function FeatureCard({ title, description, icon, href, delay = 0,
         transition={{ duration: 0.5, delay }}
         whileHover={{ y: -4, boxShadow: '0 12px 40px rgba(0,0,0,0.08)' }}
         style={{
-          padding: 28, borderRadius: 12, border: '1px solid #e5e7eb',
+          padding: 28, borderRadius: 12, border: '1px solid rgba(255,255,255,0.08)',
           backgroundColor: '#fff', cursor: 'pointer', height: '100%',
           transition: 'border-color 0.2s',
         }}
@@ -37,7 +37,7 @@ export default function FeatureCard({ title, description, icon, href, delay = 0,
           {icon}
         </div>
         <h3 style={{ fontSize: 17, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8 }}>{title}</h3>
-        <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, margin: 0 }}>{description}</p>
+        <p style={{ fontSize: 14, color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>{description}</p>
       </motion.div>
     </Link>
   );

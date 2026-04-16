@@ -16,7 +16,7 @@ export default function SampleSizeIndicator({ count }: SampleSizeIndicatorProps)
       style={{
         fontFamily: '"PT Mono", monospace',
         fontSize: '12px',
-        color: '#9ca3af',
+        color: 'var(--color-text-muted)',
         marginLeft: '8px',
       }}
       title="Total number of cases in sample"

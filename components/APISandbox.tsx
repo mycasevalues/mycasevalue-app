@@ -399,7 +399,7 @@ export default function APISandbox() {
           <p
             style={{
               fontSize: '12px',
-              color: '#991B1B',
+              color: '#f87171',
               margin: 0,
               fontFamily: 'var(--font-mono)',
             }}

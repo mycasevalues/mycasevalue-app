@@ -551,7 +551,7 @@ export default function DecisionTree() {
           <p
             style={{
               fontSize: '1.125rem',
-              color: '#6b7280',
+              color: 'var(--color-text-muted)',
               marginBottom: '2rem',
             }}
           >
@@ -617,7 +617,7 @@ export default function DecisionTree() {
                 <p
                   style={{
                     fontSize: '0.875rem',
-                    color: '#6b7280',
+                    color: 'var(--color-text-muted)',
                     margin: '0',
                   }}
                 >
@@ -752,7 +752,7 @@ export default function DecisionTree() {
             <p
               style={{
                 fontSize: '0.95rem',
-                color: '#1f2937',
+                color: 'var(--color-text-primary)',
                 lineHeight: '1.6',
                 margin: '0 0 1rem 0',
               }}
@@ -763,7 +763,7 @@ export default function DecisionTree() {
               style={{
                 margin: '0',
                 paddingLeft: '1.5rem',
-                color: '#1f2937',
+                color: 'var(--color-text-primary)',
                 fontSize: '0.95rem',
                 lineHeight: '1.8',
               }}
@@ -856,7 +856,7 @@ export default function DecisionTree() {
           <div
             style={{
               backgroundColor: 'var(--color-surface-0)',
-              border: '1px solid #e5e7eb',
+              border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '8px',
               padding: '1.5rem',
               marginBottom: '2rem',
@@ -885,7 +885,7 @@ export default function DecisionTree() {
                 <p
                   style={{
                     fontSize: '0.875rem',
-                    color: '#6b7280',
+                    color: 'var(--color-text-muted)',
                     margin: '0 0 0.25rem 0',
                     fontWeight: '500',
                   }}
@@ -908,7 +908,7 @@ export default function DecisionTree() {
                 <p
                   style={{
                     fontSize: '0.875rem',
-                    color: '#6b7280',
+                    color: 'var(--color-text-muted)',
                     margin: '0 0 0.25rem 0',
                     fontWeight: '500',
                   }}
@@ -931,7 +931,7 @@ export default function DecisionTree() {
                 <p
                   style={{
                     fontSize: '0.875rem',
-                    color: '#6b7280',
+                    color: 'var(--color-text-muted)',
                     margin: '0 0 0.25rem 0',
                     fontWeight: '500',
                   }}
@@ -954,7 +954,7 @@ export default function DecisionTree() {
                 <p
                   style={{
                     fontSize: '0.875rem',
-                    color: '#6b7280',
+                    color: 'var(--color-text-muted)',
                     margin: '0 0 0.25rem 0',
                     fontWeight: '500',
                   }}
@@ -1002,7 +1002,7 @@ export default function DecisionTree() {
           <div
             style={{
               backgroundColor: 'var(--color-surface-0)',
-              border: '1px solid #e5e7eb',
+              border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '8px',
               padding: '1.5rem',
               marginBottom: '2rem',
@@ -1043,7 +1043,7 @@ export default function DecisionTree() {
           <div
             style={{
               backgroundColor: 'var(--color-surface-0)',
-              border: '1px solid #e5e7eb',
+              border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '8px',
               padding: '1.5rem',
               marginBottom: '2rem',
@@ -1095,7 +1095,7 @@ export default function DecisionTree() {
             <p
               style={{
                 fontSize: '0.85rem',
-                color: '#1f2937',
+                color: 'var(--color-text-primary)',
                 margin: '0',
                 lineHeight: '1.6',
               }}

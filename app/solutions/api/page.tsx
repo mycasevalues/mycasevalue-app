@@ -45,7 +45,7 @@ export default function ApiPage() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '40px 24px 32px' }}>
+      <section style={{ background: 'var(--gradient-hero)', color: '#fff', padding: '40px 24px 32px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -229,7 +229,7 @@ export default function ApiPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
             <div style={{ padding: '32px', background: 'var(--color-surface-0)', borderRadius: '12px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>Starter</h3>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>$99<span style={{ fontSize: '1rem', color: '#6B7280', fontWeight: 400 }}>/month</span></p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>$99<span style={{ fontSize: '1rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>/month</span></p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', margin: '16px 0', lineHeight: 1.6 }}>
                 Perfect for individual attorneys and small practices
               </p>
@@ -246,7 +246,7 @@ export default function ApiPage() {
                 Most Popular
               </div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '16px', marginBottom: '8px' }}>Professional</h3>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>$399<span style={{ fontSize: '1rem', color: '#6B7280', fontWeight: 400 }}>/month</span></p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>$399<span style={{ fontSize: '1rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>/month</span></p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', margin: '16px 0', lineHeight: 1.6 }}>
                 Ideal for law firms and legal tech platforms
               </p>

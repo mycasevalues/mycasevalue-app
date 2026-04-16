@@ -83,7 +83,7 @@ export default function AnimatedDataViz({
               <label
                 style={{
                   fontSize: '12px',
-                  color: '#4b5563',
+                  color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   fontWeight: 500,
                 }}

@@ -128,9 +128,9 @@ export default function LegalSearchPage() {
   const selectStyle: React.CSSProperties = {
     padding: '10px 14px',
     borderRadius: 10,
-    border: '1px solid #D1D5DB',
+    border: '1px solid rgba(255,255,255,0.1)',
     fontSize: 14,
-    color: '#374151',
+    color: 'var(--color-text-primary)',
     background: 'var(--color-surface-0)',
     outline: 'none',
     minWidth: 140,
@@ -140,7 +140,7 @@ export default function LegalSearchPage() {
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '20px 16px 40px' }}>
 
       {/* Breadcrumb */}
-      <nav style={{ fontSize: 13, color: '#6B7280', marginBottom: 24 }}>
+      <nav style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 24 }}>
         <Link href="/legal" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Research Hub</Link>
         <span style={{ margin: '0 8px' }}>/</span>
         <span>Document Search</span>
@@ -151,7 +151,7 @@ export default function LegalSearchPage() {
         <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
           Legal Document Search
         </h1>
-        <p style={{ fontSize: 15, color: '#6B7280', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
+        <p style={{ fontSize: 15, color: 'var(--color-text-muted)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
           Search across 7 authoritative legal data sources. Find opinions, regulations, statutes, SEC filings, and government documents from a single interface.
         </p>
       </div>
@@ -227,36 +227,36 @@ export default function LegalSearchPage() {
             gap: 12,
             flexWrap: 'wrap',
             padding: '16px 20px',
-            background: '#F9FAFB',
+            background: 'var(--color-surface-0)',
             borderRadius: 12,
             border: '1px solid var(--border-default)',
             alignItems: 'center',
           }}>
             <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: '#6B7280', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Source</label>
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Source</label>
               <select value={source} onChange={(e) => setSource(e.target.value)} style={selectStyle}>
                 {SOURCES.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: '#6B7280', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Type</label>
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Type</label>
               <select value={docType} onChange={(e) => setDocType(e.target.value)} style={selectStyle}>
                 {TYPES.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: '#6B7280', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>From</label>
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>From</label>
               <input type="date" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} style={{ ...selectStyle, minWidth: 150 }} />
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: '#6B7280', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>To</label>
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>To</label>
               <input type="date" value={dateTo} onChange={(e) => setDateTo(e.target.value)} style={{ ...selectStyle, minWidth: 150 }} />
             </div>
             <div style={{ marginLeft: 'auto', alignSelf: 'flex-end' }}>
               <button
                 type="button"
                 onClick={() => { setSource('all'); setDocType('all'); setDateFrom(''); setDateTo(''); }}
-                style={{ padding: '10px 16px', borderRadius: 8, background: 'transparent', color: '#6B7280', fontSize: 13, border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+                style={{ padding: '10px 16px', borderRadius: 8, background: 'transparent', color: 'var(--color-text-muted)', fontSize: 13, border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
               >
                 Clear filters
               </button>
@@ -273,7 +273,7 @@ export default function LegalSearchPage() {
           border: '1px solid #FDE68A',
           borderRadius: 10,
           fontSize: 13,
-          color: '#92400E',
+          color: '#fbbf24',
           marginBottom: 16,
           display: 'flex',
           alignItems: 'center',
@@ -287,12 +287,12 @@ export default function LegalSearchPage() {
       {/* Results header */}
       {hasSearched && (
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-          <div style={{ fontSize: 14, color: '#6B7280' }}>
+          <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>
             {loading ? 'Searching...' : `${total} result${total !== 1 ? 's' : ''} found`}
             {query.trim() && !loading && <span> for &ldquo;<strong style={{ color: 'var(--color-text-primary)' }}>{query}</strong>&rdquo;</span>}
           </div>
           {total > 0 && totalPages > 1 && (
-            <div style={{ fontSize: 13, color: '#6B7280' }}>
+            <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>
               Page {page} of {totalPages}
             </div>
           )}
@@ -335,7 +335,7 @@ export default function LegalSearchPage() {
                 borderRadius: 6,
                 fontSize: 11,
                 fontWeight: 500,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 background: 'rgba(255,255,255,0.05)',
                 textTransform: 'capitalize',
               }}>
@@ -387,7 +387,7 @@ export default function LegalSearchPage() {
         <div style={{ textAlign: 'center', padding: '48px 20px' }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>&#x1F50D;</div>
           <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>No results found</h3>
-          <p style={{ fontSize: 14, color: '#6B7280', margin: 0 }}>
+          <p style={{ fontSize: 14, color: 'var(--color-text-muted)', margin: 0 }}>
             Try adjusting your search terms or filters to find what you&apos;re looking for.
           </p>
         </div>
@@ -402,7 +402,7 @@ export default function LegalSearchPage() {
             style={{
               padding: '10px 18px',
               borderRadius: 10,
-              border: '1px solid #D1D5DB',
+              border: '1px solid rgba(255,255,255,0.1)',
               background: page <= 1 ? 'rgba(255,255,255,0.05)' : 'var(--color-surface-0)',
               color: page <= 1 ? 'var(--color-text-muted)' : '#374151',
               fontSize: 14,
@@ -417,7 +417,7 @@ export default function LegalSearchPage() {
             style={{
               padding: '10px 18px',
               borderRadius: 10,
-              border: '1px solid #D1D5DB',
+              border: '1px solid rgba(255,255,255,0.1)',
               background: page >= totalPages ? 'rgba(255,255,255,0.05)' : 'var(--color-surface-0)',
               color: page >= totalPages ? 'var(--color-text-muted)' : '#374151',
               fontSize: 14,
@@ -434,7 +434,7 @@ export default function LegalSearchPage() {
         marginTop: 48,
         padding: '28px 32px',
         borderRadius: 16,
-        background: '#F9FAFB',
+        background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
       }}>
         <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>

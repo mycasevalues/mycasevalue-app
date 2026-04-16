@@ -559,7 +559,7 @@ export default async function DistrictCaseTypePage({
             marginTop: '40px',
             padding: '16px 20px',
             borderLeft: '4px solid var(--accent-primary)',
-            background: '#F0F9FF',
+            background: 'rgba(59,130,246,0.06)',
             borderRadius: '8px',
           }}
         >

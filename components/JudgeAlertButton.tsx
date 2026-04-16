@@ -161,13 +161,13 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
               <div
                 style={{
                   padding: '16px',
-                  background: '#DCFCE7',
+                  background: 'rgba(34,197,94,0.08)',
                   border: '1px solid #86EFAC',
                   borderRadius: '8px',
                   marginBottom: '24px',
                 }}
               >
-                <p style={{ fontSize: '14px', color: '#166534', margin: 0, fontWeight: '500' }}>
+                <p style={{ fontSize: '14px', color: '#4ade80', margin: 0, fontWeight: '500' }}>
                   ✓ You'll be notified when Judge {judgeName} publishes new opinions.
                 </p>
               </div>

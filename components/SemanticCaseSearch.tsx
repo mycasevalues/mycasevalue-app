@@ -108,7 +108,7 @@ export default function SemanticCaseSearch() {
       <p
         style={{
           fontSize: '14px',
-          color: '#666',
+          color: 'var(--color-text-secondary)',
           fontFamily: 'var(--font-body)',
           marginBottom: '16px',
         }}
@@ -199,7 +199,7 @@ export default function SemanticCaseSearch() {
             background: 'rgba(239,68,68,0.1)',
             border: '1px solid #FCA5A5',
             borderRadius: '6px',
-            color: '#991B1B',
+            color: '#f87171',
             fontSize: '14px',
             fontFamily: 'var(--font-body)',
             marginBottom: '16px',
@@ -216,7 +216,7 @@ export default function SemanticCaseSearch() {
             style={{
               fontSize: '12px',
               textTransform: 'uppercase',
-              color: '#666',
+              color: 'var(--color-text-secondary)',
               fontWeight: '600',
               fontFamily: 'var(--font-body)',
               marginBottom: '12px',
@@ -234,7 +234,7 @@ export default function SemanticCaseSearch() {
                   key={result.nosCode}
                   style={{
                     padding: '16px',
-                    background: '#F9FAFB',
+                    background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '8px',
                   }}
@@ -264,7 +264,7 @@ export default function SemanticCaseSearch() {
                       <div
                         style={{
                           fontSize: '12px',
-                          color: '#666',
+                          color: 'var(--color-text-secondary)',
                           fontFamily: 'var(--font-mono)',
                           marginBottom: '4px',
                         }}
@@ -293,7 +293,7 @@ export default function SemanticCaseSearch() {
                   <div
                     style={{
                       fontSize: '12px',
-                      color: '#666',
+                      color: 'var(--color-text-secondary)',
                       fontFamily: 'var(--font-body)',
                       marginBottom: '12px',
                       lineHeight: 1.4,
@@ -394,7 +394,7 @@ export default function SemanticCaseSearch() {
                     <div
                       style={{
                         fontSize: '12px',
-                        color: '#666',
+                        color: 'var(--color-text-secondary)',
                         fontFamily: 'var(--font-mono)',
                         marginBottom: '12px',
                       }}

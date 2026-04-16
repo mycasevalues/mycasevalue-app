@@ -4,7 +4,7 @@ export default function Loading() {
       {/* Breadcrumb Skeleton */}
       <nav style={{
         background: 'var(--color-surface-0)',
-        borderBottom: '1px solid #e5e7eb',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
         padding: '12px 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
@@ -23,7 +23,7 @@ export default function Loading() {
       {/* Hero Skeleton */}
       <header style={{
         background: 'var(--accent-primary)',
-        borderBottom: '1px solid #e5e7eb',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
@@ -64,7 +64,7 @@ export default function Loading() {
               key={i}
               style={{
                 background: 'var(--color-surface-0)',
-                border: '1px solid #e5e7eb',
+                border: '1px solid rgba(255,255,255,0.08)',
                 borderRadius: '12px',
                 padding: '20px',
               }}

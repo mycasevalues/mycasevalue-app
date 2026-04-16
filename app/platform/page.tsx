@@ -573,7 +573,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 Built on enterprise-grade infrastructure for reliability, performance, and scale.
@@ -668,7 +668,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 Multi-source integration ensuring accuracy, timeliness, and comprehensive coverage.
@@ -727,7 +727,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 MyCaseValue positions itself as the accessible, affordable alternative for attorneys and individuals seeking legal data insights.
@@ -820,7 +820,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 19+ integrated tools for data-driven legal decision-making, powered by AI and historical analysis.
@@ -873,7 +873,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 Positioned at the intersection of legal technology, AI, and data analytics with significant growth potential.
@@ -956,7 +956,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 Phased expansion strategy building on current federal data foundation to adjacent markets.
@@ -1020,7 +1020,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 Legal data costs $500–$2,000 per month at Westlaw and Lex Machina. That same public federal court data is freely available but buried in government databases. MyCaseValue surfaces it.
@@ -1058,7 +1058,7 @@ export default function PlatformPage() {
                   </div>
                   <div style={{
                     fontSize: 14,
-                    color: '#6B7280',
+                    color: 'var(--color-text-muted)',
                   }}>
                     {item.label}
                   </div>
@@ -1082,7 +1082,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 Comprehensive federal court data spanning 55+ years across all 95 federal districts and 84 case types.
@@ -1109,7 +1109,7 @@ export default function PlatformPage() {
                   <h4 style={{
                     fontSize: 16,
                     fontWeight: 700,
-                    color: '#1F2937',
+                    color: 'var(--color-text-primary)',
                     marginBottom: 8,
                     margin: 0,
                   }}>
@@ -1117,7 +1117,7 @@ export default function PlatformPage() {
                   </h4>
                   <p style={{
                     fontSize: 14,
-                    color: '#6B7280',
+                    color: 'var(--color-text-muted)',
                     marginBottom: 12,
                     margin: '8px 0 12px 0',
                     lineHeight: 1.6,
@@ -1171,7 +1171,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 Powered by Anthropic Claude API and trained on 55+ years of federal court data.
@@ -1202,7 +1202,7 @@ export default function PlatformPage() {
                   <h4 style={{
                     fontSize: 16,
                     fontWeight: 700,
-                    color: '#1F2937',
+                    color: 'var(--color-text-primary)',
                     marginBottom: 8,
                     margin: 0,
                   }}>
@@ -1210,7 +1210,7 @@ export default function PlatformPage() {
                   </h4>
                   <p style={{
                     fontSize: 14,
-                    color: '#6B7280',
+                    color: 'var(--color-text-muted)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}>
@@ -1236,7 +1236,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 Specialized toolsets for researchers, attorneys, paralegals, and calculators.
@@ -1317,7 +1317,7 @@ export default function PlatformPage() {
               </h2>
               <p style={{
                 fontSize: 16,
-                color: '#6B7280',
+                color: 'var(--color-text-muted)',
                 maxWidth: 600,
               }}>
                 From solo practitioners to law students, MyCaseValue serves the entire legal ecosystem.
@@ -1342,7 +1342,7 @@ export default function PlatformPage() {
                   <h4 style={{
                     fontSize: 16,
                     fontWeight: 700,
-                    color: '#1F2937',
+                    color: 'var(--color-text-primary)',
                     marginBottom: 12,
                     margin: 0,
                   }}>
@@ -1350,7 +1350,7 @@ export default function PlatformPage() {
                   </h4>
                   <p style={{
                     fontSize: 14,
-                    color: '#6B7280',
+                    color: 'var(--color-text-muted)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}>

@@ -291,7 +291,7 @@ export default function DistrictsPage() {
       {/* Breadcrumb */}
       <nav style={{
         background: 'var(--color-surface-0)',
-        borderBottom: '1px solid #e5e7eb',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
         padding: '12px 0',
         fontSize: 13,
         fontFamily: 'var(--font-body)',
@@ -306,7 +306,7 @@ export default function DistrictsPage() {
       {/* Hero */}
       <header style={{
         background: 'var(--gradient-hero)',
-        borderBottom: '1px solid #e5e7eb',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
         padding: '20px 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>

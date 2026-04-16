@@ -172,7 +172,7 @@ export default function CaseDetailPage() {
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500">
             {c.court && (
-              <span className="font-medium text-gray-700">{c.court.name}</span>
+              <span className="font-medium text-gray-300">{c.court.name}</span>
             )}
             {c.docketNumber && <span>No. {c.docketNumber}</span>}
             {c.filingDate && (
@@ -187,7 +187,7 @@ export default function CaseDetailPage() {
         {/* ── SECTION 2: AI SUMMARY ── */}
         {c.summary && (
           <Section title="Case Overview">
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-300 leading-relaxed">
               {c.summary.text}
             </p>
             {c.summary.confidenceNotes && c.summary.confidenceNotes !== 'No confidence notes.' && (
@@ -425,7 +425,7 @@ function DetailRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center gap-3">
       <span className="text-xs text-gray-400 w-32 flex-shrink-0">{label}</span>
-      <span className="text-sm text-gray-700">{value}</span>
+      <span className="text-sm text-gray-300">{value}</span>
     </div>
   );
 }

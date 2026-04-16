@@ -602,7 +602,7 @@ export default function SOLCalculatorPage() {
                       <circle cx="12" cy="12" r="10" /><path d="M12 8v4M12 16h.01" />
                     </svg>
                     <div>
-                      <p style={{ fontSize: '13px', fontWeight: 600, color: '#991B1B', margin: '0 0 4px' }}>Statute Expired</p>
+                      <p style={{ fontSize: '13px', fontWeight: 600, color: '#f87171', margin: '0 0 4px' }}>Statute Expired</p>
                       <p style={{ fontSize: '12px', color: '#7F1D1D', margin: 0 }}>
                         This deadline has passed. Consult an attorney immediately about possible exceptions.
                       </p>
@@ -616,7 +616,7 @@ export default function SOLCalculatorPage() {
                       <path d="M12 2v20M2 10h20" />
                     </svg>
                     <div>
-                      <p style={{ fontSize: '13px', fontWeight: 600, color: '#92400E', margin: '0 0 4px' }}>Deadline in {daysRemaining} Days</p>
+                      <p style={{ fontSize: '13px', fontWeight: 600, color: '#fbbf24', margin: '0 0 4px' }}>Deadline in {daysRemaining} Days</p>
                       <p style={{ fontSize: '12px', color: '#78350F', margin: 0 }}>
                         You are within 90 days of the filing deadline. Act immediately.
                       </p>
@@ -717,7 +717,7 @@ export default function SOLCalculatorPage() {
               </div>
 
               <div style={{ padding: '14px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', borderLeft: '4px solid var(--accent-primary)' }}>
-                <p style={{ fontSize: '12px', color: '#374151', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5 }}>
                   <strong>Disclaimer:</strong> This tool provides general information about statutory deadlines. Statute of limitations rules vary significantly by state and claim type. Tolling, discovery rules, and equitable estoppel may apply. Consult a licensed attorney in your jurisdiction immediately—missing a deadline can be catastrophic.
                 </p>
               </div>

@@ -561,7 +561,7 @@ export default function OpposingCounselSearch() {
               marginBottom: '24px',
             }}
           >
-            <p style={{ fontSize: '13px', color: '#991B1B', margin: 0 }}>{error}</p>
+            <p style={{ fontSize: '13px', color: '#f87171', margin: 0 }}>{error}</p>
           </div>
         )}
 

@@ -53,35 +53,35 @@ export default function CourtGuidePage() {
           <h2 className="mb-6 text-3xl font-bold text-gray-100">
             What You'll Learn
           </h2>
-          <p className="mb-6 text-lg text-gray-700">
+          <p className="mb-6 text-lg text-gray-300">
             This comprehensive 12-page guide walks you through federal court research in plain English. No legal background required.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-lg border border-white/10 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Court Fundamentals</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 Understand how federal courts work, why cases go to federal court, and how to find your district.
               </p>
             </div>
 
             <div className="rounded-lg border border-white/10 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Case Documents & Data</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 Learn what complaints, motions, and judgments mean, and how to interpret win rates and settlements.
               </p>
             </div>
 
             <div className="rounded-lg border border-white/10 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Using MyCaseValue</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 Step-by-step instructions for researching case outcomes and comparing districts.
               </p>
             </div>
 
             <div className="rounded-lg border border-white/10 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Taking Action</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 When to hire an attorney, how to file pro se, and where to find free legal resources.
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function CourtGuidePage() {
             12 Pages of Practical Guidance
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-gray-300">
               <li className="flex items-start">
                 <span className="mr-3 text-blue-900 font-semibold">1.</span>
                 <span>What Is Federal Court?</span>
@@ -120,7 +120,7 @@ export default function CourtGuidePage() {
                 <span>How to Use MyCaseValue Step by Step</span>
               </li>
             </ul>
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-gray-300">
               <li className="flex items-start">
                 <span className="mr-3 text-blue-900 font-semibold">7.</span>
                 <span>Statute of Limitations & Timing</span>
@@ -149,13 +149,13 @@ export default function CourtGuidePage() {
           <h2 className="mb-4 text-2xl font-bold text-gray-100">
             About This Guide
           </h2>
-          <p className="mb-4 text-gray-700">
+          <p className="mb-4 text-gray-300">
             This guide is written for people with no legal background who want to understand federal courts and research case outcomes. We use plain English and explain every legal term.
           </p>
-          <p className="mb-4 text-gray-700">
+          <p className="mb-4 text-gray-300">
             The guide covers federal civil cases only (not criminal). It helps you understand publicly available court data and how to use tools like MyCaseValue to research cases.
           </p>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-400">
             This guide is not legal advice. Always consult a licensed attorney for advice about your specific case.
           </p>
         </section>

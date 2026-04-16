@@ -57,7 +57,7 @@ export default function SmallFirmsPage() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '40px 24px 32px' }}>
+      <section style={{ background: 'var(--gradient-hero)', color: '#fff', padding: '40px 24px 32px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -275,7 +275,7 @@ export default function SmallFirmsPage() {
               <div style={{
                 fontSize: '14px',
                 fontWeight: 600,
-                color: '#1f2937',
+                color: 'var(--color-text-primary)',
                 marginBottom: '8px',
               }}>
                 Personal Injury
@@ -288,14 +288,14 @@ export default function SmallFirmsPage() {
               }}>
                 72%
               </div>
-              <div style={{ fontSize: '11px', color: '#6b7280', marginBottom: '12px' }}>
+              <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '12px' }}>
                 case outcome rate
               </div>
               <div style={{
                 fontFamily: '"Courier New", monospace',
                 fontSize: '13px',
                 fontWeight: 500,
-                color: '#374151',
+                color: 'var(--color-text-primary)',
               }}>
                 $285K median
               </div>
@@ -303,7 +303,7 @@ export default function SmallFirmsPage() {
             <p style={{
               fontFamily: 'var(--font-body)',
               fontSize: '0.875rem',
-              color: '#6B7280',
+              color: 'var(--color-text-muted)',
               textAlign: 'center',
               margin: 0,
             }}>

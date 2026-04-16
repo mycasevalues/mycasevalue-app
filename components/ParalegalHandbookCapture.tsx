@@ -788,7 +788,7 @@ export default function ParalegalHandbookCapture() {
       <h2 className="mb-4 text-2xl font-bold text-gray-100">
         Download the Complete Handbook
       </h2>
-      <p className="mb-6 text-gray-700">
+      <p className="mb-6 text-gray-300">
         Get instant access to all 30 pages of professional reference material. No credit card required.
       </p>
 
@@ -807,7 +807,7 @@ export default function ParalegalHandbookCapture() {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-300">
               Your email address
             </label>
             <input
@@ -823,7 +823,7 @@ export default function ParalegalHandbookCapture() {
                 }))
               }
               placeholder="you@example.com"
-              className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-2 block w-full rounded-md border border-white/10 px-4 py-2 text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={state.loading}
             />
           </div>
@@ -840,7 +840,7 @@ export default function ParalegalHandbookCapture() {
             {state.loading ? 'Generating PDF...' : 'Download Handbook'}
           </button>
 
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-400">
             Your email will only be used to send you resources and updates about MyCaseValue.
             We never share or sell your information.
             <a href="/privacy" className="ml-1 text-blue-600 hover:underline">

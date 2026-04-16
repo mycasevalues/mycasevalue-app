@@ -125,7 +125,7 @@ export default function MotionRateExplorer() {
 
   const subtitleStyle: React.CSSProperties = {
     fontSize: '16px',
-    color: '#6B7280',
+    color: 'var(--color-text-muted)',
     marginBottom: '24px',
     lineHeight: 1.5,
   };
@@ -155,7 +155,7 @@ export default function MotionRateExplorer() {
     marginBottom: '8px',
     fontSize: '14px',
     fontWeight: 600,
-    color: '#1F2937',
+    color: 'var(--color-text-primary)',
   };
 
   const tableWrapperStyle: React.CSSProperties = {
@@ -181,7 +181,7 @@ export default function MotionRateExplorer() {
     textAlign: 'left',
     fontSize: '13px',
     fontWeight: 600,
-    color: '#374151',
+    color: 'var(--color-text-primary)',
     cursor: 'pointer',
     userSelect: 'none',
     transition: 'background-color 0.2s',
@@ -190,14 +190,14 @@ export default function MotionRateExplorer() {
   const tdStyle: React.CSSProperties = {
     padding: '14px 16px',
     fontSize: '14px',
-    color: '#1F2937',
+    color: 'var(--color-text-primary)',
     borderBottom: '1px solid var(--border-default)',
   };
 
   const sortIndicatorStyle: React.CSSProperties = {
     marginLeft: '6px',
     fontSize: '12px',
-    color: '#6B7280',
+    color: 'var(--color-text-muted)',
   };
 
   const expandButtonStyle: React.CSSProperties = {
@@ -221,7 +221,7 @@ export default function MotionRateExplorer() {
   const circuitTdStyle: React.CSSProperties = {
     padding: '8px 16px',
     borderBottom: '1px solid var(--border-default)',
-    color: '#374151',
+    color: 'var(--color-text-primary)',
   };
 
   const disclaimerStyle: React.CSSProperties = {
@@ -238,7 +238,7 @@ export default function MotionRateExplorer() {
   const nothingFoundStyle: React.CSSProperties = {
     textAlign: 'center',
     padding: '32px',
-    color: '#6B7280',
+    color: 'var(--color-text-muted)',
     fontSize: '16px',
   };
 
@@ -391,7 +391,7 @@ export default function MotionRateExplorer() {
                       <tr>
                         <td colSpan={5} style={{ padding: '16px', backgroundColor: '#F9FAFB' }}>
                           <div style={{ marginBottom: '12px' }}>
-                            <h4 style={{ fontSize: '13px', fontWeight: 600, color: '#1F2937', margin: '0 0 12px 0' }}>
+                            <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0' }}>
                               Circuit Breakdown
                             </h4>
                             <table style={circuitTableStyle}>
@@ -424,7 +424,7 @@ export default function MotionRateExplorer() {
                               </tbody>
                             </table>
                           </div>
-                          <div style={{ fontSize: '12px', color: '#6B7280', marginTop: '12px' }}>
+                          <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginTop: '12px' }}>
                             Sample Size: {caseData.sampleSize.toLocaleString()}
                             {' | '}
                             Avg. Time to Decision: {caseData.avgTimeToDecisionDays} days

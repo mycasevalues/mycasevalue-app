@@ -313,7 +313,7 @@ export default function DataSourcesPage() {
                         <p style={{
                           fontSize: 14,
                           fontWeight: 700,
-                          color: '#1F2937',
+                          color: 'var(--color-text-primary)',
                           fontFamily: 'var(--font-body)',
                           margin: 0,
                         }}>
@@ -546,7 +546,7 @@ export default function DataSourcesPage() {
                       <span style={{
                         fontSize: 13,
                         fontWeight: 600,
-                        color: '#1F2937',
+                        color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-body)',
                       }}>
                         {item.updated}
@@ -610,7 +610,7 @@ export default function DataSourcesPage() {
                     padding: 16,
                     borderRadius: '8px',
                     border: '1px solid var(--border-default)',
-                    background: '#F9FAFB',
+                    background: 'var(--color-surface-0)',
                   }}>
                     <p style={{
                       fontSize: 13,

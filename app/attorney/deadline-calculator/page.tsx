@@ -406,7 +406,7 @@ export default function DeadlineCalculatorPage() {
                   { rule: 'FRCP 50', title: 'Motion for Judgment', content: 'Motion for judgment as a matter of law may be filed before or during trial' },
                   { rule: 'FRCP 65', title: 'Temporary Relief', content: 'Preliminary injunctions and restraining orders governed by specific timing rules' },
                 ].map((ref, i) => (
-                  <div key={i} style={{ padding: '16px', background: '#F9FAFB', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+                  <div key={i} style={{ padding: '16px', background: 'var(--color-surface-0)', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
                     <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       {ref.rule}
                     </h3>
@@ -421,7 +421,7 @@ export default function DeadlineCalculatorPage() {
               </div>
 
               <div style={{ marginTop: '20px', padding: '14px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', borderLeft: '4px solid var(--accent-primary)' }}>
-                <p style={{ fontSize: '12px', color: '#374151', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5 }}>
                   <strong>Disclaimer:</strong> These are default Federal Rules of Civil Procedure deadlines. Individual judges may modify deadlines through scheduling orders, and state courts have different rules. Always check the scheduling order entered in your case and local rules of court. Missing a deadline can result in sanctions, dismissal, or default judgment.
                 </p>
               </div>

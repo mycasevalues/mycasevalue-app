@@ -53,49 +53,49 @@ export default function ParalegalHandbookPage() {
           <h2 className="mb-6 text-3xl font-bold text-gray-100">
             What's Inside
           </h2>
-          <p className="mb-6 text-lg text-gray-700">
+          <p className="mb-6 text-lg text-gray-300">
             This comprehensive 30-page professional handbook provides essential reference material for paralegals managing federal court cases. Keep it on your desk for quick answers to procedural questions, deadline calculations, and jurisdiction information.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-lg border border-white/10 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Federal Court Structure</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 District courts, circuit courts, Supreme Court, magistrate judges, and Article III judges explained with clear jurisdiction boundaries.
               </p>
             </div>
 
             <div className="rounded-lg border border-white/10 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">FRCP Deadline Reference</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 The 20 most critical Federal Rules of Civil Procedure deadlines with dates, requirements, and cross-references.
               </p>
             </div>
 
             <div className="rounded-lg border border-white/10 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">SOL Quick Reference</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 Statute of limitations for all 84 Nature of Suit codes with applicable timeframes from REAL_DATA.
               </p>
             </div>
 
             <div className="rounded-lg border border-white/10 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">District Directory & Rules</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 Complete listing of all 95 federal districts with states and PACER codes, plus local rules summaries for 20 largest districts.
               </p>
             </div>
 
             <div className="rounded-lg border border-white/10 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Procedural Guides</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 How to read dockets, serve process, navigate discovery timelines, and use PACER and CourtListener effectively.
               </p>
             </div>
 
             <div className="rounded-lg border border-white/10 p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Motion & Filing Data</h3>
-              <p className="text-gray-700">
+              <p className="text-gray-300">
                 Common motion outcomes data, filing fee schedules, appeal costs, and data-driven insights for case management.
               </p>
             </div>
@@ -108,7 +108,7 @@ export default function ParalegalHandbookPage() {
             30 Pages of Professional Reference Material
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-gray-300">
               <li className="flex items-start">
                 <span className="mr-3 text-blue-900 font-semibold">Pages 1-2:</span>
                 <span>Cover and Table of Contents</span>
@@ -134,7 +134,7 @@ export default function ParalegalHandbookPage() {
                 <span>District Court Directory (all 95 districts)</span>
               </li>
             </ul>
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-gray-300">
               <li className="flex items-start">
                 <span className="mr-3 text-blue-900 font-semibold">Pages 17-19:</span>
                 <span>Local Rules Key Facts (20 largest districts)</span>
@@ -175,13 +175,13 @@ export default function ParalegalHandbookPage() {
           <h2 className="mb-4 text-2xl font-bold text-gray-100">
             About This Handbook
           </h2>
-          <p className="mb-4 text-gray-700">
+          <p className="mb-4 text-gray-300">
             This handbook is designed for paralegals, law students, and legal professionals who work with federal court cases. It provides quick reference information for the most common procedural questions, deadline calculations, and court data lookups that arise in daily practice.
           </p>
-          <p className="mb-4 text-gray-700">
+          <p className="mb-4 text-gray-300">
             The handbook combines procedural guidance with data from the Federal Judicial Center Integrated Database and CourtListener. Statute of limitations data is sourced from REAL_DATA with all 84 Nature of Suit codes. District information reflects the current 95 federal judicial districts.
           </p>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-400">
             This handbook is not legal advice. Always verify current procedures, rules, and deadlines with the specific federal district where your case is filed. Local rules and standing orders may differ from national standards shown in this reference.
           </p>
         </section>

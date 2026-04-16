@@ -117,7 +117,7 @@ export default function KeyboardShortcutsHelp() {
               <div className="space-y-2">
                 {section.items.map((shortcut, i) => (
                   <div key={i} className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">{shortcut.description}</span>
+                    <span className="text-sm text-gray-400">{shortcut.description}</span>
                     <div className="flex items-center gap-1">
                       {shortcut.keys.map((key, ki) => (
                         <span key={ki}>

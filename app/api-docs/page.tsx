@@ -264,7 +264,7 @@ export default function ApiDocsPage() {
                   borderRadius: '20px',
                   fontSize: 13,
                   fontFamily: 'monospace',
-                  color: '#1F2937',
+                  color: 'var(--color-text-primary)',
                   wordBreak: 'break-all',
                   lineHeight: 1.5,
                 }}>
@@ -374,7 +374,7 @@ export default function ApiDocsPage() {
                       <code style={{
                         fontSize: 14,
                         fontFamily: 'monospace',
-                        color: '#1F2937',
+                        color: 'var(--color-text-primary)',
                         fontWeight: 600,
                       }}>
                         {endpoint.path}
@@ -450,7 +450,7 @@ export default function ApiDocsPage() {
                         borderRadius: '20px',
                         fontSize: 12,
                         fontFamily: 'monospace',
-                        color: '#1F2937',
+                        color: 'var(--color-text-primary)',
                         wordBreak: 'break-all',
                         lineHeight: 1.6,
                         overflow: 'auto',
@@ -609,7 +609,7 @@ r = requests.get(
                 fontFamily: 'var(--font-body)',
               }}>
                 <thead>
-                  <tr style={{ borderBottom: '1px solid var(--border-default)', background: '#F9FAFB' }}>
+                  <tr style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
                     <th style={{
                       padding: 16,
                       fontSize: 13,
@@ -670,7 +670,7 @@ r = requests.get(
                         padding: 16,
                         fontSize: 14,
                         fontWeight: 500,
-                        color: '#1F2937',
+                        color: 'var(--color-text-primary)',
                       }}>
                         {err.status}
                       </td>
