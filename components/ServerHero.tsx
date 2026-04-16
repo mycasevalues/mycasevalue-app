@@ -14,36 +14,44 @@ import AnimatedDataViz from './AnimatedDataViz';
 export default function ServerHero() {
   return (
     <section className="server-hero-content" aria-label="Hero section">
-      {/* ── VISUAL 1: HERO — Clean LexisNexis-style ────────── */}
+      {/* ── VISUAL 1: HERO — Bloomberg-style institutional ────────── */}
       <div style={{
-        background: 'var(--gradient-hero)',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        background: '#080d19',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: '64px 24px 56px',
         position: 'relative',
+        overflow: 'hidden',
       }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
         <div style={{ maxWidth: '1140px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }} className="hero-grid">
           {/* Left: Text content */}
-          <div>
-            <p style={{
-              fontSize: '12px',
-              fontWeight: 600,
-              color: 'rgba(255,255,255,0.7)',
-              fontFamily: 'var(--font-body)',
-              marginBottom: '16px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
+          <div style={{ position: 'relative' }}>
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '4px 10px', marginBottom: 16,
+              borderRadius: 999,
+              border: '1px solid rgba(59,130,246,0.2)',
+              background: 'rgba(59,130,246,0.08)',
+              fontFamily: 'var(--font-mono)', fontSize: 10,
+              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              color: '#60a5fa',
             }}>
-              Federal Court Analytics
-            </p>
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+              Federal Court Analytics · Live Data
+            </div>
 
             <h1 style={{
-              fontSize: '44px',
-              fontWeight: 600,
-              color: 'var(--color-text-inverse)',
-              fontFamily: 'var(--font-display)',
-              lineHeight: 1.2,
-              marginBottom: '20px',
-              letterSpacing: '-0.01em',
+              fontSize: 'clamp(32px, 4vw, 48px)',
+              fontWeight: 700,
+              color: '#ffffff',
+              fontFamily: 'var(--font-inter)',
+              lineHeight: 1.1,
+              marginBottom: 20,
+              letterSpacing: '-0.025em',
             }}>
               What really happened in cases like yours.
             </h1>
