@@ -349,9 +349,9 @@ export default function Header() {
   const headerTransparent = isHome && !hasBlur;
 
   const navLinkClass = (section: string) =>
-    `flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${
+    `relative flex items-center gap-1 px-3 py-2 text-[13px] font-medium tracking-[-0.005em] transition-colors ${
       activeSection === section
-        ? 'text-white'
+        ? 'text-white after:absolute after:-bottom-[1px] after:left-3 after:right-3 after:h-[2px] after:bg-blue-500'
         : 'text-gray-400 hover:text-white'
     }`;
 
