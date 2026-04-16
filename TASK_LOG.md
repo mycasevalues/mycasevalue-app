@@ -669,4 +669,67 @@ All forbidden Bloomberg colors eliminated from both target files. All Westlaw to
 
 ### Session Gate: PASS
 
+---
+
+## Westlaw Precision Redesign — Session 8: District Detail Page
+
+**Commit:** `[Session 8] Districts: Rebuild district detail to Westlaw three-column layout` — sha: a55c7d41
+
+**Risk Level:** HIGH — Most complex page (840→680 lines), complete layout rebuild
+
+### File Modified (1)
+
+**app/districts/[code]/page.tsx** — Full rebuild from Bloomberg single-column to Westlaw three-column
+
+**New layout:**
+- Three-column: Left TOC (202px) | Main content (flex:1) | Right rail (232px)
+- Both sidebars: sticky, top: 94px, bg var(--sidebar), border var(--bdr)
+- Responsive: sidebars hide at ≤1024px
+
+**Preserved (ALL data fetching intact):**
+- SLUG_ALIASES map + resolveDistrictCode() (case-insensitive routing)
+- DISTRICTS_MAP (all 94 districts)
+- generateStaticParams, generateMetadata
+- getTopCaseTypesForDistrict
+- ISR revalidate = 7776000
+- FilingVolumeTrend, JudgeSectionLoader, SaveButton imports
+- Local rules + legal aid data rendering
+- Not-found state
+
+**New components used:**
+- HorizontalBarChart (Session 5) — replaces case card grid as primary viz
+- ResearchOrganizer (Session 5) — in right rail
+
+**New elements:**
+- Breadcrumb: Home › Federal Districts › [Name] (11px font-ui, › separator)
+- Page header: h1 font-legal 21px + subhead (abbrev · circuit · state) + meta row (font-mono)
+- 4 stat blocks: grid 4-col, 3px left accent bars (color by sentiment), font-mono 19px values
+- GoldTabBar: Overview | Judges | Case Analytics | Settlement Data | Attorneys — 3px solid var(--gold) active
+- Left TOC: "Page Contents" header + 7 items (font-legal for top-level, font-ui for sub-items), active = var(--link-light) bg + 3px var(--gold) left border
+- Right rail: Related Districts | Quick Stats | ResearchOrganizer | Download Report (gold button) | Set Alert (link outline button)
+- DataAttribution below every section: 10px font-ui var(--text4)
+- Settlement data: 4-block grid (Median/Mean/10th/90th percentile), font-mono values
+
+**Removed:**
+- Hero section with grid pattern overlay
+- Bloomberg hex (#E65C00, #1A1A1A, #0052CC, etc.)
+- Blue pill badges, rounded-full borders
+- 12px border-radius cards → 2px
+- font-display/font-inter → font-legal/font-ui
+
+### Verification Results
+
+1. **No PieChart/OutcomeDonut in source** → PASS (zero instances)
+2. **HorizontalBarChart present** → PASS (imported and rendered)
+3. **Three-column layout present** → PASS (202px TOC + flex:1 main + 232px rail)
+4. **GoldTabBar (not orange)** → PASS (border-bottom: 3px solid var(--gold))
+5. **No Bloomberg hex (#E65C00, #1A1A1A, #0052CC)** → PASS (zero instances)
+6. **resolveDistrictCode preserved** → PASS (uppercase normalization intact)
+7. **DataAttribution below every section** → PASS
+8. **font-baskerville on district name h1** → PASS (font-legal)
+9. **ResearchOrganizer in right rail** → PASS
+10. **npm run build → Webpack compilation** → PASS (pre-existing TS error unrelated)
+
+### Session Gate: PASS
+
 Last updated: 2026-04-16
