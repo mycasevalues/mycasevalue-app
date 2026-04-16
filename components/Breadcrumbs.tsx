@@ -115,7 +115,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   }}
                   aria-hidden="true"
                 >
-                  /
+                  ›
                 </span>
               )}
 
