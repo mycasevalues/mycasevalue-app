@@ -105,11 +105,12 @@
   --font-montserrat: var(--font-inter);
   --font-roboto:     var(--font-inter);
 
-  /* Heading Scale — Inter (LinkedIn proportions) */
-  --text-h1: 1.75rem;       /* 32px — Inter 700 */
-  --text-h2: 1.25rem;     /* 24px — Inter 600 */
-  --text-h3: 1rem;   /* 18px — Inter 600 */
-  --text-h4: 1rem;       /* 16px — Inter 500 */
+  /* Heading Scale — Bloomberg institutional proportions */
+  --text-h1: 1.875rem;    /* 30px — Inter 700 */
+  --text-h2: 1.375rem;    /* 22px — Inter 600 */
+  --text-h3: 1.0625rem;   /* 17px — Inter 600 */
+  --text-h4: 0.9375rem;   /* 15px — Inter 600 */
+  --text-h5: 0.8125rem;   /* 13px — Inter 600 */
 
   /* Body Scale — Inter */
   --text-body-lg: 0.9375rem;       /* 16px */
