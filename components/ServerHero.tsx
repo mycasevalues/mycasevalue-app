@@ -238,8 +238,13 @@ export default function ServerHero() {
       {/* ── TRUST BAR ────────────────────────────────────── */}
       <TrustBar />
 
-      {/* ── VISUAL 3: STATS BAR — Corporate style ────────────── */}
-      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '0' }}>
+      {/* ── VISUAL 3: STATS BAR — Terminal metrics strip ────────────── */}
+      <div style={{ background: '#080d19', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '0', position: 'relative', overflow: 'hidden' }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.025, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+        }} />
         <div style={{
           maxWidth: '1280px',
           margin: '0 auto',
@@ -259,12 +264,14 @@ export default function ServerHero() {
               <p style={{
                 fontSize: '32px',
                 fontWeight: 600,
-                color: 'var(--color-text-inverse)',
+                color: '#ffffff',
                 fontFamily: 'var(--font-mono)',
+                fontVariantNumeric: 'tabular-nums',
                 lineHeight: 1,
-                marginBottom: '6px',
+                marginBottom: 8,
+                letterSpacing: '-0.02em',
               }}>{stat.value}</p>
-              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-body)', lineHeight: 1.4, margin: 0, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{stat.label}</p>
+              <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.45)', fontFamily: 'var(--font-mono)', lineHeight: 1.4, margin: 0, textTransform: 'uppercase', letterSpacing: '0.15em', fontWeight: 600 }}>{stat.label}</p>
             </div>
           ))}
         </div>
