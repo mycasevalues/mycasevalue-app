@@ -870,9 +870,22 @@ input[type="range"]::-moz-range-thumb {
    LEXISNEXIS AESTHETIC — Clean Corporate Effects
    ============================================================ */
 
-/* Hero section background */
+/* Hero section background — institutional dark with grid overlay */
 .mesh-bg {
-  background: var(--gradient-hero);
+  background: #080d19;
+  position: relative;
+  overflow: hidden;
+}
+.mesh-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
 /* Clean page entrance */
