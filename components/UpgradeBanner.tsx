@@ -2,11 +2,18 @@ export default function UpgradeBanner() {
   return (
     <section
       style={{
-        background: 'var(--gradient-hero)',
+        background: '#080d19',
         padding: '64px 24px',
-        borderBottom: '1px solid var(--border-default)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
+      <div aria-hidden style={{
+        position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+        backgroundSize: '60px 60px',
+      }} />
       <style>{`
         .upgrade-banner-grid {
           display: grid;
@@ -48,47 +55,46 @@ export default function UpgradeBanner() {
           font-weight: 600;
         }
         .upgrade-btn-primary {
-          display: inline-block;
-          padding: 12px 28px;
-          height: 48px;
-          background: var(--accent-primary);
-          color: var(--color-text-inverse);
-          border-radius: 12px;
-          text-transform: uppercase;
-          font-weight: 600;
-          font-size: 13px;
-          text-decoration: none;
-          font-family: var(--font-display);
-          letter-spacing: 0.04em;
-          transition: background 200ms, transform 200ms;
-          display: flex;
+          display: inline-flex;
           align-items: center;
           justify-content: center;
-          border: none;
-          cursor: pointer;
-        }
-        .upgrade-btn-primary:hover {
-          background: #B91C1C;
-          transform: translateY(-2px);
-        }
-        .upgrade-btn-secondary {
-          display: inline-block;
-          padding: 12px 28px;
-          background: transparent;
-          color: var(--color-text-inverse);
-          border: 1px solid rgba(255,255,255,0.3);
-          border-radius: 12px;
-          text-transform: uppercase;
+          padding: 10px 20px;
+          background: #1a56db;
+          color: #ffffff;
+          border-radius: 6px;
           font-weight: 600;
           font-size: 13px;
+          letter-spacing: -0.005em;
           text-decoration: none;
-          font-family: var(--font-display);
-          letter-spacing: 0.04em;
-          transition: all 200ms;
+          font-family: var(--font-inter);
+          border: 1px solid #1a56db;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+          cursor: pointer;
+          transition: background-color 150ms ease, border-color 150ms ease;
+        }
+        .upgrade-btn-primary:hover {
+          background: #1e40af;
+          border-color: #1e40af;
+        }
+        .upgrade-btn-secondary {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 20px;
+          background: transparent;
+          color: #ffffff;
+          border: 1px solid rgba(255,255,255,0.2);
+          border-radius: 6px;
+          font-weight: 600;
+          font-size: 13px;
+          letter-spacing: -0.005em;
+          text-decoration: none;
+          font-family: var(--font-inter);
+          transition: border-color 150ms ease, background-color 150ms ease;
         }
         .upgrade-btn-secondary:hover {
-          border-color: rgba(255,255,255,0.6);
-          background: rgba(255,255,255,0.05);
+          border-color: rgba(255,255,255,0.5);
+          background: rgba(255,255,255,0.04);
         }
       `}</style>
 
