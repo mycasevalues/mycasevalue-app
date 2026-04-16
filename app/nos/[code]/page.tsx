@@ -650,7 +650,7 @@ export default async function NOSPage({ params }: PageProps) {
           position: absolute;
           top: 16px;
           height: 8px;
-          background: #70B5F9;
+          background: #3b82f6;
           border-radius: 4px;
         }
 
@@ -779,7 +779,7 @@ export default async function NOSPage({ params }: PageProps) {
 
         .quick-action-card:hover {
           border-color: var(--accent-primary);
-          background: #F0F7FC;
+          background: rgba(59,130,246,0.06);
           box-shadow: 0 2px 8px rgba(10, 102, 194, 0.1);
         }
       `}</style>

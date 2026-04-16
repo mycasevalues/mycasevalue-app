@@ -173,7 +173,7 @@ export default function PlatformPage() {
         }
 
         .tech-box {
-          background: #F5F3FF;
+          background: rgba(139,92,246,0.06);
           border: 1px solid #E9D5FF;
           padding: 16px 24px;
           border-radius: 12px;

@@ -504,7 +504,7 @@ export default function AccountPage() {
             </button>
             <style>{`
               .sign-out-btn:hover {
-                background-color: #f0f1f2;
+                background-color: rgba(255,255,255,0.05);
                 border-color: #C5C8CC;
               }
             `}</style>

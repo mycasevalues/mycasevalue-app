@@ -8,7 +8,7 @@ const styles = `
     transition: all 200ms ease;
   }
   .glossary-nos-link:hover {
-    background-color: #E6F1FF !important;
+    background-color: rgba(59,130,246,0.08) !important;
     border-color: var(--accent-primary) !important;
   }
 
@@ -16,7 +16,7 @@ const styles = `
     transition: all 200ms ease;
   }
   .glossary-related-term:hover {
-    background-color: #E6F1FF !important;
+    background-color: rgba(59,130,246,0.08) !important;
     border-color: var(--accent-primary) !important;
   }
 

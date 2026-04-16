@@ -149,7 +149,7 @@ export default function StateCourtContext({
                 <span className="text-sm text-gray-300">Win Rate</span>
                 <span className="text-sm font-mono font-semibold text-gray-100">{federalWinRate.toFixed(1)}%</span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-[rgba(255,255,255,0.08)] rounded-full h-2">
                 <div
                   className="bg-[var(--accent-primary)] h-2 rounded-full transition-all"
                   style={{ width: `${federalWinRate}%` }}
@@ -162,7 +162,7 @@ export default function StateCourtContext({
                 <span className="text-sm text-gray-300">Settlement Rate</span>
                 <span className="text-sm font-mono font-semibold text-gray-100">{federalSettlement.toFixed(1)}%</span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-[rgba(255,255,255,0.08)] rounded-full h-2">
                 <div
                   className="bg-[#0D9488] h-2 rounded-full transition-all"
                   style={{ width: `${federalSettlement}%` }}
@@ -196,7 +196,7 @@ export default function StateCourtContext({
                 <span className="text-sm text-gray-300">Win Rate</span>
                 <span className="text-sm font-mono font-semibold text-gray-100">{stateData.winRate.toFixed(1)}%</span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-[rgba(255,255,255,0.08)] rounded-full h-2">
                 <div
                   className="bg-[#7c3aed] h-2 rounded-full transition-all"
                   style={{ width: `${stateData.winRate}%` }}
@@ -211,7 +211,7 @@ export default function StateCourtContext({
                   {stateData.settlementRate.toFixed(1)}%
                 </span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-[rgba(255,255,255,0.08)] rounded-full h-2">
                 <div
                   className="bg-[#0D9488] h-2 rounded-full transition-all"
                   style={{ width: `${stateData.settlementRate}%` }}

@@ -277,7 +277,7 @@ export default function AboutPage() {
         }
 
         .contact-link:hover {
-          background: #0855a3;
+          background: var(--color-accent);
           transform: translateY(-2px);
         }
 

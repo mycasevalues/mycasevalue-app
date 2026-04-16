@@ -89,7 +89,7 @@ export default async function ChangelogPage() {
           font-family: var(--font-body);
         }
         .changelog-link-pill:hover {
-          background-color: #D5E3F2;
+          background-color: rgba(59,130,246,0.08);
           color: var(--accent-primary);
           text-decoration: none;
         }

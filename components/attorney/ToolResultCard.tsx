@@ -52,11 +52,11 @@ export function ToolResultCard({
       >
         <div className="p-8">
           <div className="space-y-4">
-            <div className="h-6 bg-gray-200 rounded w-1/3 animate-pulse"></div>
+            <div className="h-6 bg-[rgba(255,255,255,0.08)] rounded w-1/3 animate-pulse"></div>
             <div className="space-y-3">
-              <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
-              <div className="h-4 bg-gray-200 rounded w-5/6 animate-pulse"></div>
-              <div className="h-4 bg-gray-200 rounded w-4/6 animate-pulse"></div>
+              <div className="h-4 bg-[rgba(255,255,255,0.08)] rounded animate-pulse"></div>
+              <div className="h-4 bg-[rgba(255,255,255,0.08)] rounded w-5/6 animate-pulse"></div>
+              <div className="h-4 bg-[rgba(255,255,255,0.08)] rounded w-4/6 animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ export function ToolResultCard({
             <button
               onClick={handleExport}
               disabled={isExporting}
-              className="px-4 py-2 rounded-md font-medium text-gray-300 bg-[rgba(255,255,255,0.04)] hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 rounded-md font-medium text-gray-300 bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
                 paddingLeft: '16px',
                 paddingRight: '16px',

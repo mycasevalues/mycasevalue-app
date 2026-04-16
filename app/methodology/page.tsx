@@ -94,7 +94,7 @@ export default function MethodologyPage() {
         }
         .public-domain-callout {
           border-left: 3px solid #1e40af;
-          background: #F0F9FF;
+          background: rgba(59,130,246,0.06);
           padding: 1.5rem;
           border-radius: 12px;
         }
