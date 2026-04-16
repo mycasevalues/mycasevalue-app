@@ -147,7 +147,8 @@ function MegaMenu({
 
   return (
     <div
-      className="fixed top-16 left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-40"
+      className="fixed top-14 left-0 right-0 border-b shadow-lg z-40"
+      style={{ background: '#0c1220', borderColor: 'rgba(255,255,255,0.06)' }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -162,9 +163,9 @@ function MegaMenu({
         {columns.map((col, i) => (
           <div
             key={col.heading}
-            className={i > 0 ? 'border-l border-gray-100 pl-6' : ''}
+            className={i > 0 ? 'border-l border-white/5 pl-6' : ''}
           >
-            <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3 pb-2 border-b border-gray-50">
+            <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-3 pb-2 border-b border-white/5">
               {col.heading}
             </p>
             <div className="space-y-0.5">
@@ -174,8 +175,8 @@ function MegaMenu({
                   href={item.href}
                   className={`block py-1.5 px-2 -mx-2 rounded-md text-sm transition-colors ${
                     item.highlight
-                      ? 'font-semibold text-brand-blue hover:bg-blue-50'
-                      : 'text-gray-600 hover:text-brand-blue hover:bg-gray-50'
+                      ? 'font-semibold text-blue-400 hover:bg-white/5'
+                      : 'text-gray-400 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {item.label}
@@ -191,14 +192,14 @@ function MegaMenu({
 
 function SimpleDropdown({ items }: { items: DropdownItem[] }) {
   return (
-    <div className="absolute top-full left-0 mt-0 bg-white border border-gray-200 rounded-lg shadow-lg z-40 whitespace-nowrap min-w-[180px]">
+    <div className="absolute top-full left-0 mt-0 rounded-lg shadow-lg z-40 whitespace-nowrap min-w-[180px]" style={{ background: '#0c1220', border: '1px solid rgba(255,255,255,0.06)' }}>
       {items.map((item, i) => (
         <Link
           key={item.href}
           href={item.href}
-          className={`block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue transition-colors ${
+          className={`block px-4 py-2.5 text-sm text-gray-400 hover:bg-white/5 hover:text-white transition-colors ${
             i === 0 ? 'rounded-t-lg' : ''
-          } ${i === items.length - 1 ? 'rounded-b-lg' : 'border-b border-gray-50'}`}
+          } ${i === items.length - 1 ? 'rounded-b-lg' : 'border-b border-white/5'}`}
         >
           {item.label}
         </Link>
@@ -506,10 +507,10 @@ export default function Header() {
                     {userEmail.charAt(0).toUpperCase()}
                   </button>
                   {authOpen && (
-                    <div className="absolute top-full right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-40">
+                    <div className="absolute top-full right-0 mt-2 w-40 rounded-lg shadow-lg z-40" style={{ background: '#0c1220', border: '1px solid rgba(255,255,255,0.06)' }}>
                       <Link
                         href="/dashboard"
-                        className="block px-4 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-blue transition-colors rounded-t-lg border-b border-gray-50"
+                        className="block px-4 py-2.5 text-sm text-gray-400 hover:bg-white/5 hover:text-white transition-colors rounded-t-lg border-b border-white/5"
                         onClick={() => setAuthOpen(false)}
                       >
                         Dashboard
@@ -519,7 +520,7 @@ export default function Header() {
                           setAuthOpen(false);
                           handleSignOut();
                         }}
-                        className="w-full text-left px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors rounded-b-lg"
+                        className="w-full text-left px-4 py-2.5 text-sm text-red-400 hover:bg-white/5 transition-colors rounded-b-lg"
                       >
                         Sign Out
                       </button>
