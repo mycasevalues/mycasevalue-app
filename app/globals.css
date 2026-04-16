@@ -888,6 +888,121 @@ input[type="range"]::-moz-range-thumb {
   background-size: 60px 60px;
 }
 
+/* ============================================================
+   INSTITUTIONAL FORM CONTROLS
+   Bloomberg-style flat inputs — 6px radius, mono focus ring.
+   Scoped so we don't break component-library inputs that opt-out
+   via .ui-input or .ignore-institutional.
+   ============================================================ */
+
+input[type="text"]:not(.ui-input):not(.ignore-institutional),
+input[type="email"]:not(.ui-input):not(.ignore-institutional),
+input[type="search"]:not(.ui-input):not(.ignore-institutional),
+input[type="number"]:not(.ui-input):not(.ignore-institutional),
+input[type="tel"]:not(.ui-input):not(.ignore-institutional),
+input[type="url"]:not(.ui-input):not(.ignore-institutional),
+input[type="password"]:not(.ui-input):not(.ignore-institutional),
+textarea:not(.ui-input):not(.ignore-institutional),
+select:not(.ui-input):not(.ignore-institutional) {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-default);
+  background: var(--color-surface-0);
+  color: var(--color-text-primary);
+  transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="text"]:not(.ui-input):not(.ignore-institutional):hover,
+input[type="email"]:not(.ui-input):not(.ignore-institutional):hover,
+input[type="search"]:not(.ui-input):not(.ignore-institutional):hover,
+input[type="number"]:not(.ui-input):not(.ignore-institutional):hover,
+textarea:not(.ui-input):not(.ignore-institutional):hover,
+select:not(.ui-input):not(.ignore-institutional):hover {
+  border-color: rgba(26, 86, 219, 0.4);
+}
+
+input[type="text"]:not(.ui-input):not(.ignore-institutional):focus,
+input[type="email"]:not(.ui-input):not(.ignore-institutional):focus,
+input[type="search"]:not(.ui-input):not(.ignore-institutional):focus,
+input[type="number"]:not(.ui-input):not(.ignore-institutional):focus,
+input[type="tel"]:not(.ui-input):not(.ignore-institutional):focus,
+input[type="url"]:not(.ui-input):not(.ignore-institutional):focus,
+input[type="password"]:not(.ui-input):not(.ignore-institutional):focus,
+textarea:not(.ui-input):not(.ignore-institutional):focus,
+select:not(.ui-input):not(.ignore-institutional):focus {
+  outline: none;
+  border-color: #1a56db;
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.15);
+}
+
+input:not(.ui-input):not(.ignore-institutional)::placeholder,
+textarea:not(.ui-input):not(.ignore-institutional)::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+/* Tabular numerals for number inputs (financial/metric feel) */
+input[type="number"]:not(.ui-input):not(.ignore-institutional) {
+  font-feature-settings: 'tnum' 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Labels — mono eyebrow style */
+.institutional-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+/* Field hint / error / helper text */
+.institutional-hint {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 6px;
+}
+.institutional-hint.is-error {
+  color: #ef4444;
+}
+.institutional-hint.is-success {
+  color: #22c55e;
+}
+
+/* Checkbox + radio — flat institutional */
+input[type="checkbox"]:not(.ui-input):not(.ignore-institutional),
+input[type="radio"]:not(.ui-input):not(.ignore-institutional) {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--border-default);
+  border-radius: 3px;
+  background: var(--color-surface-0);
+  cursor: pointer;
+  accent-color: #1a56db;
+}
+input[type="radio"]:not(.ui-input):not(.ignore-institutional) {
+  border-radius: 50%;
+}
+
+/* Focus-visible — always show on keyboard focus for a11y */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* Clean page entrance */
 @keyframes cinematicReveal {
   0% { opacity: 0; transform: translateY(16px); }
