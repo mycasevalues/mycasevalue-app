@@ -194,27 +194,64 @@ export default function PricingPage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       <style>{`
         .pricing-header {
-          background: var(--gradient-hero);
-          color: var(--color-text-inverse);
-          padding: 2.5rem 1.5rem;
+          background: #080d19;
+          color: #ffffff;
+          padding: 3rem 1.5rem 3.5rem;
           text-align: center;
+          position: relative;
+          overflow: hidden;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .pricing-header::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          opacity: 0.03;
+          pointer-events: none;
+          background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+          background-size: 60px 60px;
+        }
+        .pricing-header > * { position: relative; }
+
+        .pricing-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 4px 10px;
+          margin-bottom: 14px;
+          border-radius: 999px;
+          border: 1px solid rgba(59,130,246,0.2);
+          background: rgba(59,130,246,0.08);
+          font-family: var(--font-mono);
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: #60a5fa;
+        }
+        .pricing-eyebrow-dot {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: #22c55e;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
 
         .pricing-h1 {
           font-family: var(--font-inter);
-          font-size: clamp(2rem, 5vw, 3rem);
-          font-weight: 600;
-          letter-spacing: -0.5px;
-          line-height: 1.2;
-          margin-bottom: 1rem;
-          color: var(--color-text-inverse);
+          font-size: clamp(1.75rem, 4vw, 2.25rem);
+          font-weight: 700;
+          letter-spacing: -0.025em;
+          line-height: 1.1;
+          margin-bottom: 0.75rem;
+          color: #ffffff;
         }
 
         .pricing-subtitle {
           font-family: var(--font-inter);
-          font-size: 1.125rem;
-          line-height: 1.8;
-          color: rgba(255, 255, 255, 0.85);
+          font-size: 0.9375rem;
+          line-height: 1.65;
+          color: rgba(255, 255, 255, 0.6);
           max-width: 42rem;
           margin: 0 auto 1.5rem;
         }
@@ -479,7 +516,11 @@ export default function PricingPage() {
 
       {/* Header */}
       <div className="pricing-header">
-        <h1 className="pricing-h1">Enterprise Intelligence. Non-Enterprise Pricing.</h1>
+        <div className="pricing-eyebrow">
+          <span className="pricing-eyebrow-dot" />
+          Pricing
+        </div>
+        <h1 className="pricing-h1">Enterprise intelligence. Non-enterprise pricing.</h1>
         <p className="pricing-subtitle">
           Federal court outcome analytics, AI case prediction, and litigation research. Transparent pricing, no long-term contracts.
         </p>
