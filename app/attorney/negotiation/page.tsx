@@ -109,7 +109,7 @@ export default function NegotiationPage() {
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
     border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: '#FFF', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -133,7 +133,7 @@ export default function NegotiationPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: r ? '380px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
-          <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>Case & Offer Details</h2>
             <form onSubmit={handleAnalyze} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
@@ -197,7 +197,7 @@ export default function NegotiationPage() {
           {r && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Offer Percentile */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
                 <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Current Offer Position</div>
                 <div style={{ fontSize: '56px', fontWeight: 600, color: getWinRateColor(r.offerPercentile).text, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                   {r.offerPercentile}<span style={{ fontSize: '24px' }}>th</span>
@@ -226,7 +226,7 @@ export default function NegotiationPage() {
               </div>
 
               {/* Negotiation Range */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Recommended Negotiation Range</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
                   <div style={{ textAlign: 'center', padding: '16px', background: '#FEF0EF', borderRadius: 10 }}>
@@ -245,13 +245,13 @@ export default function NegotiationPage() {
               </div>
 
               {/* Timing */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>Settlement Timing Intelligence</h3>
                 <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>{r.settlementTiming}</p>
               </div>
 
               {/* Talking Points */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Negotiation Talking Points</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {r.talkingPoints.map((pt, i) => (

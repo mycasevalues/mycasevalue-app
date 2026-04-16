@@ -317,19 +317,19 @@ export default function DepositionPrepPage() {
         {/* Navigation */}
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
               <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Demand Letter</p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Generate demand letters</p>
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
               <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Case Predictor</p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Predict outcomes</p>
             </div>
           </Link>
           <Link href="/attorney/venue-optimizer" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
               <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Venue Optimizer</p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Find optimal districts</p>
             </div>

@@ -376,7 +376,7 @@ export default function SettingsPage() {
             </section>
 
             {/* Quick Links Section */}
-            <section className="rounded-sm p-6" style={{ border: '1px solid var(--border-default)', backgroundColor: 'white' }}>
+            <section className="rounded-sm p-6" style={{ border: '1px solid var(--border-default)', backgroundColor: 'var(--color-surface-0)' }}>
               <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
                 Quick Links
               </h2>

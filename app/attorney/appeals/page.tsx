@@ -47,7 +47,7 @@ export default function AppealsPage() {
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
     border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: '#FFF', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -71,7 +71,7 @@ export default function AppealsPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: showResult && data ? '380px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
-          <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>Case Information</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
@@ -115,7 +115,7 @@ export default function AppealsPage() {
           {showResult && data && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Appeal Probability */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
                 <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Probability of Appeal</div>
                 <div style={{ fontSize: '64px', fontWeight: 600, color: getWinRateColor(appealProb).text, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                   {Math.min(95, appealProb)}%
@@ -127,14 +127,14 @@ export default function AppealsPage() {
 
               {/* Success Rate + Duration */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                <div style={{ background: '#FFF', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
+                <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
                   <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Reversal Rate</div>
                   <div style={{ fontSize: '36px', fontWeight: 600, color: getWinRateColor(reversalProb).text, fontFamily: 'var(--font-mono)' }}>
                     {reversalProb}%
                   </div>
                   <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: 4 }}>of appeals in this circuit</div>
                 </div>
-                <div style={{ background: '#FFF', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
+                <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
                   <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Average Appeal Duration</div>
                   <div style={{ fontSize: '36px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                     {data.avgDuration}
@@ -144,7 +144,7 @@ export default function AppealsPage() {
               </div>
 
               {/* Common Grounds for Reversal */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>
                   Most Common Grounds for Reversal
                 </h3>
@@ -177,19 +177,19 @@ export default function AppealsPage() {
         {/* Navigation */}
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/negotiation" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
               <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Negotiation Prep</p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Settlement strategy</p>
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
               <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Case Predictor</p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Predict outcomes</p>
             </div>
           </Link>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
               <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Demand Letter</p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Generate letters</p>
             </div>

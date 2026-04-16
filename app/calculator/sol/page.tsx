@@ -94,7 +94,7 @@ export default function SOLCalculatorPage() {
       </header>
 
       {/* Breadcrumb */}
-      <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
+      <nav style={{ background: 'var(--color-surface-0)', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
           <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Home</Link>
           <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
@@ -109,7 +109,7 @@ export default function SOLCalculatorPage() {
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
 
           {/* Input Form */}
-          <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
               Check Your Deadline
             </h2>
@@ -156,7 +156,7 @@ export default function SOLCalculatorPage() {
             <div style={{ display: 'grid', gap: 24, animation: 'slideUp 0.4s ease-out' }}>
 
               {/* SOL Period Card */}
-              <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
                 <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
                   Federal Statute of Limitations
                 </div>
@@ -207,7 +207,7 @@ export default function SOLCalculatorPage() {
               )}
 
               {/* Triggering Event */}
-              <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
                 <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
                   Key Triggering Event
                 </h3>
@@ -217,7 +217,7 @@ export default function SOLCalculatorPage() {
               </div>
 
               {/* Tolling Exceptions */}
-              <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
                 <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
                   Common Tolling Exceptions
                 </h3>

@@ -41,7 +41,7 @@ export default function LienCalculatorPage() {
       </header>
 
       {/* Breadcrumb */}
-      <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
+      <nav style={{ background: 'var(--color-surface-0)', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
           <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Home</Link>
           <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>

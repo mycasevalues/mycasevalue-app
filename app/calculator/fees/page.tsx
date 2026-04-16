@@ -65,7 +65,7 @@ export default function FeesPage() {
       </header>
 
       {/* Breadcrumb */}
-      <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
+      <nav style={{ background: 'var(--color-surface-0)', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
           <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Home</Link>
           <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
@@ -80,7 +80,7 @@ export default function FeesPage() {
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
 
           {/* Filing Fees */}
-          <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-display)' }}>
               Court Filing Fees
             </h2>
@@ -113,7 +113,7 @@ export default function FeesPage() {
           </div>
 
           {/* PACER Fees */}
-          <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-display)' }}>
               PACER Access Fees
             </h2>
@@ -137,7 +137,7 @@ export default function FeesPage() {
           </div>
 
           {/* Pro Hac Vice */}
-          <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>
               Pro Hac Vice Admission Fees
             </h2>
@@ -162,7 +162,7 @@ export default function FeesPage() {
           </div>
 
           {/* IFP Fee Waiver Section */}
-          <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
               <div style={{ width: 36, height: 36, borderRadius: 8, background: '#E8F3EB', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>
                 &#9733;

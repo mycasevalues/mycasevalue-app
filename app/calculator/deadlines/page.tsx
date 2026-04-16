@@ -137,7 +137,7 @@ export default function DeadlinesCalculatorPage() {
       </header>
 
       {/* Breadcrumb */}
-      <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
+      <nav style={{ background: 'var(--color-surface-0)', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
           <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Home</Link>
           <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
@@ -152,7 +152,7 @@ export default function DeadlinesCalculatorPage() {
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
 
           {/* Input Form */}
-          <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
               Calculate Your Deadlines
             </h2>
@@ -193,7 +193,7 @@ export default function DeadlinesCalculatorPage() {
             <div style={{ display: 'grid', gap: 24, animation: 'slideUp 0.4s ease-out' }}>
 
               {/* Timeline Header */}
-              <div style={{ background: '#FFF', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
                 <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>
                   FRCP Deadline Timeline
                 </h3>
@@ -264,7 +264,7 @@ export default function DeadlinesCalculatorPage() {
                   <div
                     key={i}
                     style={{
-                      background: '#FFF',
+                      background: 'var(--color-surface-0)',
                       border: `1px solid ${past ? '#FECACA' : 'var(--border-default)'}`,
                       borderLeft: `4px solid ${past ? '#CC1016' : daysFromNow !== null && daysFromNow <= 14 ? '#D97706' : 'var(--accent-primary)'}`,
                       borderRadius: 12,

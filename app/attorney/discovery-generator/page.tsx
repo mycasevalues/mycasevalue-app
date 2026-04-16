@@ -122,7 +122,7 @@ export default function DiscoveryGeneratorPage() {
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
     border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: '#FFF', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -154,7 +154,7 @@ export default function DiscoveryGeneratorPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: hasAnyText ? '340px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
-          <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
               Case Details
             </h2>
@@ -209,7 +209,7 @@ export default function DiscoveryGeneratorPage() {
                   style={{
                     width: '100%', padding: '12px 14px', border: '1px solid var(--border-default)',
                     borderRadius: '12px', fontSize: '14px', color: 'var(--color-text-primary)',
-                    backgroundColor: '#FFF', fontFamily: 'var(--font-body)',
+                    backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
                     minHeight: '80px', resize: 'vertical', boxSizing: 'border-box' as const,
                   }}
                 />
@@ -242,7 +242,7 @@ export default function DiscoveryGeneratorPage() {
           {hasAnyText && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Tabs */}
-              <div style={{ display: 'flex', gap: '4px', background: '#FFF', borderRadius: '12px', padding: '4px', border: '1px solid var(--border-default)' }}>
+              <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-0)', borderRadius: '12px', padding: '4px', border: '1px solid var(--border-default)' }}>
                 {TABS.map(tab => (
                   <button
                     key={tab.key}
@@ -270,7 +270,7 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               {/* Content */}
-              <div style={{ background: '#FFF', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: 8 }}>
                   <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-display)' }}>
                     {TABS.find(t => t.key === activeTab)?.label}

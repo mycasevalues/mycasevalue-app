@@ -236,7 +236,7 @@ export default function AdminPage() {
                 <div
                   key={index}
                   style={{
-                    backgroundColor: 'white',
+                    backgroundColor: 'var(--color-surface-0)',
                     border: '1px solid #e0e0e0',
                     borderRadius: '8px',
                     padding: '20px',
@@ -256,7 +256,7 @@ export default function AdminPage() {
             {/* System Status */}
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -300,7 +300,7 @@ export default function AdminPage() {
             {/* Recent Activity */}
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -346,7 +346,7 @@ export default function AdminPage() {
             {/* Blog Editor */}
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -424,7 +424,7 @@ export default function AdminPage() {
             {/* Changelog Editor */}
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -516,7 +516,7 @@ export default function AdminPage() {
             {/* Whats New Editor */}
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -542,7 +542,7 @@ export default function AdminPage() {
             {/* Manual Refresh Triggers */}
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -583,7 +583,7 @@ export default function AdminPage() {
             {/* Data Quality Check */}
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -618,7 +618,7 @@ export default function AdminPage() {
             {/* Last Run Times */}
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -676,7 +676,7 @@ export default function AdminPage() {
           <div>
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -775,7 +775,7 @@ export default function AdminPage() {
           <div>
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -867,7 +867,7 @@ export default function AdminPage() {
             >
               <div
                 style={{
-                  backgroundColor: 'white',
+                  backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid #e0e0e0',
                   borderRadius: '8px',
                   padding: '20px',
@@ -883,7 +883,7 @@ export default function AdminPage() {
               </div>
               <div
                 style={{
-                  backgroundColor: 'white',
+                  backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid #e0e0e0',
                   borderRadius: '8px',
                   padding: '20px',
@@ -902,7 +902,7 @@ export default function AdminPage() {
             {/* Recent Emails */}
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
@@ -944,7 +944,7 @@ export default function AdminPage() {
             {/* Test Digest */}
             <div
               style={{
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
                 borderRadius: '8px',
                 padding: '24px',
