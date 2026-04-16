@@ -114,18 +114,18 @@ export default async function OutcomesPage({
           }}>This case type and district combination does not exist in our database.</p>
           <Link href="/districts" style={{
             display: 'inline-block',
-            paddingLeft: '24px',
-            paddingRight: '24px',
-            paddingTop: '12px',
-            paddingBottom: '12px',
-            borderRadius: '12px',
+            padding: '10px 20px',
+            borderRadius: 6,
             fontWeight: 600,
-            color: 'var(--color-text-inverse)',
-            background: 'var(--gradient-hero)',
+            color: '#ffffff',
+            background: '#1a56db',
+            border: '1px solid #1a56db',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
             textDecoration: 'none',
-            fontSize: '14px',
-            fontFamily: 'var(--font-body)',
-            transition: 'all 0.3s ease',
+            fontSize: 13,
+            letterSpacing: '-0.005em',
+            fontFamily: 'var(--font-inter)',
+            transition: 'background-color 150ms ease, border-color 150ms ease',
           }}>
             Browse all outcomes
           </Link>
