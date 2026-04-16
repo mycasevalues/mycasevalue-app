@@ -70,15 +70,16 @@
   background: var(--accent-primary-hover);
 }
 
-/* Secondary — ghost outline pill */
+/* Secondary — ghost outline */
 .mcv-btn--secondary {
   background: transparent;
   color: var(--accent-primary);
-  border: 1.5px solid var(--accent-primary);
+  border: 1px solid var(--accent-primary);
 }
 .mcv-btn--secondary:hover:not(:disabled) {
   background: var(--accent-primary-subtle);
   border-color: var(--accent-primary-hover);
+  color: var(--accent-primary-hover);
 }
 
 /* Ghost — borderless */
