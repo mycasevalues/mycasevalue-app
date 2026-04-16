@@ -989,3 +989,36 @@ Fixed 5 pre-existing TypeScript errors that blocked clean build:
 ### DEPLOYMENT STATUS: ✅ LIVE IN PRODUCTION
 
 Last updated: 2026-04-16
+
+---
+
+## Session 14 — Repo Audit & Bloomberg Cleanup
+
+**Date:** 2026-04-16  
+**Goal:** 13-part Westlaw Carbon Copy Verification audit, fix violations, write report
+
+### Audit Results
+
+- Parts 1-13 all executed
+- Session-modified files (16): **0 Bloomberg violations** ✅
+- Forbidden components: **0 active** ✅
+- Token system: **Complete** ✅
+- Navigation, fonts, layout, routing: **All spec-compliant** ✅
+
+### Files Fixed
+
+1. **app/layout.tsx** — 3 violations (themeColor, body color, skip-link bg)
+2. **app/cases/page.tsx** — 40+ violations (all Bloomberg hex, all fonts)
+3. **app/pricing/page.tsx** — 13 violations (all Bloomberg hex, all fonts, gold CTAs)
+
+### Remaining
+
+- ~100 legacy/out-of-scope files with 342 Bloomberg hex violations
+- Planned for Sessions 15-19
+
+### Build Verification
+
+- `npm run build` → ✅ 0 errors, 7104+ pages
+- REPO_AUDIT_REPORT.md written
+
+### Session Gate: PASS (Conditional — core pages clean, legacy pages need follow-up)

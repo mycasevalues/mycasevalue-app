@@ -194,8 +194,8 @@ export default function PricingPage() {
     <div style={{ background: '#FFFFFF', minHeight: '100vh' }}>
       <style>{`
         .pricing-header {
-          background: #F7F7F5;
-          color: #1A1A1A;
+          background: var(--surface-warm, #FAF3E6);
+          color: var(--text-primary, #18181A);
           padding: 3rem 1.5rem 3.5rem;
           text-align: center;
           position: relative;
@@ -218,7 +218,7 @@ export default function PricingPage() {
           font-weight: 600;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: #E65C00;
+          color: var(--accent-primary, #C4882A);
         }
         .pricing-eyebrow-dot {
           width: 4px;
@@ -229,17 +229,17 @@ export default function PricingPage() {
         }
 
         .pricing-h1 {
-          font-family: var(--font-jakarta, var(--font-inter));
+          font-family: var(--font-legal);
           font-size: clamp(1.75rem, 4vw, 2.25rem);
           font-weight: 700;
           letter-spacing: -0.025em;
           line-height: 1.1;
           margin-bottom: 0.75rem;
-          color: #1A1A1A;
+          color: var(--text-primary, #18181A);
         }
 
         .pricing-subtitle {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.65;
           color: #666666;
@@ -279,22 +279,22 @@ export default function PricingPage() {
         }
 
         .pricing-card.highlighted {
-          border: 2px solid #E65C00;
+          border: 2px solid var(--accent-primary, #C4882A);
           background: #FFFFFF;
         }
 
         .pricing-card:hover {
-          border-color: #0052CC;
-          box-shadow: 0 2px 8px rgba(0,82,204,0.08);
+          border-color: var(--chrome-bg, #1B2D45);
+          box-shadow: 0 2px 8px rgba(27,45,69,0.08);
         }
 
         .pricing-card.highlighted:hover {
-          border-color: #E65C00;
-          box-shadow: 0 2px 12px rgba(230,92,0,0.12);
+          border-color: var(--accent-primary, #C4882A);
+          box-shadow: 0 2px 12px rgba(196,136,42,0.12);
         }
 
         .card-name {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 1.0625rem;
           font-weight: 600;
           letter-spacing: -0.01em;
@@ -305,7 +305,7 @@ export default function PricingPage() {
         .card-best-for {
           font-family: var(--font-mono);
           font-size: 10px;
-          color: #E65C00;
+          color: var(--accent-primary, #C4882A);
           font-weight: 600;
           letter-spacing: 0.12em;
           text-transform: uppercase;
@@ -318,11 +318,11 @@ export default function PricingPage() {
           top: -10px;
           left: 50%;
           transform: translateX(-50%);
-          background: #E65C00;
+          background: var(--accent-primary, #C4882A);
           color: #ffffff;
           padding: 0.25rem 0.625rem;
           border-radius: 3px;
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.6875rem;
           font-weight: 700;
           letter-spacing: 0.05em;
@@ -341,14 +341,14 @@ export default function PricingPage() {
         }
 
         .card-period {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.875rem;
           color: var(--color-text-secondary);
           margin-bottom: 1rem;
         }
 
         .card-description {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.875rem;
           color: var(--color-text-secondary);
           line-height: 1.6;
@@ -367,7 +367,7 @@ export default function PricingPage() {
         }
 
         .card-features li {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.875rem;
           color: var(--color-text-secondary);
           padding: 0.5rem 0;
@@ -392,7 +392,7 @@ export default function PricingPage() {
           gap: 6px;
           padding: 0.625rem 1.25rem;
           border-radius: 3px;
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 13px;
           font-weight: 600;
           letter-spacing: -0.005em;
@@ -400,18 +400,18 @@ export default function PricingPage() {
           transition: background-color 120ms ease;
           width: 100%;
           text-align: center;
-          background: #E65C00;
+          background: var(--accent-primary, #C4882A);
           color: #FFFFFF;
           border: none;
           cursor: pointer;
         }
 
         .card-cta:hover {
-          background: #CC5200;
+          background: var(--accent-primary-hover, #A87222);
         }
 
         .callout-section {
-          background: #F7F7F5;
+          background: var(--surface-warm, #FAF3E6);
           border: 1px solid #E0E0E0;
           border-radius: 4px;
           padding: 2.5rem;
@@ -422,7 +422,7 @@ export default function PricingPage() {
         }
 
         .callout-text {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 1.125rem;
           line-height: 1.8;
           color: var(--color-text-secondary);
@@ -436,7 +436,7 @@ export default function PricingPage() {
         }
 
         .faq-heading {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 1.75rem;
           font-weight: 600;
           color: var(--color-text-primary);
@@ -453,7 +453,7 @@ export default function PricingPage() {
         }
 
         .faq-question {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 1rem;
           font-weight: 600;
           color: var(--color-text-primary);
@@ -461,7 +461,7 @@ export default function PricingPage() {
         }
 
         .faq-answer {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.9375rem;
           color: var(--color-text-secondary);
           line-height: 1.7;
@@ -471,7 +471,7 @@ export default function PricingPage() {
           max-width: 80rem;
           margin: 0 auto;
           padding: 1.5rem 1.5rem 0;
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
         }
 
         @media (max-width: 640px) {
@@ -568,7 +568,7 @@ export default function PricingPage() {
 
         {/* Contact CTA */}
         <div style={{ marginTop: '4rem', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'var(--font-inter)', fontSize: '1rem', color: 'var(--color-text-secondary)', marginBottom: '1.5rem' }}>
+          <p style={{ fontFamily: 'var(--font-ui)', fontSize: '1rem', color: 'var(--color-text-secondary)', marginBottom: '1.5rem' }}>
             Have other questions about pricing or features?
           </p>
           <Link
@@ -578,11 +578,11 @@ export default function PricingPage() {
               alignItems: 'center',
               padding: '0.75rem 2rem',
               borderRadius: '8px',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '0.875rem',
               fontWeight: '600',
               textDecoration: 'none',
-              background: '#E65C00',
+              background: 'var(--accent-primary, #C4882A)',
               color: '#FFFFFF',
               transition: 'all 0.3s ease',
             }}
