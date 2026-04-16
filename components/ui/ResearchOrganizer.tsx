@@ -1,0 +1,125 @@
+'use client';
+
+/**
+ * ResearchOrganizer.tsx — Right-panel outline builder
+ *
+ * Equivalent to Westlaw Outline Builder.
+ * Container: bg var(--sidebar2), border var(--bdr), radius 2px
+ * Button: full-width, var(--link-light) bg, var(--link) text
+ */
+
+import React from 'react';
+
+interface ResearchOrganizerProps {
+  itemCount?: number;
+}
+
+/* ── Document icon (11px) ── */
+function DocIcon() {
+  return (
+    <svg
+      width="11"
+      height="11"
+      viewBox="0 0 14 14"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect
+        x="2"
+        y="1"
+        width="10"
+        height="12"
+        rx="1"
+        stroke="currentColor"
+        strokeWidth="1.2"
+      />
+      <line x1="4.5" y1="4" x2="9.5" y2="4" stroke="currentColor" strokeWidth="1" />
+      <line x1="4.5" y1="6.5" x2="9.5" y2="6.5" stroke="currentColor" strokeWidth="1" />
+      <line x1="4.5" y1="9" x2="7.5" y2="9" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
+export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps) {
+  return (
+    <div
+      style={{
+        background: 'var(--sidebar2, #F4F3EF)',
+        border: '1px solid var(--bdr, #E2DFD8)',
+        borderRadius: 2,
+        padding: 10,
+      }}
+    >
+      {/* Header */}
+      <div
+        style={{
+          fontSize: 10,
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em',
+          color: 'var(--text3, #78766C)',
+          fontFamily: 'var(--font-ui)',
+          fontWeight: 600,
+          marginBottom: 5,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 5,
+        }}
+      >
+        RESEARCH ORGANIZER
+        {typeof itemCount === 'number' && (
+          <span
+            style={{
+              fontSize: 9,
+              fontWeight: 700,
+              color: '#FFFFFF',
+              background: 'var(--link, #0A50A2)',
+              borderRadius: 8,
+              padding: '1px 5px',
+              lineHeight: '14px',
+            }}
+          >
+            {itemCount}
+          </span>
+        )}
+      </div>
+
+      {/* Note text */}
+      <p
+        style={{
+          fontSize: 10,
+          fontFamily: 'var(--font-ui)',
+          color: 'var(--text3, #78766C)',
+          lineHeight: 1.5,
+          margin: '0 0 7px 0',
+        }}
+      >
+        Drag text from this profile into your outline. Export to Word when ready.
+      </p>
+
+      {/* CTA Button */}
+      <button
+        type="button"
+        style={{
+          width: '100%',
+          height: 29,
+          border: '1px solid var(--link, #0A50A2)',
+          background: 'var(--link-light, #EAF1FB)',
+          color: 'var(--link, #0A50A2)',
+          fontSize: 11,
+          fontWeight: 600,
+          fontFamily: 'var(--font-ui)',
+          borderRadius: 2,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 4,
+          cursor: 'pointer',
+        }}
+      >
+        <DocIcon />
+        Open Research Organizer
+      </button>
+    </div>
+  );
+}
