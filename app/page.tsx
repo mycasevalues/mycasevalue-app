@@ -74,10 +74,9 @@ export default function HomePage() {
               <div className="rounded-lg border overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.06)' }}>
                 {/* Mini header */}
                 <div className="flex items-center gap-2 px-4 py-2.5 border-b" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
-                  <div className="w-2 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.15)' }} />
-                  <div className="w-2 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.15)' }} />
-                  <div className="w-2 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.15)' }} />
-                  <span className="ml-2 text-[10px] text-gray-600 font-mono">mycasevalues.com/cases</span>
+                  <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: '#22c55e' }} />
+                  <span className="text-[10px] text-gray-600 font-mono tracking-wider uppercase">Live</span>
+                  <span className="ml-auto text-[10px] text-gray-600 font-mono">mycasevalues.com/cases</span>
                 </div>
                 {/* Data rows */}
                 <div className="divide-y" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
