@@ -48,7 +48,7 @@ function RelatedItem({ href, label, sublabel, stat, statColor }: {
       className="flex items-center justify-between px-4 py-2 hover:bg-blue-50/50 transition-colors group"
     >
       <div className="min-w-0 flex-1">
-        <div className="text-sm text-gray-800 font-medium truncate group-hover:text-brand-blue transition-colors">{label}</div>
+        <div className="text-sm text-gray-200 font-medium truncate group-hover:text-brand-blue transition-colors">{label}</div>
         {sublabel && <div className="text-[11px] text-gray-400 truncate">{sublabel}</div>}
       </div>
       {stat && (

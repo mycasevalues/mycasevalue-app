@@ -449,7 +449,7 @@ function PartyGroup({ label, parties }: { label: string; parties: Array<{ name: 
       <p className="text-xs font-medium text-gray-500 mb-2">{label}</p>
       <ul className="space-y-1">
         {parties.map((p, i) => (
-          <li key={i} className="text-sm text-gray-800">
+          <li key={i} className="text-sm text-gray-200">
             {p.name}
           </li>
         ))}

@@ -99,7 +99,7 @@ export default function ProductPreview() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-800 tabular-nums">
+                      <div className="text-sm font-semibold text-gray-200 tabular-nums">
                         {cat.settlementRate}
                       </div>
                       <div className="text-[10px] text-gray-400 uppercase tracking-wider">
@@ -107,7 +107,7 @@ export default function ProductPreview() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-800 tabular-nums">
+                      <div className="text-sm font-semibold text-gray-200 tabular-nums">
                         {cat.duration}
                       </div>
                       <div className="text-[10px] text-gray-400 uppercase tracking-wider">

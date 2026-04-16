@@ -160,7 +160,7 @@ export function AIChatAssistant() {
               messages.map((msg) => (
                 <div key={msg.id} className={msg.role === 'user' ? 'flex justify-end' : 'flex justify-start'}>
                   <div
-                    className={msg.role === 'user' ? 'max-w-[85%] px-4 py-3 rounded-lg text-sm text-white' : 'max-w-[85%] px-4 py-3 rounded-lg text-sm text-gray-800 bg-[rgba(255,255,255,0.04)]'}
+                    className={msg.role === 'user' ? 'max-w-[85%] px-4 py-3 rounded-lg text-sm text-white' : 'max-w-[85%] px-4 py-3 rounded-lg text-sm text-gray-200 bg-[rgba(255,255,255,0.04)]'}
                     style={msg.role === 'user' ? { backgroundColor: 'var(--accent-primary)' } : undefined}
                   >
                     <div className="whitespace-pre-wrap leading-relaxed">{msg.content}</div>
