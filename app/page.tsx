@@ -194,18 +194,26 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: 'var(--gradient-hero)' }}>
-        <div className="max-w-4xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="relative overflow-hidden" style={{ background: 'var(--gradient-hero)' }}>
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+        }} />
+        <div className="relative max-w-4xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <p className="text-[10px] font-medium tracking-[0.25em] uppercase text-blue-400/60 mb-2">Public Beta</p>
-            <h2 className="text-xl font-bold text-white mb-1 tracking-tight">Research federal litigation like institutions do.</h2>
-            <p className="text-sm text-gray-400 tabular-nums">Free during beta &middot; No account required &middot; Sub-second search</p>
+            <p className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.25em] uppercase text-blue-400/70 mb-2 px-2 py-0.5 rounded-[3px] border border-blue-400/15 bg-blue-400/[0.04]">
+              <span className="w-1 h-1 rounded-full bg-blue-400/70" />
+              Public Beta
+            </p>
+            <h2 className="text-xl font-bold text-white mb-1.5 tracking-[-0.02em] leading-tight">Research federal litigation like institutions do.</h2>
+            <p className="text-sm text-gray-400 tabular-nums font-mono">Free during beta &middot; No account required &middot; Sub-second search</p>
           </div>
           <div className="flex gap-3 flex-shrink-0">
-            <Link href="/case-search" className="inline-flex h-10 items-center px-5 bg-[#1a56db] hover:bg-[#1e40af] text-white text-sm font-semibold rounded transition-colors">
+            <Link href="/case-search" className="inline-flex h-10 items-center px-5 bg-[#1a56db] hover:bg-[#1e40af] text-white text-[13px] font-semibold rounded-md transition-colors gap-1.5 tracking-[-0.005em]">
               Start Searching
+              <span className="text-[10px] opacity-80">&rarr;</span>
             </Link>
-            <Link href="/cases" className="inline-flex h-10 items-center px-5 bg-transparent text-gray-300 border border-white/20 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors">
+            <Link href="/cases" className="inline-flex h-10 items-center px-5 bg-transparent text-gray-200 border border-white/15 text-[13px] font-semibold rounded-md hover:bg-white/[0.03] hover:border-white/30 transition-all tracking-[-0.005em]">
               Browse Cases
             </Link>
           </div>
