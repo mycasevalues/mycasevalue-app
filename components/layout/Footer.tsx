@@ -42,11 +42,11 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <span className="text-sm font-bold text-white">
+            <span className="text-sm font-bold text-white tracking-tight">
               MyCase<span style={{ color: '#3b82f6' }}>Value</span>
             </span>
-            <p className="text-xs text-gray-500 mt-2 leading-relaxed max-w-xs">
-              Federal court intelligence from public records.
+            <p className="text-[11px] text-gray-500 mt-2 leading-relaxed max-w-xs">
+              Institutional-grade federal court intelligence sourced from public records.
             </p>
           </div>
 
