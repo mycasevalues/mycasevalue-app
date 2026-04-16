@@ -249,14 +249,14 @@ export default function AboutPage() {
         .audience-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 6px;
           padding: 1.5rem;
-          transition: all 0.2s ease;
+          transition: border-color 150ms ease, background-color 150ms ease;
         }
 
         .audience-card:hover {
-          border-color: var(--accent-primary);
-          box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
+          border-color: rgba(59,130,246,0.3);
+          background: rgba(59,130,246,0.02);
         }
 
         .audience-title {
