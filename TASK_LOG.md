@@ -1049,3 +1049,25 @@ Removed BetaBanner and LiveTicker from app/layout.tsx:
 ### Build: ✅ 0 errors, 7104+ pages
 
 ### Session Gate: PASS
+
+---
+
+## Session 15b — Post-Fix Verification & Detail Page Audit
+**Date:** 2026-04-16
+**Commit:** b473fc07
+**Deployment:** dpl_BbeFwzJFszo7WwzL4NRzQAgHLDh2
+
+### 8-Step Verification Results
+
+1. **Live Audit Fix Confirmation** — ✅ All 4 core pages: Westlaw nav present, no ticker, no banner, no Coming Soon, no emoji, no Bloomberg orange
+2. **District Detail (/districts/SDNY)** — ✅ 200, case-insensitive routing, district name, tabs, attribution, no PieCharts, mono font. CACD/NDIL/SDFL all 200.
+3. **Judge Detail (/judges/a-richard-caputo-pamd)** — ✅ 200, CaseCite refs, intel summary, research section, serif font, attribution, no PieCharts
+4. **Attorney Page (/attorney)** — ✅ 200, Westlaw nav, no old AttorneyToolsNav
+5. **OG Images** — ✅ Homepage og-image.png (200), SDNY api/og (200), Pricing og-image.png (200)
+6. **Sitemap & Robots** — ✅ 818 URLs in sitemap, robots.txt blocks AI bots + private routes
+7. **Core Metrics** — ✅ All 5 pages sub-400ms, 0 fatal errors, 0 500s in last hour
+8. **POST_FIX_AUDIT.md** — ✅ Written with full results
+
+### Verdict: READY FOR SOFT LAUNCH
+
+### Session Gate: PASS
