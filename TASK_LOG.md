@@ -598,4 +598,75 @@ All forbidden Bloomberg colors eliminated from both target files. All Westlaw to
 
 ### Session Gate: PASS
 
+---
+
+## Westlaw Precision Redesign — Session 7: Homepage Rebuild
+
+**Commit:** `[Session 7] Homepage: Rebuild to Westlaw search hub pattern` — sha: dbe0c8e8
+
+**Risk Level:** HIGH — Most visible page, complete layout rewrite
+
+### File Modified (1)
+
+**app/page.tsx** — Full rebuild from Bloomberg data-hub to Westlaw search-hub pattern
+
+**New layout (top → bottom):**
+
+1. **Hero Search Section** (white card, border-bottom var(--bdr))
+   - Eyebrow: 10px uppercase "MyCaseValue Advantage — Federal Court Intelligence Platform"
+   - h1: font-legal 24px — "The Federal Court Record." (text1) + "Open to Everyone." (gold)
+   - Body: 13px font-ui, 5.1 million cases description
+   - 44px Search bar: 2px solid var(--chrome-bg), [input flex:1] [jurisdiction 152px RIGHT] [Search 92px navy bg]
+   - Attribution: "Powered by FederalSearch+" (link color, 600 weight) + Advanced search + Search tips
+
+2. **GetStartedBar** — Session 5 component imported and rendered
+
+3. **Browse Tabs** — CSS-only switching (radio inputs) for SSR compatibility
+   - Precision Analytics (DEFAULT, active: link color + 3px link border)
+   - All Records (switchable)
+   - Federal Courts, Practice Areas, Analytics Tools (link to pages)
+   - My Research (right-aligned, links to /dashboard)
+
+4. **Precision Analytics Tab Content** (two-column)
+   - Left (flex:1): Intro text + form panel (gold-light bg, gold-border, 2×3 grid of selects) + Run/Save buttons + "Matching N cases" + Recent Precision Searches list
+   - Right sidebar (282px): My Alerts panel + ResearchOrganizer component + Platform Statistics (font-mono values)
+
+5. **All Records Tab Content** — 3×2 browse card grid
+   - Cards: white bg, 1px var(--bdr), border-top 3px var(--bdr) → gold on hover
+   - Title: font-legal 13px color var(--chrome-bg)
+   - Description: 11px font-ui color var(--text3)
+   - Stat: font-mono 11px color var(--gold)
+
+6. **Disclaimer** — 10px attribution text
+
+**Removed from old homepage:**
+- Context bar with filter pills
+- Centered hero with 42px display font + CTA buttons
+- Stats ticker (4-col grid)
+- Recently Updated data table (10-row)
+- What's Happening 3-col strip
+- CardIcon SVG components
+- StatusBadge component
+
+**Preserved:**
+- SSR metadata export (title, description, openGraph)
+- SITE_URL and SITE_METRICS imports
+- BROWSE_CARDS data (restyled for All Records tab)
+- Server component status (no 'use client')
+
+### Verification Results
+
+1. **No hero image in HTML source** → PASS
+2. **No testimonials / marketing above fold** → PASS
+3. **Search IS the hero (44px bar in first section)** → PASS
+4. **Jurisdiction dropdown on RIGHT of search input** → PASS
+5. **"Powered by FederalSearch+" attribution present** → PASS
+6. **Precision Analytics is DEFAULT tab** → PASS (radio defaultChecked)
+7. **GetStartedBar rendered** → PASS (imported from Session 5 component)
+8. **No Bloomberg hex (#E65C00, #1A1A1A, #0052CC, etc.)** → PASS (zero instances)
+9. **Search button bg is var(--chrome-bg) NOT var(--gold)** → PASS
+10. **npm run build → Webpack compilation** → PASS (pre-existing TS error unrelated)
+
+### Session Gate: PASS
+
 Last updated: 2026-04-16
