@@ -228,19 +228,30 @@
 }
 
 
-/* ── SECTION LABEL — LinkedIn Style ──────────────────────── */
+/* ── SECTION LABEL — Bloomberg Institutional Eyebrow ──────── */
 .mcv-section-label {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--accent-primary);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   background: none;
   border: none;
   padding: 0;
   margin: 0 0 12px 0;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.mcv-section-label::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.7;
+  flex-shrink: 0;
 }
 
 /* ── HEADINGS — Inter LinkedIn Proportions ────────────────── */
