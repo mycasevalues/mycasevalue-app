@@ -460,7 +460,7 @@ function SearchPageInner() {
               e.currentTarget.style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.1)';
             }}
             onBlur={(e) => {
-              e.currentTarget.style.borderColor = '#D8BFFF';
+              e.currentTarget.style.borderColor = 'rgba(139,92,246,0.3)';
               e.currentTarget.style.boxShadow = 'none';
             }}
           />

@@ -790,7 +790,7 @@ export default function DistrictHeatmapPage() {
                         style={{
                           width: '40px',
                           height: '4px',
-                          backgroundColor: '#F0F3F5',
+                          backgroundColor: 'rgba(255,255,255,0.06)',
                           borderRadius: '12px',
                           overflow: 'hidden',
                         }}
@@ -891,7 +891,7 @@ export default function DistrictHeatmapPage() {
                         style={{
                           width: '40px',
                           height: '4px',
-                          backgroundColor: '#F0F3F5',
+                          backgroundColor: 'rgba(255,255,255,0.06)',
                           borderRadius: '12px',
                           overflow: 'hidden',
                         }}

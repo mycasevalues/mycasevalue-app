@@ -145,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CAPABILITIES ── */}
-      <section style={{ background: '#f8f9fb' }}>
+      <section style={{ background: 'var(--color-surface-0)' }}>
         <div className="max-w-6xl mx-auto px-6 py-14">
           <h2 className="text-base font-semibold text-gray-100 mb-8">Platform</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

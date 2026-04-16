@@ -296,7 +296,7 @@ export default function LienCalculator() {
                     transition: 'border-color 0.2s',
                   }}
                   onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
-                  onBlur={(e) => (e.target.style.borderColor = errors.medicareAmount ? '#EF4444' : '#D1E0F8')}
+                  onBlur={(e) => (e.target.style.borderColor = errors.medicareAmount ? '#f87171' : 'rgba(255,255,255,0.1)')}
                 />
                 {errors.medicareAmount && <div style={{ fontSize: 11, color: 'var(--color-error)', fontFamily: 'var(--font-body)' }}>{errors.medicareAmount}</div>}
               </div>
@@ -340,7 +340,7 @@ export default function LienCalculator() {
                     transition: 'border-color 0.2s',
                   }}
                   onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
-                  onBlur={(e) => (e.target.style.borderColor = errors.medicaidAmount ? '#EF4444' : '#D1E0F8')}
+                  onBlur={(e) => (e.target.style.borderColor = errors.medicaidAmount ? '#f87171' : 'rgba(255,255,255,0.1)')}
                 />
                 {errors.medicaidAmount && <div style={{ fontSize: 11, color: '#EF4444', fontFamily: 'var(--font-body)' }}>{errors.medicaidAmount}</div>}
               </div>
@@ -384,7 +384,7 @@ export default function LienCalculator() {
                     transition: 'border-color 0.2s',
                   }}
                   onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
-                  onBlur={(e) => (e.target.style.borderColor = errors.workersCompAmount ? '#EF4444' : '#D1E0F8')}
+                  onBlur={(e) => (e.target.style.borderColor = errors.workersCompAmount ? '#f87171' : 'rgba(255,255,255,0.1)')}
                 />
                 {errors.workersCompAmount && <div style={{ fontSize: 11, color: '#EF4444', fontFamily: 'var(--font-body)' }}>{errors.workersCompAmount}</div>}
               </div>

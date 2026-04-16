@@ -566,7 +566,7 @@ export default async function DistrictCaseTypePage({
           <p
             style={{
               fontSize: '12px',
-              color: '#475569',
+              color: 'var(--color-text-secondary)',
               margin: '0',
               fontFamily: 'var(--font-body)',
             }}

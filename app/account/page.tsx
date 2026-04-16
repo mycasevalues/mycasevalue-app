@@ -283,7 +283,7 @@ export default function AccountPage() {
               </div>
 
               {profileMsg && (
-                <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: profileMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: profileMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${profileMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
+                <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: profileMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: profileMsg.type === 'success' ? '#34d399' : '#f87171', border: `1px solid ${profileMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
                   {profileMsg.text}
                 </div>
               )}
@@ -334,7 +334,7 @@ export default function AccountPage() {
               </div>
 
               {passwordMsg && (
-                <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: passwordMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: passwordMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${passwordMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
+                <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: passwordMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: passwordMsg.type === 'success' ? '#34d399' : '#f87171', border: `1px solid ${passwordMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
                   {passwordMsg.text}
                 </div>
               )}
@@ -395,7 +395,7 @@ export default function AccountPage() {
             </p>
 
             {apiKeyMsg && (
-              <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: apiKeyMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: apiKeyMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${apiKeyMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
+              <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: apiKeyMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: apiKeyMsg.type === 'success' ? '#34d399' : '#f87171', border: `1px solid ${apiKeyMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
                 {apiKeyMsg.text}
               </div>
             )}
@@ -438,7 +438,7 @@ export default function AccountPage() {
                           <button
                             onClick={() => handleRevokeApiKey(key.id)}
                             className="revoke-btn"
-                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: '#f87171', backgroundColor: 'transparent', border: '1px solid #FECACA', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s' }}
+                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: '#f87171', backgroundColor: 'transparent', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s' }}
                           >
                             Revoke
                           </button>
@@ -448,7 +448,7 @@ export default function AccountPage() {
                   </tbody>
                 </table>
                 <style>{`
-                  .revoke-btn:hover { background-color: #FEF2F2; border-color: #DC2626; }
+                  .revoke-btn:hover { background-color: rgba(239,68,68,0.08); border-color: #DC2626; }
                 `}</style>
               </div>
             )}

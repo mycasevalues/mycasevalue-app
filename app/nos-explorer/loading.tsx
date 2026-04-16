@@ -6,21 +6,21 @@ export default function NosExplorerLoading() {
         <div style={{
           height: '14px',
           width: '180px',
-          backgroundColor: '#e5e7eb',
+          backgroundColor: 'rgba(255,255,255,0.06)',
           borderRadius: '4px',
           marginBottom: '1.5rem',
         }} />
         <div style={{
           height: '36px',
           width: '400px',
-          backgroundColor: '#e5e7eb',
+          backgroundColor: 'rgba(255,255,255,0.06)',
           borderRadius: '6px',
           marginBottom: '0.75rem',
         }} />
         <div style={{
           height: '18px',
           width: '600px',
-          backgroundColor: '#e5e7eb',
+          backgroundColor: 'rgba(255,255,255,0.06)',
           borderRadius: '4px',
           marginBottom: '2rem',
         }} />
@@ -30,7 +30,7 @@ export default function NosExplorerLoading() {
           height: '48px',
           width: '100%',
           maxWidth: '600px',
-          backgroundColor: '#e5e7eb',
+          backgroundColor: 'rgba(255,255,255,0.06)',
           borderRadius: '8px',
           marginBottom: '2rem',
         }} />
@@ -49,9 +49,9 @@ export default function NosExplorerLoading() {
               borderRadius: '8px',
               padding: '1rem',
             }}>
-              <div style={{ height: '14px', width: '60%', backgroundColor: '#e5e7eb', borderRadius: '4px', marginBottom: '0.75rem' }} />
-              <div style={{ height: '12px', width: '40%', backgroundColor: '#f3f4f6', borderRadius: '4px', marginBottom: '0.5rem' }} />
-              <div style={{ height: '12px', width: '80%', backgroundColor: '#f3f4f6', borderRadius: '4px' }} />
+              <div style={{ height: '14px', width: '60%', backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: '4px', marginBottom: '0.75rem' }} />
+              <div style={{ height: '12px', width: '40%', backgroundColor: 'rgba(255,255,255,0.04)', borderRadius: '4px', marginBottom: '0.5rem' }} />
+              <div style={{ height: '12px', width: '80%', backgroundColor: 'rgba(255,255,255,0.04)', borderRadius: '4px' }} />
             </div>
           ))}
         </div>

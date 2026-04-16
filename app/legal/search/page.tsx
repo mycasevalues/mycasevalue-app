@@ -177,7 +177,7 @@ export default function LegalSearchPage() {
                 transition: 'border-color 0.15s',
               }}
               onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
-              onBlur={(e) => (e.target.style.borderColor = '#D1D5DB')}
+              onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.1)')}
             />
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2" style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)' }}>
               <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />

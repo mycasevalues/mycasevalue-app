@@ -731,7 +731,7 @@ export default async function ReportPage({
                       return (
                         <div key={stateId} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid #F0F3F5' }}>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', width: '36px', fontFamily: 'var(--font-mono)' }}>{stateId}</span>
-                          <div style={{ flex: 1, height: '8px', background: '#F0F3F5', borderRadius: '12px', overflow: 'hidden' }}>
+                          <div style={{ flex: 1, height: '8px', background: 'rgba(255,255,255,0.06)', borderRadius: '12px', overflow: 'hidden' }}>
                             <div style={{ height: '100%', width: `${Math.min(100, stateWr)}%`, background: stateWr >= natAvg ? '#059669' : 'var(--accent-primary)', borderRadius: '12px', transition: 'width 0.5s ease' }} />
                           </div>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>{Math.round(stateWr)}%</span>
@@ -775,7 +775,7 @@ export default async function ReportPage({
                       return (
                         <div key={circuit} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid #F0F3F5' }}>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', width: '80px', fontFamily: 'var(--font-body)' }}>{circuit}</span>
-                          <div style={{ flex: 1, height: '8px', background: '#F0F3F5', borderRadius: '12px', overflow: 'hidden' }}>
+                          <div style={{ flex: 1, height: '8px', background: 'rgba(255,255,255,0.06)', borderRadius: '12px', overflow: 'hidden' }}>
                             <div style={{ height: '100%', width: `${Math.min(100, circuitWr)}%`, background: barColor, borderRadius: '12px', transition: 'width 0.5s ease' }} />
                           </div>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>{Math.round(circuitWr)}%</span>
@@ -818,7 +818,7 @@ export default async function ReportPage({
                         <span style={{ fontSize: '13px', color: 'var(--color-text-primary)', fontWeight: 500, width: '180px', fontFamily: 'var(--font-body)', flexShrink: 0 }}>
                           {end.label || end.l || `Outcome ${i + 1}`}
                         </span>
-                        <div style={{ flex: 1, height: '8px', background: '#F0F3F5', borderRadius: '12px', overflow: 'hidden' }}>
+                        <div style={{ flex: 1, height: '8px', background: 'rgba(255,255,255,0.06)', borderRadius: '12px', overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(pct, 100)}%`,

@@ -371,7 +371,7 @@ export default function TranslatePage() {
                           style={{
                             fontSize: '10px',
                             padding: '2px 6px',
-                            background: '#F0E7FF',
+                            background: 'rgba(139,92,246,0.08)',
                             color: 'var(--accent-primary-hover)',
                             borderRadius: '4px',
                             fontFamily: 'var(--font-body)',

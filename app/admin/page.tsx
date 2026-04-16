@@ -747,7 +747,7 @@ export default function AdminPage() {
                   padding: '12px',
                   borderRadius: '4px',
                   backgroundColor: rulesValidation.valid ? '#f0fdf4' : '#fef2f2',
-                  border: `1px solid ${rulesValidation.valid ? '#d1fae5' : '#fecaca'}`,
+                  border: `1px solid `,
                 }}
               >
                 <p
