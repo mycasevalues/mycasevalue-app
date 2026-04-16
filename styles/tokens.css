@@ -15,7 +15,7 @@
   /* Accent — restrained blue */
   --color-accent:      #1a56db;
   --color-accent-dark: #1e40af;
-  --color-accent-light:#eff6ff;
+  --color-accent-light:rgba(96,165,250,0.15);
 
   /* Surfaces — dark mode */
   --color-surface-0:   #0c1220;
@@ -53,7 +53,7 @@
   --bg-elevated:      var(--color-surface-0);
   --bg-input:         var(--color-surface-0);
   --bg-hover:         var(--color-surface-1);
-  --bg-selection:     rgba(10,102,194,0.15);
+  --bg-selection:     rgba(96,165,250,0.25);
   --bg-dark:          var(--color-navy);
   --bg-alt:           var(--color-surface-1);
 
@@ -165,9 +165,9 @@
 /* High Contrast Mode */
 @media (prefers-contrast: high) {
   :root {
-    --color-text-secondary: #333333;
-    --color-border-light: #9CA3AF;
-    --color-border-medium: #6B7280;
+    --color-text-secondary: #d1d5db;
+    --color-border-light: rgba(255,255,255,0.2);
+    --color-border-medium: rgba(255,255,255,0.3);
     --border-focus: #4C1D95;
     --color-data-positive: #166534;
     --color-data-neutral: #92400E;

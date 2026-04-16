@@ -95,7 +95,7 @@ export function StaggerItem({
       className={className}
       style={style}
       variants={{
-        hidden: reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 },
+        hidden: reduced ? { opacity: 1, y: 0 } : { opacity: 0.4, y: 8 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } },
       }}
     >
