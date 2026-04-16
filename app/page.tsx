@@ -187,8 +187,8 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-[10px] font-medium tracking-[0.25em] uppercase text-blue-400/60 mb-2">Public Beta</p>
-            <h2 className="text-xl font-bold text-white mb-1">Research federal litigation like institutions do.</h2>
-            <p className="text-sm text-gray-400">Free during beta &middot; No account required &middot; Instant results</p>
+            <h2 className="text-xl font-bold text-white mb-1 tracking-tight">Research federal litigation like institutions do.</h2>
+            <p className="text-sm text-gray-400 tabular-nums">Free during beta &middot; No account required &middot; Sub-second search</p>
           </div>
           <div className="flex gap-3 flex-shrink-0">
             <Link href="/case-search" className="inline-flex h-10 items-center px-5 bg-[#1a56db] hover:bg-[#1e40af] text-white text-sm font-semibold rounded transition-colors">
