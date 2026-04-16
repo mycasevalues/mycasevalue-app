@@ -9,13 +9,13 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          navy:        '#0966C3',   // page bg / dark section bg
-          panel:       '#274464',   // raised card on dark
-          border:      '#284565',   // panel edge on dark
-          blue:        '#0966C3',   // primary CTA
-          'blue-dark': '#004182',   // button hover
-          'blue-mid':  '#1577D5',   // borders / focus rings
-          'blue-pale': '#E8F4FD',   // tints / selected states
+          navy:        '#0f2240',   // page bg / dark section bg
+          panel:       '#1a3a5c',   // raised card on dark
+          border:      '#1e3a5f',   // panel edge on dark
+          blue:        '#1a56db',   // primary CTA
+          'blue-dark': '#1e40af',   // button hover
+          'blue-mid':  '#3b82f6',   // borders / focus rings
+          'blue-pale': '#eff6ff',   // tints / selected states
           white:       '#FFFFFF',   // section headers
           link:        '#E5E7EB',   // nav links / body on dark
           muted:       'rgba(213,216,220,0.6)',   // secondary / copyright

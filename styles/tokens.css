@@ -7,28 +7,28 @@
    ============================================================ */
 
 :root {
-  /* Brand */
-  --color-navy:        #0966C3;
-  --color-navy-dark:   #004182;
-  --color-navy-light:  #1577D5;
+  /* Brand — deeper navy for institutional feel */
+  --color-navy:        #0f2240;
+  --color-navy-dark:   #0a1628;
+  --color-navy-light:  #1a3a5c;
 
-  /* Accent */
-  --color-accent:      #0966C3;
-  --color-accent-dark: #004182;
-  --color-accent-light:#E8F4FD;
+  /* Accent — restrained blue */
+  --color-accent:      #1a56db;
+  --color-accent-dark: #1e40af;
+  --color-accent-light:#eff6ff;
 
-  /* Surfaces */
+  /* Surfaces — cooler, slightly more contrast */
   --color-surface-0:   #FFFFFF;
-  --color-surface-1:   #F7F8FA;
-  --color-surface-2:   #EEF0F4;
-  --color-surface-nav: #0966C3;
+  --color-surface-1:   #f8f9fb;
+  --color-surface-2:   #f0f1f5;
+  --color-surface-nav: #0f2240;
 
-  /* Text */
-  --color-text-primary:   #0f0f0f;
-  --color-text-secondary: #4B5563;
-  --color-text-muted:     #9CA3AF;
+  /* Text — stronger primary, refined secondary */
+  --color-text-primary:   #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted:     #9ca3af;
   --color-text-inverse:   #FFFFFF;
-  --color-text-accent:    #004182;
+  --color-text-accent:    #1e40af;
 
   /* Borders */
   --color-border-light:   #E5E7EB;
@@ -157,8 +157,8 @@
   /* CTA */
   --gradient-cta:         var(--color-accent);
   --gradient-cta-hover:   var(--color-accent-dark);
-  --gradient-hero: linear-gradient(160deg, #0966C3 0%, #004182 50%, #0966C3 100%);
-  --gradient-accent: linear-gradient(to right, #0966C3 0%, #004182 100%);
+  --gradient-hero: linear-gradient(160deg, #0f2240 0%, #0a1628 50%, #122a4e 100%);
+  --gradient-accent: linear-gradient(to right, #1a56db 0%, #1e40af 100%);
 }
 
 /* High Contrast Mode */
