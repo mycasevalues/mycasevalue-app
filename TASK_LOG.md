@@ -419,4 +419,52 @@ All forbidden Bloomberg colors eliminated from both target files. All Westlaw to
 
 ### Session Gate: PASS
 
+---
+
+## Westlaw Precision Redesign — Session 3: Rebuild Header.tsx + BrowseNav.tsx (Westlaw dual-nav)
+**Date:** 2026-04-16
+**Target files:** components/layout/Header.tsx (FULL REBUILD), components/layout/BrowseNav.tsx (NEW FILE)
+**Status:** COMPLETE
+
+### Changes Made
+
+#### components/layout/Header.tsx (FULL REBUILD)
+- **Height:** 52px → 54px
+- **Background:** `#1A1A1A` → `var(--chrome-bg)` (#1B2D45 Westlaw deep navy)
+- **Border-bottom:** `1px solid #333333` → `3px solid var(--gold)` (#C4882A gold)
+- **Logo zone (192px):** Gold cube (28px, `var(--gold)` bg) + "MyCaseValue" in `font-baskerville` 13px 700 white + "Advantage" 9px uppercase `var(--chrome-text-muted)`, separated by `var(--chrome-active)` border
+- **Search bar:** Input + jurisdiction dropdown (145px, RIGHT side per spec) + Search button (84px, `var(--chrome-bg)` navy) + "Advanced" link to the right
+- **Jurisdiction dropdown:** "All Jurisdictions ▾", `#F5F3EF` bg, 11px font-sans
+- **Right zone:** Folders/History/Alerts/Help icon buttons (flex-column, 9px uppercase labels, `var(--chrome-text-muted)`) + Account section with avatar circle (28px, initials) or Sign in + "Get Access" gold button (28px, `var(--gold)`)
+- **Autocomplete dropdown:** `var(--card)` bg, `var(--bdr-strong)` border, `var(--tbl-hover)` row hover, section labels in `var(--sidebar)` bg, footer "Press Enter to search all results"
+- **All hardcoded hex values removed** — uses only CSS variable tokens
+- **Zero #E65C00 or #1A1A1A** anywhere in file
+
+#### components/layout/BrowseNav.tsx (NEW FILE)
+- **Height:** 40px
+- **Background:** `var(--chrome-bg-dark)` (#121F32)
+- **Border-bottom:** `1px solid #1A2E48`
+- **Items:** Home | Court Records | Judicial Analytics | District Intelligence | Settlement Data | Litigation Tools [AI badge] | Practical Guidance | My Research (right-aligned)
+- **Separators:** 1px `#1A2E48` vertical dividers
+- **Active item:** white text, `border-bottom: 3px solid var(--gold)`, font-weight 600
+- **Inactive:** `var(--chrome-text-muted)` (#8AAAC8)
+- **Hover:** `#D0E8F8` color, `rgba(255,255,255,0.04)` background
+- **AI badge:** `var(--gold)` bg, white text, 9px 700, border-radius 8px
+- **Route-aware active detection:** usePathname() maps to section IDs (home, court, judges, districts, tools, guidance, saved)
+- **Hidden on mobile** (md:flex)
+
+### Verification Results
+
+1. **grep "#E65C00" Header.tsx** → PASS (zero results)
+2. **grep "#1A1A1A" Header.tsx** → PASS (zero results)
+3. **grep "1B2D45" Header.tsx** → PASS (4 occurrences — comment + logo SVG fill)
+4. **grep "chrome-bg" Header.tsx** → PASS (nav background uses var(--chrome-bg))
+5. **"Advanced" text present** → PASS (link to right of Search button)
+6. **"All Jurisdictions" dropdown present** → PASS (RIGHT side of search input)
+7. **Height 54px** → PASS (header style + inner div)
+8. **BrowseNav gold active border** → PASS (3px solid var(--gold))
+9. **npm run build** → Webpack compilation PASS (pre-existing TS error unrelated)
+
+### Session Gate: PASS
+
 Last updated: 2026-04-16

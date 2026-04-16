@@ -1,20 +1,18 @@
 'use client';
 
 /**
- * Header.tsx — Bloomberg Law-style unified top navigation bar
+ * Header.tsx — Westlaw Precision-style unified top navigation bar
  *
  * Structure (left → right):
- * [Logo: isometric cube (navy SVG) + "MyCaseValue" white wordmark]
- * [CENTER: Full-width GO search bar]
- * [RIGHT: "Sign In" | "Get Access" orange button | user avatar if logged in]
+ * [Logo zone 192px: cube + "MyCaseValue" baskerville + "Advantage" sub]
+ * [CENTER: Search bar with jurisdiction dropdown RIGHT + Search button + "Advanced" link]
+ * [RIGHT: Folders | History | Alerts | Help | Account]
  *
  * Specs:
- * - Height: 52px
- * - Background: #1A1A1A (Bloomberg charcoal)
- * - Bottom border: 1px solid #333333
+ * - Height: 54px
+ * - Background: var(--chrome-bg) = #1B2D45 (Westlaw deep navy)
+ * - Border-bottom: 3px solid var(--gold) = #C4882A
  * - Position: sticky top: 0, z-index: 1000
- * - No mega-menus — Bloomberg keeps top nav clean/minimal
- * - Search bar persists on EVERY page
  */
 
 import { useState, useEffect, useRef, useCallback } from 'react';
@@ -38,6 +36,53 @@ const SEARCH_SUGGESTIONS = [
   { label: 'Settlement Ranges', href: '/cases', type: 'case' },
   { label: 'Win Rate Explorer', href: '/odds', type: 'tool' },
 ];
+
+/* ── Nav Icon Components ── */
+
+function FoldersIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+    </svg>
+  );
+}
+
+function HistoryIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
+function AlertsIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+      <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+    </svg>
+  );
+}
+
+function HelpIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+      <line x1="12" y1="17" x2="12.01" y2="17" />
+    </svg>
+  );
+}
+
+function SearchIcon({ size = 13 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
 
 /* ── Main Header ── */
 
@@ -128,69 +173,105 @@ export default function Header() {
     }
   }, [searchQuery, router]);
 
+  const initials = userEmail ? userEmail.charAt(0).toUpperCase() : '';
+
   return (
     <header
       className="sticky top-0 z-[1000] w-full"
       style={{
-        background: '#1A1A1A',
-        borderBottom: '1px solid #333333',
-        height: 52,
+        background: 'var(--chrome-bg)',
+        borderBottom: '3px solid var(--gold)',
+        height: 54,
       }}
       role="banner"
     >
-      <div className="flex items-center h-[52px] px-4" style={{ maxWidth: '100%' }}>
+      <div className="flex items-center h-[54px]" style={{ maxWidth: '100%' }}>
 
-        {/* ── LEFT: Logo Zone (200px) ── */}
-        <div className="flex items-center flex-shrink-0" style={{ width: 200 }}>
+        {/* ── LEFT: Logo Zone (192px) ── */}
+        <div
+          className="flex items-center flex-shrink-0 h-full px-3"
+          style={{
+            width: 192,
+            borderRight: '1px solid var(--chrome-active)',
+          }}
+        >
           <Link
             href="/"
-            aria-label="MyCaseValue home"
+            aria-label="MyCaseValue Advantage home"
             className="flex items-center gap-2 flex-shrink-0"
           >
-            {/* Isometric cube mark — keeps navy fill per spec */}
-            <svg
-              width="24"
-              height="24"
-              viewBox="-100 -100 200 200"
-              className="block flex-shrink-0"
-            >
-              <g transform="rotate(12)">
-                <polygon
-                  points="0,0 -40,-69.3 40,-69.3 80,0"
-                  fill="#1C3A5E"
-                  opacity="0.93"
-                />
-                <polygon
-                  points="0,0 80,0 40,69.3 -40,69.3"
-                  fill="#1C3A5E"
-                  opacity="0.65"
-                />
-                <polygon
-                  points="0,0 -40,69.3 -80,0 -40,-69.3"
-                  fill="#1C3A5E"
-                  opacity="0.38"
-                />
-              </g>
-            </svg>
-            <span
-              className="hidden sm:block"
+            {/* Logo cube — gold background, navy mark */}
+            <div
               style={{
-                fontFamily: 'var(--font-inter)',
-                fontSize: 14,
-                fontWeight: 700,
-                color: '#FFFFFF',
-                letterSpacing: '-0.02em',
+                width: 28,
+                height: 28,
+                background: 'var(--gold)',
+                borderRadius: 2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
               }}
             >
-              MyCaseValue
-            </span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="-100 -100 200 200"
+              >
+                <g transform="rotate(12)">
+                  <polygon
+                    points="0,0 -40,-69.3 40,-69.3 80,0"
+                    fill="#1B2D45"
+                    opacity="0.93"
+                  />
+                  <polygon
+                    points="0,0 80,0 40,69.3 -40,69.3"
+                    fill="#1B2D45"
+                    opacity="0.65"
+                  />
+                  <polygon
+                    points="0,0 -40,69.3 -80,0 -40,-69.3"
+                    fill="#1B2D45"
+                    opacity="0.38"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div className="hidden sm:flex flex-col">
+              <span
+                style={{
+                  fontFamily: 'var(--font-baskerville, var(--font-legal))',
+                  fontSize: 13,
+                  fontWeight: 700,
+                  color: '#FFFFFF',
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.01em',
+                }}
+              >
+                MyCaseValue
+              </span>
+              <span
+                style={{
+                  fontSize: 9,
+                  fontWeight: 600,
+                  color: 'var(--chrome-text-muted)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  lineHeight: 1,
+                  marginTop: 1,
+                }}
+              >
+                Advantage
+              </span>
+            </div>
           </Link>
         </div>
 
-        {/* ── CENTER: GO Search Bar ── */}
-        <div className="flex-1 mx-4 hidden md:block" ref={searchRef}>
-          <form onSubmit={handleSearch} className="relative">
-            <div className="flex items-center" style={{ height: 34 }}>
+        {/* ── CENTER: Search Bar + "Advanced" Link ── */}
+        <div className="flex-1 flex items-center gap-2 px-3 hidden md:flex" ref={searchRef}>
+          <form onSubmit={handleSearch} className="relative flex-1" style={{ maxWidth: 680 }}>
+            <div className="flex items-center" style={{ height: 34, background: '#FFFFFF', borderRadius: 2, overflow: 'hidden' }}>
+              {/* Search input */}
               <input
                 ref={searchInputRef}
                 type="search"
@@ -200,37 +281,69 @@ export default function Header() {
                 placeholder="Search cases, judges, districts, attorneys..."
                 className="ignore-institutional"
                 style={{
-                  width: '100%',
+                  flex: 1,
                   height: 34,
                   background: '#FFFFFF',
-                  border: '1px solid #555555',
-                  borderRight: 'none',
-                  borderRadius: '2px 0 0 2px',
+                  border: 'none',
                   padding: '0 12px',
-                  fontSize: 13,
-                  fontFamily: 'var(--font-inter)',
-                  color: '#1A1A1A',
+                  fontSize: 12,
+                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  color: 'var(--text2)',
                   outline: 'none',
+                  borderRight: '1px solid var(--bdr)',
                 }}
               />
+              {/* Jurisdiction dropdown — RIGHT side of input per spec */}
+              <div
+                style={{
+                  width: 145,
+                  height: 34,
+                  background: '#F5F3EF',
+                  borderLeft: '1px solid var(--bdr)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  padding: '0 10px',
+                  cursor: 'pointer',
+                  flexShrink: 0,
+                  gap: 4,
+                }}
+              >
+                <span style={{
+                  fontSize: 11,
+                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  color: 'var(--text2)',
+                  whiteSpace: 'nowrap',
+                  flex: 1,
+                }}>
+                  All Jurisdictions
+                </span>
+                <span style={{ fontSize: 9, color: 'var(--text3)' }}>▾</span>
+              </div>
+              {/* Search button */}
               <button
                 type="submit"
                 style={{
+                  width: 84,
                   height: 34,
-                  padding: '0 14px',
-                  background: '#E65C00',
+                  background: 'var(--chrome-bg)',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '0 2px 2px 0',
-                  fontSize: 13,
+                  fontSize: 12,
                   fontWeight: 600,
-                  fontFamily: 'var(--font-inter)',
+                  fontFamily: 'var(--font-sans, var(--font-inter))',
                   cursor: 'pointer',
                   whiteSpace: 'nowrap',
                   flexShrink: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 5,
                 }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--chrome-hover)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--chrome-bg)'; }}
               >
-                SEARCH
+                <SearchIcon size={12} />
+                Search
               </button>
             </div>
 
@@ -242,8 +355,8 @@ export default function Header() {
                   top: '100%',
                   left: 0,
                   right: 0,
-                  background: '#FFFFFF',
-                  border: '1px solid #E0E0E0',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr-strong)',
                   borderTop: 'none',
                   borderRadius: '0 0 2px 2px',
                   boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
@@ -264,142 +377,269 @@ export default function Header() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: 8,
-                      height: 40,
+                      height: 38,
                       padding: '0 12px',
                       fontSize: 13,
-                      fontFamily: 'var(--font-inter)',
-                      color: '#0052CC',
+                      fontFamily: 'var(--font-sans, var(--font-inter))',
+                      color: 'var(--link)',
                       textDecoration: 'none',
-                      borderBottom: '1px solid #F5F5F5',
+                      borderBottom: '1px solid var(--sidebar)',
                     }}
-                    className="hover:bg-[#F5F5F5] transition-colors"
+                    className="transition-colors"
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--tbl-hover)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = ''; }}
                   >
-                    {/* Type icon */}
-                    <span style={{ fontSize: 11, color: '#888888', width: 50, flexShrink: 0, textTransform: 'uppercase', fontWeight: 600, letterSpacing: '0.05em' }}>
+                    {/* Type label */}
+                    <span style={{
+                      fontSize: 10,
+                      color: 'var(--text4)',
+                      width: 50,
+                      flexShrink: 0,
+                      textTransform: 'uppercase',
+                      fontWeight: 600,
+                      letterSpacing: '0.05em',
+                      background: 'var(--sidebar)',
+                      padding: '2px 4px',
+                      borderRadius: 2,
+                      textAlign: 'center',
+                    }}>
                       {s.type}
                     </span>
-                    {s.label}
+                    <span style={{ flex: 1 }}>{s.label}</span>
+                    <span style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: 11,
+                      color: 'var(--text3)',
+                    }}></span>
                   </Link>
                 ))}
+                {/* Footer */}
+                <div style={{
+                  padding: '6px 12px',
+                  fontSize: 11,
+                  color: 'var(--text3)',
+                  background: 'var(--sidebar)',
+                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                }}>
+                  Press Enter to search all results
+                </div>
               </div>
             )}
           </form>
+          {/* "Advanced" link — right of search button */}
+          <Link
+            href="/case-search"
+            style={{
+              fontSize: 11,
+              fontFamily: 'var(--font-sans, var(--font-inter))',
+              color: 'var(--chrome-text-muted)',
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--chrome-text)'; e.currentTarget.style.textDecoration = 'underline'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--chrome-text-muted)'; e.currentTarget.style.textDecoration = 'none'; }}
+          >
+            Advanced
+          </Link>
         </div>
 
-        {/* ── RIGHT: Auth Zone (200px) ── */}
-        <div className="flex items-center justify-end gap-3 flex-shrink-0" style={{ width: 200 }}>
+        {/* ── RIGHT: Icons + Account Zone ── */}
+        <div
+          className="flex items-center h-full flex-shrink-0"
+          style={{
+            borderLeft: '1px solid var(--chrome-active)',
+            padding: '0 14px',
+          }}
+        >
+          {/* Nav icons — desktop only */}
+          <div className="hidden lg:flex items-center gap-3.5" style={{ marginRight: 13 }}>
+            {[
+              { icon: <FoldersIcon />, label: 'Folders', href: '/dashboard' },
+              { icon: <HistoryIcon />, label: 'History', href: '/dashboard' },
+              { icon: <AlertsIcon />, label: 'Alerts', href: '/dashboard' },
+              { icon: <HelpIcon />, label: 'Help', href: '/methodology' },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 2,
+                  color: 'var(--chrome-text-muted)',
+                  textDecoration: 'none',
+                  opacity: 0.7,
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.opacity = '1'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.opacity = '0.7'; }}
+              >
+                {item.icon}
+                <span style={{
+                  fontSize: 9,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.04em',
+                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  fontWeight: 500,
+                }}>
+                  {item.label}
+                </span>
+              </Link>
+            ))}
+          </div>
 
           {/* Mobile search toggle */}
           <button
-            className="md:hidden flex items-center justify-center w-8 h-8"
+            className="md:hidden flex items-center justify-center w-8 h-8 mr-2"
             onClick={() => {
               setMobileSearchOpen(!mobileSearchOpen);
               setTimeout(() => searchInputRef.current?.focus(), 100);
             }}
             aria-label="Search"
+            style={{ color: 'var(--chrome-text-muted)' }}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
+            <SearchIcon size={18} />
           </button>
 
-          {userEmail ? (
-            <div className="relative">
-              <button
-                onClick={() => setAuthOpen(!authOpen)}
-                className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold"
-                style={{
-                  background: 'rgba(255,255,255,0.15)',
-                  color: '#FFFFFF',
-                }}
-                aria-expanded={authOpen}
-                aria-haspopup="true"
-                aria-label="User menu"
-              >
-                {userEmail.charAt(0).toUpperCase()}
-              </button>
-              {authOpen && (
-                <div
-                  className="absolute top-full right-0 mt-2 w-44 z-50"
-                  style={{
-                    background: '#FFFFFF',
-                    border: '1px solid #E0E0E0',
-                    borderRadius: 4,
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                    overflow: 'hidden',
-                  }}
+          {/* Account section */}
+          <div
+            className="flex items-center h-full"
+            style={{
+              borderLeft: '1px solid var(--chrome-active)',
+              paddingLeft: 13,
+            }}
+          >
+            {userEmail ? (
+              <div className="relative">
+                <button
+                  onClick={() => setAuthOpen(!authOpen)}
+                  className="flex items-center gap-2"
+                  style={{ cursor: 'pointer' }}
+                  aria-expanded={authOpen}
+                  aria-haspopup="true"
+                  aria-label="User menu"
                 >
-                  <div style={{ padding: '8px 12px', borderBottom: '1px solid #E8E8E8', fontSize: 12, color: '#888888', fontFamily: 'var(--font-inter)' }}>
-                    {userEmail}
-                  </div>
-                  <Link
-                    href="/dashboard"
-                    className="block px-3 py-2 text-[13px] hover:bg-[#F5F5F5] transition-colors"
-                    style={{ color: '#1A1A1A', fontFamily: 'var(--font-inter)' }}
-                    onClick={() => setAuthOpen(false)}
-                  >
-                    Dashboard
-                  </Link>
-                  <Link
-                    href="/account"
-                    className="block px-3 py-2 text-[13px] hover:bg-[#F5F5F5] transition-colors"
-                    style={{ color: '#1A1A1A', fontFamily: 'var(--font-inter)' }}
-                    onClick={() => setAuthOpen(false)}
-                  >
-                    Settings
-                  </Link>
-                  <button
-                    onClick={() => {
-                      setAuthOpen(false);
-                      handleSignOut();
+                  {/* Avatar circle */}
+                  <div
+                    style={{
+                      width: 28,
+                      height: 28,
+                      borderRadius: '50%',
+                      background: 'var(--chrome-active)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: 'var(--chrome-text-muted)',
                     }}
-                    className="w-full text-left px-3 py-2 text-[13px] hover:bg-[#F5F5F5] transition-colors"
-                    style={{ color: '#B91C1C', borderTop: '1px solid #E8E8E8', fontFamily: 'var(--font-inter)' }}
                   >
-                    Sign Out
-                  </button>
-                </div>
-              )}
-            </div>
-          ) : (
-            <>
-              <Link
-                href="/sign-in"
-                style={{
-                  fontSize: 13,
-                  fontWeight: 500,
-                  color: '#FFFFFF',
-                  fontFamily: 'var(--font-inter)',
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap',
-                }}
-                className="hidden sm:block hover:opacity-80 transition-opacity"
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/sign-up"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  height: 30,
-                  padding: '0 14px',
-                  background: '#E65C00',
-                  color: '#FFFFFF',
-                  borderRadius: 3,
-                  fontSize: 13,
-                  fontWeight: 600,
-                  fontFamily: 'var(--font-inter)',
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap',
-                }}
-                className="hover:opacity-90 transition-opacity"
-              >
-                Get Access
-              </Link>
-            </>
-          )}
+                    {initials}
+                  </div>
+                  <span style={{
+                    fontSize: 11,
+                    color: 'var(--chrome-text-muted)',
+                    fontFamily: 'var(--font-sans, var(--font-inter))',
+                  }}>
+                    {userEmail.split('@')[0]} ▾
+                  </span>
+                </button>
+                {authOpen && (
+                  <div
+                    className="absolute top-full right-0 mt-2 w-48 z-50"
+                    style={{
+                      background: 'var(--card)',
+                      border: '1px solid var(--bdr-strong)',
+                      borderRadius: 2,
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <div style={{
+                      padding: '8px 12px',
+                      borderBottom: '1px solid var(--bdr)',
+                      fontSize: 12,
+                      color: 'var(--text3)',
+                      fontFamily: 'var(--font-sans, var(--font-inter))',
+                    }}>
+                      {userEmail}
+                    </div>
+                    <Link
+                      href="/dashboard"
+                      className="block px-3 py-2 text-[13px] transition-colors"
+                      style={{ color: 'var(--text1)', fontFamily: 'var(--font-sans, var(--font-inter))' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--sidebar)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = ''; }}
+                      onClick={() => setAuthOpen(false)}
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      href="/account"
+                      className="block px-3 py-2 text-[13px] transition-colors"
+                      style={{ color: 'var(--text1)', fontFamily: 'var(--font-sans, var(--font-inter))' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--sidebar)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = ''; }}
+                      onClick={() => setAuthOpen(false)}
+                    >
+                      Settings
+                    </Link>
+                    <button
+                      onClick={() => { setAuthOpen(false); handleSignOut(); }}
+                      className="w-full text-left px-3 py-2 text-[13px] transition-colors"
+                      style={{ color: 'var(--neg)', borderTop: '1px solid var(--bdr)', fontFamily: 'var(--font-sans, var(--font-inter))' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--sidebar)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = ''; }}
+                    >
+                      Sign Out
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <Link
+                  href="/sign-in"
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 500,
+                    color: '#FFFFFF',
+                    fontFamily: 'var(--font-sans, var(--font-inter))',
+                    textDecoration: 'none',
+                    whiteSpace: 'nowrap',
+                  }}
+                  className="hidden sm:block"
+                  onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.8'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
+                >
+                  Sign in
+                </Link>
+                <Link
+                  href="/sign-up"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    height: 28,
+                    padding: '0 11px',
+                    background: 'var(--gold)',
+                    color: '#FFFFFF',
+                    borderRadius: 2,
+                    fontSize: 11,
+                    fontWeight: 600,
+                    fontFamily: 'var(--font-sans, var(--font-inter))',
+                    textDecoration: 'none',
+                    whiteSpace: 'nowrap',
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--gold-hover)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--gold)'; }}
+                >
+                  Get Access
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -408,12 +648,12 @@ export default function Header() {
         <div
           className="md:hidden"
           style={{
-            background: '#1A1A1A',
-            borderBottom: '1px solid #333333',
+            background: 'var(--chrome-bg)',
+            borderBottom: '1px solid var(--chrome-border)',
             padding: '8px 16px',
           }}
         >
-          <form onSubmit={handleSearch} className="flex items-center" style={{ height: 34 }}>
+          <form onSubmit={handleSearch} className="flex items-center" style={{ height: 34, borderRadius: 2, overflow: 'hidden' }}>
             <input
               type="search"
               value={searchQuery}
@@ -424,13 +664,11 @@ export default function Header() {
                 flex: 1,
                 height: 34,
                 background: '#FFFFFF',
-                border: '1px solid #555555',
-                borderRight: 'none',
-                borderRadius: '2px 0 0 2px',
+                border: 'none',
                 padding: '0 12px',
-                fontSize: 13,
-                fontFamily: 'var(--font-inter)',
-                color: '#1A1A1A',
+                fontSize: 12,
+                fontFamily: 'var(--font-sans, var(--font-inter))',
+                color: 'var(--text2)',
                 outline: 'none',
               }}
             />
@@ -439,17 +677,20 @@ export default function Header() {
               style={{
                 height: 34,
                 padding: '0 14px',
-                background: '#E65C00',
+                background: 'var(--chrome-bg)',
                 color: '#FFFFFF',
                 border: 'none',
-                borderRadius: '0 2px 2px 0',
-                fontSize: 13,
+                fontSize: 12,
                 fontWeight: 600,
-                fontFamily: 'var(--font-inter)',
+                fontFamily: 'var(--font-sans, var(--font-inter))',
                 cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 5,
               }}
             >
-              SEARCH
+              <SearchIcon size={12} />
+              Search
             </button>
           </form>
         </div>
