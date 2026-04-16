@@ -30,7 +30,7 @@ function getCategoryStats(categoryId: string, opts: { nos: string }[]): { totalC
   }
   return {
     totalCases: total,
-    avgWinRate: 0, // Removed: averaging win rates across case types is misleading
+    avgWinRate: count > 0 ? Math.round(wrSum / count) : 0,
     avgSettlement: count > 0 ? Math.round(spSum / count) : 0,
     avgDuration: count > 0 ? Math.round(moSum / count) : 0,
   };
