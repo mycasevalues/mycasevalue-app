@@ -96,27 +96,45 @@ export default function AboutPage() {
         }
 
         .about-header {
-          background: var(--gradient-hero);
-          color: var(--color-surface-0);
-          padding: 3rem 1.5rem;
+          background: #080d19;
+          color: white;
+          padding: 4rem 1.5rem;
           text-align: left;
+          position: relative;
+          overflow: hidden;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .about-header::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          opacity: 0.03;
+          pointer-events: none;
+          background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+          background-size: 60px 60px;
+        }
+
+        .about-header > * {
+          position: relative;
         }
 
         .about-h1 {
           font-family: var(--font-inter);
-          font-size: clamp(2rem, 5vw, 2.5rem);
-          font-weight: 600;
-          letter-spacing: -0.5px;
-          line-height: 1.2;
-          margin-bottom: 0.5rem;
-          color: var(--color-surface-0);
+          font-size: clamp(1.75rem, 4vw, 2.25rem);
+          font-weight: 700;
+          letter-spacing: -0.025em;
+          line-height: 1.1;
+          margin-bottom: 1rem;
+          color: white;
         }
 
         .about-intro {
           font-family: var(--font-inter);
-          font-size: 1.125rem;
-          line-height: 1.8;
-          color: rgba(255, 255, 255, 0.85);
+          font-size: 0.9375rem;
+          line-height: 1.65;
+          color: rgba(255, 255, 255, 0.6);
+          max-width: 42rem;
         }
 
         .main-content {
