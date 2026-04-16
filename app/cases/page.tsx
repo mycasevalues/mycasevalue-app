@@ -159,13 +159,43 @@ export default function CasesIndexPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <div style={{ background: 'var(--gradient-hero)', padding: '24px 24px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <h1 className="font-display" style={{ fontSize: 32, fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 8px', letterSpacing: '-0.5px' }}>
-            Case Analytics
+      <div style={{
+        background: '#080d19',
+        padding: '28px 24px 32px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 12,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Case Intelligence
+          </div>
+          <h1 className="font-inter" style={{
+            fontSize: 'clamp(26px, 4vw, 32px)', fontWeight: 700,
+            color: '#ffffff', margin: '0 0 10px', letterSpacing: '-0.025em', lineHeight: 1.1,
+          }}>
+            Federal Case Analytics
           </h1>
-          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.5, maxWidth: 600 }}>
-            Outcome data and litigation intelligence across 84 federal case types.
+          <p style={{
+            fontSize: 15, color: 'rgba(255,255,255,0.6)', margin: 0, lineHeight: 1.6, maxWidth: 640,
+            fontFamily: 'var(--font-inter)',
+          }}>
+            Outcome data and litigation intelligence across 84 federal case types. Win rates, settlements, and duration benchmarks from 5.1M+ cases.
           </p>
         </div>
       </div>
