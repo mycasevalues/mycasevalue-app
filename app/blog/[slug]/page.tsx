@@ -436,38 +436,68 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: 'var(--gradient-hero)', padding: '40px 24px' }}>
-        <div className="max-w-4xl mx-auto">
+      <div style={{
+        background: '#080d19',
+        padding: '40px 24px 32px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div className="max-w-4xl mx-auto" style={{ position: 'relative' }}>
           <Link
             href="/blog"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
-              color: 'rgba(255,255,255,0.7)',
+              gap: '6px',
+              color: 'rgba(255,255,255,0.5)',
               textDecoration: 'none',
-              marginBottom: '24px',
-              fontSize: '14px',
-              fontFamily: 'var(--font-body)',
+              marginBottom: '20px',
+              fontSize: '12px',
+              fontFamily: 'var(--font-mono)',
+              letterSpacing: '0.02em',
             }}
           >
-            <ArrowLeftIcon size={16} />
+            <ArrowLeftIcon size={14} />
             Back to Blog
           </Link>
 
-          <div className="category-badge" style={{ marginBottom: '16px', background: 'rgba(10, 102, 194, 0.15)', color: 'var(--color-surface-0)', fontSize: '12px' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
             {article.category}
           </div>
 
-          <h1 style={{ color: 'var(--color-surface-0)', fontSize: '26px', fontWeight: 'bold', marginBottom: '16px', lineHeight: 1.2 }}>
+          <h1 style={{
+            color: '#ffffff',
+            fontFamily: 'var(--font-inter)',
+            fontSize: 'clamp(24px, 3.5vw, 32px)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.15,
+            marginBottom: '16px',
+          }}>
             {article.title}
           </h1>
 
-          <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
+          <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-mono)', letterSpacing: '0.02em' }}>
             <span>{article.author}</span>
-            <span style={{ margin: '0 12px' }}>•</span>
+            <span style={{ margin: '0 12px', color: 'rgba(255,255,255,0.3)' }}>·</span>
             <time>{article.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-            <span style={{ margin: '0 12px' }}>•</span>
+            <span style={{ margin: '0 12px', color: 'rgba(255,255,255,0.3)' }}>·</span>
             <span>{article.readTime} min read</span>
           </div>
         </div>
