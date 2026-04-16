@@ -166,7 +166,7 @@ export default function DataSourcesPage() {
               lineHeight: 1.8,
               maxWidth: 600,
             }}>
-              Complete transparency. 5.1M+ federal cases analyzed with full data provenance from FJC, PACER, CourtListener, and government databases. No algorithms hiding in the background—only verified, auditable outcomes.
+              All data sourced from official federal court and agency records with full provenance documentation.
             </p>
           </div>
         </div>
