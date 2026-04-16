@@ -397,24 +397,27 @@ export default function PricingPage() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 0.75rem 1.5rem;
-          border-radius: 9999px;
+          gap: 6px;
+          padding: 0.625rem 1.25rem;
+          border-radius: 6px;
           font-family: var(--font-inter);
-          font-size: 0.875rem;
+          font-size: 13px;
           font-weight: 600;
+          letter-spacing: -0.005em;
           text-decoration: none;
-          transition: all 0.3s ease;
+          transition: background-color 150ms ease, border-color 150ms ease;
           width: 100%;
           text-align: center;
-          background: var(--gradient-hero);
-          color: var(--color-text-inverse);
-          border: none;
+          background: #1a56db;
+          color: #ffffff;
+          border: 1px solid #1a56db;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
           cursor: pointer;
         }
 
         .card-cta:hover {
-          background: var(--accent-primary-hover);
-          transform: translateY(-2px);
+          background: #1e40af;
+          border-color: #1e40af;
         }
 
         .callout-section {
