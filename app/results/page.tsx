@@ -62,43 +62,53 @@ export default function ResultsPage() {
       </div>
 
       {/* Header */}
-      <div style={{ background: 'var(--gradient-hero)', paddingTop: '24px', paddingBottom: '24px', borderBottom: '1px solid var(--border-default)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
-          <div style={{ marginBottom: '16px' }}>
-            <span style={{
-              display: 'inline-block',
-              background: 'var(--gradient-hero)',
-              color: 'var(--color-text-inverse)',
-              padding: '6px 12px',
-              borderRadius: '12px',
-              fontSize: '11px',
-              fontWeight: '600',
-              fontFamily: 'var(--font-display)',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase'
-            }}>
-              CASE RESULTS
-            </span>
+      <div style={{
+        background: '#080d19',
+        paddingTop: '40px',
+        paddingBottom: '32px',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Case Results
           </div>
           <h1 style={{
-            fontSize: '40px',
-            fontWeight: '600',
-            color: 'var(--color-text-inverse)',
-            margin: '0 0 12px 0',
-            lineHeight: '1.2',
-            fontFamily: 'var(--font-display)'
+            fontFamily: 'var(--font-inter)',
+            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.1,
+            color: '#ffffff',
+            margin: '0 0 16px 0',
           }}>
-            Analyze Your Case Results with Real Data
+            Benchmark your case against real data
           </h1>
           <p style={{
             fontSize: '16px',
-            color: 'var(--border-default)',
+            color: 'rgba(255,255,255,0.7)',
             margin: '0',
             maxWidth: '600px',
             fontFamily: 'var(--font-body)',
             lineHeight: '1.6'
           }}>
-            Explore federal court outcomes, win rates, and settlement data to benchmark your case and make informed strategic decisions.
+            Federal court outcomes, win rates, and settlement data — contextualized for your case type, district, and procedural posture.
           </p>
         </div>
       </div>
