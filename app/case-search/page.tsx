@@ -493,7 +493,7 @@ function CaseResultCard({ result }: { result: SearchResult }) {
     >
       {/* Top row: case name + status */}
       <div className="flex items-start justify-between gap-3 mb-2">
-        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-brand-blue transition-colors leading-snug">
+        <h3 className="text-sm font-semibold text-[var(--color-text-primary)] group-hover:text-blue-400 transition-colors leading-snug">
           {result.caseName}
         </h3>
         {result.status && (

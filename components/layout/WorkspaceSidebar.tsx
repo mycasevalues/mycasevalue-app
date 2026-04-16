@@ -209,7 +209,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
       <aside
         className={`
           fixed top-0 left-0 z-40 h-full
-          bg-white border-r border-gray-100
+          bg-[#0c1220] border-r border-white/5
           transition-transform duration-200
           lg:relative lg:translate-x-0 lg:z-auto lg:h-auto
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
@@ -220,8 +220,8 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
       >
         <div className="flex flex-col h-full lg:h-[calc(100vh-120px)] lg:sticky lg:top-[80px] overflow-hidden">
           {/* Mobile only: Logo + Close */}
-          <div className="flex items-center justify-between px-4 h-14 border-b border-gray-100 flex-shrink-0 lg:hidden">
-            <Link href="/" className="flex items-center gap-2">
+          <div className="flex items-center justify-between px-4 h-14 border-b border-white/5 flex-shrink-0 lg:hidden">
+            <Link href="/" className="flex items-center gap-2 text-white">
               <svg width="24" height="24" viewBox="-100 -100 200 200" className="flex-shrink-0">
                 <rect x="-100" y="-100" width="200" height="200" rx="26" fill="#1a56db" />
                 <g transform="rotate(12)">

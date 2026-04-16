@@ -76,23 +76,23 @@ export default function WorkspaceShell({ children }: { children: React.ReactNode
       {/* Main content area */}
       <div className="flex-1 min-w-0">
         {/* Mobile sidebar toggle */}
-        <div className="lg:hidden sticky top-0 z-30 flex items-center gap-3 px-4 h-12 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div className="lg:hidden sticky top-0 z-30 flex items-center gap-3 px-4 h-12 bg-[#0c1220]/95 backdrop-blur-sm border-b border-white/5">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="p-2 -ml-2 text-gray-600 hover:text-gray-900 rounded-lg"
+            className="p-2 -ml-2 text-gray-400 hover:text-white rounded-lg"
             aria-label="Open navigation"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <span className="text-sm font-medium text-gray-600 truncate">
+          <span className="text-sm font-medium text-gray-300 truncate">
             {getPageTitle(pathname)}
           </span>
         </div>
 
         {/* Research breadcrumb — desktop only */}
-        <div className="hidden lg:block px-4 py-1 border-b border-gray-200 bg-gray-50">
+        <div className="hidden lg:block px-4 py-1 border-b border-white/5" style={{ background: '#0a1020' }}>
           <ResearchBreadcrumb />
         </div>
 
