@@ -33,8 +33,8 @@ const ToastContainer = dynamic(() => import('../components/ui/Toast'), { ssr: fa
 
 export const metadata: Metadata = {
   title: {
-    default: 'MyCaseValue | Federal Court Intelligence',
-    template: '%s | MyCaseValue',
+    default: 'MyCaseValue — Federal Court Intelligence',
+    template: '%s — MyCaseValue',
   },
   description: 'Search millions of federal court records for case outcomes, judge analytics, settlement data, and litigation intelligence. Built entirely from public federal court and agency records.',
   openGraph: {
