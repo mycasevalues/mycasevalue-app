@@ -25,7 +25,7 @@ export function FadeIn({
   style?: CSSProperties;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-40px' });
+  const inView = useInView(ref, { once: true, amount: 0.05 });
   const reduced = useReducedMotion();
 
   return (
@@ -55,7 +55,7 @@ export function StaggerGrid({
   style?: CSSProperties;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-40px' });
+  const inView = useInView(ref, { once: true, amount: 0.05 });
   const reduced = useReducedMotion();
 
   return (
