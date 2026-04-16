@@ -61,11 +61,11 @@ export default function HomePage() {
               </div>
 
               <div className="flex items-center gap-8">
-                <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-transparent text-gray-300 border border-white/20 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] transition-colors">
+                <Link href="/cases" className="inline-flex h-10 items-center px-6 bg-transparent text-gray-300 border border-white/20 text-sm font-semibold rounded hover:bg-[rgba(255,255,255,0.04)] hover:border-white/40 hover:text-white transition-all">
                   Browse Cases
                 </Link>
-                <Link href="/judges" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Judge Intelligence &rarr;
+                <Link href="/judges" className="text-sm text-gray-400 hover:text-white transition-colors group">
+                  Judge Intelligence <span className="inline-block transition-transform group-hover:translate-x-0.5">&rarr;</span>
                 </Link>
               </div>
             </div>
