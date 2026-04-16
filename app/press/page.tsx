@@ -123,45 +123,54 @@ export default function PressPage() {
 
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header Banner */}
-        <div style={{ background: 'var(--gradient-hero)', padding: '64px 24px' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 16 }}>
-              <span
-                style={{
-                  display: 'inline-block',
-                  padding: '6px 12px',
-                  backgroundColor: 'var(--accent-primary)',
-                  color: 'var(--color-text-inverse)',
-                  fontSize: '11px',
-                  fontWeight: 600,
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  borderRadius: '12px',
-                  fontFamily: 'var(--font-display)',
-                }}
-              >
-                PRESS KIT
-              </span>
+        <div style={{
+          background: '#080d19',
+          padding: '48px 24px 40px',
+          position: 'relative',
+          overflow: 'hidden',
+          borderBottom: '1px solid rgba(255,255,255,0.06)',
+        }}>
+          <div aria-hidden style={{
+            position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }} />
+          <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '4px 10px', marginBottom: 16,
+              borderRadius: 999,
+              border: '1px solid rgba(59,130,246,0.2)',
+              background: 'rgba(59,130,246,0.08)',
+              fontFamily: 'var(--font-mono)', fontSize: 10,
+              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              color: '#60a5fa',
+            }}>
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+              Press Kit
             </div>
             <h1
               className="press-header"
               style={{
-                fontSize: 'clamp(36px, 4vw, 48px)',
-                fontWeight: 600,
-                color: 'var(--color-text-inverse)',
-                fontFamily: 'var(--font-display)',
-                letterSpacing: '-1px',
-                marginBottom: 12,
+                fontFamily: 'var(--font-inter)',
+                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontWeight: 700,
+                color: '#ffffff',
+                letterSpacing: '-0.025em',
+                lineHeight: 1.1,
+                marginBottom: 16,
               }}
             >
-              Democratizing Federal Court Data
+              Democratizing federal court data
             </h1>
             <p
               style={{
                 fontSize: 16,
                 color: 'rgba(255,255,255,0.7)',
                 fontFamily: 'var(--font-body)',
-                lineHeight: 1.7,
+                lineHeight: 1.6,
+                maxWidth: 640,
+                margin: 0,
               }}
             >
               Media resources, brand assets, and story background for journalists covering legal tech and federal court transparency.
