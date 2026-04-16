@@ -299,23 +299,57 @@ export default function BlogPage() {
       />
 
       {/* Header */}
-      <div style={{ background: 'var(--gradient-hero)', padding: '40px 24px', borderBottom: '1px solid var(--border-default)' }}>
-        <div className="max-w-6xl mx-auto">
+      <div style={{
+        background: '#080d19',
+        padding: '40px 24px 48px',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div className="max-w-6xl mx-auto" style={{ position: 'relative' }}>
           {/* Breadcrumb Navigation */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
-            <a href="/" className="blog-breadcrumb-link" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s ease' }}>Home</a>
-            <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
-            <span style={{ color: 'var(--color-surface-0)' }}>Blog</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20, fontSize: 12, fontFamily: 'var(--font-mono)', letterSpacing: '0.02em' }}>
+            <a href="/" className="blog-breadcrumb-link" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s ease' }}>Home</a>
+            <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
+            <span style={{ color: 'rgba(255,255,255,0.85)' }}>Blog</span>
           </div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.9)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-            BLOG
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 14,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Research & Analysis
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px' }}>
-            Federal Court Data {'\u0026'} Litigation Insights
+          <h1 className="font-inter" style={{
+            color: '#ffffff',
+            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.1,
+            marginBottom: 10,
+          }}>
+            Federal court data &amp; litigation insights
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
-            Research-backed articles analyzing real outcomes from 5.1M+ federal cases. Understand win rates, settlement data, timelines, and what affects your case.
+          <p style={{
+            color: 'rgba(255,255,255,0.6)',
+            fontFamily: 'var(--font-inter)',
+            fontSize: 15,
+            lineHeight: 1.65,
+            maxWidth: 640,
+            margin: 0,
+          }}>
+            Research-backed articles analyzing real outcomes from 5.1M+ federal cases. Win rates, settlement data, timelines, and the factors that drive outcomes.
           </p>
         </div>
       </div>
