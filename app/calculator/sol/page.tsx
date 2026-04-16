@@ -79,16 +79,38 @@ export default function SOLCalculatorPage() {
       `}</style>
 
       {/* Header */}
-      <header style={{ background: 'var(--gradient-hero)', padding: 'clamp(16px, 3vw, 32px) clamp(16px, 3vw, 24px)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: 'var(--accent-primary)', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
-            FREE TOOL
+      <header style={{
+        background: '#080d19',
+        color: '#fff',
+        padding: '40px 24px 32px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Statute of Limitations
           </div>
-          <h1 style={{ color: '#FFF', fontSize: 'clamp(28px, 7vw, 40px)', fontWeight: 600, margin: '0 0 12px', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
-            Know When Your Federal Case Deadline Expires
+          <h1 style={{ color: '#FFF', fontFamily: 'var(--font-inter)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
+            Know when your federal deadline expires
           </h1>
-          <p style={{ color: '#b8bcc0', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
-            Check federal filing deadlines for your case type. Covers all 84 NOS codes with USC citations and tolling exceptions.
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
+            Federal filing deadlines across 84 NOS codes — with USC citations, tolling exceptions, and circuit-specific precedent.
           </p>
         </div>
       </header>
