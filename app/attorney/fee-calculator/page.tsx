@@ -214,7 +214,7 @@ export default function FeeCalculatorPage() {
                         padding: '12px 14px',
                         borderRadius: '12px',
                         border: `1px solid ${feeArrangement === opt.val ? 'var(--accent-primary)' : 'var(--border-default)'}`,
-                        backgroundColor: feeArrangement === opt.val ? 'rgba(10, 102, 194, 0.08)' : '#FAFBFC',
+                        backgroundColor: feeArrangement === opt.val ? 'rgba(10, 102, 194, 0.08)' : 'var(--color-surface-1)',
                         color: feeArrangement === opt.val ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                         fontSize: '13px',
                         fontWeight: 600,
@@ -343,19 +343,19 @@ export default function FeeCalculatorPage() {
                       Net to Client (33% arrangement)
                     </h4>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '8px' }}>
-                      <div style={{ textAlign: 'center', padding: '8px', background: '#FAFBFC', borderRadius: '8px' }}>
+                      <div style={{ textAlign: 'center', padding: '8px', background: 'var(--color-surface-1)', borderRadius: '8px' }}>
                         <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Low Range</div>
                         <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                           ${feeData.contingencyNetToClient.low.toLocaleString()}
                         </div>
                       </div>
-                      <div style={{ textAlign: 'center', padding: '8px', background: '#FAFBFC', borderRadius: '8px' }}>
+                      <div style={{ textAlign: 'center', padding: '8px', background: 'var(--color-surface-1)', borderRadius: '8px' }}>
                         <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Median</div>
                         <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                           ${feeData.contingencyNetToClient.mid.toLocaleString()}
                         </div>
                       </div>
-                      <div style={{ textAlign: 'center', padding: '8px', background: '#FAFBFC', borderRadius: '8px' }}>
+                      <div style={{ textAlign: 'center', padding: '8px', background: 'var(--color-surface-1)', borderRadius: '8px' }}>
                         <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>High Range</div>
                         <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                           ${feeData.contingencyNetToClient.high.toLocaleString()}

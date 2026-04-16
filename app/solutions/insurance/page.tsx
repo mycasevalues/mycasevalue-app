@@ -57,7 +57,7 @@ export default function InsurancePage() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: 'var(--accent-primary)', color: '#FAFBFC', padding: '40px 24px 32px' }}>
+      <section style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '40px 24px 32px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -92,7 +92,7 @@ export default function InsurancePage() {
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" style={{
               background: 'var(--accent-primary)',
-              color: '#FAFBFC',
+              color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
               textDecoration: 'none',
@@ -107,7 +107,7 @@ export default function InsurancePage() {
             </Link>
             <Link href="/contact?type=consultation" style={{
               background: 'transparent',
-              color: '#FAFBFC',
+              color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
               border: '1.5px solid rgba(255,255,255,0.5)',
@@ -195,7 +195,7 @@ export default function InsurancePage() {
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/search" style={{
               background: 'var(--accent-primary)',
-              color: '#FAFBFC',
+              color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
               textDecoration: 'none',

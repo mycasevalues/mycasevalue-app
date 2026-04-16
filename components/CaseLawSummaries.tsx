@@ -62,7 +62,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
             >
               <button
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                className="w-full text-left p-4 hover:bg-gray-50 transition-colors"
+                className="w-full text-left p-4 hover:bg-[var(--color-surface-2)] transition-colors"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
@@ -115,7 +115,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="border-t border-white/10 bg-gray-50"
+                    className="border-t border-white/10 bg-[var(--color-surface-2)]"
                   >
                     <div className="p-4">
                       <p className="text-sm text-gray-700 leading-relaxed">{caseItem.summary}</p>

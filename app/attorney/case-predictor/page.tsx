@@ -330,7 +330,7 @@ export default function CasePredictorPage() {
                           padding: '10px',
                           borderRadius: '12px',
                           border: `1px solid ${hasAttorney === opt.val ? 'var(--accent-primary)' : 'var(--border-default)'}`,
-                          backgroundColor: hasAttorney === opt.val ? 'rgba(10, 102, 194, 0.08)' : '#FAFBFC',
+                          backgroundColor: hasAttorney === opt.val ? 'rgba(10, 102, 194, 0.08)' : 'var(--color-surface-1)',
                           color: hasAttorney === opt.val ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                           fontSize: '13px',
                           fontWeight: 600,
@@ -374,7 +374,7 @@ export default function CasePredictorPage() {
                           padding: '10px',
                           borderRadius: '12px',
                           border: `1px solid ${caseStrength === opt.val ? opt.color : 'var(--border-default)'}`,
-                          backgroundColor: caseStrength === opt.val ? `${opt.color}15` : '#FAFBFC',
+                          backgroundColor: caseStrength === opt.val ? `${opt.color}15` : 'var(--color-surface-1)',
                           color: caseStrength === opt.val ? opt.color === '#EA2143' ? 'var(--accent-primary)' : opt.color === '#E89558' ? '#B86E00' : '#059669' : 'var(--color-text-secondary)',
                           fontSize: '13px',
                           fontWeight: 600,
@@ -476,7 +476,7 @@ export default function CasePredictorPage() {
                 </div>
 
                 {/* Settlement Range */}
-                <div style={{ background: '#FAFBFC', borderRadius: '12px', padding: '16px', marginBottom: '16px' }}>
+                <div style={{ background: 'var(--color-surface-1)', borderRadius: '12px', padding: '16px', marginBottom: '16px' }}>
                   <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 10px' }}>
                     Projected Settlement Range
                   </p>
@@ -509,11 +509,11 @@ export default function CasePredictorPage() {
 
                 {/* Quick Stats */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                  <div style={{ padding: '10px', background: '#FAFBFC', borderRadius: '12px' }}>
+                  <div style={{ padding: '10px', background: 'var(--color-surface-1)', borderRadius: '12px' }}>
                     <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '0 0 2px' }}>Statute of Limitations</p>
                     <p className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>{p.statuteOfLimitations}</p>
                   </div>
-                  <div style={{ padding: '10px', background: '#FAFBFC', borderRadius: '12px' }}>
+                  <div style={{ padding: '10px', background: 'var(--color-surface-1)', borderRadius: '12px' }}>
                     <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '0 0 2px' }}>Typical Fee Range</p>
                     <p className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>{p.typicalFeeRange}</p>
                   </div>

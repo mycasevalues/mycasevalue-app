@@ -439,7 +439,7 @@ export default function ComparePage() {
                 {stats.map((s) => {
                   const wrColor = getWinRateColor(s.winRate);
                   return (
-                    <div key={s.nos} style={{ padding: '16px', background: '#FAFBFC', border: '1px solid var(--border-default)', borderRadius: '8px' }}>
+                    <div key={s.nos} style={{ padding: '16px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '8px' }}>
                       <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, fontFamily: 'var(--font-display)' }}>
                         {s.label}
                       </div>

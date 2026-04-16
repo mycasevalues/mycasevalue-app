@@ -415,7 +415,7 @@ export default function JudgeProfileClient({
                   key={opinion.id}
                   style={{
                     padding: '20px',
-                    background: '#FAFBFC',
+                    background: 'var(--color-surface-1)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '6px',
                     cursor: 'pointer',

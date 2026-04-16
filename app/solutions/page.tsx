@@ -85,7 +85,7 @@ export default function SolutionsPage() {
       <section
         style={{
           background: 'var(--accent-primary)',
-          color: '#FAFBFC',
+          color: 'var(--color-surface-1)',
           padding: '40px 24px 32px',
         }}
       >
@@ -240,7 +240,7 @@ export default function SolutionsPage() {
       <section
         style={{
           background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary) 100%)',
-          color: '#FAFBFC',
+          color: 'var(--color-surface-1)',
           padding: '24px',
           textAlign: 'center',
         }}
@@ -366,7 +366,7 @@ export default function SolutionsPage() {
               style={{
                 background:
                   'var(--accent-primary)',
-                color: '#FAFBFC',
+                color: 'var(--color-surface-1)',
                 padding: '0.875rem 2rem',
                 borderRadius: '12px',
                 textDecoration: 'none',

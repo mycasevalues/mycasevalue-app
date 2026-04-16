@@ -188,7 +188,7 @@ export default function DiscoveryGeneratorPage() {
                       style={{
                         flex: 1, padding: '10px', borderRadius: '12px',
                         border: `1px solid ${partyRole === role ? 'var(--accent-primary)' : 'var(--border-default)'}`,
-                        backgroundColor: partyRole === role ? 'rgba(10,102,194,0.08)' : '#FAFBFC',
+                        backgroundColor: partyRole === role ? 'rgba(10,102,194,0.08)' : 'var(--color-surface-1)',
                         color: partyRole === role ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                         fontSize: '13px', fontWeight: 600, cursor: 'pointer',
                         textTransform: 'capitalize',
@@ -311,7 +311,7 @@ export default function DiscoveryGeneratorPage() {
                     ref={outputRef}
                     style={{
                       maxHeight: '600px', overflowY: 'auto', padding: '16px',
-                      background: '#FAFBFC', borderRadius: '12px', border: '1px solid var(--border-default)',
+                      background: 'var(--color-surface-1)', borderRadius: '12px', border: '1px solid var(--border-default)',
                       fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.7',
                       fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap', wordWrap: 'break-word',
                     }}

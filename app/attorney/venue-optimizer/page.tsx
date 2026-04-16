@@ -236,7 +236,7 @@ export default function VenueOptimizerPage() {
                     padding: '14px 24px',
                     borderBottom: '1px solid var(--border-default)',
                     alignItems: 'center',
-                    backgroundColor: v.rank <= 3 ? '#FAFBFC' : 'transparent',
+                    backgroundColor: v.rank <= 3 ? 'var(--color-surface-1)' : 'transparent',
                   }}
                 >
                   <span style={{ fontSize: '14px', fontWeight: 600, color: v.rank <= 3 ? 'var(--color-text-primary)' : 'var(--color-text-secondary)' }}>

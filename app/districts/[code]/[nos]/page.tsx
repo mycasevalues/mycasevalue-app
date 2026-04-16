@@ -479,7 +479,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             <div style={{
               marginTop: 16,
               padding: 12,
-              background: '#FAFBFC',
+              background: 'var(--color-surface-1)',
               borderRadius: 8,
               fontSize: 13,
               color: 'var(--color-text-secondary)',
@@ -558,7 +558,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             <div style={{
               marginTop: 16,
               padding: 12,
-              background: '#FAFBFC',
+              background: 'var(--color-surface-1)',
               borderRadius: 8,
               fontSize: 12,
               color: 'var(--color-text-secondary)',

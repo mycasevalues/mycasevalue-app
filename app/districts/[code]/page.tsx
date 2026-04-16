@@ -596,7 +596,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   {/* Page Limits */}
                   <div style={{
                     padding: '16px',
-                    background: '#FAFBFC',
+                    background: 'var(--color-surface-1)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '8px',
                   }}>
@@ -622,7 +622,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   {/* E-Filing */}
                   <div style={{
                     padding: '16px',
-                    background: '#FAFBFC',
+                    background: 'var(--color-surface-1)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '8px',
                   }}>
@@ -650,7 +650,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   {/* Clerk Contact */}
                   <div style={{
                     padding: '16px',
-                    background: '#FAFBFC',
+                    background: 'var(--color-surface-1)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '8px',
                   }}>
@@ -717,7 +717,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   {(aid.organizations || []).map((org: any, idx: number) => (
                     <div key={idx} style={{
                       padding: '16px',
-                      background: '#FAFBFC',
+                      background: 'var(--color-surface-1)',
                       border: '1px solid var(--border-default)',
                       borderRadius: '8px',
                     }}>

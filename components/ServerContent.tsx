@@ -356,7 +356,7 @@ export default function ServerContent() {
                 <div
                   className="feature-card"
                   style={{
-                    background: '#FAFBFC',
+                    background: 'var(--color-surface-1)',
                     border: '1px solid var(--border-default)',
                     borderTop: '3px solid var(--accent-primary)',
                     borderRadius: '12px',

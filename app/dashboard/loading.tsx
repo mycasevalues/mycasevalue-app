@@ -25,7 +25,7 @@ export default function DashboardLoading() {
         <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '32px', height: '400px' }}>
           <div style={{ height: '20px', width: '30%', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '24px' }} />
           {[1, 2, 3].map(i => (
-            <div key={i} style={{ height: '60px', background: '#FAFBFC', borderRadius: '12px', marginBottom: '12px' }} />
+            <div key={i} style={{ height: '60px', background: 'var(--color-surface-1)', borderRadius: '12px', marginBottom: '12px' }} />
           ))}
         </div>
       </div>

@@ -181,7 +181,7 @@ export default function NegotiationPage() {
                 <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Strength</label>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   {[{ v: 'weak', l: 'Weak', c: '#CC1016' }, { v: 'moderate', l: 'Moderate', c: '#D97706' }, { v: 'strong', l: 'Strong', c: '#057642' }].map(opt => (
-                    <button key={opt.v} type="button" onClick={() => setCaseStrength(opt.v)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: `1px solid ${caseStrength === opt.v ? opt.c : 'var(--border-default)'}`, backgroundColor: caseStrength === opt.v ? `${opt.c}15` : '#FAFBFC', color: caseStrength === opt.v ? opt.c : 'var(--color-text-secondary)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+                    <button key={opt.v} type="button" onClick={() => setCaseStrength(opt.v)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: `1px solid ${caseStrength === opt.v ? opt.c : 'var(--border-default)'}`, backgroundColor: caseStrength === opt.v ? `${opt.c}15` : 'var(--color-surface-1)', color: caseStrength === opt.v ? opt.c : 'var(--color-text-secondary)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                       {opt.l}
                     </button>
                   ))}

@@ -483,7 +483,7 @@ export default function LienCalculator() {
           {/* Calculation breakdown */}
           <div style={{ display: 'grid', gap: 0, marginBottom: 32, borderRadius: 10, overflow: 'hidden', border: '1px solid var(--border-default)' }}>
             {/* Gross Settlement */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: '#FAFBFC', borderBottom: '1px solid var(--border-default)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderBottom: '1px solid var(--border-default)' }}>
               <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
                 Gross Settlement Amount
               </div>
@@ -504,7 +504,7 @@ export default function LienCalculator() {
 
             {/* Case Expenses */}
             {result.caseExpenses > 0 && (
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: '#FAFBFC', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderBottom: '1px solid var(--border-default)' }}>
                 <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
                   Case Expenses
                 </div>

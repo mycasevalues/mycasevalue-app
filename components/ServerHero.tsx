@@ -63,7 +63,7 @@ export default function ServerHero() {
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
               <a href="/search" className="hero-cta-primary" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '1rem 1.5rem', background: 'var(--accent-primary)', color: '#FAFBFC',
+                padding: '1rem 1.5rem', background: 'var(--accent-primary)', color: 'var(--color-surface-1)',
                 borderRadius: '0.25rem', fontWeight: 600, fontSize: '1.25rem',
                 fontFamily: 'var(--font-display)', textDecoration: 'none',
                 transition: 'background 200ms',
@@ -73,7 +73,7 @@ export default function ServerHero() {
               </a>
               <a href="/cases" style={{
                 display: 'inline-flex', alignItems: 'center',
-                padding: '1rem 1.5rem', background: 'transparent', color: '#FAFBFC',
+                padding: '1rem 1.5rem', background: 'transparent', color: 'var(--color-surface-1)',
                 border: '2px solid rgba(255,255,255,0.4)', borderRadius: '0.25rem',
                 fontWeight: 600, fontSize: '1rem', fontFamily: 'var(--font-display)',
                 textDecoration: 'none',
@@ -281,7 +281,7 @@ export default function ServerHero() {
           </p>
           <a href="/search" className="hero-cta-primary" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
-            padding: '1rem 1.5rem', background: 'var(--accent-primary)', color: '#FAFBFC', borderRadius: '0.25rem',
+            padding: '1rem 1.5rem', background: 'var(--accent-primary)', color: 'var(--color-surface-1)', borderRadius: '0.25rem',
             fontWeight: 600, fontSize: '1.25rem', textDecoration: 'none',
             fontFamily: 'var(--font-display)', transition: 'background 200ms',
           }}>
@@ -752,7 +752,7 @@ export default function ServerHero() {
             <a href="/sign-up" className="hero-cta-primary" style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
               padding: '1rem 2rem', background: 'var(--accent-primary)',
-              color: '#FAFBFC', borderRadius: '12px', fontWeight: 600, fontSize: '0.875rem',
+              color: 'var(--color-surface-1)', borderRadius: '12px', fontWeight: 600, fontSize: '0.875rem',
               fontFamily: 'var(--font-body)', textDecoration: 'none', textTransform: 'uppercase',
               letterSpacing: '0.04em', transition: 'background 200ms',
             }}>
@@ -760,7 +760,7 @@ export default function ServerHero() {
             </a>
             <a href="/pricing" style={{
               display: 'inline-flex', alignItems: 'center',
-              padding: '1rem 2rem', background: 'transparent', color: '#FAFBFC',
+              padding: '1rem 2rem', background: 'transparent', color: 'var(--color-surface-1)',
               border: '1.5px solid rgba(255,255,255,0.5)', borderRadius: '12px',
               fontWeight: 600, fontSize: '0.875rem', fontFamily: 'var(--font-body)',
               textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.04em',

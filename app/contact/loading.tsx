@@ -11,11 +11,11 @@ export default function ContactLoading() {
         <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '32px' }}>
           <div style={{ height: '24px', width: '200px', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '24px' }} />
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
-            <div style={{ height: '48px', background: '#FAFBFC', border: '1px solid var(--border-default)', borderRadius: '12px' }} />
-            <div style={{ height: '48px', background: '#FAFBFC', border: '1px solid var(--border-default)', borderRadius: '12px' }} />
+            <div style={{ height: '48px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '12px' }} />
+            <div style={{ height: '48px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '12px' }} />
           </div>
-          <div style={{ height: '48px', background: '#FAFBFC', border: '1px solid var(--border-default)', borderRadius: '12px', marginBottom: '16px' }} />
-          <div style={{ height: '140px', background: '#FAFBFC', border: '1px solid var(--border-default)', borderRadius: '12px', marginBottom: '16px' }} />
+          <div style={{ height: '48px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '12px', marginBottom: '16px' }} />
+          <div style={{ height: '140px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '12px', marginBottom: '16px' }} />
           <div style={{ height: '48px', background: 'var(--accent-primary)', borderRadius: '12px', opacity: 0.5 }} />
         </div>
       </div>

@@ -60,7 +60,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
       <div ref={tableRef} className="overflow-x-auto" tabIndex={0} role="grid" aria-label="Judge directory table">
         <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
         <thead>
-          <tr className="bg-gray-50 border-b border-white/10">
+          <tr className="bg-[var(--color-surface-2)] border-b border-white/10">
             <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-100 whitespace-nowrap"
                 onClick={() => onSort?.('name')}>
               Judge <SortIcon active={sortBy === 'name'} order={sortOrder} />

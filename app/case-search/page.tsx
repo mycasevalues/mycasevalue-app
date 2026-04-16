@@ -298,7 +298,7 @@ function CaseSearchContent() {
               {/* Apply button */}
               <button
                 onClick={() => performSearch(1)}
-                className="w-full h-9 rounded-md bg-gray-100 text-sm font-medium text-gray-300 hover:bg-gray-200 transition-colors"
+                className="w-full h-9 rounded-md bg-[rgba(255,255,255,0.04)] text-sm font-medium text-gray-300 hover:bg-gray-200 transition-colors"
               >
                 Apply Filters
               </button>
@@ -356,9 +356,9 @@ function CaseSearchContent() {
                     style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
                   >
                     <div className="h-5 bg-gray-200 rounded w-3/4 mb-3" />
-                    <div className="h-3 bg-gray-100 rounded w-1/2 mb-4" />
-                    <div className="h-3 bg-gray-100 rounded w-full mb-2" />
-                    <div className="h-3 bg-gray-100 rounded w-2/3" />
+                    <div className="h-3 bg-[rgba(255,255,255,0.04)] rounded w-1/2 mb-4" />
+                    <div className="h-3 bg-[rgba(255,255,255,0.04)] rounded w-full mb-2" />
+                    <div className="h-3 bg-[rgba(255,255,255,0.04)] rounded w-2/3" />
                   </div>
                 ))}
               </div>
@@ -455,7 +455,7 @@ function CaseSearchContent() {
                 <button
                   onClick={() => performSearch(page - 1)}
                   disabled={page <= 1}
-                  className="h-8 px-3 rounded-md border text-xs font-medium disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+                  className="h-8 px-3 rounded-md border text-xs font-medium disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[var(--color-surface-2)] transition-colors"
                   style={{ borderColor: 'var(--border-default)' }}
                 >
                   Previous
@@ -466,7 +466,7 @@ function CaseSearchContent() {
                 <button
                   onClick={() => performSearch(page + 1)}
                   disabled={page >= totalPages}
-                  className="h-8 px-3 rounded-md border text-xs font-medium disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+                  className="h-8 px-3 rounded-md border text-xs font-medium disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[var(--color-surface-2)] transition-colors"
                   style={{ borderColor: 'var(--border-default)' }}
                 >
                   Next

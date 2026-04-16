@@ -673,7 +673,7 @@ export default async function NOSPage({ params }: PageProps) {
 
         .factor-item {
           padding: 12px;
-          background: #FAFBFC;
+          background: var(--color-surface-1);
           border: 1px solid var(--border-default);
           border-radius: 12px;
           display: flex;
@@ -1137,7 +1137,7 @@ export default async function NOSPage({ params }: PageProps) {
                     const cardContent = (
                       <div style={{
                         padding: '12px 16px',
-                        background: '#FAFBFC',
+                        background: 'var(--color-surface-1)',
                         border: '1px solid var(--border-default)',
                         borderRadius: '12px',
                       }}>

@@ -15,7 +15,7 @@ export default function CalculatorLoading() {
           {[1, 2, 3, 4].map(i => (
             <div key={i} style={{ marginBottom: '24px' }}>
               <div style={{ height: '14px', width: '120px', background: 'var(--border-default)', borderRadius: '12px', marginBottom: '8px' }} />
-              <div style={{ height: '48px', background: '#FAFBFC', border: '1px solid var(--border-default)', borderRadius: '12px' }} />
+              <div style={{ height: '48px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '12px' }} />
             </div>
           ))}
           <div style={{ height: '48px', background: 'var(--accent-primary)', borderRadius: '12px', opacity: 0.5 }} />

@@ -113,7 +113,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
             {opinions.map((op) => (
               <div key={op.id} style={{
                 padding: '16px',
-                background: '#FAFBFC',
+                background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '8px',
               }}>

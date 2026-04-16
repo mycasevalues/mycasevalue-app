@@ -191,7 +191,7 @@ const FeatureCard = ({
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
             backgroundColor:
-              badge === 'available' ? '#057642' : '#FAFBFC',
+              badge === 'available' ? '#057642' : 'var(--color-surface-1)',
             color: badge === 'available' ? 'var(--color-surface-0)' : 'var(--accent-primary)',
             border:
               badge === 'available'

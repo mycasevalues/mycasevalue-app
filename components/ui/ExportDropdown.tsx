@@ -26,7 +26,7 @@ export default function ExportDropdown() {
           text-xs font-medium text-gray-600 hover:text-gray-100
           border border-white/10 hover:border-gray-300
           rounded-lg transition-colors duration-150
-          hover:bg-gray-50
+          hover:bg-[var(--color-surface-2)]
         "
         title="Export judge data"
       >
@@ -38,13 +38,13 @@ export default function ExportDropdown() {
         <div className="absolute right-0 mt-2 w-40 bg-[#111827] border border-white/10 rounded-lg shadow-lg z-10">
           <button
             onClick={() => handleExport('csv')}
-            className="block w-full text-left px-4 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 border-b border-gray-100"
+            className="block w-full text-left px-4 py-2 text-xs font-medium text-gray-700 hover:bg-[var(--color-surface-2)] border-b border-gray-100"
           >
             Export CSV
           </button>
           <button
             onClick={() => handleExport('pdf')}
-            className="block w-full text-left px-4 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50"
+            className="block w-full text-left px-4 py-2 text-xs font-medium text-gray-700 hover:bg-[var(--color-surface-2)]"
           >
             Export PDF
           </button>

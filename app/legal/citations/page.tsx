@@ -236,7 +236,7 @@ export default function CitationsPage() {
       <div style={{
         borderRadius: 16,
         border: '1px solid var(--border-default)',
-        background: '#FAFBFC',
+        background: 'var(--color-surface-1)',
         overflow: 'hidden',
         marginBottom: 24,
         position: 'relative',

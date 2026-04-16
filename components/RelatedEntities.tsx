@@ -30,7 +30,7 @@ function SectionHeader({ title, count }: { title: string; count?: number }) {
   return (
     <div className="flex items-center justify-between px-4 py-2 border-b border-gray-100">
       <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">{title}</span>
-      {count != null && <span className="text-[10px] text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">{count}</span>}
+      {count != null && <span className="text-[10px] text-gray-400 bg-[rgba(255,255,255,0.04)] px-1.5 py-0.5 rounded">{count}</span>}
     </div>
   );
 }

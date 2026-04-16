@@ -86,7 +86,7 @@ export default function FeesPage() {
             </h2>
             <div style={{ display: 'grid', gap: 12 }}>
               {FILING_FEES.map((fee, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: '#FAFBFC', borderRadius: 10, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderRadius: 10, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
                   <div style={{ flex: 1, minWidth: 200 }}>
                     <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 2 }}>
                       {fee.label}
@@ -119,7 +119,7 @@ export default function FeesPage() {
             </h2>
             <div style={{ display: 'grid', gap: 12 }}>
               {PACER_FEES.map((fee, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: '#FAFBFC', borderRadius: 10, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderRadius: 10, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
                   <div style={{ flex: 1, minWidth: 200 }}>
                     <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 2 }}>
                       {fee.label}
@@ -146,7 +146,7 @@ export default function FeesPage() {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 10 }}>
               {PRO_HAC_VICE.map((d, i) => (
-                <div key={i} style={{ padding: '14px 18px', background: '#FAFBFC', borderRadius: 10, border: '1px solid var(--border-default)', textAlign: 'center' }}>
+                <div key={i} style={{ padding: '14px 18px', background: 'var(--color-surface-1)', borderRadius: 10, border: '1px solid var(--border-default)', textAlign: 'center' }}>
                   <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: 4 }}>
                     {d.district}
                   </div>
@@ -192,7 +192,7 @@ export default function FeesPage() {
                 rel="noopener noreferrer"
                 style={{
                   display: 'flex', alignItems: 'center', gap: 10, padding: '14px 20px',
-                  background: '#FAFBFC', border: '1px solid var(--border-default)', borderRadius: 10,
+                  background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 10,
                   textDecoration: 'none', color: 'var(--color-text-primary)', transition: 'border-color 0.2s',
                 }}
               >
@@ -209,7 +209,7 @@ export default function FeesPage() {
                 rel="noopener noreferrer"
                 style={{
                   display: 'flex', alignItems: 'center', gap: 10, padding: '14px 20px',
-                  background: '#FAFBFC', border: '1px solid var(--border-default)', borderRadius: 10,
+                  background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 10,
                   textDecoration: 'none', color: 'var(--color-text-primary)', transition: 'border-color 0.2s',
                 }}
               >

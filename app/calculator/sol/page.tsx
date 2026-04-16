@@ -211,7 +211,7 @@ export default function SOLCalculatorPage() {
                 <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
                   Key Triggering Event
                 </h3>
-                <p style={{ fontSize: 14, color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)', padding: '12px 16px', background: '#FAFBFC', borderRadius: 8, border: '1px solid var(--border-default)' }}>
+                <p style={{ fontSize: 14, color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)', padding: '12px 16px', background: 'var(--color-surface-1)', borderRadius: 8, border: '1px solid var(--border-default)' }}>
                   {rule.trigger}
                 </p>
               </div>

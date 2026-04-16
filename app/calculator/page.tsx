@@ -310,7 +310,7 @@ export default function CalculatorPage() {
                   height: '48px',
                   borderRadius: '12px',
                   borderColor: caseType === '' ? 'var(--border-default)' : 'var(--accent-primary)',
-                  background: '#FAFBFC',
+                  background: 'var(--color-surface-1)',
                   color: caseType ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   borderWidth: '1px',
@@ -354,7 +354,7 @@ export default function CalculatorPage() {
                   height: '48px',
                   borderRadius: '12px',
                   borderColor: damages === '' ? 'var(--border-default)' : 'var(--accent-primary)',
-                  background: '#FAFBFC',
+                  background: 'var(--color-surface-1)',
                   color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-body)',
                   borderWidth: '1px',
@@ -380,7 +380,7 @@ export default function CalculatorPage() {
                   height: '48px',
                   borderRadius: '12px',
                   borderColor: represented === '' ? 'var(--border-default)' : 'var(--accent-primary)',
-                  background: '#FAFBFC',
+                  background: 'var(--color-surface-1)',
                   color: represented ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)',
                   borderWidth: '1px',
@@ -409,7 +409,7 @@ export default function CalculatorPage() {
                 style={{
                   height: '48px', borderRadius: '12px',
                   borderColor: severity === '' ? 'var(--border-default)' : 'var(--accent-primary)',
-                  background: '#FAFBFC', color: severity ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                  background: 'var(--color-surface-1)', color: severity ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
                 }}
               >
@@ -437,7 +437,7 @@ export default function CalculatorPage() {
                 style={{
                   height: '48px', borderRadius: '12px',
                   borderColor: duration === '' ? 'var(--border-default)' : 'var(--accent-primary)',
-                  background: '#FAFBFC', color: duration ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                  background: 'var(--color-surface-1)', color: duration ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
                 }}
               >
@@ -466,7 +466,7 @@ export default function CalculatorPage() {
                 style={{
                   height: '48px', borderRadius: '12px',
                   borderColor: evidence === '' ? 'var(--border-default)' : 'var(--accent-primary)',
-                  background: '#FAFBFC', color: evidence ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                  background: 'var(--color-surface-1)', color: evidence ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
                 }}
               >
@@ -494,7 +494,7 @@ export default function CalculatorPage() {
                 style={{
                   height: '48px', borderRadius: '12px',
                   borderColor: priorSettlement === '' ? 'var(--border-default)' : 'var(--accent-primary)',
-                  background: '#FAFBFC', color: priorSettlement ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                  background: 'var(--color-surface-1)', color: priorSettlement ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
                 }}
               >
@@ -522,7 +522,7 @@ export default function CalculatorPage() {
                 style={{
                   height: '48px', borderRadius: '12px',
                   borderColor: defendants === '' ? 'var(--border-default)' : 'var(--accent-primary)',
-                  background: '#FAFBFC', color: defendants ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                  background: 'var(--color-surface-1)', color: defendants ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
                 }}
               >
@@ -629,7 +629,7 @@ export default function CalculatorPage() {
                 { label: 'P90', value: results.p90, highlight: false },
               ].map((col, i) => (
                 <div key={i} className="p-4 text-center" style={{
-                  background: col.highlight ? '#EDF3FB' : '#FAFBFC',
+                  background: col.highlight ? '#EDF3FB' : 'var(--color-surface-1)',
                   border: `1px solid ${col.highlight ? 'var(--accent-primary)' : 'var(--border-default)'}`,
                   borderRadius: '12px',
                   ...(col.highlight ? { transform: 'scale(1.02)' } : {}),
@@ -655,7 +655,7 @@ export default function CalculatorPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               {/* Win Rate Circle */}
               <div className="p-6 flex flex-col items-center justify-center" style={{
-                background: '#FAFBFC',
+                background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 minHeight: '200px',
@@ -693,7 +693,7 @@ export default function CalculatorPage() {
               </div>
               {/* Timeline */}
               <div className="p-6 flex flex-col items-center justify-center" style={{
-                background: '#FAFBFC',
+                background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 minHeight: '200px',

@@ -45,7 +45,7 @@ export default function ApiPage() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: 'var(--accent-primary)', color: '#FAFBFC', padding: '40px 24px 32px' }}>
+      <section style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '40px 24px 32px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -80,7 +80,7 @@ export default function ApiPage() {
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/solutions/api" style={{
               background: 'var(--accent-primary)',
-              color: '#FAFBFC',
+              color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
               textDecoration: 'none',
@@ -95,7 +95,7 @@ export default function ApiPage() {
             </Link>
             <Link href="/contact?type=developer" style={{
               background: 'transparent',
-              color: '#FAFBFC',
+              color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
               border: '1.5px solid rgba(255,255,255,0.5)',
@@ -242,7 +242,7 @@ export default function ApiPage() {
             </div>
 
             <div style={{ padding: '32px', background: 'var(--color-surface-0)', borderRadius: '12px', border: '2px solid var(--accent-primary)', boxShadow: '0 4px 16px rgba(10, 102, 194, 0.15)', position: 'relative' }}>
-              <div style={{ position: 'absolute', top: '-12px', left: '24px', background: 'var(--accent-primary)', color: '#FAFBFC', padding: '4px 12px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <div style={{ position: 'absolute', top: '-12px', left: '24px', background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '4px 12px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Most Popular
               </div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '16px', marginBottom: '8px' }}>Professional</h3>
@@ -299,7 +299,7 @@ export default function ApiPage() {
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/developers" style={{
               background: 'var(--accent-primary)',
-              color: '#FAFBFC',
+              color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
               textDecoration: 'none',

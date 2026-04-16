@@ -27,7 +27,7 @@ export default function NLRBContext() {
       <div style={{ maxWidth: '24rem', marginLeft: 'auto', marginRight: 'auto' }}>
         <div style={{
           padding: '1.5rem',
-          background: '#FAFBFC',
+          background: 'var(--color-surface-1)',
           border: '1px solid var(--border-default)',
           borderRadius: '12px',
         }}>

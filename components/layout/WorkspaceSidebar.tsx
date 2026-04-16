@@ -103,7 +103,7 @@ function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
       className={`flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm transition-all duration-150 ${
         isActive
           ? 'bg-brand-blue/8 text-brand-blue font-medium border-l-2 border-brand-blue -ml-[2px]'
-          : 'text-gray-500 hover:bg-gray-50 hover:text-gray-200'
+          : 'text-gray-500 hover:bg-[var(--color-surface-2)] hover:text-gray-200'
       }`}
     >
       <SidebarIcon path={item.icon} />
@@ -300,7 +300,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
                     <Link
                       key={i}
                       href={`/search?q=${encodeURIComponent(search.query)}`}
-                      className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors"
+                      className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm text-gray-500 hover:bg-[var(--color-surface-2)] hover:text-gray-700 transition-colors"
                     >
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="flex-shrink-0 text-gray-400">
                         <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -323,7 +323,7 @@ export default function WorkspaceSidebar({ isOpen, onToggle }: { isOpen: boolean
                     <Link
                       key={item.id}
                       href={item.href}
-                      className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700 transition-colors"
+                      className="flex items-center gap-3 px-3 py-1.5 rounded-lg text-sm text-gray-500 hover:bg-[var(--color-surface-2)] hover:text-gray-700 transition-colors"
                     >
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1.5" className="flex-shrink-0 text-brand-blue">
                         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />

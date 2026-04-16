@@ -235,7 +235,7 @@ export default function ResearchMemoPage() {
                   </div>
                 </div>
 
-                <div ref={outputRef} style={{ maxHeight: '650px', overflowY: 'auto', padding: '16px', background: '#FAFBFC', borderRadius: '12px', border: '1px solid var(--border-default)', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.7', fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
+                <div ref={outputRef} style={{ maxHeight: '650px', overflowY: 'auto', padding: '16px', background: 'var(--color-surface-1)', borderRadius: '12px', border: '1px solid var(--border-default)', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.7', fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
                   {memoText}
                   {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: 'var(--accent-primary)', marginLeft: 2, animation: 'blink 1s infinite' }} />}
                 </div>

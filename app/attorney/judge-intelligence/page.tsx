@@ -248,7 +248,7 @@ export default function JudgeIntelligencePage() {
                 <button
                   key={s.id}
                   onClick={() => handleStateChange(s.id)}
-                  style={{ padding: '8px 16px', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: '#FAFBFC', color: 'var(--accent-primary)', transition: 'border-color 0.2s' }}
+                  style={{ padding: '8px 16px', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: 'var(--color-surface-1)', color: 'var(--accent-primary)', transition: 'border-color 0.2s' }}
                 >
                   {s.label}
                 </button>

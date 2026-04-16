@@ -224,7 +224,7 @@ export default function DashboardTabs({
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-display)' }}>Docket Monitoring Alerts</h3>
               <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>0 / 10 active (beta limit)</span>
             </div>
-            <div style={{ padding: '32px', textAlign: 'center', background: '#FAFBFC', borderRadius: 10, border: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '32px', textAlign: 'center', background: 'var(--color-surface-1)', borderRadius: 10, border: '1px solid var(--border-default)' }}>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: 16 }}>No active alerts. Set up monitoring for case numbers, case types, or judge assignments.</p>
               <div style={{ background: '#EDF3FB', borderRadius: 10, padding: '20px', maxWidth: 400, margin: '0 auto' }}>
                 <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-primary-hover)', marginBottom: 10 }}>New Alert</p>
@@ -303,7 +303,7 @@ export default function DashboardTabs({
           {/* API Key */}
           <div style={cardStyle}>
             <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>API Access</h3>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', background: '#FAFBFC', borderRadius: 8, border: '1px solid var(--border-default)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', background: 'var(--color-surface-1)', borderRadius: 8, border: '1px solid var(--border-default)' }}>
               <code style={{ flex: 1, fontSize: '13px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{apiKey}</code>
               <button
                 onClick={() => { navigator.clipboard.writeText(apiKey); setCopied(true); setTimeout(() => setCopied(false), 2000); }}

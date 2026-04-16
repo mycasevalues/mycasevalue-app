@@ -65,7 +65,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
               <div
                 key={judge.id}
                 style={{
-                  background: '#FAFBFC',
+                  background: 'var(--color-surface-1)',
                   border: '1px solid #e5e7eb',
                   borderRadius: '10px',
                   padding: '16px',

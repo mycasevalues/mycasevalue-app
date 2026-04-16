@@ -549,7 +549,7 @@ export default function Header() {
             <button
               ref={hamburgerRef}
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors"
+              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[rgba(255,255,255,0.04)] transition-colors"
               aria-label={
                 mobileOpen ? 'Close navigation menu' : 'Open navigation menu'
               }

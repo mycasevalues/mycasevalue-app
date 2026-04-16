@@ -192,7 +192,7 @@ export default function BillingPage() {
             <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               Payment Method
             </h2>
-            <div style={{ backgroundColor: '#FAFBFC', borderRadius: '12px', padding: '24px', border: '2px dashed var(--border-default)', textAlign: 'center' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-1)', borderRadius: '12px', padding: '24px', border: '2px dashed var(--border-default)', textAlign: 'center' }}>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 4px 0' }}>
                 No payment method on file
               </p>

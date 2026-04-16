@@ -82,7 +82,7 @@ export function ToolResultCard({
             <button
               onClick={handleExport}
               disabled={isExporting}
-              className="px-4 py-2 rounded-md font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 rounded-md font-medium text-gray-700 bg-[rgba(255,255,255,0.04)] hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
                 paddingLeft: '16px',
                 paddingRight: '16px',

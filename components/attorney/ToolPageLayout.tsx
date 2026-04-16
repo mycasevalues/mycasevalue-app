@@ -68,7 +68,7 @@ export function ToolPageLayout({
       {/* Auth Gate \u2014 only shown when requiresPro and not authenticated */}
       {requiresPro && !isAuthenticated ? (
         <div className="max-w-4xl mx-auto px-6 py-12">
-          <div className="rounded-xl border border-white/10 p-8 sm:p-12 text-center bg-gray-50">
+          <div className="rounded-xl border border-white/10 p-8 sm:p-12 text-center bg-[var(--color-surface-2)]">
             <h2 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
               Sign in to access this tool
             </h2>
@@ -91,7 +91,7 @@ export function ToolPageLayout({
           </div>
 
           {/* Footer Disclaimer */}
-          <div className="border-t border-white/10 bg-gray-50 mt-12">
+          <div className="border-t border-white/10 bg-[var(--color-surface-2)] mt-12">
             <div className="max-w-4xl mx-auto px-6 py-8">
               <p className="text-sm text-gray-600 leading-relaxed">
                 This tool is provided for informational and analytical purposes only and does not

@@ -295,7 +295,7 @@ export default async function DashboardPage() {
         .update-item {
           padding: 16px;
           border-left: 3px solid var(--accent-primary);
-          background: #FAFBFC;
+          background: var(--color-surface-1);
           border-radius: 0 2px 2px 0;
           margin-bottom: 12px;
         }
@@ -774,7 +774,7 @@ export default async function DashboardPage() {
                 { label: 'Case Calculator', href: '/calculator', color: '#059669' },
                 { label: 'Trends & Data', href: '/trends', color: '#B86E00' },
               ].map((link) => (
-                <Link key={link.href} href={link.href} style={{ display: 'block', padding: '16px', borderRadius: '12px', border: '1px solid var(--border-default)', textDecoration: 'none', textAlign: 'center', transition: 'all 0.2s ease', background: '#FAFBFC' }}>
+                <Link key={link.href} href={link.href} style={{ display: 'block', padding: '16px', borderRadius: '12px', border: '1px solid var(--border-default)', textDecoration: 'none', textAlign: 'center', transition: 'all 0.2s ease', background: 'var(--color-surface-1)' }}>
                   <span style={{ fontSize: '14px', fontWeight: 600, color: link.color, fontFamily: 'var(--font-body)' }}>{link.label}</span>
                 </Link>
               ))}

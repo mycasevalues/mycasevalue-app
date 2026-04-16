@@ -198,7 +198,7 @@ a:hover { text-decoration: underline; color: var(--color-accent-dark); }
   --bg-muted: var(--bg-alt);
   --bg-inverted: var(--bg-dark);
   --fg: var(--fg-primary);
-  --fg-inverted: #FAFBFC;
+  --fg-inverted: var(--color-surface-1);
   --accent: var(--accent-primary);
   --accent-mid: var(--accent-primary-hover);
   --accent-bg: var(--accent-primary-subtle);

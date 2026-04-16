@@ -54,7 +54,7 @@ export default function MasterDetailLayout({
       {/* Detail Panel */}
       <div
         className={`
-          flex-1 overflow-y-auto bg-gray-50
+          flex-1 overflow-y-auto bg-[var(--color-surface-2)]
           ${hasSelection ? 'block' : 'hidden lg:block'}
         `}
       >
@@ -108,7 +108,7 @@ export function MasterListItem({
         w-full text-left px-4 py-3 border-b border-gray-50 transition-colors
         ${isActive
           ? 'bg-blue-50 border-l-2 border-l-brand-blue'
-          : 'hover:bg-gray-50 border-l-2 border-l-transparent'
+          : 'hover:bg-[var(--color-surface-2)] border-l-2 border-l-transparent'
         }
       `}
     >

@@ -498,7 +498,7 @@ export default function AccountPage() {
             <button
               onClick={handleSignOut}
               className="sign-out-btn"
-              style={{ width: '100%', padding: '12px', backgroundColor: '#FAFBFC', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s' }}
+              style={{ width: '100%', padding: '12px', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s' }}
             >
               Sign Out
             </button>

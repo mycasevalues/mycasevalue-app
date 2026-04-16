@@ -201,7 +201,7 @@ export default function DepositionPrepPage() {
                       style={{
                         padding: '10px', borderRadius: '12px',
                         border: `1px solid ${deponentRole === role.value ? 'var(--accent-primary)' : 'var(--border-default)'}`,
-                        backgroundColor: deponentRole === role.value ? 'rgba(10,102,194,0.08)' : '#FAFBFC',
+                        backgroundColor: deponentRole === role.value ? 'rgba(10,102,194,0.08)' : 'var(--color-surface-1)',
                         color: deponentRole === role.value ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                         fontSize: '13px', fontWeight: 600, cursor: 'pointer',
                         transition: 'all 0.2s', fontFamily: 'var(--font-body)',
@@ -296,7 +296,7 @@ export default function DepositionPrepPage() {
                   ref={outputRef}
                   style={{
                     maxHeight: '600px', overflowY: 'auto', padding: '16px',
-                    background: '#FAFBFC', borderRadius: '12px', border: '1px solid var(--border-default)',
+                    background: 'var(--color-surface-1)', borderRadius: '12px', border: '1px solid var(--border-default)',
                     fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.7',
                     fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap', wordWrap: 'break-word',
                   }}

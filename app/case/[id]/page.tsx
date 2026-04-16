@@ -91,9 +91,9 @@ export default function CaseDetailPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
           <div className="animate-pulse space-y-6">
             <div className="h-6 bg-gray-200 rounded w-3/4" />
-            <div className="h-4 bg-gray-100 rounded w-1/2" />
-            <div className="h-32 bg-gray-100 rounded-xl" />
-            <div className="h-24 bg-gray-100 rounded-xl" />
+            <div className="h-4 bg-[rgba(255,255,255,0.04)] rounded w-1/2" />
+            <div className="h-32 bg-[rgba(255,255,255,0.04)] rounded-xl" />
+            <div className="h-24 bg-[rgba(255,255,255,0.04)] rounded-xl" />
           </div>
         </div>
       </div>

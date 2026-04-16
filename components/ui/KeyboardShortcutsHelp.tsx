@@ -122,7 +122,7 @@ export default function KeyboardShortcutsHelp() {
                       {shortcut.keys.map((key, ki) => (
                         <span key={ki}>
                           {ki > 0 && <span className="text-gray-300 text-xs mx-0.5">+</span>}
-                          <kbd className="inline-flex items-center justify-center min-w-[24px] h-6 px-1.5 text-xs font-mono font-medium text-gray-600 bg-gray-100 border border-white/10 rounded">
+                          <kbd className="inline-flex items-center justify-center min-w-[24px] h-6 px-1.5 text-xs font-mono font-medium text-gray-600 bg-[rgba(255,255,255,0.04)] border border-white/10 rounded">
                             {key}
                           </kbd>
                         </span>
@@ -136,7 +136,7 @@ export default function KeyboardShortcutsHelp() {
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-3 border-t border-gray-100 bg-gray-50">
+        <div className="px-6 py-3 border-t border-gray-100 bg-[var(--color-surface-2)]">
           <p className="text-[11px] text-gray-400 text-center">
             Press <kbd className="px-1 py-0.5 text-[10px] bg-[#111827] border border-white/10 rounded font-mono">?</kbd> anytime to toggle this panel
           </p>
