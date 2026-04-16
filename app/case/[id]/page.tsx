@@ -106,7 +106,7 @@ export default function CaseDetailPage() {
       <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 text-center">
           
-          <h1 className="text-lg font-semibold text-gray-900 mb-2">{error || 'Case not found'}</h1>
+          <h1 className="text-lg font-semibold text-gray-100 mb-2">{error || 'Case not found'}</h1>
           <p className="text-sm text-gray-500 mb-4">
             The case you are looking for may not exist in our database yet.
           </p>
@@ -154,7 +154,7 @@ export default function CaseDetailPage() {
         {/* ── SECTION 1: HEADER ── */}
         <div>
           <div className="flex items-start justify-between gap-4 mb-3">
-            <h1 className="text-xl font-bold text-gray-900 leading-snug">
+            <h1 className="text-xl font-bold text-gray-100 leading-snug">
               {c.caseName}
             </h1>
             {c.status && (
@@ -269,7 +269,7 @@ export default function CaseDetailPage() {
                   style={{ borderColor: 'var(--border-default)' }}
                 >
                   <div>
-                    <p className="text-sm font-medium text-gray-900">{op.title}</p>
+                    <p className="text-sm font-medium text-gray-100">{op.title}</p>
                     <p className="text-xs text-gray-500">
                       {op.author && `${op.author} · `}
                       {op.date && new Date(op.date).toLocaleDateString()}
@@ -306,7 +306,7 @@ export default function CaseDetailPage() {
                     #{f.number || i + 1}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-gray-900 truncate">
+                    <p className="text-sm text-gray-100 truncate">
                       {f.title || 'Filing'}
                     </p>
                     {f.date && (
@@ -385,7 +385,7 @@ export default function CaseDetailPage() {
                   style={{ borderColor: 'var(--border-default)' }}
                 >
                   <div>
-                    <p className="text-sm text-gray-900 group-hover:text-brand-blue transition-colors">
+                    <p className="text-sm text-gray-100 group-hover:text-brand-blue transition-colors">
                       {rc.caseName}
                     </p>
                     <p className="text-xs text-gray-400">

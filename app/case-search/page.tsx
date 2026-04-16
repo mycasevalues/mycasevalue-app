@@ -157,7 +157,7 @@ function CaseSearchContent() {
       {/* Header */}
       <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-          <h1 className="text-xl font-bold text-gray-900 mb-1">Search Federal Cases</h1>
+          <h1 className="text-xl font-bold text-gray-100 mb-1">Search Federal Cases</h1>
           <p className="text-sm text-gray-500">
             Search individual case records from public federal court data.
           </p>
@@ -315,7 +315,7 @@ function CaseSearchContent() {
                     'Searching...'
                   ) : total > 0 ? (
                     <>
-                      <span className="font-semibold text-gray-900">{total.toLocaleString()}</span>{' '}
+                      <span className="font-semibold text-gray-100">{total.toLocaleString()}</span>{' '}
                       result{total !== 1 ? 's' : ''}
                       {query ? (
                         <>
@@ -387,7 +387,7 @@ function CaseSearchContent() {
                 style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
               >
                 
-                <h3 className="text-base font-semibold text-gray-900 mb-2">
+                <h3 className="text-base font-semibold text-gray-100 mb-2">
                   Search Federal Court Records
                 </h3>
                 <p className="text-sm text-gray-500 mb-5 max-w-md mx-auto">
@@ -418,7 +418,7 @@ function CaseSearchContent() {
                 className="rounded-xl border p-8 text-center"
                 style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
               >
-                <h3 className="text-base font-semibold text-gray-900 mb-2">No Cases Found</h3>
+                <h3 className="text-base font-semibold text-gray-100 mb-2">No Cases Found</h3>
                 <p className="text-sm text-gray-500 mb-4">
                   No cases match your search. Try broadening your query or adjusting filters.
                 </p>

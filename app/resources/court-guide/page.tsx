@@ -50,7 +50,7 @@ export default function CourtGuidePage() {
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Guide Overview */}
         <section className="mb-12">
-          <h2 className="mb-6 text-3xl font-bold text-gray-900">
+          <h2 className="mb-6 text-3xl font-bold text-gray-100">
             What You'll Learn
           </h2>
           <p className="mb-6 text-lg text-gray-700">
@@ -90,7 +90,7 @@ export default function CourtGuidePage() {
 
         {/* Key Topics Section */}
         <section className="mb-12 rounded-lg bg-blue-50 p-8">
-          <h2 className="mb-6 text-2xl font-bold text-gray-900">
+          <h2 className="mb-6 text-2xl font-bold text-gray-100">
             12 Pages of Practical Guidance
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -146,7 +146,7 @@ export default function CourtGuidePage() {
 
         {/* Additional Info */}
         <section className="mt-12 border-t border-gray-200 pt-8">
-          <h2 className="mb-4 text-2xl font-bold text-gray-900">
+          <h2 className="mb-4 text-2xl font-bold text-gray-100">
             About This Guide
           </h2>
           <p className="mb-4 text-gray-700">

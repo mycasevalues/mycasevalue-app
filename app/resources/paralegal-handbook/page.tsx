@@ -50,7 +50,7 @@ export default function ParalegalHandbookPage() {
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Handbook Overview */}
         <section className="mb-12">
-          <h2 className="mb-6 text-3xl font-bold text-gray-900">
+          <h2 className="mb-6 text-3xl font-bold text-gray-100">
             What's Inside
           </h2>
           <p className="mb-6 text-lg text-gray-700">
@@ -104,7 +104,7 @@ export default function ParalegalHandbookPage() {
 
         {/* Key Topics Section */}
         <section className="mb-12 rounded-lg bg-blue-50 p-8">
-          <h2 className="mb-6 text-2xl font-bold text-gray-900">
+          <h2 className="mb-6 text-2xl font-bold text-gray-100">
             30 Pages of Professional Reference Material
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -172,7 +172,7 @@ export default function ParalegalHandbookPage() {
 
         {/* Additional Info */}
         <section className="mt-12 border-t border-gray-200 pt-8">
-          <h2 className="mb-4 text-2xl font-bold text-gray-900">
+          <h2 className="mb-4 text-2xl font-bold text-gray-100">
             About This Handbook
           </h2>
           <p className="mb-4 text-gray-700">
