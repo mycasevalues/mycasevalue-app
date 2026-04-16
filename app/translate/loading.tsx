@@ -2,7 +2,7 @@ export default function Loading() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
       <style>{`@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}.sp{animation:pulse 1.5s ease-in-out infinite}`}</style>
-      <div style={{ background: 'var(--gradient-hero)', padding: '32px 20px' }}>
+      <div style={{ background: '#080d19', padding: '32px 20px' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div className="sp" style={{ height: 12, width: 150, background: 'rgba(255,255,255,0.1)', borderRadius: 2, marginBottom: 16 }} />
           <div className="sp" style={{ height: 32, width: '40%', background: 'rgba(255,255,255,0.12)', borderRadius: 2, marginBottom: 10 }} />
