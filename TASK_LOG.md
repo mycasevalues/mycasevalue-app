@@ -554,4 +554,48 @@ All forbidden Bloomberg colors eliminated from both target files. All Westlaw to
 
 ### Session Gate: PASS
 
+---
+
+## Westlaw Precision Redesign — Session 6: Footer Rebuild
+
+**Commit:** `[Session 6] Footer: Rebuild to Westlaw-style dark 4-column footer` — sha: 1e4679f3
+
+**Risk Level:** MEDIUM — Modifies 2 existing layout files (Footer.tsx, WorkspaceFooter.tsx)
+
+### Files Modified (2)
+
+1. **components/layout/Footer.tsx** — Full rebuild from Bloomberg charcoal (#1A1A1A) to Westlaw deep navy
+   - Background: `var(--chrome-bg)` = #1B2D45, border-top: `var(--chrome-border)` = #2A3F58
+   - Inner container: max-width 1200px, padding 0 22px
+   - 4-column grid (gap 20px): Brand | Product | Tools | Company
+   - Brand col: 20px gold cube + "MyCaseValue" (font-baskerville 12px 700 white) + tagline (13px font-ui chrome-text-muted) + "No enterprise price tag." (11px gold)
+   - Column headers: 10px uppercase, letter-spacing 0.09em, color #4A6080
+   - Links: font-ui 11px, color var(--chrome-text-muted), line-height 2.1, hover → white
+   - Divider: 1px solid var(--chrome-border), margin 16px 0
+   - Bottom bar: copyright left + attribution right, 10px #4A6080
+   - Removed: status strip, data lineage row, Bloomberg hex (#1A1A1A, #222222, #333333, rgba whites)
+   - Responsive: 2-col on mobile via footer-grid class
+
+2. **components/layout/WorkspaceFooter.tsx** — Simplified Westlaw dark footer
+   - Background: `var(--chrome-bg)` = #1B2D45 (was #F7F7F5 light)
+   - Border-top: `var(--chrome-border)` (was #E0E0E0)
+   - Copyright text: 10px #4A6080 (was #888888)
+   - Link color: `var(--chrome-text-muted)` (was #888888), hover → white
+   - Dot separators: `var(--chrome-border)` (was #CCCCCC)
+   - Removed: all Bloomberg hex (#F7F7F5, #E0E0E0, #888888, #CCCCCC, #0052CC)
+
+### Verification Results
+
+1. **Footer background: var(--chrome-bg) = #1B2D45** → PASS
+2. **4-column grid layout (Brand | Product | Tools | Company)** → PASS
+3. **No orange (#E65C00) in Footer.tsx** → PASS (zero instances)
+4. **No Bloomberg hex (#1A1A1A, #0052CC, #333333, #F7F7F5, #888888) in Footer.tsx** → PASS (zero)
+5. **No Bloomberg hex in WorkspaceFooter.tsx** → PASS (zero)
+6. **Column headers: 10px uppercase #4A6080** → PASS
+7. **Links: font-ui 11px var(--chrome-text-muted)** → PASS
+8. **Gold tagline "No enterprise price tag."** → PASS
+9. **npm run build → Webpack compilation** → PASS (pre-existing TS error unrelated)
+
+### Session Gate: PASS
+
 Last updated: 2026-04-16
