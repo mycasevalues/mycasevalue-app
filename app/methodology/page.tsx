@@ -243,27 +243,61 @@ export default function MethodologyPage() {
       `}</style>
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-          {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-2 mb-6 text-[11px]" style={{ color: '#CCCCCC' }}>
-            <a href="/" className="transition-colors hover:text-white" style={{ color: '#CCCCCC' }}>Home</a>
-            <span>/</span>
-            <span style={{ color: 'var(--color-surface-0)' }}>Methodology</span>
+      <div style={{
+        background: '#080d19',
+        color: '#fff',
+        padding: '48px 24px 40px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div className="max-w-4xl mx-auto" style={{ position: 'relative' }}>
+          {/* Breadcrumb */}
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20, fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.02em' }}>
+            <a href="/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>Home</a>
+            <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
+            <span style={{ color: 'rgba(255,255,255,0.85)' }}>Methodology</span>
           </nav>
 
-          {/* Badge and Title */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(239,68,68,0.08)', color: 'var(--accent-primary)', borderRadius: '9999px' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
-            METHODOLOGY
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Research Methodology
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px' }}>
-            Methodology
+          <h1 style={{
+            fontFamily: 'var(--font-inter)',
+            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.1,
+            marginBottom: 16,
+            color: '#ffffff',
+          }}>
+            Data provenance & statistical methods
           </h1>
-          <p className="text-base sm:text-lg leading-relaxed max-w-2xl" style={{ color: '#CCCCCC' }}>
-            Data processing, classification methodology, and quality standards.
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '1rem',
+            color: 'rgba(255,255,255,0.7)',
+            maxWidth: 640,
+            lineHeight: 1.6,
+            margin: 0,
+          }}>
+            Transparent documentation of data sources, processing, classification, and quality standards — every figure on this platform is reproducible.
           </p>
         </div>
       </div>
