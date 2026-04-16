@@ -298,21 +298,24 @@ export default function AboutPage() {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          padding: 0.75rem 1.5rem;
-          border-radius: 9999px;
+          padding: 10px 20px;
+          border-radius: 6px;
           font-family: var(--font-inter);
-          font-size: 0.875rem;
+          font-size: 13px;
           font-weight: 600;
+          letter-spacing: -0.005em;
           text-decoration: none;
-          background: var(--gradient-hero);
-          color: var(--color-surface-0);
-          transition: all 0.3s ease;
+          background: #1a56db;
+          color: #ffffff;
+          border: 1px solid #1a56db;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+          transition: background-color 150ms ease, border-color 150ms ease;
           margin-top: 1.5rem;
         }
 
         .contact-link:hover {
-          background: var(--color-accent);
-          transform: translateY(-2px);
+          background: #1e40af;
+          border-color: #1e40af;
         }
 
         .breadcrumb-wrapper {
