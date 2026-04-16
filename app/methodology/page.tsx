@@ -5,7 +5,7 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Methodology — MyCaseValue Federal Court Processing',
+  title: 'Methodology',
   description: 'Learn how MyCaseValue processes data from FJC IDB, PACER, and CourtListener. Transparent methodology for 5.1M+ case outcome statistics.',
   alternates: { canonical: `${SITE_URL}/methodology` },
   openGraph: {
