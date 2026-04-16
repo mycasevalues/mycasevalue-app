@@ -162,7 +162,7 @@ export default function WidgetGenerator() {
             <div style={{
               marginTop: '12px',
               padding: '8px 12px',
-              backgroundColor: '#eff6ff',
+              backgroundColor: 'rgba(59,130,246,0.06)',
               border: '1px solid #bfdbfe',
               borderRadius: '6px',
               fontSize: '13px',
@@ -241,7 +241,7 @@ export default function WidgetGenerator() {
                   boxSizing: 'border-box',
                   resize: 'none',
                   color: 'var(--color-text-primary)',
-                  backgroundColor: '#f9fafb',
+                  backgroundColor: 'var(--color-surface-0)',
                 }}
               />
               <button
@@ -265,7 +265,7 @@ export default function WidgetGenerator() {
           ) : (
             <div style={{
               padding: '16px',
-              backgroundColor: '#f3f4f6',
+              backgroundColor: 'rgba(255,255,255,0.05)',
               borderRadius: '6px',
               color: 'var(--color-text-muted)',
               fontSize: '14px',
@@ -278,7 +278,7 @@ export default function WidgetGenerator() {
 
         <div style={{
           padding: '16px',
-          backgroundColor: '#fef3c7',
+          backgroundColor: 'rgba(234,179,8,0.06)',
           border: '1px solid #fcd34d',
           borderRadius: '6px',
           fontSize: '13px',
@@ -302,7 +302,7 @@ export default function WidgetGenerator() {
         </h3>
         <div style={{
           padding: '32px',
-          backgroundColor: '#f9fafb',
+          backgroundColor: 'var(--color-surface-0)',
           borderRadius: '8px',
           border: '1px solid rgba(255,255,255,0.08)',
           minHeight: '400px',

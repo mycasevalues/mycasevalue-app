@@ -195,7 +195,7 @@ export default function RecentlyResearched() {
               display: 'flex',
               flexDirection: 'column',
               padding: '8px 10px',
-              backgroundColor: '#F9FAFB',
+              backgroundColor: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               textDecoration: 'none',

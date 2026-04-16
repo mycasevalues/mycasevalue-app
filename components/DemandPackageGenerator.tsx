@@ -226,7 +226,7 @@ export default function DemandPackageGenerator() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f9fafb', padding: '24px' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-0)', padding: '24px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ marginBottom: '32px' }}>
           <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
@@ -418,7 +418,7 @@ function PreviewContent({
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Case Information
         </h3>
-        <div style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
+        <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
           <p style={{ margin: '4px 0' }}>
             <strong>Case Type:</strong> {caseType.label}
           </p>
@@ -435,7 +435,7 @@ function PreviewContent({
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Win Rate
         </h3>
-        <div style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
+        <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
           <p style={{ margin: '4px 0' }}>
             <strong>{winRate.toFixed(1)}%</strong> of plaintiffs win or settle favorably in {caseType.label} cases
             nationwide.
@@ -450,7 +450,7 @@ function PreviewContent({
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Median Settlement
         </h3>
-        <div style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
+        <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
           <p style={{ margin: '4px 0' }}>
             <strong>{medianFormatted}</strong> is the median settlement amount in {caseType.label} cases.
           </p>
@@ -468,7 +468,7 @@ function PreviewContent({
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Time to Resolution
         </h3>
-        <div style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
+        <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
           <p style={{ margin: '4px 0' }}>
             <strong>{timeToResolution} months</strong> is the median time from filing to resolution in {caseType.label} cases.
           </p>
@@ -483,7 +483,7 @@ function PreviewContent({
           <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
             Attorney Representation Impact
           </h3>
-          <div style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
+          <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
             <p style={{ margin: '4px 0' }}>
               <strong>Represented Win Rate:</strong> {attorneyData.rwr}%
             </p>
@@ -505,7 +505,7 @@ function PreviewContent({
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Supporting Statistics
         </h3>
-        <div style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
+        <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
           <p style={{ margin: '4px 0' }}>
             <strong>Settlement Rate:</strong> {settlementRate.toFixed(1)}% of cases settle
           </p>

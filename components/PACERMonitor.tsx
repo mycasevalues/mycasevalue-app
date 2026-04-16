@@ -239,7 +239,7 @@ export default function PACERMonitor() {
                     padding: '12px',
                     border: '1px solid var(--border-default)',
                     borderRadius: '6px',
-                    backgroundColor: '#F9FAFB',
+                    backgroundColor: 'var(--color-surface-0)',
                     display: 'grid',
                     gridTemplateColumns: '1fr 1fr 1fr auto',
                     gap: '12px',

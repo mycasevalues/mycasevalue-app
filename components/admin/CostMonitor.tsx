@@ -70,7 +70,7 @@ export default function CostMonitor() {
     return (
       <div
         style={{
-          backgroundColor: '#fee2e2',
+          backgroundColor: 'rgba(239,68,68,0.06)',
           border: '1px solid #fecaca',
           borderRadius: '8px',
           padding: '24px',
@@ -175,7 +175,7 @@ export default function CostMonitor() {
       {/* Footer */}
       <div
         style={{
-          backgroundColor: '#f9fafb',
+          backgroundColor: 'var(--color-surface-0)',
           border: '1px solid rgba(255,255,255,0.08)',
           borderRadius: '8px',
           padding: '16px',
@@ -249,7 +249,7 @@ function ServiceCard({ service }: ServiceCardProps) {
       <div style={{ marginBottom: '16px' }}>
         <div
           style={{
-            backgroundColor: '#e5e7eb',
+            backgroundColor: 'rgba(255,255,255,0.08)',
             borderRadius: '4px',
             height: '8px',
             overflow: 'hidden',
@@ -276,7 +276,7 @@ function ServiceCard({ service }: ServiceCardProps) {
       {/* MoM Change */}
       <div
         style={{
-          backgroundColor: '#f3f4f6',
+          backgroundColor: 'rgba(255,255,255,0.05)',
           borderRadius: '4px',
           padding: '12px',
           fontSize: '12px',

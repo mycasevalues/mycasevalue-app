@@ -80,7 +80,7 @@ export default function WidgetImpressionPanel() {
             key={index}
             style={{
               padding: '16px',
-              backgroundColor: '#f9fafb',
+              backgroundColor: 'var(--color-surface-0)',
               borderRadius: '6px',
               border: '1px solid rgba(255,255,255,0.08)',
             }}
@@ -100,7 +100,7 @@ export default function WidgetImpressionPanel() {
         <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '16px' }}>
           Impressions Over Time (Last 30 Days)
         </h3>
-        <div style={{ backgroundColor: '#f9fafb', padding: '16px', borderRadius: '6px', minHeight: '250px', position: 'relative' }}>
+        <div style={{ backgroundColor: 'var(--color-surface-0)', padding: '16px', borderRadius: '6px', minHeight: '250px', position: 'relative' }}>
           <svg
             viewBox={`0 0 900 200`}
             style={{ width: '100%', height: '250px' }}
@@ -191,7 +191,7 @@ export default function WidgetImpressionPanel() {
                     {domain.impressions.toLocaleString()} ({percentage.toFixed(1)}%)
                   </span>
                 </div>
-                <div style={{ height: '8px', backgroundColor: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
+                <div style={{ height: '8px', backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: '4px', overflow: 'hidden' }}>
                   <div
                     style={{
                       height: '100%',
@@ -225,7 +225,7 @@ export default function WidgetImpressionPanel() {
                     {caseType.impressions.toLocaleString()} ({percentage.toFixed(1)}%)
                   </span>
                 </div>
-                <div style={{ height: '8px', backgroundColor: '#e5e7eb', borderRadius: '4px', overflow: 'hidden' }}>
+                <div style={{ height: '8px', backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: '4px', overflow: 'hidden' }}>
                   <div
                     style={{
                       height: '100%',

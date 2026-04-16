@@ -214,7 +214,7 @@ export default function DataAlertSubscribe({
                   fontSize: '12px',
                   color: 'var(--color-text-muted)',
                   marginBottom: '16px',
-                  backgroundColor: '#F9FAFB',
+                  backgroundColor: 'var(--color-surface-0)',
                   padding: '8px 10px',
                   borderRadius: '4px',
                 }}

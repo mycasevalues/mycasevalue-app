@@ -419,7 +419,7 @@ const JudgeAnalyticsPreview: React.FC = () => (
             display: 'flex',
             justifyContent: 'space-between',
             padding: '12px',
-            backgroundColor: '#F9F9F9',
+            backgroundColor: 'var(--color-surface-0)',
             borderRadius: '12px',
           }}
         >
@@ -541,7 +541,7 @@ const AIPredictionsPreview: React.FC = () => (
     <div
       style={{
         padding: '20px',
-        backgroundColor: '#F0F0F0',
+        backgroundColor: 'rgba(255,255,255,0.06)',
         borderRadius: '12px',
         marginBottom: '20px',
       }}

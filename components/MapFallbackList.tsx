@@ -50,7 +50,7 @@ export default function MapFallbackList({
       style={{
         display: 'none', // Will be shown by CSS media query
         padding: '20px 16px',
-        backgroundColor: '#f9fafb',
+        backgroundColor: 'var(--color-surface-0)',
         borderRadius: '8px',
         marginTop: '24px',
       }}

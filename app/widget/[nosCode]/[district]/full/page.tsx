@@ -119,7 +119,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
         <div style={{
           position: 'relative',
           height: '24px',
-          backgroundColor: '#f3f4f6',
+          backgroundColor: 'rgba(255,255,255,0.05)',
           borderRadius: '4px',
           overflow: 'hidden',
         }}>
