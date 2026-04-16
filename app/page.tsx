@@ -173,22 +173,25 @@ export default function HomePage() {
               Explore platform <span className="inline-block transition-transform group-hover:translate-x-0.5 text-blue-400/70">&rarr;</span>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 rounded-md overflow-hidden">
             {[
-              { title: 'Case Outcomes', desc: 'Win rates, settlement ranges, and disposition analytics across 84 case types.', href: '/cases', meta: '84 case types' },
-              { title: 'Judge Intelligence', desc: 'Ruling patterns, case duration, and outcome tendencies for federal judges.', href: '/judges', meta: '3,400+ judges' },
-              { title: 'Venue Analysis', desc: 'Compare districts by performance, timelines, and historical outcomes.', href: '/districts', meta: '94 districts' },
-              { title: 'Document Search', desc: 'Full-text search across opinions, regulations, and filings from 7 sources.', href: '/case-search', meta: '7 data sources' },
+              { num: '01', title: 'Case Outcomes', desc: 'Win rates, settlement ranges, and disposition analytics across 84 case types.', href: '/cases', meta: '84 case types' },
+              { num: '02', title: 'Judge Intelligence', desc: 'Ruling patterns, case duration, and outcome tendencies for federal judges.', href: '/judges', meta: '3,400+ judges' },
+              { num: '03', title: 'Venue Analysis', desc: 'Compare districts by performance, timelines, and historical outcomes.', href: '/districts', meta: '94 districts' },
+              { num: '04', title: 'Document Search', desc: 'Full-text search across opinions, regulations, and filings from 7 sources.', href: '/case-search', meta: '7 data sources' },
             ].map((cap) => (
               <Link
                 key={cap.title}
                 href={cap.href}
-                className="group p-6 bg-[#0c1220] hover:bg-[#111827] transition-colors"
+                className="group p-6 bg-[#0c1220] hover:bg-[#111827] transition-colors relative"
               >
-                <h3 className="text-sm font-semibold text-gray-100 mb-2 group-hover:text-white transition-colors">{cap.title}</h3>
+                <span className="text-[10px] font-mono text-gray-700 tabular-nums absolute top-4 right-4 group-hover:text-blue-400/50 transition-colors">{cap.num}</span>
+                <h3 className="text-[15px] font-semibold text-gray-100 mb-2 group-hover:text-white transition-colors tracking-[-0.01em]">{cap.title}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">{cap.desc}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] text-blue-400/60 group-hover:text-blue-400 transition-colors">View &rarr;</span>
+                <div className="flex items-center justify-between pt-3 border-t" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
+                  <span className="text-[11px] text-blue-400/60 group-hover:text-blue-400 transition-colors flex items-center gap-1">
+                    View <span className="inline-block transition-transform group-hover:translate-x-0.5">&rarr;</span>
+                  </span>
                   <span className="text-[10px] text-gray-600 font-mono tabular-nums">{cap.meta}</span>
                 </div>
               </Link>
