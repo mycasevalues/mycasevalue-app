@@ -133,12 +133,23 @@ export default async function JudgesPage() {
         <JudgeDirectoryClient initialJudges={initialJudges} initialTotal={initialTotal} />
 
         {/* Beta Notice with Radar Preview */}
-        <section style={{ padding: '48px 32px', borderRadius: 8, border: '1px solid var(--border-default)', background: 'var(--color-surface-1)', marginBottom: 64, marginTop: 64 }}>
-          <h2 style={{ fontSize: 24, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
-            Judge Analytics — Advanced Profile Metrics
+        <section style={{ padding: '40px 32px', borderRadius: 6, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', marginBottom: 48, marginTop: 48, position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '3px 8px', marginBottom: 12,
+            borderRadius: 3, background: 'rgba(59,130,246,0.08)',
+            border: '1px solid rgba(59,130,246,0.15)',
+            fontFamily: 'var(--font-mono)', fontSize: 9,
+            fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase',
+            color: '#60a5fa',
+          }}>
+            Advanced Metrics
+          </div>
+          <h2 style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-inter)', marginBottom: 10, letterSpacing: '-0.02em' }}>
+            Analytics Radar — Multi-dimensional Profiles
           </h2>
-          <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', maxWidth: 680, margin: '0 0 28px', lineHeight: 1.6 }}>
-            Explore detailed judge profiles with additional metrics derived from PACER and FJC records. Preview the analytics radar below.
+          <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-inter)', maxWidth: 680, margin: '0 0 28px', lineHeight: 1.65 }}>
+            Explore detailed judge profiles with motion grant rates, settlement patterns, and disposition metrics derived from PACER and FJC records.
           </p>
 
           {/* Radar chart preview */}
@@ -146,11 +157,11 @@ export default async function JudgesPage() {
         </section>
 
         {/* Disclaimer */}
-        <div style={{ padding: 24, border: '1px solid var(--border-default)', borderRadius: 8, background: 'var(--color-surface-0)' }}>
-          <h3 style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
+        <div style={{ padding: '20px 24px', border: '1px solid var(--border-default)', borderLeft: '3px solid rgba(59,130,246,0.3)', borderRadius: 6, background: 'var(--color-surface-0)' }}>
+          <h3 style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.2em', color: 'rgba(96,165,250,0.8)', fontFamily: 'var(--font-mono)', marginBottom: 10 }}>
             Data Methodology
           </h3>
-          <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: 0 }}>
+          <p style={{ fontSize: 12, lineHeight: 1.7, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-inter)', margin: 0 }}>
             Judge analytics are derived from publicly available federal court records and PACER data. Metrics include motion grant rates, case duration, win rates, and settlement patterns. Data is updated periodically and covers active Article III judges in the 95 federal judicial districts. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>
