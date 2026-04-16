@@ -304,15 +304,16 @@ html, body {
 
 
 /* ============================================================
-   ACCESSIBILITY — Focus states with red accent
+   ACCESSIBILITY — Institutional blue focus rings
    ============================================================ */
 *:focus-visible {
-  outline: 2px solid #1a56db;
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
+  border-radius: 2px;
 }
 
-button:focus-visible, a:focus-visible, input:focus-visible {
-  outline: 2px solid #1a56db;
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
