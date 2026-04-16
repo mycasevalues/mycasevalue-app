@@ -37,7 +37,7 @@ const COLS = [
 
 export default function Footer() {
   return (
-    <footer role="contentinfo" style={{ background: '#0a1628', color: '#94a3b8' }}>
+    <footer role="contentinfo" style={{ background: '#060a14', color: '#94a3b8' }}>
       <div className="max-w-5xl mx-auto px-6 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           {/* Brand */}

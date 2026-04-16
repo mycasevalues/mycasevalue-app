@@ -4,7 +4,7 @@ export default function BetaBanner() {
   return (
     <div
       style={{
-        background: '#0f2240',
+        background: '#080d19',
         color: 'rgba(255,255,255,0.7)',
         minHeight: '32px',
         display: 'flex',
