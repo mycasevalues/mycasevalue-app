@@ -125,60 +125,65 @@ export default async function ChangelogPage() {
       />
 
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
-        {/* Dark Navy Hero Header */}
-        <div style={{ background: 'var(--gradient-hero)', padding: '64px 24px' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            {/* Breadcrumb */}
-            <div style={{ marginBottom: 24, display: 'flex', alignItems: 'center', gap: 8 }}>
-              <Link href="/" style={{
-                fontSize: 14,
-                color: 'rgba(255,255,255,0.6)',
-                textDecoration: 'none',
-                fontFamily: 'var(--font-body)',
-                transition: 'color 150ms ease-out',
-              }}>
-                Home
-              </Link>
-              <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14 }}>/</span>
-              <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
-                Data Changelog
-              </span>
-            </div>
+        {/* Institutional Dark Hero */}
+        <div style={{
+          background: '#080d19',
+          padding: '48px 24px 40px',
+          position: 'relative',
+          overflow: 'hidden',
+          borderBottom: '1px solid rgba(255,255,255,0.06)',
+        }}>
+          <div aria-hidden style={{
+            position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }} />
+          <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+            {/* Mono breadcrumb */}
+            <nav style={{
+              display: 'flex', alignItems: 'center', gap: 8,
+              fontFamily: 'var(--font-mono)', fontSize: 11,
+              letterSpacing: '0.08em', textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.55)', marginBottom: 20,
+            }}>
+              <Link href="/" style={{ color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }}>Home</Link>
+              <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
+              <span style={{ color: 'rgba(255,255,255,0.75)' }}>Data Changelog</span>
+            </nav>
 
-            <div style={{ marginBottom: 16 }}>
-              <span style={{
-                display: 'inline-block',
-                padding: '6px 12px',
-                backgroundColor: 'var(--accent-primary)',
-                color: 'var(--color-surface-0)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                borderRadius: '12px',
-                fontFamily: 'var(--font-display)',
-              }}>
-                DATA & UPDATES
-              </span>
+            {/* Pulse eyebrow pill */}
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '4px 10px', marginBottom: 16,
+              borderRadius: 999,
+              border: '1px solid rgba(59,130,246,0.2)',
+              background: 'rgba(59,130,246,0.08)',
+              fontFamily: 'var(--font-mono)', fontSize: 10,
+              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              color: '#60a5fa',
+            }}>
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+              Data &amp; Updates
             </div>
 
             <h1 style={{
-              fontSize: 'clamp(28px, 4vw, 48px)',
+              fontFamily: 'var(--font-inter)',
+              fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 700,
-              color: 'var(--color-surface-0)',
-              fontFamily: 'var(--font-display)',
-              letterSpacing: '-1px',
+              color: '#ffffff',
+              letterSpacing: '-0.025em',
               marginBottom: 16,
-              lineHeight: 1.2,
+              lineHeight: 1.1,
             }}>
-              Data Changelog
+              Data changelog
             </h1>
 
             <p style={{
-              fontSize: 18,
-              color: 'rgba(255,255,255,0.8)',
+              fontSize: 'clamp(15px, 1.5vw, 17px)',
+              color: 'rgba(255,255,255,0.7)',
               fontFamily: 'var(--font-body)',
               lineHeight: 1.6,
+              maxWidth: 640,
               margin: 0,
             }}>
               Stay informed about data updates, new features, and platform improvements
