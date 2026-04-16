@@ -138,7 +138,7 @@ a:hover { text-decoration: underline; color: var(--color-accent-dark); }
    ============================================================ */
 @layer utilities {
   .skeleton {
-    background: linear-gradient(90deg, #E5EBF0 25%, #f9fafb 50%, #E5EBF0 75%);
+    background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
     background-size: 400% 100%;
     animation: shimmer 1.8s infinite linear;
     border-radius: 12px;
@@ -968,7 +968,7 @@ button:disabled,
 
 /* Skeleton premium loading shimmer */
 .skeleton-premium {
-  background: linear-gradient(90deg, #E5EBF0 25%, #f9fafb 50%, #E5EBF0 75%);
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.5s ease-in-out infinite;
   border-radius: 12px;

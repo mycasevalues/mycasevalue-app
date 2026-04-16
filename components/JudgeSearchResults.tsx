@@ -82,7 +82,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                 style={{
                   height: '20px',
                   width: '60%',
-                  background: '#E8EAED',
+                  background: 'rgba(255,255,255,0.06)',
                   borderRadius: '4px',
                   marginBottom: '8px',
                 }}
@@ -91,7 +91,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                 style={{
                   height: '14px',
                   width: '40%',
-                  background: '#E8EAED',
+                  background: 'rgba(255,255,255,0.06)',
                   borderRadius: '4px',
                 }}
               />
