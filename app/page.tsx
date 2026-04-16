@@ -105,7 +105,11 @@ export default function HomePage() {
           </div>
 
           {/* Metrics row */}
-          <div className="flex flex-wrap gap-x-12 gap-y-4 mt-16 pt-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+          <div className="flex items-center justify-between mt-16 pt-4 mb-3">
+            <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-gray-500">Coverage snapshot</span>
+            <span className="text-[10px] text-gray-600 font-mono tabular-nums">As of {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+          </div>
+          <div className="flex flex-wrap gap-x-12 gap-y-4 pt-4 border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
             {[
               { value: SITE_METRICS.totalCases, label: 'Federal Cases' },
               { value: String(SITE_METRICS.districtCourts), label: 'District Courts' },
