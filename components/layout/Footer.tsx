@@ -1,286 +1,222 @@
 /**
- * Footer — Bloomberg Law-style institutional footer.
+ * Footer.tsx — Westlaw Precision 4-column dark footer
  *
- * Specs:
- * - Background: #1A1A1A (charcoal, matching nav bar)
- * - 3-column link layout + brand column
- * - System-status strip: mono, green dot, operational status
- * - Data lineage row
- * - Bottom bar: copyright, legal links
- * - No SOC 2 badge (per mandatory rules)
+ * Background: var(--chrome-bg) = #1B2D45
+ * Border-top: 1px solid var(--chrome-border) = #2A3F58
+ * 4 columns: Brand | Product | Tools | Company
+ * Bottom bar: copyright + attribution
+ * No orange anywhere. No status strip. No data lineage row.
  */
 
 import Link from 'next/link';
 
+/* ── Column definitions ── */
+
 const COLS = [
   {
-    title: 'Platform',
+    title: 'PRODUCT',
     links: [
-      { label: 'Case Types', href: '/cases' },
+      { label: 'Federal Districts', href: '/districts' },
       { label: 'Judges', href: '/judges' },
-      { label: 'Districts', href: '/districts' },
-      { label: 'Attorney Tools', href: '/attorney' },
+      { label: 'Case Analytics', href: '/analytics' },
+      { label: 'Settlement Ranges', href: '/cases' },
       { label: 'Pricing', href: '/pricing' },
+      { label: 'API', href: '/api-docs' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'TOOLS',
     links: [
-      { label: 'How It Works', href: '/how-it-works' },
+      { label: 'Precision Analytics', href: '/analytics' },
+      { label: 'Venue Comparison', href: '/compare' },
+      { label: 'Settlement Calculator', href: '/attorney' },
+      { label: 'Alert Setup', href: '/dashboard' },
       { label: 'Methodology', href: '/methodology' },
-      { label: 'Whitepaper', href: '/methodology/whitepaper' },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'About', href: '/about' },
-      { label: 'Contact', href: '/contact' },
     ],
   },
   {
-    title: 'Data',
+    title: 'COMPANY',
     links: [
-      { label: 'Data Sources', href: '/data-sources' },
+      { label: 'About', href: '/about' },
       { label: 'Changelog', href: '/data/changelog' },
-      { label: 'API Reference', href: '/api-docs' },
-      { label: 'FJC IDB', href: 'https://fjc.gov', external: true },
-      { label: 'CourtListener', href: 'https://courtlistener.com', external: true },
+      { label: 'Contact', href: '/contact' },
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Terms of Service', href: '/terms' },
     ],
   },
 ];
+
+/* ── Column header style ── */
+const colHeaderStyle: React.CSSProperties = {
+  fontSize: 10,
+  fontFamily: 'var(--font-ui)',
+  fontWeight: 600,
+  color: '#4A6080',
+  textTransform: 'uppercase',
+  letterSpacing: '0.09em',
+  marginBottom: 8,
+};
+
+/* ── Link style ── */
+const linkStyle: React.CSSProperties = {
+  fontSize: 11,
+  fontFamily: 'var(--font-ui)',
+  color: 'var(--chrome-text-muted, #8AAAC8)',
+  textDecoration: 'none',
+  lineHeight: 2.1,
+  transition: 'color 120ms',
+};
+
+/* ── Gold cube logo (20px) ── */
+function GoldCube() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M14 2L26 9V19L14 26L2 19V9L14 2Z" fill="var(--gold, #C4882A)" />
+      <path d="M14 2L26 9L14 16L2 9L14 2Z" fill="var(--gold, #C4882A)" opacity="0.9" />
+      <path d="M14 16V26L2 19V9L14 16Z" fill="var(--gold, #C4882A)" opacity="0.7" />
+      <path d="M14 16V26L26 19V9L14 16Z" fill="var(--gold, #C4882A)" opacity="0.5" />
+    </svg>
+  );
+}
 
 export default function Footer() {
   return (
     <footer
       role="contentinfo"
       style={{
-        background: '#1A1A1A',
-        color: 'rgba(255,255,255,0.6)',
-        borderTop: '1px solid #333333',
+        background: 'var(--chrome-bg, #1B2D45)',
+        borderTop: '1px solid var(--chrome-border, #2A3F58)',
+        padding: '24px 0 16px',
       }}
     >
-      {/* System-status strip */}
       <div
         style={{
-          background: '#222222',
-          borderBottom: '1px solid #333333',
-          padding: '10px 24px',
+          maxWidth: 1200,
+          margin: '0 auto',
+          padding: '0 22px',
         }}
       >
-        <div
-          style={{
-            maxWidth: 960,
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: 16,
-            flexWrap: 'wrap',
-            fontFamily: 'var(--font-mono)',
-            fontSize: 10,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.4)',
-            fontVariantNumeric: 'tabular-nums',
-          }}
-        >
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-            <span
-              className="animate-pulse"
-              style={{ width: 6, height: 6, borderRadius: '50%', background: '#15803D' }}
-              aria-hidden
-            />
-            <span style={{ color: '#15803D' }}>All systems operational</span>
-          </span>
-          <span>Uptime · 99.98%</span>
-          <span>Cases indexed · 5,147,392</span>
-          <span>Last refresh · 02:00 UTC</span>
-          <span>Build · v2026.04</span>
-        </div>
-      </div>
-
-      {/* Main footer content */}
-      <div style={{ maxWidth: 960, margin: '0 auto', padding: '40px 24px' }}>
+        {/* 4-column grid */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: 32,
-            marginBottom: 32,
+            gap: 20,
           }}
           className="footer-grid"
         >
-          {/* Brand column */}
+          {/* Col 1 — Brand */}
           <div>
-            <span
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <GoldCube />
+              <span
+                style={{
+                  fontSize: 12,
+                  fontFamily: 'var(--font-legal)',
+                  fontWeight: 700,
+                  color: '#FFFFFF',
+                }}
+              >
+                MyCaseValue
+              </span>
+            </div>
+            <p
               style={{
-                fontSize: 14,
-                fontWeight: 700,
-                color: '#FFFFFF',
-                letterSpacing: '-0.02em',
-                fontFamily: 'var(--font-inter)',
+                fontSize: 13,
+                fontFamily: 'var(--font-ui)',
+                color: 'var(--chrome-text-muted, #8AAAC8)',
+                lineHeight: 1.5,
+                maxWidth: 170,
+                marginTop: 6,
+                marginBottom: 0,
               }}
             >
-              MyCaseValue
-            </span>
+              The Federal Court Record. Open to Everyone.
+            </p>
             <p
               style={{
                 fontSize: 11,
-                color: 'rgba(255,255,255,0.45)',
-                marginTop: 8,
-                lineHeight: 1.5,
-                maxWidth: 200,
+                fontFamily: 'var(--font-ui)',
+                color: 'var(--gold, #C4882A)',
+                marginTop: 4,
+                marginBottom: 0,
               }}
             >
-              Institutional-grade federal court intelligence sourced from public records.
+              No enterprise price tag.
             </p>
           </div>
 
-          {/* Link columns */}
+          {/* Cols 2-4 — Product, Tools, Company */}
           {COLS.map((col) => (
             <div key={col.title}>
-              <p
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 10,
-                  fontWeight: 600,
-                  color: 'rgba(255,255,255,0.4)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.12em',
-                  marginBottom: 12,
-                }}
-              >
-                {col.title}
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
+              <p style={colHeaderStyle}>{col.title}</p>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
                 {col.links.map((link) => (
-                  <li key={link.href}>
-                    {'external' in link && link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          fontSize: 12,
-                          color: 'rgba(255,255,255,0.55)',
-                          textDecoration: 'none',
-                          transition: 'color 120ms',
-                        }}
-                        className="footer-link"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        style={{
-                          fontSize: 12,
-                          color: 'rgba(255,255,255,0.55)',
-                          textDecoration: 'none',
-                          transition: 'color 120ms',
-                        }}
-                        className="footer-link"
-                      >
-                        {link.label}
-                      </Link>
-                    )}
-                  </li>
+                  <Link
+                    key={link.href + link.label}
+                    href={link.href}
+                    style={linkStyle}
+                    className="footer-link"
+                  >
+                    {link.label}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Data lineage row */}
+        {/* Divider */}
         <div
           style={{
-            borderTop: '1px solid #333333',
-            paddingTop: 20,
-            paddingBottom: 16,
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            gap: '8px 24px',
+            height: 1,
+            background: 'var(--chrome-border, #2A3F58)',
+            margin: '16px 0',
           }}
-        >
-          <span
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: 10,
-              fontWeight: 600,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'rgba(255,255,255,0.4)',
-            }}
-          >
-            Data lineage
-          </span>
-          <span
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: 11,
-              color: 'rgba(255,255,255,0.5)',
-              fontVariantNumeric: 'tabular-nums',
-            }}
-          >
-            FJC IDB · CourtListener · PACER (RECAP) · EEOC · USCIS · USPTO · SEC
-          </span>
-          <span
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: 10,
-              color: 'rgba(255,255,255,0.3)',
-              marginLeft: 'auto',
-              fontVariantNumeric: 'tabular-nums',
-            }}
-          >
-            Refreshed daily · 02:00 UTC
-          </span>
-        </div>
+        />
 
         {/* Bottom bar */}
         <div
           style={{
-            borderTop: '1px solid #333333',
-            paddingTop: 20,
             display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
             justifyContent: 'space-between',
-            gap: 16,
+            alignItems: 'flex-start',
+            flexWrap: 'wrap',
+            gap: 8,
           }}
         >
-          <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', margin: 0 }}>
-            &copy; {new Date().getFullYear()} MyCaseValue LLC · West Virginia
+          <p
+            style={{
+              fontSize: 10,
+              fontFamily: 'var(--font-ui)',
+              color: '#4A6080',
+              margin: 0,
+              lineHeight: 1.5,
+              maxWidth: 600,
+            }}
+          >
+            &copy; {new Date().getFullYear()} MyCaseValue LLC. All rights reserved. Federal court
+            data sourced from FJC IDB, CourtListener, RECAP, and PACER.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-            {['Privacy', 'Terms', 'Security', 'Contact'].map((label) => (
-              <Link
-                key={label}
-                href={`/${label.toLowerCase()}`}
-                style={{
-                  fontSize: 11,
-                  color: 'rgba(255,255,255,0.4)',
-                  textDecoration: 'none',
-                  transition: 'color 120ms',
-                }}
-                className="footer-link"
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
+          <p
+            style={{
+              fontSize: 10,
+              fontFamily: 'var(--font-ui)',
+              color: '#4A6080',
+              margin: 0,
+              lineHeight: 1.5,
+            }}
+          >
+            Built for pro se litigants, solo attorneys, law students, and researchers.
+          </p>
         </div>
-
-        {/* Disclaimer */}
-        <p
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: 10,
-            color: 'rgba(255,255,255,0.3)',
-            textAlign: 'center',
-            marginTop: 24,
-          }}
-        >
-          Data from public federal court records · Not legal advice
-        </p>
       </div>
 
       <style>{`
