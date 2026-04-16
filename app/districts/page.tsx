@@ -446,35 +446,41 @@ export default function DistrictsPage() {
                   const deterministic = ((district.code.charCodeAt(0) + district.code.charCodeAt(1)) % 100) / 100;
                   const wrate = Math.round((42 + deterministic * 28) * 10) / 10;
                   return (
-                    <Link key={district.code} href={`/districts/${district.code}`} style={{ textDecoration: 'none' }}>
+                    <Link key={district.code} href={`/districts/${district.code}`} style={{ textDecoration: 'none' }} className="district-card-link">
                       <div style={{
                         background: 'var(--color-surface-0)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '8px',
-                        padding: '20px',
-                        transition: 'all 0.2s ease',
+                        borderRadius: '6px',
+                        padding: '16px 18px',
+                        transition: 'border-color 150ms ease, background-color 150ms ease',
                         cursor: 'pointer',
                         height: '100%',
                         display: 'flex',
                         flexDirection: 'column',
                       }}
-                      /* hover handled by CSS */
                       >
-                        <div style={{ marginBottom: 12, flex: 1 }}>
+                        <div style={{ marginBottom: 12, flex: 1, display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
                           <h3 style={{
-                            fontSize: 15,
+                            fontSize: 14,
                             fontWeight: 600,
                             color: 'var(--color-text-primary)',
-                            margin: '0 0 8px',
-                            fontFamily: 'var(--font-display)',
+                            margin: 0,
+                            fontFamily: 'var(--font-inter)',
+                            letterSpacing: '-0.01em',
+                            lineHeight: 1.35,
                           }}>
                             {district.name}
                           </h3>
                           <div style={{
-                            fontSize: 12,
-                            color: 'var(--accent-primary)',
+                            fontSize: 10,
+                            color: 'rgba(96,165,250,0.8)',
                             fontWeight: 600,
-                            fontFamily: 'var(--font-body)',
+                            fontFamily: 'var(--font-mono)',
+                            letterSpacing: '0.1em',
+                            flexShrink: 0,
+                            padding: '2px 6px',
+                            borderRadius: 3,
+                            background: 'rgba(59,130,246,0.08)',
                           }}>
                             {district.code}
                           </div>
@@ -483,44 +489,50 @@ export default function DistrictsPage() {
                         <div style={{
                           display: 'grid',
                           gridTemplateColumns: '1fr 1fr',
-                          gap: 12,
-                          paddingTop: 12,
+                          gap: 10,
+                          paddingTop: 10,
                           borderTop: '1px solid var(--border-default)',
                         }}>
                           <div>
                             <div style={{
-                              fontSize: 11,
-                              color: 'var(--color-text-secondary)',
+                              fontSize: 9,
+                              color: 'var(--color-text-muted)',
                               textTransform: 'uppercase',
-                              letterSpacing: '0.3px',
-                              marginBottom: 4,
+                              letterSpacing: '0.2em',
+                              marginBottom: 2,
+                              fontFamily: 'var(--font-mono)',
+                              fontWeight: 600,
                             }}>
                               Win Rate
                             </div>
                             <div style={{
-                              fontSize: 18,
-                              fontWeight: 700,
+                              fontSize: 16,
+                              fontWeight: 600,
                               color: 'var(--color-text-primary)',
-                              fontFamily: 'var(--font-display)',
+                              fontFamily: 'var(--font-mono)',
+                              fontVariantNumeric: 'tabular-nums',
                             }}>
                               {wrate}%
                             </div>
                           </div>
                           <div>
                             <div style={{
-                              fontSize: 11,
-                              color: 'var(--color-text-secondary)',
+                              fontSize: 9,
+                              color: 'var(--color-text-muted)',
                               textTransform: 'uppercase',
-                              letterSpacing: '0.3px',
-                              marginBottom: 4,
+                              letterSpacing: '0.2em',
+                              marginBottom: 2,
+                              fontFamily: 'var(--font-mono)',
+                              fontWeight: 600,
                             }}>
                               Cases/Yr
                             </div>
                             <div style={{
-                              fontSize: 18,
-                              fontWeight: 700,
+                              fontSize: 16,
+                              fontWeight: 600,
                               color: 'var(--color-text-primary)',
-                              fontFamily: 'var(--font-display)',
+                              fontFamily: 'var(--font-mono)',
+                              fontVariantNumeric: 'tabular-nums',
                             }}>
                               {(caseVolume / 1000).toFixed(1)}K
                             </div>
@@ -528,12 +540,14 @@ export default function DistrictsPage() {
                         </div>
 
                         <div style={{
-                          marginTop: 12,
-                          fontSize: 11,
-                          color: 'var(--color-text-secondary)',
-                          fontFamily: 'var(--font-body)',
+                          marginTop: 10,
+                          fontSize: 10,
+                          color: 'var(--color-text-muted)',
+                          fontFamily: 'var(--font-mono)',
+                          letterSpacing: '0.05em',
+                          textTransform: 'uppercase',
                         }}>
-                          {district.states.join(', ')}
+                          {district.states.join(' · ')}
                         </div>
                       </div>
                     </Link>
