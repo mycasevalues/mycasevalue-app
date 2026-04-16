@@ -1373,25 +1373,39 @@ export default function PlatformPage() {
         </div>
 
         {/* CTA Section */}
-        <div style={{ padding: '80px 24px', background: 'var(--gradient-hero)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
+        <div style={{
+          padding: '64px 24px',
+          background: '#080d19',
+          position: 'relative',
+          overflow: 'hidden',
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+        }}>
+          <div aria-hidden style={{
+            position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }} />
+          <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
             <h2 style={{
-              fontSize: 'clamp(28px, 4vw, 40px)',
+              fontFamily: 'var(--font-inter)',
+              fontSize: 'clamp(24px, 3.5vw, 32px)',
               fontWeight: 700,
-              color: 'var(--color-surface-0)',
+              letterSpacing: '-0.02em',
+              color: '#ffffff',
               marginBottom: 16,
             }}>
-              Join the Legal Intelligence Revolution
+              Put federal court data to work
             </h2>
             <p style={{
-              fontSize: 18,
-              color: '#D1D5DB',
+              fontFamily: 'var(--font-body)',
+              fontSize: 16,
+              color: 'rgba(255,255,255,0.7)',
               marginBottom: 32,
               maxWidth: 600,
               margin: '0 auto 32px',
               lineHeight: 1.6,
             }}>
-              MyCaseValue is democratizing access to federal court data with AI-powered analytics, making sophisticated legal intelligence available to every attorney.
+              Institutional-grade analytics with transparent methodology — accessible to solo practitioners and AmLaw 100 firms alike.
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="/sign-up" style={{
