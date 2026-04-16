@@ -139,7 +139,10 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row md:items-start md:gap-16">
             <div className="md:w-56 flex-shrink-0 mb-6 md:mb-0">
-              <p className="text-[10px] font-medium tracking-[0.2em] uppercase text-blue-400/60 mb-2">Sources</p>
+              <p className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-[0.25em] uppercase text-blue-400/70 mb-2 px-2 py-0.5 rounded-[3px] border border-blue-400/15 bg-blue-400/[0.04]">
+                <span className="w-1 h-1 rounded-full bg-blue-400/70" />
+                Sources
+              </p>
               <h2 className="text-sm font-semibold text-white mb-1.5">Data Sources</h2>
               <p className="text-xs text-gray-500 leading-relaxed">
                 All data from official federal court and agency records.
@@ -147,9 +150,9 @@ export default function HomePage() {
             </div>
             <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
               {SITE_METRICS.dataSources.map((src) => (
-                <div key={src.name}>
-                  <span className="text-xs font-medium text-gray-300">{src.name}</span>
-                  <span className="text-[10px] text-gray-600 ml-1.5">{src.category}</span>
+                <div key={src.name} className="flex flex-col py-1.5 border-l-2 border-blue-400/10 hover:border-blue-400/40 transition-colors pl-3">
+                  <span className="text-xs font-medium text-gray-200">{src.name}</span>
+                  <span className="text-[10px] text-gray-600 font-mono uppercase tracking-wider mt-0.5">{src.category}</span>
                 </div>
               ))}
             </div>
