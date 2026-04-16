@@ -6,7 +6,7 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Platform Overview — Research Federal Court Outcomes',
+  title: 'How It Works — Federal Court Intelligence',
   description: 'Research federal court outcomes in 3 steps: Select case type, search 5.1M+ cases, get personalized report with win rates & settlements.',
   alternates: { canonical: `${SITE_URL}/how-it-works` },
   openGraph: {
