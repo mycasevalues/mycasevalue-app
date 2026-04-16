@@ -124,10 +124,11 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                 <span
                   className="breadcrumbs-current"
                   style={{
-                    fontSize: '13px',
+                    fontSize: '12px',
                     color: 'var(--color-text-primary)',
                     fontWeight: '500',
                     fontFamily: 'var(--font-body)',
+                    letterSpacing: '-0.005em',
                   }}
                   aria-current="page"
                 >
@@ -138,10 +139,12 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   href={item.href}
                   className="breadcrumbs-link"
                   style={{
-                    fontSize: '13px',
-                    color: 'var(--accent-primary-hover)',
+                    fontSize: '12px',
+                    color: 'var(--color-text-muted)',
                     textDecoration: 'none',
                     fontFamily: 'var(--font-body)',
+                    letterSpacing: '-0.005em',
+                    transition: 'color 150ms ease',
                   }}
                 >
                   {item.label}
@@ -157,7 +160,8 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
           font-family: var(--font-body);
         }
         .breadcrumbs-link:hover {
-          text-decoration: underline;
+          color: var(--accent-primary) !important;
+          text-decoration: none;
         }
       `}</style>
     </>
