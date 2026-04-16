@@ -30,10 +30,10 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
     <div>
       <form onSubmit={handleSubmit} role="search" aria-label="Search federal court records">
         <div
-          className="flex rounded-lg overflow-hidden border transition-all focus-within:ring-2"
+          className="flex rounded-md overflow-hidden border transition-all focus-within:border-blue-400/60 focus-within:shadow-[0_0_0_3px_rgba(59,130,246,0.1)]"
           style={{
-            background: dark ? 'rgba(255,255,255,0.07)' : '#fff',
-            borderColor: dark ? 'rgba(255,255,255,0.12)' : '#e5e7eb',
+            background: dark ? 'rgba(255,255,255,0.04)' : '#fff',
+            borderColor: dark ? 'rgba(255,255,255,0.10)' : '#e5e7eb',
             boxShadow: dark ? 'none' : '0 1px 3px rgba(0,0,0,0.06)',
           }}
         >
