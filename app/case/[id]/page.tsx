@@ -342,7 +342,7 @@ export default function CaseDetailPage() {
             {c.sources.length > 0 ? (
               c.sources.map((s, i) => (
                 <div key={i} className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600 capitalize">{s.sourceName.replace(/_/g, ' ')}</span>
+                  <span className="text-gray-400 capitalize">{s.sourceName.replace(/_/g, ' ')}</span>
                   <div className="flex items-center gap-3">
                     {s.fetchedAt && (
                       <span className="text-xs text-gray-400">

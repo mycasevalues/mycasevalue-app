@@ -72,7 +72,7 @@ export function ToolPageLayout({
             <h2 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
               Sign in to access this tool
             </h2>
-            <p className="text-gray-600 mb-8 max-w-md mx-auto">
+            <p className="text-gray-400 mb-8 max-w-md mx-auto">
               This is a Pro attorney tool. Sign in to your MyCaseValue account to continue.
             </p>
             <a
@@ -93,7 +93,7 @@ export function ToolPageLayout({
           {/* Footer Disclaimer */}
           <div className="border-t border-white/10 bg-[var(--color-surface-2)] mt-12">
             <div className="max-w-4xl mx-auto px-6 py-8">
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm text-gray-400 leading-relaxed">
                 This tool is provided for informational and analytical purposes only and does not
                 constitute legal advice. Results should be reviewed by a qualified attorney. MyCaseValue
                 assumes no liability for the use of this tool or accuracy of its results. Always

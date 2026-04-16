@@ -89,9 +89,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} MyCaseValue LLC &middot; West Virginia
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-[11px] text-gray-600 hover:text-gray-400 transition-colors">Privacy</Link>
-            <Link href="/terms" className="text-[11px] text-gray-600 hover:text-gray-400 transition-colors">Terms</Link>
-            <Link href="/contact" className="text-[11px] text-gray-600 hover:text-gray-400 transition-colors">Contact</Link>
+            <Link href="/privacy" className="text-[11px] text-gray-400 hover:text-gray-400 transition-colors">Privacy</Link>
+            <Link href="/terms" className="text-[11px] text-gray-400 hover:text-gray-400 transition-colors">Terms</Link>
+            <Link href="/contact" className="text-[11px] text-gray-400 hover:text-gray-400 transition-colors">Contact</Link>
           </div>
         </div>
 

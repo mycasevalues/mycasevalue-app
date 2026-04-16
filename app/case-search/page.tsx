@@ -224,7 +224,7 @@ function CaseSearchContent() {
 
               {/* Court */}
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Court</label>
+                <label className="block text-xs font-medium text-gray-400 mb-1">Court</label>
                 <input
                   type="text"
                   value={court}
@@ -237,7 +237,7 @@ function CaseSearchContent() {
 
               {/* Case Type */}
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Case Type</label>
+                <label className="block text-xs font-medium text-gray-400 mb-1">Case Type</label>
                 <input
                   type="text"
                   value={caseType}
@@ -251,7 +251,7 @@ function CaseSearchContent() {
               {/* Year Range */}
               <div className="flex gap-2">
                 <div className="flex-1">
-                  <label className="block text-xs font-medium text-gray-600 mb-1">From</label>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">From</label>
                   <input
                     type="number"
                     value={yearFrom}
@@ -264,7 +264,7 @@ function CaseSearchContent() {
                   />
                 </div>
                 <div className="flex-1">
-                  <label className="block text-xs font-medium text-gray-600 mb-1">To</label>
+                  <label className="block text-xs font-medium text-gray-400 mb-1">To</label>
                   <input
                     type="number"
                     value={yearTo}
@@ -280,7 +280,7 @@ function CaseSearchContent() {
 
               {/* Status */}
               <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">Status</label>
+                <label className="block text-xs font-medium text-gray-400 mb-1">Status</label>
                 <select
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}

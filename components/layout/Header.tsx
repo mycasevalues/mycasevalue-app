@@ -640,7 +640,7 @@ export default function Header() {
                           className={`block py-1.5 px-3 rounded text-sm transition-colors ${
                             item.highlight
                               ? 'font-semibold text-brand-blue'
-                              : 'text-gray-600 hover:text-brand-blue'
+                              : 'text-gray-400 hover:text-brand-blue'
                           }`}
                         >
                           {item.label}

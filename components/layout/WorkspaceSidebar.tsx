@@ -121,7 +121,7 @@ function NavSectionGroup({ section }: { section: NavSection }) {
       <button
         onClick={() => section.collapsible && setIsOpen(!isOpen)}
         className={`flex items-center justify-between w-full px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-400 border-l-2 border-l-transparent transition-all duration-150 ${
-          section.collapsible ? 'hover:text-gray-600 hover:border-l-gray-300 cursor-pointer' : 'cursor-default'
+          section.collapsible ? 'hover:text-gray-400 hover:border-l-gray-300 cursor-pointer' : 'cursor-default'
         }`}
       >
         <span>{section.title}</span>
