@@ -43,8 +43,20 @@ export default function DocumentIntelligencePage() {
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
       `}</style>
       {/* Header */}
-      <div style={{ background: 'var(--gradient-hero)', padding: '18px 20px' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{
+        background: '#080d19',
+        color: '#fff',
+        padding: '40px 24px 32px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
           <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 4px 0' }}>Document Intelligence</h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: 0 }}>AI-powered legal document analysis for case classification and insights</p>
         </div>
