@@ -150,20 +150,20 @@ export default function OddsPage() {
         .odds-select:hover { border-color: var(--accent-primary-hover); }
         .odds-select:focus { outline: none; border-color: var(--accent-primary-hover); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         .odds-btn {
-          background: var(--gradient-hero);
-          color: var(--color-text-inverse);
-          border: none;
-          border-radius: 12px;
-          padding: 14px 40px;
-          font-size: 14px;
+          background: #1a56db;
+          color: #ffffff;
+          border-radius: 6px;
+          border: 1px solid #1a56db;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+          font-size: 13px;
           font-weight: 600;
-          letter-spacing: 0.5px;
-          text-transform: uppercase;
+          letter-spacing: -0.005em;
+          padding: 10px 20px;
           cursor: pointer;
-          font-family: var(--font-display);
-          transition: background 0.2s ease;
+          font-family: var(--font-inter);
+          transition: background-color 150ms ease, border-color 150ms ease;
         }
-        .odds-btn:hover:not(:disabled) { background: #C41419; }
+        .odds-btn:hover:not(:disabled) { background: #1e40af; border-color: #1e40af; }
         .odds-btn:disabled { background: var(--border-default); color: var(--color-text-secondary); cursor: not-allowed; }
         .odds-card {
           background: var(--color-surface-0);
