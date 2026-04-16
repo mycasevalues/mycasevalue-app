@@ -113,15 +113,20 @@ export default function HomePage() {
           </div>
           <div className="flex flex-wrap gap-x-12 gap-y-4 pt-4 border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
             {[
-              { value: SITE_METRICS.totalCases, label: 'Federal Cases' },
+              { value: SITE_METRICS.totalCases, label: 'Federal Cases', trend: '+2.1%' },
               { value: String(SITE_METRICS.districtCourts), label: 'District Courts' },
               { value: String(SITE_METRICS.caseTypes), label: 'Case Types' },
               { value: '7', label: 'Public Data Sources' },
               { value: SITE_METRICS.yearsOfData, label: 'Years of Data' },
             ].map((m) => (
-              <div key={m.label}>
-                <div className="text-lg font-bold text-white tabular-nums">{m.value}</div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-wider mt-0.5">{m.label}</div>
+              <div key={m.label} className="flex items-baseline gap-2">
+                <div>
+                  <div className="text-lg font-bold text-white tabular-nums font-mono tracking-[-0.02em]">{m.value}</div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-[0.15em] mt-0.5">{m.label}</div>
+                </div>
+                {m.trend && (
+                  <span className="text-[10px] font-mono text-green-400/80 tabular-nums">{m.trend}</span>
+                )}
               </div>
             ))}
           </div>
