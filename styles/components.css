@@ -196,15 +196,14 @@
   transition:
     border-color 150ms ease,
     box-shadow 150ms ease,
-    transform 150ms ease;
+    background-color 150ms ease;
 }
 .mcv-card--interactive:hover {
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 1px var(--accent-primary);
-  transform: translateY(-2px);
+  border-color: rgba(59,130,246,0.40);
+  background: rgba(59,130,246,0.02);
 }
 .mcv-card--interactive:active {
-  transform: scale(0.99);
+  background: rgba(59,130,246,0.04);
 }
 
 /* Featured card — highlighted with accent border */
