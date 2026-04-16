@@ -147,16 +147,19 @@ export default function AboutPage() {
 
         .section-heading {
           font-family: var(--font-inter);
-          font-size: 1.5rem;
+          font-size: 1.375rem;
           font-weight: 600;
+          letter-spacing: -0.02em;
           color: var(--color-text-primary);
           margin-bottom: 1rem;
+          padding-bottom: 0.75rem;
+          border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .section-text {
           font-family: var(--font-inter);
           font-size: 0.9375rem;
-          line-height: 1.8;
+          line-height: 1.7;
           color: var(--color-text-secondary);
           margin-bottom: 1rem;
         }
