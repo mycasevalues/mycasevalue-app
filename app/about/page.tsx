@@ -169,10 +169,23 @@ export default function AboutPage() {
         .mission-box {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-left: 4px solid var(--accent-primary);
-          border-radius: 12px;
-          padding: 2rem;
+          border-left: 3px solid var(--accent-primary);
+          border-radius: 6px;
+          padding: 1.75rem 2rem;
           margin-bottom: 2rem;
+          position: relative;
+        }
+
+        .mission-box::before {
+          content: 'MISSION';
+          position: absolute;
+          top: 1rem;
+          right: 1.25rem;
+          font-family: var(--font-mono);
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.2em;
+          color: rgba(59,130,246,0.4);
         }
 
         .data-sources-grid {
