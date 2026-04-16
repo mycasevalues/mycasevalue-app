@@ -132,6 +132,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row md:items-start md:gap-16">
             <div className="md:w-56 flex-shrink-0 mb-6 md:mb-0">
+              <p className="text-[10px] font-medium tracking-[0.2em] uppercase text-blue-400/60 mb-2">Sources</p>
               <h2 className="text-sm font-semibold text-white mb-1.5">Data Sources</h2>
               <p className="text-xs text-gray-500 leading-relaxed">
                 All data from official federal court and agency records.
