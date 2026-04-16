@@ -57,27 +57,43 @@ export default function LegalAidPage() {
   return (
     <div>
       {/* Hero */}
-      <section style={{ background: 'var(--gradient-hero)', color: '#fff', padding: '40px 24px 32px' }}>
-        <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '13px',
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: '0.08em',
-            color: 'var(--accent-primary-hover)',
-            marginBottom: '16px',
+      <section style={{
+        background: '#080d19',
+        color: '#fff',
+        padding: '48px 24px 40px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+      }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
           }}>
-            SOLUTIONS
-          </p>
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            For Legal Aid
+          </div>
           <h1 style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: '2.5rem',
-            fontWeight: 600,
+            fontFamily: 'var(--font-inter)',
+            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
             lineHeight: 1.1,
-            marginBottom: '20px',
+            marginBottom: 16,
+            color: '#ffffff',
           }}>
-            Empowering Legal Aid & Pro-Bono Work
+            Empowering legal aid &amp; pro-bono
           </h1>
           <p style={{
             fontFamily: 'var(--font-body)',
