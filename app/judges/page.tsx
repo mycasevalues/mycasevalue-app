@@ -17,7 +17,7 @@ const JudgeRadarPreview = dynamic(() => import('../../components/JudgeRadarPrevi
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: 'Judge Intelligence',
+  title: 'Judge Intelligence — Federal Court Analytics',
   description: 'Research federal judges across 95 districts. Win rates, motion rates, settlement patterns, case duration. Data from 5.1M+ federal cases.',
   alternates: { canonical: `${SITE_URL}/judges` },
   openGraph: {
