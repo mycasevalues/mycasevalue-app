@@ -152,33 +152,55 @@ export default function ComparePage() {
         }
       `}</style>
 
-      {/* Dark Navy Header */}
+      {/* Institutional Header */}
       <header style={{
-        background: 'var(--accent-primary)',
-        color: 'var(--color-surface-0)',
-        padding: 'clamp(16px, 3vw, 20px)',
+        background: '#080d19',
+        color: '#fff',
+        padding: '40px 24px 32px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
         marginBottom: 0,
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 24px)', paddingRight: 'clamp(16px, 3vw, 24px)' }}>
-          <h1 className="compare-header" style={{
-            fontSize: 'clamp(24px, 6vw, 28px)',
-            fontWeight: 600,
-            margin: 0,
-            marginBottom: 12,
-            fontFamily: 'var(--font-display)',
-            color: 'var(--color-surface-0)',
-            lineHeight: 1.2,
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 24px)', paddingRight: 'clamp(16px, 3vw, 24px)', position: 'relative' }}>
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 16,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
           }}>
-            Compare Case Types Side-by-Side with Real Outcomes
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Comparison Tool
+          </div>
+          <h1 className="compare-header" style={{
+            fontFamily: 'var(--font-inter)',
+            fontSize: 'clamp(24px, 3.5vw, 30px)',
+            fontWeight: 700,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.1,
+            margin: '0 0 16px',
+            color: '#ffffff',
+          }}>
+            Compare case types side-by-side
           </h1>
           <p style={{
             fontSize: 'clamp(14px, 2vw, 16px)',
-            color: '#b8bcc0',
+            color: 'rgba(255,255,255,0.7)',
             margin: 0,
             fontFamily: 'var(--font-body)',
-            lineHeight: 1.5,
+            lineHeight: 1.6,
+            maxWidth: 640,
           }}>
-            Analyze win rates, settlement patterns, and recovery ranges across federal case types to benchmark your case value.
+            Benchmark win rates, settlement patterns, and recovery ranges across federal case types with real outcome data.
           </p>
         </div>
       </header>
