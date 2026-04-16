@@ -733,7 +733,7 @@ export default function DecisionTree() {
 
           <div
             style={{
-              backgroundColor: '#f0f9ff',
+              backgroundColor: 'rgba(59,130,246,0.06)',
               border: '1px solid #bfdbfe',
               borderRadius: '8px',
               padding: '1.5rem',
@@ -781,7 +781,7 @@ export default function DecisionTree() {
             style={{
               marginTop: '1.5rem',
               padding: '1.5rem',
-              backgroundColor: '#fef3c7',
+              backgroundColor: 'rgba(234,179,8,0.06)',
               border: '1px solid #fcd34d',
               borderRadius: '8px',
             }}
@@ -1086,7 +1086,7 @@ export default function DecisionTree() {
           {/* Disclaimer */}
           <div
             style={{
-              backgroundColor: '#f3f4f6',
+              backgroundColor: 'rgba(255,255,255,0.05)',
               border: '1px solid #d1d5db',
               borderRadius: '8px',
               padding: '1.5rem',

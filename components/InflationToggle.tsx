@@ -66,7 +66,7 @@ export default function InflationToggle() {
           color: 'var(--color-text-secondary)',
           fontStyle: 'italic',
           fontFamily: 'var(--font-body)',
-          backgroundColor: '#F0F4F8',
+          backgroundColor: 'var(--color-surface-0)',
           padding: '10px 12px',
           borderRadius: '6px',
           borderLeft: '3px solid var(--accent-primary)',

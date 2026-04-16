@@ -162,7 +162,7 @@ export default function CaseTypeComparison() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div>
                 <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{entryA.label}</div>
-                <div style={{ height: 24, background: '#F0F0F0', borderRadius: 2, overflow: 'hidden', position: 'relative' }}>
+                <div style={{ height: 24, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden', position: 'relative' }}>
                   <div style={{ width: `${entryA.wr}%`, height: '100%', background: wrColor(entryA.wr), borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 6 }}>
                     <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-mono)' }}>{entryA.wr}%</span>
                   </div>
@@ -170,7 +170,7 @@ export default function CaseTypeComparison() {
               </div>
               <div>
                 <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{entryB.label}</div>
-                <div style={{ height: 24, background: '#F0F0F0', borderRadius: 2, overflow: 'hidden', position: 'relative' }}>
+                <div style={{ height: 24, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden', position: 'relative' }}>
                   <div style={{ width: `${entryB.wr}%`, height: '100%', background: wrColor(entryB.wr), borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 6 }}>
                     <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-mono)' }}>{entryB.wr}%</span>
                   </div>

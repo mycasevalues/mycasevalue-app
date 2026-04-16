@@ -154,7 +154,7 @@ export default function AdminPage() {
   ] as const;
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#f5f5f5' }}>
+    <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
       {/* Sidebar */}
       <aside
         style={{
@@ -275,7 +275,7 @@ export default function AdminPage() {
                       display: 'flex',
                       alignItems: 'center',
                       padding: '12px',
-                      backgroundColor: '#f9f9f9',
+                      backgroundColor: 'var(--color-surface-0)',
                       borderRadius: '6px',
                     }}
                   >
@@ -529,7 +529,7 @@ export default function AdminPage() {
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Manage featured news and updates for homepage
               </p>
-              <div style={{ padding: '32px', backgroundColor: '#f9f9f9', borderRadius: '6px', textAlign: 'center' }}>
+              <div style={{ padding: '32px', backgroundColor: 'var(--color-surface-0)', borderRadius: '6px', textAlign: 'center' }}>
                 <p style={{ fontSize: '14px', color: '#595959', margin: 0 }}>No entries yet. Create your first one.</p>
               </div>
             </div>
@@ -594,7 +594,7 @@ export default function AdminPage() {
               <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
                 Data Quality Check
               </h2>
-              <div style={{ marginBottom: '16px', padding: '12px', backgroundColor: '#f0fdf4', borderRadius: '6px', border: '1px solid #d1fae5' }}>
+              <div style={{ marginBottom: '16px', padding: '12px', backgroundColor: 'rgba(34,197,94,0.06)', borderRadius: '6px', border: '1px solid rgba(34,197,94,0.15)' }}>
                 <p style={{ fontSize: '14px', color: '#065f46', margin: 0 }}>
                   Last check: 2026-04-07 at 13:45 - All systems nominal
                 </p>
@@ -655,7 +655,7 @@ export default function AdminPage() {
                               padding: '4px 8px',
                               borderRadius: '4px',
                               fontSize: '12px',
-                              backgroundColor: '#d1fae5',
+                              backgroundColor: 'rgba(34,197,94,0.1)',
                               color: '#065f46',
                             }}
                           >

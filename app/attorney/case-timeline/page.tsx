@@ -301,7 +301,7 @@ export default function CaseTimelinePage() {
                     disabled={!newMilestoneName.trim() || !newMilestoneMonths}
                     style={{
                       padding: '10px 14px',
-                      backgroundColor: !newMilestoneName.trim() || !newMilestoneMonths ? 'var(--border-default)' : '#F0F4F8',
+                      backgroundColor: !newMilestoneName.trim() || !newMilestoneMonths ? 'var(--border-default)' : 'var(--color-surface-0)',
                       color: !newMilestoneName.trim() || !newMilestoneMonths ? 'var(--color-text-muted)' : 'var(--accent-primary)',
                       border: '1px solid var(--border-default)',
                       borderRadius: '8px',

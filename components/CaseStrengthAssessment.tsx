@@ -644,7 +644,7 @@ export default function CaseStrengthAssessment() {
                 style={{
                   marginTop: '16px',
                   padding: '12px 16px',
-                  backgroundColor: '#ECFDF5',
+                  backgroundColor: 'rgba(34,197,94,0.06)',
                   borderLeft: '4px solid #10B981',
                   fontSize: '13px',
                   color: '#34d399',
@@ -818,7 +818,7 @@ export default function CaseStrengthAssessment() {
               <div
                 style={{
                   padding: '12px 16px',
-                  backgroundColor: '#ECFDF5',
+                  backgroundColor: 'rgba(34,197,94,0.06)',
                   borderLeft: '4px solid #10B981',
                   borderRadius: '4px',
                   marginBottom: '24px',
@@ -850,7 +850,7 @@ export default function CaseStrengthAssessment() {
             >
               Factor Breakdown
             </h3>
-            <div style={{ backgroundColor: '#F9FAFB', padding: '16px', borderRadius: '6px' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', padding: '16px', borderRadius: '6px' }}>
               {selectedCaseType.questions.map((q) => {
                 const answered = answers[q.id] !== undefined;
                 const isYes = answers[q.id] === true;
@@ -896,7 +896,7 @@ export default function CaseStrengthAssessment() {
           </div>
 
           {/* Comparison section */}
-          <div style={{ marginBottom: '24px', backgroundColor: '#F0F9FF', padding: '20px', borderRadius: '6px' }}>
+          <div style={{ marginBottom: '24px', backgroundColor: 'rgba(59,130,246,0.06)', padding: '20px', borderRadius: '6px' }}>
             <h3
               style={{
                 fontSize: '16px',

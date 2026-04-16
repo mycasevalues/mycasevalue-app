@@ -176,7 +176,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                 <div
                   style={{
                     padding: '6px 12px',
-                    background: '#F0F6FB',
+                    background: 'rgba(59,130,246,0.06)',
                     border: '1px solid var(--accent-primary)',
                     borderRadius: '6px',
                     fontSize: '12px',

@@ -102,7 +102,7 @@ export default function StatusPage() {
     <div
       style={{
         minHeight: '100vh',
-        backgroundColor: '#F9FAFB',
+        backgroundColor: 'var(--color-surface-0)',
         fontFamily: 'var(--font-body)',
         color: 'var(--color-text-primary)',
       }}

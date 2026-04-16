@@ -109,7 +109,7 @@ export default function ReferralPage() {
             </h2>
 
             {error && (
-              <div style={{ padding: '12px 16px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', backgroundColor: '#FEF2F2', color: '#f87171', border: '1px solid #FECACA' }}>
+              <div style={{ padding: '12px 16px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', backgroundColor: 'rgba(239,68,68,0.08)', color: '#f87171', border: '1px solid rgba(239,68,68,0.2)' }}>
                 {error}
                 {error.includes('Sign in') && (
                   <span>{' '}<Link href="/sign-in" style={{ color: 'var(--accent-primary-hover)', fontWeight: 600 }}>Sign in here</Link></span>

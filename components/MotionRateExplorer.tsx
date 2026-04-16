@@ -172,7 +172,7 @@ export default function MotionRateExplorer() {
   };
 
   const theadStyle: React.CSSProperties = {
-    backgroundColor: '#F9FAFB',
+    backgroundColor: 'var(--color-surface-0)',
     borderBottom: '1px solid var(--border-default)',
   };
 
@@ -215,7 +215,7 @@ export default function MotionRateExplorer() {
     width: '100%',
     borderCollapse: 'collapse',
     fontSize: '13px',
-    backgroundColor: '#F9FAFB',
+    backgroundColor: 'var(--color-surface-0)',
   };
 
   const circuitTdStyle: React.CSSProperties = {
@@ -389,7 +389,7 @@ export default function MotionRateExplorer() {
                     </tr>
                     {isExpanded && (
                       <tr>
-                        <td colSpan={5} style={{ padding: '16px', backgroundColor: '#F9FAFB' }}>
+                        <td colSpan={5} style={{ padding: '16px', backgroundColor: 'var(--color-surface-0)' }}>
                           <div style={{ marginBottom: '12px' }}>
                             <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0' }}>
                               Circuit Breakdown

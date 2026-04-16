@@ -300,7 +300,7 @@ export default function JudgeProfileClient({
           <div
             style={{
               padding: '12px 16px',
-              background: '#FDF4EC',
+              background: 'rgba(249,115,22,0.06)',
               border: '1px solid #C37D16',
               borderRadius: '6px',
               marginBottom: '24px',

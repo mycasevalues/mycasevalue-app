@@ -179,7 +179,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
             <span style={{
               display: 'inline-block',
               padding: '1px 6px',
-              background: '#F3F2EF',
+              background: 'var(--color-surface-0)',
               borderRadius: '3px',
               fontSize: '10px',
               fontWeight: 600,

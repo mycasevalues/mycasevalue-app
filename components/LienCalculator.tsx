@@ -643,7 +643,7 @@ export default function LienCalculator() {
                   {formatCurrency(result.netRecoveryLow)}
                 </div>
               </div>
-              <div style={{ height: '1px', background: '#D1E8D6' }} />
+              <div style={{ height: '1px', background: 'rgba(34,197,94,0.15)' }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <div style={{ fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>
                   High estimate (with negotiated reductions):
