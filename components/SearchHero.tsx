@@ -74,14 +74,15 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
         </div>
       </form>
 
-      <div className="flex flex-wrap gap-2 mt-3">
+      <div className="flex flex-wrap items-center gap-2 mt-3">
+        <span className="text-[10px] font-mono tracking-[0.15em] uppercase" style={{ color: dark ? '#4b5563' : '#9ca3af' }}>Try</span>
         {EXAMPLES.map((ex) => (
           <button
             key={ex}
             onClick={() => handleExample(ex)}
-            className="text-[11px] px-2.5 py-1 rounded border transition-all cursor-pointer"
+            className="text-[11px] px-2.5 py-1 rounded-[4px] border transition-all cursor-pointer hover:border-blue-400/40 hover:text-blue-400"
             style={{
-              borderColor: dark ? 'rgba(255,255,255,0.1)' : '#e5e7eb',
+              borderColor: dark ? 'rgba(255,255,255,0.08)' : '#e5e7eb',
               color: dark ? '#6b7280' : '#9ca3af',
               background: 'transparent',
             }}
