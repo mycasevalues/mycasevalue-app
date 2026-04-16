@@ -1022,3 +1022,30 @@ Last updated: 2026-04-16
 - REPO_AUDIT_REPORT.md written
 
 ### Session Gate: PASS (Conditional — core pages clean, legacy pages need follow-up)
+
+---
+
+## Session 15 — Live Site Audit Fix
+
+**Date:** 2026-04-16  
+**Goal:** 10-step live site audit — fix all reported issues
+
+### Findings
+
+Most reported issues did NOT exist in codebase (already fixed in Sessions 1-14):
+- No old nav conflict (no districts/judges layout.tsx files)
+- /districts has proper DataTable with 95 districts (not old state list)
+- /judges has real JudgeDirectoryClient (not Coming Soon)
+- /pricing has functional CTAs (not Coming Soon)
+- Logo wordmark properly structured as two separate spans
+
+### Actual Fix
+
+Removed BetaBanner and LiveTicker from app/layout.tsx:
+- BetaBanner: "Public beta" banner with Bloomberg #1A1A1A background
+- LiveTicker: Bloomberg-style scrolling ticker with #222222 background
+- Both rendered above the nav, breaking Westlaw aesthetic
+
+### Build: ✅ 0 errors, 7104+ pages
+
+### Session Gate: PASS
