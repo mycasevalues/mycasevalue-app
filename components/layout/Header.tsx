@@ -410,6 +410,10 @@ export default function Header() {
                 <span className="font-inter text-sm font-bold hidden sm:block tracking-tight text-white/90">
                   MyCase<span className="text-white">Value</span>
                 </span>
+                <span className="hidden md:inline-flex items-center gap-1.5 ml-1 px-1.5 py-0.5 rounded-[3px] border border-white/5 bg-white/[0.02]" aria-label="Live data">
+                  <span className="w-1 h-1 rounded-full animate-pulse" style={{ background: '#22c55e' }} />
+                  <span className="text-[9px] font-mono tracking-[0.15em] text-gray-500 uppercase">Live</span>
+                </span>
               </Link>
             </div>
 
