@@ -585,7 +585,7 @@ export default function PlatformPage() {
                 <span style={{
                   display: 'inline-block',
                   padding: '8px 16px',
-                  background: '#F3E8FF',
+                  background: 'rgba(139,92,246,0.06)',
                   color: '#6B21A8',
                   borderRadius: '20px',
                   fontSize: '12px',
@@ -610,7 +610,7 @@ export default function PlatformPage() {
                 <span style={{
                   display: 'inline-block',
                   padding: '8px 16px',
-                  background: '#F3E8FF',
+                  background: 'rgba(139,92,246,0.06)',
                   color: '#6B21A8',
                   borderRadius: '20px',
                   fontSize: '12px',
@@ -635,7 +635,7 @@ export default function PlatformPage() {
                 <span style={{
                   display: 'inline-block',
                   padding: '8px 16px',
-                  background: '#F3E8FF',
+                  background: 'rgba(139,92,246,0.06)',
                   color: '#6B21A8',
                   borderRadius: '20px',
                   fontSize: '12px',
@@ -697,7 +697,7 @@ export default function PlatformPage() {
             <div style={{
               marginTop: 40,
               padding: 24,
-              background: '#F3E8FF',
+              background: 'rgba(139,92,246,0.06)',
               borderRadius: 12,
               border: '1px solid #E9D5FF',
             }}>
@@ -902,7 +902,7 @@ export default function PlatformPage() {
             <div style={{
               marginTop: 40,
               padding: 32,
-              background: '#F3E8FF',
+              background: 'rgba(139,92,246,0.06)',
               borderRadius: 12,
               border: '1px solid #E9D5FF',
             }}>

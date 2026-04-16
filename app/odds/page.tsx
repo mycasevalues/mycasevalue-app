@@ -206,7 +206,7 @@ export default function OddsPage() {
           height: 100%;
         }
         .explore-card:hover {
-          background: '#F0F3F5';
+          background: 'rgba(255,255,255,0.06)';
           border-color: 'var(--accent-primary-hover)';
         }
         @media (max-width: 768px) {
@@ -476,7 +476,7 @@ export default function OddsPage() {
                             {item.value.toFixed(1)}%
                           </span>
                         </div>
-                        <div style={{ height: 8, background: '#F0F3F5', borderRadius: 2, overflow: 'hidden' }}>
+                        <div style={{ height: 8, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(item.value, 100)}%`,
@@ -805,7 +805,7 @@ export default function OddsPage() {
                             {results.winRate.toFixed(1)}%
                           </span>
                         </div>
-                        <div style={{ height: 8, background: '#F0F3F5', borderRadius: 2, overflow: 'hidden' }}>
+                        <div style={{ height: 8, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(results.winRate, 100)}%`,
@@ -838,7 +838,7 @@ export default function OddsPage() {
                             {nationalAverageWinRate.toFixed(1)}%
                           </span>
                         </div>
-                        <div style={{ height: 8, background: '#F0F3F5', borderRadius: 2, overflow: 'hidden' }}>
+                        <div style={{ height: 8, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(nationalAverageWinRate, 100)}%`,

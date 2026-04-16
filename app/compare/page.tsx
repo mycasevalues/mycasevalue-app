@@ -402,7 +402,7 @@ export default function ComparePage() {
                               <div>{formatted}</div>
                               {/* Visual comparison bar for percentage metrics */}
                               {v !== null && (row.key === 'winRate' || row.key === 'settlementRate' || row.key === 'dismissRate') && (
-                                <div style={{ marginTop: 6, height: 4, background: '#F0F3F5', borderRadius: 2, overflow: 'hidden' }}>
+                                <div style={{ marginTop: 6, height: 4, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
                                   <div style={{
                                     height: '100%',
                                     width: `${Math.min(v, 100)}%`,
@@ -513,7 +513,7 @@ export default function ComparePage() {
               <div style={{
                 marginTop: 20,
                 padding: '16px',
-                background: '#F3F2EF',
+                background: 'var(--color-surface-0)',
                 borderRadius: '8px',
                 border: '1px solid #E0DDD8',
               }}>
@@ -586,7 +586,7 @@ export default function ComparePage() {
                         <div style={{
                           flex: 1,
                           height: 28,
-                          background: '#F0F3F5',
+                          background: 'rgba(255,255,255,0.06)',
                           borderRadius: 2,
                           overflow: 'hidden',
                           position: 'relative',
@@ -670,7 +670,7 @@ export default function ComparePage() {
                     }}>
                       <div style={{
                         width: `${s.winRate}%`,
-                        background: '#059669',
+                        background: '#15803D',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -689,7 +689,7 @@ export default function ComparePage() {
                       </div>
                       <div style={{
                         width: `${s.settlementRate}%`,
-                        background: '#D97706',
+                        background: '#B45309',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -736,7 +736,7 @@ export default function ComparePage() {
                         <div style={{
                           width: 12,
                           height: 12,
-                          background: '#059669',
+                          background: '#15803D',
                           borderRadius: 2,
                           margin: '0 auto 4px',
                         }} />
@@ -746,7 +746,7 @@ export default function ComparePage() {
                         <div style={{
                           width: 12,
                           height: 12,
-                          background: '#D97706',
+                          background: '#B45309',
                           borderRadius: 2,
                           margin: '0 auto 4px',
                         }} />
@@ -957,7 +957,7 @@ export default function ComparePage() {
                       fontSize: 11,
                       fontWeight: 600,
                       color: 'var(--accent-primary)',
-                      background: '#FFE5E5',
+                      background: 'rgba(239,68,68,0.08)',
                       padding: '2px 8px',
                       borderRadius: 2,
                       textTransform: 'uppercase',

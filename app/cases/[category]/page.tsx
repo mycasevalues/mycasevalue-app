@@ -843,7 +843,7 @@ async function CategoryPage({
 
                   {/* Win rate bar */}
                   {rd && rdWr != null && (
-                    <div style={{ height: 4, background: '#F0F3F5', borderRadius: 8, marginBottom: 12, overflow: 'hidden' }}>
+                    <div style={{ height: 4, background: 'rgba(255,255,255,0.06)', borderRadius: 8, marginBottom: 12, overflow: 'hidden' }}>
                       <div style={{ height: '100%', width: `${Math.min(Math.max(rdWr, 0), 100)}%`, background: isNaN(rdWr) ? '#CCC' : rdWr >= 50 ? '#059669' : 'var(--accent-primary)', borderRadius: 8 }} />
                     </div>
                   )}
@@ -972,7 +972,7 @@ async function CategoryPage({
                       </div>
                       <div style={{
                         height: '8px',
-                        background: '#E0E3E6',
+                        background: 'rgba(255,255,255,0.1)',
                         borderRadius: '8px',
                         overflow: 'hidden',
                       }}>
@@ -1042,7 +1042,7 @@ async function CategoryPage({
                         <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>{circuit}</span>
                         <span style={{ fontSize: 15, fontWeight: 600, color, fontFamily: 'var(--font-mono)' }}>{wr}%</span>
                       </div>
-                      <div style={{ height: 6, background: '#F0F3F5', borderRadius: 8, overflow: 'hidden', marginBottom: 6 }}>
+                      <div style={{ height: 6, background: 'rgba(255,255,255,0.06)', borderRadius: 8, overflow: 'hidden', marginBottom: 6 }}>
                         <div style={{ width: `${Math.min(wr, 100)}%`, height: '100%', background: color, borderRadius: 8 }} />
                       </div>
                       <div style={{ fontSize: 11, color: diff >= 0 ? '#059669' : 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
@@ -1231,7 +1231,7 @@ async function CategoryPage({
                     <div style={{
                       position: 'relative',
                       height: '24px',
-                      background: '#E0E3E6',
+                      background: 'rgba(255,255,255,0.1)',
                       borderRadius: '3px',
                       overflow: 'hidden',
                     }}>

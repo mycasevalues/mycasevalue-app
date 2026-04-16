@@ -168,7 +168,7 @@ export default async function GuidePage({ params }: PageProps) {
           {content.doIHaveCase.map((item, idx) => (
             <div key={idx} style={{
               padding: '20px',
-              backgroundColor: '#f8f9fa',
+              backgroundColor: 'var(--color-surface-0)',
               border: '1px solid #e0e0e0',
               borderRadius: '6px',
             }}>
@@ -256,7 +256,7 @@ export default async function GuidePage({ params }: PageProps) {
             <div key={idx} style={{
               padding: '15px',
               borderLeft: '4px solid #CC1016',
-              backgroundColor: '#FDF4EC',
+              backgroundColor: 'rgba(249,115,22,0.06)',
               borderRadius: '4px',
             }}>
               <p style={{
@@ -368,7 +368,7 @@ export default async function GuidePage({ params }: PageProps) {
             {duration && (
               <div style={{
                 padding: '20px',
-                backgroundColor: '#F0F6FB',
+                backgroundColor: 'rgba(59,130,246,0.06)',
                 border: '1px solid #378FE9',
                 borderRadius: '8px',
               }}>
@@ -405,7 +405,7 @@ export default async function GuidePage({ params }: PageProps) {
           {realData.rng && (
             <div style={{
               padding: '20px',
-              backgroundColor: '#f8f9fa',
+              backgroundColor: 'var(--color-surface-0)',
               border: '1px solid #e0e0e0',
               borderRadius: '8px',
               marginBottom: '20px',
@@ -494,7 +494,7 @@ export default async function GuidePage({ params }: PageProps) {
 
             <div style={{
               padding: '20px',
-              backgroundColor: '#FDF4EC',
+              backgroundColor: 'rgba(249,115,22,0.06)',
               border: '1px solid #C37D16',
               borderRadius: '8px',
             }}>
@@ -589,7 +589,7 @@ export default async function GuidePage({ params }: PageProps) {
       {/* Important Disclaimer */}
       <section style={{
         padding: '20px',
-        backgroundColor: '#FAEAE9',
+        backgroundColor: 'rgba(239,68,68,0.06)',
         border: '1px solid #CC1016',
         borderRadius: '8px',
         marginBottom: '50px',
@@ -660,7 +660,7 @@ export default async function GuidePage({ params }: PageProps) {
 
           <Link href="/calculator" style={{
             padding: '20px',
-            backgroundColor: '#F0F6FB',
+            backgroundColor: 'rgba(59,130,246,0.06)',
             border: '1px solid #378FE9',
             borderRadius: '8px',
             textDecoration: 'none',

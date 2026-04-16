@@ -909,7 +909,7 @@ export default async function NOSPage({ params }: PageProps) {
                 <div
                   className="outcome-dist-segment"
                   style={{
-                    background: '#057642',
+                    background: '#15803D',
                     width: `${outcomeDist.win}%`,
                   }}
                   title={`Win: ${Math.round(outcomeDist.win)}%`}
@@ -921,7 +921,7 @@ export default async function NOSPage({ params }: PageProps) {
                 <div
                   className="outcome-dist-segment"
                   style={{
-                    background: '#D97706',
+                    background: '#B45309',
                     width: `${outcomeDist.settlement}%`,
                   }}
                   title={`Settlement: ${Math.round(outcomeDist.settlement)}%`}
@@ -945,11 +945,11 @@ export default async function NOSPage({ params }: PageProps) {
 
             <div className="outcome-dist-labels">
               <div className="outcome-dist-label">
-                <div className="outcome-dist-dot" style={{ background: '#057642' }}></div>
+                <div className="outcome-dist-dot" style={{ background: '#15803D' }}></div>
                 <span>Win: <strong style={{ color: 'var(--accent-primary)' }}>{Math.round(outcomeDist.win)}%</strong></span>
               </div>
               <div className="outcome-dist-label">
-                <div className="outcome-dist-dot" style={{ background: '#D97706' }}></div>
+                <div className="outcome-dist-dot" style={{ background: '#B45309' }}></div>
                 <span>Settlement: <strong style={{ color: 'var(--accent-primary)' }}>{Math.round(outcomeDist.settlement)}%</strong></span>
               </div>
               <div className="outcome-dist-label">

@@ -593,7 +593,7 @@ export default function DevelopersPage() {
                             style={{
                               fontSize: '11px',
                               color: 'var(--color-text-secondary)',
-                              backgroundColor: '#F0F0F0',
+                              backgroundColor: 'rgba(255,255,255,0.05)',
                               padding: '2px 6px',
                               borderRadius: '3px',
                               fontFamily: 'var(--font-mono)',

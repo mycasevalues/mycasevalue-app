@@ -31,7 +31,7 @@ export default function Loading() {
                     style={{
                       width: '60px',
                       height: '14px',
-                      background: '#1a3a5a',
+                      background: 'rgba(255,255,255,0.06)',
                       borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
@@ -48,7 +48,7 @@ export default function Loading() {
                   style={{
                     height: 'clamp(24px, 5vw, 32px)',
                     width: '60%',
-                    background: '#1a3a5a',
+                    background: 'rgba(255,255,255,0.06)',
                     borderRadius: '12px',
                     marginBottom: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',

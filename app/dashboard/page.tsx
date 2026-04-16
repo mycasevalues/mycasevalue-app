@@ -847,14 +847,14 @@ export default async function DashboardPage() {
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Employment Discrimination (NOS 442) · S.D.N.Y.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Analysis completed 2 hours ago</p>
                   </div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>76% win rate</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: 'rgba(34,197,94,0.12)', padding: '4px 12px', borderRadius: '6px' }}>76% win rate</div>
                 </div>
                 <div style={{ padding: '12px 0', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Personal Injury — Auto (NOS 350) · C.D. Cal.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Report generated 5 hours ago</p>
                   </div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>63% settlement</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: 'rgba(34,197,94,0.12)', padding: '4px 12px', borderRadius: '6px' }}>63% settlement</div>
                 </div>
                 <div style={{ padding: '12px 0', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
@@ -868,14 +868,14 @@ export default async function DashboardPage() {
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Contract Dispute (NOS 110) · S.D. Tex.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Settlement analysis 12 hours ago</p>
                   </div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>58% favorable</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: 'rgba(34,197,94,0.12)', padding: '4px 12px', borderRadius: '6px' }}>58% favorable</div>
                 </div>
                 <div style={{ padding: '12px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>Products Liability (NOS 367) · E.D. Pa.</p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>Historical case analysis 1 day ago</p>
                   </div>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: '#DCFCE7', padding: '4px 12px', borderRadius: '6px' }}>71% win rate</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', backgroundColor: 'rgba(34,197,94,0.12)', padding: '4px 12px', borderRadius: '6px' }}>71% win rate</div>
                 </div>
               </div>
             )}

@@ -801,7 +801,7 @@ export default function CalculatorPage() {
             </div>
 
             {/* Scenario Comparison */}
-            <div className="mb-6 p-6" style={{ background: '#F0F4F8', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
+            <div className="mb-6 p-6" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                 <h3 className="text-[12px] font-bold uppercase tracking-[0.8px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
                   Scenario Comparison
@@ -966,7 +966,7 @@ export default function CalculatorPage() {
             {/* Data Source Note */}
             <div className="mb-4 flex items-center gap-3 flex-wrap" style={{
               padding: '12px 16px',
-              background: '#F3F2EF',
+              background: 'var(--color-surface-0)',
               borderRadius: '8px',
               fontSize: '11px',
               color: 'var(--color-text-secondary)',

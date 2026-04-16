@@ -746,7 +746,7 @@ export default function TrendsPage() {
                         className="h-full"
                         style={{
                           width: `${(t.months / 60) * 100}%`,
-                          background: '#059669',
+                          background: '#15803D',
                         }}
                       />
                     </div>

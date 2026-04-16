@@ -89,7 +89,7 @@ export default function LegalDataPage() {
           display: 'inline-block',
           padding: '4px 14px',
           borderRadius: 20,
-          background: '#E8F4FD',
+          background: 'rgba(59,130,246,0.06)',
           color: 'var(--accent-primary)',
           fontSize: 13,
           fontWeight: 600,
@@ -246,7 +246,7 @@ export default function LegalDataPage() {
       <div style={{
         padding: '20px',
         borderRadius: 16,
-        background: '#F0F5FF',
+        background: 'rgba(59,130,246,0.06)',
         border: '1px solid #D4E4F7',
         marginBottom: 20,
       }}>
