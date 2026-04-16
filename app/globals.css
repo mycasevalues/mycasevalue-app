@@ -279,17 +279,17 @@ html, body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-base);
+  background: #080d19;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C0C4C8;
+  background: rgba(255,255,255,0.15);
   border-radius: 100px;
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4B5563;
+  background: rgba(255,255,255,0.3);
 }
 
 
