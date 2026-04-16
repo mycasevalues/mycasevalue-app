@@ -219,34 +219,55 @@ export default function OddsPage() {
 
       {/* Hero Header */}
       <header style={{
-        background: 'var(--accent-primary)',
-        padding: 'clamp(12px, 2vw, 16px) clamp(16px, 3vw, 20px)',
+        background: '#080d19',
+        padding: '28px clamp(16px, 3vw, 24px) 32px',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div aria-hidden style={{
+          position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-          <h1 className="odds-hero" style={{
-            color: 'var(--color-text-inverse)',
-            fontSize: 'clamp(24px, 6vw, 28px)',
-            fontWeight: 600,
-            margin: '0 0 8px',
-            fontFamily: 'var(--font-display)',
-            lineHeight: 1.2,
-            letterSpacing: '-0.5px',
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 6,
+            padding: '4px 10px', marginBottom: 14,
+            borderRadius: 999,
+            border: '1px solid rgba(59,130,246,0.2)',
+            background: 'rgba(59,130,246,0.08)',
+            fontFamily: 'var(--font-mono)', fontSize: 10,
+            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#60a5fa',
           }}>
-            Know Your Odds Before Taking Your Case to Trial
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            Odds Calculator
+          </div>
+          <h1 className="odds-hero" style={{
+            color: '#ffffff',
+            fontSize: 'clamp(26px, 4vw, 32px)',
+            fontWeight: 700,
+            margin: '0 0 10px',
+            fontFamily: 'var(--font-inter)',
+            lineHeight: 1.1,
+            letterSpacing: '-0.025em',
+          }}>
+            Know your odds before filing
           </h1>
           <p style={{
-            color: '#b8bcc0',
-            fontSize: 'clamp(14px, 2vw, 16px)',
+            color: 'rgba(255,255,255,0.6)',
+            fontSize: 15,
             margin: 0,
-            maxWidth: 600,
-            lineHeight: 1.5,
-            fontFamily: 'var(--font-body)',
+            maxWidth: 640,
+            lineHeight: 1.65,
+            fontFamily: 'var(--font-inter)',
           }}>
-            Understand real win rates, settlement likelihood, and recovery ranges for your federal case type based on data from 5.1M+ actual cases.
+            Real win rates, settlement likelihood, and recovery ranges for your federal case type, grounded in 5.1M+ actual cases.
           </p>
         </div>
       </header>
