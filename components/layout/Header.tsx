@@ -344,8 +344,8 @@ export default function Header() {
   const hasBlur = scrollY > 10;
   const isHome = pathname === '/';
 
-  // On homepage: transparent header that becomes solid on scroll
-  // On other pages: always solid
+  // On homepage: dark header matching hero, becomes white on scroll
+  // On other pages: always solid white
   const headerTransparent = isHome && !hasBlur;
 
   const navLinkClass = (section: string) =>
