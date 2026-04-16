@@ -45,7 +45,7 @@ export default function HomePage() {
               <p className="text-[11px] font-medium tracking-[0.25em] uppercase text-blue-400/60 mb-5">
                 Federal Court Intelligence
               </p>
-              <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-[1.15] tracking-tight mb-5">
+              <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-5">
                 Litigation intelligence
                 <br />
                 from public court records.
