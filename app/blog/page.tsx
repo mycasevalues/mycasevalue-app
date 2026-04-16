@@ -156,7 +156,7 @@ export default function BlogPage() {
           left: 0;
           right: 0;
           height: 0;
-          background: var(--gradient-hero);
+          background: #1a56db;
           border-radius: 12px 12px 0 0;
           transition: height 0.3s ease;
         }
