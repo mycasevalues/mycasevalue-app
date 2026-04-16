@@ -594,9 +594,10 @@ export default function Header() {
 
       {/* Mobile drawer */}
       <div
-        className={`fixed top-16 right-0 bottom-0 z-40 w-full max-w-sm bg-white overflow-y-auto transition-transform duration-300 ease-out lg:hidden ${
+        className={`fixed top-14 right-0 bottom-0 z-40 w-full max-w-sm overflow-y-auto transition-transform duration-300 ease-out lg:hidden ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        style={{ background: '#0c1220' }}
         role="dialog"
         aria-label="Mobile navigation"
         aria-modal={mobileOpen ? true : undefined}
@@ -616,16 +617,16 @@ export default function Header() {
                 onClick={() =>
                   setMobileExpanded(mobileExpanded === key ? null : key)
                 }
-                className="w-full flex items-center justify-between py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                className="w-full flex items-center justify-between py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
                 aria-expanded={mobileExpanded === key}
               >
-                <span className="font-semibold text-gray-900 text-sm">
+                <span className="font-semibold text-gray-200 text-sm">
                   {label}
                 </span>
                 <ChevronDown open={mobileExpanded === key} />
               </button>
               {mobileExpanded === key && (
-                <div className="bg-gray-50 rounded-lg p-4 space-y-4">
+                <div className="bg-white/5 rounded-lg p-4 space-y-4">
                   {columns.map((col) => (
                     <div key={col.heading}>
                       <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2">
@@ -655,7 +656,7 @@ export default function Header() {
           <Link
             href="/data-sources"
             onClick={() => setMobileOpen(false)}
-            className="block py-3 px-4 font-semibold text-gray-900 text-sm hover:bg-gray-50 rounded-lg transition-colors"
+            className="block py-3 px-4 font-semibold text-gray-200 text-sm hover:bg-white/5 rounded-lg transition-colors"
           >
             Data Sources
           </Link>
@@ -668,22 +669,22 @@ export default function Header() {
                   mobileExpanded === 'resources' ? null : 'resources'
                 )
               }
-              className="w-full flex items-center justify-between py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+              className="w-full flex items-center justify-between py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
               aria-expanded={mobileExpanded === 'resources'}
             >
-              <span className="font-semibold text-gray-900 text-sm">
+              <span className="font-semibold text-gray-200 text-sm">
                 Resources
               </span>
               <ChevronDown open={mobileExpanded === 'resources'} />
             </button>
             {mobileExpanded === 'resources' && (
-              <div className="bg-gray-50 rounded-lg p-4">
+              <div className="bg-white/5 rounded-lg p-4">
                 {RESOURCES_ITEMS.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block py-1.5 px-3 rounded text-sm text-gray-600 hover:text-brand-blue transition-colors"
+                    className="block py-1.5 px-3 rounded text-sm text-gray-400 hover:text-white transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -695,12 +696,12 @@ export default function Header() {
           <Link
             href="/pricing"
             onClick={() => setMobileOpen(false)}
-            className="block py-3 px-4 font-semibold text-gray-900 text-sm hover:bg-gray-50 rounded-lg transition-colors"
+            className="block py-3 px-4 font-semibold text-gray-200 text-sm hover:bg-white/5 rounded-lg transition-colors"
           >
             Pricing
           </Link>
 
-          <div className="h-px bg-gray-200" />
+          <div className="h-px bg-white/10" />
 
           {/* Auth */}
           {userEmail ? (
@@ -708,7 +709,7 @@ export default function Header() {
               <Link
                 href="/dashboard"
                 onClick={() => setMobileOpen(false)}
-                className="block py-3 px-4 rounded-lg text-sm text-gray-900 hover:bg-gray-50 transition-colors"
+                className="block py-3 px-4 rounded-lg text-sm text-gray-300 hover:bg-white/5 transition-colors"
               >
                 Dashboard
               </Link>
@@ -727,7 +728,7 @@ export default function Header() {
               <Link
                 href="/sign-in"
                 onClick={() => setMobileOpen(false)}
-                className="block py-3 px-4 rounded-lg text-center text-sm text-gray-900 hover:bg-gray-50 transition-colors"
+                className="block py-3 px-4 rounded-lg text-center text-sm text-gray-300 hover:bg-white/5 transition-colors"
               >
                 Sign In
               </Link>
