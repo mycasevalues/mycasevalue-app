@@ -176,7 +176,7 @@ export default function PrivacyPage() {
             letterSpacing: '1.5px',
             textTransform: 'uppercase',
             marginBottom: '16px',
-            background: '#FFF3F4',
+            background: 'rgba(239,68,68,0.08)',
             color: 'var(--accent-primary)'
           }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5">

@@ -260,7 +260,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Medicare */}
-          <div style={{ background: '#EDF3FB', borderRadius: 10, padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 10, padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -304,7 +304,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Medicaid */}
-          <div style={{ background: '#EDF3FB', borderRadius: 10, padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 10, padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -348,7 +348,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Workers Compensation */}
-          <div style={{ background: '#EDF3FB', borderRadius: 10, padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 10, padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -678,7 +678,7 @@ export default function LienCalculator() {
                 fontSize: 13,
                 fontFamily: 'var(--font-body)',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#EDF3FB')}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(59,130,246,0.08)')}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-surface-1)')}
             >
               <span>CMS Medicare Secondary Payer (MSP) Resources</span>

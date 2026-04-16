@@ -233,7 +233,7 @@ export default function NegotiationPage() {
                     <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Floor</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.floor)}</div>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '16px', background: '#EDF3FB', borderRadius: 10, border: '2px solid var(--accent-primary)' }}>
+                  <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(59,130,246,0.08)', borderRadius: 10, border: '2px solid var(--accent-primary)' }}>
                     <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Target</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.target)}</div>
                   </div>

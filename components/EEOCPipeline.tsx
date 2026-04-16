@@ -180,7 +180,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
           <div style={{
             marginTop: '1rem',
             padding: '0.75rem',
-            background: '#EDF3FB',
+            background: 'rgba(59,130,246,0.08)',
             borderRadius: '8px',
             borderLeft: '4px solid var(--accent-primary)',
           }}>

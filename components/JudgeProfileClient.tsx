@@ -387,7 +387,7 @@ export default function JudgeProfileClient({
           <div
             style={{
               padding: '12px 16px',
-              background: '#EDF3FB',
+              background: 'rgba(59,130,246,0.08)',
               border: '1px solid var(--accent-primary)',
               borderRadius: '6px',
               marginBottom: '24px',
@@ -479,7 +479,7 @@ export default function JudgeProfileClient({
                               style={{
                                 display: 'inline-block',
                                 padding: '2px 8px',
-                                background: '#EDF3FB',
+                                background: 'rgba(59,130,246,0.08)',
                                 border: '1px solid var(--accent-primary)',
                                 borderRadius: '3px',
                                 color: 'var(--accent-primary-hover)',

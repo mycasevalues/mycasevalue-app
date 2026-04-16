@@ -176,7 +176,7 @@ export default function TermsPage() {
             letterSpacing: '1.5px',
             textTransform: 'uppercase',
             marginBottom: '16px',
-            background: '#FFF3F4',
+            background: 'rgba(239,68,68,0.08)',
             color: 'var(--accent-primary)'
           }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5">
@@ -257,7 +257,7 @@ export default function TermsPage() {
             paddingBottom: '16px',
             borderRadius: '12px',
             borderLeft: '4px solid #D97706',
-            background: '#FFF3F4',
+            background: 'rgba(239,68,68,0.08)',
             color: 'var(--color-text-primary)',
             marginBottom: '32px'
           }}>
@@ -534,7 +534,7 @@ export default function TermsPage() {
               marginTop: '16px',
               padding: '12px 16px',
               borderRadius: '8px',
-              background: '#FFFBEB',
+              background: 'rgba(234,179,8,0.08)',
               borderLeft: '3px solid #D97706',
               fontSize: '13px',
               color: 'var(--color-text-secondary)',

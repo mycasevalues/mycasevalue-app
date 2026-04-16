@@ -57,7 +57,7 @@ export default function NLRBContext() {
           {/* Total Charges */}
           <div style={{
             padding: '1rem',
-            background: '#EDF3FB',
+            background: 'rgba(59,130,246,0.08)',
             borderRadius: '8px',
             marginBottom: '1rem',
             borderLeft: '4px solid var(--accent-primary)',
@@ -310,7 +310,7 @@ export default function NLRBContext() {
           <div style={{
             marginTop: '1rem',
             padding: '0.75rem',
-            background: '#EDF3FB',
+            background: 'rgba(59,130,246,0.08)',
             borderRadius: '8px',
             borderLeft: '4px solid var(--accent-primary)',
           }}>

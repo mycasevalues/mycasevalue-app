@@ -600,7 +600,7 @@ export default function CalculatorPage() {
             {/* Animated Settlement Range Bar */}
             <div className="mb-6" style={{ position: 'relative' }}>
               <div style={{ position: 'relative', height: '40px', marginBottom: '8px' }}>
-                <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: '#EDF3FB', borderRadius: '4px' }} />
+                <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: 'rgba(59,130,246,0.08)', borderRadius: '4px' }} />
                 <div style={{
                   position: 'absolute', top: '16px', height: '8px',
                   left: `${Math.max(0, (results.p10 / results.p90) * 100 * 0.2)}%`,
@@ -629,7 +629,7 @@ export default function CalculatorPage() {
                 { label: 'P90', value: results.p90, highlight: false },
               ].map((col, i) => (
                 <div key={i} className="p-4 text-center" style={{
-                  background: col.highlight ? '#EDF3FB' : 'var(--color-surface-1)',
+                  background: col.highlight ? 'rgba(59,130,246,0.08)' : 'var(--color-surface-1)',
                   border: `1px solid ${col.highlight ? 'var(--accent-primary)' : 'var(--border-default)'}`,
                   borderRadius: '12px',
                   ...(col.highlight ? { transform: 'scale(1.02)' } : {}),
@@ -734,7 +734,7 @@ export default function CalculatorPage() {
                 <p className="text-2xl font-black" style={{ color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{results.proSeWinRate}%</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>win rate</p>
               </div>
-              <div className="p-5" style={{ background: '#EDF3FB', border: '1px solid var(--accent-primary)', borderRadius: '12px' }}>
+              <div className="p-5" style={{ background: 'rgba(59,130,246,0.08)', border: '1px solid var(--accent-primary)', borderRadius: '12px' }}>
                 <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>Sample Size</p>
                 <p className="text-2xl font-black" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>n={results.sampleSize.toLocaleString()}</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>cases analyzed</p>
@@ -984,7 +984,7 @@ export default function CalculatorPage() {
             <div className="p-4 rounded" style={{
               color: '#92400E',
               fontFamily: 'var(--font-body)',
-              background: '#FFFBEB',
+              background: 'rgba(234,179,8,0.08)',
               border: '1px solid #FCD34D',
               borderLeft: '3px solid #F59E0B',
               fontSize: '12px',

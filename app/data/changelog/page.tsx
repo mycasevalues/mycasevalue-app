@@ -78,7 +78,7 @@ export default async function ChangelogPage() {
           display: inline-block;
           padding: 6px 12px;
           border-radius: 16px;
-          background-color: #EDF3FB;
+          background-color: rgba(59,130,246,0.08);
           color: #1e40af;
           text-decoration: none;
           font-size: 13px;
@@ -97,7 +97,7 @@ export default async function ChangelogPage() {
           display: inline-block;
           padding: 6px 12px;
           border-radius: 20px;
-          background-color: #EDF3FB;
+          background-color: rgba(59,130,246,0.08);
           color: #1e40af;
           font-family: var(--font-mono);
           font-size: 12px;
@@ -115,7 +115,7 @@ export default async function ChangelogPage() {
           transition: all 150ms ease-out;
         }
         .changelog-subscribe-btn:hover {
-          background: #EDF3FB !important;
+          background: rgba(59,130,246,0.08) !important;
         }
       `}</style>
 

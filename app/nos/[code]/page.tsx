@@ -642,7 +642,7 @@ export default async function NOSPage({ params }: PageProps) {
           left: 0;
           right: 0;
           height: 8px;
-          background: #EDF3FB;
+          background: rgba(59,130,246,0.08);
           border-radius: 4px;
         }
 
@@ -814,7 +814,7 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           {/* Data Freshness Badge */}
           <div style={{ marginBottom: '24px', textAlign: 'center' }}>
-            <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: '#EDF3FB', color: 'var(--accent-primary)', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
+            <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary)', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
           </div>
           <MetricsStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
@@ -1053,7 +1053,7 @@ export default async function NOSPage({ params }: PageProps) {
                       display: 'inline-flex',
                       alignItems: 'center',
                       padding: '6px 14px',
-                      background: '#EDF3FB',
+                      background: 'rgba(59,130,246,0.08)',
                       borderRadius: '8px',
                       fontSize: '14px',
                       fontWeight: 600,
@@ -1072,7 +1072,7 @@ export default async function NOSPage({ params }: PageProps) {
                     display: 'inline-flex',
                     alignItems: 'center',
                     padding: '6px 14px',
-                    background: '#EDF3FB',
+                    background: 'rgba(59,130,246,0.08)',
                     borderRadius: '8px',
                     fontSize: '14px',
                     fontWeight: 600,
@@ -1264,7 +1264,7 @@ export default async function NOSPage({ params }: PageProps) {
                 {/* Difference */}
                 <div style={{
                   padding: '20px',
-                  background: '#EDF3FB',
+                  background: 'rgba(59,130,246,0.08)',
                   border: '1px solid var(--accent-primary)',
                   borderRadius: '12px',
                   display: 'flex',

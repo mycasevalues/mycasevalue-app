@@ -452,7 +452,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             </div>
 
             <div style={{
-              background: '#EDF3FB',
+              background: 'rgba(59,130,246,0.08)',
               height: 16,
               borderRadius: 8,
               overflow: 'hidden',

@@ -1195,7 +1195,7 @@ export default function OddsPage() {
                       <div style={{ fontSize: 28, fontWeight: 700, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{attyData.pwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.pn ?? 0).toLocaleString()} cases</div>
                     </div>
-                    <div style={{ padding: 16, background: '#EDF3FB', border: '1px solid var(--accent-primary)', borderRadius: 8, textAlign: 'center' }}>
+                    <div style={{ padding: 16, background: 'rgba(59,130,246,0.08)', border: '1px solid var(--accent-primary)', borderRadius: 8, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Advantage</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>+{attyData.rwr - attyData.pwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>with representation</div>
@@ -1214,7 +1214,7 @@ export default function OddsPage() {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: '50%', background: '#EDF3FB', color: 'var(--accent-primary)', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>1</span>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: '50%', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary)', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>1</span>
                     <p style={{ fontSize: 13, color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
                       {results.winRate >= 40
                         ? `With a ${results.winRate.toFixed(0)}% win rate, ${results.label} cases have favorable odds. Document all evidence thoroughly and consider consulting with an attorney experienced in this area of law.`
@@ -1223,7 +1223,7 @@ export default function OddsPage() {
                     </p>
                   </div>
                   <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: '50%', background: '#EDF3FB', color: 'var(--accent-primary)', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>2</span>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: '50%', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary)', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>2</span>
                     <p style={{ fontSize: 13, color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
                       {results.settlementRate >= 30
                         ? `Settlement occurs in ${results.settlementRate.toFixed(0)}% of cases — explore early settlement discussions as a strategic option to reduce costs and timeline.`
@@ -1232,7 +1232,7 @@ export default function OddsPage() {
                     </p>
                   </div>
                   <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: '50%', background: '#EDF3FB', color: 'var(--accent-primary)', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>3</span>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: '50%', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary)', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>3</span>
                     <p style={{ fontSize: 13, color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
                       {attyData
                         ? `Attorneys achieve a ${attyData.rwr}% win rate vs ${attyData.pwr}% for pro se litigants in this case type — a +${attyData.rwr - attyData.pwr}% advantage. Research attorneys with specific ${results.label} experience in your district.`

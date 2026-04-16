@@ -163,7 +163,7 @@ export default function SOLCalculatorPage() {
                 <div style={{ fontSize: 'clamp(48px, 10vw, 64px)', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-display)', lineHeight: 1 }}>
                   {formatPeriod(rule.years)}
                 </div>
-                <div style={{ marginTop: 12, display: 'inline-block', padding: '6px 14px', background: '#EDF3FB', borderRadius: 8, fontSize: 14, fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ marginTop: 12, display: 'inline-block', padding: '6px 14px', background: 'rgba(59,130,246,0.08)', borderRadius: 8, fontSize: 14, fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>
                   {rule.usc}
                 </div>
                 <div style={{ marginTop: 12, fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>
@@ -224,7 +224,7 @@ export default function SOLCalculatorPage() {
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                   {rule.tolling.map((t, i) => (
                     <span key={i} style={{
-                      padding: '6px 14px', background: '#EDF3FB', color: 'var(--accent-primary-hover)', borderRadius: 20,
+                      padding: '6px 14px', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary-hover)', borderRadius: 20,
                       fontSize: 12, fontWeight: 500, fontFamily: 'var(--font-body)',
                     }}>
                       {t}

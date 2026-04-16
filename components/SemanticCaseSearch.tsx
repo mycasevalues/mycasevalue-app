@@ -276,7 +276,7 @@ export default function SemanticCaseSearch() {
                       style={{
                         display: 'inline-block',
                         padding: '4px 12px',
-                        background: '#EDF3FB',
+                        background: 'rgba(59,130,246,0.08)',
                         border: '1px solid var(--accent-primary)',
                         borderRadius: '6px',
                         fontSize: '12px',
@@ -358,7 +358,7 @@ export default function SemanticCaseSearch() {
                       <div
                         style={{
                           padding: '8px 12px',
-                          background: '#EDF3FB',
+                          background: 'rgba(59,130,246,0.08)',
                           border: '1px solid var(--accent-primary)',
                           borderRadius: '6px',
                           fontSize: '12px',

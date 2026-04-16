@@ -383,7 +383,7 @@ export default async function DistrictPage({ params }: PageProps) {
             }}>
               Top Case Types & Settlement Ranges
             </h2>
-            <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: '#EDF3FB', color: 'var(--accent-primary)', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
+            <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary)', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
           </div>
 
           <div style={{
@@ -744,7 +744,7 @@ export default async function DistrictPage({ params }: PageProps) {
                               <span key={i} style={{
                                 fontSize: 10,
                                 padding: '2px 8px',
-                                background: '#EDF3FB',
+                                background: 'rgba(59,130,246,0.08)',
                                 color: 'var(--accent-primary-hover)',
                                 borderRadius: '4px',
                                 fontWeight: 500,

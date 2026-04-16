@@ -14,7 +14,7 @@ const iconMap = {
 const colorMap = {
   info: { bg: '#EFF6FF', border: '#BFDBFE', text: '#1E40AF' },
   success: { bg: '#ECFDF5', border: '#A7F3D0', text: '#065F46' },
-  warning: { bg: '#FFFBEB', border: '#FDE68A', text: '#92400E' },
+  warning: { bg: 'rgba(234,179,8,0.08)', border: '#FDE68A', text: '#92400E' },
   error: { bg: '#FEF2F2', border: '#FECACA', text: '#991B1B' },
 };
 

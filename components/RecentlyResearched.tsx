@@ -204,7 +204,7 @@ export default function RecentlyResearched() {
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget;
-              el.style.backgroundColor = '#EDF3FB';
+              el.style.backgroundColor = 'rgba(59,130,246,0.08)';
               el.style.borderColor = 'var(--accent-primary)';
             }}
             onMouseLeave={(e) => {

@@ -151,7 +151,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
         style={{
           padding: '16px',
           borderRadius: '8px',
-          backgroundColor: '#FEE2E2',
+          backgroundColor: 'rgba(239,68,68,0.1)',
           color: '#991B1B',
           border: '1px solid #FECACA',
         }}
@@ -167,7 +167,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
         style={{
           padding: '20px',
           borderRadius: '8px',
-          backgroundColor: '#EFF6FF',
+          backgroundColor: 'rgba(59,130,246,0.1)',
           border: '1px solid #BFDBFE',
         }}
       >
@@ -444,7 +444,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                     fontSize: '11px',
                     fontWeight: '600',
                     fontFamily: 'var(--font-body)',
-                    backgroundColor: referral.activated_at ? '#D1FAE5' : '#FEF3C7',
+                    backgroundColor: referral.activated_at ? 'rgba(34,197,94,0.1)' : 'rgba(234,179,8,0.1)',
                     color: referral.activated_at ? '#065F46' : '#92400E',
                   }}
                 >
@@ -460,7 +460,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
       <div
         style={{
           padding: '12px',
-          backgroundColor: '#EDF3FB',
+          backgroundColor: 'rgba(59,130,246,0.08)',
           borderRadius: '8px',
           border: '1px solid #BFDBFE',
           fontSize: '13px',

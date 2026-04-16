@@ -22,7 +22,7 @@ interface USChoroplethProps {
   stateData: StateData[];
 }
 
-const COLOR_RANGE = ['#EDF3FB', '#C5DAEF', '#8DB9DE', '#4A93C9', '#1A6DB5', '#1e40af'];
+const COLOR_RANGE = ['rgba(59,130,246,0.08)', '#C5DAEF', '#8DB9DE', '#4A93C9', '#1A6DB5', '#1e40af'];
 
 export default function USChoropleth({ stateData }: USChoroplethProps) {
   const svgRef = useRef<SVGSVGElement>(null);

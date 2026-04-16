@@ -454,7 +454,7 @@ export default function ComparePage() {
                         <div style={{ marginBottom: 12 }}>
                           <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', marginBottom: 6, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Settlement Range (P25–P75)</div>
                           <div style={{ position: 'relative', height: 24 }}>
-                            <div style={{ position: 'absolute', top: 8, left: 0, right: 0, height: 8, background: '#EDF3FB', borderRadius: 4 }} />
+                            <div style={{ position: 'absolute', top: 8, left: 0, right: 0, height: 8, background: 'rgba(59,130,246,0.08)', borderRadius: 4 }} />
                             <div style={{
                               position: 'absolute', top: 8, height: 8,
                               left: `${Math.min(90, (s.rngLo / s.rngHi) * 100)}%`,

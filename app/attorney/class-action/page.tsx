@@ -175,7 +175,7 @@ export default function ClassActionPage() {
                       <td style={{ padding: '12px 16px', color: textColor }}>{settlement.members.toLocaleString()}</td>
                       <td style={{ padding: '12px 16px', color: textColor }}>{settlement.year}</td>
                       <td style={{ padding: '12px 16px' }}>
-                        <span style={{ background: '#EDF3FB', color: secondaryColor, padding: '4px 8px', borderRadius: '8px', fontSize: '12px', fontWeight: 500 }}>
+                        <span style={{ background: 'rgba(59,130,246,0.08)', color: secondaryColor, padding: '4px 8px', borderRadius: '8px', fontSize: '12px', fontWeight: 500 }}>
                           {TOP_CASE_TYPES.find((t) => t.nos === settlement.nos)?.label}
                         </span>
                       </td>

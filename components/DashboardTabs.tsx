@@ -165,7 +165,7 @@ export default function DashboardTabs({
                     <span style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                       {new Date(h.searched_at).toLocaleDateString()}
                     </span>
-                    <Link href={`/search?q=${encodeURIComponent(h.query)}`} style={{ fontSize: '12px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600, padding: '4px 10px', background: '#EDF3FB', borderRadius: 6 }}>
+                    <Link href={`/search?q=${encodeURIComponent(h.query)}`} style={{ fontSize: '12px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600, padding: '4px 10px', background: 'rgba(59,130,246,0.08)', borderRadius: 6 }}>
                       Search Again
                     </Link>
                   </div>
@@ -226,7 +226,7 @@ export default function DashboardTabs({
             </div>
             <div style={{ padding: '32px', textAlign: 'center', background: 'var(--color-surface-1)', borderRadius: 10, border: '1px solid var(--border-default)' }}>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: 16 }}>No active alerts. Set up monitoring for case numbers, case types, or judge assignments.</p>
-              <div style={{ background: '#EDF3FB', borderRadius: 10, padding: '20px', maxWidth: 400, margin: '0 auto' }}>
+              <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 10, padding: '20px', maxWidth: 400, margin: '0 auto' }}>
                 <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-primary-hover)', marginBottom: 10 }}>New Alert</p>
                 <input
                   type="text"
@@ -276,7 +276,7 @@ export default function DashboardTabs({
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid var(--border-default)' }}>
               <span style={{ fontSize: '13px', color: 'var(--color-text-primary)' }}>Language</span>
               <div style={{ display: 'flex', gap: 6 }}>
-                <button style={{ padding: '6px 12px', borderRadius: 8, border: '1px solid var(--accent-primary)', background: '#EDF3FB', color: 'var(--accent-primary-hover)', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>English</button>
+                <button style={{ padding: '6px 12px', borderRadius: 8, border: '1px solid var(--accent-primary)', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary-hover)', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>English</button>
                 <button style={{ padding: '6px 12px', borderRadius: 8, border: '1px solid var(--border-default)', background: '#FFF', color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>Español</button>
               </div>
             </div>

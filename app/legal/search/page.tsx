@@ -269,7 +269,7 @@ export default function LegalSearchPage() {
       {isDemo && hasSearched && (
         <div style={{
           padding: '10px 16px',
-          background: '#FFFBEB',
+          background: 'rgba(234,179,8,0.08)',
           border: '1px solid #FDE68A',
           borderRadius: 10,
           fontSize: 13,

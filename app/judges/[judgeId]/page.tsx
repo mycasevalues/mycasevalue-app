@@ -240,7 +240,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   alignItems: 'center',
                   gap: '6px',
                   padding: '4px 12px',
-                  background: '#EDF3FB',
+                  background: 'rgba(59,130,246,0.08)',
                   border: '1px solid var(--accent-primary)',
                   borderRadius: '8px',
                   fontSize: '12px',

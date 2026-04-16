@@ -88,7 +88,7 @@ export default function MethodologyPage() {
         }
         .limitation-callout {
           border-left: 3px solid #F59E0B;
-          background: #FFFBEB;
+          background: rgba(234,179,8,0.08);
           padding: 1.5rem;
           border-radius: 12px;
         }
@@ -254,7 +254,7 @@ export default function MethodologyPage() {
 
           {/* Badge and Title */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#FFF3F4', color: 'var(--accent-primary)', borderRadius: '9999px' }}>
+            style={{ background: 'rgba(239,68,68,0.08)', color: 'var(--accent-primary)', borderRadius: '9999px' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
             METHODOLOGY
           </div>

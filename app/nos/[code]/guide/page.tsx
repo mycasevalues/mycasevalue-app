@@ -332,7 +332,7 @@ export default async function GuidePage({ params }: PageProps) {
             {realData.sp && (
               <div style={{
                 padding: '20px',
-                backgroundColor: '#EDF3FB',
+                backgroundColor: 'rgba(59,130,246,0.08)',
                 border: '1px solid var(--accent-primary)',
                 borderRadius: '8px',
               }}>
@@ -529,7 +529,7 @@ export default async function GuidePage({ params }: PageProps) {
           <div style={{
             marginTop: '20px',
             padding: '15px',
-            backgroundColor: '#EDF3FB',
+            backgroundColor: 'rgba(59,130,246,0.08)',
             borderLeft: '4px solid var(--accent-primary)',
             borderRadius: '4px',
           }}>
@@ -633,7 +633,7 @@ export default async function GuidePage({ params }: PageProps) {
         }}>
           <Link href={`/nos/${code}`} style={{
             padding: '20px',
-            backgroundColor: '#EDF3FB',
+            backgroundColor: 'rgba(59,130,246,0.08)',
             border: '1px solid var(--accent-primary)',
             borderRadius: '8px',
             textDecoration: 'none',

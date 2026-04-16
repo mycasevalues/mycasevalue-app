@@ -44,7 +44,7 @@ export default function CookieConsent() {
         right: 0,
         zIndex: 300,
         padding: '1.5rem 1rem',
-        background: 'var(--accent-primary)',
+        background: '#0c1220',
         borderTop: '1px solid rgba(255, 255, 255, 0.1)',
         boxShadow: '0 -4px 12px rgba(0, 23, 46, 0.15)',
         animation: 'slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',

@@ -520,7 +520,7 @@ export default function DisclaimerPage() {
             padding: '32px',
             borderRadius: '12px',
             border: '2px solid var(--accent-primary)',
-            backgroundColor: '#FFF3F4',
+            backgroundColor: 'rgba(239,68,68,0.08)',
           }}>
             <p style={{
               fontSize: '1rem',

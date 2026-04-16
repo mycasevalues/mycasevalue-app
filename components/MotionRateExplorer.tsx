@@ -225,7 +225,7 @@ export default function MotionRateExplorer() {
   };
 
   const disclaimerStyle: React.CSSProperties = {
-    backgroundColor: '#FFFBEB',
+    backgroundColor: 'rgba(234,179,8,0.08)',
     border: '1px solid #FCD34D',
     borderRadius: '8px',
     padding: '16px',

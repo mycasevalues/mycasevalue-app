@@ -276,7 +276,7 @@ export default function DeadlinesCalculatorPage() {
                       <div style={{ flex: 1, minWidth: 200 }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
                           <span style={{
-                            display: 'inline-block', padding: '3px 10px', background: '#EDF3FB',
+                            display: 'inline-block', padding: '3px 10px', background: 'rgba(59,130,246,0.08)',
                             color: 'var(--accent-primary-hover)', borderRadius: 6, fontSize: 11, fontWeight: 600,
                             fontFamily: 'var(--font-mono)', whiteSpace: 'nowrap',
                           }}>

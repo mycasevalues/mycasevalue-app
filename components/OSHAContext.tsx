@@ -60,7 +60,7 @@ export default function OSHAContext() {
           }}>
             <div style={{
               padding: '1rem',
-              background: '#EDF3FB',
+              background: 'rgba(59,130,246,0.08)',
               borderRadius: '8px',
               borderLeft: '4px solid var(--accent-primary)',
             }}>
@@ -87,7 +87,7 @@ export default function OSHAContext() {
 
             <div style={{
               padding: '1rem',
-              background: '#EDF3FB',
+              background: 'rgba(59,130,246,0.08)',
               borderRadius: '8px',
               borderLeft: '4px solid var(--accent-primary)',
             }}>
@@ -116,7 +116,7 @@ export default function OSHAContext() {
           {/* Average Penalty */}
           <div style={{
             padding: '1rem',
-            background: '#EDF3FB',
+            background: 'rgba(59,130,246,0.08)',
             borderRadius: '8px',
             marginBottom: '1.5rem',
             borderLeft: '4px solid var(--accent-primary)',
@@ -278,7 +278,7 @@ export default function OSHAContext() {
           <div style={{
             marginTop: '1rem',
             padding: '0.75rem',
-            background: '#EDF3FB',
+            background: 'rgba(59,130,246,0.08)',
             borderRadius: '8px',
             borderLeft: '4px solid var(--accent-primary)',
           }}>

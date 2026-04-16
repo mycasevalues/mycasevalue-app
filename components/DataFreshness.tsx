@@ -51,8 +51,8 @@ export default function DataFreshness({ style }: DataFreshnessProps) {
       style={{
         display: 'inline-flex',
         alignItems: 'center',
-        background: '#EDF3FB',
-        color: 'var(--accent-primary)',
+        background: 'rgba(255,255,255,0.06)',
+        color: '#60a5fa',
         fontSize: '11px',
         fontWeight: 500,
         fontFamily: 'var(--font-body)',

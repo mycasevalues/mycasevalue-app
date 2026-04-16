@@ -615,7 +615,7 @@ export default function HowItWorksPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
-        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: '#FFF3F4', borderRadius: '12px' }}>
+        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'rgba(239,68,68,0.08)', borderRadius: '12px' }}>
           <h2 className="text-3xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             See what happens in courts like yours
           </h2>

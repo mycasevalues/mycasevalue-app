@@ -417,7 +417,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         }
 
         .category-badge {
-          background: #FFF3F4;
+          background: rgba(239,68,68,0.08);
           color: var(--accent-primary);
           padding: 4px 10px;
           border-radius: 12px;

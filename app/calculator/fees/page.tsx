@@ -176,7 +176,7 @@ export default function FeesPage() {
               Under 28 U.S.C. § 1915, courts may authorize individuals to proceed without prepaying filing fees if they demonstrate inability to pay. This is known as proceeding <em>in forma pauperis</em> (IFP).
             </p>
 
-            <div style={{ background: '#EDF3FB', borderRadius: 10, padding: '20px 24px', marginBottom: 16 }}>
+            <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 10, padding: '20px 24px', marginBottom: 16 }}>
               <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
                 General Eligibility Guidelines
               </h3>

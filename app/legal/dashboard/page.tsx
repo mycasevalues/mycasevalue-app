@@ -52,7 +52,7 @@ const PIPELINE_EVENTS: PipelineEvent[] = [
 
 const STATUS_STYLES: Record<string, { bg: string; color: string; label: string }> = {
   healthy: { bg: '#F0FDF4', color: '#15803D', label: 'Healthy' },
-  degraded: { bg: '#FFFBEB', color: '#B45309', label: 'Degraded' },
+  degraded: { bg: 'rgba(234,179,8,0.08)', color: '#B45309', label: 'Degraded' },
   offline: { bg: '#FEF2F2', color: '#B91C1C', label: 'Offline' },
 };
 

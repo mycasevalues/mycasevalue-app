@@ -196,7 +196,7 @@ export default function BlogPage() {
         }
 
         .category-badge {
-          background: #FFF3F4;
+          background: rgba(239,68,68,0.08);
           color: var(--accent-primary);
           padding: 4px 10px;
           border-radius: 12px;
@@ -258,7 +258,7 @@ export default function BlogPage() {
 
         .topic-pill:hover {
           border-color: var(--accent-primary);
-          background: #FFF3F4;
+          background: rgba(239,68,68,0.08);
           color: var(--accent-primary);
         }
 
@@ -447,7 +447,7 @@ export default function BlogPage() {
                       href={`/blog/${post.slug}`}
                       className="inline-flex items-center gap-1 px-3 py-2 rounded text-xs font-semibold transition-all"
                       style={{
-                        background: '#FFF3F4',
+                        background: 'rgba(239,68,68,0.08)',
                         color: 'var(--accent-primary)',
                       }}
                     >

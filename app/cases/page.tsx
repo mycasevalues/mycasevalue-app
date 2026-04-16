@@ -95,11 +95,11 @@ function getWinRateColor(wr: number): string {
 }
 
 function getWinRateBg(wr: number): string {
-  if (wr >= 65) return '#E8F3EB';
-  if (wr >= 50) return '#EDF3FB';
-  if (wr >= 35) return '#FDF4EC';
-  if (wr >= 20) return '#FEF0EF';
-  return '#FAEAE9';
+  if (wr >= 65) return 'rgba(34,197,94,0.1)';
+  if (wr >= 50) return 'rgba(59,130,246,0.08)';
+  if (wr >= 35) return 'rgba(234,179,8,0.1)';
+  if (wr >= 20) return 'rgba(239,68,68,0.08)';
+  return 'rgba(239,68,68,0.06)';
 }
 
 function getWinRateLabel(wr: number): string {
