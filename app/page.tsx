@@ -46,14 +46,14 @@ export default function HomePage() {
                 <span className="w-1 h-1 rounded-full bg-blue-400/70"></span>
                 Federal Court Intelligence
               </p>
-              <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-5">
+              <h1 className="text-3xl md:text-4xl lg:text-[3rem] font-bold text-white leading-[1.05] tracking-[-0.025em] mb-5">
                 Litigation intelligence
                 <br />
                 from public court records.
               </h1>
               <p className="text-[15px] text-gray-400 leading-relaxed max-w-md mb-8">
-                Case outcomes, judge analytics, and settlement data across {SITE_METRICS.districtCourts} federal
-                districts. Sourced from public federal court and agency records.
+                Case outcomes, judge analytics, and settlement data across all {SITE_METRICS.districtCourts} federal
+                districts. Sourced from official public federal court and agency records.
               </p>
 
               <div className="max-w-md mb-8">
