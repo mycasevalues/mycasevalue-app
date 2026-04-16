@@ -297,6 +297,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                         padding: '12px 8px',
                         textAlign: 'center',
                         color: 'var(--color-text-primary)',
+                        fontFamily: 'var(--font-mono)',
                       }}
                     >
                       ${district.medianSettlement}K
@@ -306,6 +307,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                         padding: '12px 8px',
                         textAlign: 'center',
                         color: 'var(--color-text-primary)',
+                        fontFamily: 'var(--font-mono)',
                       }}
                     >
                       {district.avgDuration} months
@@ -315,6 +317,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                         padding: '12px 8px',
                         textAlign: 'center',
                         color: 'var(--color-text-muted)',
+                        fontFamily: 'var(--font-mono)',
                       }}
                     >
                       {district.caseCount.toLocaleString()}

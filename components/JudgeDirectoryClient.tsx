@@ -642,7 +642,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
                   margin: '0 0 8px 0',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-legal)',
                   lineHeight: 1.3,
                 }}>
                   {judge.full_name}
@@ -1088,7 +1088,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
                       margin: '0 0 4px 0',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-legal)',
                     }}>
                       {judge.full_name}
                     </h3>

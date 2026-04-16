@@ -410,7 +410,7 @@ export default function HomePage() {
                 background: 'var(--gold-light, #FAF3E6)',
                 border: '1px solid var(--gold-border, #E8D09C)',
                 borderRadius: 2,
-                padding: '15px 17px',
+                padding: '16px',
                 marginBottom: 14,
               }}
             >
@@ -565,7 +565,7 @@ export default function HomePage() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: 8,
-                    padding: '7px 0',
+                    padding: '8px 0',
                     borderBottom: i < RECENT_SEARCHES.length - 1 ? '1px solid var(--bdr, #E2DFD8)' : 'none',
                   }}
                 >
