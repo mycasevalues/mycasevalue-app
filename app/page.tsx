@@ -163,10 +163,10 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
             {[
-              { title: 'Case Outcomes', desc: 'Win rates, settlement ranges, and disposition analytics across 84 case types.', href: '/cases' },
-              { title: 'Judge Intelligence', desc: 'Ruling patterns, case duration, and outcome tendencies for federal judges.', href: '/judges' },
-              { title: 'Venue Analysis', desc: 'Compare districts by performance, timelines, and historical outcomes.', href: '/districts' },
-              { title: 'Document Search', desc: 'Full-text search across opinions, regulations, and filings from 7 sources.', href: '/case-search' },
+              { title: 'Case Outcomes', desc: 'Win rates, settlement ranges, and disposition analytics across 84 case types.', href: '/cases', meta: '84 case types' },
+              { title: 'Judge Intelligence', desc: 'Ruling patterns, case duration, and outcome tendencies for federal judges.', href: '/judges', meta: '3,400+ judges' },
+              { title: 'Venue Analysis', desc: 'Compare districts by performance, timelines, and historical outcomes.', href: '/districts', meta: '94 districts' },
+              { title: 'Document Search', desc: 'Full-text search across opinions, regulations, and filings from 7 sources.', href: '/case-search', meta: '7 data sources' },
             ].map((cap) => (
               <Link
                 key={cap.title}
@@ -175,7 +175,10 @@ export default function HomePage() {
               >
                 <h3 className="text-sm font-semibold text-gray-100 mb-2 group-hover:text-white transition-colors">{cap.title}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">{cap.desc}</p>
-                <span className="text-[11px] text-blue-400/60 group-hover:text-blue-400 transition-colors">View &rarr;</span>
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] text-blue-400/60 group-hover:text-blue-400 transition-colors">View &rarr;</span>
+                  <span className="text-[10px] text-gray-600 font-mono tabular-nums">{cap.meta}</span>
+                </div>
               </Link>
             ))}
           </div>
