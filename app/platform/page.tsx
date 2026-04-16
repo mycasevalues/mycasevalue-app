@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'The Legal Intelligence Platform democratizing federal court data. 5.1M+ cases analyzed, AI-powered predictions, real-time settlement analytics, and attorney tools for data-driven legal decisions.',
   alternates: { canonical: `${SITE_URL}/platform` },
   openGraph: {
-    title: 'Legal Intelligence Platform | MyCaseValue',
+    title: 'Legal Intelligence Platform',
     description: 'Democratizing federal court data with AI-powered legal analytics. 5.1M+ cases, 95 federal districts, 55+ years of data.',
     type: 'website',
     url: `${SITE_URL}/platform`,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Legal Intelligence Platform | MyCaseValue',
+    title: 'Legal Intelligence Platform',
     description: 'Democratizing federal court data with AI-powered legal analytics. 5.1M+ cases, 95 federal districts, 55+ years of data.',
   },
   keywords: [

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Pull federal court outcome data in minutes. Judge analytics, district data, and case research tools for paralegals supporting attorneys.',
   alternates: { canonical: `${SITE_URL}/for/paralegals` },
   openGraph: {
-    title: 'Federal Court Data for Paralegals | MyCaseValue',
+    title: 'Federal Court Data for Paralegals',
     description: 'Research federal court outcomes quickly. Judge analytics, district trends, and data-driven insights to support your legal team.',
     type: 'website',
     url: `${SITE_URL}/for/paralegals`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Data for Paralegals | MyCaseValue',
+    title: 'Federal Court Data for Paralegals',
     description: 'Research federal court outcomes quickly. Judge analytics, district trends, and data-driven insights to support your legal team.',
     images: [`${SITE_URL}/og-image.png`],
   },

@@ -7,11 +7,11 @@ import { SITE_URL } from '@/lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Federal Court Data for Pro Se Litigants — MyCaseValue',
+  title: 'Federal Court Data for Pro Se Litigants',
   description: 'Research federal court outcomes as a pro se litigant. Win rates, judge analytics, settlement ranges, timelines. Free to start.',
   alternates: { canonical: `${SITE_URL}/for/pro-se` },
   openGraph: {
-    title: 'Federal Court Data for Pro Se Litigants | MyCaseValue',
+    title: 'Federal Court Data for Pro Se Litigants',
     description: 'Research real outcomes from federal cases. Get win rates, settlement ranges, and judge analytics — the same data attorneys use.',
     type: 'website',
     url: `${SITE_URL}/for/pro-se`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Data for Pro Se Litigants | MyCaseValue',
+    title: 'Federal Court Data for Pro Se Litigants',
     description: 'Research real outcomes from federal cases. Get win rates, settlement ranges, and judge analytics — the same data attorneys use.',
     images: [`${SITE_URL}/og-image.png`],
   },

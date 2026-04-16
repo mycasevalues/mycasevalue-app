@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Terms of Service — MyCaseValue',
+    title: 'Terms of Service',
     description: 'Read MyCaseValue Terms of Service, including our service agreement and user responsibilities.',
     url: `${SITE_URL}/terms`,
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Terms of Service — MyCaseValue',
+    title: 'Terms of Service',
     description: 'Read MyCaseValue Terms of Service, including our service agreement and user responsibilities.',
   },
 };

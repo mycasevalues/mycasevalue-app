@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Learn how MyCaseValue processes data from FJC IDB, PACER, and CourtListener. Transparent methodology for 5.1M+ case outcome statistics.',
   alternates: { canonical: `${SITE_URL}/methodology` },
   openGraph: {
-    title: 'Methodology — MyCaseValue',
+    title: 'Methodology',
     description: 'Learn how MyCaseValue processes and presents aggregate federal court outcome data with transparency.',
     url: `${SITE_URL}/methodology`,
     type: 'website',

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     'Evaluate your case strength across key legal factors. Get a personalized assessment score, win rate comparison, and recommendations for next steps.',
   alternates: { canonical: `${SITE_URL}/tools/case-strength` },
   openGraph: {
-    title: 'Case Strength Assessment | MyCaseValue',
+    title: 'Case Strength Assessment',
     description:
       'Evaluate your case strength across key legal factors. Get a personalized assessment score, win rate comparison, and recommendations for next steps.',
     url: `${SITE_URL}/tools/case-strength`,

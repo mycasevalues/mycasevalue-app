@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Integrate MyCaseValue federal court data with your existing legal tools. REST API, CSV exports, and direct connections to case management systems.',
   alternates: { canonical: `${SITE_URL}/integrations` },
   openGraph: {
-    title: 'Integrations — MyCaseValue',
+    title: 'Integrations',
     description: 'Connect federal court analytics to your legal workflow with our API, exports, and direct integrations.',
     type: 'website',
     url: `${SITE_URL}/integrations`,  },

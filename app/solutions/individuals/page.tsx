@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Research your case value, settlement ranges, and timeline estimates. Free access to case analytics for personal injury claims.',
   alternates: { canonical: `${SITE_URL}/solutions/individuals` },
   openGraph: {
-    title: 'For Individuals | MyCaseValue',
+    title: 'For Individuals',
     description: 'Understand your case value with real settlement data, judge analytics, and timeline projections. Make informed decisions about your personal injury claim.',
     url: `${SITE_URL}/solutions/individuals`,
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'For Individuals | MyCaseValue',
+    title: 'For Individuals',
     description: 'Research your case value, settlement ranges, and timeline estimates. Free access to case analytics for personal injury claims.',
   },
 };

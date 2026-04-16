@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Calculate federal court filing fees, PACER fees, pro hac vice fees, and other litigation costs.',
   alternates: { canonical: `${SITE_URL}/calculator/fees` },
   openGraph: {
-    title: 'Federal Court Fees Calculator | MyCaseValue',
+    title: 'Federal Court Fees Calculator',
     description: 'Calculate federal court filing fees, PACER fees, pro hac vice fees, and other litigation costs.',
     url: `${SITE_URL}/calculator/fees`,
     type: 'website',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Fees Calculator | MyCaseValue',
+    title: 'Federal Court Fees Calculator',
     description: 'Calculate federal court filing fees and litigation costs.',
   },
 };

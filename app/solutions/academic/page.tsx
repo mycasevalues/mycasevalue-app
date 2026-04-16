@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Research datasets, longitudinal analysis, and citation-ready data for law school faculty and research institutions.',
   alternates: { canonical: `${SITE_URL}/solutions/academic` },
   openGraph: {
-    title: 'For Academic Researchers | MyCaseValue',
+    title: 'For Academic Researchers',
     description: 'Enable empirical legal research with 5.1M+ federal cases. Free institutional licensing for law schools and research institutions.',
     url: `${SITE_URL}/solutions/academic`,
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'For Academic Researchers | MyCaseValue',
+    title: 'For Academic Researchers',
     description: 'Research datasets, longitudinal analysis, and citation-ready data for law school faculty and research institutions.',
   },
 };

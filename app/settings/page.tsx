@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/settings` },
   openGraph: {
-    title: 'Settings | MyCaseValue',
+    title: 'Settings',
     description: 'Manage your MyCaseValue account settings and preferences.',
     url: `${SITE_URL}/settings`,
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Settings | MyCaseValue',
+    title: 'Settings',
     description: 'Manage your MyCaseValue account settings and preferences.',
   },
 };

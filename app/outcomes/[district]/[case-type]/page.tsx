@@ -55,7 +55,7 @@ export async function generateMetadata({
 
   if (!option) {
     return {
-      title: 'Case Outcomes Not Found — MyCaseValue',
+      title: 'Case Outcomes Not Found',
       description: 'This case type and district combination does not exist.',
     };
   }

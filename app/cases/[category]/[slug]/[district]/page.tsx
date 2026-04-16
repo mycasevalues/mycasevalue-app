@@ -59,7 +59,7 @@ export async function generateMetadata({
 
   if (!caseType || !state) {
     return {
-      title: 'Case Data Not Found — MyCaseValue',
+      title: 'Case Data Not Found',
       description: 'This case type and district combination does not exist in our database.',
     };
   }

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!judge) {
     return {
-      title: 'Judge Profile Not Found — MyCaseValue',
+      title: 'Judge Profile Not Found',
       description: 'The judge profile you are looking for does not exist.',
     };
   }

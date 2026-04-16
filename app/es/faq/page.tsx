@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Preguntas Frecuentes — MyCaseValue',
+    title: 'Preguntas Frecuentes',
     description: 'Obtén respuestas a preguntas frecuentes sobre datos judiciales federales, tasas de victoria, rangos de acuerdos y cómo funciona MyCaseValue.',
     type: 'website',
     url: `${SITE_URL}/es/faq`,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Preguntas Frecuentes — MyCaseValue',
+    title: 'Preguntas Frecuentes',
     description: 'Obtén respuestas a preguntas frecuentes sobre datos judiciales federales, tasas de victoria, rangos de acuerdos.',
   },
 };

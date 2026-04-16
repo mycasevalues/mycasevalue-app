@@ -22,7 +22,7 @@ const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'
 });
 
 export const metadata: Metadata = {
-  title: 'Federal Case Trends & Outcome Analysis — MyCaseValue',
+  title: 'Federal Case Trends & Outcome Analysis',
   description: 'Track federal court outcome trends: Win rates, settlement values, case durations by year. Analyze 84 case types across all 95 districts.',
   alternates: { canonical: `${SITE_URL}/trends` },
   openGraph: {

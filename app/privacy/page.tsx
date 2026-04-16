@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Privacy Policy — MyCaseValue',
+    title: 'Privacy Policy',
     description: 'Learn how MyCaseValue collects, uses, and protects your data.',
     url: `${SITE_URL}/privacy`,
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Privacy Policy — MyCaseValue',
+    title: 'Privacy Policy',
     description: 'Learn how MyCaseValue collects, uses, and protects your data.',
   },
 };

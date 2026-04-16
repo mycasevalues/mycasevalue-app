@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   description: 'Track all updates, data refreshes, and feature releases for MyCaseValue platform. See what changed and how it affects your research.',
   alternates: { canonical: `${SITE_URL}/data/changelog` },
   openGraph: {
-    title: 'Data Changelog | MyCaseValue',
+    title: 'Data Changelog',
     description: 'Track all updates, data refreshes, and feature releases for MyCaseValue platform. See what changed and how it affects your research.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Data Changelog | MyCaseValue',
+    title: 'Data Changelog',
     description: 'Track all updates, data refreshes, and feature releases for MyCaseValue platform. See what changed and how it affects your research.',
   },
 };

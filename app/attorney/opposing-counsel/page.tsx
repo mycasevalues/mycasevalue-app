@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     'Research opposing counsel track record, settlement patterns, and litigation strategy. Analyze their win rates, time to settlement, and case type preferences using public PACER data.',
   alternates: { canonical: `${SITE_URL}/attorney/opposing-counsel` },
   openGraph: {
-    title: 'Opposing Counsel Research | MyCaseValue',
+    title: 'Opposing Counsel Research',
     description:
       'Research opposing counsel track record, settlement patterns, and litigation strategy. Analyze their win rates, time to settlement, and case type preferences using public PACER data.',
     url: `${SITE_URL}/attorney/opposing-counsel`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Opposing Counsel Research | MyCaseValue',
+    title: 'Opposing Counsel Research',
     description: 'Research opposing counsel track record, settlement patterns, and litigation strategy.',
   },
 };

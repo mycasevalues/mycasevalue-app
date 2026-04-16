@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Settlement benchmarking, claim valuation, and litigation cost forecasting for insurers and defense counsel.',
   alternates: { canonical: `${SITE_URL}/solutions/insurance` },
   openGraph: {
-    title: 'For Insurance Companies | MyCaseValue',
+    title: 'For Insurance Companies',
     description: 'Reduce claims payouts and litigation costs with data-driven valuation models, risk scoring, and settlement intelligence for insurance carriers.',
     url: `${SITE_URL}/solutions/insurance`,
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'For Insurance Companies | MyCaseValue',
+    title: 'For Insurance Companies',
     description: 'Settlement benchmarking, claim valuation, and litigation cost forecasting for insurers and defense counsel.',
   },
 };

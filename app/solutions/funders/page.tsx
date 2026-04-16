@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Portfolio analytics, case evaluation, and ROI projections for litigation finance companies and alternative funders.',
   alternates: { canonical: `${SITE_URL}/solutions/funders` },
   openGraph: {
-    title: 'For Litigation Funders | MyCaseValue',
+    title: 'For Litigation Funders',
     description: 'Make smarter funding decisions with case-level analytics, predictive risk scoring, and ROI projections across all case types and jurisdictions.',
     url: `${SITE_URL}/solutions/funders`,
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'For Litigation Funders | MyCaseValue',
+    title: 'For Litigation Funders',
     description: 'Portfolio analytics, case evaluation, and ROI projections for litigation finance companies and alternative funders.',
   },
 };

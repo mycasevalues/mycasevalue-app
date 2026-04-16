@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Court performance data, policy analysis, and transparency reporting tools for federal and state agencies.',
   alternates: { canonical: `${SITE_URL}/solutions/government` },
   openGraph: {
-    title: 'For Government Agencies | MyCaseValue',
+    title: 'For Government Agencies',
     description: 'Court performance data, policy analysis, and transparency reporting tools for federal and state agencies.',
     url: `${SITE_URL}/solutions/government`,
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'For Government Agencies | MyCaseValue',
+    title: 'For Government Agencies',
     description: 'Court performance data, policy analysis, and transparency reporting tools for federal and state agencies.',
   },
 };

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'Research federal court outcomes in 3 steps: Select case type, search 5.1M+ cases, get personalized report with win rates & settlements.',
   alternates: { canonical: `${SITE_URL}/how-it-works` },
   openGraph: {
-    title: 'Platform Overview — MyCaseValue',
+    title: 'Platform Overview',
     description: 'Three simple steps to research real federal court outcomes. Select your case type, we analyze 5.1M+ cases, you get a personalized report.',
     type: 'website',
     url: `${SITE_URL}/how-it-works`,

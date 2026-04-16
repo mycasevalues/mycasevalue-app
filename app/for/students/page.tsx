@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Research real federal court outcomes for law school. Win rates, judge analytics, case timelines, and real-world data for moot court and law review research.',
   alternates: { canonical: `${SITE_URL}/for/students` },
   openGraph: {
-    title: 'Federal Court Data for Law Students | MyCaseValue',
+    title: 'Federal Court Data for Law Students',
     description: 'Go beyond the casebook. Research real federal court outcomes for moot court prep, law review, and understanding court patterns.',
     type: 'website',
     url: `${SITE_URL}/for/students`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Data for Law Students | MyCaseValue',
+    title: 'Federal Court Data for Law Students',
     description: 'Go beyond the casebook. Research real federal court outcomes for moot court prep, law review, and understanding court patterns.',
     images: [`${SITE_URL}/og-image.png`],
   },

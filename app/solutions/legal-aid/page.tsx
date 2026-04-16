@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Free case research, outcome analysis, and grant reporting tools for non-profits and pro-bono legal services.',
   alternates: { canonical: `${SITE_URL}/solutions/legal-aid` },
   openGraph: {
-    title: 'For Legal Aid Organizations | MyCaseValue',
+    title: 'For Legal Aid Organizations',
     description: 'Free enterprise-grade case analytics for legal aid organizations. Strengthen case strategies and maximize limited resources to serve underrepresented communities.',
     url: `${SITE_URL}/solutions/legal-aid`,
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'For Legal Aid Organizations | MyCaseValue',
+    title: 'For Legal Aid Organizations',
     description: 'Free case research, outcome analysis, and grant reporting tools for non-profits and pro-bono legal services.',
   },
 };

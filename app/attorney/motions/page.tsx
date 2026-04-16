@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Motion success rate database by case type and circuit',
   alternates: { canonical: `${SITE_URL}/attorney/motions` },
   openGraph: {
-    title: 'Motion Success Rate Database | MyCaseValue',
+    title: 'Motion Success Rate Database',
     description: 'Motion success rate database by case type and circuit',
     url: `${SITE_URL}/attorney/motions`,
     type: 'website',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Motion Success Rate Database | MyCaseValue',
+    title: 'Motion Success Rate Database',
     description: 'Motion success rate database by case type and circuit',
   },
 };

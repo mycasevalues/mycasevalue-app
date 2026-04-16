@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Data Sources & Methodology | MyCaseValue',
+    title: 'Data Sources & Methodology',
     description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 5.1M+ cases across 95 federal districts with quarterly updates.',
   },
 };

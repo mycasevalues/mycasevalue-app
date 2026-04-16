@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Questions about federal court data, win rates, settlement ranges, pricing, accuracy, privacy, and whether MyCaseValue is legal advice.',
   alternates: { canonical: `${SITE_URL}/faq` },
   openGraph: {
-    title: 'FAQ — MyCaseValue',
+    title: 'FAQ',
     description: 'Get answers to common questions about federal court data, win rates, settlement ranges, and how MyCaseValue works.',
     type: 'website',
     url: `${SITE_URL}/faq`,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FAQ — MyCaseValue',
+    title: 'FAQ',
     description: 'Get answers to common questions about federal court data, win rates, settlement ranges, and how MyCaseValue works.',
     images: [`${SITE_URL}/og-image.png`],
   },

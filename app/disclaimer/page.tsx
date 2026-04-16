@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/disclaimer` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Disclaimer — MyCaseValue',
+    title: 'Disclaimer',
     description: 'Important disclaimer: MyCaseValue is not a law firm and provides data for informational purposes only, not legal advice.',
     url: `${SITE_URL}/disclaimer`,
     type: 'website',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Disclaimer — MyCaseValue',
+    title: 'Disclaimer',
     description: 'Important disclaimer: MyCaseValue is not a law firm and provides data for informational purposes only, not legal advice.',
   },
 };

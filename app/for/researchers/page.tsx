@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Access 5.1 million federal case outcomes for empirical legal research. Searchable by district, case type, judge, outcome, and year. Built on public FJC, CourtListener, and RECAP data.',
   alternates: { canonical: `${SITE_URL}/for/researchers` },
   openGraph: {
-    title: 'Federal Court Data for Academic Researchers | MyCaseValue',
+    title: 'Federal Court Data for Academic Researchers',
     description: 'Comprehensive dataset of 5.1M federal cases with advanced filtering for empirical legal research. Built on public records.',
     type: 'website',
     url: `${SITE_URL}/for/researchers`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Data for Academic Researchers | MyCaseValue',
+    title: 'Federal Court Data for Academic Researchers',
     description: 'Comprehensive dataset of 5.1M federal cases with advanced filtering for empirical legal research. Built on public records.',
     images: [`${SITE_URL}/og-image.png`],
   },

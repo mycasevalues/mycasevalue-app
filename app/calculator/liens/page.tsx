@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Estimate Medicare, Medicaid, and workers compensation liens. Calculate net recovery to client from your settlement amount.',
   alternates: { canonical: `${SITE_URL}/calculator/liens` },
   openGraph: {
-    title: 'Lien & Subrogation Calculator | MyCaseValue',
+    title: 'Lien & Subrogation Calculator',
     description: 'Estimate Medicare, Medicaid, and workers compensation liens. Calculate net recovery to client from your settlement amount.',
     url: `${SITE_URL}/calculator/liens`,
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lien & Subrogation Calculator | MyCaseValue',
+    title: 'Lien & Subrogation Calculator',
     description: 'Estimate Medicare, Medicaid, and workers compensation liens.',
   },
 };

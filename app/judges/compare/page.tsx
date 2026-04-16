@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Compare Federal Judges — Side-by-Side Analysis | MyCaseValue',
+    title: 'Compare Federal Judges — Side-by-Side Analysis',
     description: 'Compare up to 3 federal judges side-by-side. Analyze case outcome rates, motion grant rates, settlement patterns, and ruling trends across judges.',
   },
 };

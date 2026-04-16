@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Cómo Funciona — MyCaseValue',
+    title: 'Cómo Funciona',
     description: 'Cómo MyCaseValue analiza datos de casos federales para revelarte información real sobre resultados legales.',
     type: 'website',
     url: `${SITE_URL}/es/how-it-works`,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cómo Funciona — MyCaseValue',
+    title: 'Cómo Funciona',
     description: 'Cómo MyCaseValue analiza datos de casos federales para revelarte información real sobre resultados legales.',
   },
 };

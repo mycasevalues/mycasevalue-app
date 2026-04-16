@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: 'Comprehensive technical documentation of MyCaseValue research methodology, data sources, and statistical framework for federal court case analysis.',
   alternates: { canonical: `${SITE_URL}/methodology/whitepaper` },
   openGraph: {
-    title: 'Data Methodology Whitepaper | MyCaseValue',
+    title: 'Data Methodology Whitepaper',
     description: 'Comprehensive technical documentation of research methodology and statistical framework.',
     url: `${SITE_URL}/methodology/whitepaper`,
     type: 'website',

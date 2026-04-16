@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'Browse all federal case types with real court statistics. Explore win rates, case duration, and outcomes for employment, injury, consumer, civil rights, and more.',
   alternates: { canonical: `${SITE_URL}/nos` },
   openGraph: {
-    title: 'All Federal Case Types — MyCaseValue',
+    title: 'All Federal Case Types',
     description:
       'Browse all federal case types with real court statistics. Explore win rates, case duration, and outcomes for employment, injury, consumer, civil rights, and more.',
     url: `${SITE_URL}/nos`,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'All Federal Case Types — MyCaseValue',
+    title: 'All Federal Case Types',
     description: 'Browse all federal case types with real court statistics. Explore win rates, case duration, and outcomes for employment, injury, consumer, civil rights, and more.',
   },
 };

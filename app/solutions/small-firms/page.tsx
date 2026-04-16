@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Case analytics, opposing counsel intelligence, and venue selection tools designed for solo practitioners and small law firms.',
   alternates: { canonical: `${SITE_URL}/solutions/small-firms` },
   openGraph: {
-    title: 'For Small Law Firms | MyCaseValue',
+    title: 'For Small Law Firms',
     description: 'Level the playing field with enterprise-grade case analytics, judge profiles, and opposing counsel intelligence designed for solo practitioners.',
     url: `${SITE_URL}/solutions/small-firms`,
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'For Small Law Firms | MyCaseValue',
+    title: 'For Small Law Firms',
     description: 'Case analytics, opposing counsel intelligence, and venue selection tools designed for solo practitioners and small law firms.',
   },
 };

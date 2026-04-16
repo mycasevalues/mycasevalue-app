@@ -42,7 +42,7 @@ export async function generateMetadata(
   const nosInfo = nosMap[code];
 
   if (!nosInfo) {
-    return { title: 'Case Guide | MyCaseValue' };
+    return { title: 'Case Guide' };
   }
 
   const title = `${nosInfo.label} Cases — Federal Court Guide & Legal Explainer`;
