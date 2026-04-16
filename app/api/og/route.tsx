@@ -211,7 +211,7 @@ function renderNOSImage(code: string, locale: Locale = 'en'): React.ReactElement
             display: 'flex',
             alignItems: 'center',
             height: '12px',
-            backgroundColor: '#E5E7EB',
+            backgroundColor: 'rgba(255,255,255,0.08)',
             borderRadius: '6px',
             overflow: 'hidden',
           }}
