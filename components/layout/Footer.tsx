@@ -83,19 +83,26 @@ export default function Footer() {
           ))}
         </div>
 
+        {/* Data lineage row */}
+        <div className="border-t border-white/5 pt-6 pb-4 flex flex-wrap items-center gap-x-6 gap-y-2">
+          <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-gray-500">Data lineage</span>
+          <span className="text-[11px] text-gray-400 tabular-nums font-mono">FJC IDB &middot; CourtListener &middot; PACER (RECAP) &middot; EEOC &middot; USCIS &middot; USPTO &middot; SEC</span>
+          <span className="text-[10px] text-gray-600 ml-auto font-mono tabular-nums">Refreshed daily &middot; 02:00 UTC</span>
+        </div>
+
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[11px] text-gray-400">
             &copy; {new Date().getFullYear()} MyCaseValue LLC &middot; West Virginia
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-[11px] text-gray-400 hover:text-gray-400 transition-colors">Privacy</Link>
-            <Link href="/terms" className="text-[11px] text-gray-400 hover:text-gray-400 transition-colors">Terms</Link>
-            <Link href="/contact" className="text-[11px] text-gray-400 hover:text-gray-400 transition-colors">Contact</Link>
+            <Link href="/privacy" className="text-[11px] text-gray-400 hover:text-gray-300 transition-colors">Privacy</Link>
+            <Link href="/terms" className="text-[11px] text-gray-400 hover:text-gray-300 transition-colors">Terms</Link>
+            <Link href="/contact" className="text-[11px] text-gray-400 hover:text-gray-300 transition-colors">Contact</Link>
           </div>
         </div>
 
-        <p className="text-[10px] text-gray-300 text-center mt-4">
+        <p className="text-[10px] text-gray-500 text-center mt-4">
           Data from public federal court records. Not legal advice.
         </p>
       </div>
