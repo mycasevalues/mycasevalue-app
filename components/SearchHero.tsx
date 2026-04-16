@@ -62,13 +62,14 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
           />
           <button
             type="submit"
-            className="h-11 px-5 font-semibold text-sm transition-colors flex-shrink-0"
+            className="h-11 px-5 font-semibold text-[13px] transition-colors flex-shrink-0 inline-flex items-center gap-1.5 tracking-[-0.005em]"
             style={{
-              background: dark ? 'rgba(255,255,255,0.1)' : '#1a56db',
-              color: dark ? '#e5e7eb' : '#fff',
+              background: dark ? '#1a56db' : '#1a56db',
+              color: '#fff',
             }}
           >
             Search
+            <kbd className="hidden sm:inline-flex items-center justify-center h-4 px-1 rounded-[3px] bg-white/15 text-[9px] font-mono font-semibold text-white/80 border border-white/15">⏎</kbd>
           </button>
         </div>
       </form>
