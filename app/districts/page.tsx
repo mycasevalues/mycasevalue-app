@@ -367,32 +367,44 @@ export default function DistrictsPage() {
               <div style={{
                 display: 'flex',
                 alignItems: 'baseline',
-                gap: 16,
-                marginBottom: 24,
-                paddingBottom: 16,
-                borderBottom: '2px solid #e5e7eb',
+                gap: 14,
+                marginBottom: 20,
+                paddingBottom: 12,
+                borderBottom: '1px solid rgba(255,255,255,0.08)',
               }}>
+                <span style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 10,
+                  fontWeight: 600,
+                  color: 'rgba(96,165,250,0.8)',
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                }}>
+                  C{String(circuit.number).padStart(2, '0')}
+                </span>
                 <h2 style={{
-                  fontSize: 'clamp(20px, 4vw, 28px)',
-                  fontWeight: 700,
+                  fontSize: 'clamp(18px, 3vw, 22px)',
+                  fontWeight: 600,
                   color: 'var(--color-text-primary)',
                   margin: 0,
-                  fontFamily: 'var(--font-display)',
-                  letterSpacing: '-0.5px',
+                  fontFamily: 'var(--font-inter)',
+                  letterSpacing: '-0.02em',
                 }}>
                   {circuit.name}
                 </h2>
                 <span style={{
-                  background: 'var(--accent-primary)',
-                  color: 'var(--color-text-inverse)',
-                  padding: '4px 12px',
-                  borderRadius: 8,
-                  fontSize: 12,
+                  color: 'var(--color-text-muted)',
+                  padding: '2px 8px',
+                  border: '1px solid var(--border-default)',
+                  borderRadius: 3,
+                  fontSize: 10,
                   fontWeight: 600,
                   whiteSpace: 'nowrap',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-mono)',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
                 }}>
-                  {circuit.districts.length} districts
+                  {circuit.districts.length} Districts
                 </span>
                 {winRate !== null && (
                   <div style={{
@@ -400,19 +412,22 @@ export default function DistrictsPage() {
                     textAlign: 'right',
                   }}>
                     <div style={{
-                      fontSize: 12,
-                      color: 'var(--color-text-secondary)',
+                      fontSize: 9,
+                      color: 'var(--color-text-muted)',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.3px',
-                      marginBottom: 4,
+                      letterSpacing: '0.2em',
+                      fontFamily: 'var(--font-mono)',
+                      fontWeight: 600,
+                      marginBottom: 2,
                     }}>
                       Avg Win Rate
                     </div>
                     <div style={{
-                      fontSize: 20,
-                      fontWeight: 700,
-                      color: 'var(--accent-primary)',
-                      fontFamily: 'var(--font-display)',
+                      fontSize: 18,
+                      fontWeight: 600,
+                      color: '#22c55e',
+                      fontFamily: 'var(--font-mono)',
+                      fontVariantNumeric: 'tabular-nums',
                     }}>
                       {winRate}%
                     </div>
