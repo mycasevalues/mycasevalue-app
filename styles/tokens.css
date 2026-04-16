@@ -1,11 +1,11 @@
 /* ============================================================
-   MYCASEVALUE DESIGN SYSTEM — Enterprise Token Layer
+   MYCASEVALUE DESIGN SYSTEM — Westlaw Precision Token Layer
    ============================================================
-   Bloomberg Law × Lex Machina × Tier-1 Financial Terminal.
-   Every pixel deliberate. No decoration without information.
-   The data IS the design. The interface recedes.
+   Westlaw Precision × MyCaseValue Advantage.
+   The interface recedes. The intelligence leads. The data IS the design.
+   MyCaseValue Advantage is a professional legal intelligence instrument.
 
-   Typography: Plus Jakarta Sans 800 (headlines), Inter (UI/body),
+   Typography: Libre Baskerville (legal entity names), Source Sans 3 (UI),
    IBM Plex Mono (ALL data: currency, %, counts, dates).
 
    Base grid: 8px. Every spacing value is a multiple of 4 or 8.
@@ -29,66 +29,124 @@
   --space-element: 12px;
   --space-tight:   12px;
 
-  /* ── CHROME (nav, footer, dark UI) ── */
-  --chrome-bg:         #111111;
-  --chrome-border:     #2A2A2A;
-  --chrome-text:       #E8E8E8;
-  --chrome-text-muted: #888888;
-  --chrome-hover:      #1E1E1E;
-  --chrome-active:     #252525;
+  /* ── CHROME (nav, footer, dark UI — Westlaw deep navy) ── */
+  --chrome-bg:         #1B2D45;
+  --chrome-bg-dark:    #121F32;
+  --chrome-border:     #2A3F58;
+  --chrome-text:       #FFFFFF;
+  --chrome-text-muted: #8AAAC8;
+  --chrome-hover:      #243C5C;
+  --chrome-active:     #2C4870;
 
-  /* ── SURFACE (content areas, panels) ── */
+  /* ── SURFACE (content areas, panels — Westlaw warm off-white) ── */
   --surface-primary:      #FFFFFF;
-  --surface-secondary:    #F8F8F6;
-  --surface-tertiary:     #F2F2EF;
-  --surface-border:       #E4E4E0;
-  --surface-border-strong:#CCCCC6;
-  --surface-hover:        #F0F4FF;
+  --surface-secondary:    #F9F8F6;
+  --surface-tertiary:     #F4F3EF;
+  --surface-border:       #E2DFD8;
+  --surface-border-strong:#C8C4B8;
+  --surface-hover:        #EEF2FA;
 
-  /* ── TEXT ── */
-  --text-primary:    #0F0F0F;
-  --text-secondary:  #444444;
-  --text-tertiary:   #777777;
-  --text-placeholder:#AAAAAA;
+  /* ── Westlaw Page Surfaces (shorthand aliases) ── */
+  --surf:     #F6F5F2;
+  --card:     #FFFFFF;
+  --sidebar:  #F9F8F6;
+  --sidebar2: #F4F3EF;
+
+  /* ── TEXT (Westlaw warm tones) ── */
+  --text-primary:    #18181A;
+  --text-secondary:  #42403C;
+  --text-tertiary:   #78766C;
+  --text-placeholder:#A8A6A0;
   --text-disabled:   #CCCCCC;
 
-  /* ── ACCENT (Bloomberg orange — used with restraint) ── */
-  --accent:        #D4500A;
-  --accent-hover:  #B84309;
-  --accent-active: #9C3907;
-  --accent-subtle: #FDF2EC;
-  --accent-border: #F0C4A8;
+  /* ── Westlaw Text shorthand ── */
+  --text1: #18181A;
+  --text2: #42403C;
+  --text3: #78766C;
+  --text4: #A8A6A0;
 
-  /* ── LINK ── */
-  --link:         #0A50A0;
-  --link-hover:   #083D7A;
+  /* ── GOLD ACCENT (Thomson Reuters / MyCaseValue brand — replaces Bloomberg orange) ── */
+  --gold:          #C4882A;
+  --gold-hover:    #A87222;
+  --gold-light:    #FAF3E6;
+  --gold-border:   #E8D09C;
+
+  /* ── Legacy accent aliases → gold ── */
+  --accent:        var(--gold);
+  --accent-hover:  var(--gold-hover);
+  --accent-active: #8A6020;
+  --accent-subtle: var(--gold-light);
+  --accent-border: var(--gold-border);
+
+  /* ── LINK / Interactive Blue (Westlaw exact) ── */
+  --link:         #0A50A2;
+  --link-hover:   #083A7A;
+  --link-light:   #EAF1FB;
+  --link-light2:  #D8E8F5;
   --link-visited: #5B2D8E;
 
-  /* ── DATA (semantic colors for metrics) ── */
-  --data-positive:    #1A6B3A;
-  --data-positive-bg: #EBF5EF;
-  --data-negative:    #B02020;
-  --data-negative-bg: #FAEAEA;
-  --data-neutral:     #444444;
-  --data-highlight:   #1A4F8A;
+  /* ── DATA (semantic colors for metrics — Westlaw values) ── */
+  --data-positive:    #176438;
+  --data-positive-bg: #EAF4EF;
+  --data-negative:    #B01E1E;
+  --data-negative-bg: #F7EAEA;
+  --data-neutral:     #42403C;
+  --data-highlight:   #0A50A2;
 
-  /* ── TABLE ── */
-  --table-header-bg:     #F4F4F1;
-  --table-row-alt:       #FAFAF8;
-  --table-row-hover:     #EDF2FB;
-  --table-row-selected:  #E4EDF8;
-  --table-border:        #E4E4E0;
-  --table-border-strong: #C8C8C2;
-  --table-sort-active:   #0A50A0;
+  /* ── Westlaw semantic shorthand ── */
+  --pos:    #176438;
+  --pos-bg: #EAF4EF;
+  --neg:    #B01E1E;
+  --neg-bg: #F7EAEA;
+  --wrn-bg: #FEF8E6;
+  --wrn-txt:#7A5800;
+
+  /* ── TABLE (Westlaw warmer tones) ── */
+  --table-header-bg:     #EDEAE4;
+  --table-row-alt:       #F7F6F2;
+  --table-row-hover:     #EEF2FA;
+  --table-row-selected:  #E2EAF8;
+  --table-border:        #E2DFD8;
+  --table-border-strong: #C8C4B8;
+  --table-sort-active:   #0A50A2;
+
+  /* ── Westlaw table shorthand ── */
+  --tbl-hdr:   #EDEAE4;
+  --tbl-alt:   #F7F6F2;
+  --tbl-hover: #EEF2FA;
+  --tbl-sel:   #E2EAF8;
 
   /* ── STATUS ── */
-  --status-active-bg:   #EBF5EF;
-  --status-active-text: #1A6B3A;
+  --status-active-bg:   #EAF4EF;
+  --status-active-text: #176438;
   --status-active-dot:  #2A9A54;
-  --status-closed-bg:   #F4F4F1;
+  --status-closed-bg:   #F4F3EF;
   --status-closed-text: #555555;
-  --status-pending-bg:  #FFF8E8;
-  --status-pending-text:#7A5500;
+  --status-pending-bg:  #FEF8E6;
+  --status-pending-text:#7A5800;
+
+  /* ── WESTLAW BORDERS (shorthand) ── */
+  --bdr:         #E2DFD8;
+  --bdr-strong:  #C8C4B8;
+  --bdr-xstrong: #A8A49C;
+
+  /* ── PRECISION ANALYTICS BOX (Westlaw Browse Box equivalent) ── */
+  --ab:          #EBF3FC;
+  --ab-border:   #BCDAF5;
+
+  /* ── BEST HEADNOTE BOX ── */
+  --bhn:         #FDF8ED;
+  --bhn-border:  #E8D4A0;
+
+  /* ── CASECITE CITED WITH BOX ── */
+  --cw:          #E8F5EE;
+  --cw-border:   #A8D8C0;
+
+  /* ── CASECITE FLAG COLORS ── */
+  --flag-green:  #176438;
+  --flag-yellow: #C8900A;
+  --flag-red:    #CC1414;
+  --flag-blue:   #0A50A2;
 
   /* ── TYPOGRAPHY — Font Stacks ── */
   --font-display: var(--font-jakarta), 'Plus Jakarta Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -158,7 +216,7 @@
   --shadow-md:    0 4px 12px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04);
   --shadow-lg:    0 8px 24px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
   --shadow-xl:    0 16px 48px rgba(0,0,0,0.12);
-  --shadow-focus: 0 0 0 3px rgba(212,80,10,0.25);
+  --shadow-focus: 0 0 0 3px rgba(196,136,42,0.25);
 
   /* Legacy compat */
   --shadow-glow-blue:  0 0 0 3px rgba(10,80,160,0.15);
@@ -182,9 +240,9 @@
   --container-max:    1200px;
   --container-wide:   1440px;
   --container-narrow: 960px;
-  --sidebar-width:    224px;
-  --rightrail-width:  248px;
-  --topnav-height:    52px;
+  --sidebar-width:    258px;
+  --rightrail-width:  232px;
+  --topnav-height:    54px;
   --contextbar-height:40px;
 
   /* ── Z-INDEX ── */
@@ -196,7 +254,7 @@
   --z-modal:     500;
   --z-critical:  9999;
 
-  /* ── BACKWARD COMPAT — old --bl-* mapped to new tokens ── */
+  /* ── BACKWARD COMPAT — old --bl-* mapped to Westlaw tokens ── */
   --bl-nav:            var(--chrome-bg);
   --bl-nav-text:       var(--chrome-text);
   --bl-nav-border:     var(--chrome-border);
@@ -207,8 +265,8 @@
   --bl-text-muted:     var(--text-tertiary);
   --bl-link:           var(--link);
   --bl-link-hover:     var(--link-hover);
-  --bl-cta:            var(--accent);
-  --bl-cta-hover:      var(--accent-hover);
+  --bl-cta:            var(--gold);
+  --bl-cta-hover:      var(--gold-hover);
   --bl-cta-text:       #FFFFFF;
   --bl-sidebar-bg:     var(--surface-secondary);
   --bl-sidebar-border: var(--surface-border);
@@ -216,16 +274,16 @@
   --bl-sidebar-link:   var(--link);
   --bl-sidebar-link-arrow: var(--link);
   --bl-divider:        var(--surface-border);
-  --bl-accent-bar:     var(--accent);
+  --bl-accent-bar:     var(--gold);
   --bl-row-hover:      var(--table-row-hover);
 
-  /* Legacy color compat */
+  /* Legacy color compat — remapped to Westlaw */
   --color-navy:        var(--chrome-bg);
-  --color-navy-dark:   #0A0A0A;
-  --color-navy-light:  #2A2A2A;
-  --color-accent:      var(--accent);
-  --color-accent-dark: var(--accent-hover);
-  --color-accent-light:rgba(212,80,10,0.10);
+  --color-navy-dark:   #121F32;
+  --color-navy-light:  #2A3F58;
+  --color-accent:      var(--gold);
+  --color-accent-dark: var(--gold-hover);
+  --color-accent-light:rgba(196,136,42,0.10);
   --color-terminal-green:  var(--data-positive);
   --color-terminal-amber:  #B45309;
   --color-terminal-red:    var(--data-negative);
@@ -295,8 +353,8 @@
   --gradient-hero:        var(--surface-primary);
   --gradient-accent:      var(--accent);
   --institutional-dark:   var(--chrome-bg);
-  --institutional-blue:   var(--accent);
-  --institutional-blue-hover: var(--accent-hover);
+  --institutional-blue:   var(--link);
+  --institutional-blue-hover: var(--link-hover);
   --accent-terminal-green: var(--data-positive);
   --accent-terminal-amber: #B45309;
   --accent-terminal-red:   var(--data-negative);

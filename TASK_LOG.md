@@ -334,4 +334,50 @@
   - All 95 districts with deterministic data from hash function
   - All colors use token variables, zero hardcoded hex
 
+---
+
+## Westlaw Precision Redesign — Session 1: Token Migration + Tailwind Config
+**Date:** 2026-04-16
+**Target files:** styles/tokens.css, tailwind.config.js
+**Status:** COMPLETE
+
+### Changes Made
+
+#### styles/tokens.css
+- **Chrome tokens:** `--chrome-bg` #111111 → #1B2D45 (Westlaw deep navy), added `--chrome-bg-dark` #121F32, `--chrome-border` #2A2A2A → #2A3F58, `--chrome-text` → #FFFFFF, `--chrome-text-muted` #888888 → #8AAAC8, `--chrome-hover` → #243C5C, `--chrome-active` → #2C4870
+- **Gold accent (replaces Bloomberg orange):** Added `--gold` #C4882A, `--gold-hover` #A87222, `--gold-light` #FAF3E6, `--gold-border` #E8D09C. Legacy `--accent` now aliases `var(--gold)`
+- **Link tokens:** `--link` #0A50A0 → #0A50A2 (exact Westlaw), `--link-hover` → #083A7A, added `--link-light` #EAF1FB, `--link-light2` #D8E8F5
+- **Surface tokens:** `--surface-secondary` → #F9F8F6, `--surface-tertiary` → #F4F3EF, `--surface-border` → #E2DFD8, `--surface-border-strong` → #C8C4B8. Added shorthand aliases: `--surf`, `--card`, `--sidebar`, `--sidebar2`
+- **Border shorthand:** Added `--bdr` #E2DFD8, `--bdr-strong` #C8C4B8, `--bdr-xstrong` #A8A49C
+- **Text tokens:** Updated to Westlaw warm tones (#18181A, #42403C, #78766C, #A8A6A0). Added shorthand `--text1` through `--text4`
+- **Table tokens:** Updated to warmer Westlaw values. Added shorthand `--tbl-hdr`, `--tbl-alt`, `--tbl-hover`, `--tbl-sel`
+- **Data tokens:** `--data-positive` → #176438, `--data-negative` → #B01E1E. Added shorthand `--pos`, `--neg`, `--wrn-bg`, `--wrn-txt`
+- **New Westlaw component tokens:** `--ab`/`--ab-border` (Analytics Box), `--bhn`/`--bhn-border` (Best Headnote), `--cw`/`--cw-border` (CaseCite Cited With), `--flag-green`/`--flag-yellow`/`--flag-red`/`--flag-blue` (CaseCite flags)
+- **Layout:** `--sidebar-width` 224px → 258px, `--rightrail-width` 248px → 232px, `--topnav-height` 52px → 54px
+- **Shadow-focus:** Updated from orange rgba to gold rgba
+- **All backward-compat aliases** (--bl-*, --color-*) remapped to Westlaw tokens
+
+#### tailwind.config.js
+- **brand.navy:** #1A1A1A → #1B2D45
+- **brand.cta:** #E65C00 → #C4882A (gold)
+- **brand.cta-hover:** #CC4F00 → #A87222
+- **brand.link:** #0052CC → #0A50A2
+- **brand.blue-dark:** #003D99 → #083A7A
+- **brand.blue-pale:** Updated to Westlaw blue rgba
+- **All brand text/muted tokens** updated to Westlaw values
+- **navy/midnight/bl color groups** remapped to Westlaw values
+- **fontFamily:** Added `serif` (Libre Baskerville), `baskerville`, updated `sans` to Source Sans 3 primary
+- **boxShadow:** All orange rgba (230,92,0) values replaced with gold rgba (196,136,42)
+
+### Verification Results
+
+1. **grep "#E65C00\|#D4500A\|#111111\|#1A1A1A" styles/tokens.css** → PASS (zero results)
+2. **grep "chrome-bg" styles/tokens.css** → PASS (shows #1B2D45)
+3. **grep "gold" styles/tokens.css** → PASS (shows #C4882A)
+4. **grep "#E65C00\|#D4500A\|#111111\|#1A1A1A\|#0052CC\|#003D99" tailwind.config.js** → PASS (zero results)
+5. **npm run build** → Webpack compilation PASS. Pre-existing TS error in app/districts/page.tsx:188 (Set iteration, unrelated to token changes — confirmed identical on unmodified main branch)
+
+### Session Gate: PASS
+All forbidden Bloomberg colors eliminated from both target files. All Westlaw tokens in place. Build compiles successfully.
+
 Last updated: 2026-04-16

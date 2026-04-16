@@ -9,28 +9,28 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          navy:        '#1A1A1A',   // Bloomberg charcoal (nav, footer)
-          panel:       '#F7F7F5',   // sidebar bg
-          border:      '#E0E0E0',   // panel edge
-          blue:        '#0052CC',   // Bloomberg blue (links)
-          'blue-dark': '#003D99',   // link hover
-          'blue-mid':  '#0052CC',   // borders / focus rings
-          'blue-pale': 'rgba(0,82,204,0.08)',   // tints / selected states
+          navy:        '#1B2D45',   // Westlaw deep navy (nav, footer)
+          panel:       '#F9F8F6',   // sidebar bg
+          border:      '#E2DFD8',   // panel edge
+          blue:        '#0A50A2',   // Westlaw blue (links)
+          'blue-dark': '#083A7A',   // link hover
+          'blue-mid':  '#0A50A2',   // borders / focus rings
+          'blue-pale': 'rgba(10,80,162,0.08)',   // tints / selected states
           white:       '#FFFFFF',   // surface
-          link:        '#0052CC',   // link color
-          muted:       '#888888',   // secondary / muted text
-          dim:         '#AAAAAA',   // disclaimer / fine print
-          sep:         '#E8E8E8',   // separator
+          link:        '#0A50A2',   // link color
+          muted:       '#8AAAC8',   // secondary / muted text
+          dim:         '#A8A6A0',   // disclaimer / fine print
+          sep:         '#E2DFD8',   // separator
           surface:     '#FFFFFF',   // main bg
-          'surface-2': '#F5F5F5',   // alt bg
-          ink:         '#1A1A1A',   // heading text
-          'ink-2':     '#555555',   // body text
-          gray:        '#888888',
-          'text-secondary': '#555555',
-          'text-muted': '#888888',
-          // Bloomberg CTA orange
-          cta:         '#E65C00',
-          'cta-hover': '#CC4F00',
+          'surface-2': '#F6F5F2',   // alt bg (Westlaw --surf)
+          ink:         '#18181A',   // heading text
+          'ink-2':     '#42403C',   // body text
+          gray:        '#78766C',
+          'text-secondary': '#42403C',
+          'text-muted': '#78766C',
+          // Westlaw gold CTA (replaces Bloomberg orange)
+          cta:         '#C4882A',
+          'cta-hover': '#A87222',
         },
         // Data / status colors (unchanged)
         data: {
@@ -41,9 +41,9 @@ module.exports = {
           'bg-neg':    'rgba(185,28,28,0.08)',
           'bg-neu':    'rgba(180,83,9,0.08)',
         },
-        // Legacy compat — mapped to Bloomberg tokens
-        navy: { DEFAULT: '#1A1A1A', dark: '#111111', light: '#333333' },
-        midnight: { DEFAULT: '#1A1A1A', 50: '#0052CC', 100: '#E65C00', 200: '#CC4F00', 800: '#F5F5F5', 900: '#1A1A1A' },
+        // Legacy compat — mapped to Westlaw tokens
+        navy: { DEFAULT: '#1B2D45', dark: '#121F32', light: '#2A3F58' },
+        midnight: { DEFAULT: '#1B2D45', 50: '#0A50A2', 100: '#C4882A', 200: '#A87222', 800: '#F6F5F2', 900: '#1B2D45' },
         outcome: {
           win: '#15803D',
           'win-bg': 'rgba(21,128,61,0.08)',
@@ -58,27 +58,29 @@ module.exports = {
           'neutral-bg': 'rgba(0,0,0,0.03)',
           'neutral-border': 'rgba(0,0,0,0.08)',
         },
-        // Bloomberg-specific
+        // Westlaw-specific (legacy bl.* names preserved for compat)
         bl: {
-          nav:       '#1A1A1A',
+          nav:       '#1B2D45',
           surface:   '#FFFFFF',
-          'surface-alt': '#F5F5F5',
-          link:      '#0052CC',
-          cta:       '#E65C00',
-          'cta-hover': '#CC4F00',
-          divider:   '#E8E8E8',
-          sidebar:   '#F7F7F5',
-          'row-hover': '#EFF5FF',
+          'surface-alt': '#F6F5F2',
+          link:      '#0A50A2',
+          cta:       '#C4882A',
+          'cta-hover': '#A87222',
+          divider:   '#E2DFD8',
+          sidebar:   '#F9F8F6',
+          'row-hover': '#EEF2FA',
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-        body: ['var(--font-inter)', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        serif: ['var(--font-baskerville)', 'Libre Baskerville', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'Source Sans 3', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        body: ['var(--font-sans)', 'Source Sans 3', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
         display: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
         data: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
         inter: ['var(--font-inter)', 'Inter', 'sans-serif'],
         jakarta: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'sans-serif'],
+        baskerville: ['var(--font-baskerville)', 'Libre Baskerville', 'Georgia', 'serif'],
       },
       fontSize: {
         'display-2xl': ['4.5rem', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
@@ -102,16 +104,16 @@ module.exports = {
         card: '0 1px 3px rgba(0,0,0,0.06)',
         'card-hover': '0 2px 6px rgba(0,0,0,0.08)',
         'card-elevated': '0 4px 12px rgba(0,0,0,0.08)',
-        'glow-accent': '0 2px 12px rgba(230,92,0,0.15)',
+        'glow-accent': '0 2px 12px rgba(196,136,42,0.15)',
         glass: '0 1px 3px rgba(0,0,0,0.06)',
-        accent: '0 2px 8px rgba(230,92,0,0.15)',
-        'accent-lg': '0 4px 16px rgba(230,92,0,0.20)',
+        accent: '0 2px 8px rgba(196,136,42,0.15)',
+        'accent-lg': '0 4px 16px rgba(196,136,42,0.20)',
         'inner-sm': 'inset 0 1px 2px rgba(0,0,0,0.04)',
         'brand-nav': '0 1px 3px rgba(0,0,0,0.08)',
         'brand-mock': '0 2px 8px rgba(0,0,0,0.06), 0 16px 40px rgba(0,0,0,0.08)',
         'brand-card': '0 1px 3px rgba(0,0,0,0.06)',
-        'brand-btn': '0 2px 6px rgba(230,92,0,0.20)',
-        'brand-btn-lg': '0 4px 12px rgba(230,92,0,0.25)',
+        'brand-btn': '0 2px 6px rgba(196,136,42,0.20)',
+        'brand-btn-lg': '0 4px 12px rgba(196,136,42,0.25)',
       },
       spacing: {
         '0':  '0px',
