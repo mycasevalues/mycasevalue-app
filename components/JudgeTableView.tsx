@@ -99,7 +99,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
             return (
               <tr
                 key={judge.id}
-                className={`border-b border-gray-50 hover:bg-blue-50/50 transition-colors cursor-pointer ${
+                className={`border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer ${
                   selectedIdx === idx ? 'bg-blue-50 ring-1 ring-inset ring-brand-blue/30' : idx % 2 === 0 ? '' : 'bg-gray-25'
                 }`}
                 onClick={() => setSelectedIdx(idx)}
