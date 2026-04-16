@@ -95,7 +95,7 @@ export default function KeyboardShortcutsHelp() {
       {/* Modal */}
       <div className="relative bg-[#0c1220] rounded-xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-white/5">
           <h2 className="text-lg font-semibold text-gray-100">Keyboard Shortcuts</h2>
           <button
             onClick={() => setIsOpen(false)}
@@ -136,7 +136,7 @@ export default function KeyboardShortcutsHelp() {
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-3 border-t border-gray-100 bg-[var(--color-surface-2)]">
+        <div className="px-6 py-3 border-t border-white/5 bg-[var(--color-surface-2)]">
           <p className="text-[11px] text-gray-400 text-center">
             Press <kbd className="px-1 py-0.5 text-[10px] bg-[#111827] border border-white/10 rounded font-mono">?</kbd> anytime to toggle this panel
           </p>

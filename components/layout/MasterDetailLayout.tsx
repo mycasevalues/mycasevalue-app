@@ -40,7 +40,7 @@ export default function MasterDetailLayout({
       {/* Master Panel (list) */}
       <div
         className={`
-          flex-shrink-0 overflow-y-auto border-r border-gray-100 bg-[#0c1220]
+          flex-shrink-0 overflow-y-auto border-r border-white/5 bg-[#0c1220]
           ${hasSelection ? 'hidden lg:block' : 'w-full lg:w-auto'}
         `}
         style={{ width: `${masterWidth}%`, minWidth: hasSelection ? undefined : '100%' }}
@@ -60,7 +60,7 @@ export default function MasterDetailLayout({
       >
         {/* Mobile back button */}
         {hasSelection && (
-          <div className="lg:hidden sticky top-0 z-10 bg-[#111827] border-b border-gray-100 px-4 py-3">
+          <div className="lg:hidden sticky top-0 z-10 bg-[#111827] border-b border-white/5 px-4 py-3">
             <button
               onClick={onCloseDetail}
               className="flex items-center gap-2 text-sm text-brand-blue font-medium"

@@ -298,7 +298,7 @@ function CaseSearchContent() {
               {/* Apply button */}
               <button
                 onClick={() => performSearch(1)}
-                className="w-full h-9 rounded-md bg-[rgba(255,255,255,0.04)] text-sm font-medium text-gray-300 hover:bg-gray-200 transition-colors"
+                className="w-full h-9 rounded-md bg-[rgba(255,255,255,0.04)] text-sm font-medium text-gray-300 hover:bg-[rgba(255,255,255,0.08)] transition-colors"
               >
                 Apply Filters
               </button>
@@ -355,7 +355,7 @@ function CaseSearchContent() {
                     className="rounded-xl border p-5 animate-pulse"
                     style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
                   >
-                    <div className="h-5 bg-gray-200 rounded w-3/4 mb-3" />
+                    <div className="h-5 bg-[rgba(255,255,255,0.08)] rounded w-3/4 mb-3" />
                     <div className="h-3 bg-[rgba(255,255,255,0.04)] rounded w-1/2 mb-4" />
                     <div className="h-3 bg-[rgba(255,255,255,0.04)] rounded w-full mb-2" />
                     <div className="h-3 bg-[rgba(255,255,255,0.04)] rounded w-2/3" />
