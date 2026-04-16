@@ -85,18 +85,17 @@ export default function HomePage() {
                 {/* Data rows */}
                 <div className="divide-y" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
                   {[
-                    { name: 'Employment & Workplace', cases: '1.3M+', rate: '50%', color: '#22c55e' },
-                    { name: 'Personal Injury', cases: '1.5M+', rate: '48%', color: '#eab308' },
-                    { name: 'Civil Rights', cases: '1.2M+', rate: '37%', color: '#eab308' },
-                    { name: 'Consumer Protection', cases: '2.1M+', rate: '45%', color: '#eab308' },
-                    { name: 'Business Disputes', cases: '890K+', rate: '52%', color: '#22c55e' },
+                    { name: 'Employment & Workplace', cases: '1.3M+', rate: '50%', color: '#22c55e', delta: '+0.3' },
+                    { name: 'Personal Injury', cases: '1.5M+', rate: '48%', color: '#eab308', delta: '-0.1' },
+                    { name: 'Civil Rights', cases: '1.2M+', rate: '37%', color: '#eab308', delta: '+0.2' },
+                    { name: 'Consumer Protection', cases: '2.1M+', rate: '45%', color: '#eab308', delta: '+0.5' },
+                    { name: 'Business Disputes', cases: '890K+', rate: '52%', color: '#22c55e', delta: '+0.1' },
                   ].map((row) => (
-                    <div key={row.name} className="flex items-center justify-between px-4 py-3 hover:bg-white/[0.02] transition-colors">
-                      <span className="text-xs text-gray-300">{row.name}</span>
-                      <div className="flex items-center gap-6">
-                        <span className="text-xs text-gray-500 tabular-nums">{row.cases}</span>
-                        <span className="text-xs font-medium tabular-nums" style={{ color: row.color }}>{row.rate}</span>
-                      </div>
+                    <div key={row.name} className="grid grid-cols-[1fr_auto_auto_auto] items-center gap-x-4 px-4 py-2.5 hover:bg-white/[0.02] transition-colors">
+                      <span className="text-[12px] text-gray-300 truncate">{row.name}</span>
+                      <span className="text-[11px] text-gray-500 tabular-nums font-mono">{row.cases}</span>
+                      <span className="text-[11px] font-semibold tabular-nums font-mono" style={{ color: row.color }}>{row.rate}</span>
+                      <span className={`text-[10px] tabular-nums font-mono ${row.delta.startsWith('+') ? 'text-green-500/70' : 'text-red-500/70'}`}>{row.delta}</span>
                     </div>
                   ))}
                 </div>
