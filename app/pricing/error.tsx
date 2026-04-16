@@ -32,7 +32,7 @@ export default function PricingError({
         left: 0,
         right: 0,
         height: '8px',
-        background: 'var(--accent-primary)',
+        background: 'var(--gradient-hero)',
       }} />
       <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
         <div style={{
@@ -93,7 +93,7 @@ export default function PricingError({
                 alignItems: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: 'var(--accent-primary)',
+                background: 'var(--gradient-hero)',
                 color: 'var(--color-surface-0)',
                 border: 'none',
                 borderRadius: '12px',

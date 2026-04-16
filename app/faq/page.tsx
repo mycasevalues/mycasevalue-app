@@ -556,7 +556,7 @@ export default function FAQPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--gradient-hero)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           {/* Breadcrumb */}
           <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: 'var(--color-surface-0)' }}>
@@ -566,7 +566,7 @@ export default function FAQPage() {
           </nav>
 
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '8px' }}>
+            style={{ background: 'rgba(59,130,246,0.15)', color: '#60a5fa', borderRadius: '8px' }}>
             <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-surface-0)" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             FAQ
           </div>
@@ -638,7 +638,7 @@ export default function FAQPage() {
           <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
             <a href="mailto:support@mycasevalues.com"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-              style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '8px' }}>
+              style={{ background: 'rgba(59,130,246,0.15)', color: '#60a5fa', borderRadius: '8px' }}>
               <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Contact Support
             </a>

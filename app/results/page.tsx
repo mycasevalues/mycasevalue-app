@@ -67,7 +67,7 @@ export default function ResultsPage() {
           <div style={{ marginBottom: '16px' }}>
             <span style={{
               display: 'inline-block',
-              background: 'var(--accent-primary)',
+              background: 'var(--gradient-hero)',
               color: 'var(--color-text-inverse)',
               padding: '6px 12px',
               borderRadius: '12px',
@@ -145,7 +145,7 @@ export default function ResultsPage() {
                 borderRadius: '12px',
                 fontSize: '14px',
                 fontWeight: '600',
-                background: 'var(--accent-primary)',
+                background: 'var(--gradient-hero)',
                 color: 'var(--color-text-inverse)',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
