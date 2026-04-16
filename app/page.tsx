@@ -73,12 +73,14 @@ export default function HomePage() {
 
             {/* Right: Live data preview */}
             <div className="hidden lg:block">
-              <div className="rounded-lg border overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.06)' }}>
+              <div className="rounded-md border overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.08)' }}>
                 {/* Mini header */}
-                <div className="flex items-center gap-2 px-4 py-2.5 border-b" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+                <div className="flex items-center gap-2 px-4 py-2.5 border-b" style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.2)' }}>
                   <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: '#22c55e' }} />
-                  <span className="text-[10px] text-gray-600 font-mono tracking-wider uppercase">Live</span>
-                  <span className="ml-auto text-[10px] text-gray-600 font-mono">mycasevalues.com/cases</span>
+                  <span className="text-[10px] text-gray-500 font-mono tracking-[0.15em] uppercase">Live</span>
+                  <span className="text-[10px] text-gray-700 font-mono">&middot;</span>
+                  <span className="text-[10px] text-gray-500 font-mono tabular-nums">Outcomes Preview</span>
+                  <span className="ml-auto text-[10px] text-gray-600 font-mono">T+0.24s</span>
                 </div>
                 {/* Data rows */}
                 <div className="divide-y" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
