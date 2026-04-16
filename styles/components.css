@@ -145,12 +145,11 @@
 /* ── CARD — Bloomberg-Inspired Institutional Design ──────── */
 .mcv-card {
   background: var(--bg-elevated);
-  border-radius: var(--radius-md);
-  padding: 16px;
+  border-radius: 6px;
+  padding: 20px;
   transition:
-    box-shadow 200ms ease,
-    border-color 200ms ease,
-    transform 200ms ease;
+    box-shadow 150ms ease,
+    border-color 150ms ease;
 }
 
 /* Primary card — dark surface with subtle border */
