@@ -2,7 +2,7 @@ export default function CompareLoading() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
       {/* Header with title skeleton */}
-      <div style={{ background: 'var(--accent-primary)', padding: '48px 24px', borderBottom: '3px solid var(--accent-primary)' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '48px 24px', borderBottom: '3px solid var(--accent-primary)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ height: '14px', width: '80px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '16px' }} />
           <div style={{ height: '42px', width: '65%', background: 'rgba(255,255,255,0.1)', borderRadius: '12px' }} />

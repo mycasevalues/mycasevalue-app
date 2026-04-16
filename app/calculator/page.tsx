@@ -272,7 +272,7 @@ export default function CalculatorPage() {
       </div>
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)', padding: '18px 24px' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--gradient-hero)', padding: '18px 24px' }}>
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl sm:text-3xl font-black mb-2" style={{ color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)' }}>
             Estimate Your Settlement Using Real Court Data

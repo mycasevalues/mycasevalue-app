@@ -59,7 +59,7 @@ export default function AppealsPage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       <style>{`select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
 
-      <div style={{ background: 'var(--accent-primary)', padding: '18px 24px' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '18px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <h1 style={{ fontSize: '26px', fontWeight: 600, color: '#FFF', fontFamily: 'var(--font-display)', margin: '0 0 8px' }}>Know Your Appeal's Win Odds Before You File</h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>

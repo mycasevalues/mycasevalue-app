@@ -299,7 +299,7 @@ export default function BlogPage() {
       />
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', padding: '40px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '40px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb Navigation */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontSize: '14px', fontFamily: 'var(--font-body)' }}>

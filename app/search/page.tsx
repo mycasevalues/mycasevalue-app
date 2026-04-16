@@ -314,7 +314,7 @@ function SearchPageInner() {
         }
       `}</style>
       {/* Dark Navy Header Banner — Compact */}
-      <div className="search-header" style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '20px 24px' }}>
+      <div className="search-header" style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid var(--border-default)', padding: '20px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
           <h1 className="search-header" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em', margin: '0 0 4px 0' }}>
             Search federal court outcomes.

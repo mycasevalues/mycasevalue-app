@@ -365,7 +365,7 @@ export default function DevelopersPage() {
       `}</style>
 
       {/* Hero Section */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '32px 20px' }}>
+      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid var(--border-default)', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div
             style={{

@@ -494,7 +494,7 @@ export default function PlatformPage() {
 
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
-        <div style={{ background: 'var(--accent-primary)', padding: '80px 24px' }}>
+        <div style={{ background: 'var(--gradient-hero)', padding: '80px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span style={{

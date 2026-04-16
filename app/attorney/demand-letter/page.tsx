@@ -170,7 +170,7 @@ export default function DemandLetterPage() {
         select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
       `}</style>
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '18px 24px' }}>
+      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid var(--border-default)', padding: '18px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-display)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
             Demand Letters That Get Results

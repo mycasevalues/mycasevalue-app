@@ -102,7 +102,7 @@ export default function MotionAnalyticsPage() {
       </style>
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '18px 20px' }}>
+      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid var(--border-default)', padding: '18px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Link href="/attorney" style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>

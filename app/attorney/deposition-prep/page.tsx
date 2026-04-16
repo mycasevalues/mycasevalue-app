@@ -151,7 +151,7 @@ export default function DepositionPrepPage() {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', padding: '18px 24px' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '18px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-display)', margin: '0 0 8px', letterSpacing: '-0.02em' }}>
             Master Every Deposition in Days, Not Weeks

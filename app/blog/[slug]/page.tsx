@@ -436,7 +436,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', padding: '40px 24px' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '40px 24px' }}>
         <div className="max-w-4xl mx-auto">
           <Link
             href="/blog"

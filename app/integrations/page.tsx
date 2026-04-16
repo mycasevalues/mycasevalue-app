@@ -188,7 +188,7 @@ export default function IntegrationsPage() {
       />
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontSize: '14px' }}>

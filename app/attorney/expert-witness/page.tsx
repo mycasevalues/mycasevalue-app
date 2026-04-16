@@ -25,7 +25,7 @@ export default function ExpertWitnessPage() {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '20px 20px' }}>
+      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid var(--border-default)', padding: '20px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h1 className="font-display" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
             Expert Witness Intelligence

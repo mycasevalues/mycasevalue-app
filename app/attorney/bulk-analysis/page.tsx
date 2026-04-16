@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function BulkAnalysisPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
-      <div style={{ background: 'var(--accent-primary)', padding: '18px 20px' }}>
+      <div style={{ background: 'var(--gradient-hero)', padding: '18px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h1
             style={{

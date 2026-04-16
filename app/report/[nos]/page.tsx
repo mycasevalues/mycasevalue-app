@@ -349,7 +349,7 @@ export default async function ReportPage({
       `}</style>
 
       {/* Dark Navy Header Banner */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
+      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 32px) 24px' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: 13, color: '#B0B8C1', fontFamily: 'var(--font-body)', marginBottom: '20px', letterSpacing: '0.3px' }}>
             <Link href="/" className="report-breadcrumb-link">Home</Link>

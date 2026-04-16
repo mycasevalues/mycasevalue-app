@@ -65,7 +65,7 @@ export default function ContactPage() {
       />
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header Banner */}
-        <div style={{ background: 'var(--accent-primary)', padding: '64px 24px' }}>
+        <div style={{ background: 'var(--gradient-hero)', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span style={{

@@ -315,7 +315,7 @@ export default function ApiAccessPage() {
       `}</style>
 
       {/* Hero Section */}
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '20px 20px' }}>
+      <div style={{ background: 'var(--gradient-hero)', borderBottom: '1px solid var(--border-default)', padding: '20px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h1
             style={{
