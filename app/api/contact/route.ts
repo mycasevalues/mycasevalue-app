@@ -87,10 +87,8 @@ export async function POST(req: NextRequest) {
 
     // Check if RESEND_API_KEY is configured
     if (!process.env.RESEND_API_KEY) {
-      console.warn('[api/contact] RESEND_API_KEY not configured, contact form would fail in production');
       // Return success anyway in development to allow testing
       if (process.env.NODE_ENV === 'development') {
-        console.log('[api/contact] Development mode: contact submitted', { name, email, subject });
         return NextResponse.json({
           success: true,
           message: 'Contact form submitted (development mode)',
@@ -184,15 +182,6 @@ export async function POST(req: NextRequest) {
         { status: 500 }
       );
     }
-
-    // Log successful submission
-    console.log('[api/contact] Contact form submitted', {
-      name,
-      email,
-      subject,
-      messageLength: message.length,
-      timestamp: new Date().toISOString(),
-    });
 
     return NextResponse.json({
       success: true,

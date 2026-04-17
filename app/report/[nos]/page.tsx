@@ -218,9 +218,16 @@ export default async function ReportPage({
     getOpinionsByType(label, 3),
     getRECAPByType(label, 3),
   ]);
-  /* eslint-disable @typescript-eslint/no-explicit-any */
-  const opinionResults: any[] = opinions.status === 'fulfilled' ? opinions.value : [];
-  const recapResults: any[] = recapDockets.status === 'fulfilled' ? recapDockets.value : [];
+  interface CourtRecord {
+    caseName?: string;
+    absolute_url?: string;
+    court?: string;
+    dateFiled?: string;
+    status?: string;
+    docketNumber?: string;
+  }
+  const opinionResults: CourtRecord[] = opinions.status === 'fulfilled' ? opinions.value : [];
+  const recapResults: CourtRecord[] = recapDockets.status === 'fulfilled' ? recapDockets.value : [];
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
@@ -819,8 +826,8 @@ export default async function ReportPage({
                   Detailed disposition breakdown
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {(real.ends as any[]).slice(0, 8).map((end: any, i: number) => {
-                    const totalEnds = (real.ends as any[]).reduce((s: number, e: any) => s + (e.n || 0), 0);
+                  {(real.ends as Array<{ n?: number; p?: number; label?: string; l?: string; c?: string }>).slice(0, 8).map((end: { n?: number; p?: number; label?: string; l?: string; c?: string }, i: number) => {
+                    const totalEnds = (real.ends as Array<{ n?: number; p?: number; label?: string; l?: string; c?: string }>).reduce((s: number, e: { n?: number }) => s + (e.n || 0), 0);
                     const count = end.n || 0;
                     const pct = end.p || (totalEnds > 0 ? ((count / totalEnds) * 100) : 0);
                     return (
@@ -941,7 +948,7 @@ export default async function ReportPage({
                 <p style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'var(--font-body)' }}>
                   Federal Opinions
                 </p>
-                {opinionResults.map((op: any, i: number) => (
+                {opinionResults.map((op: CourtRecord, i: number) => (
                   <div key={i} style={{
                     padding: '12px 0',
                     borderBottom: i < opinionResults.length - 1 ? '1px solid var(--border-default)' : 'none',
@@ -977,7 +984,7 @@ export default async function ReportPage({
                 }}>
                   RECAP Dockets
                 </p>
-                {recapResults.map((doc: any, i: number) => (
+                {recapResults.map((doc: CourtRecord, i: number) => (
                   <div key={i} style={{
                     padding: '12px 0',
                     borderBottom: i < recapResults.length - 1 ? '1px solid var(--border-default)' : 'none',
@@ -1071,9 +1078,9 @@ export default async function ReportPage({
         {(() => {
           const parentCat = SITS.find(cat => cat.opts.some(opt => opt.nos === nos)) || SITS.find(cat => cat.id === nos);
           const related = parentCat?.opts
-            ?.filter((opt: any) => opt.nos !== nos)
+            ?.filter((opt: { label: string; nos: string; d: string }) => opt.nos !== nos)
             ?.slice(0, 4)
-            ?.map((opt: any) => ({ label: opt.label, nos: opt.nos })) || [];
+            ?.map((opt: { label: string; nos: string; d: string }) => ({ label: opt.label, nos: opt.nos })) || [];
           if (related.length === 0) return null;
           return (
             <section style={{
@@ -1092,7 +1099,7 @@ export default async function ReportPage({
                 Other cases in this category
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-                {related.map((t: any, i: number) => (
+                {related.map((t: { label: string; nos: string }, i: number) => (
                   <Link
                     key={i}
                     href={`/report/${t.nos}`}
@@ -1117,10 +1124,11 @@ export default async function ReportPage({
         {/* ═══ Similar Case Types ═══ */}
         {(() => {
           const parentCat = SITS.find(cat => cat.opts.some(opt => opt.nos === nos)) || SITS.find(cat => cat.id === nos);
+          interface SimilarItem { label: string; nos: string; winRate: number; totalCases: number }
           const similar = parentCat?.opts
-            ?.filter((opt: any) => opt.nos !== nos)
+            ?.filter((opt: { label: string; nos: string; d: string }) => opt.nos !== nos)
             ?.slice(0, 3)
-            ?.map((opt: any) => {
+            ?.map((opt: { label: string; nos: string; d: string }): SimilarItem => {
               const optData = getReportData(opt.nos);
               return {
                 label: opt.label,
@@ -1147,7 +1155,7 @@ export default async function ReportPage({
                 Other {categoryLabel || 'federal'} cases with similar outcomes
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '16px' }}>
-                {similar.map((item: any, i: number) => (
+                {similar.map((item: SimilarItem, i: number) => (
                   <Link
                     key={i}
                     href={`/report/${item.nos}`}

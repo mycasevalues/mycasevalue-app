@@ -41,8 +41,7 @@ export async function POST(req: NextRequest) {
       const supabase = getSupabaseAdmin();
       await supabase.from('analytics_events').insert(event);
     } catch {
-      // Supabase unavailable — log to console as fallback
-      console.log('[analytics]', JSON.stringify(event));
+      // Supabase unavailable — silently fail
     }
 
     return NextResponse.json({ ok: true });

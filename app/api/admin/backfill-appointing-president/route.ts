@@ -157,7 +157,6 @@ export async function POST(req: NextRequest) {
   // 1. Download FJC CSV
   let fjcRecords: Record<string, string>[] = [];
   try {
-    console.log('[backfill] Downloading FJC CSV...');
     const fjcResponse = await fetch(FJC_CSV_URL);
     if (!fjcResponse.ok) {
       errors.push(`FJC download failed: ${fjcResponse.status}`);
@@ -168,7 +167,6 @@ export async function POST(req: NextRequest) {
       fjcRecords = fjcRecords.filter(r =>
         (r['Court Type'] || '').toLowerCase().includes('district')
       );
-      console.log(`[backfill] Parsed ${fjcRecords.length} FJC district court records`);
     }
   } catch (err: unknown) {
     errors.push(`FJC fetch error: ${err instanceof Error ? err.message : String(err)}`);
@@ -187,8 +185,6 @@ export async function POST(req: NextRequest) {
       duration_ms: Date.now() - startTime,
     }, { status: 500 });
   }
-
-  console.log(`[backfill] ${judges.length} judges need appointing president data`);
 
   // 3. Match and update
   let matched = 0;

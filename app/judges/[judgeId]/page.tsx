@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { getJudgeById, getJudgeStatistics, getJudgeOpinions, getJudgeAIAnalysis } from '@/lib/judge-data-service';
 import { mockJudgesData } from '@/data/mock-judges';
 import { getWinRateColor } from '@/lib/color-scale';
-import { aggregateJudgeStats, getPartyColor, getPartyLabel } from '@/lib/supabase-judges';
+import { aggregateJudgeStats, getPartyColor, getPartyLabel, type JudgeStatistics } from '@/lib/supabase-judges';
 import JudgeProfileClient from '@/components/JudgeProfileClient';
 import JudgeAlertButton from '@/components/JudgeAlertButton';
 import { SITE_URL } from '@/lib/site-config';
@@ -94,10 +94,10 @@ export default async function JudgeProfilePage({ params }: PageProps) {
 
   // Derive "Noted For" practice areas from statistics
   const notedFor = statistics
-    .filter((s: any) => s.total_cases > 5)
-    .sort((a: any, b: any) => (b.total_cases || 0) - (a.total_cases || 0))
+    .filter((s) => s.total_cases > 5)
+    .sort((a, b) => (b.total_cases || 0) - (a.total_cases || 0))
     .slice(0, 6)
-    .map((s: any) => s.nos_label || s.nos_code || 'General');
+    .map((s) => (s as JudgeStatistics & { nos_label?: string }).nos_label || s.nos_code || 'General');
 
   // Intelligence summary items from AI analysis or defaults
   const hasAiContent = aiAnalysis?.writing_style || aiAnalysis?.plaintiff_tendencies || aiAnalysis?.motion_approach;
@@ -116,11 +116,11 @@ export default async function JudgeProfilePage({ params }: PageProps) {
 
   // Bar chart data from statistics
   const caseTypeChartData = statistics
-    .filter((s: any) => s.total_cases > 0)
-    .sort((a: any, b: any) => (b.total_cases || 0) - (a.total_cases || 0))
+    .filter((s) => s.total_cases > 0)
+    .sort((a, b) => (b.total_cases || 0) - (a.total_cases || 0))
     .slice(0, 6)
-    .map((s: any) => ({
-      label: s.nos_label || s.nos_code || 'Other',
+    .map((s) => ({
+      label: String((s as JudgeStatistics & { nos_label?: string }).nos_label || s.nos_code || 'Other'),
       percentage: Math.round(((s.total_cases || 0) / Math.max(1, aggregated.totalCases || 1)) * 100),
     }));
 

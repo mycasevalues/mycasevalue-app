@@ -55,9 +55,6 @@ export async function POST(request: Request) {
         console.error('Supabase connection error:', supabaseErr);
         // Fall through to development mode handling
       }
-    } else {
-      // Development mode: just log the alert
-      console.log('Judge alert (development mode):', { judge_id, email, timestamp: new Date().toISOString() });
     }
 
     return Response.json({

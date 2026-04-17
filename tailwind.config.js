@@ -75,11 +75,11 @@ module.exports = {
         serif: ['var(--font-baskerville)', 'Libre Baskerville', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'Source Sans 3', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
         body: ['var(--font-sans)', 'Source Sans 3', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        display: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        display: ['var(--font-ui)', 'Source Sans 3', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
         data: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
         inter: ['var(--font-ui)', 'Source Sans 3', 'Inter', 'sans-serif'],
-        jakarta: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'sans-serif'],
+        jakarta: ['var(--font-ui)', 'Source Sans 3', 'Plus Jakarta Sans', 'sans-serif'],
         baskerville: ['var(--font-baskerville)', 'Libre Baskerville', 'Georgia', 'serif'],
       },
       fontSize: {

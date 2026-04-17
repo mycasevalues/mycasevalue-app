@@ -24,8 +24,7 @@ interface ApiStatsResponse {
     total_cases: number;
     case_types: number;
     avg_win_rate: number;
-    [key: string]: any;
-  };
+  } & Record<string, unknown>;
 }
 
 const STATS_EN: StatItem[] = [

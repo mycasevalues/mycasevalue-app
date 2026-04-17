@@ -30,7 +30,6 @@ export async function GET(req: NextRequest) {
 
   try {
     // 1. Ingest recent cases from CourtListener
-    console.log('[cron/pipeline-sync] Starting CourtListener ingestion...');
     const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
     try {
       results.ingestion = await ingestSource('courtlistener', {
@@ -43,7 +42,6 @@ export async function GET(req: NextRequest) {
     }
 
     // 2. Generate summaries for cases without them
-    console.log('[cron/pipeline-sync] Starting summary enrichment...');
     try {
       results.summaries = await enrichSummaries({ limit: 20 });
     } catch (err) {
@@ -52,7 +50,6 @@ export async function GET(req: NextRequest) {
     }
 
     // 3. Generate tags for cases without them
-    console.log('[cron/pipeline-sync] Starting tag enrichment...');
     try {
       results.tags = await enrichTags({ limit: 20 });
     } catch (err) {
@@ -61,7 +58,6 @@ export async function GET(req: NextRequest) {
     }
 
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
-    console.log(`[cron/pipeline-sync] Completed in ${elapsed}s`);
 
     return NextResponse.json({
       ok: true,

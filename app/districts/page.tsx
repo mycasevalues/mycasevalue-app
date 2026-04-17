@@ -187,7 +187,7 @@ function buildDistrictRow(d: { code: string; name: string; circuit: number }): D
 const ALL_ROWS: DistrictRow[] = DISTRICTS_RAW.map(buildDistrictRow);
 const CIRCUITS_AVAILABLE = Array.from(new Set(DISTRICTS_RAW.map(d => d.circuit))).sort((a, b) => a - b);
 
-const totalCasesAll = Object.values(REAL_DATA).reduce((sum, d: any) => sum + (d.total || 0), 0);
+const totalCasesAll = Object.values(REAL_DATA).reduce((sum, d: { total?: number }) => sum + (d.total || 0), 0);
 
 /* ── Page component ──────────────────────────────────── */
 

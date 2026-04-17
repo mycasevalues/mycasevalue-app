@@ -148,14 +148,16 @@
   --flag-red:    #CC1414;
   --flag-blue:   #0A50A2;
 
-  /* ── TYPOGRAPHY — Font Stacks ── */
-  --font-display: var(--font-ui);
-  --font-body:    var(--font-inter), 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-mono:    var(--font-plex-mono), 'IBM Plex Mono', 'Menlo', monospace;
-
-  /* ── Westlaw Precision font additions ── */
+  /* ── TYPOGRAPHY — Font Stacks (Westlaw Precision) ── */
   --font-legal:   var(--font-baskerville), 'Libre Baskerville', Georgia, serif;
   --font-ui:      var(--font-sans), 'Source Sans 3', Inter, system-ui, sans-serif;
+  --font-mono:    var(--font-plex-mono), 'IBM Plex Mono', 'Menlo', monospace;
+
+  /* ── Backward-compat aliases ── */
+  --font-display: var(--font-ui);
+  --font-body:    var(--font-ui);
+  --font-inter:   var(--font-ui);
+  --font-heading: var(--font-ui);
 
   /* ── TYPOGRAPHY — Composite Font Shorthand Tokens ── */
   /* Display — page h1 only */
