@@ -205,8 +205,9 @@ export default function DemandLetterPage() {
             <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Case Type */}
               <div>
-                <label style={labelStyle}>Case Type *</label>
+                <label htmlFor="case-type" style={labelStyle}>Case Type *</label>
                 <select
+                  id="case-type"
                   value={caseType}
                   onChange={(e) => {
                     setCaseType(e.target.value);
@@ -225,8 +226,9 @@ export default function DemandLetterPage() {
 
               {/* District */}
               <div>
-                <label style={labelStyle}>Federal District (Optional)</label>
+                <label htmlFor="federal-district" style={labelStyle}>Federal District (Optional)</label>
                 <input
+                  id="federal-district"
                   type="text"
                   placeholder="e.g., Southern District of New York"
                   value={district}
@@ -272,8 +274,9 @@ export default function DemandLetterPage() {
 
               {/* Brief Facts */}
               <div>
-                <label style={labelStyle}>Case Facts & Circumstances *</label>
+                <label htmlFor="case-facts" style={labelStyle}>Case Facts & Circumstances *</label>
                 <textarea
+                  id="case-facts"
                   placeholder="Describe the key facts, timeline, and circumstances that support your claim. Include relevant details about liability, damages, and any prior settlement discussions."
                   value={briefFacts}
                   onChange={(e) => {
@@ -300,8 +303,9 @@ export default function DemandLetterPage() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   <div>
-                    <label style={labelStyle}>Economic Damages ($)</label>
+                    <label htmlFor="economic-damages" style={labelStyle}>Economic Damages ($)</label>
                     <input
+                      id="economic-damages"
                       type="number"
                       placeholder="0"
                       min="0"
@@ -315,8 +319,9 @@ export default function DemandLetterPage() {
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Pain & Suffering ($)</label>
+                    <label htmlFor="pain-and-suffering" style={labelStyle}>Pain & Suffering ($)</label>
                     <input
+                      id="pain-and-suffering"
                       type="number"
                       placeholder="0"
                       min="0"
@@ -330,8 +335,9 @@ export default function DemandLetterPage() {
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Lost Wages ($)</label>
+                    <label htmlFor="lost-wages" style={labelStyle}>Lost Wages ($)</label>
                     <input
+                      id="lost-wages"
                       type="number"
                       placeholder="0"
                       min="0"

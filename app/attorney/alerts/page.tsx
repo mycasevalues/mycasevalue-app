@@ -180,8 +180,9 @@ const WizardSteps = ({ step, setStep, formData, setFormData }: {
       {step === 1 && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
           <div>
-            <label className="institutional-label">Alert Name</label>
+            <label htmlFor="alert-name" className="institutional-label">Alert Name</label>
             <input
+              id="alert-name"
               type="text"
               placeholder="e.g., Patent Infringement - Technology Sector"
               value={formData.name}
@@ -222,8 +223,9 @@ const WizardSteps = ({ step, setStep, formData, setFormData }: {
       {step === 3 && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
           <div>
-            <label className="institutional-label">Search Terms & Boolean Operators</label>
+            <label htmlFor="search-terms" className="institutional-label">Search Terms & Boolean Operators</label>
             <textarea
+              id="search-terms"
               placeholder="e.g., (patent OR intellectual property) AND infringement AND /p damages"
               value={formData.searchTerms}
               onChange={(e) => setFormData({ ...formData, searchTerms: e.target.value })}
@@ -290,8 +292,9 @@ const WizardSteps = ({ step, setStep, formData, setFormData }: {
               <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 'var(--space-4)', alignItems: 'center' }}>
                 {formData.frequency === 'weekly' && (
                   <>
-                    <label className="institutional-label" style={{ marginBottom: 0 }}>Day</label>
+                    <label htmlFor="schedule-day" className="institutional-label" style={{ marginBottom: 0 }}>Day</label>
                     <select
+                      id="schedule-day"
                       value={formData.scheduleDay || 0}
                       onChange={(e) => setFormData({ ...formData, scheduleDay: parseInt(e.target.value) })}
                       style={{ padding: 'var(--space-2) var(--space-3)', fontSize: '14px', border: '1px solid var(--bdr)', borderRadius: '2px' }}
@@ -305,16 +308,18 @@ const WizardSteps = ({ step, setStep, formData, setFormData }: {
                   </>
                 )}
 
-                <label className="institutional-label" style={{ marginBottom: 0 }}>Time</label>
+                <label htmlFor="schedule-time" className="institutional-label" style={{ marginBottom: 0 }}>Time</label>
                 <input
+                  id="schedule-time"
                   type="time"
                   value={formData.scheduleTime || '09:00'}
                   onChange={(e) => setFormData({ ...formData, scheduleTime: e.target.value })}
                   style={{ padding: 'var(--space-2) var(--space-3)', fontSize: '14px', border: '1px solid var(--bdr)', borderRadius: '2px' }}
                 />
 
-                <label className="institutional-label" style={{ marginBottom: 0 }}>Timezone</label>
+                <label htmlFor="schedule-timezone" className="institutional-label" style={{ marginBottom: 0 }}>Timezone</label>
                 <select
+                  id="schedule-timezone"
                   value={formData.timezone || 'America/New_York'}
                   onChange={(e) => setFormData({ ...formData, timezone: e.target.value })}
                   style={{ padding: 'var(--space-2) var(--space-3)', fontSize: '14px', border: '1px solid var(--bdr)', borderRadius: '2px' }}

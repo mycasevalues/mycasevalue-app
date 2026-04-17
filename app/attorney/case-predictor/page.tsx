@@ -298,8 +298,9 @@ export default function CasePredictorPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {/* Case Category */}
                 <div>
-                  <label style={labelStyle}>Case Category</label>
+                  <label htmlFor="case-category" style={labelStyle}>Case Category</label>
                   <select
+                    id="case-category"
                     value={caseCategory}
                     onChange={(e) => { setCaseCategory(e.target.value); setCaseType(''); }}
                     style={selectStyle}
@@ -314,8 +315,8 @@ export default function CasePredictorPage() {
                 {/* Specific Case Type */}
                 {caseCategory && (
                   <div>
-                    <label style={labelStyle}>Specific Case Type</label>
-                    <select value={caseType} onChange={(e) => setCaseType(e.target.value)} style={selectStyle}>
+                    <label htmlFor="specific-case-type" style={labelStyle}>Specific Case Type</label>
+                    <select id="specific-case-type" value={caseType} onChange={(e) => setCaseType(e.target.value)} style={selectStyle}>
                       <option value="">Select type...</option>
                       {caseOptions.map((opt) => (
                         <option key={opt.label} value={opt.nos}>{opt.label}</option>
@@ -326,8 +327,8 @@ export default function CasePredictorPage() {
 
                 {/* State */}
                 <div>
-                  <label style={labelStyle}>Filing State</label>
-                  <select value={state} onChange={(e) => setState(e.target.value)} style={selectStyle}>
+                  <label htmlFor="filing-state" style={labelStyle}>Filing State</label>
+                  <select id="filing-state" value={state} onChange={(e) => setState(e.target.value)} style={selectStyle}>
                     {STATES.map((s) => (
                       <option key={s.id} value={s.id}>{s.label}</option>
                     ))}
@@ -367,8 +368,8 @@ export default function CasePredictorPage() {
 
                 {/* Damage Amount */}
                 <div>
-                  <label style={labelStyle}>Estimated Damages</label>
-                  <select value={damageAmount} onChange={(e) => setDamageAmount(e.target.value)} style={selectStyle}>
+                  <label htmlFor="estimated-damages" style={labelStyle}>Estimated Damages</label>
+                  <select id="estimated-damages" value={damageAmount} onChange={(e) => setDamageAmount(e.target.value)} style={selectStyle}>
                     <option value="small">Under $10,000</option>
                     <option value="mid">$10,000 – $75,000</option>
                     <option value="large">$75,000 – $150,000</option>

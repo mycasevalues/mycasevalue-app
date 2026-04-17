@@ -185,8 +185,8 @@ export default function DepositionPrepPage() {
 
             <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={labelStyle}>Case Category</label>
-                <select value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); }} style={selectStyle}>
+                <label htmlFor="case-category" style={labelStyle}>Case Category</label>
+                <select id="case-category" value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); }} style={selectStyle}>
                   <option value="">Select category...</option>
                   {SITS.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
                 </select>
@@ -194,8 +194,8 @@ export default function DepositionPrepPage() {
 
               {caseCategory && (
                 <div>
-                  <label style={labelStyle}>Case Type *</label>
-                  <select value={caseType} onChange={e => setCaseType(e.target.value)} style={selectStyle}>
+                  <label htmlFor="case-type" style={labelStyle}>Case Type *</label>
+                  <select id="case-type" value={caseType} onChange={e => setCaseType(e.target.value)} style={selectStyle}>
                     <option value="">Select type...</option>
                     {caseOptions.map(opt => <option key={opt.label} value={opt.nos}>{opt.label}</option>)}
                   </select>
@@ -226,8 +226,9 @@ export default function DepositionPrepPage() {
               </div>
 
               <div>
-                <label style={labelStyle}>Deponent&apos;s Position (optional)</label>
+                <label htmlFor="deponent-position" style={labelStyle}>Deponent&apos;s Position (optional)</label>
                 <textarea
+                  id="deponent-position"
                   placeholder="Brief description of deponent's role or position in the case..."
                   value={deponentPosition}
                   onChange={e => setDeponentPosition(e.target.value.slice(0, 200))}

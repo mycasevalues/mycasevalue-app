@@ -384,6 +384,7 @@ export default function FindPrintPage() {
               }}
             >
               <label
+                htmlFor="citation-input"
                 style={{
                   display: 'block',
                   fontSize: 13,
@@ -398,6 +399,7 @@ export default function FindPrintPage() {
               </label>
 
               <textarea
+                id="citation-input"
                 value={citationInput}
                 onChange={(e) => setCitationInput(e.target.value)}
                 placeholder="Brown v. Board of Education&#10;347 U.S. 483&#10;42 U.S.C. § 1983&#10;29 CFR § 1910.1200"

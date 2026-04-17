@@ -55,14 +55,14 @@
   /* ── TEXT (Westlaw warm tones) ── */
   --text-primary:    #18181A;
   --text-secondary:  #42403C;
-  --text-tertiary:   #78766C;
+  --text-tertiary:   #636157;
   --text-placeholder:#A8A6A0;
   --text-disabled:   #CCCCCC;
 
   /* ── Westlaw Text shorthand ── */
   --text1: #18181A;
   --text2: #42403C;
-  --text3: #78766C;
+  --text3: #636157;
   --text4: #A8A6A0;
 
   /* ── GOLD ACCENT (Thomson Reuters / MyCaseValue brand — replaces Westlaw orange) ── */
@@ -70,6 +70,7 @@
   --gold-hover:    #A87222;
   --gold-light:    #FAF3E6;
   --gold-border:   #E8D09C;
+  --gold-on-dark:  #D9A040;
 
   /* ── Legacy accent aliases → gold ── */
   --accent:        var(--gold);

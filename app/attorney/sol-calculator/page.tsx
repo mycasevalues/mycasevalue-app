@@ -511,8 +511,9 @@ export default function SOLCalculatorPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Case Type Select */}
               <div>
-                <label style={labelStyle}>Case Type</label>
+                <label htmlFor="case-type" style={labelStyle}>Case Type</label>
                 <select
+                  id="case-type"
                   value={selectedCaseType}
                   onChange={(e) => {
                     setSelectedCaseType(e.target.value);
@@ -532,8 +533,8 @@ export default function SOLCalculatorPage() {
 
               {/* State Select */}
               <div>
-                <label style={labelStyle}>Jurisdiction</label>
-                <select value={selectedState} onChange={(e) => setSelectedState(e.target.value)} style={inputStyle}>
+                <label htmlFor="jurisdiction" style={labelStyle}>Jurisdiction</label>
+                <select id="jurisdiction" value={selectedState} onChange={(e) => setSelectedState(e.target.value)} style={inputStyle}>
                   {US_STATES.map((state) => (
                     <option key={state} value={state}>
                       {state}
@@ -544,8 +545,9 @@ export default function SOLCalculatorPage() {
 
               {/* Incident Date */}
               <div>
-                <label style={labelStyle}>Incident Date</label>
+                <label htmlFor="incident-date" style={labelStyle}>Incident Date</label>
                 <input
+                  id="incident-date"
                   type="date"
                   value={incidentDate}
                   onChange={(e) => {

@@ -199,8 +199,9 @@ export default function DeadlineCalculatorPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', marginBottom: '24px' }}>
             <style>{`@media (max-width: 639px) { .grid-responsive { grid-template-columns: 1fr !important; } } @media (min-width: 640px) and (max-width: 1023px) { .grid-responsive { grid-template-columns: 1fr 1fr !important; } }`}</style>
             <div>
-              <label style={labelStyle}>Case Filed Date</label>
+              <label htmlFor="case-filed-date" style={labelStyle}>Case Filed Date</label>
               <input
+                id="case-filed-date"
                 type="date"
                 value={caseFiledDate}
                 onChange={(e) => setCaseFiledDate(e.target.value)}

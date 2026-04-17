@@ -168,8 +168,9 @@ export default function FeeCalculatorPage() {
             <form onSubmit={handleCalculate} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Case Type */}
               <div>
-                <label style={labelStyle}>Case Type *</label>
+                <label htmlFor="case-type" style={labelStyle}>Case Type *</label>
                 <select
+                  id="case-type"
                   value={caseType}
                   onChange={(e) => {
                     setCaseType(e.target.value);
@@ -188,8 +189,9 @@ export default function FeeCalculatorPage() {
 
               {/* Case Value */}
               <div>
-                <label style={labelStyle}>Estimated Case Value ($) *</label>
+                <label htmlFor="estimated-case-value" style={labelStyle}>Estimated Case Value ($) *</label>
                 <input
+                  id="estimated-case-value"
                   type="number"
                   placeholder="e.g., 100000"
                   min="0"

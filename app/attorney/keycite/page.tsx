@@ -209,7 +209,7 @@ export default function KeyCitePage() {
             alignItems: 'end',
           }}>
             <div>
-              <label style={{
+              <label htmlFor="citation-input" style={{
                 display: 'block',
                 fontSize: 13,
                 fontWeight: 600,
@@ -221,6 +221,7 @@ export default function KeyCitePage() {
                 Enter Citation or Case Name
               </label>
               <input
+                id="citation-input"
                 type="text"
                 value={citationInput}
                 onChange={(e) => setCitationInput(e.target.value)}
@@ -595,7 +596,7 @@ export default function KeyCitePage() {
               <div style={{ display: 'grid', gap: 16 }}>
                 {/* Jurisdiction Filter */}
                 <div>
-                  <label style={{
+                  <label htmlFor="jurisdiction-filter" style={{
                     display: 'block',
                     fontSize: 12,
                     fontWeight: 600,
@@ -607,6 +608,7 @@ export default function KeyCitePage() {
                     Jurisdiction
                   </label>
                   <select
+                    id="jurisdiction-filter"
                     value={filters.jurisdiction}
                     onChange={(e) =>
                       setFilters({ ...filters, jurisdiction: e.target.value as JurisdictionFilter })
@@ -633,7 +635,7 @@ export default function KeyCitePage() {
 
                 {/* Treatment Filter */}
                 <div>
-                  <label style={{
+                  <label htmlFor="treatment-filter" style={{
                     display: 'block',
                     fontSize: 12,
                     fontWeight: 600,
@@ -645,6 +647,7 @@ export default function KeyCitePage() {
                     Treatment
                   </label>
                   <select
+                    id="treatment-filter"
                     value={filters.treatment}
                     onChange={(e) =>
                       setFilters({ ...filters, treatment: e.target.value as TreatmentFilter })
@@ -671,7 +674,7 @@ export default function KeyCitePage() {
 
                 {/* Depth of Treatment */}
                 <div>
-                  <label style={{
+                  <label htmlFor="minimum-depth" style={{
                     display: 'block',
                     fontSize: 12,
                     fontWeight: 600,
@@ -683,6 +686,7 @@ export default function KeyCitePage() {
                     Minimum Depth ({filters.depthOfTreatment} stars)
                   </label>
                   <input
+                    id="minimum-depth"
                     type="range"
                     min="1"
                     max="4"
@@ -707,7 +711,7 @@ export default function KeyCitePage() {
 
                 {/* Date Range */}
                 <div>
-                  <label style={{
+                  <label id="date-range-label" style={{
                     display: 'block',
                     fontSize: 12,
                     fontWeight: 600,
@@ -724,6 +728,7 @@ export default function KeyCitePage() {
                     gap: 8,
                   }}>
                     <input
+                      aria-label="Date range start year"
                       type="number"
                       min="1950"
                       max="2024"
@@ -747,6 +752,7 @@ export default function KeyCitePage() {
                       placeholder="Start"
                     />
                     <input
+                      aria-label="Date range end year"
                       type="number"
                       min="1950"
                       max="2024"
@@ -774,7 +780,7 @@ export default function KeyCitePage() {
 
                 {/* Headnote Topic */}
                 <div>
-                  <label style={{
+                  <label htmlFor="headnote-topic" style={{
                     display: 'block',
                     fontSize: 12,
                     fontWeight: 600,
@@ -786,6 +792,7 @@ export default function KeyCitePage() {
                     Headnote Topic
                   </label>
                   <select
+                    id="headnote-topic"
                     value={filters.headnoteTopic}
                     onChange={(e) =>
                       setFilters({ ...filters, headnoteTopic: e.target.value })

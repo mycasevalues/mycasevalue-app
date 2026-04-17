@@ -178,7 +178,7 @@ input:hover, textarea:hover, select:hover {
 }
 input:focus, textarea:focus, select:focus {
   border-color: var(--link) !important;
-  box-shadow: 0 0 0 3px rgba(10,80,160,0.10) !important;
+  box-shadow: 0 0 0 3px rgba(10,80,160,0.25) !important;
   outline: none;
 }
 
@@ -400,7 +400,7 @@ hr { border-color: var(--surface-border); }
 
 /* Auth */
 .auth-input { transition: border-color var(--transition-base), box-shadow var(--transition-base); }
-.auth-input:focus { border-color: var(--link) !important; box-shadow: 0 0 0 3px rgba(10,80,160,0.10) !important; outline: none; }
+.auth-input:focus { border-color: var(--link) !important; box-shadow: 0 0 0 3px rgba(10,80,160,0.25) !important; outline: none; }
 .auth-btn { transition: background var(--transition-base), transform var(--transition-fast); }
 .auth-btn:hover { background-color: var(--accent-hover) !important; }
 .auth-btn:active { transform: scale(0.98); }

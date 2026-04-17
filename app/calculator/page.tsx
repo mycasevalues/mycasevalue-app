@@ -345,7 +345,7 @@ export default function CalculatorPage() {
                 id="calc-case-type"
                 value={caseType}
                 onChange={(e) => { setCaseType(e.target.value); setResults(null); }}
-                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus-visible:outline-none focus:ring-2 focus:ring-blue-500/25"
                 style={{
                   height: '48px',
                   borderRadius: 2,
@@ -389,7 +389,7 @@ export default function CalculatorPage() {
                   setDamages(val);
                   setResults(null);
                 }}
-                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus-visible:outline-none focus:ring-2 focus:ring-blue-500/25"
                 style={{
                   height: '48px',
                   borderRadius: 2,
@@ -415,7 +415,7 @@ export default function CalculatorPage() {
                 id="calc-represented"
                 value={represented}
                 onChange={(e) => { setRepresented(e.target.value); setResults(null); }}
-                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus-visible:outline-none focus:ring-2 focus:ring-blue-500/25"
                 style={{
                   height: '48px',
                   borderRadius: 2,
@@ -445,7 +445,7 @@ export default function CalculatorPage() {
                 id="calc-severity"
                 value={severity}
                 onChange={(e) => { setSeverity(e.target.value); setResults(null); }}
-                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus-visible:outline-none focus:ring-2 focus:ring-blue-500/25"
                 style={{
                   height: '48px', borderRadius: 2,
                   borderColor: severity === '' ? 'var(--border-default)' : 'var(--accent-primary)',
@@ -473,7 +473,7 @@ export default function CalculatorPage() {
                 id="calc-duration"
                 value={duration}
                 onChange={(e) => { setDuration(e.target.value); setResults(null); }}
-                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus-visible:outline-none focus:ring-2 focus:ring-blue-500/25"
                 style={{
                   height: '48px', borderRadius: 2,
                   borderColor: duration === '' ? 'var(--border-default)' : 'var(--accent-primary)',
@@ -502,7 +502,7 @@ export default function CalculatorPage() {
                 id="calc-evidence"
                 value={evidence}
                 onChange={(e) => { setEvidence(e.target.value); setResults(null); }}
-                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus-visible:outline-none focus:ring-2 focus:ring-blue-500/25"
                 style={{
                   height: '48px', borderRadius: 2,
                   borderColor: evidence === '' ? 'var(--border-default)' : 'var(--accent-primary)',
@@ -530,7 +530,7 @@ export default function CalculatorPage() {
                 id="calc-prior-settlement"
                 value={priorSettlement}
                 onChange={(e) => { setPriorSettlement(e.target.value); setResults(null); }}
-                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus-visible:outline-none focus:ring-2 focus:ring-blue-500/25"
                 style={{
                   height: '48px', borderRadius: 2,
                   borderColor: priorSettlement === '' ? 'var(--border-default)' : 'var(--accent-primary)',
@@ -558,7 +558,7 @@ export default function CalculatorPage() {
                 id="calc-defendants"
                 value={defendants}
                 onChange={(e) => { setDefendants(e.target.value); setResults(null); }}
-                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus-visible:outline-none focus:ring-2 focus:ring-blue-500/25"
                 style={{
                   height: '48px', borderRadius: 2,
                   borderColor: defendants === '' ? 'var(--border-default)' : 'var(--accent-primary)',

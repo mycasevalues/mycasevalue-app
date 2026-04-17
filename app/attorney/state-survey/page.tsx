@@ -328,7 +328,7 @@ Platform: MyCaseValue Legal Research
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Topic Selector */}
         <div style={{ marginBottom: '40px' }}>
-          <label style={{
+          <label htmlFor="research-topic" style={{
             display: 'block',
             fontSize: '12px',
             fontWeight: '600',
@@ -341,6 +341,7 @@ Platform: MyCaseValue Legal Research
             Select Research Topic
           </label>
           <select
+            id="research-topic"
             value={selectedTopic}
             onChange={(e) => {
               setSelectedTopic(e.target.value);
@@ -570,7 +571,7 @@ Platform: MyCaseValue Legal Research
           marginBottom: '32px',
         }}>
           <div>
-            <label style={{
+            <label htmlFor="filter-by-region" style={{
               display: 'block',
               fontSize: '12px',
               fontWeight: '600',
@@ -583,6 +584,7 @@ Platform: MyCaseValue Legal Research
               Filter by Region
             </label>
             <select
+              id="filter-by-region"
               value={selectedRegion || ''}
               onChange={(e) => setSelectedRegion(e.target.value || null)}
               style={{
@@ -608,7 +610,7 @@ Platform: MyCaseValue Legal Research
           </div>
 
           <div>
-            <label style={{
+            <label htmlFor="sort-by" style={{
               display: 'block',
               fontSize: '12px',
               fontWeight: '600',
@@ -621,6 +623,7 @@ Platform: MyCaseValue Legal Research
               Sort by
             </label>
             <select
+              id="sort-by"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as SortField)}
               style={{

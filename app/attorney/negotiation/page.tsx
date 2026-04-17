@@ -149,35 +149,35 @@ export default function NegotiationPage() {
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>Case & Offer Details</h2>
             <form onSubmit={handleAnalyze} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category</label>
-                <select value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); setResults(null); }} style={selectStyle}>
+                <label htmlFor="case-category" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category</label>
+                <select id="case-category" value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); setResults(null); }} style={selectStyle}>
                   <option value="">Select category...</option>
                   {SITS.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
                 </select>
               </div>
               {caseCategory && (
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Type *</label>
-                  <select value={caseType} onChange={e => { setCaseType(e.target.value); setResults(null); }} style={selectStyle}>
+                  <label htmlFor="case-type" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Type *</label>
+                  <select id="case-type" value={caseType} onChange={e => { setCaseType(e.target.value); setResults(null); }} style={selectStyle}>
                     <option value="">Select type...</option>
                     {caseOptions.map(opt => <option key={opt.label} value={opt.nos}>{opt.label}</option>)}
                   </select>
                 </div>
               )}
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>District (optional)</label>
-                <select value={district} onChange={e => setDistrict(e.target.value)} style={selectStyle}>
+                <label htmlFor="district" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>District (optional)</label>
+                <select id="district" value={district} onChange={e => setDistrict(e.target.value)} style={selectStyle}>
                   <option value="">All districts</option>
                   {STATES.filter(s => s.id).map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
                 </select>
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Current Settlement Offer ($) *</label>
-                <input type="number" placeholder="e.g., 75000" value={currentOffer} onChange={e => setCurrentOffer(e.target.value)} style={{ ...selectStyle, appearance: 'auto' as const, backgroundImage: 'none' }} />
+                <label htmlFor="current-settlement-offer" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Current Settlement Offer ($) *</label>
+                <input id="current-settlement-offer" type="number" placeholder="e.g., 75000" value={currentOffer} onChange={e => setCurrentOffer(e.target.value)} style={{ ...selectStyle, appearance: 'auto' as const, backgroundImage: 'none' }} />
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Estimated Litigation Cost to Trial ($)</label>
-                <input type="number" placeholder="e.g., 50000" value={litigationCost} onChange={e => setLitigationCost(e.target.value)} style={{ ...selectStyle, appearance: 'auto' as const, backgroundImage: 'none' }} />
+                <label htmlFor="estimated-litigation-cost" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Estimated Litigation Cost to Trial ($)</label>
+                <input id="estimated-litigation-cost" type="number" placeholder="e.g., 50000" value={litigationCost} onChange={e => setLitigationCost(e.target.value)} style={{ ...selectStyle, appearance: 'auto' as const, backgroundImage: 'none' }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Representation</label>
