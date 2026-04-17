@@ -1082,6 +1082,26 @@ export default function FoldersPage() {
           </div>
         </div>
       )}
+
+      {/* Related Tools */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
+        <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid var(--bdr)' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-ui)', marginBottom: '16px' }}>Related Tools</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '12px' }}>
+            {[
+              { name: 'Find & Print', href: '/attorney/find-print', desc: 'Find, print and export legal documents' },
+              { name: 'Alerts', href: '/attorney/alerts', desc: 'Real-time citation and case alerts' },
+              { name: 'Secondary Sources', href: '/attorney/secondary-sources', desc: 'Legal secondary sources and treatises' },
+              { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Advanced legal research search tools' },
+            ].map(tool => (
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

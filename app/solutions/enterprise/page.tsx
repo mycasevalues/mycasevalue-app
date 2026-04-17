@@ -211,34 +211,55 @@ export default function EnterprisePage() {
             Enterprise Capabilities
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
-            {FEATURES.map(f => (
-              <div key={f.title} style={{
-                background: 'var(--color-surface-0)',
-                border: '1px solid var(--border-default)',
-                borderRadius: '2px',
-                padding: '24px 16px',
-              }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
-                <h3 style={{
-                  fontFamily: 'var(--font-ui)',
-                  fontSize: '1rem',
-                  fontWeight: 600,
-                  color: 'var(--color-text-primary)',
-                  marginBottom: '8px',
+            {FEATURES.map(f => {
+              let href = '';
+              if (f.title === 'Custom Dashboards') href = '/attorney/case-predictor';
+
+              const card = (
+                <div key={f.title} style={{
+                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--border-default)',
+                  borderRadius: '2px',
+                  padding: '24px 16px',
                 }}>
-                  {f.title}
-                </h3>
-                <p style={{
-                  fontFamily: 'var(--font-ui)',
-                  fontSize: '0.875rem',
-                  color: 'var(--color-text-secondary)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                }}>
-                  {f.desc}
-                </p>
-              </div>
-            ))}
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
+                  <h3 style={{
+                    fontFamily: 'var(--font-ui)',
+                    fontSize: '1rem',
+                    fontWeight: 600,
+                    color: 'var(--color-text-primary)',
+                    marginBottom: '8px',
+                  }}>
+                    {f.title}
+                  </h3>
+                  <p style={{
+                    fontFamily: 'var(--font-ui)',
+                    fontSize: '0.875rem',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}>
+                    {f.desc}
+                  </p>
+                  {href && (
+                    <Link href={href} style={{
+                      display: 'inline-block',
+                      marginTop: '12px',
+                      fontSize: '0.8rem',
+                      color: 'var(--accent-primary)',
+                      textDecoration: 'none',
+                      fontWeight: 500,
+                    }}>
+                      Try it →
+                    </Link>
+                  )}
+                </div>
+              );
+
+              return href ? (
+                <div key={f.title}>{card}</div>
+              ) : card;
+            })}
           </div>
         </div>
       </section>

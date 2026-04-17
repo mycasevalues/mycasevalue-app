@@ -325,6 +325,24 @@ export default function VenueOptimizerPage() {
             </p>
           </div>
         )}
+
+        {/* Related Tools */}
+        <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid var(--bdr)' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-ui)', marginBottom: '16px' }}>Related Tools</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '12px' }}>
+            {[
+              { name: 'Judge Intelligence', href: '/attorney/judge-intelligence', desc: 'Research federal judges\' ruling patterns' },
+              { name: 'Case Predictor', href: '/attorney/case-predictor', desc: 'Predict case outcomes with AI analytics' },
+              { name: 'State Survey', href: '/attorney/state-survey', desc: 'State-by-state legal survey analysis' },
+              { name: 'Court Rules', href: '/attorney/court-rules', desc: 'Federal and state court rules and procedures' },
+            ].map(tool => (
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

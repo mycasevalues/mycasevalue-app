@@ -889,6 +889,24 @@ export default function AlertsPage() {
               )}
             </div>
           )}
+
+          {/* Related Tools */}
+          <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid var(--bdr)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-ui)', marginBottom: '16px' }}>Related Tools</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '12px' }}>
+              {[
+                { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Advanced legal research search tools' },
+                { name: 'KeyCite', href: '/attorney/keycite', desc: 'Citation validation and case treatment analysis' },
+                { name: 'Folders', href: '/attorney/folders', desc: 'Organize and manage research folders' },
+                { name: 'PACER Monitor', href: '/attorney/pacer-monitor', desc: 'Monitor federal court PACER filings' },
+              ].map(tool => (
+                <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
+                  <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

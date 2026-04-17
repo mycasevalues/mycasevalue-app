@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
@@ -87,6 +88,32 @@ const AI_CAPABILITIES = [
   },
 ];
 
+const TOOL_URL_MAP: { [key: string]: string } = {
+  'AI Case Predictor': '/attorney/case-predictor',
+  'Document Intelligence': '/attorney/document-intelligence',
+  'Judge Intelligence': '/attorney/judge-intelligence',
+  'Opposing Counsel Research': '/attorney/opposing-counsel',
+  'Venue Optimizer': '/attorney/venue-optimizer',
+  'PACER Monitoring': '/attorney/pacer-monitor',
+  'Bulk Case Analysis': '/attorney/bulk-analysis',
+  'Team Workspace': '/attorney/team-workspace',
+  'API Access': '/attorney/api-access',
+  'Motion Analytics': '/attorney/motion-analytics',
+  'Expert Witness': '/attorney/expert-witness',
+  'Demand Letter': '/attorney/demand-letter',
+  'Demand Package': '/attorney/demand-package',
+  'Case Timeline': '/attorney/case-timeline',
+  'Timeline': '/attorney/timeline',
+  'Advanced Search': '/attorney/advanced-search',
+  'KeyCite': '/attorney/keycite',
+  'Secondary Sources': '/attorney/secondary-sources',
+  '50-State Survey': '/attorney/state-survey',
+  'Compare Text': '/attorney/compare-text',
+  'Alerts': '/attorney/alerts',
+  'Research Folders': '/attorney/folders',
+  'Find & Print': '/attorney/find-print',
+};
+
 const TOOLS_BY_CATEGORY = [
   {
     category: 'Research Tools',
@@ -101,8 +128,8 @@ const TOOLS_BY_CATEGORY = [
     category: 'Attorney Mode Tools',
     tools: [
       'Opposing Counsel Research',
-      'Demand Package Generator',
-      'Timeline Generator',
+      'Demand Package',
+      'Timeline',
       'API Access',
     ],
   },
@@ -111,7 +138,7 @@ const TOOLS_BY_CATEGORY = [
     tools: [
       'Intake Forms',
       'Case Strength Assessment',
-      'Expert Witness Explorer',
+      'Expert Witness',
       'Document Automation',
     ],
   },
@@ -1284,28 +1311,37 @@ export default function PlatformPage() {
                     margin: 0,
                     padding: 0,
                   }}>
-                    {group.tools.map((tool) => (
-                      <li
-                        key={tool}
-                        style={{
-                          padding: '8px 0',
-                          fontSize: 14,
-                          color: 'var(--color-text-secondary)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 8,
-                        }}
-                      >
-                        <span style={{
-                          display: 'inline-block',
-                          width: 6,
-                          height: 6,
-                          background: 'var(--accent-primary)',
-                          borderRadius: '50%',
-                        }} />
-                        {tool}
-                      </li>
-                    ))}
+                    {group.tools.map((tool) => {
+                      const href = TOOL_URL_MAP[tool];
+                      return (
+                        <li
+                          key={tool}
+                          style={{
+                            padding: '8px 0',
+                            fontSize: 14,
+                            color: href ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 8,
+                          }}
+                        >
+                          <span style={{
+                            display: 'inline-block',
+                            width: 6,
+                            height: 6,
+                            background: 'var(--accent-primary)',
+                            borderRadius: '50%',
+                          }} />
+                          {href ? (
+                            <Link href={href} style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                              {tool}
+                            </Link>
+                          ) : (
+                            tool
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               ))}

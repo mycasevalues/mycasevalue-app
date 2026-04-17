@@ -149,6 +149,7 @@ const tiers: PricingTier[] = [
       'Citation-backed PDF reports',
       'Daily data refresh across all 7 sources',
       'Priority support (24-hour response)',
+      'toolsDetail',
     ],
     ctaText: 'Try Attorney Mode',
     ctaHref: '/attorney',
@@ -534,9 +535,41 @@ export default function PricingPage() {
               <p className="card-description">{tier.description}</p>
               <div className="card-features">
                 <ul>
-                  {tier.features.map((feature, idx) => (
-                    <li key={idx}>{feature}</li>
-                  ))}
+                  {tier.features.map((feature, idx) => {
+                    if (feature === 'toolsDetail') {
+                      return (
+                        <li key={idx} style={{ display: 'block', padding: '1rem 0', marginTop: '1rem', borderTop: '1px solid var(--bdr)' }}>
+                          <div style={{ marginBottom: '0.75rem', fontWeight: 600, color: 'var(--color-text-primary)' }}>Key Tools Included:</div>
+                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', fontSize: '0.8125rem' }}>
+                            <Link href="/attorney/case-predictor" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                              • AI Case Predictor
+                            </Link>
+                            <Link href="/attorney/advanced-search" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                              • Advanced Search
+                            </Link>
+                            <Link href="/attorney/keycite" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                              • KeyCite Validator
+                            </Link>
+                            <Link href="/attorney/judge-intelligence" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                              • Judge Intelligence
+                            </Link>
+                            <Link href="/attorney/state-survey" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                              • 50-State Survey
+                            </Link>
+                            <Link href="/attorney/document-intelligence" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                              • Document Intelligence
+                            </Link>
+                            <div style={{ gridColumn: '1 / -1', marginTop: '0.5rem' }}>
+                              <Link href="/attorney" style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontSize: '0.8125rem', fontWeight: 600 }}>
+                                + 29 more tools →
+                              </Link>
+                            </div>
+                          </div>
+                        </li>
+                      );
+                    }
+                    return <li key={idx}>{feature}</li>;
+                  })}
                 </ul>
               </div>
               <Link href={tier.ctaHref} className="card-cta">
