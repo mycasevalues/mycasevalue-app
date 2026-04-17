@@ -51,10 +51,13 @@ export default function NotificationToast() {
                 cursor: 'pointer',
               }}
               onClick={() => dismiss(n.id)}
+              role="button"
+              tabIndex={0}
+              aria-label="Dismiss notification"
             >
               <span>{iconMap[n.type]}</span>
               <span style={{ flex: 1 }}>{n.message}</span>
-              <span style={{ opacity: 0.5, fontSize: 12 }}>✕</span>
+              <span style={{ opacity: 0.5, fontSize: 12 }} aria-hidden="true">✕</span>
             </motion.div>
           );
         })}

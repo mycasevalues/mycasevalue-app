@@ -100,6 +100,9 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
             setIsOpen(true);
           }
         }}
+        aria-label="Share report"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
         style={buttonStyle}
         onMouseEnter={(e) => {
           (e.currentTarget as HTMLElement).style.opacity = '0.9';

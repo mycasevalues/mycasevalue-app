@@ -419,9 +419,18 @@ export default function CommandPalette({
 
   return (
     <>
-      {/* Backdrop */}
+      {/* Backdrop - click to close */}
       <div
         onClick={onClose}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape') {
+            e.preventDefault();
+            onClose();
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        aria-label="Close command palette"
         style={{
           position: 'fixed',
           inset: 0,
