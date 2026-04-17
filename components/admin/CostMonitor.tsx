@@ -74,7 +74,7 @@ export default function CostMonitor() {
           border: '1px solid var(--data-negative-border, #FCA5A5)',
           borderRadius: '4px',
           padding: '24px',
-          color: '#991b1b',
+          color: 'var(--data-negative)',
         }}
       >
         <p>Error loading cost data: {error}</p>
@@ -287,7 +287,7 @@ function ServiceCard({ service }: ServiceCardProps) {
           <span
             style={{
               fontWeight: '600',
-              color: service.momChange > 0 ? '#ef4444' : '#10b981',
+              color: service.momChange > 0 ? 'var(--data-negative)' : 'var(--data-positive)',
             }}
           >
             {service.momChange > 0 ? '+' : ''}{service.momChange.toFixed(2)}%

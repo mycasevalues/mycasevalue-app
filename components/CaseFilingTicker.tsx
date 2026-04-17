@@ -75,8 +75,8 @@ export default function CaseFilingTicker() {
     <section
       style={{
         background: 'var(--color-surface-0)',
-        borderTop: '1px solid #E0DDD8',
-        borderBottom: '1px solid #E0DDD8',
+        borderTop: '1px solid var(--bdr)',
+        borderBottom: '1px solid var(--bdr)',
         padding: '24px 20px',
         overflow: 'hidden',
       }}
@@ -149,7 +149,7 @@ export default function CaseFilingTicker() {
             }
 
             .ticker-separator {
-              color: #D0D0D0;
+              color: var(--text-disabled);
               margin: 0 4px;
             }
 

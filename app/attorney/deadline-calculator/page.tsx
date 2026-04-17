@@ -165,7 +165,7 @@ export default function DeadlineCalculatorPage() {
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         input:focus, select:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
-        @media (max-width: 640px) { h1 { font-size: clamp(28px, 5vw, 40px); } }
+        @media (max-width: 640px) { h1 { font-size: 28px; } }
       `}</style>
 
       {/* Header */}
@@ -195,7 +195,7 @@ export default function DeadlineCalculatorPage() {
       {/* Main Content */}
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Input Section */}
-        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: 'var(--shadow-xs)' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', marginBottom: '24px' }}>
             <style>{`@media (max-width: 639px) { .grid-responsive { grid-template-columns: 1fr !important; } } @media (min-width: 640px) and (max-width: 1023px) { .grid-responsive { grid-template-columns: 1fr 1fr !important; } }`}</style>
             <div>
@@ -304,7 +304,7 @@ export default function DeadlineCalculatorPage() {
                 { label: 'Critical', value: String(allDeadlines.filter(d => d.category === 'critical').length) },
                 { label: 'Days to First Deadline', value: getDaysUntil(allDeadlines[0]?.calculatedDate) > 0 ? String(getDaysUntil(allDeadlines[0]?.calculatedDate)) : 'Past due' },
               ].map((stat, i) => (
-                <div key={i} style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                <div key={i} style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
                   <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     {stat.label}
                   </p>
@@ -316,7 +316,7 @@ export default function DeadlineCalculatorPage() {
             </div>
 
             {/* Deadlines List */}
-            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', overflow: 'hidden', boxShadow: 'var(--shadow-xs)' }}>
               <div style={{ padding: '24px', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h2 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>All Deadlines</h2>
                 <div style={{ display: 'flex', gap: '12px' }}>
@@ -406,7 +406,7 @@ export default function DeadlineCalculatorPage() {
             </div>
 
             {/* FRCP Reference */}
-            <div style={{ marginTop: '40px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ marginTop: '40px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', padding: '24px', boxShadow: 'var(--shadow-xs)' }}>
               <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
                 Federal Rules of Civil Procedure Reference
               </h2>

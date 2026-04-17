@@ -1181,7 +1181,7 @@ export default function SecondarySourcesPage() {
                   fontFamily: 'var(--font-ui)',
                   fontWeight: '500',
                   backgroundColor: 'var(--gold)',
-                  color: '#FFFFFF',
+                  color: 'var(--chrome-text)',
                   border: 'none',
                   borderRadius: '2px',
                   cursor: 'pointer',

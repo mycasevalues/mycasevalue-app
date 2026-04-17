@@ -41,12 +41,12 @@ export default function ReportSkeleton() {
                     style={{
                       width: '60px',
                       height: '14px',
-                      background: '#1a3a5a',
+                      background: 'var(--chrome-bg)',
                       borderRadius: '4px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
-                  {i < 3 && <span style={{ color: '#556b7f' }}>/</span>}
+                  {i < 3 && <span style={{ color: 'var(--chrome-text-muted)' }}>/</span>}
                 </div>
               ))}
             </div>
@@ -58,7 +58,7 @@ export default function ReportSkeleton() {
                   style={{
                     height: 'clamp(24px, 5vw, 32px)',
                     width: '60%',
-                    background: '#1a3a5a',
+                    background: 'var(--chrome-bg)',
                     borderRadius: '4px',
                     marginBottom: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -134,7 +134,7 @@ export default function ReportSkeleton() {
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <div style={{ marginBottom: '24px' }}>
@@ -212,7 +212,7 @@ export default function ReportSkeleton() {
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <div style={{ marginBottom: '24px' }}>
@@ -265,7 +265,7 @@ export default function ReportSkeleton() {
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               padding: '32px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <div style={{ marginBottom: '24px' }}>

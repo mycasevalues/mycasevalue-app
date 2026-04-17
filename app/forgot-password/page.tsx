@@ -71,11 +71,11 @@ export default function ForgotPasswordPage() {
           box-shadow: 0 0 0 3px rgba(10, 80, 162, 0.1) !important;
         }
         .auth-btn:hover:not(:disabled) {
-          background-color: #B91C1C !important;
+          background-color: var(--data-negative) !important;
           transform: translateY(-1px);
         }
         .auth-link:hover {
-          color: #004d6d !important;
+          color: var(--link) !important;
         }
       `}</style>
       <div
@@ -86,7 +86,7 @@ export default function ForgotPasswordPage() {
           backgroundColor: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
           borderRadius: '4px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+          boxShadow: 'var(--shadow-sm)',
           padding: '32px',
         }}
       >

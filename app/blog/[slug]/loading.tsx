@@ -17,7 +17,7 @@ export default function BlogPostLoading() {
           border: '1px solid var(--border-default)',
           borderRadius: '4px',
           padding: '32px',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
+          boxShadow: 'var(--shadow-xs)'
         }}>
           {/* Paragraph skeletons */}
           {[1, 2, 3, 4, 5].map(i => (

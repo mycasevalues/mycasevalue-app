@@ -109,7 +109,7 @@ export default function SettingsPage() {
                   >
                     John Federal Analyst
                   </div>
-                  <p className="text-xs mt-2" style={{ color: '#6C757D' }}>
+                  <p className="text-xs mt-2" style={{ color: 'var(--text-tertiary)' }}>
                     Display only. Contact support to change.
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export default function SettingsPage() {
                   >
                     john@casecheck.legal
                   </div>
-                  <p className="text-xs mt-2" style={{ color: '#6C757D' }}>
+                  <p className="text-xs mt-2" style={{ color: 'var(--text-tertiary)' }}>
                     Primary account email
                   </p>
                 </div>

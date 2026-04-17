@@ -127,7 +127,7 @@ export default function CaseTimelineGenerator() {
     backgroundColor: input.caseType && input.filingDate ? 'var(--accent-primary)' : 'var(--border-default)',
     color: 'var(--color-surface-0)',
     border: 'none',
-    borderRadius: '20px',
+    borderRadius: '2px',
     fontSize: '15px',
     fontWeight: 600,
     fontFamily: 'var(--font-ui)',
@@ -171,7 +171,7 @@ export default function CaseTimelineGenerator() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: timeline ? '350px 1fr' : '1fr', gap: '40px', alignItems: 'start' }}>
           {/* Input Section */}
-          <div className="no-print" style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', height: 'fit-content' }}>
+          <div className="no-print" style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', height: 'fit-content' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Case Information
             </h2>
@@ -244,7 +244,7 @@ export default function CaseTimelineGenerator() {
           {timeline && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
               {/* SVG Timeline */}
-              <div ref={containerRef} style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '40px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div ref={containerRef} style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '40px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
                 <svg
                   ref={svgRef}
                   width="100%"
@@ -292,7 +292,7 @@ export default function CaseTimelineGenerator() {
               </div>
 
               {/* Milestones List */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
                 <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
                   Timeline Milestones
                 </h2>
@@ -341,7 +341,7 @@ export default function CaseTimelineGenerator() {
                     backgroundColor: 'var(--accent-primary-hover)',
                     color: 'var(--color-surface-0)',
                     border: 'none',
-                    borderRadius: '20px',
+                    borderRadius: '2px',
                     fontSize: '15px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-ui)',

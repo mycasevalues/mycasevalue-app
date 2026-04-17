@@ -147,7 +147,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
       <style>{`
         .je-input:focus { border-color: var(--link-hover, #083D7A) !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
         .je-select:focus { border-color: var(--link-hover, #083D7A) !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
-        .je-card:hover { border-color: var(--link-hover, #083D7A) !important; box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; }
+        .je-card:hover { border-color: var(--link-hover, #083D7A) !important; box-shadow: var(--shadow-sm) !important; }
         .je-th { cursor: pointer; user-select: none; white-space: nowrap; }
         .je-th:hover { color: var(--link-hover, #083D7A) !important; }
         .je-tr:hover { background: var(--color-surface-1) !important; }
@@ -335,7 +335,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                       <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(10, 102, 194, 0.08)', color: 'var(--accent-primary)', textTransform: 'uppercase' }}>Chief</span>
                     )}
                     {judge.seniorStatus && (
-                      <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(184,110,0,0.08)', color: '#B86E00', textTransform: 'uppercase' }}>Senior</span>
+                      <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(184,110,0,0.08)', color: 'var(--wrn-txt)', textTransform: 'uppercase' }}>Senior</span>
                     )}
                   </div>
                 </div>
@@ -396,7 +396,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                 <th className="je-th" onClick={() => toggleSort('name')} style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Judge<SortArrow field="name" />
                 </th>
-                <th style={{ textAlign: 'left', padding: '12px 8px', color: '#C7D1D8', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <th style={{ textAlign: 'left', padding: '12px 8px', color: 'var(--text-tertiary)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   District
                 </th>
                 <th className="je-th" onClick={() => toggleSort('winRate')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -421,14 +421,14 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
             </thead>
             <tbody>
               {paginated.map((judge, i) => (
-                <tr key={judge.slug} className="je-tr" style={{ borderBottom: '1px solid #F0F0F0', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#FAFAFA' }}>
+                <tr key={judge.slug} className="je-tr" style={{ borderBottom: '1px solid var(--bdr)', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#FAFAFA' }}>
                   <td style={{ padding: '8px 16px' }}>
                     <Link href={`/judges/${judge.slug}`} style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none', fontWeight: 600 }}>
                       {judge.name}
                     </Link>
                     <div style={{ display: 'flex', gap: 4, marginTop: 2 }}>
                       {judge.chiefJudge && <span style={{ fontSize: 9, fontWeight: 600, color: 'var(--accent-primary)' }}>CHIEF</span>}
-                      {judge.seniorStatus && <span style={{ fontSize: 9, fontWeight: 600, color: '#B86E00' }}>SENIOR</span>}
+                      {judge.seniorStatus && <span style={{ fontSize: 9, fontWeight: 600, color: 'var(--wrn-txt)' }}>SENIOR</span>}
                     </div>
                   </td>
                   <td style={{ padding: '8px 8px', color: 'var(--color-text-secondary)', fontSize: 12 }}>{judge.district}</td>

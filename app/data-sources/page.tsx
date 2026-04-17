@@ -159,7 +159,7 @@ export default function DataSourcesPage() {
               Data Foundation
             </div>
             <h1 style={{
-              fontSize: 'clamp(28px, 4vw, 36px)',
+              fontSize: '28px',
               fontWeight: 700,
               color: 'var(--card)',
               fontFamily: 'var(--font-legal)',
@@ -209,7 +209,7 @@ export default function DataSourcesPage() {
                   borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                   textAlign: 'center',
                 }}>
                   <p style={{
@@ -256,7 +256,7 @@ export default function DataSourcesPage() {
                   borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                 }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 24, marginBottom: 20 }}>
                     <div>
@@ -422,7 +422,7 @@ export default function DataSourcesPage() {
                   borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                 }}>
                   <h3 style={{
                     fontSize: 16,
@@ -470,7 +470,7 @@ export default function DataSourcesPage() {
                 borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}>
                 <h3 style={{
                   fontSize: 18,
@@ -521,7 +521,7 @@ export default function DataSourcesPage() {
                 borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}>
                 <h3 style={{
                   fontSize: 18,
@@ -585,7 +585,7 @@ export default function DataSourcesPage() {
               borderRadius: '4px',
               border: '1px solid var(--border-default)',
               background: 'var(--color-surface-0)',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}>
               <p style={{
                 fontSize: 16,
@@ -694,7 +694,7 @@ export default function DataSourcesPage() {
                   borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                 }}>
                   <div style={{
                     width: 32,

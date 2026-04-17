@@ -29,8 +29,8 @@ interface HorizontalBarChartProps {
 function ConfidenceLegend() {
   const tiers = [
     { color: 'var(--link, #0A50A2)', label: 'High confidence' },
-    { color: '#3B78C4', label: 'Medium' },
-    { color: '#87AEDD', label: 'Limited' },
+    { color: 'var(--link)', label: 'Medium' },
+    { color: 'var(--ab-border)', label: 'Limited' },
   ];
 
   return (
@@ -128,7 +128,7 @@ function BarRow({
         style={{
           flex: 1,
           height: 13,
-          background: '#EDEAE4',
+          background: 'var(--tbl-hdr)',
           borderRadius: 1,
           overflow: 'hidden',
         }}

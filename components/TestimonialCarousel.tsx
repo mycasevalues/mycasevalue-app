@@ -206,7 +206,7 @@ export default function TestimonialCarousel() {
                 padding: '32px',
                 width: '100%',
                 animation: 'fadeIn 300ms ease-in-out',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}
             >
               {/* Stars */}

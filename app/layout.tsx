@@ -24,12 +24,13 @@ const RouteLoadingBar = dynamic(() => import('../components/ui/RouteLoadingBar')
 const CookieConsent = dynamic(() => import('../components/ui/CookieConsent'), { ssr: false });
 const GlobalCommandPalette = dynamic(() => import('../components/ui/GlobalCommandPalette'), { ssr: false });
 const KeyboardShortcutsHelp = dynamic(() => import('../components/ui/KeyboardShortcutsHelp'), { ssr: false });
+const KeyboardShortcuts = dynamic(() => import('../components/KeyboardShortcuts'), { ssr: false });
 const BackToTop = dynamic(() => import('../components/BackToTop'), { ssr: false });
 const WebVitalsReporter = dynamic(() => import('../components/analytics/WebVitalsReporter'), { ssr: false });
 const DemoMode = dynamic(() => import('../components/DemoMode'), { ssr: false });
 const LanguageDetectBanner = dynamic(() => import('../components/LanguageDetectBanner'), { ssr: false });
 const AIChatAssistant = dynamic(() => import('../components/AIChatAssistant').then(mod => ({ default: mod.AIChatAssistant })), { ssr: false });
-const ToastContainer = dynamic(() => import('../components/ui/Toast'), { ssr: false });
+const ToastProvider = dynamic(() => import('../components/ui/Toast').then(mod => ({ default: mod.ToastProvider })), { ssr: false });
 
 export const metadata: Metadata = {
   title: {
@@ -159,6 +160,32 @@ const jsonLd = {
       },
     },
     {
+      '@type': 'LegalService',
+      name: 'MyCaseValues',
+      url: SITE_URL,
+      description: 'Federal court intelligence platform providing case outcome data, settlement ranges, judge analytics, and litigation research tools built from 5.1M+ public federal court records.',
+      serviceType: 'Legal Research & Court Data Analytics',
+      areaServed: {
+        '@type': 'Country',
+        name: 'United States',
+      },
+      provider: {
+        '@type': 'Organization',
+        name: 'MyCaseValue LLC',
+        url: SITE_URL,
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Court Intelligence Services',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Case Outcome Reports' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Judge Analytics' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Settlement Calculator' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Attorney Tools' } },
+        ],
+      },
+    },
+    {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
@@ -249,6 +276,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${inter.variable} ${jakarta.variable} ${plexMono.variable} ${baskerville.variable} ${sourceSans.variable}`}>
       <head>
+        {/* Theme: prevent FOUC by reading localStorage before first paint */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){try{var t=localStorage.getItem('mcv-theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}})();
+        ` }} />
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
         {/* Fonts: self-hosted via next/font (see layout imports) — no CDN, GDPR compliant */}
@@ -304,21 +335,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-ui" style={{ background: 'var(--card)', color: 'var(--text-primary)', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />
         <a href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#1B2D45] focus:text-white focus:rounded focus:shadow-lg">
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[var(--chrome-bg)] focus:text-white focus:rounded focus:shadow-lg">
           Skip to main content
         </a>
         <ReferralCapture />
         <ErrorBoundary>
           <AnalyticsProvider>
-            <LanguageDetectBanner />
-            <ConditionalHeader><Header /></ConditionalHeader>
-            <ConditionalHeader><BrowseNav /></ConditionalHeader>
-            <WorkspaceShell>
-              <main id="main-content">
-                {children}
-              </main>
-            </WorkspaceShell>
-            <ConditionalFooter><Footer /></ConditionalFooter>
+            <ToastProvider>
+              <LanguageDetectBanner />
+              <ConditionalHeader><Header /></ConditionalHeader>
+              <ConditionalHeader><BrowseNav /></ConditionalHeader>
+              <WorkspaceShell>
+                <main id="main-content">
+                  {children}
+                </main>
+              </WorkspaceShell>
+              <ConditionalFooter><Footer /></ConditionalFooter>
+            </ToastProvider>
           </AnalyticsProvider>
         </ErrorBoundary>
         <BackToTop />
@@ -326,9 +359,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <WebVitalsReporter />
         <GlobalCommandPalette />
         <KeyboardShortcutsHelp />
+        <KeyboardShortcuts />
         <DemoMode />
         <AIChatAssistant />
-        <ToastContainer />
         <Analytics />
         <SpeedInsights />
         <script dangerouslySetInnerHTML={{ __html: `

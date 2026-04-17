@@ -456,7 +456,7 @@ async function CategoryPage({
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4px' }}>
             <h1 style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: 'clamp(24px, 3.5vw, 30px)',
+              fontSize: '20px',
               fontWeight: 700,
               letterSpacing: '-0.025em',
               lineHeight: 1.1,
@@ -753,12 +753,12 @@ async function CategoryPage({
       }}>
         <style>{`
           .case-type-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: var(--shadow-md);
             border-color: var(--accent-primary);
             transform: translateY(-2px);
           }
           .cta-btn-category:hover {
-            background: #B91C1C;
+            background: var(--data-negative);
             box-shadow: none;
             transform: translateY(-2px);
           }

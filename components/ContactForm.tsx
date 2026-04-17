@@ -40,7 +40,7 @@ export default function ContactForm() {
       <div style={{
         padding: '48px 32px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
         borderRadius: '4px', textAlign: 'center',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+        boxShadow: 'var(--shadow-xs)',
       }}>
         <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
@@ -80,20 +80,20 @@ export default function ContactForm() {
         .contact-submit {
           display: block; padding: 0 32px; height: 48px;
           background: var(--accent-primary); color: var(--color-surface-0); border: none;
-          border-radius: 12px; font-size: 15px; font-weight: 600;
+          border-radius: 2px; font-size: 15px; font-weight: 600;
           cursor: pointer; transition: background 200ms;
           font-family: var(--font-ui); width: 100%;
         }
-        .contact-submit:hover:not(:disabled) { background: #0855a3; }
+        .contact-submit:hover:not(:disabled) { background: var(--link-hover); }
         .contact-submit:disabled { opacity: 0.6; cursor: not-allowed; }
         .error-message {
-          background: #fee2e2; color: #991b1b; padding: 12px; border-radius: 8px;
+          background: var(--data-negative-bg); color: var(--data-negative); padding: 12px; border-radius: 4px;
           font-size: 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
         }
       `}</style>
       <form onSubmit={handleSubmit} style={{
         padding: '32px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
-        borderRadius: '4px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+        borderRadius: '4px', boxShadow: 'var(--shadow-xs)',
         display: 'flex', flexDirection: 'column', gap: '24px',
       }}>
         <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '4px' }}>

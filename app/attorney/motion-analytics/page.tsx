@@ -97,7 +97,7 @@ export default function MotionAnalyticsPage() {
         {`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        @media (max-width: 640px) { h1 { font-size: 20px; } }
         `}
       </style>
 
@@ -131,7 +131,7 @@ export default function MotionAnalyticsPage() {
               <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
                 Win More Motions with Circuit-Specific Data
               </h1>
-              <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text-tertiary)', margin: '4px 0 0 0' }}>
                 Analyze federal motion grant rates by case type
               </p>
             </div>
@@ -144,7 +144,7 @@ export default function MotionAnalyticsPage() {
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
         {/* Controls */}
-        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: 'var(--shadow-xs)' }}>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'flex-end' }}>
             <div style={{ flex: '1 1 300px' }}>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
@@ -241,7 +241,7 @@ export default function MotionAnalyticsPage() {
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',
                     padding: '24px',
-                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                    boxShadow: 'var(--shadow-xs)',
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '16px' }}>
@@ -413,7 +413,7 @@ export default function MotionAnalyticsPage() {
 
         {/* Empty state */}
         {!selectedNos && !loading && (
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="2" />

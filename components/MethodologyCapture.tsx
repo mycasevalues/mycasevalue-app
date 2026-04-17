@@ -465,7 +465,7 @@ export default function MethodologyCapture() {
           width: 100%;
           padding: 12px 16px;
           border: 1px solid var(--border-default);
-          border-radius: 8px;
+          border-radius: 4px;
           font-size: 14px;
           font-family: var(--font-ui);
           transition: all 0.2s ease;
@@ -477,7 +477,7 @@ export default function MethodologyCapture() {
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
         }
         .form-input.error {
-          border-color: #DC2626;
+          border-color: var(--data-negative);
         }
         .form-button {
           width: 100%;
@@ -485,7 +485,7 @@ export default function MethodologyCapture() {
           background-color: var(--accent-primary);
           color: white;
           border: none;
-          border-radius: 8px;
+          border-radius: 4px;
           font-size: 15px;
           font-weight: 600;
           font-family: var(--font-ui);
@@ -501,7 +501,7 @@ export default function MethodologyCapture() {
           cursor: not-allowed;
         }
         .error-message {
-          color: #DC2626;
+          color: var(--data-negative);
           font-size: 13px;
           margin-top: 6px;
           font-family: var(--font-ui);
@@ -509,21 +509,21 @@ export default function MethodologyCapture() {
         .success-message {
           padding: 16px;
           background-color: rgba(34, 197, 94, 0.1);
-          border-left: 4px solid #22C55E;
+          border-left: 4px solid var(--data-positive);
           border-radius: 4px;
           margin-bottom: 24px;
           font-size: 14px;
-          color: #166534;
+          color: var(--data-positive);
           font-family: var(--font-ui);
         }
         .error-message-box {
           padding: 16px;
           background-color: rgba(220, 38, 38, 0.1);
-          border-left: 4px solid #DC2626;
+          border-left: 4px solid var(--data-negative);
           border-radius: 4px;
           margin-bottom: 24px;
           font-size: 14px;
-          color: #991B1B;
+          color: var(--data-negative);
           font-family: var(--font-ui);
         }
       `}</style>

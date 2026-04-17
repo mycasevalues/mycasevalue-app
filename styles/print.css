@@ -2,13 +2,32 @@
  * Print Stylesheet — MyCaseValue
  * Optimized for PDF export and physical printing
  * - Clean black/white layout
- * - Hides interactive elements (nav, footer, buttons)
+ * - Hides interactive elements (nav, footer, buttons, chat, toasts)
  * - Shows essential content (metrics, tables, disclaimer)
  * - Smart page breaks between major sections
+ * - Attorney tool-specific formatting (demand letters, memos, timelines, judges)
+ * - Data visualization fallbacks
  */
 
+/* ================================================================
+   @page rules — margins, headers, footers
+   ================================================================ */
+@page {
+  size: letter;
+  margin: 0.75in 0.75in 1in 0.75in;
+}
+
+@page :first {
+  margin-top: 0.5in;
+}
+
 @media print {
-  /* Hide navigation and interactive elements */
+
+  /* ==============================================================
+     1. GENERAL PRINT CLEANUP
+     ============================================================== */
+
+  /* ----- Hide non-content elements ----- */
   nav,
   header,
   footer,
@@ -18,246 +37,229 @@
   [class*='CookieConsent'],
   .skip-link,
   .breadcrumbs,
-  button:not(.no-print),
-  a[href]:after,
+  button:not(.print-keep),
   [role='navigation'],
   [aria-label*='navigation' i],
   [aria-label*='menu' i],
   .print-hide,
-  .no-print {
+  .no-print,
+  /* Chat assistant */
+  [class*='AIChatAssistant'],
+  [class*='chat-assistant'],
+  [class*='ChatWidget'],
+  [class*='chat-widget'],
+  [class*='ChatFloat'],
+  /* Toast / notification system */
+  .mcv-toast-container,
+  .mcv-toast,
+  [class*='NotificationToast'],
+  [class*='toast-container'],
+  [role='alert']:not(.print-keep),
+  /* Theme toggle */
+  [class*='ThemeToggle'],
+  [class*='theme-toggle'],
+  [class*='dark-mode-toggle'],
+  [class*='color-scheme'],
+  /* Auth gate overlays */
+  [class*='AuthGate'],
+  [class*='auth-gate'],
+  [class*='auth-overlay'],
+  [class*='save-modal-overlay'],
+  [class*='modal-overlay'],
+  /* Sidebar navigation */
+  .sidebar-nav-item,
+  [class*='sidebar-nav'],
+  .search-sidebar,
+  aside[class*='sidebar'],
+  /* Miscellaneous interactive */
+  [class*='ExportDropdown'],
+  [class*='ShareReport'],
+  [class*='SaveButton'],
+  [class*='SaveToTeam'],
+  [class*='Tooltip'],
+  [role='tooltip'],
+  .scroll-to-top,
+  [class*='BackToTop'],
+  [class*='FloatingAction'] {
     display: none !important;
   }
 
-  /* Page setup */
+  /* ----- Force black text on white background ----- */
   html,
   body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: auto;
-    background: #FFFFFF;
+    background: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   body {
-    font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      sans-serif;
+    font-family: 'Georgia', 'Times New Roman', 'Palatino Linotype', serif;
     font-size: 11pt;
-    line-height: 1.5;
-    color: #0f0f0f;
+    line-height: 1.6;
+    color: #000000;
   }
 
-  /* Page breaks between major sections */
+  /* Remove backgrounds globally (save ink) */
+  *:not(th):not(.print-keep-bg) {
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Remove box shadows, border-radius, text shadows */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Force all text to black */
+  p, span, div, li, td, dd, dt, label, figcaption {
+    color: #000000 !important;
+  }
+
+  /* Muted text stays a readable dark gray */
+  [class*='text-muted'],
+  [class*='text-secondary'],
+  .text-gray-500,
+  .text-gray-400 {
+    color: #4a4a4a !important;
+  }
+
+  /* ----- Show URLs after links ----- */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    color: #555555;
+    font-size: 9pt;
+    font-style: italic;
+    word-break: break-all;
+  }
+
+  /* Exclude internal / anchor / JS links from URL display */
+  a[href='#']::after,
+  a[href^='#']::after,
+  a[href^='javascript']::after,
+  a[href^='mailto']::after,
+  a[class*='no-print']::after,
+  nav a::after,
+  button a::after,
+  .print-no-url a::after,
+  a[class*='nav']::after {
+    content: '' !important;
+  }
+
+  /* ----- Page breaks ----- */
+  /* Break before major sections */
   main > section,
   main > [role='region'],
-  main > div[style*='padding'],
   .page-break-before {
     page-break-before: always;
+    break-before: page;
   }
 
   main > section:first-child,
-  main > [role='region']:first-child,
-  main > div[style*='padding']:first-child {
+  main > [role='region']:first-child {
     page-break-before: avoid;
+    break-before: avoid;
   }
 
   .page-break-after {
     page-break-after: always;
+    break-after: page;
   }
 
-  /* Keep elements together */
+  /* Avoid breaking inside cards, tables, result sections */
   table,
   .metric-card,
   [class*='Card'],
-  [class*='Block'] {
+  [class*='Block'],
+  [class*='result-section'],
+  [class*='ResultSection'],
+  figure,
+  blockquote,
+  .comparison-bar,
+  [class*='disclaimer'],
+  [class*='Disclaimer'],
+  .footnote,
+  .legal-notice,
+  [role='note'] {
     page-break-inside: avoid;
+    break-inside: avoid;
   }
 
-  /* Typography */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-heading), -apple-system, BlinkMacSystemFont,
-      'Segoe UI', sans-serif;
-    color: #0f0f0f;
+  /* ----- Typography: print-friendly serif fonts ----- */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #000000 !important;
     page-break-after: avoid;
+    break-after: avoid;
     page-break-inside: avoid;
-    margin: 12pt 0 6pt 0;
+    break-inside: avoid;
+    margin: 14pt 0 6pt 0;
   }
 
   h1 {
-    font-size: 24pt;
-    margin: 0 0 12pt 0;
-    border-bottom: 2px solid #0f0f0f;
+    font-size: 22pt;
+    margin: 0 0 10pt 0;
+    border-bottom: 2pt solid #000000;
     padding-bottom: 6pt;
   }
 
   h2 {
     font-size: 16pt;
-    margin-top: 12pt;
+    margin-top: 14pt;
+    border-bottom: 1pt solid #cccccc;
+    padding-bottom: 4pt;
   }
 
   h3 {
     font-size: 13pt;
   }
 
+  h4 {
+    font-size: 11pt;
+    font-weight: 700;
+  }
+
   p {
     margin: 6pt 0;
+    orphans: 3;
+    widows: 3;
   }
 
-  /* Links: show URL in parentheses */
-  a[href]:after {
-    content: ' (' attr(href) ')';
-    color: #6B7280;
-    font-size: 9pt;
+  h1, h2, h3, h4, h5, h6, p {
+    orphans: 3;
+    widows: 3;
   }
 
-  /* Exclude certain links from URL display */
-  a[href='#']:after,
-  a[href^='#']:after,
-  a[class*='no-print']:after,
-  button a:after {
-    content: '';
-  }
-
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 12pt 0;
-  }
-
-  thead {
-    display: table-header-group; /* Repeat header on each page */
-  }
-
-  tfoot {
-    display: table-footer-group;
-  }
-
-  tr {
-    page-break-inside: avoid;
-  }
-
-  th {
-    background-color: #F3F4F6 !important;
-    color: #0f0f0f !important;
-    border: 1px solid #D1D5DB !important;
-    padding: 6pt 8pt !important;
-    text-align: left;
-    font-weight: 600;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  td {
-    border: 1px solid #D1D5DB !important;
-    padding: 6pt 8pt !important;
-    color: #0f0f0f !important;
-  }
-
-  /* Striped rows */
-  tbody tr:nth-child(odd) {
-    background-color: #F9FAFB !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  /* Metric cards / status badges */
-  [style*='background: #C4882A'],
-  [style*='backgroundColor: #C4882A'],
-  [style*='background: rgba(34,197,94,0.1)'],
-  [style*='backgroundColor: rgba(34,197,94,0.1)'],
-  [style*='background: #EDF3FB'],
-  [style*='backgroundColor: #EDF3FB'],
-  [style*='background: #FDF4EC'],
-  [style*='backgroundColor: #FDF4EC'],
-  .badge,
-  .status-badge,
-  [class*='Badge'] {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    color: inherit !important;
-  }
-
-  /* Remove backgrounds from interactive elements */
-  .interactive,
-  [role='button'],
-  [role='tab'],
-  [role='menuitem'],
-  input,
-  textarea,
-  select {
-    background-color: #FFFFFF !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  /* Show form labels and values without inputs */
-  input[type='text'],
-  input[type='email'],
-  input[type='search'],
-  textarea,
-  select {
-    border: 1px solid #0f0f0f !important;
-    padding: 4pt 6pt !important;
-    font-size: 10pt !important;
-  }
-
-  input[type='checkbox'],
-  input[type='radio'] {
-    margin-right: 4pt;
-  }
-
-  /* Disclaimer / legal text */
-  [class*='disclaimer'],
-  [class*='Disclaimer'],
-  .footnote,
-  .legal-notice,
-  [role='note'] {
-    font-size: 9pt;
-    color: #6B7280;
-    margin-top: 12pt;
-    padding-top: 12pt;
-    border-top: 1px solid #D1D5DB;
-    page-break-inside: avoid;
-  }
-
-  /* Settlement range visualization */
-  [class*='range'],
-  [class*='Range'],
-  [class*='settlement'],
-  [class*='Settlement'] {
-    page-break-inside: avoid;
-  }
-
-  /* Top districts section */
-  [class*='TopDistrict'],
-  [class*='district-list'],
-  [class*='districts-table'] {
-    page-break-inside: avoid;
-  }
-
-  /* Margins and spacing */
+  /* ----- Margins and spacing ----- */
   main,
   article,
   .container {
-    margin: 0;
-    padding: 0.5in;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
-  /* Print-specific spacing */
   section,
   [role='region'],
   .section {
     margin-bottom: 12pt;
   }
 
-  /* Lists */
-  ul,
-  ol {
+  /* ----- Links ----- */
+  a {
+    color: #000000 !important;
+    text-decoration: underline;
+  }
+
+  /* ----- Lists ----- */
+  ul, ol {
     margin: 6pt 0;
     padding-left: 20pt;
   }
@@ -266,85 +268,582 @@
     margin: 3pt 0;
   }
 
-  /* Blockquotes */
+  /* ----- Blockquotes ----- */
   blockquote {
-    border-left: 2pt solid #D1D5DB;
-    margin-left: 0;
-    padding-left: 12pt;
-    color: #6B7280;
+    border-left: 2pt solid #666666;
+    margin: 8pt 0 8pt 0;
+    padding: 4pt 0 4pt 12pt;
+    color: #333333 !important;
+    font-style: italic;
   }
 
-  /* Images */
+  /* ----- Images ----- */
   img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100% !important;
+    height: auto !important;
     page-break-inside: avoid;
+    break-inside: avoid;
   }
 
-  /* Code blocks */
-  code,
-  pre {
-    font-family: var(--font-mono), 'Courier New', monospace;
-    font-size: 10pt;
-    background-color: #F3F4F6 !important;
-    color: #0f0f0f !important;
+  /* ----- Code blocks ----- */
+  code, pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 9pt;
+    background-color: #f5f5f5 !important;
+    color: #000000 !important;
     padding: 4pt 6pt;
-    border-radius: 2px;
+    border: 1px solid #cccccc;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  /* Avoid orphans and widows */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    orphans: 3;
-    widows: 3;
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
-  /* Shadows and effects removed */
-  * {
-    box-shadow: none !important;
-    text-shadow: none !important;
+  /* ==============================================================
+     2. TABLE STYLES
+     ============================================================== */
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10pt 0;
+    font-size: 10pt;
   }
 
-  /* SVG optimization */
-  svg {
-    max-width: 100%;
-    height: auto;
+  thead {
+    display: table-header-group;
   }
 
-  /* Print footer with page numbers */
-  @page {
-    margin: 0.75in;
-    @bottom-center {
-      content: 'Page ' counter(page) ' of ' counter(pages);
-      font-size: 10pt;
-      color: #6B7280;
-    }
-    @bottom-right {
-      content: string(title);
-      font-size: 9pt;
-      color: #9CA3AF;
-    }
+  tfoot {
+    display: table-footer-group;
   }
 
-  /* Accessibility in print */
-  .sr-only,
-  [aria-hidden='false'] {
+  tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  th {
+    background-color: #e8e8e8 !important;
+    color: #000000 !important;
+    border: 1px solid #999999 !important;
+    padding: 5pt 6pt !important;
+    text-align: left;
+    font-weight: 700;
+    font-size: 9pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  td {
+    border: 1px solid #999999 !important;
+    padding: 5pt 6pt !important;
+    color: #000000 !important;
+  }
+
+  /* Subtle alternating rows */
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ==============================================================
+     3. ATTORNEY TOOL-SPECIFIC STYLES
+     ============================================================== */
+
+  /* ----- 3a. Demand Letters ----- */
+  [class*='demand-page'],
+  [class*='DemandLetter'],
+  [class*='demand-letter'] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .demand-page-header {
+    text-align: center;
+    margin-bottom: 24pt;
+    padding-bottom: 12pt;
+    border-bottom: 2pt solid #000000;
+  }
+
+  .demand-form-grid {
     display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* The generated letter output should be full-width and professional */
+  [class*='demand-letter-output'],
+  [class*='DemandLetterOutput'],
+  [class*='letter-preview'],
+  [class*='LetterPreview'] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.8;
+  }
+
+  /* Letterhead spacing */
+  [class*='letterhead'],
+  [class*='Letterhead'] {
+    text-align: left;
+    margin-bottom: 24pt;
+    padding-bottom: 12pt;
+    border-bottom: 1pt solid #000000;
+  }
+
+  /* Signature block */
+  [class*='signature'],
+  [class*='Signature'],
+  [class*='sign-block'] {
+    margin-top: 48pt;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  [class*='signature'] p,
+  [class*='Signature'] p {
+    margin: 2pt 0;
+    line-height: 1.4;
+  }
+
+  /* Demand letter form inputs: hide in print, show output */
+  [class*='demand-form'],
+  [class*='DemandForm'] {
+    display: none !important;
+  }
+
+  [class*='demand-output'],
+  [class*='DemandOutput'],
+  [class*='demand-result'],
+  [class*='DemandResult'] {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* ----- 3b. Research Memos ----- */
+  [class*='research-memo'],
+  [class*='ResearchMemo'],
+  [class*='memo-output'],
+  [class*='MemoOutput'] {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.7;
+  }
+
+  /* Memo headings: structured and prominent */
+  [class*='research-memo'] h1,
+  [class*='ResearchMemo'] h1 {
+    font-size: 18pt;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    border-bottom: 2pt solid #000000;
+    padding-bottom: 8pt;
+    margin-bottom: 16pt;
+  }
+
+  [class*='research-memo'] h2,
+  [class*='ResearchMemo'] h2 {
+    font-size: 14pt;
+    text-transform: uppercase;
+    margin-top: 18pt;
+    margin-bottom: 8pt;
+    border-bottom: 1pt solid #999999;
+    padding-bottom: 4pt;
+  }
+
+  [class*='research-memo'] h3,
+  [class*='ResearchMemo'] h3 {
+    font-size: 12pt;
+    font-style: italic;
+    margin-top: 12pt;
+  }
+
+  /* Citation formatting */
+  .citation,
+  [class*='citation'],
+  [class*='Citation'],
+  .font-mono {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 10pt;
+    font-style: italic;
+  }
+
+  /* Legal case references */
+  [class*='case-ref'],
+  [class*='CaseRef'],
+  [class*='case-cite'],
+  [class*='CaseCite'] {
+    font-style: italic;
+    text-decoration: underline;
+  }
+
+  /* Memo section labels ("ISSUE:", "RULE:", "ANALYSIS:", etc.) */
+  [class*='memo-label'],
+  [class*='MemoLabel'],
+  [class*='section-label'] {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10pt;
+    letter-spacing: 0.5pt;
+    margin-bottom: 4pt;
+    display: block;
+  }
+
+  /* ----- 3c. Case Comparison Tables ----- */
+  .comparison-table,
+  [class*='ComparisonTable'],
+  [class*='compare-text'],
+  [class*='CompareText'],
+  [class*='case-comparison'],
+  [class*='CaseComparison'] {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    width: 100% !important;
+  }
+
+  /* Shrink font for dense comparison tables */
+  .comparison-table td,
+  .comparison-table th,
+  [class*='ComparisonTable'] td,
+  [class*='ComparisonTable'] th,
+  [class*='case-comparison'] td,
+  [class*='case-comparison'] th {
+    font-size: 8pt !important;
+    padding: 4pt 5pt !important;
+    line-height: 1.3;
+  }
+
+  /* Comparison bars: print as text values */
+  .comparison-bar {
+    background: transparent !important;
+    border: 1px solid #999999 !important;
+  }
+
+  .comparison-fill {
+    background-color: #cccccc !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ----- 3d. Timeline Views ----- */
+  /* Linearize timelines into a vertical list */
+  .timeline-grid,
+  [class*='TimelineRange'],
+  [class*='timeline-range'],
+  [class*='CaseTimeline'],
+  [class*='case-timeline'] {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .timeline-item,
+  [class*='timeline-item'],
+  [class*='TimelineItem'],
+  [class*='timeline-event'],
+  [class*='TimelineEvent'] {
+    display: block !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 8pt;
+    padding: 6pt 0 6pt 16pt;
+    border-left: 2pt solid #666666;
+    position: relative;
+  }
+
+  /* Timeline markers: simple bullet in print */
+  .timeline-number,
+  [class*='timeline-dot'],
+  [class*='TimelineDot'],
+  [class*='timeline-marker'] {
+    display: inline-block;
+    font-weight: 700;
+    margin-right: 6pt;
+    min-width: 20pt;
+  }
+
+  /* Timeline connector lines: hide fancy SVG connectors */
+  [class*='timeline-connector'],
+  [class*='TimelineConnector'],
+  [class*='timeline-line'] {
+    display: none !important;
+  }
+
+  /* ----- 3e. Judge Profiles ----- */
+  [class*='judge-profile'],
+  [class*='JudgeProfile'],
+  [class*='judge-intelligence'],
+  [class*='JudgeIntelligence'] {
+    width: 100% !important;
+  }
+
+  /* Force single-column layout for judge pages */
+  .judge-toc,
+  [class*='judge-toc'] {
+    display: none !important;
+  }
+
+  .judge-right-rail,
+  [class*='judge-right-rail'],
+  [class*='judge-sidebar'] {
+    display: none !important;
+  }
+
+  [class*='judge-main'],
+  [class*='JudgeMain'],
+  [class*='judge-content'],
+  [class*='JudgeContent'] {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Judge stats: clean tabular layout */
+  [class*='judge-stats'],
+  [class*='JudgeStats'] {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  [class*='judge-stat-card'],
+  [class*='JudgeStatCard'] {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    margin: 4pt 1%;
+    padding: 6pt;
+    border: 1px solid #cccccc;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* ==============================================================
+     4. DATA VISUALIZATION HANDLING
+     ============================================================== */
+
+  /* Hide interactive charts and sparklines */
+  canvas,
+  [class*='Sparkline'],
+  [class*='sparkline'],
+  [class*='recharts'],
+  [class*='Recharts'],
+  [class*='chart-interactive'],
+  [class*='ChartInteractive'],
+  [class*='apexcharts'],
+  [class*='plotly'],
+  [class*='victory-'],
+  [class*='nivo-'],
+  [class*='visx-'] {
+    display: none !important;
+  }
+
+  /* Show fallback data tables */
+  .print-data-table,
+  [class*='print-data-table'],
+  [class*='chart-fallback-table'],
+  .print-show-table {
+    display: table !important;
+    width: 100% !important;
+  }
+
+  /* SVG charts that are kept: ensure high contrast */
+  svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  svg text {
+    fill: #000000 !important;
+  }
+
+  svg line,
+  svg path.domain {
+    stroke: #000000 !important;
+  }
+
+  svg rect[class*='bar'],
+  svg rect[class*='Bar'] {
+    fill: #666666 !important;
+    stroke: #333333 !important;
+  }
+
+  svg circle {
+    fill: #333333 !important;
+    stroke: #000000 !important;
+  }
+
+  /* Ensure SVG legends are visible */
+  svg [class*='legend'] text,
+  svg [class*='Legend'] text {
+    fill: #000000 !important;
+    font-size: 8pt;
+  }
+
+  /* TimelineRange SVG: allow it to print since it is informational */
+  [class*='TimelineRange'] svg,
+  [class*='timeline-range'] svg {
+    display: block !important;
+  }
+
+  [class*='TimelineRange'] svg text,
+  [class*='timeline-range'] svg text {
+    fill: #000000 !important;
+  }
+
+  /* ==============================================================
+     5. PAGE HEADERS / FOOTERS (CSS generated content)
+     ============================================================== */
+
+  /* "Printed on" date stamp at the top of the first page */
+  body::before {
+    content: "Printed from MyCaseValues.com";
+    display: block;
+    text-align: right;
+    font-size: 8pt;
+    color: #999999 !important;
+    margin-bottom: 6pt;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    border-bottom: 0.5pt solid #cccccc;
+    padding-bottom: 4pt;
+  }
+
+  /* Page footer via generated content on main */
+  body::after {
+    content: "MyCaseValues.com \2014  Confidential Attorney Work Product";
+    display: block;
+    text-align: center;
+    font-size: 8pt;
+    color: #999999 !important;
+    margin-top: 24pt;
+    padding-top: 8pt;
+    border-top: 0.5pt solid #cccccc;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* ==============================================================
+     6. FORM / INPUT HANDLING
+     ============================================================== */
+
+  input, textarea, select {
+    border: 1px solid #000000 !important;
+    padding: 3pt 5pt !important;
+    font-size: 10pt !important;
+    color: #000000 !important;
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    margin-right: 4pt;
+    border: none !important;
+  }
+
+  /* Hide search bars and filter controls in print */
+  [class*='search-bar'],
+  [class*='SearchBar'],
+  [class*='filter-controls'],
+  [class*='FilterControls'],
+  [class*='filter-toggle'],
+  [class*='FilterToggle'],
+  [role='search'] {
+    display: none !important;
+  }
+
+  /* ==============================================================
+     7. DISCLAIMER / LEGAL / FOOTNOTES
+     ============================================================== */
+
+  [class*='disclaimer'],
+  [class*='Disclaimer'],
+  .footnote,
+  .legal-notice,
+  [role='note'] {
+    font-size: 9pt;
+    color: #555555 !important;
+    margin-top: 12pt;
+    padding-top: 8pt;
+    border-top: 1pt solid #cccccc;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* ==============================================================
+     8. LAYOUT GRID OVERRIDES
+     ============================================================== */
+
+  /* Flatten multi-column grids to single column for print */
+  .secondary-sidebar-grid,
+  .folders-sidebar-grid,
+  .keycite-sidebar-grid,
+  [class*='sidebar-grid'] {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Attorney tool grids: full width single column */
+  [style*='gridTemplateColumns'] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Settlement ranges */
+  [class*='range'],
+  [class*='Range'],
+  [class*='settlement'],
+  [class*='Settlement'] {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* District tables */
+  [class*='TopDistrict'],
+  [class*='district-list'],
+  [class*='districts-table'] {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* ==============================================================
+     9. BADGES / STATUS INDICATORS
+     ============================================================== */
+
+  .badge,
+  .status-badge,
+  [class*='Badge'] {
+    border: 1px solid #666666 !important;
+    padding: 1pt 4pt !important;
+    font-size: 8pt;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ==============================================================
+     10. ACCESSIBILITY / UTILITY CLASSES
+     ============================================================== */
+
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
   }
 
   [aria-hidden='true'] {
     display: none !important;
   }
-}
 
-@media print {
+  /* Print utility classes */
   .print-show,
   .print-block {
     display: block !important;
@@ -354,7 +853,112 @@
     display: inline !important;
   }
 
-  .no-print {
-    display: none !important;
+  .print-flex {
+    display: flex !important;
+  }
+
+  .print-full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .print-keep {
+    display: block !important;
+  }
+
+  .print-no-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* ==============================================================
+     11. NOS EXPLORER / JUDGES EXPLORER TABLE FIXES
+     ============================================================== */
+
+  .nos-th,
+  .je-th {
+    background-color: #e0e0e0 !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* JudgesExplorer: fit to page */
+  [class*='JudgesExplorer'],
+  [class*='judges-explorer'] {
+    font-size: 9pt;
+  }
+
+  [class*='JudgesExplorer'] table,
+  [class*='judges-explorer'] table {
+    font-size: 8pt;
+  }
+
+  /* NOS Explorer: fit to page */
+  [class*='NosExplorer'],
+  [class*='nos-explorer'] {
+    font-size: 9pt;
+  }
+
+  [class*='NosExplorer'] table,
+  [class*='nos-explorer'] table {
+    font-size: 8pt;
+  }
+
+  /* ==============================================================
+     12. MOTION ANALYTICS / APPEALS / OTHER ATTORNEY TOOLS
+     ============================================================== */
+
+  [class*='motion-analytics'],
+  [class*='MotionAnalytics'] {
+    width: 100% !important;
+  }
+
+  [class*='motion-analytics'] h1,
+  [class*='MotionAnalytics'] h1 {
+    font-size: 18pt;
+  }
+
+  /* Appeals tool */
+  [class*='appeals'],
+  [class*='Appeals'] {
+    width: 100% !important;
+  }
+
+  /* Venue optimizer */
+  [class*='venue-optimizer'],
+  [class*='VenueOptimizer'] {
+    width: 100% !important;
+  }
+
+  /* Fee calculator results */
+  [class*='fee-calculator'],
+  [class*='FeeCalculator'] {
+    width: 100% !important;
+  }
+
+  [class*='fee-calculator'] table,
+  [class*='FeeCalculator'] table {
+    font-size: 9pt;
+  }
+
+  /* Deposition prep */
+  [class*='deposition'],
+  [class*='Deposition'] {
+    width: 100% !important;
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+
+  /* Discovery generator */
+  [class*='discovery'],
+  [class*='Discovery'] {
+    width: 100% !important;
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+
+  /* Expert witness */
+  [class*='expert-witness'],
+  [class*='ExpertWitness'] {
+    width: 100% !important;
   }
 }

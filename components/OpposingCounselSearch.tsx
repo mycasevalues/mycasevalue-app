@@ -248,7 +248,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
             <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>Win Rate</div>
           </div>
           <div style={{ textAlign: 'center' }}>
-            <div className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: '#1B7C7D' }}>
+            <div className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-positive)' }}>
               {attorney.settlementRate}%
             </div>
             <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>Settlement</div>
@@ -299,7 +299,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
             <div style={{ display: 'flex', gap: '8px' }}>
               {[
                 { label: 'Early', value: attorney.trialVsSettlement.earlySettlementRate, color: 'var(--data-positive, #176438)' },
-                { label: 'Standard', value: attorney.trialVsSettlement.settlementRate - attorney.trialVsSettlement.earlySettlementRate, color: '#B86E00' },
+                { label: 'Standard', value: attorney.trialVsSettlement.settlementRate - attorney.trialVsSettlement.earlySettlementRate, color: 'var(--wrn-txt)' },
                 { label: 'Late', value: 100 - attorney.trialVsSettlement.settlementRate, color: 'var(--accent-primary)' },
               ].map((s) => (
                 <div key={s.label} style={{ flex: 1, padding: '8px', borderRadius: '4px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
@@ -443,7 +443,7 @@ export default function OpposingCounselSearch() {
         input:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        @media (max-width: 640px) { h1 { font-size: 20px; } }
       `}</style>
 
       {/* Header */}
@@ -592,7 +592,7 @@ export default function OpposingCounselSearch() {
                 borderRadius: '4px',
               }}
             >
-              <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ fontSize: '11px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {result.disclaimer}
               </p>
             </div>
@@ -608,7 +608,7 @@ export default function OpposingCounselSearch() {
               borderRadius: '4px',
               padding: '40px 24px',
               textAlign: 'center',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <div

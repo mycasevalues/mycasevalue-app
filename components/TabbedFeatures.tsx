@@ -117,7 +117,7 @@ const TabbedFeatures: React.FC = () => {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: 0,
-              fontFamily: 'var(--font-legal, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
+              fontFamily: 'var(--font-legal)',
             }}
           >
             Powered by real federal court data
@@ -178,7 +178,7 @@ const TabbedFeatures: React.FC = () => {
                     fontWeight: 600,
                     color: activeTab === index ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                     margin: '0 0 8px 0',
-                    fontFamily: 'var(--font-legal, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
+                    fontFamily: 'var(--font-legal)',
                     transition: 'color 0.2s ease',
                   }}
                 >
@@ -191,7 +191,7 @@ const TabbedFeatures: React.FC = () => {
                       color: 'var(--color-text-secondary)',
                       margin: 0,
                       lineHeight: '1.5',
-                      fontFamily: 'var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
+                      fontFamily: 'var(--font-ui)',
                       animation: 'fadeInTab 0.3s ease-in',
                     }}
                   >
@@ -233,7 +233,7 @@ const TabbedFeatures: React.FC = () => {
                 padding: '40px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
                 animation: 'fadeInContent 0.4s ease-in 0.05s both',
-                fontFamily: 'var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               {currentFeature.preview}
@@ -277,7 +277,7 @@ const TabbedFeatures: React.FC = () => {
         }
 
         .tabbed-features-grid button:first-child {
-          border-radius: 12px 4px 0 0;
+          border-radius: 4px 4px 0 0;
         }
 
         .tabbed-features-grid button:last-child {
@@ -291,7 +291,7 @@ const TabbedFeatures: React.FC = () => {
           }
 
           .tabbed-features-grid button {
-            border-radius: 12px !important;
+            border-radius: 4px !important;
             margin-bottom: 8px;
           }
 

@@ -127,7 +127,7 @@ export default function FeeCalculatorPage() {
     borderRadius: '4px',
     padding: '24px',
     border: '1px solid var(--border-default)',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+    boxShadow: 'var(--shadow-xs)',
   };
 
   return (
@@ -160,7 +160,7 @@ export default function FeeCalculatorPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: feeData ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
-          <div style={{ ...cardStyle, boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ ...cardStyle, boxShadow: 'var(--shadow-xs)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Case Details
             </h2>
@@ -398,8 +398,8 @@ export default function FeeCalculatorPage() {
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                       <div style={{ padding: '12px', background: 'rgba(10,80,162,0.06)', borderRadius: '4px', border: '1px solid var(--link)' }}>
-                        <div style={{ fontSize: '11px', color: '#38bdf8', fontWeight: 600 }}>Junior Attorney</div>
-                        <div style={{ fontSize: '13px', color: '#38bdf8', marginTop: '4px' }}>
+                        <div style={{ fontSize: '11px', color: 'var(--link)', fontWeight: 600 }}>Junior Attorney</div>
+                        <div style={{ fontSize: '13px', color: 'var(--link)', marginTop: '4px' }}>
                           ${feeData.hourly.lowRate}/hr
                         </div>
                         <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--accent-primary)', marginTop: '6px' }}>
@@ -407,8 +407,8 @@ export default function FeeCalculatorPage() {
                         </div>
                       </div>
                       <div style={{ padding: '12px', background: 'rgba(10,80,162,0.06)', borderRadius: '4px', border: '1px solid var(--link)' }}>
-                        <div style={{ fontSize: '11px', color: '#38bdf8', fontWeight: 600 }}>Senior Attorney</div>
-                        <div style={{ fontSize: '13px', color: '#38bdf8', marginTop: '4px' }}>
+                        <div style={{ fontSize: '11px', color: 'var(--link)', fontWeight: 600 }}>Senior Attorney</div>
+                        <div style={{ fontSize: '13px', color: 'var(--link)', marginTop: '4px' }}>
                           ${feeData.hourly.highRate}/hr
                         </div>
                         <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--accent-primary)', marginTop: '6px' }}>
@@ -672,7 +672,7 @@ export default function FeeCalculatorPage() {
         {/* Navigation */}
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/intake-forms" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Intake Forms
               </p>
@@ -682,7 +682,7 @@ export default function FeeCalculatorPage() {
             </div>
           </Link>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Demand Letter
               </p>
@@ -692,7 +692,7 @@ export default function FeeCalculatorPage() {
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Case Predictor
               </p>

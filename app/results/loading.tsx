@@ -19,7 +19,7 @@ export default function ResultsLoading() {
             borderRadius: '4px',
             padding: '24px',
             marginBottom: '16px',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
+            boxShadow: 'var(--shadow-xs)'
           }}>
             {/* Title skeleton */}
             <div style={{ height: '20px', width: '70%', background: 'var(--border-default)', borderRadius: '4px', marginBottom: '12px' }} />

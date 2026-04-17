@@ -201,12 +201,12 @@ export default async function DistrictNOSPage({ params }: PageProps) {
   return (
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       <style>{`
-        a.lex-link { color: var(--accent-primary); text-decoration: none; font-weight: 500; }
-        a.lex-link:hover { text-decoration: underline; }
+        a.mcv-link { color: var(--accent-primary); text-decoration: none; font-weight: 500; }
+        a.mcv-link:hover { text-decoration: underline; }
         .metric-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 24px;
           display: flex;
           flex-direction: column;
@@ -248,11 +248,11 @@ export default async function DistrictNOSPage({ params }: PageProps) {
         fontFamily: 'var(--font-ui)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
-          <Link href="/" className="lex-link">Home</Link>
+          <Link href="/" className="mcv-link">Home</Link>
           <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>{'>'}  </span>
-          <Link href="/districts" className="lex-link">Districts</Link>
+          <Link href="/districts" className="mcv-link">Districts</Link>
           <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>{'>'}  </span>
-          <Link href={`/districts/${district}`} className="lex-link">{districtInfo.fullName}</Link>
+          <Link href={`/districts/${district}`} className="mcv-link">{districtInfo.fullName}</Link>
           <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>{'>'}  </span>
           <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>{nosInfo.label}</span>
         </div>
@@ -287,7 +287,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             color: 'var(--color-text-inverse)',
             fontFamily: 'var(--font-heading)',
             letterSpacing: '-1.5px',
-            fontSize: 'clamp(28px, 5vw, 48px)',
+            fontSize: '28px',
             lineHeight: 1.2,
             fontWeight: 700,
             margin: '0 0 8px',

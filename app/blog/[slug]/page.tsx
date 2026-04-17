@@ -412,7 +412,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
         .related-article-card:hover {
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          box-shadow: var(--shadow-md);
           border-color: var(--accent-primary);
         }
 
@@ -484,7 +484,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <h1 style={{
             color: 'var(--card)',
             fontFamily: 'var(--font-legal)',
-            fontSize: 'clamp(24px, 3.5vw, 32px)',
+            fontSize: '20px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.15,
@@ -532,7 +532,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                       style={{
                         padding: '8px 12px',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '20px',
+                        borderRadius: '2px',
                         fontSize: '12px',
                         color: 'var(--color-text-secondary)',
                         textDecoration: 'none',
@@ -600,7 +600,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   background: 'var(--accent-primary)',
                   color: 'var(--color-surface-0)',
                   padding: '8px 16px',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: '12px',
                   fontWeight: '600',
                   textDecoration: 'none',

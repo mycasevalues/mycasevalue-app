@@ -156,7 +156,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                     fontFamily: 'var(--font-ui)',
                     marginTop: 'auto',
                     paddingTop: 8,
-                    borderTop: '1px solid #e5e7eb',
+                    borderTop: '1px solid var(--bdr)',
                   }}
                 >
                   View Profile →

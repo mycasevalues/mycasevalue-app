@@ -57,7 +57,7 @@ export default function AppealsPage() {
 
   return (
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
-      <style>{`select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
+      <style>{`select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: var(--shadow-focus); }`}</style>
 
       <div style={{
         background: 'var(--card)',
@@ -86,7 +86,7 @@ export default function AppealsPage() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Appeals Analytics
           </div>
-          <h1 style={{ fontFamily: 'var(--font-ui)', fontSize: 'clamp(24px, 3.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Know Your Reversal Odds Before You File</h1>
+          <h1 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Know Your Reversal Odds Before You File</h1>
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
             Reversal probability and strategic insight — by case type, circuit, and trial outcome — derived from millions of federal appeals.
           </p>
@@ -192,7 +192,7 @@ export default function AppealsPage() {
               </div>
 
               {/* Data Source */}
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt)', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid var(--flag-yellow)', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt)', lineHeight: 1.6 }}>
                 <strong>Data Sources:</strong> Appeal rates derived from FJC Integrated Database and Administrative Office of the U.S. Courts annual reports. Reversal rates reflect circuit-level averages. Individual case outcomes depend on specific facts and legal issues. All outputs should be verified with current case law research.
               </div>
             </div>

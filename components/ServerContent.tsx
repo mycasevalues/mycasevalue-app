@@ -120,7 +120,7 @@ export default function ServerContent() {
                   display: 'flex',
                   gap: '24px',
                   alignItems: 'flex-start',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                 }}
               >
                 <div
@@ -286,7 +286,7 @@ export default function ServerContent() {
                   transition: 'all 0.2s ease',
                   cursor: 'pointer',
                   height: '100%',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
                     <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
@@ -361,7 +361,7 @@ export default function ServerContent() {
                     borderTop: '3px solid var(--accent-primary)',
                     borderRadius: '4px',
                     padding: '24px',
-                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                    boxShadow: 'var(--shadow-xs)',
                     transition: 'all 0.2s ease',
                   }}
                 >
@@ -1331,7 +1331,7 @@ export default function ServerContent() {
         }
 
         .cta-btn-primary:hover {
-          background: #B91C1C !important;
+          background: var(--data-negative) !important;
           box-shadow: none !important;
           transform: translateY(-2px) !important;
         }

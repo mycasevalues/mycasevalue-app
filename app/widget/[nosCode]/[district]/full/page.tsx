@@ -30,7 +30,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
       <div style={{
         width: '340px',
         height: '220px',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+        fontFamily: 'var(--font-ui)',
         fontSize: '12px',
         padding: '12px',
         boxSizing: 'border-box',
@@ -68,7 +68,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
     <div style={{
       width: '340px',
       height: '220px',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      fontFamily: 'var(--font-ui)',
       fontSize: '12px',
       padding: '16px',
       boxSizing: 'border-box',

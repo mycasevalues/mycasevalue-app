@@ -78,7 +78,7 @@ export default async function ChangelogPage() {
         .changelog-link-pill {
           display: inline-block;
           padding: 6px 12px;
-          border-radius: 16px;
+          border-radius: 4px;
           background-color: rgba(10,80,162,0.08);
           color: var(--link);
           text-decoration: none;
@@ -169,7 +169,7 @@ export default async function ChangelogPage() {
 
             <h1 style={{
               fontFamily: 'var(--font-legal)',
-              fontSize: 'clamp(28px, 4vw, 40px)',
+              fontSize: '28px',
               fontWeight: 700,
               color: 'var(--card)',
               letterSpacing: '-0.025em',

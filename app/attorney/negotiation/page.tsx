@@ -120,7 +120,7 @@ export default function NegotiationPage() {
   return (
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
-        select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
+        select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: var(--shadow-focus); }
         @media (max-width: 768px) {
           .negotiation-form-grid { grid-template-columns: 1fr !important; }
           .negotiation-range-grid { grid-template-columns: 1fr !important; }

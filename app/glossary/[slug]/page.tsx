@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE_URL } from '../../../lib/site-config';
 import { getAllTerms, getTermBySlug } from '../../../lib/glossary';
+import JsonLd from '../../../components/JsonLd';
 
 const styles = `
   .glossary-nos-link {
@@ -168,7 +169,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
             borderRadius: '4px',
             border: '1px solid var(--border-default)',
             padding: '32px',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            boxShadow: 'var(--shadow-xs)',
           }}
         >
           {/* Definition Section */}
@@ -238,7 +239,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                         display: 'inline-flex',
                         alignItems: 'center',
                         padding: '6px 12px',
-                        background: '#F0F2F5',
+                        background: 'var(--surf)',
                         border: '1px solid var(--border-default)',
                         borderRadius: '4px',
                         fontSize: '13px',
@@ -387,18 +388,60 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'DefinedTerm',
-            name: term.term,
-            description: term.definition,
-            definition: term.definition,
-            url: `${SITE_URL}/glossary/${term.slug}`,
-          }),
+      {/* JSON-LD: DefinedTerm + FAQPage + BreadcrumbList */}
+      <JsonLd
+        data={{
+          '@graph': [
+            {
+              '@type': 'DefinedTerm',
+              name: term.term,
+              description: term.definition,
+              definition: term.definition,
+              url: `${SITE_URL}/glossary/${term.slug}`,
+              inDefinedTermSet: {
+                '@type': 'DefinedTermSet',
+                name: 'MyCaseValue Legal Glossary',
+                url: `${SITE_URL}/glossary`,
+              },
+            },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+                { '@type': 'ListItem', position: 2, name: 'Glossary', item: `${SITE_URL}/glossary` },
+                { '@type': 'ListItem', position: 3, name: term.term, item: `${SITE_URL}/glossary/${term.slug}` },
+              ],
+            },
+            {
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: `What does "${term.term}" mean in legal terms?`,
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: term.definition,
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: `How does "${term.term}" apply in federal court?`,
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: term.federalContext,
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: `What does the data show about "${term.term}"?`,
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: term.dataContext,
+                  },
+                },
+              ],
+            },
+          ],
         }}
       />
     </div>

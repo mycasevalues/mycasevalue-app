@@ -53,7 +53,7 @@ export default function JudgeIntelligencePage() {
     select:focus, input:focus {
       outline: none;
       border-color: var(--accent-primary);
-      box-shadow: 0 0 0 2px rgba(232, 23, 31, 0.08);
+      box-shadow: var(--shadow-focus);
     }
   `;
 
@@ -119,7 +119,7 @@ export default function JudgeIntelligencePage() {
         {`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        @media (max-width: 640px) { h1 { font-size: 20px; } }
         `}
       </style>
       {/* Header */}
@@ -155,7 +155,7 @@ export default function JudgeIntelligencePage() {
           </div>
           <h1 className="font-legal" style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: 'clamp(24px, 3.5vw, 30px)',
+            fontSize: '20px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
@@ -253,7 +253,7 @@ export default function JudgeIntelligencePage() {
 
         {/* Empty state */}
         {!selectedState && !loading && (
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />

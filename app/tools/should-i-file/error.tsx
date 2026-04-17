@@ -21,7 +21,7 @@ export default function Error({
       alignItems: 'center',
       justifyContent: 'center',
       background: 'var(--surf, #F6F5F2)',
-      fontFamily: 'var(--font-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif)',
+      fontFamily: 'var(--font-ui)',
       padding: '24px',
       position: 'relative',
     }}>
@@ -42,7 +42,7 @@ export default function Error({
           border: '1px solid var(--bdr)',
           borderRadius: '4px',
           padding: '48px 32px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+          boxShadow: 'var(--shadow-sm)',
         }}>
           {/* Icon */}
           <div style={{

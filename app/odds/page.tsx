@@ -134,7 +134,7 @@ export default function OddsPage() {
           height: 48px;
           width: 100%;
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 0 36px 0 16px;
           font-family: var(--font-ui);
           font-size: 14px;
@@ -151,8 +151,8 @@ export default function OddsPage() {
         .odds-select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         .odds-btn {
           background: var(--gold);
-          color: #ffffff;
-          border-radius: 6px;
+          color: var(--chrome-text);
+          border-radius: 4px;
           border: 1px solid var(--gold);
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
           font-size: 13px;
@@ -168,11 +168,11 @@ export default function OddsPage() {
         .odds-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         .odds-link { color: var(--gold); text-decoration: none; transition: color 0.2s ease; }
-        .odds-link:hover { color: #004a6d; text-decoration: underline; }
+        .odds-link:hover { color: var(--link); text-decoration: underline; }
         .outcome-donut {
           width: 160px;
           height: 160px;
@@ -200,7 +200,7 @@ export default function OddsPage() {
           padding: '16px';
           background: 'var(--color-surface-1)';
           border: '1px solid var(--border-default)';
-          border-radius: 12px;
+          border-radius: 4px;
           text-decoration: none;
           transition: all 0.2s ease;
           height: 100%;
@@ -250,7 +250,7 @@ export default function OddsPage() {
           </div>
           <h1 className="odds-hero" style={{
             color: 'var(--color-surface-0)',
-            fontSize: 'clamp(26px, 4vw, 32px)',
+            fontSize: '28px',
             fontWeight: 700,
             margin: '0 0 10px',
             fontFamily: 'var(--font-ui)',
@@ -512,7 +512,7 @@ export default function OddsPage() {
 
                   {/* Detailed ends breakdown */}
                   {results.ends.length > 0 && (
-                    <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid #F0F3F5' }}>
+                    <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid var(--bdr)' }}>
                       <p style={{
                         fontSize: 11,
                         fontWeight: 600,
@@ -616,7 +616,7 @@ export default function OddsPage() {
                   <div style={{
                     marginTop: 24,
                     paddingTop: 16,
-                    borderTop: '1px solid #F0F3F5',
+                    borderTop: '1px solid var(--bdr)',
                   }}>
                     <p style={{
                       fontSize: 11,
@@ -875,7 +875,7 @@ export default function OddsPage() {
                     color: 'var(--color-text-secondary)',
                     margin: '16px 0 0',
                     paddingTop: 16,
-                    borderTop: '1px solid #F0F3F5',
+                    borderTop: '1px solid var(--bdr)',
                   }}>
                     {results.winRate > nationalAverageWinRate
                       ? `This case type has a ${(results.winRate - nationalAverageWinRate).toFixed(1)}% higher win rate than the federal court average.`
@@ -1049,7 +1049,7 @@ export default function OddsPage() {
                 padding: 'clamp(24px, 5vw, 40px)',
                 textAlign: 'center',
               }}>
-                <p style={{ fontSize: 14, color: '#b8bcc0', margin: '0 0 16px' }}>
+                <p style={{ fontSize: 14, color: 'var(--text-placeholder)', margin: '0 0 16px' }}>
                   Want the full picture? See circuit breakdowns, judge data, and more.
                 </p>
                 <Link

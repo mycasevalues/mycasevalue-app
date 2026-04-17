@@ -74,8 +74,8 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
         .live-ticker-strip {
           position: relative;
           overflow: hidden;
-          background: #222222;
-          border-bottom: 1px solid #333333;
+          background: var(--chrome-bg-dark);
+          border-bottom: 1px solid var(--chrome-border);
           height: 28px;
           display: flex;
           align-items: center;
@@ -105,21 +105,21 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
           align-items: center;
           gap: 6px;
           padding: 0 12px;
-          background: #222222;
-          border-right: 1px solid #333333;
+          background: var(--chrome-bg-dark);
+          border-right: 1px solid var(--chrome-border);
           font-family: var(--font-mono);
           font-size: 8px;
           font-weight: 600;
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: #15803D;
+          color: var(--data-positive);
           white-space: nowrap;
         }
         .live-ticker-dot {
           width: 6px;
           height: 6px;
           border-radius: 50%;
-          background: #15803D;
+          background: var(--data-positive);
         }
         .ticker-track {
           display: flex;

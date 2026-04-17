@@ -16,7 +16,7 @@
   height: 36px;
   padding: 0 16px;
   border: none;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
@@ -48,9 +48,9 @@
 
 /* Sizes — Westlaw tight rectangular */
 .mcv-btn--xs { height: 28px; padding: 0 10px; font-size: 12px; border-radius: 2px; }
-.mcv-btn--sm { height: 32px; padding: 0 12px; font-size: 13px; border-radius: 3px; }
-.mcv-btn--md { height: 36px; padding: 0 16px; font-size: 14px; border-radius: 3px; }
-.mcv-btn--lg { height: 44px; padding: 0 24px; font-size: 14px; border-radius: 3px; }
+.mcv-btn--sm { height: 32px; padding: 0 12px; font-size: 13px; border-radius: 2px; }
+.mcv-btn--md { height: 36px; padding: 0 16px; font-size: 14px; border-radius: 2px; }
+.mcv-btn--lg { height: 44px; padding: 0 24px; font-size: 14px; border-radius: 2px; }
 
 @media (pointer: coarse) {
   .mcv-btn--xs { min-height: 44px; }
@@ -108,10 +108,10 @@
 /* Danger */
 .mcv-btn--danger {
   background: var(--danger);
-  color: #FFFFFF;
+  color: var(--chrome-text);
 }
 .mcv-btn--danger:hover:not(:disabled) {
-  background: #990C13;
+  background: var(--data-negative);
 }
 
 /* Dark ghost — for use on dark backgrounds (nav, footer) */
@@ -143,7 +143,7 @@
 
 /* ── CARD — Westlaw Flat Card System ──────────────────────── */
 .mcv-card {
-  background: #FFFFFF;
+  background: var(--card);
   border-radius: 4px;
   padding: 20px;
   transition:
@@ -157,8 +157,8 @@
   box-shadow: none;
 }
 .mcv-card--default:hover {
-  border-color: #CCCCCC;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-color: var(--bdr-strong);
+  box-shadow: var(--shadow-xs);
 }
 
 /* Elevated card */
@@ -232,7 +232,7 @@
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
-  color: #444444;
+  color: var(--text-secondary);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: none;
@@ -271,7 +271,7 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
-  color: #444444;
+  color: var(--text-secondary);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -299,9 +299,9 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
   font-family: var(--font-body);
   font-size: 14px;
   color: var(--text1, #18181A);
-  background: #FFFFFF;
-  border: 1px solid #E0E0E0;
-  border-radius: 3px;
+  background: var(--card);
+  border: 1px solid var(--bdr);
+  border-radius: 2px;
   transition:
     border-color 150ms ease,
     box-shadow 150ms ease,
@@ -314,16 +314,16 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
 }
 
 .mcv-input::placeholder {
-  color: #888888;
+  color: var(--text-placeholder);
 }
 
 .mcv-input:hover {
-  border-color: #CCCCCC;
+  border-color: var(--bdr-strong);
 }
 
 .mcv-input:focus {
   border-color: var(--link, #0A50A2);
-  box-shadow: 0 0 0 3px rgba(0,82,204,0.25);
+  box-shadow: var(--shadow-focus);
 }
 
 .mcv-input:focus-visible {
@@ -355,7 +355,7 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
 
 .mcv-input__hint {
   font-size: 13px;
-  color: #888888;
+  color: var(--text-placeholder);
   margin: 0;
 }
 
@@ -391,21 +391,21 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
 }
 
 /* Badge variants — light mode */
-.mcv-badge--default  { background: #F5F5F5; color: #555555; transition: background-color 150ms ease; }
-.mcv-badge--default:hover { background-color: #E8E8E8; }
+.mcv-badge--default  { background: var(--surface-secondary); color: var(--text-tertiary); transition: background-color 150ms ease; }
+.mcv-badge--default:hover { background-color: var(--surface-tertiary); }
 .mcv-badge--success  { background: var(--success-subtle); color: var(--success); }
 .mcv-badge--warning  { background: var(--warning-subtle); color: var(--warning); }
 .mcv-badge--danger   { background: var(--danger-subtle); color: var(--danger); }
 .mcv-badge--info     { background: rgba(0,82,204,0.08); color: var(--link, #0A50A2); }
 .mcv-badge--accent   { background: rgba(230,92,0,0.08); color: var(--gold, #C4882A); }
-.mcv-badge--outline  { background: transparent; color: #555555; border: 1px solid #E0E0E0; }
-.mcv-badge--outline:hover { background-color: #F5F5F5; border-color: var(--link, #0A50A2); }
+.mcv-badge--outline  { background: transparent; color: var(--text-tertiary); border: 1px solid var(--bdr); }
+.mcv-badge--outline:hover { background-color: var(--surface-secondary); border-color: var(--link); }
 
 
 /* ── STAT CARD — Westlaw Data Metric ──────────────────────── */
 .mcv-stat-card {
-  background: #FFFFFF;
-  border: 1px solid #E8E8E8;
+  background: var(--card);
+  border: 1px solid var(--bdr);
   border-radius: 4px;
   padding: 20px;
   transition: border-color 150ms ease, background-color 150ms ease;
@@ -433,7 +433,7 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
-  color: #444444;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -463,7 +463,7 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
 
 .mcv-stat-card__sublabel {
   font-size: 12px;
-  color: #888888;
+  color: var(--text-placeholder);
 }
 
 
@@ -473,7 +473,7 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
 }
 .auth-input:focus {
   border-color: var(--link, #0A50A2) !important;
-  box-shadow: 0 0 0 3px rgba(0,82,204,0.25) !important;
+  box-shadow: var(--shadow-focus) !important;
   outline: none;
 }
 
@@ -495,6 +495,38 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
 }
 
 
+/* ── LINK — Westlaw interactive link ─────────────────────────── */
+.mcv-link {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+.mcv-link:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* ── SELECT — Westlaw form select ────────────────────────────── */
+.mcv-select {
+  appearance: none;
+  background: var(--card);
+  border: 1px solid var(--bdr);
+  border-radius: 2px;
+  padding: 8px 12px;
+  font-family: var(--font-ui);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast);
+}
+.mcv-select:hover {
+  border-color: var(--bdr-strong);
+}
+.mcv-select:focus {
+  border-color: var(--link);
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
 /* ── MOBILE RESPONSIVE — Touch targets & compact spacing ───── */
 @media (max-width: 600px) {
   .mcv-btn--sm { min-height: 44px; }
@@ -503,6 +535,36 @@ h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; li
 
 @media (max-width: 480px) {
   .mcv-card { padding: 12px; }
+}
+
+
+/* ── SKELETON SHIMMER — Westlaw Precision Loading System ────── */
+@keyframes mcv-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.mcv-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surf, #F6F5F2) 25%,
+    var(--bdr, #E2DFD8) 50%,
+    var(--surf, #F6F5F2) 75%
+  );
+  background-size: 200% 100%;
+  animation: mcv-shimmer 1.8s ease-in-out infinite;
+}
+
+.mcv-skeleton--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .mcv-skeleton-stat-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
 }
 
 

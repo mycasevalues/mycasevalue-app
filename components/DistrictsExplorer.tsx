@@ -162,7 +162,7 @@ export default function DistrictsExplorer({
         .circuit-card {
           border: 1px solid var(--border-default);
           background: var(--color-surface-0);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 16px;
           cursor: pointer;
           transition: all 150ms;
@@ -172,7 +172,7 @@ export default function DistrictsExplorer({
         }
         .circuit-card:hover {
           border-color: var(--link-hover, #083D7A);
-          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+          box-shadow: var(--shadow-sm);
         }
         .circuit-card.active {
           background: var(--accent-primary);
@@ -231,7 +231,7 @@ export default function DistrictsExplorer({
         .stat-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 24px;
         }
         .stat-label {
@@ -263,7 +263,7 @@ export default function DistrictsExplorer({
         .control-select {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 8px 12px;
           font-size: 13px;
           font-family: var(--font-ui);

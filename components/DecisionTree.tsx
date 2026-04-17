@@ -789,7 +789,7 @@ export default function DecisionTree() {
             <p
               style={{
                 fontSize: '0.9rem',
-                color: '#92400e',
+                color: 'var(--wrn-txt)',
                 margin: '0',
                 fontWeight: '500',
               }}
@@ -833,7 +833,7 @@ export default function DecisionTree() {
                 fontSize: '1rem',
                 fontWeight: '600',
                 margin: '0 0 0.5rem 0',
-                color: qualificationResult.qualifies ? '#15803d' : '#991b1b',
+                color: qualificationResult.qualifies ? 'var(--data-positive)' : 'var(--data-negative)',
               }}
             >
               {qualificationResult.qualifies
@@ -843,7 +843,7 @@ export default function DecisionTree() {
             <p
               style={{
                 fontSize: '0.95rem',
-                color: qualificationResult.qualifies ? '#166534' : '#7f1d1d',
+                color: qualificationResult.qualifies ? 'var(--data-positive)' : 'var(--data-negative)',
                 margin: '0',
                 lineHeight: '1.5',
               }}

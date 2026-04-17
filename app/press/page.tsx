@@ -153,7 +153,7 @@ export default function PressPage() {
               className="press-header"
               style={{
                 fontFamily: 'var(--font-ui)',
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '28px',
                 fontWeight: 700,
                 color: 'var(--card)',
                 letterSpacing: '-0.025em',
@@ -294,7 +294,7 @@ export default function PressPage() {
                     borderRadius: '4px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
-                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                    boxShadow: 'var(--shadow-xs)',
                     textAlign: 'center',
                   }}
                 >
@@ -367,7 +367,7 @@ export default function PressPage() {
                       borderRadius: '4px',
                       border: '1px solid var(--border-default)',
                       background: 'var(--color-surface-0)',
-                      boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                      boxShadow: 'var(--shadow-xs)',
                       textDecoration: 'none',
                       textAlign: 'center',
                       transition: 'all 0.3s ease',
@@ -471,7 +471,7 @@ export default function PressPage() {
                       borderRadius: '4px',
                       border: '1px solid var(--border-default)',
                       background: 'var(--color-surface-0)',
-                      boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                      boxShadow: 'var(--shadow-xs)',
                     }}
                   >
                     <div
@@ -539,7 +539,7 @@ export default function PressPage() {
                     borderRadius: '4px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
-                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                    boxShadow: 'var(--shadow-xs)',
                   }}
                 >
                   <div
@@ -648,7 +648,7 @@ export default function PressPage() {
                     borderRadius: '4px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
-                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                    boxShadow: 'var(--shadow-xs)',
                     borderLeft: '4px solid var(--accent-primary)',
                   }}
                 >
@@ -699,7 +699,7 @@ export default function PressPage() {
                 borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
                 textAlign: 'center',
               }}
             >
@@ -735,7 +735,7 @@ export default function PressPage() {
                 borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}
             >
               <p
@@ -797,7 +797,7 @@ export default function PressPage() {
       <style>{`
         .press-logo-download:hover {
           border-color: var(--accent-primary) !important;
-          box-shadow: 0 8px 24px rgba(10, 102, 194, 0.12) !important;
+          box-shadow: var(--shadow-lg) !important;
           transform: translateY(-2px);
         }
       `}</style>

@@ -284,7 +284,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
         <div style={{ marginBottom: '48px' }}>
           <h1
             style={{
-              fontSize: 'clamp(28px, 5vw, 44px)',
+              fontSize: '28px',
               fontWeight: 900,
               marginBottom: 16,
               color: 'var(--color-text-primary)',

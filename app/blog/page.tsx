@@ -157,7 +157,7 @@ export default function BlogPage() {
           right: 0;
           height: 0;
           background: var(--link);
-          border-radius: 2px 12px 0 0;
+          border-radius: 2px 4px 0 0;
           transition: height 0.3s ease;
         }
 
@@ -333,7 +333,7 @@ export default function BlogPage() {
           </div>
           <h1 className="font-ui" style={{
             color: 'var(--card)',
-            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
@@ -628,7 +628,7 @@ export default function BlogPage() {
           <a
             href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold transition-all"
-            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '20px' }}
+            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '2px' }}
           >
             Explore Attorney Mode
             <ArrowRightIcon size={16} />

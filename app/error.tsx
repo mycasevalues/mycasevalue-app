@@ -1,9 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
 
-export default function Error({
+export default function RootError({
   error,
   reset,
 }: {
@@ -11,52 +10,8 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error('[ErrorBoundary] Caught error:', error?.message || error, error?.digest);
+    console.error('[Root Error]', error?.message || error, error?.digest);
   }, [error]);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring' as const,
-        stiffness: 300,
-        damping: 30,
-      },
-    },
-  };
-
-  const iconVariants = {
-    hidden: { scale: 0.5, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: 'spring' as const,
-        stiffness: 400,
-        damping: 35,
-      },
-    },
-    pulse: {
-      scale: [1, 1.05, 1],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-      },
-    },
-  };
 
   return (
     <div
@@ -66,174 +21,240 @@ export default function Error({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'var(--color-surface-1)',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
-        padding: '0',
+        background: 'var(--surf, #F6F5F2)',
+        fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
+        padding: 0,
         position: 'relative',
       }}
     >
-      {/* Dark navy header bar */}
-      <motion.div
+      {/* Top chrome accent bar */}
+      <div
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
-          height: '8px',
-          background: 'var(--accent-primary)',
+          height: 6,
+          background: 'var(--chrome-bg, #1B2D45)',
         }}
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.6 }}
       />
-      <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
-        <motion.div
+
+      <div
+        style={{
+          padding: '48px 24px',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <div
           style={{
-            maxWidth: 480,
+            maxWidth: 500,
+            width: '100%',
             textAlign: 'center',
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
-            borderRadius: '4px',
-            padding: '48px 32px',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-          }}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            type: 'spring' as const,
-            stiffness: 300,
-            damping: 30,
-            delay: 0.1,
+            background: 'var(--card)',
+            border: '1px solid var(--bdr, #E2DFD8)',
+            borderRadius: 4,
+            padding: '48px 36px',
+            boxShadow: '0 2px 8px rgba(27, 45, 69, 0.07)',
+            position: 'relative',
           }}
         >
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+          {/* Card top accent */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: 3,
+              background: 'var(--chrome-bg, #1B2D45)',
+              borderRadius: '4px 4px 0 0',
+            }}
+          />
+
+          {/* Alert icon */}
+          <div
+            style={{
+              width: 72,
+              height: 72,
+              borderRadius: 4,
+              background: 'rgba(176, 30, 30, 0.06)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: 24,
+            }}
           >
-            {/* Icon */}
-            <motion.div
-              variants={iconVariants}
-              animate={['visible', 'pulse']}
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--data-negative, #B01E1E)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </div>
+
+          <h1
+            style={{
+              fontSize: 26,
+              fontWeight: 700,
+              color: 'var(--chrome-bg, #1B2D45)',
+              margin: '0 0 10px',
+              fontFamily: "var(--font-legal, 'Libre Baskerville', serif)",
+              letterSpacing: '-0.01em',
+              lineHeight: 1.3,
+            }}
+          >
+            Something went wrong
+          </h1>
+
+          <p
+            style={{
+              fontSize: 15,
+              color: 'var(--text-tertiary)',
+              lineHeight: 1.65,
+              margin: '0 0 12px',
+              fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
+              maxWidth: 400,
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
+          >
+            We encountered an unexpected issue loading this page. Your data is
+            safe. Please try again, or return to the homepage if the problem
+            persists.
+          </p>
+
+          {error.digest && (
+            <p
               style={{
-                width: 72,
-                height: 72,
-                borderRadius: '4px',
-                background: 'rgba(0,105,151,0.08)',
+                fontSize: 12,
+                color: 'var(--text-placeholder)',
+                margin: '0 0 24px',
+                fontFamily: 'monospace',
+                wordBreak: 'break-all',
+              }}
+            >
+              Error ID: {error.digest}
+            </p>
+          )}
+
+          {!error.digest && <div style={{ marginBottom: 24 }} />}
+
+          <div
+            style={{
+              display: 'flex',
+              gap: 12,
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+            }}
+          >
+            <button
+              type="button"
+              onClick={reset}
+              style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: 24,
-              }}
-            >
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" y1="8" x2="12" y2="12" />
-                <line x1="12" y1="16" x2="12.01" y2="16" />
-              </svg>
-            </motion.div>
-
-            <motion.h1
-              variants={itemVariants}
-              style={{
-                fontSize: '24px',
+                gap: 8,
+                padding: '10px 24px',
+                background: 'var(--chrome-bg, #1B2D45)',
+                color: 'var(--chrome-text)',
+                border: 'none',
+                borderRadius: 2,
+                fontSize: 14,
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
-                margin: '0 0 8px',
-                letterSpacing: '-0.01em',
+                fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
+                cursor: 'pointer',
+                transition: 'background 150ms ease',
+                letterSpacing: '0.01em',
               }}
             >
-              Something went wrong
-            </motion.h1>
-
-            <motion.p
-              variants={itemVariants}
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M23 4v6h-6" />
+                <path d="M1 20v-6h6" />
+                <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+              </svg>
+              Try Again
+            </button>
+            <a
+              href="/"
               style={{
-                fontSize: '15px',
-                color: 'var(--color-text-secondary)',
-                lineHeight: 1.6,
-                margin: '0 0 24px',
-                maxWidth: 400,
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '10px 24px',
+                background: 'transparent',
+                color: 'var(--chrome-bg, #1B2D45)',
+                border: '1px solid var(--bdr, #E2DFD8)',
+                borderRadius: 2,
+                fontSize: 14,
+                fontWeight: 600,
+                fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
+                textDecoration: 'none',
+                cursor: 'pointer',
+                transition: 'border-color 150ms ease',
+                letterSpacing: '0.01em',
               }}
             >
-              We encountered an issue loading this page. Please try again, or return to the homepage if the problem persists.
-            </motion.p>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Go Home
+            </a>
+          </div>
 
-            {error.digest && (
-              <motion.p
-                variants={itemVariants}
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '12px',
-                  color: 'var(--color-text-secondary)',
-                  margin: '0 0 24px',
-                  wordBreak: 'break-all',
-                }}
-              >
-                Error ID: {error.digest}
-              </motion.p>
-            )}
-
-            <motion.div variants={itemVariants} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-              <motion.button
-                type="button"
-                onClick={reset}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  padding: '12px 24px',
-                  background: 'var(--accent-primary)',
-                  color: 'var(--color-surface-0)',
-                  border: 'none',
-                  borderRadius: '4px',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  transition: 'all 200ms',
-                  boxShadow: 'none',
-                }}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M23 4v6h-6" />
-                  <path d="M1 20v-6h6" />
-                  <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
-                </svg>
-                Try again
-              </motion.button>
-              <motion.a
-                href="/"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 8,
-                  padding: '12px 24px',
-                  background: 'var(--color-surface-1)',
-                  color: 'var(--color-text-primary)',
-                  border: '1px solid var(--border-default)',
-                  borderRadius: '4px',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  transition: 'all 200ms',
-                  cursor: 'pointer',
-                }}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-                Go home
-              </motion.a>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+          <p
+            style={{
+              fontSize: 12,
+              color: 'var(--text-placeholder)',
+              marginTop: 24,
+              marginBottom: 0,
+              fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
+            }}
+          >
+            If this persists,{' '}
+            <a
+              href="mailto:support@mycasevalues.com?subject=Error%20Report"
+              style={{
+                color: 'var(--link, #0A50A2)',
+                textDecoration: 'underline',
+                textUnderlineOffset: '2px',
+              }}
+            >
+              contact support
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -343,7 +343,7 @@ export default function TeamWorkspace() {
         a:hover { text-decoration: underline; }
         input:focus, textarea:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         select:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
-        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        @media (max-width: 640px) { h1 { font-size: 20px; } }
       `}</style>
 
       {/* Header */}

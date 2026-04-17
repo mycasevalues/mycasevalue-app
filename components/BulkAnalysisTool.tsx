@@ -343,7 +343,7 @@ export function BulkAnalysisTool() {
           borderRadius: '4px',
           padding: '32px',
           marginBottom: '24px',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+          boxShadow: 'var(--shadow-xs)',
         }}
       >
         <h2
@@ -503,7 +503,7 @@ export function BulkAnalysisTool() {
                   borderRadius: '4px',
                   padding: '24px',
                   textAlign: 'center',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                 }}
               >
                 <p
@@ -541,7 +541,7 @@ export function BulkAnalysisTool() {
               borderRadius: '4px',
               padding: '24px',
               marginBottom: '24px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <h3
@@ -604,7 +604,7 @@ export function BulkAnalysisTool() {
               borderRadius: '4px',
               padding: '24px',
               marginBottom: '24px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <h3
@@ -647,7 +647,7 @@ export function BulkAnalysisTool() {
               borderRadius: '4px',
               overflow: 'hidden',
               marginBottom: '24px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
@@ -888,7 +888,7 @@ export function BulkAnalysisTool() {
             borderRadius: '4px',
             padding: '64px 32px',
             textAlign: 'center',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            boxShadow: 'var(--shadow-xs)',
           }}
         >
           <div

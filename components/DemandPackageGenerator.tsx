@@ -553,10 +553,10 @@ function PreviewContent({
           marginBottom: '24px',
         }}
       >
-        <h3 style={{ fontSize: '14px', fontWeight: '600', color: '#B91C1C', marginTop: '0', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--data-negative)', marginTop: '0', marginBottom: '8px' }}>
           Legal Disclaimer
         </h3>
-        <p style={{ fontSize: '13px', color: '#B91C1C', margin: '0' }}>
+        <p style={{ fontSize: '13px', color: 'var(--data-negative)', margin: '0' }}>
           This research data package is for informational purposes only and does not constitute legal advice. Case outcomes
           depend on specific facts, jurisdiction, judge assignment, and legal representation quality. Historical data does not
           guarantee future results. Settlement amounts and win rates represent aggregate data across multiple case types and may
@@ -565,7 +565,7 @@ function PreviewContent({
         </p>
       </div>
 
-      <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid var(--bdr)' }}>
         <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '0' }}>
           MyCaseValue - Federal Case Outcome Research
         </p>

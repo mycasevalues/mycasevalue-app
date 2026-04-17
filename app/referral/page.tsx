@@ -81,7 +81,7 @@ export default function ReferralPage() {
       <div style={{ padding: '40px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* How It Works */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               How It Works
             </h2>
@@ -103,7 +103,7 @@ export default function ReferralPage() {
           </div>
 
           {/* Your Referral Link */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Your Referral Link
             </h2>
@@ -151,7 +151,7 @@ export default function ReferralPage() {
           </div>
 
           {/* Reward Tiers */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)' }}>
             <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Reward Tiers
             </h2>

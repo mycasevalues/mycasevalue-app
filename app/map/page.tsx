@@ -494,7 +494,7 @@ export default function DistrictHeatmapPage() {
                       cursor: 'pointer',
                       minHeight: bin.count > 0 ? '4px' : '0px',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#004B7A')}
+                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--link-hover)')}
                     onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--gold)')}
                     title={`${bin.label}: ${bin.count} states`}
                   />
@@ -974,7 +974,7 @@ export default function DistrictHeatmapPage() {
                 transition: 'background-color 0.2s ease',
                 cursor: 'pointer',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#D01419')}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--data-negative)')}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--accent-primary)')}
             >
               Go to Case Calculator

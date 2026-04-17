@@ -50,7 +50,7 @@ export default function GlobalError({
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               padding: '48px 32px',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-sm)',
             }}
           >
             {/* Icon */}

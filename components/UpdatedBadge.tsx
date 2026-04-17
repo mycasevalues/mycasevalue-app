@@ -12,7 +12,7 @@ export default function UpdatedBadge({ text = 'Updated Q4 2025' }: UpdatedBadgeP
   return (
     <span
       style={{
-        background: '#f5f3ff',
+        background: 'var(--link-light)',
         color: 'var(--accent-primary)',
         fontSize: '11px',
         fontWeight: 500,

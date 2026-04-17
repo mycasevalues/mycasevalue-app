@@ -444,7 +444,7 @@ export default function APISandbox() {
               margin: 0,
               padding: '12px 14px',
               backgroundColor: 'var(--chrome-bg, #1B2D45)',
-              color: '#D4D4D4',
+              color: 'var(--text-disabled)',
               fontSize: '11px',
               lineHeight: 1.5,
               fontFamily: 'var(--font-mono)',

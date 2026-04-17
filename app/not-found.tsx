@@ -17,7 +17,7 @@ export default function NotFound() {
         justifyContent: 'center',
         padding: '0',
         background: 'var(--color-surface-1)',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
+        fontFamily: 'var(--font-ui)',
         textAlign: 'center',
         position: 'relative',
       }}
@@ -41,7 +41,7 @@ export default function NotFound() {
             border: '1px solid var(--border-default)',
             borderRadius: '4px',
             padding: '48px 32px',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            boxShadow: 'var(--shadow-sm)',
           }}
         >
           {/* 404 Number */}
@@ -198,7 +198,7 @@ export default function NotFound() {
                   background: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: '13px',
                   fontWeight: 500,
                   textDecoration: 'none',
@@ -221,7 +221,7 @@ export default function NotFound() {
                   background: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: '13px',
                   fontWeight: 500,
                   textDecoration: 'none',
@@ -244,7 +244,7 @@ export default function NotFound() {
                   background: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: '13px',
                   fontWeight: 500,
                   textDecoration: 'none',
@@ -268,7 +268,7 @@ export default function NotFound() {
                   background: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: '13px',
                   fontWeight: 500,
                   textDecoration: 'none',

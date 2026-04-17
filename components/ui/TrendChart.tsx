@@ -213,7 +213,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
         borderRadius: '4px',
         padding: '24px',
         boxSizing: 'border-box',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+        fontFamily: 'var(--font-ui)',
       }}
     >
       {label && (

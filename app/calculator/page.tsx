@@ -236,17 +236,39 @@ export default function CalculatorPage() {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: 'Settlement Research Tool',
-    url: `${SITE_URL}/calculator`,
-    applicationCategory: 'Legal',
-    description: 'Estimate your case value with damage multipliers based on federal court data.',
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'USD',
-      price: '0',
-      description: 'Free settlement calculator tool',
-    },
+    '@graph': [
+      {
+        '@type': 'WebApplication',
+        name: 'MyCaseValue Settlement Calculator',
+        url: `${SITE_URL}/calculator`,
+        applicationCategory: 'LegalService',
+        applicationSubCategory: 'Settlement Estimation Tool',
+        operatingSystem: 'All',
+        browserRequirements: 'Requires JavaScript',
+        description: 'Free settlement calculator that estimates case value ranges using damage multipliers derived from 5.1M+ federal court records. Factors include case type, severity, evidence strength, and attorney representation.',
+        featureList: 'Settlement range estimation, Percentile breakdown (P10-P90), Win rate analysis, Attorney impact comparison, Scenario comparison, Federal court data context',
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'USD',
+          price: '0',
+          availability: 'https://schema.org/InStock',
+          description: 'Free settlement calculator tool — no account required',
+        },
+        provider: {
+          '@type': 'Organization',
+          name: 'MyCaseValue LLC',
+          url: SITE_URL,
+        },
+        screenshot: `${SITE_URL}/og-image.png`,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Settlement Calculator', item: `${SITE_URL}/calculator` },
+        ],
+      },
+    ],
   };
 
   return (
@@ -655,7 +677,7 @@ export default function CalculatorPage() {
                   position: 'absolute', top: '16px', height: '8px',
                   left: `${Math.max(0, (results.p10 / results.p90) * 100 * 0.2)}%`,
                   right: `${Math.max(0, 100 - 100)}%`,
-                  background: 'linear-gradient(90deg, #B0D0F5, var(--link), var(--accent-primary), var(--link), #B0D0F5)',
+                  background: 'linear-gradient(90deg, var(--link-light2), var(--link), var(--accent-primary), var(--link), var(--link-light2))',
                   borderRadius: 2,
                   animation: 'slideUpFadeIn 0.6s ease-out',
                 }} />

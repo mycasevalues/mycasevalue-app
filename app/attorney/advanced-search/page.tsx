@@ -395,7 +395,7 @@ export default function AdvancedSearchPage() {
         .search-input:focus {
           outline: none;
           border-color: var(--link);
-          box-shadow: 0 0 0 3px rgba(10,80,160,0.15);
+          box-shadow: var(--shadow-focus);
         }
         .mode-toggle {
           display: inline-flex;
@@ -467,7 +467,7 @@ export default function AdvancedSearchPage() {
         }
         .result-card:hover {
           border-color: var(--link);
-          box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+          box-shadow: var(--shadow-xs);
         }
         .result-title {
           font-size: 15px;

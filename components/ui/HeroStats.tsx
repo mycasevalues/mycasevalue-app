@@ -28,17 +28,17 @@ interface ApiStatsResponse {
 }
 
 const STATS_EN: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#F0F2F5' },
-  { value: 95, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: '#F0F2F5' },
+  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: 'var(--surf)' },
+  { value: 95, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: 'var(--surf)' },
   { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '', color: 'var(--accent-primary-hover)' },
-  { value: 55, suffix: '+', label: 'Years of Data', sublabel: '1970–2025', icon: '', color: '#F0F2F5' },
+  { value: 55, suffix: '+', label: 'Years of Data', sublabel: '1970–2025', icon: '', color: 'var(--surf)' },
 ];
 
 const STATS_ES: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#F0F2F5' },
-  { value: 95, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: '#F0F2F5' },
+  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: 'var(--surf)' },
+  { value: 95, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: 'var(--surf)' },
   { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '', color: 'var(--accent-primary-hover)' },
-  { value: 55, suffix: '+', label: 'Años de Datos', sublabel: '1970–2025', icon: '', color: '#F0F2F5' },
+  { value: 55, suffix: '+', label: 'Años de Datos', sublabel: '1970–2025', icon: '', color: 'var(--surf)' },
 ];
 
 function useCountUp(target: number, duration: number = 2000, shouldStart: boolean = false): number {
@@ -265,12 +265,12 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
           marginTop: 'clamp(20px, 3vw, 32px)',
         }}>
           <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
-            <div style={{ fontSize: '36px', fontWeight: 600, color: '#F0F2F5', fontFamily: 'var(--font-mono)' }}>5.1M+</div>
+            <div style={{ fontSize: '36px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>5.1M+</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Federal Cases</div>
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>Analyzed</div>
           </div>
           <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
-            <div style={{ fontSize: '36px', fontWeight: 600, color: '#F0F2F5', fontFamily: 'var(--font-mono)' }}>95</div>
+            <div style={{ fontSize: '36px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>95</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Federal Districts</div>
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>All US courts</div>
           </div>
@@ -280,7 +280,7 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>Tracked</div>
           </div>
           <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
-            <div style={{ fontSize: '36px', fontWeight: 600, color: '#F0F2F5', fontFamily: 'var(--font-mono)' }}>55+</div>
+            <div style={{ fontSize: '36px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>55+</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Years of Data</div>
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>1970–2025</div>
           </div>

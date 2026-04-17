@@ -173,7 +173,7 @@ export default async function ReportPage({
           <div style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-ui)' }}>
             <h1 style={{ fontSize: 28, fontWeight: 600, marginBottom: 16, color: 'var(--color-text-primary)' }}>Daily limit reached</h1>
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
-            <a href="/pricing" style={{ padding: '12px 28px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '20px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
+            <a href="/pricing" style={{ padding: '12px 28px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '2px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
             <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
           </div>
         );
@@ -267,7 +267,7 @@ export default async function ReportPage({
           /* White subheader background */
           div[style*="background: var(--color-surface-0)"][style*="border-bottom"] {
             background: white !important;
-            border: 1px solid #DDD !important;
+            border: 1px solid var(--bdr) !important;
           }
 
           /* Remove shadows and animations */
@@ -378,7 +378,7 @@ export default async function ReportPage({
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16 }}>
             <div style={{ flex: 1 }}>
               <h1 style={{
-                fontSize: 'clamp(24px, 5vw, 32px)',
+                fontSize: '20px',
                 fontWeight: 600,
                 margin: 0,
                 color: 'var(--color-text-inverse)',
@@ -432,7 +432,7 @@ export default async function ReportPage({
           borderRadius: '4px',
           padding: '32px',
           marginBottom: '24px',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+          boxShadow: 'var(--shadow-xs)',
         }}>
           <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
             Win Rate Analysis
@@ -444,7 +444,7 @@ export default async function ReportPage({
             <style>{`
               .win-rate-grid { grid-template-columns: repeat(3, 1fr); }
               @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 16px; } }
-              .report-cta-btn { display: inline-block; padding: 8px 24px; background: var(--gold, #C4882A); color: #ffffff; border: 1px solid var(--gold, #C4882A); border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 13px; letter-spacing: -0.005em; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
+              .report-cta-btn { display: inline-block; padding: 8px 24px; background: var(--gold, #C4882A); color: var(--chrome-text); border: 1px solid var(--gold, #C4882A); border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 13px; letter-spacing: -0.005em; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
               .report-cta-btn:hover { background: var(--gold); border-color: var(--gold); }
               .report-red-link { font-size: 14px; font-weight: 500; color: var(--accent-primary); text-decoration: none; font-family: var(--font-ui); transition: color 0.2s ease; }
               .report-red-link:hover { color: var(--gold); }
@@ -521,7 +521,7 @@ export default async function ReportPage({
           borderRadius: '4px',
           padding: '32px',
           marginBottom: '24px',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+          boxShadow: 'var(--shadow-xs)',
         }}>
           <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
             Year-Over-Year Case Volume
@@ -594,7 +594,7 @@ export default async function ReportPage({
           borderRadius: '4px',
           padding: '32px',
           marginBottom: '24px',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+          boxShadow: 'var(--shadow-xs)',
         }}>
           <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
             Case Timeline
@@ -632,7 +632,7 @@ export default async function ReportPage({
                 borderRadius: '4px',
                 padding: '32px',
                 marginBottom: '24px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}>
                 <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                   Settlement Range
@@ -685,7 +685,7 @@ export default async function ReportPage({
                 borderRadius: '4px',
                 padding: '32px',
                 marginBottom: '24px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}>
                 <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                   Representation Impact
@@ -729,7 +729,7 @@ export default async function ReportPage({
                 borderRadius: '4px',
                 padding: '32px',
                 marginBottom: '24px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}>
                 <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                   Win Rates by State
@@ -746,7 +746,7 @@ export default async function ReportPage({
                       const natAvg = real.wr ?? winRate;
                       const diff = Math.round((stateWr - natAvg) * 10) / 10;
                       return (
-                        <div key={stateId} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid #F0F3F5' }}>
+                        <div key={stateId} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid var(--bdr)' }}>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', width: '36px', fontFamily: 'var(--font-mono)' }}>{stateId}</span>
                           <div style={{ flex: 1, height: '8px', background: 'var(--bdr)', borderRadius: '4px', overflow: 'hidden' }}>
                             <div style={{ height: '100%', width: `${Math.min(100, stateWr)}%`, background: stateWr >= natAvg ? 'var(--data-positive)' : 'var(--accent-primary)', borderRadius: '4px', transition: 'width 0.5s ease' }} />
@@ -773,7 +773,7 @@ export default async function ReportPage({
                 borderRadius: '4px',
                 padding: '32px',
                 marginBottom: '24px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}>
                 <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                   Win Rates by Circuit
@@ -789,7 +789,7 @@ export default async function ReportPage({
                       const natAvg = real.wr ?? winRate;
                       const diff = Math.round((circuitWr - natAvg) * 10) / 10;
                       return (
-                        <div key={circuit} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid #F0F3F5' }}>
+                        <div key={circuit} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid var(--bdr)' }}>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', width: '80px', fontFamily: 'var(--font-ui)' }}>{circuit}</span>
                           <div style={{ flex: 1, height: '8px', background: 'var(--bdr)', borderRadius: '4px', overflow: 'hidden' }}>
                             <div style={{ height: '100%', width: `${Math.min(100, circuitWr)}%`, background: circuitWr >= natAvg ? 'var(--data-positive)' : 'var(--accent-primary)', borderRadius: '4px', transition: 'width 0.5s ease' }} />
@@ -816,7 +816,7 @@ export default async function ReportPage({
                 borderRadius: '4px',
                 padding: '32px',
                 marginBottom: '24px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}>
                 <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                   How Cases End
@@ -881,7 +881,7 @@ export default async function ReportPage({
             padding: '48px 32px',
             textAlign: 'center',
             marginTop: 24,
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            boxShadow: 'var(--shadow-xs)',
           }}>
             <div style={{ fontSize: 40, marginBottom: 20, color: 'var(--accent-primary)' }}>
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -933,7 +933,7 @@ export default async function ReportPage({
             borderRadius: '4px',
             padding: '32px',
             marginBottom: '24px',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            boxShadow: 'var(--shadow-xs)',
             marginTop: '24px',
           }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
@@ -1017,7 +1017,7 @@ export default async function ReportPage({
         {real?.factors && real.factors.length > 0 && (
           <section style={{
             background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px',
-            padding: '32px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginTop: '24px',
+            padding: '32px', marginBottom: '24px', boxShadow: 'var(--shadow-xs)', marginTop: '24px',
           }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
               Key factors affecting outcome
@@ -1089,7 +1089,7 @@ export default async function ReportPage({
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
               marginTop: '24px',
             }}>
               <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
@@ -1106,7 +1106,7 @@ export default async function ReportPage({
                     className="report-related-case"
                     style={{
                       padding: '12px 0',
-                      borderBottom: i < related.length - 1 ? '1px solid #E8E9EA' : 'none',
+                      borderBottom: i < related.length - 1 ? '1px solid var(--bdr)' : 'none',
                       display: 'block',
                       fontSize: '15px',
                       fontWeight: 500,
@@ -1145,7 +1145,7 @@ export default async function ReportPage({
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
               marginTop: '24px',
             }}>
               <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>

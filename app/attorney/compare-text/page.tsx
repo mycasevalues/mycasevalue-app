@@ -451,7 +451,7 @@ ${docB}
             key={`${segment.wordIndex}-${segment.text}`}
             style={{
               ...baseStyle,
-              color: '#C8900A',
+              color: 'var(--flag-yellow)',
               backgroundColor: 'rgba(200, 144, 10, 0.12)',
               padding: '1px 2px',
               borderRadius: '2px',
@@ -464,7 +464,7 @@ ${docB}
             key={`${segment.wordIndex}-${segment.text}`}
             style={{
               ...baseStyle,
-              color: '#C8900A',
+              color: 'var(--flag-yellow)',
               backgroundColor: 'rgba(200, 144, 10, 0.15)',
               padding: '2px 4px',
               borderRadius: '2px',
@@ -888,7 +888,7 @@ ${docB}
                 fontSize: '24px',
                 fontWeight: 700,
                 fontFamily: 'var(--font-mono)',
-                color: '#C8900A',
+                color: 'var(--flag-yellow)',
                 marginBottom: '4px',
               }}
             >
@@ -1092,7 +1092,7 @@ ${docB}
                   border: '1px solid var(--bdr)',
                   borderRadius: '2px',
                   backgroundColor: 'var(--gold)',
-                  color: '#FFFFFF',
+                  color: 'var(--chrome-text)',
                   fontFamily: 'var(--font-ui)',
                   fontSize: '13px',
                   fontWeight: 600,

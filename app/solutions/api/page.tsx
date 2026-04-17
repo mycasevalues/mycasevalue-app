@@ -74,7 +74,7 @@ export default function ApiPage() {
           </div>
           <h1 style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
@@ -261,7 +261,7 @@ export default function ApiPage() {
             </div>
 
             <div style={{ padding: '32px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '2px solid var(--accent-primary)', boxShadow: '0 4px 16px rgba(10, 102, 194, 0.15)', position: 'relative' }}>
-              <div style={{ position: 'absolute', top: '-12px', left: '24px', background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '4px 12px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <div style={{ position: 'absolute', top: '-12px', left: '24px', background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '4px 12px', borderRadius: '2px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Most Popular
               </div>
               <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '16px', marginBottom: '8px' }}>Professional</h3>

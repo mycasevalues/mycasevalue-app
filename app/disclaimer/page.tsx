@@ -74,7 +74,7 @@ export default function DisclaimerPage() {
           </div>
           <h1
             style={{
-              fontSize: 'clamp(28px, 4vw, 40px)',
+              fontSize: '28px',
               fontWeight: 600,
               color: 'var(--color-surface-0)',
               fontFamily: 'var(--font-ui)',

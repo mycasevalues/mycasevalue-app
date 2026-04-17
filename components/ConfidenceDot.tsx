@@ -15,9 +15,9 @@ interface ConfidenceDotProps {
 
 function getConfidence(n: number): { color: string; label: string } {
   if (n >= 10000) return { color: 'var(--data-positive, #176438)', label: 'High confidence' };
-  if (n >= 1000) return { color: '#f59e0b', label: 'Medium confidence' };
+  if (n >= 1000) return { color: 'var(--flag-yellow)', label: 'Medium confidence' };
   if (n >= 100) return { color: 'var(--data-negative, #B01E1E)', label: 'Low confidence' };
-  return { color: '#6b7280', label: 'Insufficient data' };
+  return { color: 'var(--text-tertiary)', label: 'Insufficient data' };
 }
 
 export default function ConfidenceDot({ n, style }: ConfidenceDotProps) {

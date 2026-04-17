@@ -78,7 +78,7 @@ export default function AuthGate({ feature, children }: AuthGateProps) {
           width: '100%',
           background: 'var(--card)',
           border: '1px solid var(--bdr)',
-          borderRadius: 6,
+          borderRadius: 4,
           overflow: 'hidden',
         }}
       >

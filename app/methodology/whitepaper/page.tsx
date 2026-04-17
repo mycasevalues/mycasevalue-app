@@ -60,7 +60,7 @@ export default function WhitepaperPage() {
           <h1
             style={{
               fontFamily: 'var(--font-legal)',
-              fontSize: 'clamp(28px, 4vw, 40px)',
+              fontSize: '28px',
               fontWeight: 700,
               color: 'var(--color-text-inverse)',
               letterSpacing: '-0.025em',
@@ -110,7 +110,7 @@ export default function WhitepaperPage() {
             borderRadius: '4px',
             border: '1px solid var(--border-default)',
             padding: '48px',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            boxShadow: 'var(--shadow-xs)',
           }}
         >
           <MethodologyCapture />

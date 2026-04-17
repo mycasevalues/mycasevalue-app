@@ -233,7 +233,7 @@ export default function Footer() {
       </div>
 
       <style>{`
-        .footer-link:hover { color: #FFFFFF !important; }
+        .footer-link:hover { color: var(--chrome-text) !important; }
         @media (max-width: 640px) {
           .footer-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .footer-link { min-height: 44px; display: inline-flex !important; align-items: center; }

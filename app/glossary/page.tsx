@@ -57,7 +57,7 @@ export default function GlossaryPage() {
 
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '20px' }}
+            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '2px' }}
           >
             <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-surface-0)" strokeWidth="2.5">
               <path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z" />
@@ -101,7 +101,7 @@ export default function GlossaryPage() {
             borderRadius: '4px',
             border: '1px solid var(--border-default)',
             padding: '32px',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            boxShadow: 'var(--shadow-xs)',
           }}
         >
           <GlossaryExplorer terms={explorerTerms} featured={explorerFeatured} />

@@ -56,7 +56,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
   return (
     <div>
       {/* Filters */}
-      <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+      <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: 'var(--shadow-xs)' }}>
         <div style={{ marginBottom: '24px' }}>
           <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 12px' }}>
             Expert Type
@@ -184,7 +184,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}
             >
               {/* Header */}
@@ -422,7 +422,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
 
       {/* No Results */}
       {filteredExperts.length === 0 && (
-        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
           <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: '0 0 12px' }}>
             No experts match the selected filters.
           </p>
@@ -453,7 +453,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
 
       {/* Disclaimer */}
       <div style={{ marginTop: '24px', padding: '16px 24px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
-        <p style={{ fontSize: '12px', color: '#C37D16', margin: 0, lineHeight: 1.6 }}>
+        <p style={{ fontSize: '12px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.6 }}>
           <strong>Disclaimer:</strong> This database provides analytical data on Daubert challenges and expert witness outcomes from federal court opinions. The statistics reflect historical trends and should not be construed as legal advice or guarantees of outcomes. Actual success rates vary significantly based on specific facts, jurisdiction, expert qualifications, and case circumstances. Counsel should conduct independent research and consult with qualified experts when making retention and strategy decisions.
         </p>
       </div>

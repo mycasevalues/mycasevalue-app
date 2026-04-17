@@ -132,7 +132,7 @@ export default function NosExplorerPage() {
 
           <div style={{ paddingTop: 16, paddingBottom: 20 }}>
             <h1 style={{
-              fontSize: 'clamp(22px, 3vw, 28px)', fontWeight: 900, marginBottom: 8,
+              fontSize: '20px', fontWeight: 900, marginBottom: 8,
               color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-legal)', lineHeight: 1.2,
             }}>
               NOS Code Explorer
@@ -140,7 +140,7 @@ export default function NosExplorerPage() {
 
             <p style={{
               fontSize: 14, lineHeight: 1.5, maxWidth: 640,
-              color: '#C7D1D8', fontFamily: 'var(--font-ui)',
+              color: 'var(--text-tertiary)', fontFamily: 'var(--font-ui)',
             }}>
               Search {nosData.length} federal case types with win rates and settlement data from {totalCases.toLocaleString()} cases.
             </p>

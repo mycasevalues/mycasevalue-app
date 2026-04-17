@@ -102,7 +102,7 @@ export default function AnalyticsPage() {
 
         .header {
           background: var(--card);
-          color: #ffffff;
+          color: var(--chrome-text);
           padding: 48px 24px 40px;
           border-bottom: 1px solid var(--bdr);
           position: relative;
@@ -139,18 +139,18 @@ export default function AnalyticsPage() {
           font-weight: 600;
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: #60a5fa;
+          color: var(--link);
         }
 
         .header-eyebrow-dot {
           width: 4px;
           height: 4px;
           border-radius: 50%;
-          background: #22c55e;
+          background: var(--data-positive);
         }
 
         .header h1 {
-          font-size: clamp(28px, 4vw, 36px);
+          font-size: 28px;
           font-weight: 700;
           margin: 0 0 16px 0;
           font-family: var(--font-ui);
@@ -238,7 +238,7 @@ export default function AnalyticsPage() {
         .tooltip-content {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 8px;
+          border-radius: 4px;
           padding: 12px;
           font-size: 12px;
           font-family: var(--font-ui);
@@ -340,7 +340,7 @@ export default function AnalyticsPage() {
                   contentStyle={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '20px',
+                    borderRadius: '2px',
                     padding: '12px',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '12px',
@@ -373,7 +373,7 @@ export default function AnalyticsPage() {
                   contentStyle={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '20px',
+                    borderRadius: '2px',
                     padding: '12px',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '12px',
@@ -421,7 +421,7 @@ export default function AnalyticsPage() {
               padding: '8px 24px',
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
-              borderRadius: '20px',
+              borderRadius: '2px',
               textDecoration: 'none',
               fontSize: '14px',
               fontWeight: '600',

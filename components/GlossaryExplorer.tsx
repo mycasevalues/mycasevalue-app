@@ -137,7 +137,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                 style={{
                   display: 'block',
                   padding: '16px',
-                  background: '#FFF9E6',
+                  background: 'var(--gold-light)',
                   border: '1px solid var(--wrn-bg, #FCD34D)',
                   borderRadius: '4px',
                   textDecoration: 'none',
@@ -150,7 +150,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                 }}
                 onMouseOut={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.borderColor = '#FFE5B4';
+                  el.style.borderColor = 'var(--gold-border)';
                   el.style.boxShadow = 'none';
                 }}
               >

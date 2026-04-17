@@ -4,7 +4,7 @@
  */
 
 const pulseStyle: React.CSSProperties = {
-  background: 'linear-gradient(90deg, #F3F2EF 25%, #E9E5DF 50%, #F3F2EF 75%)',
+  background: 'linear-gradient(90deg, var(--surf) 25%, var(--bdr) 50%, var(--surf) 75%)',
   backgroundSize: '200% 100%',
   animation: 'skeleton-pulse 1.5s ease-in-out infinite',
   borderRadius: '4px',

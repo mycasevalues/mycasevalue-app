@@ -137,7 +137,7 @@ export default function TranslatePage() {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Translator Form */}
-        <div className="p-6 sm:p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
+        <div className="p-6 sm:p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: 'var(--shadow-xs)', borderRadius: '4px' }}>
           {/* Free Access Banner */}
           <div className="mb-8 p-4 flex items-center gap-3" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid var(--link-light, #BAE6FD)', borderRadius: '4px' }}>
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--data-positive)', flexShrink: 0 }} />
@@ -226,7 +226,7 @@ export default function TranslatePage() {
         {/* Translation Result */}
         {translation && (
           <>
-            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: 'var(--accent-primary)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid var(--accent-primary)', borderRadius: '4px' }}>
+            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: 'var(--accent-primary)', background: 'var(--color-surface-0)', boxShadow: 'var(--shadow-xs)', borderLeft: '4px solid var(--accent-primary)', borderRadius: '4px' }}>
               <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                 Plain English Translation
               </h2>
@@ -255,8 +255,8 @@ export default function TranslatePage() {
                 }
               }
               return relatedTerms.size > 0 ? (
-                <div className="mt-8 p-6 sm:p-8 border" style={{ borderColor: 'rgba(59,130,246,0.15)', background: 'rgba(59,130,246,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
-                  <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#38bdf8', fontFamily: 'var(--font-ui)' }}>
+                <div className="mt-8 p-6 sm:p-8 border" style={{ borderColor: 'rgba(59,130,246,0.15)', background: 'rgba(59,130,246,0.06)', boxShadow: 'var(--shadow-xs)', borderRadius: '4px' }}>
+                  <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--link)', fontFamily: 'var(--font-ui)' }}>
                     Related Legal Concepts
                   </h2>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '8px' }}>
@@ -270,7 +270,7 @@ export default function TranslatePage() {
                           border: '1px solid var(--link-light, #BAE6FD)',
                           borderRadius: '4px',
                           fontSize: '12px',
-                          color: '#38bdf8',
+                          color: 'var(--link)',
                           cursor: 'pointer',
                           transition: 'all 150ms',
                           fontFamily: 'var(--font-ui)',
@@ -278,11 +278,11 @@ export default function TranslatePage() {
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.background = 'rgba(59,130,246,0.08)';
-                          e.currentTarget.style.borderColor = '#0369A1';
+                          e.currentTarget.style.borderColor = 'var(--link-hover)';
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.background = 'var(--color-surface-0)';
-                          e.currentTarget.style.borderColor = '#BAE6FD';
+                          e.currentTarget.style.borderColor = 'var(--bdr)';
                         }}
                       >
                         {term}
@@ -341,7 +341,7 @@ export default function TranslatePage() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = 'var(--accent-primary)';
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)';
+                  e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'var(--border-default)';
@@ -460,7 +460,7 @@ export default function TranslatePage() {
               borderRadius: '4px',
               borderColor: 'var(--border-default)',
               background: 'var(--color-surface-0)',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
@@ -477,7 +477,7 @@ export default function TranslatePage() {
               borderRadius: '4px',
               borderColor: 'var(--border-default)',
               background: 'var(--color-surface-0)',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
@@ -494,7 +494,7 @@ export default function TranslatePage() {
               borderRadius: '4px',
               borderColor: 'var(--border-default)',
               background: 'var(--color-surface-0)',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
@@ -511,7 +511,7 @@ export default function TranslatePage() {
               borderRadius: '4px',
               borderColor: 'var(--border-default)',
               background: 'var(--color-surface-0)',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
@@ -524,7 +524,7 @@ export default function TranslatePage() {
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-8 p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
+        <div className="mt-8 p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: 'var(--shadow-xs)', borderRadius: '4px' }}>
           <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Important Disclaimer
           </h2>

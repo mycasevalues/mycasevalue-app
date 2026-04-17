@@ -150,13 +150,13 @@ export default function TrendsPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
       <style>{`
-        a.lex-link { color: var(--gold); text-decoration: none; }
-        a.lex-link:hover { text-decoration: underline; }
-        .lex-card { background: var(--color-surface-0); border: 1px solid var(--border-default); border-radius: 4px; }
-        .lex-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .lex-btn-primary { background: var(--gold, #C4882A); color: #ffffff; border: 1px solid var(--gold, #C4882A); border-radius: 2px; font-size: 13px; font-weight: 600; letter-spacing: -0.005em; padding: 8px 24px; cursor: pointer; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
-        .lex-btn-primary:hover { background: var(--gold); border-color: var(--gold); }
-        .lex-badge { background: rgba(10, 102, 194, 0.1); color: var(--accent-primary); border-radius: 3px; }
+        a.mcv-link { color: var(--gold); text-decoration: none; }
+        a.mcv-link:hover { text-decoration: underline; }
+        .mcv-card--default { background: var(--color-surface-0); border: 1px solid var(--border-default); border-radius: 4px; }
+        .mcv-card--default:hover { box-shadow: var(--shadow-sm); }
+        .mcv-btn--primary { background: var(--gold, #C4882A); color: var(--chrome-text); border: 1px solid var(--gold, #C4882A); border-radius: 2px; font-size: 13px; font-weight: 600; letter-spacing: -0.005em; padding: 8px 24px; cursor: pointer; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
+        .mcv-btn--primary:hover { background: var(--gold); border-color: var(--gold); }
+        .mcv-badge { background: rgba(10, 102, 194, 0.1); color: var(--accent-primary); border-radius: 3px; }
         h1 { font-family: var(--font-legal); }
         h2 { font-family: var(--font-legal); }
       `}</style>
@@ -166,7 +166,7 @@ export default function TrendsPage() {
       <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '16px 0' }}>
         <div className="max-w-6xl mx-auto px-6">
           <nav className="flex items-center gap-2 text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-            <a href="/" className="lex-link" style={{ fontWeight: 500 }}>Home</a>
+            <a href="/" className="mcv-link" style={{ fontWeight: 500 }}>Home</a>
             <span style={{ color: 'var(--border-default)' }}>›</span>
             <span style={{ color: 'var(--color-text-primary)', fontWeight: 500 }}>Trends</span>
           </nav>
@@ -232,7 +232,7 @@ export default function TrendsPage() {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="text-center p-4 lex-card"
+                className="text-center p-4 mcv-card--default"
               >
                 <div className="text-2xl font-legal font-extrabold" style={{ color: 'var(--color-text-primary)' }}>
                   {stat.v}
@@ -277,7 +277,7 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="block p-4 lex-card transition-all"
+                  className="block p-4 mcv-card--default transition-all"
                   style={{
                     textDecoration: 'none',
                   }}
@@ -294,7 +294,7 @@ export default function TrendsPage() {
                         {t.label}
                       </span>
                       <span
-                        className="text-[10px] font-bold px-2 py-0.5 lex-badge"
+                        className="text-[10px] font-bold px-2 py-0.5 mcv-badge"
                       >
                         {CATEGORY_META[t.category]?.label || t.category}
                       </span>
@@ -334,7 +334,7 @@ export default function TrendsPage() {
               return (
                 <div
                   key={c.cat}
-                  className="p-5 lex-card"
+                  className="p-5 mcv-card--default"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
@@ -378,7 +378,7 @@ export default function TrendsPage() {
                   return (
                     <div
                       key={circuit.circuit}
-                      className="p-4 lex-card"
+                      className="p-4 mcv-card--default"
                     >
                       <div className="flex items-center justify-between mb-3">
                         <span className="text-sm font-semibold" style={{ color: 'var(--color-text-primary)' }}>
@@ -425,12 +425,12 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="flex items-center justify-between p-3 lex-card transition-all"
+                  className="flex items-center justify-between p-3 mcv-card--default transition-all"
                   style={{
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm lex-link">{t.label}</span>
+                  <span className="text-sm mcv-link">{t.label}</span>
                   <span className="text-sm font-bold" style={{ color: 'var(--gold)' }}>{t.winRate}%</span>
                 </a>
               ))}
@@ -448,12 +448,12 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="flex items-center justify-between p-3 lex-card transition-all"
+                  className="flex items-center justify-between p-3 mcv-card--default transition-all"
                   style={{
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm lex-link">{t.label}</span>
+                  <span className="text-sm mcv-link">{t.label}</span>
                   <span className="text-sm font-bold" style={{ color: 'var(--accent-primary)' }}>{t.winRate}%</span>
                 </a>
               ))}
@@ -475,12 +475,12 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="flex items-center justify-between p-3 lex-card transition-all"
+                  className="flex items-center justify-between p-3 mcv-card--default transition-all"
                   style={{
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm lex-link">{t.label}</span>
+                  <span className="text-sm mcv-link">{t.label}</span>
                   <span className="text-sm font-bold" style={{ color: 'var(--gold)' }}>{t.months} months</span>
                 </a>
               ))}
@@ -498,12 +498,12 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="flex items-center justify-between p-3 lex-card transition-all"
+                  className="flex items-center justify-between p-3 mcv-card--default transition-all"
                   style={{
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm lex-link">{t.label}</span>
+                  <span className="text-sm mcv-link">{t.label}</span>
                   <span className="text-sm font-bold" style={{ color: 'var(--accent-primary)' }}>{t.months} months</span>
                 </a>
               ))}
@@ -588,21 +588,21 @@ export default function TrendsPage() {
               <tbody>
                 {trends.filter(t => t.medianMd > 0).slice(0, 15).map((t) => (
                   <tr key={t.nos}>
-                    <td className="px-4 py-2.5 lex-card" style={{ borderRadius: '4px 0 0 4px' }}>
-                      <a href={`/nos/${t.nos}`} className="lex-link">
+                    <td className="px-4 py-2.5 mcv-card--default" style={{ borderRadius: '4px 0 0 4px' }}>
+                      <a href={`/nos/${t.nos}`} className="mcv-link">
                         {t.label}
                       </a>
                     </td>
-                    <td className="px-4 py-2.5 text-right lex-card" style={{ color: 'var(--color-text-secondary)' }}>
+                    <td className="px-4 py-2.5 text-right mcv-card--default" style={{ color: 'var(--color-text-secondary)' }}>
                       {fmtK(t.medianLo)}
                     </td>
-                    <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: 'var(--accent-primary)' }}>
+                    <td className="px-4 py-2.5 text-right font-semibold mcv-card--default" style={{ color: 'var(--accent-primary)' }}>
                       {fmtK(t.medianMd)}
                     </td>
-                    <td className="px-4 py-2.5 text-right lex-card" style={{ color: 'var(--color-text-secondary)' }}>
+                    <td className="px-4 py-2.5 text-right mcv-card--default" style={{ color: 'var(--color-text-secondary)' }}>
                       {fmtK(t.medianHi)}
                     </td>
-                    <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: 'var(--gold)', borderRadius: '0 4px 4px 0' }}>
+                    <td className="px-4 py-2.5 text-right font-semibold mcv-card--default" style={{ color: 'var(--gold)', borderRadius: '0 4px 4px 0' }}>
                       {t.winRate}%
                     </td>
                   </tr>
@@ -626,7 +626,7 @@ export default function TrendsPage() {
             return (
               <div className="space-y-6">
                 {/* Stacked Bar */}
-                <div className="p-6 lex-card">
+                <div className="p-6 mcv-card--default">
                   <div className="flex rounded overflow-hidden" style={{ height: '48px' }}>
                     {outcomes.map((outcome) => (
                       <div
@@ -646,7 +646,7 @@ export default function TrendsPage() {
                   {outcomes.map((outcome) => (
                     <div
                       key={outcome.outcome}
-                      className="p-4 lex-card"
+                      className="p-4 mcv-card--default"
                     >
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-3 h-3 rounded" style={{ background: outcome.color }} />
@@ -665,7 +665,7 @@ export default function TrendsPage() {
           })()}
 
           {/* Sankey Diagram */}
-          <div className="lex-card p-6 mt-8">
+          <div className="mcv-card p-6 mt-8">
             <h3 className="font-legal font-semibold mb-4" style={{ color: 'var(--color-text-primary)', fontSize: '1.1rem' }}>
               Case Flow: Filing to Disposition
             </h3>
@@ -705,7 +705,7 @@ export default function TrendsPage() {
                   return (
                     <div
                       key={c.cat}
-                      className="p-4 lex-card"
+                      className="p-4 mcv-card--default"
                       style={{
                         background: bgColor,
                         border: `1px solid ${barColor}`,
@@ -754,11 +754,11 @@ export default function TrendsPage() {
                   <a
                     key={t.nos}
                     href={`/nos/${t.nos}`}
-                    className="block p-4 lex-card transition-all"
+                    className="block p-4 mcv-card--default transition-all"
                     style={{ textDecoration: 'none' }}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-semibold lex-link">{t.label}</span>
+                      <span className="text-sm font-semibold mcv-link">{t.label}</span>
                       <span className="text-sm font-bold" style={{ color: 'var(--data-positive)' }}>{t.months}mo</span>
                     </div>
                     <div className="h-1.5 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '4px' }}>
@@ -783,11 +783,11 @@ export default function TrendsPage() {
                   <a
                     key={t.nos}
                     href={`/nos/${t.nos}`}
-                    className="block p-4 lex-card transition-all"
+                    className="block p-4 mcv-card--default transition-all"
                     style={{ textDecoration: 'none' }}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-semibold lex-link">{t.label}</span>
+                      <span className="text-sm font-semibold mcv-link">{t.label}</span>
                       <span className="text-sm font-bold" style={{ color: 'var(--accent-primary)' }}>{t.months}mo</span>
                     </div>
                     <div className="h-1.5 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '4px' }}>
@@ -826,7 +826,7 @@ export default function TrendsPage() {
                   <a
                     key={t.nos}
                     href={`/nos/${t.nos}`}
-                    className="block p-4 lex-card transition-all"
+                    className="block p-4 mcv-card--default transition-all"
                     style={{ textDecoration: 'none' }}
                   >
                     <div className="flex items-center gap-4 mb-2">
@@ -950,7 +950,7 @@ export default function TrendsPage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group p-6 lex-card transition-all hover:shadow-lg"
+                className="group p-6 mcv-card--default transition-all hover:shadow-lg"
                 style={{
                   textDecoration: 'none',
                   display: 'flex',
@@ -976,7 +976,7 @@ export default function TrendsPage() {
 
         {/* CTA */}
         <section
-          className="text-center p-8 lex-card"
+          className="text-center p-8 mcv-card--default"
           style={{
             background: 'var(--accent-primary)',
           }}
@@ -990,7 +990,7 @@ export default function TrendsPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href="/odds"
-              className="lex-btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
+              className="mcv-btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
             >
               Check My Odds — Free
               <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

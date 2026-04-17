@@ -105,39 +105,39 @@ export default function ComparePage() {
   return (
     <>
       <style>{`
-        .lexis-link {
+        .mcv-link {
           color: var(--gold);
           text-decoration: none;
           transition: color 0.2s ease;
         }
-        .lexis-link:hover {
-          color: #004a6d;
+        .mcv-link:hover {
+          color: var(--link);
           text-decoration: underline;
         }
-        .lexis-select {
+        .mcv-select {
           transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        .lexis-select:hover {
+        .mcv-select:hover {
           border-color: var(--gold);
         }
-        .lexis-select:focus {
+        .mcv-select:focus {
           outline: none;
           border-color: var(--gold);
           box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.1);
         }
-        .lexis-btn {
+        .mcv-btn {
           transition: background-color 0.2s ease, opacity 0.2s ease;
         }
-        .lexis-btn:hover:not(:disabled) {
-          background-color: #c41419;
+        .mcv-btn:hover:not(:disabled) {
+          background-color: var(--data-negative);
           opacity: 0.95;
         }
-        .lexis-btn:active:not(:disabled) {
-          background-color: #a30f16;
+        .mcv-btn:active:not(:disabled) {
+          background-color: var(--data-negative);
         }
         @media (max-width: 768px) {
           .compare-header h1 {
-            font-size: clamp(24px, 6vw, 36px);
+            font-size: 20px;
           }
           .compare-selectors {
             grid-template-columns: 1fr !important;
@@ -204,7 +204,7 @@ export default function ComparePage() {
           </div>
           <h1 className="compare-header" style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: 'clamp(24px, 3.5vw, 30px)',
+            fontSize: '20px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
@@ -235,7 +235,7 @@ export default function ComparePage() {
         fontFamily: 'var(--font-ui)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 24px)', paddingRight: 'clamp(16px, 3vw, 24px)' }}>
-          <Link href="/" className="lexis-link" style={{ marginRight: 8, color: 'var(--gold)' }}>Home</Link>
+          <Link href="/" className="mcv-link" style={{ marginRight: 8, color: 'var(--gold)' }}>Home</Link>
           <span style={{ color: 'var(--color-text-secondary)', marginRight: 8 }}>/</span>
           <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>Compare Case Types</span>
         </div>
@@ -272,7 +272,7 @@ export default function ComparePage() {
                 <select
                   value={selected[idx]}
                   onChange={e => handleSelect(idx, e.target.value)}
-                  className="lexis-select"
+                  className="mcv-select"
                   style={{
                     width: '100%',
                     height: 48,
@@ -310,7 +310,7 @@ export default function ComparePage() {
           <button
             onClick={() => setComparing(true)}
             disabled={!canCompare}
-            className="lexis-btn"
+            className="mcv-btn"
             style={{
               padding: '12px 32px',
               background: canCompare ? 'var(--accent-primary)' : 'var(--border-default)',
@@ -367,7 +367,7 @@ export default function ComparePage() {
                         fontWeight: 600,
                         fontSize: 14,
                       }}>
-                        <Link href={`/report/${s.nos}`} className="lexis-link" style={{ textDecoration: 'none' }}>
+                        <Link href={`/report/${s.nos}`} className="mcv-link" style={{ textDecoration: 'none' }}>
                           {s.label}
                         </Link>
                         <span style={{
@@ -925,7 +925,7 @@ export default function ComparePage() {
             }}>
               Data sourced from the Federal Judicial Center Integrated Database. Outcomes are historical averages and do not predict future results.
               This is not legal advice.{' '}
-              <Link href="/methodology" className="lexis-link" style={{ textDecoration: 'none' }}>
+              <Link href="/methodology" className="mcv-link" style={{ textDecoration: 'none' }}>
                 Learn about our methodology
               </Link>
             </p>

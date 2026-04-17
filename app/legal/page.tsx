@@ -47,7 +47,7 @@ const FEATURES = [
 ];
 
 const SOURCES = [
-  { name: 'CourtListener', records: '500k+', type: 'Legal Opinions', color: '#1E3A5F', description: 'Federal and state court opinions with full text and metadata' },
+  { name: 'CourtListener', records: '500k+', type: 'Legal Opinions', color: 'var(--chrome-bg)', description: 'Federal and state court opinions with full text and metadata' },
   { name: 'Federal Register', records: 'Daily', type: 'Regulations', color: 'var(--link)', description: 'Proposed and final rules, notices, and presidential documents' },
   { name: 'eCFR', records: '~200k', type: 'Federal Code', color: 'var(--data-positive)', description: 'Electronic Code of Federal Regulations — current regulatory text' },
   { name: 'EDGAR', records: 'Millions', type: 'SEC Filings', color: 'var(--wrn-txt)', description: '10-K, 10-Q, 8-K, and other corporate filings and disclosures' },
@@ -98,7 +98,7 @@ export default function LegalDataPage() {
           Research Hub
         </div>
         <h1 style={{
-          fontFamily: 'var(--font-ui, Inter, sans-serif)',
+          fontFamily: 'var(--font-ui)',
           fontSize: 40,
           fontWeight: 700,
           color: 'var(--color-text-primary)',
@@ -175,7 +175,7 @@ export default function LegalDataPage() {
               key={uc.audience}
               style={{
                 padding: '24px',
-                borderRadius: 6,
+                borderRadius: 4,
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
               }}
@@ -245,7 +245,7 @@ export default function LegalDataPage() {
       {/* -- Enhanced Features -- */}
       <div style={{
         padding: '24px',
-        borderRadius: 6,
+        borderRadius: 4,
         background: 'rgba(10,80,162,0.06)',
         border: '1px solid var(--link-light, #BAE6FD)',
         marginBottom: 20,
@@ -271,7 +271,7 @@ export default function LegalDataPage() {
         textAlign: 'center',
         padding: '24px 20px',
         background: 'var(--accent-primary)',
-        borderRadius: 6,
+        borderRadius: 4,
         color: 'var(--color-surface-0)',
       }}>
         <h3 style={{ fontSize: 22, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 8px' }}>

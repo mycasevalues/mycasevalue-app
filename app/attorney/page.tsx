@@ -147,7 +147,7 @@ const FeatureCard = ({
         cursor: href ? 'pointer' : 'default',
         textDecoration: 'none',
         color: 'inherit',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+        boxShadow: 'var(--shadow-xs)',
       }}
       className="attorney-feature-card"
     >
@@ -557,7 +557,7 @@ export default function AttorneyPage() {
       <style dangerouslySetInnerHTML={{ __html: `
         .attorney-feature-card:hover {
           border-color: var(--gold) !important;
-          box-shadow: 0 8px 24px rgba(196, 136, 42, 0.12) !important;
+          box-shadow: var(--shadow-lg) !important;
           transform: translateY(-4px);
         }
         .attorney-feature-card:hover svg {
@@ -571,7 +571,7 @@ export default function AttorneyPage() {
         }
         .attorney-cta-link:hover {
           background-color: var(--gold) !important;
-          box-shadow: 0 8px 24px rgba(196, 136, 42, 0.24) !important;
+          box-shadow: var(--shadow-lg) !important;
           transform: translateY(-2px);
         }
         .attorney-breadcrumb-link:hover {
@@ -598,7 +598,7 @@ export default function AttorneyPage() {
           <h1
             style={{
               margin: '0 0 8px',
-              fontSize: 'clamp(24px, 4vw, 32px)',
+              fontSize: '20px',
               fontWeight: '700',
               fontFamily: 'var(--font-ui)',
               lineHeight: '1.2',
@@ -645,7 +645,7 @@ export default function AttorneyPage() {
             <h2
               style={{
                 margin: '0 0 12px 0',
-                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontSize: '28px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text1, #18181A)',
@@ -723,7 +723,7 @@ export default function AttorneyPage() {
                     gap: '16px',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                     cursor: 'pointer',
-                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                    boxShadow: 'var(--shadow-xs)',
                     height: '100%',
                   }}
                   className="attorney-feature-card"
@@ -786,7 +786,7 @@ export default function AttorneyPage() {
             <h2
               style={{
                 margin: '0 0 12px 0',
-                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontSize: '28px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text1, #18181A)',
@@ -910,7 +910,7 @@ export default function AttorneyPage() {
             <h2
               style={{
                 margin: '0 0 12px 0',
-                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontSize: '28px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text1, #18181A)',
@@ -963,12 +963,12 @@ export default function AttorneyPage() {
                   borderRadius: 4,
                   padding: '32px',
                   textAlign: 'center',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                 }}
               >
                 <div
                   style={{
-                    fontSize: 'clamp(32px, 5vw, 48px)',
+                    fontSize: '28px',
                     fontWeight: '600',
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--gold)',
@@ -1015,7 +1015,7 @@ export default function AttorneyPage() {
             <h2
               style={{
                 margin: '0 0 12px 0',
-                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontSize: '28px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text1, #18181A)',
@@ -1078,7 +1078,7 @@ export default function AttorneyPage() {
             <h2
               style={{
                 margin: '0 0 12px 0',
-                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontSize: '28px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text1, #18181A)',
@@ -1140,7 +1140,7 @@ export default function AttorneyPage() {
                   textDecoration: 'none',
                   color: 'inherit',
                   transition: 'all 0.3s ease',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '12px',

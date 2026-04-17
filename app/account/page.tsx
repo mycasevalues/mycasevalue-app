@@ -247,7 +247,7 @@ export default function AccountPage() {
       <div style={{ padding: '40px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Profile Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Profile Information
             </h2>
@@ -283,7 +283,7 @@ export default function AccountPage() {
               </div>
 
               {profileMsg && (
-                <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: profileMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: profileMsg.type === 'success' ? '#34d399' : '#f87171', border: `1px solid ${profileMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
+                <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: profileMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: profileMsg.type === 'success' ? 'var(--data-positive)' : 'var(--data-negative)', border: `1px solid ${profileMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
                   {profileMsg.text}
                 </div>
               )}
@@ -299,7 +299,7 @@ export default function AccountPage() {
           </div>
 
           {/* Password Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Change Password
             </h2>
@@ -334,7 +334,7 @@ export default function AccountPage() {
               </div>
 
               {passwordMsg && (
-                <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: passwordMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: passwordMsg.type === 'success' ? '#34d399' : '#f87171', border: `1px solid ${passwordMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
+                <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: passwordMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: passwordMsg.type === 'success' ? 'var(--data-positive)' : 'var(--data-negative)', border: `1px solid ${passwordMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
                   {passwordMsg.text}
                 </div>
               )}
@@ -350,7 +350,7 @@ export default function AccountPage() {
           </div>
 
           {/* Subscription Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Subscription Plan
             </h2>
@@ -386,7 +386,7 @@ export default function AccountPage() {
           </div>
 
           {/* API Key Management */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               API Keys
             </h2>
@@ -395,7 +395,7 @@ export default function AccountPage() {
             </p>
 
             {apiKeyMsg && (
-              <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: apiKeyMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: apiKeyMsg.type === 'success' ? '#34d399' : '#f87171', border: `1px solid ${apiKeyMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
+              <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: apiKeyMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: apiKeyMsg.type === 'success' ? 'var(--data-positive)' : 'var(--data-negative)', border: `1px solid ${apiKeyMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
                 {apiKeyMsg.text}
               </div>
             )}
@@ -448,7 +448,7 @@ export default function AccountPage() {
                   </tbody>
                 </table>
                 <style>{`
-                  .revoke-btn:hover { background-color: rgba(239,68,68,0.08); border-color: #DC2626; }
+                  .revoke-btn:hover { background-color: rgba(239,68,68,0.08); border-color: var(--data-negative); }
                 `}</style>
               </div>
             )}
@@ -463,7 +463,7 @@ export default function AccountPage() {
           </div>
 
           {/* Quick Links */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Quick Links
             </h2>
@@ -505,11 +505,11 @@ export default function AccountPage() {
             <style>{`
               .sign-out-btn:hover {
                 background-color: rgba(255,255,255,0.05);
-                border-color: #C5C8CC;
+                border-color: var(--bdr-strong);
               }
             `}</style>
 
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '2px solid var(--accent-primary)' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '2px solid var(--accent-primary)' }}>
               <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>
                 Danger Zone
               </h2>

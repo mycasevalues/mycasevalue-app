@@ -134,7 +134,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
             background: 'var(--color-surface-0)',
             border: `1px solid var(--border-default)`,
             borderRadius: '4px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+            boxShadow: 'var(--shadow-md)',
             zIndex: 1000,
             minWidth: '280px',
           }}
@@ -266,7 +266,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
             borderRadius: '4px',
             fontSize: '14px',
             fontWeight: 500,
-            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+            boxShadow: 'var(--shadow-md)',
             zIndex: 2000,
             animation: 'slideUp 0.3s ease-out',
           }}

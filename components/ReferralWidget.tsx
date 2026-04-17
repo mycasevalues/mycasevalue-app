@@ -131,7 +131,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
         <h3 style={{ margin: '0 0 8px 0', color: 'var(--link, #0A50A2)' }}>
           Referral Link Not Set
         </h3>
-        <p style={{ margin: '0 0 16px 0', color: '#1E3A8A', fontSize: '14px' }}>
+        <p style={{ margin: '0 0 16px 0', color: 'var(--link)', fontSize: '14px' }}>
           Your referral link hasn't been generated yet.
         </p>
         <button
@@ -208,7 +208,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
             border: 'none',
             outline: 'none',
             fontSize: '14px',
-            color: '#495057',
+            color: 'var(--text-secondary)',
             fontFamily: 'monospace',
           }}
         />
@@ -262,7 +262,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
             <div
               style={{
                 fontSize: '13px',
-                color: '#6C757D',
+                color: 'var(--text-tertiary)',
               }}
             >
               Total Referrals
@@ -291,7 +291,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
             <div
               style={{
                 fontSize: '13px',
-                color: '#6C757D',
+                color: 'var(--text-tertiary)',
               }}
             >
               Active Referrals

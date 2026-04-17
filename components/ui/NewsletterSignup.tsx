@@ -162,7 +162,7 @@ export default function NewsletterSignup() {
             disabled={status === 'loading'}
             onMouseEnter={(e) => {
               if (status !== 'loading') {
-                e.currentTarget.style.background = '#B91C1C';
+                e.currentTarget.style.background = 'var(--data-negative)';
               }
             }}
             onMouseLeave={(e) => {

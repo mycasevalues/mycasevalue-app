@@ -395,7 +395,7 @@ export default function HowItWorksPage() {
                   textDecoration: 'none',
                   color: 'inherit',
                   transition: 'all 0.3s ease',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                   display: 'flex',
                   flexDirection: 'column',
                   gap: 8,
@@ -534,12 +534,12 @@ export default function HowItWorksPage() {
                   backgroundColor: 'var(--accent-primary)',
                   color: 'var(--color-surface-0)',
                   textDecoration: 'none',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontWeight: 600,
                   fontSize: '14px',
                   fontFamily: 'var(--font-ui)',
                   transition: 'all 0.3s ease',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -628,7 +628,7 @@ export default function HowItWorksPage() {
           </p>
           <a href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold transition-all hover:shadow-lg"
-            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '20px' }}>
+            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '2px' }}>
             Start Free Research
             <ArrowRightIcon size={16} />
           </a>

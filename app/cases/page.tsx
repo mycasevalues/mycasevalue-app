@@ -188,7 +188,7 @@ export default function CasesIndexPage() {
             Case Intelligence
           </div>
           <h1 className="font-legal" style={{
-            fontSize: 'clamp(26px, 4vw, 28px)', fontWeight: 700,
+            fontSize: '28px', fontWeight: 700,
             color: 'var(--color-text-primary)', margin: '0 0 16px', letterSpacing: '-0.025em', lineHeight: 1.1,
           }}>
             Federal Case Analytics
@@ -285,7 +285,7 @@ export default function CasesIndexPage() {
             }}
             onFocus={(e) => {
               (e.target as HTMLInputElement).style.borderColor = 'var(--accent-primary)';
-              (e.target as HTMLInputElement).style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.08)';
+              (e.target as HTMLInputElement).style.boxShadow = 'var(--shadow-focus)';
             }}
             onBlur={(e) => {
               (e.target as HTMLInputElement).style.borderColor = 'var(--border-default)';
@@ -676,7 +676,7 @@ export default function CasesIndexPage() {
           gap: '16px',
           borderTop: '1px solid rgba(0,0,0,0.1)',
           zIndex: 100,
-          boxShadow: '0 -2px 8px rgba(0,0,0,0.1)',
+          boxShadow: 'var(--shadow-sm)',
         }}>
           <span style={{ color: 'white', fontWeight: 600, fontSize: 15, fontFamily: 'var(--font-ui)' }}>
             Compare {selectedCategories.size} categor{selectedCategories.size === 1 ? 'y' : 'ies'}
@@ -700,7 +700,7 @@ export default function CasesIndexPage() {
             }}
             onMouseEnter={(e) => {
               (e.target as HTMLButtonElement).style.transform = 'scale(1.05)';
-              (e.target as HTMLButtonElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+              (e.target as HTMLButtonElement).style.boxShadow = 'var(--shadow-md)';
             }}
             onMouseLeave={(e) => {
               (e.target as HTMLButtonElement).style.transform = 'scale(1)';

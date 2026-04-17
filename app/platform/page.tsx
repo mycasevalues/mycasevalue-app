@@ -359,7 +359,7 @@ export default function PlatformPage() {
         }
 
         .stat-number {
-          font-size: clamp(24px, 4vw, 36px);
+          font-size: 20px;
           font-weight: 700;
           color: var(--accent-primary);
           margin-bottom: 8px;
@@ -398,7 +398,7 @@ export default function PlatformPage() {
           background: var(--gold, #C4882A);
           color: white;
           padding: 4px 12px;
-          border-radius: 20px;
+          border-radius: 2px;
           font-size: 12px;
           font-weight: 600;
           text-transform: uppercase;
@@ -453,7 +453,7 @@ export default function PlatformPage() {
         }
 
         .market-value {
-          font-size: clamp(20px, 3vw, 32px);
+          font-size: 20px;
           font-weight: 700;
           margin-bottom: 8px;
           font-family: var(--font-mono);
@@ -640,7 +640,7 @@ export default function PlatformPage() {
                   padding: '8px 16px',
                   background: 'var(--color-surface-1)',
                   color: 'var(--accent-primary)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: '12px',
                   fontWeight: 600,
                   textTransform: 'uppercase',
@@ -665,7 +665,7 @@ export default function PlatformPage() {
                   padding: '8px 16px',
                   background: 'var(--color-surface-1)',
                   color: 'var(--accent-primary)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: '12px',
                   fontWeight: 600,
                   textTransform: 'uppercase',
@@ -690,7 +690,7 @@ export default function PlatformPage() {
                   padding: '8px 16px',
                   background: 'var(--color-surface-1)',
                   color: 'var(--accent-primary)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: '12px',
                   fontWeight: 600,
                   textTransform: 'uppercase',

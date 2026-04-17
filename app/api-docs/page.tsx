@@ -183,7 +183,7 @@ export default function ApiDocsPage() {
             </div>
             <h1 style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: 'clamp(32px, 4.5vw, 44px)',
+              fontSize: '28px',
               fontWeight: 700,
               color: 'var(--card)',
               letterSpacing: '-0.03em',
@@ -246,7 +246,7 @@ export default function ApiDocsPage() {
                 borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}>
                 <h3 style={{
                   fontSize: 18,
@@ -270,7 +270,7 @@ export default function ApiDocsPage() {
                   display: 'block',
                   padding: 12,
                   backgroundColor: 'rgba(255,255,255,0.05)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: 13,
                   fontFamily: 'monospace',
                   color: 'var(--color-text-primary)',
@@ -287,7 +287,7 @@ export default function ApiDocsPage() {
                 borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}>
                 <h3 style={{
                   fontSize: 18,
@@ -363,15 +363,15 @@ export default function ApiDocsPage() {
                   borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                 }}>
                   <div style={{ marginBottom: 24 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                       <span style={{
                         display: 'inline-block',
                         padding: '4px 10px',
-                        backgroundColor: endpoint.method === 'GET' ? '#DBEAFE' : 'rgba(239,68,68,0.1)',
-                        color: endpoint.method === 'GET' ? '#0369A1' : '#991B1B',
+                        backgroundColor: endpoint.method === 'GET' ? 'var(--link-light)' : 'var(--data-negative-bg)',
+                        color: endpoint.method === 'GET' ? 'var(--link)' : 'var(--data-negative)',
                         fontSize: '11px',
                         fontWeight: 700,
                         fontFamily: 'monospace',
@@ -427,7 +427,7 @@ export default function ApiDocsPage() {
                         display: 'block',
                         padding: 16,
                         backgroundColor: 'var(--color-text-primary)',
-                        borderRadius: '20px',
+                        borderRadius: '2px',
                         fontSize: 12,
                         fontFamily: 'monospace',
                         color: 'var(--border-default)',
@@ -456,7 +456,7 @@ export default function ApiDocsPage() {
                         display: 'block',
                         padding: 16,
                         backgroundColor: 'rgba(255,255,255,0.05)',
-                        borderRadius: '20px',
+                        borderRadius: '2px',
                         fontSize: 12,
                         fontFamily: 'monospace',
                         color: 'var(--color-text-primary)',
@@ -507,7 +507,7 @@ export default function ApiDocsPage() {
                   display: 'block',
                   padding: 16,
                   backgroundColor: 'var(--color-text-primary)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: 11,
                   fontFamily: 'monospace',
                   color: 'var(--border-default)',
@@ -540,7 +540,7 @@ export default function ApiDocsPage() {
                   display: 'block',
                   padding: 16,
                   backgroundColor: 'var(--color-text-primary)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: 11,
                   fontFamily: 'monospace',
                   color: 'var(--border-default)',
@@ -576,7 +576,7 @@ export default function ApiDocsPage() {
                   display: 'block',
                   padding: 16,
                   backgroundColor: 'var(--color-text-primary)',
-                  borderRadius: '20px',
+                  borderRadius: '2px',
                   fontSize: 11,
                   fontFamily: 'monospace',
                   color: 'var(--border-default)',

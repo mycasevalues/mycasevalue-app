@@ -45,7 +45,7 @@ export default function ServerHero() {
             </div>
 
             <h1 style={{
-              fontSize: 'clamp(32px, 4vw, 48px)',
+              fontSize: '28px',
               fontWeight: 700,
               color: 'var(--card, #FFFFFF)',
               fontFamily: 'var(--font-ui)',
@@ -306,7 +306,7 @@ export default function ServerHero() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Integrated Workflow
           </div>
-          <h2 style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
             From research to action — without friction
           </h2>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)', maxWidth: 600, margin: '0 auto 28px', lineHeight: 1.7 }}>
@@ -643,7 +643,7 @@ export default function ServerHero() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Data Provenance
           </div>
-          <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 28px)', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 40, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 40, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
             Trusted data sources &amp; standards
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }} className="awards-grid">
@@ -813,7 +813,7 @@ export default function ServerHero() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Free · No Account Required
           </div>
-          <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 36px)', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.1 }}>
+          <h2 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.1 }}>
             Start researching today
           </h2>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)', maxWidth: 480, margin: '0 auto 32px', lineHeight: 1.7 }}>

@@ -645,7 +645,7 @@ export default function CaseStrengthAssessment() {
                   marginTop: '16px',
                   padding: '12px 16px',
                   backgroundColor: 'rgba(34,197,94,0.06)',
-                  borderLeft: '4px solid #10B981',
+                  borderLeft: '4px solid var(--data-positive)',
                   fontSize: '13px',
                   color: 'var(--data-positive, #176438)',
                 }}
@@ -819,7 +819,7 @@ export default function CaseStrengthAssessment() {
                 style={{
                   padding: '12px 16px',
                   backgroundColor: 'rgba(34,197,94,0.06)',
-                  borderLeft: '4px solid #10B981',
+                  borderLeft: '4px solid var(--data-positive)',
                   borderRadius: '4px',
                   marginBottom: '24px',
                 }}
@@ -987,7 +987,7 @@ export default function CaseStrengthAssessment() {
             style={{
               padding: '16px',
               backgroundColor: 'rgba(234,179,8,0.1)',
-              borderLeft: '4px solid #F59E0B',
+              borderLeft: '4px solid var(--flag-yellow)',
               borderRadius: '4px',
               marginBottom: '24px',
             }}

@@ -55,7 +55,7 @@ export default function PacerMonitorPage() {
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
         input:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
-        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        @media (max-width: 640px) { h1 { font-size: 20px; } }
       `}</style>
       <div style={{
         background: 'var(--card)',
@@ -72,7 +72,7 @@ export default function PacerMonitorPage() {
         }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
           <h1 className="font-legal" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>PACER Monitoring</h1>
-          <p style={{ fontSize: '14px', color: '#B0B8C0', margin: 0 }}>Real-time alerts on case developments, filings, and motions</p>
+          <p style={{ fontSize: '14px', color: 'var(--text-tertiary)', margin: 0 }}>Real-time alerts on case developments, filings, and motions</p>
         </div>
       </div>
 

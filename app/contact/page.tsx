@@ -177,7 +177,7 @@ export default function ContactPage() {
                   borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: 'var(--shadow-xs)',
                   textDecoration: 'none',
                   color: 'inherit',
                   transition: 'all 0.3s ease',
@@ -232,7 +232,7 @@ export default function ContactPage() {
                 borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}
             >
               <h2
@@ -285,7 +285,7 @@ export default function ContactPage() {
                 borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}
             >
               <h2
@@ -338,7 +338,7 @@ export default function ContactPage() {
                 borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: 'var(--shadow-xs)',
               }}
             >
               <h2

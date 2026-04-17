@@ -21,7 +21,7 @@ function SkeletonPulse({ width = '100%', height = '16px', borderRadius = '4px', 
         width,
         height,
         borderRadius,
-        background: 'linear-gradient(90deg, rgba(255,255,255,0.10) 25%, #FFFFFF 50%, rgba(255,255,255,0.10) 75%)',
+        background: 'linear-gradient(90deg, rgba(255,255,255,0.10) 25%, var(--card) 50%, rgba(255,255,255,0.10) 75%)',
         backgroundSize: '200% 100%',
         animation: 'skeleton-shimmer 1.8s ease-in-out infinite',
       }}
@@ -49,7 +49,7 @@ export function SkeletonChart({ height = '200px', className = '' }: { height?: s
     <div className={className} style={{ height, position: 'relative', overflow: 'hidden' }}>
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, #FFFFFF 100%)',
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, var(--card) 100%)',
         borderRadius: '4px',
       }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', height: '100%', padding: '24px', gap: '8px' }}>
@@ -58,7 +58,7 @@ export function SkeletonChart({ height = '200px', className = '' }: { height?: s
               flex: 1,
               height: `${h}%`,
               borderRadius: '2px 2px 0 0',
-              background: 'linear-gradient(90deg, rgba(255,255,255,0.10) 25%, #FFFFFF 50%, rgba(255,255,255,0.10) 75%)',
+              background: 'linear-gradient(90deg, rgba(255,255,255,0.10) 25%, var(--card) 50%, rgba(255,255,255,0.10) 75%)',
               backgroundSize: '200% 100%',
               animation: `skeleton-shimmer 1.8s ease-in-out ${i * 0.1}s infinite`,
             }} />

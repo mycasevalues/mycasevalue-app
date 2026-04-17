@@ -440,12 +440,12 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                     display: 'inline-flex',
                     alignItems: 'center',
                     padding: '4px 10px',
-                    borderRadius: '20px',
+                    borderRadius: '2px',
                     fontSize: '11px',
                     fontWeight: '600',
                     fontFamily: 'var(--font-ui)',
                     backgroundColor: referral.activated_at ? 'rgba(34,197,94,0.1)' : 'rgba(234,179,8,0.1)',
-                    color: referral.activated_at ? '#065F46' : '#92400E',
+                    color: referral.activated_at ? 'var(--data-positive)' : 'var(--wrn-txt)',
                   }}
                 >
                   {referral.activated_at ? '✓ Active' : '○ Pending'}

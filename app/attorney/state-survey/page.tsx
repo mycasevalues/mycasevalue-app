@@ -1097,7 +1097,7 @@ Platform: MyCaseValue Legal Research
                 width: '24px',
                 height: '24px',
                 borderRadius: '3px',
-                background: '#EAF4EF',
+                background: 'var(--data-positive-bg)',
                 border: `2px solid var(--data-positive)`,
               }} />
               <div>
@@ -1115,7 +1115,7 @@ Platform: MyCaseValue Legal Research
                 width: '24px',
                 height: '24px',
                 borderRadius: '3px',
-                background: '#FAF3E6',
+                background: 'var(--gold-light)',
                 border: `2px solid var(--gold)`,
               }} />
               <div>
@@ -1133,7 +1133,7 @@ Platform: MyCaseValue Legal Research
                 width: '24px',
                 height: '24px',
                 borderRadius: '3px',
-                background: '#FAEAEA',
+                background: 'var(--data-negative-bg)',
                 border: `2px solid var(--data-negative)`,
               }} />
               <div>

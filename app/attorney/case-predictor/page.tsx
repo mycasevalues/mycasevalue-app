@@ -71,7 +71,7 @@ export default function CasePredictorPage() {
     select:focus, input:focus {
       outline: none;
       border-color: var(--accent-primary);
-      box-shadow: 0 0 0 2px rgba(232, 23, 31, 0.08);
+      box-shadow: var(--shadow-focus);
     }
   `;
   const [caseType, setCaseType] = useState('');
@@ -157,7 +157,7 @@ export default function CasePredictorPage() {
         {`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        @media (max-width: 640px) { h1 { font-size: 20px; } }
         @media (max-width: 768px) {
           .predictor-form-grid { grid-template-columns: 1fr !important; }
           .predictor-stats-grid { grid-template-columns: 1fr !important; }
@@ -200,7 +200,7 @@ export default function CasePredictorPage() {
           </div>
           <h1 className="font-legal" style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: 'clamp(24px, 3.5vw, 30px)',
+            fontSize: '20px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
@@ -214,7 +214,7 @@ export default function CasePredictorPage() {
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 24px' }}>
         {/* How It Works Section */}
-        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '32px' }}>
+        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', marginBottom: '32px' }}>
           <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
             How It Works
           </h2>
@@ -233,7 +233,7 @@ export default function CasePredictorPage() {
               </div>
             </div>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 600, fontSize: '18px' }}>
+              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--chrome-text)', fontWeight: 600, fontSize: '18px' }}>
                 2
               </div>
               <div>
@@ -246,7 +246,7 @@ export default function CasePredictorPage() {
               </div>
             </div>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 600, fontSize: '18px' }}>
+              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--chrome-text)', fontWeight: 600, fontSize: '18px' }}>
                 3
               </div>
               <div>
@@ -271,32 +271,32 @@ export default function CasePredictorPage() {
               <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 16px' }}>
                 5.1M+
               </div>
-              <div style={{ fontSize: '13px', color: '#B0B5BA' }}>Federal cases analyzed</div>
+              <div style={{ fontSize: '13px', color: 'var(--text-tertiary)' }}>Federal cases analyzed</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)' }}>
               <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 16px' }}>
                 84
               </div>
-              <div style={{ fontSize: '13px', color: '#B0B5BA' }}>Nature of suit codes</div>
+              <div style={{ fontSize: '13px', color: 'var(--text-tertiary)' }}>Nature of suit codes</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)' }}>
               <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 16px' }}>
                 All 50
               </div>
-              <div style={{ fontSize: '13px', color: '#B0B5BA' }}>States covered</div>
+              <div style={{ fontSize: '13px', color: 'var(--text-tertiary)' }}>States covered</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)' }}>
               <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 16px' }}>
                 AI-Powered
               </div>
-              <div style={{ fontSize: '13px', color: '#B0B5BA' }}>Predictions & analysis</div>
+              <div style={{ fontSize: '13px', color: 'var(--text-tertiary)' }}>Predictions & analysis</div>
             </div>
           </div>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: p ? '1fr 1fr' : '1fr', gap: '24px' }} className="predictor-form-grid">
           {/* Input Form */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
             <h2 className="font-ui" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Case Details
             </h2>
@@ -390,8 +390,8 @@ export default function CasePredictorPage() {
                   <label style={labelStyle}>Case Strength Assessment</label>
                   <div style={{ display: 'flex', gap: '8px' }}>
                     {[
-                      { val: 'weak', label: 'Weak', color: '#EA2143' },
-                      { val: 'moderate', label: 'Moderate', color: '#E89558' },
+                      { val: 'weak', label: 'Weak', color: 'var(--data-negative)' },
+                      { val: 'moderate', label: 'Moderate', color: 'var(--flag-yellow)' },
                       { val: 'strong', label: 'Strong', color: 'var(--data-positive)' },
                     ].map((opt) => (
                       <button
@@ -476,7 +476,7 @@ export default function CasePredictorPage() {
           {p && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Score Cards */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
                   <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
                     Prediction: {p.caseType}
@@ -550,7 +550,7 @@ export default function CasePredictorPage() {
               </div>
 
               {/* Outcome Distribution */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
                 <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
                   Predicted Outcome Distribution
                 </h3>
@@ -570,7 +570,7 @@ export default function CasePredictorPage() {
               </div>
 
               {/* Key Factors */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
                 <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
                   Key Analysis Factors
                 </h3>
@@ -588,7 +588,7 @@ export default function CasePredictorPage() {
 
               {/* AI-Generated Strategic Insights */}
               {p.aiInsights && (
-                <div style={{ background: 'linear-gradient(135deg, var(--surf) 0%, var(--surf) 100%)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                <div style={{ background: 'linear-gradient(135deg, var(--surf) 0%, var(--surf) 100%)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: 'var(--accent-primary)', flexShrink: 0 }}>
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
@@ -623,7 +623,7 @@ export default function CasePredictorPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
             <Link href="/attorney/judge-intelligence" style={{ textDecoration: 'none' }}>
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = 'var(--accent-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'var(--border-default)'; }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = 'var(--accent-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'var(--border-default)'; }}>
                 <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                     <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
@@ -638,7 +638,7 @@ export default function CasePredictorPage() {
               </div>
             </Link>
             <Link href="/attorney/venue-optimizer" style={{ textDecoration: 'none' }}>
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = 'var(--accent-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'var(--border-default)'; }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = 'var(--accent-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'var(--border-default)'; }}>
                 <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                     <circle cx="12" cy="12" r="10" />
@@ -655,7 +655,7 @@ export default function CasePredictorPage() {
               </div>
             </Link>
             <Link href="/attorney/motion-analytics" style={{ textDecoration: 'none' }}>
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = 'var(--accent-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'var(--border-default)'; }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = 'var(--accent-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'var(--border-default)'; }}>
                 <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                     <path d="M3 3h18v18H3z" />
@@ -670,7 +670,7 @@ export default function CasePredictorPage() {
               </div>
             </Link>
             <Link href="/attorney/bulk-analysis" style={{ textDecoration: 'none' }}>
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = 'var(--accent-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'var(--border-default)'; }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = 'var(--accent-primary)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = 'var(--border-default)'; }}>
                 <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                     <path d="M4 3h16v2H4V3zm0 4h16v2H4V7zm0 4h16v2H4v-2zm0 4h16v2H4v-2z" />

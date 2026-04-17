@@ -18,6 +18,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import ThemeToggle from '../ThemeToggle';
 
 /* ── Route → active section mapping ── */
 
@@ -151,6 +152,19 @@ export default function BrowseNav() {
               </Link>
             );
           })}
+          {/* Theme toggle — right side of browse nav */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              borderLeft: '1px solid var(--chrome-border, #2A3F58)',
+              marginLeft: 4,
+              paddingLeft: 4,
+              flexShrink: 0,
+            }}
+          >
+            <ThemeToggle />
+          </div>
         </div>
       </nav>
 
@@ -164,28 +178,33 @@ export default function BrowseNav() {
         }}
         aria-label="Mobile browse navigation"
       >
-        <button
-          onClick={() => setMobileOpen((prev) => !prev)}
-          aria-expanded={mobileOpen}
-          aria-controls="browse-nav-mobile-menu"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-            width: '100%',
-            height: 44,
-            padding: '0 16px',
-            background: 'transparent',
-            border: 'none',
-            color: 'var(--chrome-text-muted, #8AAAC8)',
-            fontSize: 14,
-            fontFamily: 'var(--font-sans, var(--font-ui))',
-            cursor: 'pointer',
-          }}
-        >
-          <span style={{ fontSize: 18, lineHeight: 1 }}>{mobileOpen ? '\u2715' : '\u2630'}</span>
-          <span>Browse</span>
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <button
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-expanded={mobileOpen}
+            aria-controls="browse-nav-mobile-menu"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+              flex: 1,
+              height: 44,
+              padding: '0 16px',
+              background: 'transparent',
+              border: 'none',
+              color: 'var(--chrome-text-muted, #8AAAC8)',
+              fontSize: 14,
+              fontFamily: 'var(--font-sans, var(--font-ui))',
+              cursor: 'pointer',
+            }}
+          >
+            <span style={{ fontSize: 18, lineHeight: 1 }}>{mobileOpen ? '\u2715' : '\u2630'}</span>
+            <span>Browse</span>
+          </button>
+          <div style={{ paddingRight: 8 }}>
+            <ThemeToggle />
+          </div>
+        </div>
 
         {mobileOpen && (
           <div

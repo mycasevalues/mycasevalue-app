@@ -166,7 +166,7 @@ export default function DashboardTabs({
                     <span style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                       {new Date(h.searched_at).toLocaleDateString()}
                     </span>
-                    <Link href={`/search?q=${encodeURIComponent(h.query)}`} style={{ fontSize: '12px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600, padding: '4px 10px', background: 'rgba(59,130,246,0.08)', borderRadius: 6 }}>
+                    <Link href={`/search?q=${encodeURIComponent(h.query)}`} style={{ fontSize: '12px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600, padding: '4px 10px', background: 'rgba(59,130,246,0.08)', borderRadius: 4 }}>
                       Search Again
                     </Link>
                   </div>
@@ -278,7 +278,7 @@ export default function DashboardTabs({
               <span style={{ fontSize: '13px', color: 'var(--color-text-primary)' }}>Language</span>
               <div style={{ display: 'flex', gap: 6 }}>
                 <button style={{ padding: '6px 12px', borderRadius: '4px', border: '1px solid var(--accent-primary)', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary-hover)', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>English</button>
-                <button style={{ padding: '6px 12px', borderRadius: '4px', border: '1px solid var(--border-default)', background: '#FFF', color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>Español</button>
+                <button style={{ padding: '6px 12px', borderRadius: '4px', border: '1px solid var(--border-default)', background: 'var(--card)', color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>Español</button>
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0' }}>
@@ -292,7 +292,7 @@ export default function DashboardTabs({
                 }}
               >
                 <div style={{
-                  width: 18, height: 18, borderRadius: '50%', background: '#FFF',
+                  width: 18, height: 18, borderRadius: '50%', background: 'var(--card)',
                   position: 'absolute', top: 3,
                   left: weeklyDigest ? 23 : 3,
                   transition: 'left 0.2s', boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
@@ -313,7 +313,7 @@ export default function DashboardTabs({
                 {copied ? 'Copied!' : 'Copy'}
               </button>
             </div>
-            <button style={{ marginTop: 8, padding: '8px 16px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '12px', color: 'var(--color-text-secondary)', cursor: 'pointer', fontWeight: 600 }}>
+            <button style={{ marginTop: 8, padding: '8px 16px', background: 'var(--card)', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '12px', color: 'var(--color-text-secondary)', cursor: 'pointer', fontWeight: 600 }}>
               Regenerate Key
             </button>
           </div>
@@ -322,7 +322,7 @@ export default function DashboardTabs({
           {userId && <ReferralDashboard userId={userId} userEmail={userEmail} />}
 
           {/* Danger Zone */}
-          <div style={{ ...cardStyle, borderColor: '#FECACA' }}>
+          <div style={{ ...cardStyle, borderColor: 'var(--data-negative)' }}>
             <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--data-negative, #B01E1E)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>Danger Zone</h3>
             <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: 12 }}>Permanently delete your account and all associated data. This action cannot be undone.</p>
             {!showDeleteConfirm ? (
@@ -351,7 +351,7 @@ export default function DashboardTabs({
               await getSupabase().auth.signOut();
               window.location.href = '/';
             }}
-            style={{ width: '100%', padding: '12px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-secondary)', cursor: 'pointer' }}
+            style={{ width: '100%', padding: '12px', background: 'var(--card)', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-secondary)', cursor: 'pointer' }}
           >
             Sign Out
           </button>

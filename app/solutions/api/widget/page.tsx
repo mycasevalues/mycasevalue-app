@@ -23,13 +23,13 @@ export default function WidgetGeneratorPage() {
             fontSize: '36px',
             fontWeight: 700,
             marginBottom: '12px',
-            color: '#1f2937',
+            color: 'var(--text-primary)',
           }}>
             Widget Generator
           </h1>
           <p style={{
             fontSize: '16px',
-            color: '#6b7280',
+            color: 'var(--text-tertiary)',
             maxWidth: '600px',
           }}>
             Create embeddable widgets to display case settlement data on your website. Customize the case type, district, and display style.

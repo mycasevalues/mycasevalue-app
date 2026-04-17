@@ -162,7 +162,7 @@ export default async function NOSPage({ params }: PageProps) {
           <h1 className="text-3xl font-bold mb-4">Case type not found</h1>
           <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>NOS code {code} does not exist in our database.</p>
           <Link href="/" className="inline-block px-6 py-3 font-semibold text-white transition"
-            style={{ background: 'var(--accent-primary)', borderRadius: '20px' }}>
+            style={{ background: 'var(--accent-primary)', borderRadius: '2px' }}>
             Return to Home
           </Link>
         </div>
@@ -410,7 +410,7 @@ export default async function NOSPage({ params }: PageProps) {
           padding: 8px 14px;
           background: var(--gold);
           color: var(--color-text-inverse);
-          border-radius: 12px;
+          border-radius: 4px;
           font-size: 12px;
           font-weight: 600;
           border: none;
@@ -421,10 +421,10 @@ export default async function NOSPage({ params }: PageProps) {
         .stat-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 24px;
           text-align: center;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+          box-shadow: var(--shadow-xs);
           transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
@@ -453,7 +453,7 @@ export default async function NOSPage({ params }: PageProps) {
         .outcome-bar {
           display: flex;
           height: 32px;
-          border-radius: 12px;
+          border-radius: 4px;
           overflow: hidden;
           background: var(--color-surface-1);
           margin-bottom: 16px;
@@ -490,14 +490,14 @@ export default async function NOSPage({ params }: PageProps) {
         .legend-color {
           width: 12px;
           height: 12px;
-          border-radius: 12px;
+          border-radius: 4px;
           flex-shrink: 0;
         }
 
         .related-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 16px;
           text-decoration: none;
           color: inherit;
@@ -537,13 +537,13 @@ export default async function NOSPage({ params }: PageProps) {
 
         .disclaimer-box {
           background: rgba(234,179,8,0.1);
-          border: 1px solid #FCD34D;
-          border-radius: 12px;
+          border: 1px solid var(--gold-border);
+          border-radius: 4px;
           padding: 16px;
         }
 
         .disclaimer-box h3 {
-          color: #92400E;
+          color: var(--wrn-txt);
           font-size: 14px;
           font-weight: 600;
           margin: 0 0 8px 0;
@@ -551,7 +551,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .disclaimer-box p {
-          color: #78350F;
+          color: var(--wrn-txt);
           font-size: 13px;
           line-height: 1.6;
           margin: 0;
@@ -562,7 +562,7 @@ export default async function NOSPage({ params }: PageProps) {
           background: var(--gold);
           color: var(--color-text-inverse);
           padding: 16px 32px;
-          border-radius: 12px;
+          border-radius: 4px;
           text-decoration: none;
           display: inline-block;
           font-size: 14px;
@@ -601,15 +601,15 @@ export default async function NOSPage({ params }: PageProps) {
         .content-box {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 24px;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+          box-shadow: var(--shadow-xs);
         }
 
         .outcome-dist-bar {
           display: flex;
           height: 20px;
-          border-radius: 12px;
+          border-radius: 4px;
           overflow: hidden;
           background: var(--color-surface-1);
           margin-bottom: 20px;
@@ -643,7 +643,7 @@ export default async function NOSPage({ params }: PageProps) {
         .outcome-dist-dot {
           width: 8px;
           height: 8px;
-          border-radius: 12px;
+          border-radius: 4px;
           flex-shrink: 0;
           background: var(--gold);
         }
@@ -668,7 +668,7 @@ export default async function NOSPage({ params }: PageProps) {
           position: absolute;
           top: 16px;
           height: 8px;
-          background: #3b82f6;
+          background: var(--link);
           border-radius: 4px;
         }
 
@@ -693,7 +693,7 @@ export default async function NOSPage({ params }: PageProps) {
           padding: 12px;
           background: var(--color-surface-1);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           display: flex;
           align-items: flex-start;
           gap: 8px;
@@ -725,7 +725,7 @@ export default async function NOSPage({ params }: PageProps) {
         .related-type-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 16px;
           text-decoration: none;
           color: inherit;
@@ -735,7 +735,7 @@ export default async function NOSPage({ params }: PageProps) {
 
         .related-type-card:hover {
           border-color: var(--accent-primary);
-          box-shadow: 0 2px 8px rgba(10, 102, 194, 0.1);
+          box-shadow: var(--shadow-sm);
           transform: translateY(-1px);
         }
 
@@ -780,7 +780,7 @@ export default async function NOSPage({ params }: PageProps) {
         .quick-action-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 16px;
           text-decoration: none;
           color: var(--accent-primary);
@@ -798,7 +798,7 @@ export default async function NOSPage({ params }: PageProps) {
         .quick-action-card:hover {
           border-color: var(--accent-primary);
           background: rgba(59,130,246,0.06);
-          box-shadow: 0 2px 8px rgba(10, 102, 194, 0.1);
+          box-shadow: var(--shadow-sm);
         }
       `}</style>
 
@@ -815,7 +815,7 @@ export default async function NOSPage({ params }: PageProps) {
 
           <div className="flex items-start justify-between gap-6" style={{ flexWrap: 'wrap' }}>
             <div className="flex-1">
-              <h1 style={{ fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: 600, margin: '0 0 12px 0', fontFamily: 'var(--font-ui)', lineHeight: 1.2, color: 'var(--color-surface-0)' }}>
+              <h1 style={{ fontSize: '28px', fontWeight: 600, margin: '0 0 12px 0', fontFamily: 'var(--font-ui)', lineHeight: 1.2, color: 'var(--color-surface-0)' }}>
                 {nosInfo.label}
               </h1>
               <p style={{ fontSize: '14px', color: 'var(--border-default)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -867,7 +867,7 @@ export default async function NOSPage({ params }: PageProps) {
               marginTop: '24px',
               padding: '16px 16px',
               backgroundColor: 'rgba(234,179,8,0.1)',
-              borderLeft: '3px solid #D97706',
+              borderLeft: '3px solid var(--flag-yellow)',
               borderRadius: '4px',
               fontSize: '12px',
               color: 'var(--wrn-txt)',
@@ -883,7 +883,7 @@ export default async function NOSPage({ params }: PageProps) {
               marginTop: '24px',
               padding: '16px 16px',
               backgroundColor: 'rgba(234,179,8,0.1)',
-              borderLeft: '3px solid #D97706',
+              borderLeft: '3px solid var(--flag-yellow)',
               borderRadius: '4px',
               fontSize: '12px',
               color: 'var(--wrn-txt)',

@@ -123,11 +123,11 @@ export default function BillingPage() {
           {/* Error Banner */}
           {error && (
             <div style={{ padding: '16px 16px', marginBottom: '24px', borderRadius: '4px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)' }}>
-              <p style={{ fontSize: '13px', color: '#E89558', margin: 0 }}>{error}</p>
+              <p style={{ fontSize: '13px', color: 'var(--flag-yellow)', margin: 0 }}>{error}</p>
             </div>
           )}
           {/* Current Plan Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
               <div>
                 <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 8px 0' }}>
@@ -165,7 +165,7 @@ export default function BillingPage() {
           </div>
 
           {/* Plan Features */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Your Plan Includes
             </h2>
@@ -188,7 +188,7 @@ export default function BillingPage() {
           </div>
 
           {/* Payment Method (placeholder for future Stripe) */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               Payment Method
             </h2>

@@ -24,7 +24,7 @@ export default function CategoryLoading() {
               borderRadius: '4px',
               padding: '24px',
               minHeight: '160px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
+              boxShadow: 'var(--shadow-xs)'
             }}>
               <div style={{ height: '24px', width: '80%', background: 'var(--border-default)', borderRadius: '4px', marginBottom: '12px' }} />
               <div style={{ height: '14px', width: '100%', background: 'var(--color-surface-1)', borderRadius: '4px', marginBottom: '8px' }} />

@@ -144,15 +144,15 @@ export function MasterListItem({
         width: '100%',
         textAlign: 'left',
         padding: '8px 16px',
-        borderBottom: '1px solid #F0F0F0',
+        borderBottom: '1px solid var(--bdr)',
         borderLeft: isActive ? '3px solid var(--gold, #C4882A)' : '3px solid transparent',
-        background: isActive ? '#EFF5FF' : 'transparent',
+        background: isActive ? 'var(--link-light)' : 'transparent',
         cursor: 'pointer',
         transition: 'background 80ms',
         border: 'none',
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
-        borderBottomColor: '#F0F0F0',
+        borderBottomColor: 'var(--bdr)',
         borderLeftWidth: 3,
         borderLeftStyle: 'solid',
         borderLeftColor: isActive ? 'var(--gold, #C4882A)' : 'transparent',
@@ -162,7 +162,7 @@ export function MasterListItem({
     >
       {children}
       <style>{`
-        .master-list-item:hover { background: #EFF5FF !important; }
+        .master-list-item:hover { background: var(--link-light) !important; }
       `}</style>
     </button>
   );

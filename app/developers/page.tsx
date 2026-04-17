@@ -359,7 +359,7 @@ export default function DevelopersPage() {
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
         input:focus, select:focus, textarea:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
-        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        @media (max-width: 640px) { h1 { font-size: 20px; } }
         code { font-family: var(--font-mono); }
         pre { font-family: var(--font-mono); }
       `}</style>
@@ -394,7 +394,7 @@ export default function DevelopersPage() {
           </div>
           <h1 style={{
             fontFamily: 'var(--font-legal)',
-            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
@@ -908,7 +908,7 @@ export default function DevelopersPage() {
             >
               Ready to integrate?
             </h3>
-            <p style={{ fontSize: '14px', color: '#B0B8C0', margin: '0 0 20px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text-tertiary)', margin: '0 0 20px' }}>
               Request API access to start building with MyCaseValue data. Perfect for integrations, analysis tools, and enterprise applications.
             </p>
             <Link

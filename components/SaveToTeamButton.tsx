@@ -128,7 +128,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
             color: 'var(--color-surface-0)',
             fontSize: '13px',
             fontWeight: 500,
-            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+            boxShadow: 'var(--shadow-md)',
             zIndex: 10001,
             animation: 'fadeIn 0.2s ease-out',
           }}

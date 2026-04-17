@@ -290,7 +290,7 @@ function SignInForm() {
             border: '1px solid var(--border-default)',
             borderRadius: '4px',
             padding: '24px',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            boxShadow: 'var(--shadow-sm)',
           }}
         >
 

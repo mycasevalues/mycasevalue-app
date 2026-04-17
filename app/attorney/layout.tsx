@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import { SITE_URL } from '@/lib/site-config';
+import JsonLd from '@/components/JsonLd';
+import Onboarding from '@/components/Onboarding';
 
 export const metadata: Metadata = {
   title: {
@@ -37,6 +39,30 @@ export const metadata: Metadata = {
   ],
 };
 
+const breadcrumbJsonLd = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: SITE_URL,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Attorney Tools',
+      item: `${SITE_URL}/attorney`,
+    },
+  ],
+};
+
 export default function AttorneyLayout({ children }: { children: ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <Onboarding />
+      {children}
+    </>
+  );
 }

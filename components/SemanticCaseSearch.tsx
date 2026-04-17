@@ -142,7 +142,7 @@ export default function SemanticCaseSearch() {
               e.currentTarget.style.borderColor = isOverLimit ? 'var(--data-negative, #B01E1E)' : 'var(--accent-primary)';
             }}
             onBlur={(e) => {
-              e.currentTarget.style.borderColor = isOverLimit ? '#f87171' : 'rgba(255,255,255,0.1)';
+              e.currentTarget.style.borderColor = isOverLimit ? 'var(--data-negative)' : 'var(--bdr)';
             }}
           />
         </div>

@@ -87,7 +87,7 @@ export default function MethodologyPage() {
           transform: translateY(-2px);
         }
         .limitation-callout {
-          border-left: 3px solid #F59E0B;
+          border-left: 3px solid var(--flag-yellow);
           background: rgba(234,179,8,0.08);
           padding: 1.5rem;
           border-radius: 2px;
@@ -131,7 +131,7 @@ export default function MethodologyPage() {
         .at-a-glance-label {
           font-size: 0.75rem;
           font-weight: 600;
-          color: #6B7280;
+          color: var(--text-tertiary);
           font-family: var(--font-ui, 'Inter', sans-serif);
         }
         .confidence-tiers {
@@ -164,7 +164,7 @@ export default function MethodologyPage() {
         }
         .confidence-desc {
           font-size: 0.75rem;
-          color: #6B7280;
+          color: var(--text-tertiary);
           margin-bottom: 0.5rem;
         }
         .confidence-threshold {
@@ -280,7 +280,7 @@ export default function MethodologyPage() {
 
           <h1 style={{
             fontFamily: 'var(--font-legal)',
-            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
@@ -373,7 +373,7 @@ export default function MethodologyPage() {
                 name: 'PACER (Public Access to Court Electronic Records)',
                 description: 'PACER is the federal judiciary\'s official electronic records system. Court filings, docket sheets, and case documents referenced in our dataset originate from PACER.',
                 badge: 'Reference',
-                color: '#C0C4C8',
+                color: 'var(--text-placeholder)',
                 url: 'https://pacer.uscourts.gov/',
                 icon: 'files'
               },
@@ -389,7 +389,7 @@ export default function MethodologyPage() {
                 name: 'Administrative Office of U.S. Courts',
                 description: 'The AO publishes annual statistical tables on federal court caseloads, median disposition times, and case processing metrics used for our timeline and volume statistics.',
                 badge: 'Primary Source',
-                color: '#B86E00',
+                color: 'var(--wrn-txt)',
                 url: 'https://www.uscourts.gov/statistics-reports',
                 icon: 'building'
               },
@@ -539,7 +539,7 @@ export default function MethodologyPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-legal font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>Public Domain Status</h2>
           <div className="public-domain-callout">
-            <p className="text-sm leading-relaxed m-0" style={{ color: '#003d5c' }}>
+            <p className="text-sm leading-relaxed m-0" style={{ color: 'var(--link)' }}>
               All source data used by MyCaseValue is public domain under 17 U.S.C. § 105 (works of the United States government) or made freely available by the Free Law Project under open-access principles. MyCaseValue's proprietary contribution is in the aggregation, categorization, and presentation of this data — not in the underlying records themselves.
             </p>
           </div>
@@ -572,7 +572,7 @@ export default function MethodologyPage() {
           <p className="text-sm mb-6" style={{ color: 'var(--color-text-secondary)' }}>Questions about our methodology?</p>
           <a href="mailto:support@mycasevalues.com"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '20px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: '1px solid var(--accent-primary)' }}>
+            style={{ borderRadius: '2px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: '1px solid var(--accent-primary)' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

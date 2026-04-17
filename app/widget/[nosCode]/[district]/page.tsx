@@ -74,7 +74,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
       <div style={{
         width: '280px',
         height: '160px',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+        fontFamily: 'var(--font-ui)',
         fontSize: '12px',
         padding: '12px',
         boxSizing: 'border-box',
@@ -101,7 +101,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
     <div style={{
       width: '280px',
       height: '160px',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      fontFamily: 'var(--font-ui)',
       fontSize: '12px',
       padding: '12px',
       boxSizing: 'border-box',

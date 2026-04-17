@@ -30,7 +30,7 @@ interface PipelineEvent {
 }
 
 const SOURCES: SourceStatus[] = [
-  { name: 'CourtListener', key: 'courtlistener', color: '#1E3A5F', status: 'healthy', documents: 547832, lastSync: '2 min ago', syncInterval: '15 min', latency: 142, uptime: 99.8, trend: 2.4 },
+  { name: 'CourtListener', key: 'courtlistener', color: 'var(--chrome-bg)', status: 'healthy', documents: 547832, lastSync: '2 min ago', syncInterval: '15 min', latency: 142, uptime: 99.8, trend: 2.4 },
   { name: 'Federal Register', key: 'federal_register', color: 'var(--link)', status: 'healthy', documents: 89421, lastSync: '8 min ago', syncInterval: '1 hr', latency: 210, uptime: 99.5, trend: 1.8 },
   { name: 'eCFR', key: 'ecfr', color: 'var(--data-positive)', status: 'healthy', documents: 198765, lastSync: '25 min ago', syncInterval: '6 hr', latency: 95, uptime: 99.9, trend: 0.3 },
   { name: 'EDGAR', key: 'edgar', color: 'var(--wrn-txt)', status: 'degraded', documents: 1243098, lastSync: '1 hr ago', syncInterval: '30 min', latency: 890, uptime: 97.2, trend: -0.5 },
@@ -53,7 +53,7 @@ const PIPELINE_EVENTS: PipelineEvent[] = [
 const STATUS_STYLES: Record<string, { bg: string; color: string; label: string }> = {
   healthy: { bg: 'rgba(34,197,94,0.06)', color: 'var(--data-positive)', label: 'Healthy' },
   degraded: { bg: 'rgba(234,179,8,0.08)', color: 'var(--wrn-txt)', label: 'Degraded' },
-  offline: { bg: '#FEF2F2', color: '#B91C1C', label: 'Offline' },
+  offline: { bg: 'var(--data-negative-bg)', color: 'var(--data-negative)', label: 'Offline' },
 };
 
 const EVENT_STYLES: Record<string, { bg: string; color: string; icon: string }> = {
@@ -128,24 +128,24 @@ export default function LegalDashboardPage() {
 
       {/* Summary cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, marginBottom: 28 }}>
-        <div style={{ padding: '24px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: '24px 24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Total Documents</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono, monospace)' }}>{formatNumber(totalDocs)}</div>
           <div style={{ fontSize: 12, color: 'var(--data-positive)', marginTop: 4 }}>+12,341 today</div>
         </div>
-        <div style={{ padding: '24px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: '24px 24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Sources Online</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive)', fontFamily: 'var(--font-mono, monospace)' }}>{healthySources}/{sources.length}</div>
           <div style={{ fontSize: 12, color: sources.some(s => s.status !== 'healthy') ? 'var(--wrn-txt)' : 'var(--data-positive)', marginTop: 4 }}>
             {sources.some(s => s.status === 'offline') ? '1 source offline' : sources.some(s => s.status === 'degraded') ? '1 degraded' : 'All healthy'}
           </div>
         </div>
-        <div style={{ padding: '24px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: '24px 24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Avg Uptime</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono, monospace)' }}>{avgUptime}%</div>
           <div style={{ fontSize: 12, color: 'var(--color-text-muted)', marginTop: 4 }}>30-day rolling</div>
         </div>
-        <div style={{ padding: '24px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+        <div style={{ padding: '24px 24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Avg Latency</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono, monospace)' }}>{avgLatency}ms</div>
           <div style={{ fontSize: 12, color: 'var(--color-text-muted)', marginTop: 4 }}>API response time</div>
@@ -186,7 +186,7 @@ export default function LegalDashboardPage() {
                 key={src.key}
                 style={{
                   padding: '24px 24px',
-                  borderRadius: 14,
+                  borderRadius: 4,
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   display: 'grid',
@@ -321,7 +321,7 @@ export default function LegalDashboardPage() {
         <div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16, marginBottom: 24 }}>
             {/* Completeness */}
-            <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+            <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
               <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>Document Completeness</h3>
               {[
                 { label: 'Has full text', value: 94 },
@@ -348,7 +348,7 @@ export default function LegalDashboardPage() {
             </div>
 
             {/* Freshness */}
-            <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+            <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
               <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>Data Freshness</h3>
               {sources.map(src => {
                 const fresh = src.status === 'healthy' ? 'current' : src.status === 'degraded' ? 'stale' : 'unavailable';
@@ -373,7 +373,7 @@ export default function LegalDashboardPage() {
           </div>
 
           {/* Processing stats */}
-          <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
+          <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
             <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>Processing Pipeline</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
               {[

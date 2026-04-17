@@ -136,7 +136,7 @@ export default function CaseTypeComparison() {
         <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2, overflow: 'hidden' }}>
           {/* Header row */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', background: 'var(--accent-primary)', padding: '12px 16px' }}>
-            <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#C7D1D8' }}>Metric</div>
+            <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text-tertiary)' }}>Metric</div>
             <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-surface-0)', textAlign: 'center' }}>{entryA.label}</div>
             <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-surface-0)', textAlign: 'center' }}>{entryB.label}</div>
           </div>

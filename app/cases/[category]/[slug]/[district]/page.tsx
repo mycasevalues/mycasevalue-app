@@ -132,7 +132,7 @@ function StatsCard({
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
         textAlign: 'center',
-        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
+        boxShadow: 'var(--shadow-xs)',
       }}
     >
       <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
@@ -313,7 +313,7 @@ export default async function DistrictCaseTypePage({
             <div style={{ flex: 1 }}>
               <h1
                 style={{
-                  fontSize: 'clamp(28px, 6vw, 36px)',
+                  fontSize: '28px',
                   fontWeight: 700,
                   margin: '0 0 8px',
                   fontFamily: 'var(--font-ui)',
@@ -391,7 +391,7 @@ export default async function DistrictCaseTypePage({
             borderRadius: '4px',
             padding: '32px',
             marginBottom: '48px',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
+            boxShadow: 'var(--shadow-xs)',
           }}
         >
           <h2
@@ -428,7 +428,7 @@ export default async function DistrictCaseTypePage({
             borderRadius: '4px',
             padding: '24px',
             marginBottom: '48px',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
+            boxShadow: 'var(--shadow-xs)',
           }}
         >
           <h3
@@ -463,7 +463,7 @@ export default async function DistrictCaseTypePage({
             borderRadius: '4px',
             padding: '24px',
             marginBottom: '48px',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
+            boxShadow: 'var(--shadow-xs)',
           }}
         >
           <h3
@@ -494,7 +494,7 @@ export default async function DistrictCaseTypePage({
           .nav-button {
             display: inline-block;
             padding: '16px 32px';
-            border-radius: '12px';
+            border-radius: '4px';
             background: 'var(--accent-primary)';
             color: white;
             text-decoration: none;
@@ -507,7 +507,7 @@ export default async function DistrictCaseTypePage({
             transition: background-color 0.2s ease, transform 0.2s ease;
           }
           .nav-button:hover {
-            background-color: '#c41218';
+            background-color: 'var(--data-negative)';
             transform: translateY(-1px);
           }
 

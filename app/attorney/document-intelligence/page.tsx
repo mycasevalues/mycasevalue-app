@@ -40,7 +40,7 @@ export default function DocumentIntelligencePage() {
         input:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        @media (max-width: 640px) { h1 { font-size: 20px; } }
       `}</style>
       {/* Header */}
       <div style={{
@@ -67,7 +67,7 @@ export default function DocumentIntelligencePage() {
           Upload a legal document — complaint, motion, or brief — to receive an AI-powered analysis including case type classification, key claims identified, relevant NOS codes, and comparable federal court outcomes.
         </p>
 
-        <div style={{ border: '2px dashed var(--border-default)', borderRadius: '4px', padding: '40px', textAlign: 'center', marginBottom: '24px', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ border: '2px dashed var(--border-default)', borderRadius: '4px', padding: '40px', textAlign: 'center', marginBottom: '24px', background: 'var(--color-surface-0)', boxShadow: 'var(--shadow-xs)' }}>
           <input
             type="file"
             accept=".pdf,.txt,.doc,.docx"
@@ -88,7 +88,7 @@ export default function DocumentIntelligencePage() {
         {error && <div style={{ padding: '12px 16px', background: 'rgba(10, 102, 194, 0.12)', border: '1px solid var(--border-default)', borderRadius: '4px', color: 'var(--accent-primary)', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
 
         {analysis && (
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', boxShadow: 'var(--shadow-xs)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>Document Analysis</h2>
             <div style={{ fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>{analysis}</div>
           </div>

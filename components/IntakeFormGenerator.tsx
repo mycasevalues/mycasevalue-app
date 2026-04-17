@@ -595,7 +595,7 @@ export default function IntakeFormGenerator() {
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: selectedInfo ? '1fr 1fr' : '1fr', gap: '24px' }}>
-      <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+      <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
         <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
           Form Configuration
         </h2>
@@ -630,7 +630,7 @@ export default function IntakeFormGenerator() {
           </div>
 
           <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
-            <p style={{ fontSize: '12px', color: '#38bdf8', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '12px', color: 'var(--link)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
               This tool generates a comprehensive intake questionnaire with relevant fields for your case type. You can customize and print the form for client meetings.
             </p>
           </div>
@@ -644,7 +644,7 @@ export default function IntakeFormGenerator() {
               backgroundColor: !selectedCaseType || loading ? 'var(--border-default)' : 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               border: 'none',
-              borderRadius: '20px',
+              borderRadius: '2px',
               fontSize: '15px',
               fontWeight: 600,
               fontFamily: 'var(--font-ui)',
@@ -666,7 +666,7 @@ export default function IntakeFormGenerator() {
                 backgroundColor: 'var(--color-surface-0)',
                 color: 'var(--accent-primary)',
                 border: '1px solid var(--accent-primary)',
-                borderRadius: '20px',
+                borderRadius: '2px',
                 fontSize: '13px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
@@ -687,7 +687,7 @@ export default function IntakeFormGenerator() {
       </div>
 
       {selectedInfo && (
-        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
           <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
             Preview
           </h2>

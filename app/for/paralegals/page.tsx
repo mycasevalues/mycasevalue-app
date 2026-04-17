@@ -89,7 +89,7 @@ export default function ParalegalsPage() {
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 background: 'var(--color-surface-0)',
-                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
+                boxShadow: 'var(--shadow-xs)',
               }}
             >
               <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>

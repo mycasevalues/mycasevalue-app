@@ -549,7 +549,7 @@ export default function FoldersPage() {
                       <span style={{ fontSize: '13px', fontFamily: 'var(--font-ui)' }}>Secondary Sources</span>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <div style={{ width: '120px', height: '8px', background: 'var(--surf)', borderRadius: '2px', overflow: 'hidden' }}>
-                          <div style={{ width: `${(analysis.secondaryCount / analysis.totalItems) * 100}%`, height: '100%', background: '#a855f7' }} />
+                          <div style={{ width: `${(analysis.secondaryCount / analysis.totalItems) * 100}%`, height: '100%', background: 'var(--link-visited)' }} />
                         </div>
                         <span style={{ fontSize: '12px', fontWeight: 600, color: '#a855f7', fontFamily: 'var(--font-mono)' }}>
                           {analysis.secondaryCount}

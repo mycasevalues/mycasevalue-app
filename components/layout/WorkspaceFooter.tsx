@@ -33,7 +33,7 @@ export default function WorkspaceFooter() {
         style={{
           fontSize: 10,
           fontFamily: 'var(--font-ui)',
-          color: '#4A6080',
+          color: 'var(--chrome-text-muted)',
           display: 'flex',
           alignItems: 'center',
           gap: 12,
@@ -61,7 +61,7 @@ export default function WorkspaceFooter() {
       </div>
 
       <style>{`
-        .wf-link:hover { color: #FFFFFF !important; }
+        .wf-link:hover { color: var(--chrome-text) !important; }
       `}</style>
     </footer>
   );

@@ -287,12 +287,12 @@ export default function PricingPage() {
 
         .pricing-card:hover {
           border-color: var(--chrome-bg);
-          box-shadow: 0 2px 8px rgba(27,45,69,0.08);
+          box-shadow: var(--shadow-sm);
         }
 
         .pricing-card.highlighted:hover {
           border-color: var(--accent-primary, #C4882A);
-          box-shadow: 0 2px 12px rgba(196,136,42,0.12);
+          box-shadow: var(--shadow-sm);
         }
 
         .card-name {

@@ -230,7 +230,7 @@ export default async function OutcomesPage({
       <style>{`
         .outcome-card-link:hover {
           border-color: var(--gold);
-          box-shadow: 0 2px 8px rgba(10, 102, 194, 0.1);
+          box-shadow: var(--shadow-sm);
           transform: translateY(-2px);
         }
 
@@ -294,7 +294,7 @@ export default async function OutcomesPage({
           {/* Title with Badge */}
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '8px', flexWrap: 'wrap' }}>
             <h1 style={{
-              fontSize: 'clamp(28px, 6vw, 42px)',
+              fontSize: '28px',
               fontWeight: 600,
               margin: 0,
               fontFamily: 'var(--font-ui)',

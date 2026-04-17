@@ -128,7 +128,7 @@ export default function ResearchMemoPage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: var(--shadow-focus); }
       `}</style>
 
       {/* Header */}
@@ -238,10 +238,10 @@ export default function ResearchMemoPage() {
                     {loading && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
                   <div style={{ display: 'flex', gap: 8 }}>
-                    <button onClick={copyToClipboard} disabled={loading} style={{ padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--accent-primary)', color: '#FFFFFF', border: 'none', borderRadius: '2px', fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.5 : 1 }}>
+                    <button onClick={copyToClipboard} disabled={loading} style={{ padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--accent-primary)', color: 'var(--chrome-text)', border: 'none', borderRadius: '2px', fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.5 : 1 }}>
                       {copied ? 'Copied!' : 'Copy'}
                     </button>
-                    <button onClick={exportAsDocx} disabled={loading || exporting} style={{ padding: '8px 12px', background: 'var(--gold)', color: '#FFFFFF', border: 'none', borderRadius: '2px', fontSize: '12px', fontWeight: 600, cursor: loading || exporting ? 'not-allowed' : 'pointer', opacity: loading || exporting ? 0.5 : 1 }}>
+                    <button onClick={exportAsDocx} disabled={loading || exporting} style={{ padding: '8px 12px', background: 'var(--gold)', color: 'var(--chrome-text)', border: 'none', borderRadius: '2px', fontSize: '12px', fontWeight: 600, cursor: loading || exporting ? 'not-allowed' : 'pointer', opacity: loading || exporting ? 0.5 : 1 }}>
                       {exporting ? 'Exporting...' : 'Export as Word'}
                     </button>
                   </div>

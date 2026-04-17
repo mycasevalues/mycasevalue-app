@@ -18,7 +18,7 @@ export default function NLRBContext() {
   const outcomes = [
     { label: 'Settled', value: nlrbData.settledCases, percentage: Number(((nlrbData.settledCases / totalOutcomes) * 100).toFixed(1)), color: 'var(--data-positive, #176438)' },
     { label: 'Withdrawn', value: nlrbData.withdrawnCases, percentage: Number(((nlrbData.withdrawnCases / totalOutcomes) * 100).toFixed(1)), color: 'var(--color-text-secondary)' },
-    { label: 'Dismissed', value: nlrbData.dismissedCases, percentage: Number(((nlrbData.dismissedCases / totalOutcomes) * 100).toFixed(1)), color: '#DC3545' },
+    { label: 'Dismissed', value: nlrbData.dismissedCases, percentage: Number(((nlrbData.dismissedCases / totalOutcomes) * 100).toFixed(1)), color: 'var(--data-negative)' },
     { label: 'Complaint Issued', value: nlrbData.complaintIssued, percentage: Number(((nlrbData.complaintIssued / totalOutcomes) * 100).toFixed(1)), color: 'var(--accent-primary)' },
   ];
 

@@ -344,7 +344,7 @@ export default function AdminPage() {
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
-                    <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
+                    <tr style={{ borderBottom: '2px solid var(--bdr-strong)' }}>
                       <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Action
                       </th>
@@ -358,7 +358,7 @@ export default function AdminPage() {
                   </thead>
                   <tbody>
                     {activityLogs.map((log) => (
-                      <tr key={log.id} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                      <tr key={log.id} style={{ borderBottom: '1px solid var(--bdr)' }}>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{log.action}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{log.user}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px', color: 'var(--color-text-secondary)' }}>{log.timestamp}</td>
@@ -394,7 +394,7 @@ export default function AdminPage() {
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
-                    <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
+                    <tr style={{ borderBottom: '2px solid var(--bdr-strong)' }}>
                       <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Title
                       </th>
@@ -411,7 +411,7 @@ export default function AdminPage() {
                   </thead>
                   <tbody>
                     {blogPosts.map((post) => (
-                      <tr key={post.id} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                      <tr key={post.id} style={{ borderBottom: '1px solid var(--bdr)' }}>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{post.title}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>
                           <span
@@ -422,7 +422,7 @@ export default function AdminPage() {
                               fontSize: '12px',
                               backgroundColor:
                                 post.status === 'published' ? '#d1fae5' : '#fef3c7',
-                              color: post.status === 'published' ? '#065f46' : '#92400e',
+                              color: post.status === 'published' ? 'var(--data-positive)' : 'var(--wrn-txt)',
                             }}
                           >
                             {post.status}
@@ -630,7 +630,7 @@ export default function AdminPage() {
                 Data Quality Check
               </h2>
               <div style={{ marginBottom: '16px', padding: '12px', backgroundColor: 'rgba(34,197,94,0.06)', borderRadius: '4px', border: '1px solid rgba(34,197,94,0.15)' }}>
-                <p style={{ fontSize: '14px', color: '#065f46', margin: 0 }}>
+                <p style={{ fontSize: '14px', color: 'var(--data-positive)', margin: 0 }}>
                   Last check: 2026-04-07 at 13:45 - All systems nominal
                 </p>
               </div>
@@ -666,7 +666,7 @@ export default function AdminPage() {
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
-                    <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
+                    <tr style={{ borderBottom: '2px solid var(--bdr-strong)' }}>
                       <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Data Source
                       </th>
@@ -680,7 +680,7 @@ export default function AdminPage() {
                   </thead>
                   <tbody>
                     {dataSources.map((source) => (
-                      <tr key={source.name} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                      <tr key={source.name} style={{ borderBottom: '1px solid var(--bdr)' }}>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{source.name}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px', color: 'var(--color-text-secondary)' }}>{source.lastRefresh}</td>
                         <td style={{ padding: '12px 0' }}>
@@ -691,7 +691,7 @@ export default function AdminPage() {
                               borderRadius: '4px',
                               fontSize: '12px',
                               backgroundColor: 'rgba(34,197,94,0.1)',
-                              color: '#065f46',
+                              color: 'var(--data-positive)',
                             }}
                           >
                             Current
@@ -781,14 +781,14 @@ export default function AdminPage() {
                 style={{
                   padding: '12px',
                   borderRadius: '4px',
-                  backgroundColor: rulesValidation.valid ? '#f0fdf4' : '#fef2f2',
+                  backgroundColor: rulesValidation.valid ? 'var(--data-positive-bg)' : 'var(--data-negative-bg)',
                   border: `1px solid `,
                 }}
               >
                 <p
                   style={{
                     fontSize: '13px',
-                    color: rulesValidation.valid ? '#065f46' : '#991b1b',
+                    color: rulesValidation.valid ? 'var(--data-positive)' : 'var(--data-negative)',
                     margin: 0,
                   }}
                 >
@@ -847,7 +847,7 @@ export default function AdminPage() {
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
-                    <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
+                    <tr style={{ borderBottom: '2px solid var(--bdr-strong)' }}>
                       <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Email
                       </th>
@@ -864,7 +864,7 @@ export default function AdminPage() {
                   </thead>
                   <tbody>
                     {users.map((user) => (
-                      <tr key={user.id} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                      <tr key={user.id} style={{ borderBottom: '1px solid var(--bdr)' }}>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{user.email}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{user.role}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px', color: 'var(--color-text-secondary)' }}>{user.lastActive}</td>
@@ -962,7 +962,7 @@ export default function AdminPage() {
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
-                    <tr style={{ borderBottom: '2px solid #e0e0e0' }}>
+                    <tr style={{ borderBottom: '2px solid var(--bdr-strong)' }}>
                       <th style={{ textAlign: 'left', padding: '12px 0', fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)' }}>
                         Recipient
                       </th>
@@ -976,7 +976,7 @@ export default function AdminPage() {
                   </thead>
                   <tbody>
                     {emailsSent.map((email) => (
-                      <tr key={email.id} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                      <tr key={email.id} style={{ borderBottom: '1px solid var(--bdr)' }}>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{email.recipient}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px' }}>{email.subject}</td>
                         <td style={{ padding: '12px 0', fontSize: '14px', color: 'var(--color-text-secondary)' }}>{email.sent}</td>

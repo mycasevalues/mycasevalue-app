@@ -207,7 +207,7 @@ export default function JudgeRadar({
           Judge Profile
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }}>
-          <span style={{ width: 12, height: 3, background: '#E0DDD8', borderRadius: 1, display: 'inline-block', borderTop: '1px dashed #E0DDD8' }} />
+          <span style={{ width: 12, height: 3, background: 'var(--bdr)', borderRadius: 1, display: 'inline-block', borderTop: '1px dashed var(--bdr)' }} />
           District Average
         </div>
       </div>

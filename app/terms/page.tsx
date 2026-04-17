@@ -256,7 +256,7 @@ export default function TermsPage() {
             paddingTop: '16px',
             paddingBottom: '16px',
             borderRadius: '4px',
-            borderLeft: '4px solid #D97706',
+            borderLeft: '4px solid var(--flag-yellow)',
             background: 'rgba(239,68,68,0.08)',
             color: 'var(--color-text-primary)',
             marginBottom: '32px'
@@ -535,7 +535,7 @@ export default function TermsPage() {
               padding: '12px 16px',
               borderRadius: '4px',
               background: 'rgba(234,179,8,0.08)',
-              borderLeft: '3px solid #D97706',
+              borderLeft: '3px solid var(--flag-yellow)',
               fontSize: '13px',
               color: 'var(--color-text-secondary)',
               lineHeight: 1.6,

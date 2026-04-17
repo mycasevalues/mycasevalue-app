@@ -87,7 +87,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
         .nos-th { cursor: pointer; user-select: none; white-space: nowrap; }
         .nos-th:hover { color: var(--accent-primary-hover) !important; }
         .nos-tr:hover { background: var(--color-surface-1) !important; }
-        .nos-expand:hover { background: #F0F3F5 !important; }
+        .nos-expand:hover { background: var(--surface-hover) !important; }
         @media (max-width: 768px) {
           .nos-table-wrap { overflow-x: auto; }
         }
@@ -152,7 +152,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
               <th className="nos-th" onClick={() => toggleSort('label')} style={{ textAlign: 'left', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Case Type<SortArrow field="label" />
               </th>
-              <th style={{ textAlign: 'left', padding: '12px 8px', color: '#C7D1D8', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <th style={{ textAlign: 'left', padding: '12px 8px', color: 'var(--text-tertiary)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Category
               </th>
               <th className="nos-th" onClick={() => toggleSort('total')} style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -179,7 +179,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                   key={row.nos}
                   className="nos-tr"
                   onClick={() => setExpandedNos(expandedNos === row.nos ? null : row.nos)}
-                  style={{ borderBottom: '1px solid #F0F0F0', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#FAFAFA', cursor: 'pointer' }}
+                  style={{ borderBottom: '1px solid var(--bdr)', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#FAFAFA', cursor: 'pointer' }}
                 >
                   <td style={{ padding: '8px 16px', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--accent-primary-hover)', fontSize: 13 }}>
                     {row.nos}

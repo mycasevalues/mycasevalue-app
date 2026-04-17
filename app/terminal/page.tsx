@@ -240,9 +240,9 @@ function TerminalContent() {
   const isSaved = (id: number) => savedCases.includes(id);
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden" style={{ background: '#0f1117' }}>
+    <div className="h-screen flex flex-col overflow-hidden" style={{ background: 'var(--chrome-bg-dark)' }}>
       {/* ── TOP BAR ── */}
-      <div className="flex-shrink-0 h-12 flex items-center gap-3 px-3 border-b" style={{ background: '#161822', borderColor: '#252833' }}>
+      <div className="flex-shrink-0 h-12 flex items-center gap-3 px-3 border-b" style={{ background: 'var(--chrome-bg)', borderColor: 'var(--chrome-border)' }}>
         <button onClick={() => setSidebarOpen(!sidebarOpen)} className="w-8 h-8 flex items-center justify-center rounded hover:bg-white/5 text-gray-400 transition-colors">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -256,7 +256,7 @@ function TerminalContent() {
               type="text" value={query} onChange={e => setQuery(e.target.value)}
               placeholder="Search cases, dockets, parties..."
               className="w-full h-8 pl-8 pr-3 rounded-md text-xs text-white placeholder:text-gray-500 border focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 outline-none transition-colors"
-              style={{ background: '#1e2030', borderColor: '#303347' }}
+              style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }}
             />
           </div>
           <button type="submit" className="h-8 px-3 rounded-md bg-[var(--link)] text-white text-xs font-medium hover:bg-[var(--color-surface-1)]0 transition-colors">Search</button>
@@ -288,7 +288,7 @@ function TerminalContent() {
       <div className="flex flex-1 overflow-hidden">
         {/* ── LEFT SIDEBAR ── */}
         {sidebarOpen && (
-          <div className="w-48 flex-shrink-0 border-r overflow-y-auto" style={{ background: '#161822', borderColor: '#252833' }}>
+          <div className="w-48 flex-shrink-0 border-r overflow-y-auto" style={{ background: 'var(--chrome-bg)', borderColor: 'var(--chrome-border)' }}>
             <div className="p-3 space-y-4">
               {/* Filters */}
               <div>
@@ -296,20 +296,20 @@ function TerminalContent() {
                 <div className="space-y-2">
                   <input type="text" value={court} onChange={e => setCourt(e.target.value)} placeholder="Court (e.g. SDNY)"
                     className="w-full h-7 px-2 rounded text-xs border outline-none focus:border-blue-500 text-gray-300 placeholder:text-gray-400"
-                    style={{ background: '#1e2030', borderColor: '#303347' }} />
+                    style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }} />
                   <input type="text" value={caseType} onChange={e => setCaseType(e.target.value)} placeholder="Case type"
                     className="w-full h-7 px-2 rounded text-xs border outline-none focus:border-blue-500 text-gray-300 placeholder:text-gray-400"
-                    style={{ background: '#1e2030', borderColor: '#303347' }} />
+                    style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }} />
                   <select value={status} onChange={e => setStatus(e.target.value)}
                     className="w-full h-7 px-2 rounded text-xs border outline-none text-gray-300"
-                    style={{ background: '#1e2030', borderColor: '#303347' }}>
+                    style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }}>
                     <option value="">All statuses</option>
                     <option value="open">Open</option>
                     <option value="closed">Closed</option>
                   </select>
                   <select value={sort} onChange={e => setSort(e.target.value)}
                     className="w-full h-7 px-2 rounded text-xs border outline-none text-gray-300"
-                    style={{ background: '#1e2030', borderColor: '#303347' }}>
+                    style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }}>
                     <option value="newest">Newest first</option>
                     <option value="oldest">Oldest first</option>
                   </select>
@@ -371,9 +371,9 @@ function TerminalContent() {
         )}
 
         {/* ── RESULTS LIST ── */}
-        <div className={`flex-shrink-0 border-r overflow-y-auto ${selectedId ? 'w-80 lg:w-96' : 'flex-1 max-w-3xl'}`} style={{ borderColor: '#252833', background: '#12141d' }}>
+        <div className={`flex-shrink-0 border-r overflow-y-auto ${selectedId ? 'w-80 lg:w-96' : 'flex-1 max-w-3xl'}`} style={{ borderColor: 'var(--chrome-border)', background: 'var(--chrome-bg-dark)' }}>
           {/* Results header */}
-          <div className="sticky top-0 z-10 px-3 py-2 border-b flex items-center justify-between" style={{ background: '#161822', borderColor: '#252833' }}>
+          <div className="sticky top-0 z-10 px-3 py-2 border-b flex items-center justify-between" style={{ background: 'var(--chrome-bg)', borderColor: 'var(--chrome-border)' }}>
             <span className="text-[11px] text-gray-400">
               {loading ? 'Searching...' : hasSearched ? `${total} result${total !== 1 ? 's' : ''}` : 'Enter a query'}
             </span>
@@ -386,7 +386,7 @@ function TerminalContent() {
           {loading && (
             <div className="p-3 space-y-2">
               {[...Array(8)].map((_, i) => (
-                <div key={i} className="h-16 rounded animate-pulse" style={{ background: '#1e2030' }} />
+                <div key={i} className="h-16 rounded animate-pulse" style={{ background: 'var(--chrome-hover)' }} />
               ))}
             </div>
           )}
@@ -399,7 +399,7 @@ function TerminalContent() {
                 {['Patent infringement', 'SEC v. Terraform', 'Employment discrimination'].map(q => (
                   <button key={q} onClick={() => { setQuery(q); performSearch(); }}
                     className="text-[10px] px-2 py-1 rounded border text-gray-500 hover:text-[var(--link)] hover:border-blue-500/30 transition-colors"
-                    style={{ borderColor: '#303347' }}>
+                    style={{ borderColor: 'var(--chrome-active)' }}>
                     {q}
                   </button>
                 ))}
@@ -415,7 +415,7 @@ function TerminalContent() {
                 {['SEC v. Terraform', 'Patent infringement', 'Civil rights', 'Employment discrimination', 'Class action'].map(q => (
                   <button key={q} onClick={() => { setQuery(q); setTimeout(performSearch, 50); }}
                     className="text-[10px] px-2 py-1 rounded border text-gray-500 hover:text-[var(--link)] hover:border-blue-500/30 transition-colors"
-                    style={{ borderColor: '#303347' }}>
+                    style={{ borderColor: 'var(--chrome-active)' }}>
                     {q}
                   </button>
                 ))}
@@ -436,7 +436,7 @@ function TerminalContent() {
                     ? 'bg-white/[0.03]'
                     : 'hover:bg-white/[0.02]'
                 }`}
-                style={{ borderBottomColor: '#1e2030', borderLeftColor: selectedId === r.id ? undefined : 'transparent' }}
+                style={{ borderBottomColor: 'var(--chrome-hover)', borderLeftColor: selectedId === r.id ? undefined : 'transparent' }}
               >
                 <div className="flex items-start justify-between gap-2">
                   <span className={`${compact ? 'text-[11px]' : 'text-xs'} font-medium text-gray-200 leading-snug line-clamp-1`}>{r.caseName}</span>
@@ -454,7 +454,7 @@ function TerminalContent() {
                 {!compact && r.tags.length > 0 && (
                   <div className="flex gap-1 mt-1.5">
                     {r.tags.slice(0, 3).map(t => (
-                      <span key={t.tag} className="text-[9px] px-1.5 py-0.5 rounded" style={{ background: '#1e2030', color: '#8b8fa3' }}>
+                      <span key={t.tag} className="text-[9px] px-1.5 py-0.5 rounded" style={{ background: 'var(--chrome-hover)', color: 'var(--chrome-text-muted)' }}>
                         {t.tag}
                       </span>
                     ))}
@@ -467,12 +467,12 @@ function TerminalContent() {
 
         {/* ── CASE DETAIL PANEL ── */}
         {selectedId && (
-          <div className="flex-1 overflow-y-auto" style={{ background: '#12141d' }}>
+          <div className="flex-1 overflow-y-auto" style={{ background: 'var(--chrome-bg-dark)' }}>
             {caseLoading && (
               <div className="p-6 space-y-4">
-                <div className="h-6 w-3/4 rounded animate-pulse" style={{ background: '#1e2030' }} />
-                <div className="h-4 w-1/2 rounded animate-pulse" style={{ background: '#1e2030' }} />
-                <div className="h-32 rounded animate-pulse" style={{ background: '#1e2030' }} />
+                <div className="h-6 w-3/4 rounded animate-pulse" style={{ background: 'var(--chrome-hover)' }} />
+                <div className="h-4 w-1/2 rounded animate-pulse" style={{ background: 'var(--chrome-hover)' }} />
+                <div className="h-32 rounded animate-pulse" style={{ background: 'var(--chrome-hover)' }} />
               </div>
             )}
 
@@ -537,7 +537,7 @@ function TerminalContent() {
                       <Panel title="Docket Activity" collapsible collapsed={collapsedSections.has('filings')} onToggle={() => toggleSection('filings')}>
                         <div className="space-y-0">
                           {caseDetail.filings.slice(0, 15).map((f, i) => (
-                            <div key={i} className="flex items-start gap-3 py-1.5 border-b last:border-0" style={{ borderColor: '#252833' }}>
+                            <div key={i} className="flex items-start gap-3 py-1.5 border-b last:border-0" style={{ borderColor: 'var(--chrome-border)' }}>
                               <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-surface-1)]0/50 mt-1.5 flex-shrink-0" />
                               <div className="flex-1 min-w-0">
                                 <p className="text-[11px] text-gray-300 truncate">{f.title || `Filing #${f.number || i + 1}`}</p>
@@ -594,7 +594,7 @@ function TerminalContent() {
                       <Panel title="Tags">
                         <div className="flex flex-wrap gap-1">
                           {caseDetail.tags.map(t => (
-                            <span key={`${t.category}-${t.tag}`} className="text-[10px] px-2 py-0.5 rounded" style={{ background: '#1e2030', color: '#8b8fa3' }}>
+                            <span key={`${t.category}-${t.tag}`} className="text-[10px] px-2 py-0.5 rounded" style={{ background: 'var(--chrome-hover)', color: 'var(--chrome-text-muted)' }}>
                               {t.tag}
                             </span>
                           ))}
@@ -628,7 +628,7 @@ function TerminalContent() {
 
 function Panel({ title, children, collapsible, collapsed, onToggle }: { title: string; children: React.ReactNode; collapsible?: boolean; collapsed?: boolean; onToggle?: () => void }) {
   return (
-    <div className="rounded border" style={{ background: '#1a1c28', borderColor: '#252833' }}>
+    <div className="rounded border" style={{ background: '#1a1c28', borderColor: 'var(--chrome-border)' }}>
       <button
         onClick={collapsible ? onToggle : undefined}
         className={`w-full flex items-center justify-between px-3 py-2 ${collapsible ? 'cursor-pointer hover:bg-white/[0.02]' : 'cursor-default'} transition-colors rounded-t-lg`}
@@ -658,7 +658,7 @@ function MetaRow({ label, value }: { label: string; value: string }) {
 
 export default function TerminalPage() {
   return (
-    <Suspense fallback={<div className="h-screen flex items-center justify-center" style={{ background: '#0f1117' }}><p className="text-gray-500 text-sm">Loading terminal...</p></div>}>
+    <Suspense fallback={<div className="h-screen flex items-center justify-center" style={{ background: 'var(--chrome-bg-dark)' }}><p className="text-gray-500 text-sm">Loading terminal...</p></div>}>
       <TerminalContent />
     </Suspense>
   );

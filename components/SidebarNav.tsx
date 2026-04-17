@@ -45,7 +45,7 @@ export default function SidebarNav() {
           align-items: center;
           gap: 12px;
           padding: 12px 14px;
-          border-radius: 12px;
+          border-radius: 4px;
           font-size: 14px;
           font-weight: 400;
           color: var(--color-surface-0);

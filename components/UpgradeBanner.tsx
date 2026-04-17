@@ -60,7 +60,7 @@ export default function UpgradeBanner() {
           justify-content: center;
           padding: 8px 24px;
           background: var(--gold, #C4882A);
-          color: #ffffff;
+          color: var(--chrome-text);
           border-radius: 3px;
           font-weight: 600;
           font-size: 13px;
@@ -82,9 +82,9 @@ export default function UpgradeBanner() {
           justify-content: center;
           padding: 8px 24px;
           background: transparent;
-          color: #ffffff;
+          color: var(--chrome-text);
           border: 1px solid rgba(255,255,255,0.2);
-          border-radius: 6px;
+          border-radius: 2px;
           font-weight: 600;
           font-size: 13px;
           letter-spacing: -0.005em;

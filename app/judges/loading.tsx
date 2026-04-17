@@ -24,7 +24,7 @@ export default function JudgesLoading() {
               borderRadius: '4px',
               padding: '24px',
               minHeight: '180px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
+              boxShadow: 'var(--shadow-xs)'
             }}>
               {/* Judge name/avatar skeleton */}
               <div style={{ height: '20px', width: '75%', background: 'var(--bdr)', borderRadius: '4px', marginBottom: '16px' }} />

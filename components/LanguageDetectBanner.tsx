@@ -73,7 +73,7 @@ export default function LanguageDetectBanner() {
         right: 0,
         zIndex: 190,
         background: 'var(--card, #FFFFFF)',
-        borderBottom: '1px solid #D1E3F4',
+        borderBottom: '1px solid var(--bdr)',
         padding: '12px 24px',
         display: 'flex',
         alignItems: 'center',

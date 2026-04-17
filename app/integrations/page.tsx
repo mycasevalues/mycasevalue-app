@@ -136,7 +136,7 @@ export default function IntegrationsPage() {
         .integration-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 32px;
           transition: all 0.2s ease;
           position: relative;
@@ -154,25 +154,25 @@ export default function IntegrationsPage() {
           right: 0;
           height: 3px;
           background: var(--gold, #C4882A);
-          border-radius: 12px 4px 0 0;
+          border-radius: 4px 4px 0 0;
         }
         .breadcrumb-link:hover {
           color: var(--color-text-inverse) !important;
         }
         .integration-link:hover {
-          background: #B91C1C !important;
+          background: var(--data-negative) !important;
         }
         .feature-tag {
           background: var(--color-surface-1);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 4px 10px;
           font-size: 12px;
           color: var(--color-text-secondary);
           font-family: var(--font-ui);
         }
         .cta-btn:hover {
-          background: #B91C1C !important;
+          background: var(--data-negative) !important;
           transform: translateY(-1px);
         }
         @media (max-width: 768px) {
@@ -227,7 +227,7 @@ export default function IntegrationsPage() {
 
           <h1 style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
@@ -319,7 +319,7 @@ export default function IntegrationsPage() {
                   borderRadius: '4px',
                   background: integration.status === 'Available' ? 'rgba(34,197,94,0.06)' : 'rgba(232, 23, 31, 0.06)',
                   color: integration.status === 'Available' ? 'var(--data-positive)' : 'var(--accent-primary)',
-                  border: integration.status === 'Available' ? '1px solid #BBF7D0' : 'none',
+                  border: integration.status === 'Available' ? '1px solid var(--cw-border)' : 'none',
                 }}>
                   {integration.status}
                 </span>
@@ -510,7 +510,7 @@ export default function IntegrationsPage() {
                   borderRadius: '4px',
                   background: capability.status === 'Available' ? 'rgba(34,197,94,0.06)' : 'rgba(232, 23, 31, 0.06)',
                   color: capability.status === 'Available' ? 'var(--data-positive)' : 'var(--accent-primary)',
-                  border: capability.status === 'Available' ? '1px solid #BBF7D0' : 'none',
+                  border: capability.status === 'Available' ? '1px solid var(--cw-border)' : 'none',
                   display: 'inline-block',
                 }}>
                   {capability.status}

@@ -52,7 +52,7 @@ export default function Loading() {
           fontSize: '14px',
           color: 'var(--color-text-secondary)',
           margin: 0,
-          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
+          fontFamily: 'var(--font-ui)',
         }}
       >
         Loading

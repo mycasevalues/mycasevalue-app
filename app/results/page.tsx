@@ -29,7 +29,7 @@ export default function ResultsPage() {
           transition: all 0.2s ease;
         }
         .cta-button:hover {
-          background-color: #CC0D14 !important;
+          background-color: var(--data-negative) !important;
           transform: translateY(-1px);
         }
         .secondary-button {
@@ -37,14 +37,14 @@ export default function ResultsPage() {
         }
         .secondary-button:hover {
           background-color: var(--color-surface-1);
-          border-color: #A8ACB1;
+          border-color: var(--bdr);
         }
         .info-card {
           transition: all 0.2s ease;
         }
         .info-card:hover {
-          border-color: #B0B5BA;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+          border-color: var(--bdr);
+          box-shadow: var(--shadow-xs);
         }
       `}</style>
 
@@ -55,7 +55,7 @@ export default function ResultsPage() {
             <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
               Home
             </Link>
-            <span style={{ margin: '0 8px', color: '#A8ACB1' }}>&gt;</span>
+            <span style={{ margin: '0 8px', color: 'var(--text-placeholder)' }}>&gt;</span>
             <span style={{ color: 'var(--color-text-primary)', fontWeight: '600' }}>Case Results</span>
           </nav>
         </div>
@@ -91,7 +91,7 @@ export default function ResultsPage() {
           </div>
           <h1 style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,

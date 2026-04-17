@@ -77,7 +77,7 @@ export default function FeesPage() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Fee Reference
           </div>
-          <h1 style={{ color: 'var(--color-text-inverse)', fontFamily: 'var(--font-legal)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
+          <h1 style={{ color: 'var(--color-text-inverse)', fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
             Know Court Costs Before Filing
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
@@ -251,7 +251,7 @@ export default function FeesPage() {
 
           {/* Disclaimer */}
           <div style={{
-            padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4,
+            padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid var(--flag-yellow)', borderRadius: 4,
             fontSize: 12, color: 'var(--wrn-txt)', lineHeight: 1.6, fontFamily: 'var(--font-ui)',
           }}>
             <strong>Important:</strong> Fee amounts are current as of December 2024. Fees are set by the Judicial Conference and may change. Always verify fees with the specific court before filing. Local district fees (e.g., pro hac vice, attorney admission) vary and are set by individual courts.

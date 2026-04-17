@@ -65,7 +65,7 @@ export default function CookieConsent() {
         }
         .cookie-banner-button {
           padding: 0.625rem 1.25rem;
-          border-radius: 12px;
+          border-radius: 4px;
           fontSize: 0.9375rem;
           font-family: var(--font-ui);
           font-weight: 600;
@@ -120,7 +120,7 @@ export default function CookieConsent() {
           <Link
             href="/legal/cookies"
             style={{
-              color: '#E8F0F5',
+              color: 'var(--chrome-text-muted)',
               textDecoration: 'underline',
               fontWeight: 500,
               transition: 'color 0.2s ease',

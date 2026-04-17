@@ -102,7 +102,7 @@ export default function EnterpriseDemoForm() {
         border: '1px solid var(--border-default)',
         borderRadius: '4px',
         textAlign: 'center',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+        boxShadow: 'var(--shadow-xs)',
       }}>
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px', margin: '0 auto 16px' }}>
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
@@ -186,7 +186,7 @@ export default function EnterpriseDemoForm() {
           background: var(--accent-primary);
           color: var(--color-surface-0);
           border: none;
-          border-radius: 12px;
+          border-radius: 4px;
           font-size: 15px;
           font-weight: 600;
           cursor: pointer;
@@ -206,7 +206,7 @@ export default function EnterpriseDemoForm() {
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
         borderRadius: '4px',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+        boxShadow: 'var(--shadow-xs)',
         display: 'flex',
         flexDirection: 'column',
         gap: '24px',

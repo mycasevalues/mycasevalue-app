@@ -36,7 +36,7 @@ export default function Loading() {
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
-                  {i < 3 && <span style={{ color: '#556b7f' }}>/</span>}
+                  {i < 3 && <span style={{ color: 'var(--chrome-text-muted)' }}>/</span>}
                 </div>
               ))}
             </div>
@@ -139,7 +139,7 @@ export default function Loading() {
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <div style={{ marginBottom: '24px' }}>
@@ -232,7 +232,7 @@ export default function Loading() {
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <div style={{ marginBottom: '24px' }}>
@@ -301,7 +301,7 @@ export default function Loading() {
               borderRadius: '4px',
               padding: '32px',
               marginBottom: '24px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <div style={{ marginBottom: '24px' }}>
@@ -350,7 +350,7 @@ export default function Loading() {
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               padding: '32px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <div style={{ marginBottom: '24px' }}>

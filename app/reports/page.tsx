@@ -165,7 +165,7 @@ export default function ReportsPage() {
               >
                 <style>{`
                   .feature-card:hover {
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                    box-shadow: var(--shadow-md);
                     border-color: var(--link);
                   }
                 `}</style>
@@ -274,7 +274,7 @@ export default function ReportsPage() {
 
         {!hasData ? (
           /* Empty State */
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '40px 24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', textAlign: 'center' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '40px 24px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', textAlign: 'center' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(0,105,151,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -289,7 +289,7 @@ export default function ReportsPage() {
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
               Your saved case research reports and search history will appear here. Start by running a case lookup.
             </p>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '20px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '2px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
               Start a Case Lookup
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </Link>
@@ -333,7 +333,7 @@ export default function ReportsPage() {
                   }
                 `}</style>
                 {reports.length === 0 ? (
-                  <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '40px', border: '1px solid var(--border-default)', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                  <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '40px', border: '1px solid var(--border-default)', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
                     <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>No saved reports yet. Reports are saved automatically when you view case data.</p>
                   </div>
                 ) : (
@@ -342,7 +342,7 @@ export default function ReportsPage() {
                       key={r.id}
                       href={`/cases/${encodeURIComponent(r.category)}${r.district ? `?district=${encodeURIComponent(r.district)}` : ''}`}
                       className="report-card"
-                      style={{ display: 'block', backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px 24px', border: '1px solid var(--border-default)', borderLeft: '4px solid transparent', textDecoration: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
+                      style={{ display: 'block', backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px 24px', border: '1px solid var(--border-default)', borderLeft: '4px solid transparent', textDecoration: 'none', boxShadow: 'var(--shadow-xs)' }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
@@ -378,7 +378,7 @@ export default function ReportsPage() {
                   }
                 `}</style>
                 {searches.length === 0 ? (
-                  <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '40px', border: '1px solid var(--border-default)', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                  <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '40px', border: '1px solid var(--border-default)', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
                     <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>No search history yet.</p>
                   </div>
                 ) : (
@@ -386,7 +386,7 @@ export default function ReportsPage() {
                     <div
                       key={s.id}
                       className="history-card"
-                      style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '16px 24px', border: '1px solid var(--border-default)', borderLeft: '4px solid transparent', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
+                      style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '16px 24px', border: '1px solid var(--border-default)', borderLeft: '4px solid transparent', boxShadow: 'var(--shadow-xs)' }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>

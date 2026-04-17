@@ -17,7 +17,7 @@ export default function BetaBanner() {
         lineHeight: 1.4,
         textAlign: 'center',
         letterSpacing: '0.01em',
-        borderBottom: '1px solid #333333',
+        borderBottom: '1px solid var(--chrome-border)',
       }}
     >
       <span>Public beta</span>

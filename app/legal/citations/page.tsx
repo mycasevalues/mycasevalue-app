@@ -234,7 +234,7 @@ export default function CitationsPage() {
 
       {/* Graph */}
       <div style={{
-        borderRadius: 6,
+        borderRadius: 4,
         border: '1px solid var(--border-default)',
         background: 'var(--color-surface-1)',
         overflow: 'hidden',
@@ -303,7 +303,7 @@ export default function CitationsPage() {
                   fontSize="10"
                   fontWeight={selected?.id === node.id ? 700 : 500}
                   fill={hl ? 'var(--color-text-primary)' : 'var(--color-text-muted)'}
-                  fontFamily="var(--font-ui, Inter, sans-serif)"
+                  fontFamily="var(--font-ui)"
                 >
                   {node.name.length > 22 ? node.name.slice(0, 20) + '...' : node.name}
                 </text>
@@ -330,7 +330,7 @@ export default function CitationsPage() {
             right: 16,
             width: 280,
             padding: '24px',
-            borderRadius: 14,
+            borderRadius: 4,
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
             boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
@@ -391,25 +391,25 @@ export default function CitationsPage() {
         gap: 12,
         marginBottom: 20,
       }}>
-        <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono, monospace)' }}>
             {NODES.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Landmark Cases</div>
         </div>
-        <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono, monospace)' }}>
             {CITATIONS.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Citation Links</div>
         </div>
-        <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive)', fontFamily: 'var(--font-mono, monospace)' }}>
             {CATEGORIES.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Legal Categories</div>
         </div>
-        <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--wrn-txt)', fontFamily: 'var(--font-mono, monospace)' }}>
             {new Date().getFullYear() - Math.min(...NODES.map(n => n.year))}+
           </div>

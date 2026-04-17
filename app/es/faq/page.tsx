@@ -193,7 +193,7 @@ export default function SpanishFAQPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '20px' }}>
+            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '2px' }}>
             AYUDA
           </div>
 

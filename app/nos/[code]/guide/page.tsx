@@ -113,7 +113,7 @@ export default async function GuidePage({ params }: PageProps) {
 
       <p style={{
         fontSize: '1.1rem',
-        color: '#5c5c5c',
+        color: 'var(--text-tertiary)',
         marginBottom: '50px',
         lineHeight: 1.6,
         fontFamily: 'var(--font-ui)',
@@ -135,7 +135,7 @@ export default async function GuidePage({ params }: PageProps) {
         {content.whatIs.map((para, idx) => (
           <p key={idx} style={{
             fontSize: '1rem',
-            color: '#3c3c3c',
+            color: 'var(--text-secondary)',
             marginBottom: '15px',
             lineHeight: 1.8,
             fontFamily: 'var(--font-ui)',
@@ -158,7 +158,7 @@ export default async function GuidePage({ params }: PageProps) {
         </h2>
         <p style={{
           fontSize: '0.95rem',
-          color: '#5c5c5c',
+          color: 'var(--text-tertiary)',
           marginBottom: '24px',
           fontFamily: 'var(--font-ui)',
         }}>
@@ -183,7 +183,7 @@ export default async function GuidePage({ params }: PageProps) {
               </p>
               <p style={{
                 fontSize: '0.95rem',
-                color: '#3c3c3c',
+                color: 'var(--text-secondary)',
                 margin: 0,
                 lineHeight: 1.6,
                 fontFamily: 'var(--font-ui)',
@@ -208,7 +208,7 @@ export default async function GuidePage({ params }: PageProps) {
         </h2>
         <p style={{
           fontSize: '0.95rem',
-          color: '#5c5c5c',
+          color: 'var(--text-tertiary)',
           marginBottom: '24px',
           fontFamily: 'var(--font-ui)',
         }}>
@@ -221,7 +221,7 @@ export default async function GuidePage({ params }: PageProps) {
           {content.whatToProve.map((item, idx) => (
             <li key={idx} style={{
               fontSize: '1rem',
-              color: '#3c3c3c',
+              color: 'var(--text-secondary)',
               marginBottom: '12px',
               lineHeight: 1.6,
               fontFamily: 'var(--font-ui)',
@@ -245,7 +245,7 @@ export default async function GuidePage({ params }: PageProps) {
         </h2>
         <p style={{
           fontSize: '0.95rem',
-          color: '#5c5c5c',
+          color: 'var(--text-tertiary)',
           marginBottom: '24px',
           fontFamily: 'var(--font-ui)',
         }}>
@@ -255,13 +255,13 @@ export default async function GuidePage({ params }: PageProps) {
           {content.dismissalReasons.map((reason, idx) => (
             <div key={idx} style={{
               padding: '16px',
-              borderLeft: '4px solid #CC1016',
+              borderLeft: '4px solid var(--data-negative)',
               backgroundColor: 'rgba(249,115,22,0.06)',
               borderRadius: '4px',
             }}>
               <p style={{
                 fontSize: '0.95rem',
-                color: '#3c3c3c',
+                color: 'var(--text-secondary)',
                 margin: 0,
                 lineHeight: 1.6,
                 fontFamily: 'var(--font-ui)',
@@ -302,7 +302,7 @@ export default async function GuidePage({ params }: PageProps) {
               }}>
                 <p style={{
                   fontSize: '0.85rem',
-                  color: '#5c5c5c',
+                  color: 'var(--text-tertiary)',
                   marginBottom: '8px',
                   fontFamily: 'var(--font-ui)',
                 }}>
@@ -319,7 +319,7 @@ export default async function GuidePage({ params }: PageProps) {
                 </p>
                 <p style={{
                   fontSize: '0.85rem',
-                  color: '#5c5c5c',
+                  color: 'var(--text-tertiary)',
                   margin: 0,
                   fontFamily: 'var(--font-ui)',
                 }}>
@@ -338,7 +338,7 @@ export default async function GuidePage({ params }: PageProps) {
               }}>
                 <p style={{
                   fontSize: '0.85rem',
-                  color: '#5c5c5c',
+                  color: 'var(--text-tertiary)',
                   marginBottom: '8px',
                   fontFamily: 'var(--font-ui)',
                 }}>
@@ -355,7 +355,7 @@ export default async function GuidePage({ params }: PageProps) {
                 </p>
                 <p style={{
                   fontSize: '0.85rem',
-                  color: '#5c5c5c',
+                  color: 'var(--text-tertiary)',
                   margin: 0,
                   fontFamily: 'var(--font-ui)',
                 }}>
@@ -374,7 +374,7 @@ export default async function GuidePage({ params }: PageProps) {
               }}>
                 <p style={{
                   fontSize: '0.85rem',
-                  color: '#5c5c5c',
+                  color: 'var(--text-tertiary)',
                   marginBottom: '8px',
                   fontFamily: 'var(--font-ui)',
                 }}>
@@ -391,7 +391,7 @@ export default async function GuidePage({ params }: PageProps) {
                 </p>
                 <p style={{
                   fontSize: '0.85rem',
-                  color: '#5c5c5c',
+                  color: 'var(--text-tertiary)',
                   margin: 0,
                   fontFamily: 'var(--font-ui)',
                 }}>
@@ -412,7 +412,7 @@ export default async function GuidePage({ params }: PageProps) {
             }}>
               <p style={{
                 fontSize: '0.9rem',
-                color: '#5c5c5c',
+                color: 'var(--text-tertiary)',
                 marginBottom: '15px',
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -420,7 +420,7 @@ export default async function GuidePage({ params }: PageProps) {
               </p>
               <p style={{
                 fontSize: '0.95rem',
-                color: '#3c3c3c',
+                color: 'var(--text-secondary)',
                 margin: 0,
                 lineHeight: 1.6,
                 fontFamily: 'var(--font-ui)',
@@ -447,7 +447,7 @@ export default async function GuidePage({ params }: PageProps) {
 
           <p style={{
             fontSize: '0.95rem',
-            color: '#5c5c5c',
+            color: 'var(--text-tertiary)',
             marginBottom: '24px',
             fontFamily: 'var(--font-ui)',
           }}>
@@ -467,7 +467,7 @@ export default async function GuidePage({ params }: PageProps) {
             }}>
               <p style={{
                 fontSize: '0.85rem',
-                color: '#5c5c5c',
+                color: 'var(--text-tertiary)',
                 marginBottom: '8px',
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -484,7 +484,7 @@ export default async function GuidePage({ params }: PageProps) {
               </p>
               <p style={{
                 fontSize: '0.85rem',
-                color: '#3c3c3c',
+                color: 'var(--text-secondary)',
                 margin: 0,
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -500,7 +500,7 @@ export default async function GuidePage({ params }: PageProps) {
             }}>
               <p style={{
                 fontSize: '0.85rem',
-                color: '#5c5c5c',
+                color: 'var(--text-tertiary)',
                 marginBottom: '8px',
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -509,7 +509,7 @@ export default async function GuidePage({ params }: PageProps) {
               <p style={{
                 fontSize: '2rem',
                 fontWeight: 700,
-                color: '#B24020',
+                color: 'var(--data-negative)',
                 margin: '0 0 10px 0',
                 fontFamily: 'var(--font-legal)',
               }}>
@@ -517,7 +517,7 @@ export default async function GuidePage({ params }: PageProps) {
               </p>
               <p style={{
                 fontSize: '0.85rem',
-                color: '#3c3c3c',
+                color: 'var(--text-secondary)',
                 margin: 0,
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -535,7 +535,7 @@ export default async function GuidePage({ params }: PageProps) {
           }}>
             <p style={{
               fontSize: '0.95rem',
-              color: '#3c3c3c',
+              color: 'var(--text-secondary)',
               margin: 0,
               lineHeight: 1.6,
               fontFamily: 'var(--font-ui)',
@@ -565,7 +565,7 @@ export default async function GuidePage({ params }: PageProps) {
           {content.nextSteps.slice(0, -1).map((step, idx) => (
             <li key={idx} style={{
               fontSize: '1rem',
-              color: '#3c3c3c',
+              color: 'var(--text-secondary)',
               marginBottom: '15px',
               lineHeight: 1.6,
               fontFamily: 'var(--font-ui)',
@@ -575,7 +575,7 @@ export default async function GuidePage({ params }: PageProps) {
           ))}
           <li style={{
             fontSize: '1rem',
-            color: '#3c3c3c',
+            color: 'var(--text-secondary)',
             marginBottom: '15px',
             lineHeight: 1.6,
             fontFamily: 'var(--font-ui)',
@@ -605,7 +605,7 @@ export default async function GuidePage({ params }: PageProps) {
         </h3>
         <p style={{
           fontSize: '0.9rem',
-          color: '#3c3c3c',
+          color: 'var(--text-secondary)',
           margin: 0,
           lineHeight: 1.6,
           fontFamily: 'var(--font-ui)',
@@ -650,7 +650,7 @@ export default async function GuidePage({ params }: PageProps) {
             </p>
             <p style={{
               fontSize: '0.85rem',
-              color: '#3c3c3c',
+              color: 'var(--text-secondary)',
               margin: 0,
               fontFamily: 'var(--font-ui)',
             }}>
@@ -677,7 +677,7 @@ export default async function GuidePage({ params }: PageProps) {
             </p>
             <p style={{
               fontSize: '0.85rem',
-              color: '#3c3c3c',
+              color: 'var(--text-secondary)',
               margin: 0,
               fontFamily: 'var(--font-ui)',
             }}>
@@ -704,7 +704,7 @@ export default async function GuidePage({ params }: PageProps) {
             </p>
             <p style={{
               fontSize: '0.85rem',
-              color: '#3c3c3c',
+              color: 'var(--text-secondary)',
               margin: 0,
               fontFamily: 'var(--font-ui)',
             }}>

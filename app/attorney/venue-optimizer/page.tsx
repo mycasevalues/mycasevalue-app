@@ -40,7 +40,7 @@ export default function VenueOptimizerPage() {
     select:focus, input:focus {
       outline: none;
       border-color: var(--accent-primary);
-      box-shadow: 0 0 0 2px rgba(232, 23, 31, 0.08);
+      box-shadow: var(--shadow-focus);
     }
   `;
 
@@ -88,7 +88,7 @@ export default function VenueOptimizerPage() {
         {`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        @media (max-width: 640px) { h1 { font-size: 20px; } }
         `}
       </style>
       {/* Header */}
@@ -129,7 +129,7 @@ export default function VenueOptimizerPage() {
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 24px' }}>
         {/* Controls */}
-        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: 'var(--shadow-xs)' }}>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'flex-end' }}>
             <div style={{ flex: '1 1 300px' }}>
               <label htmlFor="case-type" style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
@@ -198,26 +198,26 @@ export default function VenueOptimizerPage() {
         {data && !loading && (
           <>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '24px' }}>
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>National Win Rate</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>{data.nationalStats.winRate}%</p>
               </div>
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Settlement Rate</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--data-positive)', margin: 0 }}>{data.nationalStats.settlementRate}%</p>
               </div>
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Median Duration</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0 }}>{data.nationalStats.medianDurationMonths}mo</p>
               </div>
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Total Cases</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>{data.nationalStats.totalCases.toLocaleString()}</p>
               </div>
             </div>
 
             {/* Venue Rankings Table */}
-            <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', overflow: 'hidden', boxShadow: 'var(--shadow-xs)' }}>
               <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                 <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
                   Venue Rankings — {data.caseType}
@@ -310,7 +310,7 @@ export default function VenueOptimizerPage() {
 
         {/* Empty state */}
         {!selectedNos && !loading && (
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                 <circle cx="12" cy="12" r="10" />

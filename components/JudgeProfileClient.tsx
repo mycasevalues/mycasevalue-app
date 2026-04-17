@@ -310,7 +310,7 @@ export default function JudgeProfileClient({
               style={{
                 fontSize: '13px',
                 fontFamily: 'var(--font-ui)',
-                color: '#B24020',
+                color: 'var(--data-negative)',
                 margin: 0,
                 fontWeight: '600',
               }}
@@ -321,7 +321,7 @@ export default function JudgeProfileClient({
               style={{
                 fontSize: '12px',
                 fontFamily: 'var(--font-ui)',
-                color: '#B24020',
+                color: 'var(--data-negative)',
                 margin: '4px 0 0 0',
               }}
             >

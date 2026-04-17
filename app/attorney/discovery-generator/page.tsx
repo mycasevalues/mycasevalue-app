@@ -135,7 +135,7 @@ export default function DiscoveryGeneratorPage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: var(--shadow-focus); }
       `}</style>
 
       {/* Header */}
@@ -275,7 +275,7 @@ export default function DiscoveryGeneratorPage() {
                       {tab.rule}
                     </span>
                     {texts[tab.key] && (
-                      <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: activeTab === tab.key ? '#FFF' : 'var(--data-positive)', marginLeft: 6, verticalAlign: 'middle' }} />
+                      <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: activeTab === tab.key ? 'var(--card)' : 'var(--data-positive)', marginLeft: 6, verticalAlign: 'middle' }} />
                     )}
                   </button>
                 ))}

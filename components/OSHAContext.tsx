@@ -13,10 +13,10 @@ export default function OSHAContext() {
 
   // Create violation type breakdown for visualization
   const violations = [
-    { label: 'Serious Violations', value: oshaData.seriousViolations, percentage: violationPercentages.serious, color: '#DC3545' },
-    { label: 'Willful Violations', value: oshaData.willfulViolations, percentage: violationPercentages.willful, color: '#B22222' },
-    { label: 'Repeat Violations', value: oshaData.repeatViolations, percentage: violationPercentages.repeat, color: '#FF6B6B' },
-    { label: 'Other Violations', value: oshaData.otherViolations, percentage: violationPercentages.other, color: '#FFA07A' },
+    { label: 'Serious Violations', value: oshaData.seriousViolations, percentage: violationPercentages.serious, color: 'var(--data-negative)' },
+    { label: 'Willful Violations', value: oshaData.willfulViolations, percentage: violationPercentages.willful, color: 'var(--flag-red)' },
+    { label: 'Repeat Violations', value: oshaData.repeatViolations, percentage: violationPercentages.repeat, color: 'var(--data-negative)' },
+    { label: 'Other Violations', value: oshaData.otherViolations, percentage: violationPercentages.other, color: 'var(--flag-yellow)' },
   ];
 
   return (

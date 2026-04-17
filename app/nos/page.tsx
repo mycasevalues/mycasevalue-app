@@ -150,7 +150,7 @@ export default function NOSIndexPage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px', flexWrap: 'wrap' }}>
             <h1
               style={{
-                fontSize: 'clamp(28px, 6vw, 42px)',
+                fontSize: '28px',
                 fontWeight: 'bold',
                 color: 'var(--color-surface-0)',
                 margin: 0,

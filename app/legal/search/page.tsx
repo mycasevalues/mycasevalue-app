@@ -69,7 +69,7 @@ const SOURCE_LABELS: Record<string, string> = {
 function highlightQuery(text: string, query: string): string {
   if (!query.trim()) return text;
   const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return text.replace(new RegExp(`(${escaped})`, 'gi'), '<mark style="background:#FEF08A;padding:0 2px;border-radius:2px">$1</mark>');
+  return text.replace(new RegExp(`(${escaped})`, 'gi'), '<mark style="background:var(--gold-light);padding:0 2px;border-radius:2px">$1</mark>');
 }
 
 export default function LegalSearchPage() {
@@ -207,7 +207,7 @@ export default function LegalSearchPage() {
             style={{
               padding: '16px 16px',
               borderRadius: 4,
-              background: showFilters ? '#E8F4FD' : 'rgba(255,255,255,0.05)',
+              background: showFilters ? 'var(--link-light)' : 'rgba(255,255,255,0.05)',
               color: showFilters ? 'var(--accent-primary)' : 'var(--color-text-muted)',
               fontSize: 14,
               fontWeight: 500,

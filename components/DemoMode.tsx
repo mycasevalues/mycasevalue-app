@@ -33,7 +33,7 @@ function DemoModeBadge() {
         backgroundColor: 'var(--text1, #18181A)',
         color: 'var(--color-surface-0)',
         padding: '8px 16px',
-        borderRadius: '20px',
+        borderRadius: '2px',
         fontSize: '12px',
         fontWeight: 600,
         fontFamily: 'var(--font-ui)',

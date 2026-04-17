@@ -407,7 +407,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                 {intelligenceItems.map((item, i) => (
                   <div key={i} style={{
                     display: 'flex', gap: 8, padding: '8px 16px',
-                    borderBottom: i < intelligenceItems.length - 1 ? '1px solid #F2EFE8' : 'none',
+                    borderBottom: i < intelligenceItems.length - 1 ? '1px solid var(--bdr)' : 'none',
                   }}>
                     {/* Number circle */}
                     <div style={{

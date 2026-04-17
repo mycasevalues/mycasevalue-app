@@ -270,7 +270,7 @@ export default function KeyCitePage() {
                 transition: 'all 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#B0762A';
+                e.currentTarget.style.background = 'var(--gold-hover)';
                 e.currentTarget.style.transform = 'translateY(-1px)';
               }}
               onMouseLeave={(e) => {
@@ -1268,7 +1268,7 @@ export default function KeyCitePage() {
                   color: 'white',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#B0762A';
+                  e.currentTarget.style.background = 'var(--gold-hover)';
                   e.currentTarget.style.transform = 'translateY(-1px)';
                 }}
                 onMouseLeave={(e) => {

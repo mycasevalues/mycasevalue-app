@@ -125,7 +125,7 @@ export function AIChatAssistant() {
       {isOpen && (
         <div
           className="fixed bottom-6 right-6 z-50 flex flex-col bg-[#FFFFFF] border border-[var(--bdr, #E2DFD8)] shadow-2xl overflow-hidden"
-          style={{ width: '400px', maxWidth: 'calc(100vw - 48px)', height: '560px', maxHeight: 'calc(100vh - 48px)', borderRadius: '6px', fontFamily: 'var(--font-ui)' }}
+          style={{ width: '400px', maxWidth: 'calc(100vw - 48px)', height: '560px', maxHeight: 'calc(100vh - 48px)', borderRadius: '4px', fontFamily: 'var(--font-ui)' }}
         >
           <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--bdr, #E2DFD8)]" style={{ backgroundColor: 'var(--card, #FFFFFF)' }}>
             <div className="flex items-center gap-3">

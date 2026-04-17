@@ -113,7 +113,7 @@ function StatsCard({
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
         textAlign: 'center',
-        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
+        boxShadow: 'var(--shadow-xs)',
       }}
     >
       <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
@@ -286,7 +286,7 @@ export default async function CaseTypeDetailPage({
             <div style={{ flex: 1 }}>
               <h1
                 style={{
-                  fontSize: 'clamp(24px, 5vw, 28px)',
+                  fontSize: '20px',
                   fontWeight: 700,
                   margin: '0',
                   fontFamily: 'var(--font-ui)',
@@ -338,7 +338,7 @@ export default async function CaseTypeDetailPage({
             borderRadius: '4px',
             padding: '32px',
             marginBottom: '48px',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
+            boxShadow: 'var(--shadow-xs)',
           }}
         >
           <h2
@@ -380,7 +380,7 @@ export default async function CaseTypeDetailPage({
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               padding: '24px',
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <h3
@@ -413,7 +413,7 @@ export default async function CaseTypeDetailPage({
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               padding: '24px',
-              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
+              boxShadow: 'var(--shadow-xs)',
             }}
           >
             <h3
@@ -466,9 +466,9 @@ export default async function CaseTypeDetailPage({
           .cta-button {
             display: inline-block;
             padding: 8px 24px;
-            border-radius: 6px;
+            border-radius: 4px;
             background: var(--gold);
-            color: #ffffff;
+            color: var(--chrome-text);
             text-decoration: none;
             font-weight: 600;
             font-size: 13px;
@@ -499,7 +499,7 @@ export default async function CaseTypeDetailPage({
             borderRadius: '4px',
             padding: '48px 40px',
             textAlign: 'center',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+            boxShadow: 'var(--shadow-xs)',
           }}
         >
           <h2
@@ -536,18 +536,18 @@ export default async function CaseTypeDetailPage({
           <style>{`
             .related-case-card {
               padding: 16px;
-              border-radius: 12px;
+              border-radius: 4px;
               background: var(--color-surface-0);
               border: 1px solid var(--border-default);
               text-decoration: none;
               color: inherit;
               transition: all 0.2s ease;
-              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+              box-shadow: var(--shadow-xs);
             }
             .related-case-card:hover {
               border-color: var(--accent-primary);
               background: var(--color-surface-0);
-              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+              box-shadow: var(--shadow-md);
               transform: translateY(-1px);
             }
           `}</style>

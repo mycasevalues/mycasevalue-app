@@ -21,7 +21,7 @@ export default function ExpertWitnessPage() {
         }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        @media (max-width: 640px) { h1 { font-size: 20px; } }
       `}</style>
 
       {/* Header */}
@@ -42,7 +42,7 @@ export default function ExpertWitnessPage() {
           <h1 className="font-legal" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
             Expert Witness Intelligence
           </h1>
-          <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '8px 0 0 0' }}>
+          <p style={{ fontSize: '14px', color: 'var(--text-tertiary)', margin: '8px 0 0 0' }}>
             Daubert challenge success rates and expert retention patterns by case type
           </p>
         </div>

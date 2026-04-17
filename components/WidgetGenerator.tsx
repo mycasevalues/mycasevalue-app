@@ -53,7 +53,7 @@ export default function WidgetGenerator() {
   width="${dimensions.width}"
   height="${dimensions.height}"
   frameborder="0"
-  style="border: none; border-radius: 6px;"
+  style="border: none; border-radius: 4px;"
   title="MyCaseValue Case Settlement Widget"
 ></iframe>`
     : '';
@@ -136,9 +136,9 @@ export default function WidgetGenerator() {
                     style={{
                       padding: '8px 12px',
                       fontSize: '14px',
-                      borderBottom: '1px solid #f3f4f6',
+                      borderBottom: '1px solid var(--bdr)',
                       cursor: 'pointer',
-                      backgroundColor: selectedNos === type.nos ? '#eff6ff' : 'transparent',
+                      backgroundColor: selectedNos === type.nos ? 'var(--link-light)' : 'transparent',
                       color: selectedNos === type.nos ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                     }}
                     onMouseEnter={(e) => {
@@ -147,7 +147,7 @@ export default function WidgetGenerator() {
                       }
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = selectedNos === type.nos ? '#eff6ff' : 'transparent';
+                      e.currentTarget.style.backgroundColor = selectedNos === type.nos ? 'var(--link-light)' : 'transparent';
                     }}
                   >
                     <div style={{ fontWeight: 500, color: 'inherit' }}>{type.label}</div>
@@ -283,7 +283,7 @@ export default function WidgetGenerator() {
           border: '1px solid var(--wrn-bg, #FCD34D)',
           borderRadius: '4px',
           fontSize: '13px',
-          color: '#92400e',
+          color: 'var(--wrn-txt)',
         }}>
           <strong>Attribution:</strong> All widgets include a "Powered by MyCaseValue" attribution. This is required.
         </div>
