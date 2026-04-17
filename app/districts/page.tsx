@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 import { REAL_DATA } from '../../lib/realdata';
 import Link from 'next/link';
+import JsonLd from '../../components/JsonLd';
 
 export const revalidate = 0;
 
@@ -23,6 +24,31 @@ export const metadata: Metadata = {
     description: 'Explore all 95 federal judicial districts with case outcomes data.',
     images: [`${SITE_URL}/og-image.png`],
   },
+};
+
+const jsonLdData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: 'Federal District Court Analytics',
+      description: 'All 95 federal judicial districts across 13 circuits with case outcomes, win rates, and settlement data.',
+      url: `${SITE_URL}/districts`,
+      image: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Districts', item: `${SITE_URL}/districts` },
+      ],
+    },
+  ],
 };
 
 /* ── District data model ─────────────────────────────── */
@@ -214,7 +240,7 @@ export default function DistrictsPage() {
 
   return (
     <div style={{ background: 'var(--surface-secondary)', minHeight: '100vh' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <JsonLd data={jsonLd} />
 
       {/* ── ContextBar ── */}
       <div style={{

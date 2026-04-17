@@ -8,6 +8,7 @@ import { getCircuitWinRates, getOutcomeBreakdown } from '../../lib/trends';
 import { fmtK } from '../../lib/format';
 import CaseTypeComparison from '../../components/CaseTypeComparison';
 import DataFreshness from '../../components/DataFreshness';
+import JsonLd from '../../components/JsonLd';
 
 const OutcomeSankey = dynamic(() => import('../../components/charts/OutcomeSankey'), { ssr: false });
 import UpdatedBadge from '../../components/UpdatedBadge';
@@ -159,10 +160,7 @@ export default function TrendsPage() {
         h1 { font-family: var(--font-ui); }
         h2 { font-family: var(--font-ui); }
       `}</style>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
 
       {/* Breadcrumb */}
       <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '16px 0' }}>

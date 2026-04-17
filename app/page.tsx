@@ -19,6 +19,8 @@ import { SITE_URL } from '@/lib/site-config';
 import { SITE_METRICS } from '@/lib/site-metrics';
 import GetStartedBar from '@/components/ui/GetStartedBar';
 import ResearchOrganizer from '@/components/ui/ResearchOrganizer';
+import Onboarding from '@/components/Onboarding';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'MyCaseValue Advantage — Federal Court Intelligence Platform',
@@ -30,6 +32,15 @@ export const metadata: Metadata = {
     images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue' }],
     description: 'Litigation intelligence from public federal court records.',
     url: SITE_URL,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MyCaseValue Advantage | Federal Court Intelligence',
+    description: 'Institutional-grade litigation intelligence from public federal court records.',
+    images: [`${SITE_URL}/og-image.png`],
+  },
+  alternates: {
+    canonical: SITE_URL,
   },
 };
 
@@ -99,9 +110,45 @@ function SearchIcon() {
   );
 }
 
+// Structured data for homepage
+const jsonLdData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'MyCaseValue',
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon-512.png`,
+      description: 'Federal court case analytics and outcome data for legal professionals',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'support@mycasevalues.com',
+        contactType: 'customer support',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      url: SITE_URL,
+      name: 'MyCaseValue',
+      description: 'Federal court case analytics and outcome data for legal professionals',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${SITE_URL}/cases?q={search_term_string}`,
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+  ],
+};
+
 export default function HomePage() {
   return (
-    <main style={{ fontFamily: 'var(--font-ui)' }}>
+    <>
+      <JsonLd data={jsonLdData} />
+      <Onboarding />
+      <main style={{ fontFamily: 'var(--font-ui)' }}>
 
       {/* ═══ 1. HERO SEARCH SECTION ═══ */}
       <section
@@ -916,5 +963,6 @@ export default function HomePage() {
         }
       `}</style>
     </main>
+    </>
   );
 }

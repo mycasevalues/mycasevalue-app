@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
+import JsonLd from '../../components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Pricing — Federal Court Intelligence Plans',
@@ -501,10 +502,7 @@ export default function PricingPage() {
         }
       `}</style>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
 
       {/* Breadcrumb */}
       <div className="breadcrumb-wrapper">

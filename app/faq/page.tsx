@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
+import JsonLd from '../../components/JsonLd';
 
 export const revalidate = 0;
 
@@ -550,10 +551,7 @@ const faqs = [
 export default function FAQPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
 
       {/* Header */}
       <div className="relative overflow-hidden border-b" style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'var(--card, #FFFFFF)' }}>

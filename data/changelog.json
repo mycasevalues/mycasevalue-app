@@ -34,5 +34,77 @@
     "description": "Added EEOC charge pipeline data for employment discrimination NOS codes and NLRB case activity data for labor relations pages.",
     "affectedNosCodes": ["442", "445", "710", "720"],
     "affectedDistricts": []
+  },
+  {
+    "id": "changelog-20260416",
+    "date": "2026-04-16",
+    "updateType": "data_update",
+    "title": "FJC IDB Data Refresh - Q1 2026 Complete",
+    "description": "Comprehensive data update from the Federal Judicial Center Integrated Database covering all dispositions through March 31, 2026. Updated win rates, settlement patterns, and case duration metrics across all 94 federal districts.",
+    "affectedNosCodes": ["1100", "1300", "2100", "2500", "4000", "5000", "8800"],
+    "affectedDistricts": ["All Districts"]
+  },
+  {
+    "id": "changelog-20260410",
+    "date": "2026-04-10",
+    "updateType": "feature",
+    "title": "Judge Analytics Engine - Win Rate Predictors",
+    "description": "New machine learning model predicts likely trial outcomes based on assigned judge and case characteristics. Analyzes judge-specific summary judgment patterns, trial win rates, and damages awards across all case types.",
+    "affectedNosCodes": ["All"],
+    "affectedDistricts": ["All Districts"]
+  },
+  {
+    "id": "changelog-20260405",
+    "date": "2026-04-05",
+    "updateType": "fix",
+    "title": "Settlement Data Filtering - Confidence Level Adjustment",
+    "description": "Corrected filtering logic for settlement percentile calculations to exclude confidential settlements and improve P25, P50, P90 accuracy. Settlement figures now reflect only publicly documented outcomes.",
+    "affectedNosCodes": ["1300", "4000", "5000", "8800"],
+    "affectedDistricts": ["SDNY", "NDCA", "CDCA", "NDIL"]
+  },
+  {
+    "id": "changelog-20260328",
+    "date": "2026-03-28",
+    "updateType": "feature",
+    "title": "Venue Optimizer Tool Launch",
+    "description": "New tool helps attorneys evaluate and compare federal districts based on win rates, settlement patterns, case duration, judge assignment, and jury demographics. Includes side-by-side district comparison and outcome predictions.",
+    "affectedNosCodes": ["All"],
+    "affectedDistricts": ["All Districts"]
+  },
+  {
+    "id": "changelog-20260315",
+    "date": "2026-03-15",
+    "updateType": "data_update",
+    "title": "Case Predictor Training Data Expansion",
+    "description": "Expanded case outcome prediction model with 18 months of additional historical data (2024-2025) and refined outcome probability calibration. Improved accuracy for employment discrimination and civil rights cases.",
+    "affectedNosCodes": ["1300", "8800"],
+    "affectedDistricts": ["All Districts"]
+  },
+  {
+    "id": "changelog-20260301",
+    "date": "2026-03-01",
+    "updateType": "feature",
+    "title": "Judge Intelligence Dashboard - Personal Patterns",
+    "description": "Enhanced judge profile pages with individual judicial patterns: summary judgment grant rates, average damages awards, settlement propensities, and case duration patterns. Now covers all federal judges with 5+ years history.",
+    "affectedNosCodes": ["All"],
+    "affectedDistricts": ["All Districts"]
+  },
+  {
+    "id": "changelog-20260220",
+    "date": "2026-02-20",
+    "updateType": "fix",
+    "title": "NOS Code Classification - Subcode Granularity",
+    "description": "Fixed NOS code subcategory assignments for patent and copyright cases. Improved distinction between patent infringement (2100), trademark (2400), and copyright (2500) cases. Impact on case type filtering and outcome metrics.",
+    "affectedNosCodes": ["2100", "2400", "2500"],
+    "affectedDistricts": ["NDCA", "CDCA", "SDCA", "EDTX"]
+  },
+  {
+    "id": "changelog-20260201",
+    "date": "2026-02-01",
+    "updateType": "data_update",
+    "title": "PACER Integration - Real-Time Case Tracking",
+    "description": "Integrated Public Access to Court Electronic Records (PACER) data feeds for real-time case status updates across all districts. Case dispositions now updated daily with 24-hour delay from federal court filing systems.",
+    "affectedNosCodes": ["All"],
+    "affectedDistricts": ["All Districts"]
   }
 ]

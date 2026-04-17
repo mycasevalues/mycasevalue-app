@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 import { getJudges } from '../../lib/judge-data-service';
 import JudgeDirectoryClient from '../../components/JudgeDirectoryClient';
+import JsonLd from '../../components/JsonLd';
 import dynamic from 'next/dynamic';
 
 const JudgeRadarPreview = dynamic(() => import('../../components/JudgeRadarPreview'), {
@@ -70,10 +71,7 @@ export default async function JudgesPage() {
 
   return (
     <div style={{ background: 'var(--surf, #F6F5F2)', minHeight: '100vh' }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       {/* Header */}
       <div style={{
         borderBottom: '1px solid var(--bdr, #E2DFD8)',

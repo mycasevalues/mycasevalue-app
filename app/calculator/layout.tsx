@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
+import JsonLd from '../../components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Settlement Calculator — Federal Case Valuation',
@@ -30,6 +31,42 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLdData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: 'Settlement Calculator',
+      description: 'Free federal court settlement calculator. Estimate your case value based on 5.1M+ real outcomes.',
+      url: `${SITE_URL}/calculator`,
+      image: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+      },
+    },
+    {
+      '@type': 'Calculator',
+      name: 'Federal Court Settlement Calculator',
+      url: `${SITE_URL}/calculator`,
+      description: 'Estimate settlement value based on federal court case outcomes and damage multipliers.',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Calculator', item: `${SITE_URL}/calculator` },
+      ],
+    },
+  ],
+};
+
 export default function CalculatorLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <JsonLd data={jsonLdData} />
+      {children}
+    </>
+  );
 }

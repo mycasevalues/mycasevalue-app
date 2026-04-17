@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
+import JsonLd from '../../components/JsonLd';
 
 export const revalidate = 0;
 
@@ -117,10 +118,7 @@ export default function HowItWorksPage() {
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
         }
       `}} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
 
       {/* Header */}
       <div className="relative overflow-hidden" style={{ background: 'var(--card, #FFFFFF)' }}>
