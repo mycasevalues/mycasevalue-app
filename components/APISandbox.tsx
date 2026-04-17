@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { SITE_URL } from '@/lib/site-config';
 
 interface EndpointConfig {
   method: string;
@@ -184,7 +185,7 @@ export default function APISandbox() {
     try {
       const startTime = performance.now();
 
-      let url = `https://www.mycasevalues.com${endpoint.path}`;
+      let url = `${SITE_URL}${endpoint.path}`;
       const queryParams: string[] = [];
 
       endpoint.params.forEach((param) => {

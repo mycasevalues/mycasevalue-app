@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { SITE_URL } from '@/lib/site-config';
 import { SITS } from '@/lib/data';
 
 type DisplayStyle = 'compact' | 'full';
@@ -48,7 +49,7 @@ export default function WidgetGenerator() {
   const dimensions = displayStyle === 'compact' ? { width: 280, height: 160 } : { width: 340, height: 220 };
   const embedCode = selectedNos
     ? `<iframe
-  src="https://mycasevalues.com/widget/${selectedNos}/${selectedDistrict}"
+  src="${SITE_URL}/widget/${selectedNos}/${selectedDistrict}"
   width="${dimensions.width}"
   height="${dimensions.height}"
   frameborder="0"

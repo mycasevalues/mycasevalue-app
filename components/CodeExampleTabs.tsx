@@ -1,10 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { SITE_URL } from '@/lib/site-config';
 
 const codeExamples = {
   javascript: `const apiKey = 'your_api_key_here';
-const baseUrl = 'https://www.mycasevalues.com/api/v1';
+const baseUrl = '${SITE_URL}/api/v1';
 
 async function getCaseStatistics(nosCode) {
   const url = \`\${baseUrl}/cases/nos/\${nosCode}\`;
@@ -35,7 +36,7 @@ getCaseStatistics('442');`,
   python: `import requests
 
 api_key = 'your_api_key_here'
-base_url = 'https://www.mycasevalues.com/api/v1'
+base_url = '${SITE_URL}/api/v1'
 
 def get_case_statistics(nos_code):
     url = f'{base_url}/cases/nos/{nos_code}'
@@ -56,7 +57,7 @@ def get_case_statistics(nos_code):
 # Get statistics for Personal Injury (442)
 get_case_statistics('442')`,
 
-  curl: `curl -X GET "https://www.mycasevalues.com/api/v1/cases/nos/442" \\
+  curl: `curl -X GET "${SITE_URL}/api/v1/cases/nos/442" \\
   -H "Authorization: Bearer your_api_key_here" \\
   -H "Content-Type: application/json"`,
 };

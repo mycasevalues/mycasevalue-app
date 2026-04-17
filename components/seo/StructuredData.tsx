@@ -3,6 +3,8 @@
  * Provides schema.org markup for better search engine understanding.
  */
 
+import { SITE_URL } from '@/lib/site-config';
+
 type WebApplicationProps = {
   name: string;
   description: string;
@@ -33,7 +35,7 @@ export function WebApplicationSchema({ name, description, url, category, offers 
     provider: {
       '@type': 'Organization',
       name: 'MyCaseValue',
-      url: 'https://mycasevalues.com',
+      url: SITE_URL,
     },
   };
 

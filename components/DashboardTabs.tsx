@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/site-config';
 import ReferralDashboard from './ReferralDashboard';
 
 type Tab = 'overview' | 'history' | 'saved' | 'alerts' | 'account';
@@ -49,7 +50,7 @@ export default function DashboardTabs({
 
   // Mock API key
   const apiKey = `mcv_${btoa(userEmail).slice(0, 24)}...`;
-  const referralLink = `https://mycasevalues.com/ref/${btoa(userEmail).slice(0, 8)}`;
+  const referralLink = `${SITE_URL}/ref/${btoa(userEmail).slice(0, 8)}`;
 
   const tabStyle = (key: Tab): React.CSSProperties => ({
     padding: '10px 18px', borderRadius: '6px', border: 'none',
