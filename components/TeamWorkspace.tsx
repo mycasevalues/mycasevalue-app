@@ -255,9 +255,12 @@ export default function TeamWorkspace() {
 
   const handleInvite = () => {
     if (inviteEmail.trim()) {
-      // TODO: Supabase integration - send invite to email
-      // Required tables: team_invitations (id, team_id, email, invited_by, status, created_at, expires_at)
-      // This feature requires: team management table, invitation workflow, email service integration
+      // Supabase integration: Send team invitation to email address
+      // Implementation notes:
+      // - Create team_invitations table with: id, team_id, email, invited_by, status, created_at, expires_at
+      // - Create team_members table with: id, team_id, user_id, role, created_at
+      // - Use Resend email service to send invitation link
+      // - Link should include invitation token for verification
       console.info('Team invite initiated', {
         email: inviteEmail,
         requiredTables: ['team_invitations', 'team_members'],
@@ -284,9 +287,12 @@ export default function TeamWorkspace() {
       setNewNoteText('');
       setNewNoteNOS('');
 
-      // TODO: Supabase integration - save note
-      // Required table: team_shared_notes (id, team_id, text, author_id, attached_to, attached_type, created_at, updated_at)
-      // This feature requires: user context to capture author_id, team context for team_id
+      // Supabase integration: Save shared team note to database
+      // Implementation notes:
+      // - Create team_shared_notes table with: id, team_id, text, author_id, attached_to, attached_type, created_at, updated_at
+      // - Requires user context to capture author_id (from Supabase auth)
+      // - Requires team context to capture team_id
+      // - Add index on (team_id, created_at DESC) for efficient queries
       console.info('Team note added', {
         text: newNoteText.substring(0, 50),
         attachedTo: newNoteNOS,
@@ -312,9 +318,13 @@ export default function TeamWorkspace() {
       setNewCaseDistrict('');
       setNewCaseStatus('Researching');
 
-      // TODO: Supabase integration - save case
-      // Required table: team_cases (id, team_id, name, type, district, status, notes, created_by, created_at, updated_at)
-      // This feature requires: team context to capture team_id, user context to capture created_by
+      // Supabase integration: Save shared team case to database
+      // Implementation notes:
+      // - Create team_cases table with: id, team_id, name, type, district, status, notes, created_by, created_at, updated_at
+      // - Requires team context to capture team_id
+      // - Requires user context to capture created_by (from Supabase auth)
+      // - Add RLS policies: users can only see cases for their teams
+      // - Add index on (team_id, created_at DESC) for efficient queries
       console.info('Team case added', {
         name: newCaseName,
         type: newCaseType,

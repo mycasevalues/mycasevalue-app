@@ -111,6 +111,16 @@ function CaseSearchContent() {
         setTotal(data.total);
         setTotalPages(data.totalPages);
         setPage(p);
+
+        // Save search to history
+        if (query) {
+          try {
+            const { saveSearchHistory } = await import('../../lib/persistence');
+            await saveSearchHistory(query, caseType || undefined);
+          } catch {
+            // Silent fail — don't block search
+          }
+        }
       } catch (err) {
         setError('Unable to search. Please try again.');
         setResults([]);

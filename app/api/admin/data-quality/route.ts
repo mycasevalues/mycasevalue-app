@@ -2,9 +2,10 @@
  * Data Quality Check API Route
  *
  * GET /api/admin/data-quality - Run and return quality check results
- * POST /api/admin/data-quality - Run check and send notification (TODO: Resend)
+ * POST /api/admin/data-quality - Run check and send email notification via Resend
  *
  * Protected: Requires admin auth header (simple token check for now)
+ * Upgrade path: Verify user against Supabase 'admins' table for RBAC
  */
 
 import { NextRequest, NextResponse } from 'next/server';

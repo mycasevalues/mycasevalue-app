@@ -12,6 +12,7 @@ interface ReportPDFButtonProps {
   totalCases?: number;
   settleRate?: number;
   dismissRate?: number;
+  nos?: string;
 }
 
 export default function ReportPDFButton(props: ReportPDFButtonProps) {
@@ -20,6 +21,13 @@ export default function ReportPDFButton(props: ReportPDFButtonProps) {
   async function handleDownload() {
     setLoading(true);
     try {
+      // Save to user's report history
+      const { saveReport } = await import('../../../lib/persistence');
+      await saveReport({
+        category: props.nos || props.category,
+        district: props.district,
+      });
+
       const { generateReportPDF } = await import('../../../lib/generatePDF');
       const doc = await generateReportPDF(props);
       const filename = `MyCaseValue-${props.category.replace(/[^a-zA-Z0-9]/g, '-')}-Report.pdf`;

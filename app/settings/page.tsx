@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
+import { SavedReportsSection, SearchHistorySection, UserPreferencesSection } from '../../components/UserDataManager';
 
 export const metadata: Metadata = {
   title: 'Settings',
@@ -59,6 +60,9 @@ export default function SettingsPage() {
                 { label: 'Account Information', id: 'account' },
                 { label: 'Preferences', id: 'preferences' },
                 { label: 'Data & Privacy', id: 'privacy' },
+                { label: 'Saved Reports', id: 'saved-reports' },
+                { label: 'Search History', id: 'search-history' },
+                { label: 'User Preferences', id: 'user-prefs' },
                 { label: 'Appearance', id: 'appearance' },
                 { label: 'Subscription', id: 'subscription' },
               ].map((item) => (
@@ -335,6 +339,21 @@ export default function SettingsPage() {
                 </div>
               </div>
             </section>
+
+            {/* Saved Reports Section */}
+            <div id="saved-reports">
+              <SavedReportsSection />
+            </div>
+
+            {/* Search History Section */}
+            <div id="search-history">
+              <SearchHistorySection />
+            </div>
+
+            {/* User Preferences Section */}
+            <div id="user-prefs">
+              <UserPreferencesSection />
+            </div>
 
             {/* Subscription Section */}
             <section

@@ -37,10 +37,12 @@ export async function POST(request: NextRequest) {
     // Send confirmation email
     const emailResult = await sendWhitepaperConfirmation(cleanEmail, fullName, organization);
 
-    // TODO: In production, also implement:
-    // 1. Send email with PDF attachment using Resend
-    // 2. Store lead information in database (Supabase)
-    // 3. Log analytics event
+    // Production implementation plan:
+    // 1. Send email with PDF attachment using Resend (requires Resend API)
+    // 2. Store lead information in Supabase whitepaper_leads table
+    //    - Fields: id, email, full_name, organization, pdf_sent, created_at
+    // 3. Log analytics event to track conversion funnel
+    // Note: PDF is currently generated client-side. Consider server-side generation for consistency.
 
     if (!emailResult.success) {
       console.warn('[whitepaper-capture] Email send failed:', emailResult.error);

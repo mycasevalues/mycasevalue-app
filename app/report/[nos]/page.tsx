@@ -862,6 +862,7 @@ export default async function ReportPage({
               <ReportPDFButton
                 category={label}
                 district={districtLabel}
+                nos={nos}
                 winRate={winRate}
                 settlementMedian={settlementRange?.md || 0}
                 timeline={medianDuration}

@@ -529,7 +529,7 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* TODO: Have legal counsel review this arbitration/forum clause before final publication. */}
+            {/* LEGAL REVIEW REQUIRED: Arbitration and forum selection clause requires attorney review before final publication. */}
             <div style={{
               marginTop: '16px',
               padding: '12px 16px',

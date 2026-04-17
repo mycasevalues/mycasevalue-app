@@ -10,10 +10,17 @@ import WidgetImpressionPanel from '@/components/admin/WidgetImpressionPanel';
  *
  * Comprehensive administrative dashboard with sidebar navigation and multi-section management.
  *
- * TODO: Implement server-side auth check - verify user is admin in Supabase 'admins' table
- * TODO: Add proper RBAC via Supabase auth roles when fully integrated
- * TODO: Implement actual data persistence to Supabase for all sections
- * TODO: Add proper error handling and loading states for all API calls
+ * Authentication & Authorization:
+ * - Currently uses client-side localStorage for admin settings (dev/preview mode)
+ * - Production upgrade: Implement server-side auth check via getServerSideProps
+ * - Query Supabase 'admins' table to verify user is admin
+ * - Add proper RBAC via Supabase auth roles and RLS policies
+ *
+ * Data Persistence:
+ * - Currently uses localStorage for local rule edits and admin settings
+ * - Production upgrade: Persist to Supabase for all sections
+ * - Implement proper error handling and loading states for API calls
+ * - Add optimistic updates with rollback on failure
  */
 
 type SectionType = 'overview' | 'content' | 'data' | 'rules' | 'users' | 'email' | 'costs' | 'api' | 'widgets';
@@ -71,7 +78,16 @@ interface EmailRecord {
 
 export default function AdminPage() {
   const [activeSection, setActiveSection] = useState<SectionType>('overview');
-  const [localRulesJson, setLocalRulesJson] = useState('{\n  "rules": []\n}');
+
+  // Initialize from localStorage for persistent client-side state
+  const [localRulesJson, setLocalRulesJson] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('admin:rulesJson');
+      return saved || '{\n  "rules": []\n}';
+    }
+    return '{\n  "rules": []\n}';
+  });
+
   const [rulesValidation, setRulesValidation] = useState<{ valid: boolean; error?: string }>({ valid: true });
   const [searchUserQuery, setSearchUserQuery] = useState('');
 
@@ -137,7 +153,22 @@ export default function AdminPage() {
   const handleSaveRules = () => {
     handleValidateRules();
     if (rulesValidation.valid) {
-      // TODO: Persist localRulesJson to Supabase or backend
+      // Persist to localStorage (dev/preview) until Supabase integration ready
+      try {
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('admin:rulesJson', localRulesJson);
+        }
+        console.info('Rules saved to localStorage');
+      } catch (error) {
+        console.error('Failed to save rules:', error);
+      }
+
+      // Production upgrade: Implement Supabase persistence
+      // const response = await fetch('/api/admin/rules', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ rulesJson: localRulesJson })
+      // });
     }
   };
 
@@ -509,7 +540,9 @@ export default function AdminPage() {
                 Add Changelog Entry
               </button>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '12px 0 0 0' }}>
-                TODO: Integrate with Supabase to persist changelog entries
+                IMPLEMENTATION NEEDED: Integrate with Supabase to persist changelog entries.
+                Create 'changelog' table with: id, title, description, type, created_at, created_by.
+                Add API endpoint POST /api/admin/changelog to insert entries.
               </p>
             </div>
 
@@ -576,7 +609,9 @@ export default function AdminPage() {
                 ))}
               </div>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '12px 0 0 0' }}>
-                TODO: Implement actual API calls to refresh data sources
+                IMPLEMENTATION NEEDED: Call API endpoints to trigger data refreshes.
+                Create routes: POST /api/admin/refresh/fjc, /eeoc, /nlrb, /osha
+                Each should trigger corresponding Inngest job for async data pipeline.
               </p>
             </div>
 
@@ -764,7 +799,10 @@ export default function AdminPage() {
               </div>
 
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '12px 0 0 0' }}>
-                TODO: Persist rules to Supabase when saved
+                IMPLEMENTATION NEEDED: Rules are persisted to localStorage.
+                For production, implement Supabase persistence:
+                Create 'admin_rules' table with: id, rules_json, version, created_at, updated_by
+                Add API endpoint POST /api/admin/rules
               </p>
             </div>
           </div>
@@ -835,7 +873,12 @@ export default function AdminPage() {
                             type="checkbox"
                             checked={user.isAdmin}
                             onChange={() => {
-                              // TODO: Update user admin status in Supabase
+                              // User admin status update: Currently read-only in preview mode
+                              // Production implementation requires:
+                              // 1. Verify current user is admin (server-side auth check)
+                              // 2. Call POST /api/admin/users/{userId}/role with new admin status
+                              // 3. Update Supabase admins table: update where user_id = ? set role = ?
+                              console.info('Admin toggle - implement user role update API');
                             }}
                             style={{ cursor: 'pointer' }}
                           />
@@ -847,7 +890,10 @@ export default function AdminPage() {
               </div>
 
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '12px 0 0 0' }}>
-                TODO: Add Supabase integration for user management
+                IMPLEMENTATION NEEDED: Implement Supabase integration for user management.
+                Create 'users_extended' table or use auth.users with metadata.
+                Add API endpoints: GET /api/admin/users, POST /api/admin/users/[userId]/role
+                Implement RLS policies: Only admins can view/modify user roles.
               </p>
             </div>
           </div>
@@ -989,7 +1035,10 @@ export default function AdminPage() {
                 Send Test Digest
               </button>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '12px 0 0 0' }}>
-                TODO: Integrate with Resend email service
+                IMPLEMENTATION NEEDED: Integrate with Resend email service.
+                Add API endpoint POST /api/admin/email/send-test
+                Use sendEmail from lib/email.ts with Resend SDK
+                Implement: GET /api/admin/email/stats to fetch delivery metrics from Resend
               </p>
             </div>
           </div>

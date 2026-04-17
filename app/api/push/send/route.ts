@@ -89,10 +89,8 @@ export async function POST(req: NextRequest) {
         vapidPrivateKey
       );
 
-      // TODO: Retrieve subscriptions from Supabase push_subscriptions table
+      // Retrieve subscriptions from Supabase push_subscriptions table
       // and send to each subscriber using webpush.sendNotification().
-      // Once the push_subscriptions table is created in Supabase, query it here,
-      // validate subscription objects, and iterate through them to send notifications.
 
       try {
         const supabase = getSupabaseAdmin();
@@ -113,9 +111,35 @@ export async function POST(req: NextRequest) {
           );
         }
 
-        // TODO: Implement sending notifications to each subscription when table is ready
-        console.info('[api/push/send] Push send requested:', { title, url, tag, subscriptionCount: subscriptions?.length || 0 });
-        sentCount = 0;
+        // Implement sending notifications to each subscription when table is ready
+        if (subscriptions && subscriptions.length > 0) {
+          const results = await Promise.allSettled(
+            subscriptions.map(async (sub: any) => {
+              try {
+                // Validate subscription has required fields
+                if (!sub.subscription || !sub.subscription.endpoint) {
+                  console.warn('[api/push/send] Invalid subscription object:', sub.id);
+                  return { status: 'invalid' };
+                }
+                return await webpush.sendNotification(sub.subscription, JSON.stringify({
+                  title,
+                  body: notificationBody,
+                  url,
+                  icon,
+                  tag,
+                }));
+              } catch (err) {
+                console.error('[api/push/send] Failed to send to subscription:', sub.id, err);
+                throw err;
+              }
+            })
+          );
+
+          sentCount = results.filter(r => r.status === 'fulfilled').length;
+          failedCount = results.filter(r => r.status === 'rejected').length;
+        }
+
+        console.info('[api/push/send] Push send completed:', { title, url, tag, subscriptionCount: subscriptions?.length || 0, sentCount, failedCount });
       } catch (dbErr: any) {
         console.error('[api/push/send] Database error retrieving subscriptions:', dbErr.message);
         return NextResponse.json(

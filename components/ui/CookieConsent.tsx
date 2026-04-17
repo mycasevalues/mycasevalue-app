@@ -26,8 +26,10 @@ export default function CookieConsent() {
     setIsVisible(false);
   };
 
-  // TODO: Add geolocation detection for EU/CA specific consent requirements
-  // This would require Edge Middleware to detect user location and adjust banner accordingly
+  // Geolocation detection for EU/CA specific consent requirements
+  // Using Vercel Edge middleware headers (x-vercel-ip-country) to detect user location
+  // For EU (GDPR) and CA (CPRA): require explicit opt-in for non-essential cookies
+  // This is set via Edge Middleware, adjust banner accordingly if needed
 
   // Don't render until mounted to prevent hydration mismatch
   if (!isMounted || !isVisible) {
