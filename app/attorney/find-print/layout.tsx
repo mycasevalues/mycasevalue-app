@@ -3,14 +3,28 @@ import { SITE_URL } from '@/lib/site-config';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Find & Print Documents | MyCaseValue',
-  description: 'Batch retrieval tool for legal citations. Input multiple case citations, statutes, and regulations to retrieve and format documents for download, email, or printing.',
+  title: 'Find & Print Documents | MyCaseValues',
+  description: 'Batch retrieve up to 100 legal documents by citation. Download, email, or print cases, statutes, and regulations in your preferred format.',
+  alternates: { canonical: `${SITE_URL}/attorney/find-print` },
   openGraph: {
-    title: 'Find & Print — Batch Document Retrieval',
-    description: 'Retrieve multiple legal documents by citation in seconds.',
+    title: 'Find & Print Documents | MyCaseValues',
+    description: 'Batch retrieve up to 100 legal documents by citation. Download, email, or print cases, statutes, and regulations.',
     type: 'website',
     url: `${SITE_URL}/attorney/find-print`,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Find & Print Documents | MyCaseValues',
+    description: 'Batch retrieve legal documents by citation for download, email, or print.',
+  },
+  keywords: [
+    'legal document retrieval',
+    'batch citation download',
+    'case law printing',
+    'legal document download',
+    'citation batch search',
+    'legal research tool',
+  ],
 };
 
 export default function FindPrintLayout({ children }: { children: ReactNode }) {

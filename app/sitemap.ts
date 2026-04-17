@@ -120,6 +120,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/attorney/opposing-counsel`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/attorney/team-workspace`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/attorney/case-timeline`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/attorney/timeline`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/calculator/liens`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${baseUrl}/press`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/reports/2026-annual`, lastModified: now, changeFrequency: 'yearly', priority: 0.6 },

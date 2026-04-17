@@ -967,7 +967,7 @@ export default function AdvancedSearchPage() {
                   padding: '12px 16px',
                   background: 'var(--card)',
                   border: '1px solid var(--bdr)',
-                  borderRadius: 4,
+                  borderRadius: 2,
                   fontSize: 13,
                   color: 'var(--link)',
                   fontWeight: 500,
