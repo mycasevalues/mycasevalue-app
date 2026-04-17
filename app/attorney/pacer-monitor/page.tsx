@@ -85,7 +85,7 @@ export default function PacerMonitorPage() {
               <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Recent Alerts</h2>
               <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)', padding: '3px' }}>
                 {(['all', 'high', 'medium', 'low'] as const).map((f) => (
-                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '4px 8px', borderRadius: '4px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? 'var(--accent-primary)' : 'transparent', color: filter === f ? 'var(--color-surface-0)' : 'var(--color-text-secondary)', textTransform: 'capitalize' as const }}>
+                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '4px 8px', borderRadius: '2px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? 'var(--accent-primary)' : 'transparent', color: filter === f ? 'var(--color-surface-0)' : 'var(--color-text-secondary)', textTransform: 'capitalize' as const }}>
                     {f}
                   </button>
                 ))}
@@ -102,7 +102,7 @@ export default function PacerMonitorPage() {
                         <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--gold)' }}>{alert.caseNumber}</span>
                         <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginLeft: '8px' }}>{alert.court}</span>
                       </div>
-                      <span style={{ fontSize: '10px', fontWeight: 600, padding: '2px 8px', borderRadius: '4px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>
+                      <span style={{ fontSize: '10px', fontWeight: 600, padding: '2px 8px', borderRadius: '3px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>
                     </div>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>{alert.caseName}</p>
                     <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 6px', lineHeight: 1.4 }}>{alert.event}</p>
@@ -124,11 +124,11 @@ export default function PacerMonitorPage() {
                   value={watchCase}
                   onChange={(e) => setWatchCase(e.target.value)}
                   placeholder="Case number..."
-                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', outline: 'none' }}
+                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '2px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', outline: 'none' }}
                   onFocus={(e) => e.target.style.borderColor = 'var(--accent-primary)'}
                   onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.10)'}
                 />
-                <button onClick={addWatch} style={{ padding: '12px 20px', height: '48px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>+</button>
+                <button onClick={addWatch} style={{ padding: '12px 20px', height: '48px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '2px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>+</button>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {watchList.map((c) => (

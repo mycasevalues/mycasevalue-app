@@ -215,7 +215,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-mono)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: 'var(--accent-primary)',
+                  color: 'var(--gold)',
                   marginBottom: '4px',
                 }}
               >
@@ -333,7 +333,7 @@ export default function SolutionsPage() {
           <h2
             style={{
               fontFamily: 'var(--font-legal)',
-              fontSize: '28px',
+              fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: '16px',

@@ -331,11 +331,11 @@ export default function ApiAccessPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
           <h1
             style={{
-              fontSize: '24px',
-              fontWeight: 600,
+              fontSize: '28px',
+              fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: 0,
-              fontFamily: 'var(--font-heading)',
+              fontFamily: 'var(--font-legal)',
             }}
           >
             API Access
@@ -501,7 +501,7 @@ export default function ApiAccessPage() {
                       fontSize: '11px',
                       fontWeight: 600,
                       padding: '4px 10px',
-                      borderRadius: '4px',
+                      borderRadius: '3px',
                       backgroundColor: `${methodColors[endpoint.method]}20`,
                       color: methodColors[endpoint.method],
                       minWidth: '45px',

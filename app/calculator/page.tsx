@@ -311,7 +311,7 @@ export default function CalculatorPage() {
           </div>
           <h1 style={{
             fontFamily: 'var(--font-legal)',
-            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
@@ -650,13 +650,13 @@ export default function CalculatorPage() {
             {/* Animated Settlement Range Bar */}
             <div className="mb-6" style={{ position: 'relative' }}>
               <div style={{ position: 'relative', height: '40px', marginBottom: '8px' }}>
-                <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: 'rgba(10,80,162,0.08)', borderRadius: 3 }} />
+                <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: 'rgba(10,80,162,0.08)', borderRadius: 2 }} />
                 <div style={{
                   position: 'absolute', top: '16px', height: '8px',
                   left: `${Math.max(0, (results.p10 / results.p90) * 100 * 0.2)}%`,
                   right: `${Math.max(0, 100 - 100)}%`,
                   background: 'linear-gradient(90deg, #B0D0F5, var(--link), var(--accent-primary), var(--link), #B0D0F5)',
-                  borderRadius: 3,
+                  borderRadius: 2,
                   animation: 'slideUpFadeIn 0.6s ease-out',
                 }} />
                 <div style={{
@@ -1017,7 +1017,7 @@ export default function CalculatorPage() {
             <div className="mb-4 flex items-center gap-3 flex-wrap" style={{
               padding: '12px 16px',
               background: 'var(--color-surface-0)',
-              borderRadius: 3,
+              borderRadius: 4,
               fontSize: '11px',
               color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-ui)',

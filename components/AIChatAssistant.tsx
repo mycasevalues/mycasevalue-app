@@ -112,7 +112,7 @@ export function AIChatAssistant() {
         <button
           onClick={() => setIsOpen(true)}
           className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded text-white shadow-lg hover:shadow-xl transition-all"
-          style={{ backgroundColor: 'var(--card, #FFFFFF)', fontFamily: 'Inter, system-ui, sans-serif' }}
+          style={{ backgroundColor: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)' }}
           aria-label="Open AI Assistant"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -125,7 +125,7 @@ export function AIChatAssistant() {
       {isOpen && (
         <div
           className="fixed bottom-6 right-6 z-50 flex flex-col bg-[#FFFFFF] border border-[var(--bdr, #E2DFD8)] shadow-2xl overflow-hidden"
-          style={{ width: '400px', maxWidth: 'calc(100vw - 48px)', height: '560px', maxHeight: 'calc(100vh - 48px)', borderRadius: '6px', fontFamily: 'Inter, system-ui, sans-serif' }}
+          style={{ width: '400px', maxWidth: 'calc(100vw - 48px)', height: '560px', maxHeight: 'calc(100vh - 48px)', borderRadius: '6px', fontFamily: 'var(--font-ui)' }}
         >
           <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--bdr, #E2DFD8)]" style={{ backgroundColor: 'var(--card, #FFFFFF)' }}>
             <div className="flex items-center gap-3">

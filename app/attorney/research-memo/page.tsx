@@ -117,7 +117,7 @@ export default function ResearchMemoPage() {
 
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
-    border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px',
+    border: '1px solid var(--border-default)', borderRadius: '2px', fontSize: '14px',
     color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
@@ -172,7 +172,7 @@ export default function ResearchMemoPage() {
                   onChange={e => setLegalQuestion(e.target.value)}
                   style={{
                     width: '100%', padding: '12px 14px', border: '1px solid var(--border-default)',
-                    borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)',
+                    borderRadius: '2px', fontSize: '14px', color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
                     minHeight: '140px', resize: 'vertical', boxSizing: 'border-box' as const,
                   }}
@@ -217,7 +217,7 @@ export default function ResearchMemoPage() {
                 style={{
                   width: '100%', padding: '16px',
                   backgroundColor: loading || !legalQuestion.trim() ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
+                  color: 'var(--color-text-inverse)', border: 'none', borderRadius: '2px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase', letterSpacing: '0.04em',
                   cursor: loading || !legalQuestion.trim() ? 'not-allowed' : 'pointer',
@@ -238,10 +238,10 @@ export default function ResearchMemoPage() {
                     {loading && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
                   <div style={{ display: 'flex', gap: 8 }}>
-                    <button onClick={copyToClipboard} disabled={loading} style={{ padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--accent-primary)', color: '#FFFFFF', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.5 : 1 }}>
+                    <button onClick={copyToClipboard} disabled={loading} style={{ padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--accent-primary)', color: '#FFFFFF', border: 'none', borderRadius: '2px', fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.5 : 1 }}>
                       {copied ? 'Copied!' : 'Copy'}
                     </button>
-                    <button onClick={exportAsDocx} disabled={loading || exporting} style={{ padding: '8px 12px', background: 'var(--gold)', color: '#FFFFFF', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: loading || exporting ? 'not-allowed' : 'pointer', opacity: loading || exporting ? 0.5 : 1 }}>
+                    <button onClick={exportAsDocx} disabled={loading || exporting} style={{ padding: '8px 12px', background: 'var(--gold)', color: '#FFFFFF', border: 'none', borderRadius: '2px', fontSize: '12px', fontWeight: 600, cursor: loading || exporting ? 'not-allowed' : 'pointer', opacity: loading || exporting ? 0.5 : 1 }}>
                       {exporting ? 'Exporting...' : 'Export as Word'}
                     </button>
                   </div>

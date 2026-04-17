@@ -223,7 +223,7 @@ function SignInForm() {
       {/* Main Content Container */}
       <div className="auth-container">
         {/* Benefits/Trust Indicators Section */}
-        <div className="benefits-section" style={{ background: '#0F2A4A', borderRadius: '4px', padding: '36px' }}>
+        <div className="benefits-section" style={{ background: 'var(--chrome-bg)', borderRadius: '4px', padding: '36px' }}>
           <h2 className="benefits-title">
             Access federal court analytics powering legal professionals
           </h2>
@@ -477,7 +477,7 @@ function SignInForm() {
               backgroundColor: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               border: 'none',
-              borderRadius: '20px',
+              borderRadius: '2px',
               fontFamily: 'var(--font-ui)',
               fontSize: '15px',
               fontWeight: 600,

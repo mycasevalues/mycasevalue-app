@@ -200,13 +200,13 @@ export default function PlatformPage() {
         }
 
         .tech-box {
-          background: rgba(139,92,246,0.06);
-          border: 1px solid #E9D5FF;
+          background: var(--color-surface-1);
+          border: 1px solid var(--border-default);
           padding: 16px 24px;
-          border-radius: 12px;
+          border-radius: 4px;
           font-size: 14px;
           font-weight: 500;
-          color: #6B21A8;
+          color: var(--color-text-primary);
           min-width: 120px;
           text-align: center;
         }
@@ -225,16 +225,16 @@ export default function PlatformPage() {
         }
 
         .flow-item {
-          background: linear-gradient(135deg, #F3E8FF 0%, #FAF5FF 100%);
-          border: 1px solid #E9D5FF;
+          background: var(--color-surface-0);
+          border: 1px solid var(--border-default);
           padding: 24px;
-          border-radius: 12px;
+          border-radius: 4px;
           text-align: center;
         }
 
         .flow-title {
           font-weight: 600;
-          color: #6B21A8;
+          color: var(--color-text-primary);
           font-size: 14px;
           margin-bottom: 8px;
         }
@@ -251,7 +251,7 @@ export default function PlatformPage() {
           margin: 40px 0;
           background: white;
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           overflow: hidden;
         }
 
@@ -277,17 +277,17 @@ export default function PlatformPage() {
 
         .comparison-table .feature-name {
           font-weight: 600;
-          color: #1F2937;
+          color: var(--color-text-primary);
           min-width: 180px;
         }
 
         .comparison-table .yes {
-          color: #059669;
+          color: var(--data-positive);
           font-weight: 600;
         }
 
         .comparison-table .no {
-          color: #DC2626;
+          color: var(--data-negative);
           font-weight: 600;
         }
 
@@ -306,7 +306,7 @@ export default function PlatformPage() {
         .feature-card {
           background: white;
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 24px;
           transition: all 0.3s ease;
         }
@@ -320,8 +320,8 @@ export default function PlatformPage() {
         .feature-icon {
           width: 48px;
           height: 48px;
-          background: linear-gradient(135deg, var(--accent-primary) 0%, #A78BFA 100%);
-          border-radius: 12px;
+          background: var(--accent-primary);
+          border-radius: 4px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -332,14 +332,14 @@ export default function PlatformPage() {
 
         .feature-title {
           font-weight: 600;
-          color: #1F2937;
+          color: var(--color-text-primary);
           margin-bottom: 8px;
           font-size: 16px;
         }
 
         .feature-desc {
           font-size: 14px;
-          color: #6B7280;
+          color: var(--color-text-secondary);
           line-height: 1.6;
         }
 
@@ -349,8 +349,8 @@ export default function PlatformPage() {
           gap: 24px;
           margin: 40px 0;
           padding: 32px;
-          background: linear-gradient(135deg, var(--accent-primary) 0%, #2D5A8C 100%);
-          border-radius: 12px;
+          background: var(--chrome-bg, var(--accent-primary));
+          border-radius: 4px;
         }
 
         .stat-item {
@@ -382,13 +382,13 @@ export default function PlatformPage() {
         .roadmap-phase {
           background: white;
           border: 2px solid var(--accent-primary);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 32px;
           position: relative;
         }
 
         .roadmap-phase.current {
-          background: linear-gradient(135deg, #F3E8FF 0%, #FAF5FF 100%);
+          background: var(--color-surface-1);
         }
 
         .phase-badge {
@@ -407,7 +407,7 @@ export default function PlatformPage() {
         .phase-title {
           font-size: 18px;
           font-weight: 700;
-          color: #1F2937;
+          color: var(--color-text-primary);
           margin-top: 8px;
           margin-bottom: 12px;
         }
@@ -445,9 +445,9 @@ export default function PlatformPage() {
         }
 
         .market-card {
-          background: linear-gradient(135deg, var(--accent-primary) 0%, #A78BFA 100%);
+          background: var(--accent-primary);
           padding: 32px;
-          border-radius: 12px;
+          border-radius: 4px;
           color: white;
           text-align: center;
         }
@@ -565,8 +565,8 @@ export default function PlatformPage() {
               Platform
             </div>
             <h1 style={{
-              fontFamily: 'var(--font-ui)',
-              fontSize: 'clamp(32px, 4.5vw, 44px)',
+              fontFamily: 'var(--font-legal)',
+              fontSize: '28px',
               fontWeight: 700,
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
@@ -617,7 +617,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -638,8 +638,8 @@ export default function PlatformPage() {
                 <span style={{
                   display: 'inline-block',
                   padding: '8px 16px',
-                  background: 'rgba(139,92,246,0.06)',
-                  color: '#6B21A8',
+                  background: 'var(--color-surface-1)',
+                  color: 'var(--accent-primary)',
                   borderRadius: '20px',
                   fontSize: '12px',
                   fontWeight: 600,
@@ -663,8 +663,8 @@ export default function PlatformPage() {
                 <span style={{
                   display: 'inline-block',
                   padding: '8px 16px',
-                  background: 'rgba(139,92,246,0.06)',
-                  color: '#6B21A8',
+                  background: 'var(--color-surface-1)',
+                  color: 'var(--accent-primary)',
                   borderRadius: '20px',
                   fontSize: '12px',
                   fontWeight: 600,
@@ -688,8 +688,8 @@ export default function PlatformPage() {
                 <span style={{
                   display: 'inline-block',
                   padding: '8px 16px',
-                  background: 'rgba(139,92,246,0.06)',
-                  color: '#6B21A8',
+                  background: 'var(--color-surface-1)',
+                  color: 'var(--accent-primary)',
                   borderRadius: '20px',
                   fontSize: '12px',
                   fontWeight: 600,
@@ -712,7 +712,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -750,12 +750,12 @@ export default function PlatformPage() {
             <div style={{
               marginTop: 40,
               padding: 24,
-              background: 'rgba(139,92,246,0.06)',
+              background: 'var(--color-surface-1)',
               borderRadius: 4,
               border: '1px solid var(--border-default)',
             }}>
               <p style={{
-                color: '#6B21A8',
+                color: 'var(--accent-primary)',
                 fontSize: 14,
                 lineHeight: 1.6,
                 margin: 0,
@@ -771,7 +771,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -866,7 +866,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -919,7 +919,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -957,12 +957,12 @@ export default function PlatformPage() {
             <div style={{
               marginTop: 40,
               padding: 32,
-              background: 'rgba(139,92,246,0.06)',
+              background: 'var(--color-surface-1)',
               borderRadius: 4,
               border: '1px solid var(--border-default)',
             }}>
               <h3 style={{
-                color: '#6B21A8',
+                color: 'var(--accent-primary)',
                 fontSize: 16,
                 fontWeight: 600,
                 marginBottom: 16,
@@ -973,7 +973,7 @@ export default function PlatformPage() {
                 listStyle: 'none',
                 margin: 0,
                 padding: 0,
-                color: '#6B21A8',
+                color: 'var(--accent-primary)',
                 fontSize: 14,
               }}>
                 <li style={{ marginBottom: 12, display: 'flex', gap: 8 }}>
@@ -1002,7 +1002,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -1066,7 +1066,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -1103,7 +1103,7 @@ export default function PlatformPage() {
                   }}
                 >
                   <div style={{
-                    fontSize: 'clamp(20px, 3vw, 28px)',
+                    fontSize: '20px',
                     fontWeight: 700,
                     color: 'var(--accent-primary)',
                     marginBottom: 8,
@@ -1128,7 +1128,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -1217,7 +1217,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -1282,7 +1282,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -1372,7 +1372,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ marginBottom: 48 }}>
               <h2 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: 12,
@@ -1442,7 +1442,7 @@ export default function PlatformPage() {
           <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
             <h2 style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: 'clamp(24px, 3.5vw, 32px)',
+              fontSize: '20px',
               fontWeight: 700,
               letterSpacing: '-0.02em',
               color: 'var(--card)',

@@ -47,7 +47,7 @@ const TYPES = [
 ];
 
 const SOURCE_COLORS: Record<string, string> = {
-  courtlistener: '#1E3A5F',
+  courtlistener: 'var(--chrome-bg)',
   federal_register: 'var(--link)',
   ecfr: 'var(--data-positive)',
   edgar: 'var(--wrn-txt)',
@@ -306,7 +306,7 @@ export default function LegalSearchPage() {
             key={doc.id}
             style={{
               padding: '24px 24px',
-              borderRadius: 14,
+              borderRadius: 4,
               border: '1px solid var(--border-default)',
               background: 'var(--color-surface-0)',
               transition: 'border-color 0.15s, box-shadow 0.15s',
@@ -433,7 +433,7 @@ export default function LegalSearchPage() {
       <div style={{
         marginTop: 48,
         padding: '32px 32px',
-        borderRadius: 6,
+        borderRadius: 4,
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
       }}>

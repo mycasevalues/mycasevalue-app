@@ -72,7 +72,7 @@ export function ToolResultCard({
       {/* Header */}
       <div
         className="flex items-center justify-between px-8 py-6 border-b border-[var(--bdr, #E2DFD8)]"
-        style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+        style={{ fontFamily: 'var(--font-ui)' }}
       >
         <h2 className="text-xl font-semibold text-[var(--color-text-muted)]">{title}</h2>
 

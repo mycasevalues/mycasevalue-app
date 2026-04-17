@@ -152,7 +152,7 @@ export default function CaseTimelinePage() {
     width: '100%',
     padding: '12px 14px',
     border: '1px solid var(--border-default)',
-    borderRadius: '4px',
+    borderRadius: '2px',
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
@@ -247,7 +247,7 @@ export default function CaseTimelinePage() {
                   backgroundColor: !caseType || !filingDate ? 'var(--border-default)' : 'var(--accent-primary)',
                   color: 'var(--color-text-primary)',
                   border: 'none',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   fontSize: '15px',
                   fontWeight: 600,
                   fontFamily: 'var(--font-ui)',
@@ -316,7 +316,7 @@ export default function CaseTimelinePage() {
                       backgroundColor: !newMilestoneName.trim() || !newMilestoneMonths ? 'var(--border-default)' : 'var(--color-surface-0)',
                       color: !newMilestoneName.trim() || !newMilestoneMonths ? 'var(--color-text-muted)' : 'var(--accent-primary)',
                       border: '1px solid var(--border-default)',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       fontSize: '13px',
                       fontWeight: 600,
                       fontFamily: 'var(--font-ui)',
@@ -463,7 +463,7 @@ export default function CaseTimelinePage() {
 
         {/* Beta Badge */}
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 12px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.08)', border: '1px solid rgba(10, 102, 194, 0.2)' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 12px', borderRadius: '3px', background: 'rgba(10, 102, 194, 0.08)', border: '1px solid rgba(10, 102, 194, 0.2)' }}>
             <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
               Free during public beta
             </span>

@@ -182,7 +182,7 @@ export default function JudgeIntelligencePage() {
                 padding: '12px 14px',
                 height: '48px',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 background: 'var(--color-surface-0)',
@@ -215,7 +215,7 @@ export default function JudgeIntelligencePage() {
                     onClick={() => setSortBy(opt.key)}
                     style={{
                       padding: '6px 12px',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       border: 'none',
                       fontSize: '12px',
                       fontWeight: 600,
@@ -270,7 +270,7 @@ export default function JudgeIntelligencePage() {
                 <button
                   key={s.id}
                   onClick={() => handleStateChange(s.id)}
-                  style={{ padding: '8px 16px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: 'var(--color-surface-1)', color: 'var(--accent-primary)', transition: 'border-color 0.2s' }}
+                  style={{ padding: '8px 16px', border: '1px solid var(--border-default)', borderRadius: '2px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: 'var(--color-surface-1)', color: 'var(--accent-primary)', transition: 'border-color 0.2s' }}
                 >
                   {s.label}
                 </button>
@@ -325,7 +325,7 @@ export default function JudgeIntelligencePage() {
                             {judge.name}
                           </span>
                           {judge.senior && (
-                            <span style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(184,110,0,0.08)', color: 'var(--wrn-txt)' }}>
+                            <span style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '3px', backgroundColor: 'rgba(184,110,0,0.08)', color: 'var(--wrn-txt)' }}>
                               Senior
                             </span>
                           )}

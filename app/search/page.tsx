@@ -351,7 +351,7 @@ function SearchPageInner() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Federal Case Search
           </div>
-          <h1 className="search-header" style={{ fontFamily: 'var(--font-ui)', fontSize: 'clamp(24px, 3.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--card)', margin: '0 0 12px' }}>
+          <h1 className="search-header" style={{ fontFamily: 'var(--font-ui)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--card)', margin: '0 0 12px' }}>
             Search Federal Court Outcomes
           </h1>
           <p className="search-header" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
@@ -483,7 +483,7 @@ function SearchPageInner() {
               padding: '0 14px',
               fontSize: '14px',
               border: '1px solid var(--border-default)',
-              borderRadius: '3px',
+              borderRadius: '2px',
               background: 'var(--color-surface-0)',
               color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-ui)',
@@ -495,7 +495,7 @@ function SearchPageInner() {
               e.currentTarget.style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.1)';
             }}
             onBlur={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(139,92,246,0.3)';
+              e.currentTarget.style.borderColor = 'var(--border-default)';
               e.currentTarget.style.boxShadow = 'none';
             }}
           />
@@ -507,10 +507,10 @@ function SearchPageInner() {
               padding: '0 20px',
               fontSize: '14px',
               fontWeight: '600',
-              background: aiLoading || !aiQuery.trim() ? 'rgba(196, 136, 42, 0.3)' : 'var(--accent-primary)',
+              background: aiLoading || !aiQuery.trim() ? 'var(--border-default)' : 'var(--accent-primary)',
               color: 'var(--color-text-inverse)',
               border: 'none',
-              borderRadius: '3px',
+              borderRadius: '2px',
               cursor: aiLoading || !aiQuery.trim() ? 'not-allowed' : 'pointer',
               fontFamily: 'var(--font-ui)',
               transition: 'all 150ms',

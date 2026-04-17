@@ -78,7 +78,7 @@ export default function DocumentIntelligencePage() {
           <button
             onClick={handleUpload}
             disabled={!file || loading}
-            style={{ padding: '0 28px', height: '48px', background: !file || loading ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '4px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
+            style={{ padding: '0 28px', height: '48px', background: !file || loading ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '2px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
           >
             {loading ? 'Analyzing...' : 'Analyze Document'}
           </button>

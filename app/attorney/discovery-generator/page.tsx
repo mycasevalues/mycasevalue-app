@@ -121,7 +121,7 @@ export default function DiscoveryGeneratorPage() {
 
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
-    border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px',
+    border: '1px solid var(--border-default)', borderRadius: '2px', fontSize: '14px',
     color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
@@ -198,7 +198,7 @@ export default function DiscoveryGeneratorPage() {
                       type="button"
                       onClick={() => setPartyRole(role)}
                       style={{
-                        flex: 1, padding: '8px', borderRadius: '4px',
+                        flex: 1, padding: '8px', borderRadius: '2px',
                         border: `1px solid ${partyRole === role ? 'var(--accent-primary)' : 'var(--border-default)'}`,
                         backgroundColor: partyRole === role ? 'rgba(10,102,194,0.08)' : 'var(--color-surface-1)',
                         color: partyRole === role ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
@@ -220,7 +220,7 @@ export default function DiscoveryGeneratorPage() {
                   onChange={e => setClaimsDefenses(e.target.value)}
                   style={{
                     width: '100%', padding: '12px 14px', border: '1px solid var(--border-default)',
-                    borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)',
+                    borderRadius: '2px', fontSize: '14px', color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
                     minHeight: '80px', resize: 'vertical', boxSizing: 'border-box' as const,
                   }}
@@ -239,7 +239,7 @@ export default function DiscoveryGeneratorPage() {
                 style={{
                   width: '100%', padding: '16px',
                   backgroundColor: loading || !caseType ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
+                  color: 'var(--color-text-inverse)', border: 'none', borderRadius: '2px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase', letterSpacing: '0.04em',
                   cursor: loading || !caseType ? 'not-allowed' : 'pointer',
@@ -263,7 +263,7 @@ export default function DiscoveryGeneratorPage() {
                       if (!texts[tab.key] && !loading) generateTab(tab.key);
                     }}
                     style={{
-                      flex: 1, padding: '8px 12px', borderRadius: '4px', border: 'none',
+                      flex: 1, padding: '8px 12px', borderRadius: '2px', border: 'none',
                       background: activeTab === tab.key ? 'var(--accent-primary)' : 'transparent',
                       color: activeTab === tab.key ? '#FFF' : 'var(--color-text-secondary)',
                       fontSize: '12px', fontWeight: 600, cursor: 'pointer',
@@ -294,7 +294,7 @@ export default function DiscoveryGeneratorPage() {
                       disabled={loading || !currentText}
                       style={{
                         padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--accent-primary)',
-                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
+                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '2px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || !currentText ? 'not-allowed' : 'pointer',
                         opacity: loading || !currentText ? 0.5 : 1,
@@ -307,7 +307,7 @@ export default function DiscoveryGeneratorPage() {
                       disabled={loading || exporting || !currentText}
                       style={{
                         padding: '8px 12px', background: 'var(--gold)',
-                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
+                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '2px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || exporting || !currentText ? 'not-allowed' : 'pointer',
                         opacity: loading || exporting || !currentText ? 0.5 : 1,
