@@ -142,7 +142,7 @@ export default function MotionRateExplorer() {
     padding: '12px 14px',
     height: '48px',
     border: '1px solid var(--border-default)',
-    borderRadius: '6px',
+    borderRadius: '4px',
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: '#FFF',
@@ -160,7 +160,7 @@ export default function MotionRateExplorer() {
 
   const tableWrapperStyle: React.CSSProperties = {
     overflowX: 'auto',
-    borderRadius: '6px',
+    borderRadius: '4px',
     border: '1px solid var(--border-default)',
     marginBottom: '32px',
   };

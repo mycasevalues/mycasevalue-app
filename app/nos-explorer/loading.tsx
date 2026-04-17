@@ -14,7 +14,7 @@ export default function NosExplorerLoading() {
           height: '36px',
           width: '400px',
           backgroundColor: 'rgba(255,255,255,0.06)',
-          borderRadius: '6px',
+          borderRadius: '4px',
           marginBottom: '0.75rem',
         }} />
         <div style={{

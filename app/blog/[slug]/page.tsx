@@ -546,7 +546,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 </div>
               </div>
 
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: '24px' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px' }}>
                 <h3 style={{ fontSize: '16px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '12px' }}>
                   About the Author
                 </h3>
@@ -584,7 +584,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
 
             {/* CTA Box */}
-            <div style={{ background: 'var(--color-surface-0)', border: '2px solid var(--accent-primary)', borderRadius: '6px', padding: '24px', textAlign: 'center' }}>
+            <div style={{ background: 'var(--color-surface-0)', border: '2px solid var(--accent-primary)', borderRadius: '4px', padding: '24px', textAlign: 'center' }}>
               <h3 style={{ fontSize: '16px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '12px' }}>
                 Get More Insights
               </h3>
@@ -618,7 +618,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       {/* Bottom CTA */}
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <section style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: '32px 24px', textAlign: 'center' }}>
+        <section style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '32px 24px', textAlign: 'center' }}>
           <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '12px' }}>
             Ready to put this data into action?
           </h2>
@@ -634,7 +634,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               padding: '12px 24px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontWeight: '600',
               textDecoration: 'none',

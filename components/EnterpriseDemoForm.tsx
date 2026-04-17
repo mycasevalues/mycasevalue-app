@@ -100,7 +100,7 @@ export default function EnterpriseDemoForm() {
         padding: '48px 32px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
-        borderRadius: '6px',
+        borderRadius: '4px',
         textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}>
@@ -136,7 +136,7 @@ export default function EnterpriseDemoForm() {
     fontFamily: 'var(--font-body)',
     color: 'var(--color-text-primary)',
     border: '1px solid var(--border-default)',
-    borderRadius: '6px',
+    borderRadius: '4px',
     background: 'var(--color-surface-0)',
     outline: 'none',
     transition: 'border-color 200ms',
@@ -205,7 +205,7 @@ export default function EnterpriseDemoForm() {
         padding: '32px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
-        borderRadius: '6px',
+        borderRadius: '4px',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
         display: 'flex',
         flexDirection: 'column',
@@ -219,7 +219,7 @@ export default function EnterpriseDemoForm() {
               className="enterprise-input"
               style={{
                 ...inputStyle,
-                borderColor: errors.name ? '#DC2626' : 'var(--border-default)',
+                borderColor: errors.name ? 'var(--data-negative, #B01E1E)' : 'var(--border-default)',
               }}
               type="text"
               placeholder="Your name"
@@ -235,7 +235,7 @@ export default function EnterpriseDemoForm() {
               className="enterprise-input"
               style={{
                 ...inputStyle,
-                borderColor: errors.organization ? '#DC2626' : 'var(--border-default)',
+                borderColor: errors.organization ? 'var(--data-negative, #B01E1E)' : 'var(--border-default)',
               }}
               type="text"
               placeholder="Your organization"
@@ -253,7 +253,7 @@ export default function EnterpriseDemoForm() {
             className="enterprise-input"
             style={{
               ...inputStyle,
-              borderColor: errors.email ? '#DC2626' : 'var(--border-default)',
+              borderColor: errors.email ? 'var(--data-negative, #B01E1E)' : 'var(--border-default)',
             }}
             type="email"
             placeholder="you@example.com"
@@ -271,7 +271,7 @@ export default function EnterpriseDemoForm() {
               className="enterprise-select"
               style={{
                 ...inputStyle,
-                borderColor: errors.role ? '#DC2626' : 'var(--border-default)',
+                borderColor: errors.role ? 'var(--data-negative, #B01E1E)' : 'var(--border-default)',
                 appearance: 'auto',
               }}
               value={formData.role}
@@ -296,7 +296,7 @@ export default function EnterpriseDemoForm() {
               className="enterprise-select"
               style={{
                 ...inputStyle,
-                borderColor: errors.teamSize ? '#DC2626' : 'var(--border-default)',
+                borderColor: errors.teamSize ? 'var(--data-negative, #B01E1E)' : 'var(--border-default)',
                 appearance: 'auto',
               }}
               value={formData.teamSize}
@@ -321,7 +321,7 @@ export default function EnterpriseDemoForm() {
               ...inputStyle,
               height: '100px',
               resize: 'vertical',
-              borderColor: errors.useCase ? '#DC2626' : 'var(--border-default)',
+              borderColor: errors.useCase ? 'var(--data-negative, #B01E1E)' : 'var(--border-default)',
             }}
             placeholder="How would you like to use MyCaseValue? (max 200 characters)"
             value={formData.useCase}

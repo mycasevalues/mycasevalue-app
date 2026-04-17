@@ -68,7 +68,7 @@ export default function InflationToggle() {
           fontFamily: 'var(--font-body)',
           backgroundColor: 'var(--color-surface-0)',
           padding: '10px 12px',
-          borderRadius: '6px',
+          borderRadius: '4px',
           borderLeft: '3px solid var(--accent-primary)',
           lineHeight: 1.5,
         }}>

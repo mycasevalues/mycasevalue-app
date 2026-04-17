@@ -27,7 +27,7 @@ export default function LoadingPage() {
           {/* Heading skeletons */}
           <div style={{ paddingTop: '0px', paddingBottom: '24px' }}>
             <div style={{ ...shimmerStyle, height: '12px', width: '80px', borderRadius: '4px', marginBottom: '12px' }} />
-            <div style={{ ...shimmerStyle, height: '32px', width: '300px', borderRadius: '6px', marginBottom: '12px' }} />
+            <div style={{ ...shimmerStyle, height: '32px', width: '300px', borderRadius: '4px', marginBottom: '12px' }} />
             <div style={{ ...shimmerStyle, height: '16px', width: '250px', borderRadius: '4px', marginBottom: '12px' }} />
             <div style={{ ...shimmerStyle, height: '16px', width: '320px', borderRadius: '4px', marginTop: '12px' }} />
           </div>

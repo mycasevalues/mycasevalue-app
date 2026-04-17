@@ -28,7 +28,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
       <div style={{
         background: 'var(--color-surface-0)',
         border: '1px solid rgba(255,255,255,0.08)',
-        borderRadius: '6px',
+        borderRadius: '4px',
         padding: 'clamp(24px, 4vw, 32px)',
       }}>
         <h2 style={{
@@ -67,7 +67,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                 style={{
                   background: 'var(--color-surface-1)',
                   border: '1px solid rgba(255,255,255,0.08)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                   display: 'flex',
                   flexDirection: 'column',

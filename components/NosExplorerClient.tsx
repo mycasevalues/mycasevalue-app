@@ -21,12 +21,12 @@ interface NosRow {
 type SortField = 'nos' | 'label' | 'total' | 'wr' | 'sp' | 'mo' | 'rngMd';
 type SortDir = 'asc' | 'desc';
 
-const wrColor = (wr: number) => wr >= 50 ? '#057642' : wr >= 35 ? '#C37D16' : 'var(--accent-primary)';
+const wrColor = (wr: number) => wr >= 50 ? 'var(--data-positive, #176438)' : wr >= 35 ? '#C37D16' : 'var(--accent-primary)';
 
 const CATEGORY_COLORS: Record<string, string> = {
   work: 'var(--color-text-primary)', injury: 'var(--accent-primary)', consumer: '#70B5F9', rights: 'var(--accent-primary)',
-  money: '#C37D16', housing: '#057642', medical: '#CC1016', family: '#C37D16',
-  gov: 'var(--color-text-secondary)', education: '#70B5F9', ip: '#057642', other: 'var(--color-text-secondary)',
+  money: '#C37D16', housing: 'var(--data-positive, #176438)', medical: 'var(--data-negative, #B01E1E)', family: '#C37D16',
+  gov: 'var(--color-text-secondary)', education: '#70B5F9', ip: 'var(--data-positive, #176438)', other: 'var(--color-text-secondary)',
 };
 
 export default function NosExplorerClient({ data }: { data: NosRow[] }) {

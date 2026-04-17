@@ -340,7 +340,7 @@ export function BulkAnalysisTool() {
         style={{
           background: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
           padding: '32px',
           marginBottom: '24px',
           boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -395,7 +395,7 @@ export function BulkAnalysisTool() {
               flex: 1,
               padding: '12px',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '14px',
               color: 'var(--color-text-primary)',
               backgroundColor: 'var(--color-surface-0)',
@@ -410,7 +410,7 @@ export function BulkAnalysisTool() {
               backgroundColor: file && !loading ? 'var(--accent-primary)' : 'var(--border-default)',
               color: 'var(--color-surface-0)',
               border: 'none',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontWeight: 600,
               cursor: file && !loading ? 'pointer' : 'not-allowed',
@@ -451,7 +451,7 @@ export function BulkAnalysisTool() {
           <div
             style={{
               padding: '14px 18px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               backgroundColor: 'rgba(239, 68, 68, 0.12)',
               border: '1px solid var(--border-default)',
             }}
@@ -500,7 +500,7 @@ export function BulkAnalysisTool() {
                 style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '20px',
                   textAlign: 'center',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -538,7 +538,7 @@ export function BulkAnalysisTool() {
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '24px',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -601,7 +601,7 @@ export function BulkAnalysisTool() {
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '24px',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -644,7 +644,7 @@ export function BulkAnalysisTool() {
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               overflow: 'hidden',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -840,7 +840,7 @@ export function BulkAnalysisTool() {
                 backgroundColor: 'var(--accent-primary)',
                 color: 'var(--color-surface-0)',
                 border: 'none',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontSize: '14px',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -854,7 +854,7 @@ export function BulkAnalysisTool() {
           <div
             style={{
               padding: '14px 18px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               backgroundColor: 'rgba(10, 102, 194, 0.08)',
               border: '1px solid var(--border-default)',
             }}
@@ -885,7 +885,7 @@ export function BulkAnalysisTool() {
           style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '64px 32px',
             textAlign: 'center',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -895,7 +895,7 @@ export function BulkAnalysisTool() {
             style={{
               width: '64px',
               height: '64px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               background: 'rgba(10, 102, 194, 0.12)',
               display: 'flex',
               alignItems: 'center',

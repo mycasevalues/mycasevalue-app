@@ -191,7 +191,7 @@ const faqItems = [
 
 export default function PricingPage() {
   return (
-    <div style={{ background: '#FFFFFF', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--card, #FFFFFF)', minHeight: '100vh' }}>
       <style>{`
         .pricing-header {
           background: var(--surface-warm, #FAF3E6);
@@ -209,10 +209,10 @@ export default function PricingPage() {
           align-items: center;
           gap: 6px;
           padding: 4px 10px;
-          margin-bottom: 14px;
-          border-radius: 2px;
+          margin-bottom: 16px;
+          border-radius: 4px;
           border: 1px solid var(--bdr, #E2DFD8);
-          background: #FFFFFF;
+          background: var(--card, #FFFFFF);
           font-family: var(--font-mono);
           font-size: 10px;
           font-weight: 600;
@@ -224,7 +224,7 @@ export default function PricingPage() {
           width: 4px;
           height: 4px;
           border-radius: 50%;
-          background: #15803D;
+          background: var(--data-positive, #176438);
           animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
 
@@ -273,14 +273,14 @@ export default function PricingPage() {
           padding: 1.75rem;
           border-radius: 4px;
           border: 1px solid var(--bdr, #E2DFD8);
-          background: #FFFFFF;
+          background: var(--card, #FFFFFF);
           transition: border-color 150ms ease, box-shadow 150ms ease;
           position: relative;
         }
 
         .pricing-card.highlighted {
           border: 2px solid var(--accent-primary, #C4882A);
-          background: #FFFFFF;
+          background: var(--card, #FFFFFF);
         }
 
         .pricing-card:hover {
@@ -319,9 +319,9 @@ export default function PricingPage() {
           left: 50%;
           transform: translateX(-50%);
           background: var(--accent-primary, #C4882A);
-          color: #ffffff;
-          padding: 0.25rem 0.625rem;
-          border-radius: 3px;
+          color: var(--card, #ffffff);
+          padding: 4px 8px;
+          border-radius: 4px;
           font-family: var(--font-ui);
           font-size: 0.6875rem;
           font-weight: 700;
@@ -337,7 +337,7 @@ export default function PricingPage() {
           font-variant-numeric: tabular-nums;
           line-height: 1;
           letter-spacing: -0.02em;
-          margin-bottom: 0.25rem;
+          margin-bottom: 4px;
         }
 
         .card-period {
@@ -390,8 +390,8 @@ export default function PricingPage() {
           align-items: center;
           justify-content: center;
           gap: 6px;
-          padding: 0.625rem 1.25rem;
-          border-radius: 3px;
+          padding: 8px 12px;
+          border-radius: 4px;
           font-family: var(--font-ui);
           font-size: 13px;
           font-weight: 600;
@@ -401,13 +401,13 @@ export default function PricingPage() {
           width: 100%;
           text-align: center;
           background: var(--accent-primary, #C4882A);
-          color: #FFFFFF;
+          color: var(--card, #FFFFFF);
           border: none;
           cursor: pointer;
         }
 
         .card-cta:hover {
-          background: var(--accent-primary-hover, #A87222);
+          background: var(--gold-hover, #A87222);
         }
 
         .callout-section {
@@ -445,11 +445,11 @@ export default function PricingPage() {
         }
 
         .faq-item {
-          background: #FFFFFF;
+          background: var(--card, #FFFFFF);
           border: 1px solid var(--bdr, #E2DFD8);
           border-radius: 4px;
           padding: 1.5rem;
-          margin-bottom: 1rem;
+          margin-bottom: 16px;
         }
 
         .faq-question {
@@ -576,14 +576,14 @@ export default function PricingPage() {
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              padding: '0.75rem 2rem',
+              padding: '12px 24px',
               borderRadius: '4px',
               fontFamily: 'var(--font-ui)',
               fontSize: '0.875rem',
               fontWeight: '600',
               textDecoration: 'none',
               background: 'var(--accent-primary, #C4882A)',
-              color: '#FFFFFF',
+              color: 'var(--card, #FFFFFF)',
               transition: 'all 0.3s ease',
             }}
             className="hover:opacity-90"

@@ -243,7 +243,7 @@ export default function SignUpPage() {
       {/* Free Launch Banner */}
       <div
         style={{
-          backgroundColor: '#059669',
+          backgroundColor: 'var(--data-positive, #176438)',
           color: 'var(--color-text-inverse)',
           padding: '12px 24px',
           textAlign: 'center',

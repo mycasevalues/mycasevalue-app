@@ -112,7 +112,7 @@ export default function FeeCalculatorPage() {
     padding: '12px 14px',
     height: 'auto',
     border: '1px solid var(--border-default)',
-    borderRadius: '6px',
+    borderRadius: '4px',
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
@@ -124,7 +124,7 @@ export default function FeeCalculatorPage() {
 
   const cardStyle: React.CSSProperties = {
     background: 'var(--color-surface-0)',
-    borderRadius: '6px',
+    borderRadius: '4px',
     padding: '20px',
     border: '1px solid var(--border-default)',
     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -224,7 +224,7 @@ export default function FeeCalculatorPage() {
                       }}
                       style={{
                         padding: '12px 14px',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         border: `1px solid ${feeArrangement === opt.val ? 'var(--accent-primary)' : 'var(--border-default)'}`,
                         backgroundColor: feeArrangement === opt.val ? 'rgba(10, 102, 194, 0.08)' : 'var(--color-surface-1)',
                         color: feeArrangement === opt.val ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
@@ -248,7 +248,7 @@ export default function FeeCalculatorPage() {
               </div>
 
               {/* Info Box */}
-              <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '6px', border: '1px solid #E0F2FE' }}>
+              <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
                 <p style={{ fontSize: '12px', color: '#38bdf8', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
                   This calculator shows estimated fees for different arrangements. Actual fees depend on jurisdictional rules, attorney experience, and case complexity.
                 </p>
@@ -256,7 +256,7 @@ export default function FeeCalculatorPage() {
 
               {/* Error */}
               {error && (
-                <div style={{ padding: '12px 14px', borderRadius: '6px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
+                <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
                   <p style={{ fontSize: '13px', color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>{error}</p>
                 </div>
               )}
@@ -480,7 +480,7 @@ export default function FeeCalculatorPage() {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '8px' }}>
                       <span style={{ fontWeight: 600 }}>Adjusted Fee Award:</span>
-                      <span style={{ fontWeight: 700, color: '#D97706', fontSize: '15px', fontFamily: 'var(--font-mono)' }}>
+                      <span style={{ fontWeight: 700, color: 'var(--wrn-txt, #7A5800)', fontSize: '15px', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.lodestar.adjustedTotal.toLocaleString()}
                       </span>
                     </div>
@@ -670,7 +670,7 @@ export default function FeeCalculatorPage() {
         {/* Navigation */}
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/intake-forms" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
                 Intake Forms
               </p>
@@ -680,7 +680,7 @@ export default function FeeCalculatorPage() {
             </div>
           </Link>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
                 Demand Letter
               </p>
@@ -690,7 +690,7 @@ export default function FeeCalculatorPage() {
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
                 Case Predictor
               </p>

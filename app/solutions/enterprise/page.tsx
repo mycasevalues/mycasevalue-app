@@ -215,7 +215,7 @@ export default function EnterprisePage() {
               <div key={f.title} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
@@ -261,7 +261,7 @@ export default function EnterprisePage() {
               <div key={useCase.title} style={{
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '28px 24px',
               }}>
                 <h3 style={{
@@ -318,7 +318,7 @@ export default function EnterprisePage() {
               width: '100%',
               borderCollapse: 'collapse',
               background: 'var(--color-surface-0)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               overflow: 'hidden',
               border: '1px solid var(--border-default)',
             }}>
@@ -419,7 +419,7 @@ export default function EnterprisePage() {
               <details key={idx} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '24px',
               }}>
                 <summary style={{

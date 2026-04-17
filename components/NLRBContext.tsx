@@ -16,7 +16,7 @@ export default function NLRBContext() {
   // Calculate outcome percentages for visualization
   const totalOutcomes = nlrbData.settledCases + nlrbData.withdrawnCases + nlrbData.dismissedCases + nlrbData.complaintIssued;
   const outcomes = [
-    { label: 'Settled', value: nlrbData.settledCases, percentage: Number(((nlrbData.settledCases / totalOutcomes) * 100).toFixed(1)), color: '#057642' },
+    { label: 'Settled', value: nlrbData.settledCases, percentage: Number(((nlrbData.settledCases / totalOutcomes) * 100).toFixed(1)), color: 'var(--data-positive, #176438)' },
     { label: 'Withdrawn', value: nlrbData.withdrawnCases, percentage: Number(((nlrbData.withdrawnCases / totalOutcomes) * 100).toFixed(1)), color: 'var(--color-text-secondary)' },
     { label: 'Dismissed', value: nlrbData.dismissedCases, percentage: Number(((nlrbData.dismissedCases / totalOutcomes) * 100).toFixed(1)), color: '#DC3545' },
     { label: 'Complaint Issued', value: nlrbData.complaintIssued, percentage: Number(((nlrbData.complaintIssued / totalOutcomes) * 100).toFixed(1)), color: 'var(--accent-primary)' },
@@ -29,7 +29,7 @@ export default function NLRBContext() {
           padding: '1.5rem',
           background: 'var(--color-surface-1)',
           border: '1px solid var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
         }}>
           {/* Header */}
           <div style={{ marginBottom: '1.5rem' }}>
@@ -123,14 +123,14 @@ export default function NLRBContext() {
               <div style={{
                 height: '20px',
                 background: 'var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 overflow: 'hidden',
               }}>
                 <div style={{
                   height: '100%',
                   width: `${ulpPercentage}%`,
                   background: 'var(--accent-primary)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   transition: 'width 150ms ease',
                 }} />
               </div>
@@ -172,14 +172,14 @@ export default function NLRBContext() {
               <div style={{
                 height: '20px',
                 background: 'var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 overflow: 'hidden',
               }}>
                 <div style={{
                   height: '100%',
                   width: `${repPetitionPercentage}%`,
-                  background: '#057642',
-                  borderRadius: '6px',
+                  background: 'var(--data-positive, #176438)',
+                  borderRadius: '4px',
                   transition: 'width 150ms ease',
                 }} />
               </div>
@@ -237,14 +237,14 @@ export default function NLRBContext() {
                 <div style={{
                   height: '8px',
                   background: 'var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   overflow: 'hidden',
                 }}>
                   <div style={{
                     height: '100%',
                     width: `${outcome.percentage}%`,
                     background: outcome.color,
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     transition: 'width 150ms ease',
                   }} />
                 </div>

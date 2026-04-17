@@ -63,7 +63,7 @@ export default function ResultsPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         paddingTop: '40px',
         paddingBottom: '32px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -95,7 +95,7 @@ export default function ResultsPage() {
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
-            color: '#ffffff',
+            color: 'var(--text1, #18181A)',
             margin: '0 0 16px 0',
           }}>
             Benchmark your case against real data
@@ -118,7 +118,7 @@ export default function ResultsPage() {
         {/* Empty State Card */}
         <div style={{
           padding: '20px',
-          borderRadius: '6px',
+          borderRadius: '4px',
           border: '1px solid var(--border-default)',
           background: 'var(--color-surface-0)',
           textAlign: 'center'
@@ -149,13 +149,13 @@ export default function ResultsPage() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 8,
-                padding: '10px 20px',
-                borderRadius: 6,
+                padding: '12px 20px',
+                borderRadius: 4,
                 fontSize: 13,
                 fontWeight: 600,
                 letterSpacing: '-0.005em',
                 background: 'var(--gold, #C4882A)',
-                color: '#ffffff',
+                color: 'var(--card, #ffffff)',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-ui)',
                 border: '1px solid var(--gold, #C4882A)',
@@ -176,7 +176,7 @@ export default function ResultsPage() {
                 paddingLeft: '24px',
                 paddingRight: '24px',
                 height: '48px',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontSize: '14px',
                 fontWeight: '600',
                 background: 'var(--color-surface-0)',
@@ -196,7 +196,7 @@ export default function ResultsPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', marginTop: '16px' }}>
           <div className="info-card" style={{
             padding: '12px',
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
           }}>
@@ -223,7 +223,7 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '12px',
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
           }}>
@@ -250,7 +250,7 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '12px',
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
           }}>
@@ -277,7 +277,7 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '12px',
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
           }}>

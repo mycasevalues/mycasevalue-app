@@ -131,7 +131,7 @@ export default function SOLCalculatorPage() {
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
 
           {/* Input Form */}
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Check Your Deadline
             </h2>
@@ -178,7 +178,7 @@ export default function SOLCalculatorPage() {
             <div style={{ display: 'grid', gap: 24, animation: 'slideUp 0.4s ease-out' }}>
 
               {/* SOL Period Card */}
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
                 <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
                   Federal Statute of Limitations
                 </div>
@@ -197,15 +197,15 @@ export default function SOLCalculatorPage() {
               {daysRemaining !== null && deadlineDate && (
                 <div style={{
                   background: isExpired ? '#FEF0EF' : daysRemaining <= 90 ? 'rgba(234,179,8,0.1)' : 'rgba(34,197,94,0.1)',
-                  border: `1px solid ${isExpired ? '#CC1016' : daysRemaining <= 90 ? '#D97706' : '#057642'}`,
-                  borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center',
+                  border: `1px solid ${isExpired ? 'var(--data-negative, #B01E1E)' : daysRemaining <= 90 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-positive, #176438)'}`,
+                  borderRadius: 4, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center',
                 }}>
                   <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
                     {isExpired ? 'DEADLINE EXPIRED' : 'Days Remaining'}
                   </div>
                   <div style={{
                     fontSize: 'clamp(40px, 8vw, 56px)', fontWeight: 600,
-                    color: isExpired ? '#CC1016' : daysRemaining <= 90 ? '#D97706' : '#057642',
+                    color: isExpired ? 'var(--data-negative, #B01E1E)' : daysRemaining <= 90 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-positive, #176438)',
                     fontFamily: 'var(--font-mono)', lineHeight: 1,
                   }}>
                     {isExpired ? '0' : daysRemaining.toLocaleString()}
@@ -219,7 +219,7 @@ export default function SOLCalculatorPage() {
                       <div style={{
                         height: '100%',
                         width: `${Math.max(5, Math.min(100, (daysRemaining / (rule.years * 365)) * 100))}%`,
-                        background: daysRemaining <= 90 ? '#D97706' : '#057642',
+                        background: daysRemaining <= 90 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-positive, #176438)',
                         borderRadius: 4,
                         transition: 'width 0.5s ease',
                       }} />
@@ -229,7 +229,7 @@ export default function SOLCalculatorPage() {
               )}
 
               {/* Triggering Event */}
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 32px)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 32px)' }}>
                 <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
                   Key Triggering Event
                 </h3>
@@ -239,7 +239,7 @@ export default function SOLCalculatorPage() {
               </div>
 
               {/* Tolling Exceptions */}
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 32px)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 32px)' }}>
                 <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
                   Common Tolling Exceptions
                 </h3>
@@ -257,7 +257,7 @@ export default function SOLCalculatorPage() {
 
               {/* Disclaimer */}
               <div style={{
-                padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 6,
+                padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4,
                 fontSize: 12, color: '#fde68a', lineHeight: 1.6, fontFamily: 'var(--font-body)',
               }}>
                 <strong>Important:</strong> SOL rules are complex and exceptions apply. Tolling provisions, discovery rules, and equitable doctrines can extend or shorten deadlines. Consult an attorney before relying on this information.

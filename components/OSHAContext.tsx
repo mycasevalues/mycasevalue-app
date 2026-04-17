@@ -26,7 +26,7 @@ export default function OSHAContext() {
           padding: '1.5rem',
           background: 'var(--color-surface-1)',
           border: '1px solid var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
         }}>
           {/* Header */}
           <div style={{ marginBottom: '1.5rem' }}>
@@ -182,14 +182,14 @@ export default function OSHAContext() {
                 <div style={{
                   height: '8px',
                   background: 'var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   overflow: 'hidden',
                 }}>
                   <div style={{
                     height: '100%',
                     width: `${violation.percentage}%`,
                     background: violation.color,
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     transition: 'width 150ms ease',
                   }} />
                 </div>
@@ -248,14 +248,14 @@ export default function OSHAContext() {
                 <div style={{
                   height: '6px',
                   background: 'var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   overflow: 'hidden',
                 }}>
                   <div style={{
                     height: '100%',
                     width: `${(state.inspections / oshaData.topStates[0].inspections) * 100}%`,
                     background: 'var(--accent-primary)',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     transition: 'width 150ms ease',
                   }} />
                 </div>

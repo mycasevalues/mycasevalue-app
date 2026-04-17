@@ -206,7 +206,7 @@ export default function DataSourcesPage() {
               ].map((stat, idx) => (
                 <div key={idx} style={{
                   padding: 32,
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -253,7 +253,7 @@ export default function DataSourcesPage() {
               {dataSources.map((source, idx) => (
                 <div key={idx} style={{
                   padding: 32,
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -419,7 +419,7 @@ export default function DataSourcesPage() {
               {methodology.map((method, idx) => (
                 <div key={idx} style={{
                   padding: 28,
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -467,7 +467,7 @@ export default function DataSourcesPage() {
               {/* Update Schedule Card */}
               <div style={{
                 padding: 32,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -518,7 +518,7 @@ export default function DataSourcesPage() {
               {/* Last Updated Card */}
               <div style={{
                 padding: 32,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -582,7 +582,7 @@ export default function DataSourcesPage() {
 
             <div style={{
               padding: 40,
-              borderRadius: '6px',
+              borderRadius: '4px',
               border: '1px solid var(--border-default)',
               background: 'var(--color-surface-0)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -691,7 +691,7 @@ export default function DataSourcesPage() {
               ].map((item, idx) => (
                 <div key={idx} style={{
                   padding: 24,
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -736,7 +736,7 @@ export default function DataSourcesPage() {
           {/* CTA Section */}
           <section style={{
             padding: 48,
-            borderRadius: '6px',
+            borderRadius: '4px',
             background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--link, #0A50A2) 100%)',
             textAlign: 'center',
           }}>
@@ -768,7 +768,7 @@ export default function DataSourcesPage() {
                   color: 'var(--accent-primary)',
                   fontSize: 15,
                   fontWeight: 700,
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-ui)',
                   transition: 'all 0.3s ease',
@@ -785,7 +785,7 @@ export default function DataSourcesPage() {
                   color: 'var(--color-surface-0)',
                   fontSize: 15,
                   fontWeight: 700,
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-ui)',
                   border: '1px solid rgba(255,255,255,0.3)',

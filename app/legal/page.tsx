@@ -50,7 +50,7 @@ const SOURCES = [
   { name: 'CourtListener', records: '500k+', type: 'Legal Opinions', color: '#1E3A5F', description: 'Federal and state court opinions with full text and metadata' },
   { name: 'Federal Register', records: 'Daily', type: 'Regulations', color: '#a78bfa', description: 'Proposed and final rules, notices, and presidential documents' },
   { name: 'eCFR', records: '~200k', type: 'Federal Code', color: '#0D9488', description: 'Electronic Code of Federal Regulations — current regulatory text' },
-  { name: 'EDGAR', records: 'Millions', type: 'SEC Filings', color: '#D97706', description: '10-K, 10-Q, 8-K, and other corporate filings and disclosures' },
+  { name: 'EDGAR', records: 'Millions', type: 'SEC Filings', color: 'var(--wrn-txt, #7A5800)', description: '10-K, 10-Q, 8-K, and other corporate filings and disclosures' },
   { name: 'Caselaw Access', records: '6.7M', type: 'US Cases', color: '#34d399', description: 'Harvard Law Library digitized caselaw spanning 360+ years' },
   { name: 'CanLII', records: '100k+', type: 'Canadian Law', color: '#f87171', description: 'Canadian court decisions and legislation for cross-border research' },
   { name: 'GovInfo', records: 'Millions', type: 'Gov Documents', color: 'var(--color-text-muted)', description: 'Congressional records, federal reports, and government publications' },
@@ -132,7 +132,7 @@ export default function LegalDataPage() {
                 <div style={{
                   width: 48,
                   height: 48,
-                  borderRadius: 6,
+                  borderRadius: 4,
                   background: feat.bg,
                   color: feat.color,
                   display: 'flex',
@@ -210,7 +210,7 @@ export default function LegalDataPage() {
               key={src.name}
               style={{
                 padding: '16px 20px',
-                borderRadius: 6,
+                borderRadius: 4,
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
               }}

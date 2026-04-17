@@ -87,9 +87,9 @@ export default function DataAlertSubscribe({
           style={{
             backgroundColor: 'rgba(34,197,94,0.1)',
             border: '1px solid #057642',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '12px',
-            color: '#057642',
+            color: 'var(--data-positive, #176438)',
             fontSize: '14px',
           }}
         >
@@ -106,7 +106,7 @@ export default function DataAlertSubscribe({
               backgroundColor: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               border: 'none',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontWeight: 500,
               cursor: 'pointer',
@@ -226,7 +226,7 @@ export default function DataAlertSubscribe({
                 <p
                   style={{
                     fontSize: '13px',
-                    color: '#CC1016',
+                    color: 'var(--data-negative, #B01E1E)',
                     marginBottom: '12px',
                     margin: 0,
                   }}

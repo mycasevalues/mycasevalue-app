@@ -128,7 +128,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '32px',
               maxWidth: '420px',
               width: '90%',
@@ -221,7 +221,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       }
                     }}
                   />
-                  {error && <p style={{ fontSize: '12px', color: '#CC1016', margin: '6px 0 0 0' }}>{error}</p>}
+                  {error && <p style={{ fontSize: '12px', color: 'var(--data-negative, #B01E1E)', margin: '6px 0 0 0' }}>{error}</p>}
                 </div>
 
                 <div style={{ display: 'flex', gap: '12px' }}>

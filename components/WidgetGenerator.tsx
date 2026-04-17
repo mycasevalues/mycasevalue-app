@@ -74,7 +74,7 @@ export default function WidgetGenerator() {
       gridTemplateColumns: '1fr 1fr',
       gap: '40px',
       backgroundColor: '#fff',
-      borderRadius: '6px',
+      borderRadius: '4px',
       padding: '32px',
       border: '1px solid rgba(255,255,255,0.08)',
     }}>
@@ -106,7 +106,7 @@ export default function WidgetGenerator() {
                 padding: '10px 12px',
                 fontSize: '14px',
                 border: '1px solid #d1d5db',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 boxSizing: 'border-box',
                 fontFamily: 'inherit',
               }}
@@ -165,7 +165,7 @@ export default function WidgetGenerator() {
               padding: '8px 12px',
               backgroundColor: 'rgba(59,130,246,0.06)',
               border: '1px solid #bfdbfe',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '13px',
               color: 'var(--accent-primary)',
             }}>
@@ -200,7 +200,7 @@ export default function WidgetGenerator() {
                   border: displayStyle === style.value ? '2px solid var(--accent-primary)' : '1px solid #d1d5db',
                   backgroundColor: displayStyle === style.value ? '#eff6ff' : '#fff',
                   color: displayStyle === style.value ? 'var(--accent-primary)' : '#374151',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   cursor: 'pointer',
                   transition: 'all 0.2s',
                   textAlign: 'left',
@@ -238,7 +238,7 @@ export default function WidgetGenerator() {
                   fontSize: '12px',
                   fontFamily: '"Courier New", monospace',
                   border: '1px solid #d1d5db',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   boxSizing: 'border-box',
                   resize: 'none',
                   color: 'var(--color-text-primary)',
@@ -267,7 +267,7 @@ export default function WidgetGenerator() {
             <div style={{
               padding: '16px',
               backgroundColor: 'rgba(255,255,255,0.05)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               color: 'var(--color-text-muted)',
               fontSize: '14px',
               textAlign: 'center',
@@ -281,7 +281,7 @@ export default function WidgetGenerator() {
           padding: '16px',
           backgroundColor: 'rgba(234,179,8,0.06)',
           border: '1px solid #fcd34d',
-          borderRadius: '6px',
+          borderRadius: '4px',
           fontSize: '13px',
           color: '#92400e',
         }}>
@@ -327,7 +327,7 @@ export default function WidgetGenerator() {
                 width={dimensions.width}
                 height={dimensions.height}
                 frameBorder="0"
-                style={{ borderRadius: '6px', border: 'none' }}
+                style={{ borderRadius: '4px', border: 'none' }}
                 title="Widget Preview"
               />
             </div>

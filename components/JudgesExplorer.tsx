@@ -49,7 +49,7 @@ function getCircuitForDistrict(district: string): string {
   return 'Other';
 }
 
-const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : 'var(--accent-primary)';
+const wrColor = (wr: number) => wr >= 50 ? 'var(--data-positive, #176438)' : wr >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--accent-primary)';
 
 export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
   const [search, setSearch] = useState('');

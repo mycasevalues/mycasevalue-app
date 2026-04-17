@@ -35,10 +35,10 @@ const CATEGORY_CHART_COLORS: Record<string, string> = {
   Consumer: 'var(--color-text-secondary)',
   'Civil Rights': 'var(--border-default)',
   Housing: '#70B5F9',
-  Medical: '#CC1016',
+  Medical: 'var(--data-negative, #B01E1E)',
   Family: '#C37D16',
   Government: 'var(--color-text-secondary)',
-  'Intellectual Property': '#057642',
+  'Intellectual Property': 'var(--data-positive, #176438)',
   Other: 'var(--color-text-secondary)',
 };
 
@@ -55,7 +55,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
         style={{
           background: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
           padding: '12px 16px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         }}
@@ -100,7 +100,7 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
         }}
       >
         <h3
@@ -146,7 +146,7 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
         }}
       >
         <h3
@@ -181,7 +181,7 @@ export default function TrendCharts() {
                     '#70B5F9',
                     'var(--color-text-secondary)',
                     'var(--border-default)',
-                    '#057642',
+                    'var(--data-positive, #176438)',
                   ][idx % 6]
                 }
                 strokeWidth={2}
@@ -199,7 +199,7 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
         }}
       >
         <h3
@@ -236,7 +236,7 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
         }}
       >
         <h3
@@ -282,7 +282,7 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
         }}
       >
         <h3
@@ -315,7 +315,7 @@ export default function TrendCharts() {
                       style={{
                         background: 'var(--color-surface-0)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         padding: '12px 16px',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
@@ -337,7 +337,7 @@ export default function TrendCharts() {
             />
             <Bar dataKey="avgWinRate" radius={[0, 8, 8, 0]}>
               {circuitWinRates.map((entry, index) => (
-                <Cell key={index} fill={entry.avgWinRate > 55 ? '#057642' : entry.avgWinRate < 45 ? 'var(--accent-primary)' : '#70B5F9'} />
+                <Cell key={index} fill={entry.avgWinRate > 55 ? 'var(--data-positive, #176438)' : entry.avgWinRate < 45 ? 'var(--accent-primary)' : '#70B5F9'} />
               ))}
             </Bar>
           </BarChart>
@@ -350,7 +350,7 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
         }}
       >
         <h3
@@ -383,7 +383,7 @@ export default function TrendCharts() {
                       style={{
                         background: 'var(--color-surface-0)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         padding: '12px 16px',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
@@ -415,7 +415,7 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
         }}
       >
         <h3

@@ -182,7 +182,7 @@ export default function JudgeIntelligencePage() {
                 padding: '12px 14px',
                 height: '48px',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 background: 'var(--color-surface-0)',
@@ -203,7 +203,7 @@ export default function JudgeIntelligencePage() {
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
                 Sort By
               </label>
-              <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-0)', borderRadius: '6px', border: '1px solid var(--border-default)', padding: '3px' }}>
+              <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', padding: '3px' }}>
                 {([
                   { key: 'winRate', label: 'Win Rate' },
                   { key: 'settlementRate', label: 'Settlement' },
@@ -215,7 +215,7 @@ export default function JudgeIntelligencePage() {
                     onClick={() => setSortBy(opt.key)}
                     style={{
                       padding: '6px 12px',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       border: 'none',
                       fontSize: '12px',
                       fontWeight: 600,
@@ -246,15 +246,15 @@ export default function JudgeIntelligencePage() {
 
         {/* Error */}
         {error && (
-          <div style={{ backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: '20px 24px', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '20px 24px', marginBottom: '24px' }}>
             <p style={{ fontSize: '14px', color: 'var(--accent-primary)', margin: 0 }}>{error}</p>
           </div>
         )}
 
         {/* Empty state */}
         {!selectedState && !loading && (
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '6px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
               </svg>
@@ -270,7 +270,7 @@ export default function JudgeIntelligencePage() {
                 <button
                   key={s.id}
                   onClick={() => handleStateChange(s.id)}
-                  style={{ padding: '8px 16px', border: '1px solid var(--border-default)', borderRadius: '6px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: 'var(--color-surface-1)', color: 'var(--accent-primary)', transition: 'border-color 0.2s' }}
+                  style={{ padding: '8px 16px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: 'var(--color-surface-1)', color: 'var(--accent-primary)', transition: 'border-color 0.2s' }}
                 >
                   {s.label}
                 </button>
@@ -296,7 +296,7 @@ export default function JudgeIntelligencePage() {
                     key={judge.name}
                     style={{
                       background: 'var(--color-surface-0)',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       border: isExpanded ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
                       overflow: 'hidden',
                       transition: 'border-color 0.2s, box-shadow 0.2s',
@@ -325,7 +325,7 @@ export default function JudgeIntelligencePage() {
                             {judge.name}
                           </span>
                           {judge.senior && (
-                            <span style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '6px', backgroundColor: 'rgba(184,110,0,0.08)', color: '#B86E00' }}>
+                            <span style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(184,110,0,0.08)', color: '#B86E00' }}>
                               Senior
                             </span>
                           )}
@@ -336,7 +336,7 @@ export default function JudgeIntelligencePage() {
                       </div>
 
                       <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexShrink: 0 }}>
-                        <StatBadge label="Win Rate" value={`${judge.plaintiffWinRate}%`} color={judge.plaintiffWinRate >= 55 ? '#059669' : judge.plaintiffWinRate >= 40 ? '#B86E00' : 'var(--accent-primary)'} />
+                        <StatBadge label="Win Rate" value={`${judge.plaintiffWinRate}%`} color={judge.plaintiffWinRate >= 55 ? 'var(--data-positive, #176438)' : judge.plaintiffWinRate >= 40 ? '#B86E00' : 'var(--accent-primary)'} />
                         <StatBadge label="Settlement" value={`${judge.settlementRate}%`} color="#1B7C7D" />
                         <StatBadge label="Duration" value={`${judge.medianDurationMonths}mo`} color="var(--color-text-primary)" />
                         <svg
@@ -409,7 +409,7 @@ export default function JudgeIntelligencePage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '24px', padding: '20px 20px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid var(--border-default)', borderRadius: '6px' }}>
+            <div style={{ marginTop: '24px', padding: '20px 20px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
               <p style={{ fontSize: '12px', color: '#B86E00', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>

@@ -106,7 +106,7 @@ export default function UpgradeBanner() {
               display: 'inline-flex', alignItems: 'center',
               background: 'rgba(10, 102, 194, 0.2)', color: 'var(--accent-primary)',
               fontSize: '11px', fontWeight: 600, textTransform: 'uppercase',
-              padding: '6px 12px', borderRadius: '6px', marginBottom: '16px',
+              padding: '6px 12px', borderRadius: '4px', marginBottom: '16px',
               letterSpacing: '0.08em',
             }}>
               NEW
@@ -156,7 +156,7 @@ export default function UpgradeBanner() {
           {/* Right Side — Prediction Card Mockup */}
           <div>
             <div style={{
-              background: 'var(--color-surface-0)', borderRadius: '6px', padding: '32px',
+              background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
             }}>
               <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '20px', fontFamily: 'var(--font-ui)' }}>

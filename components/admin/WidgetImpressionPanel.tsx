@@ -81,7 +81,7 @@ export default function WidgetImpressionPanel() {
             style={{
               padding: '16px',
               backgroundColor: 'var(--color-surface-0)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               border: '1px solid rgba(255,255,255,0.08)',
             }}
           >
@@ -100,7 +100,7 @@ export default function WidgetImpressionPanel() {
         <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '16px' }}>
           Impressions Over Time (Last 30 Days)
         </h3>
-        <div style={{ backgroundColor: 'var(--color-surface-0)', padding: '16px', borderRadius: '6px', minHeight: '250px', position: 'relative' }}>
+        <div style={{ backgroundColor: 'var(--color-surface-0)', padding: '16px', borderRadius: '4px', minHeight: '250px', position: 'relative' }}>
           <svg
             viewBox={`0 0 900 200`}
             style={{ width: '100%', height: '250px' }}

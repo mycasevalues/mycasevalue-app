@@ -128,7 +128,7 @@ function StatsCard({
     <div
       style={{
         padding: '20px',
-        borderRadius: '6px',
+        borderRadius: '4px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
         textAlign: 'center',
@@ -185,7 +185,7 @@ export default async function DistrictCaseTypePage({
             style={{
               display: 'inline-block',
               padding: '10px 20px',
-              borderRadius: 6,
+              borderRadius: 4,
               background: 'var(--gold, #C4882A)',
               color: '#ffffff',
               textDecoration: 'none',
@@ -338,7 +338,7 @@ export default async function DistrictCaseTypePage({
                 style={{
                   display: 'inline-block',
                   padding: '8px 16px',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   background: 'var(--accent-primary)',
                   fontSize: '12px',
                   fontWeight: '600',
@@ -388,7 +388,7 @@ export default async function DistrictCaseTypePage({
           style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '32px',
             marginBottom: '40px',
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
@@ -425,7 +425,7 @@ export default async function DistrictCaseTypePage({
           style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '24px',
             marginBottom: '40px',
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
@@ -460,7 +460,7 @@ export default async function DistrictCaseTypePage({
           style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '24px',
             marginBottom: '40px',
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
@@ -523,7 +523,7 @@ export default async function DistrictCaseTypePage({
         <div
           style={{
             background: 'rgba(255,255,255,0.05)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '32px 24px',
             textAlign: 'center',
           }}

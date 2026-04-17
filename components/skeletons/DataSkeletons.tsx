@@ -7,7 +7,7 @@ const pulseStyle: React.CSSProperties = {
   background: 'linear-gradient(90deg, #F3F2EF 25%, #E9E5DF 50%, #F3F2EF 75%)',
   backgroundSize: '200% 100%',
   animation: 'skeleton-pulse 1.5s ease-in-out infinite',
-  borderRadius: '6px',
+  borderRadius: '4px',
 };
 
 const pulseKeyframes = `
@@ -42,7 +42,7 @@ export function SettlementRangeSkeleton() {
       <style>{pulseKeyframes}</style>
       <div style={{ background: 'var(--color-surface-0)', border: '1px solid #E0DDD8', borderRadius: '4px', padding: '24px' }}>
         <SkeletonBox width="140px" height="14px" style={{ marginBottom: '16px' }} />
-        <SkeletonBox width="100%" height="24px" style={{ marginBottom: '16px', borderRadius: '6px' }} />
+        <SkeletonBox width="100%" height="24px" style={{ marginBottom: '16px', borderRadius: '4px' }} />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
           <SkeletonBox height="48px" />
           <SkeletonBox height="48px" />

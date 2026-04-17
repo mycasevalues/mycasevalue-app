@@ -66,7 +66,7 @@ export default function ContactPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header Banner */}
         <div style={{
-          background: '#FFFFFF',
+          background: 'var(--card, #FFFFFF)',
           padding: '56px 24px',
           position: 'relative',
           overflow: 'hidden',
@@ -79,8 +79,8 @@ export default function ContactPage() {
           }} />
           <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
             <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              padding: '4px 10px', marginBottom: 14,
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              padding: '4px 8px', marginBottom: 16,
               borderRadius: 999,
               border: '1px solid rgba(59,130,246,0.2)',
               background: 'rgba(59,130,246,0.08)',
@@ -95,10 +95,10 @@ export default function ContactPage() {
               style={{
                 fontSize: 'clamp(28px, 4vw, 36px)',
                 fontWeight: 700,
-                color: '#ffffff',
+                color: 'var(--card, #FFFFFF)',
                 fontFamily: 'var(--font-ui)',
                 letterSpacing: '-0.025em',
-                marginBottom: 10,
+                marginBottom: 8,
                 lineHeight: 1.1,
               }}
             >
@@ -106,7 +106,7 @@ export default function ContactPage() {
             </h1>
             <p
               style={{
-                fontSize: 15,
+                fontSize: 16,
                 color: 'rgba(255,255,255,0.6)',
                 fontFamily: 'var(--font-ui)',
                 lineHeight: 1.65,
@@ -174,7 +174,7 @@ export default function ContactPage() {
                 href={link.href}
                 style={{
                   padding: 24,
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -229,7 +229,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -263,7 +263,7 @@ export default function ContactPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 8,
-                  fontSize: 15,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   textDecoration: 'none',
@@ -282,7 +282,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -316,7 +316,7 @@ export default function ContactPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 8,
-                  fontSize: 15,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   textDecoration: 'none',
@@ -335,7 +335,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -369,7 +369,7 @@ export default function ContactPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 8,
-                  fontSize: 15,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   textDecoration: 'none',
@@ -399,7 +399,7 @@ export default function ContactPage() {
             padding: '24px',
             marginTop: 48,
             marginBottom: 24,
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             backgroundColor: 'rgba(0,105,151,0.05)',
             textAlign: 'center',

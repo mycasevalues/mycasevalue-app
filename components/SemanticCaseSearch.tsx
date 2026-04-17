@@ -89,7 +89,7 @@ export default function SemanticCaseSearch() {
         padding: '24px',
         background: 'var(--color-surface-0)',
         border: '2px solid var(--accent-primary)',
-        borderRadius: '6px',
+        borderRadius: '4px',
         marginBottom: '24px',
       }}
     >
@@ -139,7 +139,7 @@ export default function SemanticCaseSearch() {
               resize: 'vertical',
             }}
             onFocus={(e) => {
-              e.currentTarget.style.borderColor = isOverLimit ? '#CC1016' : 'var(--accent-primary)';
+              e.currentTarget.style.borderColor = isOverLimit ? 'var(--data-negative, #B01E1E)' : 'var(--accent-primary)';
             }}
             onBlur={(e) => {
               e.currentTarget.style.borderColor = isOverLimit ? '#f87171' : 'rgba(255,255,255,0.1)';
@@ -151,7 +151,7 @@ export default function SemanticCaseSearch() {
         <div
           style={{
             fontSize: '12px',
-            color: isOverLimit ? '#CC1016' : 'var(--text3, #78766C)',
+            color: isOverLimit ? 'var(--data-negative, #B01E1E)' : 'var(--text3, #78766C)',
             fontFamily: 'var(--font-mono)',
             marginBottom: '12px',
             textAlign: 'right',
@@ -198,7 +198,7 @@ export default function SemanticCaseSearch() {
             padding: '12px',
             background: 'rgba(239,68,68,0.1)',
             border: '1px solid #FCA5A5',
-            borderRadius: '6px',
+            borderRadius: '4px',
             color: '#f87171',
             fontSize: '14px',
             fontFamily: 'var(--font-body)',
@@ -278,7 +278,7 @@ export default function SemanticCaseSearch() {
                         padding: '4px 12px',
                         background: 'rgba(59,130,246,0.08)',
                         border: '1px solid var(--accent-primary)',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         fontSize: '12px',
                         fontWeight: '600',
                         color: 'var(--accent-primary-hover)',
@@ -317,7 +317,7 @@ export default function SemanticCaseSearch() {
                           padding: '8px 12px',
                           background: winRateColor.bg,
                           border: `1px solid ${winRateColor.border}`,
-                          borderRadius: '6px',
+                          borderRadius: '4px',
                           fontSize: '12px',
                           fontFamily: 'var(--font-mono)',
                         }}
@@ -360,7 +360,7 @@ export default function SemanticCaseSearch() {
                           padding: '8px 12px',
                           background: 'rgba(59,130,246,0.08)',
                           border: '1px solid var(--accent-primary)',
-                          borderRadius: '6px',
+                          borderRadius: '4px',
                           fontSize: '12px',
                           fontFamily: 'var(--font-mono)',
                         }}

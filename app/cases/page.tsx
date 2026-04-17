@@ -87,19 +87,19 @@ function getTopWinRateCaseTypes(): Array<{ nos: string; label: string; wr: numbe
 
 // Get color for win rate — matches lib/color-scale.ts palette
 function getWinRateColor(wr: number): string {
-  if (wr >= 65) return '#057642';
-  if (wr >= 50) return '#1B2D45';
-  if (wr >= 35) return '#C4882A';
-  if (wr >= 20) return '#CC1016';
-  return '#8C1515';
+  if (wr >= 65) return 'var(--data-positive, #176438)';
+  if (wr >= 50) return 'var(--chrome-bg, #1B2D45)';
+  if (wr >= 35) return 'var(--gold, #C4882A)';
+  if (wr >= 20) return 'var(--data-negative, #B01E1E)';
+  return 'var(--data-negative, #B01E1E)';
 }
 
 function getWinRateBg(wr: number): string {
-  if (wr >= 65) return 'rgba(34,197,94,0.1)';
-  if (wr >= 50) return 'rgba(59,130,246,0.08)';
-  if (wr >= 35) return 'rgba(234,179,8,0.1)';
-  if (wr >= 20) return 'rgba(239,68,68,0.08)';
-  return 'rgba(239,68,68,0.06)';
+  if (wr >= 65) return 'var(--data-positive-bg, #EAF4EF)';
+  if (wr >= 50) return 'var(--link-light, #EAF1FB)';
+  if (wr >= 35) return 'var(--gold, #C4882A)';
+  if (wr >= 20) return 'var(--data-negative-bg, #FAEAEA)';
+  return 'var(--data-negative-bg, #FAEAEA)';
 }
 
 function getWinRateLabel(wr: number): string {
@@ -160,7 +160,7 @@ export default function CasesIndexPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         padding: '28px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -201,7 +201,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Platform Statistics Bar */}
-      <div style={{ background: '#FFFFFF', borderBottom: '1px solid var(--border-default)', padding: '16px 24px' }}>
+      <div style={{ background: 'var(--card, #FFFFFF)', borderBottom: '1px solid var(--border-default)', padding: '16px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
             <DataFreshness />
@@ -273,8 +273,8 @@ export default function CasesIndexPage() {
               padding: '12px 16px 12px 48px',
               fontSize: '15px',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
-              background: '#FFFFFF',
+              borderRadius: '2px',
+              background: 'var(--card, #FFFFFF)',
               color: 'var(--text-primary)',
               fontFamily: 'var(--font-ui)',
               boxSizing: 'border-box',
@@ -294,9 +294,9 @@ export default function CasesIndexPage() {
 
         <style dangerouslySetInnerHTML={{ __html: `
           .cat-card {
-            background: #FFFFFF;
+            background: var(--card, #FFFFFF);
             border: 1px solid var(--border-default);
-            border-radius: var(--radius-md);
+            border-radius: 4px;
             padding: 32px;
             transition: border-color 150ms ease, box-shadow 150ms ease;
             height: 100%;
@@ -325,9 +325,9 @@ export default function CasesIndexPage() {
             transform: translateY(-2px);
           }
           .stat-bar {
-            background: #FFFFFF;
+            background: var(--card, #FFFFFF);
             border: 1px solid var(--border-default);
-            border-radius: var(--radius-lg);
+            border-radius: 2px;
             height: 8px;
             width: 100%;
             overflow: hidden;
@@ -339,9 +339,9 @@ export default function CasesIndexPage() {
             transition: width 0.3s ease;
           }
           .quick-link-card {
-            background: #FFFFFF;
+            background: var(--card, #FFFFFF);
             border: 1px solid var(--border-default);
-            border-radius: var(--radius-lg);
+            border-radius: 4px;
             padding: 20px;
             text-align: center;
             transition: all 0.2s ease;
@@ -372,8 +372,8 @@ export default function CasesIndexPage() {
                 fontSize: 14,
                 fontWeight: 600,
                 border: '1px solid var(--border-default)',
-                borderRadius: 4,
-                background: '#FFFFFF',
+                borderRadius: 2,
+                background: 'var(--card, #FFFFFF)',
                 color: 'var(--text-primary)',
                 fontFamily: 'var(--font-ui)',
                 cursor: 'pointer',
@@ -414,7 +414,7 @@ export default function CasesIndexPage() {
                   <Link href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
                     <div className="cat-card" style={{
                       borderColor: isSelected ? 'var(--accent-primary, #C4882A)' : 'var(--border-default)',
-                      background: isSelected ? 'var(--accent-primary-subtle, #FAF3E6)' : '#FFFFFF',
+                      background: isSelected ? 'var(--accent-primary-subtle, #FAF3E6)' : 'var(--card, #FFFFFF)',
                     }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8, paddingRight: 28 }}>
                         <h2 className="font-legal" style={{ fontSize: 22, fontWeight: 600, color: 'var(--text-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
@@ -482,7 +482,7 @@ export default function CasesIndexPage() {
             <div style={{ display: 'grid', gap: 12 }}>
               {topFiledCases.map((caseType, idx) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div style={{ background: '#FFFFFF', border: '1px solid var(--border-default)', borderRadius: '6px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 80px 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
+                  <div style={{ background: 'var(--card, #FFFFFF)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 80px 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: 'var(--text-primary)' }}>
                       #{idx + 1}
                     </div>
@@ -514,10 +514,10 @@ export default function CasesIndexPage() {
             <h2 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 32, letterSpacing: '-0.3px' }}>
               Highest Win Rate Case Types
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
               {topWinRateCases.map((caseType) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div style={{ background: '#FFFFFF', border: '1px solid var(--border-default)', borderRadius: '6px', padding: 20, height: '100%', transition: 'all 0.2s ease', cursor: 'pointer' }}>
+                  <div style={{ background: 'var(--card, #FFFFFF)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: 20, height: '100%', transition: 'all 0.2s ease', cursor: 'pointer' }}>
                     <div style={{ fontSize: 14, color: 'var(--text2, #42403C)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 500 }}>
                       {caseType.categoryLabel}
                     </div>
@@ -549,7 +549,7 @@ export default function CasesIndexPage() {
             <h2 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 32, letterSpacing: '-0.3px' }}>
               Quick Links
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 24 }}>
               <Link href="/search" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
                   <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary, #C4882A)" strokeWidth="2">
@@ -563,7 +563,7 @@ export default function CasesIndexPage() {
 
               <Link href="/calculator" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#15803D" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--data-positive, #176438)" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"></rect>
                     <path d="M8 6h8M8 10h8M8 14h8M8 18h8"></path>
                   </svg>
@@ -584,7 +584,7 @@ export default function CasesIndexPage() {
 
               <Link href="/trends" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" strokeWidth="2">
+                  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--data-negative, #B01E1E)" strokeWidth="2">
                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                   </svg>
                   <div style={{ fontWeight: 600, color: 'var(--text-primary)' }}>View Trends</div>
@@ -608,7 +608,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* CTA */}
-      <div style={{ background: '#FFFFFF', border: '1px solid var(--border-default)', padding: '60px 20px', textAlign: 'center' }}>
+      <div style={{ background: 'var(--card, #FFFFFF)', border: '1px solid var(--border-default)', padding: '60px 20px', textAlign: 'center' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2 className="font-legal" style={{ fontSize: 32, fontWeight: 600, color: 'var(--text-primary)', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
             Ready to research your case?
@@ -616,7 +616,7 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 18, color: 'var(--text2, #42403C)', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: 'var(--accent-primary, #C4882A)', color: '#FFFFFF', borderRadius: '6px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-legal)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
+          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: 'var(--accent-primary, #C4882A)', color: 'var(--card, #FFFFFF)', borderRadius: '2px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-legal)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
             Start Researching
             <ArrowRightIcon size={14} />
           </a>
@@ -646,10 +646,10 @@ export default function CasesIndexPage() {
           <button
             onClick={handleCompare}
             style={{
-              background: '#FFFFFF',
+              background: 'var(--card, #FFFFFF)',
               color: 'var(--accent-primary, #C4882A)',
               border: 'none',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '8px 20px',
               fontWeight: 600,
               fontSize: 14,

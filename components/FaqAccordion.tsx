@@ -36,7 +36,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
 
         .faq-item.active {
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-          background-color: rgba(232, 23, 31, 0.02);
+          background-color: var(--gold-light, #FAF3E6);
         }
 
         .faq-question {
@@ -62,7 +62,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
         }
       `}</style>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', borderRadius: '6px', border: '1px solid var(--border-default)', overflow: 'hidden' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', borderRadius: '4px', border: '1px solid var(--border-default)', overflow: 'hidden' }}>
         {items.map((item, index) => {
           const isOpen = openIndex === index;
           const isLast = index === items.length - 1;
@@ -73,7 +73,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
               className={`faq-item ${isOpen ? 'active' : ''}`}
               style={{
                 borderBottom: isLast ? 'none' : '1px solid var(--border-default)',
-                backgroundColor: isOpen ? 'rgba(232, 23, 31, 0.02)' : 'var(--color-surface-0)',
+                backgroundColor: isOpen ? 'var(--gold-light, #FAF3E6)' : 'var(--color-surface-0)',
                 overflow: 'hidden',
               }}
             >

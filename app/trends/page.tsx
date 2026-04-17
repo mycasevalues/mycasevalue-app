@@ -101,14 +101,14 @@ function getTrendData(): TrendEntry[] {
 const CATEGORY_META: Record<string, { label: string; color: string }> = {
   money: { label: 'Financial', color: '#C37D16' },
   work: { label: 'Employment', color: 'var(--color-text-primary)' },
-  injury: { label: 'Injury', color: '#CC1016' },
+  injury: { label: 'Injury', color: 'var(--data-negative, #B01E1E)' },
   consumer: { label: 'Consumer', color: '#70B5F9' },
   rights: { label: 'Civil Rights', color: 'var(--accent-primary)' },
   housing: { label: 'Housing', color: '#70B5F9' },
-  medical: { label: 'Medical', color: '#CC1016' },
+  medical: { label: 'Medical', color: 'var(--data-negative, #B01E1E)' },
   family: { label: 'Family', color: '#C37D16' },
   gov: { label: 'Government', color: 'var(--color-text-secondary)' },
-  ip: { label: 'Intellectual Property', color: '#057642' },
+  ip: { label: 'Intellectual Property', color: 'var(--data-positive, #176438)' },
   other: { label: 'Other', color: 'var(--color-text-secondary)' },
 };
 
@@ -307,7 +307,7 @@ export default function TrendsPage() {
                       <span>{t.months}mo avg</span>
                     </div>
                   </div>
-                  <div className="h-2 overflow-hidden" style={{ background: 'var(--color-surface-1)', borderRadius: '6px' }}>
+                  <div className="h-2 overflow-hidden" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
                     <div
                       className="h-full"
                       style={{
@@ -349,7 +349,7 @@ export default function TrendsPage() {
                       {c.total.toLocaleString()} cases
                     </span>
                   </div>
-                  <div className="h-2 mb-2 overflow-hidden" style={{ background: 'var(--color-surface-1)', borderRadius: '6px' }}>
+                  <div className="h-2 mb-2 overflow-hidden" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
                     <div className="h-full" style={{ width: `${pct}%`, background: c.color }} />
                   </div>
                   <div className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>
@@ -376,7 +376,7 @@ export default function TrendsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {circuitData.map((circuit) => {
                   const isAboveAvg = circuit.avgWinRate > nationalAvg;
-                  const indicatorColor = circuit.avgWinRate > 55 ? '#057642' : circuit.avgWinRate < 45 ? 'var(--accent-primary)' : '#70B5F9';
+                  const indicatorColor = circuit.avgWinRate > 55 ? 'var(--data-positive, #176438)' : circuit.avgWinRate < 45 ? 'var(--accent-primary)' : '#70B5F9';
                   return (
                     <div
                       key={circuit.circuit}
@@ -390,7 +390,7 @@ export default function TrendsPage() {
                           {circuit.avgWinRate}%
                         </span>
                       </div>
-                      <div className="h-2 mb-3 overflow-hidden" style={{ background: 'var(--color-surface-1)', borderRadius: '6px' }}>
+                      <div className="h-2 mb-3 overflow-hidden" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
                         <div
                           className="h-full"
                           style={{
@@ -401,7 +401,7 @@ export default function TrendsPage() {
                       </div>
                       <div className="flex items-center justify-between text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>
                         <span>{circuit.caseCount.toLocaleString()} cases</span>
-                        <span style={{ color: isAboveAvg ? '#057642' : 'var(--accent-primary)' }}>
+                        <span style={{ color: isAboveAvg ? 'var(--data-positive, #176438)' : 'var(--accent-primary)' }}>
                           {isAboveAvg ? '+' : ''}{(circuit.avgWinRate - nationalAvg).toFixed(1)}%
                         </span>
                       </div>
@@ -695,13 +695,13 @@ export default function TrendsPage() {
             return (
               <div className="space-y-3">
                 {categoryWinRates.map((c) => {
-                  let barColor = '#059669';
+                  let barColor = 'var(--data-positive, #176438)';
                   let bgColor = 'rgba(7,135,74,0.15)';
                   if (c.avgWr < 35) {
                     barColor = 'var(--accent-primary)';
                     bgColor = 'rgba(232,23,31,0.15)';
                   } else if (c.avgWr < 50) {
-                    barColor = '#D97706';
+                    barColor = 'var(--wrn-txt, #7A5800)';
                     bgColor = 'rgba(217,119,6,0.15)';
                   }
                   return (
@@ -721,7 +721,7 @@ export default function TrendsPage() {
                           {c.avgWr}%
                         </span>
                       </div>
-                      <div className="h-2 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '6px' }}>
+                      <div className="h-2 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '4px' }}>
                         <div
                           className="h-full"
                           style={{
@@ -763,7 +763,7 @@ export default function TrendsPage() {
                       <span className="text-sm font-semibold lex-link">{t.label}</span>
                       <span className="text-sm font-bold" style={{ color: '#34d399' }}>{t.months}mo</span>
                     </div>
-                    <div className="h-1.5 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '6px' }}>
+                    <div className="h-1.5 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '4px' }}>
                       <div
                         className="h-full"
                         style={{
@@ -792,7 +792,7 @@ export default function TrendsPage() {
                       <span className="text-sm font-semibold lex-link">{t.label}</span>
                       <span className="text-sm font-bold" style={{ color: 'var(--accent-primary)' }}>{t.months}mo</span>
                     </div>
-                    <div className="h-1.5 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '6px' }}>
+                    <div className="h-1.5 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '4px' }}>
                       <div
                         className="h-full"
                         style={{
@@ -850,7 +850,7 @@ export default function TrendsPage() {
                         {t.settlementPct}%
                       </span>
                     </div>
-                    <div className="h-1.5 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '6px' }}>
+                    <div className="h-1.5 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '4px' }}>
                       <div
                         className="h-full"
                         style={{
@@ -1006,7 +1006,7 @@ export default function TrendsPage() {
                 border: '1px solid var(--border-default)',
                 color: 'var(--color-text-primary)',
                 background: 'var(--color-surface-0)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 textDecoration: 'none',
               }}
             >

@@ -208,7 +208,7 @@ export default async function ChangelogPage() {
                         style={{
                           background: 'var(--color-surface-0)',
                           border: '1px solid var(--border-default)',
-                          borderRadius: 6,
+                          borderRadius: 4,
                           padding: '32px',
                           boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                         }}
@@ -315,7 +315,7 @@ export default async function ChangelogPage() {
                 <div style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: 6,
+                  borderRadius: 4,
                   padding: '48px 32px',
                   textAlign: 'center',
                 }}>
@@ -334,7 +334,7 @@ export default async function ChangelogPage() {
             {/* Subscribe Section */}
             <div style={{
               background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold-hover, #A87222) 100%)',
-              borderRadius: 6,
+              borderRadius: 4,
               padding: '48px 32px',
               color: 'var(--color-surface-0)',
               marginBottom: 64,
@@ -412,7 +412,7 @@ export default async function ChangelogPage() {
             <div style={{
               background: '#F0F5FB',
               border: '1px solid #D5E3F2',
-              borderRadius: 6,
+              borderRadius: 4,
               padding: '24px 28px',
             }}>
               <p style={{

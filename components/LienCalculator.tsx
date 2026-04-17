@@ -193,7 +193,7 @@ export default function LienCalculator() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
       {/* Input Section */}
-      <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: 'clamp(24px, 4vw, 40px)' }}>
+      <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: 'clamp(24px, 4vw, 40px)' }}>
         <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
           Settlement Details
         </h2>
@@ -260,7 +260,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Medicare */}
-          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '6px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -287,7 +287,7 @@ export default function LienCalculator() {
                   style={{
                     padding: '10px 12px',
                     border: errors.medicareAmount ? '2px solid #EF4444' : '1px solid #D1E0F8',
-                    borderRadius: 6,
+                    borderRadius: 4,
                     fontSize: 13,
                     fontFamily: 'var(--font-mono)',
                     backgroundColor: '#FFF',
@@ -304,7 +304,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Medicaid */}
-          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '6px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -331,7 +331,7 @@ export default function LienCalculator() {
                   style={{
                     padding: '10px 12px',
                     border: errors.medicaidAmount ? '2px solid #EF4444' : '1px solid #D1E0F8',
-                    borderRadius: 6,
+                    borderRadius: 4,
                     fontSize: 13,
                     fontFamily: 'var(--font-mono)',
                     backgroundColor: '#FFF',
@@ -348,7 +348,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Workers Compensation */}
-          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '6px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -375,7 +375,7 @@ export default function LienCalculator() {
                   style={{
                     padding: '10px 12px',
                     border: errors.workersCompAmount ? '2px solid #EF4444' : '1px solid #D1E0F8',
-                    borderRadius: 6,
+                    borderRadius: 4,
                     fontSize: 13,
                     fontFamily: 'var(--font-mono)',
                     backgroundColor: '#FFF',
@@ -475,13 +475,13 @@ export default function LienCalculator() {
 
       {/* Results Section */}
       {result && (
-        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: 'clamp(24px, 4vw, 40px)' }}>
+        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: 'clamp(24px, 4vw, 40px)' }}>
           <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
             Lien Estimate Breakdown
           </h2>
 
           {/* Calculation breakdown */}
-          <div style={{ display: 'grid', gap: 0, marginBottom: 32, borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--border-default)' }}>
+          <div style={{ display: 'grid', gap: 0, marginBottom: 32, borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--border-default)' }}>
             {/* Gross Settlement */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderBottom: '1px solid var(--border-default)' }}>
               <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
@@ -607,7 +607,7 @@ export default function LienCalculator() {
           )}
 
           {/* Total Liens Summary */}
-          <div style={{ background: '#FFF', border: '2px solid var(--border-default)', borderRadius: '6px', padding: 16, marginBottom: 24 }}>
+          <div style={{ background: '#FFF', border: '2px solid var(--border-default)', borderRadius: '4px', padding: 16, marginBottom: 24 }}>
             <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', marginBottom: 12, fontFamily: 'var(--font-body)' }}>
               TOTAL LIENS ESTIMATE
             </div>
@@ -630,7 +630,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Net Recovery */}
-          <div style={{ background: 'var(--color-surface-1)', borderRadius: '6px', padding: 24, border: '1px solid var(--border-default)', marginBottom: 24 }}>
+          <div style={{ background: 'var(--color-surface-1)', borderRadius: '4px', padding: 24, border: '1px solid var(--border-default)', marginBottom: 24 }}>
             <h3 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
               Estimated Net Recovery to Client
             </h3>
@@ -694,7 +694,7 @@ export default function LienCalculator() {
             padding: 16,
             background: 'rgba(234,179,8,0.1)',
             borderLeft: '3px solid #D97706',
-            borderRadius: 6,
+            borderRadius: 4,
             fontSize: 12,
             color: '#fde68a',
             lineHeight: 1.6,

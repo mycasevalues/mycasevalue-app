@@ -51,7 +51,7 @@ const colHeaderStyle: React.CSSProperties = {
   fontSize: 10,
   fontFamily: 'var(--font-ui)',
   fontWeight: 600,
-  color: '#4A6080',
+  color: 'var(--chrome-text-muted, #8AAAC8)',
   textTransform: 'uppercase',
   letterSpacing: '0.09em',
   marginBottom: 8,
@@ -100,7 +100,7 @@ export default function Footer() {
         style={{
           maxWidth: 1200,
           margin: '0 auto',
-          padding: '0 22px',
+          padding: '0 24px',
         }}
       >
         {/* 4-column grid */}
@@ -108,7 +108,7 @@ export default function Footer() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: 20,
+            gap: 24,
           }}
           className="footer-grid"
         >
@@ -196,7 +196,7 @@ export default function Footer() {
             style={{
               fontSize: 10,
               fontFamily: 'var(--font-ui)',
-              color: '#4A6080',
+              color: 'var(--chrome-text-muted, #8AAAC8)',
               margin: 0,
               lineHeight: 1.5,
               maxWidth: 600,
@@ -209,7 +209,7 @@ export default function Footer() {
             style={{
               fontSize: 10,
               fontFamily: 'var(--font-ui)',
-              color: '#4A6080',
+              color: 'var(--chrome-text-muted, #8AAAC8)',
               margin: 0,
               lineHeight: 1.5,
             }}

@@ -315,10 +315,10 @@ const ENDPOINTS: Endpoint[] = [
 ];
 
 const methodColors: Record<string, string> = {
-  GET: '#059669',
+  GET: 'var(--data-positive, #176438)',
   POST: 'var(--accent-primary)',
   PUT: '#B86E00',
-  DELETE: '#DC2626',
+  DELETE: 'var(--data-negative, #B01E1E)',
 };
 
 const errorCodes = [
@@ -460,7 +460,7 @@ export default function DevelopersPage() {
                 key={idx}
                 style={{
                   background: 'var(--color-surface-0)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                   border: '1px solid var(--border-default)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -513,7 +513,7 @@ export default function DevelopersPage() {
               key={idx}
               style={{
                 background: 'var(--color-surface-0)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 overflow: 'hidden',
                 marginBottom: '16px',
@@ -528,7 +528,7 @@ export default function DevelopersPage() {
                       fontSize: '11px',
                       fontWeight: 700,
                       padding: '4px 10px',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       backgroundColor: `${methodColors[endpoint.method]}`,
                       color: 'var(--color-surface-0)',
                       minWidth: '45px',
@@ -645,7 +645,7 @@ export default function DevelopersPage() {
                     lineHeight: 1.5,
                     fontFamily: 'var(--font-mono)',
                     overflowX: 'auto',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                   }}
                 >
                   {endpoint.responseExample}
@@ -671,7 +671,7 @@ export default function DevelopersPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '24px',
               border: '1px solid var(--border-default)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -690,7 +690,7 @@ export default function DevelopersPage() {
                 lineHeight: 1.5,
                 fontFamily: 'var(--font-mono)',
                 overflowX: 'auto',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 marginBottom: '16px',
               }}
             >
@@ -734,7 +734,7 @@ export default function DevelopersPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               border: '1px solid var(--border-default)',
               overflow: 'hidden',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -805,7 +805,7 @@ export default function DevelopersPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               border: '1px solid var(--border-default)',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -821,8 +821,8 @@ export default function DevelopersPage() {
                     gap: '12px',
                     padding: '12px',
                     backgroundColor: 'var(--color-surface-1)',
-                    borderRadius: '6px',
-                    borderLeft: `3px solid ${error.code >= 500 ? '#DC2626' : error.code >= 400 ? '#F59E0B' : '#059669'}`,
+                    borderRadius: '4px',
+                    borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative, #B01E1E)' : error.code >= 400 ? '#F59E0B' : 'var(--data-positive, #176438)'}`,
                   }}
                 >
                   <code
@@ -859,7 +859,7 @@ export default function DevelopersPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               border: '1px solid var(--border-default)',
               overflow: 'hidden',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -891,7 +891,7 @@ export default function DevelopersPage() {
           <div
             style={{
               background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold-hover, #A87222) 100%)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '32px',
               textAlign: 'center',
               boxShadow: '0 4px 12px rgba(10, 102, 194, 0.15)',

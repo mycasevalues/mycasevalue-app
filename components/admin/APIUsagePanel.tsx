@@ -59,7 +59,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
   }, []);
 
   return (
-    <div style={{ padding: '24px', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
+    <div style={{ padding: '24px', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
       <h3
         style={{
           fontFamily: 'var(--font-ui)',
@@ -146,7 +146,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
               fontFamily: 'var(--font-ui)',
               fontSize: '1.75rem',
               fontWeight: 600,
-              color: mockMetrics.rateLimitViolations > 0 ? '#DC2626' : '#059669',
+              color: mockMetrics.rateLimitViolations > 0 ? 'var(--data-negative, #B01E1E)' : 'var(--data-positive, #176438)',
               margin: 0,
             }}
           >
@@ -309,7 +309,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
                     style={{
                       height: '100%',
                       width: `${user.percentage}%`,
-                      background: '#059669',
+                      background: 'var(--data-positive, #176438)',
                       transition: 'width 200ms ease',
                     }}
                   />
@@ -350,7 +350,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             padding: '12px',
             background: 'rgba(59,130,246,0.08)',
             border: '1px solid #93C5FD',
-            borderRadius: '6px',
+            borderRadius: '4px',
             fontSize: '0.75rem',
             color: '#60a5fa',
             fontFamily: 'var(--font-body)',

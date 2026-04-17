@@ -37,7 +37,7 @@ export default function SidebarNav() {
       gap: '8px',
       backgroundColor: 'var(--accent-primary)',
       padding: '12px',
-      borderRadius: '6px',
+      borderRadius: '4px',
     }}>
       <style>{`
         .sidebar-nav-item {

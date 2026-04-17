@@ -165,7 +165,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         <div
           style={{
             background: 'var(--color-surface-0)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             padding: '32px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',

@@ -132,7 +132,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
 
   const cardStyle: React.CSSProperties = {
     background: 'var(--color-surface-0)',
-    borderRadius: '6px',
+    borderRadius: '4px',
     padding: '24px',
     border: '1px solid var(--border-default)',
   };

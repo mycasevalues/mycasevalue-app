@@ -129,7 +129,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
               width: '100%',
               padding: '10px 12px',
               border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '14px',
               minHeight: '100px',
               fontFamily: 'var(--font-body)',

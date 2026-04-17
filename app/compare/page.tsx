@@ -467,7 +467,7 @@ export default function ComparePage() {
                       </div>
 
                       {/* Win Rate Badge */}
-                      <div style={{ display: 'inline-block', padding: '2px 10px', background: wrColor.bg, border: `1px solid ${wrColor.border}`, borderRadius: '6px', fontSize: 12, fontWeight: 600, color: wrColor.text, marginBottom: 12 }}>
+                      <div style={{ display: 'inline-block', padding: '2px 10px', background: wrColor.bg, border: `1px solid ${wrColor.border}`, borderRadius: '4px', fontSize: 12, fontWeight: 600, color: wrColor.text, marginBottom: 12 }}>
                         {s.winRate.toFixed(1)}% win rate · {wrColor.label}
                       </div>
 
@@ -497,12 +497,12 @@ export default function ComparePage() {
                       {/* Attorney Impact */}
                       {s.attorneyWR !== null && s.proSeWR !== null && (
                         <div style={{ display: 'flex', gap: 8 }}>
-                          <div style={{ flex: 1, padding: '8px', background: 'rgba(34,197,94,0.1)', borderRadius: 6, textAlign: 'center' }}>
-                            <div style={{ fontSize: 16, fontWeight: 700, color: '#057642', fontFamily: 'var(--font-mono)' }}>{s.attorneyWR}%</div>
+                          <div style={{ flex: 1, padding: '8px', background: 'rgba(34,197,94,0.1)', borderRadius: 4, textAlign: 'center' }}>
+                            <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>{s.attorneyWR}%</div>
                             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>w/ attorney</div>
                           </div>
-                          <div style={{ flex: 1, padding: '8px', background: 'rgba(239,68,68,0.06)', borderRadius: 6, textAlign: 'center' }}>
-                            <div style={{ fontSize: 16, fontWeight: 700, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{s.proSeWR}%</div>
+                          <div style={{ flex: 1, padding: '8px', background: 'rgba(239,68,68,0.06)', borderRadius: 4, textAlign: 'center' }}>
+                            <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>{s.proSeWR}%</div>
                             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>pro se</div>
                           </div>
                         </div>
@@ -513,7 +513,7 @@ export default function ComparePage() {
                         <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--color-text-secondary)' }}>
                           <span style={{
                             display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
-                            backgroundColor: s.totalCases >= 10000 ? '#057642' : s.totalCases >= 1000 ? '#C37D16' : s.totalCases >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)',
+                            backgroundColor: s.totalCases >= 10000 ? 'var(--data-positive, #176438)' : s.totalCases >= 1000 ? '#C37D16' : s.totalCases >= 100 ? 'var(--data-negative, #B01E1E)' : 'var(--text4, #A8A6A0)',
                           }} />
                           n={s.totalCases.toLocaleString()} cases
                         </div>

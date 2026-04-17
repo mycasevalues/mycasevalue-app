@@ -301,7 +301,7 @@ export default function IntegrationsPage() {
                 <div style={{
                   width: '56px',
                   height: '56px',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   background: 'var(--color-surface-1)',
                   border: '1px solid var(--border-default)',
                   display: 'flex',
@@ -316,9 +316,9 @@ export default function IntegrationsPage() {
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   background: integration.status === 'Available' ? 'rgba(34,197,94,0.06)' : 'rgba(232, 23, 31, 0.06)',
-                  color: integration.status === 'Available' ? '#059669' : 'var(--accent-primary)',
+                  color: integration.status === 'Available' ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
                   border: integration.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                 }}>
                   {integration.status}
@@ -376,7 +376,7 @@ export default function IntegrationsPage() {
                   padding: '10px 24px',
                   background: 'var(--accent-primary)',
                   color: 'var(--color-text-inverse)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   textDecoration: 'none',
                   fontSize: '13px',
                   fontWeight: 600,
@@ -471,7 +471,7 @@ export default function IntegrationsPage() {
                 style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '24px',
                   transition: 'all 0.2s ease',
                   position: 'relative',
@@ -507,9 +507,9 @@ export default function IntegrationsPage() {
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   background: capability.status === 'Available' ? 'rgba(34,197,94,0.06)' : 'rgba(232, 23, 31, 0.06)',
-                  color: capability.status === 'Available' ? '#059669' : 'var(--accent-primary)',
+                  color: capability.status === 'Available' ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
                   border: capability.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                   display: 'inline-block',
                 }}>
@@ -589,7 +589,7 @@ export default function IntegrationsPage() {
                 style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '28px',
                   transition: 'all 0.2s ease',
                   display: 'flex',
@@ -629,7 +629,7 @@ export default function IntegrationsPage() {
         {/* API Quick Start */}
         <div style={{
           background: 'var(--accent-primary)',
-          borderRadius: '6px',
+          borderRadius: '4px',
           padding: '48px',
           marginBottom: '48px',
         }}>
@@ -654,7 +654,7 @@ export default function IntegrationsPage() {
           {/* Code Block */}
           <div style={{
             background: 'rgba(0,0,0,0.3)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '24px',
             fontFamily: 'var(--font-mono)',
             fontSize: '13px',
@@ -699,7 +699,7 @@ export default function IntegrationsPage() {
                 padding: '12px 28px',
                 background: 'var(--accent-primary)',
                 color: 'var(--color-text-inverse)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 textDecoration: 'none',
                 fontSize: '13px',
                 fontWeight: 600,
@@ -760,7 +760,7 @@ export default function IntegrationsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '2px solid var(--accent-primary-hover)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'flex',
@@ -817,7 +817,7 @@ export default function IntegrationsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '2px solid var(--accent-primary)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'flex',
@@ -874,7 +874,7 @@ export default function IntegrationsPage() {
         <div style={{
           background: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
           padding: '48px',
           textAlign: 'center' as const,
         }}>
@@ -906,7 +906,7 @@ export default function IntegrationsPage() {
               padding: '14px 32px',
               background: 'var(--accent-primary)',
               color: 'var(--color-text-inverse)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               textDecoration: 'none',
               fontSize: '14px',
               fontWeight: 600,

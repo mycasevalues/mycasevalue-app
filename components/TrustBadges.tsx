@@ -98,7 +98,7 @@ export default function TrustBadges() {
                   fontSize: '30px',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-mono)',
                   lineHeight: 1.2,
                   marginBottom: '8px',
                 }}

@@ -121,7 +121,7 @@ export default function MotionAnalyticsPage() {
             Back to Attorney Tools
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '6px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M9 9h6M9 15h6" />
@@ -144,7 +144,7 @@ export default function MotionAnalyticsPage() {
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 20px' }}>
         {/* Controls */}
-        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'flex-end' }}>
             <div style={{ flex: '1 1 300px' }}>
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
@@ -153,7 +153,7 @@ export default function MotionAnalyticsPage() {
               <select
                 value={selectedNos}
                 onChange={(e) => setSelectedNos(e.target.value)}
-                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '6px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-body)', transition: 'border-color 0.2s' }}
+                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-body)', transition: 'border-color 0.2s' }}
               >
                 <option value="">Select case type...</option>
                 {caseTypes.map((ct) => (
@@ -198,7 +198,7 @@ export default function MotionAnalyticsPage() {
               <select
                 value={selectedNos2}
                 onChange={(e) => setSelectedNos2(e.target.value)}
-                style={{ width: '100%', maxWidth: '400px', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '6px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-body)', transition: 'border-color 0.2s' }}
+                style={{ width: '100%', maxWidth: '400px', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-body)', transition: 'border-color 0.2s' }}
               >
                 <option value="">Select second case type...</option>
                 {caseTypes.map((ct) => (
@@ -239,7 +239,7 @@ export default function MotionAnalyticsPage() {
                   style={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     padding: '20px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                   }}
@@ -251,9 +251,9 @@ export default function MotionAnalyticsPage() {
                     <div
                       style={{
                         padding: '4px 10px',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         backgroundColor: motion.successColor === 'green' ? 'rgba(5, 118, 66, 0.12)' : motion.successColor === 'amber' ? 'rgba(195, 125, 22, 0.12)' : 'rgba(10, 102, 194, 0.12)',
-                        color: motion.successColor === 'green' ? '#057642' : motion.successColor === 'amber' ? '#C37D16' : 'var(--accent-primary)',
+                        color: motion.successColor === 'green' ? 'var(--data-positive, #176438)' : motion.successColor === 'amber' ? '#C37D16' : 'var(--accent-primary)',
                         fontSize: '11px',
                         fontWeight: 600,
                         textTransform: 'uppercase' as const,
@@ -306,7 +306,7 @@ export default function MotionAnalyticsPage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '6px' }}>
+            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
               <p style={{ fontSize: '11px', color: '#C37D16', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
@@ -339,7 +339,7 @@ export default function MotionAnalyticsPage() {
                       style={{
                         background: 'var(--color-surface-0)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         padding: '14px',
                       }}
                     >
@@ -376,13 +376,13 @@ export default function MotionAnalyticsPage() {
                       style={{
                         background: 'var(--color-surface-0)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         padding: '14px',
                       }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                         <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{motion.motionType}</span>
-                        <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: '#057642' }}>
+                        <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--data-positive, #176438)' }}>
                           {motion.grantRate}%
                         </span>
                       </div>
@@ -403,7 +403,7 @@ export default function MotionAnalyticsPage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '6px' }}>
+            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
               <p style={{ fontSize: '11px', color: '#C37D16', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> Motion success rates are derived from public federal court statistics (FJC IDB). Actual outcomes depend on jurisdiction, judge, opposing counsel, and case-specific factors.
               </p>
@@ -413,8 +413,8 @@ export default function MotionAnalyticsPage() {
 
         {/* Empty state */}
         {!selectedNos && !loading && (
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '6px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M9 9h6M9 15h6" />

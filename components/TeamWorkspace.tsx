@@ -228,14 +228,14 @@ const DEMO_ACTIVITIES: ActivityItem[] = [
 
 const roleColors: Record<string, string> = {
   Admin: '#3D8FB5',
-  Partner: '#059669',
+  Partner: 'var(--data-positive, #176438)',
   Associate: 'var(--accent-primary-hover)',
   Paralegal: '#B86E00',
 };
 
 const statusColors: Record<string, string> = {
   Researching: 'var(--accent-primary)',
-  Active: '#059669',
+  Active: 'var(--data-positive, #176438)',
   Settled: '#B86E00',
   Closed: '#6B7280',
 };
@@ -370,7 +370,7 @@ export default function TeamWorkspace() {
                 style={{
                   width: '40px',
                   height: '40px',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   background: 'rgba(10, 102, 194, 0.12)',
                   display: 'flex',
                   alignItems: 'center',
@@ -397,7 +397,7 @@ export default function TeamWorkspace() {
               style={{
                 background: 'rgba(10, 102, 194, 0.15)',
                 padding: '6px 14px',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--accent-primary)',
               }}
             >
@@ -436,7 +436,7 @@ export default function TeamWorkspace() {
             gap: '4px',
             marginBottom: '24px',
             background: 'var(--color-surface-1)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             padding: '3px',
             width: 'fit-content',
@@ -449,7 +449,7 @@ export default function TeamWorkspace() {
               onClick={() => setActiveTab(tab)}
               style={{
                 padding: '8px 20px',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: 'none',
                 fontSize: '14px',
                 fontWeight: 600,
@@ -479,7 +479,7 @@ export default function TeamWorkspace() {
               <div
                 style={{
                   background: 'var(--color-surface-0)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '40px',
                   border: '1px solid var(--border-default)',
                   textAlign: 'center',
@@ -494,7 +494,7 @@ export default function TeamWorkspace() {
                     key={report.id}
                     style={{
                       background: 'var(--color-surface-0)',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       padding: '16px',
                       border: '1px solid var(--border-default)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -510,7 +510,7 @@ export default function TeamWorkspace() {
                       <span
                         style={{
                           padding: '2px 8px',
-                          borderRadius: '6px',
+                          borderRadius: '4px',
                           backgroundColor: 'rgba(10, 102, 194, 0.12)',
                           color: 'var(--accent-primary)',
                           fontSize: '11px',
@@ -542,7 +542,7 @@ export default function TeamWorkspace() {
             <div
               style={{
                 background: 'var(--color-surface-0)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px',
                 border: '1px solid var(--border-default)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -643,7 +643,7 @@ export default function TeamWorkspace() {
               <div
                 style={{
                   background: 'var(--color-surface-0)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '40px',
                   border: '1px solid var(--border-default)',
                   textAlign: 'center',
@@ -658,7 +658,7 @@ export default function TeamWorkspace() {
                     key={note.id}
                     style={{
                       background: 'var(--color-surface-0)',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       padding: '16px',
                       border: '1px solid var(--border-default)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -669,7 +669,7 @@ export default function TeamWorkspace() {
                         style={{
                           display: 'inline-block',
                           padding: '2px 8px',
-                          borderRadius: '6px',
+                          borderRadius: '4px',
                           backgroundColor: 'rgba(10, 102, 194, 0.12)',
                           color: 'var(--accent-primary)',
                           fontSize: '11px',
@@ -699,7 +699,7 @@ export default function TeamWorkspace() {
             <div
               style={{
                 background: 'var(--color-surface-0)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px',
                 border: '1px solid var(--border-default)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -873,7 +873,7 @@ export default function TeamWorkspace() {
               <div
                 style={{
                   background: 'var(--color-surface-0)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '40px',
                   border: '1px solid var(--border-default)',
                   textAlign: 'center',
@@ -885,7 +885,7 @@ export default function TeamWorkspace() {
               <div
                 style={{
                   background: 'var(--color-surface-0)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   overflow: 'hidden',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -946,7 +946,7 @@ export default function TeamWorkspace() {
                               style={{
                                 display: 'inline-block',
                                 padding: '3px 10px',
-                                borderRadius: '6px',
+                                borderRadius: '4px',
                                 backgroundColor: `${statusColors[caseItem.status]}15`,
                                 color: statusColors[caseItem.status],
                                 fontSize: '11px',
@@ -975,7 +975,7 @@ export default function TeamWorkspace() {
                 key={activity.id}
                 style={{
                   background: 'var(--color-surface-0)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '14px 20px',
                   border: '1px solid var(--border-default)',
                   display: 'flex',
@@ -1015,7 +1015,7 @@ export default function TeamWorkspace() {
                         : activity.icon === 'comment'
                         ? 'var(--accent-primary)'
                         : activity.icon === 'predict'
-                        ? '#059669'
+                        ? 'var(--data-positive, #176438)'
                         : activity.icon === 'note'
                         ? '#B45309'
                         : '#B86E00'
@@ -1109,7 +1109,7 @@ export default function TeamWorkspace() {
                   style={{
                     display: 'inline-block',
                     padding: '2px 8px',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     backgroundColor: 'rgba(10, 102, 194, 0.12)',
                     color: 'var(--accent-primary)',
                     fontSize: '10px',
@@ -1127,7 +1127,7 @@ export default function TeamWorkspace() {
           <div
             style={{
               background: 'var(--color-surface-1)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '16px',
               marginBottom: '20px',
               display: 'flex',
@@ -1200,7 +1200,7 @@ export default function TeamWorkspace() {
                 key={member.id}
                 style={{
                   background: 'var(--color-surface-1)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '12px',
                   border: '1px solid var(--border-default)',
                   display: 'flex',

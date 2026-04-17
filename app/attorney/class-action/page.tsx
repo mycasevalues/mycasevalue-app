@@ -104,7 +104,7 @@ export default function ClassActionPage() {
                   style={{
                     background: 'var(--color-surface-0)',
                     border: `1px solid ${borderColor}`,
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     padding: '20px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                   }}
@@ -155,7 +155,7 @@ export default function ClassActionPage() {
           <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '24px', color: secondaryColor, fontFamily: 'var(--font-heading)' }}>
             Recent Class Action Settlements
           </h2>
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '6px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>
@@ -192,7 +192,7 @@ export default function ClassActionPage() {
           <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '24px', color: secondaryColor, fontFamily: 'var(--font-heading)' }}>
             Class Certification Approval Rates by District
           </h2>
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '6px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>

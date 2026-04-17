@@ -14,8 +14,8 @@ export default function DispositionBar({ data }: DispositionBarProps) {
 
   const colors: Record<string, string> = {
     settled: 'var(--accent-primary)',
-    plaintiffVerdict: '#057642',
-    defenseVerdict: '#CC1016',
+    plaintiffVerdict: 'var(--data-positive, #176438)',
+    defenseVerdict: 'var(--data-negative, #B01E1E)',
     dismissed: 'var(--text4, #A8A6A0)',
     summaryJudgment: '#C37D16',
     other: '#E0DDD8',

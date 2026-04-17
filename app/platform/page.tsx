@@ -708,7 +708,7 @@ export default function PlatformPage() {
               marginTop: 40,
               padding: 24,
               background: 'rgba(139,92,246,0.06)',
-              borderRadius: 6,
+              borderRadius: 4,
               border: '1px solid #E9D5FF',
             }}>
               <p style={{
@@ -913,7 +913,7 @@ export default function PlatformPage() {
               marginTop: 40,
               padding: 32,
               background: 'rgba(139,92,246,0.06)',
-              borderRadius: 6,
+              borderRadius: 4,
               border: '1px solid #E9D5FF',
             }}>
               <h3 style={{
@@ -1053,7 +1053,7 @@ export default function PlatformPage() {
                   style={{
                     padding: 24,
                     background: 'var(--color-surface-1)',
-                    borderRadius: 6,
+                    borderRadius: 4,
                     border: '1px solid var(--border-default)',
                   }}
                 >
@@ -1110,7 +1110,7 @@ export default function PlatformPage() {
                   style={{
                     padding: 28,
                     background: 'var(--color-surface-0)',
-                    borderRadius: 6,
+                    borderRadius: 4,
                     border: '1px solid var(--border-default)',
                     transition: 'all 0.3s ease',
                   }}
@@ -1199,7 +1199,7 @@ export default function PlatformPage() {
                   style={{
                     padding: 28,
                     background: 'var(--color-surface-1)',
-                    borderRadius: 6,
+                    borderRadius: 4,
                     border: '1px solid var(--border-default)',
                   }}
                 >
@@ -1264,7 +1264,7 @@ export default function PlatformPage() {
                   style={{
                     padding: 28,
                     background: 'var(--color-surface-0)',
-                    borderRadius: 6,
+                    borderRadius: 4,
                     border: '1px solid var(--border-default)',
                   }}
                 >
@@ -1345,7 +1345,7 @@ export default function PlatformPage() {
                   style={{
                     padding: 28,
                     background: 'var(--color-surface-1)',
-                    borderRadius: 6,
+                    borderRadius: 4,
                     border: '1px solid var(--border-default)',
                   }}
                 >
@@ -1414,7 +1414,7 @@ export default function PlatformPage() {
                 background: 'var(--accent-primary)',
                 color: 'var(--color-surface-0)',
                 textDecoration: 'none',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontWeight: 600,
                 fontSize: 16,
                 transition: 'all 0.3s ease',
@@ -1429,7 +1429,7 @@ export default function PlatformPage() {
                 color: 'var(--accent-primary)',
                 border: '2px solid var(--accent-primary)',
                 textDecoration: 'none',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontWeight: 600,
                 fontSize: 16,
                 transition: 'all 0.3s ease',

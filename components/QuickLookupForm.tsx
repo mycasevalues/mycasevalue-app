@@ -34,7 +34,7 @@ export default function QuickLookupForm() {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '20px',
+        gap: '24px',
       }}
     >
       {/* Case Type Label & Select */}
@@ -58,8 +58,8 @@ export default function QuickLookupForm() {
             padding: '12px 16px',
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
-            fontFamily: 'var(--font-body)',
+            borderRadius: '3px',
+            fontFamily: 'var(--font-ui)',
             fontSize: '15px',
             color: 'var(--color-text-primary)',
             width: '100%',
@@ -109,8 +109,8 @@ export default function QuickLookupForm() {
               padding: '12px 16px',
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
-              fontFamily: 'var(--font-body)',
+              borderRadius: '3px',
+              fontFamily: 'var(--font-ui)',
               fontSize: '15px',
               color: 'var(--color-text-primary)',
               width: '100%',
@@ -142,10 +142,10 @@ export default function QuickLookupForm() {
           color: 'var(--color-surface-0)',
           fontWeight: 600,
           fontSize: '15px',
-          borderRadius: '6px',
+          borderRadius: '3px',
           border: 'none',
           cursor: 'pointer',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           transition: 'all 150ms ease',
           marginTop: '8px',
         }}
@@ -159,7 +159,7 @@ export default function QuickLookupForm() {
         const nos = OPT_TO_NOS[caseType];
         const rd = nos ? (REAL_DATA as any)[nos] : null;
         if (!rd) return null;
-        const wrColor = (rd.wr ?? 0) >= 50 ? '#059669' : (rd.wr ?? 0) >= 35 ? '#D97706' : 'var(--accent-primary)';
+        const wrColor = (rd.wr ?? 0) >= 50 ? 'var(--data-positive, #176438)' : (rd.wr ?? 0) >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-negative, #B01E1E)';
         return (
           <div style={{
             background: 'var(--color-surface-1)',
@@ -217,7 +217,7 @@ export default function QuickLookupForm() {
           border-color: var(--accent-primary) !important;
         }
         .quick-lookup-submit:hover {
-          background: #B91C1C !important;
+          background: var(--accent-primary-hover, #A87222) !important;
         }
         .quick-lookup-submit:active {
           transform: scale(0.98);

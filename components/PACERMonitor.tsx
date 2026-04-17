@@ -94,7 +94,7 @@ export default function PACERMonitor() {
   const getStatusColor = (status: string): { bg: string; text: string } => {
     switch (status) {
       case 'active':
-        return { bg: 'rgba(34,197,94,0.1)', text: '#057642' };
+        return { bg: 'rgba(34,197,94,0.1)', text: 'var(--data-positive, #176438)' };
       case 'inactive':
         return { bg: '#FDF4EC', text: '#B24020' };
       case 'closed':
@@ -164,7 +164,7 @@ export default function PACERMonitor() {
               flex: 1,
               padding: '10px 12px',
               border: error ? '1px solid #CC1016' : '1px solid var(--bdr, #E2DFD8)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontFamily: 'var(--font-mono)',
               backgroundColor: 'var(--color-surface-0)',
@@ -178,7 +178,7 @@ export default function PACERMonitor() {
               backgroundColor: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               border: 'none',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontWeight: 500,
               cursor: 'pointer',
@@ -198,7 +198,7 @@ export default function PACERMonitor() {
           <p
             style={{
               fontSize: '12px',
-              color: '#CC1016',
+              color: 'var(--data-negative, #B01E1E)',
               margin: 0,
             }}
           >
@@ -238,7 +238,7 @@ export default function PACERMonitor() {
                   style={{
                     padding: '12px',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     backgroundColor: 'var(--color-surface-0)',
                     display: 'grid',
                     gridTemplateColumns: '1fr 1fr 1fr auto',
@@ -315,7 +315,7 @@ export default function PACERMonitor() {
                       style={{
                         padding: '4px 8px',
                         backgroundColor: 'transparent',
-                        color: '#CC1016',
+                        color: 'var(--data-negative, #B01E1E)',
                         border: '1px solid #CC1016',
                         borderRadius: '4px',
                         fontSize: '12px',

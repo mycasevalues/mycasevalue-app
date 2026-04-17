@@ -105,8 +105,8 @@ const CaseList = ({ cases }: CaseListProps) => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
     {cases.map((caseItem, idx) => {
       const outcomeColors: Record<string, string> = {
-        trial_win: '#059669',
-        trial_loss: '#DC2626',
+        trial_win: 'var(--data-positive, #176438)',
+        trial_loss: 'var(--data-negative, #B01E1E)',
         settlement: 'var(--accent-primary)',
         dismissal: '#6B7280',
         other: '#8B5CF6',
@@ -147,7 +147,7 @@ const CaseList = ({ cases }: CaseListProps) => (
           <div
             style={{
               padding: '4px 8px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               backgroundColor: outcomeColors[caseItem.outcome] + '1F',
               fontSize: '11px',
               fontWeight: 600,
@@ -210,7 +210,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
   <div
     style={{
       background: 'var(--color-surface-0)',
-      borderRadius: '6px',
+      borderRadius: '4px',
       border: isExpanded ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
       overflow: 'hidden',
       boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)',
@@ -302,7 +302,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
                 { label: 'Standard', value: attorney.trialVsSettlement.settlementRate - attorney.trialVsSettlement.earlySettlementRate, color: '#B86E00' },
                 { label: 'Late', value: 100 - attorney.trialVsSettlement.settlementRate, color: 'var(--accent-primary)' },
               ].map((s) => (
-                <div key={s.label} style={{ flex: 1, padding: '8px', borderRadius: '6px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
+                <div key={s.label} style={{ flex: 1, padding: '8px', borderRadius: '4px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
                   <div className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: s.color }}>
                     {s.value}%
                   </div>
@@ -470,7 +470,7 @@ export default function OpposingCounselSearch() {
               style={{
                 width: '48px',
                 height: '48px',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 background: 'rgba(10, 102, 194, 0.15)',
                 display: 'flex',
                 alignItems: 'center',
@@ -519,7 +519,7 @@ export default function OpposingCounselSearch() {
                   padding: '12px 12px 12px 42px',
                   height: '48px',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   fontSize: '14px',
                   color: 'var(--color-text-primary)',
                   background: 'var(--color-surface-0)',
@@ -536,7 +536,7 @@ export default function OpposingCounselSearch() {
                 backgroundColor: 'var(--accent-primary)',
                 color: 'var(--color-text-inverse)',
                 border: 'none',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontSize: '14px',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -555,7 +555,7 @@ export default function OpposingCounselSearch() {
           <div
             style={{
               padding: '12px 16px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               backgroundColor: 'rgba(220, 38, 38, 0.12)',
               border: '1px solid #FCA5A5',
               marginBottom: '24px',
@@ -589,7 +589,7 @@ export default function OpposingCounselSearch() {
                 padding: '14px 18px',
                 backgroundColor: 'rgba(232, 149, 88, 0.12)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
               }}
             >
               <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}>
@@ -605,7 +605,7 @@ export default function OpposingCounselSearch() {
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '40px 24px',
               textAlign: 'center',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -615,7 +615,7 @@ export default function OpposingCounselSearch() {
               style={{
                 width: '64px',
                 height: '64px',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 background: 'rgba(10, 102, 194, 0.12)',
                 display: 'flex',
                 alignItems: 'center',

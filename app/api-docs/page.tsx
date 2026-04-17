@@ -243,7 +243,7 @@ export default function ApiDocsPage() {
               {/* API Key Auth Card */}
               <div style={{
                 padding: 32,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -284,7 +284,7 @@ export default function ApiDocsPage() {
               {/* Rate Limits Card */}
               <div style={{
                 padding: 32,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -360,7 +360,7 @@ export default function ApiDocsPage() {
               {endpoints.map((endpoint, idx) => (
                 <div key={idx} style={{
                   padding: 32,
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -375,7 +375,7 @@ export default function ApiDocsPage() {
                         fontSize: '11px',
                         fontWeight: 700,
                         fontFamily: 'monospace',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         letterSpacing: '0.05em',
                       }}>
                         {endpoint.method}
@@ -490,7 +490,7 @@ export default function ApiDocsPage() {
               {/* cURL */}
               <div style={{
                 padding: 24,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
               }}>
@@ -523,7 +523,7 @@ export default function ApiDocsPage() {
               {/* JavaScript */}
               <div style={{
                 padding: 24,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
               }}>
@@ -559,7 +559,7 @@ export default function ApiDocsPage() {
               {/* Python */}
               <div style={{
                 padding: 24,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
               }}>
@@ -607,7 +607,7 @@ r = requests.get(
             </h2>
 
             <div style={{
-              borderRadius: '6px',
+              borderRadius: '4px',
               border: '1px solid var(--border-default)',
               background: 'var(--color-surface-0)',
               overflow: 'hidden',
@@ -700,7 +700,7 @@ r = requests.get(
           {/* CTA Section */}
           <section style={{
             padding: 48,
-            borderRadius: '6px',
+            borderRadius: '4px',
             background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold-hover, #A87222) 100%)',
             textAlign: 'center',
             marginBottom: 64,
@@ -732,7 +732,7 @@ r = requests.get(
                 color: 'var(--accent-primary)',
                 fontSize: 15,
                 fontWeight: 700,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-ui)',
                 transition: 'all 0.3s ease',

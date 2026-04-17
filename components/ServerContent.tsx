@@ -115,7 +115,7 @@ export default function ServerContent() {
                 style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '24px',
                   display: 'flex',
                   gap: '20px',
@@ -132,7 +132,7 @@ export default function ServerContent() {
                     color: 'var(--accent-primary)',
                     background: 'rgba(10, 102, 194, 0.08)',
                     padding: '8px 14px',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     minWidth: '90px',
                     textAlign: 'center',
                     border: '1px solid rgba(232,23,31,0.15)',
@@ -221,7 +221,7 @@ export default function ServerContent() {
               </p>
               <a href="/search" className="cta-btn-primary" style={{
                 display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                height: '48px', padding: '0 32px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '6px',
+                height: '48px', padding: '0 32px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '4px',
                 fontWeight: 600, fontSize: '14px', textDecoration: 'none', textTransform: 'uppercase',
                 letterSpacing: '0.04em', fontFamily: 'var(--font-ui)',
               }}>
@@ -238,7 +238,7 @@ export default function ServerContent() {
                 { title: 'Analyze settlement trends', desc: 'Access full settlement distributions from P10 to P90, with median values and trend data over time.' },
                 { title: 'Act with confidence', desc: 'From data-driven settlement estimates to judge-specific insights, get the intelligence that drives better decisions.' },
               ].map((item, i) => (
-                <div key={i} style={{ padding: '16px', background: 'var(--color-surface-1)', borderRadius: '6px', border: '1px solid var(--border-default)' }}>
+                <div key={i} style={{ padding: '16px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
                   <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '6px' }}>{item.title}</h3>
                   <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
                 </div>
@@ -281,7 +281,7 @@ export default function ServerContent() {
                 <div className="category-card" style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '24px',
                   transition: 'all 0.2s ease',
                   cursor: 'pointer',
@@ -298,7 +298,7 @@ export default function ServerContent() {
                       padding: '3px 8px',
                       background: 'rgba(10, 102, 194, 0.08)',
                       color: 'var(--accent-primary)',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       fontFamily: 'var(--font-body)',
                       flexShrink: 0,
                       marginLeft: '8px',
@@ -359,7 +359,7 @@ export default function ServerContent() {
                     background: 'var(--color-surface-1)',
                     border: '1px solid var(--border-default)',
                     borderTop: '3px solid var(--accent-primary)',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     padding: '24px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                     transition: 'all 0.2s ease',
@@ -520,7 +520,7 @@ export default function ServerContent() {
                     style={{
                       background: 'var(--color-surface-0)',
                       border: '1px solid var(--border-default)',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       padding: '28px 24px',
                       height: '100%',
                       display: 'flex',
@@ -531,7 +531,7 @@ export default function ServerContent() {
                       style={{
                         width: '56px',
                         height: '56px',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         background: 'rgba(232, 23, 31, 0.08)',
                         display: 'flex',
                         alignItems: 'center',
@@ -616,8 +616,8 @@ export default function ServerContent() {
               { title: 'Legal Aid & Nonprofits', desc: 'Free tier designed for access to justice. Help underrepresented communities understand their legal options with real outcome data.', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
               { title: 'Legal Researchers & Academics', desc: 'Access comprehensive federal court statistics spanning 55+ years (1970–2025). Perfect for empirical legal studies and policy analysis.', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
             ].map((item, i) => (
-              <div key={i} className="who-card" style={{ padding: '28px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', transition: 'all 0.2s ease' }}>
-                <div style={{ width: '44px', height: '44px', borderRadius: '6px', background: 'rgba(10, 102, 194, 0.08)', border: '1px solid rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+              <div key={i} className="who-card" style={{ padding: '28px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', transition: 'all 0.2s ease' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.08)', border: '1px solid rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
                 </div>
                 <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>{item.title}</h3>
@@ -682,10 +682,10 @@ export default function ServerContent() {
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid var(--border-default)' }}>
                     <td style={{ padding: '12px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>{row.feature}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(10, 102, 194, 0.08)', color: row.mcv ? '#057642' : '#9ca3af', fontWeight: 600, fontSize: '16px' }}>{row.mcv ? 'Yes' : 'No'}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.westlaw ? '#057642' : '#9ca3af', fontSize: '16px' }}>{row.westlaw ? 'Yes' : 'No'}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.lexis === 'partial' ? '#C37D16' : (row.lexis ? '#057642' : '#9ca3af'), fontSize: '16px' }}>{row.lexis === 'partial' ? 'Partial' : (row.lexis ? 'Yes' : 'No')}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.pacer ? '#057642' : '#9ca3af', fontSize: '16px' }}>{row.pacer ? 'Yes' : 'No'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(10, 102, 194, 0.08)', color: row.mcv ? 'var(--data-positive, #176438)' : '#9ca3af', fontWeight: 600, fontSize: '16px' }}>{row.mcv ? 'Yes' : 'No'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.westlaw ? 'var(--data-positive, #176438)' : '#9ca3af', fontSize: '16px' }}>{row.westlaw ? 'Yes' : 'No'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.lexis === 'partial' ? '#C37D16' : (row.lexis ? 'var(--data-positive, #176438)' : '#9ca3af'), fontSize: '16px' }}>{row.lexis === 'partial' ? 'Partial' : (row.lexis ? 'Yes' : 'No')}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.pacer ? 'var(--data-positive, #176438)' : '#9ca3af', fontSize: '16px' }}>{row.pacer ? 'Yes' : 'No'}</td>
                   </tr>
                 ))}
                 <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
@@ -741,7 +741,7 @@ export default function ServerContent() {
                 style={{
                   background: 'var(--color-surface-0)',
                   border: plan.featured ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '24px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -764,7 +764,7 @@ export default function ServerContent() {
                       background: 'var(--accent-primary)',
                       color: 'var(--color-text-inverse)',
                       padding: '4px 12px',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       whiteSpace: 'nowrap',
                     }}
                   >
@@ -823,7 +823,7 @@ export default function ServerContent() {
                     display: 'block',
                     textAlign: 'center',
                     padding: '10px 16px',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 600,
@@ -899,7 +899,7 @@ export default function ServerContent() {
             ].map((item, i) => (
               <a key={i} href={item.href} style={{
                 display: 'block', padding: '24px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)',
-                borderRadius: '6px', textDecoration: 'none', transition: 'all 200ms',
+                borderRadius: '4px', textDecoration: 'none', transition: 'all 200ms',
               }} className="related-card">
                 <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>{item.title}</h3>
                 <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
@@ -947,7 +947,7 @@ export default function ServerContent() {
                 href={tool.href}
                 style={{
                   display: 'block', padding: '24px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)',
-                  borderRadius: 6, textDecoration: 'none', transition: 'all 0.2s ease',
+                  borderRadius: 4, textDecoration: 'none', transition: 'all 0.2s ease',
                 }}
               >
                 <div style={{ marginBottom: 8 }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg></div>
@@ -982,7 +982,7 @@ export default function ServerContent() {
             background: 'var(--color-surface-0)',
             padding: '28px 32px',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             justifyContent: 'center',
           }}>
             {[
@@ -1028,7 +1028,7 @@ export default function ServerContent() {
               <div key={i} style={{
                 background: 'transparent',
                 border: '2px solid var(--accent-primary)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '28px 20px',
                 textAlign: 'center',
               }}>
@@ -1152,13 +1152,13 @@ export default function ServerContent() {
               .slice(0, 6)
               .map(([nos, data]: any, i) => {
                 const winRate = data.wr || 0;
-                const winRateColor = winRate > 60 ? '#057642' : winRate > 40 ? '#C37D16' : '#CC1016';
+                const winRateColor = winRate > 60 ? 'var(--data-positive, #176438)' : winRate > 40 ? '#C37D16' : 'var(--data-negative, #B01E1E)';
                 return (
                   <Link key={i} href={`/report/${nos}`} style={{ textDecoration: 'none' }}>
                     <div style={{
                       background: 'var(--color-surface-0)',
                       border: '1px solid var(--border-default)',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       padding: '24px',
                       transition: 'all 0.2s ease',
                       cursor: 'pointer',
@@ -1200,7 +1200,7 @@ export default function ServerContent() {
                       <div style={{
                         padding: '8px 12px',
                         background: 'rgba(10, 102, 194, 0.08)',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         marginBottom: '12px',
                       }}>
                         <p style={{
@@ -1262,7 +1262,7 @@ export default function ServerContent() {
                 padding: '0 40px',
                 background: 'var(--accent-primary)',
                 color: 'var(--color-text-inverse)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontFamily: 'var(--font-ui)',
                 fontSize: '16px',
                 fontWeight: 600,
@@ -1287,7 +1287,7 @@ export default function ServerContent() {
                 padding: '0 40px',
                 background: 'rgba(255,255,255,0.1)',
                 color: 'var(--color-text-inverse)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontFamily: 'var(--font-ui)',
                 fontSize: '16px',
                 fontWeight: 600,

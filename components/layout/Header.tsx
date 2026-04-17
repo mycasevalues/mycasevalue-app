@@ -298,7 +298,7 @@ export default function Header() {
                 style={{
                   width: 145,
                   height: 34,
-                  background: '#F5F3EF',
+                  background: 'var(--sidebar, #F9F8F6)',
                   borderLeft: '1px solid var(--bdr)',
                   display: 'flex',
                   alignItems: 'center',
@@ -415,7 +415,7 @@ export default function Header() {
                 ))}
                 {/* Footer */}
                 <div style={{
-                  padding: '6px 12px',
+                  padding: '8px 12px',
                   fontSize: 11,
                   color: 'var(--text3)',
                   background: 'var(--sidebar)',
@@ -453,7 +453,7 @@ export default function Header() {
           }}
         >
           {/* Nav icons — desktop only */}
-          <div className="hidden lg:flex items-center gap-3.5" style={{ marginRight: 13 }}>
+          <div className="hidden lg:flex items-center gap-3.5" style={{ marginRight: 12 }}>
             {[
               { icon: <FoldersIcon />, label: 'Folders', href: '/dashboard' },
               { icon: <HistoryIcon />, label: 'History', href: '/dashboard' },
@@ -508,7 +508,7 @@ export default function Header() {
             className="flex items-center h-full"
             style={{
               borderLeft: '1px solid var(--chrome-active)',
-              paddingLeft: 13,
+              paddingLeft: 12,
             }}
           >
             {userEmail ? (

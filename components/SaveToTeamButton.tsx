@@ -155,7 +155,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
             ref={modalRef}
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '24px',
               maxWidth: '400px',
               width: '90%',

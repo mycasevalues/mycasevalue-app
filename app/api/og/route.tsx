@@ -212,7 +212,7 @@ function renderNOSImage(code: string, locale: Locale = 'en'): React.ReactElement
             alignItems: 'center',
             height: '12px',
             backgroundColor: 'rgba(255,255,255,0.08)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             overflow: 'hidden',
           }}
         >

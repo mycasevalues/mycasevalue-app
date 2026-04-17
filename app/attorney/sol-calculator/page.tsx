@@ -452,7 +452,7 @@ export default function SOLCalculatorPage() {
     padding: '12px 14px',
     height: 'auto',
     border: '1px solid var(--border-default)',
-    borderRadius: '6px',
+    borderRadius: '4px',
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
@@ -503,7 +503,7 @@ export default function SOLCalculatorPage() {
           <style>{`.sol-grid { grid-template-columns: 1fr !important; } @media (min-width: 768px) { .sol-grid { grid-template-columns: 1fr 1fr !important; } }`}</style>
 
           {/* Input Section */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '6px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Calculate Deadline
             </h2>
@@ -590,7 +590,7 @@ export default function SOLCalculatorPage() {
                 <div
                   style={{
                     background: 'var(--color-surface-0)',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     padding: '28px',
                     border: '1px solid var(--border-default)',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -609,7 +609,7 @@ export default function SOLCalculatorPage() {
 
                 {/* Warning Banner */}
                 {isExpired && (
-                  <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid #FCA5A5', borderRadius: '6px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid #FCA5A5', borderRadius: '4px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DC2626" strokeWidth="2" style={{ flexShrink: 0 }}>
                       <circle cx="12" cy="12" r="10" /><path d="M12 8v4M12 16h.01" />
                     </svg>
@@ -623,7 +623,7 @@ export default function SOLCalculatorPage() {
                 )}
 
                 {isWarning && !isExpired && (
-                  <div style={{ background: 'rgba(234,179,8,0.1)', border: '1px solid #FDE68A', borderRadius: '6px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <div style={{ background: 'rgba(234,179,8,0.1)', border: '1px solid #FDE68A', borderRadius: '4px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2" style={{ flexShrink: 0 }}>
                       <path d="M12 2v20M2 10h20" />
                     </svg>
@@ -637,7 +637,7 @@ export default function SOLCalculatorPage() {
                 )}
 
                 {!isWarning && !isExpired && daysRemaining && daysRemaining > 0 && (
-                  <div style={{ background: 'rgba(34,197,94,0.12)', border: '1px solid #6EE7B7', borderRadius: '6px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <div style={{ background: 'rgba(34,197,94,0.12)', border: '1px solid #6EE7B7', borderRadius: '4px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" style={{ flexShrink: 0 }}>
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
@@ -655,7 +655,7 @@ export default function SOLCalculatorPage() {
             )}
 
             {selectedSOLData && (
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '6px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
                   Key Rules
                 </h3>
@@ -673,7 +673,7 @@ export default function SOLCalculatorPage() {
 
         {/* Detailed SOL Data Table */}
         {selectedSOLData && (
-          <div style={{ marginTop: '40px', background: 'var(--color-surface-0)', borderRadius: '6px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', overflow: 'hidden' }}>
+          <div style={{ marginTop: '40px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', overflow: 'hidden' }}>
             <div style={{ padding: '24px', borderBottom: '1px solid var(--border-default)' }}>
               <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
                 {selectedSOLData.caseType}

@@ -123,7 +123,7 @@ export default function HowItWorksPage() {
       />
 
       {/* Header */}
-      <div className="relative overflow-hidden" style={{ background: '#FFFFFF' }}>
+      <div className="relative overflow-hidden" style={{ background: 'var(--card, #FFFFFF)' }}>
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
@@ -171,7 +171,7 @@ export default function HowItWorksPage() {
                     borderColor: 'var(--border-default)',
                     background: 'var(--color-surface-0)',
                     borderRadius: '4px',
-                    padding: '28px',
+                    padding: '32px',
                     animationDelay: `${idx * 100}ms`,
                   }}>
 
@@ -182,11 +182,11 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Step number circle */}
-                  <div className="inline-flex items-center justify-center font-mono font-bold mb-6 tabular-nums"
+                  <div className="inline-flex items-center justify-center font-mono font-bold mb-8 tabular-nums"
                     style={{
                       width: '36px',
                       height: '36px',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       background: 'rgba(26,86,219,0.12)',
                       color: '#60a5fa',
                       fontSize: '16px',
@@ -196,7 +196,7 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Icon */}
-                  <div className="mb-6">
+                  <div className="mb-8">
                     {step.icon}
                   </div>
 
@@ -254,7 +254,7 @@ export default function HowItWorksPage() {
                 description: 'Track how outcomes have changed over time to understand current judicial patterns and trends.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
                 {/* Red Icon */}
                 <div className="mb-4" style={{ width: '24px', height: '24px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
@@ -282,8 +282,8 @@ export default function HowItWorksPage() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
-              <div key={i} className="text-center p-4 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
-                <div className="text-2xl font-display font-extrabold" style={{ color: 'var(--color-text-primary)' }}>
+              <div key={i} className="text-center p-4 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
+                <div className="text-2xl font-display font-extrabold" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
                   {stat.value}
                 </div>
                 <div className="text-[11px] font-semibold mt-2" style={{ color: 'var(--color-text-secondary)' }}>
@@ -320,7 +320,7 @@ export default function HowItWorksPage() {
                 description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
               },
             ].map((source, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
                 <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
                   {source.title}
                 </h3>
@@ -393,7 +393,7 @@ export default function HowItWorksPage() {
                   padding: '24px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   textDecoration: 'none',
                   color: 'inherit',
                   transition: 'all 0.3s ease',
@@ -408,7 +408,7 @@ export default function HowItWorksPage() {
                   style={{
                     width: '40px',
                     height: '40px',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     backgroundColor: 'var(--color-surface-1)',
                     display: 'flex',
                     alignItems: 'center',
@@ -470,6 +470,7 @@ export default function HowItWorksPage() {
                       fontWeight: 600,
                       fontSize: '24px',
                       flexShrink: 0,
+                      fontFamily: 'var(--font-mono)',
                     }}
                   >
                     {idx + 1}
@@ -535,7 +536,7 @@ export default function HowItWorksPage() {
                   backgroundColor: 'var(--accent-primary)',
                   color: 'var(--color-surface-0)',
                   textDecoration: 'none',
-                  borderRadius: '6px',
+                  borderRadius: '20px',
                   fontWeight: 600,
                   fontSize: '14px',
                   fontFamily: 'var(--font-ui)',
@@ -605,7 +606,7 @@ export default function HowItWorksPage() {
                 description: 'Available in English and Spanish. Legal data democratized for all communities.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
                 <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
                   {item.title}
                 </h3>
@@ -620,7 +621,7 @@ export default function HowItWorksPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
-        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'rgba(239,68,68,0.08)', borderRadius: '6px' }}>
+        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'rgba(239,68,68,0.08)', borderRadius: '4px' }}>
           <h2 className="text-3xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             See what happens in courts like yours
           </h2>

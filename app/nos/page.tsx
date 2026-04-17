@@ -164,7 +164,7 @@ export default function NOSIndexPage() {
                 background: 'var(--accent-primary)',
                 color: 'var(--color-surface-0)',
                 padding: '6px 12px',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontSize: '12px',
                 fontWeight: '600',
                 whiteSpace: 'nowrap',
@@ -280,7 +280,7 @@ export default function NOSIndexPage() {
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '32px',
           }}
           >

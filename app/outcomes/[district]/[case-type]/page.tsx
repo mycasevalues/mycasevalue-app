@@ -115,7 +115,7 @@ export default async function OutcomesPage({
           <Link href="/districts" style={{
             display: 'inline-block',
             padding: '10px 20px',
-            borderRadius: 6,
+            borderRadius: 4,
             fontWeight: 600,
             color: '#ffffff',
             background: 'var(--gold, #C4882A)',
@@ -308,7 +308,7 @@ export default async function OutcomesPage({
               background: 'var(--accent-primary)',
               color: 'var(--color-text-inverse)',
               padding: '6px 12px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '11px',
               fontWeight: 600,
               letterSpacing: '0.5px',
@@ -360,7 +360,7 @@ export default async function OutcomesPage({
             <div style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '20px',
             }}>
               <div style={{
@@ -382,7 +382,7 @@ export default async function OutcomesPage({
             <div style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '20px',
             }}>
               <div style={{
@@ -404,7 +404,7 @@ export default async function OutcomesPage({
             <div style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '20px',
             }}>
               <div style={{
@@ -426,7 +426,7 @@ export default async function OutcomesPage({
             <div style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '20px',
             }}>
               <div style={{
@@ -458,7 +458,7 @@ export default async function OutcomesPage({
           <div style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: 'clamp(20px, 4vw, 32px)',
           }}>
             <h2 style={{
@@ -500,7 +500,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     height: '12px',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     background: 'var(--border-default)',
                     overflow: 'hidden',
                   }}>
@@ -554,7 +554,7 @@ export default async function OutcomesPage({
             <div style={{
               background: 'var(--color-surface-1)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '20px',
             }}>
               <div style={{
@@ -614,7 +614,7 @@ export default async function OutcomesPage({
               <div style={{
                 background: 'var(--color-surface-0)',
                 border: `1px solid ${getComparisonColor(winRateDiff)}`,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '8px 12px',
                 fontSize: '12px',
                 fontWeight: 600,
@@ -630,7 +630,7 @@ export default async function OutcomesPage({
             <div style={{
               background: 'var(--color-surface-1)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '20px',
             }}>
               <div style={{
@@ -690,7 +690,7 @@ export default async function OutcomesPage({
               <div style={{
                 background: 'var(--color-surface-0)',
                 border: `1px solid ${getComparisonColor(settleRateDiff)}`,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '8px 12px',
                 fontSize: '12px',
                 fontWeight: 600,
@@ -706,7 +706,7 @@ export default async function OutcomesPage({
             <div style={{
               background: 'var(--color-surface-1)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '20px',
             }}>
               <div style={{
@@ -766,7 +766,7 @@ export default async function OutcomesPage({
               <div style={{
                 background: 'var(--color-surface-0)',
                 border: `1px solid ${getComparisonColor(-durationDiff)}`,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '8px 12px',
                 fontSize: '12px',
                 fontWeight: 600,
@@ -811,7 +811,7 @@ export default async function OutcomesPage({
                 style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '20px',
                   textDecoration: 'none',
                   display: 'block',
@@ -881,7 +881,7 @@ export default async function OutcomesPage({
                   background: 'var(--accent-primary-hover)',
                   color: 'var(--color-surface-0)',
                   padding: '16px 20px',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   textDecoration: 'none',
                   fontSize: '14px',
                   fontWeight: 600,
@@ -924,7 +924,7 @@ export default async function OutcomesPage({
             <Link href={`/cases/${category.id}`} className="outcome-card-link" style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '24px',
               textDecoration: 'none',
               display: 'block',
@@ -954,7 +954,7 @@ export default async function OutcomesPage({
             <Link href={`/nos/${option.nos}`} className="outcome-card-link" style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '24px',
               textDecoration: 'none',
               display: 'block',

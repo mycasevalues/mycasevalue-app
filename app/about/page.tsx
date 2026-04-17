@@ -96,7 +96,7 @@ export default function AboutPage() {
         }
 
         .about-header {
-          background: #FFFFFF;
+          background: var(--card, #FFFFFF);
           color: white;
           padding: 4rem 1.5rem;
           text-align: left;
@@ -173,7 +173,7 @@ export default function AboutPage() {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
           border-left: 3px solid var(--accent-primary);
-          border-radius: 6px;
+          border-radius: 4px;
           padding: 1.75rem 2rem;
           margin-bottom: 2rem;
           position: relative;
@@ -207,7 +207,7 @@ export default function AboutPage() {
         .source-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 6px;
+          border-radius: 4px;
           padding: 1.5rem;
           transition: border-color 150ms ease, background-color 150ms ease;
         }
@@ -249,7 +249,7 @@ export default function AboutPage() {
         .audience-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 6px;
+          border-radius: 4px;
           padding: 1.5rem;
           transition: border-color 150ms ease, background-color 150ms ease;
         }
@@ -277,7 +277,7 @@ export default function AboutPage() {
         .company-info {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 4px;
           padding: 2rem;
           margin-bottom: 2rem;
         }
@@ -298,15 +298,15 @@ export default function AboutPage() {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          padding: 10px 20px;
-          border-radius: 6px;
+          padding: 8px 20px;
+          border-radius: 4px;
           font-family: var(--font-ui);
           font-size: 13px;
           font-weight: 600;
           letter-spacing: -0.005em;
           text-decoration: none;
           background: var(--gold, #C4882A);
-          color: #ffffff;
+          color: var(--card, #FFFFFF);
           border: 1px solid var(--gold, #C4882A);
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
           transition: background-color 150ms ease, border-color 150ms ease;
@@ -362,8 +362,8 @@ export default function AboutPage() {
       <div className="about-header">
         <div className="about-container">
           <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 6,
-            padding: '4px 10px', marginBottom: 16,
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            padding: '4px 8px', marginBottom: 16,
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',

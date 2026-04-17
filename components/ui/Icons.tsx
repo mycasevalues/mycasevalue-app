@@ -44,7 +44,7 @@ export function ScaleIcon({ color = '#3D72FF', size = 24 }: { color?: string; si
   );
 }
 
-export function DollarIcon({ color = '#D97706', size = 24 }: { color?: string; size?: number }) {
+export function DollarIcon({ color = 'var(--wrn-txt, #7A5800)', size = 24 }: { color?: string; size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" stroke={color} {...s}>
       <circle cx="12" cy="12" r="10" />
@@ -54,7 +54,7 @@ export function DollarIcon({ color = '#D97706', size = 24 }: { color?: string; s
   );
 }
 
-export function HomeIcon({ color = '#059669', size = 24 }: { color?: string; size?: number }) {
+export function HomeIcon({ color = 'var(--data-positive, #176438)', size = 24 }: { color?: string; size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" stroke={color} {...s}>
       <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
@@ -176,7 +176,7 @@ export function CategoryIcon({ name, color, size = 28 }: { name: string; color?:
       width: size + 16,
       height: size + 16,
       background: `${color}10`,
-      borderRadius: '6px',
+      borderRadius: '4px',
     }}>
       <Icon color={color} size={size} />
     </div>

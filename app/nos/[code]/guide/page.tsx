@@ -170,7 +170,7 @@ export default async function GuidePage({ params }: PageProps) {
               padding: '20px',
               backgroundColor: 'var(--color-surface-0)',
               border: '1px solid #e0e0e0',
-              borderRadius: '6px',
+              borderRadius: '4px',
             }}>
               <p style={{
                 fontSize: '1rem',
@@ -476,7 +476,7 @@ export default async function GuidePage({ params }: PageProps) {
               <p style={{
                 fontSize: '2rem',
                 fontWeight: 700,
-                color: '#057642',
+                color: 'var(--data-positive, #176438)',
                 margin: '0 0 10px 0',
                 fontFamily: 'var(--font-heading)',
               }}>
@@ -597,7 +597,7 @@ export default async function GuidePage({ params }: PageProps) {
         <h3 style={{
           fontSize: '1rem',
           fontWeight: 600,
-          color: '#8C1515',
+          color: 'var(--data-negative, #B01E1E)',
           marginBottom: '10px',
           fontFamily: 'var(--font-heading)',
         }}>

@@ -23,7 +23,7 @@ const SkeletonResultCard = () => (
     marginBottom: '12px',
     background: 'var(--color-surface-0)',
     border: '1px solid var(--border-default)',
-    borderRadius: '6px',
+    borderRadius: '4px',
     animation: 'shimmer 2s infinite',
   }}>
     <div style={{
@@ -37,7 +37,7 @@ const SkeletonResultCard = () => (
         height: '20px',
         width: '60%',
         background: 'rgba(255,255,255,0.06)',
-        borderRadius: '6px',
+        borderRadius: '4px',
         flex: '1 1 auto',
         minWidth: '150px',
       }} />
@@ -45,7 +45,7 @@ const SkeletonResultCard = () => (
         height: '20px',
         width: '20%',
         background: 'rgba(255,255,255,0.06)',
-        borderRadius: '6px',
+        borderRadius: '4px',
         minWidth: '50px',
       }} />
     </div>
@@ -53,7 +53,7 @@ const SkeletonResultCard = () => (
       height: '14px',
       width: '40%',
       background: 'rgba(255,255,255,0.06)',
-      borderRadius: '6px',
+      borderRadius: '4px',
     }} />
   </div>
 );
@@ -416,7 +416,7 @@ function SearchPageInner() {
                   padding: '8px 16px',
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   fontSize: '13px',
                   color: 'var(--accent-primary-hover)',
                   textDecoration: 'none',
@@ -444,7 +444,7 @@ function SearchPageInner() {
       )}
 
       {/* AI-Powered Search Section */}
-      <div style={{ marginBottom: '32px', padding: '24px', background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', border: '1px solid #D8BFFF', borderRadius: '6px' }}>
+      <div style={{ marginBottom: '32px', padding: '24px', background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', border: '1px solid #D8BFFF', borderRadius: '4px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: 'var(--accent-primary)', flexShrink: 0 }}>
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
@@ -556,28 +556,28 @@ function SearchPageInner() {
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                   {aiResult.parameters.caseType && (
-                    <div style={{ padding: '8px 12px', background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)', borderRadius: '6px' }}>
+                    <div style={{ padding: '8px 12px', background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)', borderRadius: '4px' }}>
                       <p style={{ fontSize: '11px', fontWeight: '500', color: '#60a5fa', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         Case Type: <strong>{aiResult.parameters.caseType}</strong>
                       </p>
                     </div>
                   )}
                   {aiResult.parameters.nosCode && (
-                    <div style={{ padding: '8px 12px', background: 'rgba(234,179,8,0.1)', border: '1px solid #FCD34D', borderRadius: '6px' }}>
+                    <div style={{ padding: '8px 12px', background: 'rgba(234,179,8,0.1)', border: '1px solid #FCD34D', borderRadius: '4px' }}>
                       <p style={{ fontSize: '11px', fontWeight: '500', color: '#fbbf24', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         NOS Code: <strong>{aiResult.parameters.nosCode}</strong>
                       </p>
                     </div>
                   )}
                   {aiResult.parameters.settlementMinimum && (
-                    <div style={{ padding: '8px 12px', background: 'rgba(34,197,94,0.08)', border: '1px solid #86EFAC', borderRadius: '6px' }}>
+                    <div style={{ padding: '8px 12px', background: 'rgba(34,197,94,0.08)', border: '1px solid #86EFAC', borderRadius: '4px' }}>
                       <p style={{ fontSize: '11px', fontWeight: '500', color: '#4ade80', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         Settlement Min: <strong>${aiResult.parameters.settlementMinimum.toLocaleString()}</strong>
                       </p>
                     </div>
                   )}
                   {aiResult.parameters.district && (
-                    <div style={{ padding: '8px 12px', background: 'rgba(139,92,246,0.06)', border: '1px solid rgba(139,92,246,0.15)', borderRadius: '6px' }}>
+                    <div style={{ padding: '8px 12px', background: 'rgba(139,92,246,0.06)', border: '1px solid rgba(139,92,246,0.15)', borderRadius: '4px' }}>
                       <p style={{ fontSize: '11px', fontWeight: '500', color: '#6B21A8', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         District: <strong>{aiResult.parameters.district}</strong>
                       </p>
@@ -633,7 +633,7 @@ function SearchPageInner() {
               paddingRight: query ? '44px' : '16px',
               fontSize: '16px',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               background: 'var(--color-surface-0)',
               color: 'var(--color-text-primary)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -662,7 +662,7 @@ function SearchPageInner() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontSize: '18px',
                 lineHeight: 1,
                 padding: 0,
@@ -686,7 +686,7 @@ function SearchPageInner() {
       </form>
 
       {/* Search Tips Section */}
-      <div style={{ marginBottom: '24px', background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)', borderRadius: '6px', overflow: 'hidden' }}>
+      <div style={{ marginBottom: '24px', background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)', borderRadius: '4px', overflow: 'hidden' }}>
         <button
           onClick={() => setTipsExpanded(!tipsExpanded)}
           style={{
@@ -849,7 +849,7 @@ function SearchPageInner() {
             marginBottom: '12px',
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             textDecoration: 'none',
             transition: 'all 150ms ease-out',
             cursor: 'pointer',
@@ -873,7 +873,7 @@ function SearchPageInner() {
               color: 'var(--accent-primary)',
               background: 'rgba(10, 102, 194, 0.08)',
               padding: '4px 10px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               border: 'none',
               fontFamily: 'var(--font-body)',
               whiteSpace: 'nowrap',
@@ -909,7 +909,7 @@ function SearchPageInner() {
                 {rd.wr != null && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)' }}>
                     <span style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>Win Rate </span>
-                    <strong style={{ color: rd.wr >= 50 ? '#059669' : 'var(--accent-primary)' }}>{rd.wr}%</strong>
+                    <strong style={{ color: rd.wr >= 50 ? 'var(--data-positive, #176438)' : 'var(--accent-primary)' }}>{rd.wr}%</strong>
                   </span>
                 )}
                 {rd.sp != null && (
@@ -959,7 +959,7 @@ function SearchPageInner() {
                     padding: '6px 12px',
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     fontSize: '12px',
                     color: 'var(--accent-primary-hover)',
                     cursor: 'pointer',
@@ -1023,7 +1023,7 @@ function SearchPageInner() {
                       <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>{item.label}</span>
                     </div>
                     <div style={{ display: 'flex', gap: 16, fontSize: 12, fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)', flexShrink: 0 }}>
-                      <span style={{ color: item.wr >= 50 ? '#059669' : item.wr >= 35 ? '#D97706' : 'var(--accent-primary)', fontWeight: 600 }}>{item.wr}%</span>
+                      <span style={{ color: item.wr >= 50 ? 'var(--data-positive, #176438)' : item.wr >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--accent-primary)', fontWeight: 600 }}>{item.wr}%</span>
                       <span>{item.total.toLocaleString()}</span>
                       <span>{item.mo}mo</span>
                       {item.rngMd > 0 && <span style={{ color: 'var(--accent-primary)', fontWeight: 600 }}>{fmtK(item.rngMd)}</span>}
@@ -1069,11 +1069,11 @@ function SearchPageInner() {
                     <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>{cat.label}</div>
                     <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: 8 }}>{cat.opts.length} case types</div>
                     <div style={{ display: 'flex', gap: 12, fontSize: 11, fontFamily: 'var(--font-mono)' }}>
-                      <span style={{ color: avgWr >= 50 ? '#059669' : avgWr >= 35 ? '#D97706' : 'var(--accent-primary)', fontWeight: 600 }}>{avgWr}% win</span>
+                      <span style={{ color: avgWr >= 50 ? 'var(--data-positive, #176438)' : avgWr >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--accent-primary)', fontWeight: 600 }}>{avgWr}% win</span>
                       <span style={{ color: 'var(--color-text-secondary)' }}>{totalCases >= 1000 ? `${(totalCases / 1000).toFixed(0)}K cases` : `${totalCases} cases`}</span>
                     </div>
                     <div style={{ height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, marginTop: 8, overflow: 'hidden' }}>
-                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#059669' : avgWr >= 35 ? '#D97706' : 'var(--accent-primary)', borderRadius: 2 }} />
+                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? 'var(--data-positive, #176438)' : avgWr >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--accent-primary)', borderRadius: 2 }} />
                     </div>
                   </Link>
                 );
@@ -1128,7 +1128,7 @@ function SearchPageInner() {
                       padding: '16px',
                       background: 'var(--color-surface-0)',
                       border: '1px solid var(--border-default)',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       transition: 'all 0.15s ease',
                     }}
                     onMouseEnter={(e) => {

@@ -67,7 +67,7 @@ export default function DocumentIntelligencePage() {
           Upload a legal document — complaint, motion, or brief — to receive an AI-powered analysis including case type classification, key claims identified, relevant NOS codes, and comparable federal court outcomes.
         </p>
 
-        <div style={{ border: '2px dashed var(--border-default)', borderRadius: '6px', padding: '40px', textAlign: 'center', marginBottom: '24px', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ border: '2px dashed var(--border-default)', borderRadius: '4px', padding: '40px', textAlign: 'center', marginBottom: '24px', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           <input
             type="file"
             accept=".pdf,.txt,.doc,.docx"
@@ -78,17 +78,17 @@ export default function DocumentIntelligencePage() {
           <button
             onClick={handleUpload}
             disabled={!file || loading}
-            style={{ padding: '0 28px', height: '48px', background: !file || loading ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '6px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
+            style={{ padding: '0 28px', height: '48px', background: !file || loading ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
           >
             {loading ? 'Analyzing...' : 'Analyze Document'}
           </button>
           <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '12px' }}>Supported: PDF, TXT, DOC, DOCX · Max 10MB</p>
         </div>
 
-        {error && <div style={{ padding: '12px 16px', background: 'rgba(10, 102, 194, 0.12)', border: '1px solid var(--border-default)', borderRadius: '6px', color: 'var(--accent-primary)', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
+        {error && <div style={{ padding: '12px 16px', background: 'rgba(10, 102, 194, 0.12)', border: '1px solid var(--border-default)', borderRadius: '4px', color: 'var(--accent-primary)', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
 
         {analysis && (
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>Document Analysis</h2>
             <div style={{ fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>{analysis}</div>
           </div>

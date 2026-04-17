@@ -65,8 +65,8 @@ function getStatusColor(
     case 'operational':
       return {
         bg: 'rgba(34,197,94,0.1)',
-        text: '#057642',
-        indicator: '#057642',
+        text: 'var(--data-positive, #176438)',
+        indicator: 'var(--data-positive, #176438)',
       };
     case 'degraded':
       return {
@@ -77,8 +77,8 @@ function getStatusColor(
     case 'down':
       return {
         bg: '#FEF0EF',
-        text: '#CC1016',
-        indicator: '#CC1016',
+        text: 'var(--data-negative, #B01E1E)',
+        indicator: 'var(--data-negative, #B01E1E)',
       };
     default:
       return {
@@ -240,7 +240,7 @@ export default function StatusPage() {
                   style={{
                     backgroundColor: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     padding: '16px',
                     display: 'grid',
                     gridTemplateColumns: '1fr auto',
@@ -347,7 +347,7 @@ export default function StatusPage() {
             style={{
               backgroundColor: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '16px',
               textAlign: 'center',
               color: 'var(--color-text-muted)',

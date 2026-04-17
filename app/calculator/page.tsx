@@ -273,7 +273,7 @@ export default function CalculatorPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         color: '#fff',
         padding: '48px 24px 40px',
         position: 'relative',
@@ -287,8 +287,8 @@ export default function CalculatorPage() {
         }} />
         <div className="max-w-3xl mx-auto" style={{ position: 'relative' }}>
           <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 6,
-            padding: '4px 10px', marginBottom: 16,
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            padding: '4px 8px', marginBottom: 16,
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
@@ -331,7 +331,7 @@ export default function CalculatorPage() {
             borderColor: 'var(--border-default)',
             background: 'var(--color-surface-0)',
             padding: '20px',
-            borderRadius: '6px',
+            borderRadius: 4,
           }}
           onSubmit={(e) => { e.preventDefault(); calculate(); }}
         >
@@ -348,7 +348,7 @@ export default function CalculatorPage() {
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
-                  borderRadius: '6px',
+                  borderRadius: 2,
                   borderColor: caseType === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)',
                   color: caseType ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
@@ -367,7 +367,7 @@ export default function CalculatorPage() {
             </div>
 
             {/* District Note */}
-            <div style={{ padding: '12px 16px', borderRadius: '6px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '12px 16px', borderRadius: 4, background: 'var(--color-surface-1)', border: '1px solid var(--border-default)' }}>
               <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontSize: '13px', margin: 0, lineHeight: 1.5 }}>
                 Estimates reflect national averages. District-specific data is available in <a href="/cases" style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600 }}>Case Reports</a>.
               </p>
@@ -392,7 +392,7 @@ export default function CalculatorPage() {
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
-                  borderRadius: '6px',
+                  borderRadius: 2,
                   borderColor: damages === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)',
                   color: 'var(--color-text-primary)',
@@ -418,7 +418,7 @@ export default function CalculatorPage() {
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
-                  borderRadius: '6px',
+                  borderRadius: 2,
                   borderColor: represented === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)',
                   color: represented ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
@@ -447,7 +447,7 @@ export default function CalculatorPage() {
                 onChange={(e) => { setSeverity(e.target.value); setResults(null); }}
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
-                  height: '48px', borderRadius: '6px',
+                  height: '48px', borderRadius: 2,
                   borderColor: severity === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)', color: severity ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
@@ -475,7 +475,7 @@ export default function CalculatorPage() {
                 onChange={(e) => { setDuration(e.target.value); setResults(null); }}
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
-                  height: '48px', borderRadius: '6px',
+                  height: '48px', borderRadius: 2,
                   borderColor: duration === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)', color: duration ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
@@ -504,7 +504,7 @@ export default function CalculatorPage() {
                 onChange={(e) => { setEvidence(e.target.value); setResults(null); }}
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
-                  height: '48px', borderRadius: '6px',
+                  height: '48px', borderRadius: 2,
                   borderColor: evidence === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)', color: evidence ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
@@ -532,7 +532,7 @@ export default function CalculatorPage() {
                 onChange={(e) => { setPriorSettlement(e.target.value); setResults(null); }}
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
-                  height: '48px', borderRadius: '6px',
+                  height: '48px', borderRadius: 2,
                   borderColor: priorSettlement === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)', color: priorSettlement ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
@@ -560,7 +560,7 @@ export default function CalculatorPage() {
                 onChange={(e) => { setDefendants(e.target.value); setResults(null); }}
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
-                  height: '48px', borderRadius: '6px',
+                  height: '48px', borderRadius: 2,
                   borderColor: defendants === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)', color: defendants ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
@@ -591,7 +591,7 @@ export default function CalculatorPage() {
                 cursor: canCalculate ? 'pointer' : 'not-allowed',
                 opacity: canCalculate ? 1 : 0.7,
                 textTransform: 'uppercase',
-                borderRadius: '6px',
+                borderRadius: 2,
                 fontSize: '14px',
                 letterSpacing: '0.5px',
               }}
@@ -609,7 +609,7 @@ export default function CalculatorPage() {
                 fontFamily: 'var(--font-ui)',
                 cursor: 'pointer',
                 borderColor: 'var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: 2,
                 fontSize: '14px',
                 letterSpacing: '0.5px',
                 textTransform: 'uppercase',
@@ -625,7 +625,7 @@ export default function CalculatorPage() {
           <div className="mt-8 border" style={{
             borderColor: 'var(--border-default)',
             background: 'var(--color-surface-0)',
-            borderRadius: '6px',
+            borderRadius: 4,
             padding: '20px',
             animation: 'slideUpFadeIn 0.4s ease-out',
           }}>
@@ -633,20 +633,20 @@ export default function CalculatorPage() {
               Estimated Settlement Range
             </h2>
             <p className="text-sm mb-6" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>
-              {results.caseLabel} case · {damages ? `$${Number(damages).toLocaleString()}` : ''} in claimed damages
+              {results.caseLabel} case · {damages ? <span style={{ fontFamily: 'var(--font-mono)' }}>${Number(damages).toLocaleString()}</span> : ''} in claimed damages
               {represented === 'yes' ? ' · Attorney represented' : ''}
             </p>
 
             {/* Animated Settlement Range Bar */}
             <div className="mb-6" style={{ position: 'relative' }}>
               <div style={{ position: 'relative', height: '40px', marginBottom: '8px' }}>
-                <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: 'rgba(59,130,246,0.08)', borderRadius: '4px' }} />
+                <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: 'rgba(59,130,246,0.08)', borderRadius: 3 }} />
                 <div style={{
                   position: 'absolute', top: '16px', height: '8px',
                   left: `${Math.max(0, (results.p10 / results.p90) * 100 * 0.2)}%`,
                   right: `${Math.max(0, 100 - 100)}%`,
                   background: 'linear-gradient(90deg, #B0D0F5, #70B5F9, var(--accent-primary), #70B5F9, #B0D0F5)',
-                  borderRadius: '4px',
+                  borderRadius: 3,
                   animation: 'slideUpFadeIn 0.6s ease-out',
                 }} />
                 <div style={{
@@ -671,7 +671,7 @@ export default function CalculatorPage() {
                 <div key={i} className="p-4 text-center" style={{
                   background: col.highlight ? 'rgba(59,130,246,0.08)' : 'var(--color-surface-1)',
                   border: `1px solid ${col.highlight ? 'var(--accent-primary)' : 'var(--border-default)'}`,
-                  borderRadius: '6px',
+                  borderRadius: 4,
                   ...(col.highlight ? { transform: 'scale(1.02)' } : {}),
                 }}>
                   <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: col.highlight ? 'var(--accent-primary)' : 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
@@ -697,7 +697,7 @@ export default function CalculatorPage() {
               <div className="p-6 flex flex-col items-center justify-center" style={{
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: 4,
                 minHeight: '200px',
               }}>
                 <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
@@ -724,7 +724,7 @@ export default function CalculatorPage() {
                     flexDirection: 'column',
                     border: '1px solid var(--border-default)',
                   }}>
-                    <p className="text-3xl font-black" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-ui)', marginBottom: '2px' }}>
+                    <p className="text-3xl font-black" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', marginBottom: '2px' }}>
                       {(results.winRate * 100).toFixed(0)}%
                     </p>
                     <p className="text-[10px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>of cases</p>
@@ -735,7 +735,7 @@ export default function CalculatorPage() {
               <div className="p-6 flex flex-col items-center justify-center" style={{
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: 4,
                 minHeight: '200px',
               }}>
                 <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
@@ -755,7 +755,7 @@ export default function CalculatorPage() {
                     width: '100%',
                     height: '4px',
                     background: 'var(--accent-primary)',
-                    borderRadius: '6px',
+                    borderRadius: 2,
                   }} />
                   <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>from filing to resolution</p>
                 </div>
@@ -764,17 +764,17 @@ export default function CalculatorPage() {
 
             {/* Attorney Impact & Sample Size */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-              <div className="p-5" style={{ background: 'rgba(34,197,94,0.1)', border: '1px solid #057642', borderRadius: '6px' }}>
+              <div className="p-5" style={{ background: 'rgba(34,197,94,0.1)', border: '1px solid var(--data-positive, #176438)', borderRadius: 4 }}>
                 <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>With Attorney</p>
-                <p className="text-2xl font-black" style={{ color: '#057642', fontFamily: 'var(--font-mono)' }}>{results.attorneyWinRate}%</p>
+                <p className="text-2xl font-black" style={{ color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>{results.attorneyWinRate}%</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>win rate</p>
               </div>
-              <div className="p-5" style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid #CC1016', borderRadius: '6px' }}>
+              <div className="p-5" style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid var(--data-negative, #B01E1E)', borderRadius: 4 }}>
                 <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>Pro Se</p>
-                <p className="text-2xl font-black" style={{ color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{results.proSeWinRate}%</p>
+                <p className="text-2xl font-black" style={{ color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>{results.proSeWinRate}%</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>win rate</p>
               </div>
-              <div className="p-5" style={{ background: 'rgba(59,130,246,0.08)', border: '1px solid var(--accent-primary)', borderRadius: '6px' }}>
+              <div className="p-5" style={{ background: 'rgba(59,130,246,0.08)', border: '1px solid var(--accent-primary)', borderRadius: 4 }}>
                 <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>Sample Size</p>
                 <p className="text-2xl font-black" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>n={results.sampleSize.toLocaleString()}</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>cases analyzed</p>
@@ -782,7 +782,7 @@ export default function CalculatorPage() {
             </div>
 
             {/* Detailed Breakdown */}
-            <div className="mb-6 p-6" style={{ background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '6px' }}>
+            <div className="mb-6 p-6" style={{ background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4 }}>
               <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
                 Calculation Breakdown
               </h3>
@@ -799,49 +799,49 @@ export default function CalculatorPage() {
                   {results.breakdown.severityMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Severity adjustment</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.severityMult > 1 ? '#059669' : '#B91C1C', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.severityMult.toFixed(1)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.severityMult > 1 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.severityMult.toFixed(1)}</td>
                     </tr>
                   )}
                   {results.breakdown.durationMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Duration adjustment</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.durationMult > 1 ? '#059669' : '#B91C1C', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.durationMult.toFixed(1)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.durationMult > 1 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.durationMult.toFixed(1)}</td>
                     </tr>
                   )}
                   {results.breakdown.attorneyMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Attorney representation boost</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: '#34d399', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.attorneyMult.toFixed(2)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.attorneyMult.toFixed(2)}</td>
                     </tr>
                   )}
                   {results.breakdown.evidenceMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Evidence strength adjustment</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.evidenceMult > 1 ? '#059669' : '#B91C1C', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.evidenceMult.toFixed(1)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.evidenceMult > 1 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.evidenceMult.toFixed(1)}</td>
                     </tr>
                   )}
                   {results.breakdown.settlementMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Prior settlement adjustment</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.settlementMult > 1 ? '#059669' : '#B91C1C', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.settlementMult.toFixed(2)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.settlementMult > 1 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.settlementMult.toFixed(2)}</td>
                     </tr>
                   )}
                   {results.breakdown.defendantsMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Multiple defendants adjustment</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.defendantsMult > 1 ? '#059669' : '#B91C1C', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.defendantsMult.toFixed(2)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.defendantsMult > 1 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.defendantsMult.toFixed(2)}</td>
                     </tr>
                   )}
                   <tr>
-                    <td style={{ padding: '10px 0', color: 'var(--color-text-primary)', fontWeight: 600 }}>Estimated median settlement</td>
-                    <td style={{ padding: '10px 0', textAlign: 'right', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', fontSize: '16px' }}>{fmt(results.median)}</td>
+                    <td style={{ padding: '12px 0', color: 'var(--color-text-primary)', fontWeight: 600 }}>Estimated median settlement</td>
+                    <td style={{ padding: '12px 0', textAlign: 'right', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', fontSize: '16px' }}>{fmt(results.median)}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             {/* Scenario Comparison */}
-            <div className="mb-6 p-6" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px' }}>
+            <div className="mb-6 p-6" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                 <h3 className="text-[12px] font-bold uppercase tracking-[0.8px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
                   Scenario Comparison
@@ -869,7 +869,7 @@ export default function CalculatorPage() {
                       background: scenarios.length >= 3 ? 'var(--border-default)' : 'var(--accent-primary)',
                       color: 'var(--color-surface-0)',
                       border: 'none',
-                      borderRadius: '6px',
+                      borderRadius: 2,
                       cursor: scenarios.length >= 3 ? 'not-allowed' : 'pointer',
                       fontFamily: 'var(--font-body)',
                       textTransform: 'uppercase',
@@ -888,7 +888,7 @@ export default function CalculatorPage() {
                         background: 'var(--color-surface-0)',
                         color: 'var(--color-text-primary)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '6px',
+                        borderRadius: 2,
                         cursor: 'pointer',
                         fontFamily: 'var(--font-body)',
                         textTransform: 'uppercase',
@@ -935,7 +935,7 @@ export default function CalculatorPage() {
               const realCtx = getRealDataForCategory(caseType);
               if (!realCtx) return null;
               return (
-                <div className="mb-6 p-6" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid #BAE6FD', borderRadius: '6px' }}>
+                <div className="mb-6 p-6" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid #BAE6FD', borderRadius: 4 }}>
                   <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-body)' }}>
                     How This Compares to Federal Data
                   </h3>
@@ -943,13 +943,13 @@ export default function CalculatorPage() {
                     <div>
                       <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: 'var(--color-text-secondary)' }}>Actual Win Rate</p>
                       <p className="text-xl font-bold" style={{
-                        color: realCtx.wr >= 50 ? '#059669' : 'var(--accent-primary)',
+                        color: realCtx.wr >= 50 ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
                         fontFamily: 'var(--font-mono)',
                       }}>{realCtx.wr.toFixed(1)}%</p>
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: 'var(--color-text-secondary)' }}>Settlement Rate</p>
-                      <p className="text-xl font-bold" style={{ color: '#D97706', fontFamily: 'var(--font-mono)' }}>{realCtx.sp.toFixed(1)}%</p>
+                      <p className="text-xl font-bold" style={{ color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-mono)' }}>{realCtx.sp.toFixed(1)}%</p>
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: 'var(--color-text-secondary)' }}>Median Duration</p>
@@ -974,7 +974,7 @@ export default function CalculatorPage() {
               const nos = CATEGORY_PRIMARY_NOS[caseType];
               if (!nos) return null;
               return (
-                <div className="mb-6 text-center p-6" style={{ background: 'var(--accent-primary)', borderRadius: '6px' }}>
+                <div className="mb-6 text-center p-6" style={{ background: 'var(--accent-primary)', borderRadius: 4 }}>
                   <p className="text-sm mb-3" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
                     See circuit breakdowns, judge data, and detailed outcomes
                   </p>
@@ -987,7 +987,7 @@ export default function CalculatorPage() {
                       background: 'var(--accent-primary)',
                       color: 'var(--color-surface-0)',
                       padding: '12px 28px',
-                      borderRadius: '6px',
+                      borderRadius: 2,
                       fontSize: 14,
                       fontWeight: 600,
                       textDecoration: 'none',
@@ -1007,7 +1007,7 @@ export default function CalculatorPage() {
             <div className="mb-4 flex items-center gap-3 flex-wrap" style={{
               padding: '12px 16px',
               background: 'var(--color-surface-0)',
-              borderRadius: '4px',
+              borderRadius: 3,
               fontSize: '11px',
               color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-body)',
@@ -1022,11 +1022,11 @@ export default function CalculatorPage() {
 
             {/* Results disclaimer */}
             <div className="p-4 rounded" style={{
-              color: '#fbbf24',
+              color: 'var(--wrn-txt, #7A5800)',
               fontFamily: 'var(--font-body)',
               background: 'rgba(234,179,8,0.08)',
               border: '1px solid #FCD34D',
-              borderLeft: '3px solid #F59E0B',
+              borderLeft: '3px solid var(--wrn-txt, #7A5800)',
               fontSize: '12px',
               lineHeight: '1.6',
             }}>
@@ -1039,9 +1039,9 @@ export default function CalculatorPage() {
         <div className="mt-8 border" style={{
           borderColor: 'var(--border-default)',
           background: 'var(--color-surface-0)',
-          borderRadius: '6px',
+          borderRadius: 4,
           padding: '32px',
-          borderLeft: '3px solid #F59E0B',
+          borderLeft: '3px solid var(--wrn-txt, #7A5800)',
         }}>
           <h2 className="text-xs font-bold uppercase tracking-[0.8px] mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Important Disclaimer
@@ -1094,7 +1094,7 @@ export default function CalculatorPage() {
                 style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: 4,
                   padding: '24px',
                 }}
               >
@@ -1131,7 +1131,7 @@ export default function CalculatorPage() {
                   display: 'block',
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: 4,
                   padding: '24px',
                   textDecoration: 'none',
                   transition: 'all 0.2s',

@@ -229,7 +229,7 @@ const TabbedFeatures: React.FC = () => {
                 width: '100%',
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '40px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
                 animation: 'fadeInContent 0.4s ease-in 0.05s both',
@@ -333,7 +333,7 @@ const WinRatePreview: React.FC = () => (
             style={{
               height: '8px',
               backgroundColor: 'var(--color-surface-1)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               overflow: 'hidden',
             }}
           >
@@ -342,7 +342,7 @@ const WinRatePreview: React.FC = () => (
                 height: '100%',
                 backgroundColor: 'var(--accent-primary)',
                 width: `${item.rate}%`,
-                borderRadius: '6px',
+                borderRadius: '4px',
               }}
             />
           </div>
@@ -378,7 +378,7 @@ const SettlementPreview: React.FC = () => (
             padding: '16px',
             backgroundColor: item.label === 'Median' ? '#F0F0F0' : 'var(--color-surface-0)',
             border: item.label === 'Median' ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             textAlign: 'center',
           }}
         >
@@ -420,7 +420,7 @@ const JudgeAnalyticsPreview: React.FC = () => (
             justifyContent: 'space-between',
             padding: '12px',
             backgroundColor: 'var(--color-surface-0)',
-            borderRadius: '6px',
+            borderRadius: '4px',
           }}
         >
           <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>{item.label}</span>
@@ -459,7 +459,7 @@ const TimelinePreview: React.FC = () => (
             style={{
               height: '6px',
               backgroundColor: 'var(--color-surface-1)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               overflow: 'hidden',
             }}
           >
@@ -468,7 +468,7 @@ const TimelinePreview: React.FC = () => (
                 height: '100%',
                 backgroundColor: 'var(--color-text-secondary)',
                 width: `${(item.months / 30) * 100}%`,
-                borderRadius: '6px',
+                borderRadius: '4px',
               }}
             />
           </div>
@@ -542,7 +542,7 @@ const AIPredictionsPreview: React.FC = () => (
       style={{
         padding: '20px',
         backgroundColor: 'rgba(255,255,255,0.06)',
-        borderRadius: '6px',
+        borderRadius: '4px',
         marginBottom: '20px',
       }}
     >
@@ -588,7 +588,7 @@ const AIPredictionsPreview: React.FC = () => (
             style={{
               height: '6px',
               backgroundColor: 'var(--color-surface-1)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               overflow: 'hidden',
             }}
           >
@@ -597,7 +597,7 @@ const AIPredictionsPreview: React.FC = () => (
                 height: '100%',
                 backgroundColor: item.prob > 50 ? 'var(--accent-primary)' : item.prob > 25 ? 'var(--color-text-secondary)' : '#B0BEC5',
                 width: `${item.prob}%`,
-                borderRadius: '6px',
+                borderRadius: '4px',
               }}
             />
           </div>

@@ -474,7 +474,7 @@ export default function AnnualReportCapture() {
         padding: '48px 32px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
-        borderRadius: '6px',
+        borderRadius: '4px',
         textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}>
@@ -568,7 +568,7 @@ export default function AnnualReportCapture() {
             padding: '24px',
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             display: 'flex',
             flexDirection: 'column',
             gap: '16px',
@@ -658,7 +658,7 @@ export default function AnnualReportCapture() {
             padding: '24px',
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
           }}>
             <div style={{ marginBottom: '24px' }}>

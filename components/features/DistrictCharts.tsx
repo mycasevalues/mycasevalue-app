@@ -39,7 +39,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
           }}
         >
           <h3
@@ -63,7 +63,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                 contentStyle={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',

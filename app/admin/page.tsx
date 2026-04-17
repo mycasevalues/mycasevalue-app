@@ -276,7 +276,7 @@ export default function AdminPage() {
                       alignItems: 'center',
                       padding: '12px',
                       backgroundColor: 'var(--color-surface-0)',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                     }}
                   >
                     <div
@@ -529,7 +529,7 @@ export default function AdminPage() {
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Manage featured news and updates for homepage
               </p>
-              <div style={{ padding: '32px', backgroundColor: 'var(--color-surface-0)', borderRadius: '6px', textAlign: 'center' }}>
+              <div style={{ padding: '32px', backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', textAlign: 'center' }}>
                 <p style={{ fontSize: '14px', color: 'var(--text3, #78766C)', margin: 0 }}>No entries yet. Create your first one.</p>
               </div>
             </div>
@@ -594,7 +594,7 @@ export default function AdminPage() {
               <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
                 Data Quality Check
               </h2>
-              <div style={{ marginBottom: '16px', padding: '12px', backgroundColor: 'rgba(34,197,94,0.06)', borderRadius: '6px', border: '1px solid rgba(34,197,94,0.15)' }}>
+              <div style={{ marginBottom: '16px', padding: '12px', backgroundColor: 'rgba(34,197,94,0.06)', borderRadius: '4px', border: '1px solid rgba(34,197,94,0.15)' }}>
                 <p style={{ fontSize: '14px', color: '#065f46', margin: 0 }}>
                   Last check: 2026-04-07 at 13:45 - All systems nominal
                 </p>

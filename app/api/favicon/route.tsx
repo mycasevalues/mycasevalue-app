@@ -25,7 +25,7 @@ export async function GET(request: Request) {
           width: '100%',
           height: '100%',
           backgroundColor: '#18181A',
-          borderRadius: '6px',
+          borderRadius: '4px',
           color: '#C4882A',
           fontFamily: 'monospace',
           fontWeight: 'bold',

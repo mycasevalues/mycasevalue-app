@@ -86,7 +86,7 @@ export default function RelatedEntities({ context }: RelatedEntitiesProps) {
                 label={ct.label}
                 sublabel={`NOS ${ct.nos}`}
                 stat={ct.winRate != null ? `${ct.winRate}%` : undefined}
-                statColor={ct.winRate && ct.winRate >= 50 ? '#057642' : ct.winRate && ct.winRate >= 35 ? '#B45309' : '#B91C1C'}
+                statColor={ct.winRate && ct.winRate >= 50 ? 'var(--data-positive, #176438)' : ct.winRate && ct.winRate >= 35 ? '#B45309' : '#B91C1C'}
               />
             ))}
           </div>

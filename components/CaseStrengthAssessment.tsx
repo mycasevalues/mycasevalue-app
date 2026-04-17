@@ -594,7 +594,7 @@ export default function CaseStrengthAssessment() {
                     gap: '8px',
                     cursor: 'pointer',
                     padding: '12px 16px',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     backgroundColor:
                       answers[currentQuestion.id] === option.value
                         ? '#E7F3FF'
@@ -669,7 +669,7 @@ export default function CaseStrengthAssessment() {
                 backgroundColor: 'white',
                 color: 'var(--accent-primary)',
                 border: '1px solid var(--accent-primary)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontSize: '14px',
                 fontWeight: '600',
                 cursor: 'pointer',
@@ -694,7 +694,7 @@ export default function CaseStrengthAssessment() {
                   backgroundColor: isAnswered ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
                   color: 'white',
                   border: 'none',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   fontSize: '14px',
                   fontWeight: '600',
                   cursor: isAnswered ? 'pointer' : 'not-allowed',
@@ -726,7 +726,7 @@ export default function CaseStrengthAssessment() {
                   backgroundColor: isAnswered ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
                   color: 'white',
                   border: 'none',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   fontSize: '14px',
                   fontWeight: '600',
                   cursor: isAnswered ? 'pointer' : 'not-allowed',
@@ -850,7 +850,7 @@ export default function CaseStrengthAssessment() {
             >
               Factor Breakdown
             </h3>
-            <div style={{ backgroundColor: 'var(--color-surface-0)', padding: '16px', borderRadius: '6px' }}>
+            <div style={{ backgroundColor: 'var(--color-surface-0)', padding: '16px', borderRadius: '4px' }}>
               {selectedCaseType.questions.map((q) => {
                 const answered = answers[q.id] !== undefined;
                 const isYes = answers[q.id] === true;
@@ -896,7 +896,7 @@ export default function CaseStrengthAssessment() {
           </div>
 
           {/* Comparison section */}
-          <div style={{ marginBottom: '24px', backgroundColor: 'rgba(59,130,246,0.06)', padding: '20px', borderRadius: '6px' }}>
+          <div style={{ marginBottom: '24px', backgroundColor: 'rgba(59,130,246,0.06)', padding: '20px', borderRadius: '4px' }}>
             <h3
               style={{
                 fontSize: '16px',
@@ -1019,7 +1019,7 @@ export default function CaseStrengthAssessment() {
                 backgroundColor: 'white',
                 color: 'var(--accent-primary)',
                 border: '1px solid var(--accent-primary)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontSize: '14px',
                 fontWeight: '600',
                 cursor: 'pointer',
@@ -1044,7 +1044,7 @@ export default function CaseStrengthAssessment() {
                 backgroundColor: 'var(--accent-primary)',
                 color: 'white',
                 border: 'none',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontSize: '14px',
                 fontWeight: '600',
                 cursor: 'pointer',

@@ -366,7 +366,7 @@ export default function SettingsPage() {
                 <div
                   className="px-3 py-1 rounded-sm text-sm font-semibold whitespace-nowrap ml-4"
                   style={{
-                    backgroundColor: '#059669',
+                    backgroundColor: 'var(--data-positive, #176438)',
                     color: 'white',
                   }}
                 >

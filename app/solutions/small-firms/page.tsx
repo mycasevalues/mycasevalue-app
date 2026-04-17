@@ -110,7 +110,7 @@ export default function SmallFirmsPage() {
               background: 'var(--gold, #C4882A)',
               color: '#ffffff',
               padding: '10px 20px',
-              borderRadius: 6,
+              borderRadius: 4,
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
@@ -129,7 +129,7 @@ export default function SmallFirmsPage() {
               background: 'transparent',
               color: 'rgba(255,255,255,0.85)',
               padding: '10px 20px',
-              borderRadius: 6,
+              borderRadius: 4,
               border: '1px solid rgba(255,255,255,0.2)',
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
@@ -162,7 +162,7 @@ export default function SmallFirmsPage() {
               <div key={f.title} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
@@ -216,7 +216,7 @@ export default function SmallFirmsPage() {
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
-              borderRadius: '6px',
+              borderRadius: '4px',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
@@ -231,7 +231,7 @@ export default function SmallFirmsPage() {
               background: 'transparent',
               color: 'var(--color-text-primary)',
               padding: '0.875rem 2rem',
-              borderRadius: '6px',
+              borderRadius: '4px',
               border: '1.5px solid var(--border-default)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
@@ -271,7 +271,7 @@ export default function SmallFirmsPage() {
           <div style={{
             background: 'var(--color-surface-1)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '20px 16px',
             marginBottom: '32px',
           }}>
@@ -334,7 +334,7 @@ export default function SmallFirmsPage() {
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
-              borderRadius: '6px',
+              borderRadius: '4px',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
@@ -368,7 +368,7 @@ export default function SmallFirmsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -401,7 +401,7 @@ export default function SmallFirmsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -434,7 +434,7 @@ export default function SmallFirmsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',

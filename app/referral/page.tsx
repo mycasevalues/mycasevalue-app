@@ -81,7 +81,7 @@ export default function ReferralPage() {
       <div style={{ padding: '40px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* How It Works */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '6px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               How It Works
             </h2>
@@ -103,7 +103,7 @@ export default function ReferralPage() {
           </div>
 
           {/* Your Referral Link */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '6px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
             <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Your Referral Link
             </h2>
@@ -126,12 +126,12 @@ export default function ReferralPage() {
             ) : referralCode ? (
               <div>
                 <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                  <code style={{ flex: 1, padding: '12px 16px', backgroundColor: 'var(--color-surface-1)', borderRadius: '6px', fontSize: '14px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  <code style={{ flex: 1, padding: '12px 16px', backgroundColor: 'var(--color-surface-1)', borderRadius: '4px', fontSize: '14px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     https://www.mycasevalues.com/?ref={referralCode}
                   </code>
                   <button
                     onClick={handleCopy}
-                    style={{ padding: '12px 20px', backgroundColor: copied ? '#065F46' : 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '6px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background-color 0.2s' }}
+                    style={{ padding: '12px 20px', backgroundColor: copied ? '#065F46' : 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background-color 0.2s' }}
                   >
                     {copied ? 'Copied!' : 'Copy Link'}
                   </button>
@@ -143,7 +143,7 @@ export default function ReferralPage() {
             ) : (
               <button
                 onClick={handleGenerate}
-                style={{ padding: '12px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '6px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase' }}
+                style={{ padding: '12px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase' }}
               >
                 Generate Referral Code
               </button>
@@ -151,7 +151,7 @@ export default function ReferralPage() {
           </div>
 
           {/* Reward Tiers */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '6px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)' }}>
+          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)' }}>
             <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Reward Tiers
             </h2>

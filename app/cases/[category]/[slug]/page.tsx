@@ -109,7 +109,7 @@ function StatsCard({
     <div
       style={{
         padding: '20px',
-        borderRadius: '6px',
+        borderRadius: '4px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
         textAlign: 'center',
@@ -134,7 +134,7 @@ function StatsCard({
       >
         {value}
         {shouldShowDot && (
-          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? '#057642' : casesCount >= 1000 ? '#C37D16' : casesCount >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)' }} />
+          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? 'var(--data-positive, #176438)' : casesCount >= 1000 ? '#C37D16' : casesCount >= 100 ? 'var(--data-negative, #B01E1E)' : 'var(--text4, #A8A6A0)' }} />
         )}
       </p>
       {subtitle && (
@@ -172,7 +172,7 @@ export default async function CaseTypeDetailPage({
             style={{
               display: 'inline-block',
               padding: '10px 20px',
-              borderRadius: 6,
+              borderRadius: 4,
               background: 'var(--gold, #C4882A)',
               color: '#ffffff',
               textDecoration: 'none',
@@ -335,7 +335,7 @@ export default async function CaseTypeDetailPage({
           style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '32px',
             marginBottom: '40px',
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
@@ -378,7 +378,7 @@ export default async function CaseTypeDetailPage({
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
             }}
@@ -411,7 +411,7 @@ export default async function CaseTypeDetailPage({
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
             }}
@@ -496,7 +496,7 @@ export default async function CaseTypeDetailPage({
           style={{
             background: 'var(--accent-primary)',
             color: 'var(--color-text-inverse)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '48px 40px',
             textAlign: 'center',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',

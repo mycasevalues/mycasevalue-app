@@ -59,7 +59,7 @@ export default function JudgeSectionLoader({ nosCode, districtId, mode }: JudgeS
         <div style={{
           background: 'var(--color-surface-0)',
           border: '1px solid rgba(255,255,255,0.08)',
-          borderRadius: '6px',
+          borderRadius: '4px',
           padding: 'clamp(24px, 4vw, 32px)',
         }}>
           <div style={{

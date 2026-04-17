@@ -68,7 +68,7 @@ export default function BrowseNav() {
       style={{
         height: 40,
         background: 'var(--chrome-bg-dark)',
-        borderBottom: '1px solid #1A2E48',
+        borderBottom: '1px solid var(--chrome-border, #2A3F58)',
       }}
       aria-label="Browse navigation"
     >
@@ -83,8 +83,8 @@ export default function BrowseNav() {
                 key={item.id}
                 style={{
                   width: 1,
-                  background: '#1A2E48',
-                  margin: '9px 0',
+                  background: 'var(--chrome-border, #2A3F58)',
+                  margin: '8px 0',
                   flexShrink: 0,
                 }}
               />
@@ -133,8 +133,8 @@ export default function BrowseNav() {
                     fontSize: 9,
                     fontWeight: 700,
                     borderRadius: 2,
-                    padding: '1px 5px',
-                    marginLeft: 5,
+                    padding: '2px 4px',
+                    marginLeft: 4,
                     lineHeight: '14px',
                   }}
                 >

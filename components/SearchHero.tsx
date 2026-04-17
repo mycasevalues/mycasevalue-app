@@ -91,8 +91,8 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
           display: 'flex',
           flexWrap: 'wrap',
           alignItems: 'center',
-          gap: 6,
-          marginTop: 10,
+          gap: 8,
+          marginTop: 8,
         }}
       >
         <span
@@ -112,7 +112,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             onClick={() => handleExample(ex)}
             style={{
               fontSize: 11,
-              padding: '3px 8px',
+              padding: '4px 8px',
               borderRadius: 2,
               border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid var(--bdr, #E2DFD8)',
               color: dark ? '#6B7280' : 'var(--link, #0A50A2)',

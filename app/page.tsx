@@ -108,10 +108,10 @@ export default function HomePage() {
         style={{
           background: 'var(--card, #FFFFFF)',
           borderBottom: '1px solid var(--bdr, #E2DFD8)',
-          padding: '22px 30px 18px',
+          padding: '24px 32px 16px',
         }}
       >
-        <div style={{ maxWidth: 820, margin: '0 auto' }}>
+        <div style={{ maxWidth: 824, margin: '0 auto' }}>
           {/* Eyebrow */}
           <p
             style={{
@@ -177,7 +177,7 @@ export default function HomePage() {
                 display: 'flex',
                 alignItems: 'center',
                 padding: '0 12px',
-                background: '#FFFFFF',
+                background: 'var(--card, #FFFFFF)',
                 gap: 8,
               }}
             >
@@ -251,8 +251,8 @@ export default function HomePage() {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: 14,
-              marginTop: 7,
+              gap: 12,
+              marginTop: 8,
             }}
           >
             <span
@@ -384,9 +384,9 @@ export default function HomePage() {
           style={{
             maxWidth: 1200,
             margin: '0 auto',
-            padding: '18px 22px',
+            padding: '16px 24px',
             display: 'flex',
-            gap: 20,
+            gap: 24,
           }}
         >
           {/* Left: form + recent searches */}
@@ -411,7 +411,7 @@ export default function HomePage() {
                 border: '1px solid var(--gold-border, #E8D09C)',
                 borderRadius: 2,
                 padding: '16px',
-                marginBottom: 14,
+                marginBottom: 16,
               }}
             >
               {/* 2×3 grid of form fields */}
@@ -419,7 +419,7 @@ export default function HomePage() {
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
-                  gap: '10px 14px',
+                  gap: '8px 12px',
                 }}
               >
                 {[
@@ -450,8 +450,8 @@ export default function HomePage() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        padding: '0 9px',
-                        background: '#FFFFFF',
+                        padding: '0 8px',
+                        background: 'var(--card, #FFFFFF)',
                         border: '1px solid var(--bdr, #E2DFD8)',
                         borderRadius: 2,
                         fontSize: 12,
@@ -745,7 +745,7 @@ export default function HomePage() {
           style={{
             maxWidth: 1200,
             margin: '0 auto',
-            padding: '18px 22px',
+            padding: '16px 24px',
           }}
         >
           <div
@@ -785,7 +785,7 @@ export default function HomePage() {
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: 14,
+              gap: 12,
             }}
             className="hp-card-grid"
           >
@@ -796,7 +796,7 @@ export default function HomePage() {
                 className="hp-browse-card"
                 style={{
                   display: 'block',
-                  background: '#FFFFFF',
+                  background: 'var(--card, #FFFFFF)',
                   border: '1px solid var(--bdr, #E2DFD8)',
                   borderRadius: 2,
                   borderTop: '3px solid var(--bdr, #E2DFD8)',
@@ -846,7 +846,7 @@ export default function HomePage() {
       {/* ═══ DISCLAIMER ═══ */}
       <div
         style={{
-          padding: '10px 22px',
+          padding: '12px 24px',
           borderTop: '1px solid var(--bdr, #E2DFD8)',
           background: 'var(--card, #FFFFFF)',
           textAlign: 'center',

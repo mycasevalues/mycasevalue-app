@@ -53,7 +53,7 @@ export default function DashboardTabs({
   const referralLink = `${SITE_URL}/ref/${btoa(userEmail).slice(0, 8)}`;
 
   const tabStyle = (key: Tab): React.CSSProperties => ({
-    padding: '10px 18px', borderRadius: '6px', border: 'none',
+    padding: '10px 18px', borderRadius: '4px', border: 'none',
     background: activeTab === key ? 'var(--accent-primary)' : 'transparent',
     color: activeTab === key ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)',
     fontSize: '13px', fontWeight: 600, cursor: 'pointer',
@@ -62,14 +62,14 @@ export default function DashboardTabs({
   });
 
   const cardStyle: React.CSSProperties = {
-    background: 'var(--color-surface-0)', borderRadius: '6px', padding: '24px',
+    background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px',
     border: '1px solid var(--border-default)',
   };
 
   return (
     <div>
       {/* Tabs */}
-      <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-0)', borderRadius: '6px', padding: '4px', border: '1px solid var(--border-default)', marginBottom: 24, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-0)', borderRadius: '4px', padding: '4px', border: '1px solid var(--border-default)', marginBottom: 24, flexWrap: 'wrap' }}>
         {TABS.map(tab => (
           <button key={tab.key} onClick={() => setActiveTab(tab.key)} style={tabStyle(tab.key)}>
             <span>{tab.icon}</span> {tab.label}
@@ -95,7 +95,7 @@ export default function DashboardTabs({
             {[
               { label: 'Reports Generated', value: reportsCount, color: 'var(--accent-primary)' },
               { label: 'Saved Reports', value: savedCount, color: 'var(--color-success)' },
-              { label: 'Active Alerts', value: alertsCount, color: '#D97706' },  /* Note: warning color kept as-is */
+              { label: 'Active Alerts', value: alertsCount, color: 'var(--wrn-txt, #7A5800)' },  /* Note: warning color kept as-is */
             ].map(stat => (
               <div key={stat.label} style={{ ...cardStyle, textAlign: 'center' }}>
                 <div style={{ fontSize: '32px', fontWeight: 600, color: stat.color, fontFamily: 'var(--font-mono)' }}>{stat.value}</div>
@@ -150,7 +150,7 @@ export default function DashboardTabs({
               placeholder="Search history..."
               value={historySearch}
               onChange={e => { setHistorySearch(e.target.value); setHistoryPage(0); }}
-              style={{ padding: '8px 14px', border: '1px solid var(--border-default)', borderRadius: '6px', fontSize: '13px', width: 200, fontFamily: 'var(--font-body)' }}
+              style={{ padding: '8px 14px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '13px', width: 200, fontFamily: 'var(--font-body)' }}
             />
           </div>
 
@@ -198,14 +198,14 @@ export default function DashboardTabs({
             {savedReports.length > 0 ? (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 12 }}>
                 {savedReports.map((r, i) => (
-                  <div key={i} style={{ padding: '16px', background: 'var(--color-surface-1)', borderRadius: '6px', border: '1px solid var(--border-default)' }}>
+                  <div key={i} style={{ padding: '16px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
                     <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 4 }}>{r.category}</div>
                     {r.district && <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: 8 }}>{r.district}</div>}
                     <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', marginBottom: 10 }}>
                       Saved {new Date(r.viewed_at).toLocaleDateString()}
                     </div>
                     <div style={{ display: 'flex', gap: 8 }}>
-                      <Link href={`/nos/${r.category}`} style={{ fontSize: '12px', color: '#FFF', background: 'var(--accent-primary)', padding: '4px 12px', borderRadius: 6, textDecoration: 'none', fontWeight: 600 }}>View</Link>
+                      <Link href={`/nos/${r.category}`} style={{ fontSize: '12px', color: '#FFF', background: 'var(--accent-primary)', padding: '4px 12px', borderRadius: 4, textDecoration: 'none', fontWeight: 600 }}>View</Link>
                     </div>
                   </div>
                 ))}
@@ -225,9 +225,9 @@ export default function DashboardTabs({
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>Docket Monitoring Alerts</h3>
               <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>0 / 10 active (beta limit)</span>
             </div>
-            <div style={{ padding: '32px', textAlign: 'center', background: 'var(--color-surface-1)', borderRadius: '6px', border: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '32px', textAlign: 'center', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: 16 }}>No active alerts. Set up monitoring for case numbers, case types, or judge assignments.</p>
-              <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '6px', padding: '20px', maxWidth: 400, margin: '0 auto' }}>
+              <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: '20px', maxWidth: 400, margin: '0 auto' }}>
                 <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-primary-hover)', marginBottom: 10 }}>New Alert</p>
                 <input
                   type="text"
@@ -286,7 +286,7 @@ export default function DashboardTabs({
               <button
                 onClick={() => setWeeklyDigest(!weeklyDigest)}
                 style={{
-                  width: 44, height: 24, borderRadius: '6px', border: 'none',
+                  width: 44, height: 24, borderRadius: '4px', border: 'none',
                   background: weeklyDigest ? 'var(--accent-primary)' : 'var(--border-default)',
                   position: 'relative', cursor: 'pointer', transition: 'background 0.2s',
                 }}
@@ -308,7 +308,7 @@ export default function DashboardTabs({
               <code style={{ flex: 1, fontSize: '13px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{apiKey}</code>
               <button
                 onClick={() => { navigator.clipboard.writeText(apiKey); setCopied(true); setTimeout(() => setCopied(false), 2000); }}
-                style={{ padding: '6px 12px', background: copied ? '#057642' : 'var(--accent-primary)', color: '#FFF', border: 'none', borderRadius: '4px', fontSize: '11px', fontWeight: 600, cursor: 'pointer' }}
+                style={{ padding: '6px 12px', background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)', color: '#FFF', border: 'none', borderRadius: '4px', fontSize: '11px', fontWeight: 600, cursor: 'pointer' }}
               >
                 {copied ? 'Copied!' : 'Copy'}
               </button>
@@ -323,17 +323,17 @@ export default function DashboardTabs({
 
           {/* Danger Zone */}
           <div style={{ ...cardStyle, borderColor: '#FECACA' }}>
-            <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#CC1016', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>Danger Zone</h3>
+            <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--data-negative, #B01E1E)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>Danger Zone</h3>
             <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: 12 }}>Permanently delete your account and all associated data. This action cannot be undone.</p>
             {!showDeleteConfirm ? (
-              <button onClick={() => setShowDeleteConfirm(true)} style={{ padding: '10px 20px', background: 'var(--color-surface-0)', border: '1px solid #CC1016', borderRadius: '4px', fontSize: '13px', color: '#CC1016', fontWeight: 600, cursor: 'pointer' }}>
+              <button onClick={() => setShowDeleteConfirm(true)} style={{ padding: '10px 20px', background: 'var(--color-surface-0)', border: '1px solid #CC1016', borderRadius: '4px', fontSize: '13px', color: 'var(--data-negative, #B01E1E)', fontWeight: 600, cursor: 'pointer' }}>
                 Delete Account
               </button>
             ) : (
               <div style={{ padding: '16px', background: 'rgba(239,68,68,0.06)', borderRadius: '4px', border: '1px solid #CC1016' }}>
-                <p style={{ fontSize: '13px', fontWeight: 600, color: '#CC1016', marginBottom: 10 }}>Are you sure? This will permanently delete all your data.</p>
+                <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--data-negative, #B01E1E)', marginBottom: 10 }}>Are you sure? This will permanently delete all your data.</p>
                 <div style={{ display: 'flex', gap: 8 }}>
-                  <button style={{ padding: '8px 16px', background: '#CC1016', color: '#FFF', border: 'none', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+                  <button style={{ padding: '8px 16px', background: 'var(--data-negative, #B01E1E)', color: '#FFF', border: 'none', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                     Yes, Delete Everything
                   </button>
                   <button onClick={() => setShowDeleteConfirm(false)} style={{ padding: '8px 16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '13px', color: 'var(--color-text-secondary)', cursor: 'pointer' }}>
@@ -351,7 +351,7 @@ export default function DashboardTabs({
               await getSupabase().auth.signOut();
               window.location.href = '/';
             }}
-            style={{ width: '100%', padding: '12px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: '6px', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-secondary)', cursor: 'pointer' }}
+            style={{ width: '100%', padding: '12px', background: '#FFF', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-secondary)', cursor: 'pointer' }}
           >
             Sign Out
           </button>

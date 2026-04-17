@@ -120,7 +120,7 @@ export default function TranslatePage() {
           {/* Header Content */}
           <div className="pb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '6px' }}>
+              style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '4px' }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               TRANSLATE
             </div>
@@ -137,10 +137,10 @@ export default function TranslatePage() {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Translator Form */}
-        <div className="p-6 sm:p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '6px' }}>
+        <div className="p-6 sm:p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
           {/* Free Access Banner */}
-          <div className="mb-8 p-4 flex items-center gap-3" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid #BAE6FD', borderRadius: '6px' }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#059669', flexShrink: 0 }} />
+          <div className="mb-8 p-4 flex items-center gap-3" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid #BAE6FD', borderRadius: '4px' }}>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--data-positive, #176438)', flexShrink: 0 }} />
             <p className="text-sm" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-body)', margin: 0 }}>
               <strong>Unlimited translations</strong> — all features are free during launch
             </p>
@@ -161,7 +161,7 @@ export default function TranslatePage() {
               placeholder="Paste legal text here in English or Spanish. Examples: 'The court hereby grants the motion for summary judgment...' or 'La corte otorga la moción para sentencia sumaria...'"
               className="w-full px-4 py-4 border text-sm transition-all focus:outline-none focus:ring-2 resize-none"
               style={{
-                borderRadius: '6px',
+                borderRadius: '4px',
                 borderColor: 'var(--border-default)',
                 background: 'var(--color-surface-1)',
                 color: 'var(--color-text-primary)',
@@ -176,7 +176,7 @@ export default function TranslatePage() {
 
           {/* Error Display */}
           {error && (
-            <div className="mb-6 p-4" style={{ background: 'rgba(10, 102, 194, 0.06)', border: '1px solid var(--accent-primary)', borderRadius: '6px' }}>
+            <div className="mb-6 p-4" style={{ background: 'rgba(10, 102, 194, 0.06)', border: '1px solid var(--accent-primary)', borderRadius: '4px' }}>
               <p className="text-sm" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-body)' }}>
                 {error}
               </p>
@@ -226,7 +226,7 @@ export default function TranslatePage() {
         {/* Translation Result */}
         {translation && (
           <>
-            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: 'var(--accent-primary)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid var(--accent-primary)', borderRadius: '6px' }}>
+            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: 'var(--accent-primary)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid var(--accent-primary)', borderRadius: '4px' }}>
               <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                 Plain English Translation
               </h2>
@@ -255,7 +255,7 @@ export default function TranslatePage() {
                 }
               }
               return relatedTerms.size > 0 ? (
-                <div className="mt-8 p-6 sm:p-8 border" style={{ borderColor: 'rgba(59,130,246,0.15)', background: 'rgba(59,130,246,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '6px' }}>
+                <div className="mt-8 p-6 sm:p-8 border" style={{ borderColor: 'rgba(59,130,246,0.15)', background: 'rgba(59,130,246,0.06)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
                   <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#38bdf8', fontFamily: 'var(--font-ui)' }}>
                     Related Legal Concepts
                   </h2>
@@ -307,7 +307,7 @@ export default function TranslatePage() {
                 onClick={() => handleExample(phrase)}
                 className="p-4 border text-left transition-all hover:border-2 hover:shadow-sm active:scale-[0.98]"
                 style={{
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   borderColor: 'var(--border-default)',
                   background: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
@@ -334,7 +334,7 @@ export default function TranslatePage() {
                 style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                   cursor: 'pointer',
                   transition: 'all 150ms',
@@ -418,7 +418,7 @@ export default function TranslatePage() {
                     style={{
                       borderColor: 'var(--border-default)',
                       background: 'var(--color-surface-0)',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                     }}
                   >
                     <div className="flex items-start justify-between gap-4">
@@ -436,7 +436,7 @@ export default function TranslatePage() {
                         style={{
                           background: 'var(--accent-primary-hover)',
                           color: 'var(--color-surface-0)',
-                          borderRadius: '6px',
+                          borderRadius: '4px',
                           border: 'none',
                           cursor: 'pointer',
                         }}
@@ -457,7 +457,7 @@ export default function TranslatePage() {
             href="/search"
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
-              borderRadius: '6px',
+              borderRadius: '4px',
               borderColor: 'var(--border-default)',
               background: 'var(--color-surface-0)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -474,7 +474,7 @@ export default function TranslatePage() {
             href="/calculator"
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
-              borderRadius: '6px',
+              borderRadius: '4px',
               borderColor: 'var(--border-default)',
               background: 'var(--color-surface-0)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -491,7 +491,7 @@ export default function TranslatePage() {
             href="/glossary"
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
-              borderRadius: '6px',
+              borderRadius: '4px',
               borderColor: 'var(--border-default)',
               background: 'var(--color-surface-0)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -508,7 +508,7 @@ export default function TranslatePage() {
             href="/odds"
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
-              borderRadius: '6px',
+              borderRadius: '4px',
               borderColor: 'var(--border-default)',
               background: 'var(--color-surface-0)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -524,7 +524,7 @@ export default function TranslatePage() {
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-8 p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '6px' }}>
+        <div className="mt-8 p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
           <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Important Disclaimer
           </h2>

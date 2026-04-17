@@ -291,7 +291,7 @@ export default function PressPage() {
                   key={stat.label}
                   style={{
                     padding: 28,
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -364,7 +364,7 @@ export default function PressPage() {
                     href={`/press/assets/${logo.filename}`}
                     style={{
                       padding: 24,
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       border: '1px solid var(--border-default)',
                       background: 'var(--color-surface-0)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -468,7 +468,7 @@ export default function PressPage() {
                     key={color.hex}
                     style={{
                       overflow: 'hidden',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                       border: '1px solid var(--border-default)',
                       background: 'var(--color-surface-0)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -536,7 +536,7 @@ export default function PressPage() {
                   key={screenshot.title}
                   style={{
                     overflow: 'hidden',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -645,7 +645,7 @@ export default function PressPage() {
                   key={index}
                   style={{
                     padding: 32,
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -696,7 +696,7 @@ export default function PressPage() {
             <div
               style={{
                 padding: 48,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -732,7 +732,7 @@ export default function PressPage() {
             <div
               style={{
                 padding: 40,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',

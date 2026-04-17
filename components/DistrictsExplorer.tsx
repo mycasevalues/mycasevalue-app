@@ -372,9 +372,9 @@ export default function DistrictsExplorer({
                       ? 'var(--accent-primary)'
                       : rate !== null
                       ? rate >= 50
-                        ? '#059669'
+                        ? 'var(--data-positive, #176438)'
                         : rate >= 35
-                        ? '#D97706'
+                        ? 'var(--wrn-txt, #7A5800)'
                         : 'var(--accent-primary)'
                       : 'var(--text4, #A8A6A0)',
                   }}
@@ -447,7 +447,7 @@ export default function DistrictsExplorer({
         }}
       >
         {filteredDistricts.map((d) => {
-          const wrColor = d.winRate >= 50 ? '#059669' : d.winRate >= 35 ? '#D97706' : 'var(--accent-primary)';
+          const wrColor = d.winRate >= 50 ? 'var(--data-positive, #176438)' : d.winRate >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--accent-primary)';
           return (
             <Link
               key={d.slug}

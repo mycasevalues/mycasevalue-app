@@ -21,9 +21,9 @@ const variantStyles = {
     iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z',
   },
   success: {
-    borderColor: '#059669',
+    borderColor: 'var(--data-positive, #176438)',
     background: 'rgba(7,135,74,0.05)',
-    iconColor: '#059669',
+    iconColor: 'var(--data-positive, #176438)',
     iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
   },
   warning: {
@@ -51,7 +51,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
         borderLeft: `4px solid ${styles.borderColor}`,
         background: styles.background,
         padding: '16px 20px',
-        borderRadius: '6px',
+        borderRadius: '4px',
         display: 'flex',
         gap: '12px',
         alignItems: 'flex-start',

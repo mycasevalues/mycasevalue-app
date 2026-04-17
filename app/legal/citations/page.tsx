@@ -31,7 +31,7 @@ const CATEGORIES = [
   { key: 'civil_rights', label: 'Civil Rights', color: '#a78bfa' },
   { key: 'criminal', label: 'Criminal Law', color: '#f87171' },
   { key: 'regulatory', label: 'Regulatory', color: '#34d399' },
-  { key: 'corporate', label: 'Corporate', color: '#D97706' },
+  { key: 'corporate', label: 'Corporate', color: 'var(--wrn-txt, #7A5800)' },
 ];
 
 const CATEGORY_COLORS: Record<string, string> = Object.fromEntries(CATEGORIES.map(c => [c.key, c.color]));
@@ -338,7 +338,7 @@ export default function CitationsPage() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
               <span style={{
                 padding: '3px 10px',
-                borderRadius: 6,
+                borderRadius: 4,
                 fontSize: 11,
                 fontWeight: 600,
                 color: CATEGORY_COLORS[selected.category],
@@ -410,7 +410,7 @@ export default function CitationsPage() {
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Legal Categories</div>
         </div>
         <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
-          <div style={{ fontSize: 28, fontWeight: 700, color: '#D97706', fontFamily: 'var(--font-mono, monospace)' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-mono, monospace)' }}>
             {new Date().getFullYear() - Math.min(...NODES.map(n => n.year))}+
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Years of Precedent</div>
@@ -427,7 +427,7 @@ export default function CitationsPage() {
               onClick={() => setSelected(node)}
               style={{
                 padding: '16px 20px',
-                borderRadius: 6,
+                borderRadius: 4,
                 border: selected?.id === node.id ? `2px solid ${CATEGORY_COLORS[node.category]}` : '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 textAlign: 'left',

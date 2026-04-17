@@ -102,13 +102,13 @@ export default function FeesPage() {
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
 
           {/* Filing Fees */}
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
               Court Filing Fees
             </h2>
             <div style={{ display: 'grid', gap: 12 }}>
               {FILING_FEES.map((fee, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderRadius: 6, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
                   <div style={{ flex: 1, minWidth: 200 }}>
                     <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 2 }}>
                       {fee.label}
@@ -135,13 +135,13 @@ export default function FeesPage() {
           </div>
 
           {/* PACER Fees */}
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
               PACER Access Fees
             </h2>
             <div style={{ display: 'grid', gap: 12 }}>
               {PACER_FEES.map((fee, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderRadius: 6, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
                   <div style={{ flex: 1, minWidth: 200 }}>
                     <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 2 }}>
                       {fee.label}
@@ -159,7 +159,7 @@ export default function FeesPage() {
           </div>
 
           {/* Pro Hac Vice */}
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
               Pro Hac Vice Admission Fees
             </h2>
@@ -168,7 +168,7 @@ export default function FeesPage() {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 10 }}>
               {PRO_HAC_VICE.map((d, i) => (
-                <div key={i} style={{ padding: '14px 18px', background: 'var(--color-surface-1)', borderRadius: 6, border: '1px solid var(--border-default)', textAlign: 'center' }}>
+                <div key={i} style={{ padding: '14px 18px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)', textAlign: 'center' }}>
                   <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: 4 }}>
                     {d.district}
                   </div>
@@ -184,7 +184,7 @@ export default function FeesPage() {
           </div>
 
           {/* IFP Fee Waiver Section */}
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
               <div style={{ width: 36, height: 36, borderRadius: 4, background: 'rgba(34,197,94,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>
                 &#9733;
@@ -198,7 +198,7 @@ export default function FeesPage() {
               Under 28 U.S.C. § 1915, courts may authorize individuals to proceed without prepaying filing fees if they demonstrate inability to pay. This is known as proceeding <em>in forma pauperis</em> (IFP).
             </p>
 
-            <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 6, padding: '20px 24px', marginBottom: 16 }}>
+            <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 4, padding: '20px 24px', marginBottom: 16 }}>
               <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
                 General Eligibility Guidelines
               </h3>
@@ -214,7 +214,7 @@ export default function FeesPage() {
                 rel="noopener noreferrer"
                 style={{
                   display: 'flex', alignItems: 'center', gap: 10, padding: '14px 20px',
-                  background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 6,
+                  background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4,
                   textDecoration: 'none', color: 'var(--color-text-primary)', transition: 'border-color 0.2s',
                 }}
               >
@@ -231,7 +231,7 @@ export default function FeesPage() {
                 rel="noopener noreferrer"
                 style={{
                   display: 'flex', alignItems: 'center', gap: 10, padding: '14px 20px',
-                  background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 6,
+                  background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4,
                   textDecoration: 'none', color: 'var(--color-text-primary)', transition: 'border-color 0.2s',
                 }}
               >
@@ -251,7 +251,7 @@ export default function FeesPage() {
 
           {/* Disclaimer */}
           <div style={{
-            padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 6,
+            padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4,
             fontSize: 12, color: '#fde68a', lineHeight: 1.6, fontFamily: 'var(--font-body)',
           }}>
             <strong>Important:</strong> Fee amounts are current as of December 2024. Fees are set by the Judicial Conference and may change. Always verify fees with the specific court before filing. Local district fees (e.g., pro hac vice, attorney admission) vary and are set by individual courts.

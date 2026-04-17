@@ -110,7 +110,7 @@ export default function IndividualsPage() {
               background: 'var(--gold, #C4882A)',
               color: '#ffffff',
               padding: '10px 20px',
-              borderRadius: 6,
+              borderRadius: 4,
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
@@ -129,7 +129,7 @@ export default function IndividualsPage() {
               background: 'transparent',
               color: 'rgba(255,255,255,0.85)',
               padding: '10px 20px',
-              borderRadius: 6,
+              borderRadius: 4,
               border: '1px solid rgba(255,255,255,0.2)',
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
@@ -162,7 +162,7 @@ export default function IndividualsPage() {
               <div key={f.title} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
@@ -216,7 +216,7 @@ export default function IndividualsPage() {
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
-              borderRadius: '6px',
+              borderRadius: '4px',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
@@ -231,7 +231,7 @@ export default function IndividualsPage() {
               background: 'transparent',
               color: 'var(--color-text-primary)',
               padding: '0.875rem 2rem',
-              borderRadius: '6px',
+              borderRadius: '4px',
               border: '1.5px solid var(--border-default)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
@@ -271,7 +271,7 @@ export default function IndividualsPage() {
           <div style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '24px',
             marginBottom: '24px',
           }}>
@@ -287,7 +287,7 @@ export default function IndividualsPage() {
               display: 'block',
               background: 'var(--color-surface-0)',
               padding: '12px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '12px',
               color: 'var(--accent-primary)',
               fontFamily: '"Courier New", monospace',
@@ -327,7 +327,7 @@ export default function IndividualsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -360,7 +360,7 @@ export default function IndividualsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -393,7 +393,7 @@ export default function IndividualsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',

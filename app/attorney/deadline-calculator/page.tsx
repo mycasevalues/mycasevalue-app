@@ -22,9 +22,9 @@ const FRCP_DEFAULTS = [
 ];
 
 const eventCategories = {
-  critical: { bg: 'rgba(204,16,25,0.12)', text: '#DC2626', dot: '#DC2626', label: 'Critical' },
+  critical: { bg: 'rgba(204,16,25,0.12)', text: 'var(--data-negative, #B01E1E)', dot: 'var(--data-negative, #B01E1E)', label: 'Critical' },
   important: { bg: 'rgba(184,110,0,0.12)', text: '#B86E00', dot: '#B86E00', label: 'Important' },
-  planning: { bg: 'rgba(7,135,74,0.12)', text: '#059669', dot: '#059669', label: 'Planning' },
+  planning: { bg: 'rgba(7,135,74,0.12)', text: 'var(--data-positive, #176438)', dot: 'var(--data-positive, #176438)', label: 'Planning' },
 };
 
 export default function DeadlineCalculatorPage() {
@@ -150,7 +150,7 @@ export default function DeadlineCalculatorPage() {
     padding: '12px 14px',
     height: 'auto',
     border: '1px solid var(--border-default)',
-    borderRadius: '6px',
+    borderRadius: '4px',
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
@@ -195,7 +195,7 @@ export default function DeadlineCalculatorPage() {
       {/* Main Content */}
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Input Section */}
-        <div style={{ background: 'var(--color-surface-0)', borderRadius: '6px', padding: '28px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginBottom: '24px' }} className="grid-responsive">
             <style>{`.grid-responsive { grid-template-columns: 1fr !important; } @media (min-width: 640px) { .grid-responsive { grid-template-columns: 1fr 1fr !important; } } @media (min-width: 1024px) { .grid-responsive { grid-template-columns: 1fr 1fr 1fr !important; } }`}</style>
             <div>
@@ -210,7 +210,7 @@ export default function DeadlineCalculatorPage() {
             {caseFiledDate && (
               <div>
                 <label style={labelStyle}>Case Filed</label>
-                <div style={{ padding: '12px 14px', height: '42px', display: 'flex', alignItems: 'center', fontSize: '14px', color: 'var(--color-text-primary)', fontWeight: 500, background: 'rgba(255,255,255,0.05)', borderRadius: '6px' }}>
+                <div style={{ padding: '12px 14px', height: '42px', display: 'flex', alignItems: 'center', fontSize: '14px', color: 'var(--color-text-primary)', fontWeight: 500, background: 'rgba(255,255,255,0.05)', borderRadius: '4px' }}>
                   {new Date(caseFiledDate).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })}
                 </div>
               </div>
@@ -303,7 +303,7 @@ export default function DeadlineCalculatorPage() {
                 { label: 'Critical', value: String(allDeadlines.filter(d => d.category === 'critical').length) },
                 { label: 'Days to First Deadline', value: getDaysUntil(allDeadlines[0]?.calculatedDate) > 0 ? String(getDaysUntil(allDeadlines[0]?.calculatedDate)) : 'Past due' },
               ].map((stat, i) => (
-                <div key={i} style={{ background: 'var(--color-surface-0)', borderRadius: '6px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                <div key={i} style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                   <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     {stat.label}
                   </p>
@@ -315,7 +315,7 @@ export default function DeadlineCalculatorPage() {
             </div>
 
             {/* Deadlines List */}
-            <div style={{ background: 'var(--color-surface-0)', borderRadius: '6px', border: '1px solid var(--border-default)', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <div style={{ padding: '24px', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>All Deadlines</h2>
                 <div style={{ display: 'flex', gap: '12px' }}>
@@ -354,7 +354,7 @@ export default function DeadlineCalculatorPage() {
                             {deadline.event}
                           </h3>
                           {deadline.id.startsWith('custom-') && (
-                            <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', background: 'rgba(10, 102, 194, 0.1)', padding: '2px 8px', borderRadius: '6px' }}>
+                            <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', background: 'rgba(10, 102, 194, 0.1)', padding: '2px 8px', borderRadius: '4px' }}>
                               Custom
                             </span>
                           )}
@@ -379,7 +379,7 @@ export default function DeadlineCalculatorPage() {
                         <div style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                           {deadline.calculatedDate}
                         </div>
-                        <span style={{ fontSize: '11px', fontWeight: 600, padding: '2px 8px', borderRadius: '6px', backgroundColor: config.bg, color: config.text, textTransform: 'uppercase' as const }}>
+                        <span style={{ fontSize: '11px', fontWeight: 600, padding: '2px 8px', borderRadius: '4px', backgroundColor: config.bg, color: config.text, textTransform: 'uppercase' as const }}>
                           {config.label}
                         </span>
                         {deadline.id.startsWith('custom-') && (
@@ -405,7 +405,7 @@ export default function DeadlineCalculatorPage() {
             </div>
 
             {/* FRCP Reference */}
-            <div style={{ marginTop: '40px', background: 'var(--color-surface-0)', borderRadius: '6px', border: '1px solid var(--border-default)', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ marginTop: '40px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
                 Federal Rules of Civil Procedure Reference
               </h2>

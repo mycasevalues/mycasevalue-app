@@ -87,7 +87,7 @@ export default function GlossaryPage() {
           >
             Plain-English definitions of federal court terms, data concepts, and legal statutes used throughout MyCaseValue.
           </p>
-          <div className="mt-6 inline-block px-3 py-1.5 text-[13px] font-semibold" style={{ background: 'rgba(255, 255, 255, 0.1)', color: 'var(--color-surface-0)', borderRadius: '6px' }}>
+          <div className="mt-6 inline-block px-3 py-1.5 text-[13px] font-semibold" style={{ background: 'rgba(255, 255, 255, 0.1)', color: 'var(--color-surface-0)', borderRadius: '4px' }}>
             327 Legal Terms
           </div>
         </div>
@@ -98,7 +98,7 @@ export default function GlossaryPage() {
         <div
           style={{
             background: 'var(--color-surface-0)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             padding: '32px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -119,7 +119,7 @@ export default function GlossaryPage() {
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
               color: 'var(--color-text-primary)',
-              borderRadius: '6px',
+              borderRadius: '4px',
             }}
           >
             <svg aria-hidden="true"

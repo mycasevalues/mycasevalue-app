@@ -189,10 +189,10 @@ export default async function NOSPage({ params }: PageProps) {
         count: e.n,
       }))
     : [
-        { label: 'Settled', value: outcomeData.fav_set || 30, color: '#057642' },
+        { label: 'Settled', value: outcomeData.fav_set || 30, color: 'var(--data-positive, #176438)' },
         { label: 'Dismissed', value: outcomeData.dismiss || 53, color: 'var(--color-text-secondary)' },
         { label: 'Trial Win', value: outcomeData.trial_win || 10, color: 'var(--accent-primary)' },
-        { label: 'Trial Loss', value: outcomeData.trial_loss || 7, color: '#CC1016' },
+        { label: 'Trial Loss', value: outcomeData.trial_loss || 7, color: 'var(--data-negative, #B01E1E)' },
       ].map(o => {
         const total = [outcomeData.fav_set || 30, outcomeData.dismiss || 53, outcomeData.trial_win || 10, outcomeData.trial_loss || 7].reduce((s, v) => s + v, 0);
         return { ...o, percentage: total > 0 ? Math.round((o.value / total) * 100) : 0 };
@@ -838,14 +838,14 @@ export default async function NOSPage({ params }: PageProps) {
             {[
               { label: 'Win Rate', value: `${winRate}%`, color: 'var(--accent-primary)', showSample: true, showDot: true },
               { label: 'Median Duration', value: `${medianDuration} mo`, color: 'var(--accent-primary)', showSample: false, showDot: false },
-              { label: 'Settlement Rate', value: `${settleRate}%`, color: '#057642', showSample: false, showDot: false },
+              { label: 'Settlement Rate', value: `${settleRate}%`, color: 'var(--data-positive, #176438)', showSample: false, showDot: false },
               { label: 'Cases Analyzed', value: totalCases > 0 ? totalCases.toLocaleString() : '500+', color: 'var(--accent-primary)', showSample: false, showDot: false },
             ].map((stat, i) => (
               <MetricsStaggerItem key={i} className="stat-card">
                 <div className="stat-value" style={{ color: stat.color, display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
                   {stat.value}
                   {stat.showDot && totalCases > 0 && (
-                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? '#057642' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)' }} />
+                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? 'var(--data-positive, #176438)' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? 'var(--data-negative, #B01E1E)' : 'var(--text4, #A8A6A0)' }} />
                   )}
                   {stat.showSample && totalCases > 0 && <SampleSizeIndicator count={totalCases} />}
                 </div>
@@ -868,7 +868,7 @@ export default async function NOSPage({ params }: PageProps) {
               padding: '14px 16px',
               backgroundColor: 'rgba(234,179,8,0.1)',
               borderLeft: '3px solid #D97706',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '12px',
               color: '#fde68a',
               lineHeight: '1.5',
@@ -884,7 +884,7 @@ export default async function NOSPage({ params }: PageProps) {
               padding: '14px 16px',
               backgroundColor: 'rgba(234,179,8,0.1)',
               borderLeft: '3px solid #D97706',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '12px',
               color: '#fde68a',
               lineHeight: '1.5',
@@ -1157,7 +1157,7 @@ export default async function NOSPage({ params }: PageProps) {
                         padding: '12px 16px',
                         background: 'var(--color-surface-1)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                       }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
@@ -1166,18 +1166,18 @@ export default async function NOSPage({ params }: PageProps) {
                           <span style={{
                             fontSize: '14px',
                             fontWeight: 600,
-                            color: wr >= winRate ? '#057642' : 'var(--accent-primary)',
+                            color: wr >= winRate ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
                             fontFamily: 'var(--font-mono)',
                           }}>
                             {wr}%
                           </span>
                         </div>
-                        <div style={{ height: '4px', background: 'var(--border-default)', borderRadius: '6px', overflow: 'hidden' }}>
+                        <div style={{ height: '4px', background: 'var(--border-default)', borderRadius: '4px', overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(wr, 100)}%`,
-                            background: wr >= winRate ? '#057642' : 'var(--accent-primary)',
-                            borderRadius: '6px',
+                            background: wr >= winRate ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
+                            borderRadius: '4px',
                           }} />
                         </div>
                       </div>
@@ -1236,7 +1236,7 @@ export default async function NOSPage({ params }: PageProps) {
                   padding: '20px',
                   background: getWinRateColor(attyImpact.rwr).bg,
                   border: `1px solid ${getWinRateColor(attyImpact.rwr).border}`,
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                 }}>
                   <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                     With Attorney
@@ -1260,7 +1260,7 @@ export default async function NOSPage({ params }: PageProps) {
                   padding: '20px',
                   background: 'rgba(239,68,68,0.06)',
                   border: '1px solid #CC1016',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                 }}>
                   <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                     Pro Se (No Attorney)
@@ -1268,7 +1268,7 @@ export default async function NOSPage({ params }: PageProps) {
                   <div style={{
                     fontSize: '36px',
                     fontWeight: 600,
-                    color: '#CC1016',
+                    color: 'var(--data-negative, #B01E1E)',
                     fontFamily: 'var(--font-mono)',
                     lineHeight: 1.1,
                   }}>
@@ -1284,7 +1284,7 @@ export default async function NOSPage({ params }: PageProps) {
                   padding: '20px',
                   background: 'rgba(59,130,246,0.08)',
                   border: '1px solid var(--accent-primary)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
@@ -1345,8 +1345,8 @@ export default async function NOSPage({ params }: PageProps) {
                       <div className="related-type-stat">
                         <span>Win Rate:</span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                          <strong style={{ color: caseType.wr >= 50 ? '#057642' : 'var(--accent-primary)' }}>{caseType.wr}%</strong>
-                          <span title={`Based on ${caseType.total.toLocaleString()} cases — ${caseType.total >= 10000 ? 'High' : caseType.total >= 1000 ? 'Medium' : caseType.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: caseType.total >= 10000 ? '#057642' : caseType.total >= 1000 ? '#C37D16' : caseType.total >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)' }} />
+                          <strong style={{ color: caseType.wr >= 50 ? 'var(--data-positive, #176438)' : 'var(--accent-primary)' }}>{caseType.wr}%</strong>
+                          <span title={`Based on ${caseType.total.toLocaleString()} cases — ${caseType.total >= 10000 ? 'High' : caseType.total >= 1000 ? 'Medium' : caseType.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: caseType.total >= 10000 ? 'var(--data-positive, #176438)' : caseType.total >= 1000 ? '#C37D16' : caseType.total >= 100 ? 'var(--data-negative, #B01E1E)' : 'var(--text4, #A8A6A0)' }} />
                         </div>
                       </div>
                       <div className="related-type-stat">

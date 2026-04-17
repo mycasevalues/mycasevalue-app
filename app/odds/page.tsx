@@ -353,7 +353,7 @@ export default function OddsPage() {
                 <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
                   Attorney Representation
                 </label>
-                <div style={{ display: 'flex', gap: 0, borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--border-default)' }}>
+                <div style={{ display: 'flex', gap: 0, borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--border-default)' }}>
                   <button
                     type="button"
                     onClick={() => { setRepresented('yes'); setShowResults(false); }}
@@ -448,7 +448,7 @@ export default function OddsPage() {
                 }}>
                   <span>
                     <span style={{ color: 'var(--color-text-secondary)' }}>Settlement: </span>
-                    <strong style={{ color: '#D97706', fontFamily: 'var(--font-mono)' }}>{results.settlementRate.toFixed(1)}%</strong>
+                    <strong style={{ color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-mono)' }}>{results.settlementRate.toFixed(1)}%</strong>
                   </span>
                   <span style={{ color: 'var(--border-default)' }}>|</span>
                   <span>
@@ -482,7 +482,7 @@ export default function OddsPage() {
                   <div style={{ display: 'grid', gap: 16 }}>
                     {[
                       { label: 'Won at Trial', value: results.winRate, color: '#34d399' },
-                      { label: 'Settled', value: results.settlementRate, color: '#D97706' },
+                      { label: 'Settled', value: results.settlementRate, color: 'var(--wrn-txt, #7A5800)' },
                       { label: 'Dismissed', value: results.dismissalRate, color: 'var(--accent-primary)' },
                     ].map(item => (
                       <div key={item.label}>
@@ -664,7 +664,7 @@ export default function OddsPage() {
                     gap: 12,
                   }}>
                     {topCircuits.map(({ circuit, rate }) => {
-                      const color = rate >= 50 ? '#059669' : rate >= 35 ? '#D97706' : 'var(--accent-primary)';
+                      const color = rate >= 50 ? 'var(--data-positive, #176438)' : rate >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--accent-primary)';
                       return (
                         <div key={circuit} style={{
                           background: 'var(--color-surface-1)',
@@ -707,7 +707,7 @@ export default function OddsPage() {
                 }}>
                   In federal court, <strong>{results.label}</strong> cases see a win rate of{' '}
                   <strong style={{ color: winColor }}>{results.winRate.toFixed(1)}%</strong> at trial.
-                  However, <strong style={{ color: '#D97706' }}>{results.settlementRate.toFixed(1)}%</strong> of
+                  However, <strong style={{ color: 'var(--wrn-txt, #7A5800)' }}>{results.settlementRate.toFixed(1)}%</strong> of
                   cases settle before trial
                   {results.recoveryMedian !== null && (
                     <>, with a median recovery of <strong style={{ color: 'var(--accent-primary-hover)' }}>{fmtK(results.recoveryMedian)}</strong></>
@@ -770,7 +770,7 @@ export default function OddsPage() {
                   }}>
                     {[
                       { label: 'Win', color: '#34d399', pct: results.winRate },
-                      { label: 'Settlement', color: '#D97706', pct: results.settlementRate },
+                      { label: 'Settlement', color: 'var(--wrn-txt, #7A5800)', pct: results.settlementRate },
                       { label: 'Dismissed/Other', color: 'var(--color-text-muted)', pct: results.dismissalRate },
                     ].map(item => (
                       <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -853,7 +853,7 @@ export default function OddsPage() {
                           <span style={{
                             fontSize: 13,
                             fontWeight: 600,
-                            color: nationalAverageWinRate >= 50 ? '#059669' : nationalAverageWinRate >= 35 ? '#D97706' : 'var(--accent-primary)',
+                            color: nationalAverageWinRate >= 50 ? 'var(--data-positive, #176438)' : nationalAverageWinRate >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--accent-primary)',
                             fontFamily: 'var(--font-mono)',
                           }}>
                             {nationalAverageWinRate.toFixed(1)}%
@@ -863,7 +863,7 @@ export default function OddsPage() {
                           <div style={{
                             height: '100%',
                             width: `${Math.min(nationalAverageWinRate, 100)}%`,
-                            background: nationalAverageWinRate >= 50 ? '#059669' : nationalAverageWinRate >= 35 ? '#D97706' : 'var(--accent-primary)',
+                            background: nationalAverageWinRate >= 50 ? 'var(--data-positive, #176438)' : nationalAverageWinRate >= 35 ? 'var(--wrn-txt, #7A5800)' : 'var(--accent-primary)',
                             borderRadius: 2,
                           }} />
                         </div>
@@ -926,7 +926,7 @@ export default function OddsPage() {
                               width: 8,
                               height: 8,
                               borderRadius: '50%',
-                              background: factor.severity === 'high' ? 'var(--accent-primary)' : '#D97706',
+                              background: factor.severity === 'high' ? 'var(--accent-primary)' : 'var(--wrn-txt, #7A5800)',
                               flexShrink: 0,
                               marginTop: 6,
                             }} />
@@ -1025,7 +1025,7 @@ export default function OddsPage() {
                     <p style={{
                       fontSize: 28,
                       fontWeight: 600,
-                      color: '#D97706',
+                      color: 'var(--wrn-txt, #7A5800)',
                       margin: 0,
                       fontFamily: 'var(--font-mono)',
                     }}>
@@ -1208,12 +1208,12 @@ export default function OddsPage() {
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
                     <div style={{ padding: 16, background: 'rgba(34,197,94,0.1)', border: '1px solid #057642', borderRadius: 4, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>With Attorney</div>
-                      <div style={{ fontSize: 28, fontWeight: 700, color: '#057642', fontFamily: 'var(--font-mono)' }}>{attyData.rwr}%</div>
+                      <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>{attyData.rwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.rn ?? 0).toLocaleString()} cases</div>
                     </div>
                     <div style={{ padding: 16, background: 'rgba(239,68,68,0.06)', border: '1px solid #CC1016', borderRadius: 4, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Pro Se</div>
-                      <div style={{ fontSize: 28, fontWeight: 700, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{attyData.pwr}%</div>
+                      <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>{attyData.pwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.pn ?? 0).toLocaleString()} cases</div>
                     </div>
                     <div style={{ padding: 16, background: 'rgba(59,130,246,0.08)', border: '1px solid var(--accent-primary)', borderRadius: 4, textAlign: 'center' }}>
@@ -1375,7 +1375,7 @@ export default function OddsPage() {
                       >
                         <span style={{ color: 'var(--color-text-primary)', fontWeight: 500 }}>{t?.label || rd.label}</span>
                         <span style={{
-                          color: (rd.wr ?? 0) >= 50 ? '#059669' : 'var(--accent-primary)',
+                          color: (rd.wr ?? 0) >= 50 ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
                           fontWeight: 600,
                           fontFamily: 'var(--font-mono)',
                           fontSize: 12,

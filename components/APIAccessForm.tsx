@@ -64,7 +64,7 @@ export default function APIAccessForm() {
       <div
         style={{
           background: 'var(--color-surface-0)',
-          borderRadius: '6px',
+          borderRadius: '4px',
           padding: '24px',
           border: '1px solid var(--border-default)',
           boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -122,7 +122,7 @@ export default function APIAccessForm() {
     <div
       style={{
         background: 'var(--color-surface-0)',
-        borderRadius: '6px',
+        borderRadius: '4px',
         padding: '24px',
         border: '1px solid var(--border-default)',
         boxShadow: '0 1px 3px rgba(0,0,0,0.06)',

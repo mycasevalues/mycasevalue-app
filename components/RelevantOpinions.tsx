@@ -51,7 +51,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
           <div style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '24px',
           }}>
             <h2 style={{
@@ -90,7 +90,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
         <div style={{
           background: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
-          borderRadius: '6px',
+          borderRadius: '4px',
           padding: '24px',
         }}>
           <h2 style={{

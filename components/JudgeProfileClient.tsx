@@ -302,7 +302,7 @@ export default function JudgeProfileClient({
               padding: '12px 16px',
               background: 'rgba(249,115,22,0.06)',
               border: '1px solid #C37D16',
-              borderRadius: '6px',
+              borderRadius: '4px',
               marginBottom: '24px',
             }}
           >
@@ -389,7 +389,7 @@ export default function JudgeProfileClient({
               padding: '12px 16px',
               background: 'rgba(59,130,246,0.08)',
               border: '1px solid var(--accent-primary)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               marginBottom: '24px',
             }}
           >
@@ -417,7 +417,7 @@ export default function JudgeProfileClient({
                     padding: '20px',
                     background: 'var(--color-surface-1)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     cursor: 'pointer',
                   }}
                   onClick={() => setExpandedOpinion(isExpanded ? null : opinion.id)}
@@ -616,7 +616,7 @@ export default function JudgeProfileClient({
               background: 'var(--color-surface-0)',
               color: 'var(--accent-primary)',
               textDecoration: 'none',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontFamily: 'var(--font-body)',
               fontWeight: '600',
               fontSize: '14px',
@@ -636,7 +636,7 @@ export default function JudgeProfileClient({
                 background: 'rgba(255, 255, 255, 0.2)',
                 color: 'var(--color-surface-0)',
                 textDecoration: 'none',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 fontFamily: 'var(--font-body)',
                 fontWeight: '600',
                 fontSize: '14px',
@@ -657,7 +657,7 @@ export default function JudgeProfileClient({
               background: 'rgba(255, 255, 255, 0.2)',
               color: 'var(--color-surface-0)',
               textDecoration: 'none',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontFamily: 'var(--font-body)',
               fontWeight: '600',
               fontSize: '14px',
@@ -752,7 +752,7 @@ function DistrictComparisonRow({
 }) {
   const diff = judgeValue - districtValue;
   const isFavorable = isInverse ? diff < 0 : diff > 0;
-  const diffColor = isFavorable ? '#057642' : '#CC1016';
+  const diffColor = isFavorable ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)';
   const diffText = isFavorable ? '✓' : '';
 
   const judgeVal = isNaN(judgeValue ?? 0) ? 0 : judgeValue ?? 0;

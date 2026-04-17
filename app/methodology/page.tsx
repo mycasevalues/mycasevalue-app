@@ -394,7 +394,7 @@ export default function MethodologyPage() {
                 icon: 'building'
               },
             ].map((source, i) => (
-              <div key={i} className="source-card p-5" style={{ background: 'var(--surf, #F6F5F2)', borderRadius: '6px' }}>
+              <div key={i} className="source-card p-5" style={{ background: 'var(--surf, #F6F5F2)', borderRadius: '4px' }}>
                 <div className="flex items-start gap-3 mb-3">
                   <div className="text-2xl flex-shrink-0">
                     {source.icon === 'database' && '-'}
@@ -465,7 +465,7 @@ export default function MethodologyPage() {
           <div className="coverage-grid">
             {[
               { v: '5.1M+', l: 'Federal Cases', c: 'var(--color-text-primary)' },
-              { v: '55+', l: 'Years of Data', c: '#059669' },
+              { v: '55+', l: 'Years of Data', c: 'var(--data-positive, #176438)' },
               { v: '20+', l: 'Case Categories', c: 'var(--accent-primary)' },
               { v: '95', l: 'Federal Districts', c: 'var(--accent-primary-hover)' },
             ].map((stat, i) => (

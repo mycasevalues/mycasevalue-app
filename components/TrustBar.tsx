@@ -34,15 +34,15 @@ export default function TrustBar() {
       <div style={{
         maxWidth: '1140px', margin: '0 auto',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        flexWrap: 'wrap', gap: '40px',
+        flexWrap: 'wrap', gap: '32px',
       }}>
         {indicators.map((item, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d={item.icon} />
             </svg>
-            <span style={{ fontSize: '13px', fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
-              {item.text}<strong style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>{item.highlight}</strong>
+            <span style={{ fontSize: '13px', fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+              {item.text}<strong style={{ fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{item.highlight}</strong>
             </span>
           </div>
         ))}

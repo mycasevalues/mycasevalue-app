@@ -7,7 +7,7 @@ const pulseStyle: React.CSSProperties = {
   background: 'linear-gradient(90deg, var(--bdr, #E2DFD8) 25%, #F0F0F0 50%, var(--bdr, #E2DFD8) 75%)',
   backgroundSize: '200% 100%',
   animation: 'skeleton-pulse 1.5s ease-in-out infinite',
-  borderRadius: '6px',
+  borderRadius: '4px',
 };
 
 function Sk({ width = '100%', height = '20px', style }: { width?: string; height?: string; style?: React.CSSProperties }) {
@@ -74,7 +74,7 @@ export default function Loading() {
             <div key={i} style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--bdr, #E2DFD8)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '20px',
             }}>
               <Sk width="200px" height="15px" style={{ marginBottom: 16 }} />
@@ -96,7 +96,7 @@ export default function Loading() {
         {/* Local Rules section skeleton */}
         <div style={{ marginTop: 48 }}>
           <Sk width="160px" height="22px" style={{ marginBottom: 24 }} />
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: '6px', padding: '24px' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: '4px', padding: '24px' }}>
             {[1, 2, 3, 4].map((i) => (
               <div key={i} style={{ marginBottom: i < 4 ? 16 : 0 }}>
                 <Sk width="240px" height="14px" style={{ marginBottom: 6 }} />
@@ -111,7 +111,7 @@ export default function Loading() {
           <Sk width="200px" height="22px" style={{ marginBottom: 24 }} />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
             {[1, 2, 3].map((i) => (
-              <div key={i} style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: '6px', padding: '20px' }}>
+              <div key={i} style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: '4px', padding: '20px' }}>
                 <Sk width="180px" height="15px" style={{ marginBottom: 12 }} />
                 <Sk width="100%" height="12px" style={{ marginBottom: 6 }} />
                 <Sk width="80%" height="12px" />

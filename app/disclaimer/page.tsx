@@ -66,7 +66,7 @@ export default function DisclaimerPage() {
               fontWeight: 600,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontFamily: 'var(--font-ui)',
             }}>
               LEGAL
@@ -462,7 +462,7 @@ export default function DisclaimerPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
             }}>
@@ -502,7 +502,7 @@ export default function DisclaimerPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
             }}>
@@ -518,7 +518,7 @@ export default function DisclaimerPage() {
           {/* Acknowledgment */}
           <section style={{
             padding: '32px',
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '2px solid var(--accent-primary)',
             backgroundColor: 'rgba(239,68,68,0.08)',
           }}>

@@ -39,7 +39,7 @@ export default function ContactForm() {
     return (
       <div style={{
         padding: '48px 32px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
-        borderRadius: '6px', textAlign: 'center',
+        borderRadius: '4px', textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}>
         <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
@@ -59,7 +59,7 @@ export default function ContactForm() {
   const inputStyle = {
     width: '100%', padding: '12px 14px', fontSize: '14px',
     fontFamily: 'var(--font-body)', color: 'var(--color-text-primary)',
-    border: '1px solid var(--border-default)', borderRadius: '6px',
+    border: '1px solid var(--border-default)', borderRadius: '4px',
     background: 'var(--color-surface-0)', outline: 'none',
     transition: 'border-color 200ms',
     height: '48px',
@@ -93,7 +93,7 @@ export default function ContactForm() {
       `}</style>
       <form onSubmit={handleSubmit} style={{
         padding: '32px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
-        borderRadius: '6px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+        borderRadius: '4px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
         display: 'flex', flexDirection: 'column', gap: '20px',
       }}>
         <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '4px' }}>

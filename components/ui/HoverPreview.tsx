@@ -95,7 +95,7 @@ export function JudgePreviewCard({ name, district, circuit, winRate, totalCases,
         {winRate != null && (
           <div>
             <div className="text-xs text-gray-400">Win Rate</div>
-            <div className="text-sm font-mono font-bold" style={{ color: winRate >= 50 ? '#057642' : winRate >= 35 ? '#B45309' : '#B91C1C' }}>
+            <div className="text-sm font-mono font-bold" style={{ color: winRate >= 50 ? 'var(--data-positive, #176438)' : winRate >= 35 ? '#B45309' : '#B91C1C' }}>
               {winRate.toFixed(1)}%
             </div>
           </div>
@@ -134,7 +134,7 @@ export function CaseTypePreviewCard({ label, nos, totalCases, winRate, settlemen
         {winRate != null && (
           <div>
             <div className="text-[10px] text-gray-400">Win Rate</div>
-            <div className="text-xs font-mono font-bold" style={{ color: winRate >= 50 ? '#057642' : '#B45309' }}>
+            <div className="text-xs font-mono font-bold" style={{ color: winRate >= 50 ? 'var(--data-positive, #176438)' : '#B45309' }}>
               {winRate}%
             </div>
           </div>

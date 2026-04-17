@@ -316,7 +316,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               border: 'none',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',

@@ -407,7 +407,7 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Footer Info */}
-        <div style={{ marginTop: '48px', padding: '24px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', textAlign: 'center' }}>
+        <div style={{ marginTop: '48px', padding: '24px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', textAlign: 'center' }}>
           <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
             Have questions about the data?
           </h3>

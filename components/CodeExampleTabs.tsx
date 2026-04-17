@@ -71,7 +71,7 @@ export default function CodeExampleTabs() {
     <div
       style={{
         background: 'var(--color-surface-0)',
-        borderRadius: '6px',
+        borderRadius: '4px',
         border: '1px solid var(--border-default)',
         overflow: 'hidden',
         boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -121,7 +121,7 @@ export default function CodeExampleTabs() {
             lineHeight: 1.6,
             fontFamily: 'var(--font-mono)',
             overflowX: 'auto',
-            borderRadius: '6px',
+            borderRadius: '4px',
             whiteSpace: 'pre-wrap',
             wordWrap: 'break-word',
           }}

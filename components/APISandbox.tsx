@@ -268,7 +268,7 @@ export default function APISandbox() {
             padding: '10px 12px',
             fontSize: '13px',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             fontFamily: 'var(--font-mono)',
             boxSizing: 'border-box',
           }}
@@ -302,7 +302,7 @@ export default function APISandbox() {
             padding: '10px 12px',
             fontSize: '13px',
             border: '1px solid var(--border-default)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             fontFamily: 'var(--font-mono)',
             boxSizing: 'border-box',
           }}
@@ -376,7 +376,7 @@ export default function APISandbox() {
           color: 'var(--color-surface-0)',
           backgroundColor: loading ? 'var(--color-text-muted)' : 'var(--accent-primary)',
           border: 'none',
-          borderRadius: '6px',
+          borderRadius: '4px',
           cursor: loading ? 'not-allowed' : 'pointer',
           fontFamily: 'var(--font-heading)',
           transition: 'all 0.2s ease',
@@ -393,7 +393,7 @@ export default function APISandbox() {
             padding: '12px',
             backgroundColor: 'rgba(239,68,68,0.1)',
             border: '1px solid #FECACA',
-            borderRadius: '6px',
+            borderRadius: '4px',
             marginBottom: '16px',
           }}
         >
@@ -425,7 +425,7 @@ export default function APISandbox() {
               style={{
                 fontSize: '12px',
                 fontWeight: 600,
-                color: response.status >= 200 && response.status < 300 ? '#059669' : '#DC2626',
+                color: response.status >= 200 && response.status < 300 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)',
               }}
             >
               Status: {response.status}
@@ -449,7 +449,7 @@ export default function APISandbox() {
               lineHeight: 1.5,
               fontFamily: 'var(--font-mono)',
               overflowX: 'auto',
-              borderRadius: '6px',
+              borderRadius: '4px',
               maxHeight: '400px',
               overflowY: 'auto',
             }}

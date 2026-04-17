@@ -96,7 +96,7 @@ export default function MapFallbackList({
                 padding: '12px',
                 backgroundColor: 'var(--color-surface-0)',
                 border: `1px solid ${colorObj.border}`,
-                borderRadius: '6px',
+                borderRadius: '4px',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease',
                 cursor: 'pointer',

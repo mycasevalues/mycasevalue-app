@@ -107,7 +107,7 @@ export default function WhitepaperPage() {
         <div
           style={{
             background: 'var(--color-surface-0)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             padding: '48px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -121,7 +121,7 @@ export default function WhitepaperPage() {
           style={{
             marginTop: 48,
             padding: '24px',
-            borderRadius: '6px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             backgroundColor: 'rgba(10, 102, 194, 0.05)',
           }}

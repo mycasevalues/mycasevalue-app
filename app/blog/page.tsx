@@ -392,7 +392,7 @@ export default function BlogPage() {
                     style={{
                       background: 'var(--accent-primary)',
                       color: 'var(--color-surface-0)',
-                      borderRadius: '6px',
+                      borderRadius: '4px',
                     }}
                   >
                     Read Article
@@ -618,7 +618,7 @@ export default function BlogPage() {
 
       {/* CTA Section */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
+        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             Want deeper analysis? Try Attorney Mode
           </h2>

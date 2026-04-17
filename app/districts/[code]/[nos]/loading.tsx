@@ -65,7 +65,7 @@ export default function Loading() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--bdr, #E2DFD8)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '20px',
               }}
             >

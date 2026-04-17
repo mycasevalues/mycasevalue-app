@@ -173,7 +173,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '16px',
               }}
             >
@@ -312,7 +312,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                 }}
               >
@@ -355,7 +355,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                 }}
               >
@@ -397,7 +397,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                 }}
               >
@@ -475,7 +475,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 padding: '32px 24px',
                 marginBottom: '16px',
               }}
@@ -486,7 +486,7 @@ export default function SampleReportPage() {
                   style={{
                     height: '8px',
                     backgroundColor: 'var(--border-default)',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     overflow: 'hidden',
                     marginBottom: '16px',
                     position: 'relative',
@@ -594,7 +594,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                 }}
               >
@@ -636,7 +636,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                 }}
               >
@@ -678,7 +678,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                 }}
               >
@@ -746,7 +746,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 overflow: 'hidden',
                 marginBottom: '24px',
               }}
@@ -970,7 +970,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                 }}
               >
@@ -1012,7 +1012,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                 }}
               >
@@ -1054,7 +1054,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   padding: '16px',
                 }}
               >
@@ -1122,7 +1122,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '6px',
+                borderRadius: '4px',
                 overflow: 'hidden',
                 marginBottom: '24px',
               }}
@@ -1325,7 +1325,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--accent-primary)',
                   color: 'var(--color-text-inverse)',
                   padding: '16px 32px',
-                  borderRadius: '6px',
+                  borderRadius: '4px',
                   fontSize: '16px',
                   fontWeight: 600,
                   textDecoration: 'none',

@@ -505,7 +505,7 @@ export default function PrivacyPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               background: 'var(--color-surface-0)',
               color: 'var(--color-text-primary)',
               border: '1px solid var(--border-default)'
@@ -537,7 +537,7 @@ export default function PrivacyPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '6px',
+              borderRadius: '4px',
               background: 'var(--color-surface-0)',
               color: 'var(--color-text-primary)',
               border: '1px solid var(--border-default)'

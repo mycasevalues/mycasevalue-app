@@ -431,7 +431,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           <div style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--bdr, #E2DFD8)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '24px',
           }}>
             <div style={{
@@ -505,7 +505,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           <div style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--bdr, #E2DFD8)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '24px',
           }}>
             <div style={{ marginBottom: 32 }}>
@@ -585,7 +585,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               display: 'block',
               background: 'var(--color-surface-0)',
               border: '1px solid var(--bdr, #E2DFD8)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '20px',
               textDecoration: 'none',
               transition: 'border-color 0.2s',
@@ -612,7 +612,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               display: 'block',
               background: 'var(--color-surface-0)',
               border: '1px solid var(--bdr, #E2DFD8)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               padding: '20px',
               textDecoration: 'none',
               transition: 'border-color 0.2s',
@@ -642,7 +642,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           <div style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--bdr, #E2DFD8)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: 'clamp(24px, 4vw, 32px)',
           }}>
             <h2 style={{
@@ -679,7 +679,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           <div style={{
             background: '#F0F0F0',
             border: '1px dashed var(--bdr, #E2DFD8)',
-            borderRadius: '6px',
+            borderRadius: '4px',
             padding: '24px',
             textAlign: 'center',
           }}>
