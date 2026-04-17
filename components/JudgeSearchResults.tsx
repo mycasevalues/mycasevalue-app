@@ -74,7 +74,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                 padding: '16px',
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 animation: 'shimmer 2s infinite',
               }}
             >
@@ -123,7 +123,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                 padding: '16px',
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 textDecoration: 'none',
                 transition: 'all 150ms ease-out',
                 cursor: 'pointer',

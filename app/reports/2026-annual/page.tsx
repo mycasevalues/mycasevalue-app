@@ -33,7 +33,7 @@ export default function AnnualReportPage() {
           <h1 style={{
             fontSize: '26px',
             fontWeight: 700,
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
             lineHeight: 1.2,
           }}>

@@ -152,7 +152,7 @@ export default function PressPage() {
             <h1
               className="press-header"
               style={{
-                fontFamily: 'var(--font-inter)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
                 color: '#ffffff',
@@ -222,7 +222,7 @@ export default function PressPage() {
                 fontSize: 28,
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: 32,
               }}
             >
@@ -272,7 +272,7 @@ export default function PressPage() {
                 fontSize: 28,
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: 32,
               }}
             >
@@ -291,7 +291,7 @@ export default function PressPage() {
                   key={stat.label}
                   style={{
                     padding: 28,
-                    borderRadius: '12px',
+                    borderRadius: '6px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -331,7 +331,7 @@ export default function PressPage() {
                 fontSize: 28,
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: 32,
               }}
             >
@@ -345,7 +345,7 @@ export default function PressPage() {
                   fontSize: 18,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 20,
                 }}
               >
@@ -364,7 +364,7 @@ export default function PressPage() {
                     href={`/press/assets/${logo.filename}`}
                     style={{
                       padding: 24,
-                      borderRadius: '12px',
+                      borderRadius: '6px',
                       border: '1px solid var(--border-default)',
                       background: 'var(--color-surface-0)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -383,7 +383,7 @@ export default function PressPage() {
                         alignItems: 'center',
                         justifyContent: 'center',
                         marginBottom: 12,
-                        borderRadius: '8px',
+                        borderRadius: '4px',
                         background: logo.label.includes('Dark')
                           ? 'var(--accent-primary)'
                           : 'var(--color-surface-1)',
@@ -449,7 +449,7 @@ export default function PressPage() {
                   fontSize: 18,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 20,
                 }}
               >
@@ -468,7 +468,7 @@ export default function PressPage() {
                     key={color.hex}
                     style={{
                       overflow: 'hidden',
-                      borderRadius: '12px',
+                      borderRadius: '6px',
                       border: '1px solid var(--border-default)',
                       background: 'var(--color-surface-0)',
                       boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -486,7 +486,7 @@ export default function PressPage() {
                           fontSize: 14,
                           fontWeight: 600,
                           color: 'var(--color-text-primary)',
-                          fontFamily: 'var(--font-display)',
+                          fontFamily: 'var(--font-ui)',
                           margin: '0 0 8px 0',
                         }}
                       >
@@ -517,7 +517,7 @@ export default function PressPage() {
                 fontSize: 28,
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: 32,
               }}
             >
@@ -536,7 +536,7 @@ export default function PressPage() {
                   key={screenshot.title}
                   style={{
                     overflow: 'hidden',
-                    borderRadius: '12px',
+                    borderRadius: '6px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -588,7 +588,7 @@ export default function PressPage() {
                         fontSize: 14,
                         fontWeight: 600,
                         color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-display)',
+                        fontFamily: 'var(--font-ui)',
                         margin: '0 0 8px 0',
                       }}
                     >
@@ -628,7 +628,7 @@ export default function PressPage() {
                 fontSize: 28,
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: 32,
               }}
             >
@@ -645,7 +645,7 @@ export default function PressPage() {
                   key={index}
                   style={{
                     padding: 32,
-                    borderRadius: '12px',
+                    borderRadius: '6px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -687,7 +687,7 @@ export default function PressPage() {
                 fontSize: 28,
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: 32,
               }}
             >
@@ -696,7 +696,7 @@ export default function PressPage() {
             <div
               style={{
                 padding: 48,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -723,7 +723,7 @@ export default function PressPage() {
                 fontSize: 28,
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: 32,
               }}
             >
@@ -732,7 +732,7 @@ export default function PressPage() {
             <div
               style={{
                 padding: 40,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',

@@ -47,7 +47,7 @@ export default function AnimatedDataViz({
         marginTop: '32px',
         padding: '24px',
         background: 'rgba(255, 255, 255, 0.08)',
-        borderRadius: '12px',
+        borderRadius: '6px',
         backdropFilter: 'blur(10px)',
         border: '1px solid rgba(255, 255, 255, 0.1)',
         animation: isVisible ? 'fadeInUp 0.6s ease-out' : 'none',

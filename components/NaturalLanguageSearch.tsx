@@ -403,7 +403,7 @@ export default function NaturalLanguageSearch() {
         padding: '24px',
         background: 'var(--color-surface-0)',
         border: '2px solid var(--accent-primary)',
-        borderRadius: '12px',
+        borderRadius: '6px',
         marginBottom: '24px',
       }}
     >
@@ -445,26 +445,26 @@ export default function NaturalLanguageSearch() {
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
               border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               outline: 'none',
               transition: 'border-color 0.2s',
               boxSizing: 'border-box',
             }}
             onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--accent-primary)')}
-            onBlur={(e) => (e.currentTarget.style.borderColor = '#D1D5DB')}
+            onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--bdr, #E2DFD8)')}
           />
           <button
             type="submit"
             disabled={isLoading || !query.trim()}
             style={{
               padding: '12px 24px',
-              background: isLoading || !query.trim() ? '#CCCCCC' : 'var(--accent-primary)',
+              background: isLoading || !query.trim() ? 'var(--bdr, #E2DFD8)' : 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               fontSize: '14px',
               fontWeight: '600',
               fontFamily: 'var(--font-body)',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '4px',
               cursor: isLoading || !query.trim() ? 'not-allowed' : 'pointer',
               transition: 'background-color 0.2s',
             }}
@@ -546,7 +546,7 @@ export default function NaturalLanguageSearch() {
                   padding: '12px',
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                 }}
               >
                 <div

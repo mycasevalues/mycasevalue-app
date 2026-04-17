@@ -27,7 +27,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
 
   const cardStyle = {
     background: 'var(--color-surface-0)',
-    borderRadius: '12px',
+    borderRadius: '6px',
     border: '1px solid var(--border-default)',
     padding: '32px',
     marginBottom: '24px',
@@ -44,7 +44,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             color: 'var(--color-text-primary)',
             marginBottom: '20px',
             marginTop: 0,
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           Win Rate Trend (2018–2024)
@@ -71,7 +71,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
               contentStyle={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                 color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-body)',
@@ -101,7 +101,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             color: 'var(--color-text-primary)',
             marginBottom: '20px',
             marginTop: 0,
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           Top Case Types
@@ -132,7 +132,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
               contentStyle={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                 color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-body)',

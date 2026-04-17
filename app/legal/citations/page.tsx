@@ -204,7 +204,7 @@ export default function CitationsPage() {
             borderRadius: 20,
             fontSize: 13,
             fontWeight: 500,
-            border: !activeCategory ? '2px solid var(--accent-primary)' : '1px solid #D1D5DB',
+            border: !activeCategory ? '2px solid var(--accent-primary)' : '1px solid var(--bdr, #E2DFD8)',
             background: !activeCategory ? '#E8F4FD' : 'var(--color-surface-0)',
             color: !activeCategory ? 'var(--accent-primary)' : '#6B7280',
             cursor: 'pointer',
@@ -221,7 +221,7 @@ export default function CitationsPage() {
               borderRadius: 20,
               fontSize: 13,
               fontWeight: 500,
-              border: activeCategory === cat.key ? `2px solid ${cat.color}` : '1px solid #D1D5DB',
+              border: activeCategory === cat.key ? `2px solid ${cat.color}` : '1px solid var(--bdr, #E2DFD8)',
               background: activeCategory === cat.key ? `${cat.color}14` : 'var(--color-surface-0)',
               color: activeCategory === cat.key ? cat.color : '#6B7280',
               cursor: 'pointer',
@@ -427,7 +427,7 @@ export default function CitationsPage() {
               onClick={() => setSelected(node)}
               style={{
                 padding: '16px 20px',
-                borderRadius: 12,
+                borderRadius: 6,
                 border: selected?.id === node.id ? `2px solid ${CATEGORY_COLORS[node.category]}` : '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 textAlign: 'left',

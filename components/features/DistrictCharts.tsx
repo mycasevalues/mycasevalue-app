@@ -39,14 +39,14 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '12px',
+            borderRadius: '6px',
           }}
         >
           <h3
             className="text-lg font-bold mb-6"
             style={{
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             Top Case Types by Volume
@@ -63,7 +63,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                 contentStyle={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',

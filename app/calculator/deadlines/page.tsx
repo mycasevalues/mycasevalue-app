@@ -149,7 +149,7 @@ export default function DeadlinesCalculatorPage() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
             FRCP Deadlines
           </div>
-          <h1 style={{ color: '#FFF', fontFamily: 'var(--font-inter)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
+          <h1 style={{ color: '#FFF', fontFamily: 'var(--font-ui)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
             Never miss a procedural deadline
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
@@ -174,8 +174,8 @@ export default function DeadlinesCalculatorPage() {
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
 
           {/* Input Form */}
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Calculate Your Deadlines
             </h2>
 
@@ -215,8 +215,8 @@ export default function DeadlinesCalculatorPage() {
             <div style={{ display: 'grid', gap: 24, animation: 'slideUp 0.4s ease-out' }}>
 
               {/* Timeline Header */}
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
-                <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 32px)' }}>
+                <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
                   FRCP Deadline Timeline
                 </h3>
                 <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
@@ -289,7 +289,7 @@ export default function DeadlinesCalculatorPage() {
                       background: 'var(--color-surface-0)',
                       border: `1px solid ${past ? '#FECACA' : 'var(--border-default)'}`,
                       borderLeft: `4px solid ${past ? '#CC1016' : daysFromNow !== null && daysFromNow <= 14 ? '#D97706' : 'var(--accent-primary)'}`,
-                      borderRadius: 12,
+                      borderRadius: 6,
                       padding: 'clamp(16px, 3vw, 24px)',
                       animation: `slideUp 0.4s ease-out ${i * 0.08}s both`,
                     }}
@@ -311,7 +311,7 @@ export default function DeadlinesCalculatorPage() {
                             +{d.days} days from {d.from}
                           </span>
                         </div>
-                        <h4 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-display)' }}>
+                        <h4 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                           {d.label}
                         </h4>
                         <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>

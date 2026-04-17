@@ -111,7 +111,7 @@ export default function LegalDashboardPage() {
         </div>
         <div style={{
           padding: '8px 16px',
-          borderRadius: 10,
+          borderRadius: 6,
           background: 'rgba(34,197,94,0.06)',
           border: '1px solid #BBF7D0',
           fontSize: 13,
@@ -201,7 +201,7 @@ export default function LegalDashboardPage() {
                   <span style={{
                     display: 'inline-block',
                     padding: '2px 10px',
-                    borderRadius: 8,
+                    borderRadius: 4,
                     fontSize: 11,
                     fontWeight: 600,
                     color: st.color,
@@ -227,11 +227,11 @@ export default function LegalDashboardPage() {
                       {src.uptime}%
                     </span>
                   </div>
-                  <div style={{ height: 6, borderRadius: 8, background: 'var(--border-default)', overflow: 'hidden' }}>
+                  <div style={{ height: 6, borderRadius: 4, background: 'var(--border-default)', overflow: 'hidden' }}>
                     <div style={{
                       height: '100%',
                       width: `${src.uptime}%`,
-                      borderRadius: 8,
+                      borderRadius: 4,
                       background: src.uptime >= 99 ? '#22C55E' : src.uptime >= 97 ? '#F59E0B' : '#EF4444',
                       transition: 'width 0.5s',
                     }} />
@@ -267,7 +267,7 @@ export default function LegalDashboardPage() {
                 key={evt.id}
                 style={{
                   padding: '14px 20px',
-                  borderRadius: 12,
+                  borderRadius: 6,
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   display: 'flex',
@@ -278,7 +278,7 @@ export default function LegalDashboardPage() {
                 <div style={{
                   width: 32,
                   height: 32,
-                  borderRadius: 8,
+                  borderRadius: 4,
                   background: es.bg,
                   color: es.color,
                   display: 'flex',
@@ -300,7 +300,7 @@ export default function LegalDashboardPage() {
                       display: 'inline-block',
                       marginTop: 6,
                       padding: '2px 8px',
-                      borderRadius: 8,
+                      borderRadius: 4,
                       fontSize: 11,
                       fontWeight: 600,
                       color: es.color,
@@ -335,11 +335,11 @@ export default function LegalDashboardPage() {
                     <span style={{ fontSize: 13, color: 'var(--color-text-secondary)' }}>{item.label}</span>
                     <span style={{ fontSize: 13, fontWeight: 600, color: item.value >= 95 ? '#15803D' : item.value >= 90 ? '#B45309' : '#DC2626' }}>{item.value}%</span>
                   </div>
-                  <div style={{ height: 6, borderRadius: 8, background: 'var(--border-default)' }}>
+                  <div style={{ height: 6, borderRadius: 4, background: 'var(--border-default)' }}>
                     <div style={{
                       height: '100%',
                       width: `${item.value}%`,
-                      borderRadius: 8,
+                      borderRadius: 4,
                       background: item.value >= 95 ? '#22C55E' : item.value >= 90 ? '#F59E0B' : '#EF4444',
                     }} />
                   </div>

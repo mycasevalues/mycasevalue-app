@@ -182,7 +182,7 @@ export default function ComparePage() {
             Comparison Tool
           </div>
           <h1 className="compare-header" style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
             fontSize: 'clamp(24px, 3.5vw, 30px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -299,7 +299,7 @@ export default function ComparePage() {
               fontSize: 14,
               fontWeight: 600,
               cursor: canCompare ? 'pointer' : 'not-allowed',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 20,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -454,20 +454,20 @@ export default function ComparePage() {
               border: '1px solid var(--border-default)',
               borderRadius: 4,
             }}>
-              <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0', fontFamily: 'var(--font-display)' }}>
+              <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0', fontFamily: 'var(--font-ui)' }}>
                 Attorney Impact & Settlement Range
               </h3>
               <div style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: '16px' }}>
                 {stats.map((s) => {
                   const wrColor = getWinRateColor(s.winRate);
                   return (
-                    <div key={s.nos} style={{ padding: '16px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '8px' }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, fontFamily: 'var(--font-display)' }}>
+                    <div key={s.nos} style={{ padding: '16px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, fontFamily: 'var(--font-ui)' }}>
                         {s.label}
                       </div>
 
                       {/* Win Rate Badge */}
-                      <div style={{ display: 'inline-block', padding: '2px 10px', background: wrColor.bg, border: `1px solid ${wrColor.border}`, borderRadius: '12px', fontSize: 12, fontWeight: 600, color: wrColor.text, marginBottom: 12 }}>
+                      <div style={{ display: 'inline-block', padding: '2px 10px', background: wrColor.bg, border: `1px solid ${wrColor.border}`, borderRadius: '6px', fontSize: 12, fontWeight: 600, color: wrColor.text, marginBottom: 12 }}>
                         {s.winRate.toFixed(1)}% win rate · {wrColor.label}
                       </div>
 
@@ -513,7 +513,7 @@ export default function ComparePage() {
                         <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--color-text-secondary)' }}>
                           <span style={{
                             display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
-                            backgroundColor: s.totalCases >= 10000 ? '#057642' : s.totalCases >= 1000 ? '#C37D16' : s.totalCases >= 100 ? '#CC1016' : '#999999',
+                            backgroundColor: s.totalCases >= 10000 ? '#057642' : s.totalCases >= 1000 ? '#C37D16' : s.totalCases >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)',
                           }} />
                           n={s.totalCases.toLocaleString()} cases
                         </div>
@@ -536,11 +536,11 @@ export default function ComparePage() {
                 marginTop: 20,
                 padding: '16px',
                 background: 'var(--color-surface-0)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 border: '1px solid #E0DDD8',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
-                  <span style={{ display: 'inline-block', padding: '1px 6px', background: 'var(--border-default)', borderRadius: 8, fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.3px' }}>AI</span>
+                  <span style={{ display: 'inline-block', padding: '1px 6px', background: 'var(--border-default)', borderRadius: 4, fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.3px' }}>AI</span>
                   <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Comparison Summary</span>
                 </div>
                 <p style={{ fontSize: 13, color: 'var(--color-text-primary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -572,7 +572,7 @@ export default function ComparePage() {
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 margin: '0 0 24px 0',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Visual Comparison
               </h3>
@@ -658,7 +658,7 @@ export default function ComparePage() {
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 margin: '0 0 24px 0',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Outcome Distribution
               </h3>
@@ -814,7 +814,7 @@ export default function ComparePage() {
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 12px 0',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     Quick Insights
                   </h3>
@@ -919,7 +919,7 @@ export default function ComparePage() {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 24px 0',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Popular Comparisons
             </h3>
@@ -1019,7 +1019,7 @@ export default function ComparePage() {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 24px 0',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Related Tools
             </h3>
@@ -1060,7 +1060,7 @@ export default function ComparePage() {
                     fontWeight: 600,
                     color: 'var(--accent-primary-hover)',
                     margin: '0 0 4px 0',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     {tool.name}
                   </h4>

@@ -190,7 +190,7 @@ export default function BlogPage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #595959;
+          color: var(--text3, #78766C);
           font-size: 14px;
           border-radius: 12px;
         }
@@ -343,7 +343,7 @@ export default function BlogPage() {
           </h1>
           <p style={{
             color: 'rgba(255,255,255,0.6)',
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
             fontSize: 15,
             lineHeight: 1.65,
             maxWidth: 640,
@@ -392,7 +392,7 @@ export default function BlogPage() {
                     style={{
                       background: 'var(--accent-primary)',
                       color: 'var(--color-surface-0)',
-                      borderRadius: '12px',
+                      borderRadius: '6px',
                     }}
                   >
                     Read Article
@@ -530,7 +530,7 @@ export default function BlogPage() {
               key={idx}
               className="featured-research-card"
             >
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0', lineHeight: 1.4, fontFamily: 'var(--font-display)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0', lineHeight: 1.4, fontFamily: 'var(--font-ui)' }}>
                 {research.title}
               </h3>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -601,7 +601,7 @@ export default function BlogPage() {
                 <div style={{ marginBottom: '12px' }}>
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg>
                 </div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
                   {tool.name}
                 </h3>
                 <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -618,7 +618,7 @@ export default function BlogPage() {
 
       {/* CTA Section */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '12px' }}>
+        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             Want deeper analysis? Try Attorney Mode
           </h2>

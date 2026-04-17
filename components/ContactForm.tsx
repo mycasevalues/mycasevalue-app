@@ -39,14 +39,14 @@ export default function ContactForm() {
     return (
       <div style={{
         padding: '48px 32px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
-        borderRadius: '12px', textAlign: 'center',
+        borderRadius: '6px', textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}>
         <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
           <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
-        <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
           Message Sent
         </h3>
         <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>
@@ -59,7 +59,7 @@ export default function ContactForm() {
   const inputStyle = {
     width: '100%', padding: '12px 14px', fontSize: '14px',
     fontFamily: 'var(--font-body)', color: 'var(--color-text-primary)',
-    border: '1px solid var(--border-default)', borderRadius: '12px',
+    border: '1px solid var(--border-default)', borderRadius: '6px',
     background: 'var(--color-surface-0)', outline: 'none',
     transition: 'border-color 200ms',
     height: '48px',
@@ -93,10 +93,10 @@ export default function ContactForm() {
       `}</style>
       <form onSubmit={handleSubmit} style={{
         padding: '32px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
-        borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+        borderRadius: '6px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
         display: 'flex', flexDirection: 'column', gap: '20px',
       }}>
-        <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
+        <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '4px' }}>
           Send Us a Message
         </h2>
         {error && (

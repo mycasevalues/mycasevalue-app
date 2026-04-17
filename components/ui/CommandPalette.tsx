@@ -447,7 +447,7 @@ export default function CommandPalette({
           maxHeight: '60vh',
           background: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
           boxShadow: '0 10px 20px rgba(0, 23, 46, 0.15)',
           overflow: 'hidden',
           display: 'flex',
@@ -501,7 +501,7 @@ export default function CommandPalette({
               color: 'var(--color-text-secondary)',
               background: 'var(--color-surface-1)',
               border: '1px solid var(--border-default)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '4px 8px',
               lineHeight: 1.4,
               fontFamily: 'inherit',
@@ -546,7 +546,7 @@ export default function CommandPalette({
                     textTransform: 'uppercase',
                     letterSpacing: '0.06em',
                     padding: '8px 10px 4px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}
                 >
                   {groupLabel}
@@ -566,7 +566,7 @@ export default function CommandPalette({
                         alignItems: 'center',
                         gap: '12px',
                         padding: '11px 12px',
-                        borderRadius: '12px',
+                        borderRadius: '6px',
                         borderLeft: isSelected ? '3px solid var(--accent-primary)' : '3px solid transparent',
                         cursor: 'pointer',
                         background: isSelected ? 'var(--color-surface-1)' : 'transparent',
@@ -641,7 +641,7 @@ export default function CommandPalette({
                             color: item.categoryColor,
                             background: `color-mix(in srgb, ${item.categoryColor} 12%, transparent)`,
                             padding: '4px 10px',
-                            borderRadius: '12px',
+                            borderRadius: '6px',
                             whiteSpace: 'nowrap',
                           }}
                         >
@@ -657,7 +657,7 @@ export default function CommandPalette({
                             color: 'var(--accent-primary-hover)',
                             background: 'transparent',
                             border: '2px solid var(--link-hover, #083D7A)',
-                            borderRadius: '12px',
+                            borderRadius: '6px',
                             padding: '4px 8px',
                             lineHeight: 1.4,
                             fontFamily: 'inherit',

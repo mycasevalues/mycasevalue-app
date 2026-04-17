@@ -89,7 +89,7 @@ function FullCoverage({ data, onMoreCases, onSimilarFact }: Omit<AnalyticsBoxPro
               fontWeight: 700,
               color: '#FFFFFF',
               background: 'var(--link, #0A50A2)',
-              borderRadius: 8,
+              borderRadius: 4,
               padding: '1px 6px',
               lineHeight: '14px',
             }}

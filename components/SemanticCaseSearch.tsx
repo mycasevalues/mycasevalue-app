@@ -89,7 +89,7 @@ export default function SemanticCaseSearch() {
         padding: '24px',
         background: 'var(--color-surface-0)',
         border: '2px solid var(--accent-primary)',
-        borderRadius: '12px',
+        borderRadius: '6px',
         marginBottom: '24px',
       }}
     >
@@ -131,8 +131,8 @@ export default function SemanticCaseSearch() {
               padding: '12px',
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
-              border: isOverLimit ? '1px solid #CC1016' : '1px solid #D1D5DB',
-              borderRadius: '8px',
+              border: isOverLimit ? '1px solid #CC1016' : '1px solid var(--bdr, #E2DFD8)',
+              borderRadius: '4px',
               outline: 'none',
               transition: 'border-color 0.2s',
               boxSizing: 'border-box',
@@ -151,7 +151,7 @@ export default function SemanticCaseSearch() {
         <div
           style={{
             fontSize: '12px',
-            color: isOverLimit ? '#CC1016' : '#666',
+            color: isOverLimit ? '#CC1016' : 'var(--text3, #78766C)',
             fontFamily: 'var(--font-mono)',
             marginBottom: '12px',
             textAlign: 'right',
@@ -166,13 +166,13 @@ export default function SemanticCaseSearch() {
           disabled={isLoading || !description.trim() || isOverLimit}
           style={{
             padding: '12px 24px',
-            background: isLoading || !description.trim() || isOverLimit ? '#CCCCCC' : 'var(--accent-primary)',
+            background: isLoading || !description.trim() || isOverLimit ? 'var(--bdr, #E2DFD8)' : 'var(--accent-primary)',
             color: 'var(--color-surface-0)',
             fontSize: '14px',
             fontWeight: '600',
             fontFamily: 'var(--font-body)',
             border: 'none',
-            borderRadius: '8px',
+            borderRadius: '4px',
             cursor: isLoading || !description.trim() || isOverLimit ? 'not-allowed' : 'pointer',
             transition: 'background-color 0.2s',
           }}
@@ -236,7 +236,7 @@ export default function SemanticCaseSearch() {
                     padding: '16px',
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                   }}
                 >
                   {/* Title and Similarity Score */}

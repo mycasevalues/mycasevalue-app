@@ -103,7 +103,7 @@ const container: React.CSSProperties = {
   maxWidth: '580px',
   margin: '0 auto',
   backgroundColor: 'var(--color-surface-0)',
-  borderRadius: '12px',
+  borderRadius: '6px',
   overflow: 'hidden',
 };
 
@@ -151,7 +151,7 @@ const hr: React.CSSProperties = {
 
 const toolCard: React.CSSProperties = {
   backgroundColor: '#FAFBFC',
-  borderRadius: '8px',
+  borderRadius: '4px',
   border: '1px solid var(--border-default)',
   padding: '16px 20px',
   marginBottom: '12px',
@@ -177,7 +177,7 @@ const toolDesc: React.CSSProperties = {
 
 const betaBox: React.CSSProperties = {
   backgroundColor: '#EDF3FB',
-  borderRadius: '8px',
+  borderRadius: '4px',
   padding: '16px 20px',
   marginBottom: '24px',
 };
@@ -199,7 +199,7 @@ const ctaButton: React.CSSProperties = {
   backgroundColor: 'var(--accent-primary)',
   color: 'var(--color-surface-0)',
   padding: '14px 32px',
-  borderRadius: '8px',
+  borderRadius: '4px',
   fontSize: '16px',
   fontWeight: 600,
   textDecoration: 'none',

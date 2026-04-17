@@ -78,7 +78,7 @@ export default function DataAlertSubscribe({
         padding: '16px',
         backgroundColor: 'var(--color-surface-0)',
         border: '1px solid rgba(255,255,255,0.1)',
-        borderRadius: '8px',
+        borderRadius: '4px',
         fontFamily: 'var(--font-body)',
       }}
     >

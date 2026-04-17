@@ -37,7 +37,7 @@ export function ToolPageLayout({
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="border-b border-[#E0E0E0]">
+      <div className="border-b border-[var(--bdr, #E2DFD8)]">
         <div className="max-w-4xl mx-auto px-6 py-4 sm:py-6">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
@@ -68,7 +68,7 @@ export function ToolPageLayout({
       {/* Auth Gate \u2014 only shown when requiresPro and not authenticated */}
       {requiresPro && !isAuthenticated ? (
         <div className="max-w-4xl mx-auto px-6 py-12">
-          <div className="rounded-xl border border-[#E0E0E0] p-8 sm:p-12 text-center bg-[var(--color-surface-2)]">
+          <div className="rounded-xl border border-[var(--bdr, #E2DFD8)] p-8 sm:p-12 text-center bg-[var(--color-surface-2)]">
             <h2 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
               Sign in to access this tool
             </h2>
@@ -91,7 +91,7 @@ export function ToolPageLayout({
           </div>
 
           {/* Footer Disclaimer */}
-          <div className="border-t border-[#E0E0E0] bg-[var(--color-surface-2)] mt-12">
+          <div className="border-t border-[var(--bdr, #E2DFD8)] bg-[var(--color-surface-2)] mt-12">
             <div className="max-w-4xl mx-auto px-6 py-8">
               <p className="text-sm text-gray-400 leading-relaxed">
                 This tool is provided for informational and analytical purposes only and does not

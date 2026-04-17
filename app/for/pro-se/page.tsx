@@ -87,7 +87,7 @@ export default function ProSeLitigantsPage() {
               style={{
                 padding: '1.5rem',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
               }}
@@ -111,7 +111,7 @@ export default function ProSeLitigantsPage() {
               alignItems: 'center',
               gap: '0.5rem',
               padding: '0.75rem 1.5rem',
-              borderRadius: '8px',
+              borderRadius: '4px',
               backgroundColor: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               textDecoration: 'none',

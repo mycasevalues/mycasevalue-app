@@ -160,7 +160,7 @@ export default function OddsPage() {
           letter-spacing: -0.005em;
           padding: 10px 20px;
           cursor: pointer;
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           transition: background-color 150ms ease, border-color 150ms ease;
         }
         .odds-btn:hover:not(:disabled) { background: var(--gold-hover, #A87222); border-color: var(--gold-hover, #A87222); }
@@ -253,7 +253,7 @@ export default function OddsPage() {
             fontSize: 'clamp(26px, 4vw, 32px)',
             fontWeight: 700,
             margin: '0 0 10px',
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
             lineHeight: 1.1,
             letterSpacing: '-0.025em',
           }}>
@@ -265,7 +265,7 @@ export default function OddsPage() {
             margin: 0,
             maxWidth: 640,
             lineHeight: 1.65,
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
           }}>
             Real win rates, settlement likelihood, and recovery ranges for your federal case type, grounded in 5.1M+ actual cases.
           </p>
@@ -303,7 +303,7 @@ export default function OddsPage() {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 16px',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Select Your Case Type
             </h2>
@@ -353,7 +353,7 @@ export default function OddsPage() {
                 <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
                   Attorney Representation
                 </label>
-                <div style={{ display: 'flex', gap: 0, borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border-default)' }}>
+                <div style={{ display: 'flex', gap: 0, borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--border-default)' }}>
                   <button
                     type="button"
                     onClick={() => { setRepresented('yes'); setShowResults(false); }}
@@ -427,7 +427,7 @@ export default function OddsPage() {
                   fontSize: 'clamp(56px, 12vw, 80px)',
                   fontWeight: 600,
                   color: winColor,
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: 1,
                   margin: '0 0 8px',
                 }}>
@@ -475,7 +475,7 @@ export default function OddsPage() {
                     margin: '0 0 20px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     Case Outcomes
                   </h3>
@@ -554,7 +554,7 @@ export default function OddsPage() {
                     margin: '0 0 20px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     Recovery Range
                   </h3>
@@ -654,7 +654,7 @@ export default function OddsPage() {
                     margin: '0 0 20px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     Win Rate by Circuit Court
                   </h3>
@@ -737,7 +737,7 @@ export default function OddsPage() {
                     margin: '0 0 16px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     Outcome Breakdown
                   </h3>
@@ -794,7 +794,7 @@ export default function OddsPage() {
                     margin: '0 0 16px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     How Your Odds Compare
                   </h3>
@@ -894,7 +894,7 @@ export default function OddsPage() {
                     margin: '0 0 16px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     Key Factors That Affect Odds
                   </h3>
@@ -1067,7 +1067,7 @@ export default function OddsPage() {
                     textDecoration: 'none',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     transition: 'background 0.2s ease',
                   }}
                 >
@@ -1088,7 +1088,7 @@ export default function OddsPage() {
                     margin: '0 0 16px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     Explore More
                   </h3>
@@ -1202,21 +1202,21 @@ export default function OddsPage() {
               {/* Attorney Representation Comparison */}
               {attyData && (
                 <section className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
-                  <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>
+                  <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                     Attorney Representation Impact
                   </h3>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
-                    <div style={{ padding: 16, background: 'rgba(34,197,94,0.1)', border: '1px solid #057642', borderRadius: 8, textAlign: 'center' }}>
+                    <div style={{ padding: 16, background: 'rgba(34,197,94,0.1)', border: '1px solid #057642', borderRadius: 4, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>With Attorney</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: '#057642', fontFamily: 'var(--font-mono)' }}>{attyData.rwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.rn ?? 0).toLocaleString()} cases</div>
                     </div>
-                    <div style={{ padding: 16, background: 'rgba(239,68,68,0.06)', border: '1px solid #CC1016', borderRadius: 8, textAlign: 'center' }}>
+                    <div style={{ padding: 16, background: 'rgba(239,68,68,0.06)', border: '1px solid #CC1016', borderRadius: 4, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Pro Se</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{attyData.pwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.pn ?? 0).toLocaleString()} cases</div>
                     </div>
-                    <div style={{ padding: 16, background: 'rgba(59,130,246,0.08)', border: '1px solid var(--accent-primary)', borderRadius: 8, textAlign: 'center' }}>
+                    <div style={{ padding: 16, background: 'rgba(59,130,246,0.08)', border: '1px solid var(--accent-primary)', borderRadius: 4, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Advantage</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>+{attyData.rwr - attyData.pwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>with representation</div>
@@ -1228,8 +1228,8 @@ export default function OddsPage() {
               {/* AI-Generated Next Steps */}
               <section className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-                  <span style={{ padding: '2px 8px', background: 'var(--color-surface-1)', borderRadius: 8, fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.3px' }}>AI</span>
-                  <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-display)' }}>
+                  <span style={{ padding: '2px 8px', background: 'var(--color-surface-1)', borderRadius: 4, fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.3px' }}>AI</span>
+                  <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                     Recommended Next Steps
                   </h3>
                 </div>
@@ -1272,7 +1272,7 @@ export default function OddsPage() {
                 padding: 'clamp(16px, 4vw, 32px)',
                 background: 'rgba(234,179,8,0.1)',
                 border: '1px solid #FCD34D',
-                borderRadius: 8,
+                borderRadius: 4,
               }}>
                 <p style={{ fontSize: 13, color: '#fde68a', margin: '0 0 8px', lineHeight: 1.6, fontWeight: 600 }}>
                   Statistical estimate based on historical data — not a prediction of your case outcome.
@@ -1309,7 +1309,7 @@ export default function OddsPage() {
                       fontSize: 24,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                     }}>
                       {stat.v}
                     </div>
@@ -1341,7 +1341,7 @@ export default function OddsPage() {
                   margin: '0 0 16px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.3px',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   Popular Case Types
                 </h3>
@@ -1393,7 +1393,7 @@ export default function OddsPage() {
               <div className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
                 <h3 style={{
                   fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px',
-                  textTransform: 'uppercase', letterSpacing: '0.3px', fontFamily: 'var(--font-display)',
+                  textTransform: 'uppercase', letterSpacing: '0.3px', fontFamily: 'var(--font-ui)',
                 }}>
                   Next Steps
                 </h3>
@@ -1450,7 +1450,7 @@ export default function OddsPage() {
               <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--border-default)" strokeWidth="1.5" style={{ margin: '0 auto 16px', display: 'block' }}>
                 <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
               </svg>
-              <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
+              <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 8 }}>
                 Select a case type to see your odds
               </p>
               <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', maxWidth: 480, margin: '0 auto', lineHeight: 1.6 }}>

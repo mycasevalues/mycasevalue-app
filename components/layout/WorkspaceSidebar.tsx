@@ -166,7 +166,7 @@ function FilterCheckbox({
         gap: 7,
         cursor: 'pointer',
         fontSize: 12,
-        fontFamily: 'var(--font-sans, var(--font-inter))',
+        fontFamily: 'var(--font-sans, var(--font-ui))',
         color: 'var(--text2)',
       }}
       onMouseEnter={(e) => {
@@ -238,7 +238,7 @@ function FilterSectionGroup({ section }: { section: FilterSection }) {
           height: 36,
           padding: '0 14px',
           fontSize: 12,
-          fontFamily: 'var(--font-sans, var(--font-inter))',
+          fontFamily: 'var(--font-sans, var(--font-ui))',
           fontWeight: 600,
           color: 'var(--text1)',
           background: 'none',
@@ -268,7 +268,7 @@ function FilterSectionGroup({ section }: { section: FilterSection }) {
               color: 'var(--link)',
               cursor: 'pointer',
               marginTop: 4,
-              fontFamily: 'var(--font-sans, var(--font-inter))',
+              fontFamily: 'var(--font-sans, var(--font-ui))',
             }}>
               + 3,395 more
             </div>
@@ -412,7 +412,7 @@ export default function WorkspaceSidebar({
                         border: 'none',
                         padding: '0 8px',
                         fontSize: 11,
-                        fontFamily: 'var(--font-sans, var(--font-inter))',
+                        fontFamily: 'var(--font-sans, var(--font-ui))',
                         color: 'var(--text2)',
                         outline: 'none',
                         background: 'transparent',
@@ -450,7 +450,7 @@ export default function WorkspaceSidebar({
               }}>
                 <span style={{
                   fontSize: 11,
-                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  fontFamily: 'var(--font-sans, var(--font-ui))',
                   fontWeight: 600,
                   textTransform: 'uppercase',
                   letterSpacing: '0.07em',
@@ -462,7 +462,7 @@ export default function WorkspaceSidebar({
                   fontSize: 11,
                   color: 'var(--link)',
                   cursor: 'pointer',
-                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  fontFamily: 'var(--font-sans, var(--font-ui))',
                 }}>
                   Clear all
                 </span>
@@ -499,7 +499,7 @@ export default function WorkspaceSidebar({
                       <span style={{
                         flex: 1,
                         fontSize: 12,
-                        fontFamily: 'var(--font-sans, var(--font-inter))',
+                        fontFamily: 'var(--font-sans, var(--font-ui))',
                         fontWeight: isActive ? 600 : 400,
                         color: isActive ? 'var(--text1)' : 'var(--link)',
                       }}>
@@ -539,7 +539,7 @@ export default function WorkspaceSidebar({
               }}>
                 <span style={{
                   fontSize: 11,
-                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  fontFamily: 'var(--font-sans, var(--font-ui))',
                   fontWeight: 600,
                   textTransform: 'uppercase',
                   letterSpacing: '0.07em',
@@ -551,7 +551,7 @@ export default function WorkspaceSidebar({
                   fontSize: 11,
                   color: 'var(--link)',
                   cursor: 'pointer',
-                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  fontFamily: 'var(--font-sans, var(--font-ui))',
                 }}>
                   Print
                 </span>
@@ -577,7 +577,7 @@ export default function WorkspaceSidebar({
                         padding: item.indent ? '0 14px 0 24px' : '0 14px',
                         fontSize: item.indent ? 11 : 12,
                         fontFamily: item.indent
-                          ? 'var(--font-sans, var(--font-inter))'
+                          ? 'var(--font-sans, var(--font-ui))'
                           : 'var(--font-baskerville, var(--font-legal))',
                         fontWeight: isActive ? 600 : 400,
                         color: isActive ? 'var(--text1)' : (item.indent ? 'var(--text2)' : 'var(--link)'),
@@ -622,7 +622,7 @@ export default function WorkspaceSidebar({
               style={{
                 display: 'block',
                 fontSize: 12,
-                fontFamily: 'var(--font-sans, var(--font-inter))',
+                fontFamily: 'var(--font-sans, var(--font-ui))',
                 color: 'var(--text3)',
                 textDecoration: 'none',
                 padding: '3px 0',
@@ -637,7 +637,7 @@ export default function WorkspaceSidebar({
               style={{
                 display: 'block',
                 fontSize: 12,
-                fontFamily: 'var(--font-sans, var(--font-inter))',
+                fontFamily: 'var(--font-sans, var(--font-ui))',
                 color: 'var(--text3)',
                 textDecoration: 'none',
                 padding: '3px 0',

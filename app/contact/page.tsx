@@ -96,7 +96,7 @@ export default function ContactPage() {
                 fontSize: 'clamp(28px, 4vw, 36px)',
                 fontWeight: 700,
                 color: '#ffffff',
-                fontFamily: 'var(--font-inter)',
+                fontFamily: 'var(--font-ui)',
                 letterSpacing: '-0.025em',
                 marginBottom: 10,
                 lineHeight: 1.1,
@@ -108,7 +108,7 @@ export default function ContactPage() {
               style={{
                 fontSize: 15,
                 color: 'rgba(255,255,255,0.6)',
-                fontFamily: 'var(--font-inter)',
+                fontFamily: 'var(--font-ui)',
                 lineHeight: 1.65,
                 maxWidth: 560,
               }}
@@ -140,7 +140,7 @@ export default function ContactPage() {
               fontSize: 24,
               fontWeight: 600,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 24,
             }}
           >
@@ -174,7 +174,7 @@ export default function ContactPage() {
                 href={link.href}
                 style={{
                   padding: 24,
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -192,7 +192,7 @@ export default function ContactPage() {
                     fontSize: 16,
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     margin: 0,
                   }}
                 >
@@ -229,7 +229,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -240,7 +240,7 @@ export default function ContactPage() {
                   fontSize: 18,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 8,
                 }}
               >
@@ -282,7 +282,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -293,7 +293,7 @@ export default function ContactPage() {
                   fontSize: 18,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 8,
                 }}
               >
@@ -335,7 +335,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -346,7 +346,7 @@ export default function ContactPage() {
                   fontSize: 18,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 8,
                 }}
               >
@@ -399,7 +399,7 @@ export default function ContactPage() {
             padding: '24px',
             marginTop: 48,
             marginBottom: 24,
-            borderRadius: '12px',
+            borderRadius: '6px',
             border: '1px solid var(--border-default)',
             backgroundColor: 'rgba(0,105,151,0.05)',
             textAlign: 'center',
@@ -410,7 +410,7 @@ export default function ContactPage() {
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-display)' }}>
+            <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-ui)' }}>
               Response Time
             </span>
           </div>

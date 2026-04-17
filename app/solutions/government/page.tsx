@@ -85,7 +85,7 @@ export default function GovernmentPage() {
             For Government
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -112,7 +112,7 @@ export default function GovernmentPage() {
               padding: '10px 20px',
               borderRadius: 6,
               textDecoration: 'none',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '-0.005em',
@@ -132,7 +132,7 @@ export default function GovernmentPage() {
               borderRadius: 6,
               border: '1px solid rgba(255,255,255,0.2)',
               textDecoration: 'none',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '-0.005em',
@@ -148,7 +148,7 @@ export default function GovernmentPage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '2rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -162,7 +162,7 @@ export default function GovernmentPage() {
               <div key={f.title} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '20px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
@@ -194,7 +194,7 @@ export default function GovernmentPage() {
       <section style={{ padding: '20px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1.75rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -216,7 +216,7 @@ export default function GovernmentPage() {
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
-              borderRadius: '12px',
+              borderRadius: '6px',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
@@ -231,7 +231,7 @@ export default function GovernmentPage() {
               background: 'transparent',
               color: 'var(--color-text-primary)',
               padding: '0.875rem 2rem',
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: '1.5px solid var(--border-default)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
@@ -251,7 +251,7 @@ export default function GovernmentPage() {
       <section style={{ padding: '20px 16px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1.75rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -266,7 +266,7 @@ export default function GovernmentPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -299,7 +299,7 @@ export default function GovernmentPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -332,7 +332,7 @@ export default function GovernmentPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',

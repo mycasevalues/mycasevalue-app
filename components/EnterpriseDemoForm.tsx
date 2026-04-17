@@ -100,7 +100,7 @@ export default function EnterpriseDemoForm() {
         padding: '48px 32px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
-        borderRadius: '12px',
+        borderRadius: '6px',
         textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}>
@@ -112,7 +112,7 @@ export default function EnterpriseDemoForm() {
           fontSize: '20px',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
-          fontFamily: 'var(--font-display)',
+          fontFamily: 'var(--font-ui)',
           marginBottom: '8px',
         }}>
           Thank You
@@ -136,7 +136,7 @@ export default function EnterpriseDemoForm() {
     fontFamily: 'var(--font-body)',
     color: 'var(--color-text-primary)',
     border: '1px solid var(--border-default)',
-    borderRadius: '12px',
+    borderRadius: '6px',
     background: 'var(--color-surface-0)',
     outline: 'none',
     transition: 'border-color 200ms',
@@ -205,7 +205,7 @@ export default function EnterpriseDemoForm() {
         padding: '32px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
-        borderRadius: '12px',
+        borderRadius: '6px',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
         display: 'flex',
         flexDirection: 'column',

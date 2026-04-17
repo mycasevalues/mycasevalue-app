@@ -71,7 +71,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               left: '12px',
               top: '50%',
               transform: 'translateY(-50%)',
-              color: '#595959',
+              color: 'var(--text3, #78766C)',
               pointerEvents: 'none',
             }}
           >
@@ -88,7 +88,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               padding: '12px 12px 12px 40px',
               fontSize: '14px',
               border: '1px solid var(--border-default)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               outline: 'none',
               fontFamily: 'var(--font-body)',
               transition: 'all 200ms ease',
@@ -103,7 +103,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
             }}
           />
         </div>
-        <p style={{ fontSize: '12px', color: '#595959', margin: '0' }}>
+        <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0' }}>
           {filteredTerms.length} of {terms.length} terms
         </p>
       </div>
@@ -115,7 +115,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
             style={{
               fontSize: '18px',
               fontWeight: 600,
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               color: 'var(--accent-primary)',
               marginBottom: '16px',
             }}
@@ -139,7 +139,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   padding: '16px',
                   background: '#FFF9E6',
                   border: '1px solid #FFE5B4',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   textDecoration: 'none',
                   transition: 'all 200ms ease',
                 }}
@@ -160,7 +160,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                     fontWeight: 600,
                     color: 'var(--accent-primary)',
                     marginBottom: '8px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                   }}
                 >
                   {term.term}
@@ -204,7 +204,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   height: '32px',
                   fontSize: '13px',
                   fontWeight: 600,
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   textDecoration: 'none',
                   transition: 'all 200ms ease',
                   color: lettersWithTerms.has(letter) ? 'var(--accent-primary)' : '#A9AEB3',
@@ -228,7 +228,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               style={{
                 fontSize: '18px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--accent-primary)',
                 marginBottom: '16px',
                 paddingBottom: '8px',
@@ -249,7 +249,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                     padding: '14px',
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     textDecoration: 'none',
                     transition: 'all 200ms ease',
                   }}
@@ -268,7 +268,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                     style={{
                       fontSize: '15px',
                       fontWeight: 600,
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       color: 'var(--color-text-primary)',
                       marginBottom: '6px',
                       margin: 0,

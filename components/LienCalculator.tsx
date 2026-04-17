@@ -193,15 +193,15 @@ export default function LienCalculator() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
       {/* Input Section */}
-      <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)' }}>
-        <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+      <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: 'clamp(24px, 4vw, 40px)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
           Settlement Details
         </h2>
 
         <form onSubmit={handleCalculate} style={{ display: 'grid', gap: 20 }}>
           {/* Gross Settlement */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)' }}>
+            <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
               Gross Settlement Amount <span style={{ color: '#EF4444' }}>*</span>
             </label>
             <input
@@ -213,7 +213,7 @@ export default function LienCalculator() {
               style={{
                 padding: '12px 14px',
                 border: errors.grossSettlement ? '2px solid var(--color-error)' : '1px solid var(--border-default)',
-                borderRadius: 8,
+                borderRadius: '4px',
                 fontSize: 14,
                 fontFamily: 'var(--font-mono)',
                 backgroundColor: 'var(--color-surface-1)',
@@ -229,7 +229,7 @@ export default function LienCalculator() {
 
           {/* Case Type */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)' }}>
+            <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
               Case Type
             </label>
             <select
@@ -239,7 +239,7 @@ export default function LienCalculator() {
               style={{
                 padding: '12px 14px',
                 border: '1px solid var(--border-default)',
-                borderRadius: 8,
+                borderRadius: '4px',
                 fontSize: 14,
                 fontFamily: 'var(--font-body)',
                 backgroundColor: 'var(--color-surface-1)',
@@ -260,7 +260,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Medicare */}
-          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 10, padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '6px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -269,13 +269,13 @@ export default function LienCalculator() {
                 onChange={handleInputChange}
                 style={{ width: 18, height: 18, cursor: 'pointer' }}
               />
-              <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', cursor: 'pointer', margin: 0 }}>
+              <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', cursor: 'pointer', margin: 0 }}>
                 Medicare benefits received?
               </label>
             </div>
             {formData.medicareBenefits && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <label style={{ fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-display)' }}>
+                <label style={{ fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                   Estimated Medicare expenditures
                 </label>
                 <input
@@ -304,7 +304,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Medicaid */}
-          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 10, padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '6px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -313,13 +313,13 @@ export default function LienCalculator() {
                 onChange={handleInputChange}
                 style={{ width: 18, height: 18, cursor: 'pointer' }}
               />
-              <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', cursor: 'pointer', margin: 0 }}>
+              <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', cursor: 'pointer', margin: 0 }}>
                 Medicaid benefits received?
               </label>
             </div>
             {formData.medicaidBenefits && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <label style={{ fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-display)' }}>
+                <label style={{ fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                   Estimated Medicaid amount
                 </label>
                 <input
@@ -348,7 +348,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Workers Compensation */}
-          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 10, padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '6px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -357,13 +357,13 @@ export default function LienCalculator() {
                 onChange={handleInputChange}
                 style={{ width: 18, height: 18, cursor: 'pointer' }}
               />
-              <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', cursor: 'pointer', margin: 0 }}>
+              <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', cursor: 'pointer', margin: 0 }}>
                 Workers compensation received?
               </label>
             </div>
             {formData.workersCompBenefits && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <label style={{ fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-display)' }}>
+                <label style={{ fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                   Total workers comp received
                 </label>
                 <input
@@ -393,7 +393,7 @@ export default function LienCalculator() {
 
           {/* Attorney Fee Percentage */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)' }}>
+            <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
               Attorney Fee Percentage (%)
             </label>
             <input
@@ -408,7 +408,7 @@ export default function LienCalculator() {
               style={{
                 padding: '12px 14px',
                 border: errors.attorneyFeePercent ? '2px solid #EF4444' : '1px solid var(--border-default)',
-                borderRadius: 8,
+                borderRadius: '4px',
                 fontSize: 14,
                 fontFamily: 'var(--font-mono)',
                 backgroundColor: 'var(--color-surface-1)',
@@ -424,7 +424,7 @@ export default function LienCalculator() {
 
           {/* Case Expenses */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)' }}>
+            <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
               Case Expenses Estimate
             </label>
             <input
@@ -436,7 +436,7 @@ export default function LienCalculator() {
               style={{
                 padding: '12px 14px',
                 border: '1px solid var(--border-default)',
-                borderRadius: 8,
+                borderRadius: '4px',
                 fontSize: 14,
                 fontFamily: 'var(--font-mono)',
                 backgroundColor: 'var(--color-surface-1)',
@@ -457,10 +457,10 @@ export default function LienCalculator() {
               background: 'var(--accent-primary)',
               color: '#FFF',
               border: 'none',
-              borderRadius: 8,
+              borderRadius: '4px',
               fontSize: 15,
               fontWeight: 600,
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               cursor: 'pointer',
               transition: 'background-color 0.2s',
               marginTop: 8,
@@ -475,13 +475,13 @@ export default function LienCalculator() {
 
       {/* Results Section */}
       {result && (
-        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', padding: 'clamp(24px, 4vw, 40px)' }}>
+          <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
             Lien Estimate Breakdown
           </h2>
 
           {/* Calculation breakdown */}
-          <div style={{ display: 'grid', gap: 0, marginBottom: 32, borderRadius: 10, overflow: 'hidden', border: '1px solid var(--border-default)' }}>
+          <div style={{ display: 'grid', gap: 0, marginBottom: 32, borderRadius: '6px', overflow: 'hidden', border: '1px solid var(--border-default)' }}>
             {/* Gross Settlement */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderBottom: '1px solid var(--border-default)' }}>
               <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
@@ -516,7 +516,7 @@ export default function LienCalculator() {
 
             {/* Net Before Liens */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'rgba(34,197,94,0.1)', borderBottom: '1px solid #D1E8D6' }}>
-              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)' }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                 Net Before Liens
               </div>
               <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>
@@ -526,14 +526,14 @@ export default function LienCalculator() {
           </div>
 
           {/* Liens Detail */}
-          <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '24px 0 16px', fontFamily: 'var(--font-display)' }}>
+          <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '24px 0 16px', fontFamily: 'var(--font-ui)' }}>
             Liens to Address
           </h3>
 
           {/* Medicare Lien */}
           {(result.medicareLiensHigh > 0) && (
-            <div style={{ background: 'rgba(234,179,8,0.1)', borderLeft: '4px solid #F59E0B', borderRadius: 8, padding: 16, marginBottom: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, fontFamily: 'var(--font-display)' }}>
+            <div style={{ background: 'rgba(234,179,8,0.1)', borderLeft: '4px solid #F59E0B', borderRadius: '4px', padding: 16, marginBottom: 16 }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, fontFamily: 'var(--font-ui)' }}>
                 Medicare Lien (Estimated Range)
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
@@ -560,8 +560,8 @@ export default function LienCalculator() {
 
           {/* Medicaid Lien */}
           {(result.medicaidLiensHigh > 0) && (
-            <div style={{ background: 'rgba(34,197,94,0.06)', borderLeft: '4px solid #10B981', borderRadius: 8, padding: 16, marginBottom: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, fontFamily: 'var(--font-display)' }}>
+            <div style={{ background: 'rgba(34,197,94,0.06)', borderLeft: '4px solid #10B981', borderRadius: '4px', padding: 16, marginBottom: 16 }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, fontFamily: 'var(--font-ui)' }}>
                 Medicaid Lien (Estimated Range)
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
@@ -588,8 +588,8 @@ export default function LienCalculator() {
 
           {/* Workers Comp Lien */}
           {(result.workersCompLiens > 0) && (
-            <div style={{ background: 'rgba(59,130,246,0.08)', borderLeft: '4px solid #3B82F6', borderRadius: 8, padding: 16, marginBottom: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, fontFamily: 'var(--font-display)' }}>
+            <div style={{ background: 'rgba(59,130,246,0.08)', borderLeft: '4px solid #3B82F6', borderRadius: '4px', padding: 16, marginBottom: 16 }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, fontFamily: 'var(--font-ui)' }}>
                 Workers Compensation Lien
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
@@ -607,7 +607,7 @@ export default function LienCalculator() {
           )}
 
           {/* Total Liens Summary */}
-          <div style={{ background: '#FFF', border: '2px solid var(--border-default)', borderRadius: 10, padding: 16, marginBottom: 24 }}>
+          <div style={{ background: '#FFF', border: '2px solid var(--border-default)', borderRadius: '6px', padding: 16, marginBottom: 24 }}>
             <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', marginBottom: 12, fontFamily: 'var(--font-body)' }}>
               TOTAL LIENS ESTIMATE
             </div>
@@ -630,8 +630,8 @@ export default function LienCalculator() {
           </div>
 
           {/* Net Recovery */}
-          <div style={{ background: 'var(--color-surface-1)', borderRadius: 12, padding: 24, border: '1px solid var(--border-default)', marginBottom: 24 }}>
-            <h3 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-display)' }}>
+          <div style={{ background: 'var(--color-surface-1)', borderRadius: '6px', padding: 24, border: '1px solid var(--border-default)', marginBottom: 24 }}>
+            <h3 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
               Estimated Net Recovery to Client
             </h3>
             <div style={{ display: 'grid', gap: 12 }}>
@@ -657,7 +657,7 @@ export default function LienCalculator() {
 
           {/* Resources */}
           <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: 24 }}>
-            <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
+            <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
               Resources
             </h3>
             <a
@@ -671,7 +671,7 @@ export default function LienCalculator() {
                 padding: '12px 16px',
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: 8,
+                borderRadius: '4px',
                 textDecoration: 'none',
                 color: 'var(--color-text-primary)',
                 transition: 'background-color 0.2s',

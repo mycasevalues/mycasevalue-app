@@ -162,7 +162,7 @@ export default function DataSourcesPage() {
               fontSize: 'clamp(28px, 4vw, 36px)',
               fontWeight: 700,
               color: '#ffffff',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               letterSpacing: '-0.025em',
               marginBottom: 10,
               lineHeight: 1.1,
@@ -172,7 +172,7 @@ export default function DataSourcesPage() {
             <p style={{
               fontSize: 15,
               color: 'rgba(255,255,255,0.6)',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.65,
               maxWidth: 640,
             }}>
@@ -206,7 +206,7 @@ export default function DataSourcesPage() {
               ].map((stat, idx) => (
                 <div key={idx} style={{
                   padding: 32,
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -216,7 +216,7 @@ export default function DataSourcesPage() {
                     fontSize: 32,
                     fontWeight: 700,
                     color: 'var(--accent-primary)',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     margin: '0 0 8px 0',
                   }}>
                     {stat.number}
@@ -243,7 +243,7 @@ export default function DataSourcesPage() {
               fontSize: 32,
               fontWeight: 700,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
               Our Verified Sources
@@ -253,7 +253,7 @@ export default function DataSourcesPage() {
               {dataSources.map((source, idx) => (
                 <div key={idx} style={{
                   padding: 32,
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -264,7 +264,7 @@ export default function DataSourcesPage() {
                         fontSize: 20,
                         fontWeight: 700,
                         color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-display)',
+                        fontFamily: 'var(--font-ui)',
                         marginBottom: 8,
                       }}>
                         {source.name}
@@ -291,7 +291,7 @@ export default function DataSourcesPage() {
                           fontSize: 11,
                           fontWeight: 600,
                           color: 'var(--color-text-secondary)',
-                          fontFamily: 'var(--font-display)',
+                          fontFamily: 'var(--font-ui)',
                           margin: 0,
                           textTransform: 'uppercase',
                           letterSpacing: '0.05em',
@@ -302,7 +302,7 @@ export default function DataSourcesPage() {
                           fontSize: 18,
                           fontWeight: 700,
                           color: 'var(--accent-primary)',
-                          fontFamily: 'var(--font-display)',
+                          fontFamily: 'var(--font-ui)',
                           margin: 0,
                         }}>
                           {source.cases}
@@ -313,7 +313,7 @@ export default function DataSourcesPage() {
                           fontSize: 11,
                           fontWeight: 600,
                           color: 'var(--color-text-secondary)',
-                          fontFamily: 'var(--font-display)',
+                          fontFamily: 'var(--font-ui)',
                           margin: 0,
                           textTransform: 'uppercase',
                           letterSpacing: '0.05em',
@@ -341,7 +341,7 @@ export default function DataSourcesPage() {
                       fontSize: 11,
                       fontWeight: 600,
                       color: 'var(--color-text-secondary)',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       margin: '0 0 12px 0',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
@@ -405,7 +405,7 @@ export default function DataSourcesPage() {
               fontSize: 32,
               fontWeight: 700,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
               How We Calculate Outcomes
@@ -419,7 +419,7 @@ export default function DataSourcesPage() {
               {methodology.map((method, idx) => (
                 <div key={idx} style={{
                   padding: 28,
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -428,7 +428,7 @@ export default function DataSourcesPage() {
                     fontSize: 16,
                     fontWeight: 700,
                     color: 'var(--color-text-primary)',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     marginBottom: 12,
                   }}>
                     {method.title}
@@ -453,7 +453,7 @@ export default function DataSourcesPage() {
               fontSize: 32,
               fontWeight: 700,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
               Data Freshness & Update Schedule
@@ -467,7 +467,7 @@ export default function DataSourcesPage() {
               {/* Update Schedule Card */}
               <div style={{
                 padding: 32,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -476,7 +476,7 @@ export default function DataSourcesPage() {
                   fontSize: 18,
                   fontWeight: 700,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 24,
                 }}>
                   Update Frequency
@@ -506,7 +506,7 @@ export default function DataSourcesPage() {
                         fontSize: 13,
                         fontWeight: 600,
                         color: 'var(--accent-primary)',
-                        fontFamily: 'var(--font-display)',
+                        fontFamily: 'var(--font-ui)',
                       }}>
                         {item.frequency}
                       </span>
@@ -518,7 +518,7 @@ export default function DataSourcesPage() {
               {/* Last Updated Card */}
               <div style={{
                 padding: 32,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -527,7 +527,7 @@ export default function DataSourcesPage() {
                   fontSize: 18,
                   fontWeight: 700,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 24,
                 }}>
                   Last Updated
@@ -574,7 +574,7 @@ export default function DataSourcesPage() {
               fontSize: 32,
               fontWeight: 700,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
               Geographic Coverage
@@ -582,7 +582,7 @@ export default function DataSourcesPage() {
 
             <div style={{
               padding: 40,
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: '1px solid var(--border-default)',
               background: 'var(--color-surface-0)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -618,7 +618,7 @@ export default function DataSourcesPage() {
                 ].map((circuit, idx) => (
                   <div key={idx} style={{
                     padding: 16,
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
                   }}>
@@ -626,7 +626,7 @@ export default function DataSourcesPage() {
                       fontSize: 13,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       margin: '0 0 6px 0',
                     }}>
                       {circuit.name}
@@ -635,7 +635,7 @@ export default function DataSourcesPage() {
                       fontSize: 16,
                       fontWeight: 700,
                       color: 'var(--accent-primary)',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       margin: 0,
                     }}>
                       {circuit.districts} districts
@@ -652,7 +652,7 @@ export default function DataSourcesPage() {
               fontSize: 32,
               fontWeight: 700,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
               Built on Verification, Not Speculation
@@ -691,7 +691,7 @@ export default function DataSourcesPage() {
               ].map((item, idx) => (
                 <div key={idx} style={{
                   padding: 24,
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -699,7 +699,7 @@ export default function DataSourcesPage() {
                   <div style={{
                     width: 32,
                     height: 32,
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     backgroundColor: 'rgba(255,255,255,0.05)',
                     display: 'flex',
                     alignItems: 'center',
@@ -714,7 +714,7 @@ export default function DataSourcesPage() {
                     fontSize: 16,
                     fontWeight: 700,
                     color: 'var(--color-text-primary)',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     marginBottom: 8,
                   }}>
                     {item.title}
@@ -736,7 +736,7 @@ export default function DataSourcesPage() {
           {/* CTA Section */}
           <section style={{
             padding: 48,
-            borderRadius: '12px',
+            borderRadius: '6px',
             background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--link, #0A50A2) 100%)',
             textAlign: 'center',
           }}>
@@ -744,7 +744,7 @@ export default function DataSourcesPage() {
               fontSize: 28,
               fontWeight: 700,
               color: 'var(--color-surface-0)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 12,
             }}>
               Questions About Our Data?
@@ -768,9 +768,9 @@ export default function DataSourcesPage() {
                   color: 'var(--accent-primary)',
                   fontSize: 15,
                   fontWeight: 700,
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   textDecoration: 'none',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   transition: 'all 0.3s ease',
                 }}
               >
@@ -785,9 +785,9 @@ export default function DataSourcesPage() {
                   color: 'var(--color-surface-0)',
                   fontSize: 15,
                   fontWeight: 700,
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   textDecoration: 'none',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   border: '1px solid rgba(255,255,255,0.3)',
                   transition: 'all 0.3s ease',
                 }}

@@ -67,13 +67,13 @@ export default function ProductPreview() {
             </div>
           </div>
 
-          <div className="bg-[var(--surf,#F6F5F2)] border border-t-0 border-[#E0E0E0] rounded-b-xl p-6 md:p-8 shadow-xl">
+          <div className="bg-[var(--surf,#F6F5F2)] border border-t-0 border-[var(--bdr, #E2DFD8)] rounded-b-xl p-6 md:p-8 shadow-xl">
             {/* Category cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {SAMPLE_CATEGORIES.map((cat) => (
                 <div
                   key={cat.title}
-                  className="border border-[#E0E0E0] rounded-xl p-4 hover:shadow-sm transition-shadow"
+                  className="border border-[var(--bdr, #E2DFD8)] rounded-xl p-4 hover:shadow-sm transition-shadow"
                 >
                   <h4 className="text-sm font-semibold text-gray-100 mb-3">
                     {cat.title}
@@ -119,7 +119,7 @@ export default function ProductPreview() {
               ))}
             </div>
 
-            <div className="mt-4 pt-4 border-t border-[#E0E0E0] flex items-center justify-between">
+            <div className="mt-4 pt-4 border-t border-[var(--bdr, #E2DFD8)] flex items-center justify-between">
               <span className="text-[11px] text-gray-400">
                 Showing 3 of 84 case type categories
               </span>

@@ -474,7 +474,7 @@ export default function AnnualReportCapture() {
         padding: '48px 32px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
-        borderRadius: '12px',
+        borderRadius: '6px',
         textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}>
@@ -482,7 +482,7 @@ export default function AnnualReportCapture() {
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
           <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
-        <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
           Report Downloaded
         </h3>
         <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.6, marginBottom: '16px' }}>
@@ -495,7 +495,7 @@ export default function AnnualReportCapture() {
             background: 'var(--accent-primary)',
             color: 'var(--color-surface-0)',
             border: 'none',
-            borderRadius: '8px',
+            borderRadius: '4px',
             fontSize: '14px',
             fontWeight: 600,
             cursor: 'pointer',
@@ -550,7 +550,7 @@ export default function AnnualReportCapture() {
             fontSize: '22px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
           }}>
             Download the Report
@@ -568,7 +568,7 @@ export default function AnnualReportCapture() {
             padding: '24px',
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '12px',
+            borderRadius: '6px',
             display: 'flex',
             flexDirection: 'column',
             gap: '16px',
@@ -601,7 +601,7 @@ export default function AnnualReportCapture() {
                   fontFamily: 'var(--font-body)',
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   background: 'var(--color-surface-0)',
                   outline: 'none',
                   transition: 'border-color 200ms',
@@ -615,7 +615,7 @@ export default function AnnualReportCapture() {
                 padding: '12px',
                 background: 'rgba(239,68,68,0.1)',
                 border: '1px solid #FCA5A5',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 fontSize: '13px',
                 color: '#f87171',
               }}>
@@ -648,7 +648,7 @@ export default function AnnualReportCapture() {
             fontSize: '22px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
           }}>
             What's Inside
@@ -658,7 +658,7 @@ export default function AnnualReportCapture() {
             padding: '24px',
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '12px',
+            borderRadius: '6px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
           }}>
             <div style={{ marginBottom: '24px' }}>

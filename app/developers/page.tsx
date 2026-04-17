@@ -393,7 +393,7 @@ export default function DevelopersPage() {
             API & Integrations
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -460,7 +460,7 @@ export default function DevelopersPage() {
                 key={idx}
                 style={{
                   background: 'var(--color-surface-0)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                   border: '1px solid var(--border-default)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -513,7 +513,7 @@ export default function DevelopersPage() {
               key={idx}
               style={{
                 background: 'var(--color-surface-0)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 overflow: 'hidden',
                 marginBottom: '16px',
@@ -671,7 +671,7 @@ export default function DevelopersPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '24px',
               border: '1px solid var(--border-default)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -734,7 +734,7 @@ export default function DevelopersPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: '1px solid var(--border-default)',
               overflow: 'hidden',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -805,7 +805,7 @@ export default function DevelopersPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: '1px solid var(--border-default)',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -859,7 +859,7 @@ export default function DevelopersPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: '1px solid var(--border-default)',
               overflow: 'hidden',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -891,7 +891,7 @@ export default function DevelopersPage() {
           <div
             style={{
               background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold-hover, #A87222) 100%)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '32px',
               textAlign: 'center',
               boxShadow: '0 4px 12px rgba(10, 102, 194, 0.15)',
@@ -918,7 +918,7 @@ export default function DevelopersPage() {
                 backgroundColor: 'var(--color-surface-0)',
                 color: 'var(--accent-primary)',
                 padding: '12px 32px',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 textDecoration: 'none',
                 fontWeight: 600,
                 fontSize: '14px',

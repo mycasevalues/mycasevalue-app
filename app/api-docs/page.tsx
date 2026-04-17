@@ -182,7 +182,7 @@ export default function ApiDocsPage() {
               API Documentation
             </div>
             <h1 style={{
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(32px, 4.5vw, 44px)',
               fontWeight: 700,
               color: '#ffffff',
@@ -224,7 +224,7 @@ export default function ApiDocsPage() {
               fontSize: 32,
               fontWeight: 700,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 24,
             }}>
               Authentication
@@ -243,7 +243,7 @@ export default function ApiDocsPage() {
               {/* API Key Auth Card */}
               <div style={{
                 padding: 32,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -252,7 +252,7 @@ export default function ApiDocsPage() {
                   fontSize: 18,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 12,
                 }}>
                   API Key Authentication
@@ -284,7 +284,7 @@ export default function ApiDocsPage() {
               {/* Rate Limits Card */}
               <div style={{
                 padding: 32,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -293,7 +293,7 @@ export default function ApiDocsPage() {
                   fontSize: 18,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 12,
                 }}>
                   Rate Limits
@@ -312,7 +312,7 @@ export default function ApiDocsPage() {
                     <p style={{
                       fontSize: 14,
                       color: 'var(--accent-primary)',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       fontWeight: 600,
                       margin: 0,
                     }}>
@@ -332,7 +332,7 @@ export default function ApiDocsPage() {
                     <p style={{
                       fontSize: 14,
                       color: 'var(--accent-primary)',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       fontWeight: 600,
                       margin: 0,
                     }}>
@@ -350,7 +350,7 @@ export default function ApiDocsPage() {
               fontSize: 32,
               fontWeight: 700,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
               API Endpoints
@@ -360,7 +360,7 @@ export default function ApiDocsPage() {
               {endpoints.map((endpoint, idx) => (
                 <div key={idx} style={{
                   padding: 32,
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -393,7 +393,7 @@ export default function ApiDocsPage() {
                       fontSize: 20,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       marginBottom: 8,
                     }}>
                       {endpoint.title}
@@ -416,7 +416,7 @@ export default function ApiDocsPage() {
                         fontSize: 13,
                         fontWeight: 700,
                         color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-display)',
+                        fontFamily: 'var(--font-ui)',
                         marginBottom: 12,
                         textTransform: 'uppercase',
                         letterSpacing: '0.08em',
@@ -445,7 +445,7 @@ export default function ApiDocsPage() {
                         fontSize: 13,
                         fontWeight: 700,
                         color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-display)',
+                        fontFamily: 'var(--font-ui)',
                         marginBottom: 12,
                         textTransform: 'uppercase',
                         letterSpacing: '0.08em',
@@ -480,7 +480,7 @@ export default function ApiDocsPage() {
               fontSize: 32,
               fontWeight: 700,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
               Code Examples
@@ -490,7 +490,7 @@ export default function ApiDocsPage() {
               {/* cURL */}
               <div style={{
                 padding: 24,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
               }}>
@@ -498,7 +498,7 @@ export default function ApiDocsPage() {
                   fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 16,
                 }}>
                   cURL
@@ -523,7 +523,7 @@ export default function ApiDocsPage() {
               {/* JavaScript */}
               <div style={{
                 padding: 24,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
               }}>
@@ -531,7 +531,7 @@ export default function ApiDocsPage() {
                   fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 16,
                 }}>
                   JavaScript
@@ -559,7 +559,7 @@ export default function ApiDocsPage() {
               {/* Python */}
               <div style={{
                 padding: 24,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
               }}>
@@ -567,7 +567,7 @@ export default function ApiDocsPage() {
                   fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 16,
                 }}>
                   Python
@@ -600,14 +600,14 @@ r = requests.get(
               fontSize: 32,
               fontWeight: 700,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
               Error Codes
             </h2>
 
             <div style={{
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: '1px solid var(--border-default)',
               background: 'var(--color-surface-0)',
               overflow: 'hidden',
@@ -625,7 +625,7 @@ r = requests.get(
                       fontWeight: 600,
                       textAlign: 'left',
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
                     }}>
@@ -637,7 +637,7 @@ r = requests.get(
                       fontWeight: 600,
                       textAlign: 'left',
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
                     }}>
@@ -649,7 +649,7 @@ r = requests.get(
                       fontWeight: 600,
                       textAlign: 'left',
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
                     }}>
@@ -700,7 +700,7 @@ r = requests.get(
           {/* CTA Section */}
           <section style={{
             padding: 48,
-            borderRadius: '12px',
+            borderRadius: '6px',
             background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold-hover, #A87222) 100%)',
             textAlign: 'center',
             marginBottom: 64,
@@ -709,7 +709,7 @@ r = requests.get(
               fontSize: 28,
               fontWeight: 700,
               color: 'var(--color-surface-0)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 12,
             }}>
               Ready to Integrate?
@@ -732,9 +732,9 @@ r = requests.get(
                 color: 'var(--accent-primary)',
                 fontSize: 15,
                 fontWeight: 700,
-                borderRadius: '12px',
+                borderRadius: '6px',
                 textDecoration: 'none',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 transition: 'all 0.3s ease',
               }}
             >

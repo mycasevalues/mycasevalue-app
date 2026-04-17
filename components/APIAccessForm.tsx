@@ -64,7 +64,7 @@ export default function APIAccessForm() {
       <div
         style={{
           background: 'var(--color-surface-0)',
-          borderRadius: '12px',
+          borderRadius: '6px',
           padding: '24px',
           border: '1px solid var(--border-default)',
           boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -122,7 +122,7 @@ export default function APIAccessForm() {
     <div
       style={{
         background: 'var(--color-surface-0)',
-        borderRadius: '12px',
+        borderRadius: '6px',
         padding: '24px',
         border: '1px solid var(--border-default)',
         boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -167,7 +167,7 @@ export default function APIAccessForm() {
               width: '100%',
               padding: '12px 14px',
               border: '1px solid var(--border-default)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
               color: 'var(--color-text-primary)',
@@ -205,7 +205,7 @@ export default function APIAccessForm() {
               width: '100%',
               padding: '12px 14px',
               border: '1px solid var(--border-default)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
               color: 'var(--color-text-primary)',
@@ -242,7 +242,7 @@ export default function APIAccessForm() {
               width: '100%',
               padding: '12px 14px',
               border: '1px solid var(--border-default)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
               color: 'var(--color-text-primary)',
@@ -260,7 +260,7 @@ export default function APIAccessForm() {
               padding: '12px 14px',
               backgroundColor: 'rgba(239, 68, 68, 0.1)',
               border: '1px solid #FCA5A5',
-              borderRadius: '8px',
+              borderRadius: '4px',
               color: '#f87171',
               fontSize: '13px',
             }}
@@ -277,7 +277,7 @@ export default function APIAccessForm() {
             backgroundColor: formState.loading ? '#A5A5A5' : 'var(--accent-primary)',
             color: 'var(--color-surface-0)',
             border: 'none',
-            borderRadius: '8px',
+            borderRadius: '4px',
             fontSize: '13px',
             fontWeight: 600,
             cursor: formState.loading ? 'not-allowed' : 'pointer',

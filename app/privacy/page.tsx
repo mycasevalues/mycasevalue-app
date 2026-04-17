@@ -74,7 +74,7 @@ export default function PrivacyPage() {
         }
 
         .breadcrumb-home-link {
-          color: #CCCCCC;
+          color: var(--bdr, #E2DFD8);
           text-decoration: none;
           transition: color 0.2s;
         }
@@ -157,7 +157,7 @@ export default function PrivacyPage() {
       <div style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: '#CCCCCC' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: 'var(--bdr, #E2DFD8)' }}>
             <a href="/" className="breadcrumb-home-link">Home</a>
             <span>/</span>
             <span style={{ color: 'var(--color-surface-0)' }}>Privacy Policy</span>
@@ -190,7 +190,7 @@ export default function PrivacyPage() {
             marginBottom: '16px',
             color: 'white',
             letterSpacing: '-1.5px',
-            fontFamily: 'var(--font-display)'
+            fontFamily: 'var(--font-ui)'
           }}>
             Privacy Policy
           </h1>
@@ -505,7 +505,7 @@ export default function PrivacyPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               background: 'var(--color-surface-0)',
               color: 'var(--color-text-primary)',
               border: '1px solid var(--border-default)'
@@ -537,7 +537,7 @@ export default function PrivacyPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               background: 'var(--color-surface-0)',
               color: 'var(--color-text-primary)',
               border: '1px solid var(--border-default)'

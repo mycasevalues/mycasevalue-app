@@ -49,7 +49,7 @@ export default function HoverPreview({ children, preview, delay = 300 }: HoverPr
       {show && (
         <div
           className={`
-            absolute z-50 w-72 bg-[var(--surf,#F6F5F2)] border border-[#E0E0E0] rounded-lg shadow-lg
+            absolute z-50 w-72 bg-[var(--surf,#F6F5F2)] border border-[var(--bdr, #E2DFD8)] rounded-lg shadow-lg
             animate-fade-in pointer-events-auto
             ${position === 'above' ? 'bottom-full mb-2' : 'top-full mt-2'}
           `}
@@ -91,7 +91,7 @@ export function JudgePreviewCard({ name, district, circuit, winRate, totalCases,
           </span>
         )}
       </div>
-      <div className="flex gap-4 mt-3 pt-3 border-t border-[#E0E0E0]">
+      <div className="flex gap-4 mt-3 pt-3 border-t border-[var(--bdr, #E2DFD8)]">
         {winRate != null && (
           <div>
             <div className="text-xs text-gray-400">Win Rate</div>
@@ -124,7 +124,7 @@ export function CaseTypePreviewCard({ label, nos, totalCases, winRate, settlemen
     <div className="p-4">
       <div className="text-sm font-semibold text-gray-100 mb-1">{label}</div>
       <div className="text-xs text-gray-400 mb-3">NOS Code: {nos}</div>
-      <div className="grid grid-cols-2 gap-3 pt-3 border-t border-[#E0E0E0]">
+      <div className="grid grid-cols-2 gap-3 pt-3 border-t border-[var(--bdr, #E2DFD8)]">
         {totalCases != null && (
           <div>
             <div className="text-[10px] text-gray-400">Cases</div>

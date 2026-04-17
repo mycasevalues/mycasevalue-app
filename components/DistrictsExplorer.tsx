@@ -270,7 +270,7 @@ export default function DistrictsExplorer({
           color: var(--color-text-primary);
         }
         .control-input::placeholder {
-          color: #999;
+          color: var(--text4, #A8A6A0);
         }
         .control-input:focus,
         .control-select:focus {
@@ -325,7 +325,7 @@ export default function DistrictsExplorer({
             letterSpacing: '0.3px',
             color: 'var(--color-text-secondary)',
             marginBottom: 12,
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           Filter by Circuit
@@ -376,7 +376,7 @@ export default function DistrictsExplorer({
                         : rate >= 35
                         ? '#D97706'
                         : 'var(--accent-primary)'
-                      : '#999',
+                      : 'var(--text4, #A8A6A0)',
                   }}
                 >
                   {rate !== null ? `${rate}%` : '—'}
@@ -582,7 +582,7 @@ export default function DistrictsExplorer({
             margin: '0 0 16px',
             textTransform: 'uppercase',
             letterSpacing: '0.3px',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           Related Pages

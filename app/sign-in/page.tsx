@@ -128,7 +128,7 @@ function SignInForm() {
           max-width: 380px;
         }
         .benefits-title {
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
           font-size: 20px;
           font-weight: 600;
           color: var(--color-surface-0);
@@ -209,7 +209,7 @@ function SignInForm() {
         <Link
           href="/"
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '16px',
             fontWeight: 600,
             color: 'var(--color-surface-0)',
@@ -223,7 +223,7 @@ function SignInForm() {
       {/* Main Content Container */}
       <div className="auth-container">
         {/* Benefits/Trust Indicators Section */}
-        <div className="benefits-section" style={{ background: '#0F2A4A', borderRadius: '8px', padding: '36px' }}>
+        <div className="benefits-section" style={{ background: '#0F2A4A', borderRadius: '4px', padding: '36px' }}>
           <h2 className="benefits-title">
             Access federal court analytics powering legal professionals
           </h2>
@@ -288,7 +288,7 @@ function SignInForm() {
           style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             padding: '24px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
@@ -304,7 +304,7 @@ function SignInForm() {
               <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
             </g>
           </svg>
-          <span style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#111' }}>
+          <span style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 700, color: '#111' }}>
             MyCase<span style={{ color: 'var(--accent-primary)' }}>Value</span>
           </span>
         </div>
@@ -312,7 +312,7 @@ function SignInForm() {
         {/* Heading */}
         <h1
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '24px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -354,7 +354,7 @@ function SignInForm() {
                 height: '48px',
                 padding: '12px 14px',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
@@ -414,7 +414,7 @@ function SignInForm() {
                 height: '48px',
                 padding: '12px 14px',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
@@ -457,7 +457,7 @@ function SignInForm() {
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
                 backgroundColor: 'rgba(10, 102, 194, 0.06)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 border: '1px solid rgba(10, 102, 194, 0.2)',
               }}
             >

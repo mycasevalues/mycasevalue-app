@@ -68,7 +68,7 @@ export default function AnalyticsPage() {
           font-weight: bold;
           color: var(--color-text-primary);
           margin-bottom: 8px;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
         }
 
         .metric-label {
@@ -97,7 +97,7 @@ export default function AnalyticsPage() {
           font-weight: 600;
           color: var(--color-text-primary);
           margin-bottom: 20px;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
         }
 
         .header {
@@ -153,7 +153,7 @@ export default function AnalyticsPage() {
           font-size: clamp(28px, 4vw, 36px);
           font-weight: 700;
           margin: 0 0 16px 0;
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           letter-spacing: -0.025em;
           line-height: 1.1;
         }
@@ -264,7 +264,7 @@ export default function AnalyticsPage() {
           font-weight: 600;
           color: var(--color-text-primary);
           margin: 0 0 8px 0;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
         }
 
         .info-banner p {
@@ -407,8 +407,8 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Footer Info */}
-        <div style={{ marginTop: '48px', padding: '24px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '12px', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
+        <div style={{ marginTop: '48px', padding: '24px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '6px', textAlign: 'center' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
             Have questions about the data?
           </h3>
           <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', fontFamily: 'var(--font-body)' }}>

@@ -58,7 +58,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
             fontWeight: 700,
             color: '#FFFFFF',
             background: 'var(--link, #0A50A2)',
-            borderRadius: 8,
+            borderRadius: 4,
             padding: '1px 5px',
             lineHeight: '14px',
           }}

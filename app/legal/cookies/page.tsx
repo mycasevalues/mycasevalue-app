@@ -39,7 +39,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 700,
                 margin: '0 0 1rem 0',
                 lineHeight: 1.2,
-                fontFamily: 'var(--font-inter)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               Cookie Policy
@@ -110,7 +110,7 @@ export default function CookiePolicyPage() {
               style={{
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '1.5rem',
                 marginBottom: '1.5rem',
               }}
@@ -170,7 +170,7 @@ export default function CookiePolicyPage() {
               style={{
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '1.5rem',
                 marginBottom: '1.5rem',
               }}
@@ -227,7 +227,7 @@ export default function CookiePolicyPage() {
               style={{
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '1.5rem',
                 marginBottom: '1.5rem',
               }}
@@ -284,7 +284,7 @@ export default function CookiePolicyPage() {
               style={{
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '1.5rem',
                 marginBottom: '1.5rem',
               }}
@@ -381,7 +381,7 @@ export default function CookiePolicyPage() {
               style={{
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '1.5rem',
               }}
             >

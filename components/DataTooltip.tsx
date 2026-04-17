@@ -122,8 +122,8 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
             transform: 'translateX(-50%)',
             width: '280px',
             background: '#1F2937',
-            color: '#F9FAFB',
-            borderRadius: '8px',
+            color: 'var(--surf, #F6F5F2)',
+            borderRadius: '4px',
             padding: '12px 14px',
             boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
             zIndex: 100,
@@ -144,7 +144,7 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
             fontFamily: 'var(--font-body)',
             fontSize: '12px',
             lineHeight: 1.55,
-            color: '#D1D5DB',
+            color: 'var(--bdr, #E2DFD8)',
             margin: 0,
           }}>
             {displayBody}

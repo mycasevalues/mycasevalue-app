@@ -210,7 +210,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
   <div
     style={{
       background: 'var(--color-surface-0)',
-      borderRadius: '12px',
+      borderRadius: '6px',
       border: isExpanded ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
       overflow: 'hidden',
       boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)',
@@ -231,7 +231,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
         <div style={{ flex: 1 }}>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '17px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
+          <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '17px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
             {attorney.name}
           </h3>
           <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0 }}>
@@ -268,7 +268,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
           <div>
             <h4
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '13px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
@@ -285,7 +285,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
 
             <h4
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '13px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
@@ -302,7 +302,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
                 { label: 'Standard', value: attorney.trialVsSettlement.settlementRate - attorney.trialVsSettlement.earlySettlementRate, color: '#B86E00' },
                 { label: 'Late', value: 100 - attorney.trialVsSettlement.settlementRate, color: 'var(--accent-primary)' },
               ].map((s) => (
-                <div key={s.label} style={{ flex: 1, padding: '8px', borderRadius: '12px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
+                <div key={s.label} style={{ flex: 1, padding: '8px', borderRadius: '6px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
                   <div className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: s.color }}>
                     {s.value}%
                   </div>
@@ -316,7 +316,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
           <div>
             <h4
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '13px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
@@ -348,7 +348,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
         <div style={{ marginTop: '20px' }}>
           <h4
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '13px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
@@ -366,7 +366,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
         <div style={{ marginTop: '20px' }}>
           <h4
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '13px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
@@ -384,7 +384,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
         <div style={{ marginTop: '20px' }}>
           <h4
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '13px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
@@ -470,7 +470,7 @@ export default function OpposingCounselSearch() {
               style={{
                 width: '48px',
                 height: '48px',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 background: 'rgba(10, 102, 194, 0.15)',
                 display: 'flex',
                 alignItems: 'center',
@@ -483,7 +483,7 @@ export default function OpposingCounselSearch() {
             <div>
               <h1
                 style={{
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '28px',
                   fontWeight: 600,
                   color: 'var(--color-text-inverse)',
@@ -519,7 +519,7 @@ export default function OpposingCounselSearch() {
                   padding: '12px 12px 12px 42px',
                   height: '48px',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   fontSize: '14px',
                   color: 'var(--color-text-primary)',
                   background: 'var(--color-surface-0)',
@@ -536,7 +536,7 @@ export default function OpposingCounselSearch() {
                 backgroundColor: 'var(--accent-primary)',
                 color: 'var(--color-text-inverse)',
                 border: 'none',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 fontSize: '14px',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -555,7 +555,7 @@ export default function OpposingCounselSearch() {
           <div
             style={{
               padding: '12px 16px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               backgroundColor: 'rgba(220, 38, 38, 0.12)',
               border: '1px solid #FCA5A5',
               marginBottom: '24px',
@@ -589,7 +589,7 @@ export default function OpposingCounselSearch() {
                 padding: '14px 18px',
                 backgroundColor: 'rgba(232, 149, 88, 0.12)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
               }}
             >
               <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}>
@@ -605,7 +605,7 @@ export default function OpposingCounselSearch() {
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '40px 24px',
               textAlign: 'center',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -615,7 +615,7 @@ export default function OpposingCounselSearch() {
               style={{
                 width: '64px',
                 height: '64px',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 background: 'rgba(10, 102, 194, 0.12)',
                 display: 'flex',
                 alignItems: 'center',
@@ -628,7 +628,7 @@ export default function OpposingCounselSearch() {
             </div>
             <h2
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '22px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',

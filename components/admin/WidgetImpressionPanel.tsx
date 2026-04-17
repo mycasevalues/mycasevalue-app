@@ -68,7 +68,7 @@ export default function WidgetImpressionPanel() {
   const maxImpressions = Math.max(...chartData.map((d) => d.impressions));
 
   return (
-    <div style={{ padding: '24px', backgroundColor: '#fff', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' }}>
+    <div style={{ padding: '24px', backgroundColor: '#fff', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.08)' }}>
       <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '24px' }}>
         Widget Impressions & Embeds
       </h2>

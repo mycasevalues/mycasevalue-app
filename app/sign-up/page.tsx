@@ -113,7 +113,7 @@ export default function SignUpPage() {
             maxWidth: '440px',
             backgroundColor: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             padding: '20px',
             textAlign: 'center',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
@@ -123,7 +123,7 @@ export default function SignUpPage() {
             style={{
               width: '56px',
               height: '56px',
-              borderRadius: '8px',
+              borderRadius: '4px',
               backgroundColor: 'rgba(0,105,151,0.08)',
               display: 'flex',
               alignItems: 'center',
@@ -137,7 +137,7 @@ export default function SignUpPage() {
           </div>
           <h2
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '22px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
@@ -269,7 +269,7 @@ export default function SignUpPage() {
           style={{
             maxWidth: '1200px',
             margin: '0 auto',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '20px',
             fontWeight: 900,
             letterSpacing: '-0.5px',
@@ -299,7 +299,7 @@ export default function SignUpPage() {
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               padding: '24px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
             }}
@@ -307,7 +307,7 @@ export default function SignUpPage() {
             {/* Heading */}
             <h1
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '24px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
@@ -349,7 +349,7 @@ export default function SignUpPage() {
                     height: '48px',
                     padding: '12px 16px',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: 'var(--color-text-primary)',
@@ -389,7 +389,7 @@ export default function SignUpPage() {
                     height: '48px',
                     padding: '12px 16px',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: 'var(--color-text-primary)',
@@ -425,7 +425,7 @@ export default function SignUpPage() {
                     height: '48px',
                     padding: '12px 16px',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: 'var(--color-text-primary)',
@@ -476,7 +476,7 @@ export default function SignUpPage() {
                     height: '48px',
                     padding: '12px 16px',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: 'var(--color-text-primary)',
@@ -527,7 +527,7 @@ export default function SignUpPage() {
                     height: '48px',
                     padding: '12px 16px',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: 'var(--color-text-primary)',
@@ -605,7 +605,7 @@ export default function SignUpPage() {
                     margin: '0 0 16px 0',
                     padding: '10px 12px',
                     backgroundColor: 'rgba(10, 102, 194, 0.06)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     border: '1px solid rgba(10, 102, 194, 0.2)',
                   }}
                 >
@@ -622,7 +622,7 @@ export default function SignUpPage() {
                     margin: '0 0 16px 0',
                     padding: '10px 12px',
                     backgroundColor: 'rgba(10, 102, 194, 0.06)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     border: '1px solid rgba(10, 102, 194, 0.2)',
                   }}
                 >
@@ -704,7 +704,7 @@ export default function SignUpPage() {
           <div style={{ marginBottom: '48px' }}>
             <h2
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '20px',
                 fontWeight: 600,
                 color: 'var(--accent-primary)',
@@ -728,7 +728,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(27, 58, 92, 0.08)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -742,7 +742,7 @@ export default function SignUpPage() {
                 </div>
                 <h3
                   style={{
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '15px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
@@ -771,7 +771,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(10, 102, 194, 0.08)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -785,7 +785,7 @@ export default function SignUpPage() {
                 </div>
                 <h3
                   style={{
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '15px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
@@ -814,7 +814,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(21, 128, 61, 0.08)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -828,7 +828,7 @@ export default function SignUpPage() {
                 </div>
                 <h3
                   style={{
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '15px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
@@ -857,7 +857,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(217, 119, 6, 0.08)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -871,7 +871,7 @@ export default function SignUpPage() {
                 </div>
                 <h3
                   style={{
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '15px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
@@ -900,7 +900,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(0, 110, 187, 0.08)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -915,7 +915,7 @@ export default function SignUpPage() {
                 </div>
                 <h3
                   style={{
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '15px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
@@ -944,7 +944,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(10, 102, 194, 0.08)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -958,7 +958,7 @@ export default function SignUpPage() {
                 </div>
                 <h3
                   style={{
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '15px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
@@ -986,7 +986,7 @@ export default function SignUpPage() {
           <div>
             <h2
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '20px',
                 fontWeight: 600,
                 color: 'var(--accent-primary)',

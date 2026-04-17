@@ -132,7 +132,7 @@ export default function LegalDataPage() {
                 <div style={{
                   width: 48,
                   height: 48,
-                  borderRadius: 12,
+                  borderRadius: 6,
                   background: feat.bg,
                   color: feat.color,
                   display: 'flex',
@@ -210,7 +210,7 @@ export default function LegalDataPage() {
               key={src.name}
               style={{
                 padding: '16px 20px',
-                borderRadius: 12,
+                borderRadius: 6,
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
               }}

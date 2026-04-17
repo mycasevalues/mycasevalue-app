@@ -240,7 +240,7 @@ export default function DemandPackageGenerator() {
         <div
           style={{
             backgroundColor: 'white',
-            borderRadius: '8px',
+            borderRadius: '4px',
             padding: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
             marginBottom: '24px',
@@ -264,7 +264,7 @@ export default function DemandPackageGenerator() {
                 style={{
                   width: '100%',
                   padding: '10px',
-                  border: '1px solid #ddd',
+                  border: '1px solid var(--bdr, #E2DFD8)',
                   borderRadius: '6px',
                   fontSize: '14px',
                   fontFamily: 'inherit',
@@ -289,7 +289,7 @@ export default function DemandPackageGenerator() {
                 style={{
                   width: '100%',
                   padding: '10px',
-                  border: '1px solid #ddd',
+                  border: '1px solid var(--bdr, #E2DFD8)',
                   borderRadius: '6px',
                   fontSize: '14px',
                   fontFamily: 'inherit',
@@ -327,7 +327,7 @@ export default function DemandPackageGenerator() {
           <div
             style={{
               backgroundColor: 'white',
-              borderRadius: '8px',
+              borderRadius: '4px',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
             }}
@@ -534,7 +534,7 @@ function PreviewContent({
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Methodology
         </h3>
-        <div style={{ backgroundColor: 'var(--color-surface-1)', padding: '12px', borderRadius: '8px', fontSize: '14px', color: 'var(--color-text-secondary)' }}>
+        <div style={{ backgroundColor: 'var(--color-surface-1)', padding: '12px', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-secondary)' }}>
           <p>
             This data package is derived from analysis of 5.1M+ federal civil cases filed in United States District Courts from
             2010-2025. Win rates, settlement data, and case duration statistics are calculated from publicly available case

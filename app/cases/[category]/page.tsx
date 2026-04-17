@@ -309,7 +309,7 @@ async function CategoryPage({
         <div style={{ padding: '40px 20px', textAlign: 'center' }}>
           <h1 className="text-2xl font-bold">Category not found</h1>
           <p className="mt-4" style={{ color: 'var(--color-text-secondary)' }}>The case type you&apos;re looking for doesn&apos;t exist.</p>
-          <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: 'var(--color-text-primary)', borderRadius: '12px' }}>Browse all categories</a>
+          <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: 'var(--color-text-primary)', borderRadius: '6px' }}>Browse all categories</a>
         </div>
       );
     }
@@ -321,7 +321,7 @@ async function CategoryPage({
       <div style={{ padding: '40px 20px', textAlign: 'center', minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <h1 style={{ fontSize: 24, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 16 }}>Data Loading Error</h1>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: 24 }}>Data for this case type is being compiled. Check back soon.</p>
-        <a href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: 'var(--gold, #C4882A)', color: '#ffffff', border: '1px solid var(--gold, #C4882A)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 6, textDecoration: 'none', fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', fontFamily: 'var(--font-inter)', margin: '0 auto' }}>Browse all categories</a>
+        <a href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: 'var(--gold, #C4882A)', color: '#ffffff', border: '1px solid var(--gold, #C4882A)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 6, textDecoration: 'none', fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', fontFamily: 'var(--font-ui)', margin: '0 auto' }}>Browse all categories</a>
       </div>
     );
   }
@@ -411,7 +411,7 @@ async function CategoryPage({
           margin: '0 auto',
           fontSize: '14px',
           color: 'var(--color-text-secondary)',
-          fontFamily: 'var(--font-display)',
+          fontFamily: 'var(--font-ui)',
         }}>
           <Link href="/" style={{ color: 'var(--color-text-primary)', textDecoration: 'none' }}>
             Home
@@ -455,7 +455,7 @@ async function CategoryPage({
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4px' }}>
             <h1 style={{
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(24px, 3.5vw, 30px)',
               fontWeight: 700,
               letterSpacing: '-0.025em',
@@ -514,7 +514,7 @@ async function CategoryPage({
                     if (rd?.total) totalCases += rd.total;
                   }
                   return totalCases > 0 ? (
-                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? '#057642' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? '#CC1016' : '#999999' }} />
+                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? '#057642' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)' }} />
                   ) : null;
                 })()}
               </div>
@@ -543,7 +543,7 @@ async function CategoryPage({
         borderBottom: '1px solid var(--border-default)',
         textAlign: 'center',
       }}>
-        <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary)', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '8px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
+        <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary)', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
       </div>
 
       {/* Category Statistics Summary Bar */}
@@ -583,7 +583,7 @@ async function CategoryPage({
                   <div style={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     padding: '20px',
                     textAlign: 'center',
                   }}>
@@ -609,7 +609,7 @@ async function CategoryPage({
                   <div style={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     padding: '20px',
                     textAlign: 'center',
                   }}>
@@ -635,7 +635,7 @@ async function CategoryPage({
                           if (rd?.total) totalCases += rd.total;
                         }
                         return totalCases > 0 ? (
-                          <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? '#057642' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? '#CC1016' : '#999999' }} />
+                          <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? '#057642' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)' }} />
                         ) : null;
                       })()}
                     </div>
@@ -652,7 +652,7 @@ async function CategoryPage({
                   <div style={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     padding: '20px',
                     textAlign: 'center',
                   }}>
@@ -678,7 +678,7 @@ async function CategoryPage({
                   <div style={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     padding: '20px',
                     textAlign: 'center',
                   }}>
@@ -729,7 +729,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 24px 0',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             letterSpacing: '-0.3px',
           }}>
             What We Cover
@@ -740,7 +740,7 @@ async function CategoryPage({
             lineHeight: '1.7',
             maxWidth: '800px',
             margin: 0,
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
           }}>
             {categoryLongDescriptions[category]}
           </p>
@@ -769,7 +769,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 32px 0',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             letterSpacing: '-0.3px',
           }}>
             {categoryData?.opts?.length ?? 0} Case Types Covered
@@ -799,9 +799,9 @@ async function CategoryPage({
                   style={{
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '12px',
+                    borderRadius: '6px',
                     padding: '20px',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     textDecoration: 'none',
                     color: 'inherit',
                     display: 'flex',
@@ -837,9 +837,9 @@ async function CategoryPage({
                       </div>
                       {rdWr != null && (
                         <div style={{ minWidth: 50 }}>
-                          <div style={{ fontSize: '16px', fontWeight: 600, color: isNaN(rdWr) ? '#999' : rdWr >= 50 ? '#059669' : 'var(--accent-primary)', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                          <div style={{ fontSize: '16px', fontWeight: 600, color: isNaN(rdWr) ? 'var(--text4, #A8A6A0)' : rdWr >= 50 ? '#059669' : 'var(--accent-primary)', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                             {isNaN(rdWr) ? '—' : `${rdWr}%`}
-                            <span title={`Based on ${(rdTotal ?? 0).toLocaleString()} cases — ${(rdTotal ?? 0) >= 10000 ? 'High' : (rdTotal ?? 0) >= 1000 ? 'Medium' : (rdTotal ?? 0) >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: (rdTotal ?? 0) >= 10000 ? '#057642' : (rdTotal ?? 0) >= 1000 ? '#C37D16' : (rdTotal ?? 0) >= 100 ? '#CC1016' : '#999999' }} />
+                            <span title={`Based on ${(rdTotal ?? 0).toLocaleString()} cases — ${(rdTotal ?? 0) >= 10000 ? 'High' : (rdTotal ?? 0) >= 1000 ? 'Medium' : (rdTotal ?? 0) >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: (rdTotal ?? 0) >= 10000 ? '#057642' : (rdTotal ?? 0) >= 1000 ? '#C37D16' : (rdTotal ?? 0) >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)' }} />
                           </div>
                           <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Win Rate</div>
                         </div>
@@ -865,8 +865,8 @@ async function CategoryPage({
 
                   {/* Win rate bar */}
                   {rd && rdWr != null && (
-                    <div style={{ height: 4, background: 'rgba(255,255,255,0.06)', borderRadius: 8, marginBottom: 12, overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: `${Math.min(Math.max(rdWr, 0), 100)}%`, background: isNaN(rdWr) ? '#CCC' : rdWr >= 50 ? '#059669' : 'var(--accent-primary)', borderRadius: 8 }} />
+                    <div style={{ height: 4, background: 'rgba(255,255,255,0.06)', borderRadius: 4, marginBottom: 12, overflow: 'hidden' }}>
+                      <div style={{ height: '100%', width: `${Math.min(Math.max(rdWr, 0), 100)}%`, background: isNaN(rdWr) ? 'var(--bdr, #E2DFD8)' : rdWr >= 50 ? '#059669' : 'var(--accent-primary)', borderRadius: 4 }} />
                     </div>
                   )}
 
@@ -904,7 +904,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 32px 0',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             letterSpacing: '-0.3px',
           }}>
             Top Performing Case Types
@@ -949,7 +949,7 @@ async function CategoryPage({
                         padding: '20px 24px',
                         background: 'var(--color-surface-1)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '8px',
+                        borderRadius: '4px',
                         textDecoration: 'none',
                         transition: 'all 0.2s ease',
                       }}
@@ -978,7 +978,7 @@ async function CategoryPage({
                             fontSize: '16px',
                             fontWeight: 600,
                             color: 'var(--color-text-primary)',
-                            fontFamily: 'var(--font-display)',
+                            fontFamily: 'var(--font-ui)',
                           }}>
                             {item.label}
                           </div>
@@ -995,14 +995,14 @@ async function CategoryPage({
                       <div style={{
                         height: '8px',
                         background: 'rgba(255,255,255,0.1)',
-                        borderRadius: '8px',
+                        borderRadius: '4px',
                         overflow: 'hidden',
                       }}>
                         <div style={{
                           height: '100%',
                           width: `${Math.min(item.wr || 0, 100)}%`,
                           background: item.wr >= 50 ? '#059669' : 'var(--accent-primary)',
-                          borderRadius: '8px',
+                          borderRadius: '4px',
                         }} />
                       </div>
                     </Link>
@@ -1026,7 +1026,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 12px 0',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             letterSpacing: '-0.3px',
           }}>
             Win Rates by Circuit
@@ -1058,14 +1058,14 @@ async function CategoryPage({
                   const color = wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : 'var(--accent-primary)';
                   return (
                     <div key={circuit} style={{
-                      padding: '16px', borderRadius: 8, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)',
+                      padding: '16px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)',
                     }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                         <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>{circuit}</span>
                         <span style={{ fontSize: 15, fontWeight: 600, color, fontFamily: 'var(--font-mono)' }}>{wr}%</span>
                       </div>
-                      <div style={{ height: 6, background: 'rgba(255,255,255,0.06)', borderRadius: 8, overflow: 'hidden', marginBottom: 6 }}>
-                        <div style={{ width: `${Math.min(wr, 100)}%`, height: '100%', background: color, borderRadius: 8 }} />
+                      <div style={{ height: 6, background: 'rgba(255,255,255,0.06)', borderRadius: 4, overflow: 'hidden', marginBottom: 6 }}>
+                        <div style={{ width: `${Math.min(wr, 100)}%`, height: '100%', background: color, borderRadius: 4 }} />
                       </div>
                       <div style={{ fontSize: 11, color: diff >= 0 ? '#059669' : 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         {diff >= 0 ? '+' : ''}{diff.toFixed(1)}% vs avg
@@ -1090,7 +1090,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 12px 0',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             letterSpacing: '-0.3px',
           }}>
             Recovery Ranges
@@ -1125,15 +1125,15 @@ async function CategoryPage({
                   href={`/report/${item.nos}`}
                   style={{
                     display: 'block', padding: '16px 20px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
-                    borderRadius: 8, textDecoration: 'none', transition: 'all 0.2s ease',
+                    borderRadius: 4, textDecoration: 'none', transition: 'all 0.2s ease',
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)' }}>{item.label}</span>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>{item.label}</span>
                     <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>{fmtK(item.md)} median</span>
                   </div>
                   {/* Range bar visualization */}
-                  <div style={{ position: 'relative', height: 28, background: 'var(--color-surface-1)', borderRadius: 8, overflow: 'hidden' }}>
+                  <div style={{ position: 'relative', height: 28, background: 'var(--color-surface-1)', borderRadius: 4, overflow: 'hidden' }}>
                     {/* Low to high range */}
                     <div style={{
                       position: 'absolute',
@@ -1141,7 +1141,7 @@ async function CategoryPage({
                       width: `${((item.hi - item.lo) / maxHi) * 100}%`,
                       height: '100%',
                       background: 'linear-gradient(90deg, rgba(10, 102, 194, 0.15), rgba(10, 102, 194, 0.25))',
-                      borderRadius: 8,
+                      borderRadius: 4,
                     }} />
                     {/* Median marker */}
                     <div style={{
@@ -1151,7 +1151,7 @@ async function CategoryPage({
                       width: 3,
                       height: '100%',
                       background: 'var(--accent-primary)',
-                      borderRadius: 8,
+                      borderRadius: 4,
                     }} />
                     {/* Labels */}
                     <div style={{ position: 'absolute', left: `${(item.lo / maxHi) * 100}%`, bottom: 2, fontSize: 10, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)', transform: 'translateX(-50%)' }}>
@@ -1180,7 +1180,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 12px 0',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             letterSpacing: '-0.3px',
           }}>
             Settlement Range Comparison
@@ -1222,7 +1222,7 @@ async function CategoryPage({
                       padding: '20px',
                       background: 'var(--color-surface-1)',
                       border: '1px solid var(--border-default)',
-                      borderRadius: '8px',
+                      borderRadius: '4px',
                       textDecoration: 'none',
                       transition: 'all 0.2s ease',
                     }}
@@ -1237,7 +1237,7 @@ async function CategoryPage({
                         fontSize: '14px',
                         fontWeight: 600,
                         color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-display)',
+                        fontFamily: 'var(--font-ui)',
                       }}>
                         {item.label}
                       </span>
@@ -1272,7 +1272,7 @@ async function CategoryPage({
                         width: '3px',
                         height: '100%',
                         background: 'var(--accent-primary)',
-                        borderRadius: '12px',
+                        borderRadius: '6px',
                         transform: 'translateX(-50%)',
                       }} />
                     </div>
@@ -1307,7 +1307,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 32px 0',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             letterSpacing: '-0.3px',
           }}>
             Key Statistics
@@ -1320,8 +1320,8 @@ async function CategoryPage({
             <div style={{
               background: 'var(--color-surface-0)',
               padding: '24px',
-              borderRadius: '12px',
-              fontFamily: 'var(--font-display)',
+              borderRadius: '6px',
+              fontFamily: 'var(--font-ui)',
             }}>
               <div style={{
                 fontSize: '28px',
@@ -1352,8 +1352,8 @@ async function CategoryPage({
             <div style={{
               background: 'var(--color-surface-0)',
               padding: '24px',
-              borderRadius: '12px',
-              fontFamily: 'var(--font-display)',
+              borderRadius: '6px',
+              fontFamily: 'var(--font-ui)',
             }}>
               <div style={{
                 fontSize: '28px',
@@ -1384,8 +1384,8 @@ async function CategoryPage({
             <div style={{
               background: 'var(--color-surface-0)',
               padding: '24px',
-              borderRadius: '12px',
-              fontFamily: 'var(--font-display)',
+              borderRadius: '6px',
+              fontFamily: 'var(--font-ui)',
             }}>
               <div style={{
                 fontSize: '28px',
@@ -1428,7 +1428,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 32px 0',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             letterSpacing: '-0.3px',
           }}>
             Explore More
@@ -1447,7 +1447,7 @@ async function CategoryPage({
                 padding: '24px',
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease',
                 color: 'var(--color-text-primary)',
@@ -1458,7 +1458,7 @@ async function CategoryPage({
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 marginBottom: '8px',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Compare Cases
               </div>
@@ -1492,7 +1492,7 @@ async function CategoryPage({
                 padding: '24px',
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease',
                 color: 'var(--color-text-primary)',
@@ -1503,7 +1503,7 @@ async function CategoryPage({
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 marginBottom: '8px',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Case Calculator
               </div>
@@ -1537,7 +1537,7 @@ async function CategoryPage({
                 padding: '24px',
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease',
                 color: 'var(--color-text-primary)',
@@ -1548,7 +1548,7 @@ async function CategoryPage({
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 marginBottom: '8px',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Win Rate Odds
               </div>
@@ -1582,7 +1582,7 @@ async function CategoryPage({
                 padding: '24px',
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease',
                 color: 'var(--color-text-primary)',
@@ -1593,7 +1593,7 @@ async function CategoryPage({
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 marginBottom: '8px',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Case Trends
               </div>
@@ -1633,7 +1633,7 @@ async function CategoryPage({
             fontSize: '32px',
             fontWeight: 600,
             margin: '0 0 16px 0',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             letterSpacing: '-0.3px',
           }}>
             Research Your Case
@@ -1641,7 +1641,7 @@ async function CategoryPage({
           <p style={{
             fontSize: '18px',
             margin: '0 0 32px 0',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             opacity: 0.95,
             lineHeight: '1.6',
           }}>
@@ -1659,11 +1659,11 @@ async function CategoryPage({
               padding: '0 40px',
               background: 'var(--accent-primary)',
               color: 'var(--color-text-inverse)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               fontWeight: 600,
               fontSize: '14px',
               textDecoration: 'none',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               border: 'none',
               cursor: 'pointer',
               transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',

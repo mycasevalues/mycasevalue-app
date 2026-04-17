@@ -29,7 +29,7 @@ function SkeletonLine({ width = '100%' }: { width?: string }) {
 
 function StatSkeleton() {
   return (
-    <div style={{ padding: 24, borderRadius: 12, border: '1px solid rgba(255,255,255,0.08)', background: 'var(--color-surface-1)' }}>
+    <div style={{ padding: 24, borderRadius: '6px', border: '1px solid rgba(255,255,255,0.08)', background: 'var(--color-surface-1)' }}>
       <SkeletonLine width="40%" />
       <div style={{ height: 32, backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: 4, marginBottom: 8, position: 'relative', overflow: 'hidden' }}>
         <motion.div
@@ -46,11 +46,11 @@ function StatSkeleton() {
 
 function CardSkeleton() {
   return (
-    <div style={{ padding: 24, borderRadius: 12, border: '1px solid rgba(255,255,255,0.08)', background: 'var(--color-surface-1)' }}>
+    <div style={{ padding: 24, borderRadius: '6px', border: '1px solid rgba(255,255,255,0.08)', background: 'var(--color-surface-1)' }}>
       <SkeletonLine width="70%" />
       <SkeletonLine width="100%" />
       <SkeletonLine width="85%" />
-      <div style={{ height: 120, backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: 8, marginTop: 12, position: 'relative', overflow: 'hidden' }}>
+      <div style={{ height: 120, backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: '4px', marginTop: 12, position: 'relative', overflow: 'hidden' }}>
         <motion.div
           style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)' }}
           initial={shimmer.initial}
@@ -64,7 +64,7 @@ function CardSkeleton() {
 
 function ChartSkeleton() {
   return (
-    <div style={{ padding: 24, borderRadius: 12, border: '1px solid rgba(255,255,255,0.08)', background: 'var(--color-surface-1)' }}>
+    <div style={{ padding: 24, borderRadius: '6px', border: '1px solid rgba(255,255,255,0.08)', background: 'var(--color-surface-1)' }}>
       <SkeletonLine width="50%" />
       <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, height: 200, marginTop: 16 }}>
         {Array.from({ length: 12 }).map((_, i) => {
@@ -88,7 +88,7 @@ function ChartSkeleton() {
 
 function TableSkeleton({ lines = 5 }: { lines: number }) {
   return (
-    <div style={{ borderRadius: 12, border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden' }}>
+    <div style={{ borderRadius: '6px', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden' }}>
       <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 16, padding: '12px 16px', backgroundColor: 'var(--color-surface-0)' }}>
         <SkeletonLine width="80%" />
         <SkeletonLine width="60%" />

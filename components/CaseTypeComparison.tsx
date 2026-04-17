@@ -65,7 +65,7 @@ export default function CaseTypeComparison() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: 16, alignItems: 'center', marginBottom: 24 }}>
         {/* Left selector */}
         <div>
-          <label style={{ display: 'block', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
+          <label style={{ display: 'block', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 8 }}>
             Case Type A
           </label>
           <select
@@ -96,7 +96,7 @@ export default function CaseTypeComparison() {
           <div style={{
             width: 40, height: 40, borderRadius: '50%', background: 'var(--accent-primary)', color: 'var(--color-surface-0)',
             display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600,
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
           }}>
             VS
           </div>
@@ -104,7 +104,7 @@ export default function CaseTypeComparison() {
 
         {/* Right selector */}
         <div>
-          <label style={{ display: 'block', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
+          <label style={{ display: 'block', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 8 }}>
             Case Type B
           </label>
           <select

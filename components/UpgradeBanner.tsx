@@ -66,7 +66,7 @@ export default function UpgradeBanner() {
           font-size: 13px;
           letter-spacing: -0.005em;
           text-decoration: none;
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           border: 1px solid var(--gold, #C4882A);
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
           cursor: pointer;
@@ -89,7 +89,7 @@ export default function UpgradeBanner() {
           font-size: 13px;
           letter-spacing: -0.005em;
           text-decoration: none;
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           transition: border-color 150ms ease, background-color 150ms ease;
         }
         .upgrade-btn-secondary:hover {
@@ -106,7 +106,7 @@ export default function UpgradeBanner() {
               display: 'inline-flex', alignItems: 'center',
               background: 'rgba(10, 102, 194, 0.2)', color: 'var(--accent-primary)',
               fontSize: '11px', fontWeight: 600, textTransform: 'uppercase',
-              padding: '6px 12px', borderRadius: '12px', marginBottom: '16px',
+              padding: '6px 12px', borderRadius: '6px', marginBottom: '16px',
               letterSpacing: '0.08em',
             }}>
               NEW
@@ -114,7 +114,7 @@ export default function UpgradeBanner() {
 
             <h2 style={{
               fontSize: '32px', fontWeight: 600, color: 'var(--color-text-inverse)',
-              margin: '0 0 16px 0', fontFamily: 'var(--font-display)', lineHeight: 1.2,
+              margin: '0 0 16px 0', fontFamily: 'var(--font-ui)', lineHeight: 1.2,
             }}>
               MyCaseValue Attorney Mode
             </h2>
@@ -156,10 +156,10 @@ export default function UpgradeBanner() {
           {/* Right Side — Prediction Card Mockup */}
           <div>
             <div style={{
-              background: 'var(--color-surface-0)', borderRadius: '12px', padding: '32px',
+              background: 'var(--color-surface-0)', borderRadius: '6px', padding: '32px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
             }}>
-              <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '20px', fontFamily: 'var(--font-display)' }}>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '20px', fontFamily: 'var(--font-ui)' }}>
                 Case Outcome Prediction
               </div>
               <div style={{ fontSize: '48px', fontWeight: 600, color: 'var(--accent-primary)', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>

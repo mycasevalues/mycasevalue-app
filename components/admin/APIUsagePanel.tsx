@@ -59,10 +59,10 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
   }, []);
 
   return (
-    <div style={{ padding: '24px', background: 'var(--color-surface-0)', borderRadius: '12px' }}>
+    <div style={{ padding: '24px', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
       <h3
         style={{
-          fontFamily: 'var(--font-display)',
+          fontFamily: 'var(--font-ui)',
           fontSize: '1.25rem',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
@@ -86,7 +86,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
           style={{
             padding: '16px',
             background: 'var(--color-surface-1)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
           }}
         >
@@ -95,7 +95,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
           </p>
           <p
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '1.75rem',
               fontWeight: 600,
               color: 'var(--accent-primary)',
@@ -110,7 +110,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
           style={{
             padding: '16px',
             background: 'var(--color-surface-1)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
           }}
         >
@@ -119,7 +119,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
           </p>
           <p
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '1.75rem',
               fontWeight: 600,
               color: 'var(--accent-primary)',
@@ -134,7 +134,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
           style={{
             padding: '16px',
             background: 'var(--color-surface-1)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
           }}
         >
@@ -143,7 +143,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
           </p>
           <p
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '1.75rem',
               fontWeight: 600,
               color: mockMetrics.rateLimitViolations > 0 ? '#DC2626' : '#059669',
@@ -159,7 +159,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
       <div style={{ marginBottom: '32px' }}>
         <h4
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -172,7 +172,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
         <div
           style={{
             background: 'var(--color-surface-1)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             overflow: 'hidden',
           }}
         >
@@ -254,7 +254,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
       <div>
         <h4
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -267,7 +267,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
         <div
           style={{
             background: 'var(--color-surface-1)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             overflow: 'hidden',
           }}
         >

@@ -88,7 +88,7 @@ const main: React.CSSProperties = {
 
 const container: React.CSSProperties = {
   maxWidth: '580px', margin: '0 auto', backgroundColor: '#FFF',
-  borderRadius: '12px', overflow: 'hidden',
+  borderRadius: '6px', overflow: 'hidden',
 };
 
 const header: React.CSSProperties = { backgroundColor: 'var(--accent-primary)', padding: '24px 40px' };
@@ -100,21 +100,21 @@ const paragraph: React.CSSProperties = { color: 'var(--color-text-secondary)', f
 const hr: React.CSSProperties = { borderTop: '1px solid var(--border-default)', margin: '24px 0' };
 
 const alertBox: React.CSSProperties = {
-  backgroundColor: '#FEF3C7', borderRadius: '8px', border: '1px solid #D97706',
+  backgroundColor: '#FEF3C7', borderRadius: '4px', border: '1px solid #D97706',
   padding: '16px 20px', marginBottom: '16px',
 };
 const alertLabel: React.CSSProperties = { color: '#78350F', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 4px' };
 const alertValue: React.CSSProperties = { color: '#78350F', fontSize: '15px', fontWeight: 600, margin: 0 };
 
 const detailsBox: React.CSSProperties = {
-  backgroundColor: '#FAFBFC', borderRadius: '8px', border: '1px solid var(--border-default)',
+  backgroundColor: '#FAFBFC', borderRadius: '4px', border: '1px solid var(--border-default)',
   padding: '16px 20px',
 };
 const detailRow: React.CSSProperties = { color: 'var(--color-text-primary)', fontSize: '13px', lineHeight: '1.8', margin: 0 };
 
 const ctaButton: React.CSSProperties = {
   display: 'inline-block', backgroundColor: 'var(--accent-primary)', color: '#FFF',
-  padding: '12px 28px', borderRadius: '8px', fontSize: '14px', fontWeight: 600, textDecoration: 'none',
+  padding: '12px 28px', borderRadius: '4px', fontSize: '14px', fontWeight: 600, textDecoration: 'none',
 };
 const secondaryLink: React.CSSProperties = { color: 'var(--accent-primary)', fontSize: '13px', textDecoration: 'underline' };
 const footer: React.CSSProperties = { color: 'var(--color-text-muted)', fontSize: '11px', margin: 0 };

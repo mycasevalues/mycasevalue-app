@@ -59,7 +59,7 @@ export default function WhitepaperPage() {
           </div>
           <h1
             style={{
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 700,
               color: '#ffffff',
@@ -107,7 +107,7 @@ export default function WhitepaperPage() {
         <div
           style={{
             background: 'var(--color-surface-0)',
-            borderRadius: '12px',
+            borderRadius: '6px',
             border: '1px solid var(--border-default)',
             padding: '48px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -121,7 +121,7 @@ export default function WhitepaperPage() {
           style={{
             marginTop: 48,
             padding: '24px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             border: '1px solid var(--border-default)',
             backgroundColor: 'rgba(10, 102, 194, 0.05)',
           }}
@@ -131,7 +131,7 @@ export default function WhitepaperPage() {
               fontSize: 16,
               fontWeight: 600,
               color: 'var(--accent-primary-hover)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: 12,
               marginTop: 0,
             }}

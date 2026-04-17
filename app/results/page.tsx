@@ -90,7 +90,7 @@ export default function ResultsPage() {
             Case Results
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -118,7 +118,7 @@ export default function ResultsPage() {
         {/* Empty State Card */}
         <div style={{
           padding: '20px',
-          borderRadius: '12px',
+          borderRadius: '6px',
           border: '1px solid var(--border-default)',
           background: 'var(--color-surface-0)',
           textAlign: 'center'
@@ -128,7 +128,7 @@ export default function ResultsPage() {
             fontWeight: '600',
             color: 'var(--color-text-primary)',
             margin: '0 0 12px 0',
-            fontFamily: 'var(--font-display)'
+            fontFamily: 'var(--font-ui)'
           }}>
             No Results Selected
           </h2>
@@ -157,7 +157,7 @@ export default function ResultsPage() {
                 background: 'var(--gold, #C4882A)',
                 color: '#ffffff',
                 textDecoration: 'none',
-                fontFamily: 'var(--font-inter)',
+                fontFamily: 'var(--font-ui)',
                 border: '1px solid var(--gold, #C4882A)',
                 boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
                 cursor: 'pointer',
@@ -176,7 +176,7 @@ export default function ResultsPage() {
                 paddingLeft: '24px',
                 paddingRight: '24px',
                 height: '48px',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 fontSize: '14px',
                 fontWeight: '600',
                 background: 'var(--color-surface-0)',
@@ -196,7 +196,7 @@ export default function ResultsPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', marginTop: '16px' }}>
           <div className="info-card" style={{
             padding: '12px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
           }}>
@@ -205,7 +205,7 @@ export default function ResultsPage() {
               fontWeight: '600',
               color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               letterSpacing: '0.08em',
               textTransform: 'uppercase'
             }}>
@@ -223,7 +223,7 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '12px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
           }}>
@@ -232,7 +232,7 @@ export default function ResultsPage() {
               fontWeight: '600',
               color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               letterSpacing: '0.08em',
               textTransform: 'uppercase'
             }}>
@@ -250,7 +250,7 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '12px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
           }}>
@@ -259,7 +259,7 @@ export default function ResultsPage() {
               fontWeight: '600',
               color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               letterSpacing: '0.08em',
               textTransform: 'uppercase'
             }}>
@@ -277,7 +277,7 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '12px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             border: '1px solid var(--border-default)',
             background: 'var(--color-surface-0)'
           }}>
@@ -286,7 +286,7 @@ export default function ResultsPage() {
               fontWeight: '600',
               color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               letterSpacing: '0.08em',
               textTransform: 'uppercase'
             }}>

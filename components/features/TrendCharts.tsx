@@ -55,7 +55,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
         style={{
           background: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
           padding: '12px 16px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         }}
@@ -100,13 +100,13 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
         }}
       >
         <h3
           className="text-lg font-semibold mb-6"
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
           }}
@@ -146,13 +146,13 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
         }}
       >
         <h3
           className="text-lg font-semibold mb-6"
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
           }}
@@ -199,13 +199,13 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
         }}
       >
         <h3
           className="text-lg font-semibold mb-6"
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
           }}
@@ -236,13 +236,13 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
         }}
       >
         <h3
           className="text-lg font-semibold mb-6"
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
           }}
@@ -282,13 +282,13 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
         }}
       >
         <h3
           className="text-lg font-semibold mb-6"
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
           }}
@@ -315,7 +315,7 @@ export default function TrendCharts() {
                       style={{
                         background: 'var(--color-surface-0)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '12px',
+                        borderRadius: '6px',
                         padding: '12px 16px',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
@@ -350,13 +350,13 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
         }}
       >
         <h3
           className="text-lg font-semibold mb-6"
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
           }}
@@ -383,7 +383,7 @@ export default function TrendCharts() {
                       style={{
                         background: 'var(--color-surface-0)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '12px',
+                        borderRadius: '6px',
                         padding: '12px 16px',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
@@ -415,13 +415,13 @@ export default function TrendCharts() {
         style={{
           background: 'var(--color-surface-0)',
           borderColor: 'var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
         }}
       >
         <h3
           className="text-lg font-semibold mb-6"
           style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
           }}

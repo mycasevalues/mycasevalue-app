@@ -39,8 +39,8 @@ export default function Error({
           maxWidth: 480,
           textAlign: 'center',
           background: '#FFFFFF',
-          border: '1px solid #E0E0E0',
-          borderRadius: '12px',
+          border: '1px solid var(--bdr, #E2DFD8)',
+          borderRadius: '6px',
           padding: '48px 32px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}>
@@ -48,7 +48,7 @@ export default function Error({
           <div style={{
             width: 72,
             height: 72,
-            borderRadius: '12px',
+            borderRadius: '6px',
             background: 'rgba(10,80,162,0.08)',
             display: 'inline-flex',
             alignItems: 'center',
@@ -74,7 +74,7 @@ export default function Error({
 
           <p style={{
             fontSize: '15px',
-            color: '#444444',
+            color: 'var(--text2, #42403C)',
             lineHeight: 1.6,
             margin: '0 0 24px',
             maxWidth: 400,
@@ -96,7 +96,7 @@ export default function Error({
                 background: 'var(--gold, #C4882A)',
                 color: '#FFFFFF',
                 border: 'none',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 fontSize: '14px',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -120,8 +120,8 @@ export default function Error({
                 padding: '12px 24px',
                 background: 'var(--surf, #F6F5F2)',
                 color: 'var(--text1, #18181A)',
-                border: '1px solid #E0E0E0',
-                borderRadius: '12px',
+                border: '1px solid var(--bdr, #E2DFD8)',
+                borderRadius: '6px',
                 fontSize: '14px',
                 fontWeight: 600,
                 textDecoration: 'none',

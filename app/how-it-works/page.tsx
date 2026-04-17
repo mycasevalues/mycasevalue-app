@@ -170,7 +170,7 @@ export default function HowItWorksPage() {
                   style={{
                     borderColor: 'var(--border-default)',
                     background: 'var(--color-surface-0)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     padding: '28px',
                     animationDelay: `${idx * 100}ms`,
                   }}>
@@ -254,7 +254,7 @@ export default function HowItWorksPage() {
                 description: 'Track how outcomes have changed over time to understand current judicial patterns and trends.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '12px' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
                 {/* Red Icon */}
                 <div className="mb-4" style={{ width: '24px', height: '24px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
@@ -282,7 +282,7 @@ export default function HowItWorksPage() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
-              <div key={i} className="text-center p-4 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '12px' }}>
+              <div key={i} className="text-center p-4 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
                 <div className="text-2xl font-display font-extrabold" style={{ color: 'var(--color-text-primary)' }}>
                   {stat.value}
                 </div>
@@ -320,7 +320,7 @@ export default function HowItWorksPage() {
                 description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
               },
             ].map((source, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '12px' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
                 <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
                   {source.title}
                 </h3>
@@ -393,7 +393,7 @@ export default function HowItWorksPage() {
                   padding: '24px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   textDecoration: 'none',
                   color: 'inherit',
                   transition: 'all 0.3s ease',
@@ -408,7 +408,7 @@ export default function HowItWorksPage() {
                   style={{
                     width: '40px',
                     height: '40px',
-                    borderRadius: '12px',
+                    borderRadius: '6px',
                     backgroundColor: 'var(--color-surface-1)',
                     display: 'flex',
                     alignItems: 'center',
@@ -475,7 +475,7 @@ export default function HowItWorksPage() {
                     {idx + 1}
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)' }}>
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                       {step.label}
                     </div>
                     <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginTop: 4 }}>
@@ -535,10 +535,10 @@ export default function HowItWorksPage() {
                   backgroundColor: 'var(--accent-primary)',
                   color: 'var(--color-surface-0)',
                   textDecoration: 'none',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   fontWeight: 600,
                   fontSize: '14px',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   transition: 'all 0.3s ease',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                   display: 'inline-flex',
@@ -605,7 +605,7 @@ export default function HowItWorksPage() {
                 description: 'Available in English and Spanish. Legal data democratized for all communities.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '12px' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
                 <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
                   {item.title}
                 </h3>
@@ -620,7 +620,7 @@ export default function HowItWorksPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
-        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'rgba(239,68,68,0.08)', borderRadius: '12px' }}>
+        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'rgba(239,68,68,0.08)', borderRadius: '6px' }}>
           <h2 className="text-3xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             See what happens in courts like yours
           </h2>

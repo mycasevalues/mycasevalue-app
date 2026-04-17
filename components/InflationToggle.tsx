@@ -23,7 +23,7 @@ export default function InflationToggle() {
             backgroundColor: inflationEnabled ? 'var(--accent-primary)' : 'var(--border-default)',
             color: inflationEnabled ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
             border: 'none',
-            borderRadius: '8px',
+            borderRadius: '4px',
             fontSize: '13px',
             fontWeight: 600,
             cursor: 'pointer',

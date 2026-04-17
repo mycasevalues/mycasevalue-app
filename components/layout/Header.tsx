@@ -287,7 +287,7 @@ export default function Header() {
                   border: 'none',
                   padding: '0 12px',
                   fontSize: 12,
-                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  fontFamily: 'var(--font-sans, var(--font-ui))',
                   color: 'var(--text2)',
                   outline: 'none',
                   borderRight: '1px solid var(--bdr)',
@@ -310,7 +310,7 @@ export default function Header() {
               >
                 <span style={{
                   fontSize: 11,
-                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  fontFamily: 'var(--font-sans, var(--font-ui))',
                   color: 'var(--text2)',
                   whiteSpace: 'nowrap',
                   flex: 1,
@@ -330,7 +330,7 @@ export default function Header() {
                   border: 'none',
                   fontSize: 12,
                   fontWeight: 600,
-                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  fontFamily: 'var(--font-sans, var(--font-ui))',
                   cursor: 'pointer',
                   whiteSpace: 'nowrap',
                   flexShrink: 0,
@@ -380,7 +380,7 @@ export default function Header() {
                       height: 38,
                       padding: '0 12px',
                       fontSize: 13,
-                      fontFamily: 'var(--font-sans, var(--font-inter))',
+                      fontFamily: 'var(--font-sans, var(--font-ui))',
                       color: 'var(--link)',
                       textDecoration: 'none',
                       borderBottom: '1px solid var(--sidebar)',
@@ -419,7 +419,7 @@ export default function Header() {
                   fontSize: 11,
                   color: 'var(--text3)',
                   background: 'var(--sidebar)',
-                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  fontFamily: 'var(--font-sans, var(--font-ui))',
                 }}>
                   Press Enter to search all results
                 </div>
@@ -431,7 +431,7 @@ export default function Header() {
             href="/case-search"
             style={{
               fontSize: 11,
-              fontFamily: 'var(--font-sans, var(--font-inter))',
+              fontFamily: 'var(--font-sans, var(--font-ui))',
               color: 'var(--chrome-text-muted)',
               textDecoration: 'none',
               whiteSpace: 'nowrap',
@@ -481,7 +481,7 @@ export default function Header() {
                   fontSize: 9,
                   textTransform: 'uppercase',
                   letterSpacing: '0.04em',
-                  fontFamily: 'var(--font-sans, var(--font-inter))',
+                  fontFamily: 'var(--font-sans, var(--font-ui))',
                   fontWeight: 500,
                 }}>
                   {item.label}
@@ -541,7 +541,7 @@ export default function Header() {
                   <span style={{
                     fontSize: 11,
                     color: 'var(--chrome-text-muted)',
-                    fontFamily: 'var(--font-sans, var(--font-inter))',
+                    fontFamily: 'var(--font-sans, var(--font-ui))',
                   }}>
                     {userEmail.split('@')[0]} ▾
                   </span>
@@ -562,14 +562,14 @@ export default function Header() {
                       borderBottom: '1px solid var(--bdr)',
                       fontSize: 12,
                       color: 'var(--text3)',
-                      fontFamily: 'var(--font-sans, var(--font-inter))',
+                      fontFamily: 'var(--font-sans, var(--font-ui))',
                     }}>
                       {userEmail}
                     </div>
                     <Link
                       href="/dashboard"
                       className="block px-3 py-2 text-[13px] transition-colors"
-                      style={{ color: 'var(--text1)', fontFamily: 'var(--font-sans, var(--font-inter))' }}
+                      style={{ color: 'var(--text1)', fontFamily: 'var(--font-sans, var(--font-ui))' }}
                       onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--sidebar)'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.background = ''; }}
                       onClick={() => setAuthOpen(false)}
@@ -579,7 +579,7 @@ export default function Header() {
                     <Link
                       href="/account"
                       className="block px-3 py-2 text-[13px] transition-colors"
-                      style={{ color: 'var(--text1)', fontFamily: 'var(--font-sans, var(--font-inter))' }}
+                      style={{ color: 'var(--text1)', fontFamily: 'var(--font-sans, var(--font-ui))' }}
                       onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--sidebar)'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.background = ''; }}
                       onClick={() => setAuthOpen(false)}
@@ -589,7 +589,7 @@ export default function Header() {
                     <button
                       onClick={() => { setAuthOpen(false); handleSignOut(); }}
                       className="w-full text-left px-3 py-2 text-[13px] transition-colors"
-                      style={{ color: 'var(--neg)', borderTop: '1px solid var(--bdr)', fontFamily: 'var(--font-sans, var(--font-inter))' }}
+                      style={{ color: 'var(--neg)', borderTop: '1px solid var(--bdr)', fontFamily: 'var(--font-sans, var(--font-ui))' }}
                       onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--sidebar)'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.background = ''; }}
                     >
@@ -606,7 +606,7 @@ export default function Header() {
                     fontSize: 11,
                     fontWeight: 500,
                     color: '#FFFFFF',
-                    fontFamily: 'var(--font-sans, var(--font-inter))',
+                    fontFamily: 'var(--font-sans, var(--font-ui))',
                     textDecoration: 'none',
                     whiteSpace: 'nowrap',
                   }}
@@ -628,7 +628,7 @@ export default function Header() {
                     borderRadius: 2,
                     fontSize: 11,
                     fontWeight: 600,
-                    fontFamily: 'var(--font-sans, var(--font-inter))',
+                    fontFamily: 'var(--font-sans, var(--font-ui))',
                     textDecoration: 'none',
                     whiteSpace: 'nowrap',
                   }}
@@ -667,7 +667,7 @@ export default function Header() {
                 border: 'none',
                 padding: '0 12px',
                 fontSize: 12,
-                fontFamily: 'var(--font-sans, var(--font-inter))',
+                fontFamily: 'var(--font-sans, var(--font-ui))',
                 color: 'var(--text2)',
                 outline: 'none',
               }}
@@ -682,7 +682,7 @@ export default function Header() {
                 border: 'none',
                 fontSize: 12,
                 fontWeight: 600,
-                fontFamily: 'var(--font-sans, var(--font-inter))',
+                fontFamily: 'var(--font-sans, var(--font-ui))',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',

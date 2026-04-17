@@ -200,7 +200,7 @@ export default function PricingPage() {
           text-align: center;
           position: relative;
           overflow: hidden;
-          border-bottom: 1px solid #E0E0E0;
+          border-bottom: 1px solid var(--bdr, #E2DFD8);
         }
         .pricing-header > * { position: relative; }
 
@@ -211,7 +211,7 @@ export default function PricingPage() {
           padding: 4px 10px;
           margin-bottom: 14px;
           border-radius: 2px;
-          border: 1px solid #E0E0E0;
+          border: 1px solid var(--bdr, #E2DFD8);
           background: #FFFFFF;
           font-family: var(--font-mono);
           font-size: 10px;
@@ -242,7 +242,7 @@ export default function PricingPage() {
           font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.65;
-          color: #666666;
+          color: var(--text3, #78766C);
           max-width: 42rem;
           margin: 0 auto 1.5rem;
         }
@@ -272,7 +272,7 @@ export default function PricingPage() {
           flex-direction: column;
           padding: 1.75rem;
           border-radius: 4px;
-          border: 1px solid #E0E0E0;
+          border: 1px solid var(--bdr, #E2DFD8);
           background: #FFFFFF;
           transition: border-color 150ms ease, box-shadow 150ms ease;
           position: relative;
@@ -412,7 +412,7 @@ export default function PricingPage() {
 
         .callout-section {
           background: var(--surface-warm, #FAF3E6);
-          border: 1px solid #E0E0E0;
+          border: 1px solid var(--bdr, #E2DFD8);
           border-radius: 4px;
           padding: 2.5rem;
           margin-bottom: 4rem;
@@ -446,7 +446,7 @@ export default function PricingPage() {
 
         .faq-item {
           background: #FFFFFF;
-          border: 1px solid #E0E0E0;
+          border: 1px solid var(--bdr, #E2DFD8);
           border-radius: 4px;
           padding: 1.5rem;
           margin-bottom: 1rem;
@@ -577,7 +577,7 @@ export default function PricingPage() {
               display: 'inline-flex',
               alignItems: 'center',
               padding: '0.75rem 2rem',
-              borderRadius: '8px',
+              borderRadius: '4px',
               fontFamily: 'var(--font-ui)',
               fontSize: '0.875rem',
               fontWeight: '600',

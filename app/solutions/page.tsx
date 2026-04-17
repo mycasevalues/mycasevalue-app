@@ -105,7 +105,7 @@ export default function SolutionsPage() {
           </p>
           <h1
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '2.5rem',
               fontWeight: 600,
               lineHeight: 1.1,
@@ -143,7 +143,7 @@ export default function SolutionsPage() {
             <div style={{ textAlign: 'center' }}>
               <div
                 style={{
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
                   color: 'var(--accent-primary-hover)',
@@ -166,7 +166,7 @@ export default function SolutionsPage() {
             <div style={{ textAlign: 'center' }}>
               <div
                 style={{
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
                   color: 'var(--accent-primary-hover)',
@@ -189,7 +189,7 @@ export default function SolutionsPage() {
             <div style={{ textAlign: 'center' }}>
               <div
                 style={{
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
                   color: 'var(--accent-primary-hover)',
@@ -212,7 +212,7 @@ export default function SolutionsPage() {
             <div style={{ textAlign: 'center' }}>
               <div
                 style={{
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
@@ -282,7 +282,7 @@ export default function SolutionsPage() {
                 style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '20px 16px',
                   textDecoration: 'none',
                   display: 'block',
@@ -332,7 +332,7 @@ export default function SolutionsPage() {
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '1.75rem',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
@@ -368,7 +368,7 @@ export default function SolutionsPage() {
                   'var(--accent-primary)',
                 color: 'var(--color-surface-1)',
                 padding: '0.875rem 2rem',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
                 fontWeight: 600,
@@ -386,7 +386,7 @@ export default function SolutionsPage() {
                 background: 'transparent',
                 color: 'var(--color-text-primary)',
                 padding: '0.875rem 2rem',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1.5px solid var(--border-default)',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',

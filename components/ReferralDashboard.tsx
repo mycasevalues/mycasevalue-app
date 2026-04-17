@@ -132,7 +132,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
 
   const cardStyle: React.CSSProperties = {
     background: 'var(--color-surface-0)',
-    borderRadius: '12px',
+    borderRadius: '6px',
     padding: '24px',
     border: '1px solid var(--border-default)',
   };
@@ -150,7 +150,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
       <div
         style={{
           padding: '16px',
-          borderRadius: '8px',
+          borderRadius: '4px',
           backgroundColor: 'rgba(239,68,68,0.1)',
           color: '#f87171',
           border: '1px solid #FECACA',
@@ -166,7 +166,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
       <div
         style={{
           padding: '20px',
-          borderRadius: '8px',
+          borderRadius: '4px',
           backgroundColor: 'rgba(59,130,246,0.1)',
           border: '1px solid rgba(59,130,246,0.15)',
         }}
@@ -251,7 +251,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
             marginBottom: '16px',
             padding: '12px',
             backgroundColor: 'var(--color-surface-1)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
           }}
         >
@@ -303,7 +303,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
               style={{
                 padding: '12px',
                 backgroundColor: 'var(--color-surface-1)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 textAlign: 'center',
               }}
@@ -334,7 +334,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
               style={{
                 padding: '12px',
                 backgroundColor: 'var(--color-surface-1)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 border: '1px solid var(--border-default)',
                 textAlign: 'center',
               }}
@@ -377,7 +377,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
             style={{
               padding: '12px',
               backgroundColor: 'var(--color-surface-1)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               border: '1px solid var(--border-default)',
               fontSize: '13px',
               color: 'var(--color-text-primary)',
@@ -461,7 +461,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
         style={{
           padding: '12px',
           backgroundColor: 'rgba(59,130,246,0.08)',
-          borderRadius: '8px',
+          borderRadius: '4px',
           border: '1px solid rgba(59,130,246,0.15)',
           fontSize: '13px',
           color: 'var(--accent-primary-hover)',

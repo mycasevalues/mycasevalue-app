@@ -100,7 +100,7 @@ export default function PACERMonitor() {
       case 'closed':
         return { bg: '#F0F0F0', text: '#5F5F5F' };
       default:
-        return { bg: '#F5F5F5', text: '#333333' };
+        return { bg: 'var(--tbl-hdr, #EDEAE4)', text: '#333333' };
     }
   };
 
@@ -112,7 +112,7 @@ export default function PACERMonitor() {
         padding: '24px',
         backgroundColor: 'var(--color-surface-0)',
         border: '1px solid rgba(255,255,255,0.1)',
-        borderRadius: '8px',
+        borderRadius: '4px',
         fontFamily: 'var(--font-body)',
       }}
     >
@@ -163,7 +163,7 @@ export default function PACERMonitor() {
             style={{
               flex: 1,
               padding: '10px 12px',
-              border: error ? '1px solid #CC1016' : '1px solid #D1D5DB',
+              border: error ? '1px solid #CC1016' : '1px solid var(--bdr, #E2DFD8)',
               borderRadius: '6px',
               fontSize: '14px',
               fontFamily: 'var(--font-mono)',

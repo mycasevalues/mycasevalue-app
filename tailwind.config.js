@@ -78,7 +78,7 @@ module.exports = {
         display: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
         data: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
-        inter: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        inter: ['var(--font-ui)', 'Source Sans 3', 'Inter', 'sans-serif'],
         jakarta: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'sans-serif'],
         baskerville: ['var(--font-baskerville)', 'Libre Baskerville', 'Georgia', 'serif'],
       },

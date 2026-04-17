@@ -257,7 +257,7 @@ export default function DistrictsPage() {
             color: 'var(--text-secondary)',
             margin: 0,
             lineHeight: 1.5,
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
           }}>
             All {ALL_ROWS.length} federal judicial districts across {CIRCUITS_AVAILABLE.length} circuits. Outcome data from the FJC Integrated Database.
           </p>
@@ -344,7 +344,7 @@ export default function DistrictsPage() {
             <table style={{
               width: '100%',
               borderCollapse: 'collapse',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontSize: 13,
               minWidth: 900,
             }}>
@@ -467,7 +467,7 @@ export default function DistrictsPage() {
             lineHeight: 1.7,
             margin: '0 0 8px',
             maxWidth: 740,
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
           }}>
             Win rates are derived from the Federal Judicial Center Integrated Database covering {(totalCasesAll / 1_000_000).toFixed(1)}M+ federal civil cases filed 2000–2024.
             Rates represent weighted averages across all case types within each district. Individual case type outcomes vary significantly.
@@ -476,7 +476,7 @@ export default function DistrictsPage() {
             fontSize: 12,
             color: 'var(--text-tertiary)',
             margin: 0,
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
           }}>
             This is not legal advice. See our{' '}
             <Link href="/disclaimer" style={{ color: 'var(--link)', textDecoration: 'none' }}>disclaimer</Link>

@@ -124,7 +124,7 @@ export default function LanguageDetectBanner() {
           style={{
             background: 'none',
             border: 'none',
-            color: '#595959',
+            color: 'var(--text3, #78766C)',
             fontSize: '18px',
             cursor: 'pointer',
             padding: '4px',
@@ -137,7 +137,7 @@ export default function LanguageDetectBanner() {
             (e.currentTarget as HTMLButtonElement).style.color = 'var(--color-text-secondary)';
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.color = '#999999';
+            (e.currentTarget as HTMLButtonElement).style.color = 'var(--text4, #A8A6A0)';
           }}
           aria-label="Dismiss language suggestion"
         >

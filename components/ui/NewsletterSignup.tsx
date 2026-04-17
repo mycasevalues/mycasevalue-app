@@ -39,7 +39,7 @@ export default function NewsletterSignup() {
       style={{
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
-        borderRadius: '12px',
+        borderRadius: '6px',
         padding: '32px',
       }}
     >
@@ -60,7 +60,7 @@ export default function NewsletterSignup() {
       {/* Heading */}
       <h2
         style={{
-          fontFamily: 'var(--font-display)',
+          fontFamily: 'var(--font-ui)',
           fontSize: '20px',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
@@ -92,7 +92,7 @@ export default function NewsletterSignup() {
             alignItems: 'center',
             gap: '12px',
             padding: '16px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             background: 'rgba(22, 163, 74, 0.08)',
             border: '1px solid rgba(22, 163, 74, 0.2)',
           }}
@@ -146,7 +146,7 @@ export default function NewsletterSignup() {
               minWidth: '200px',
               height: '48px',
               padding: '12px 16px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: `4px solid ${status === 'error' ? 'var(--accent-primary)' : 'var(--border-default)'}`,
               background: 'var(--color-surface-0)',
               fontFamily: 'var(--font-body)',
@@ -171,7 +171,7 @@ export default function NewsletterSignup() {
             style={{
               height: '48px',
               padding: '0 24px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: 'none',
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',

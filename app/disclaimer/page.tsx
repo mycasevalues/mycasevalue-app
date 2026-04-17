@@ -66,8 +66,8 @@ export default function DisclaimerPage() {
               fontWeight: 600,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              borderRadius: '12px',
-              fontFamily: 'var(--font-display)',
+              borderRadius: '6px',
+              fontFamily: 'var(--font-ui)',
             }}>
               LEGAL
             </span>
@@ -77,7 +77,7 @@ export default function DisclaimerPage() {
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 600,
               color: 'var(--color-surface-0)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               letterSpacing: '-1px',
               marginBottom: 12,
             }}
@@ -128,7 +128,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -151,7 +151,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -174,7 +174,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -220,7 +220,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -243,7 +243,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -295,7 +295,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -347,7 +347,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -370,7 +370,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -393,7 +393,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -416,7 +416,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -439,7 +439,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -462,7 +462,7 @@ export default function DisclaimerPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
             }}>
@@ -479,7 +479,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 style={{
               fontSize: '1.875rem',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
@@ -502,7 +502,7 @@ export default function DisclaimerPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
             }}>
@@ -518,7 +518,7 @@ export default function DisclaimerPage() {
           {/* Acknowledgment */}
           <section style={{
             padding: '32px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             border: '2px solid var(--accent-primary)',
             backgroundColor: 'rgba(239,68,68,0.08)',
           }}>

@@ -39,7 +39,7 @@ export default function NotFound() {
             maxWidth: 560,
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '12px',
+            borderRadius: '6px',
             padding: '48px 32px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
@@ -98,14 +98,14 @@ export default function NotFound() {
             }
             .notfound-link-secondary:hover {
               background: rgba(255,255,255,0.1) !important;
-              border-color: #D1D5DB !important;
+              border-color: var(--bdr, #E2DFD8) !important;
             }
             .notfound-link-tertiary {
               transition: all 200ms ease;
             }
             .notfound-link-tertiary:hover {
               background: rgba(255,255,255,0.05) !important;
-              border-color: #D1D5DB !important;
+              border-color: var(--bdr, #E2DFD8) !important;
             }
           `}</style>
 
@@ -122,7 +122,7 @@ export default function NotFound() {
                 background: 'var(--accent-primary)',
                 color: 'var(--color-surface-0)',
                 border: 'none',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 fontSize: '14px',
                 fontWeight: 600,
                 textDecoration: 'none',
@@ -147,7 +147,7 @@ export default function NotFound() {
                 background: 'var(--color-surface-1)',
                 color: 'var(--color-text-primary)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 fontSize: '14px',
                 fontWeight: 600,
                 textDecoration: 'none',

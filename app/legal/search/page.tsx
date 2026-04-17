@@ -127,7 +127,7 @@ export default function LegalSearchPage() {
 
   const selectStyle: React.CSSProperties = {
     padding: '10px 14px',
-    borderRadius: 10,
+    borderRadius: 6,
     border: '1px solid rgba(255,255,255,0.1)',
     fontSize: 14,
     color: 'var(--color-text-primary)',
@@ -168,8 +168,8 @@ export default function LegalSearchPage() {
               style={{
                 width: '100%',
                 padding: '14px 18px 14px 46px',
-                borderRadius: 12,
-                border: '2px solid #D1D5DB',
+                borderRadius: 6,
+                border: '2px solid var(--bdr, #E2DFD8)',
                 fontSize: 16,
                 color: 'var(--color-text-primary)',
                 outline: 'none',
@@ -188,7 +188,7 @@ export default function LegalSearchPage() {
             disabled={loading}
             style={{
               padding: '14px 28px',
-              borderRadius: 12,
+              borderRadius: 6,
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               fontSize: 15,
@@ -206,12 +206,12 @@ export default function LegalSearchPage() {
             onClick={() => setShowFilters(!showFilters)}
             style={{
               padding: '14px 18px',
-              borderRadius: 12,
+              borderRadius: 6,
               background: showFilters ? '#E8F4FD' : 'rgba(255,255,255,0.05)',
               color: showFilters ? 'var(--accent-primary)' : '#6B7280',
               fontSize: 14,
               fontWeight: 500,
-              border: showFilters ? '1px solid var(--accent-primary)' : '1px solid #D1D5DB',
+              border: showFilters ? '1px solid var(--accent-primary)' : '1px solid var(--bdr, #E2DFD8)',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
             }}
@@ -228,7 +228,7 @@ export default function LegalSearchPage() {
             flexWrap: 'wrap',
             padding: '16px 20px',
             background: 'var(--color-surface-0)',
-            borderRadius: 12,
+            borderRadius: 6,
             border: '1px solid var(--border-default)',
             alignItems: 'center',
           }}>
@@ -256,7 +256,7 @@ export default function LegalSearchPage() {
               <button
                 type="button"
                 onClick={() => { setSource('all'); setDocType('all'); setDateFrom(''); setDateTo(''); }}
-                style={{ padding: '10px 16px', borderRadius: 8, background: 'transparent', color: 'var(--color-text-muted)', fontSize: 13, border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+                style={{ padding: '10px 16px', borderRadius: 4, background: 'transparent', color: 'var(--color-text-muted)', fontSize: 13, border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
               >
                 Clear filters
               </button>
@@ -271,7 +271,7 @@ export default function LegalSearchPage() {
           padding: '10px 16px',
           background: 'rgba(234,179,8,0.08)',
           border: '1px solid #FDE68A',
-          borderRadius: 10,
+          borderRadius: 6,
           fontSize: 13,
           color: '#fbbf24',
           marginBottom: 16,
@@ -401,7 +401,7 @@ export default function LegalSearchPage() {
             disabled={page <= 1 || loading}
             style={{
               padding: '10px 18px',
-              borderRadius: 10,
+              borderRadius: 6,
               border: '1px solid rgba(255,255,255,0.1)',
               background: page <= 1 ? 'rgba(255,255,255,0.05)' : 'var(--color-surface-0)',
               color: page <= 1 ? 'var(--color-text-muted)' : '#374151',
@@ -416,7 +416,7 @@ export default function LegalSearchPage() {
             disabled={page >= totalPages || loading}
             style={{
               padding: '10px 18px',
-              borderRadius: 10,
+              borderRadius: 6,
               border: '1px solid rgba(255,255,255,0.1)',
               background: page >= totalPages ? 'rgba(255,255,255,0.05)' : 'var(--color-surface-0)',
               color: page >= totalPages ? 'var(--color-text-muted)' : '#374151',
@@ -447,7 +447,7 @@ export default function LegalSearchPage() {
               onClick={() => { setSource(s.value); doSearch(1); }}
               style={{
                 padding: '10px 14px',
-                borderRadius: 10,
+                borderRadius: 6,
                 border: source === s.value ? `2px solid ${SOURCE_COLORS[s.value]}` : '1px solid var(--border-default)',
                 background: source === s.value ? `${SOURCE_COLORS[s.value]}0A` : 'var(--color-surface-0)',
                 cursor: 'pointer',

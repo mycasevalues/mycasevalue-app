@@ -595,8 +595,8 @@ export default function IntakeFormGenerator() {
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: selectedInfo ? '1fr 1fr' : '1fr', gap: '24px' }}>
-      <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-        <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+      <div style={{ background: 'var(--color-surface-0)', borderRadius: '6px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
           Form Configuration
         </h2>
 
@@ -612,7 +612,7 @@ export default function IntakeFormGenerator() {
                 width: '100%',
                 padding: '12px 14px',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 backgroundColor: 'var(--color-surface-0)',
@@ -629,7 +629,7 @@ export default function IntakeFormGenerator() {
             </select>
           </div>
 
-          <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '12px', border: '1px solid #E0F2FE' }}>
+          <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '6px', border: '1px solid #E0F2FE' }}>
             <p style={{ fontSize: '12px', color: '#38bdf8', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
               This tool generates a comprehensive intake questionnaire with relevant fields for your case type. You can customize and print the form for client meetings.
             </p>
@@ -647,7 +647,7 @@ export default function IntakeFormGenerator() {
               borderRadius: '20px',
               fontSize: '15px',
               fontWeight: 600,
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
               cursor: !selectedCaseType || loading ? 'not-allowed' : 'pointer',
@@ -687,12 +687,12 @@ export default function IntakeFormGenerator() {
       </div>
 
       {selectedInfo && (
-        <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-display)' }}>
+        <div style={{ background: 'var(--color-surface-0)', borderRadius: '6px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
             Preview
           </h2>
 
-          <div style={{ maxHeight: '600px', overflowY: 'auto', padding: '16px', background: 'var(--color-surface-1)', borderRadius: '12px', border: '1px solid var(--border-default)' }}>
+          <div style={{ maxHeight: '600px', overflowY: 'auto', padding: '16px', background: 'var(--color-surface-1)', borderRadius: '6px', border: '1px solid var(--border-default)' }}>
             <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', borderBottom: '2px solid var(--accent-primary)', paddingBottom: '8px' }}>
               Form Sections:
             </h3>
@@ -702,7 +702,7 @@ export default function IntakeFormGenerator() {
               ))}
             </ul>
 
-            <div style={{ marginTop: '20px', padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '8px', border: '1px solid #FCD34D' }}>
+            <div style={{ marginTop: '20px', padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '4px', border: '1px solid #FCD34D' }}>
               <p style={{ fontSize: '12px', color: '#fbbf24', margin: 0, fontFamily: 'var(--font-body)' }}>
                 <strong>Note:</strong> Each section contains numbered fields with blank lines formatted for printing.
               </p>

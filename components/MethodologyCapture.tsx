@@ -533,7 +533,7 @@ export default function MethodologyCapture() {
             fontSize: 20,
             fontWeight: 600,
             color: 'var(--color-text-primary)',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             marginBottom: 8,
             marginTop: 0,
           }}
@@ -648,7 +648,7 @@ export default function MethodologyCapture() {
         style={{
           marginTop: 24,
           padding: 16,
-          borderRadius: 8,
+          borderRadius: '4px',
           backgroundColor: 'rgba(0, 65, 130, 0.05)',
           fontSize: 13,
           color: 'var(--color-text-secondary)',

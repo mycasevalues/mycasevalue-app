@@ -254,10 +254,10 @@
 }
 
 /* ── HEADINGS — Plus Jakarta Sans for Westlaw ─────────────── */
-h1, .mcv-h1 { font-family: var(--font-display); font-weight: 800; font-size: 22px; line-height: 1.2; color: var(--text1, #18181A); }
-h2, .mcv-h2 { font-family: var(--font-display); font-weight: 700; font-size: 17px; line-height: 1.3; color: var(--text1, #18181A); }
-h3, .mcv-h3 { font-family: var(--font-display); font-weight: 700; font-size: 15px; line-height: 1.4; color: var(--text1, #18181A); }
-h4, .mcv-h4 { font-family: var(--font-display); font-weight: 600; font-size: 14px; line-height: 1.4; color: var(--text1, #18181A); }
+h1, .mcv-h1 { font-family: var(--font-ui); font-weight: 800; font-size: 22px; line-height: 1.2; color: var(--text1, #18181A); }
+h2, .mcv-h2 { font-family: var(--font-ui); font-weight: 700; font-size: 17px; line-height: 1.3; color: var(--text1, #18181A); }
+h3, .mcv-h3 { font-family: var(--font-ui); font-weight: 700; font-size: 15px; line-height: 1.4; color: var(--text1, #18181A); }
+h4, .mcv-h4 { font-family: var(--font-ui); font-weight: 600; font-size: 14px; line-height: 1.4; color: var(--text1, #18181A); }
 
 
 /* ── INPUT — Westlaw Clean Light ─────────────────────────── */

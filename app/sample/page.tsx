@@ -105,7 +105,7 @@ export default function SampleReportPage() {
               style={{
                 fontSize: '32px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 margin: '0 0 8px 0',
                 color: 'var(--color-text-inverse)',
               }}
@@ -173,7 +173,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '16px',
               }}
             >
@@ -293,7 +293,7 @@ export default function SampleReportPage() {
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
@@ -312,7 +312,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                 }}
               >
@@ -355,7 +355,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                 }}
               >
@@ -397,7 +397,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                 }}
               >
@@ -464,7 +464,7 @@ export default function SampleReportPage() {
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
@@ -475,7 +475,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '32px 24px',
                 marginBottom: '16px',
               }}
@@ -486,7 +486,7 @@ export default function SampleReportPage() {
                   style={{
                     height: '8px',
                     backgroundColor: 'var(--border-default)',
-                    borderRadius: '12px',
+                    borderRadius: '6px',
                     overflow: 'hidden',
                     marginBottom: '16px',
                     position: 'relative',
@@ -575,7 +575,7 @@ export default function SampleReportPage() {
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
@@ -594,7 +594,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                 }}
               >
@@ -636,7 +636,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                 }}
               >
@@ -678,7 +678,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                 }}
               >
@@ -735,7 +735,7 @@ export default function SampleReportPage() {
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
@@ -746,7 +746,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 overflow: 'hidden',
                 marginBottom: '24px',
               }}
@@ -951,7 +951,7 @@ export default function SampleReportPage() {
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
@@ -970,7 +970,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                 }}
               >
@@ -1012,7 +1012,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                 }}
               >
@@ -1054,7 +1054,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                 }}
               >
@@ -1111,7 +1111,7 @@ export default function SampleReportPage() {
               style={{
                 fontSize: '24px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
                 color: 'var(--color-text-primary)',
               }}
@@ -1122,7 +1122,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 overflow: 'hidden',
                 marginBottom: '24px',
               }}
@@ -1325,7 +1325,7 @@ export default function SampleReportPage() {
                   backgroundColor: 'var(--accent-primary)',
                   color: 'var(--color-text-inverse)',
                   padding: '16px 32px',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   fontSize: '16px',
                   fontWeight: 600,
                   textDecoration: 'none',

@@ -31,7 +31,7 @@ export default function NosExplorerLoading() {
           width: '100%',
           maxWidth: '600px',
           backgroundColor: 'rgba(255,255,255,0.06)',
-          borderRadius: '8px',
+          borderRadius: '4px',
           marginBottom: '2rem',
         }} />
 
@@ -46,7 +46,7 @@ export default function NosExplorerLoading() {
               height: '120px',
               backgroundColor: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               padding: '1rem',
             }}>
               <div style={{ height: '14px', width: '60%', backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: '4px', marginBottom: '0.75rem' }} />

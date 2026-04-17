@@ -133,7 +133,7 @@ export default function NosExplorerPage() {
           <div style={{ paddingTop: 16, paddingBottom: 20 }}>
             <h1 style={{
               fontSize: 'clamp(22px, 3vw, 28px)', fontWeight: 900, marginBottom: 8,
-              color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
+              color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-ui)', lineHeight: 1.2,
             }}>
               NOS Code Explorer
             </h1>
@@ -154,7 +154,7 @@ export default function NosExplorerPage() {
 
         {/* What are NOS Codes? */}
         <div style={{ marginTop: 48, padding: 32, background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 12 }}>
             Understanding Federal Case Classifications
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>

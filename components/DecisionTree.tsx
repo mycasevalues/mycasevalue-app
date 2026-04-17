@@ -572,7 +572,7 @@ export default function DecisionTree() {
                 style={{
                   padding: '1.5rem',
                   border: '2px solid var(--border-default)',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   backgroundColor: 'var(--color-surface-0)',
                   cursor: 'pointer',
                   transition:
@@ -735,7 +735,7 @@ export default function DecisionTree() {
             style={{
               backgroundColor: 'rgba(59,130,246,0.06)',
               border: '1px solid #bfdbfe',
-              borderRadius: '8px',
+              borderRadius: '4px',
               padding: '1.5rem',
             }}
           >
@@ -783,7 +783,7 @@ export default function DecisionTree() {
               padding: '1.5rem',
               backgroundColor: 'rgba(234,179,8,0.06)',
               border: '1px solid #fcd34d',
-              borderRadius: '8px',
+              borderRadius: '4px',
             }}
           >
             <p
@@ -818,7 +818,7 @@ export default function DecisionTree() {
           <div
             style={{
               padding: '1.5rem',
-              borderRadius: '8px',
+              borderRadius: '4px',
               marginBottom: '2rem',
               backgroundColor: qualificationResult.qualifies
                 ? '#dcfce7'
@@ -857,7 +857,7 @@ export default function DecisionTree() {
             style={{
               backgroundColor: 'var(--color-surface-0)',
               border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               padding: '1.5rem',
               marginBottom: '2rem',
             }}
@@ -1003,7 +1003,7 @@ export default function DecisionTree() {
             style={{
               backgroundColor: 'var(--color-surface-0)',
               border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               padding: '1.5rem',
               marginBottom: '2rem',
             }}
@@ -1044,7 +1044,7 @@ export default function DecisionTree() {
             style={{
               backgroundColor: 'var(--color-surface-0)',
               border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: '8px',
+              borderRadius: '4px',
               padding: '1.5rem',
               marginBottom: '2rem',
             }}
@@ -1088,7 +1088,7 @@ export default function DecisionTree() {
             style={{
               backgroundColor: 'rgba(255,255,255,0.05)',
               border: '1px solid #d1d5db',
-              borderRadius: '8px',
+              borderRadius: '4px',
               padding: '1.5rem',
             }}
           >

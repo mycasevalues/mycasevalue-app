@@ -2,7 +2,7 @@
 
 /**
  * ResearchBreadcrumb — Westlaw-style breadcrumb trail.
- * Light mode: #888888 separators, var(--link, #0A50A2) links, var(--text1, #18181A) current page.
+ * Light mode: var(--text4, #A8A6A0) separators, var(--link, #0A50A2) links, var(--text1, #18181A) current page.
  */
 
 import Link from 'next/link';
@@ -76,7 +76,7 @@ export default function ResearchBreadcrumb() {
         alignItems: 'center',
         gap: 6,
         fontSize: 12,
-        fontFamily: 'var(--font-inter)',
+        fontFamily: 'var(--font-ui)',
         overflowX: 'auto',
         whiteSpace: 'nowrap',
         padding: '8px 4px',
@@ -90,7 +90,7 @@ export default function ResearchBreadcrumb() {
               height="10"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#CCCCCC"
+              stroke="var(--bdr, #E2DFD8)"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"

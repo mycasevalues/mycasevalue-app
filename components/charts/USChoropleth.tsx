@@ -154,7 +154,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
             background: 'var(--accent-primary)',
             color: 'var(--color-surface-0)',
             padding: '12px 16px',
-            borderRadius: '8px',
+            borderRadius: '4px',
             fontSize: '13px',
             fontFamily: 'var(--font-body)',
             pointerEvents: 'none',

@@ -663,7 +663,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 <p style={{
                   fontSize: 12,
                   fontWeight: 400,
-                  color: 'var(--text3, #595959)',
+                  color: 'var(--text3, #78766C)',
                   margin: '0 0 12px 0',
                   fontFamily: 'var(--font-body)',
                 }}>
@@ -790,7 +790,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               borderRadius: 2,
               border: '1px solid var(--border-default)',
               background: state.currentPage === 1 ? 'var(--color-surface-1)' : 'var(--color-surface-0)',
-              color: state.currentPage === 1 ? 'var(--text4, #999999)' : 'var(--color-text-primary)',
+              color: state.currentPage === 1 ? 'var(--text4, #A8A6A0)' : 'var(--color-text-primary)',
               cursor: state.currentPage === 1 ? 'not-allowed' : 'pointer',
               fontSize: 14,
               fontWeight: 600,
@@ -855,7 +855,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               borderRadius: 2,
               border: '1px solid var(--border-default)',
               background: state.currentPage === totalPages ? 'var(--color-surface-1)' : 'var(--color-surface-0)',
-              color: state.currentPage === totalPages ? 'var(--text4, #999999)' : 'var(--color-text-primary)',
+              color: state.currentPage === totalPages ? 'var(--text4, #A8A6A0)' : 'var(--color-text-primary)',
               cursor: state.currentPage === totalPages ? 'not-allowed' : 'pointer',
               fontSize: 14,
               fontWeight: 600,
@@ -1136,7 +1136,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     </div>
                     <div style={{
                       fontSize: 10,
-                      color: 'var(--text3, #595959)',
+                      color: 'var(--text3, #78766C)',
                       fontFamily: 'var(--font-body)',
                       textAlign: 'center',
                     }}>
@@ -1158,7 +1158,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     </div>
                     <div style={{
                       fontSize: 10,
-                      color: 'var(--text3, #595959)',
+                      color: 'var(--text3, #78766C)',
                       fontFamily: 'var(--font-body)',
                       marginTop: 2,
                     }}>
@@ -1180,7 +1180,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     </div>
                     <div style={{
                       fontSize: 10,
-                      color: 'var(--text3, #595959)',
+                      color: 'var(--text3, #78766C)',
                       fontFamily: 'var(--font-body)',
                       marginTop: 2,
                     }}>

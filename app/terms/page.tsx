@@ -74,7 +74,7 @@ export default function TermsPage() {
         }
 
         .breadcrumb-home-link {
-          color: #CCCCCC;
+          color: var(--bdr, #E2DFD8);
           text-decoration: none;
           transition: color 0.2s;
         }
@@ -157,7 +157,7 @@ export default function TermsPage() {
       <div style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: '#CCCCCC' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: 'var(--bdr, #E2DFD8)' }}>
             <a href="/" className="breadcrumb-home-link">Home</a>
             <span>/</span>
             <span style={{ color: 'var(--color-surface-0)' }}>Terms of Service</span>
@@ -190,7 +190,7 @@ export default function TermsPage() {
             marginBottom: '16px',
             color: 'white',
             letterSpacing: '-1.5px',
-            fontFamily: 'var(--font-display)'
+            fontFamily: 'var(--font-ui)'
           }}>
             Terms of Service
           </h1>
@@ -255,7 +255,7 @@ export default function TermsPage() {
             paddingRight: '16px',
             paddingTop: '16px',
             paddingBottom: '16px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             borderLeft: '4px solid #D97706',
             background: 'rgba(239,68,68,0.08)',
             color: 'var(--color-text-primary)',
@@ -533,7 +533,7 @@ export default function TermsPage() {
             <div style={{
               marginTop: '16px',
               padding: '12px 16px',
-              borderRadius: '8px',
+              borderRadius: '4px',
               background: 'rgba(234,179,8,0.08)',
               borderLeft: '3px solid #D97706',
               fontSize: '13px',
@@ -567,7 +567,7 @@ export default function TermsPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               background: 'var(--color-surface-0)',
               color: 'var(--color-text-primary)',
               border: '1px solid var(--border-default)'
@@ -599,7 +599,7 @@ export default function TermsPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               background: 'var(--color-surface-0)',
               color: 'var(--color-text-primary)',
               border: '1px solid var(--border-default)'

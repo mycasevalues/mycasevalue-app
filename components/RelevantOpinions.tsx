@@ -51,7 +51,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
           <div style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '12px',
+            borderRadius: '6px',
             padding: '24px',
           }}>
             <h2 style={{
@@ -59,7 +59,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: '20px',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
             }}>Relevant Opinions</h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
               <span style={{
@@ -90,7 +90,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
         <div style={{
           background: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
           padding: '24px',
         }}>
           <h2 style={{
@@ -98,7 +98,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             marginBottom: '4px',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
           }}>Relevant Opinions</h2>
           <p style={{
             fontSize: '13px',
@@ -115,7 +115,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
                 padding: '16px',
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '8px',
+                borderRadius: '4px',
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', flexWrap: 'wrap' }}>
                   <div style={{ flex: 1, minWidth: '200px' }}>
@@ -128,7 +128,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
                         fontWeight: 600,
                         color: 'var(--accent-primary)',
                         textDecoration: 'none',
-                        fontFamily: 'var(--font-display)',
+                        fontFamily: 'var(--font-ui)',
                         lineHeight: 1.3,
                       }}
                     >

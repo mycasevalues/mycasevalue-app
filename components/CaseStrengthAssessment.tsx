@@ -471,7 +471,7 @@ export default function CaseStrengthAssessment() {
                   padding: '24px',
                   backgroundColor: 'white',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                   textAlign: 'left',
@@ -535,7 +535,7 @@ export default function CaseStrengthAssessment() {
           style={{
             backgroundColor: 'white',
             padding: '40px',
-            borderRadius: '8px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
           }}
         >
@@ -691,7 +691,7 @@ export default function CaseStrengthAssessment() {
                 disabled={!isAnswered}
                 style={{
                   padding: '12px 32px',
-                  backgroundColor: isAnswered ? 'var(--accent-primary)' : '#D1D5DB',
+                  backgroundColor: isAnswered ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '6px',
@@ -723,7 +723,7 @@ export default function CaseStrengthAssessment() {
                 disabled={!isAnswered}
                 style={{
                   padding: '12px 32px',
-                  backgroundColor: isAnswered ? 'var(--accent-primary)' : '#D1D5DB',
+                  backgroundColor: isAnswered ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '6px',
@@ -771,7 +771,7 @@ export default function CaseStrengthAssessment() {
         <div
           style={{
             backgroundColor: 'white',
-            borderRadius: '8px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             padding: '40px',
           }}

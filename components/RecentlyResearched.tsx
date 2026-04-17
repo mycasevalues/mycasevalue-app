@@ -136,7 +136,7 @@ export default function RecentlyResearched() {
           padding: '16px',
           backgroundColor: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
-          borderRadius: '8px',
+          borderRadius: '4px',
           fontFamily: 'var(--font-body)',
         }}
       >
@@ -170,7 +170,7 @@ export default function RecentlyResearched() {
         padding: '16px',
         backgroundColor: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
-        borderRadius: '8px',
+        borderRadius: '4px',
         fontFamily: 'var(--font-body)',
       }}
     >

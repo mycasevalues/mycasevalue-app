@@ -415,7 +415,7 @@ export default async function NOSPage({ params }: PageProps) {
           font-weight: 600;
           border: none;
           letter-spacing: 0.5px;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
         }
 
         .stat-card {
@@ -466,7 +466,7 @@ export default async function NOSPage({ params }: PageProps) {
           color: var(--color-text-inverse);
           font-size: 11px;
           font-weight: 600;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
           transition: opacity 0.2s ease;
         }
 
@@ -525,7 +525,7 @@ export default async function NOSPage({ params }: PageProps) {
           font-weight: 600;
           color: var(--color-text-primary);
           margin-top: 8px;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
         }
 
         .related-card-category {
@@ -547,7 +547,7 @@ export default async function NOSPage({ params }: PageProps) {
           font-size: 14px;
           font-weight: 600;
           margin: 0 0 8px 0;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
         }
 
         .disclaimer-box p {
@@ -567,7 +567,7 @@ export default async function NOSPage({ params }: PageProps) {
           display: inline-block;
           font-size: 14px;
           font-weight: 600;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
           border: none;
           text-transform: uppercase;
           letter-spacing: 0.5px;
@@ -595,7 +595,7 @@ export default async function NOSPage({ params }: PageProps) {
           font-weight: 600;
           color: var(--color-text-primary);
           margin-bottom: 20px;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
         }
 
         .content-box {
@@ -622,7 +622,7 @@ export default async function NOSPage({ params }: PageProps) {
           color: var(--color-text-inverse);
           font-size: 10px;
           font-weight: 600;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
         }
 
         .outcome-dist-labels {
@@ -754,7 +754,7 @@ export default async function NOSPage({ params }: PageProps) {
           font-weight: 600;
           color: var(--color-text-primary);
           margin-bottom: 10px;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
         }
 
         .related-type-stats {
@@ -792,7 +792,7 @@ export default async function NOSPage({ params }: PageProps) {
           gap: 8px;
           font-weight: 600;
           font-size: 13px;
-          font-family: var(--font-display);
+          font-family: var(--font-ui);
         }
 
         .quick-action-card:hover {
@@ -815,7 +815,7 @@ export default async function NOSPage({ params }: PageProps) {
 
           <div className="flex items-start justify-between gap-6" style={{ flexWrap: 'wrap' }}>
             <div className="flex-1">
-              <h1 style={{ fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: 600, margin: '0 0 12px 0', fontFamily: 'var(--font-display)', lineHeight: 1.2, color: 'var(--color-surface-0)' }}>
+              <h1 style={{ fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: 600, margin: '0 0 12px 0', fontFamily: 'var(--font-ui)', lineHeight: 1.2, color: 'var(--color-surface-0)' }}>
                 {nosInfo.label}
               </h1>
               <p style={{ fontSize: '14px', color: 'var(--border-default)', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -845,7 +845,7 @@ export default async function NOSPage({ params }: PageProps) {
                 <div className="stat-value" style={{ color: stat.color, display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
                   {stat.value}
                   {stat.showDot && totalCases > 0 && (
-                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? '#057642' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? '#CC1016' : '#999999' }} />
+                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? '#057642' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)' }} />
                   )}
                   {stat.showSample && totalCases > 0 && <SampleSizeIndicator count={totalCases} />}
                 </div>
@@ -1072,7 +1072,7 @@ export default async function NOSPage({ params }: PageProps) {
                       alignItems: 'center',
                       padding: '6px 14px',
                       background: 'rgba(59,130,246,0.08)',
-                      borderRadius: '8px',
+                      borderRadius: '4px',
                       fontSize: '14px',
                       fontWeight: 600,
                       color: 'var(--accent-primary-hover)',
@@ -1091,7 +1091,7 @@ export default async function NOSPage({ params }: PageProps) {
                     alignItems: 'center',
                     padding: '6px 14px',
                     background: 'rgba(59,130,246,0.08)',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--accent-primary-hover)',
@@ -1103,7 +1103,7 @@ export default async function NOSPage({ params }: PageProps) {
                   </div>
                 )}
                 <div style={{ flex: 1, minWidth: '200px' }}>
-                  <div style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-display)' }}>
+                  <div style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-ui)' }}>
                     {statute.title}
                   </div>
                   <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -1157,7 +1157,7 @@ export default async function NOSPage({ params }: PageProps) {
                         padding: '12px 16px',
                         background: 'var(--color-surface-1)',
                         border: '1px solid var(--border-default)',
-                        borderRadius: '12px',
+                        borderRadius: '6px',
                       }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
@@ -1172,12 +1172,12 @@ export default async function NOSPage({ params }: PageProps) {
                             {wr}%
                           </span>
                         </div>
-                        <div style={{ height: '4px', background: 'var(--border-default)', borderRadius: '12px', overflow: 'hidden' }}>
+                        <div style={{ height: '4px', background: 'var(--border-default)', borderRadius: '6px', overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(wr, 100)}%`,
                             background: wr >= winRate ? '#057642' : 'var(--accent-primary)',
-                            borderRadius: '12px',
+                            borderRadius: '6px',
                           }} />
                         </div>
                       </div>
@@ -1236,7 +1236,7 @@ export default async function NOSPage({ params }: PageProps) {
                   padding: '20px',
                   background: getWinRateColor(attyImpact.rwr).bg,
                   border: `1px solid ${getWinRateColor(attyImpact.rwr).border}`,
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                 }}>
                   <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                     With Attorney
@@ -1260,7 +1260,7 @@ export default async function NOSPage({ params }: PageProps) {
                   padding: '20px',
                   background: 'rgba(239,68,68,0.06)',
                   border: '1px solid #CC1016',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                 }}>
                   <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                     Pro Se (No Attorney)
@@ -1284,7 +1284,7 @@ export default async function NOSPage({ params }: PageProps) {
                   padding: '20px',
                   background: 'rgba(59,130,246,0.08)',
                   border: '1px solid var(--accent-primary)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
@@ -1346,7 +1346,7 @@ export default async function NOSPage({ params }: PageProps) {
                         <span>Win Rate:</span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                           <strong style={{ color: caseType.wr >= 50 ? '#057642' : 'var(--accent-primary)' }}>{caseType.wr}%</strong>
-                          <span title={`Based on ${caseType.total.toLocaleString()} cases — ${caseType.total >= 10000 ? 'High' : caseType.total >= 1000 ? 'Medium' : caseType.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: caseType.total >= 10000 ? '#057642' : caseType.total >= 1000 ? '#C37D16' : caseType.total >= 100 ? '#CC1016' : '#999999' }} />
+                          <span title={`Based on ${caseType.total.toLocaleString()} cases — ${caseType.total >= 10000 ? 'High' : caseType.total >= 1000 ? 'Medium' : caseType.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: caseType.total >= 10000 ? '#057642' : caseType.total >= 1000 ? '#C37D16' : caseType.total >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)' }} />
                         </div>
                       </div>
                       <div className="related-type-stat">
@@ -1413,7 +1413,7 @@ export default async function NOSPage({ params }: PageProps) {
       {/* CTA Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 text-center" style={{ background: 'var(--color-surface-0)', borderTop: '1px solid var(--border-default)' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 style={{ fontSize: '28px', fontWeight: 600, margin: '0 0 12px 0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: 600, margin: '0 0 12px 0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Research Your {nosInfo.label} Case
           </h2>
           <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>

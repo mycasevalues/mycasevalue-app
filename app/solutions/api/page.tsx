@@ -73,7 +73,7 @@ export default function ApiPage() {
             For Developers / API
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -100,7 +100,7 @@ export default function ApiPage() {
               padding: '10px 20px',
               borderRadius: 6,
               textDecoration: 'none',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '-0.005em',
@@ -120,7 +120,7 @@ export default function ApiPage() {
               borderRadius: 6,
               border: '1px solid rgba(255,255,255,0.2)',
               textDecoration: 'none',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '-0.005em',
@@ -136,7 +136,7 @@ export default function ApiPage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '2rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -150,7 +150,7 @@ export default function ApiPage() {
               <div key={f.title} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '20px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
@@ -182,7 +182,7 @@ export default function ApiPage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-0)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '2rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -192,37 +192,37 @@ export default function ApiPage() {
             What the API Provides
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '32px' }}>
-            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
               <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>Case Statistics</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                 Win rates, settlement data, and outcome predictions for 84 case types and 95 districts
               </p>
             </div>
-            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
               <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>Judge Intelligence</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                 Judge profiles, historical case outcomes, and plaintiff/defendant statistics
               </p>
             </div>
-            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
               <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>Trend Analysis</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                 10-year historical trends showing how case outcomes have evolved over time
               </p>
             </div>
-            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
               <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>AI Predictions</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                 Machine learning-powered outcome predictions based on case characteristics and historical patterns
               </p>
             </div>
-            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
               <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>District Data</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                 Geographic breakdowns with jurisdiction-specific case statistics and trends
               </p>
             </div>
-            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '8px', border: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
               <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>Real-Time Updates</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
                 Latest data from CourtListener and FJC Integrated Database with automatic daily updates
@@ -236,7 +236,7 @@ export default function ApiPage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '2rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -246,8 +246,8 @@ export default function ApiPage() {
             Pricing Tiers
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
-            <div style={{ padding: '32px', background: 'var(--color-surface-0)', borderRadius: '12px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>Starter</h3>
+            <div style={{ padding: '32px', background: 'var(--color-surface-0)', borderRadius: '6px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>Starter</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>$99<span style={{ fontSize: '1rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>/month</span></p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', margin: '16px 0', lineHeight: 1.6 }}>
                 Perfect for individual attorneys and small practices
@@ -260,11 +260,11 @@ export default function ApiPage() {
               </ul>
             </div>
 
-            <div style={{ padding: '32px', background: 'var(--color-surface-0)', borderRadius: '12px', border: '2px solid var(--accent-primary)', boxShadow: '0 4px 16px rgba(10, 102, 194, 0.15)', position: 'relative' }}>
+            <div style={{ padding: '32px', background: 'var(--color-surface-0)', borderRadius: '6px', border: '2px solid var(--accent-primary)', boxShadow: '0 4px 16px rgba(10, 102, 194, 0.15)', position: 'relative' }}>
               <div style={{ position: 'absolute', top: '-12px', left: '24px', background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '4px 12px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Most Popular
               </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '16px', marginBottom: '8px' }}>Professional</h3>
+              <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '16px', marginBottom: '8px' }}>Professional</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>$399<span style={{ fontSize: '1rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>/month</span></p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', margin: '16px 0', lineHeight: 1.6 }}>
                 Ideal for law firms and legal tech platforms
@@ -277,8 +277,8 @@ export default function ApiPage() {
               </ul>
             </div>
 
-            <div style={{ padding: '32px', background: 'var(--color-surface-0)', borderRadius: '12px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>Enterprise</h3>
+            <div style={{ padding: '32px', background: 'var(--color-surface-0)', borderRadius: '6px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: 0, marginBottom: '8px' }}>Enterprise</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>Custom</p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)', margin: '16px 0', lineHeight: 1.6 }}>
                 For mission-critical integrations at scale
@@ -298,7 +298,7 @@ export default function ApiPage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1.75rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -320,7 +320,7 @@ export default function ApiPage() {
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
-              borderRadius: '12px',
+              borderRadius: '6px',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
@@ -335,7 +335,7 @@ export default function ApiPage() {
               background: 'transparent',
               color: 'var(--color-text-primary)',
               padding: '0.875rem 2rem',
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: '1.5px solid var(--border-default)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
@@ -355,7 +355,7 @@ export default function ApiPage() {
       <section style={{ padding: '20px 16px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1.75rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -370,7 +370,7 @@ export default function ApiPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -403,7 +403,7 @@ export default function ApiPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -436,7 +436,7 @@ export default function ApiPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '20px 16px',
                 textDecoration: 'none',
                 display: 'block',

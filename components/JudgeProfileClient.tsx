@@ -150,7 +150,7 @@ export default function JudgeProfileClient({
         style={{
           background: 'var(--color-surface-0)',
           padding: '32px',
-          borderRadius: '8px',
+          borderRadius: '4px',
           border: '1px solid var(--border-default)',
           marginBottom: '48px',
         }}
@@ -186,7 +186,7 @@ export default function JudgeProfileClient({
           style={{
             background: 'var(--color-surface-0)',
             padding: '32px',
-            borderRadius: '8px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             marginBottom: '48px',
           }}
@@ -212,7 +212,7 @@ export default function JudgeProfileClient({
         style={{
           background: 'var(--color-surface-0)',
           padding: '32px',
-          borderRadius: '8px',
+          borderRadius: '4px',
           border: '1px solid var(--border-default)',
           marginBottom: '48px',
           overflowX: 'auto',
@@ -292,7 +292,7 @@ export default function JudgeProfileClient({
           style={{
             background: 'var(--color-surface-0)',
             padding: '32px',
-            borderRadius: '8px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             marginBottom: '48px',
           }}
@@ -366,7 +366,7 @@ export default function JudgeProfileClient({
           style={{
             background: 'var(--color-surface-0)',
             padding: '32px',
-            borderRadius: '8px',
+            borderRadius: '4px',
             border: '1px solid var(--border-default)',
             marginBottom: '48px',
           }}
@@ -560,7 +560,7 @@ export default function JudgeProfileClient({
         style={{
           background: 'var(--color-surface-1)',
           padding: '20px',
-          borderRadius: '8px',
+          borderRadius: '4px',
           marginBottom: '48px',
         }}
       >
@@ -589,7 +589,7 @@ export default function JudgeProfileClient({
         style={{
           background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--link-hover, #083D7A) 100%)',
           padding: '40px',
-          borderRadius: '8px',
+          borderRadius: '4px',
           color: 'var(--color-surface-0)',
           marginTop: '48px',
         }}
@@ -693,7 +693,7 @@ function StatCard({
         background: colorObj.bg,
         border: `2px solid ${colorObj.border}`,
         padding: '24px',
-        borderRadius: '8px',
+        borderRadius: '4px',
         textAlign: 'center',
       }}
     >

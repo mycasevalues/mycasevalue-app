@@ -403,7 +403,7 @@ export default function ApiAccessPage() {
                 key={idx}
                 style={{
                   background: 'var(--color-surface-0)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '16px',
                   border: '1px solid var(--border-default)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -444,7 +444,7 @@ export default function ApiAccessPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '16px',
               border: '1px solid var(--border-default)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -457,7 +457,7 @@ export default function ApiAccessPage() {
                 color: 'var(--color-text-primary)',
                 backgroundColor: 'var(--color-surface-0)',
                 padding: '8px 12px',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 display: 'block',
                 wordBreak: 'break-all',
               }}
@@ -486,7 +486,7 @@ export default function ApiAccessPage() {
               key={idx}
               style={{
                 background: 'var(--color-surface-0)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 border: '1px solid var(--border-default)',
                 overflow: 'hidden',
                 marginBottom: '16px',
@@ -501,7 +501,7 @@ export default function ApiAccessPage() {
                       fontSize: '11px',
                       fontWeight: 600,
                       padding: '4px 10px',
-                      borderRadius: '12px',
+                      borderRadius: '6px',
                       backgroundColor: `${methodColors[endpoint.method]}20`,
                       color: methodColors[endpoint.method],
                       minWidth: '45px',
@@ -519,7 +519,7 @@ export default function ApiAccessPage() {
                       color: 'var(--color-text-primary)',
                       backgroundColor: 'var(--color-surface-0)',
                       padding: '4px 8px',
-                      borderRadius: '8px',
+                      borderRadius: '4px',
                       wordBreak: 'break-all',
                       flex: 1,
                     }}
@@ -618,7 +618,7 @@ export default function ApiAccessPage() {
                     lineHeight: 1.5,
                     fontFamily: 'var(--font-mono)',
                     overflowX: 'auto',
-                    borderRadius: '12px',
+                    borderRadius: '6px',
                   }}
                 >
                   {endpoint.curlExample}
@@ -650,7 +650,7 @@ export default function ApiAccessPage() {
                     lineHeight: 1.5,
                     fontFamily: 'var(--font-mono)',
                     overflowX: 'auto',
-                    borderRadius: '12px',
+                    borderRadius: '6px',
                   }}
                 >
                   {endpoint.responseExample}
@@ -682,7 +682,7 @@ export default function ApiAccessPage() {
                         gap: '12px',
                         padding: '8px 12px',
                         backgroundColor: 'var(--color-surface-0)',
-                        borderRadius: '12px',
+                        borderRadius: '6px',
                         borderLeft: `3px solid ${error.code >= 500 ? '#DC2626' : error.code >= 400 ? '#F59E0B' : '#059669'}`,
                       }}
                     >
@@ -722,7 +722,7 @@ export default function ApiAccessPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '24px',
               border: '1px solid var(--border-default)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
@@ -741,7 +741,7 @@ export default function ApiAccessPage() {
                 lineHeight: 1.5,
                 fontFamily: 'var(--font-mono)',
                 overflowX: 'auto',
-                borderRadius: '12px',
+                borderRadius: '6px',
               }}
             >
               {`Authorization: Bearer YOUR_API_KEY`}
@@ -765,7 +765,7 @@ export default function ApiAccessPage() {
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '24px',
               border: '1px solid var(--border-default)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',

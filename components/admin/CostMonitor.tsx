@@ -60,7 +60,7 @@ export default function CostMonitor() {
 
   if (loading) {
     return (
-      <div style={{ backgroundColor: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', padding: '24px' }}>
+      <div style={{ backgroundColor: 'white', border: '1px solid #e0e0e0', borderRadius: '4px', padding: '24px' }}>
         <p style={{ color: 'var(--color-text-secondary)' }}>Loading cost data...</p>
       </div>
     );
@@ -72,7 +72,7 @@ export default function CostMonitor() {
         style={{
           backgroundColor: 'rgba(239,68,68,0.06)',
           border: '1px solid #fecaca',
-          borderRadius: '8px',
+          borderRadius: '4px',
           padding: '24px',
           color: '#991b1b',
         }}
@@ -101,12 +101,12 @@ export default function CostMonitor() {
           style={{
             backgroundColor: 'white',
             border: '1px solid #e0e0e0',
-            borderRadius: '8px',
+            borderRadius: '4px',
             padding: '20px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
           }}
         >
-          <p style={{ fontSize: '12px', color: '#595959', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
             Current Monthly Spend
           </p>
           <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
@@ -121,12 +121,12 @@ export default function CostMonitor() {
           style={{
             backgroundColor: 'white',
             border: '1px solid #e0e0e0',
-            borderRadius: '8px',
+            borderRadius: '4px',
             padding: '20px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
           }}
         >
-          <p style={{ fontSize: '12px', color: '#595959', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
             Budget Utilization
           </p>
           <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
@@ -141,12 +141,12 @@ export default function CostMonitor() {
           style={{
             backgroundColor: 'white',
             border: '1px solid #e0e0e0',
-            borderRadius: '8px',
+            borderRadius: '4px',
             padding: '20px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
           }}
         >
-          <p style={{ fontSize: '12px', color: '#595959', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
             Projected EOMonth
           </p>
           <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
@@ -177,7 +177,7 @@ export default function CostMonitor() {
         style={{
           backgroundColor: 'var(--color-surface-0)',
           border: '1px solid rgba(255,255,255,0.08)',
-          borderRadius: '8px',
+          borderRadius: '4px',
           padding: '16px',
           fontSize: '12px',
           color: 'var(--color-text-muted)',
@@ -202,7 +202,7 @@ function ServiceCard({ service }: ServiceCardProps) {
       style={{
         backgroundColor: 'white',
         border: '1px solid #e0e0e0',
-        borderRadius: '8px',
+        borderRadius: '4px',
         padding: '24px',
         boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
       }}

@@ -83,9 +83,9 @@ export default function PacerMonitorPage() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
               <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>Recent Alerts</h2>
-              <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-1)', borderRadius: '12px', border: '1px solid var(--border-default)', padding: '3px' }}>
+              <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-1)', borderRadius: '6px', border: '1px solid var(--border-default)', padding: '3px' }}>
                 {(['all', 'high', 'medium', 'low'] as const).map((f) => (
-                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '12px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? 'var(--accent-primary)' : 'transparent', color: filter === f ? 'var(--color-surface-0)' : 'var(--color-text-secondary)', textTransform: 'capitalize' as const }}>
+                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '6px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? 'var(--accent-primary)' : 'transparent', color: filter === f ? 'var(--color-surface-0)' : 'var(--color-text-secondary)', textTransform: 'capitalize' as const }}>
                     {f}
                   </button>
                 ))}
@@ -96,13 +96,13 @@ export default function PacerMonitorPage() {
               {filtered.map((alert) => {
                 const pc = priorityColors[alert.priority];
                 return (
-                  <div key={alert.id} style={{ background: 'var(--color-surface-0)', borderRadius: '12px', padding: '16px 20px', border: '1px solid var(--border-default)', borderLeft: `4px solid ${pc.dot}` }}>
+                  <div key={alert.id} style={{ background: 'var(--color-surface-0)', borderRadius: '6px', padding: '16px 20px', border: '1px solid var(--border-default)', borderLeft: `4px solid ${pc.dot}` }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
                       <div>
                         <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary-hover)' }}>{alert.caseNumber}</span>
                         <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginLeft: '8px' }}>{alert.court}</span>
                       </div>
-                      <span style={{ fontSize: '10px', fontWeight: 600, padding: '2px 8px', borderRadius: '12px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>
+                      <span style={{ fontSize: '10px', fontWeight: 600, padding: '2px 8px', borderRadius: '6px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>
                     </div>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>{alert.caseName}</p>
                     <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 6px', lineHeight: 1.4 }}>{alert.event}</p>
@@ -116,7 +116,7 @@ export default function PacerMonitorPage() {
           {/* Sidebar */}
           <div>
             {/* Add to Watch List */}
-            <div style={{ background: 'var(--color-surface-0)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div style={{ background: 'var(--color-surface-0)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '6px', padding: '20px', border: '1px solid var(--border-default)', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
               <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Watch List</h3>
               <div style={{ display: 'flex', gap: '6px', marginBottom: '12px' }}>
                 <input
@@ -124,15 +124,15 @@ export default function PacerMonitorPage() {
                   value={watchCase}
                   onChange={(e) => setWatchCase(e.target.value)}
                   placeholder="Case number..."
-                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '12px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', outline: 'none' }}
+                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '6px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', outline: 'none' }}
                   onFocus={(e) => e.target.style.borderColor = 'var(--accent-primary)'}
                   onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.10)'}
                 />
-                <button onClick={addWatch} style={{ padding: '12px 20px', height: '48px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '12px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>+</button>
+                <button onClick={addWatch} style={{ padding: '12px 20px', height: '48px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '6px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>+</button>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {watchList.map((c) => (
-                  <div key={c} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 10px', backgroundColor: 'var(--color-surface-1)', borderRadius: '12px' }}>
+                  <div key={c} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 10px', backgroundColor: 'var(--color-surface-1)', borderRadius: '6px' }}>
                     <span className="font-mono" style={{ fontSize: '12px', color: 'var(--color-text-primary)' }}>{c}</span>
                     <button onClick={() => setWatchList(watchList.filter((w) => w !== c))} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-secondary)', fontSize: '14px' }}>&times;</button>
                   </div>
@@ -141,7 +141,7 @@ export default function PacerMonitorPage() {
             </div>
 
             {/* Stats */}
-            <div style={{ background: 'var(--color-surface-0)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div style={{ background: 'var(--color-surface-0)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '6px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
               <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Monitor Stats</h3>
               {[
                 { label: 'Watched Cases', value: String(watchList.length) },

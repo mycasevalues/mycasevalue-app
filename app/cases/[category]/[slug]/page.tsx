@@ -109,7 +109,7 @@ function StatsCard({
     <div
       style={{
         padding: '20px',
-        borderRadius: '12px',
+        borderRadius: '6px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
         textAlign: 'center',
@@ -134,7 +134,7 @@ function StatsCard({
       >
         {value}
         {shouldShowDot && (
-          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? '#057642' : casesCount >= 1000 ? '#C37D16' : casesCount >= 100 ? '#CC1016' : '#999999' }} />
+          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? '#057642' : casesCount >= 1000 ? '#C37D16' : casesCount >= 100 ? '#CC1016' : 'var(--text4, #A8A6A0)' }} />
         )}
       </p>
       {subtitle && (
@@ -161,7 +161,7 @@ export default async function CaseTypeDetailPage({
         style={{ background: 'var(--color-surface-1)' }}
       >
         <div style={{ textAlign: 'center', color: 'var(--color-text-primary)' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 'bold', margin: '0 0 16px', fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 'bold', margin: '0 0 16px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
             Case type not found
           </h1>
           <p style={{ color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
@@ -181,7 +181,7 @@ export default async function CaseTypeDetailPage({
               letterSpacing: '-0.005em',
               border: '1px solid var(--gold, #C4882A)',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             Back to {getCategoryLabel(category)}
@@ -289,7 +289,7 @@ export default async function CaseTypeDetailPage({
                   fontSize: 'clamp(24px, 5vw, 28px)',
                   fontWeight: 'bold',
                   margin: '0',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   color: 'var(--color-text-inverse)',
                 }}
               >
@@ -335,7 +335,7 @@ export default async function CaseTypeDetailPage({
           style={{
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
-            borderRadius: '12px',
+            borderRadius: '6px',
             padding: '32px',
             marginBottom: '40px',
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
@@ -346,7 +346,7 @@ export default async function CaseTypeDetailPage({
               fontSize: '20px',
               fontWeight: 'bold',
               margin: '0 0 16px',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               color: 'var(--color-text-primary)',
             }}
           >
@@ -378,7 +378,7 @@ export default async function CaseTypeDetailPage({
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
             }}
@@ -388,7 +388,7 @@ export default async function CaseTypeDetailPage({
                 fontSize: '16px',
                 fontWeight: 'bold',
                 margin: '0 0 16px',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--color-text-primary)',
               }}
             >
@@ -411,7 +411,7 @@ export default async function CaseTypeDetailPage({
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
             }}
@@ -421,7 +421,7 @@ export default async function CaseTypeDetailPage({
                 fontSize: '16px',
                 fontWeight: 'bold',
                 margin: '0 0 16px',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--color-text-primary)',
               }}
             >
@@ -475,7 +475,7 @@ export default async function CaseTypeDetailPage({
             letter-spacing: -0.005em;
             border: 1px solid var(--gold, #C4882A);
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
-            font-family: var(--font-inter);
+            font-family: var(--font-ui);
             transition: background-color 150ms ease, border-color 150ms ease;
           }
           .cta-button:hover {
@@ -496,7 +496,7 @@ export default async function CaseTypeDetailPage({
           style={{
             background: 'var(--accent-primary)',
             color: 'var(--color-text-inverse)',
-            borderRadius: '12px',
+            borderRadius: '6px',
             padding: '48px 40px',
             textAlign: 'center',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
@@ -507,7 +507,7 @@ export default async function CaseTypeDetailPage({
               fontSize: '28px',
               fontWeight: 'bold',
               margin: '0 0 12px',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               color: 'var(--color-text-inverse)',
             }}
           >
@@ -556,7 +556,7 @@ export default async function CaseTypeDetailPage({
               fontSize: '20px',
               fontWeight: 'bold',
               margin: '0 0 24px',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               color: 'var(--color-text-primary)',
             }}
           >
@@ -580,7 +580,7 @@ export default async function CaseTypeDetailPage({
                   href={`/cases/${related.categorySlug}/${related.slug}`}
                   className="related-case-card"
                 >
-                  <h3 style={{ fontSize: '14px', fontWeight: 'bold', margin: '0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-display)' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 'bold', margin: '0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                     {related.label}
                   </h3>
                   <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>

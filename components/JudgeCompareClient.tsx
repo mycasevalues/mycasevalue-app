@@ -289,7 +289,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
               marginBottom: 16,
               color: 'var(--color-text-primary)',
               letterSpacing: '-1.5px',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.2,
             }}
           >
@@ -323,7 +323,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: 8,
+                borderRadius: 4,
                 padding: '20px',
               }}
             >
@@ -476,7 +476,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: 8,
+                borderRadius: 4,
                 padding: '32px',
                 marginBottom: '48px',
               }}
@@ -486,7 +486,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                   fontSize: 20,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: '24px',
                 }}
               >
@@ -532,7 +532,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: 8,
+                borderRadius: 4,
                 overflow: 'hidden',
                 marginBottom: '48px',
               }}
@@ -550,7 +550,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                     style={{
                       padding: '20px',
                       borderRight: idx < selectedJudges.length - 1 ? '1px solid var(--border-default)' : 'none',
-                      background: idx % 2 === 0 ? '#F9FAFB' : 'var(--color-surface-0)',
+                      background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--color-surface-0)',
                     }}
                   >
                     <h3
@@ -618,7 +618,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                         style={{
                           padding: '16px 20px',
                           textAlign: 'right',
-                          background: idx % 2 === 0 ? '#F9FAFB' : 'var(--color-surface-0)',
+                          background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--color-surface-0)',
                           fontFamily: 'var(--font-body)',
                           fontSize: 14,
                           fontWeight: 500,

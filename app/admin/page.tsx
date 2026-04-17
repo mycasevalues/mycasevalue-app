@@ -238,12 +238,12 @@ export default function AdminPage() {
                   style={{
                     backgroundColor: 'var(--color-surface-0)',
                     border: '1px solid #e0e0e0',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     padding: '20px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                   }}
                 >
-                  <p style={{ fontSize: '12px', color: '#595959', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
                     {metric.label}
                   </p>
                   <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
@@ -258,7 +258,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -302,7 +302,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
@@ -348,7 +348,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -426,7 +426,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -518,7 +518,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
@@ -530,7 +530,7 @@ export default function AdminPage() {
                 Manage featured news and updates for homepage
               </p>
               <div style={{ padding: '32px', backgroundColor: 'var(--color-surface-0)', borderRadius: '6px', textAlign: 'center' }}>
-                <p style={{ fontSize: '14px', color: '#595959', margin: 0 }}>No entries yet. Create your first one.</p>
+                <p style={{ fontSize: '14px', color: 'var(--text3, #78766C)', margin: 0 }}>No entries yet. Create your first one.</p>
               </div>
             </div>
           </div>
@@ -544,7 +544,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -585,7 +585,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -620,7 +620,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
@@ -678,7 +678,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
@@ -777,7 +777,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
@@ -869,12 +869,12 @@ export default function AdminPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid #e0e0e0',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   padding: '20px',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                 }}
               >
-                <p style={{ fontSize: '12px', color: '#595959', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+                <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
                   Subscriber Count
                 </p>
                 <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
@@ -885,12 +885,12 @@ export default function AdminPage() {
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid #e0e0e0',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   padding: '20px',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                 }}
               >
-                <p style={{ fontSize: '12px', color: '#595959', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+                <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
                   This Month
                 </p>
                 <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
@@ -904,7 +904,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -946,7 +946,7 @@ export default function AdminPage() {
               style={{
                 backgroundColor: 'var(--color-surface-0)',
                 border: '1px solid #e0e0e0',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}

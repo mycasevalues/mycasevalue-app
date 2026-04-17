@@ -73,7 +73,7 @@ export default function WidgetGenerator() {
       gridTemplateColumns: '1fr 1fr',
       gap: '40px',
       backgroundColor: '#fff',
-      borderRadius: '12px',
+      borderRadius: '6px',
       padding: '32px',
       border: '1px solid rgba(255,255,255,0.08)',
     }}>
@@ -254,7 +254,7 @@ export default function WidgetGenerator() {
                   backgroundColor: 'var(--accent-primary)',
                   color: 'var(--color-surface-0)',
                   border: 'none',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   cursor: 'pointer',
                   width: '100%',
                 }}
@@ -303,7 +303,7 @@ export default function WidgetGenerator() {
         <div style={{
           padding: '32px',
           backgroundColor: 'var(--color-surface-0)',
-          borderRadius: '8px',
+          borderRadius: '4px',
           border: '1px solid rgba(255,255,255,0.08)',
           minHeight: '400px',
           display: 'flex',

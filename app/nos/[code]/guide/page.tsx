@@ -298,7 +298,7 @@ export default async function GuidePage({ params }: PageProps) {
                 padding: '20px',
                 backgroundColor: winRateColor.bg,
                 border: `1px solid ${winRateColor.border}`,
-                borderRadius: '8px',
+                borderRadius: '4px',
               }}>
                 <p style={{
                   fontSize: '0.85rem',
@@ -334,7 +334,7 @@ export default async function GuidePage({ params }: PageProps) {
                 padding: '20px',
                 backgroundColor: 'rgba(59,130,246,0.08)',
                 border: '1px solid var(--accent-primary)',
-                borderRadius: '8px',
+                borderRadius: '4px',
               }}>
                 <p style={{
                   fontSize: '0.85rem',
@@ -370,7 +370,7 @@ export default async function GuidePage({ params }: PageProps) {
                 padding: '20px',
                 backgroundColor: 'rgba(59,130,246,0.06)',
                 border: '1px solid #378FE9',
-                borderRadius: '8px',
+                borderRadius: '4px',
               }}>
                 <p style={{
                   fontSize: '0.85rem',
@@ -407,7 +407,7 @@ export default async function GuidePage({ params }: PageProps) {
               padding: '20px',
               backgroundColor: 'var(--color-surface-0)',
               border: '1px solid #e0e0e0',
-              borderRadius: '8px',
+              borderRadius: '4px',
               marginBottom: '20px',
             }}>
               <p style={{
@@ -463,7 +463,7 @@ export default async function GuidePage({ params }: PageProps) {
               padding: '20px',
               backgroundColor: 'rgba(34,197,94,0.1)',
               border: '1px solid #057642',
-              borderRadius: '8px',
+              borderRadius: '4px',
             }}>
               <p style={{
                 fontSize: '0.85rem',
@@ -496,7 +496,7 @@ export default async function GuidePage({ params }: PageProps) {
               padding: '20px',
               backgroundColor: 'rgba(249,115,22,0.06)',
               border: '1px solid #C37D16',
-              borderRadius: '8px',
+              borderRadius: '4px',
             }}>
               <p style={{
                 fontSize: '0.85rem',
@@ -591,7 +591,7 @@ export default async function GuidePage({ params }: PageProps) {
         padding: '20px',
         backgroundColor: 'rgba(239,68,68,0.06)',
         border: '1px solid #CC1016',
-        borderRadius: '8px',
+        borderRadius: '4px',
         marginBottom: '50px',
       }}>
         <h3 style={{
@@ -635,7 +635,7 @@ export default async function GuidePage({ params }: PageProps) {
             padding: '20px',
             backgroundColor: 'rgba(59,130,246,0.08)',
             border: '1px solid var(--accent-primary)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             textDecoration: 'none',
             color: 'var(--accent-primary)',
             transition: 'all 0.2s ease',
@@ -662,7 +662,7 @@ export default async function GuidePage({ params }: PageProps) {
             padding: '20px',
             backgroundColor: 'rgba(59,130,246,0.06)',
             border: '1px solid #378FE9',
-            borderRadius: '8px',
+            borderRadius: '4px',
             textDecoration: 'none',
             color: 'var(--accent-primary)',
             transition: 'all 0.2s ease',
@@ -689,7 +689,7 @@ export default async function GuidePage({ params }: PageProps) {
             padding: '20px',
             backgroundColor: 'var(--color-surface-1)',
             border: '1px solid #e0e0e0',
-            borderRadius: '8px',
+            borderRadius: '4px',
             textDecoration: 'none',
             color: 'var(--accent-primary)',
             transition: 'all 0.2s ease',

@@ -104,7 +104,7 @@ export default function ClassActionPage() {
                   style={{
                     background: 'var(--color-surface-0)',
                     border: `1px solid ${borderColor}`,
-                    borderRadius: '12px',
+                    borderRadius: '6px',
                     padding: '20px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                   }}
@@ -121,7 +121,7 @@ export default function ClassActionPage() {
                           padding: '6px 12px',
                           background: colorInfo.bg,
                           border: `1px solid ${colorInfo.border}`,
-                          borderRadius: '8px',
+                          borderRadius: '4px',
                           fontSize: '14px',
                           fontWeight: 600,
                           color: colorInfo.text,
@@ -155,7 +155,7 @@ export default function ClassActionPage() {
           <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '24px', color: secondaryColor, fontFamily: 'var(--font-heading)' }}>
             Recent Class Action Settlements
           </h2>
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '6px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>
@@ -175,7 +175,7 @@ export default function ClassActionPage() {
                       <td style={{ padding: '12px 16px', color: textColor }}>{settlement.members.toLocaleString()}</td>
                       <td style={{ padding: '12px 16px', color: textColor }}>{settlement.year}</td>
                       <td style={{ padding: '12px 16px' }}>
-                        <span style={{ background: 'rgba(59,130,246,0.08)', color: secondaryColor, padding: '4px 8px', borderRadius: '8px', fontSize: '12px', fontWeight: 500 }}>
+                        <span style={{ background: 'rgba(59,130,246,0.08)', color: secondaryColor, padding: '4px 8px', borderRadius: '4px', fontSize: '12px', fontWeight: 500 }}>
                           {TOP_CASE_TYPES.find((t) => t.nos === settlement.nos)?.label}
                         </span>
                       </td>
@@ -192,7 +192,7 @@ export default function ClassActionPage() {
           <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '24px', color: secondaryColor, fontFamily: 'var(--font-heading)' }}>
             Class Certification Approval Rates by District
           </h2>
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '12px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '6px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                 <thead>
@@ -219,7 +219,7 @@ export default function ClassActionPage() {
                               padding: '4px 10px',
                               background: colorInfo.bg,
                               border: `1px solid ${colorInfo.border}`,
-                              borderRadius: '8px',
+                              borderRadius: '4px',
                               color: colorInfo.text,
                               fontWeight: 600,
                               fontSize: '13px',

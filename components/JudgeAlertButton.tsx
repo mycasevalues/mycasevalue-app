@@ -72,7 +72,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
           background: 'var(--accent-primary)',
           color: 'var(--color-surface-0)',
           border: 'none',
-          borderRadius: '8px',
+          borderRadius: '4px',
           fontSize: '14px',
           fontWeight: '600',
           cursor: 'pointer',
@@ -128,7 +128,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
           <div
             style={{
               background: 'var(--color-surface-0)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '32px',
               maxWidth: '420px',
               width: '90%',
@@ -150,7 +150,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
               }
             `}</style>
 
-            <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
               Set Judge Alert
             </h2>
             <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0', lineHeight: '1.6' }}>
@@ -163,7 +163,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                   padding: '16px',
                   background: 'rgba(34,197,94,0.08)',
                   border: '1px solid #86EFAC',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   marginBottom: '24px',
                 }}
               >
@@ -200,7 +200,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       padding: '10px 14px',
                       fontSize: '14px',
                       border: error ? '1px solid #CC1016' : '1px solid var(--border-default)',
-                      borderRadius: '8px',
+                      borderRadius: '4px',
                       background: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
                       outline: 'none',
@@ -234,7 +234,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       background: 'rgba(255,255,255,0.05)',
                       color: 'var(--color-text-secondary)',
                       border: 'none',
-                      borderRadius: '8px',
+                      borderRadius: '4px',
                       fontSize: '14px',
                       fontWeight: '600',
                       cursor: 'pointer',
@@ -256,10 +256,10 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     style={{
                       flex: 1,
                       padding: '10px 16px',
-                      background: loading || !email.trim() ? '#D1D5DB' : 'var(--accent-primary)',
+                      background: loading || !email.trim() ? 'var(--bdr, #E2DFD8)' : 'var(--accent-primary)',
                       color: 'var(--color-surface-0)',
                       border: 'none',
-                      borderRadius: '8px',
+                      borderRadius: '4px',
                       fontSize: '14px',
                       fontWeight: '600',
                       cursor: loading || !email.trim() ? 'not-allowed' : 'pointer',

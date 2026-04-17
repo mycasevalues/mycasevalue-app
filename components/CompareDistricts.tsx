@@ -81,7 +81,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
         padding: '24px',
         backgroundColor: 'var(--color-surface-0)',
         border: '1px solid rgba(255,255,255,0.1)',
-        borderRadius: '8px',
+        borderRadius: '4px',
         fontFamily: 'var(--font-body)',
       }}
     >
@@ -191,7 +191,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
             }}
           >
             <thead>
-              <tr style={{ borderBottom: '2px solid #D1D5DB' }}>
+              <tr style={{ borderBottom: '2px solid var(--bdr, #E2DFD8)' }}>
                 <th
                   style={{
                     padding: '12px 8px',
@@ -260,7 +260,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
                         idx < comparisonData.length - 1
                           ? '1px solid var(--border-default)'
                           : 'none',
-                      backgroundColor: idx % 2 === 0 ? 'var(--color-surface-0)' : '#F9FAFB',
+                      backgroundColor: idx % 2 === 0 ? 'var(--color-surface-0)' : 'var(--surf, #F6F5F2)',
                     }}
                   >
                     <td

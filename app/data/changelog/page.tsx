@@ -168,7 +168,7 @@ export default async function ChangelogPage() {
             </div>
 
             <h1 style={{
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 700,
               color: '#ffffff',
@@ -208,7 +208,7 @@ export default async function ChangelogPage() {
                         style={{
                           background: 'var(--color-surface-0)',
                           border: '1px solid var(--border-default)',
-                          borderRadius: 12,
+                          borderRadius: 6,
                           padding: '32px',
                           boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                         }}
@@ -234,7 +234,7 @@ export default async function ChangelogPage() {
                           fontSize: 20,
                           fontWeight: 700,
                           color: 'var(--color-text-primary)',
-                          fontFamily: 'var(--font-display)',
+                          fontFamily: 'var(--font-ui)',
                           margin: '0 0 12px 0',
                           letterSpacing: '-0.5px',
                         }}>
@@ -315,7 +315,7 @@ export default async function ChangelogPage() {
                 <div style={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: 12,
+                  borderRadius: 6,
                   padding: '48px 32px',
                   textAlign: 'center',
                 }}>
@@ -334,7 +334,7 @@ export default async function ChangelogPage() {
             {/* Subscribe Section */}
             <div style={{
               background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold-hover, #A87222) 100%)',
-              borderRadius: 12,
+              borderRadius: 6,
               padding: '48px 32px',
               color: 'var(--color-surface-0)',
               marginBottom: 64,
@@ -342,7 +342,7 @@ export default async function ChangelogPage() {
               <h2 style={{
                 fontSize: 24,
                 fontWeight: 700,
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 margin: '0 0 12px 0',
                 letterSpacing: '-0.5px',
               }}>
@@ -368,7 +368,7 @@ export default async function ChangelogPage() {
                   style={{
                     flex: '1 1 250px',
                     padding: '12px 16px',
-                    borderRadius: 8,
+                    borderRadius: 4,
                     border: '1px solid rgba(255,255,255,0.2)',
                     background: 'rgba(255,255,255,0.1)',
                     color: 'var(--color-surface-0)',
@@ -382,7 +382,7 @@ export default async function ChangelogPage() {
                   className="changelog-subscribe-btn"
                   style={{
                     padding: '12px 28px',
-                    borderRadius: 8,
+                    borderRadius: 4,
                     border: 'none',
                     background: 'var(--color-surface-0)',
                     color: 'var(--accent-primary)',
@@ -412,7 +412,7 @@ export default async function ChangelogPage() {
             <div style={{
               background: '#F0F5FB',
               border: '1px solid #D5E3F2',
-              borderRadius: 12,
+              borderRadius: 6,
               padding: '24px 28px',
             }}>
               <p style={{

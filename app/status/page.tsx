@@ -82,7 +82,7 @@ function getStatusColor(
       };
     default:
       return {
-        bg: '#F5F5F5',
+        bg: 'var(--tbl-hdr, #EDEAE4)',
         text: '#5F5F5F',
         indicator: '#5F5F5F',
       };
@@ -142,7 +142,7 @@ export default function StatusPage() {
           style={{
             backgroundColor: overallColors.bg,
             border: `1px solid ${overallColors.indicator}`,
-            borderRadius: '8px',
+            borderRadius: '4px',
             padding: '24px',
             marginBottom: '32px',
             display: 'grid',

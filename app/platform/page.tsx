@@ -185,7 +185,7 @@ export default function PlatformPage() {
         }
 
         .tech-arrow {
-          color: #D1D5DB;
+          color: var(--bdr, #E2DFD8);
           font-size: 20px;
           font-weight: 300;
         }
@@ -522,7 +522,7 @@ export default function PlatformPage() {
               Platform
             </div>
             <h1 style={{
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(32px, 4.5vw, 44px)',
               fontWeight: 700,
               letterSpacing: '-0.03em',
@@ -612,7 +612,7 @@ export default function PlatformPage() {
                 <div className="tech-box">TailwindCSS</div>
               </div>
 
-              <div style={{ textAlign: 'center', color: '#D1D5DB', fontSize: 24 }}>
+              <div style={{ textAlign: 'center', color: 'var(--bdr, #E2DFD8)', fontSize: 24 }}>
                 {String.fromCharCode(8595)}
               </div>
 
@@ -637,7 +637,7 @@ export default function PlatformPage() {
                 <div className="tech-box">Node.js</div>
               </div>
 
-              <div style={{ textAlign: 'center', color: '#D1D5DB', fontSize: 24 }}>
+              <div style={{ textAlign: 'center', color: 'var(--bdr, #E2DFD8)', fontSize: 24 }}>
                 {String.fromCharCode(8595)}
               </div>
 
@@ -708,7 +708,7 @@ export default function PlatformPage() {
               marginTop: 40,
               padding: 24,
               background: 'rgba(139,92,246,0.06)',
-              borderRadius: 12,
+              borderRadius: 6,
               border: '1px solid #E9D5FF',
             }}>
               <p style={{
@@ -913,7 +913,7 @@ export default function PlatformPage() {
               marginTop: 40,
               padding: 32,
               background: 'rgba(139,92,246,0.06)',
-              borderRadius: 12,
+              borderRadius: 6,
               border: '1px solid #E9D5FF',
             }}>
               <h3 style={{
@@ -1053,7 +1053,7 @@ export default function PlatformPage() {
                   style={{
                     padding: 24,
                     background: 'var(--color-surface-1)',
-                    borderRadius: 12,
+                    borderRadius: 6,
                     border: '1px solid var(--border-default)',
                   }}
                 >
@@ -1110,7 +1110,7 @@ export default function PlatformPage() {
                   style={{
                     padding: 28,
                     background: 'var(--color-surface-0)',
-                    borderRadius: 12,
+                    borderRadius: 6,
                     border: '1px solid var(--border-default)',
                     transition: 'all 0.3s ease',
                   }}
@@ -1199,7 +1199,7 @@ export default function PlatformPage() {
                   style={{
                     padding: 28,
                     background: 'var(--color-surface-1)',
-                    borderRadius: 12,
+                    borderRadius: 6,
                     border: '1px solid var(--border-default)',
                   }}
                 >
@@ -1264,7 +1264,7 @@ export default function PlatformPage() {
                   style={{
                     padding: 28,
                     background: 'var(--color-surface-0)',
-                    borderRadius: 12,
+                    borderRadius: 6,
                     border: '1px solid var(--border-default)',
                   }}
                 >
@@ -1345,7 +1345,7 @@ export default function PlatformPage() {
                   style={{
                     padding: 28,
                     background: 'var(--color-surface-1)',
-                    borderRadius: 12,
+                    borderRadius: 6,
                     border: '1px solid var(--border-default)',
                   }}
                 >
@@ -1387,7 +1387,7 @@ export default function PlatformPage() {
           }} />
           <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
             <h2 style={{
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(24px, 3.5vw, 32px)',
               fontWeight: 700,
               letterSpacing: '-0.02em',
@@ -1414,7 +1414,7 @@ export default function PlatformPage() {
                 background: 'var(--accent-primary)',
                 color: 'var(--color-surface-0)',
                 textDecoration: 'none',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 fontWeight: 600,
                 fontSize: 16,
                 transition: 'all 0.3s ease',
@@ -1429,7 +1429,7 @@ export default function PlatformPage() {
                 color: 'var(--accent-primary)',
                 border: '2px solid var(--accent-primary)',
                 textDecoration: 'none',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 fontWeight: 600,
                 fontSize: 16,
                 transition: 'all 0.3s ease',

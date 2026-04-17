@@ -174,7 +174,7 @@ export default function EnterprisePage() {
             Enterprise
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -185,7 +185,7 @@ export default function EnterprisePage() {
             Enterprise-grade litigation analytics
           </h1>
           <p style={{
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
             fontSize: 15,
             color: 'rgba(255,255,255,0.6)',
             maxWidth: 640,
@@ -201,7 +201,7 @@ export default function EnterprisePage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '2rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -215,7 +215,7 @@ export default function EnterprisePage() {
               <div key={f.title} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '20px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
@@ -247,7 +247,7 @@ export default function EnterprisePage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-0)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '2rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -261,7 +261,7 @@ export default function EnterprisePage() {
               <div key={useCase.title} style={{
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '28px 24px',
               }}>
                 <h3 style={{
@@ -295,7 +295,7 @@ export default function EnterprisePage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '2rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -318,7 +318,7 @@ export default function EnterprisePage() {
               width: '100%',
               borderCollapse: 'collapse',
               background: 'var(--color-surface-0)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               overflow: 'hidden',
               border: '1px solid var(--border-default)',
             }}>
@@ -405,7 +405,7 @@ export default function EnterprisePage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '2rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
@@ -419,7 +419,7 @@ export default function EnterprisePage() {
               <details key={idx} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '24px',
               }}>
                 <summary style={{
@@ -452,7 +452,7 @@ export default function EnterprisePage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-0)' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '2rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',

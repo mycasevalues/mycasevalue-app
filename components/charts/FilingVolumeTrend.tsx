@@ -254,7 +254,7 @@ export default function FilingVolumeTrend({
           display: 'none',
           background: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
-          borderRadius: '8px',
+          borderRadius: '4px',
           padding: '8px 12px',
           boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
           pointerEvents: 'none',

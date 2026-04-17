@@ -41,7 +41,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             height: 38,
             borderRadius: 2,
             overflow: 'hidden',
-            border: dark ? '1px solid rgba(255,255,255,0.10)' : '1px solid #CCCCCC',
+            border: dark ? '1px solid rgba(255,255,255,0.10)' : '1px solid var(--bdr, #E2DFD8)',
             background: dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF',
             transition: 'border-color 120ms',
           }}
@@ -61,7 +61,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               border: 'none',
               outline: 'none',
               fontSize: 13,
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               color: dark ? '#E5E7EB' : 'var(--text1, #18181A)',
             }}
           />
@@ -75,7 +75,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               border: 'none',
               fontSize: 13,
               fontWeight: 600,
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
               flexShrink: 0,
@@ -101,7 +101,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             fontFamily: 'var(--font-mono)',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
-            color: dark ? '#4B5563' : '#888888',
+            color: dark ? '#4B5563' : 'var(--text4, #A8A6A0)',
           }}
         >
           Try:
@@ -114,11 +114,11 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               fontSize: 11,
               padding: '3px 8px',
               borderRadius: 2,
-              border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid #E0E0E0',
+              border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid var(--bdr, #E2DFD8)',
               color: dark ? '#6B7280' : 'var(--link, #0A50A2)',
               background: 'transparent',
               cursor: 'pointer',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
               transition: 'border-color 120ms, background 120ms',
             }}
             className="search-example-pill"

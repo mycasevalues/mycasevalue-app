@@ -130,7 +130,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
             marginTop: '8px',
             background: 'var(--color-surface-0)',
             border: `1px solid var(--border-default)`,
-            borderRadius: '8px',
+            borderRadius: '4px',
             boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
             zIndex: 1000,
             minWidth: '280px',

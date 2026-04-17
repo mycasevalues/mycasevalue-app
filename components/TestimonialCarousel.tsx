@@ -107,7 +107,7 @@ export default function TestimonialCarousel() {
               height: '4px',
               background: 'var(--accent-primary)',
               margin: '0 auto 16px',
-              borderRadius: '12px',
+              borderRadius: '6px',
             }}
           />
           <h2
@@ -115,7 +115,7 @@ export default function TestimonialCarousel() {
               fontSize: '32px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               margin: '0 0 12px 0',
             }}
           >
@@ -157,7 +157,7 @@ export default function TestimonialCarousel() {
               flexShrink: 0,
               width: '44px',
               height: '44px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: 'none',
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
@@ -202,7 +202,7 @@ export default function TestimonialCarousel() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 padding: '32px',
                 width: '100%',
                 animation: 'fadeIn 300ms ease-in-out',
@@ -247,7 +247,7 @@ export default function TestimonialCarousel() {
                     fontSize: '16px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     margin: '0 0 2px 0',
                   }}
                 >
@@ -289,7 +289,7 @@ export default function TestimonialCarousel() {
               flexShrink: 0,
               width: '44px',
               height: '44px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               border: 'none',
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',

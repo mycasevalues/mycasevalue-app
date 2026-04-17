@@ -154,7 +154,7 @@ export default function NOSIndexPage() {
                 fontWeight: 'bold',
                 color: 'var(--color-surface-0)',
                 margin: 0,
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               Federal Case Types Directory
@@ -164,7 +164,7 @@ export default function NOSIndexPage() {
                 background: 'var(--accent-primary)',
                 color: 'var(--color-surface-0)',
                 padding: '6px 12px',
-                borderRadius: '12px',
+                borderRadius: '6px',
                 fontSize: '12px',
                 fontWeight: '600',
                 whiteSpace: 'nowrap',
@@ -221,7 +221,7 @@ export default function NOSIndexPage() {
                 color: 'var(--color-text-primary)',
                 paddingLeft: '16px',
                 borderLeft: '3px solid var(--accent-primary)',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               {categoryName}
@@ -280,7 +280,7 @@ export default function NOSIndexPage() {
             style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '12px',
+              borderRadius: '6px',
               padding: '32px',
           }}
           >
@@ -291,7 +291,7 @@ export default function NOSIndexPage() {
                 marginBottom: '16px',
                 color: 'var(--color-text-primary)',
                 margin: '0 0 16px 0',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               What are NOS Codes?

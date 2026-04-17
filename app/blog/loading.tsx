@@ -9,8 +9,8 @@ export default function BlogLoading() {
             <div className="w-3 h-3" style={{ background: 'var(--accent-primary)', borderRadius: '50%' }} />
             INSIGHTS & ANALYSIS
           </div>
-          <div className="h-12 mb-4 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '12px' }} />
-          <div className="h-8 max-w-2xl animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '12px' }} />
+          <div className="h-12 mb-4 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '6px' }} />
+          <div className="h-8 max-w-2xl animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '6px' }} />
         </div>
       </div>
 
@@ -18,16 +18,16 @@ export default function BlogLoading() {
       <div className="max-w-5xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 gap-8">
           {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="border p-8" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '12px' }}>
+            <div key={i} className="border p-8" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '6px' }}>
               <div className="flex flex-col gap-4">
-                <div className="h-6 w-24 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '12px' }} />
+                <div className="h-6 w-24 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '6px' }} />
                 <div className="space-y-2">
-                  <div className="h-8 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '12px' }} />
-                  <div className="h-8 w-3/4 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '12px' }} />
+                  <div className="h-8 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '6px' }} />
+                  <div className="h-8 w-3/4 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '6px' }} />
                 </div>
                 <div className="space-y-2 pt-2">
-                  <div className="h-4 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '12px' }} />
-                  <div className="h-4 w-5/6 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '12px' }} />
+                  <div className="h-4 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '6px' }} />
+                  <div className="h-4 w-5/6 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '6px' }} />
                 </div>
                 <div className="flex gap-2 pt-4">
                   <div className="h-4 w-20 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '9999px' }} />

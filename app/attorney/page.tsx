@@ -138,7 +138,7 @@ const FeatureCard = ({
       style={{
         backgroundColor: '#FFFFFF',
         border: '1px solid var(--border-default)',
-        borderRadius: '12px',
+        borderRadius: '6px',
         padding: '24px',
         display: 'flex',
         flexDirection: 'column',
@@ -158,7 +158,7 @@ const FeatureCard = ({
             margin: '0 0 8px 0',
             fontSize: '16px',
             fontWeight: '500',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-ui)',
             color: 'var(--text1, #18181A)',
           }}
         >
@@ -168,9 +168,9 @@ const FeatureCard = ({
           style={{
             margin: 0,
             fontSize: '14px',
-            color: '#444444',
+            color: 'var(--text2, #42403C)',
             lineHeight: '1.5',
-            fontFamily: 'var(--font-inter)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           {description}
@@ -181,7 +181,7 @@ const FeatureCard = ({
           style={{
             display: 'inline-block',
             padding: '6px 12px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             fontSize: '12px',
             fontWeight: '600',
             textTransform: 'uppercase',
@@ -400,7 +400,7 @@ export default function AttorneyPage() {
     <div
       style={{
         color: 'var(--text1, #18181A)',
-        fontFamily: 'var(--font-inter)',
+        fontFamily: 'var(--font-ui)',
         minHeight: '100vh',
         backgroundColor: 'var(--surf, #F6F5F2)',
       }}
@@ -437,15 +437,15 @@ export default function AttorneyPage() {
       <section
         style={{
           backgroundColor: '#FFFFFF',
-          borderBottom: '1px solid #E0E0E0',
+          borderBottom: '1px solid var(--bdr, #E2DFD8)',
           padding: '32px 24px',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Breadcrumb */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '13px', fontFamily: 'var(--font-inter)' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '13px', fontFamily: 'var(--font-ui)' }}>
             <Link href="/" style={{ color: 'var(--gold, #C4882A)', textDecoration: 'none' }}>Home</Link>
-            <span style={{ color: '#CCCCCC' }}>›</span>
+            <span style={{ color: 'var(--bdr, #E2DFD8)' }}>›</span>
             <span style={{ color: 'var(--text1, #18181A)', fontWeight: 600 }}>Attorney Tools</span>
           </nav>
 
@@ -455,7 +455,7 @@ export default function AttorneyPage() {
               margin: '0 0 8px',
               fontSize: 'clamp(24px, 4vw, 32px)',
               fontWeight: '700',
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: '1.2',
               color: 'var(--text1, #18181A)',
               letterSpacing: '-0.5px',
@@ -469,10 +469,10 @@ export default function AttorneyPage() {
             style={{
               margin: 0,
               fontSize: '15px',
-              color: '#444444',
+              color: 'var(--text2, #42403C)',
               lineHeight: '1.5',
               maxWidth: '700px',
-              fontFamily: 'var(--font-inter)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             AI-powered case predictions, data-backed settlement ranges, judge intelligence, and venue optimization.
@@ -502,7 +502,7 @@ export default function AttorneyPage() {
                 margin: '0 0 12px 0',
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '600',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--text1, #18181A)',
               }}
             >
@@ -512,8 +512,8 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#444444',
-                fontFamily: 'var(--font-inter)',
+                color: 'var(--text2, #42403C)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               Evaluate cases with real outcome data. Predict settlement ranges. Understand judge behavior. Identify optimal venues. Make decisions backed by 5.1M+ verified federal cases.
@@ -571,7 +571,7 @@ export default function AttorneyPage() {
                   style={{
                     backgroundColor: '#FFFFFF',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '12px',
+                    borderRadius: '6px',
                     padding: '24px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -590,7 +590,7 @@ export default function AttorneyPage() {
                         margin: '0 0 8px 0',
                         fontSize: '18px',
                         fontWeight: '600',
-                        fontFamily: 'var(--font-display)',
+                        fontFamily: 'var(--font-ui)',
                         color: 'var(--text1, #18181A)',
                       }}
                     >
@@ -600,9 +600,9 @@ export default function AttorneyPage() {
                       style={{
                         margin: 0,
                         fontSize: '14px',
-                        color: '#444444',
+                        color: 'var(--text2, #42403C)',
                         lineHeight: '1.5',
-                        fontFamily: 'var(--font-inter)',
+                        fontFamily: 'var(--font-ui)',
                       }}
                     >
                       {item.description}
@@ -643,7 +643,7 @@ export default function AttorneyPage() {
                 margin: '0 0 12px 0',
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '600',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--text1, #18181A)',
               }}
             >
@@ -653,8 +653,8 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#444444',
-                fontFamily: 'var(--font-inter)',
+                color: 'var(--text2, #42403C)',
+                fontFamily: 'var(--font-ui)',
                 maxWidth: '600px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
@@ -691,7 +691,7 @@ export default function AttorneyPage() {
                 style={{
                   backgroundColor: 'var(--surf, #F6F5F2)',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '32px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -708,7 +708,7 @@ export default function AttorneyPage() {
                       height: '28px',
                       backgroundColor: 'var(--gold, #C4882A)',
                       color: '#FFFFFF',
-                      borderRadius: '12px',
+                      borderRadius: '6px',
                       fontSize: '16px',
                       fontWeight: '600',
                     }}
@@ -720,7 +720,7 @@ export default function AttorneyPage() {
                       margin: 0,
                       fontSize: '18px',
                       fontWeight: '600',
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-ui)',
                       color: 'var(--text1, #18181A)',
                     }}
                   >
@@ -731,9 +731,9 @@ export default function AttorneyPage() {
                   style={{
                     margin: 0,
                     fontSize: '14px',
-                    color: '#444444',
+                    color: 'var(--text2, #42403C)',
                     lineHeight: '1.6',
-                    fontFamily: 'var(--font-inter)',
+                    fontFamily: 'var(--font-ui)',
                   }}
                 >
                   {useCase.description}
@@ -766,7 +766,7 @@ export default function AttorneyPage() {
                 margin: '0 0 12px 0',
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '600',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--text1, #18181A)',
               }}
             >
@@ -776,8 +776,8 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#444444',
-                fontFamily: 'var(--font-inter)',
+                color: 'var(--text2, #42403C)',
+                fontFamily: 'var(--font-ui)',
                 maxWidth: '600px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
@@ -814,7 +814,7 @@ export default function AttorneyPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   padding: '32px',
                   textAlign: 'center',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -824,7 +824,7 @@ export default function AttorneyPage() {
                   style={{
                     fontSize: 'clamp(32px, 5vw, 48px)',
                     fontWeight: '600',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     color: 'var(--gold, #C4882A)',
                     marginBottom: '12px',
                   }}
@@ -835,9 +835,9 @@ export default function AttorneyPage() {
                   style={{
                     margin: 0,
                     fontSize: '14px',
-                    color: '#444444',
+                    color: 'var(--text2, #42403C)',
                     lineHeight: '1.6',
-                    fontFamily: 'var(--font-inter)',
+                    fontFamily: 'var(--font-ui)',
                   }}
                 >
                   {item.label}
@@ -871,7 +871,7 @@ export default function AttorneyPage() {
                 margin: '0 0 12px 0',
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '600',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--text1, #18181A)',
               }}
             >
@@ -889,8 +889,8 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#444444',
-                fontFamily: 'var(--font-inter)',
+                color: 'var(--text2, #42403C)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               Unlock the full power of legal intelligence with exclusive attorney-grade features.
@@ -934,7 +934,7 @@ export default function AttorneyPage() {
                 margin: '0 0 12px 0',
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '600',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--text1, #18181A)',
               }}
             >
@@ -944,8 +944,8 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#444444',
-                fontFamily: 'var(--font-inter)',
+                color: 'var(--text2, #42403C)',
+                fontFamily: 'var(--font-ui)',
                 maxWidth: '600px',
                 marginLeft: 'auto',
                 marginRight: 'auto',
@@ -990,7 +990,7 @@ export default function AttorneyPage() {
                   padding: '24px',
                   backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
-                  borderRadius: '12px',
+                  borderRadius: '6px',
                   textDecoration: 'none',
                   color: 'inherit',
                   transition: 'all 0.3s ease',
@@ -1007,7 +1007,7 @@ export default function AttorneyPage() {
                     margin: 0,
                     fontSize: '18px',
                     fontWeight: '600',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-ui)',
                     color: 'var(--text1, #18181A)',
                   }}
                 >
@@ -1017,9 +1017,9 @@ export default function AttorneyPage() {
                   style={{
                     margin: 0,
                     fontSize: '13px',
-                    color: '#444444',
+                    color: 'var(--text2, #42403C)',
                     lineHeight: '1.5',
-                    fontFamily: 'var(--font-inter)',
+                    fontFamily: 'var(--font-ui)',
                   }}
                 >
                   {cta.description}

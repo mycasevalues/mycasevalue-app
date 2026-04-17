@@ -111,7 +111,7 @@ export default function CookieConsent() {
             onClick={() => setCookie('rejected')}
             style={{
               padding: '10px 20px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               fontWeight: 600,
               fontSize: '12px',
               fontFamily: 'var(--font-body)',
@@ -130,7 +130,7 @@ export default function CookieConsent() {
             onClick={() => setCookie('accepted')}
             style={{
               padding: '10px 20px',
-              borderRadius: '12px',
+              borderRadius: '6px',
               fontWeight: 600,
               fontSize: '12px',
               fontFamily: 'var(--font-body)',

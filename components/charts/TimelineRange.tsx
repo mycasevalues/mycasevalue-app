@@ -13,7 +13,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
   return (
     <div className="w-full" role="img" aria-label={lang === 'es' ? 'Línea de tiempo del caso' : 'Case timeline'}>
       {/* Visual timeline bar */}
-      <div className="flex gap-[2px] h-8 overflow-hidden mb-4" style={{ borderRadius: '12px' }}>
+      <div className="flex gap-[2px] h-8 overflow-hidden mb-4" style={{ borderRadius: '6px' }}>
         {stages.map((stage, i) => (
           <div
             key={i}
@@ -26,7 +26,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
           >
             {/* Tooltip on hover */}
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-[11px] font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
-              style={{ background: 'var(--color-surface-0)', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', borderRadius: '12px' }}>
+              style={{ background: 'var(--color-surface-0)', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', borderRadius: '6px' }}>
               {stage.label}: {stage.duration}
             </div>
           </div>
@@ -37,7 +37,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
       <div className="flex flex-wrap gap-x-5 gap-y-2">
         {stages.map((stage, i) => (
           <div key={i} className="flex items-center gap-2">
-            <div className="w-3 h-3 flex-shrink-0" style={{ background: stage.color, borderRadius: '12px' }} />
+            <div className="w-3 h-3 flex-shrink-0" style={{ background: stage.color, borderRadius: '6px' }} />
             <div>
               <span className="text-[12px] font-semibold text-[var(--color-text-secondary)]">{stage.label}</span>
               <span className="text-[12px] font-data font-bold ml-1.5" style={{ color: stage.color }}>{stage.duration}</span>

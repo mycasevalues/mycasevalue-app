@@ -120,7 +120,7 @@ export default function AboutPage() {
         }
 
         .about-h1 {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: clamp(1.75rem, 4vw, 2.25rem);
           font-weight: 700;
           letter-spacing: -0.025em;
@@ -130,7 +130,7 @@ export default function AboutPage() {
         }
 
         .about-intro {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.65;
           color: rgba(255, 255, 255, 0.6);
@@ -146,7 +146,7 @@ export default function AboutPage() {
         }
 
         .section-heading {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 1.375rem;
           font-weight: 600;
           letter-spacing: -0.02em;
@@ -157,7 +157,7 @@ export default function AboutPage() {
         }
 
         .section-text {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.7;
           color: var(--color-text-secondary);
@@ -218,7 +218,7 @@ export default function AboutPage() {
         }
 
         .source-title {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.9375rem;
           font-weight: 600;
           letter-spacing: -0.01em;
@@ -227,7 +227,7 @@ export default function AboutPage() {
         }
 
         .source-description {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.875rem;
           color: var(--color-text-secondary);
           line-height: 1.6;
@@ -260,7 +260,7 @@ export default function AboutPage() {
         }
 
         .audience-title {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 1rem;
           font-weight: 600;
           color: var(--color-text-primary);
@@ -268,7 +268,7 @@ export default function AboutPage() {
         }
 
         .audience-description {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.875rem;
           color: var(--color-text-secondary);
           line-height: 1.6;
@@ -283,7 +283,7 @@ export default function AboutPage() {
         }
 
         .company-text {
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.8;
           color: var(--color-text-secondary);
@@ -300,7 +300,7 @@ export default function AboutPage() {
           gap: 0.5rem;
           padding: 10px 20px;
           border-radius: 6px;
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
           font-size: 13px;
           font-weight: 600;
           letter-spacing: -0.005em;
@@ -322,7 +322,7 @@ export default function AboutPage() {
           max-width: 56rem;
           margin: 0 auto;
           padding: 1.5rem 1.5rem 0;
-          font-family: var(--font-inter);
+          font-family: var(--font-ui);
         }
 
         @media (max-width: 640px) {

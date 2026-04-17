@@ -6,7 +6,7 @@ const btnStyle: React.CSSProperties = {
   padding: '6px 14px',
   background: 'var(--color-surface-0)',
   border: '1px solid var(--border-default)',
-  borderRadius: '12px',
+  borderRadius: '6px',
   fontSize: '13px',
   color: '#F0F2F5',
   textDecoration: 'none',

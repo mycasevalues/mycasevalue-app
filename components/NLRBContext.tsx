@@ -29,7 +29,7 @@ export default function NLRBContext() {
           padding: '1.5rem',
           background: 'var(--color-surface-1)',
           border: '1px solid var(--border-default)',
-          borderRadius: '12px',
+          borderRadius: '6px',
         }}>
           {/* Header */}
           <div style={{ marginBottom: '1.5rem' }}>
@@ -39,7 +39,7 @@ export default function NLRBContext() {
               color: 'var(--color-text-primary)',
               marginBottom: '0.5rem',
               marginTop: 0,
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-ui)',
             }}>
               NLRB Context
             </h2>
@@ -58,7 +58,7 @@ export default function NLRBContext() {
           <div style={{
             padding: '1rem',
             background: 'rgba(59,130,246,0.08)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             marginBottom: '1rem',
             borderLeft: '4px solid var(--accent-primary)',
           }}>
@@ -311,7 +311,7 @@ export default function NLRBContext() {
             marginTop: '1rem',
             padding: '0.75rem',
             background: 'rgba(59,130,246,0.08)',
-            borderRadius: '8px',
+            borderRadius: '4px',
             borderLeft: '4px solid var(--accent-primary)',
           }}>
             <p style={{

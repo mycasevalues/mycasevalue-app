@@ -142,7 +142,7 @@ export default function MotionRateExplorer() {
     padding: '12px 14px',
     height: '48px',
     border: '1px solid var(--border-default)',
-    borderRadius: '12px',
+    borderRadius: '6px',
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: '#FFF',
@@ -160,7 +160,7 @@ export default function MotionRateExplorer() {
 
   const tableWrapperStyle: React.CSSProperties = {
     overflowX: 'auto',
-    borderRadius: '12px',
+    borderRadius: '6px',
     border: '1px solid var(--border-default)',
     marginBottom: '32px',
   };
@@ -227,7 +227,7 @@ export default function MotionRateExplorer() {
   const disclaimerStyle: React.CSSProperties = {
     backgroundColor: 'rgba(234,179,8,0.08)',
     border: '1px solid #FCD34D',
-    borderRadius: '8px',
+    borderRadius: '4px',
     padding: '16px',
     fontSize: '13px',
     color: '#fde68a',

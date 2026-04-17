@@ -101,7 +101,7 @@ export default function BrowseNav() {
               style={{
                 padding: '0 14px',
                 fontSize: 12,
-                fontFamily: 'var(--font-sans, var(--font-inter))',
+                fontFamily: 'var(--font-sans, var(--font-ui))',
                 fontWeight: isActive ? 600 : 400,
                 color: isActive ? '#FFFFFF' : 'var(--chrome-text-muted)',
                 cursor: 'pointer',
@@ -132,7 +132,7 @@ export default function BrowseNav() {
                     color: '#FFFFFF',
                     fontSize: 9,
                     fontWeight: 700,
-                    borderRadius: 8,
+                    borderRadius: 2,
                     padding: '1px 5px',
                     marginLeft: 5,
                     lineHeight: '14px',

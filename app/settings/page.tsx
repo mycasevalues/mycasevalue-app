@@ -37,7 +37,7 @@ export default function SettingsPage() {
       {/* Navy Header */}
       <header style={{ backgroundColor: 'var(--accent-primary)' }} className="text-white py-8">
         <div className="max-w-6xl mx-auto px-6">
-          <h1 className="text-3xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>
+          <h1 className="text-3xl font-bold" style={{ fontFamily: 'var(--font-ui)' }}>
             Settings
           </h1>
           <p className="text-sm mt-2 opacity-90">Manage your account and preferences</p>
@@ -87,7 +87,7 @@ export default function SettingsPage() {
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
                 Account Information
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -169,7 +169,7 @@ export default function SettingsPage() {
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
                 Preferences
               </h2>
               <div className="space-y-6">
@@ -255,7 +255,7 @@ export default function SettingsPage() {
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
                 Data & Privacy
               </h2>
               <p className="text-sm mb-6" style={{ color: 'var(--color-text-secondary)' }}>
@@ -306,7 +306,7 @@ export default function SettingsPage() {
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
                 Appearance
               </h2>
               <div>
@@ -345,7 +345,7 @@ export default function SettingsPage() {
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
                 Subscription
               </h2>
               <div
@@ -377,7 +377,7 @@ export default function SettingsPage() {
 
             {/* Quick Links Section */}
             <section className="rounded-sm p-6" style={{ border: '1px solid var(--border-default)', backgroundColor: 'var(--color-surface-0)' }}>
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
                 Quick Links
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

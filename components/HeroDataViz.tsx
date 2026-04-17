@@ -205,7 +205,7 @@ const RotatingCards: React.FC<{ cards: CardItem[] }> = ({ cards }) => {
           style={{
             backgroundColor: colorObj.bg,
             border: `1px solid ${colorObj.border}`,
-            borderRadius: '8px',
+            borderRadius: '4px',
             padding: '24px',
             minHeight: '120px',
             display: 'flex',
@@ -282,7 +282,7 @@ const RotatingCards: React.FC<{ cards: CardItem[] }> = ({ cards }) => {
               borderRadius: '50%',
               border: 'none',
               cursor: 'pointer',
-              backgroundColor: idx === currentIndex ? 'var(--accent-primary)' : '#D1D5DB',
+              backgroundColor: idx === currentIndex ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
               transition: 'background-color 0.3s ease',
             }}
             whileHover={{ scale: 1.2 }}
@@ -316,7 +316,7 @@ export default function HeroDataViz({ bars = DEFAULT_BARS, cards = DEFAULT_CARDS
       <div
         style={{
           fontSize: '11px',
-          color: '#595959',
+          color: 'var(--text3, #78766C)',
           fontFamily: 'var(--font-body)',
           marginBottom: '20px',
           letterSpacing: '0.02em',

@@ -106,7 +106,7 @@ export default function SOLCalculatorPage() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
             Statute of Limitations
           </div>
-          <h1 style={{ color: '#FFF', fontFamily: 'var(--font-inter)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
+          <h1 style={{ color: '#FFF', fontFamily: 'var(--font-ui)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
             Know when your federal deadline expires
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
@@ -131,8 +131,8 @@ export default function SOLCalculatorPage() {
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
 
           {/* Input Form */}
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Check Your Deadline
             </h2>
 
@@ -178,14 +178,14 @@ export default function SOLCalculatorPage() {
             <div style={{ display: 'grid', gap: 24, animation: 'slideUp 0.4s ease-out' }}>
 
               {/* SOL Period Card */}
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
                 <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
                   Federal Statute of Limitations
                 </div>
-                <div style={{ fontSize: 'clamp(48px, 10vw, 64px)', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-display)', lineHeight: 1 }}>
+                <div style={{ fontSize: 'clamp(48px, 10vw, 64px)', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-ui)', lineHeight: 1 }}>
                   {formatPeriod(rule.years)}
                 </div>
-                <div style={{ marginTop: 12, display: 'inline-block', padding: '6px 14px', background: 'rgba(59,130,246,0.08)', borderRadius: 8, fontSize: 14, fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ marginTop: 12, display: 'inline-block', padding: '6px 14px', background: 'rgba(59,130,246,0.08)', borderRadius: 4, fontSize: 14, fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>
                   {rule.usc}
                 </div>
                 <div style={{ marginTop: 12, fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>
@@ -198,7 +198,7 @@ export default function SOLCalculatorPage() {
                 <div style={{
                   background: isExpired ? '#FEF0EF' : daysRemaining <= 90 ? 'rgba(234,179,8,0.1)' : 'rgba(34,197,94,0.1)',
                   border: `1px solid ${isExpired ? '#CC1016' : daysRemaining <= 90 ? '#D97706' : '#057642'}`,
-                  borderRadius: 12, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center',
+                  borderRadius: 6, padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center',
                 }}>
                   <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
                     {isExpired ? 'DEADLINE EXPIRED' : 'Days Remaining'}
@@ -229,18 +229,18 @@ export default function SOLCalculatorPage() {
               )}
 
               {/* Triggering Event */}
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
-                <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 32px)' }}>
+                <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
                   Key Triggering Event
                 </h3>
-                <p style={{ fontSize: 14, color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)', padding: '12px 16px', background: 'var(--color-surface-1)', borderRadius: 8, border: '1px solid var(--border-default)' }}>
+                <p style={{ fontSize: 14, color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)', padding: '12px 16px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)' }}>
                   {rule.trigger}
                 </p>
               </div>
 
               {/* Tolling Exceptions */}
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 12, padding: 'clamp(24px, 4vw, 32px)' }}>
-                <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-display)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 6, padding: 'clamp(24px, 4vw, 32px)' }}>
+                <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
                   Common Tolling Exceptions
                 </h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
