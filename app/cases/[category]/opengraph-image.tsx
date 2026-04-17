@@ -82,7 +82,7 @@ export default async function Image({
             display: 'flex',
             width: '100%',
             height: '100%',
-            background: '#1A1A1A',
+            background: '#18181A',
             color: '#ffffff',
             fontFamily: 'Inter, sans-serif',
             alignItems: 'center',
@@ -109,7 +109,7 @@ export default async function Image({
           flexDirection: 'column',
           width: '100%',
           height: '100%',
-          background: '#1A1A1A',
+          background: '#18181A',
           color: '#ffffff',
           fontFamily: 'Inter, sans-serif',
           padding: '60px',
@@ -222,7 +222,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#0052CC',
+                color: '#0A50A2',
               }}
             >
               {stats.avgWinRate}%
@@ -256,7 +256,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#0052CC',
+                color: '#0A50A2',
               }}
             >
               {caseCount}
@@ -290,7 +290,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#0052CC',
+                color: '#0A50A2',
               }}
             >
               {stats.caseTypeCount}

@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * LiveTicker — Bloomberg-style scrolling ticker strip below the nav.
+ * LiveTicker — Westlaw-style scrolling ticker strip below the nav.
  * Charcoal background matching the nav bar.
  */
 
@@ -146,7 +146,7 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
           padding: 0 14px;
         }
         .ticker-label {
-          color: #E65C00;
+          color: var(--gold, #C4882A);
           font-weight: 700;
           letter-spacing: 0.02em;
         }

@@ -1,13 +1,13 @@
 'use client';
 
 /**
- * MasterDetailLayout — Bloomberg-style split-pane layout for research pages.
+ * MasterDetailLayout — Westlaw-style split-pane layout for research pages.
  *
  * Desktop: Master list (35%) | Detail panel (65%)
  * Tablet: Master list (40%) | Detail panel (60%)
  * Mobile: Full-screen list, tap to see detail (overlay)
  *
- * Light mode: white backgrounds, #E0E0E0 borders, Bloomberg palette.
+ * Light mode: white backgrounds, #E0E0E0 borders, Westlaw palette.
  */
 
 import { ReactNode } from 'react';
@@ -41,7 +41,7 @@ export default function MasterDetailLayout({
           width: `${masterWidth}%`,
           minWidth: hasSelection ? undefined : '100%',
           background: '#FFFFFF',
-          borderRight: '1px solid #E0E0E0',
+          borderRight: '1px solid var(--border-default, #E0E0E0)',
         }}
       >
         <div className="lg:hidden w-full">{!hasSelection && masterPanel}</div>
@@ -54,7 +54,7 @@ export default function MasterDetailLayout({
           flex-1 overflow-y-auto
           ${hasSelection ? 'block' : 'hidden lg:block'}
         `}
-        style={{ background: '#F7F7F5' }}
+        style={{ background: 'var(--surf, #F6F5F2)' }}
       >
         {/* Mobile back button */}
         {hasSelection && (
@@ -75,7 +75,7 @@ export default function MasterDetailLayout({
                 fontSize: 13,
                 fontWeight: 500,
                 fontFamily: 'var(--font-inter)',
-                color: '#0052CC',
+                color: 'var(--link, #0A50A2)',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
@@ -145,7 +145,7 @@ export function MasterListItem({
         textAlign: 'left',
         padding: '10px 16px',
         borderBottom: '1px solid #F0F0F0',
-        borderLeft: isActive ? '3px solid #E65C00' : '3px solid transparent',
+        borderLeft: isActive ? '3px solid var(--gold, #C4882A)' : '3px solid transparent',
         background: isActive ? '#EFF5FF' : 'transparent',
         cursor: 'pointer',
         transition: 'background 80ms',
@@ -155,7 +155,7 @@ export function MasterListItem({
         borderBottomColor: '#F0F0F0',
         borderLeftWidth: 3,
         borderLeftStyle: 'solid',
-        borderLeftColor: isActive ? '#E65C00' : 'transparent',
+        borderLeftColor: isActive ? 'var(--gold, #C4882A)' : 'transparent',
         fontFamily: 'var(--font-inter)',
       }}
       className="master-list-item"
@@ -179,7 +179,7 @@ export function StatPill({ label, value, color }: { label: string; value: string
         style={{
           fontFamily: 'var(--font-mono)',
           fontWeight: 600,
-          color: color || '#1A1A1A',
+          color: color || 'var(--text1, #18181A)',
           fontVariantNumeric: 'tabular-nums',
         }}
       >

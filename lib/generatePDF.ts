@@ -21,9 +21,9 @@ export async function generateReportPDF(data: ReportPDFData) {
     const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
     const w = doc.internal.pageSize.getWidth();
 
-    // Brand colors: #E65C00 (orange accent), #0052CC (blue), #1A1A1A (dark header), #4B5563 (body)
+    // Brand colors: #C4882A (orange accent), #0A50A2 (blue), #18181A (dark header), #4B5563 (body)
     // ─── Header bar ──────────────────────────────────────
-    doc.setFillColor(26, 26, 26); // #1A1A1A dark background
+    doc.setFillColor(24, 24, 26); // #18181A dark background
     doc.rect(0, 0, w, 25, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(14);
@@ -62,7 +62,7 @@ export async function generateReportPDF(data: ReportPDFData) {
       doc.setFont('helvetica', 'normal');
       doc.text(s.label, x + 5, y + 9);
       doc.setFontSize(16);
-      doc.setTextColor(230, 92, 0); // #E65C00 Bloomberg orange
+      doc.setTextColor(196, 136, 42); // #C4882A Westlaw orange
       doc.setFont('helvetica', 'bold');
       doc.text(s.value, x + 5, y + 20);
     });
@@ -74,7 +74,7 @@ export async function generateReportPDF(data: ReportPDFData) {
       doc.setFont('helvetica', 'bold');
       doc.text('Median Settlement', 15, 132);
       doc.setFontSize(16);
-      doc.setTextColor(230, 92, 0); // #E65C00
+      doc.setTextColor(196, 136, 42); // #C4882A
       doc.text(`$${data.settlementMedian.toLocaleString()}K`, 70, 132);
     }
 
@@ -87,9 +87,9 @@ export async function generateReportPDF(data: ReportPDFData) {
     doc.text(lines, 15, 270);
 
     // ─── Footer line ─────────────────────────────────────
-    doc.setDrawColor(0, 82, 204); // #0052CC
+    doc.setDrawColor(10, 80, 162); // #0A50A2
     doc.line(15, 265, w - 15, 265);
-    doc.setTextColor(230, 92, 0); // #E65C00
+    doc.setTextColor(196, 136, 42); // #C4882A
     doc.setFontSize(9);
     doc.setFont('helvetica', 'normal');
     doc.text('mycasevalues.com', w / 2, 268, { align: 'center' });

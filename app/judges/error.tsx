@@ -20,7 +20,7 @@ export default function Error({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      background: '#F7F7F5',
+      background: 'var(--surf, #F6F5F2)',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
       padding: '24px',
       position: 'relative',
@@ -32,7 +32,7 @@ export default function Error({
         left: 0,
         right: 0,
         height: '8px',
-        background: '#E65C00',
+        background: 'var(--gold, #C4882A)',
       }} />
       <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
         <div style={{
@@ -49,13 +49,13 @@ export default function Error({
             width: 72,
             height: 72,
             borderRadius: '12px',
-            background: 'rgba(0,82,204,0.08)',
+            background: 'rgba(10,80,162,0.08)',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
             marginBottom: 24,
           }}>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0052CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="10" />
               <line x1="12" y1="8" x2="12" y2="12" />
               <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -65,7 +65,7 @@ export default function Error({
           <h1 style={{
             fontSize: '24px',
             fontWeight: 600,
-            color: '#1A1A1A',
+            color: 'var(--text1, #18181A)',
             margin: '0 0 8px',
             letterSpacing: '-0.01em',
           }}>
@@ -93,7 +93,7 @@ export default function Error({
                 alignItems: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: '#E65C00',
+                background: 'var(--gold, #C4882A)',
                 color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '12px',
@@ -118,8 +118,8 @@ export default function Error({
                 alignItems: 'center',
                 gap: 8,
                 padding: '12px 24px',
-                background: '#F7F7F5',
-                color: '#1A1A1A',
+                background: 'var(--surf, #F6F5F2)',
+                color: 'var(--text1, #18181A)',
                 border: '1px solid #E0E0E0',
                 borderRadius: '12px',
                 fontSize: '14px',

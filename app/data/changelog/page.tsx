@@ -80,7 +80,7 @@ export default async function ChangelogPage() {
           padding: 6px 12px;
           border-radius: 16px;
           background-color: rgba(59,130,246,0.08);
-          color: #0052CC;
+          color: var(--link, #0A50A2);
           text-decoration: none;
           font-size: 13px;
           font-weight: 500;
@@ -99,7 +99,7 @@ export default async function ChangelogPage() {
           padding: 6px 12px;
           border-radius: 20px;
           background-color: rgba(59,130,246,0.08);
-          color: #0052CC;
+          color: var(--link, #0A50A2);
           font-family: var(--font-mono);
           font-size: 12px;
           font-weight: 500;
@@ -333,7 +333,7 @@ export default async function ChangelogPage() {
 
             {/* Subscribe Section */}
             <div style={{
-              background: 'linear-gradient(135deg, var(--accent-primary) 0%, #CC4F00 100%)',
+              background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold-hover, #A87222) 100%)',
               borderRadius: 12,
               padding: '48px 32px',
               color: 'var(--color-surface-0)',

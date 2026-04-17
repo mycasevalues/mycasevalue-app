@@ -1,6 +1,6 @@
 export default function DistrictsLoading() {
   return (
-    <div style={{ minHeight: '100vh', background: '#F7F7F5', fontFamily: 'var(--font-inter)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf, #F6F5F2)', fontFamily: 'var(--font-inter)' }}>
       {/* Navy header with title skeleton */}
       <div style={{ background: '#FFFFFF', padding: '48px 24px', borderBottom: '1px solid #E8E8E8' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>

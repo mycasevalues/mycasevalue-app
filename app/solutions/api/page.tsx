@@ -95,7 +95,7 @@ export default function ApiPage() {
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/api-docs" style={{
-              background: '#E65C00',
+              background: 'var(--gold, #C4882A)',
               color: '#ffffff',
               padding: '10px 20px',
               borderRadius: 6,
@@ -107,7 +107,7 @@ export default function ApiPage() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 6,
-              border: '1px solid #E65C00',
+              border: '1px solid var(--gold, #C4882A)',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
             }}>
               View API docs

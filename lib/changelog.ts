@@ -39,7 +39,7 @@ export function getUpdateTypeBadge(updateType: UpdateType): { color: string; bgC
     },
     data_update: {
       color: '#FFFFFF',
-      bgColor: '#0052CC',
+      bgColor: 'var(--link, #0A50A2)',
       label: 'Data Update',
     },
     feature: {

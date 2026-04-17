@@ -4,7 +4,7 @@ export default function BetaBanner() {
   return (
     <div
       style={{
-        background: '#1A1A1A',
+        background: 'var(--text1, #18181A)',
         color: 'rgba(255,255,255,0.7)',
         minHeight: '28px',
         display: 'flex',
@@ -26,7 +26,7 @@ export default function BetaBanner() {
       <Link
         href="/about"
         style={{
-          color: '#E65C00',
+          color: 'var(--gold, #C4882A)',
           textDecoration: 'underline',
           fontSize: '12px',
           fontWeight: 500,

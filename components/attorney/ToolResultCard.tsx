@@ -47,7 +47,7 @@ export function ToolResultCard({
   if (loading) {
     return (
       <div
-        className="bg-[#F7F7F5] border border-[#E0E0E0] overflow-hidden"
+        className="bg-[var(--surf,#F6F5F2)] border border-[#E0E0E0] overflow-hidden"
         style={{ borderRadius: '12px' }}
       >
         <div className="p-8">
@@ -66,7 +66,7 @@ export function ToolResultCard({
 
   return (
     <div
-      className="bg-[#F7F7F5] border border-[#E0E0E0] overflow-hidden"
+      className="bg-[var(--surf,#F6F5F2)] border border-[#E0E0E0] overflow-hidden"
       style={{ borderRadius: '12px' }}
     >
       {/* Header */}

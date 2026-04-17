@@ -68,7 +68,7 @@ export default function RelatedEntities({ context }: RelatedEntitiesProps) {
   if (relatedCaseTypes.length === 0 && relatedDistricts.length === 0) return null;
 
   return (
-    <div className="border-l border-[#E0E0E0] bg-[#F7F7F5]" style={{ width: '260px', minWidth: '260px', flexShrink: 0 }}>
+    <div className="border-l border-[#E0E0E0] bg-[var(--surf,#F6F5F2)]" style={{ width: '260px', minWidth: '260px', flexShrink: 0 }}>
       <div className="sticky top-[80px] h-[calc(100vh-120px)] overflow-y-auto">
         {/* Header */}
         <div className="px-4 py-3 border-b border-[#E0E0E0]">

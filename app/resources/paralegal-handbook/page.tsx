@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function ParalegalHandbookPage() {
   return (
-    <div className="min-h-screen bg-[#F7F7F5]">
+    <div className="min-h-screen bg-[var(--surf, #F6F5F2)]">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-900 to-blue-800 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">

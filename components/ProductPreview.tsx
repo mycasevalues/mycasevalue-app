@@ -37,7 +37,7 @@ const SAMPLE_CATEGORIES = [
 
 export default function ProductPreview() {
   return (
-    <section className="px-4 md:px-8 py-14 md:py-20 bg-[#F7F7F5]">
+    <section className="px-4 md:px-8 py-14 md:py-20 bg-[var(--surf,#F6F5F2)]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <p className="text-xs font-semibold text-brand-blue uppercase tracking-widest mb-3">
@@ -67,7 +67,7 @@ export default function ProductPreview() {
             </div>
           </div>
 
-          <div className="bg-[#F7F7F5] border border-t-0 border-[#E0E0E0] rounded-b-xl p-6 md:p-8 shadow-xl">
+          <div className="bg-[var(--surf,#F6F5F2)] border border-t-0 border-[#E0E0E0] rounded-b-xl p-6 md:p-8 shadow-xl">
             {/* Category cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {SAMPLE_CATEGORIES.map((cat) => (
@@ -133,7 +133,7 @@ export default function ProductPreview() {
         <div className="text-center mt-8">
           <Link
             href="/cases"
-            className="inline-flex items-center justify-center px-6 py-2.5 rounded bg-[#E65C00] text-white font-semibold text-sm transition-colors hover:bg-[#CC4F00]"
+            className="inline-flex items-center justify-center px-6 py-2.5 rounded bg-[var(--gold,#C4882A)] text-white font-semibold text-sm transition-colors hover:bg-[var(--gold-hover,#A87222)]"
           >
             Explore All Case Types &rarr;
           </Link>

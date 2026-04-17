@@ -305,17 +305,17 @@ export default function AboutPage() {
           font-weight: 600;
           letter-spacing: -0.005em;
           text-decoration: none;
-          background: #E65C00;
+          background: var(--gold, #C4882A);
           color: #ffffff;
-          border: 1px solid #E65C00;
+          border: 1px solid var(--gold, #C4882A);
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
           transition: background-color 150ms ease, border-color 150ms ease;
           margin-top: 1.5rem;
         }
 
         .contact-link:hover {
-          background: #CC5200;
-          border-color: #CC5200;
+          background: var(--gold-hover, #A87222);
+          border-color: var(--gold-hover, #A87222);
         }
 
         .breadcrumb-wrapper {

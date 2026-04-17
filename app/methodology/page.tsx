@@ -93,7 +93,7 @@ export default function MethodologyPage() {
           border-radius: 12px;
         }
         .public-domain-callout {
-          border-left: 3px solid #0052CC;
+          border-left: 3px solid var(--link, #0A50A2);
           background: rgba(59,130,246,0.06);
           padding: 1.5rem;
           border-radius: 12px;
@@ -237,7 +237,7 @@ export default function MethodologyPage() {
         .related-title {
           font-weight: 600;
           font-size: 0.875rem;
-          color: #003D99;
+          color: var(--link-hover, #083D7A);
           font-family: var(--font-inter, 'Inter', sans-serif);
         }
       `}</style>
@@ -394,7 +394,7 @@ export default function MethodologyPage() {
                 icon: 'building'
               },
             ].map((source, i) => (
-              <div key={i} className="source-card p-5 bg-[#F7F7F5]" style={{ borderRadius: '12px' }}>
+              <div key={i} className="source-card p-5" style={{ background: 'var(--surf, #F6F5F2)', borderRadius: '12px' }}>
                 <div className="flex items-start gap-3 mb-3">
                   <div className="text-2xl flex-shrink-0">
                     {source.icon === 'database' && '-'}

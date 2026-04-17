@@ -437,8 +437,8 @@ export default async function ReportPage({
             <style>{`
               .win-rate-grid { grid-template-columns: repeat(3, 1fr); }
               @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 16px; } }
-              .report-cta-btn { display: inline-block; padding: 10px 20px; background: #E65C00; color: #ffffff; border: 1px solid #E65C00; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 13px; letter-spacing: -0.005em; font-family: var(--font-inter); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
-              .report-cta-btn:hover { background: #CC4F00; border-color: #CC4F00; }
+              .report-cta-btn { display: inline-block; padding: 10px 20px; background: var(--gold, #C4882A); color: #ffffff; border: 1px solid var(--gold, #C4882A); border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 13px; letter-spacing: -0.005em; font-family: var(--font-inter); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
+              .report-cta-btn:hover { background: var(--gold-hover, #A87222); border-color: var(--gold-hover, #A87222); }
               .report-red-link { font-size: 14px; font-weight: 500; color: var(--accent-primary); text-decoration: none; font-family: var(--font-body); transition: color 0.2s ease; }
               .report-red-link:hover { color: var(--accent-primary-hover); }
               .report-related-case { text-decoration: none; color: var(--accent-primary); transition: all 0.2s ease; display: block; }
@@ -574,7 +574,7 @@ export default async function ReportPage({
               </div>
             );
           })()}
-          <style>{`.yoy-bar { background: #0052CC; transition: background-color 150ms ease; } .yoy-bar:hover { background: #003D99 !important; }`}</style>
+          <style>{`.yoy-bar { background: var(--link, #0A50A2); transition: background-color 150ms ease; } .yoy-bar:hover { background: var(--link-hover, #083D7A) !important; }`}</style>
           <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px', textAlign: 'center', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
             Deterministic projection based on historical case volume patterns
           </p>

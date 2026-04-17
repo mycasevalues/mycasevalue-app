@@ -111,14 +111,14 @@ export async function sendWelcomeEmail(
             <style>
               body { margin: 0; padding: 0; }
               .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-              .header { background-color: #1A1A1A; color: white; padding: 24px; text-align: center; }
+              .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
               .header-text { font-size: 24px; font-weight: bold; margin: 0; }
               .body-content { background-color: white; padding: 32px 24px; }
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
               .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
               .body-content ul { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
-              .body-content a { color: #0052CC; text-decoration: none; }
-              .cta-button { background-color: #E65C00; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .body-content a { color: #0A50A2; text-decoration: none; }
+              .cta-button { background-color: #C4882A; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
               .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
               .footer p { margin: 8px 0; }
             </style>
@@ -163,14 +163,14 @@ export async function sendWelcomeEmail(
           <style>
             body { margin: 0; padding: 0; }
             .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-            .header { background-color: #1A1A1A; color: white; padding: 24px; text-align: center; }
+            .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
             .header-text { font-size: 24px; font-weight: bold; margin: 0; }
             .body-content { background-color: white; padding: 32px 24px; }
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
             .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
             .body-content ul { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
-            .body-content a { color: #0052CC; text-decoration: none; }
-            .cta-button { background-color: #E65C00; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .body-content a { color: #0A50A2; text-decoration: none; }
+            .cta-button { background-color: #C4882A; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
             .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
             .footer p { margin: 8px 0; }
           </style>
@@ -229,13 +229,13 @@ export async function sendReportEmail(
             <style>
               body { margin: 0; padding: 0; }
               .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-              .header { background-color: #1A1A1A; color: white; padding: 24px; text-align: center; }
+              .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
               .header-text { font-size: 24px; font-weight: bold; margin: 0; }
               .body-content { background-color: white; padding: 32px 24px; }
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
               .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
-              .body-content a { color: #0052CC; text-decoration: none; }
-              .cta-button { background-color: #E65C00; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .body-content a { color: #0A50A2; text-decoration: none; }
+              .cta-button { background-color: #C4882A; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
               .report-table { border-collapse: collapse; width: 100%; margin: 20px 0; }
               .report-table td { border: 1px solid #ddd; padding: 12px; color: #4B5563; font-size: 15px; }
               .report-table strong { color: #212529; }
@@ -291,13 +291,13 @@ export async function sendReportEmail(
           <style>
             body { margin: 0; padding: 0; }
             .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-            .header { background-color: #1A1A1A; color: white; padding: 24px; text-align: center; }
+            .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
             .header-text { font-size: 24px; font-weight: bold; margin: 0; }
             .body-content { background-color: white; padding: 32px 24px; }
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
             .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
-            .body-content a { color: #0052CC; text-decoration: none; }
-            .cta-button { background-color: #E65C00; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .body-content a { color: #0A50A2; text-decoration: none; }
+            .cta-button { background-color: #C4882A; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
             .report-table { border-collapse: collapse; width: 100%; margin: 20px 0; }
             .report-table td { border: 1px solid #ddd; padding: 12px; color: #4B5563; font-size: 15px; }
             .report-table strong { color: #212529; }
@@ -365,13 +365,13 @@ export async function sendPasswordResetEmail(
             <style>
               body { margin: 0; padding: 0; }
               .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-              .header { background-color: #1A1A1A; color: white; padding: 24px; text-align: center; }
+              .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
               .header-text { font-size: 24px; font-weight: bold; margin: 0; }
               .body-content { background-color: white; padding: 32px 24px; text-align: center; }
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
               .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
-              .body-content a { color: #0052CC; text-decoration: none; }
-              .cta-button { background-color: #E65C00; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .body-content a { color: #0A50A2; text-decoration: none; }
+              .cta-button { background-color: #C4882A; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
               .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
               .footer p { margin: 8px 0; }
             </style>
@@ -411,13 +411,13 @@ export async function sendPasswordResetEmail(
           <style>
             body { margin: 0; padding: 0; }
             .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-            .header { background-color: #1A1A1A; color: white; padding: 24px; text-align: center; }
+            .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
             .header-text { font-size: 24px; font-weight: bold; margin: 0; }
             .body-content { background-color: white; padding: 32px 24px; text-align: center; }
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
             .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
-            .body-content a { color: #0052CC; text-decoration: none; }
-            .cta-button { background-color: #E65C00; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .body-content a { color: #0A50A2; text-decoration: none; }
+            .cta-button { background-color: #C4882A; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
             .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
             .footer p { margin: 8px 0; }
           </style>
@@ -472,13 +472,13 @@ export async function sendReportReadyEmail(
             <style>
               body { margin: 0; padding: 0; }
               .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-              .header { background-color: #1A1A1A; color: white; padding: 24px; text-align: center; }
+              .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
               .header-text { font-size: 24px; font-weight: bold; margin: 0; }
               .body-content { background-color: white; padding: 32px 24px; text-align: center; }
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
               .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
-              .body-content a { color: #0052CC; text-decoration: none; }
-              .cta-button { background-color: #E65C00; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .body-content a { color: #0A50A2; text-decoration: none; }
+              .cta-button { background-color: #C4882A; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
               .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
               .footer p { margin: 8px 0; }
             </style>
@@ -515,13 +515,13 @@ export async function sendReportReadyEmail(
           <style>
             body { margin: 0; padding: 0; }
             .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
-            .header { background-color: #1A1A1A; color: white; padding: 24px; text-align: center; }
+            .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
             .header-text { font-size: 24px; font-weight: bold; margin: 0; }
             .body-content { background-color: white; padding: 32px 24px; text-align: center; }
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
             .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
-            .body-content a { color: #0052CC; text-decoration: none; }
-            .cta-button { background-color: #E65C00; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .body-content a { color: #0A50A2; text-decoration: none; }
+            .cta-button { background-color: #C4882A; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
             .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
             .footer p { margin: 8px 0; }
           </style>

@@ -547,10 +547,10 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
         <div style={{
           padding: '24px',
           borderRadius: 2,
-          border: '1px solid #CC1016',
-          background: '#FAEAE9',
-          color: '#8C1515',
-          fontFamily: 'var(--font-body)',
+          border: '1px solid var(--danger, #CC1016)',
+          background: 'var(--danger-subtle, #FAEAE9)',
+          color: 'var(--danger, #8C1515)',
+          fontFamily: 'var(--font-ui)',
           marginBottom: 24,
         }}>
           {state.error}
@@ -565,12 +565,12 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
           <span style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
             Showing {state.judges.length} of {state.total} judges
           </span>
-          <div style={{ display: 'flex', gap: 4, background: 'var(--color-surface-1)', borderRadius: 8, padding: 2 }}>
+          <div style={{ display: 'flex', gap: 4, background: 'var(--color-surface-1)', borderRadius: 4, padding: 2 }}>
             <button
               onClick={() => setViewMode('table')}
               style={{
                 padding: '6px 12px', fontSize: 12, fontWeight: 600, border: 'none', cursor: 'pointer',
-                borderRadius: 6, fontFamily: 'var(--font-body)', transition: 'all 0.15s',
+                borderRadius: 2, fontFamily: 'var(--font-ui)', transition: 'all 0.15s',
                 background: viewMode === 'table' ? 'var(--color-surface-0)' : 'transparent',
                 color: viewMode === 'table' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                 boxShadow: viewMode === 'table' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
@@ -583,7 +583,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               onClick={() => setViewMode('cards')}
               style={{
                 padding: '6px 12px', fontSize: 12, fontWeight: 600, border: 'none', cursor: 'pointer',
-                borderRadius: 6, fontFamily: 'var(--font-body)', transition: 'all 0.15s',
+                borderRadius: 2, fontFamily: 'var(--font-ui)', transition: 'all 0.15s',
                 background: viewMode === 'cards' ? 'var(--color-surface-0)' : 'transparent',
                 color: viewMode === 'cards' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                 boxShadow: viewMode === 'cards' ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
@@ -597,7 +597,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
 
         {/* Table View */}
         {viewMode === 'table' && (
-          <div style={{ marginBottom: 32, border: '1px solid var(--border-default)', borderRadius: 8, overflow: 'hidden', background: 'var(--color-surface-0)' }}>
+          <div style={{ marginBottom: 32, border: '1px solid var(--border-default)', borderRadius: 4, overflow: 'hidden', background: 'var(--color-surface-0)' }}>
             <JudgeTableView judges={state.judges} sortBy={sortBy} sortOrder="asc" />
           </div>
         )}
@@ -663,7 +663,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 <p style={{
                   fontSize: 12,
                   fontWeight: 400,
-                  color: '#595959',
+                  color: 'var(--text3, #595959)',
                   margin: '0 0 12px 0',
                   fontFamily: 'var(--font-body)',
                 }}>
@@ -790,7 +790,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               borderRadius: 2,
               border: '1px solid var(--border-default)',
               background: state.currentPage === 1 ? 'var(--color-surface-1)' : 'var(--color-surface-0)',
-              color: state.currentPage === 1 ? '#999999' : 'var(--color-text-primary)',
+              color: state.currentPage === 1 ? 'var(--text4, #999999)' : 'var(--color-text-primary)',
               cursor: state.currentPage === 1 ? 'not-allowed' : 'pointer',
               fontSize: 14,
               fontWeight: 600,
@@ -855,7 +855,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               borderRadius: 2,
               border: '1px solid var(--border-default)',
               background: state.currentPage === totalPages ? 'var(--color-surface-1)' : 'var(--color-surface-0)',
-              color: state.currentPage === totalPages ? '#999999' : 'var(--color-text-primary)',
+              color: state.currentPage === totalPages ? 'var(--text4, #999999)' : 'var(--color-text-primary)',
               cursor: state.currentPage === totalPages ? 'not-allowed' : 'pointer',
               fontSize: 14,
               fontWeight: 600,
@@ -1025,10 +1025,10 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
           <div style={{
             padding: '24px',
             borderRadius: 2,
-            border: '1px solid #CC1016',
-            background: '#FAEAE9',
-            color: '#8C1515',
-            fontFamily: 'var(--font-body)',
+            border: '1px solid var(--danger, #CC1016)',
+            background: 'var(--danger-subtle, #FAEAE9)',
+            color: 'var(--danger, #8C1515)',
+            fontFamily: 'var(--font-ui)',
             marginBottom: 24,
           }}>
             {byNOSState.error}
@@ -1136,7 +1136,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     </div>
                     <div style={{
                       fontSize: 10,
-                      color: '#595959',
+                      color: 'var(--text3, #595959)',
                       fontFamily: 'var(--font-body)',
                       textAlign: 'center',
                     }}>
@@ -1158,7 +1158,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     </div>
                     <div style={{
                       fontSize: 10,
-                      color: '#595959',
+                      color: 'var(--text3, #595959)',
                       fontFamily: 'var(--font-body)',
                       marginTop: 2,
                     }}>
@@ -1180,7 +1180,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     </div>
                     <div style={{
                       fontSize: 10,
-                      color: '#595959',
+                      color: 'var(--text3, #595959)',
                       fontFamily: 'var(--font-body)',
                       marginTop: 2,
                     }}>

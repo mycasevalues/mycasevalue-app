@@ -45,7 +45,7 @@ export async function GET(request: NextRequest) {
             flexDirection: 'column',
             width: '1200px',
             height: '630px',
-            background: '#1A1A1A',
+            background: '#18181A',
             color: '#ffffff',
             fontFamily: '"Outfit", system-ui, sans-serif',
             padding: '60px',
@@ -158,7 +158,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '600',
-                  color: '#0052CC',
+                  color: '#0A50A2',
                 }}
               >
                 {winRate}%
@@ -192,7 +192,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '600',
-                  color: '#0052CC',
+                  color: '#0A50A2',
                 }}
               >
                 {parseInt(cases as string).toLocaleString('en-US')}
@@ -226,7 +226,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '600',
-                  color: '#0052CC',
+                  color: '#0A50A2',
                 }}
               >
                 {decodeURIComponent(recovery as string)}
@@ -299,7 +299,7 @@ export async function GET(request: NextRequest) {
             flexDirection: 'column',
             width: '1200px',
             height: '630px',
-            background: '#1A1A1A',
+            background: '#18181A',
             color: '#ffffff',
             fontFamily: 'system-ui, sans-serif',
             padding: '60px',

@@ -61,7 +61,7 @@ export default function MethodologyCapture() {
     // Define fonts and colors
     const colors = {
       primary: [10, 102, 194], // var(--accent-primary)
-      darkBlue: [0, 61, 153], // #003D99
+      darkBlue: [8, 61, 122], // #083D7A (Westlaw link-hover)
       black: [15, 15, 15], // var(--color-text-primary)
       darkGray: [75, 85, 99], // var(--color-text-secondary)
       lightGray: [229, 231, 235], // var(--border-default)
@@ -492,7 +492,7 @@ export default function MethodologyCapture() {
           transition: all 0.2s ease;
         }
         .form-button:hover:not(:disabled) {
-          background-color: #CC4F00;
+          background-color: var(--gold-hover, #A87222);
           box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
         }
         .form-button:disabled {

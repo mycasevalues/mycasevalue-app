@@ -1,6 +1,6 @@
 /**
  * ServerHero.tsx — Server Component
- * Bloomberg-inspired institutional design: clean navy hero, search-forward layout.
+ * Westlaw-inspired institutional design: clean navy hero, search-forward layout.
  * SEO-friendly SSR content, hidden once the client component loads.
  */
 
@@ -14,7 +14,7 @@ import AnimatedDataViz from './AnimatedDataViz';
 export default function ServerHero() {
   return (
     <section className="server-hero-content" aria-label="Hero section">
-      {/* ── VISUAL 1: HERO — Bloomberg-style institutional ────────── */}
+      {/* ── VISUAL 1: HERO — Westlaw-style institutional ────────── */}
       <div style={{
         background: '#FFFFFF',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -314,9 +314,9 @@ export default function ServerHero() {
           </p>
           <a href="/search" style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
-            padding: '10px 20px', background: '#E65C00', color: '#ffffff', borderRadius: '3px',
+            padding: '10px 20px', background: 'var(--gold, #C4882A)', color: '#ffffff', borderRadius: '3px',
             fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', textDecoration: 'none',
-            fontFamily: 'var(--font-inter)', border: '1px solid #E65C00',
+            fontFamily: 'var(--font-inter)', border: '1px solid var(--gold, #C4882A)',
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
             transition: 'background-color 150ms ease, border-color 150ms ease',
           }}>
@@ -822,10 +822,10 @@ export default function ServerHero() {
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="/sign-up" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '10px 20px', background: '#E65C00',
+              padding: '10px 20px', background: 'var(--gold, #C4882A)',
               color: '#ffffff', borderRadius: '3px', fontWeight: 600, fontSize: 13,
               fontFamily: 'var(--font-inter)', textDecoration: 'none',
-              letterSpacing: '-0.005em', border: '1px solid #E65C00',
+              letterSpacing: '-0.005em', border: '1px solid var(--gold, #C4882A)',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
               transition: 'background-color 150ms ease, border-color 150ms ease',
             }}>

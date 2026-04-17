@@ -7,7 +7,7 @@ import { createBrowserClient } from '@supabase/ssr';
 
 export default function SignInPage() {
   return (
-    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#F7F7F5' }} />}>
+    <Suspense fallback={<div style={{ minHeight: '100vh', background: 'var(--surf, #F6F5F2)' }} />}>
       <SignInForm />
     </Suspense>
   );
@@ -89,13 +89,13 @@ function SignInForm() {
           text-align: center;
         }
         .auth-input:focus {
-          border-color: #0052CC !important;
+          border-color: var(--link, #0A50A2) !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.15) !important;
+          box-shadow: 0 0 0 3px rgba(10, 80, 162, 0.15) !important;
         }
         .auth-btn {
-          background: #E65C00;
-          border: 1px solid #E65C00;
+          background: var(--gold, #C4882A);
+          border: 1px solid var(--gold, #C4882A);
           color: #ffffff;
           border-radius: 6px;
           font-size: 13px;
@@ -105,11 +105,11 @@ function SignInForm() {
           transition: background-color 150ms ease, border-color 150ms ease;
         }
         .auth-btn:hover:not(:disabled) {
-          background: #CC5200;
-          border-color: #CC5200;
+          background: var(--gold-hover, #A87222);
+          border-color: var(--gold-hover, #A87222);
         }
         .auth-link:hover {
-          color: #0052CC !important;
+          color: var(--link, #0A50A2) !important;
         }
         .checkbox-wrapper {
           display: flex;

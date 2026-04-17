@@ -7,7 +7,7 @@ import { join } from 'path';
  */
 
 const sizes = [192, 512];
-const accentColor = '#1A1A1A';
+const accentColor = '#18181A';
 const textColor = '#FFFFFF';
 
 function generateSVG(size: number): string {

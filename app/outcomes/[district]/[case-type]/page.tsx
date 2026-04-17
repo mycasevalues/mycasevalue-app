@@ -118,8 +118,8 @@ export default async function OutcomesPage({
             borderRadius: 6,
             fontWeight: 600,
             color: '#ffffff',
-            background: '#E65C00',
-            border: '1px solid #E65C00',
+            background: 'var(--gold, #C4882A)',
+            border: '1px solid var(--gold, #C4882A)',
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
             textDecoration: 'none',
             fontSize: 13,
@@ -889,7 +889,7 @@ export default async function OutcomesPage({
                   textAlign: 'center',
                   transition: 'all 0.3s ease',
                   display: 'block',
-                  border: '1px solid #0052CC',
+                  border: '1px solid var(--link, #0A50A2)',
                 }}
 
               >

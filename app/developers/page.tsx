@@ -890,7 +890,7 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: 'linear-gradient(135deg, var(--accent-primary) 0%, #CC4F00 100%)',
+              background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold-hover, #A87222) 100%)',
               borderRadius: '12px',
               padding: '32px',
               textAlign: 'center',

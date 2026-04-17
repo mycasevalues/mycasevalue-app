@@ -90,7 +90,7 @@ export default function NotFound() {
               transition: all 200ms ease;
             }
             .notfound-link-primary:hover {
-              background: #CC4F00 !important;
+              background: var(--gold-hover, #A87222) !important;
               box-shadow: 0 4px 12px rgba(204, 79, 0, 0.3);
             }
             .notfound-link-secondary {

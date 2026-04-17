@@ -66,9 +66,9 @@ export default function ForgotPasswordPage() {
           animation: fadeIn 0.4s ease-out;
         }
         .auth-input:focus {
-          border-color: #0052CC !important;
+          border-color: var(--link, #0A50A2) !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1) !important;
+          box-shadow: 0 0 0 3px rgba(10, 80, 162, 0.1) !important;
         }
         .auth-btn:hover:not(:disabled) {
           background-color: #B91C1C !important;
@@ -138,7 +138,7 @@ export default function ForgotPasswordPage() {
                 margin: '0 auto 20px',
               }}
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0052CC" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>

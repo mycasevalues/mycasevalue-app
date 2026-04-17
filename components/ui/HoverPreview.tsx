@@ -49,7 +49,7 @@ export default function HoverPreview({ children, preview, delay = 300 }: HoverPr
       {show && (
         <div
           className={`
-            absolute z-50 w-72 bg-[#F7F7F5] border border-[#E0E0E0] rounded-lg shadow-lg
+            absolute z-50 w-72 bg-[var(--surf,#F6F5F2)] border border-[#E0E0E0] rounded-lg shadow-lg
             animate-fade-in pointer-events-auto
             ${position === 'above' ? 'bottom-full mb-2' : 'top-full mt-2'}
           `}

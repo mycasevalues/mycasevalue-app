@@ -408,7 +408,7 @@ export default async function NOSPage({ params }: PageProps) {
         .nos-badge {
           display: inline-block;
           padding: 8px 14px;
-          background: #E65C00;
+          background: var(--gold, #C4882A);
           color: var(--color-text-inverse);
           border-radius: 12px;
           font-size: 12px;
@@ -559,7 +559,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .cta-button {
-          background: #E65C00;
+          background: var(--gold, #C4882A);
           color: var(--color-text-inverse);
           padding: 14px 28px;
           border-radius: 12px;
@@ -645,7 +645,7 @@ export default async function NOSPage({ params }: PageProps) {
           height: 10px;
           border-radius: 12px;
           flex-shrink: 0;
-          background: #E65C00;
+          background: var(--gold, #C4882A);
         }
 
         .recovery-range-bar {
@@ -677,7 +677,7 @@ export default async function NOSPage({ params }: PageProps) {
           top: 10px;
           width: 2px;
           height: 20px;
-          background: #E65C00;
+          background: var(--gold, #C4882A);
           transform: translateX(-50%);
           z-index: 10;
         }
@@ -702,7 +702,7 @@ export default async function NOSPage({ params }: PageProps) {
         .factor-dot {
           width: 8px;
           height: 8px;
-          background: #E65C00;
+          background: var(--gold, #C4882A);
           border-radius: 50%;
           margin-top: 4px;
           flex-shrink: 0;

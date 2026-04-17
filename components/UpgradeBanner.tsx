@@ -59,7 +59,7 @@ export default function UpgradeBanner() {
           align-items: center;
           justify-content: center;
           padding: 10px 20px;
-          background: #E65C00;
+          background: var(--gold, #C4882A);
           color: #ffffff;
           border-radius: 3px;
           font-weight: 600;
@@ -67,14 +67,14 @@ export default function UpgradeBanner() {
           letter-spacing: -0.005em;
           text-decoration: none;
           font-family: var(--font-inter);
-          border: 1px solid #E65C00;
+          border: 1px solid var(--gold, #C4882A);
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
           cursor: pointer;
           transition: background-color 150ms ease, border-color 150ms ease;
         }
         .upgrade-btn-primary:hover {
-          background: #CC4F00;
-          border-color: #CC4F00;
+          background: var(--gold-hover, #A87222);
+          border-color: var(--gold-hover, #A87222);
         }
         .upgrade-btn-secondary {
           display: inline-flex;

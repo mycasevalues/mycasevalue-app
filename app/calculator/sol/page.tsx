@@ -67,14 +67,14 @@ export default function SOLCalculatorPage() {
           background-repeat: no-repeat; background-position: right 12px center; cursor: pointer;
           transition: border-color 0.2s ease;
         }
-        .sol-select:hover { border-color: #0052CC; }
-        .sol-select:focus { outline: none; border-color: #0052CC; box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
+        .sol-select:hover { border-color: var(--link, #0A50A2); }
+        .sol-select:focus { outline: none; border-color: var(--link, #0A50A2); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         .sol-input {
           height: 48px; width: 100%; border: 1px solid var(--border-default); border-radius: 12px;
           padding: 0 16px; font-family: var(--font-body); font-size: 14px; color: var(--color-text-primary);
           background: var(--color-surface-0); transition: border-color 0.2s ease;
         }
-        .sol-input:focus { outline: none; border-color: #0052CC; box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
+        .sol-input:focus { outline: none; border-color: var(--link, #0A50A2); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         @keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
       `}</style>
 

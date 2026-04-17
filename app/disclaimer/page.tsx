@@ -35,7 +35,7 @@ export default function DisclaimerPage() {
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
       <style>{`
         a[data-link-type="teal"] {
-          color: #003D99;
+          color: var(--link-hover, #083D7A);
           text-decoration: none;
         }
         a[data-link-type="teal"]:hover {

@@ -107,7 +107,7 @@ export default function NOSIndexPage() {
           color: #C21119;
         }
         .nos-breadcrumb-link {
-          color: #003D99;
+          color: var(--link-hover, #083D7A);
           text-decoration: none;
           transition: color 0.2s ease;
         }

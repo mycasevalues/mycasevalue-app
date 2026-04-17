@@ -1,8 +1,8 @@
 'use client';
 
 /**
- * SearchHero — Bloomberg-style search bar for the homepage context bar.
- * Light mode: white input, orange SEARCH button, subtle border.
+ * SearchHero — Westlaw-style search bar for the homepage context bar.
+ * Light mode: white input, gold SEARCH button, subtle border.
  * Also supports dark variant for potential use in dark sections.
  */
 
@@ -62,7 +62,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               outline: 'none',
               fontSize: 13,
               fontFamily: 'var(--font-inter)',
-              color: dark ? '#E5E7EB' : '#1A1A1A',
+              color: dark ? '#E5E7EB' : 'var(--text1, #18181A)',
             }}
           />
           <button
@@ -70,7 +70,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             style={{
               height: 38,
               padding: '0 16px',
-              background: '#E65C00',
+              background: 'var(--gold, #C4882A)',
               color: '#FFFFFF',
               border: 'none',
               fontSize: 13,
@@ -115,7 +115,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               padding: '3px 8px',
               borderRadius: 2,
               border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid #E0E0E0',
-              color: dark ? '#6B7280' : '#0052CC',
+              color: dark ? '#6B7280' : 'var(--link, #0A50A2)',
               background: 'transparent',
               cursor: 'pointer',
               fontFamily: 'var(--font-inter)',
@@ -130,7 +130,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
 
       <style>{`
         .search-example-pill:hover {
-          border-color: #0052CC !important;
+          border-color: var(--link, #0A50A2) !important;
           background: rgba(0,82,204,0.04) !important;
         }
       `}</style>

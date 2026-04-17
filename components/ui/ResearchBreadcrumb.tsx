@@ -1,8 +1,8 @@
 'use client';
 
 /**
- * ResearchBreadcrumb — Bloomberg-style breadcrumb trail.
- * Light mode: #888888 separators, #0052CC links, #1A1A1A current page.
+ * ResearchBreadcrumb — Westlaw-style breadcrumb trail.
+ * Light mode: #888888 separators, var(--link, #0A50A2) links, var(--text1, #18181A) current page.
  */
 
 import Link from 'next/link';
@@ -100,12 +100,12 @@ export default function ResearchBreadcrumb() {
             </svg>
           )}
           {i === crumbs.length - 1 ? (
-            <span style={{ color: '#1A1A1A', fontWeight: 500 }}>{crumb.label}</span>
+            <span style={{ color: 'var(--text1, #18181A)', fontWeight: 500 }}>{crumb.label}</span>
           ) : (
             <Link
               href={crumb.href}
               style={{
-                color: '#0052CC',
+                color: 'var(--link, #0A50A2)',
                 textDecoration: 'none',
                 transition: 'color 120ms',
               }}

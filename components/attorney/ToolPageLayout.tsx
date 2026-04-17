@@ -77,7 +77,7 @@ export function ToolPageLayout({
             </p>
             <a
               href="/sign-in"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-medium text-white transition-colors bg-[#E65C00] hover:bg-[#CC4F00]"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-md font-medium text-white transition-colors bg-[var(--gold,#C4882A)] hover:bg-[var(--gold-hover,#A87222)]"
             >
               Sign in
             </a>

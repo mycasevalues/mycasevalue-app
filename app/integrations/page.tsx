@@ -153,7 +153,7 @@ export default function IntegrationsPage() {
           left: 0;
           right: 0;
           height: 3px;
-          background: #E65C00;
+          background: var(--gold, #C4882A);
           border-radius: 12px 4px 0 0;
         }
         .breadcrumb-link:hover {

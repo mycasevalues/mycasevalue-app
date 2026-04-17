@@ -214,7 +214,7 @@ export default function PlatformPage() {
 
         .flow-desc {
           font-size: 13px;
-          color: #003D99;
+          color: var(--link-hover, #083D7A);
           line-height: 1.5;
         }
 
@@ -229,7 +229,7 @@ export default function PlatformPage() {
         }
 
         .comparison-table th {
-          background: #1A1A1A;
+          background: var(--text1, #18181A);
           color: white;
           padding: 16px;
           text-align: left;
@@ -368,7 +368,7 @@ export default function PlatformPage() {
           position: absolute;
           top: -12px;
           left: 24px;
-          background: #E65C00;
+          background: var(--gold, #C4882A);
           color: white;
           padding: 4px 12px;
           border-radius: 20px;
@@ -404,7 +404,7 @@ export default function PlatformPage() {
           content: '';
           width: 6px;
           height: 6px;
-          background: #E65C00;
+          background: var(--gold, #C4882A);
           border-radius: 50%;
           flex-shrink: 0;
           margin-top: 2px;

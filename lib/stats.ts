@@ -78,3 +78,28 @@ export function formatPercentage(
   const range = confidenceRange(value, sampleSize);
   return range.display;
 }
+
+/**
+ * Format a dollar amount for display.
+ * - Values >= 1,000,000 → "$1.2M"
+ * - Values >= 1,000 → "$187,200"
+ * - Values < 1,000 → "$500"
+ */
+export function formatCurrency(value: number): string {
+  if (value >= 1_000_000) {
+    const millions = value / 1_000_000;
+    return `$${millions % 1 === 0 ? millions.toFixed(0) : millions.toFixed(1)}M`;
+  }
+  return `$${value.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+}
+
+/**
+ * Format a duration in months for display.
+ * - Whole months → "12 months"
+ * - Fractional → "8.3 months"
+ * - 1 month → "1 month"
+ */
+export function formatDuration(months: number): string {
+  const formatted = months % 1 === 0 ? months.toFixed(0) : months.toFixed(1);
+  return `${formatted} ${months === 1 ? 'month' : 'months'}`;
+}

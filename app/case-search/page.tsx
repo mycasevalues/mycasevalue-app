@@ -194,7 +194,7 @@ function CaseSearchContent() {
             </div>
             <button
               type="submit"
-              className="h-11 px-5 rounded-lg bg-[#E65C00] text-white text-sm font-semibold hover:bg-[#CC5200] transition-colors"
+              className="h-11 px-5 rounded-lg bg-[var(--gold, #C4882A)] text-white text-sm font-semibold hover:bg-[var(--gold-hover, #A87222)] transition-colors"
             >
               Search
             </button>
@@ -215,7 +215,7 @@ function CaseSearchContent() {
                 {hasFilters && (
                   <button
                     onClick={handleReset}
-                    className="text-xs text-[#0052CC] hover:underline"
+                    className="text-xs text-[var(--link, #0A50A2)] hover:underline"
                   >
                     Reset
                   </button>
@@ -373,7 +373,7 @@ function CaseSearchContent() {
                 <p className="text-sm text-red-600 mb-2">{error}</p>
                 <button
                   onClick={() => performSearch(page)}
-                  className="text-sm text-[#0052CC] hover:underline"
+                  className="text-sm text-[var(--link, #0A50A2)] hover:underline"
                 >
                   Try again
                 </button>
@@ -402,7 +402,7 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="text-xs px-3 py-1.5 rounded border text-gray-500 hover:border-[#0052CC] hover:text-[#0052CC] hover:bg-white/5 transition-all"
+                      className="text-xs px-3 py-1.5 rounded border text-gray-500 hover:border-[var(--link, #0A50A2)] hover:text-[var(--link, #0A50A2)] hover:bg-white/5 transition-all"
                       style={{ borderColor: 'var(--border-default)' }}
                     >
                       {eq}
@@ -430,7 +430,7 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="text-xs px-3 py-1.5 rounded border text-gray-500 hover:border-[#0052CC] hover:text-[#0052CC] transition-all"
+                      className="text-xs px-3 py-1.5 rounded border text-gray-500 hover:border-[var(--link, #0A50A2)] hover:text-[var(--link, #0A50A2)] transition-all"
                       style={{ borderColor: 'var(--border-default)' }}
                     >
                       Try: {eq}

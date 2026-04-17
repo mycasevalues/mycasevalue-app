@@ -153,7 +153,7 @@ export default function ParalegalHandbookCapture() {
 
       const addSubheader = (text: string) => {
         doc.setFontSize(11);
-        doc.setTextColor(0, 61, 153); // #003D99
+        doc.setTextColor(8, 61, 122); // #083D7A (Westlaw link-hover)
         doc.setFont('helvetica', 'bold');
         doc.text(text, margin, yPosition);
         yPosition += 7;

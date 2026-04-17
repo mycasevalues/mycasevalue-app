@@ -153,8 +153,8 @@ export default function TrendsPage() {
         a.lex-link:hover { text-decoration: underline; }
         .lex-card { background: var(--color-surface-0); border: 1px solid var(--border-default); border-radius: 12px; }
         .lex-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .lex-btn-primary { background: #E65C00; color: #ffffff; border: 1px solid #E65C00; border-radius: 6px; font-size: 13px; font-weight: 600; letter-spacing: -0.005em; padding: 10px 20px; cursor: pointer; font-family: var(--font-inter); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
-        .lex-btn-primary:hover { background: #CC5200; border-color: #CC5200; }
+        .lex-btn-primary { background: var(--gold, #C4882A); color: #ffffff; border: 1px solid var(--gold, #C4882A); border-radius: 6px; font-size: 13px; font-weight: 600; letter-spacing: -0.005em; padding: 10px 20px; cursor: pointer; font-family: var(--font-inter); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
+        .lex-btn-primary:hover { background: var(--gold-hover, #A87222); border-color: var(--gold-hover, #A87222); }
         .lex-badge { background: rgba(10, 102, 194, 0.1); color: var(--accent-primary); border-radius: 12px; }
         h1 { font-family: var(--font-display); }
         h2 { font-family: var(--font-display); }
@@ -903,7 +903,7 @@ export default function TrendsPage() {
                         className="w-full transition-all"
                         style={{
                           height: `${(v.volume / maxVol) * 100}%`,
-                          background: 'linear-gradient(180deg, var(--accent-primary), #0052CC)',
+                          background: 'linear-gradient(180deg, var(--accent-primary), var(--link, #0A50A2))',
                         }}
                       />
                     </div>

@@ -78,7 +78,7 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
           <button
             onClick={runCheck}
             disabled={loading}
-            className="px-3 py-1 text-xs font-medium bg-[#E65C00] text-white rounded hover:bg-[#CC4F00] disabled:opacity-50"
+            className="px-3 py-1 text-xs font-medium bg-[var(--gold,#C4882A)] text-white rounded hover:bg-[var(--gold-hover,#A87222)] disabled:opacity-50"
           >
             Run Check
           </button>
