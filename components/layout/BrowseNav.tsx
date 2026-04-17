@@ -17,6 +17,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 /* ── Route → active section mapping ── */
 
@@ -62,90 +63,190 @@ const NAV_ITEMS: BrowseNavItem[] = [
 export default function BrowseNav() {
   const pathname = usePathname();
   const activeSection = getActiveSection(pathname);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = NAV_ITEMS.filter((item) => !item.separator);
 
   return (
-    <nav
-      className="w-full hidden md:flex"
-      style={{
-        height: 40,
-        background: 'var(--chrome-bg-dark)',
-        borderBottom: '1px solid var(--chrome-border, #2A3F58)',
-      }}
-      aria-label="Browse navigation"
-    >
-      <div
-        className="flex items-stretch w-full"
-        style={{ maxWidth: '100%', padding: '0 4px' }}
+    <>
+      {/* Desktop nav — unchanged */}
+      <nav
+        className="w-full hidden md:flex"
+        style={{
+          height: 40,
+          background: 'var(--chrome-bg-dark)',
+          borderBottom: '1px solid var(--chrome-border, #2A3F58)',
+        }}
+        aria-label="Browse navigation"
       >
-        {NAV_ITEMS.map((item) => {
-          if (item.separator) {
-            return (
-              <div
-                key={item.id}
-                style={{
-                  width: 1,
-                  background: 'var(--chrome-border, #2A3F58)',
-                  margin: '8px 0',
-                  flexShrink: 0,
-                }}
-              />
-            );
-          }
-
-          const isActive = activeSection === item.id;
-
-          return (
-            <Link
-              key={item.id}
-              href={item.href}
-              className="flex items-center"
-              style={{
-                padding: '0 14px',
-                fontSize: 12,
-                fontFamily: 'var(--font-sans, var(--font-ui))',
-                fontWeight: isActive ? 600 : 400,
-                color: isActive ? 'var(--card, #FFFFFF)' : 'var(--chrome-text-muted)',
-                cursor: 'pointer',
-                borderBottom: isActive ? '3px solid var(--gold)' : '3px solid transparent',
-                whiteSpace: 'nowrap',
-                textDecoration: 'none',
-                transition: 'color 0.15s ease, background 0.15s ease',
-                ...(item.rightAlign ? { marginLeft: 'auto' } : {}),
-              }}
-              onMouseEnter={(e) => {
-                if (!isActive) {
-                  e.currentTarget.style.color = '#D0E8F8';
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.04)';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (!isActive) {
-                  e.currentTarget.style.color = 'var(--chrome-text-muted)';
-                  e.currentTarget.style.background = '';
-                }
-              }}
-            >
-              {item.label}
-              {item.badge && (
-                <span
+        <div
+          className="flex items-stretch w-full"
+          style={{ maxWidth: '100%', padding: '0 4px' }}
+        >
+          {NAV_ITEMS.map((item) => {
+            if (item.separator) {
+              return (
+                <div
+                  key={item.id}
                   style={{
-                    background: 'var(--gold)',
-                    color: 'var(--card, #FFFFFF)',
-                    fontSize: 9,
-                    fontWeight: 700,
-                    borderRadius: 2,
-                    padding: '2px 4px',
-                    marginLeft: 4,
-                    lineHeight: '14px',
+                    width: 1,
+                    background: 'var(--chrome-border, #2A3F58)',
+                    margin: '8px 0',
+                    flexShrink: 0,
+                  }}
+                />
+              );
+            }
+
+            const isActive = activeSection === item.id;
+
+            return (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="flex items-center"
+                style={{
+                  padding: '0 14px',
+                  fontSize: 12,
+                  fontFamily: 'var(--font-sans, var(--font-ui))',
+                  fontWeight: isActive ? 600 : 400,
+                  color: isActive ? 'var(--card, #FFFFFF)' : 'var(--chrome-text-muted)',
+                  cursor: 'pointer',
+                  borderBottom: isActive ? '3px solid var(--gold)' : '3px solid transparent',
+                  whiteSpace: 'nowrap',
+                  textDecoration: 'none',
+                  transition: 'color 0.15s ease, background 0.15s ease',
+                  ...(item.rightAlign ? { marginLeft: 'auto' } : {}),
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.color = '#D0E8F8';
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.04)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.color = 'var(--chrome-text-muted)';
+                    e.currentTarget.style.background = '';
+                  }
+                }}
+              >
+                {item.label}
+                {item.badge && (
+                  <span
+                    style={{
+                      background: 'var(--gold)',
+                      color: 'var(--card, #FFFFFF)',
+                      fontSize: 9,
+                      fontWeight: 700,
+                      borderRadius: 2,
+                      padding: '2px 4px',
+                      marginLeft: 4,
+                      lineHeight: '14px',
+                    }}
+                  >
+                    {item.badge}
+                  </span>
+                )}
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+
+      {/* Mobile nav — visible below md (768px) */}
+      <nav
+        className="md:hidden"
+        style={{
+          background: 'var(--chrome-bg-dark, #121F32)',
+          borderBottom: '1px solid var(--chrome-border, #2A3F58)',
+          position: 'relative',
+        }}
+        aria-label="Mobile browse navigation"
+      >
+        <button
+          onClick={() => setMobileOpen((prev) => !prev)}
+          aria-expanded={mobileOpen}
+          aria-controls="browse-nav-mobile-menu"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 8,
+            width: '100%',
+            height: 44,
+            padding: '0 16px',
+            background: 'transparent',
+            border: 'none',
+            color: 'var(--chrome-text-muted, #8AAAC8)',
+            fontSize: 14,
+            fontFamily: 'var(--font-sans, var(--font-ui))',
+            cursor: 'pointer',
+          }}
+        >
+          <span style={{ fontSize: 18, lineHeight: 1 }}>{mobileOpen ? '\u2715' : '\u2630'}</span>
+          <span>Browse</span>
+        </button>
+
+        {mobileOpen && (
+          <div
+            id="browse-nav-mobile-menu"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              background: 'var(--chrome-bg-dark, #121F32)',
+              borderTop: '1px solid var(--chrome-border, #2A3F58)',
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              right: 0,
+              zIndex: 50,
+              boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+            }}
+          >
+            {navLinks.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 6,
+                    minHeight: 44,
+                    padding: '0 20px',
+                    fontSize: 13,
+                    fontFamily: 'var(--font-sans, var(--font-ui))',
+                    fontWeight: isActive ? 600 : 400,
+                    color: isActive ? 'var(--card, #FFFFFF)' : 'var(--chrome-text-muted, #8AAAC8)',
+                    textDecoration: 'none',
+                    borderLeft: isActive ? '3px solid var(--gold, #C4882A)' : '3px solid transparent',
+                    transition: 'background 0.15s ease',
                   }}
                 >
-                  {item.badge}
-                </span>
-              )}
-            </Link>
-          );
-        })}
-      </div>
-    </nav>
+                  {item.label}
+                  {item.badge && (
+                    <span
+                      style={{
+                        background: 'var(--gold)',
+                        color: 'var(--card, #FFFFFF)',
+                        fontSize: 9,
+                        fontWeight: 700,
+                        borderRadius: 2,
+                        padding: '2px 4px',
+                        lineHeight: '14px',
+                      }}
+                    >
+                      {item.badge}
+                    </span>
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+        )}
+      </nav>
+    </>
   );
 }

@@ -140,7 +140,7 @@ export default function KeyCitePage() {
         position: 'relative',
         overflow: 'hidden',
         borderBottom: '1px solid rgba(0,0,0,0.1)',
-      }}>
+      }} className="keycite-page-header">
         <div aria-hidden style={{
           position: 'absolute',
           inset: 0,
@@ -207,7 +207,7 @@ export default function KeyCitePage() {
             gridTemplateColumns: '1fr auto',
             gap: 16,
             alignItems: 'end',
-          }}>
+          }} className="keycite-search-grid">
             <div>
               <label htmlFor="citation-input" style={{
                 display: 'block',
@@ -292,7 +292,7 @@ export default function KeyCitePage() {
             padding: 32,
             marginBottom: 32,
           }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: 32, alignItems: 'start' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: 32, alignItems: 'start' }} className="keycite-case-header-grid">
               {/* Flag Icon */}
               <div style={{
                 width: 80,
@@ -570,7 +570,7 @@ export default function KeyCitePage() {
             display: 'grid',
             gridTemplateColumns: '280px 1fr',
             gap: 24,
-          }}>
+          }} className="keycite-sidebar-grid">
             {/* Filter Sidebar */}
             <div style={{
               background: 'var(--card)',
@@ -1324,6 +1324,14 @@ export default function KeyCitePage() {
         @keyframes pulse {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.5; }
+        }
+        @media (max-width: 768px) {
+          .keycite-search-grid { grid-template-columns: 1fr !important; }
+          .keycite-case-header-grid { grid-template-columns: 1fr !important; }
+          .keycite-sidebar-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .keycite-page-header { padding: 20px 12px !important; }
         }
       `}</style>
     </div>

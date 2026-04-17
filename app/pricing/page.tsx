@@ -476,7 +476,21 @@ export default function PricingPage() {
           font-family: var(--font-ui);
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
+          .pricing-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+
+          .pricing-card {
+            padding: 1.25rem !important;
+          }
+
+          .pricing-header {
+            padding: 2rem 1rem 2.5rem !important;
+          }
+        }
+
+        @media (max-width: 480px) {
           .pricing-h1 {
             font-size: 1.75rem;
           }
@@ -486,7 +500,11 @@ export default function PricingPage() {
           }
 
           .pricing-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
+          }
+
+          .pricing-card {
+            padding: 1.25rem !important;
           }
 
           .pricing-card.highlighted {

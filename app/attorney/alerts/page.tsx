@@ -490,6 +490,13 @@ export default function AlertsPage() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--surf)', padding: 'var(--space-8)' }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .alerts-controls-grid { grid-template-columns: 1fr !important; }
+          .alerts-list-grid { grid-template-columns: 1fr !important; }
+          .alerts-detail-stats-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ marginBottom: 'var(--space-8)' }}>
@@ -584,7 +591,7 @@ export default function AlertsPage() {
           gap: 'var(--space-3)',
           marginBottom: 'var(--space-6)',
           alignItems: 'center'
-        }}>
+        }} className="alerts-controls-grid">
           <button
             onClick={() => setShowWizard(true)}
             style={{
@@ -633,7 +640,7 @@ export default function AlertsPage() {
           </select>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: selectedAlert ? '1fr 1fr' : '1fr', gap: 'var(--space-6)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: selectedAlert ? '1fr 1fr' : '1fr', gap: 'var(--space-6)' }} className="alerts-list-grid">
           {/* Alerts List */}
           <div>
             <h2 style={{ fontSize: '16px', fontWeight: '600', fontFamily: 'var(--font-ui)', marginBottom: 'var(--space-4)', color: 'var(--text-secondary)' }}>
@@ -759,7 +766,7 @@ export default function AlertsPage() {
                 </button>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }} className="alerts-detail-stats-grid">
                 <div>
                   <label style={{ display: 'block', fontSize: '11px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Status</label>
                   <button

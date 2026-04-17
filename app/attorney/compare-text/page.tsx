@@ -487,6 +487,7 @@ ${docB}
         gap: '24px',
         marginTop: '24px',
       }}
+      className="compare-sidebyside-grid"
     >
       {/* Document A */}
       <div
@@ -606,8 +607,17 @@ ${docB}
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--surf)' }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .compare-input-grid { grid-template-columns: 1fr !important; }
+          .compare-sidebyside-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .compare-page-header { padding: 20px 12px !important; }
+        }
+      `}</style>
       {/* Header */}
-      <div style={{ backgroundColor: 'var(--chrome-bg)', padding: '32px 40px', color: 'var(--chrome-text)' }}>
+      <div style={{ backgroundColor: 'var(--chrome-bg)', padding: '32px 40px', color: 'var(--chrome-text)' }} className="compare-page-header">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h1
             style={{
@@ -648,6 +658,7 @@ ${docB}
               gap: '16px',
               marginBottom: '16px',
             }}
+            className="compare-input-grid"
           >
             {/* Document A Input */}
             <div>

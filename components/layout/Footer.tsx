@@ -234,11 +234,12 @@ export default function Footer() {
 
       <style>{`
         .footer-link:hover { color: #FFFFFF !important; }
-        @media (max-width: 768px) {
+        @media (max-width: 640px) {
           .footer-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .footer-link { min-height: 44px; display: inline-flex !important; align-items: center; }
         }
         @media (max-width: 480px) {
-          .footer-grid { grid-template-columns: repeat(1, 1fr) !important; }
+          .footer-grid { grid-template-columns: repeat(1, 1fr) !important; gap: 16px !important; }
         }
       `}</style>
     </footer>

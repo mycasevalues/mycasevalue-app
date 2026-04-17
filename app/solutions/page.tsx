@@ -412,7 +412,18 @@ export default function SolutionsPage() {
         }
         @media (max-width: 768px) {
           .solutions-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+          .solutions-hero-stats {
+            gap: 16px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .solutions-grid {
             grid-template-columns: 1fr !important;
+          }
+          .solutions-hero-stats {
+            gap: 12px !important;
           }
         }
         @media (min-width: 769px) and (max-width: 1024px) {

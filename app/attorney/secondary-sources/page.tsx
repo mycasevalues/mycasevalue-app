@@ -436,6 +436,14 @@ export default function SecondarySourcesPage() {
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--surf)', fontFamily: 'var(--font-ui)' }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .secondary-sidebar-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .secondary-page-header { padding: 20px 12px !important; }
+        }
+      `}</style>
       {/* Hero Header */}
       <div style={{
         background: 'var(--chrome-bg)',
@@ -444,7 +452,7 @@ export default function SecondarySourcesPage() {
         position: 'relative',
         overflow: 'hidden',
         borderBottom: '1px solid var(--chrome-border)',
-      }}>
+      }} className="secondary-page-header">
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -542,7 +550,7 @@ export default function SecondarySourcesPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: showFilters ? '280px 1fr' : '1fr', gap: '24px', padding: '24px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: showFilters ? '280px 1fr' : '1fr', gap: '24px', padding: '24px' }} className="secondary-sidebar-grid">
         {/* Sidebar Filters */}
         {showFilters && (
           <aside style={{

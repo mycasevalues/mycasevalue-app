@@ -254,6 +254,16 @@ export default function CalculatorPage() {
       <DemoCalculator />
       <style>{slideUpFadeIn}</style>
       <style>{selectStyles}</style>
+      <style>{`
+        @media (max-width: 768px) {
+          .calc-percentiles { grid-template-columns: repeat(3, 1fr) !important; }
+          .calc-header { padding: 32px 16px 28px !important; }
+        }
+        @media (max-width: 480px) {
+          .calc-percentiles { grid-template-columns: repeat(2, 1fr) !important; }
+          .calc-header { padding: 24px 12px 20px !important; }
+        }
+      `}</style>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -272,7 +282,7 @@ export default function CalculatorPage() {
       </div>
 
       {/* Header */}
-      <div style={{
+      <div className="calc-header" style={{
         background: 'var(--card)',
         color: 'var(--color-text-inverse)',
         padding: '48px 24px 40px',
@@ -660,7 +670,7 @@ export default function CalculatorPage() {
             </div>
 
             {/* 5-column percentile grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
+            <div className="calc-percentiles grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
               {[
                 { label: 'P10', value: results.p10, highlight: false },
                 { label: 'P25', value: results.low, highlight: false },

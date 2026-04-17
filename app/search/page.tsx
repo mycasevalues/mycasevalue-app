@@ -312,6 +312,14 @@ function SearchPageInner() {
             display: none !important;
           }
         }
+        @media (max-width: 480px) {
+          .search-category-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .search-header {
+            padding: 24px 12px !important;
+          }
+        }
       `}</style>
       {/* Dark Institutional Header */}
       <div className="search-header" style={{
@@ -1039,7 +1047,7 @@ function SearchPageInner() {
             <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
               Browse by Category
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
+            <div className="search-category-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
               {SITS.map(cat => {
                 const seen = new Set<string>();
                 let totalCases = 0;

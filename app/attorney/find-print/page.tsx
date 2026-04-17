@@ -297,6 +297,7 @@ export default function FindPrintPage() {
           overflow: 'hidden',
           borderBottom: '1px solid rgba(0,0,0,0.1)',
         }}
+        className="findprint-page-header"
       >
         <div
           aria-hidden
@@ -372,7 +373,7 @@ export default function FindPrintPage() {
 
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 24px' }}>
         {/* Main Grid: Input + Help Sidebar */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: 24, marginBottom: 32 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: 24, marginBottom: 32 }} className="findprint-main-grid">
           {/* Left Column: Citation Input */}
           <div>
             <div
@@ -777,7 +778,7 @@ export default function FindPrintPage() {
               Delivery Options
             </h2>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="findprint-delivery-grid">
               {/* Format Selection */}
               <div
                 style={{
@@ -927,7 +928,7 @@ export default function FindPrintPage() {
                 Additional Options
               </label>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }} className="findprint-options-grid">
                 {[
                   { key: 'includeKeyCite', label: 'Include KeyCite History' },
                   { key: 'includeCitingRefs', label: 'Include Citing References' },
@@ -1163,6 +1164,14 @@ export default function FindPrintPage() {
           50% {
             opacity: 0.5;
           }
+        }
+        @media (max-width: 768px) {
+          .findprint-main-grid { grid-template-columns: 1fr !important; }
+          .findprint-delivery-grid { grid-template-columns: 1fr !important; }
+          .findprint-options-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .findprint-page-header { padding: 20px 12px !important; }
         }
       `}</style>
     </div>

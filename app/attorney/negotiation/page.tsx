@@ -119,7 +119,16 @@ export default function NegotiationPage() {
 
   return (
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
-      <style>{`select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
+      <style>{`
+        select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
+        @media (max-width: 768px) {
+          .negotiation-form-grid { grid-template-columns: 1fr !important; }
+          .negotiation-range-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .negotiation-page-header { padding: 20px 12px !important; }
+        }
+      `}</style>
 
       <div style={{
         background: 'var(--card)',
@@ -128,7 +137,7 @@ export default function NegotiationPage() {
         position: 'relative',
         overflow: 'hidden',
         borderBottom: '1px solid var(--bdr)',
-      }}>
+      }} className="negotiation-page-header">
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -143,7 +152,7 @@ export default function NegotiationPage() {
       </div>
 
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: r ? '380px 1fr' : '1fr', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: r ? '380px 1fr' : '1fr', gap: '24px' }} className="negotiation-form-grid">
           {/* Form */}
           <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>Case & Offer Details</h2>
@@ -240,7 +249,7 @@ export default function NegotiationPage() {
               {/* Negotiation Range */}
               <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>Recommended Negotiation Range</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }} className="negotiation-range-grid">
                   <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(176,30,30,0.08)', borderRadius: 4 }}>
                     <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--text2, #42403C)', textTransform: 'uppercase', marginBottom: 4 }}>Floor</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.floor)}</div>

@@ -222,6 +222,14 @@ export default function FoldersPage() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--surf)' }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .folders-sidebar-grid { grid-template-columns: 1fr !important; }
+          .folders-stats-grid { grid-template-columns: 1fr 1fr !important; }
+          .folders-analysis-grid { grid-template-columns: 1fr !important; }
+          .folders-filter-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       {/* Header */}
       <div style={{ background: 'var(--chrome-bg)', color: 'white', padding: '24px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -238,7 +246,7 @@ export default function FoldersPage() {
       </div>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px', display: 'grid', gridTemplateColumns: '240px 1fr', gap: '24px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px', display: 'grid', gridTemplateColumns: '240px 1fr', gap: '24px' }} className="folders-sidebar-grid">
 
         {/* Sidebar - Folder Tree */}
         <div style={{ background: 'var(--card)', borderRadius: '4px', border: '1px solid var(--bdr)', padding: '16px', height: 'fit-content', maxHeight: '80vh', overflowY: 'auto' }}>
@@ -463,7 +471,7 @@ export default function FoldersPage() {
               </div>
 
               {/* Folder Statistics */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--bdr)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--bdr)' }} className="folders-stats-grid">
                 <div>
                   <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>
                     {currentFolder.itemCount}
@@ -508,7 +516,7 @@ export default function FoldersPage() {
               <h3 style={{ fontSize: '16px', fontWeight: 600, fontFamily: 'var(--font-ui)', margin: '0 0 16px', color: 'var(--text-primary)' }}>
                 Folder Analysis
               </h3>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }} className="folders-analysis-grid">
                 {/* Content Type Breakdown */}
                 <div>
                   <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2, #42403C)', marginBottom: '12px' }}>
@@ -577,7 +585,7 @@ export default function FoldersPage() {
 
           {/* Search, Filter, Sort Bar */}
           <div style={{ background: 'var(--card)', borderRadius: '4px', border: '1px solid var(--bdr)', padding: '16px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 140px 140px 140px', gap: '12px', alignItems: 'flex-end' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 140px 140px 140px', gap: '12px', alignItems: 'flex-end' }} className="folders-filter-grid">
               {/* Search */}
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: '12px', top: '12px', color: 'var(--text2, #42403C)', display: 'flex' }}><SearchIcon size={16} /></span>

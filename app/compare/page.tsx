@@ -140,7 +140,7 @@ export default function ComparePage() {
             font-size: clamp(24px, 6vw, 36px);
           }
           .compare-selectors {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr !important;
           }
           .compare-table {
             font-size: 12px;
@@ -148,6 +148,27 @@ export default function ComparePage() {
           .compare-table th,
           .compare-table td {
             padding: 12px 8px !important;
+          }
+          .compare-table-wrapper {
+            -webkit-overflow-scrolling: touch;
+          }
+          .compare-table-wrapper table {
+            min-width: 500px;
+          }
+          .compare-impact-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .compare-selectors {
+            grid-template-columns: 1fr !important;
+          }
+          .compare-table {
+            font-size: 11px;
+          }
+          .compare-table th,
+          .compare-table td {
+            padding: 10px 6px !important;
           }
         }
       `}</style>
@@ -457,7 +478,7 @@ export default function ComparePage() {
               <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0', fontFamily: 'var(--font-ui)' }}>
                 Attorney Impact & Settlement Range
               </h3>
-              <div style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: '16px' }}>
+              <div className="compare-impact-grid" style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: '16px' }}>
                 {stats.map((s) => {
                   const wrColor = getWinRateColor(s.winRate);
                   return (

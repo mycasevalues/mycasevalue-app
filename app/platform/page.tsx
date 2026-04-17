@@ -506,6 +506,7 @@ export default function PlatformPage() {
         @media (max-width: 480px) {
           .stats-bar {
             grid-template-columns: 1fr;
+            padding: 16px !important;
           }
 
           .market-grid {
@@ -514,7 +515,22 @@ export default function PlatformPage() {
 
           .comparison-table {
             font-size: 11px;
+          }
+
+          .platform-table-wrap {
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .platform-table-wrap .comparison-table {
+            min-width: 600px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .platform-table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
           }
         }
       `}</style>
@@ -771,6 +787,7 @@ export default function PlatformPage() {
               </p>
             </div>
 
+            <div className="platform-table-wrap">
             <table className="comparison-table">
               <thead>
                 <tr>
@@ -828,8 +845,8 @@ export default function PlatformPage() {
                   <td className="feature-name">Free Access</td>
                   <td className="yes">Basic</td>
                   <td className="no">No</td>
-                  <td className="no">No</td>
                   <td className="yes">Basic</td>
+                  <td className="no">No</td>
                 </tr>
                 <tr>
                   <td className="feature-name">Cost</td>
@@ -840,6 +857,7 @@ export default function PlatformPage() {
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
         </div>
 

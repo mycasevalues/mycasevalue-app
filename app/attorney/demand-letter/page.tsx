@@ -168,6 +168,12 @@ export default function DemandLetterPage() {
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
+        @media (max-width: 768px) {
+          .demand-form-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .demand-page-header { padding: 20px 12px !important; }
+        }
       `}</style>
       {/* Header */}
       <div style={{
@@ -177,7 +183,7 @@ export default function DemandLetterPage() {
         position: 'relative',
         overflow: 'hidden',
         borderBottom: '1px solid var(--bdr)',
-      }}>
+      }} className="demand-page-header">
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -195,7 +201,7 @@ export default function DemandLetterPage() {
 
       {/* Main Content */}
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: letterText ? '1fr 1fr' : '1fr', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: letterText ? '1fr 1fr' : '1fr', gap: '24px' }} className="demand-form-grid">
           {/* Input Form */}
           <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>

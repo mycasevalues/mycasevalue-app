@@ -152,6 +152,7 @@ export default function HomePage() {
 
       {/* ═══ 1. HERO SEARCH SECTION ═══ */}
       <section
+        className="home-hero"
         style={{
           background: 'var(--card)',
           borderBottom: '1px solid var(--bdr)',
@@ -959,6 +960,8 @@ export default function HomePage() {
         }
         @media (max-width: 480px) {
           .hp-card-grid { grid-template-columns: 1fr !important; }
+          .home-hero { padding: 16px 16px 12px !important; }
+          .home-hero h1 { font-size: 22px !important; }
         }
       `}</style>
     </main>
