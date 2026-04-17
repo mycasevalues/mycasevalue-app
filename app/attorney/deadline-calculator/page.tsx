@@ -183,7 +183,7 @@ export default function DeadlineCalculatorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0, letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Litigation Deadline Calculator
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: '8px 0 0 0' }}>
@@ -225,7 +225,7 @@ export default function DeadlineCalculatorPage() {
               style={{
                 padding: '8px 16px',
                 backgroundColor: caseFiledDate ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
-                color: 'var(--color-surface-0)',
+                color: 'var(--color-text-primary)',
                 border: 'none',
                 borderRadius: '4px',
                 fontSize: '12px',
@@ -278,7 +278,7 @@ export default function DeadlineCalculatorPage() {
                 padding: '12px 20px',
                 height: '42px',
                 backgroundColor: newEventName.trim() && newEventDays ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
-                color: 'var(--color-surface-0)',
+                color: 'var(--color-text-primary)',
                 border: 'none',
                 borderRadius: '4px',
                 fontSize: '12px',
@@ -317,7 +317,7 @@ export default function DeadlineCalculatorPage() {
             {/* Deadlines List */}
             <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <div style={{ padding: '24px', borderBottom: '1px solid var(--border-default)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>All Deadlines</h2>
+                <h2 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>All Deadlines</h2>
                 <div style={{ display: 'flex', gap: '12px' }}>
                   {Object.entries(eventCategories).map(([key, config]) => (
                     <div key={key} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -406,7 +406,7 @@ export default function DeadlineCalculatorPage() {
 
             {/* FRCP Reference */}
             <div style={{ marginTop: '40px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-              <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
+              <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
                 Federal Rules of Civil Procedure Reference
               </h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>

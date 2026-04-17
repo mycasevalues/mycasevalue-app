@@ -72,7 +72,7 @@ export async function GET(request: NextRequest) {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              marginBottom: '60px',
+              marginBottom: '48px',
               zIndex: 2,
             }}
           >
@@ -104,7 +104,7 @@ export async function GET(request: NextRequest) {
               flex: 1,
               display: 'flex',
               alignItems: 'center',
-              marginBottom: '60px',
+              marginBottom: '48px',
               zIndex: 2,
             }}
           >
@@ -113,7 +113,7 @@ export async function GET(request: NextRequest) {
                 fontSize: '72px',
                 fontWeight: '800',
                 lineHeight: '1.1',
-                maxWidth: '900px',
+                maxWidth: '1200px',
                 letterSpacing: '-1px',
                 color: '#ffffff',
               }}

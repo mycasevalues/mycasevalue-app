@@ -200,7 +200,7 @@ export default function AdminPage() {
         }}
       >
         <div style={{ padding: '0 20px', marginBottom: '32px' }}>
-          <h1 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 8px 0' }}>MyCaseValue</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 700, margin: '0 0 16px 0' }}>MyCaseValue</h1>
           <p style={{ fontSize: '12px', opacity: 0.7, margin: 0 }}>Admin Panel</p>
         </div>
 
@@ -243,7 +243,7 @@ export default function AdminPage() {
       <div style={{ marginLeft: '240px', flex: 1, padding: '32px', overflowY: 'auto' }}>
         {/* Header */}
         <header style={{ marginBottom: '32px' }}>
-          <h1 style={{ fontSize: '32px', fontWeight: 'bold', margin: '0 0 8px 0', color: COLORS.black }}>
+          <h1 style={{ fontSize: 28, fontWeight: 'bold', margin: '0 0 8px 0', color: COLORS.black }}>
             {getSectionTitle(activeSection)}
           </h1>
           <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>

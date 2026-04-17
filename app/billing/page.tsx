@@ -85,7 +85,7 @@ export default function BillingPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
       {/* Dark Navy Header */}
-      <div style={{ backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '32px 20px' }}>
+      <div style={{ backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '32px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '24px' }}>
@@ -107,7 +107,7 @@ export default function BillingPage() {
             </span>
           </div>
 
-          <h1 className="font-legal" style={{ fontSize: '36px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 12px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 12px 0' }}>
             Billing & Subscription
           </h1>
 

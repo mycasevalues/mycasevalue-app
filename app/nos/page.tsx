@@ -213,6 +213,18 @@ export default function NOSIndexPage() {
       <div style={{ padding: 'clamp(24px, 5vw, 48px) 24px', maxWidth: '1200px', margin: '0 auto' }}>
         {categories.map((categoryName) => (
           <section key={categoryName} style={{ marginBottom: '64px' }}>
+            <div
+              style={{
+                fontSize: 10,
+                fontFamily: 'var(--font-mono)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: 'var(--color-text-muted)',
+                marginBottom: 8,
+              }}
+            >
+              Case Category
+            </div>
             <h2
               style={{
                 fontSize: '24px',
@@ -284,6 +296,18 @@ export default function NOSIndexPage() {
               padding: '32px',
           }}
           >
+            <div
+              style={{
+                fontSize: 10,
+                fontFamily: 'var(--font-mono)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: 'var(--color-text-muted)',
+                marginBottom: 8,
+              }}
+            >
+              Information
+            </div>
             <h2
               style={{
                 fontSize: '24px',

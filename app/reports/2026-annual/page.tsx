@@ -26,7 +26,7 @@ export default function AnnualReportPage() {
         color: 'var(--color-surface-0)',
         borderBottom: '4px solid var(--accent-primary)',
       }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ marginBottom: '8px', fontSize: '13px', fontWeight: 600, color: '#A0C7E8', letterSpacing: '0.5px' }}>
             FEDERAL COURT DATA REPORT
           </div>
@@ -51,7 +51,7 @@ export default function AnnualReportPage() {
       </div>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 24px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Email Capture & Download Section */}
         <AnnualReportCapture />
       </div>

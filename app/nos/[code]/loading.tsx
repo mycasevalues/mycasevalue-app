@@ -22,7 +22,7 @@ export default function Loading() {
       <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
         {/* Dark Navy Header Skeleton */}
         <div style={{ background: 'var(--card, #FFFFFF)', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(24px, 4vw, 32px) 24px' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(24px, 4vw, 32px) 24px' }}>
             {/* Breadcrumb skeleton */}
             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
               {[1, 2, 3].map((i) => (
@@ -70,7 +70,7 @@ export default function Loading() {
 
         {/* White Subheader Section Skeleton */}
         <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
             {/* Description lines skeleton */}
             <div style={{ marginBottom: '24px' }}>
               <div
@@ -130,7 +130,7 @@ export default function Loading() {
         </div>
 
         {/* Main Content Skeleton */}
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(24px, 4vw, 40px) 24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(24px, 4vw, 40px) 24px' }}>
           {/* Case Type Overview Section */}
           <section
             style={{

@@ -328,12 +328,12 @@ export default function ApiAccessPage() {
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }} />
-        <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
           <h1
             style={{
               fontSize: '24px',
               fontWeight: 600,
-              color: 'var(--color-surface-0)',
+              color: 'var(--color-text-primary)',
               margin: 0,
               fontFamily: 'var(--font-heading)',
             }}
@@ -346,7 +346,7 @@ export default function ApiAccessPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
         {/* What the API Provides */}
         <section style={{ marginBottom: '32px' }}>
           <h2
@@ -785,7 +785,7 @@ export default function ApiAccessPage() {
                       fontWeight: 600,
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
-                      margin: '0 0 8px',
+                      margin: '0 0 16px',
                     }}
                   >
                     {item.label}

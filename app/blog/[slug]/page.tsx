@@ -338,7 +338,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     return (
       <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center', maxWidth: '600px', padding: '24px' }}>
-          <h1 style={{ fontSize: '22px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '16px' }}>Article Not Found</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '16px' }}>Article Not Found</h1>
           <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
             We could not find the article you are looking for.
           </p>
@@ -619,7 +619,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       {/* Bottom CTA */}
       <div className="max-w-4xl mx-auto px-6 py-16">
         <section style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '32px 24px', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '12px' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '12px' }}>
             Ready to put this data into action?
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0', fontFamily: 'var(--font-body)' }}>

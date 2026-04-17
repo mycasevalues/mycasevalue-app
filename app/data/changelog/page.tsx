@@ -139,7 +139,7 @@ export default async function ChangelogPage() {
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }} />
-          <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
             {/* Mono breadcrumb */}
             <nav style={{
               display: 'flex', alignItems: 'center', gap: 8,
@@ -194,9 +194,9 @@ export default async function ChangelogPage() {
 
         {/* Main Content */}
         <div className="changelog-container" style={{ padding: '64px 24px' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             {/* Timeline of Entries */}
-            <div style={{ marginBottom: 80 }}>
+            <div style={{ marginBottom: 64 }}>
               {entries.length > 0 ? (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
                   {entries.map((entry) => {

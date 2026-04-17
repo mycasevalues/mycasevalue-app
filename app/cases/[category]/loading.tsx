@@ -3,7 +3,7 @@ export default function CategoryLoading() {
     <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
       {/* Hero header skeleton */}
       <div style={{ background: 'var(--card, #FFFFFF)', padding: '48px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ height: '36px', width: '40%', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', marginBottom: '16px' }} />
           <div style={{ height: '48px', background: 'rgba(255,255,255,0.08)', borderRadius: '4px', marginBottom: '12px' }} />
           <div style={{ height: '18px', width: '60%', background: 'rgba(255,255,255,0.08)', borderRadius: '4px' }} />
@@ -11,7 +11,7 @@ export default function CategoryLoading() {
       </div>
 
       {/* Case type cards grid */}
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 24px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',

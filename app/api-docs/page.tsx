@@ -167,7 +167,7 @@ export default function ApiDocsPage() {
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }} />
-          <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
               padding: '4px 10px', marginBottom: 16,
@@ -206,7 +206,7 @@ export default function ApiDocsPage() {
 
         {/* Breadcrumb */}
         <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
             <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
               <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
                 Home
@@ -217,9 +217,9 @@ export default function ApiDocsPage() {
           </div>
         </div>
 
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '64px 24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 24px' }}>
           {/* Authentication Section */}
-          <section style={{ marginBottom: 80 }}>
+          <section style={{ marginBottom: 64 }}>
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
@@ -345,7 +345,7 @@ export default function ApiDocsPage() {
           </section>
 
           {/* Endpoints Section */}
-          <section style={{ marginBottom: 80 }}>
+          <section style={{ marginBottom: 64 }}>
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
@@ -475,7 +475,7 @@ export default function ApiDocsPage() {
           </section>
 
           {/* Code Examples Section */}
-          <section style={{ marginBottom: 80 }}>
+          <section style={{ marginBottom: 64 }}>
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
@@ -595,7 +595,7 @@ r = requests.get(
           </section>
 
           {/* Error Handling Section */}
-          <section style={{ marginBottom: 80 }}>
+          <section style={{ marginBottom: 64 }}>
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,

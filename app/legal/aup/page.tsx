@@ -29,7 +29,7 @@ export default function AUPPage() {
         >
           <div
             style={{
-              maxWidth: '900px',
+              maxWidth: '1200px',
               margin: '0 auto',
             }}
           >
@@ -60,7 +60,7 @@ export default function AUPPage() {
         {/* Content */}
         <section
           style={{
-            maxWidth: '900px',
+            maxWidth: '1200px',
             margin: '0 auto',
             padding: '0 1.5rem 2rem 1.5rem',
             fontFamily: 'var(--font-body)',

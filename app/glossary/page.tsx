@@ -158,7 +158,7 @@ export default function GlossaryPage() {
             }
           `}
         </style>
-        <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+        <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, fontFamily: 'var(--font-ui)' }}>
           Related Tools
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

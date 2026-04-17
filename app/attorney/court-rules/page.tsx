@@ -145,7 +145,7 @@ export default function CourtRulesPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Never Miss a Local Rule Again
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -158,7 +158,7 @@ export default function CourtRulesPage() {
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Filters */}
         <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
             Find Your District
           </h2>
 

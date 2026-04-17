@@ -151,7 +151,7 @@ function renderNOSImage(code: string, locale: Locale = 'en'): React.ReactElement
       }}
     >
       {/* Header */}
-      <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '40px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '48px' }}>
         <div
           style={{
             fontSize: '40px',
@@ -324,7 +324,7 @@ function renderDistrictImage(districtCode: string, locale: Locale = 'en'): React
       }}
     >
       {/* Header */}
-      <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '40px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '48px' }}>
         <div
           style={{
             fontSize: '48px',
@@ -498,7 +498,7 @@ function renderHomeImage(locale: Locale = 'en'): React.ReactElement {
           style={{
             fontSize: '24px',
             color: '#666666',
-            marginBottom: '40px',
+            marginBottom: '48px',
             maxWidth: '700px',
           }}
         >

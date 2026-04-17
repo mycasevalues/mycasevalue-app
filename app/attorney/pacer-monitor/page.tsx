@@ -70,19 +70,19 @@ export default function PacerMonitorPage() {
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }} />
-        <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative' }}>
-          <h1 className="font-legal" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 4px 0' }}>PACER Monitoring</h1>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+          <h1 className="font-legal" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>PACER Monitoring</h1>
           <p style={{ fontSize: '14px', color: '#B0B8C0', margin: 0 }}>Real-time alerts on case developments, filings, and motions</p>
         </div>
       </div>
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(260px, 300px)', gap: '24px' }} className="pacer-grid">
           <style>{`.pacer-grid { grid-template-columns: 1fr !important; } @media (min-width: 768px) { .pacer-grid { grid-template-columns: minmax(0, 1fr) minmax(260px, 300px) !important; } }`}</style>
           {/* Alerts Feed */}
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-              <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>Recent Alerts</h2>
+              <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Recent Alerts</h2>
               <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)', padding: '3px' }}>
                 {(['all', 'high', 'medium', 'low'] as const).map((f) => (
                   <button key={f} onClick={() => setFilter(f)} style={{ padding: '4px 8px', borderRadius: '4px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? 'var(--accent-primary)' : 'transparent', color: filter === f ? 'var(--color-surface-0)' : 'var(--color-text-secondary)', textTransform: 'capitalize' as const }}>
@@ -128,7 +128,7 @@ export default function PacerMonitorPage() {
                   onFocus={(e) => e.target.style.borderColor = 'var(--accent-primary)'}
                   onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.10)'}
                 />
-                <button onClick={addWatch} style={{ padding: '12px 20px', height: '48px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>+</button>
+                <button onClick={addWatch} style={{ padding: '12px 20px', height: '48px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>+</button>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {watchList.map((c) => (

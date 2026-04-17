@@ -177,7 +177,7 @@ export default function CaseTimelinePage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Case Timeline Generator
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -191,7 +191,7 @@ export default function CaseTimelinePage() {
         <div style={{ display: 'grid', gridTemplateColumns: timeline ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
           <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
               Case Information
             </h2>
 
@@ -245,7 +245,7 @@ export default function CaseTimelinePage() {
                   width: '100%',
                   padding: '16px',
                   backgroundColor: !caseType || !filingDate ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: 'var(--color-surface-0)',
+                  color: 'var(--color-text-primary)',
                   border: 'none',
                   borderRadius: '4px',
                   fontSize: '15px',
@@ -353,13 +353,13 @@ export default function CaseTimelinePage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Timeline Summary Card */}
               <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
+                <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
                   Timeline Summary
                 </h2>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                   <div>
-                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-body)' }}>
                       Case Type
                     </p>
                     <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -368,7 +368,7 @@ export default function CaseTimelinePage() {
                   </div>
 
                   <div>
-                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-body)' }}>
                       Filing Date
                     </p>
                     <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -377,7 +377,7 @@ export default function CaseTimelinePage() {
                   </div>
 
                   <div>
-                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-body)' }}>
                       Projected Resolution
                     </p>
                     <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -386,7 +386,7 @@ export default function CaseTimelinePage() {
                   </div>
 
                   <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '16px' }}>
-                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-body)' }}>
                       Progress
                     </p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -409,7 +409,7 @@ export default function CaseTimelinePage() {
 
               {/* Milestone Timeline */}
               <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+                <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
                   Case Milestones
                 </h2>
 

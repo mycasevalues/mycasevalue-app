@@ -174,20 +174,20 @@ export default function CasesIndexPage() {
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
-            padding: '4px 10px', marginBottom: 12,
-            borderRadius: 999,
+            padding: '2px 8px', marginBottom: 12,
+            borderRadius: 3,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 11,
+            fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase',
             color: 'var(--chrome-bg, #1B2D45)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Case Intelligence
           </div>
           <h1 className="font-legal" style={{
-            fontSize: 'clamp(26px, 4vw, 32px)', fontWeight: 700,
-            color: 'var(--text-primary)', margin: '0 0 10px', letterSpacing: '-0.025em', lineHeight: 1.1,
+            fontSize: 'clamp(26px, 4vw, 28px)', fontWeight: 700,
+            color: 'var(--color-text-primary)', margin: '0 0 16px', letterSpacing: '-0.025em', lineHeight: 1.1,
           }}>
             Federal Case Analytics
           </h1>
@@ -417,7 +417,7 @@ export default function CasesIndexPage() {
                       background: isSelected ? 'var(--accent-primary-subtle, #FAF3E6)' : 'var(--card, #FFFFFF)',
                     }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8, paddingRight: 28 }}>
-                        <h2 className="font-legal" style={{ fontSize: 22, fontWeight: 600, color: 'var(--text-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
+                        <h2 className="font-ui" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', letterSpacing: '-0.3px' }}>
                           {category.label}
                         </h2>
                         <SaveButton
@@ -476,7 +476,19 @@ export default function CasesIndexPage() {
         {/* Most-Filed Case Types Section */}
         {filtered.length !== 0 && topFiledCases.length > 0 && (
           <div style={{ marginTop: 80 }}>
-            <h2 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 32, letterSpacing: '-0.3px' }}>
+            <div
+              style={{
+                fontSize: 10,
+                fontFamily: 'var(--font-mono)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: 'var(--color-text-muted)',
+                marginBottom: 8,
+              }}
+            >
+              Case Analytics
+            </div>
+            <h2 className="font-ui" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, letterSpacing: '-0.3px' }}>
               Most-Filed Case Types
             </h2>
             <div style={{ display: 'grid', gap: 12 }}>
@@ -511,7 +523,19 @@ export default function CasesIndexPage() {
         {/* Highest Win Rate Case Types Section */}
         {filtered.length !== 0 && topWinRateCases.length > 0 && (
           <div style={{ marginTop: 80 }}>
-            <h2 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 32, letterSpacing: '-0.3px' }}>
+            <div
+              style={{
+                fontSize: 10,
+                fontFamily: 'var(--font-mono)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: 'var(--color-text-muted)',
+                marginBottom: 8,
+              }}
+            >
+              Win Rate Analysis
+            </div>
+            <h2 className="font-ui" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, letterSpacing: '-0.3px' }}>
               Highest Win Rate Case Types
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
@@ -545,8 +569,20 @@ export default function CasesIndexPage() {
 
         {/* Quick Links Section */}
         {filtered.length !== 0 && (
-          <div style={{ marginTop: 80, marginBottom: 40 }}>
-            <h2 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 32, letterSpacing: '-0.3px' }}>
+          <div style={{ marginTop: 64, marginBottom: 48 }}>
+            <div
+              style={{
+                fontSize: 10,
+                fontFamily: 'var(--font-mono)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: 'var(--color-text-muted)',
+                marginBottom: 8,
+              }}
+            >
+              Navigation
+            </div>
+            <h2 className="font-ui" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, letterSpacing: '-0.3px' }}>
               Quick Links
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 24 }}>
@@ -610,7 +646,7 @@ export default function CasesIndexPage() {
       {/* CTA */}
       <div style={{ background: 'var(--card, #FFFFFF)', border: '1px solid var(--border-default)', padding: '60px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 className="font-legal" style={{ fontSize: 32, fontWeight: 600, color: 'var(--text-primary)', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
+          <h2 className="font-ui" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', letterSpacing: '-0.3px' }}>
             Ready to research your case?
           </h2>
           <p style={{ fontSize: 18, color: 'var(--text2, #42403C)', margin: '0 0 32px', lineHeight: 1.6 }}>

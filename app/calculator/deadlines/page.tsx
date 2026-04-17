@@ -171,7 +171,7 @@ export default function DeadlinesCalculatorPage() {
 
       {/* Main Content */}
       <div style={{ background: 'var(--color-surface-1)', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
 
           {/* Input Form */}
           <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>

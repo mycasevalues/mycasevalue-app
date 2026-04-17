@@ -350,8 +350,8 @@ export default function DistrictsPage() {
             }}>
               <thead>
                 <tr style={{
-                  background: 'var(--table-header-bg)',
-                  borderBottom: '2px solid var(--surface-border-strong)',
+                  background: 'var(--color-surface-1, #F4F3EF)',
+                  borderBottom: '1px solid var(--border-default)',
                 }}>
                   <th style={thStyle({ width: 280, textAlign: 'left' })}>District Name</th>
                   <th style={thStyle({ width: 72 })}>Code</th>
@@ -367,8 +367,8 @@ export default function DistrictsPage() {
                   <tr
                     key={row.code}
                     style={{
-                      borderBottom: '1px solid var(--surface-border)',
-                      background: i % 2 === 1 ? 'var(--table-row-alt)' : 'transparent',
+                      borderBottom: '1px solid var(--border-default)',
+                      background: i % 2 === 1 ? 'var(--color-surface-0, #FFFFFF)' : 'transparent',
                       transition: 'var(--transition-fast)',
                     }}
                   >
@@ -437,13 +437,15 @@ export default function DistrictsPage() {
           alignItems: 'center',
           justifyContent: 'space-between',
           marginTop: 12,
-          fontSize: 12,
+          fontSize: 10,
           fontFamily: 'var(--font-mono)',
-          color: 'var(--text-tertiary)',
+          color: 'var(--color-text-muted)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.08em',
         }}>
           <span>{ALL_ROWS.length} districts across {CIRCUITS_AVAILABLE.length} circuits</span>
-          <span style={{ letterSpacing: '0.05em' }}>
-            Source: FJC Integrated Database · CourtListener · PACER
+          <span style={{ letterSpacing: '0.08em' }}>
+            Source: Federal Judicial Center Integrated Database
           </span>
         </div>
       </div>
@@ -454,6 +456,18 @@ export default function DistrictsPage() {
         padding: '32px clamp(16px, 3vw, 48px)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div
+            style={{
+              fontSize: 10,
+              fontFamily: 'var(--font-mono)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              color: 'var(--color-text-muted)',
+              marginBottom: 8,
+            }}
+          >
+            Data Source
+          </div>
           <h2 style={{
             font: 'var(--type-section)',
             color: 'var(--text-primary)',
@@ -494,12 +508,13 @@ export default function DistrictsPage() {
 function thStyle(overrides: React.CSSProperties = {}): React.CSSProperties {
   return {
     padding: '8px 12px',
-    fontSize: 10,
+    fontSize: 11,
     fontFamily: 'var(--font-mono)',
     fontWeight: 600,
-    letterSpacing: '0.1em',
+    letterSpacing: '0.08em',
     textTransform: 'uppercase' as const,
-    color: 'var(--text-tertiary)',
+    color: 'var(--color-text-muted, var(--text-tertiary))',
+    backgroundColor: 'var(--color-surface-1, #F4F3EF)',
     whiteSpace: 'nowrap' as const,
     ...overrides,
   };

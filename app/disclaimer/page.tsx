@@ -55,7 +55,7 @@ export default function DisclaimerPage() {
           padding: '64px 24px',
         }}
       >
-        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ marginBottom: 16 }}>
             <span style={{
               display: 'inline-block',
@@ -110,7 +110,7 @@ export default function DisclaimerPage() {
 
       {/* Breadcrumb */}
       <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
             <a href="/" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)' }}>
               Home
@@ -122,7 +122,7 @@ export default function DisclaimerPage() {
       </div>
 
       {/* Content */}
-      <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '64px', paddingBottom: '64px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '64px', paddingBottom: '64px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           {/* Not Legal Advice */}
           <section>

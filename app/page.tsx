@@ -528,23 +528,24 @@ export default function HomePage() {
             <div style={{ marginTop: 4 }}>
               <div
                 style={{
+                  fontSize: 10,
+                  fontFamily: 'var(--font-mono)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  color: 'var(--text3, #78766C)',
+                  marginBottom: 8,
+                }}
+              >
+                Recent Precision Searches
+              </div>
+              <div
+                style={{
                   display: 'flex',
                   alignItems: 'baseline',
                   justifyContent: 'space-between',
                   marginBottom: 8,
                 }}
               >
-                <h3
-                  style={{
-                    fontSize: 13,
-                    fontFamily: 'var(--font-ui)',
-                    fontWeight: 600,
-                    color: 'var(--text1, #18181A)',
-                    margin: 0,
-                  }}
-                >
-                  Recent Precision Searches
-                </h3>
                 <Link
                   href="/dashboard"
                   style={{
@@ -552,6 +553,7 @@ export default function HomePage() {
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--link, #0A50A2)',
                     textDecoration: 'none',
+                    marginLeft: 'auto',
                   }}
                 >
                   View Research Path →
@@ -632,15 +634,15 @@ export default function HomePage() {
               <div
                 style={{
                   fontSize: 10,
+                  fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
+                  letterSpacing: '0.1em',
                   color: 'var(--text3, #78766C)',
-                  fontFamily: 'var(--font-ui)',
                   fontWeight: 600,
                   marginBottom: 6,
                 }}
               >
-                MY ALERTS
+                My Alerts
               </div>
               {[
                 'Employment cases, SDNY',
@@ -692,15 +694,15 @@ export default function HomePage() {
               <div
                 style={{
                   fontSize: 10,
+                  fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
+                  letterSpacing: '0.1em',
                   color: 'var(--text3, #78766C)',
-                  fontFamily: 'var(--font-ui)',
                   fontWeight: 600,
                   marginBottom: 6,
                 }}
               >
-                PLATFORM STATISTICS
+                Platform Statistics
               </div>
               {PLATFORM_STATS.map((stat) => (
                 <div

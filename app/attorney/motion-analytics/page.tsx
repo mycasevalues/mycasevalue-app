@@ -128,7 +128,7 @@ export default function MotionAnalyticsPage() {
               </svg>
             </div>
             <div>
-              <h1 className="font-legal" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+              <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
                 Win More Motions with Circuit-Specific Data
               </h1>
               <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
@@ -142,7 +142,7 @@ export default function MotionAnalyticsPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
         {/* Controls */}
         <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'flex-end' }}>
@@ -420,7 +420,7 @@ export default function MotionAnalyticsPage() {
                 <path d="M9 9h6M9 15h6" />
               </svg>
             </div>
-            <h2 className="font-legal" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+            <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Analyze Motion Success Rates
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>

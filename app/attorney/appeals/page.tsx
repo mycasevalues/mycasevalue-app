@@ -185,7 +185,7 @@ export default function AppealsPage() {
 
               {/* Filing Deadline Notice */}
               <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid var(--accent-primary)' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>Appeal Filing Deadline</h3>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>Appeal Filing Deadline</h3>
                 <p style={{ fontSize: '13px', color: 'var(--accent-primary-hover)', margin: 0, lineHeight: 1.6 }}>
                   Under FRAP Rule 4(a)(1)(A), a notice of appeal must be filed within <strong>30 days</strong> after entry of judgment. If the United States is a party, the deadline extends to <strong>60 days</strong>. Post-trial motions (FRCP 50(b), 52(b), 59) toll this deadline until the motion is decided.
                 </p>

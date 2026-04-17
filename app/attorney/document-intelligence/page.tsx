@@ -57,12 +57,12 @@ export default function DocumentIntelligencePage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontFamily: 'var(--font-ui)', fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 4px 0' }}>Document Intelligence</h1>
+          <h1 style={{ fontFamily: 'var(--font-ui)', fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px 0' }}>Document Intelligence</h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: 0 }}>AI-powered legal document analysis for case classification and insights</p>
         </div>
       </div>
 
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '32px 20px' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '32px 24px' }}>
         <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', marginBottom: '32px' }}>
           Upload a legal document — complaint, motion, or brief — to receive an AI-powered analysis including case type classification, key claims identified, relevant NOS codes, and comparable federal court outcomes.
         </p>
@@ -78,7 +78,7 @@ export default function DocumentIntelligencePage() {
           <button
             onClick={handleUpload}
             disabled={!file || loading}
-            style={{ padding: '0 28px', height: '48px', background: !file || loading ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
+            style={{ padding: '0 28px', height: '48px', background: !file || loading ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '4px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
           >
             {loading ? 'Analyzing...' : 'Analyze Document'}
           </button>

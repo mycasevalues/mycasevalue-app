@@ -184,7 +184,7 @@ export default function DemandLetterPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Demand Letters That Get Results
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -198,7 +198,7 @@ export default function DemandLetterPage() {
         <div style={{ display: 'grid', gridTemplateColumns: letterText ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
           <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
               Case Information
             </h2>
 
@@ -374,7 +374,7 @@ export default function DemandLetterPage() {
                   width: '100%',
                   padding: '16px',
                   backgroundColor: loading || !caseType || !briefFacts.trim() ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: 'var(--color-surface-0)',
+                  color: 'var(--color-text-primary)',
                   border: 'none',
                   borderRadius: '4px',
                   fontSize: '15px',
@@ -396,7 +396,7 @@ export default function DemandLetterPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', position: 'relative' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: 8 }}>
-                  <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                  <h2 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
                     Generated Demand Letter
                     {loading && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
@@ -407,7 +407,7 @@ export default function DemandLetterPage() {
                       style={{
                         padding: '8px 12px',
                         background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
-                        color: 'var(--color-surface-0)',
+                        color: 'var(--color-text-primary)',
                         border: 'none',
                         borderRadius: '4px',
                         fontSize: '12px',
@@ -426,7 +426,7 @@ export default function DemandLetterPage() {
                       style={{
                         padding: '8px 12px',
                         background: 'var(--accent-primary-hover)',
-                        color: 'var(--color-surface-0)',
+                        color: 'var(--color-text-primary)',
                         border: 'none',
                         borderRadius: '4px',
                         fontSize: '12px',
@@ -507,7 +507,7 @@ export default function DemandLetterPage() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <h3 style={{ fontSize: '15px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '15px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 AI-Powered Analysis
               </h3>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -519,7 +519,7 @@ export default function DemandLetterPage() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <h3 style={{ fontSize: '15px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '15px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Professional Template
               </h3>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -531,7 +531,7 @@ export default function DemandLetterPage() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <h3 style={{ fontSize: '15px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '15px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Case-Specific
               </h3>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>

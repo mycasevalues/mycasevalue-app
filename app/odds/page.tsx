@@ -1206,17 +1206,17 @@ export default function OddsPage() {
                     Attorney Representation Impact
                   </h3>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
-                    <div style={{ padding: 16, background: 'rgba(34,197,94,0.1)', border: '1px solid var(--data-positive, #176438)', borderRadius: 4, textAlign: 'center' }}>
+                    <div style={{ padding: 24, background: 'rgba(34,197,94,0.1)', border: '1px solid var(--data-positive, #176438)', borderRadius: 4, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>With Attorney</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>{attyData.rwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.rn ?? 0).toLocaleString()} cases</div>
                     </div>
-                    <div style={{ padding: 16, background: 'rgba(239,68,68,0.06)', border: '1px solid var(--data-negative, #B01E1E)', borderRadius: 4, textAlign: 'center' }}>
+                    <div style={{ padding: 24, background: 'rgba(239,68,68,0.06)', border: '1px solid var(--data-negative, #B01E1E)', borderRadius: 4, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Pro Se</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>{attyData.pwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.pn ?? 0).toLocaleString()} cases</div>
                     </div>
-                    <div style={{ padding: 16, background: 'rgba(59,130,246,0.08)', border: '1px solid var(--accent-primary)', borderRadius: 4, textAlign: 'center' }}>
+                    <div style={{ padding: 24, background: 'rgba(59,130,246,0.08)', border: '1px solid var(--accent-primary)', borderRadius: 4, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Advantage</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>+{attyData.rwr - attyData.pwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>with representation</div>

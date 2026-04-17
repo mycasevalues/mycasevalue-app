@@ -507,7 +507,7 @@ export default function PlatformPage() {
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }} />
-          <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
               padding: '4px 10px', marginBottom: 16,
@@ -547,7 +547,7 @@ export default function PlatformPage() {
 
         {/* Stats Bar */}
         <div style={{ padding: '60px 24px', background: 'var(--color-surface-1)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div className="stats-bar">
               <div className="stat-item">
                 <div className="stat-number">5.1M+</div>
@@ -571,8 +571,8 @@ export default function PlatformPage() {
 
         {/* Technology Stack */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -666,8 +666,8 @@ export default function PlatformPage() {
 
         {/* Data Pipeline */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -725,8 +725,8 @@ export default function PlatformPage() {
 
         {/* Competitive Analysis */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -818,8 +818,8 @@ export default function PlatformPage() {
 
         {/* Features */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -871,8 +871,8 @@ export default function PlatformPage() {
 
         {/* Market Opportunity */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -954,8 +954,8 @@ export default function PlatformPage() {
 
         {/* Roadmap */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -1018,8 +1018,8 @@ export default function PlatformPage() {
 
         {/* The Problem Section */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -1080,8 +1080,8 @@ export default function PlatformPage() {
 
         {/* The Data Section */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -1169,8 +1169,8 @@ export default function PlatformPage() {
 
         {/* AI Layer Section */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -1234,8 +1234,8 @@ export default function PlatformPage() {
 
         {/* Tools Section */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-1)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -1315,8 +1315,8 @@ export default function PlatformPage() {
 
         {/* Audiences Section */}
         <div style={{ padding: '80px 24px', background: 'var(--color-surface-0)' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div style={{ marginBottom: 60 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ marginBottom: 48 }}>
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
@@ -1385,7 +1385,7 @@ export default function PlatformPage() {
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }} />
-          <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
             <h2 style={{
               fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(24px, 3.5vw, 32px)',

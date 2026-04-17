@@ -442,12 +442,12 @@ async function CategoryPage({
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
-            padding: '4px 10px', marginBottom: 12,
-            borderRadius: 999,
+            padding: '2px 8px', marginBottom: 12,
+            borderRadius: 3,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 11,
+            fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase',
             color: 'var(--link, #0A50A2)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
@@ -725,10 +725,10 @@ async function CategoryPage({
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
-            fontSize: '28px',
+            fontSize: 20,
             fontWeight: 600,
             color: 'var(--color-text-primary)',
-            margin: '0 0 24px 0',
+            margin: '0 0 12px 0',
             fontFamily: 'var(--font-ui)',
             letterSpacing: '-0.3px',
           }}>

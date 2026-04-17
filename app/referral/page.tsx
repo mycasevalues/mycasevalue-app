@@ -68,7 +68,7 @@ export default function ReferralPage() {
             <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Home</Link>
             {' > Referral Program'}
           </div>
-          <h1 className="font-legal" style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 8px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
             Referral Program
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>

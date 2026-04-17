@@ -62,11 +62,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 /* ── Shared styles ── */
 const sectionLabel: React.CSSProperties = {
-  fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.05em',
+  fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.05em',
   color: 'var(--text3)', fontFamily: 'var(--font-ui)', fontWeight: 600,
 };
 const dataAttrStyle: React.CSSProperties = {
-  fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--text4)',
+  fontSize: 11, fontFamily: 'var(--font-ui)', color: 'var(--text4)',
   marginTop: 8, lineHeight: 1.5,
 };
 
@@ -185,8 +185,8 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   {partyLabel !== '—' && (
                     <span style={{
                       display: 'inline-block', marginLeft: 6, padding: '1px 6px',
-                      background: partyColor, color: 'var(--card, #FFFFFF)', borderRadius: 2,
-                      fontSize: 10, fontWeight: 600,
+                      background: partyColor, color: 'var(--card, #FFFFFF)', borderRadius: 3,
+                      fontSize: 11, fontWeight: 600,
                     }}>
                       {judge.party_of_appointing_president}
                     </span>
@@ -209,7 +209,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   <span style={{ color: 'var(--bdr-strong)' }}>·</span>
                   <span style={{
                     padding: '1px 6px', background: 'var(--pos-bg)', color: 'var(--pos)',
-                    borderRadius: 2, fontSize: 10, fontWeight: 600, fontFamily: 'var(--font-ui)',
+                    borderRadius: 3, fontSize: 11, fontWeight: 600, fontFamily: 'var(--font-ui)',
                   }}>
                     Active
                   </span>
@@ -221,8 +221,8 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                     {notedFor.map((tag: string, i: number) => (
                       <span key={i} style={{
                         height: 20, padding: '0 8px', display: 'inline-flex', alignItems: 'center',
-                        border: '1px solid var(--bdr-strong)', borderRadius: 2,
-                        fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--text2)',
+                        border: '1px solid var(--bdr-strong)', borderRadius: 3,
+                        fontSize: 11, fontFamily: 'var(--font-ui)', color: 'var(--text2)',
                       }}>
                         {tag}
                       </span>
@@ -236,7 +236,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                 <button type="button" style={{
                   height: 30, padding: '0 14px', background: 'var(--gold)', color: 'var(--card, #FFFFFF)',
                   fontSize: 11, fontWeight: 600, fontFamily: 'var(--font-ui)',
-                  border: 'none', borderRadius: 2, cursor: 'pointer', whiteSpace: 'nowrap',
+                  border: 'none', borderRadius: 3, cursor: 'pointer', whiteSpace: 'nowrap',
                 }}>
                   Download Judge Report
                 </button>
@@ -244,7 +244,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                 <button type="button" style={{
                   height: 30, padding: '0 14px', background: 'transparent', color: 'var(--link)',
                   fontSize: 11, fontWeight: 600, fontFamily: 'var(--font-ui)',
-                  border: '1px solid var(--link)', borderRadius: 2, cursor: 'pointer', whiteSpace: 'nowrap',
+                  border: '1px solid var(--link)', borderRadius: 3, cursor: 'pointer', whiteSpace: 'nowrap',
                 }}>
                   Add to Folder
                 </button>
@@ -258,16 +258,16 @@ export default async function JudgeProfilePage({ params }: PageProps) {
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{
               background: 'var(--ab)', border: '1px solid var(--ab-border)',
-              borderRadius: 2, padding: '8px 12px',
+              borderRadius: 3, padding: '8px 12px',
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ fontSize: 10, fontFamily: 'var(--font-ui)', fontWeight: 700, color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <span style={{ fontSize: 11, fontFamily: 'var(--font-ui)', fontWeight: 700, color: 'var(--text3)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     CaseCite™ — All Opinions — Hon. {judge.last_name || judge.full_name}
                   </span>
                   <CaseCiteFlagGroup flags={['green', 'blue']} size={11} />
                 </div>
-                <Link href={`/judges/${judgeId}#casecite`} style={{ fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--link)', textDecoration: 'none' }}>
+                <Link href={`/judges/${judgeId}#casecite`} style={{ fontSize: 11, fontFamily: 'var(--font-ui)', color: 'var(--link)', textDecoration: 'none' }}>
                   View full CaseCite history →
                 </Link>
               </div>
@@ -296,7 +296,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               { label: 'Settlement Rate', value: aggregated.settlementRate ? `${aggregated.settlementRate.toFixed(0)}%` : '—', accent: 'var(--pos)' },
             ].map(stat => (
               <div key={stat.label} style={{
-                background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
+                background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 3,
                 padding: '8px 12px', position: 'relative', overflow: 'hidden',
               }}>
                 <div style={{ position: 'absolute', left: 0, top: 0, width: 3, height: '100%', background: stat.accent }} />
@@ -346,7 +346,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               padding: '0 14px', background: 'var(--tbl-hdr)', borderBottom: '1px solid var(--bdr)', marginBottom: 4,
             }}>
               <span style={{ ...sectionLabel }}>Page Contents</span>
-              <span style={{ fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--link)', cursor: 'pointer' }}>Print</span>
+              <span style={{ fontSize: 11, fontFamily: 'var(--font-ui)', color: 'var(--link)', cursor: 'pointer' }}>Print</span>
             </div>
             {[
               { label: 'Intelligence Summary', active: true, sub: false },
@@ -394,11 +394,11 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   <h2 style={{ fontSize: 12, fontFamily: 'var(--font-ui)', fontWeight: 600, color: 'var(--text1)', margin: '0 0 2px' }}>
                     Intelligence Summary
                   </h2>
-                  <span style={{ fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--text3)' }}>
+                  <span style={{ fontSize: 11, fontFamily: 'var(--font-ui)', color: 'var(--text3)' }}>
                     {aggregated.totalCases || 0} cases · <Link href="/methodology" style={{ color: 'var(--text3)', textDecoration: 'none' }}>Methodology</Link>
                   </span>
                 </div>
-                <span style={{ fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--link)', cursor: 'pointer' }}>
+                <span style={{ fontSize: 11, fontFamily: 'var(--font-ui)', color: 'var(--link)', cursor: 'pointer' }}>
                   Add to Research Organizer
                 </span>
               </div>
@@ -419,7 +419,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                     </div>
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 3 }}>
-                        <span style={{ fontSize: 10, fontFamily: 'var(--font-ui)', fontWeight: 600, textTransform: 'uppercase', color: 'var(--link)' }}>
+                        <span style={{ fontSize: 11, fontFamily: 'var(--font-ui)', fontWeight: 600, textTransform: 'uppercase', color: 'var(--link)' }}>
                           {item.topic}
                         </span>
                         <span style={{ fontSize: 9, fontFamily: 'var(--font-mono)', color: 'var(--text3)' }}>
@@ -463,7 +463,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                           width: 8, height: 8, borderRadius: '50%',
                           border: '2px solid var(--link)', background: 'var(--card)',
                         }} />
-                        <div style={{ fontSize: 10, fontFamily: 'var(--font-mono)', color: 'var(--text3)', marginBottom: 2 }}>{entry.date}</div>
+                        <div style={{ fontSize: 11, fontFamily: 'var(--font-mono)', color: 'var(--text3)', marginBottom: 2 }}>{entry.date}</div>
                         <div style={{ fontSize: 12, fontFamily: 'var(--font-legal)', color: 'var(--text1)' }}>{entry.title}</div>
                         <div style={{ fontSize: 11, fontFamily: 'var(--font-ui)', color: 'var(--text3)' }}>{entry.subtitle}</div>
                       </div>
@@ -556,7 +556,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               ].map(row => (
                 <div key={row.label} style={{
                   display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 4, padding: '3px 0',
-                  borderBottom: '1px solid var(--bdr)', fontSize: 10,
+                  borderBottom: '1px solid var(--bdr)', fontSize: 11,
                 }}>
                   <span style={{ fontFamily: 'var(--font-ui)', color: 'var(--text3)' }}>{row.label}</span>
                   <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text1)', textAlign: 'right' }}>{row.judge}</span>
@@ -590,7 +590,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
             <button type="button" style={{
               width: '100%', height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center',
               background: 'var(--gold)', color: 'var(--card, #FFFFFF)', fontSize: 11, fontWeight: 600,
-              fontFamily: 'var(--font-ui)', border: 'none', borderRadius: 2, cursor: 'pointer', marginBottom: 6,
+              fontFamily: 'var(--font-ui)', border: 'none', borderRadius: 3, cursor: 'pointer', marginBottom: 6,
             }}>
               Download Report
             </button>
@@ -599,7 +599,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
             <button type="button" style={{
               width: '100%', height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center',
               background: 'transparent', color: 'var(--link)', fontSize: 11, fontWeight: 600,
-              fontFamily: 'var(--font-ui)', border: '1px solid var(--link)', borderRadius: 2, cursor: 'pointer',
+              fontFamily: 'var(--font-ui)', border: '1px solid var(--link)', borderRadius: 3, cursor: 'pointer',
             }}>
               Add to Keep List
             </button>

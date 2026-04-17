@@ -253,7 +253,7 @@ export default function DistrictHeatmapPage() {
       <div style={{ backgroundColor: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header */}
         <header style={{ backgroundColor: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '16px 24px' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16px 24px' }}>
             {/* Breadcrumb */}
             <nav style={{ fontSize: '14px', color: 'var(--color-surface-0)', marginBottom: '16px', opacity: 0.85, fontFamily: 'var(--font-body)' }}>
               <a href="/" style={{ color: 'var(--color-surface-0)', textDecoration: 'none' }}>Home</a>
@@ -307,7 +307,7 @@ export default function DistrictHeatmapPage() {
         </header>
 
         {/* Main Content */}
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 16px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 16px' }}>
           {/* Summary Stats */}
           <div
             style={{
@@ -983,7 +983,7 @@ export default function DistrictHeatmapPage() {
         </div>
 
         {/* Related Pages */}
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 16px', backgroundColor: 'var(--color-surface-1)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 16px', backgroundColor: 'var(--color-surface-1)' }}>
           <h2
             style={{
               fontSize: '20px',
@@ -1188,7 +1188,7 @@ export default function DistrictHeatmapPage() {
             backgroundColor: 'var(--color-surface-0)',
           }}
         >
-          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', textAlign: 'center', margin: 0, fontFamily: 'var(--font-body)' }}>
               Disclaimer: The win rate data presented on this page is based on historical federal
               court records and is provided for informational purposes only. This information does

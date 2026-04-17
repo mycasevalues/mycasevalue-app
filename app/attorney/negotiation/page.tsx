@@ -135,7 +135,7 @@ export default function NegotiationPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', margin: '0 0 8px' }}>Negotiate from Strength with Real Trial Data</h1>
+          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', margin: '0 0 16px' }}>Negotiate from Strength with Real Trial Data</h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
             Benchmark offers against 100K+ settlements, calculate your BATNA, and execute a data-backed negotiation strategy
           </p>
@@ -199,7 +199,7 @@ export default function NegotiationPage() {
                   ))}
                 </div>
               </div>
-              <button type="submit" disabled={!caseType || !currentOffer} style={{ width: '100%', padding: '16px', backgroundColor: !caseType || !currentOffer ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: !caseType || !currentOffer ? 'not-allowed' : 'pointer' }}>
+              <button type="submit" disabled={!caseType || !currentOffer} style={{ width: '100%', padding: '16px', backgroundColor: !caseType || !currentOffer ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '4px', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: !caseType || !currentOffer ? 'not-allowed' : 'pointer' }}>
                 Analyze Negotiation Position
               </button>
             </form>
@@ -258,7 +258,7 @@ export default function NegotiationPage() {
 
               {/* Timing */}
               <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>Settlement Timing Intelligence</h3>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>Settlement Timing Intelligence</h3>
                 <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>{r.settlementTiming}</p>
               </div>
 

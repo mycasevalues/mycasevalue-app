@@ -30,7 +30,7 @@ type AvailableState = { id: string; label: string };
 
 const StatBadge = ({ label, value, color }: { label: string; value: string; color: string }) => (
   <div style={{ textAlign: 'center' }}>
-    <div className="font-mono" style={{ fontSize: '22px', fontWeight: 600, color }}>{value}</div>
+    <div className="font-mono" style={{ fontSize: 20, fontWeight: 600, color }}>{value}</div>
     <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '2px' }}>{label}</div>
   </div>
 );
@@ -167,7 +167,7 @@ export default function JudgeIntelligencePage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 20px' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 24px' }}>
         {/* Controls */}
         <div style={{ display: 'flex', gap: '16px', marginBottom: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
           <div style={{ flex: '1 1 240px' }}>
@@ -259,7 +259,7 @@ export default function JudgeIntelligencePage() {
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
               </svg>
             </div>
-            <h2 className="font-legal" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+            <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Select a District
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto' }}>

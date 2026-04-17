@@ -418,7 +418,7 @@ export default async function DashboardPage() {
           marginBottom: '24px',
           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div className="breadcrumb">
               <Link href="/" style={{ color: 'var(--color-surface-0)', textDecoration: 'none', transition: 'color 0.2s ease' }}>Home</Link>
               <span>/</span>
@@ -462,7 +462,7 @@ export default async function DashboardPage() {
 
         {/* Metrics Overview Bar */}
         <div style={{ padding: '0 20px', marginBottom: '24px' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
               {/* Total Cases Analyzed */}
               <div style={{ backgroundColor: 'var(--card, #FFFFFF)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
@@ -497,7 +497,7 @@ export default async function DashboardPage() {
 
         {/* Free During Beta Banner */}
         <div style={{ padding: '0 20px', marginBottom: '24px' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div className="free-banner">
               <div>
                 <p className="free-banner-text">
@@ -510,7 +510,7 @@ export default async function DashboardPage() {
         </div>
 
         <div style={{ padding: '0 20px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
 
           {/* Quick Stats Overview Bar */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '16px', marginBottom: '24px' }}>

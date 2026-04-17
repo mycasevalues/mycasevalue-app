@@ -108,7 +108,7 @@ export default async function Image({
           style={{
             display: 'flex',
             flexDirection: 'column',
-            marginBottom: '40px',
+            marginBottom: '48px',
             zIndex: 2,
           }}
         >
@@ -149,7 +149,7 @@ export default async function Image({
               fontSize: '64px',
               fontWeight: '800',
               lineHeight: '1.2',
-              maxWidth: '900px',
+              maxWidth: '1200px',
               letterSpacing: '-1px',
               color: 'var(--color-text-inverse, #fff)',
             }}

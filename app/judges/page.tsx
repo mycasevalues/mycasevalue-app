@@ -93,12 +93,12 @@ export default async function JudgesPage() {
             {/* Eyebrow */}
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
-              padding: '4px 8px', marginBottom: 12,
-              borderRadius: 2,
+              padding: '2px 8px', marginBottom: 12,
+              borderRadius: 3,
               border: '1px solid var(--bdr-strong, #C8C4B8)',
               background: 'var(--tbl-hdr, #EDEAE4)',
-              fontFamily: 'var(--font-ui)', fontSize: 10,
-              fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const,
+              fontFamily: 'var(--font-mono)', fontSize: 11,
+              fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' as const,
               color: 'var(--text3, #78766C)',
             }}>
               <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--pos, #176438)' }} />
@@ -106,8 +106,8 @@ export default async function JudgesPage() {
             </div>
 
             <h1 style={{
-              fontSize: 21, fontWeight: 700, marginBottom: 8,
-              color: 'var(--text1, #18181A)', letterSpacing: '-0.01em', fontFamily: 'var(--font-legal)', lineHeight: 1.2,
+              fontSize: 28, fontWeight: 700, marginBottom: 16,
+              color: 'var(--color-text-primary)', letterSpacing: '-0.01em', fontFamily: 'var(--font-legal)', lineHeight: 1.2,
             }}>
               Judicial Analytics
             </h1>
@@ -130,17 +130,16 @@ export default async function JudgesPage() {
         {/* Advanced Metrics with Radar Preview */}
         <section style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--bdr, #E2DFD8)', background: 'var(--card, #FFFFFF)', marginBottom: 48, marginTop: 48, position: 'relative' }}>
           <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 6,
-            padding: '4px 8px', marginBottom: 12,
-            borderRadius: 2, background: 'var(--tbl-hdr, #EDEAE4)',
-            border: '1px solid var(--bdr-strong, #C8C4B8)',
-            fontFamily: 'var(--font-ui)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const,
+            fontSize: 10,
+            fontFamily: 'var(--font-mono)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
             color: 'var(--text3, #78766C)',
+            marginBottom: 8,
           }}>
             Advanced Metrics
           </div>
-          <h2 style={{ fontSize: 17, fontWeight: 600, color: 'var(--text1, #18181A)', fontFamily: 'var(--font-legal)', marginBottom: 8, letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 12, letterSpacing: '-0.01em' }}>
             Analytics Radar — Multi-dimensional Profiles
           </h2>
           <p style={{ fontSize: 12, color: 'var(--text2, #42403C)', fontFamily: 'var(--font-ui)', maxWidth: 680, margin: '0 0 24px', lineHeight: 1.6 }}>
@@ -152,8 +151,8 @@ export default async function JudgesPage() {
         </section>
 
         {/* Disclaimer */}
-        <div style={{ padding: '12px 16px', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: 2, background: 'var(--tbl-hdr, #EDEAE4)' }}>
-          <h3 style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.07em', color: 'var(--text3, #78766C)', fontFamily: 'var(--font-ui)', marginBottom: 8 }}>
+        <div style={{ padding: '12px 16px', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: 3, background: 'var(--tbl-hdr, #EDEAE4)' }}>
+          <h3 style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text3, #78766C)', fontFamily: 'var(--font-mono)', marginBottom: 8 }}>
             Data Methodology
           </h3>
           <p style={{ fontSize: 11, lineHeight: 1.6, color: 'var(--text3, #78766C)', fontFamily: 'var(--font-ui)', margin: 0 }}>

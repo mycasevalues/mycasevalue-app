@@ -200,7 +200,7 @@ export default function AccountPage() {
                 Account
               </span>
             </div>
-            <h1 className="font-legal" style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 8px 0' }}>
+            <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
               Account Settings
             </h1>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
@@ -234,7 +234,7 @@ export default function AccountPage() {
               Account
             </span>
           </div>
-          <h1 className="font-legal" style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 8px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
             Account Settings
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
@@ -365,7 +365,7 @@ export default function AccountPage() {
             </div>
 
             {planInfo?.grantedAt && (
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Member since {new Date(planInfo.grantedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
@@ -387,7 +387,7 @@ export default function AccountPage() {
 
           {/* API Key Management */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               API Keys
             </h2>
             <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0', lineHeight: 1.5 }}>
@@ -402,7 +402,7 @@ export default function AccountPage() {
 
             {newApiKey && (
               <div style={{ padding: '16px', borderRadius: '4px', marginBottom: '16px', backgroundColor: 'rgba(59,130,246,0.06)', border: '1px solid var(--link-light, #BAE6FD)' }}>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 8px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 16px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Your New API Key (copy now)
                 </p>
                 <code style={{ display: 'block', padding: '8px 12px', backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '13px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', wordBreak: 'break-all', border: '1px solid var(--border-default)' }}>

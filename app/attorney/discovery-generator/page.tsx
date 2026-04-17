@@ -153,7 +153,7 @@ export default function DiscoveryGeneratorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', margin: '0 0 8px', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
             Draft Discovery Requests in Minutes, Not Hours
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
@@ -167,7 +167,7 @@ export default function DiscoveryGeneratorPage() {
         <div style={{ display: 'grid', gridTemplateColumns: hasAnyText ? '340px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
           <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
               Case Details
             </h2>
             <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -284,7 +284,7 @@ export default function DiscoveryGeneratorPage() {
               {/* Content */}
               <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: 8 }}>
-                  <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                  <h2 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
                     {TABS.find(t => t.key === activeTab)?.label}
                     {loading && activeTab && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>

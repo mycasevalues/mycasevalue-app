@@ -122,7 +122,7 @@ export default function NosExplorerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Header */}
       <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--accent-primary)' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
           <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Home</Link>
@@ -149,7 +149,7 @@ export default function NosExplorerPage() {
       </div>
 
       {/* Main Content */}
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '32px 24px 48px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 24px 48px' }}>
         <NosExplorerClient data={nosData} />
 
         {/* What are NOS Codes? */}

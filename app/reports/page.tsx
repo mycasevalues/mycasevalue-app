@@ -76,9 +76,9 @@ export default function ReportsPage() {
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
       {/* Dark Navy Header */}
       <div style={{ backgroundColor: 'var(--accent-primary)', padding: '40px 24px', marginBottom: '32px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <h1 className="font-legal" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+            <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               My Reports
             </h1>
             <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '4px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' }}>
@@ -99,7 +99,7 @@ export default function ReportsPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
 
         {/* "All Reports Free During Beta" Banner */}
         <div style={{

@@ -171,7 +171,7 @@ export default async function ReportPage({
       if (!allowed) {
         return (
           <div style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
-            <h1 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '12px', color: 'var(--color-text-primary)' }}>Daily limit reached</h1>
+            <h1 style={{ fontSize: 28, fontWeight: 600, marginBottom: 16, color: 'var(--color-text-primary)' }}>Daily limit reached</h1>
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
             <a href="/pricing" style={{ padding: '12px 28px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '20px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
             <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
@@ -367,7 +367,7 @@ export default async function ReportPage({
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }} />
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(24px, 4vw, 32px) 24px', position: 'relative' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(24px, 4vw, 32px) 24px', position: 'relative' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 13, color: '#B0B8C1', fontFamily: 'var(--font-body)', marginBottom: '24px', letterSpacing: '0.3px' }}>
             <Link href="/" className="report-breadcrumb-link">Home</Link>
             <span>/</span>
@@ -399,7 +399,7 @@ export default async function ReportPage({
 
       {/* White Subheader Section */}
       <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
           <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: '0 0 20px', lineHeight: 1.7, fontWeight: 500 }}>
             Based on {totalCases ? totalCases.toLocaleString() : 'thousands of'} federal cases · {districtLabel} · Public court records
             {categoryLabel ? ` · ${categoryLabel}` : ''}
@@ -424,7 +424,7 @@ export default async function ReportPage({
         </div>
       </div>
 
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(24px, 4vw, 40px) 24px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(24px, 4vw, 40px) 24px' }}>
         {/* ═══ FREE: Win Rate Analysis ═══ */}
         <section style={{
           background: 'var(--color-surface-0)',

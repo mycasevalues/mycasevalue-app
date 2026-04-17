@@ -27,9 +27,9 @@ export default function BulkAnalysisPage() {
           <h1
             style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: '26px',
+              fontSize: '28px',
               fontWeight: 600,
-              color: 'var(--color-surface-0)',
+              color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
             }}
           >
@@ -41,7 +41,7 @@ export default function BulkAnalysisPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
         <BulkAnalysisTool />
       </div>
     </div>

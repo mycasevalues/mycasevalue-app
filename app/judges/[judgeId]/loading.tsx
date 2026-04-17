@@ -42,7 +42,7 @@ export default function LoadingPage() {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '16px',
-            marginBottom: '40px',
+            marginBottom: '48px',
           }}
         >
           {Array.from({ length: 4 }).map((_, i) => (
@@ -55,7 +55,7 @@ export default function LoadingPage() {
         </div>
 
         {/* Radar chart skeleton */}
-        <div style={{ background: 'var(--card, #FFFFFF)', padding: '32px', borderRadius: '4px', border: '1px solid var(--bdr, #E2DFD8)', marginBottom: '40px' }}>
+        <div style={{ background: 'var(--card, #FFFFFF)', padding: '32px', borderRadius: '4px', border: '1px solid var(--bdr, #E2DFD8)', marginBottom: '48px' }}>
           <div style={{ ...shimmerStyle, height: '20px', width: '150px', borderRadius: '4px', marginBottom: '16px' }} />
           <div style={{ ...shimmerStyle, height: '340px', width: '100%', borderRadius: '4px' }} />
         </div>

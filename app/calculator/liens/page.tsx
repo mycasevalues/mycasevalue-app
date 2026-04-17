@@ -75,7 +75,7 @@ export default function LienCalculatorPage() {
 
       {/* Main Content */}
       <div style={{ background: 'var(--color-surface-1)', minHeight: '60vh', padding: 'clamp(24px, 5vw, 48px) clamp(16px, 4vw, 48px)' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <LienCalculator />
         </div>
       </div>

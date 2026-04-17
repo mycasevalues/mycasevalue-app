@@ -1413,7 +1413,7 @@ export default async function NOSPage({ params }: PageProps) {
       {/* CTA Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 text-center" style={{ background: 'var(--color-surface-0)', borderTop: '1px solid var(--border-default)' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 style={{ fontSize: '28px', fontWeight: 600, margin: '0 0 12px 0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, margin: '0 0 12px 0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Research Your {nosInfo.label} Case
           </h2>
           <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>

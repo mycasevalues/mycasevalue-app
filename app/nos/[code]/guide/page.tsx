@@ -98,7 +98,7 @@ export default async function GuidePage({ params }: PageProps) {
   const duration = realData?.mo || null;
 
   return (
-    <div style={{ maxWidth: '900px', margin: '0 auto', padding: '60px 30px' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 30px' }}>
       {/* Header */}
       <h1 style={{
         fontSize: '2.5rem',

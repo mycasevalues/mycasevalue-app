@@ -205,10 +205,10 @@ export default function CasePredictorPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 20px' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 24px' }}>
         {/* How It Works Section */}
         <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '32px' }}>
-          <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
+          <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
             How It Works
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
@@ -217,7 +217,7 @@ export default function CasePredictorPage() {
                 1
               </div>
               <div>
-                <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+                <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
                   Enter Case Details
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
@@ -230,7 +230,7 @@ export default function CasePredictorPage() {
                 2
               </div>
               <div>
-                <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+                <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
                   AI Analysis
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
@@ -243,7 +243,7 @@ export default function CasePredictorPage() {
                 3
               </div>
               <div>
-                <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+                <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
                   Get Insights
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0 }}>
@@ -256,30 +256,30 @@ export default function CasePredictorPage() {
 
         {/* Data-Driven Insights */}
         <div style={{ background: 'linear-gradient(135deg, var(--accent-primary) 0%, #003366 100%)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '32px', color: 'var(--color-text-inverse)' }}>
-          <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 24px' }}>
+          <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 24px' }}>
             Federal Court Data at Your Fingertips
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)' }}>
-              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 8px' }}>
+              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 16px' }}>
                 5.1M+
               </div>
               <div style={{ fontSize: '13px', color: '#B0B5BA' }}>Federal cases analyzed</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)' }}>
-              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 8px' }}>
+              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 16px' }}>
                 84
               </div>
               <div style={{ fontSize: '13px', color: '#B0B5BA' }}>Nature of suit codes</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)' }}>
-              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 8px' }}>
+              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 16px' }}>
                 All 50
               </div>
               <div style={{ fontSize: '13px', color: '#B0B5BA' }}>States covered</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)' }}>
-              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 8px' }}>
+              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 16px' }}>
                 AI-Powered
               </div>
               <div style={{ fontSize: '13px', color: '#B0B5BA' }}>Predictions & analysis</div>
@@ -290,7 +290,7 @@ export default function CasePredictorPage() {
         <div style={{ display: 'grid', gridTemplateColumns: p ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
           <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
+            <h2 className="font-ui" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Case Details
             </h2>
 
@@ -610,7 +610,7 @@ export default function CasePredictorPage() {
 
         {/* Related Attorney Tools Section */}
         <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '2px solid var(--border-default)' }}>
-          <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
+          <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
             Related Attorney Tools
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
@@ -621,7 +621,7 @@ export default function CasePredictorPage() {
                     <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
                   </svg>
                 </div>
-                <h3 className="font-legal" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+                <h3 className="font-legal" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
                   Judge Intelligence
                 </h3>
                 <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>
@@ -638,7 +638,7 @@ export default function CasePredictorPage() {
                     <circle cx="12" cy="12" r="2" />
                   </svg>
                 </div>
-                <h3 className="font-legal" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+                <h3 className="font-legal" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
                   Venue Optimizer
                 </h3>
                 <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>

@@ -119,7 +119,7 @@ export default function VenueOptimizerPage() {
               </svg>
             </div>
             <div>
-              <h1 className="font-legal" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+              <h1 className="font-legal" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
                 Pick the Court That Wins Your Case
               </h1>
             </div>
@@ -127,7 +127,7 @@ export default function VenueOptimizerPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 20px' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 24px' }}>
         {/* Controls */}
         <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'flex-end' }}>
@@ -218,7 +218,7 @@ export default function VenueOptimizerPage() {
             {/* Venue Rankings Table */}
             <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
-                <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+                <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
                   Venue Rankings — {data.caseType}
                 </h2>
                 <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '4px 0 0' }}>
@@ -317,7 +317,7 @@ export default function VenueOptimizerPage() {
                 <circle cx="12" cy="12" r="2" />
               </svg>
             </div>
-            <h2 className="font-legal" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+            <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Find Your Optimal Venue
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>

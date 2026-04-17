@@ -135,10 +135,10 @@ export default function PressPage() {
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
           }} />
-          <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
-              padding: '4px 10px', marginBottom: 16,
+              padding: '2px 8px', marginBottom: 16,
               borderRadius: 999,
               border: '1px solid rgba(59,130,246,0.2)',
               background: 'rgba(59,130,246,0.08)',
@@ -189,7 +189,7 @@ export default function PressPage() {
         >
           <div
             style={{
-              maxWidth: 1280,
+              maxWidth: 1200,
               margin: '0 auto',
               paddingLeft: '24px',
               paddingRight: '24px',
@@ -214,9 +214,9 @@ export default function PressPage() {
         </div>
 
         {/* Main Content */}
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '64px 24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 24px' }}>
           {/* Company Overview */}
-          <section style={{ marginBottom: '80px' }}>
+          <section style={{ marginBottom: '64px' }}>
             <h2
               style={{
                 fontSize: 28,
@@ -266,7 +266,7 @@ export default function PressPage() {
           </section>
 
           {/* Key Statistics */}
-          <section style={{ marginBottom: '80px' }}>
+          <section style={{ marginBottom: '64px' }}>
             <h2
               style={{
                 fontSize: 28,
@@ -325,7 +325,7 @@ export default function PressPage() {
           </section>
 
           {/* Brand Assets */}
-          <section style={{ marginBottom: '80px' }}>
+          <section style={{ marginBottom: '64px' }}>
             <h2
               style={{
                 fontSize: 28,
@@ -511,7 +511,7 @@ export default function PressPage() {
           </section>
 
           {/* Platform Screenshots */}
-          <section style={{ marginBottom: '80px' }}>
+          <section style={{ marginBottom: '64px' }}>
             <h2
               style={{
                 fontSize: 28,
@@ -622,7 +622,7 @@ export default function PressPage() {
           </section>
 
           {/* Press Quotes */}
-          <section style={{ marginBottom: '80px' }}>
+          <section style={{ marginBottom: '64px' }}>
             <h2
               style={{
                 fontSize: 28,
@@ -681,7 +681,7 @@ export default function PressPage() {
           </section>
 
           {/* In the News */}
-          <section style={{ marginBottom: '80px' }}>
+          <section style={{ marginBottom: '64px' }}>
             <h2
               style={{
                 fontSize: 28,

@@ -80,7 +80,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
     return (
       <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
         <div className="max-w-3xl mx-auto px-6 py-24">
-          <h1 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+          <h1 style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)' }}>
             Term not found
           </h1>
           <p style={{ color: 'var(--color-text-secondary)', marginTop: '12px' }}>

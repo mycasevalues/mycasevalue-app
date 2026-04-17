@@ -122,7 +122,7 @@ function StatsCard({
       <p
         style={{
           fontSize: '28px',
-          fontWeight: 'bold',
+          fontWeight: 700,
           color: 'var(--accent-primary)',
           margin: '0',
           fontFamily: 'var(--font-data)',
@@ -161,7 +161,7 @@ export default async function CaseTypeDetailPage({
         style={{ background: 'var(--color-surface-1)' }}
       >
         <div style={{ textAlign: 'center', color: 'var(--color-text-primary)' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 'bold', margin: '0 0 16px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
             Case type not found
           </h1>
           <p style={{ color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
@@ -287,7 +287,7 @@ export default async function CaseTypeDetailPage({
               <h1
                 style={{
                   fontSize: 'clamp(24px, 5vw, 28px)',
-                  fontWeight: 'bold',
+                  fontWeight: 700,
                   margin: '0',
                   fontFamily: 'var(--font-ui)',
                   color: 'var(--color-text-inverse)',
@@ -319,7 +319,7 @@ export default async function CaseTypeDetailPage({
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '16px',
-            marginBottom: '40px',
+            marginBottom: '48px',
           }}
           className="stats-grid"
         >
@@ -337,14 +337,14 @@ export default async function CaseTypeDetailPage({
             border: '1px solid var(--border-default)',
             borderRadius: '4px',
             padding: '32px',
-            marginBottom: '40px',
+            marginBottom: '48px',
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
           }}
         >
           <h2
             style={{
               fontSize: '20px',
-              fontWeight: 'bold',
+              fontWeight: 700,
               margin: '0 0 16px',
               fontFamily: 'var(--font-ui)',
               color: 'var(--color-text-primary)',
@@ -370,7 +370,7 @@ export default async function CaseTypeDetailPage({
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '24px',
-            marginBottom: '40px',
+            marginBottom: '48px',
           }}
         >
           {/* Federal Law */}
@@ -386,7 +386,7 @@ export default async function CaseTypeDetailPage({
             <h3
               style={{
                 fontSize: '16px',
-                fontWeight: 'bold',
+                fontWeight: 700,
                 margin: '0 0 16px',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--color-text-primary)',
@@ -419,7 +419,7 @@ export default async function CaseTypeDetailPage({
             <h3
               style={{
                 fontSize: '16px',
-                fontWeight: 'bold',
+                fontWeight: 700,
                 margin: '0 0 16px',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--color-text-primary)',
@@ -505,7 +505,7 @@ export default async function CaseTypeDetailPage({
           <h2
             style={{
               fontSize: '28px',
-              fontWeight: 'bold',
+              fontWeight: 700,
               margin: '0 0 12px',
               fontFamily: 'var(--font-ui)',
               color: 'var(--color-text-inverse)',
@@ -554,7 +554,7 @@ export default async function CaseTypeDetailPage({
           <h2
             style={{
               fontSize: '20px',
-              fontWeight: 'bold',
+              fontWeight: 700,
               margin: '0 0 24px',
               fontFamily: 'var(--font-ui)',
               color: 'var(--color-text-primary)',
@@ -580,7 +580,7 @@ export default async function CaseTypeDetailPage({
                   href={`/cases/${related.categorySlug}/${related.slug}`}
                   className="related-case-card"
                 >
-                  <h3 style={{ fontSize: '14px', fontWeight: 'bold', margin: '0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 700, margin: '0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                     {related.label}
                   </h3>
                   <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
