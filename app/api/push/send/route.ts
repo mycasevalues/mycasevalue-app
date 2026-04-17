@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { secureCompare } from '../../../../lib/sanitize';
+import { getSupabaseAdmin } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
@@ -89,9 +90,44 @@ export async function POST(req: NextRequest) {
       );
 
       // TODO: Retrieve subscriptions from Supabase push_subscriptions table
-      // and send to each subscriber. For now, log the intent.
-      console.info('[api/push/send] Push send requested:', { title, url, tag });
-      sentCount = 0;
+      // and send to each subscriber using webpush.sendNotification().
+      // Once the push_subscriptions table is created in Supabase, query it here,
+      // validate subscription objects, and iterate through them to send notifications.
+
+      try {
+        const supabase = getSupabaseAdmin();
+        const { data: subscriptions, error } = await supabase
+          .from('push_subscriptions')
+          .select('*');
+
+        if (error) {
+          console.error('[api/push/send] Failed to query push_subscriptions:', error.message);
+          return NextResponse.json(
+            {
+              success: false,
+              message: 'Failed to retrieve push subscriptions from database',
+              sent: 0,
+              failed: 0,
+            },
+            { status: 503 }
+          );
+        }
+
+        // TODO: Implement sending notifications to each subscription when table is ready
+        console.info('[api/push/send] Push send requested:', { title, url, tag, subscriptionCount: subscriptions?.length || 0 });
+        sentCount = 0;
+      } catch (dbErr: any) {
+        console.error('[api/push/send] Database error retrieving subscriptions:', dbErr.message);
+        return NextResponse.json(
+          {
+            success: false,
+            message: 'Error accessing push subscriptions database',
+            sent: 0,
+            failed: 0,
+          },
+          { status: 503 }
+        );
+      }
     } catch (importErr: any) {
       console.warn('[api/push/send] web-push not available:', importErr.message);
       return NextResponse.json(

@@ -439,7 +439,7 @@ export default function AnnualReportCapture() {
         return;
       }
 
-      // Store email (TODO: Resend/Supabase integration)
+      // Capture email to newsletter_subscribers and email_leads via API
       const response = await fetch('/api/email/capture', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

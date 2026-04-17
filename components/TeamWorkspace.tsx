@@ -256,6 +256,14 @@ export default function TeamWorkspace() {
   const handleInvite = () => {
     if (inviteEmail.trim()) {
       // TODO: Supabase integration - send invite to email
+      // Required tables: team_invitations (id, team_id, email, invited_by, status, created_at, expires_at)
+      // This feature requires: team management table, invitation workflow, email service integration
+      console.info('Team invite initiated', {
+        email: inviteEmail,
+        requiredTables: ['team_invitations', 'team_members'],
+        requiresEmailService: true,
+      });
+
       setInviteEmail('');
       setShowInviteSuccess(true);
       setTimeout(() => setShowInviteSuccess(false), 3000);
@@ -275,7 +283,16 @@ export default function TeamWorkspace() {
       setLocalNotes([newNote, ...localNotes]);
       setNewNoteText('');
       setNewNoteNOS('');
+
       // TODO: Supabase integration - save note
+      // Required table: team_shared_notes (id, team_id, text, author_id, attached_to, attached_type, created_at, updated_at)
+      // This feature requires: user context to capture author_id, team context for team_id
+      console.info('Team note added', {
+        text: newNoteText.substring(0, 50),
+        attachedTo: newNoteNOS,
+        requiredTables: ['team_shared_notes'],
+        requiresTeamContext: true,
+      });
     }
   };
 
@@ -294,7 +311,18 @@ export default function TeamWorkspace() {
       setNewCaseType('');
       setNewCaseDistrict('');
       setNewCaseStatus('Researching');
+
       // TODO: Supabase integration - save case
+      // Required table: team_cases (id, team_id, name, type, district, status, notes, created_by, created_at, updated_at)
+      // This feature requires: team context to capture team_id, user context to capture created_by
+      console.info('Team case added', {
+        name: newCaseName,
+        type: newCaseType,
+        district: newCaseDistrict,
+        status: newCaseStatus,
+        requiredTables: ['team_cases'],
+        requiresTeamContext: true,
+      });
     }
   };
 

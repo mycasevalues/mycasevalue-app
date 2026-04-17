@@ -12,41 +12,58 @@ import { apiHandler } from '../../../../lib/api-middleware';
 import { apiUnauthorized, apiForbidden, apiSuccess } from '../../../../lib/api-response';
 import { runDataQualityCheck, summarizeCheckResults } from '../../../../lib/data-quality';
 import { logger } from '../../../../lib/logger';
+import { getSupabaseAdmin } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
 // ─── Admin Auth Check ──────────────────────────────────────
 
 /**
- * Simple admin token check. TODO: Replace with proper admin role check
- * when auth system is fully integrated.
+ * Admin auth check via Supabase or hardcoded admin email.
+ * Verifies user is the admin (jvdelorenzi@gmail.com) or has admin token.
  */
-function checkAdminAuth(request: NextRequest): boolean {
+async function checkAdminAuth(request: NextRequest): Promise<boolean> {
   const authHeader = request.headers.get('authorization');
 
-  // TODO: Implement proper admin role check via Supabase
-  // For now, accept: Authorization: Bearer admin-secret-key
-  if (!authHeader) return false;
-
-  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : '';
-
-  // TODO: Load from environment variable or Supabase admin role
-  const adminToken = process.env.ADMIN_DATA_QUALITY_TOKEN;
-  if (!adminToken) {
-    // In development without token set, allow via X-Admin-Key header for testing
-    if (process.env.NODE_ENV !== 'production') {
-      return request.headers.get('x-admin-key') === 'dev-local-testing';
+  // Fallback: Check bearer token if provided
+  if (authHeader?.startsWith('Bearer ')) {
+    const token = authHeader.slice(7);
+    const adminToken = process.env.ADMIN_DATA_QUALITY_TOKEN;
+    if (adminToken && token === adminToken) {
+      return true;
     }
-    return false;
   }
 
-  return token === adminToken;
+  // Dev fallback: Allow via X-Admin-Key header for testing
+  if (process.env.NODE_ENV !== 'production') {
+    if (request.headers.get('x-admin-key') === 'dev-local-testing') {
+      return true;
+    }
+  }
+
+  // Check against hardcoded admin email for now
+  const adminEmail = 'jvdelorenzi@gmail.com';
+  try {
+    const supabase = getSupabaseAdmin();
+    // Get the user from the auth token if provided
+    const token = authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : null;
+    if (token) {
+      const { data: { user }, error } = await supabase.auth.getUser(token);
+      if (!error && user?.email === adminEmail) {
+        return true;
+      }
+    }
+  } catch (error) {
+    logger.warn('Error checking admin auth via Supabase', { error });
+  }
+
+  return false;
 }
 
 // ─── GET Handler ──────────────────────────────────────────────
 
 export const GET = apiHandler({}, async (request) => {
-  if (!checkAdminAuth(request)) {
+  if (!(await checkAdminAuth(request))) {
     return apiUnauthorized('Admin authentication required');
   }
 
@@ -66,7 +83,7 @@ export const GET = apiHandler({}, async (request) => {
 // ─── POST Handler (with notification) ──────────────────────
 
 export const POST = apiHandler({}, async (request) => {
-  if (!checkAdminAuth(request)) {
+  if (!(await checkAdminAuth(request))) {
     return apiUnauthorized('Admin authentication required');
   }
 
@@ -74,7 +91,8 @@ export const POST = apiHandler({}, async (request) => {
     const result = runDataQualityCheck();
     const summary = summarizeCheckResults(result);
 
-    // TODO: Send notification via Resend email service
+    // Note: Resend email service not yet available. Notification marked as not sent.
+    // TODO: Implement email notification via Resend when service is available
     // const emailResult = await resend.emails.send({
     //   from: 'admin@casecheck.com',
     //   to: process.env.ADMIN_EMAIL || 'dev@casecheck.com',
@@ -87,7 +105,7 @@ export const POST = apiHandler({}, async (request) => {
     //   `,
     // });
 
-    // For now, just log the summary
+    // Log the results for now
     logger.info('Data quality check completed', {
       passed: result.passed,
       anomalies: result.anomalies.length,
@@ -99,7 +117,7 @@ export const POST = apiHandler({}, async (request) => {
       {
         ...result,
         notification: {
-          sent: false, // TODO: Set to true when Resend integration is live
+          sent: false, // Resend integration not yet available
           message: summary,
         },
       },

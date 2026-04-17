@@ -64,6 +64,22 @@ export const POST = apiHandler(
       } catch (dbError: any) {
         log.warn('email_leads DB error', { error: dbError.message || dbError });
       }
+
+      // Also add to newsletter_subscribers for marketing emails
+      try {
+        const { error: nlError } = await supabase.from('newsletter_subscribers').upsert(
+          {
+            email: cleanEmail,
+            subscribed_at: new Date().toISOString(),
+          },
+          { onConflict: 'email' }
+        );
+        if (nlError) {
+          log.warn('newsletter_subscribers upsert failed', { error: nlError.message });
+        }
+      } catch (dbError: any) {
+        log.warn('newsletter_subscribers DB error', { error: dbError.message || dbError });
+      }
     }
 
     return NextResponse.json({

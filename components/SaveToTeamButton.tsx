@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { useSaveToSupabase } from '@/lib/hooks/useSaveToSupabase';
 
 type SaveToTeamButtonProps = {
   itemTitle?: string;
@@ -12,7 +13,9 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
   const [noteText, setNoteText] = useState('');
   const [isSaving, setIsSaving] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
+  const { save: saveToSupabase } = useSaveToSupabase();
 
   // Close modal on outside click
   useEffect(() => {
@@ -32,22 +35,36 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
     if (!noteText.trim()) return;
 
     setIsSaving(true);
-    // Simulate save delay
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    setSaveError(null);
 
-    // TODO: Supabase integration - save report to team workspace
-    // Expected flow:
-    // 1. Call supabase function to insert team_shared_items record
-    // 2. Include: item_title, item_type, note, shared_by (current user), shared_at (now)
-    // 3. Trigger real-time event for team members
+    try {
+      // Save to saved_reports table in Supabase
+      // Note: user_id and created_at are added automatically by useSaveToSupabase hook
+      await saveToSupabase('saved_reports', {
+        item_title: itemTitle,
+        item_type: itemType,
+        note: noteText,
+      });
 
-    setIsSaving(false);
-    setShowSuccess(true);
-    setNoteText('');
-    setShowModal(false);
+      console.info('Team item saved successfully', {
+        itemTitle,
+        itemType,
+        noteLength: noteText.length,
+      });
 
-    // Hide success message after 3 seconds
-    setTimeout(() => setShowSuccess(false), 3000);
+      setIsSaving(false);
+      setShowSuccess(true);
+      setNoteText('');
+      setShowModal(false);
+
+      // Hide success message after 3 seconds
+      setTimeout(() => setShowSuccess(false), 3000);
+    } catch (err) {
+      const errorMsg = err instanceof Error ? err.message : 'Failed to save item';
+      setSaveError(errorMsg);
+      console.error('Error saving to team workspace:', errorMsg);
+      setIsSaving(false);
+    }
   };
 
   return (
@@ -217,6 +234,14 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 }}
               />
             </div>
+
+            {saveError && (
+              <div style={{ marginBottom: '16px', padding: '10px 12px', backgroundColor: 'rgba(220, 38, 38, 0.1)', borderRadius: '4px', border: '1px solid rgba(220, 38, 38, 0.3)' }}>
+                <p style={{ fontSize: '12px', color: '#dc2626', margin: 0 }}>
+                  {saveError}
+                </p>
+              </div>
+            )}
 
             <p style={{ fontSize: '11px', color: 'var(--color-text-muted)', margin: '0 0 16px' }}>
               This will be shared with your team on the Team Workspace
