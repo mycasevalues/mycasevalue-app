@@ -344,19 +344,6 @@
   }
 }
 
-/* Print-specific utility classes */
-.print-show {
-  display: none;
-}
-
-.print-block {
-  display: none;
-}
-
-.print-inline {
-  display: none;
-}
-
 @media print {
   .print-show,
   .print-block {

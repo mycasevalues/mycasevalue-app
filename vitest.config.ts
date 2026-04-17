@@ -14,6 +14,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './'),
+      // web-push is an optional dependency not installed in all environments
+      'web-push': path.resolve(__dirname, './__tests__/__mocks__/web-push.ts'),
     },
   },
 })

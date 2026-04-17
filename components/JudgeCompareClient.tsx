@@ -16,7 +16,6 @@ import JudgeRadar, { JudgeRadarData } from '@/components/charts/JudgeRadar';
 import { JudgeWithStats, JudgeStatistics, aggregateJudgeStats } from '@/lib/supabase-judges';
 import { getWinRateColor } from '@/lib/color-scale';
 import { mockJudgesData } from '@/data/mock-judges';
-import jsPDF from 'jspdf';
 
 interface SearchResult {
   id: string;
@@ -171,9 +170,10 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
 
   const selectedJudges = slots.filter((s) => s.judge !== null);
 
-  const exportPDF = () => {
+  const exportPDF = async () => {
     if (selectedJudges.length === 0) return;
 
+    const jsPDF = (await import('jspdf')).default;
     const doc = new jsPDF({ format: 'a4' });
     let yPos = 20;
 

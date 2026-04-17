@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { jsPDF } from 'jspdf';
 
 interface FormState {
   email: string;
@@ -20,6 +19,7 @@ export default function CourtGuideCapture() {
 
   const generatePDF = async (email: string) => {
     try {
+      const { jsPDF } = await import('jspdf');
       const doc = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',

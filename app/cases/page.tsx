@@ -8,7 +8,9 @@ import { REAL_DATA } from '../../lib/realdata';
 import { ArrowRightIcon, SearchIcon } from '../../components/ui/Icons';
 import DataFreshness from '../../components/DataFreshness';
 import { StaggerGrid, StaggerItem } from '../../components/motion';
-import TrendSparkline from '../../components/charts/TrendSparkline';
+import dynamic from 'next/dynamic';
+
+const TrendSparkline = dynamic(() => import('../../components/charts/TrendSparkline'), { ssr: false });
 import { SITE_URL } from '../../lib/site-config';
 import ConfidenceDot from '../../components/ConfidenceDot';
 import SaveButton from '../../components/ui/SaveButton';

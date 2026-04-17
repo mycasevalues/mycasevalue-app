@@ -10,7 +10,9 @@ import { SearchIcon } from '../../components/ui/Icons';
 import DataFreshness from '../../components/DataFreshness';
 import SampleSizeIndicator from '../../components/SampleSizeIndicator';
 import { useResearchStore } from '../../store/research';
-import TrendSparkline from '../../components/charts/TrendSparkline';
+import dynamic from 'next/dynamic';
+
+const TrendSparkline = dynamic(() => import('../../components/charts/TrendSparkline'), { ssr: false });
 import SearchTabs from '../../components/SearchTabs';
 import JudgeSearchResults from '../../components/JudgeSearchResults';
 import { SITE_URL } from '../../lib/site-config';

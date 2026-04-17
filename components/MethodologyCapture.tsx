@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import jsPDF from 'jspdf';
+import type jsPDFType from 'jspdf';
 
 interface FormData {
   email: string;
@@ -46,7 +46,8 @@ export default function MethodologyCapture() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const generatePDF = (): jsPDF => {
+  const generatePDF = async (): Promise<jsPDFType> => {
+    const jsPDF = (await import('jspdf')).default;
     const doc = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
@@ -411,7 +412,7 @@ export default function MethodologyCapture() {
 
     try {
       // Generate PDF
-      const pdf = generatePDF();
+      const pdf = await generatePDF();
       const pdfBase64 = pdf.output('datauristring');
 
       // Send to server-side API for email and storage

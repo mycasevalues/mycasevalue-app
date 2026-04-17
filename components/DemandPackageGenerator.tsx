@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import jsPDF from 'jspdf';
 import { SITS } from '@/lib/data';
 import { REAL_DATA } from '@/lib/realdata';
 import { ATTORNEY_IMPACT, AttorneyImpactData } from '@/lib/attorney-impact';
@@ -37,9 +36,10 @@ export default function DemandPackageGenerator() {
     setShowPreview(true);
   }
 
-  function handleDownloadPDF() {
+  async function handleDownloadPDF() {
     if (!selectedCaseType || !selectedDistrict) return;
 
+    const jsPDF = (await import('jspdf')).default;
     const doc = new jsPDF();
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();

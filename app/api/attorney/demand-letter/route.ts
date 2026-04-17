@@ -5,6 +5,27 @@ import { REAL_DATA } from '../../../../lib/realdata';
 import { sanitizeForPrompt } from '../../../../lib/sanitize';
 import { getSupabaseAdmin } from '../../../../lib/supabase';
 
+// ---------------------------------------------------------------------------
+// CORS & rate-limit helpers
+// ---------------------------------------------------------------------------
+
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+};
+
+function withRateLimitHeaders(headers: Record<string, string> = {}): Record<string, string> {
+  return {
+    ...CORS_HEADERS,
+    // TODO: Replace static values with real rate-limit tracking (e.g. Upstash Redis)
+    'X-RateLimit-Limit': '20',
+    'X-RateLimit-Remaining': '19',
+    'X-RateLimit-Reset': String(Math.floor(Date.now() / 1000) + 3600),
+    ...headers,
+  };
+}
+
 /**
  * Fetch case data from Supabase with REAL_DATA fallback.
  * This ensures the tool works even if Supabase is unavailable.
@@ -34,28 +55,29 @@ export async function POST(req: NextRequest) {
     if (!caseType || !briefFacts || !partyRole) {
       return NextResponse.json(
         { error: 'Case type, facts, and party role are required' },
-        { status: 400 }
+        { status: 400, headers: withRateLimitHeaders() }
       );
     }
 
     if (briefFacts.length < 50) {
       return NextResponse.json(
         { error: 'Please provide more detailed facts about the case (minimum 50 characters)' },
-        { status: 400 }
+        { status: 400, headers: withRateLimitHeaders() }
       );
     }
 
     if (briefFacts.length > 3000) {
       return NextResponse.json(
         { error: 'Facts must be 3000 characters or less' },
-        { status: 400 }
+        { status: 400, headers: withRateLimitHeaders() }
       );
     }
 
     if (!process.env.ANTHROPIC_API_KEY) {
+      // TODO: Add fallback mock letter generation when Anthropic API key is not configured
       return NextResponse.json(
         { error: 'Service temporarily unavailable' },
-        { status: 503 }
+        { status: 503, headers: withRateLimitHeaders() }
       );
     }
 
@@ -121,9 +143,22 @@ Please generate a professional demand letter template incorporating these facts 
     console.error('[api/attorney/demand-letter] error:', errorMessage);
 
     if (err instanceof SyntaxError) {
-      return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'Invalid JSON', message: 'Request body must be valid JSON' },
+        { status: 400, headers: withRateLimitHeaders() }
+      );
     }
 
-    return NextResponse.json({ error: 'Generation failed' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Generation failed', message: 'An unexpected error occurred while generating the demand letter' },
+      { status: 500, headers: withRateLimitHeaders() }
+    );
   }
+}
+
+/**
+ * OPTIONS handler for CORS preflight requests
+ */
+export async function OPTIONS() {
+  return new NextResponse(null, { headers: CORS_HEADERS });
 }

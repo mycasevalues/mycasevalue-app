@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { jsPDF } from 'jspdf';
 import { REAL_DATA } from '@/lib/realdata';
 
 interface FormState {
@@ -115,6 +114,7 @@ export default function ParalegalHandbookCapture() {
 
   const generatePDF = async (email: string) => {
     try {
+      const { jsPDF } = await import('jspdf');
       const doc = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',

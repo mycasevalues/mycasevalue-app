@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { jsPDF } from 'jspdf';
 import { REAL_DATA } from '@/lib/realdata';
 import { ATTORNEY_IMPACT } from '@/lib/attorney-impact';
 
@@ -20,7 +19,8 @@ export default function AnnualReportCapture() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  const generatePDF = () => {
+  const generatePDF = async () => {
+    const { jsPDF } = await import('jspdf');
     const doc = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
@@ -455,7 +455,7 @@ export default function AnnualReportCapture() {
       }
 
       // Generate and download PDF
-      const doc = generatePDF();
+      const doc = await generatePDF();
       doc.save('MyCaseValue-2026-Annual-Report.pdf');
 
       setSubmitted(true);

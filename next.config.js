@@ -26,6 +26,14 @@ if (process.env.ANALYZE === 'true') {
 
 const nextConfig = {
   reactStrictMode: true,
+  // Strip console.log from production builds for smaller bundles and cleaner output
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
+  },
+  // Experimental CSS optimization (critters for critical CSS inlining)
+  experimental: {
+    // optimizeCss: true, // Requires 'critters' package - enable when installed
+  },
   images: {
     // Enable Image optimization for better performance and Core Web Vitals
     // Serves responsive images with WebP and AVIF formats

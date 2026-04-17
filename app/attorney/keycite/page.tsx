@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import AuthGate from '@/components/AuthGate';
 
 // Mock data for Brown v. Board of Education
 const MOCK_CASE_DATA = {
@@ -131,6 +132,7 @@ export default function KeyCitePage() {
   };
 
   return (
+    <AuthGate feature="KeyCite Citation Analysis">
     <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       {/* Header with status */}
       <div style={{
@@ -1335,5 +1337,6 @@ export default function KeyCitePage() {
         }
       `}</style>
     </div>
+    </AuthGate>
   );
 }

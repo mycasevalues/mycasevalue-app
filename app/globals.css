@@ -9,11 +9,18 @@
 @import '../styles/components.css';
 @import '../styles/cross-browser.css';
 @import '../styles/mobile-responsive.css';
-@import '../styles/print.css';
+@import '../styles/print.css' print;
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Print utility classes — hidden on screen, shown in print */
+.print-show,
+.print-block,
+.print-inline {
+  display: none;
+}
 
 /* ============================================================
    RESET & BASE
