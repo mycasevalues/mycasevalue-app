@@ -44,7 +44,7 @@ export default function CookieConsent() {
         background: 'var(--color-surface-0)',
         borderTop: '1px solid var(--border-default)',
         boxShadow: '0 -1px 8px rgba(0,0,0,0.06)',
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
         animation: 'slideUp 400ms cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
     >
@@ -81,7 +81,7 @@ export default function CookieConsent() {
               fontSize: '14px',
               lineHeight: '1.5',
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             We use cookies for analytics and to improve your experience.{' '}
@@ -114,7 +114,7 @@ export default function CookieConsent() {
               borderRadius: '4px',
               fontWeight: 600,
               fontSize: '12px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               border: '1px solid var(--border-default)',
               background: 'transparent',
               color: 'var(--color-text-secondary)',
@@ -133,7 +133,7 @@ export default function CookieConsent() {
               borderRadius: '4px',
               fontWeight: 600,
               fontSize: '12px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               border: 'none',
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',

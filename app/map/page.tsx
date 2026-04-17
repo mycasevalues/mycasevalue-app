@@ -106,7 +106,7 @@ interface StateData {
 
 // Helper function to get color based on win rate
 function getWinRateColor(winRate: number): string {
-  if (winRate >= 50) return 'var(--data-positive, #176438)'; // green
+  if (winRate >= 50) return 'var(--data-positive)'; // green
   if (winRate >= 35) return '#FF9D00'; // amber
   return 'var(--accent-primary)'; // red
 }
@@ -255,7 +255,7 @@ export default function DistrictHeatmapPage() {
         <header style={{ backgroundColor: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16px 24px' }}>
             {/* Breadcrumb */}
-            <nav style={{ fontSize: '14px', color: 'var(--color-surface-0)', marginBottom: '16px', opacity: 0.85, fontFamily: 'var(--font-body)' }}>
+            <nav style={{ fontSize: '14px', color: 'var(--color-surface-0)', marginBottom: '16px', opacity: 0.85, fontFamily: 'var(--font-ui)' }}>
               <a href="/" style={{ color: 'var(--color-surface-0)', textDecoration: 'none' }}>Home</a>
               <span> / </span>
               <span>Map</span>
@@ -297,7 +297,7 @@ export default function DistrictHeatmapPage() {
                   color: 'var(--color-surface-0)',
                   opacity: 0.85,
                   margin: 0,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 Discover federal court win rates by state and district to make data-driven venue decisions and understand your case's best opportunities.
@@ -325,7 +325,7 @@ export default function DistrictHeatmapPage() {
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
                 Total States & Territories
               </p>
               <p
@@ -348,7 +348,7 @@ export default function DistrictHeatmapPage() {
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
                 National Average
               </p>
               <p
@@ -371,7 +371,7 @@ export default function DistrictHeatmapPage() {
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
                 Highest Rate
               </p>
               <p
@@ -385,7 +385,7 @@ export default function DistrictHeatmapPage() {
               >
                 {highestRate.toFixed(1)}%
               </p>
-              <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '4px 0 0 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '4px 0 0 0', fontFamily: 'var(--font-ui)' }}>
                 {highestState?.name}
               </p>
             </div>
@@ -397,7 +397,7 @@ export default function DistrictHeatmapPage() {
                 backgroundColor: 'var(--color-surface-0)',
               }}
             >
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
                 Lowest Rate
               </p>
               <p
@@ -411,7 +411,7 @@ export default function DistrictHeatmapPage() {
               >
                 {lowestRate.toFixed(1)}%
               </p>
-              <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '4px 0 0 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '4px 0 0 0', fontFamily: 'var(--font-ui)' }}>
                 {lowestState?.name}
               </p>
             </div>
@@ -488,14 +488,14 @@ export default function DistrictHeatmapPage() {
                     style={{
                       width: '100%',
                       height: `${(bin.count / maxBinCount) * 160}px`,
-                      backgroundColor: 'var(--accent-primary-hover)',
+                      backgroundColor: 'var(--gold)',
                       borderRadius: '4px',
                       transition: 'background-color 0.2s ease',
                       cursor: 'pointer',
                       minHeight: bin.count > 0 ? '4px' : '0px',
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#004B7A')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--accent-primary-hover)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--gold)')}
                     title={`${bin.label}: ${bin.count} states`}
                   />
                   <p
@@ -504,7 +504,7 @@ export default function DistrictHeatmapPage() {
                       color: 'var(--color-text-secondary)',
                       marginTop: '8px',
                       margin: '8px 0 0 0',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       textAlign: 'center',
                     }}
                   >
@@ -516,7 +516,7 @@ export default function DistrictHeatmapPage() {
                       fontWeight: '600',
                       color: 'var(--color-text-primary)',
                       margin: '4px 0 0 0',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                     }}
                   >
                     {bin.count}
@@ -537,7 +537,7 @@ export default function DistrictHeatmapPage() {
                   fontWeight: '600',
                   color: 'var(--color-text-primary)',
                   marginBottom: '8px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 Search States & Territories
@@ -557,7 +557,7 @@ export default function DistrictHeatmapPage() {
                   color: 'var(--color-text-primary)',
                   height: '48px',
                   fontSize: '14px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   outline: 'none',
                   boxSizing: 'border-box',
                   transition: 'border-color 0.2s ease',
@@ -576,7 +576,7 @@ export default function DistrictHeatmapPage() {
                   fontWeight: '600',
                   color: 'var(--color-text-primary)',
                   marginBottom: '8px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 Sort By
@@ -594,7 +594,7 @@ export default function DistrictHeatmapPage() {
                   color: 'var(--color-text-primary)',
                   height: '48px',
                   fontSize: '14px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   outline: 'none',
                   boxSizing: 'border-box',
                   transition: 'border-color 0.2s ease',
@@ -621,7 +621,7 @@ export default function DistrictHeatmapPage() {
               }}
             >
               {filteredStates.map((state) => {
-                const barColor = state.winRate >= 55 ? 'var(--data-positive, #176438)' : state.winRate < 45 ? 'var(--accent-primary)' : 'var(--accent-primary-hover)';
+                const barColor = state.winRate >= 55 ? 'var(--data-positive)' : state.winRate < 45 ? 'var(--accent-primary)' : 'var(--gold)';
                 const districtSlug = state.code.toLowerCase();
                 return (
                   <a
@@ -648,7 +648,7 @@ export default function DistrictHeatmapPage() {
                             color: 'var(--color-text-primary)',
                             margin: 0,
                             marginBottom: '4px',
-                            fontFamily: 'var(--font-body)',
+                            fontFamily: 'var(--font-ui)',
                           }}
                         >
                           {state.name}
@@ -690,14 +690,14 @@ export default function DistrictHeatmapPage() {
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+                      <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                         {state.winRate < 45
                           ? 'Below average'
                           : state.winRate <= 52
                             ? 'Near average'
                             : 'Above average'}
                       </p>
-                      <span style={{ fontSize: '11px', color: 'var(--accent-primary-hover)', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
+                      <span style={{ fontSize: '11px', color: 'var(--gold)', fontWeight: 600, fontFamily: 'var(--font-ui)' }}>
                         View details →
                       </span>
                     </div>
@@ -707,7 +707,7 @@ export default function DistrictHeatmapPage() {
             </div>
           ) : (
             <div style={{ textAlign: 'center', padding: '48px 16px' }}>
-              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 No states found matching "{searchQuery}". Try a different search.
               </p>
             </div>
@@ -761,7 +761,7 @@ export default function DistrictHeatmapPage() {
                         fontWeight: '600',
                         color: 'var(--color-text-secondary)',
                         minWidth: '24px',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}
                     >
                       #{idx + 1}
@@ -773,7 +773,7 @@ export default function DistrictHeatmapPage() {
                           fontWeight: '600',
                           color: 'var(--color-text-primary)',
                           margin: 0,
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--font-ui)',
                         }}
                       >
                         {state.name}
@@ -862,7 +862,7 @@ export default function DistrictHeatmapPage() {
                         fontWeight: '600',
                         color: 'var(--color-text-secondary)',
                         minWidth: '24px',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}
                     >
                       #{idx + 1}
@@ -874,7 +874,7 @@ export default function DistrictHeatmapPage() {
                           fontWeight: '600',
                           color: 'var(--color-text-primary)',
                           margin: 0,
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--font-ui)',
                         }}
                       >
                         {state.name}
@@ -953,7 +953,7 @@ export default function DistrictHeatmapPage() {
                 color: 'var(--color-surface-0)',
                 opacity: 0.9,
                 marginBottom: '24px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               Use our comprehensive odds calculator to estimate case outcomes based on federal court
@@ -970,7 +970,7 @@ export default function DistrictHeatmapPage() {
                 backgroundColor: 'var(--accent-primary)',
                 textDecoration: 'none',
                 fontSize: '14px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 transition: 'background-color 0.2s ease',
                 cursor: 'pointer',
               }}
@@ -1039,7 +1039,7 @@ export default function DistrictHeatmapPage() {
                   fontSize: '13px',
                   color: 'var(--color-text-secondary)',
                   margin: 0,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 Dive deep into specific judicial districts and their case outcomes.
@@ -1083,7 +1083,7 @@ export default function DistrictHeatmapPage() {
                   fontSize: '13px',
                   color: 'var(--color-text-secondary)',
                   margin: 0,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 See individual judge performance and their case win rates.
@@ -1127,7 +1127,7 @@ export default function DistrictHeatmapPage() {
                   fontSize: '13px',
                   color: 'var(--color-text-secondary)',
                   margin: 0,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 Track trends in case outcomes over time and across jurisdictions.
@@ -1171,7 +1171,7 @@ export default function DistrictHeatmapPage() {
                   fontSize: '13px',
                   color: 'var(--color-text-secondary)',
                   margin: 0,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 Compare case outcomes and statistics between different regions.
@@ -1189,7 +1189,7 @@ export default function DistrictHeatmapPage() {
           }}
         >
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', textAlign: 'center', margin: 0, fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', textAlign: 'center', margin: 0, fontFamily: 'var(--font-ui)' }}>
               Disclaimer: The win rate data presented on this page is based on historical federal
               court records and is provided for informational purposes only. This information does
               not constitute legal advice. Actual case outcomes depend on many factors including

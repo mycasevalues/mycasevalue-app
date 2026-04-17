@@ -82,7 +82,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
         backgroundColor: 'var(--color-surface-0)',
         border: '1px solid rgba(255,255,255,0.1)',
         borderRadius: '4px',
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
       }}
     >
       <h2
@@ -132,7 +132,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
               borderRadius: '4px',
               fontSize: '14px',
               minHeight: '100px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               backgroundColor: 'var(--color-surface-0)',
               color: 'var(--color-text-primary)',
             }}

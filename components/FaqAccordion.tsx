@@ -144,7 +144,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                     padding: '0 20px 20px 20px',
                     paddingLeft: '24px',
                     borderTop: '1px solid var(--border-default)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '16px',
                     fontWeight: 400,
                     color: 'var(--color-text-secondary)',

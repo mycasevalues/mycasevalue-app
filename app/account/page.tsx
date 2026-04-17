@@ -359,7 +359,7 @@ export default function AccountPage() {
               <span className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                 {planLabels[planInfo?.plan || 'free'] || 'Free'}
               </span>
-              <span style={{ padding: '4px 10px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? 'var(--color-surface-1)' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? 'var(--color-text-secondary)' : 'var(--accent-primary-hover)' }}>
+              <span style={{ padding: '4px 10px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? 'var(--color-surface-1)' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? 'var(--color-text-secondary)' : 'var(--gold)' }}>
                 {planInfo?.plan === 'free' ? 'Free' : 'Active'}
               </span>
             </div>
@@ -402,7 +402,7 @@ export default function AccountPage() {
 
             {newApiKey && (
               <div style={{ padding: '16px', borderRadius: '4px', marginBottom: '16px', backgroundColor: 'rgba(59,130,246,0.06)', border: '1px solid var(--link-light, #BAE6FD)' }}>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 16px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--gold)', margin: '0 0 16px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Your New API Key (copy now)
                 </p>
                 <code style={{ display: 'block', padding: '8px 12px', backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '13px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', wordBreak: 'break-all', border: '1px solid var(--border-default)' }}>
@@ -438,7 +438,7 @@ export default function AccountPage() {
                           <button
                             onClick={() => handleRevokeApiKey(key.id)}
                             className="revoke-btn"
-                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: 'var(--data-negative, #B01E1E)', backgroundColor: 'transparent', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }}
+                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: 'var(--data-negative)', backgroundColor: 'transparent', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }}
                           >
                             Revoke
                           </button>
@@ -487,7 +487,7 @@ export default function AccountPage() {
             </div>
             <style>{`
               .quick-link-card:hover {
-                border-color: var(--accent-primary-hover);
+                border-color: var(--gold);
                 box-shadow: 0 2px 8px rgba(10, 102, 194, 0.12);
               }
             `}</style>
@@ -518,7 +518,7 @@ export default function AccountPage() {
               </p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>
                 To delete your account, contact{' '}
-                <a href="mailto:support@mycasevalues.com" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>support@mycasevalues.com</a>.
+                <a href="mailto:support@mycasevalues.com" style={{ color: 'var(--gold)', textDecoration: 'none' }}>support@mycasevalues.com</a>.
               </p>
             </div>
           </div>

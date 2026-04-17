@@ -300,7 +300,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             padding: '16px 24px',
             fontSize: 14,
             fontWeight: 600,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             color: activeTab === 'directory' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
             background: activeTab === 'directory' ? 'var(--color-surface-0)' : 'var(--color-surface-1)',
             border: 'none',
@@ -321,7 +321,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             padding: '16px 24px',
             fontSize: 14,
             fontWeight: 600,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             color: activeTab === 'by-case-type' ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
             background: activeTab === 'by-case-type' ? 'var(--color-surface-0)' : 'var(--color-surface-1)',
             border: 'none',
@@ -354,7 +354,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             marginBottom: 8,
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             Search Judge Name
           </label>
@@ -372,7 +372,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               borderRadius: 2,
               border: '1px solid var(--border-default)',
               fontSize: 14,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               boxSizing: 'border-box',
             }}
           />
@@ -393,7 +393,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               marginBottom: 8,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Circuit
             </label>
@@ -406,7 +406,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 borderRadius: 2,
                 border: '1px solid var(--border-default)',
                 fontSize: 14,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               {CIRCUITS.map(circuit => (
@@ -424,7 +424,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               marginBottom: 8,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               District
             </label>
@@ -438,7 +438,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 borderRadius: 2,
                 border: '1px solid var(--border-default)',
                 fontSize: 14,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 opacity: !selectedCircuit ? 0.5 : 1,
                 cursor: !selectedCircuit ? 'not-allowed' : 'pointer',
               }}
@@ -458,7 +458,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               marginBottom: 8,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Appointing President
             </label>
@@ -474,7 +474,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 borderRadius: 2,
                 border: '1px solid var(--border-default)',
                 fontSize: 14,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               {PRESIDENTS.map(president => (
@@ -492,7 +492,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               marginBottom: 8,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Sort By
             </label>
@@ -508,7 +508,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 borderRadius: 2,
                 border: '1px solid var(--border-default)',
                 fontSize: 14,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               {SORT_OPTIONS.map(option => (
@@ -522,7 +522,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
       {/* Results Header */}
       <div style={{
         fontSize: 14,
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
         color: 'var(--color-text-secondary)',
         marginBottom: 20,
       }}>
@@ -536,7 +536,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
           padding: '48px 24px',
           textAlign: 'center',
           color: 'var(--color-text-secondary)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
         }}>
           Loading judges...
         </div>
@@ -562,7 +562,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
         <>
         {/* View mode toggle */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-          <span style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+          <span style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
             Showing {state.judges.length} of {state.total} judges
           </span>
           <div style={{ display: 'flex', gap: 4, background: 'var(--color-surface-1)', borderRadius: 4, padding: 2 }}>
@@ -654,7 +654,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   fontWeight: 400,
                   color: 'var(--color-text-secondary)',
                   margin: '0 0 4px 0',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   {judge.district_id && judge.circuit ? `${judge.district_id} • ${judge.circuit} Circuit` : 'District not specified'}
                 </p>
@@ -665,7 +665,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   fontWeight: 400,
                   color: 'var(--text3, #78766C)',
                   margin: '0 0 12px 0',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   {appointmentYear ? `Appointed ${appointmentYear}` : 'No appointment date'} {judge.appointing_president ? `by ${judge.appointing_president}` : ''}
                 </p>
@@ -677,7 +677,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   gap: 8,
                   marginBottom: 12,
                   fontSize: 12,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   color: 'var(--color-text-secondary)',
                 }}>
                   <div style={{
@@ -701,7 +701,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   marginBottom: 12,
                   fontSize: 13,
                   fontWeight: 500,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   width: 'fit-content',
                 }}>
                   <span style={{ color: winRateColor.text }}>
@@ -734,7 +734,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   textDecoration: 'none',
                   fontSize: 14,
                   fontWeight: 600,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   transition: 'all 0.2s ease',
                   background: 'var(--color-surface-0)',
                   cursor: 'pointer',
@@ -766,7 +766,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
           padding: '48px 24px',
           textAlign: 'center',
           color: 'var(--color-text-secondary)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
         }}>
           No judges found matching your criteria. Try adjusting your filters.
         </div>
@@ -780,7 +780,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
           alignItems: 'center',
           gap: 12,
           padding: '24px 0',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
         }}>
           <button
             onClick={() => setState(prev => ({ ...prev, currentPage: Math.max(1, prev.currentPage - 1) }))}
@@ -895,7 +895,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 marginBottom: 8,
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Case Type
               </label>
@@ -911,7 +911,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   borderRadius: 2,
                   border: '1px solid var(--border-default)',
                   fontSize: 14,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 <option value="">Select a case type...</option>
@@ -933,7 +933,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 marginBottom: 8,
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 District (Optional)
               </label>
@@ -946,7 +946,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   borderRadius: 2,
                   border: '1px solid var(--border-default)',
                   fontSize: 14,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 <option value="">All districts</option>
@@ -971,7 +971,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 marginBottom: 8,
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Minimum Cases Handled
               </label>
@@ -984,7 +984,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   borderRadius: 2,
                   border: '1px solid var(--border-default)',
                   fontSize: 14,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 <option value="10">10+ cases</option>
@@ -1000,7 +1000,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
         {selectedNOS && (
           <div style={{
             fontSize: 14,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             color: 'var(--color-text-secondary)',
             marginBottom: 20,
           }}>
@@ -1014,7 +1014,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             padding: '48px 24px',
             textAlign: 'center',
             color: 'var(--color-text-secondary)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             Loading judges...
           </div>
@@ -1097,7 +1097,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                       fontWeight: 400,
                       color: 'var(--color-text-secondary)',
                       margin: 0,
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                     }}>
                       {judge.district_id || 'District not specified'}
                     </p>
@@ -1121,14 +1121,14 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                         fontSize: 13,
                         fontWeight: 600,
                         color: winRateColor.text,
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}>
                         {winRate.toFixed(1)}%
                       </div>
                       <div style={{
                         fontSize: 10,
                         color: winRateColor.text,
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                         marginTop: 2,
                       }}>
                         {winRateColor.label}
@@ -1137,7 +1137,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     <div style={{
                       fontSize: 10,
                       color: 'var(--text3, #78766C)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       textAlign: 'center',
                     }}>
                       Plaintiff
@@ -1159,7 +1159,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     <div style={{
                       fontSize: 10,
                       color: 'var(--text3, #78766C)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       marginTop: 2,
                     }}>
                       Cases
@@ -1181,7 +1181,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     <div style={{
                       fontSize: 10,
                       color: 'var(--text3, #78766C)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       marginTop: 2,
                     }}>
                       months
@@ -1198,7 +1198,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                     textDecoration: 'none',
                     fontSize: 13,
                     fontWeight: 600,
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     background: 'var(--color-surface-0)',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
@@ -1229,7 +1229,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             padding: '48px 24px',
             textAlign: 'center',
             color: 'var(--color-text-secondary)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             No judges found matching your criteria. Try adjusting your filters.
           </div>
@@ -1248,7 +1248,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
               fontSize: 12,
               lineHeight: 1.6,
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               Statistical data from public federal court records. This ranking does not predict future rulings and should not be used as the sole basis for any litigation decision. Always consult a licensed attorney.

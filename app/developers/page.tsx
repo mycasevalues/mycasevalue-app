@@ -315,10 +315,10 @@ const ENDPOINTS: Endpoint[] = [
 ];
 
 const methodColors: Record<string, string> = {
-  GET: 'var(--data-positive, #176438)',
+  GET: 'var(--data-positive)',
   POST: 'var(--accent-primary)',
   PUT: '#B86E00',
-  DELETE: 'var(--data-negative, #B01E1E)',
+  DELETE: 'var(--data-negative)',
 };
 
 const errorCodes = [
@@ -354,7 +354,7 @@ const rateLimitTiers = [
 
 export default function DevelopersPage() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
@@ -366,8 +366,8 @@ export default function DevelopersPage() {
 
       {/* Hero Section */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -383,35 +383,35 @@ export default function DevelopersPage() {
             display: 'inline-flex', alignItems: 'center', gap: 6,
             padding: '4px 10px', marginBottom: 16,
             borderRadius: 999,
-            border: '1px solid rgba(59,130,246,0.2)',
-            background: 'rgba(59,130,246,0.08)',
+            border: '1px solid rgba(10,80,162,0.2)',
+            background: 'rgba(10,80,162,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             API & Integrations
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--card)',
           }}>
             MyCaseValue REST API
           </h1>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.6,
             maxWidth: 640,
             margin: 0,
           }}>
-            Programmatic access to federal case statistics, win rates, settlement data, and predictive analytics. <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link, #0A50A2)' }}>v1.0</span> · Bearer auth · JSON
+            Programmatic access to federal case statistics, win rates, settlement data, and predictive analytics. <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link)' }}>v1.0</span> · Bearer auth · JSON
           </p>
         </div>
       </div>
@@ -604,7 +604,7 @@ export default function DevelopersPage() {
                               style={{
                                 fontSize: '11px',
                                 fontWeight: 600,
-                                color: 'var(--data-negative, #B01E1E)',
+                                color: 'var(--data-negative)',
                                 textTransform: 'uppercase',
                                 letterSpacing: '0.5px',
                               }}
@@ -640,7 +640,7 @@ export default function DevelopersPage() {
                     margin: 0,
                     padding: '12px 14px',
                     backgroundColor: 'var(--chrome-bg, #1B2D45)',
-                    color: '#D4D4D4',
+                    color: 'var(--color-text-3)',
                     fontSize: '12px',
                     lineHeight: 1.5,
                     fontFamily: 'var(--font-mono)',
@@ -685,7 +685,7 @@ export default function DevelopersPage() {
                 margin: 0,
                 padding: '12px 14px',
                 backgroundColor: 'var(--chrome-bg, #1B2D45)',
-                color: '#D4D4D4',
+                color: 'var(--color-text-3)',
                 fontSize: '12px',
                 lineHeight: 1.5,
                 fontFamily: 'var(--font-mono)',
@@ -822,7 +822,7 @@ export default function DevelopersPage() {
                     padding: '12px',
                     backgroundColor: 'var(--color-surface-1)',
                     borderRadius: '4px',
-                    borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative, #B01E1E)' : error.code >= 400 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-positive, #176438)'}`,
+                    borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative)' : error.code >= 400 ? 'var(--wrn-txt)' : 'var(--data-positive)'}`,
                   }}
                 >
                   <code

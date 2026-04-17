@@ -42,7 +42,7 @@ export default function UpgradeBanner() {
           gap: 12px;
           font-size: 14px;
           color: rgba(255,255,255,0.8);
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
         }
         .feature-checkmark {
           flex-shrink: 0;
@@ -121,7 +121,7 @@ export default function UpgradeBanner() {
 
             <p style={{
               fontSize: '16px', color: 'rgba(255,255,255,0.7)', fontWeight: 300,
-              lineHeight: 1.7, margin: '0 0 32px 0', fontFamily: 'var(--font-body)',
+              lineHeight: 1.7, margin: '0 0 32px 0', fontFamily: 'var(--font-ui)',
             }} /* Note: rgba color used for transparency, keeping as-is */>
               AI-powered case predictions, judge intelligence, venue optimization, and bulk
               analysis — built for legal professionals. Get the competitive edge that large
@@ -165,7 +165,7 @@ export default function UpgradeBanner() {
               <div style={{ fontSize: '48px', fontWeight: 600, color: 'var(--accent-primary)', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
                 72%
               </div>
-              <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
+              <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 Favorable Outcome Probability
               </div>
               <div style={{ height: '1px', background: 'var(--border-default)', marginBottom: '24px' }} />
@@ -177,7 +177,7 @@ export default function UpgradeBanner() {
                 ].map((m) => (
                   <div key={m.label} style={{
                     display: 'flex', justifyContent: 'space-between',
-                    fontSize: '13px', fontFamily: 'var(--font-body)',
+                    fontSize: '13px', fontFamily: 'var(--font-ui)',
                   }}>
                     <span style={{ color: 'var(--color-text-secondary)' }}>{m.label}</span>
                     <span style={{ fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{m.value}</span>

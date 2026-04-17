@@ -195,7 +195,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
             className="je-input"
             style={{
               width: '100%', height: 40, paddingLeft: 36, paddingRight: 12,
-              border: '1px solid var(--border-default)', borderRadius: 2, fontFamily: 'var(--font-body)',
+              border: '1px solid var(--border-default)', borderRadius: 2, fontFamily: 'var(--font-ui)',
               fontSize: 14, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
             }}
           />
@@ -208,7 +208,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           className="je-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-            fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+            fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -224,7 +224,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           className="je-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-            fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+            fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -240,7 +240,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           className="je-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-            fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+            fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -265,7 +265,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
       {/* Sort Row */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, flexWrap: 'wrap', gap: 8 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-          <span style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>Sort by:</span>
+          <span style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>Sort by:</span>
           {([
             ['cases', 'Cases'],
             ['winRate', 'Win Rate'],
@@ -282,14 +282,14 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                 border: 'none', background: sortField === field ? 'var(--accent-primary)' : 'var(--color-surface-1)',
                 color: sortField === field ? 'var(--color-surface-0)' : 'var(--color-text-primary)',
                 padding: '4px 10px', borderRadius: 2, fontSize: 12, fontWeight: 600,
-                cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 0.15s',
+                cursor: 'pointer', fontFamily: 'var(--font-ui)', transition: 'all 0.15s',
               }}
             >
               {label}<SortArrow field={field} />
             </button>
           ))}
         </div>
-        <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+        <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
           {filtered.length} judge{filtered.length !== 1 ? 's' : ''}
         </div>
       </div>
@@ -297,10 +297,10 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
       {/* Results */}
       {filtered.length === 0 ? (
         <div style={{ textAlign: 'center', padding: 64, background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2 }}>
-          <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>No judges match your filters.</p>
+          <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>No judges match your filters.</p>
           <button
             onClick={() => { setSearch(''); setCircuitFilter(''); setDistrictFilter(''); setStatusFilter('all'); setPage(1); }}
-            style={{ marginTop: 12, border: 'none', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '8px 24px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
+            style={{ marginTop: 12, border: 'none', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '8px 24px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-ui)' }}
           >
             Clear Filters
           </button>
@@ -326,7 +326,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                     <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 2px', fontFamily: 'var(--font-ui)' }}>
                       {judge.name}
                     </p>
-                    <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                       {judge.district} · {circuit} Cir.
                     </p>
                   </div>
@@ -341,7 +341,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                 </div>
 
                 {/* Appointed info */}
-                <p style={{ fontSize: 11, color: 'var(--color-text-secondary)', margin: '0 0 12px', fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: 11, color: 'var(--color-text-secondary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
                   Appointed {judge.appointedYear} · {judge.appointedBy.replace('President ', '')}
                 </p>
 
@@ -390,7 +390,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
       ) : (
         /* Table View */
         <div className="je-table-wrap" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2, overflow: 'hidden' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-body)', fontSize: 13 }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-ui)', fontSize: 13 }}>
             <thead>
               <tr style={{ background: 'var(--accent-primary)' }}>
                 <th className="je-th" onClick={() => toggleSort('name')} style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -478,7 +478,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
             value={perPage}
             onChange={e => { setPerPage(Number(e.target.value)); setPage(1); }}
             className="je-select"
-            style={{ height: 32, padding: '0 24px 0 8px', border: '1px solid var(--border-default)', borderRadius: 4, fontSize: 12, fontFamily: 'var(--font-body)', background: 'var(--color-surface-0)', appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 4px center', backgroundSize: '14px' }}
+            style={{ height: 32, padding: '0 24px 0 8px', border: '1px solid var(--border-default)', borderRadius: 4, fontSize: 12, fontFamily: 'var(--font-ui)', background: 'var(--color-surface-0)', appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 4px center', backgroundSize: '14px' }}
           >
             <option value={12}>12/page</option>
             <option value={24}>24/page</option>

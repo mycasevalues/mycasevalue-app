@@ -235,7 +235,7 @@ export default function NaturalLanguageSearch() {
             borderRadius: '4px',
             fontSize: '14px',
             color: 'var(--color-text-primary)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             marginRight: '8px',
             marginBottom: '8px',
           }}
@@ -278,7 +278,7 @@ export default function NaturalLanguageSearch() {
             borderRadius: '4px',
             fontSize: '14px',
             color: 'var(--color-text-primary)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             marginRight: '8px',
             marginBottom: '8px',
           }}
@@ -321,7 +321,7 @@ export default function NaturalLanguageSearch() {
             borderRadius: '4px',
             fontSize: '14px',
             color: 'var(--color-text-primary)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             marginRight: '8px',
             marginBottom: '8px',
           }}
@@ -364,7 +364,7 @@ export default function NaturalLanguageSearch() {
             borderRadius: '4px',
             fontSize: '14px',
             color: 'var(--color-text-primary)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             marginRight: '8px',
             marginBottom: '8px',
           }}
@@ -423,7 +423,7 @@ export default function NaturalLanguageSearch() {
         style={{
           fontSize: '14px',
           color: 'var(--color-text-secondary)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           marginBottom: '16px',
         }}
       >
@@ -443,7 +443,7 @@ export default function NaturalLanguageSearch() {
               flex: 1,
               padding: '12px',
               fontSize: '14px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '4px',
               outline: 'none',
@@ -462,7 +462,7 @@ export default function NaturalLanguageSearch() {
               color: 'var(--color-surface-0)',
               fontSize: '14px',
               fontWeight: '600',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               border: 'none',
               borderRadius: '4px',
               cursor: isLoading || !query.trim() ? 'not-allowed' : 'pointer',
@@ -494,7 +494,7 @@ export default function NaturalLanguageSearch() {
             borderRadius: '4px',
             color: 'var(--data-negative, #B01E1E)',
             fontSize: '14px',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
           }}
         >
@@ -511,7 +511,7 @@ export default function NaturalLanguageSearch() {
               textTransform: 'uppercase',
               color: 'var(--color-text-secondary)',
               fontWeight: '600',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: '8px',
             }}
           >
@@ -532,7 +532,7 @@ export default function NaturalLanguageSearch() {
               textTransform: 'uppercase',
               color: 'var(--color-text-secondary)',
               fontWeight: '600',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: '12px',
             }}
           >

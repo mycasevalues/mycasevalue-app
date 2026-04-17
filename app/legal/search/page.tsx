@@ -50,9 +50,9 @@ const SOURCE_COLORS: Record<string, string> = {
   courtlistener: '#1E3A5F',
   federal_register: '#7C3AED',
   ecfr: '#0D9488',
-  edgar: 'var(--wrn-txt, #7A5800)',
-  caselaw: 'var(--data-positive, #176438)',
-  canlii: 'var(--data-negative, #B01E1E)',
+  edgar: 'var(--wrn-txt)',
+  caselaw: 'var(--data-positive)',
+  canlii: 'var(--data-negative)',
   govinfo: 'var(--color-text-muted)',
 };
 
@@ -270,10 +270,10 @@ export default function LegalSearchPage() {
         <div style={{
           padding: '8px 16px',
           background: 'rgba(234,179,8,0.08)',
-          border: '1px solid var(--wrn-bg, #FCD34D)',
+          border: '1px solid var(--wrn-txt)',
           borderRadius: 4,
           fontSize: 13,
-          color: 'var(--wrn-txt, #7A5800)',
+          color: 'var(--wrn-txt)',
           marginBottom: 16,
           display: 'flex',
           alignItems: 'center',

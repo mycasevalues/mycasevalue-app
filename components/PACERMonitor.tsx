@@ -113,7 +113,7 @@ export default function PACERMonitor() {
         backgroundColor: 'var(--color-surface-0)',
         border: '1px solid rgba(255,255,255,0.1)',
         borderRadius: '4px',
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
       }}
     >
       <h2

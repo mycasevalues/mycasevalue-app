@@ -75,7 +75,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
         {title && (
           <p
             style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '14px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
@@ -87,7 +87,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
         )}
         <div
           style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '13px',
             color: 'var(--color-text-secondary)',
             lineHeight: 1.6,

@@ -51,7 +51,7 @@ export default function NOSRecoveryRangeClient({
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
             <div>
               <h2 className="section-title">Recovery Range Visualization</h2>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '0px', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '0px', fontFamily: 'var(--font-ui)' }}>
                 Typical monetary recovery for {nosLabel} cases {inflationEnabled ? '(in 2024 dollars)' : '(in thousands)'}
               </p>
             </div>

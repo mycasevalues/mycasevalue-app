@@ -176,7 +176,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
               alignItems: 'center',
               gap: '8px',
               fontSize: '13px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               color: 'var(--color-text-secondary)',
             }}
           >

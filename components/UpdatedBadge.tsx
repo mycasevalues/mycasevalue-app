@@ -18,7 +18,7 @@ export default function UpdatedBadge({ text = 'Updated Q4 2025' }: UpdatedBadgeP
         fontWeight: 500,
         padding: '2px 8px',
         borderRadius: '4px',
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
         display: 'inline-block',
         whiteSpace: 'nowrap',
       }}

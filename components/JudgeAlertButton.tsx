@@ -76,7 +76,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
           fontSize: '14px',
           fontWeight: '600',
           cursor: 'pointer',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           transition: 'all 150ms ease-out',
           display: 'flex',
           alignItems: 'center',
@@ -121,7 +121,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
             alignItems: 'center',
             justifyContent: 'center',
             zIndex: 1000,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}
           onClick={handleClose}
         >
@@ -206,7 +206,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       outline: 'none',
                       boxSizing: 'border-box',
                       transition: 'border-color 150ms',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                     }}
                     onFocus={(e) => {
                       if (!error) {
@@ -238,7 +238,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       fontSize: '14px',
                       fontWeight: '600',
                       cursor: 'pointer',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       transition: 'all 150ms',
                     }}
                     onMouseEnter={(e) => {
@@ -263,7 +263,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       fontSize: '14px',
                       fontWeight: '600',
                       cursor: loading || !email.trim() ? 'not-allowed' : 'pointer',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       transition: 'all 150ms',
                       opacity: loading || !email.trim() ? 0.7 : 1,
                     }}

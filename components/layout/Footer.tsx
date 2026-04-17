@@ -53,7 +53,7 @@ const colHeaderStyle: React.CSSProperties = {
   fontWeight: 600,
   color: 'var(--chrome-text-muted, #8AAAC8)',
   textTransform: 'uppercase',
-  letterSpacing: '0.09em',
+  letterSpacing: '0.08em',
   marginBottom: 8,
 };
 

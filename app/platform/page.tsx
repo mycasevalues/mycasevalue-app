@@ -214,7 +214,7 @@ export default function PlatformPage() {
 
         .flow-desc {
           font-size: 13px;
-          color: var(--link-hover, #083D7A);
+          color: var(--link);
           line-height: 1.5;
         }
 
@@ -495,8 +495,8 @@ export default function PlatformPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
-          background: 'var(--card, #FFFFFF)',
-          color: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
+          color: 'var(--card)',
           padding: '56px 24px 48px',
           position: 'relative',
           overflow: 'hidden',
@@ -516,9 +516,9 @@ export default function PlatformPage() {
               background: 'rgba(59,130,246,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 10,
               fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-              color: 'var(--link, #0A50A2)',
+              color: 'var(--link)',
             }}>
-              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
               Platform
             </div>
             <h1 style={{
@@ -528,19 +528,19 @@ export default function PlatformPage() {
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
               marginBottom: 16,
-              color: 'var(--card, #FFFFFF)',
+              color: 'var(--card)',
             }}>
               The legal intelligence platform
             </h1>
             <p style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(15px, 1.5vw, 17px)',
               color: 'rgba(255,255,255,0.7)',
               lineHeight: 1.6,
               maxWidth: 680,
               margin: 0,
             }}>
-              Federal court analytics for attorneys, judges, researchers, and institutions — built on <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link, #0A50A2)' }}>5.1M+</span> cases spanning five decades.
+              Federal court analytics for attorneys, judges, researchers, and institutions — built on <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link)' }}>5.1M+</span> cases spanning five decades.
             </p>
           </div>
         </div>
@@ -1375,7 +1375,7 @@ export default function PlatformPage() {
         {/* CTA Section */}
         <div style={{
           padding: '64px 24px',
-          background: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
           position: 'relative',
           overflow: 'hidden',
           borderTop: '1px solid rgba(255,255,255,0.06)',
@@ -1391,13 +1391,13 @@ export default function PlatformPage() {
               fontSize: 'clamp(24px, 3.5vw, 32px)',
               fontWeight: 700,
               letterSpacing: '-0.02em',
-              color: 'var(--card, #FFFFFF)',
+              color: 'var(--card)',
               marginBottom: 16,
             }}>
               Put federal court data to work
             </h2>
             <p style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: 16,
               color: 'rgba(255,255,255,0.7)',
               marginBottom: 32,

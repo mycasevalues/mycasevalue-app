@@ -554,7 +554,7 @@ export default function FAQPage() {
       <JsonLd data={jsonLd} />
 
       {/* Header */}
-      <div className="relative overflow-hidden border-b" style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'var(--card, #FFFFFF)' }}>
+      <div className="relative overflow-hidden border-b" style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'var(--card)' }}>
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
@@ -568,14 +568,14 @@ export default function FAQPage() {
           </nav>
 
           <div className="inline-flex items-center gap-2 px-2 py-1 text-[10px] font-semibold tracking-[0.25em] uppercase mb-5 rounded-[3px] border"
-            style={{ background: 'rgba(26,86,219,0.08)', color: 'var(--link, #0A50A2)', borderColor: 'rgba(26,86,219,0.2)' }}>
+            style={{ background: 'rgba(26,86,219,0.08)', color: 'var(--link)', borderColor: 'rgba(26,86,219,0.2)' }}>
             <span className="w-1 h-1 rounded-full bg-[var(--link)]/80" />
             Frequently Asked
           </div>
-          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'white', lineHeight: '1.1' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'var(--color-text-inverse, #FFFFFF)', lineHeight: '1.1' }}>
             Common Questions
           </h1>
-          <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
+          <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'var(--color-text-inverse, #FFFFFF)' }}>
             Platform capabilities, data sources, methodology, and typical usage patterns.
           </p>
         </div>
@@ -645,18 +645,18 @@ export default function FAQPage() {
           <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
             <a href="mailto:support@mycasevalues.com"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
-              style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--link, #0A50A2)', borderRadius: '4px' }}>
+              style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--link)', borderRadius: '4px' }}>
               <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Contact Support
             </a>
             <Link href="/methodology"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
-              style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', color: 'var(--accent-primary-hover)', borderRadius: '4px' }}>
+              style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', color: 'var(--gold)', borderRadius: '4px' }}>
               Methodology
             </Link>
             <Link href="/glossary"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
-              style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', color: 'var(--accent-primary-hover)', borderRadius: '4px' }}>
+              style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', color: 'var(--gold)', borderRadius: '4px' }}>
               Glossary
             </Link>
           </div>

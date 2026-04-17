@@ -224,7 +224,7 @@ export default function LienCalculator() {
               onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
               onBlur={(e) => (e.target.style.borderColor = errors.grossSettlement ? 'var(--color-error)' : 'var(--border-default)')}
             />
-            {errors.grossSettlement && <div style={{ fontSize: 12, color: 'var(--color-error)', fontFamily: 'var(--font-body)' }}>{errors.grossSettlement}</div>}
+            {errors.grossSettlement && <div style={{ fontSize: 12, color: 'var(--color-error)', fontFamily: 'var(--font-ui)' }}>{errors.grossSettlement}</div>}
           </div>
 
           {/* Case Type */}
@@ -241,7 +241,7 @@ export default function LienCalculator() {
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 fontSize: 14,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 backgroundColor: 'var(--color-surface-1)',
                 color: 'var(--color-text-primary)',
                 outline: 'none',
@@ -298,7 +298,7 @@ export default function LienCalculator() {
                   onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
                   onBlur={(e) => (e.target.style.borderColor = errors.medicareAmount ? '#f87171' : 'rgba(255,255,255,0.1)')}
                 />
-                {errors.medicareAmount && <div style={{ fontSize: 11, color: 'var(--color-error)', fontFamily: 'var(--font-body)' }}>{errors.medicareAmount}</div>}
+                {errors.medicareAmount && <div style={{ fontSize: 11, color: 'var(--color-error)', fontFamily: 'var(--font-ui)' }}>{errors.medicareAmount}</div>}
               </div>
             )}
           </div>
@@ -342,7 +342,7 @@ export default function LienCalculator() {
                   onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
                   onBlur={(e) => (e.target.style.borderColor = errors.medicaidAmount ? '#f87171' : 'rgba(255,255,255,0.1)')}
                 />
-                {errors.medicaidAmount && <div style={{ fontSize: 11, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-body)' }}>{errors.medicaidAmount}</div>}
+                {errors.medicaidAmount && <div style={{ fontSize: 11, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-ui)' }}>{errors.medicaidAmount}</div>}
               </div>
             )}
           </div>
@@ -386,7 +386,7 @@ export default function LienCalculator() {
                   onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
                   onBlur={(e) => (e.target.style.borderColor = errors.workersCompAmount ? '#f87171' : 'rgba(255,255,255,0.1)')}
                 />
-                {errors.workersCompAmount && <div style={{ fontSize: 11, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-body)' }}>{errors.workersCompAmount}</div>}
+                {errors.workersCompAmount && <div style={{ fontSize: 11, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-ui)' }}>{errors.workersCompAmount}</div>}
               </div>
             )}
           </div>
@@ -419,7 +419,7 @@ export default function LienCalculator() {
               onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
               onBlur={(e) => (e.target.style.borderColor = errors.attorneyFeePercent ? 'var(--data-negative, #B01E1E)' : 'var(--border-default)')}
             />
-            {errors.attorneyFeePercent && <div style={{ fontSize: 12, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-body)' }}>{errors.attorneyFeePercent}</div>}
+            {errors.attorneyFeePercent && <div style={{ fontSize: 12, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-ui)' }}>{errors.attorneyFeePercent}</div>}
           </div>
 
           {/* Case Expenses */}
@@ -484,7 +484,7 @@ export default function LienCalculator() {
           <div style={{ display: 'grid', gap: 0, marginBottom: 32, borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--border-default)' }}>
             {/* Gross Settlement */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 24px', background: 'var(--color-surface-1)', borderBottom: '1px solid var(--border-default)' }}>
-              <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Gross Settlement Amount
               </div>
               <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
@@ -494,7 +494,7 @@ export default function LienCalculator() {
 
             {/* Attorney Fees */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 24px', background: '#FFF', borderBottom: '1px solid var(--border-default)' }}>
-              <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Attorney Fees ({result.attorneyFeePercent.toFixed(2)}%)
               </div>
               <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>
@@ -505,7 +505,7 @@ export default function LienCalculator() {
             {/* Case Expenses */}
             {result.caseExpenses > 0 && (
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 24px', background: 'var(--color-surface-1)', borderBottom: '1px solid var(--border-default)' }}>
-                <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                   Case Expenses
                 </div>
                 <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>
@@ -537,7 +537,7 @@ export default function LienCalculator() {
                 Medicare Lien (Estimated Range)
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-ui)' }}>
                   Low (negotiated reduction):
                 </div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-mono)' }}>
@@ -545,14 +545,14 @@ export default function LienCalculator() {
                 </div>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-ui)' }}>
                   High (full conditional payment):
                 </div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-mono)' }}>
                   {formatCurrency(result.medicareLiensHigh)}
                 </div>
               </div>
-              <div style={{ fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
+              <div style={{ fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6, fontFamily: 'var(--font-ui)', fontStyle: 'italic' }}>
                 Medicare Secondary Payer (MSP) rules allow for negotiated reduction of conditional payments. The amount shown as "low" reflects typical settlement negotiations where roughly 1/3 of the net settlement is allocated to reduce the Medicare lien.
               </div>
             </div>
@@ -565,7 +565,7 @@ export default function LienCalculator() {
                 Medicaid Lien (Estimated Range)
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-ui)' }}>
                   Low (state reduction):
                 </div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>
@@ -573,14 +573,14 @@ export default function LienCalculator() {
                 </div>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-ui)' }}>
                   High (full amount):
                 </div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>
                   {formatCurrency(result.medicaidLiensHigh)}
                 </div>
               </div>
-              <div style={{ fontSize: 12, color: 'var(--data-positive, #176438)', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
+              <div style={{ fontSize: 12, color: 'var(--data-positive, #176438)', lineHeight: 1.6, fontFamily: 'var(--font-ui)', fontStyle: 'italic' }}>
                 Medicaid lien reductions vary significantly by state. Many states allow substantial reductions (20-60%) through negotiation and state-specific formulas. Consult your state's Medicaid recovery rules.
               </div>
             </div>
@@ -593,14 +593,14 @@ export default function LienCalculator() {
                 Workers Compensation Lien
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: 'var(--link, #0A50A2)', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: 'var(--link, #0A50A2)', fontFamily: 'var(--font-ui)' }}>
                   Reimbursement amount:
                 </div>
                 <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--link, #0A50A2)', fontFamily: 'var(--font-mono)' }}>
                   {formatCurrency(result.workersCompLiens)}
                 </div>
               </div>
-              <div style={{ fontSize: 12, color: 'var(--link, #0A50A2)', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
+              <div style={{ fontSize: 12, color: 'var(--link, #0A50A2)', lineHeight: 1.6, fontFamily: 'var(--font-ui)', fontStyle: 'italic' }}>
                 Workers compensation liens are generally enforced as stated but may be subject to reduction under applicable state law or settlement negotiation.
               </div>
             </div>
@@ -608,11 +608,11 @@ export default function LienCalculator() {
 
           {/* Total Liens Summary */}
           <div style={{ background: '#FFF', border: '2px solid var(--border-default)', borderRadius: '4px', padding: 16, marginBottom: 24 }}>
-            <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', marginBottom: 12, fontFamily: 'var(--font-body)' }}>
+            <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', marginBottom: 12, fontFamily: 'var(--font-ui)' }}>
               TOTAL LIENS ESTIMATE
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 16 }}>
-              <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Low estimate:
               </div>
               <div style={{ fontSize: 20, fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
@@ -620,7 +620,7 @@ export default function LienCalculator() {
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 16, marginTop: 8 }}>
-              <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 High estimate:
               </div>
               <div style={{ fontSize: 20, fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>
@@ -636,7 +636,7 @@ export default function LienCalculator() {
             </h3>
             <div style={{ display: 'grid', gap: 12 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <div style={{ fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                   Low estimate (with full liens):
                 </div>
                 <div style={{ fontSize: 20, fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>
@@ -645,7 +645,7 @@ export default function LienCalculator() {
               </div>
               <div style={{ height: '1px', background: 'rgba(34,197,94,0.15)' }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <div style={{ fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 14, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                   High estimate (with negotiated reductions):
                 </div>
                 <div style={{ fontSize: 20, fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
@@ -676,7 +676,7 @@ export default function LienCalculator() {
                 color: 'var(--color-text-primary)',
                 transition: 'background-color 0.2s',
                 fontSize: 13,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(59,130,246,0.08)')}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-surface-1)')}
@@ -698,7 +698,7 @@ export default function LienCalculator() {
             fontSize: 12,
             color: 'var(--wrn-txt, #7A5800)',
             lineHeight: 1.6,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             <strong>Important Disclaimer:</strong> Lien amounts are estimates only. Actual Medicare, Medicaid, and workers compensation lien amounts must be verified directly with each lienholder. Lien reduction amounts vary based on jurisdiction, case circumstances, and negotiation outcomes. Settlement structures may also affect lien calculations. Consult an attorney familiar with Medicare Secondary Payer law and your state's lien recovery statutes before finalizing any settlement.
           </div>

@@ -74,7 +74,7 @@ export default function NewsletterSignup() {
       {/* Description */}
       <p
         style={{
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           fontSize: '14px',
           color: 'var(--color-text-secondary)',
           margin: '0 0 24px',
@@ -112,7 +112,7 @@ export default function NewsletterSignup() {
           </svg>
           <span
             style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '14px',
               fontWeight: 600,
               color: 'var(--data-positive, #176438)',
@@ -149,7 +149,7 @@ export default function NewsletterSignup() {
               borderRadius: '4px',
               border: `4px solid ${status === 'error' ? 'var(--accent-primary)' : 'var(--border-default)'}`,
               background: 'var(--color-surface-0)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '14px',
               color: 'var(--color-text-primary)',
               outline: 'none',
@@ -175,7 +175,7 @@ export default function NewsletterSignup() {
               border: 'none',
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '13px',
               fontWeight: 600,
               textTransform: 'uppercase',
@@ -194,7 +194,7 @@ export default function NewsletterSignup() {
       {status === 'error' && (
         <p
           style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '13px',
             color: 'var(--accent-primary)',
             margin: '12px 0 0',
@@ -207,7 +207,7 @@ export default function NewsletterSignup() {
       {/* Privacy Text */}
       <p
         style={{
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           fontSize: '12px',
           color: 'var(--color-text-secondary)',
           margin: '16px 0 0',

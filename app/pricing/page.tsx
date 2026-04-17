@@ -192,7 +192,7 @@ const faqItems = [
 
 export default function PricingPage() {
   return (
-    <div style={{ background: 'var(--card, #FFFFFF)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--card)', minHeight: '100vh' }}>
       <style>{`
         .pricing-header {
           background: var(--surface-warm, #FAF3E6);
@@ -213,7 +213,7 @@ export default function PricingPage() {
           margin-bottom: 16px;
           border-radius: 4px;
           border: 1px solid var(--bdr, #E2DFD8);
-          background: var(--card, #FFFFFF);
+          background: var(--card);
           font-family: var(--font-mono);
           font-size: 8px;
           font-weight: 600;
@@ -225,13 +225,13 @@ export default function PricingPage() {
           width: 4px;
           height: 4px;
           border-radius: 50%;
-          background: var(--data-positive, #176438);
+          background: var(--data-positive);
           animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
 
         .pricing-h1 {
           font-family: var(--font-legal);
-          font-size: clamp(1.75rem, 4vw, 2.25rem);
+          font-size: 28px;
           font-weight: 700;
           letter-spacing: -0.025em;
           line-height: 1.1;
@@ -274,14 +274,14 @@ export default function PricingPage() {
           padding: 1.75rem;
           border-radius: 4px;
           border: 1px solid var(--bdr, #E2DFD8);
-          background: var(--card, #FFFFFF);
+          background: var(--card);
           transition: border-color 150ms ease, box-shadow 150ms ease;
           position: relative;
         }
 
         .pricing-card.highlighted {
           border: 2px solid var(--accent-primary, #C4882A);
-          background: var(--card, #FFFFFF);
+          background: var(--card);
         }
 
         .pricing-card:hover {
@@ -402,13 +402,13 @@ export default function PricingPage() {
           width: 100%;
           text-align: center;
           background: var(--accent-primary, #C4882A);
-          color: var(--card, #FFFFFF);
+          color: var(--card);
           border: none;
           cursor: pointer;
         }
 
         .card-cta:hover {
-          background: var(--gold-hover, #A87222);
+          background: var(--gold);
         }
 
         .callout-section {
@@ -446,7 +446,7 @@ export default function PricingPage() {
         }
 
         .faq-item {
-          background: var(--card, #FFFFFF);
+          background: var(--card);
           border: 1px solid var(--bdr, #E2DFD8);
           border-radius: 4px;
           padding: 1.5rem;
@@ -581,7 +581,7 @@ export default function PricingPage() {
               fontWeight: '600',
               textDecoration: 'none',
               background: 'var(--accent-primary, #C4882A)',
-              color: 'var(--card, #FFFFFF)',
+              color: 'var(--card)',
               transition: 'all 0.3s ease',
             }}
             className="hover:opacity-90"

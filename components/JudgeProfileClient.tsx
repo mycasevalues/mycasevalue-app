@@ -234,7 +234,7 @@ export default function JudgeProfileClient({
           style={{
             width: '100%',
             borderCollapse: 'collapse',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '14px',
           }}
         >
@@ -309,7 +309,7 @@ export default function JudgeProfileClient({
             <p
               style={{
                 fontSize: '13px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 color: '#B24020',
                 margin: 0,
                 fontWeight: '600',
@@ -320,7 +320,7 @@ export default function JudgeProfileClient({
             <p
               style={{
                 fontSize: '12px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 color: '#B24020',
                 margin: '4px 0 0 0',
               }}
@@ -396,7 +396,7 @@ export default function JudgeProfileClient({
             <p
               style={{
                 fontSize: '13px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--accent-primary-hover)',
                 margin: 0,
               }}
@@ -464,7 +464,7 @@ export default function JudgeProfileClient({
                           alignItems: 'center',
                           gap: '12px',
                           fontSize: '12px',
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--font-ui)',
                           color: 'var(--color-text-secondary)',
                           marginBottom: '8px',
                         }}
@@ -538,7 +538,7 @@ export default function JudgeProfileClient({
                       <p
                         style={{
                           fontSize: '13px',
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--font-ui)',
                           color: 'var(--color-text-secondary)',
                           margin: 0,
                           lineHeight: '1.6',
@@ -604,7 +604,7 @@ export default function JudgeProfileClient({
         >
           Explore More
         </h2>
-        <p style={{ fontSize: '14px', fontFamily: 'var(--font-body)', margin: '0 0 24px 0' }}>
+        <p style={{ fontSize: '14px', fontFamily: 'var(--font-ui)', margin: '0 0 24px 0' }}>
           Get deeper insights into this judge's behavior, compare with other judges, or set up case outcome alerts.
         </p>
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -617,7 +617,7 @@ export default function JudgeProfileClient({
               color: 'var(--accent-primary)',
               textDecoration: 'none',
               borderRadius: '4px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               fontSize: '14px',
               transition: 'background-color 0.2s ease',
@@ -637,7 +637,7 @@ export default function JudgeProfileClient({
                 color: 'var(--color-surface-0)',
                 textDecoration: 'none',
                 borderRadius: '4px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontWeight: '600',
                 fontSize: '14px',
                 border: '1px solid rgba(255, 255, 255, 0.4)',
@@ -658,7 +658,7 @@ export default function JudgeProfileClient({
               color: 'var(--color-surface-0)',
               textDecoration: 'none',
               borderRadius: '4px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               fontSize: '14px',
               border: '1px solid rgba(255, 255, 255, 0.4)',
@@ -700,7 +700,7 @@ function StatCard({
       <p
         style={{
           fontSize: '12px',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           color: 'var(--color-text-secondary)',
           margin: '0 0 12px 0',
           fontWeight: '500',
@@ -724,7 +724,7 @@ function StatCard({
       <p
         style={{
           fontSize: '12px',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           color: colorObj.text,
           margin: 0,
           opacity: 0.8,
@@ -795,7 +795,7 @@ function AnalysisSection({ title, content }: { title: string; content: string })
       <p
         style={{
           fontSize: '13px',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           color: 'var(--color-text-secondary)',
           lineHeight: '1.6',
           margin: 0,

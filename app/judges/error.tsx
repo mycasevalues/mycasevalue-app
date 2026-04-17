@@ -38,7 +38,7 @@ export default function Error({
         <div style={{
           maxWidth: 480,
           textAlign: 'center',
-          background: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
           border: '1px solid var(--bdr, #E2DFD8)',
           borderRadius: '4px',
           padding: '48px 32px',
@@ -55,7 +55,7 @@ export default function Error({
             justifyContent: 'center',
             marginBottom: 24,
           }}>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="10" />
               <line x1="12" y1="8" x2="12" y2="12" />
               <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -94,7 +94,7 @@ export default function Error({
                 gap: 8,
                 padding: '12px 24px',
                 background: 'var(--gold, #C4882A)',
-                color: 'var(--card, #FFFFFF)',
+                color: 'var(--card)',
                 border: 'none',
                 borderRadius: '4px',
                 fontSize: '14px',

@@ -47,7 +47,7 @@ export default function NLRBContext() {
               fontSize: '0.8125rem',
               color: 'var(--color-text-secondary)',
               margin: 0,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.5,
             }}>
               National labor charges and case outcomes (FY{nlrbData.year})
@@ -69,7 +69,7 @@ export default function NLRBContext() {
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
               marginBottom: '0.375rem',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Total Charges Filed
             </div>
@@ -90,7 +90,7 @@ export default function NLRBContext() {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: '0.75rem',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Charge Types
             </div>
@@ -107,7 +107,7 @@ export default function NLRBContext() {
                   fontSize: '0.8125rem',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   Unfair Labor Practice (ULP)
                 </span>
@@ -156,7 +156,7 @@ export default function NLRBContext() {
                   fontSize: '0.8125rem',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   Representation Petitions
                 </span>
@@ -204,7 +204,7 @@ export default function NLRBContext() {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: '0.75rem',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Case Outcomes
             </div>
@@ -221,7 +221,7 @@ export default function NLRBContext() {
                     fontSize: '0.8125rem',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     {outcome.label}
                   </span>
@@ -269,7 +269,7 @@ export default function NLRBContext() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Board Decisions
               </div>
@@ -291,7 +291,7 @@ export default function NLRBContext() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Elections Conducted
               </div>
@@ -318,7 +318,7 @@ export default function NLRBContext() {
               fontSize: '0.8125rem',
               color: 'var(--accent-primary-hover)',
               margin: 0,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.5,
               fontWeight: 500,
             }}>
@@ -332,7 +332,7 @@ export default function NLRBContext() {
             color: 'var(--color-text-secondary)',
             marginTop: '1rem',
             marginBottom: 0,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             lineHeight: 1.4,
           }}>
             Source: NLRB Annual Reports. Data includes unfair labor practice charges, representation petitions, and case outcomes.

@@ -75,7 +75,7 @@ export default async function JudgesPage() {
       {/* Header */}
       <div style={{
         borderBottom: '1px solid var(--bdr, #E2DFD8)',
-        background: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -126,7 +126,7 @@ export default async function JudgesPage() {
         <JudgeDirectoryClient initialJudges={initialJudges} initialTotal={initialTotal} />
 
         {/* Advanced Metrics with Radar Preview */}
-        <section style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--bdr, #E2DFD8)', background: 'var(--card, #FFFFFF)', marginBottom: 48, marginTop: 48, position: 'relative' }}>
+        <section style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--bdr, #E2DFD8)', background: 'var(--card)', marginBottom: 48, marginTop: 48, position: 'relative' }}>
           <div style={{
             fontSize: 10,
             fontFamily: 'var(--font-mono)',

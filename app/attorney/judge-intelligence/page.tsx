@@ -114,7 +114,7 @@ export default function JudgeIntelligencePage() {
     : [];
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{focusStyle}
         {`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
@@ -124,8 +124,8 @@ export default function JudgeIntelligencePage() {
       </style>
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -148,9 +148,9 @@ export default function JudgeIntelligencePage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Judge Intelligence
           </div>
           <h1 className="font-legal" style={{
@@ -159,7 +159,7 @@ export default function JudgeIntelligencePage() {
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--card)',
             margin: 0,
           }}>
             Know your judge before the courtroom
@@ -187,7 +187,7 @@ export default function JudgeIntelligencePage() {
                 color: 'var(--color-text-primary)',
                 background: 'var(--color-surface-0)',
                 cursor: 'pointer',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 transition: 'border-color 0.2s',
               }}
             >
@@ -325,7 +325,7 @@ export default function JudgeIntelligencePage() {
                             {judge.name}
                           </span>
                           {judge.senior && (
-                            <span style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(184,110,0,0.08)', color: '#B86E00' }}>
+                            <span style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(184,110,0,0.08)', color: 'var(--wrn-txt)' }}>
                               Senior
                             </span>
                           )}
@@ -336,8 +336,8 @@ export default function JudgeIntelligencePage() {
                       </div>
 
                       <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexShrink: 0 }}>
-                        <StatBadge label="Win Rate" value={`${judge.plaintiffWinRate}%`} color={judge.plaintiffWinRate >= 55 ? 'var(--data-positive, #176438)' : judge.plaintiffWinRate >= 40 ? '#B86E00' : 'var(--accent-primary)'} />
-                        <StatBadge label="Settlement" value={`${judge.settlementRate}%`} color="#1B7C7D" />
+                        <StatBadge label="Win Rate" value={`${judge.plaintiffWinRate}%`} color={judge.plaintiffWinRate >= 55 ? 'var(--data-positive)' : judge.plaintiffWinRate >= 40 ? 'var(--wrn-txt)' : 'var(--accent-primary)'} />
+                        <StatBadge label="Settlement" value={`${judge.settlementRate}%`} color="var(--link)" />
                         <StatBadge label="Duration" value={`${judge.medianDurationMonths}mo`} color="var(--color-text-primary)" />
                         <svg
                           width="18"
@@ -362,11 +362,11 @@ export default function JudgeIntelligencePage() {
                             <h4 className="font-legal" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
                               Ruling Patterns
                             </h4>
-                            <MeterBar value={judge.plaintiffWinRate} max={100} color="#059669" label="Favorable Outcome Rate" />
-                            <MeterBar value={judge.settlementRate} max={100} color="#1B7C7D" label="Settlement Rate" />
+                            <MeterBar value={judge.plaintiffWinRate} max={100} color="var(--data-positive)" label="Favorable Outcome Rate" />
+                            <MeterBar value={judge.settlementRate} max={100} color="var(--link)" label="Settlement Rate" />
                             <MeterBar value={judge.dismissalRate} max={100} color="var(--accent-primary)" label="Dismissal Rate" />
                             <MeterBar value={judge.trialRate} max={100} color='var(--accent-primary)' label="Trial Rate" />
-                            <MeterBar value={judge.motionGrantRate} max={100} color="#004D80" label="Motion Grant Rate" />
+                            <MeterBar value={judge.motionGrantRate} max={100} color="var(--chrome-bg)" label="Motion Grant Rate" />
                           </div>
 
                           {/* Judge Profile */}
@@ -409,8 +409,8 @@ export default function JudgeIntelligencePage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '24px', padding: '24px 24px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '12px', color: '#B86E00', margin: 0, lineHeight: 1.5 }}>
+            <div style={{ marginTop: '24px', padding: '24px 24px', backgroundColor: 'rgba(122,88,0,0.08)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+              <p style={{ fontSize: '12px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
             </div>

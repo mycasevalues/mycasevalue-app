@@ -89,15 +89,15 @@ function SignInForm() {
           text-align: center;
         }
         .auth-input:focus {
-          border-color: var(--link, #0A50A2) !important;
+          border-color: var(--link) !important;
           outline: none;
           box-shadow: 0 0 0 3px rgba(10, 80, 162, 0.15) !important;
         }
         .auth-btn {
-          background: var(--gold, #C4882A);
-          border: 1px solid var(--gold, #C4882A);
-          color: #ffffff;
-          border-radius: 6px;
+          background: var(--gold);
+          border: 1px solid var(--gold);
+          color: var(--color-text-inverse, #FFFFFF);
+          border-radius: '2px';
           font-size: 13px;
           font-weight: 600;
           letter-spacing: -0.005em;
@@ -105,11 +105,11 @@ function SignInForm() {
           transition: background-color 150ms ease, border-color 150ms ease;
         }
         .auth-btn:hover:not(:disabled) {
-          background: var(--gold-hover, #A87222);
-          border-color: var(--gold-hover, #A87222);
+          background: var(--gold);
+          border-color: var(--gold);
         }
         .auth-link:hover {
-          color: var(--link, #0A50A2) !important;
+          color: var(--link) !important;
         }
         .checkbox-wrapper {
           display: flex;
@@ -145,7 +145,7 @@ function SignInForm() {
           flex-shrink: 0;
           width: 20px;
           height: 20px;
-          background: #059669;
+          background: var(--data-positive);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -154,7 +154,7 @@ function SignInForm() {
           font-weight: 600;
         }
         .benefit-text {
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
           font-size: 14px;
           line-height: 1.5;
         }
@@ -173,10 +173,10 @@ function SignInForm() {
           font-family: var(--font-mono);
           font-size: 16px;
           font-weight: 600;
-          color: #059669;
+          color: var(--data-positive);
         }
         .trust-label {
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
           font-size: 12px;
           color: rgba(255,255,255,0.8);
           margin-top: 4px;
@@ -331,7 +331,7 @@ function SignInForm() {
               htmlFor="email"
               style={{
                 display: 'block',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '14px',
                 fontWeight: 500,
                 color: 'var(--color-text-primary)',
@@ -355,7 +355,7 @@ function SignInForm() {
                 padding: '12px 14px',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 backgroundColor: 'var(--color-surface-0)',
@@ -378,7 +378,7 @@ function SignInForm() {
               <label
                 htmlFor="password"
                 style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '14px',
                   fontWeight: 500,
                   color: 'var(--color-text-primary)',
@@ -389,9 +389,9 @@ function SignInForm() {
               <Link
                 href="/forgot-password"
                 style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '14px',
-                  color: 'var(--accent-primary-hover)',
+                  color: 'var(--gold)',
                   textDecoration: 'none',
                   fontWeight: 500,
                 }}
@@ -415,7 +415,7 @@ function SignInForm() {
                 padding: '12px 14px',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 backgroundColor: 'var(--color-surface-0)',
@@ -436,7 +436,7 @@ function SignInForm() {
               />
               <span
                 style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '14px',
                   color: 'var(--color-text-secondary)',
                   userSelect: 'none',
@@ -451,7 +451,7 @@ function SignInForm() {
           {error && (
             <p
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '13px',
                 color: 'var(--accent-primary)',
                 margin: '0 0 16px 0',
@@ -478,7 +478,7 @@ function SignInForm() {
               color: 'var(--color-surface-0)',
               border: 'none',
               borderRadius: '20px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '15px',
               fontWeight: 600,
               textTransform: 'uppercase',
@@ -509,7 +509,7 @@ function SignInForm() {
           <span
             style={{
               padding: '0 12px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '13px',
               color: 'var(--color-text-secondary)',
               fontWeight: 500,
@@ -535,7 +535,7 @@ function SignInForm() {
         >
           <p
             style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '14px',
               color: 'var(--color-text-primary)',
               margin: 0,
@@ -545,7 +545,7 @@ function SignInForm() {
             <Link
               href="/sign-up"
               style={{
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 textDecoration: 'none',
                 fontWeight: 600,
               }}
@@ -559,7 +559,7 @@ function SignInForm() {
           {/* Legal Footer */}
           <p
             style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '12px',
               color: 'var(--color-text-secondary)',
               margin: 0,
@@ -571,7 +571,7 @@ function SignInForm() {
             <Link
               href="/terms"
               style={{
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 textDecoration: 'none',
               }}
               className="auth-link"
@@ -582,7 +582,7 @@ function SignInForm() {
             <Link
               href="/privacy"
               style={{
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 textDecoration: 'none',
               }}
               className="auth-link"

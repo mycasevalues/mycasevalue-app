@@ -485,7 +485,7 @@ export default function AnnualReportCapture() {
         <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
           Report Downloaded
         </h3>
-        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.6, marginBottom: '16px' }}>
+        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.6, marginBottom: '16px' }}>
           Your 2026 Federal Court Statistics Annual Report is ready. Check your downloads folder and your email for confirmation.
         </p>
         <button
@@ -526,7 +526,7 @@ export default function AnnualReportCapture() {
           font-weight: 600;
           cursor: pointer;
           transition: background 200ms;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
           width: 100%;
         }
         .annual-report-submit:hover {
@@ -580,7 +580,7 @@ export default function AnnualReportCapture() {
                 fontSize: '13px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 marginBottom: '8px',
               }}>
                 Email Address
@@ -598,7 +598,7 @@ export default function AnnualReportCapture() {
                   width: '100%',
                   padding: '12px 14px',
                   fontSize: '14px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',

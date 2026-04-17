@@ -83,7 +83,7 @@ export default function VenueOptimizerPage() {
   const displayedVenues = data ? (showAll ? data.venues : data.venues.slice(0, 15)) : [];
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{focusStyle}
         {`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
@@ -93,8 +93,8 @@ export default function VenueOptimizerPage() {
       </style>
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -138,7 +138,7 @@ export default function VenueOptimizerPage() {
               <select
                 value={selectedNos}
                 onChange={(e) => setSelectedNos(e.target.value)}
-                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-body)', transition: 'border-color 0.2s' }}
+                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 0.2s' }}
               >
                 <option value="">Select case type...</option>
                 {caseTypes.map((ct) => (
@@ -203,7 +203,7 @@ export default function VenueOptimizerPage() {
               </div>
               <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Settlement Rate</p>
-                <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--data-positive, #176438)', margin: 0 }}>{data.nationalStats.settlementRate}%</p>
+                <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--data-positive)', margin: 0 }}>{data.nationalStats.settlementRate}%</p>
               </div>
               <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Median Duration</p>
@@ -257,7 +257,7 @@ export default function VenueOptimizerPage() {
                   <span style={{ fontSize: '14px', fontWeight: v.rank <= 3 ? 700 : 500, color: 'var(--color-text-primary)' }}>
                     {v.stateLabel}
                   </span>
-                  <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: v.winRate >= data.nationalStats.winRate ? 'var(--data-positive, #176438)' : 'var(--accent-primary)', textAlign: 'right' }}>
+                  <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: v.winRate >= data.nationalStats.winRate ? 'var(--data-positive)' : 'var(--accent-primary)', textAlign: 'right' }}>
                     {v.winRate}%
                   </span>
                   <span className="font-mono" style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-text-primary)', textAlign: 'right' }}>
@@ -270,14 +270,14 @@ export default function VenueOptimizerPage() {
                     fontSize: '13px',
                     fontWeight: 600,
                     textAlign: 'right',
-                    color: v.advantage > 0 ? 'var(--data-positive, #176438)' : v.advantage < 0 ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                    color: v.advantage > 0 ? 'var(--data-positive)' : v.advantage < 0 ? 'var(--accent-primary)' : 'var(--text2, #42403C)',
                   }}>
                     {v.advantage > 0 ? '+' : ''}{v.advantage}%
                   </span>
                   <div style={{ textAlign: 'right' }}>
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                       <div style={{ width: '32px', height: '6px', background: 'var(--border-default)', borderRadius: '3px', overflow: 'hidden' }}>
-                        <div style={{ height: '100%', width: `${v.score}%`, background: v.score >= 70 ? 'var(--data-positive, #176438)' : v.score >= 50 ? '#E89558' : 'var(--accent-primary)', borderRadius: '3px' }} />
+                        <div style={{ height: '100%', width: `${v.score}%`, background: v.score >= 70 ? 'var(--data-positive)' : v.score >= 50 ? 'var(--wrn-txt)' : 'var(--accent-primary)', borderRadius: '3px' }} />
                       </div>
                       <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{v.score}</span>
                     </div>
@@ -299,8 +299,8 @@ export default function VenueOptimizerPage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}>
+            <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(122,88,0,0.08)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+              <p style={{ fontSize: '11px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
             </div>

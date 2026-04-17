@@ -133,7 +133,7 @@ const BarChart: React.FC<{ bars: BarItem[] }> = ({ bars }) => {
           return (
             <div key={bar.nos} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-primary)' }}>
+                <span style={{ fontSize: '13px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
                   {bar.label}
                 </span>
                 <span
@@ -317,7 +317,7 @@ export default function HeroDataViz({ bars = DEFAULT_BARS, cards = DEFAULT_CARDS
         style={{
           fontSize: '11px',
           color: 'var(--text3, #78766C)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           marginBottom: '24px',
           letterSpacing: '0.02em',
         }}

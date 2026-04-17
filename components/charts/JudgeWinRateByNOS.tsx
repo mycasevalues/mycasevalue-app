@@ -128,7 +128,7 @@ export default function JudgeWinRateByNOS({
       .attr('text-anchor', 'end')
       .attr('dominant-baseline', 'central')
       .attr('font-size', '12px')
-      .attr('font-family', 'var(--font-body)')
+      .attr('font-family', 'var(--font-ui)')
       .attr('fill', 'var(--color-text-secondary)')
       .attr('font-weight', 500)
       .text((d) => NOS_CODE_LABELS[d.nos_code] || `NOS ${d.nos_code}`);
@@ -143,7 +143,7 @@ export default function JudgeWinRateByNOS({
       .attr('y', (_, i) => (yScale(i.toString()) || 0) + yScale.bandwidth() / 2)
       .attr('dominant-baseline', 'central')
       .attr('font-size', '12px')
-      .attr('font-family', 'var(--font-body)')
+      .attr('font-family', 'var(--font-ui)')
       .attr('font-weight', 600)
       .attr('fill', (d) => getWinRateColor(d.plaintiff_win_rate || 0).text)
       .text((d) => `${(d.plaintiff_win_rate || 0).toFixed(0)}%`);
@@ -158,7 +158,7 @@ export default function JudgeWinRateByNOS({
       .attr('y', (_, i) => (yScale(i.toString()) || 0) + yScale.bandwidth() / 2)
       .attr('dominant-baseline', 'central')
       .attr('font-size', '11px')
-      .attr('font-family', 'var(--font-body)')
+      .attr('font-family', 'var(--font-ui)')
       .attr('fill', 'var(--color-text-muted)')
       .text((d) => `(n = ${d.total_cases})`);
 
@@ -166,14 +166,14 @@ export default function JudgeWinRateByNOS({
     g.append('g')
       .attr('transform', `translate(0,${chartHeight})`)
       .call(d3.axisBottom(xScale).tickFormat((d) => `${d}%`))
-      .style('font-family', 'var(--font-body)')
+      .style('font-family', 'var(--font-ui)')
       .style('font-size', '11px');
 
   }, [filtered, w, h]);
 
   if (filtered.length === 0) {
     return (
-      <div style={{ padding: '40px', textAlign: 'center', color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)' }}>
+      <div style={{ padding: '40px', textAlign: 'center', color: 'var(--color-text-muted)', fontFamily: 'var(--font-ui)' }}>
         No case types with {minCases}+ cases
       </div>
     );
@@ -189,7 +189,7 @@ export default function JudgeWinRateByNOS({
         aria-label="Judge win rate by case type (NOS code)"
         role="img"
       />
-      <div style={{ fontSize: '12px', fontFamily: 'var(--font-body)', color: 'var(--color-text-muted)', marginTop: '16px', textAlign: 'center' }}>
+      <div style={{ fontSize: '12px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-muted)', marginTop: '16px', textAlign: 'center' }}>
         Click a case type to see more details
       </div>
     </div>

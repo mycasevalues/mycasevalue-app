@@ -32,7 +32,7 @@ export function TrendLine({
           <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
           <XAxis
             dataKey="year"
-            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
+            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
             axisLine={{ stroke: 'var(--border-default)' }}
             tickLine={false}
           />
@@ -49,7 +49,7 @@ export function TrendLine({
               borderRadius: '4px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               fontSize: '13px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               padding: '8px 14px',
               color: 'var(--color-text-primary)',
             }}

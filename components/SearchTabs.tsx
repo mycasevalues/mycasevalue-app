@@ -36,7 +36,7 @@ export default function SearchTabs() {
               padding: '12px 16px',
               fontSize: '14px',
               fontWeight: activeTab === tab.id ? '600' : '500',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               color: activeTab === tab.id ? 'var(--accent-primary)' : 'var(--text3, #78766C)',
               background: 'transparent',
               border: 'none',

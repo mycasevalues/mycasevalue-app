@@ -51,7 +51,7 @@ export default function LanguageToggle() {
         gap: '2px',
         fontSize: '13px',
         fontWeight: 500,
-        fontFamily: 'Inter, var(--font-body)',
+        fontFamily: 'Inter, var(--font-ui)',
         color: 'var(--color-text-secondary)',
         marginRight: '12px',
       }}
@@ -67,7 +67,7 @@ export default function LanguageToggle() {
           fontWeight: locale === 'en' ? 600 : 500,
           transition: 'color 150ms',
           fontSize: '13px',
-          fontFamily: 'Inter, var(--font-body)',
+          fontFamily: 'Inter, var(--font-ui)',
         }}
         aria-label="Switch to English"
         aria-pressed={locale === 'en'}
@@ -86,7 +86,7 @@ export default function LanguageToggle() {
           fontWeight: locale === 'es' ? 600 : 500,
           transition: 'color 150ms',
           fontSize: '13px',
-          fontFamily: 'Inter, var(--font-body)',
+          fontFamily: 'Inter, var(--font-ui)',
         }}
         aria-label="Switch to Spanish"
         aria-pressed={locale === 'es'}

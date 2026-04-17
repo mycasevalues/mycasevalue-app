@@ -79,7 +79,7 @@ export default function DataAlertSubscribe({
         backgroundColor: 'var(--color-surface-0)',
         border: '1px solid rgba(255,255,255,0.1)',
         borderRadius: '4px',
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
       }}
     >
       {isSuccess ? (
@@ -168,7 +168,7 @@ export default function DataAlertSubscribe({
                     border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: '4px',
                     fontSize: '13px',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     backgroundColor: 'var(--color-surface-0)',
                     color: 'var(--color-text-primary)',
                     boxSizing: 'border-box',
@@ -197,7 +197,7 @@ export default function DataAlertSubscribe({
                     border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: '4px',
                     fontSize: '13px',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     backgroundColor: 'var(--color-surface-0)',
                     color: 'var(--color-text-primary)',
                     boxSizing: 'border-box',

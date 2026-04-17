@@ -124,7 +124,7 @@ export default function NosExplorerPage() {
       <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--accent-primary)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
-          <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
+          <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-ui)' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Home</Link>
             <span style={{ color: 'rgba(255,255,255,0.4)' }}>/</span>
             <span style={{ color: 'var(--color-surface-0)' }}>NOS Explorer</span>
@@ -133,14 +133,14 @@ export default function NosExplorerPage() {
           <div style={{ paddingTop: 16, paddingBottom: 20 }}>
             <h1 style={{
               fontSize: 'clamp(22px, 3vw, 28px)', fontWeight: 900, marginBottom: 8,
-              color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-ui)', lineHeight: 1.2,
+              color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-legal)', lineHeight: 1.2,
             }}>
               NOS Code Explorer
             </h1>
 
             <p style={{
               fontSize: 14, lineHeight: 1.5, maxWidth: 640,
-              color: '#C7D1D8', fontFamily: 'var(--font-body)',
+              color: '#C7D1D8', fontFamily: 'var(--font-ui)',
             }}>
               Search {nosData.length} federal case types with win rates and settlement data from {totalCases.toLocaleString()} cases.
             </p>
@@ -154,16 +154,16 @@ export default function NosExplorerPage() {
 
         {/* What are NOS Codes? */}
         <div style={{ marginTop: 48, padding: 32, background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 12 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', marginBottom: 12 }}>
             Understanding Federal Case Classifications
           </h2>
-          <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
+          <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: '0 0 12px' }}>
             Nature of Suit (NOS) codes are a classification system used by federal courts to categorize civil cases by their legal subject matter. Assigned at filing, these three-digit codes enable statistical analysis of court activity and help identify trends across case types.
           </p>
-          <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
+          <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: '0 0 12px' }}>
             The coding system is maintained by the Administrative Office of the United States Courts and covers everything from contract disputes (NOS 110–199) to civil rights cases (NOS 440–449) to intellectual property (NOS 820–840).
           </p>
-          <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: 0 }}>
+          <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
             Data sourced from the Federal Judicial Center Integrated Database (FJC IDB) and public court records. MyCaseValue LLC is not a law firm.
           </p>
         </div>

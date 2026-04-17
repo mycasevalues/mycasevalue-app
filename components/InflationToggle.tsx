@@ -28,7 +28,7 @@ export default function InflationToggle() {
             fontWeight: 600,
             cursor: 'pointer',
             transition: 'background-color 0.2s ease, color 0.2s ease',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}
           aria-pressed={inflationEnabled}
           title="Toggle inflation adjustment to 2024 dollars"
@@ -65,7 +65,7 @@ export default function InflationToggle() {
           fontSize: '12px',
           color: 'var(--color-text-secondary)',
           fontStyle: 'italic',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           backgroundColor: 'var(--color-surface-0)',
           padding: '8px 12px',
           borderRadius: '4px',

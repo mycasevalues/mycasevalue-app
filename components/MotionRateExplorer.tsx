@@ -108,7 +108,7 @@ export default function MotionRateExplorer() {
     maxWidth: '1400px',
     margin: '0 auto',
     padding: '32px 20px',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
   };
 
   const headerStyle: React.CSSProperties = {
@@ -146,7 +146,7 @@ export default function MotionRateExplorer() {
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--card, #FFFFFF)',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
     cursor: 'pointer',
   };
 

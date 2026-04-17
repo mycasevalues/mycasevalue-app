@@ -497,7 +497,7 @@ export default function CommandPalette({
               fontSize: '15px',
               color: 'var(--color-text-primary)',
               caretColor: 'var(--accent-primary-hover)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               height: '100%',
             }}
             autoComplete="off"
@@ -619,7 +619,7 @@ export default function CommandPalette({
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
-                            fontFamily: 'var(--font-body)',
+                            fontFamily: 'var(--font-ui)',
                           }}
                         >
                           {item.label}
@@ -632,7 +632,7 @@ export default function CommandPalette({
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
-                              fontFamily: 'var(--font-body)',
+                              fontFamily: 'var(--font-ui)',
                             }}
                           >
                             {item.description}
@@ -696,7 +696,7 @@ export default function CommandPalette({
             fontSize: '10px',
             color: 'var(--color-text-secondary)',
             background: 'var(--color-surface-1)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           <span>

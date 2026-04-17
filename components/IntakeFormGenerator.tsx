@@ -602,7 +602,7 @@ export default function IntakeFormGenerator() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div>
-            <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               Case Type *
             </label>
             <select
@@ -616,7 +616,7 @@ export default function IntakeFormGenerator() {
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 backgroundColor: 'var(--color-surface-0)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 outline: 'none',
               }}
             >
@@ -630,7 +630,7 @@ export default function IntakeFormGenerator() {
           </div>
 
           <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
-            <p style={{ fontSize: '12px', color: '#38bdf8', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '12px', color: '#38bdf8', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
               This tool generates a comprehensive intake questionnaire with relevant fields for your case type. You can customize and print the form for client meetings.
             </p>
           </div>
@@ -669,7 +669,7 @@ export default function IntakeFormGenerator() {
                 borderRadius: '20px',
                 fontSize: '13px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
               }}
@@ -696,14 +696,14 @@ export default function IntakeFormGenerator() {
             <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', borderBottom: '2px solid var(--accent-primary)', paddingBottom: '8px' }}>
               Form Sections:
             </h3>
-            <ul style={{ margin: 0, paddingLeft: '24px', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.8', fontFamily: 'var(--font-body)' }}>
+            <ul style={{ margin: 0, paddingLeft: '24px', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.8', fontFamily: 'var(--font-ui)' }}>
               {selectedInfo.sections.map((section, idx) => (
                 <li key={idx}>{section}</li>
               ))}
             </ul>
 
             <div style={{ marginTop: '24px', padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '4px', border: '1px solid var(--wrn-bg, #FCD34D)' }}>
-              <p style={{ fontSize: '12px', color: 'var(--wrn-txt, #7A5800)', margin: 0, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--wrn-txt, #7A5800)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 <strong>Note:</strong> Each section contains numbered fields with blank lines formatted for printing.
               </p>
             </div>

@@ -109,7 +109,7 @@ export default function SemanticCaseSearch() {
         style={{
           fontSize: '14px',
           color: 'var(--color-text-secondary)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           marginBottom: '16px',
         }}
       >
@@ -130,7 +130,7 @@ export default function SemanticCaseSearch() {
               minHeight: '120px',
               padding: '12px',
               fontSize: '14px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               border: isOverLimit ? '1px solid #CC1016' : '1px solid var(--bdr, #E2DFD8)',
               borderRadius: '4px',
               outline: 'none',
@@ -170,7 +170,7 @@ export default function SemanticCaseSearch() {
             color: 'var(--color-surface-0)',
             fontSize: '14px',
             fontWeight: '600',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             border: 'none',
             borderRadius: '4px',
             cursor: isLoading || !description.trim() || isOverLimit ? 'not-allowed' : 'pointer',
@@ -201,7 +201,7 @@ export default function SemanticCaseSearch() {
             borderRadius: '4px',
             color: 'var(--data-negative, #B01E1E)',
             fontSize: '14px',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
           }}
         >
@@ -218,7 +218,7 @@ export default function SemanticCaseSearch() {
               textTransform: 'uppercase',
               color: 'var(--color-text-secondary)',
               fontWeight: '600',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               marginBottom: '12px',
             }}
           >
@@ -294,7 +294,7 @@ export default function SemanticCaseSearch() {
                     style={{
                       fontSize: '12px',
                       color: 'var(--color-text-secondary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       marginBottom: '12px',
                       lineHeight: 1.4,
                     }}
@@ -412,7 +412,7 @@ export default function SemanticCaseSearch() {
                       fontWeight: '600',
                       color: 'var(--accent-primary)',
                       textDecoration: 'none',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       padding: '4px 0',
                       transition: 'color 0.2s',
                       cursor: 'pointer',

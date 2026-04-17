@@ -67,7 +67,7 @@ export default function CookieConsent() {
           padding: 0.625rem 1.25rem;
           border-radius: 12px;
           fontSize: 0.9375rem;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
           font-weight: 600;
           cursor: pointer;
           transition: all 0.2s ease;
@@ -111,7 +111,7 @@ export default function CookieConsent() {
             margin: 0,
             fontSize: '0.9375rem',
             color: 'var(--color-surface-0)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             lineHeight: '1.6',
             letterSpacing: '0.3px',
           }}
@@ -159,7 +159,7 @@ export default function CookieConsent() {
               color: 'var(--color-surface-0)',
               textDecoration: 'none',
               fontSize: '0.9375rem',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: 600,
               transition: 'color 0.2s ease',
               cursor: 'pointer',

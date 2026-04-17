@@ -106,7 +106,7 @@ export default function ComparePage() {
     <>
       <style>{`
         .lexis-link {
-          color: var(--accent-primary-hover);
+          color: var(--gold);
           text-decoration: none;
           transition: color 0.2s ease;
         }
@@ -118,11 +118,11 @@ export default function ComparePage() {
           transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
         .lexis-select:hover {
-          border-color: var(--accent-primary-hover);
+          border-color: var(--gold);
         }
         .lexis-select:focus {
           outline: none;
-          border-color: var(--accent-primary-hover);
+          border-color: var(--gold);
           box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.1);
         }
         .lexis-btn {
@@ -154,8 +154,8 @@ export default function ComparePage() {
 
       {/* Institutional Header */}
       <header style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--color-surface-0)',
+        color: 'var(--color-surface-0)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -176,9 +176,9 @@ export default function ComparePage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Comparison Tool
           </div>
           <h1 className="compare-header" style={{
@@ -188,7 +188,7 @@ export default function ComparePage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             margin: '0 0 16px',
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--color-surface-0)',
           }}>
             Compare case types side-by-side
           </h1>
@@ -196,7 +196,7 @@ export default function ComparePage() {
             fontSize: 'clamp(14px, 2vw, 16px)',
             color: 'rgba(255,255,255,0.7)',
             margin: 0,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             lineHeight: 1.6,
             maxWidth: 640,
           }}>
@@ -211,10 +211,10 @@ export default function ComparePage() {
         padding: '12px 0',
         borderBottom: '1px solid var(--border-default)',
         fontSize: 13,
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 24px)', paddingRight: 'clamp(16px, 3vw, 24px)' }}>
-          <Link href="/" className="lexis-link" style={{ marginRight: 8, color: 'var(--accent-primary-hover)' }}>Home</Link>
+          <Link href="/" className="lexis-link" style={{ marginRight: 8, color: 'var(--gold)' }}>Home</Link>
           <span style={{ color: 'var(--color-text-secondary)', marginRight: 8 }}>/</span>
           <span style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>Compare Case Types</span>
         </div>
@@ -225,7 +225,7 @@ export default function ComparePage() {
         background: 'var(--color-surface-1)',
         minHeight: 'calc(100vh - 200px)',
         padding: 'clamp(16px, 3vw, 24px)',
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 24px)', paddingRight: 'clamp(16px, 3vw, 24px)' }}>
           {/* Selectors */}
@@ -261,7 +261,7 @@ export default function ComparePage() {
                     borderRadius: 4,
                     background: 'var(--color-surface-0)',
                     color: 'var(--color-text-primary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     cursor: 'pointer',
                     appearance: 'none',
                     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
@@ -323,7 +323,7 @@ export default function ComparePage() {
                 width: '100%',
                 borderCollapse: 'collapse',
                 fontSize: 14,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 <thead>
                   <tr style={{ borderBottom: '2px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
@@ -416,7 +416,7 @@ export default function ComparePage() {
                             <td key={s.nos} style={{
                               textAlign: 'center',
                               padding: '16px 16px',
-                              color: isBest ? 'var(--accent-primary-hover)' : 'var(--color-text-primary)',
+                              color: isBest ? 'var(--gold)' : 'var(--color-text-primary)',
                               fontWeight: isBest ? 700 : 400,
                               fontFamily: 'var(--font-mono)',
                               fontSize: 14,
@@ -428,7 +428,7 @@ export default function ComparePage() {
                                   <div style={{
                                     height: '100%',
                                     width: `${Math.min(v, 100)}%`,
-                                    background: isBest ? 'var(--accent-primary-hover)' : row.key === 'dismissRate' ? 'var(--accent-primary)' : 'var(--border-default)',
+                                    background: isBest ? 'var(--gold)' : row.key === 'dismissRate' ? 'var(--accent-primary)' : 'var(--border-default)',
                                     borderRadius: 2,
                                     transition: 'width 0.5s ease',
                                   }} />
@@ -484,7 +484,7 @@ export default function ComparePage() {
                               background: 'linear-gradient(90deg, #70B5F9, var(--accent-primary))',
                               borderRadius: 4,
                             }} />
-                            <div style={{ position: 'absolute', top: 4, width: 2, height: 16, background: 'var(--accent-primary-hover)', left: `${(s.medianRecovery / s.rngHi) * 100}%`, transform: 'translateX(-50%)' }} />
+                            <div style={{ position: 'absolute', top: 4, width: 2, height: 16, background: 'var(--gold)', left: `${(s.medianRecovery / s.rngHi) * 100}%`, transform: 'translateX(-50%)' }} />
                           </div>
                           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: 'var(--color-text-secondary)', marginTop: 4, fontFamily: 'var(--font-mono)' }}>
                             <span>${s.rngLo}K</span>
@@ -498,11 +498,11 @@ export default function ComparePage() {
                       {s.attorneyWR !== null && s.proSeWR !== null && (
                         <div style={{ display: 'flex', gap: 8 }}>
                           <div style={{ flex: 1, padding: '8px', background: 'rgba(34,197,94,0.1)', borderRadius: 4, textAlign: 'center' }}>
-                            <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>{s.attorneyWR}%</div>
+                            <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--data-positive)', fontFamily: 'var(--font-mono)' }}>{s.attorneyWR}%</div>
                             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>w/ attorney</div>
                           </div>
                           <div style={{ flex: 1, padding: '8px', background: 'rgba(239,68,68,0.06)', borderRadius: 4, textAlign: 'center' }}>
-                            <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>{s.proSeWR}%</div>
+                            <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>{s.proSeWR}%</div>
                             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>pro se</div>
                           </div>
                         </div>
@@ -513,7 +513,7 @@ export default function ComparePage() {
                         <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--color-text-secondary)' }}>
                           <span style={{
                             display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
-                            backgroundColor: s.totalCases >= 10000 ? 'var(--data-positive, #176438)' : s.totalCases >= 1000 ? '#C37D16' : s.totalCases >= 100 ? 'var(--data-negative, #B01E1E)' : 'var(--text4, #A8A6A0)',
+                            backgroundColor: s.totalCases >= 10000 ? 'var(--data-positive)' : s.totalCases >= 1000 ? '#C37D16' : s.totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)',
                           }} />
                           n={s.totalCases.toLocaleString()} cases
                         </div>
@@ -543,7 +543,7 @@ export default function ComparePage() {
                   <span style={{ display: 'inline-block', padding: '1px 6px', background: 'var(--border-default)', borderRadius: 4, fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.3px' }}>AI</span>
                   <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Comparison Summary</span>
                 </div>
-                <p style={{ fontSize: 13, color: 'var(--color-text-primary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: 13, color: 'var(--color-text-primary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-ui)' }}>
                   {stats[0].label} cases show a {stats[0].winRate > stats[1].winRate ? 'higher' : 'lower'} win rate ({stats[0].winRate.toFixed(1)}%) compared to {stats[1].label} ({stats[1].winRate.toFixed(1)}%), with {Math.abs(stats[0].medianDuration - stats[1].medianDuration).toFixed(0)} months difference in median case duration.{' '}
                   {stats[0].medianRecovery !== null && stats[1].medianRecovery !== null
                     ? `Median recovery for ${stats[0].label} ($${stats[0].medianRecovery}K) is ${stats[0].medianRecovery > stats[1].medianRecovery ? 'higher' : 'lower'} than ${stats[1].label} ($${stats[1].medianRecovery}K).`
@@ -586,7 +586,7 @@ export default function ComparePage() {
                   value: s[metric.key as keyof CaseStats] as number,
                 }));
                 const maxValue = Math.max(...metricStats.map(m => m.value));
-                const colors = ['var(--accent-primary)', 'var(--accent-primary-hover)', 'var(--accent-primary)'];
+                const colors = ['var(--accent-primary)', 'var(--gold)', 'var(--accent-primary)'];
 
                 return (
                   <div key={metric.key} style={{ marginBottom: 24 }}>
@@ -692,7 +692,7 @@ export default function ComparePage() {
                     }}>
                       <div style={{
                         width: `${s.winRate}%`,
-                        background: 'var(--data-positive, #176438)',
+                        background: 'var(--data-positive)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -758,7 +758,7 @@ export default function ComparePage() {
                         <div style={{
                           width: 12,
                           height: 12,
-                          background: 'var(--data-positive, #176438)',
+                          background: 'var(--data-positive)',
                           borderRadius: 2,
                           margin: '0 auto 4px',
                         }} />
@@ -950,10 +950,10 @@ export default function ComparePage() {
                     cursor: 'pointer',
                     textAlign: 'left',
                     transition: 'all 0.2s ease',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--accent-primary-hover)';
+                    (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--gold)';
                     (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 2px 4px rgba(10, 102, 194, 0.1)';
                   }}
                   onMouseLeave={(e) => {
@@ -1047,7 +1047,7 @@ export default function ComparePage() {
                     transition: 'all 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--accent-primary-hover)';
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--gold)';
                     (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 2px 4px rgba(10, 102, 194, 0.1)';
                   }}
                   onMouseLeave={(e) => {
@@ -1058,7 +1058,7 @@ export default function ComparePage() {
                   <h4 style={{
                     fontSize: 14,
                     fontWeight: 600,
-                    color: 'var(--accent-primary-hover)',
+                    color: 'var(--gold)',
                     margin: '0 0 4px 0',
                     fontFamily: 'var(--font-ui)',
                   }}>

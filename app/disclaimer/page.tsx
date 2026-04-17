@@ -35,7 +35,7 @@ export default function DisclaimerPage() {
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
       <style>{`
         a[data-link-type="teal"] {
-          color: var(--link-hover, #083D7A);
+          color: var(--link);
           text-decoration: none;
         }
         a[data-link-type="teal"]:hover {
@@ -88,7 +88,7 @@ export default function DisclaimerPage() {
             style={{
               fontSize: 16,
               color: 'rgba(255,255,255,0.7)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.7,
             }}
           >
@@ -98,7 +98,7 @@ export default function DisclaimerPage() {
             style={{
               fontSize: 13,
               color: 'rgba(255,255,255,0.6)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               marginTop: 12,
               lineHeight: 1.5,
             }}
@@ -111,8 +111,8 @@ export default function DisclaimerPage() {
       {/* Breadcrumb */}
       <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
-            <a href="/" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-ui)' }}>
+            <a href="/" data-link-type="teal" style={{ color: 'var(--gold)' }}>
               Home
             </a>
             <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
@@ -140,7 +140,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               MyCaseValue is <strong>not a law firm</strong> and does not provide legal advice. The information, tools, and data presented on this website are for informational and research purposes only. Nothing on MyCaseValue should be construed as legal advice, and you should not rely on any content for the purpose of taking legal action without first consulting with a qualified attorney licensed to practice law in your jurisdiction.
@@ -163,7 +163,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               Your use of MyCaseValue does not create an attorney-client relationship between you and MyCaseValue, its creators, or any associated parties. We cannot advise you on your specific legal situation, and we do not have the attorney-client privilege with you. If you need legal advice specific to your case, you must consult with a licensed attorney.
@@ -186,7 +186,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               All data presented on MyCaseValue is sourced from publicly available federal court records and databases, including:
@@ -195,7 +195,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               marginTop: 12,
               paddingLeft: '24px',
             }}>
@@ -208,7 +208,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
               marginTop: 12,
             }}>
@@ -232,7 +232,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               The statistics, win rates, settlement ranges, and case timelines presented on MyCaseValue are based on aggregate historical data from past federal court cases. These figures show what has happened in similar cases in the past. They are not predictions of what will happen in your case. Every case is unique, and the outcome of your specific case depends on numerous factors including the specific facts, applicable law, jurisdiction, judge, and quality of legal representation.
@@ -255,7 +255,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               While we strive for accuracy and employ quality control measures, we make no representation or warranty regarding the completeness, accuracy, timeliness, or reliability of any data on MyCaseValue. You should be aware of the following limitations:
@@ -265,7 +265,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               marginTop: 12,
               paddingLeft: '24px',
             }}>
@@ -283,7 +283,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
               marginTop: 12,
             }}>
@@ -307,7 +307,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               <strong>MyCaseValue provides no guarantees, warranties, or assurances regarding the outcome of any case.</strong> Historical aggregate data cannot and should not be used to predict individual case outcomes. The fact that cases in a specific category achieved a 60% win rate does not mean your case will result in a win. Many unique factors affect each case's outcome:
@@ -317,7 +317,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               marginTop: 12,
               paddingLeft: '24px',
             }}>
@@ -335,7 +335,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
               marginTop: 12,
             }}>
@@ -359,7 +359,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               If you believe you have a legal claim or are involved in a legal dispute, you should consult with a qualified, licensed attorney in your jurisdiction as soon as possible. An attorney can review the specific facts of your situation, advise you of your legal rights and options, and represent your interests. Many attorneys offer free initial consultations. If you cannot afford an attorney, contact your local bar association or legal aid office for resources.
@@ -382,7 +382,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               To the fullest extent permitted by law, MyCaseValue, its creators, owners, operators, and contributors shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of or related to your use of this website, including any claims based on reliance on data, breach of warranty, or any other legal theory. This limitation applies even if we have been advised of the possibility of such damages.
@@ -405,10 +405,10 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
-              We respect your privacy. We do not store information about the cases you research or the queries you make. All searches are performed privately and encrypted. We do not sell, trade, or share your research data with third parties. For complete details on our privacy practices, please see our <a href="/privacy" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>Privacy Policy</a>.
+              We respect your privacy. We do not store information about the cases you research or the queries you make. All searches are performed privately and encrypted. We do not sell, trade, or share your research data with third parties. For complete details on our privacy practices, please see our <a href="/privacy" data-link-type="teal" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Privacy Policy</a>.
             </p>
           </section>
 
@@ -428,7 +428,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               MyCaseValue reserves the right to update or modify this disclaimer at any time. Changes are effective immediately upon posting. Your continued use of the website after any changes constitutes your acceptance of the updated disclaimer. We encourage you to review this disclaimer periodically to stay informed of any changes.
@@ -451,7 +451,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               If you have questions about this disclaimer, how MyCaseValue works, or need clarification about our data limitations, please contact us:
@@ -467,10 +467,10 @@ export default function DisclaimerPage() {
               border: '1px solid var(--border-default)',
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Email:</strong> <a href="mailto:support@mycasevalues.com" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>support@mycasevalues.com</a>
+                <strong>Email:</strong> <a href="mailto:support@mycasevalues.com" data-link-type="teal" style={{ color: 'var(--gold)', textDecoration: 'none' }}>support@mycasevalues.com</a>
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Website:</strong> <a href="https://mycasevalues.com" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>https://mycasevalues.com</a>
+                <strong>Website:</strong> <a href="https://mycasevalues.com" data-link-type="teal" style={{ color: 'var(--gold)', textDecoration: 'none' }}>https://mycasevalues.com</a>
               </p>
             </div>
           </section>
@@ -491,7 +491,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
             }}>
               This disclaimer is part of MyCaseValue's complete legal framework. Please review our other legal documents to fully understand your rights and our obligations:
@@ -507,10 +507,10 @@ export default function DisclaimerPage() {
               border: '1px solid var(--border-default)',
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Terms of Service:</strong> <a href="/terms" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>Read our Terms of Service</a> for rules governing use of MyCaseValue and our limitations of liability.
+                <strong>Terms of Service:</strong> <a href="/terms" data-link-type="teal" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Read our Terms of Service</a> for rules governing use of MyCaseValue and our limitations of liability.
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Privacy Policy:</strong> <a href="/privacy" data-link-type="teal" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>Review our Privacy Policy</a> to understand how we collect, use, and protect your data.
+                <strong>Privacy Policy:</strong> <a href="/privacy" data-link-type="teal" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Review our Privacy Policy</a> to understand how we collect, use, and protect your data.
               </p>
             </div>
           </section>
@@ -527,7 +527,7 @@ export default function DisclaimerPage() {
               lineHeight: '1.5',
               margin: 0,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: 600,
             }}>
               <strong>Your Acknowledgment:</strong> By using MyCaseValue, you acknowledge that you have carefully read and understood this disclaimer in its entirety. You understand and accept:
@@ -536,7 +536,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               marginTop: 12,
               paddingLeft: '24px',
               margin: '12px 0 0 0',
@@ -553,7 +553,7 @@ export default function DisclaimerPage() {
               lineHeight: '1.5',
               margin: '12px 0 0 0',
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               If you do not agree with this disclaimer, you should not use MyCaseValue.
             </p>

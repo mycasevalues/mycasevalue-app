@@ -104,7 +104,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
             fontSize: '13px',
             color: 'var(--color-text-secondary)',
             marginBottom: '24px',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             Most-cited federal court opinions for {nosLabel} cases
           </p>
@@ -140,7 +140,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
                       marginTop: '4px',
                       fontSize: '12px',
                       color: 'var(--color-text-secondary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                     }}>
                       {op.court && <span>{op.court}</span>}
                       {op.year && <span>{op.year}</span>}
@@ -155,7 +155,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
                     marginTop: '8px',
                     marginBottom: 0,
                     lineHeight: 1.5,
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     {op.summary}
                   </p>
@@ -174,7 +174,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
             gap: '6px',
             fontSize: '11px',
             color: 'var(--color-text-muted)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             <span style={{
               display: 'inline-block',

@@ -141,7 +141,7 @@ export default function BlogPage() {
         .blog-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 2px;
           transition: all 0.3s ease;
           position: relative;
           display: flex;
@@ -156,8 +156,8 @@ export default function BlogPage() {
           left: 0;
           right: 0;
           height: 0;
-          background: var(--link, #0A50A2);
-          border-radius: 12px 12px 0 0;
+          background: var(--link);
+          border-radius: 2px 12px 0 0;
           transition: height 0.3s ease;
         }
 
@@ -182,7 +182,7 @@ export default function BlogPage() {
         .featured-post {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 2px;
         }
 
         .featured-image-placeholder {
@@ -190,16 +190,16 @@ export default function BlogPage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--text3, #78766C);
+          color: var(--text3, var(--color-text-3));
           font-size: 14px;
-          border-radius: 12px;
+          border-radius: 2px;
         }
 
         .category-badge {
           background: rgba(239,68,68,0.08);
           color: var(--accent-primary);
           padding: 4px 10px;
-          border-radius: 12px;
+          border-radius: 2px;
           font-size: 12px;
           font-weight: 600;
           display: inline-block;
@@ -209,7 +209,7 @@ export default function BlogPage() {
         .sidebar-filter {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 2px;
           padding: 24px;
         }
 
@@ -219,7 +219,7 @@ export default function BlogPage() {
           color: var(--color-text-secondary);
           cursor: pointer;
           transition: color 0.2s ease;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
         }
 
         .filter-item:hover {
@@ -229,7 +229,7 @@ export default function BlogPage() {
         .featured-research-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 2px;
           padding: 24px;
           transition: all 0.3s ease;
           text-decoration: none;
@@ -252,7 +252,7 @@ export default function BlogPage() {
           display: inline-block;
           transition: all 0.2s ease;
           cursor: pointer;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
           text-decoration: none;
         }
 
@@ -265,7 +265,7 @@ export default function BlogPage() {
         .related-tools-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 2px;
           padding: 24px;
           text-decoration: none;
           display: flex;
@@ -300,7 +300,7 @@ export default function BlogPage() {
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
         padding: '40px 24px 48px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',
@@ -322,17 +322,17 @@ export default function BlogPage() {
             display: 'inline-flex', alignItems: 'center', gap: 6,
             padding: '4px 10px', marginBottom: 14,
             borderRadius: 999,
-            border: '1px solid rgba(59,130,246,0.2)',
-            background: 'rgba(59,130,246,0.08)',
+            border: '1px solid rgba(10,80,162,0.2)',
+            background: 'rgba(10,80,162,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Research & Analysis
           </div>
           <h1 className="font-ui" style={{
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--card)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -343,7 +343,7 @@ export default function BlogPage() {
           </h1>
           <p style={{
             color: 'rgba(255,255,255,0.6)',
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             fontSize: 15,
             lineHeight: 1.65,
             maxWidth: 640,
@@ -373,13 +373,13 @@ export default function BlogPage() {
                   </h2>
                   <p
                     className="mb-8 leading-relaxed"
-                    style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
+                    style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
                   >
                     {featuredPost.description}
                   </p>
                 </div>
                 <div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
                     <span className="font-medium">{featuredPost.author}</span>
                     <span className="mx-2">•</span>
                     <time>{featuredPost.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
@@ -458,7 +458,7 @@ export default function BlogPage() {
                     >
                       <h3
                         className="font-legal font-semibold mb-3 transition-colors"
-                        style={{ fontSize: '18px', color: 'var(--color-text-primary)', lineHeight: '1.4' }}
+                        style={{ fontSize: '20px', color: 'var(--color-text-primary)', lineHeight: '1.4' }}
                       >
                         {post.title}
                       </h3>
@@ -466,12 +466,12 @@ export default function BlogPage() {
 
                     <p
                       className="mb-6 line-clamp-3"
-                      style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: '1.5', fontFamily: 'var(--font-body)', minHeight: '63px' }}
+                      style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: '1.5', fontFamily: 'var(--font-ui)', minHeight: '63px' }}
                     >
                       {post.description}
                     </p>
 
-                    <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '12px', flex: 1 }}>
+                    <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', flex: 1 }}>
                       <span className="font-medium">{post.author}</span>
                       <span className="mx-1.5">•</span>
                       <time>{post.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
@@ -502,7 +502,7 @@ export default function BlogPage() {
           <h2 className="text-3xl font-legal font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
             Featured Research
           </h2>
-          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
             Explore our latest in-depth analyses on federal litigation trends, settlement patterns, and case outcomes.
           </p>
         </div>
@@ -530,10 +530,10 @@ export default function BlogPage() {
               key={idx}
               className="featured-research-card"
             >
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0', lineHeight: 1.4, fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0', lineHeight: 1.4, fontFamily: 'var(--font-legal)' }}>
                 {research.title}
               </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 {research.description}
               </p>
               <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-primary)', textDecoration: 'none' }}>
@@ -550,7 +550,7 @@ export default function BlogPage() {
           <h2 className="text-3xl font-legal font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
             Browse by Topic
           </h2>
-          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
             Filter articles by practice area and research focus.
           </p>
         </div>
@@ -580,7 +580,7 @@ export default function BlogPage() {
           <h2 className="text-3xl font-legal font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
             Related Tools
           </h2>
-          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
             Use these interactive tools to explore the data discussed in our research.
           </p>
         </div>
@@ -601,10 +601,10 @@ export default function BlogPage() {
                 <div style={{ marginBottom: '12px' }}>
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg>
                 </div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-legal)' }}>
                   {tool.name}
                 </h3>
-                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                   Explore federal case data interactively.
                 </p>
               </div>
@@ -622,7 +622,7 @@ export default function BlogPage() {
           <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             Want deeper analysis? Try Attorney Mode
           </h2>
-          <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontSize: '16px' }}>
+          <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontSize: '16px' }}>
             Access advanced case analytics, predictive insights, and strategic recommendations powered by 5.1M+ federal court cases.
           </p>
           <a

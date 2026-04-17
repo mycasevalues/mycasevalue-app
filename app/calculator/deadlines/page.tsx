@@ -102,29 +102,29 @@ export default function DeadlinesCalculatorPage() {
     <>
       <style>{`
         .dl-select {
-          height: 48px; width: 100%; border: 1px solid var(--border-default); border-radius: 12px;
-          padding: 0 36px 0 16px; font-family: var(--font-body); font-size: 14px; color: var(--color-text-primary);
+          height: 48px; width: 100%; border: 1px solid var(--border-default); border-radius: 2px;
+          padding: 0 36px 0 16px; font-family: var(--font-ui); font-size: 14px; color: var(--color-text-primary);
           background: var(--color-surface-0); appearance: none;
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
           background-repeat: no-repeat; background-position: right 12px center; cursor: pointer;
           transition: border-color 0.2s ease;
         }
-        .dl-select:hover { border-color: var(--accent-primary-hover); }
-        .dl-select:focus { outline: none; border-color: var(--accent-primary-hover); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
+        .dl-select:hover { border-color: var(--gold); }
+        .dl-select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         .dl-input {
-          height: 48px; width: 100%; border: 1px solid var(--border-default); border-radius: 12px;
-          padding: 0 16px; font-family: var(--font-body); font-size: 14px; color: var(--color-text-primary);
+          height: 48px; width: 100%; border: 1px solid var(--border-default); border-radius: 2px;
+          padding: 0 16px; font-family: var(--font-ui); font-size: 14px; color: var(--color-text-primary);
           background: var(--color-surface-0); transition: border-color 0.2s ease;
         }
-        .dl-input:focus { outline: none; border-color: var(--accent-primary-hover); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
+        .dl-input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         @keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
       `}</style>
 
       {/* Header */}
       <header style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--color-text-inverse)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -140,26 +140,26 @@ export default function DeadlinesCalculatorPage() {
             display: 'inline-flex', alignItems: 'center', gap: 6,
             padding: '4px 10px', marginBottom: 16,
             borderRadius: 999,
-            border: '1px solid rgba(59,130,246,0.2)',
-            background: 'rgba(59,130,246,0.08)',
+            border: '1px solid rgba(10,80,162,0.2)',
+            background: 'rgba(10,80,162,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             FRCP Deadlines
           </div>
-          <h1 style={{ color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
+          <h1 style={{ color: 'var(--color-text-inverse)', fontFamily: 'var(--font-legal)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
             Never miss a procedural deadline
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
             Federal Rules of Civil Procedure deadline calculator — visual timelines with FRCP rule citations and weekend/holiday handling.
           </p>
         </div>
       </header>
 
       {/* Breadcrumb */}
-      <nav style={{ background: 'var(--color-surface-0)', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-body)' }}>
+      <nav style={{ background: 'var(--color-surface-0)', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-ui)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
           <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Home</Link>
           <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
@@ -175,7 +175,7 @@ export default function DeadlinesCalculatorPage() {
 
           {/* Input Form */}
           <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 32 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Calculate Your Deadlines
             </h2>
 
@@ -219,7 +219,7 @@ export default function DeadlinesCalculatorPage() {
                 <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
                   FRCP Deadline Timeline
                 </h3>
-                <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
                   {baseDate
                     ? `Starting from ${formatDate(baseDate)} — ${EVENT_TYPES.find(e => e.value === eventType)?.label}`
                     : 'Enter a date above to see specific deadline dates'}
@@ -228,14 +228,14 @@ export default function DeadlinesCalculatorPage() {
                 {/* Horizontal Timeline */}
                 <div style={{ position: 'relative', padding: '24px 0 0' }}>
                   {/* Timeline line */}
-                  <div style={{ position: 'absolute', top: 32, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-primary-hover))', borderRadius: 2 }} />
+                  <div style={{ position: 'absolute', top: 32, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, var(--accent-primary), var(--gold))', borderRadius: 2 }} />
 
                   {/* Event markers */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', position: 'relative', minHeight: 80 }}>
                     {/* Start marker */}
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 0, position: 'relative' }}>
-                      <div style={{ width: 14, height: 14, borderRadius: '50%', background: 'var(--accent-primary)', border: '3px solid var(--card, #FFFFFF)', boxShadow: '0 0 0 2px var(--accent-primary)', zIndex: 2 }} />
-                      <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', marginTop: 8, whiteSpace: 'nowrap', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
+                      <div style={{ width: 14, height: 14, borderRadius: '50%', background: 'var(--accent-primary)', border: '3px solid var(--card)', boxShadow: '0 0 0 2px var(--accent-primary)', zIndex: 2 }} />
+                      <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', marginTop: 8, whiteSpace: 'nowrap', fontWeight: 600, fontFamily: 'var(--font-ui)' }}>
                         Day 0
                       </div>
                     </div>
@@ -255,9 +255,9 @@ export default function DeadlinesCalculatorPage() {
                         >
                           <div style={{
                             width: 12, height: 12, borderRadius: '50%',
-                            background: baseDate && isPastDate(addDays(baseDate, d.days)) ? 'var(--data-negative, #B01E1E)' : 'var(--data-positive, #176438)',
-                            border: '2px solid var(--card, #FFFFFF)',
-                            boxShadow: '0 0 0 2px ' + (baseDate && isPastDate(addDays(baseDate, d.days)) ? 'var(--data-negative, #B01E1E)' : 'var(--data-positive, #176438)'),
+                            background: baseDate && isPastDate(addDays(baseDate, d.days)) ? 'var(--data-negative)' : 'var(--data-positive)',
+                            border: '2px solid var(--card)',
+                            boxShadow: '0 0 0 2px ' + (baseDate && isPastDate(addDays(baseDate, d.days)) ? 'var(--data-negative)' : 'var(--data-positive)'),
                             zIndex: 2,
                           }} />
                           <div style={{
@@ -288,7 +288,7 @@ export default function DeadlinesCalculatorPage() {
                     style={{
                       background: 'var(--color-surface-0)',
                       border: `1px solid ${past ? '#FECACA' : 'var(--border-default)'}`,
-                      borderLeft: `4px solid ${past ? 'var(--data-negative, #B01E1E)' : daysFromNow !== null && daysFromNow <= 14 ? 'var(--wrn-txt, #7A5800)' : 'var(--accent-primary)'}`,
+                      borderLeft: `4px solid ${past ? 'var(--data-negative)' : daysFromNow !== null && daysFromNow <= 14 ? 'var(--wrn-txt)' : 'var(--accent-primary)'}`,
                       borderRadius: 4,
                       padding: 'clamp(16px, 3vw, 24px)',
                       animation: `slideUp 0.4s ease-out ${i * 0.08}s both`,
@@ -298,8 +298,8 @@ export default function DeadlinesCalculatorPage() {
                       <div style={{ flex: 1, minWidth: 200 }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                           <span style={{
-                            display: 'inline-block', padding: '3px 10px', background: 'rgba(59,130,246,0.08)',
-                            color: 'var(--accent-primary-hover)', borderRadius: 4, fontSize: 11, fontWeight: 600,
+                            display: 'inline-block', padding: '3px 10px', background: 'rgba(10,80,162,0.08)',
+                            color: 'var(--gold)', borderRadius: 4, fontSize: 11, fontWeight: 600,
                             fontFamily: 'var(--font-mono)', whiteSpace: 'nowrap',
                           }}>
                             {d.rule}
@@ -314,21 +314,21 @@ export default function DeadlinesCalculatorPage() {
                         <h4 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                           {d.label}
                         </h4>
-                        <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
+                        <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
                           {d.description}
                         </p>
                       </div>
 
                       {deadlineDate && (
                         <div style={{ textAlign: 'right', minWidth: 130 }}>
-                          <div style={{ fontSize: 15, fontWeight: 600, color: past ? 'var(--data-negative, #B01E1E)' : 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                          <div style={{ fontSize: 15, fontWeight: 600, color: past ? 'var(--data-negative)' : 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
                             {formatDate(deadlineDate)}
                           </div>
                           {daysFromNow !== null && (
                             <div style={{
                               fontSize: 12, fontWeight: 600, marginTop: 4,
-                              color: past ? 'var(--data-negative, #B01E1E)' : daysFromNow <= 14 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-positive, #176438)',
-                              fontFamily: 'var(--font-body)',
+                              color: past ? 'var(--data-negative)' : daysFromNow <= 14 ? 'var(--wrn-txt)' : 'var(--data-positive)',
+                              fontFamily: 'var(--font-ui)',
                             }}>
                               {past ? 'PASSED' : `${daysFromNow} days from today`}
                             </div>
@@ -343,7 +343,7 @@ export default function DeadlinesCalculatorPage() {
               {/* Disclaimer */}
               <div style={{
                 padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4,
-                fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6, fontFamily: 'var(--font-body)',
+                fontSize: 12, color: 'var(--wrn-txt)', lineHeight: 1.6, fontFamily: 'var(--font-ui)',
               }}>
                 <strong>Important:</strong> Based on FRCP default rules — local rules and scheduling orders may modify these deadlines. Weekend and holiday adjustments per FRCP 6(a) are not computed here. Always verify deadlines with the applicable local rules and any court-specific orders.
               </div>

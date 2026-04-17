@@ -36,7 +36,7 @@ function DemoModeBadge() {
         borderRadius: '20px',
         fontSize: '12px',
         fontWeight: 600,
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
         boxShadow: '0 2px 8px rgba(10, 102, 194, 0.2)',
         pointerEvents: 'none',
       }}

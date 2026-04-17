@@ -66,7 +66,7 @@ export default function NOSIndexPage() {
         .nos-card {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: '4px';
           padding: 24px;
           transition: all 0.2s ease;
           text-decoration: none;
@@ -96,7 +96,7 @@ export default function NOSIndexPage() {
           transform: translateX(4px);
         }
         .nos-back-link {
-          color: var(--accent-primary);
+          color: var(--color-text-inverse, #FFFFFF);
           text-decoration: none;
           font-size: 14px;
           display: inline-block;
@@ -104,15 +104,15 @@ export default function NOSIndexPage() {
           transition: color 0.2s ease;
         }
         .nos-back-link:hover {
-          color: #C21119;
+          color: var(--color-text-inverse, #FFFFFF);
         }
         .nos-breadcrumb-link {
-          color: var(--link-hover, #083D7A);
+          color: var(--link);
           text-decoration: none;
           transition: color 0.2s ease;
         }
         .nos-breadcrumb-link:hover {
-          color: #004A6A;
+          color: var(--link);
         }
 
         @media (max-width: 768px) {
@@ -179,7 +179,7 @@ export default function NOSIndexPage() {
               color: 'var(--border-default)',
               maxWidth: '600px',
               margin: '0',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             Explore all case types in our federal court database. Each case type includes real statistics
@@ -205,7 +205,7 @@ export default function NOSIndexPage() {
             Home
           </Link>
           <span style={{ color: 'var(--color-text-secondary)', margin: '0 8px' }}>/</span>
-          <span style={{ color: 'var(--accent-primary-hover)', fontWeight: '600' }}>Case Types</span>
+          <span style={{ color: 'var(--gold)', fontWeight: '600' }}>Case Types</span>
         </div>
       </div>
 
@@ -273,7 +273,7 @@ export default function NOSIndexPage() {
                       fontSize: '13px',
                       color: 'var(--color-text-secondary)',
                       margin: '0',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                     }}
                   >
                     View court statistics and case outcomes for this type
@@ -325,7 +325,7 @@ export default function NOSIndexPage() {
                 marginBottom: '16px',
                 color: 'var(--color-text-secondary)',
                 lineHeight: '1.6',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               Nature of Suit (NOS) codes are standardized federal court classifications that categorize
@@ -337,7 +337,7 @@ export default function NOSIndexPage() {
                 marginBottom: '16px',
                 color: 'var(--color-text-secondary)',
                 lineHeight: '1.6',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               The statistics on these pages are derived from actual federal court data, including case
@@ -349,7 +349,7 @@ export default function NOSIndexPage() {
                 color: 'var(--color-text-secondary)',
                 lineHeight: '1.6',
                 margin: '0',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               For legal advice specific to your situation, please consult with a qualified attorney in

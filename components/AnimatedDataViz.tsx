@@ -62,7 +62,7 @@ export default function AnimatedDataViz({
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             margin: '0 0 4px 0',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           {caseType} · {district}
@@ -84,7 +84,7 @@ export default function AnimatedDataViz({
                 style={{
                   fontSize: '12px',
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontWeight: 500,
                 }}
               >

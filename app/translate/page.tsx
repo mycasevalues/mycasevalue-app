@@ -111,7 +111,7 @@ export default function TranslatePage() {
       <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
         <div className="max-w-4xl mx-auto px-6 py-4">
           {/* Breadcrumb Navigation */}
-          <div className="flex items-center gap-2 mb-12 text-sm" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
+          <div className="flex items-center gap-2 mb-12 text-sm" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)' }}>
             <Link href="/" className="hover:opacity-100 opacity-80 transition-opacity">Home</Link>
             <span>/</span>
             <span style={{ color: 'var(--color-surface-0)' }}>Translate</span>
@@ -127,7 +127,7 @@ export default function TranslatePage() {
             <h1 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-2px', fontFamily: 'var(--font-ui)' }}>
               Legal Jargon Translator
             </h1>
-            <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)' }}>
               Paste any legal text from a federal court document in English or Spanish and get an instant explanation in the same language. Free translations every day.
             </p>
           </div>
@@ -140,8 +140,8 @@ export default function TranslatePage() {
         <div className="p-6 sm:p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
           {/* Free Access Banner */}
           <div className="mb-8 p-4 flex items-center gap-3" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid var(--link-light, #BAE6FD)', borderRadius: '4px' }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--data-positive, #176438)', flexShrink: 0 }} />
-            <p className="text-sm" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-body)', margin: 0 }}>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--data-positive)', flexShrink: 0 }} />
+            <p className="text-sm" style={{ color: 'var(--gold)', fontFamily: 'var(--font-ui)', margin: 0 }}>
               <strong>Unlimited translations</strong> — all features are free during launch
             </p>
           </div>
@@ -165,11 +165,11 @@ export default function TranslatePage() {
                 borderColor: 'var(--border-default)',
                 background: 'var(--color-surface-1)',
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 minHeight: '140px',
               }}
             />
-            <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
               Minimum 10 characters, maximum 3,000 characters. Supports English and Spanish input.
             </p>
           </div>
@@ -177,7 +177,7 @@ export default function TranslatePage() {
           {/* Error Display */}
           {error && (
             <div className="mb-6 p-4" style={{ background: 'rgba(10, 102, 194, 0.06)', border: '1px solid var(--accent-primary)', borderRadius: '4px' }}>
-              <p className="text-sm" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-body)' }}>
+              <p className="text-sm" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-ui)' }}>
                 {error}
               </p>
             </div>
@@ -198,7 +198,7 @@ export default function TranslatePage() {
                 !input.trim() || loading
                   ? 'var(--color-text-secondary)'
                   : 'var(--color-surface-0)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               cursor:
                 !input.trim() || loading
                   ? 'not-allowed'
@@ -233,12 +233,12 @@ export default function TranslatePage() {
               <div className="prose prose-sm max-w-none"
                 style={{
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: '1.6',
                 }}>
                 <p className="whitespace-pre-wrap">{translation}</p>
               </div>
-              <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', borderColor: 'var(--border-default)' }}>
+              <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', borderColor: 'var(--border-default)' }}>
                 Unlimited translations available. Paste more legal text above to translate.
               </p>
             </div>
@@ -273,7 +273,7 @@ export default function TranslatePage() {
                           color: '#38bdf8',
                           cursor: 'pointer',
                           transition: 'all 150ms',
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--font-ui)',
                           fontWeight: '500',
                         }}
                         onMouseEnter={(e) => {
@@ -311,7 +311,7 @@ export default function TranslatePage() {
                   borderColor: 'var(--border-default)',
                   background: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '13px',
                   lineHeight: '1.5',
                 }}
@@ -361,7 +361,7 @@ export default function TranslatePage() {
                 </p>
                 {item.related && (
                   <div style={{ paddingTop: '8px', borderTop: '1px solid var(--border-default)' }}>
-                    <p className="text-[10px] font-semibold mb-2" style={{ color: 'var(--accent-primary-hover)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '8px 0 4px' }}>
+                    <p className="text-[10px] font-semibold mb-2" style={{ color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '8px 0 4px' }}>
                       Related Terms:
                     </p>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
@@ -372,9 +372,9 @@ export default function TranslatePage() {
                             fontSize: '10px',
                             padding: '2px 6px',
                             background: 'rgba(139,92,246,0.08)',
-                            color: 'var(--accent-primary-hover)',
+                            color: 'var(--gold)',
                             borderRadius: '4px',
-                            fontFamily: 'var(--font-body)',
+                            fontFamily: 'var(--font-ui)',
                           }}
                         >
                           {rel}
@@ -423,10 +423,10 @@ export default function TranslatePage() {
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <p className="text-[13px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>
+                        <p className="text-[13px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                           {item.input.substring(0, 80)}{item.input.length > 80 ? '...' : ''}
                         </p>
-                        <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+                        <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                           {item.timestamp.toLocaleTimeString()}
                         </p>
                       </div>
@@ -434,7 +434,7 @@ export default function TranslatePage() {
                         onClick={() => loadFromHistory(item)}
                         className="px-3 py-2 text-[11px] font-semibold whitespace-nowrap transition-all hover:shadow-sm active:scale-[0.98]"
                         style={{
-                          background: 'var(--accent-primary-hover)',
+                          background: 'var(--gold)',
                           color: 'var(--color-surface-0)',
                           borderRadius: '4px',
                           border: 'none',
@@ -466,7 +466,7 @@ export default function TranslatePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
               Case Search
             </p>
-            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
               Search federal court cases by nature of suit or keyword.
             </p>
           </Link>
@@ -483,7 +483,7 @@ export default function TranslatePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
               Settlement Calculator
             </p>
-            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
               Estimate settlement ranges based on case data.
             </p>
           </Link>
@@ -500,7 +500,7 @@ export default function TranslatePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
               Legal Glossary
             </p>
-            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
               Browse all federal court term definitions.
             </p>
           </Link>
@@ -517,7 +517,7 @@ export default function TranslatePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
               Odds Checker
             </p>
-            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
               Check your case type win probability.
             </p>
           </Link>
@@ -528,7 +528,7 @@ export default function TranslatePage() {
           <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Important Disclaimer
           </h2>
-          <p className="text-[11px] leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+          <p className="text-[11px] leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
             This translator provides informal explanations of legal terminology and should not be considered legal advice. Legal language can have nuanced meanings depending on context, jurisdiction, and specific case facts. Always consult with a qualified attorney for authoritative interpretations of legal documents. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>

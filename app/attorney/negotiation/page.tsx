@@ -109,7 +109,7 @@ export default function NegotiationPage() {
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
     border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -118,12 +118,12 @@ export default function NegotiationPage() {
   const r = results;
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
 
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -135,7 +135,7 @@ export default function NegotiationPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', margin: '0 0 16px' }}>Negotiate from Strength with Real Trial Data</h1>
+          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-ui)', margin: '0 0 16px' }}>Negotiate from Strength with Real Trial Data</h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
             Benchmark offers against 100K+ settlements, calculate your BATNA, and execute a data-backed negotiation strategy
           </p>
@@ -192,7 +192,7 @@ export default function NegotiationPage() {
               <div>
                 <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Strength</label>
                 <div style={{ display: 'flex', gap: '8px' }}>
-                  {[{ v: 'weak', l: 'Weak', c: 'var(--data-negative, #B01E1E)' }, { v: 'moderate', l: 'Moderate', c: 'var(--wrn-txt, #7A5800)' }, { v: 'strong', l: 'Strong', c: 'var(--data-positive, #176438)' }].map(opt => (
+                  {[{ v: 'weak', l: 'Weak', c: 'var(--data-negative)' }, { v: 'moderate', l: 'Moderate', c: 'var(--wrn-txt)' }, { v: 'strong', l: 'Strong', c: 'var(--data-positive)' }].map(opt => (
                     <button key={opt.v} type="button" onClick={() => setCaseStrength(opt.v)} style={{ flex: 1, padding: '8px', borderRadius: '4px', border: `1px solid ${caseStrength === opt.v ? opt.c : 'var(--border-default)'}`, backgroundColor: caseStrength === opt.v ? `${opt.c}15` : 'var(--color-surface-1)', color: caseStrength === opt.v ? opt.c : 'var(--color-text-secondary)', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                       {opt.l}
                     </button>
@@ -216,7 +216,7 @@ export default function NegotiationPage() {
                 </div>
                 <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: 4 }}>percentile of historical settlements</div>
                 <div style={{ marginTop: 16, height: 10, background: 'var(--border-default)', borderRadius: 4, position: 'relative' }}>
-                  <div style={{ position: 'absolute', left: `${Math.min(r.offerPercentile, 98)}%`, top: -4, width: 18, height: 18, borderRadius: '50%', background: getWinRateColor(r.offerPercentile).bg, border: '3px solid var(--card, #FFFFFF)', boxShadow: '0 2px 4px rgba(0,0,0,0.2)', transform: 'translateX(-50%)' }} />
+                  <div style={{ position: 'absolute', left: `${Math.min(r.offerPercentile, 98)}%`, top: -4, width: 18, height: 18, borderRadius: '50%', background: getWinRateColor(r.offerPercentile).bg, border: '3px solid var(--card)', boxShadow: '0 2px 4px rgba(0,0,0,0.2)', transform: 'translateX(-50%)' }} />
                   <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 16, fontSize: 10, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                     <span>{formatMoney(r.p25)}</span><span>{formatMoney(r.p50)}</span><span>{formatMoney(r.p75)}</span>
                   </div>
@@ -224,15 +224,15 @@ export default function NegotiationPage() {
               </div>
 
               {/* BATNA */}
-              <div style={{ background: r.batna > parseInt(currentOffer) ? 'rgba(34,197,94,0.1)' : '#FEF0EF', borderRadius: '4px', padding: '24px', border: `1px solid ${r.batna > parseInt(currentOffer) ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)'}` }}>
+              <div style={{ background: r.batna > parseInt(currentOffer) ? 'rgba(23,100,56,0.08)' : 'rgba(176,30,30,0.08)', borderRadius: '4px', padding: '24px', border: `1px solid ${r.batna > parseInt(currentOffer) ? 'var(--data-positive)' : 'var(--data-negative)'}` }}>
                 <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>BATNA (Best Alternative to Negotiated Agreement)</div>
-                <div style={{ fontSize: '32px', fontWeight: 600, color: r.batna > parseInt(currentOffer) ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ fontSize: '32px', fontWeight: 600, color: r.batna > parseInt(currentOffer) ? 'var(--data-positive)' : 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>
                   {formatMoney(r.batna)}
                 </div>
                 <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: 4 }}>
                   = {Math.round(r.winRate)}% win rate × {formatMoney(r.medianVerdict)} median verdict − {formatMoney(parseInt(litigationCost) || 50000)} litigation costs
                 </div>
-                <div style={{ marginTop: 8, fontSize: '13px', fontWeight: 600, color: r.batna > parseInt(currentOffer) ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)' }}>
+                <div style={{ marginTop: 8, fontSize: '13px', fontWeight: 600, color: r.batna > parseInt(currentOffer) ? 'var(--data-positive)' : 'var(--data-negative)' }}>
                   {r.batna > parseInt(currentOffer) ? 'BATNA exceeds current offer — reject and negotiate higher' : 'Current offer exceeds BATNA — consider accepting or negotiating modestly higher'}
                 </div>
               </div>
@@ -241,17 +241,17 @@ export default function NegotiationPage() {
               <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>Recommended Negotiation Range</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
-                  <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(239,68,68,0.06)', borderRadius: 4 }}>
-                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Floor</div>
-                    <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.floor)}</div>
+                  <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(176,30,30,0.08)', borderRadius: 4 }}>
+                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--text2, #42403C)', textTransform: 'uppercase', marginBottom: 4 }}>Floor</div>
+                    <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.floor)}</div>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(59,130,246,0.08)', borderRadius: 4, border: '2px solid var(--accent-primary)' }}>
-                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Target</div>
-                    <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.target)}</div>
+                  <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(10,80,162,0.06)', borderRadius: 4, border: '2px solid var(--link)' }}>
+                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--text2, #42403C)', textTransform: 'uppercase', marginBottom: 4 }}>Target</div>
+                    <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.target)}</div>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(34,197,94,0.1)', borderRadius: 4 }}>
-                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Ceiling</div>
-                    <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.ceiling)}</div>
+                  <div style={{ textAlign: 'center', padding: '16px', background: 'rgba(23,100,56,0.08)', borderRadius: 4 }}>
+                    <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--text2, #42403C)', textTransform: 'uppercase', marginBottom: 4 }}>Ceiling</div>
+                    <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-positive)', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.ceiling)}</div>
                   </div>
                 </div>
               </div>
@@ -268,7 +268,7 @@ export default function NegotiationPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {r.talkingPoints.map((pt, i) => (
                     <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
-                      <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: 'var(--accent-primary)', color: 'var(--color-text-inverse, #fff)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600, marginTop: 2 }}>{i + 1}</div>
+                      <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600, marginTop: 2 }}>{i + 1}</div>
                       <p style={{ fontSize: '13px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6 }}>{pt}</p>
                     </div>
                   ))}
@@ -276,7 +276,7 @@ export default function NegotiationPage() {
               </div>
 
               {/* Disclaimer */}
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(122,88,0,0.08)', borderLeft: '3px solid var(--wrn-txt)', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt)', lineHeight: 1.6 }}>
                 <strong>Important:</strong> AI-generated negotiation intelligence — for attorney use only. Historical data provides context but does not predict specific case outcomes. All negotiation strategies should account for case-specific factors not captured in aggregate data.
               </div>
             </div>

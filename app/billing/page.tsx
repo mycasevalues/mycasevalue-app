@@ -137,7 +137,7 @@ export default function BillingPage() {
                   <span className="font-legal" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {details.name}
                   </span>
-                  <span style={{ padding: '4px 12px', borderRadius: '4px', fontSize: '12px', fontWeight: 600, backgroundColor: 'rgba(0,105,151,0.06)', color: 'var(--accent-primary-hover)' }}>
+                  <span style={{ padding: '4px 12px', borderRadius: '4px', fontSize: '12px', fontWeight: 600, backgroundColor: 'rgba(0,105,151,0.06)', color: 'var(--gold)' }}>
                     Active
                   </span>
                 </div>
@@ -204,7 +204,7 @@ export default function BillingPage() {
 
           {/* Back link */}
           <div style={{ textAlign: 'center' }}>
-            <Link href="/account" style={{ fontSize: '14px', color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
+            <Link href="/account" style={{ fontSize: '14px', color: 'var(--gold)', textDecoration: 'none' }}>
               Back to Account Settings
             </Link>
           </div>

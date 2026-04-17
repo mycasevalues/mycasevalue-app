@@ -136,7 +136,7 @@ const FeatureCard = ({
   const content = (
     <div
       style={{
-        backgroundColor: 'var(--card, #FFFFFF)',
+        backgroundColor: 'var(--card)',
         border: '1px solid var(--border-default)',
         borderRadius: 4,
         padding: '24px',
@@ -151,7 +151,7 @@ const FeatureCard = ({
       }}
       className="attorney-feature-card"
     >
-      <div style={{ fontSize: '32px', color: 'var(--gold-hover, #A87222)', transition: 'color 0.3s ease' }}>{icon}</div>
+      <div style={{ fontSize: '32px', color: 'var(--gold)', transition: 'color 0.3s ease' }}>{icon}</div>
       <div>
         <h3
           style={{
@@ -187,8 +187,8 @@ const FeatureCard = ({
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
             backgroundColor:
-              badge === 'available' ? 'var(--data-positive, #176438)' : 'var(--surf, #F6F5F2)',
-            color: badge === 'available' ? 'var(--card, #FFFFFF)' : 'var(--gold, #C4882A)',
+              badge === 'available' ? 'var(--data-positive)' : 'var(--surf)',
+            color: badge === 'available' ? 'var(--card)' : 'var(--gold)',
             border:
               badge === 'available'
                 ? 'none'
@@ -199,7 +199,7 @@ const FeatureCard = ({
           {badge === 'available' ? 'Available' : 'In Development'}
         </span>
         {href && (
-          <span style={{ fontSize: '13px', color: 'var(--gold, #C4882A)', fontWeight: 600, transition: 'color 0.3s ease' }}>
+          <span style={{ fontSize: '13px', color: 'var(--gold)', fontWeight: 600, transition: 'color 0.3s ease' }}>
             Try it →
           </span>
         )}
@@ -411,41 +411,41 @@ export default function AttorneyPage() {
       />
       <style dangerouslySetInnerHTML={{ __html: `
         .attorney-feature-card:hover {
-          border-color: var(--gold-hover, #A87222) !important;
-          box-shadow: 0 8px 24px rgba(168, 114, 34, 0.12) !important;
+          border-color: var(--gold) !important;
+          box-shadow: 0 8px 24px rgba(196, 136, 42, 0.12) !important;
           transform: translateY(-4px);
         }
         .attorney-feature-card:hover svg {
-          color: var(--gold, #C4882A) !important;
+          color: var(--gold) !important;
         }
         .attorney-feature-card:hover h3 {
-          color: var(--gold-hover, #A87222) !important;
+          color: var(--gold) !important;
         }
         .attorney-feature-card:hover span {
-          color: var(--gold-hover, #A87222) !important;
+          color: var(--gold) !important;
         }
         .attorney-cta-link:hover {
-          background-color: var(--gold, #C4882A) !important;
+          background-color: var(--gold) !important;
           box-shadow: 0 8px 24px rgba(196, 136, 42, 0.24) !important;
           transform: translateY(-2px);
         }
         .attorney-breadcrumb-link:hover {
-          color: var(--gold, #C4882A) !important;
+          color: var(--gold) !important;
         }
       `}} />
       {/* Header Section — workspace-consistent (no orange banner) */}
       <section
         style={{
-          backgroundColor: 'var(--card, #FFFFFF)',
-          borderBottom: '1px solid var(--bdr, #E2DFD8)',
+          backgroundColor: 'var(--card)',
+          borderBottom: '1px solid var(--bdr)',
           padding: '32px 24px',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '13px', fontFamily: 'var(--font-ui)' }}>
-            <Link href="/" style={{ color: 'var(--gold, #C4882A)', textDecoration: 'none' }}>Home</Link>
-            <span style={{ color: 'var(--bdr, #E2DFD8)' }}>›</span>
+            <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Home</Link>
+            <span style={{ color: 'var(--bdr)' }}>›</span>
             <span style={{ color: 'var(--text1, #18181A)', fontWeight: 600 }}>Attorney Tools</span>
           </nav>
 
@@ -569,7 +569,7 @@ export default function AttorneyPage() {
               <Link key={index} href={item.href} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div
                   style={{
-                    backgroundColor: 'var(--card, #FFFFFF)',
+                    backgroundColor: 'var(--card)',
                     border: '1px solid var(--border-default)',
                     borderRadius: 4,
                     padding: '24px',
@@ -583,7 +583,7 @@ export default function AttorneyPage() {
                   }}
                   className="attorney-feature-card"
                 >
-                  <div style={{ fontSize: '32px', color: 'var(--gold-hover, #A87222)', transition: 'color 0.3s ease' }}>{item.icon}</div>
+                  <div style={{ fontSize: '32px', color: 'var(--gold)', transition: 'color 0.3s ease' }}>{item.icon}</div>
                   <div>
                     <h3
                       style={{
@@ -609,7 +609,7 @@ export default function AttorneyPage() {
                     </p>
                   </div>
                   <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '13px', color: 'var(--gold, #C4882A)', fontWeight: 600, transition: 'color 0.3s ease' }}>
+                    <span style={{ fontSize: '13px', color: 'var(--gold)', fontWeight: 600, transition: 'color 0.3s ease' }}>
                       Explore →
                     </span>
                   </div>
@@ -624,7 +624,7 @@ export default function AttorneyPage() {
       <section
         style={{
           padding: '60px 24px',
-          backgroundColor: 'var(--card, #FFFFFF)',
+          backgroundColor: 'var(--card)',
         }}
       >
         <div
@@ -706,8 +706,8 @@ export default function AttorneyPage() {
                       justifyContent: 'center',
                       width: '28px',
                       height: '28px',
-                      backgroundColor: 'var(--gold, #C4882A)',
-                      color: 'var(--card, #FFFFFF)',
+                      backgroundColor: 'var(--gold)',
+                      color: 'var(--card)',
                       borderRadius: 4,
                       fontSize: '16px',
                       fontWeight: '600',
@@ -813,7 +813,7 @@ export default function AttorneyPage() {
               <div
                 key={index}
                 style={{
-                  backgroundColor: 'var(--card, #FFFFFF)',
+                  backgroundColor: 'var(--card)',
                   border: '1px solid var(--border-default)',
                   borderRadius: 4,
                   padding: '32px',
@@ -826,7 +826,7 @@ export default function AttorneyPage() {
                     fontSize: 'clamp(32px, 5vw, 48px)',
                     fontWeight: '600',
                     fontFamily: 'var(--font-mono)',
-                    color: 'var(--gold, #C4882A)',
+                    color: 'var(--gold)',
                     marginBottom: '12px',
                   }}
                 >
@@ -853,7 +853,7 @@ export default function AttorneyPage() {
       <section
         style={{
           padding: '60px 24px',
-          backgroundColor: 'var(--card, #FFFFFF)',
+          backgroundColor: 'var(--card)',
         }}
       >
         <div
@@ -880,7 +880,7 @@ export default function AttorneyPage() {
               <span
                 style={{
                   display: 'block',
-                  color: 'var(--gold, #C4882A)',
+                  color: 'var(--gold)',
                 }}
               >
                 plus:
@@ -989,7 +989,7 @@ export default function AttorneyPage() {
                 href={cta.href}
                 style={{
                   padding: '24px',
-                  backgroundColor: 'var(--card, #FFFFFF)',
+                  backgroundColor: 'var(--card)',
                   border: '1px solid var(--border-default)',
                   borderRadius: 4,
                   textDecoration: 'none',

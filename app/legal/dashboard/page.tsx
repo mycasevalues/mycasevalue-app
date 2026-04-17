@@ -33,9 +33,9 @@ const SOURCES: SourceStatus[] = [
   { name: 'CourtListener', key: 'courtlistener', color: '#1E3A5F', status: 'healthy', documents: 547832, lastSync: '2 min ago', syncInterval: '15 min', latency: 142, uptime: 99.8, trend: 2.4 },
   { name: 'Federal Register', key: 'federal_register', color: '#a78bfa', status: 'healthy', documents: 89421, lastSync: '8 min ago', syncInterval: '1 hr', latency: 210, uptime: 99.5, trend: 1.8 },
   { name: 'eCFR', key: 'ecfr', color: '#0D9488', status: 'healthy', documents: 198765, lastSync: '25 min ago', syncInterval: '6 hr', latency: 95, uptime: 99.9, trend: 0.3 },
-  { name: 'EDGAR', key: 'edgar', color: 'var(--wrn-txt, #7A5800)', status: 'degraded', documents: 1243098, lastSync: '1 hr ago', syncInterval: '30 min', latency: 890, uptime: 97.2, trend: -0.5 },
-  { name: 'Caselaw Access', key: 'caselaw', color: 'var(--data-positive, #176438)', status: 'healthy', documents: 6712340, lastSync: '12 min ago', syncInterval: '4 hr', latency: 178, uptime: 99.7, trend: 0.9 },
-  { name: 'CanLII', key: 'canlii', color: 'var(--data-negative, #B01E1E)', status: 'healthy', documents: 134562, lastSync: '45 min ago', syncInterval: '12 hr', latency: 320, uptime: 99.1, trend: 1.2 },
+  { name: 'EDGAR', key: 'edgar', color: 'var(--wrn-txt)', status: 'degraded', documents: 1243098, lastSync: '1 hr ago', syncInterval: '30 min', latency: 890, uptime: 97.2, trend: -0.5 },
+  { name: 'Caselaw Access', key: 'caselaw', color: 'var(--data-positive)', status: 'healthy', documents: 6712340, lastSync: '12 min ago', syncInterval: '4 hr', latency: 178, uptime: 99.7, trend: 0.9 },
+  { name: 'CanLII', key: 'canlii', color: 'var(--data-negative)', status: 'healthy', documents: 134562, lastSync: '45 min ago', syncInterval: '12 hr', latency: 320, uptime: 99.1, trend: 1.2 },
   { name: 'GovInfo', key: 'govinfo', color: 'var(--color-text-muted)', status: 'offline', documents: 2891234, lastSync: '3 hr ago', syncInterval: '2 hr', latency: 0, uptime: 94.3, trend: -1.1 },
 ];
 
@@ -51,16 +51,16 @@ const PIPELINE_EVENTS: PipelineEvent[] = [
 ];
 
 const STATUS_STYLES: Record<string, { bg: string; color: string; label: string }> = {
-  healthy: { bg: 'rgba(34,197,94,0.06)', color: 'var(--data-positive, #176438)', label: 'Healthy' },
-  degraded: { bg: 'rgba(234,179,8,0.08)', color: 'var(--wrn-txt, #7A5800)', label: 'Degraded' },
+  healthy: { bg: 'rgba(34,197,94,0.06)', color: 'var(--data-positive)', label: 'Healthy' },
+  degraded: { bg: 'rgba(234,179,8,0.08)', color: 'var(--wrn-txt)', label: 'Degraded' },
   offline: { bg: '#FEF2F2', color: '#B91C1C', label: 'Offline' },
 };
 
 const EVENT_STYLES: Record<string, { bg: string; color: string; icon: string }> = {
   ingestion: { bg: '#E8F4FD', color: 'var(--accent-primary)', icon: '\u2B07' },
   processing: { bg: '#F5F3FF', color: '#a78bfa', icon: '\u2699' },
-  embedding: { bg: 'rgba(34,197,94,0.06)', color: 'var(--data-positive, #176438)', icon: '\u2728' },
-  error: { bg: '#FEF2F2', color: 'var(--data-negative, #B01E1E)', icon: '\u26A0' },
+  embedding: { bg: 'rgba(34,197,94,0.06)', color: 'var(--data-positive)', icon: '\u2728' },
+  error: { bg: '#FEF2F2', color: 'var(--data-negative)', icon: '\u26A0' },
 };
 
 function formatNumber(n: number): string {
@@ -115,13 +115,13 @@ export default function LegalDashboardPage() {
           background: 'rgba(34,197,94,0.06)',
           border: '1px solid var(--data-positive-border, #BFEFE5)',
           fontSize: 13,
-          color: 'var(--data-positive, #176438)',
+          color: 'var(--data-positive)',
           fontWeight: 500,
           display: 'flex',
           alignItems: 'center',
           gap: 6,
         }}>
-          <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--data-positive, #176438)', display: 'inline-block' }} />
+          <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--data-positive)', display: 'inline-block' }} />
           System operational
         </div>
       </div>
@@ -131,12 +131,12 @@ export default function LegalDashboardPage() {
         <div style={{ padding: '24px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Total Documents</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono, monospace)' }}>{formatNumber(totalDocs)}</div>
-          <div style={{ fontSize: 12, color: 'var(--data-positive, #176438)', marginTop: 4 }}>+12,341 today</div>
+          <div style={{ fontSize: 12, color: 'var(--data-positive)', marginTop: 4 }}>+12,341 today</div>
         </div>
         <div style={{ padding: '24px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Sources Online</div>
-          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono, monospace)' }}>{healthySources}/{sources.length}</div>
-          <div style={{ fontSize: 12, color: sources.some(s => s.status !== 'healthy') ? '#B45309' : 'var(--data-positive, #176438)', marginTop: 4 }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive)', fontFamily: 'var(--font-mono, monospace)' }}>{healthySources}/{sources.length}</div>
+          <div style={{ fontSize: 12, color: sources.some(s => s.status !== 'healthy') ? '#B45309' : 'var(--data-positive)', marginTop: 4 }}>
             {sources.some(s => s.status === 'offline') ? '1 source offline' : sources.some(s => s.status === 'degraded') ? '1 degraded' : 'All healthy'}
           </div>
         </div>
@@ -223,7 +223,7 @@ export default function LegalDashboardPage() {
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                     <span style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>Uptime</span>
-                    <span style={{ fontSize: 11, fontWeight: 600, color: src.uptime >= 99 ? 'var(--data-positive, #176438)' : src.uptime >= 97 ? '#B45309' : '#B91C1C' }}>
+                    <span style={{ fontSize: 11, fontWeight: 600, color: src.uptime >= 99 ? 'var(--data-positive)' : src.uptime >= 97 ? '#B45309' : '#B91C1C' }}>
                       {src.uptime}%
                     </span>
                   </div>
@@ -232,7 +232,7 @@ export default function LegalDashboardPage() {
                       height: '100%',
                       width: `${src.uptime}%`,
                       borderRadius: 4,
-                      background: src.uptime >= 99 ? 'var(--data-positive, #176438)' : src.uptime >= 97 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-negative, #B01E1E)',
+                      background: src.uptime >= 99 ? 'var(--data-positive)' : src.uptime >= 97 ? 'var(--wrn-txt)' : 'var(--data-negative)',
                       transition: 'width 0.5s',
                     }} />
                   </div>
@@ -240,7 +240,7 @@ export default function LegalDashboardPage() {
 
                 {/* Latency */}
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: src.latency === 0 ? 'var(--data-negative, #B01E1E)' : src.latency < 300 ? 'var(--color-text-primary)' : '#B45309', fontFamily: 'var(--font-mono, monospace)' }}>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: src.latency === 0 ? 'var(--data-negative)' : src.latency < 300 ? 'var(--color-text-primary)' : '#B45309', fontFamily: 'var(--font-mono, monospace)' }}>
                     {src.latency === 0 ? '---' : `${src.latency}ms`}
                   </div>
                   <div style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>latency</div>
@@ -333,14 +333,14 @@ export default function LegalDashboardPage() {
                 <div key={item.label} style={{ marginBottom: 12 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                     <span style={{ fontSize: 13, color: 'var(--color-text-secondary)' }}>{item.label}</span>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: item.value >= 95 ? 'var(--data-positive, #176438)' : item.value >= 90 ? '#B45309' : 'var(--data-negative, #B01E1E)' }}>{item.value}%</span>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: item.value >= 95 ? 'var(--data-positive)' : item.value >= 90 ? '#B45309' : 'var(--data-negative)' }}>{item.value}%</span>
                   </div>
                   <div style={{ height: 6, borderRadius: 4, background: 'var(--border-default)' }}>
                     <div style={{
                       height: '100%',
                       width: `${item.value}%`,
                       borderRadius: 4,
-                      background: item.value >= 95 ? 'var(--data-positive, #176438)' : item.value >= 90 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-negative, #B01E1E)',
+                      background: item.value >= 95 ? 'var(--data-positive)' : item.value >= 90 ? 'var(--wrn-txt)' : 'var(--data-negative)',
                     }} />
                   </div>
                 </div>
@@ -352,7 +352,7 @@ export default function LegalDashboardPage() {
               <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>Data Freshness</h3>
               {sources.map(src => {
                 const fresh = src.status === 'healthy' ? 'current' : src.status === 'degraded' ? 'stale' : 'unavailable';
-                const freshColor = fresh === 'current' ? 'var(--data-positive, #176438)' : fresh === 'stale' ? '#B45309' : 'var(--data-negative, #B01E1E)';
+                const freshColor = fresh === 'current' ? 'var(--data-positive)' : fresh === 'stale' ? '#B45309' : 'var(--data-negative)';
                 return (
                   <div key={src.key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <span style={{ fontSize: 13, color: src.color, fontWeight: 500 }}>{src.name}</span>
@@ -380,8 +380,8 @@ export default function LegalDashboardPage() {
                 { stage: 'Ingestion Queue', count: 3421, status: 'active', color: 'var(--accent-primary)' },
                 { stage: 'Text Extraction', count: 892, status: 'active', color: '#a78bfa' },
                 { stage: 'Entity Recognition', count: 456, status: 'active', color: '#0D9488' },
-                { stage: 'Embedding Generation', count: 1203, status: 'active', color: 'var(--data-positive, #176438)' },
-                { stage: 'Index Update', count: 78, status: 'active', color: 'var(--wrn-txt, #7A5800)' },
+                { stage: 'Embedding Generation', count: 1203, status: 'active', color: 'var(--data-positive)' },
+                { stage: 'Index Update', count: 78, status: 'active', color: 'var(--wrn-txt)' },
               ].map(stage => (
                 <div key={stage.stage} style={{ textAlign: 'center', padding: '16px' }}>
                   <div style={{ fontSize: 24, fontWeight: 700, color: stage.color, fontFamily: 'var(--font-mono, monospace)' }}>
@@ -394,7 +394,7 @@ export default function LegalDashboardPage() {
                     borderRadius: 4,
                     fontSize: 10,
                     fontWeight: 600,
-                    color: 'var(--data-positive, #176438)',
+                    color: 'var(--data-positive)',
                     background: 'rgba(34,197,94,0.06)',
                   }}>
                     Active

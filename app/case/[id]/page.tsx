@@ -161,8 +161,8 @@ export default function CaseDetailPage() {
               <span
                 className="flex-shrink-0 text-[10px] font-semibold px-2.5 py-1 rounded uppercase tracking-wider"
                 style={{
-                  background: c.status === 'open' ? 'rgba(30,64,175,0.15)' : c.status === 'closed' ? 'rgba(22,101,52,0.15)' : 'rgba(255,255,255,0.05)',
-                  color: c.status === 'open' ? '#60a5fa' : c.status === 'closed' ? '#4ade80' : '#9ca3af',
+                  background: c.status === 'open' ? 'rgba(10,80,162,0.10)' : c.status === 'closed' ? 'rgba(22,101,52,0.15)' : 'rgba(255,255,255,0.05)',
+                  color: c.status === 'open' ? 'var(--link)' : c.status === 'closed' ? '#4ade80' : '#9ca3af',
                 }}
               >
                 {c.status}
@@ -228,7 +228,7 @@ export default function CaseDetailPage() {
                         style={{
                           borderColor: 'var(--border-default)',
                           color: 'var(--color-text-secondary)',
-                          background: t.category === 'practice_area' ? 'rgba(30,64,175,0.15)' : t.category === 'claim_type' ? 'rgba(234,179,8,0.12)' : 'transparent',
+                          background: t.category === 'practice_area' ? 'rgba(10,80,162,0.10)' : t.category === 'claim_type' ? 'rgba(234,179,8,0.12)' : 'transparent',
                         }}
                       >
                         {t.tag}

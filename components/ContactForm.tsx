@@ -49,7 +49,7 @@ export default function ContactForm() {
         <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
           Message Sent
         </h3>
-        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>
+        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.6 }}>
           Thank you for reaching out. We typically respond within 1 business day.
         </p>
       </div>
@@ -58,7 +58,7 @@ export default function ContactForm() {
 
   const inputStyle = {
     width: '100%', padding: '12px 14px', fontSize: '14px',
-    fontFamily: 'var(--font-body)', color: 'var(--color-text-primary)',
+    fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)',
     border: '1px solid var(--border-default)', borderRadius: '4px',
     background: 'var(--color-surface-0)', outline: 'none',
     transition: 'border-color 200ms',
@@ -69,7 +69,7 @@ export default function ContactForm() {
 
   const labelStyle = {
     display: 'block', fontSize: '14px', fontWeight: 600,
-    color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)',
     marginBottom: '8px',
   } as React.CSSProperties;
 
@@ -82,7 +82,7 @@ export default function ContactForm() {
           background: var(--accent-primary); color: var(--color-surface-0); border: none;
           border-radius: 12px; font-size: 15px; font-weight: 600;
           cursor: pointer; transition: background 200ms;
-          font-family: var(--font-body); width: 100%;
+          font-family: var(--font-ui); width: 100%;
         }
         .contact-submit:hover:not(:disabled) { background: #0855a3; }
         .contact-submit:disabled { opacity: 0.6; cursor: not-allowed; }

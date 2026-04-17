@@ -230,7 +230,7 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
             fontSize: 'clamp(10px, 1vw, 12px)',
             color: 'rgba(107, 114, 128, 0.7)',
             fontStyle: 'italic',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             {updatedDateText}
           </div>

@@ -58,8 +58,8 @@ export default function SmallFirmsPage() {
     <div>
       {/* Hero */}
       <section style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -70,7 +70,7 @@ export default function SmallFirmsPage() {
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }} />
-        <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
             padding: '4px 10px', marginBottom: 16,
@@ -78,25 +78,25 @@ export default function SmallFirmsPage() {
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             For Small Firms
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--card)',
           }}>
             Enterprise-grade analytics, small-firm economics
           </h1>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1.125rem',
             color: 'rgba(255,255,255,0.7)',
             maxWidth: '640px',
@@ -107,10 +107,10 @@ export default function SmallFirmsPage() {
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/sign-up" style={{
-              background: 'var(--gold, #C4882A)',
-              color: 'var(--card, #FFFFFF)',
+              background: 'var(--gold)',
+              color: 'var(--card)',
               padding: '8px 24px',
-              borderRadius: 4,
+              borderRadius: 2,
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
@@ -119,7 +119,7 @@ export default function SmallFirmsPage() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 6,
-              border: '1px solid var(--gold, #C4882A)',
+              border: '1px solid var(--gold)',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
             }}>
               Start trial
@@ -129,7 +129,7 @@ export default function SmallFirmsPage() {
               background: 'transparent',
               color: 'rgba(255,255,255,0.85)',
               padding: '8px 24px',
-              borderRadius: 4,
+              borderRadius: 2,
               border: '1px solid rgba(255,255,255,0.2)',
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
@@ -162,12 +162,12 @@ export default function SmallFirmsPage() {
               <div key={f.title} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '24px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '1rem',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
@@ -176,7 +176,7 @@ export default function SmallFirmsPage() {
                   {f.title}
                 </h3>
                 <p style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '0.875rem',
                   color: 'var(--color-text-secondary)',
                   lineHeight: 1.6,
@@ -203,7 +203,7 @@ export default function SmallFirmsPage() {
             Start winning more cases with smarter research
           </h2>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
             color: 'var(--color-text-secondary)',
             marginBottom: '32px',
@@ -216,9 +216,9 @@ export default function SmallFirmsPage() {
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
-              borderRadius: '4px',
+              borderRadius: '2px',
               textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
@@ -231,10 +231,10 @@ export default function SmallFirmsPage() {
               background: 'transparent',
               color: 'var(--color-text-primary)',
               padding: '0.875rem 2rem',
-              borderRadius: '4px',
+              borderRadius: '2px',
               border: '1.5px solid var(--border-default)',
               textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
@@ -260,7 +260,7 @@ export default function SmallFirmsPage() {
             Embed your practice area data
           </h2>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
             color: 'var(--color-text-secondary)',
             lineHeight: 1.6,
@@ -278,7 +278,7 @@ export default function SmallFirmsPage() {
             <div style={{
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '24px',
               textAlign: 'center',
               marginBottom: '24px',
@@ -302,7 +302,7 @@ export default function SmallFirmsPage() {
               <div style={{
                 fontSize: '24px',
                 fontWeight: 700,
-                color: 'var(--data-positive, #176438)',
+                color: 'var(--data-positive)',
                 marginBottom: '4px',
               }}>
                 72%
@@ -320,7 +320,7 @@ export default function SmallFirmsPage() {
               </div>
             </div>
             <p style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '0.875rem',
               color: 'var(--color-text-muted)',
               textAlign: 'center',
@@ -334,9 +334,9 @@ export default function SmallFirmsPage() {
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-1)',
               padding: '0.875rem 2rem',
-              borderRadius: '4px',
+              borderRadius: '2px',
               textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
@@ -368,7 +368,7 @@ export default function SmallFirmsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '24px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -378,7 +378,7 @@ export default function SmallFirmsPage() {
             >
               <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '1.125rem',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
@@ -387,7 +387,7 @@ export default function SmallFirmsPage() {
                 Individuals
               </h3>
               <p style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '0.875rem',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 1.6,
@@ -401,7 +401,7 @@ export default function SmallFirmsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '24px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -411,7 +411,7 @@ export default function SmallFirmsPage() {
             >
               <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '1.125rem',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
@@ -420,7 +420,7 @@ export default function SmallFirmsPage() {
                 Enterprise Legal
               </h3>
               <p style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '0.875rem',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 1.6,
@@ -434,7 +434,7 @@ export default function SmallFirmsPage() {
               style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '24px 16px',
                 textDecoration: 'none',
                 display: 'block',
@@ -444,7 +444,7 @@ export default function SmallFirmsPage() {
             >
               <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '1.125rem',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
@@ -453,7 +453,7 @@ export default function SmallFirmsPage() {
                 Litigation Funders
               </h3>
               <p style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '0.875rem',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 1.6,

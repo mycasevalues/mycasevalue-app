@@ -87,7 +87,7 @@ export default function CaseFilingTicker() {
           style={{
             fontSize: '12px',
             color: 'var(--text3, #78766C)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
             textTransform: 'uppercase',
             letterSpacing: '0.05em',
@@ -137,7 +137,7 @@ export default function CaseFilingTicker() {
             .ticker-link {
               color: var(--accent-primary);
               text-decoration: none;
-              font-family: var(--font-body);
+              font-family: var(--font-ui);
               font-size: 14px;
               font-weight: 500;
               transition: color 0.2s ease;
@@ -156,7 +156,7 @@ export default function CaseFilingTicker() {
             .ticker-metadata {
               color: var(--color-text-secondary);
               font-size: 13px;
-              font-family: var(--font-body);
+              font-family: var(--font-ui);
               margin-left: 4px;
             }
 

@@ -185,7 +185,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   {partyLabel !== '—' && (
                     <span style={{
                       display: 'inline-block', marginLeft: 6, padding: '1px 6px',
-                      background: partyColor, color: 'var(--card, #FFFFFF)', borderRadius: 3,
+                      background: partyColor, color: 'var(--color-text-inverse)', borderRadius: 3,
                       fontSize: 11, fontWeight: 600,
                     }}>
                       {judge.party_of_appointing_president}
@@ -234,7 +234,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               {/* Action buttons (right) */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4, flexShrink: 0, marginLeft: 16 }}>
                 <button type="button" style={{
-                  height: 30, padding: '0 14px', background: 'var(--gold)', color: 'var(--card, #FFFFFF)',
+                  height: 30, padding: '0 14px', background: 'var(--gold)', color: 'var(--color-text-inverse)',
                   fontSize: 11, fontWeight: 600, fontFamily: 'var(--font-ui)',
                   border: 'none', borderRadius: 3, cursor: 'pointer', whiteSpace: 'nowrap',
                 }}>
@@ -257,7 +257,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
         <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '8px 24px' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{
-              background: 'var(--ab)', border: '1px solid var(--ab-border)',
+              background: 'var(--surf)', border: '1px solid var(--ab-border)',
               borderRadius: 3, padding: '8px 12px',
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
@@ -412,7 +412,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                     {/* Number circle */}
                     <div style={{
                       width: 20, height: 20, borderRadius: '50%', background: 'var(--link)',
-                      color: 'var(--card, #FFFFFF)', fontSize: 9, fontFamily: 'var(--font-ui)', fontWeight: 700,
+                      color: 'var(--color-text-inverse)', fontSize: 9, fontFamily: 'var(--font-ui)', fontWeight: 700,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2,
                     }}>
                       {i + 1}
@@ -589,7 +589,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
             {/* Download Report */}
             <button type="button" style={{
               width: '100%', height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center',
-              background: 'var(--gold)', color: 'var(--card, #FFFFFF)', fontSize: 11, fontWeight: 600,
+              background: 'var(--gold)', color: 'var(--color-text-inverse)', fontSize: 11, fontWeight: 600,
               fontFamily: 'var(--font-ui)', border: 'none', borderRadius: 3, cursor: 'pointer', marginBottom: 6,
             }}>
               Download Report

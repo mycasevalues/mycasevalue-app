@@ -47,7 +47,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
             fontSize: 14,
             color: 'var(--color-text-secondary)',
             margin: '0 0 24px',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             {subtitle}
           </p>
@@ -83,7 +83,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                       textDecoration: 'none',
                       fontWeight: 600,
                       fontSize: 14,
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       display: 'inline-block',
                       marginBottom: 4,
                     }}
@@ -94,7 +94,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                     <div style={{
                       fontSize: 12,
                       color: 'var(--color-text-secondary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                     }}>
                       {judge.district_id}
                     </div>
@@ -109,7 +109,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
                     marginBottom: 4,
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     Win Rate
                   </div>
@@ -131,7 +131,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
                     marginBottom: 4,
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     Total Cases
                   </div>
@@ -153,7 +153,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                     textDecoration: 'none',
                     fontSize: 13,
                     fontWeight: 500,
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     marginTop: 'auto',
                     paddingTop: 8,
                     borderTop: '1px solid #e5e7eb',

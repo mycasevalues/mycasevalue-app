@@ -106,7 +106,7 @@ export default async function GuidePage({ params }: PageProps) {
         color: 'var(--color-text-primary)',
         marginBottom: '30px',
         lineHeight: 1.2,
-        fontFamily: 'var(--font-heading)',
+        fontFamily: 'var(--font-legal)',
       }}>
         Understanding {nosInfo.label} Cases in Federal Court — A Practical Guide
       </h1>
@@ -116,7 +116,7 @@ export default async function GuidePage({ params }: PageProps) {
         color: '#5c5c5c',
         marginBottom: '50px',
         lineHeight: 1.6,
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
       }}>
         This guide explains what {nosInfo.label.toLowerCase()} cases are, how to evaluate if you have a claim, what you must prove, and the next steps to take. It's based on real federal court data.
       </p>
@@ -128,7 +128,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontWeight: 600,
           color: 'var(--color-text-primary)',
           marginBottom: '24px',
-          fontFamily: 'var(--font-heading)',
+          fontFamily: 'var(--font-legal)',
         }}>
           What Is a {nosInfo.label} Case?
         </h2>
@@ -138,7 +138,7 @@ export default async function GuidePage({ params }: PageProps) {
             color: '#3c3c3c',
             marginBottom: '15px',
             lineHeight: 1.8,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             {para}
           </p>
@@ -152,7 +152,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontWeight: 600,
           color: 'var(--color-text-primary)',
           marginBottom: '24px',
-          fontFamily: 'var(--font-heading)',
+          fontFamily: 'var(--font-legal)',
         }}>
           Do I Have a {nosInfo.label} Case?
         </h2>
@@ -160,7 +160,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontSize: '0.95rem',
           color: '#5c5c5c',
           marginBottom: '24px',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
         }}>
           Ask yourself these questions:
         </p>
@@ -177,7 +177,7 @@ export default async function GuidePage({ params }: PageProps) {
                 fontWeight: 600,
                 color: 'var(--accent-primary)',
                 marginBottom: '8px',
-                fontFamily: 'var(--font-heading)',
+                fontFamily: 'var(--font-legal)',
               }}>
                 {item.q}
               </p>
@@ -186,7 +186,7 @@ export default async function GuidePage({ params }: PageProps) {
                 color: '#3c3c3c',
                 margin: 0,
                 lineHeight: 1.6,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 {item.a}
               </p>
@@ -202,7 +202,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontWeight: 600,
           color: 'var(--color-text-primary)',
           marginBottom: '24px',
-          fontFamily: 'var(--font-heading)',
+          fontFamily: 'var(--font-legal)',
         }}>
           What You Must Prove
         </h2>
@@ -210,7 +210,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontSize: '0.95rem',
           color: '#5c5c5c',
           marginBottom: '24px',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
         }}>
           To win a {nosInfo.label.toLowerCase()} case, you must establish:
         </p>
@@ -224,7 +224,7 @@ export default async function GuidePage({ params }: PageProps) {
               color: '#3c3c3c',
               marginBottom: '12px',
               lineHeight: 1.6,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               {item}
             </li>
@@ -239,7 +239,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontWeight: 600,
           color: 'var(--color-text-primary)',
           marginBottom: '24px',
-          fontFamily: 'var(--font-heading)',
+          fontFamily: 'var(--font-legal)',
         }}>
           Why {nosInfo.label} Cases Get Dismissed
         </h2>
@@ -247,7 +247,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontSize: '0.95rem',
           color: '#5c5c5c',
           marginBottom: '24px',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
         }}>
           Courts dismiss cases for several reasons. Understanding them helps you strengthen your claim:
         </p>
@@ -264,7 +264,7 @@ export default async function GuidePage({ params }: PageProps) {
                 color: '#3c3c3c',
                 margin: 0,
                 lineHeight: 1.6,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 {reason}
               </p>
@@ -281,7 +281,7 @@ export default async function GuidePage({ params }: PageProps) {
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             marginBottom: '30px',
-            fontFamily: 'var(--font-heading)',
+            fontFamily: 'var(--font-legal)',
           }}>
             What Outcomes Look Like
           </h2>
@@ -304,7 +304,7 @@ export default async function GuidePage({ params }: PageProps) {
                   fontSize: '0.85rem',
                   color: '#5c5c5c',
                   marginBottom: '8px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   Win Rate
                 </p>
@@ -313,7 +313,7 @@ export default async function GuidePage({ params }: PageProps) {
                   fontWeight: 700,
                   color: winRateColor.text,
                   margin: '0 0 10px 0',
-                  fontFamily: 'var(--font-heading)',
+                  fontFamily: 'var(--font-legal)',
                 }}>
                   {realData.wr}%
                 </p>
@@ -321,7 +321,7 @@ export default async function GuidePage({ params }: PageProps) {
                   fontSize: '0.85rem',
                   color: '#5c5c5c',
                   margin: 0,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   {winRateColor.label} outcomes in federal court
                 </p>
@@ -340,16 +340,16 @@ export default async function GuidePage({ params }: PageProps) {
                   fontSize: '0.85rem',
                   color: '#5c5c5c',
                   marginBottom: '8px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   Settlement Rate
                 </p>
                 <p style={{
                   fontSize: '2.5rem',
                   fontWeight: 700,
-                  color: 'var(--accent-primary-hover)',
+                  color: 'var(--gold)',
                   margin: '0 0 10px 0',
-                  fontFamily: 'var(--font-heading)',
+                  fontFamily: 'var(--font-legal)',
                 }}>
                   {realData.sp}%
                 </p>
@@ -357,7 +357,7 @@ export default async function GuidePage({ params }: PageProps) {
                   fontSize: '0.85rem',
                   color: '#5c5c5c',
                   margin: 0,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   End in settlement rather than trial
                 </p>
@@ -369,23 +369,23 @@ export default async function GuidePage({ params }: PageProps) {
               <div style={{
                 padding: '24px',
                 backgroundColor: 'rgba(59,130,246,0.06)',
-                border: '1px solid var(--link, #0A50A2)',
+                border: '1px solid var(--link)',
                 borderRadius: '4px',
               }}>
                 <p style={{
                   fontSize: '0.85rem',
                   color: '#5c5c5c',
                   marginBottom: '8px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   Median Duration
                 </p>
                 <p style={{
                   fontSize: '2.5rem',
                   fontWeight: 700,
-                  color: 'var(--accent-primary-hover)',
+                  color: 'var(--gold)',
                   margin: '0 0 10px 0',
-                  fontFamily: 'var(--font-heading)',
+                  fontFamily: 'var(--font-legal)',
                 }}>
                   {duration} mo
                 </p>
@@ -393,7 +393,7 @@ export default async function GuidePage({ params }: PageProps) {
                   fontSize: '0.85rem',
                   color: '#5c5c5c',
                   margin: 0,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   From filing to resolution
                 </p>
@@ -414,7 +414,7 @@ export default async function GuidePage({ params }: PageProps) {
                 fontSize: '0.9rem',
                 color: '#5c5c5c',
                 marginBottom: '15px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 <strong>Typical Settlement Range</strong>
               </p>
@@ -423,7 +423,7 @@ export default async function GuidePage({ params }: PageProps) {
                 color: '#3c3c3c',
                 margin: 0,
                 lineHeight: 1.6,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 <strong>25th percentile:</strong> <span style={{ fontFamily: 'var(--font-mono)' }}>${fmtK(realData.rng.lo)}k</span> | <strong>Median:</strong> <span style={{ fontFamily: 'var(--font-mono)' }}>${fmtK(realData.rng.md)}k</span> | <strong>75th percentile:</strong> <span style={{ fontFamily: 'var(--font-mono)' }}>${fmtK(realData.rng.hi)}k</span>
               </p>
@@ -440,7 +440,7 @@ export default async function GuidePage({ params }: PageProps) {
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             marginBottom: '24px',
-            fontFamily: 'var(--font-heading)',
+            fontFamily: 'var(--font-legal)',
           }}>
             The Value of an Attorney
           </h2>
@@ -449,7 +449,7 @@ export default async function GuidePage({ params }: PageProps) {
             fontSize: '0.95rem',
             color: '#5c5c5c',
             marginBottom: '24px',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             Having a licensed attorney makes a significant difference in {nosInfo.label.toLowerCase()} cases:
           </p>
@@ -462,23 +462,23 @@ export default async function GuidePage({ params }: PageProps) {
             <div style={{
               padding: '24px',
               backgroundColor: 'rgba(34,197,94,0.1)',
-              border: '1px solid var(--data-positive, #176438)',
+              border: '1px solid var(--data-positive)',
               borderRadius: '4px',
             }}>
               <p style={{
                 fontSize: '0.85rem',
                 color: '#5c5c5c',
                 marginBottom: '8px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 With Attorney
               </p>
               <p style={{
                 fontSize: '2rem',
                 fontWeight: 700,
-                color: 'var(--data-positive, #176438)',
+                color: 'var(--data-positive)',
                 margin: '0 0 10px 0',
-                fontFamily: 'var(--font-heading)',
+                fontFamily: 'var(--font-legal)',
               }}>
                 {attorneyData.rwr}%
               </p>
@@ -486,7 +486,7 @@ export default async function GuidePage({ params }: PageProps) {
                 fontSize: '0.85rem',
                 color: '#3c3c3c',
                 margin: 0,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Outcome rate for represented parties
               </p>
@@ -495,14 +495,14 @@ export default async function GuidePage({ params }: PageProps) {
             <div style={{
               padding: '24px',
               backgroundColor: 'rgba(249,115,22,0.06)',
-              border: '1px solid var(--wrn-bg, #FCD34D)',
+              border: '1px solid var(--wrn-bg)',
               borderRadius: '4px',
             }}>
               <p style={{
                 fontSize: '0.85rem',
                 color: '#5c5c5c',
                 marginBottom: '8px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Without Attorney
               </p>
@@ -511,7 +511,7 @@ export default async function GuidePage({ params }: PageProps) {
                 fontWeight: 700,
                 color: '#B24020',
                 margin: '0 0 10px 0',
-                fontFamily: 'var(--font-heading)',
+                fontFamily: 'var(--font-legal)',
               }}>
                 {attorneyData.pwr}%
               </p>
@@ -519,7 +519,7 @@ export default async function GuidePage({ params }: PageProps) {
                 fontSize: '0.85rem',
                 color: '#3c3c3c',
                 margin: 0,
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Outcome rate for pro se (self-represented) parties
               </p>
@@ -538,7 +538,7 @@ export default async function GuidePage({ params }: PageProps) {
               color: '#3c3c3c',
               margin: 0,
               lineHeight: 1.6,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               <strong>Impact:</strong> An attorney increases your win rate by {attorneyData.rwr - attorneyData.pwr} percentage points. Most employment, personal injury, and consumer protection attorneys work on contingency—you don't pay upfront, and they take a percentage of your settlement or verdict.
             </p>
@@ -553,7 +553,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontWeight: 600,
           color: 'var(--color-text-primary)',
           marginBottom: '24px',
-          fontFamily: 'var(--font-heading)',
+          fontFamily: 'var(--font-legal)',
         }}>
           Your Next Steps
         </h2>
@@ -568,7 +568,7 @@ export default async function GuidePage({ params }: PageProps) {
               color: '#3c3c3c',
               marginBottom: '15px',
               lineHeight: 1.6,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               {step}
             </li>
@@ -578,7 +578,7 @@ export default async function GuidePage({ params }: PageProps) {
             color: '#3c3c3c',
             marginBottom: '15px',
             lineHeight: 1.6,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontWeight: 600,
           }}>
             {content.nextSteps[content.nextSteps.length - 1]}
@@ -590,16 +590,16 @@ export default async function GuidePage({ params }: PageProps) {
       <section style={{
         padding: '24px',
         backgroundColor: 'rgba(239,68,68,0.06)',
-        border: '1px solid var(--data-negative, #B01E1E)',
+        border: '1px solid var(--data-negative)',
         borderRadius: '4px',
         marginBottom: '50px',
       }}>
         <h3 style={{
           fontSize: '1rem',
           fontWeight: 600,
-          color: 'var(--data-negative, #B01E1E)',
+          color: 'var(--data-negative)',
           marginBottom: '8px',
-          fontFamily: 'var(--font-heading)',
+          fontFamily: 'var(--font-legal)',
         }}>
           Important Disclaimer
         </h3>
@@ -608,7 +608,7 @@ export default async function GuidePage({ params }: PageProps) {
           color: '#3c3c3c',
           margin: 0,
           lineHeight: 1.6,
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
         }}>
           This guide is educational and not legal advice. Every case is unique and depends on specific facts, applicable law, and jurisdiction. This information is based on aggregated federal court data and does not apply to state court cases, administrative claims, or proceedings outside the federal system. Consult a licensed attorney in your jurisdiction for advice about your specific situation.
         </p>
@@ -621,7 +621,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontWeight: 600,
           color: 'var(--color-text-primary)',
           marginBottom: '24px',
-          fontFamily: 'var(--font-heading)',
+          fontFamily: 'var(--font-legal)',
         }}>
           Related Resources
         </h2>
@@ -644,7 +644,7 @@ export default async function GuidePage({ params }: PageProps) {
               fontSize: '1rem',
               fontWeight: 600,
               margin: '0 0 8px 0',
-              fontFamily: 'var(--font-heading)',
+              fontFamily: 'var(--font-legal)',
             }}>
               {nosInfo.label} Case Data
             </p>
@@ -652,7 +652,7 @@ export default async function GuidePage({ params }: PageProps) {
               fontSize: '0.85rem',
               color: '#3c3c3c',
               margin: 0,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               See detailed analytics and settlement data
             </p>
@@ -661,7 +661,7 @@ export default async function GuidePage({ params }: PageProps) {
           <Link href="/calculator" style={{
             padding: '24px',
             backgroundColor: 'rgba(59,130,246,0.06)',
-            border: '1px solid var(--link, #0A50A2)',
+            border: '1px solid var(--link)',
             borderRadius: '4px',
             textDecoration: 'none',
             color: 'var(--accent-primary)',
@@ -671,7 +671,7 @@ export default async function GuidePage({ params }: PageProps) {
               fontSize: '1rem',
               fontWeight: 600,
               margin: '0 0 8px 0',
-              fontFamily: 'var(--font-heading)',
+              fontFamily: 'var(--font-legal)',
             }}>
               Settlement Calculator
             </p>
@@ -679,7 +679,7 @@ export default async function GuidePage({ params }: PageProps) {
               fontSize: '0.85rem',
               color: '#3c3c3c',
               margin: 0,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Estimate your case's potential value
             </p>
@@ -698,7 +698,7 @@ export default async function GuidePage({ params }: PageProps) {
               fontSize: '1rem',
               fontWeight: 600,
               margin: '0 0 8px 0',
-              fontFamily: 'var(--font-heading)',
+              fontFamily: 'var(--font-legal)',
             }}>
               Explore All Case Types
             </p>
@@ -706,7 +706,7 @@ export default async function GuidePage({ params }: PageProps) {
               fontSize: '0.85rem',
               color: '#3c3c3c',
               margin: 0,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Browse guides for other case types
             </p>

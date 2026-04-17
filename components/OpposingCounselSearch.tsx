@@ -438,7 +438,7 @@ export default function OpposingCounselSearch() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         input:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
@@ -523,7 +523,7 @@ export default function OpposingCounselSearch() {
                   fontSize: '14px',
                   color: 'var(--color-text-primary)',
                   background: 'var(--color-surface-0)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               />
             </div>

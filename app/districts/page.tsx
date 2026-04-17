@@ -315,7 +315,7 @@ export default function DistrictsPage() {
             letterSpacing: '0.05em',
             borderRadius: 3,
             background: 'var(--accent)',
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--card)',
             whiteSpace: 'nowrap',
             cursor: 'default',
           }}>

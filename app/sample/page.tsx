@@ -449,7 +449,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -497,7 +497,7 @@ export default function SampleReportPage() {
                     style={{
                       height: '100%',
                       background:
-                        'linear-gradient(90deg, var(--accent-primary-hover) 0%, var(--accent-primary) 100%)',
+                        'linear-gradient(90deg, var(--gold) 0%, var(--accent-primary) 100%)',
                     }}
                   />
                 </div>
@@ -560,7 +560,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -720,7 +720,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -936,7 +936,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -1096,7 +1096,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -1306,7 +1306,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -1344,7 +1344,7 @@ export default function SampleReportPage() {
       {/* Hover styles (CSS-only, no event handlers needed in Server Component) */}
       <style dangerouslySetInnerHTML={{ __html: `
         .sample-banner-cta:hover { background-color: var(--color-surface-1) !important; }
-        .sample-breadcrumb-link:hover { color: var(--accent-primary-hover) !important; }
+        .sample-breadcrumb-link:hover { color: var(--gold) !important; }
         .sample-section-link:hover { text-decoration: underline !important; }
         .sample-cta-btn:hover { opacity: 0.9; }
       `}} />

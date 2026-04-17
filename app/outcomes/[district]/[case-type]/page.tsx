@@ -109,7 +109,7 @@ export default async function OutcomesPage({
             marginBottom: '32px',
             color: 'var(--color-text-secondary)',
             fontSize: '16px',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             lineHeight: '1.6',
           }}>This case type and district combination does not exist in our database.</p>
           <Link href="/districts" style={{
@@ -117,9 +117,9 @@ export default async function OutcomesPage({
             padding: '8px 24px',
             borderRadius: 4,
             fontWeight: 600,
-            color: 'var(--card, #FFFFFF)',
-            background: 'var(--gold, #C4882A)',
-            border: '1px solid var(--gold, #C4882A)',
+            color: 'var(--card)',
+            background: 'var(--gold)',
+            border: '1px solid var(--gold)',
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
             textDecoration: 'none',
             fontSize: 13,
@@ -164,9 +164,9 @@ export default async function OutcomesPage({
   const durationDiff = districtDuration - nationalDuration;
 
   const getComparisonColor = (diff: number) => {
-    if (diff > 2) return 'var(--data-positive, #176438)'; // green
-    if (diff > -2) return 'var(--wrn-txt, #7A5800)'; // amber
-    return 'var(--data-negative, #B01E1E)'; // red
+    if (diff > 2) return 'var(--data-positive)'; // green
+    if (diff > -2) return 'var(--wrn-txt)'; // amber
+    return 'var(--data-negative)'; // red
   };
 
   const getComparisonLabel = (diff: number) => {
@@ -190,10 +190,10 @@ export default async function OutcomesPage({
 
   // Outcome distribution
   const outcomes = [
-    { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: 'var(--accent-primary-hover)' },
+    { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: 'var(--gold)' },
     { label: 'Dismissed', value: Math.round(Math.max(10, 53 - districtSettleRate - districtWinRate * 0.6)), color: 'var(--color-text-secondary)' },
     { label: 'Trial Win', value: Math.round(districtWinRate * 0.6), color: 'var(--color-text-muted)' },
-    { label: 'Trial Loss', value: Math.round(districtWinRate * 0.4), color: 'var(--data-negative, #B01E1E)' },
+    { label: 'Trial Loss', value: Math.round(districtWinRate * 0.4), color: 'var(--data-negative)' },
   ];
 
   // JSON-LD schema
@@ -229,7 +229,7 @@ export default async function OutcomesPage({
       {/* Design system styles */}
       <style>{`
         .outcome-card-link:hover {
-          border-color: var(--accent-primary-hover);
+          border-color: var(--gold);
           box-shadow: 0 2px 8px rgba(10, 102, 194, 0.1);
           transform: translateY(-2px);
         }
@@ -252,7 +252,7 @@ export default async function OutcomesPage({
 
       {/* Header Section - Institutional Dark */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
         padding: '40px 24px 32px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',
@@ -268,7 +268,7 @@ export default async function OutcomesPage({
           <div style={{
             fontSize: '13px',
             color: 'var(--border-default)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
             letterSpacing: '0.3px',
             display: 'flex',
@@ -324,7 +324,7 @@ export default async function OutcomesPage({
           <p style={{
             fontSize: '16px',
             margin: '12px 0 0 0',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             color: 'var(--border-default)',
             lineHeight: '1.6',
             maxWidth: '700px',
@@ -375,7 +375,7 @@ export default async function OutcomesPage({
               <div style={{
                 fontSize: '13px',
                 color: 'var(--color-text-secondary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
               }}>Win + Settlement Rate</div>
             </div>
@@ -397,7 +397,7 @@ export default async function OutcomesPage({
               <div style={{
                 fontSize: '13px',
                 color: 'var(--color-text-secondary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
               }}>Median Duration</div>
             </div>
@@ -419,7 +419,7 @@ export default async function OutcomesPage({
               <div style={{
                 fontSize: '13px',
                 color: 'var(--color-text-secondary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
               }}>Settlement Rate</div>
             </div>
@@ -441,7 +441,7 @@ export default async function OutcomesPage({
               <div style={{
                 fontSize: '13px',
                 color: 'var(--color-text-secondary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
               }}>Cases Tracked</div>
             </div>
@@ -485,7 +485,7 @@ export default async function OutcomesPage({
                       fontSize: '13px',
                       fontWeight: 600,
                       color: 'var(--color-text-secondary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                     }}>
                       {outcome.label}
                     </span>
@@ -539,7 +539,7 @@ export default async function OutcomesPage({
             fontSize: '14px',
             color: 'var(--color-text-secondary)',
             margin: '0 0 24px 0',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             lineHeight: '1.6',
           }}>
             {stateName} outcomes for {option.label} cases vs. national average
@@ -564,7 +564,7 @@ export default async function OutcomesPage({
                 letterSpacing: '0.5px',
                 fontWeight: 600,
                 marginBottom: '12px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Win Rate (Trials + Settlements)
               </div>
@@ -579,7 +579,7 @@ export default async function OutcomesPage({
                     fontSize: '13px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     {stateName}
                   </div>
@@ -597,7 +597,7 @@ export default async function OutcomesPage({
                     fontSize: '13px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     National Avg
                   </div>
@@ -619,7 +619,7 @@ export default async function OutcomesPage({
                 fontSize: '12px',
                 fontWeight: 600,
                 color: getComparisonColor(winRateDiff),
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 textAlign: 'center',
               }}>
                 {getComparisonLabel(winRateDiff)} {winRateDiff > 0 ? '+' : ''}{winRateDiff.toFixed(1)}%
@@ -640,7 +640,7 @@ export default async function OutcomesPage({
                 letterSpacing: '0.5px',
                 fontWeight: 600,
                 marginBottom: '12px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Settlement Rate
               </div>
@@ -655,14 +655,14 @@ export default async function OutcomesPage({
                     fontSize: '13px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     {stateName}
                   </div>
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: 'var(--accent-primary-hover)',
+                    color: 'var(--gold)',
                     fontFamily: 'var(--font-ui)',
                   }}>
                     {Math.round(districtSettleRate)}%
@@ -673,7 +673,7 @@ export default async function OutcomesPage({
                     fontSize: '13px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     National Avg
                   </div>
@@ -695,7 +695,7 @@ export default async function OutcomesPage({
                 fontSize: '12px',
                 fontWeight: 600,
                 color: getComparisonColor(settleRateDiff),
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 textAlign: 'center',
               }}>
                 {getComparisonLabel(settleRateDiff)} {settleRateDiff > 0 ? '+' : ''}{settleRateDiff.toFixed(1)}%
@@ -716,7 +716,7 @@ export default async function OutcomesPage({
                 letterSpacing: '0.5px',
                 fontWeight: 600,
                 marginBottom: '12px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Median Duration
               </div>
@@ -731,7 +731,7 @@ export default async function OutcomesPage({
                     fontSize: '13px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     {stateName}
                   </div>
@@ -749,7 +749,7 @@ export default async function OutcomesPage({
                     fontSize: '13px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     National Avg
                   </div>
@@ -771,7 +771,7 @@ export default async function OutcomesPage({
                 fontSize: '12px',
                 fontWeight: 600,
                 color: getComparisonColor(-durationDiff),
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 textAlign: 'center',
               }}>
                 {getComparisonLabel(-durationDiff)} {durationDiff > 0 ? '+' : ''}{durationDiff.toFixed(1)} mo
@@ -825,14 +825,14 @@ export default async function OutcomesPage({
                   letterSpacing: '0.5px',
                   fontWeight: 600,
                   marginBottom: '8px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   Case Type
                 </div>
                 <div style={{
                   fontSize: '15px',
                   fontWeight: 600,
-                  color: 'var(--accent-primary-hover)',
+                  color: 'var(--gold)',
                   fontFamily: 'var(--font-ui)',
                   marginBottom: '12px',
                 }}>
@@ -841,7 +841,7 @@ export default async function OutcomesPage({
                 <div style={{
                   fontSize: '12px',
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}>
                   Explore outcomes →
                 </div>
@@ -878,18 +878,18 @@ export default async function OutcomesPage({
                 key={i}
                 href={action.path}
                 style={{
-                  background: 'var(--accent-primary-hover)',
+                  background: 'var(--gold)',
                   color: 'var(--color-surface-0)',
                   padding: '16px 24px',
                   borderRadius: '4px',
                   textDecoration: 'none',
                   fontSize: '14px',
                   fontWeight: 600,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   textAlign: 'center',
                   transition: 'all 0.3s ease',
                   display: 'block',
-                  border: '1px solid var(--link, #0A50A2)',
+                  border: '1px solid var(--link)',
                 }}
 
               >
@@ -937,7 +937,7 @@ export default async function OutcomesPage({
                 letterSpacing: '0.5px',
                 fontWeight: 600,
                 marginBottom: '12px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Category
               </div>
@@ -967,7 +967,7 @@ export default async function OutcomesPage({
                 letterSpacing: '0.5px',
                 fontWeight: 600,
                 marginBottom: '12px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Case Type
               </div>
@@ -990,7 +990,7 @@ export default async function OutcomesPage({
         color: 'var(--color-text-secondary)',
         padding: 'clamp(24px, 4vw, 40px) 20px',
         fontSize: '13px',
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
         lineHeight: '1.7',
         borderTop: '1px solid var(--border-default)',
       }}>

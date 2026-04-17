@@ -8,7 +8,7 @@ const styles = `
     transition: all 200ms ease;
   }
   .glossary-nos-link:hover {
-    background-color: rgba(59,130,246,0.08) !important;
+    background-color: rgba(10,80,162,0.08) !important;
     border-color: var(--accent-primary) !important;
   }
 
@@ -16,7 +16,7 @@ const styles = `
     transition: all 200ms ease;
   }
   .glossary-related-term:hover {
-    background-color: rgba(59,130,246,0.08) !important;
+    background-color: rgba(10,80,162,0.08) !important;
     border-color: var(--accent-primary) !important;
   }
 
@@ -138,7 +138,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
               color: 'var(--color-surface-0)',
               letterSpacing: '-1.5px',
               marginBottom: '12px',
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
             }}
           >
             {term.term}
@@ -151,7 +151,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                 fontSize: '16px',
                 color: 'rgba(255, 255, 255, 0.9)',
                 fontStyle: 'italic',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               /{term.pronunciation}/
@@ -177,7 +177,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
               style={{
                 fontSize: '18px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-legal)',
                 color: 'var(--accent-primary)',
                 marginBottom: '12px',
               }}
@@ -195,7 +195,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
               style={{
                 fontSize: '18px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-legal)',
                 color: 'var(--accent-primary)',
                 marginBottom: '12px',
               }}
@@ -213,7 +213,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
               style={{
                 fontSize: '18px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-legal)',
                 color: 'var(--accent-primary)',
                 marginBottom: '12px',
               }}
@@ -263,7 +263,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                 style={{
                   fontSize: '18px',
                   fontWeight: 600,
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-legal)',
                   color: 'var(--accent-primary)',
                   marginBottom: '12px',
                 }}
@@ -303,7 +303,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                 style={{
                   fontSize: '18px',
                   fontWeight: 600,
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-legal)',
                   color: 'var(--accent-primary)',
                   marginBottom: '12px',
                 }}

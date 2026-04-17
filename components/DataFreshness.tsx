@@ -55,7 +55,7 @@ export default function DataFreshness({ style }: DataFreshnessProps) {
         color: 'var(--link, #0A50A2)',
         fontSize: '11px',
         fontWeight: 500,
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
         padding: '2px 8px',
         borderRadius: '4px',
         textDecoration: 'none',

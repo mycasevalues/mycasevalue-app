@@ -65,7 +65,7 @@ export default function JudgeSectionLoader({ nosCode, districtId, mode }: JudgeS
           <div style={{
             fontSize: 14,
             color: 'var(--color-text-secondary)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}>
             Loading judges...
           </div>

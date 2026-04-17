@@ -92,7 +92,7 @@ export default function MotionAnalyticsPage() {
   }, [selectedNos, selectedNos2, comparisonMode]);
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{focusStyle}
         {`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
@@ -103,8 +103,8 @@ export default function MotionAnalyticsPage() {
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -153,7 +153,7 @@ export default function MotionAnalyticsPage() {
               <select
                 value={selectedNos}
                 onChange={(e) => setSelectedNos(e.target.value)}
-                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-body)', transition: 'border-color 0.2s' }}
+                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 0.2s' }}
               >
                 <option value="">Select case type...</option>
                 {caseTypes.map((ct) => (
@@ -198,7 +198,7 @@ export default function MotionAnalyticsPage() {
               <select
                 value={selectedNos2}
                 onChange={(e) => setSelectedNos2(e.target.value)}
-                style={{ width: '100%', maxWidth: '400px', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-body)', transition: 'border-color 0.2s' }}
+                style={{ width: '100%', maxWidth: '400px', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 0.2s' }}
               >
                 <option value="">Select second case type...</option>
                 {caseTypes.map((ct) => (
@@ -252,8 +252,8 @@ export default function MotionAnalyticsPage() {
                       style={{
                         padding: '4px 10px',
                         borderRadius: '4px',
-                        backgroundColor: motion.successColor === 'green' ? 'rgba(5, 118, 66, 0.12)' : motion.successColor === 'amber' ? 'rgba(195, 125, 22, 0.12)' : 'rgba(10, 102, 194, 0.12)',
-                        color: motion.successColor === 'green' ? 'var(--data-positive, #176438)' : motion.successColor === 'amber' ? '#C37D16' : 'var(--accent-primary)',
+                        backgroundColor: motion.successColor === 'green' ? 'rgba(23, 100, 56, 0.08)' : motion.successColor === 'amber' ? 'rgba(122, 88, 0, 0.08)' : 'rgba(10, 102, 194, 0.06)',
+                        color: motion.successColor === 'green' ? 'var(--data-positive)' : motion.successColor === 'amber' ? 'var(--wrn-txt)' : 'var(--link)',
                         fontSize: '11px',
                         fontWeight: 600,
                         textTransform: 'uppercase' as const,
@@ -267,16 +267,16 @@ export default function MotionAnalyticsPage() {
                   <div style={{ marginBottom: '16px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                       <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const }}>Grant Rate</span>
-                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 600, color: motion.successColor === 'green' ? 'var(--data-positive, #176438)' : motion.successColor === 'amber' ? '#E89558' : 'var(--accent-primary)' }}>
+                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 600, color: motion.successColor === 'green' ? 'var(--data-positive)' : motion.successColor === 'amber' ? 'var(--wrn-txt)' : 'var(--accent-primary)' }}>
                         {motion.grantRate}%
                       </span>
                     </div>
-                    <div style={{ height: '6px', background: 'var(--border-default)', borderRadius: '3px', overflow: 'hidden' }}>
+                    <div style={{ height: '6px', background: 'var(--bdr)', borderRadius: '3px', overflow: 'hidden' }}>
                       <div
                         style={{
                           height: '100%',
                           width: `${Math.min(motion.grantRate, 100)}%`,
-                          background: motion.successColor === 'green' ? 'var(--data-positive, #176438)' : motion.successColor === 'amber' ? '#E89558' : 'var(--accent-primary)',
+                          background: motion.successColor === 'green' ? 'var(--data-positive)' : motion.successColor === 'amber' ? 'var(--wrn-txt)' : 'var(--accent-primary)',
                           borderRadius: '3px',
                         }}
                       />
@@ -306,8 +306,8 @@ export default function MotionAnalyticsPage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '11px', color: '#C37D16', margin: 0, lineHeight: 1.5 }}>
+            <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(122,88,0,0.08)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+              <p style={{ fontSize: '11px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
             </div>
@@ -366,7 +366,7 @@ export default function MotionAnalyticsPage() {
 
               {/* Right case */}
               <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid #057642' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid var(--data-positive)' }}>
                   {data2.caseType}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -382,7 +382,7 @@ export default function MotionAnalyticsPage() {
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                         <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{motion.motionType}</span>
-                        <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--data-positive, #176438)' }}>
+                        <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--data-positive)' }}>
                           {motion.grantRate}%
                         </span>
                       </div>
@@ -391,7 +391,7 @@ export default function MotionAnalyticsPage() {
                           style={{
                             height: '100%',
                             width: `${Math.min(motion.grantRate, 100)}%`,
-                            background: 'var(--data-positive, #176438)',
+                            background: 'var(--data-positive)',
                             borderRadius: '2px',
                           }}
                         />
@@ -403,8 +403,8 @@ export default function MotionAnalyticsPage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '11px', color: '#C37D16', margin: 0, lineHeight: 1.5 }}>
+            <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(122,88,0,0.08)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
+              <p style={{ fontSize: '11px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> Motion success rates are derived from public federal court statistics (FJC IDB). Actual outcomes depend on jurisdiction, judge, opposing counsel, and case-specific factors.
               </p>
             </div>

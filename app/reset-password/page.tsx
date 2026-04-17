@@ -97,7 +97,7 @@ export default function ResetPasswordPage() {
       >
         <p
           style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '14px',
             color: 'var(--color-surface-0)',
             opacity: 0.8,
@@ -135,7 +135,7 @@ export default function ResetPasswordPage() {
           animation: fadeIn 0.4s ease-out;
         }
         .auth-input:focus {
-          border-color: var(--link, #0A50A2) !important;
+          border-color: var(--link) !important;
           outline: none;
           box-shadow: 0 0 0 3px rgba(10, 80, 162, 0.1) !important;
         }
@@ -164,9 +164,9 @@ export default function ResetPasswordPage() {
           <Link
             href="/"
             style={{
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               fontSize: '14px',
-              color: 'var(--accent-primary-hover)',
+              color: 'var(--gold)',
               textDecoration: 'none',
               fontWeight: 500,
             }}
@@ -207,7 +207,7 @@ export default function ResetPasswordPage() {
                 margin: '0 auto 20px',
               }}
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
@@ -225,7 +225,7 @@ export default function ResetPasswordPage() {
             </h1>
             <p
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '14px',
                 color: 'var(--color-text-secondary)',
                 margin: 0,
@@ -253,7 +253,7 @@ export default function ResetPasswordPage() {
 
             <p
               style={{
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '14px',
                 color: 'var(--color-text-secondary)',
                 margin: '0 0 28px 0',
@@ -276,7 +276,7 @@ export default function ResetPasswordPage() {
               >
                 <p
                   style={{
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '13px',
                     color: 'var(--accent-primary)',
                     margin: 0,
@@ -295,7 +295,7 @@ export default function ResetPasswordPage() {
                   htmlFor="password"
                   style={{
                     display: 'block',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 500,
                     color: 'var(--color-text-primary)',
@@ -319,7 +319,7 @@ export default function ResetPasswordPage() {
                     padding: '12px 14px',
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)',
@@ -335,7 +335,7 @@ export default function ResetPasswordPage() {
                   htmlFor="confirm-password"
                   style={{
                     display: 'block',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 500,
                     color: 'var(--color-text-primary)',
@@ -359,7 +359,7 @@ export default function ResetPasswordPage() {
                     padding: '12px 14px',
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)',
@@ -382,7 +382,7 @@ export default function ResetPasswordPage() {
                   color: 'var(--color-surface-0)',
                   border: 'none',
                   borderRadius: '20px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '15px',
                   fontWeight: 600,
                   cursor: loading ? 'not-allowed' : 'pointer',
@@ -399,9 +399,9 @@ export default function ResetPasswordPage() {
               <Link
                 href="/sign-in"
                 style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '14px',
-                  color: 'var(--accent-primary-hover)',
+                  color: 'var(--gold)',
                   textDecoration: 'none',
                   fontWeight: 500,
                 }}

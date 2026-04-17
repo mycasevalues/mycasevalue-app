@@ -82,7 +82,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                         alignItems: 'center',
                         textDecoration: 'none',
                         color: 'var(--accent-primary-hover)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}
                       title={item.label}
                       aria-current={isLast ? 'page' : undefined}
@@ -127,7 +127,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                     fontSize: '12px',
                     color: 'var(--color-text-primary)',
                     fontWeight: '500',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     letterSpacing: '-0.005em',
                   }}
                   aria-current="page"
@@ -142,7 +142,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                     fontSize: '12px',
                     color: 'var(--color-text-muted)',
                     textDecoration: 'none',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     letterSpacing: '-0.005em',
                     transition: 'color 150ms ease',
                   }}
@@ -157,7 +157,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
 
       <style>{`
         .breadcrumbs-container {
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
         }
         .breadcrumbs-link:hover {
           color: var(--accent-primary) !important;

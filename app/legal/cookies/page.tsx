@@ -21,7 +21,7 @@ export default function CookiePolicyPage() {
         {/* Header */}
         <section
           style={{
-            background: 'linear-gradient(135deg, var(--link, #0A50A2) 0%, var(--accent-primary) 100%)',
+            background: 'linear-gradient(135deg, var(--link) 0%, var(--accent-primary) 100%)',
             color: 'var(--color-surface-0)',
             padding: '1.5rem 1.5rem',
             marginBottom: '1.5rem',
@@ -63,7 +63,7 @@ export default function CookiePolicyPage() {
             maxWidth: '1200px',
             margin: '0 auto',
             padding: '0 1.5rem 2rem 1.5rem',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             color: 'var(--color-text-primary)',
           }}
         >
@@ -73,7 +73,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -95,7 +95,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -155,7 +155,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -212,7 +212,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -269,7 +269,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -326,7 +326,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -366,7 +366,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -425,7 +425,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -449,16 +449,16 @@ export default function CookiePolicyPage() {
               >
                 <thead>
                   <tr style={{ background: '#F0F4F8', borderBottom: '2px solid var(--accent-primary)' }}>
-                    <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 600, color: 'var(--accent-primary-hover)' }}>
+                    <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 600, color: 'var(--gold)' }}>
                       Cookie Type
                     </th>
-                    <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 600, color: 'var(--accent-primary-hover)' }}>
+                    <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 600, color: 'var(--gold)' }}>
                       Category
                     </th>
-                    <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 600, color: 'var(--accent-primary-hover)' }}>
+                    <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 600, color: 'var(--gold)' }}>
                       Duration
                     </th>
-                    <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 600, color: 'var(--accent-primary-hover)' }}>
+                    <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 600, color: 'var(--gold)' }}>
                       Purpose
                     </th>
                   </tr>
@@ -517,7 +517,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -539,7 +539,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',

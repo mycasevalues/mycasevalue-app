@@ -12,7 +12,7 @@ export default function ExpertWitnessPage() {
   const experts = getExpertTypes();
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         select:focus, input:focus {
           outline: none;
@@ -26,8 +26,8 @@ export default function ExpertWitnessPage() {
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',

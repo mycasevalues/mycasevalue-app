@@ -54,7 +54,7 @@ export default function ReportPDFButton(props: ReportPDFButtonProps) {
         borderRadius: '4px',
         fontSize: '14px',
         fontWeight: 600,
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
         cursor: loading ? 'wait' : 'pointer',
         opacity: loading ? 0.7 : 1,
         transition: 'all 0.2s ease',

@@ -116,7 +116,7 @@ function StatsCard({
         boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
       }}
     >
-      <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
+      <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
         {label}
       </p>
       <p
@@ -125,7 +125,7 @@ function StatsCard({
           fontWeight: 700,
           color: 'var(--accent-primary)',
           margin: '0',
-          fontFamily: 'var(--font-data)',
+          fontFamily: 'var(--font-mono)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -134,11 +134,11 @@ function StatsCard({
       >
         {value}
         {shouldShowDot && (
-          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? 'var(--data-positive, #176438)' : casesCount >= 1000 ? '#C37D16' : casesCount >= 100 ? 'var(--data-negative, #B01E1E)' : 'var(--text4, #A8A6A0)' }} />
+          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? 'var(--data-positive)' : casesCount >= 1000 ? '#C37D16' : casesCount >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
         )}
       </p>
       {subtitle && (
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '12px', margin: '6px 0 0', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '12px', margin: '6px 0 0', fontFamily: 'var(--font-ui)' }}>
           {subtitle}
         </p>
       )}
@@ -164,7 +164,7 @@ export default async function CaseTypeDetailPage({
           <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
             Case type not found
           </h1>
-          <p style={{ color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
+          <p style={{ color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
             This case type does not exist in our database.
           </p>
           <Link
@@ -173,13 +173,13 @@ export default async function CaseTypeDetailPage({
               display: 'inline-block',
               padding: '8px 24px',
               borderRadius: 4,
-              background: 'var(--gold, #C4882A)',
-              color: 'var(--card, #FFFFFF)',
+              background: 'var(--gold)',
+              color: 'var(--color-surface-0)',
               textDecoration: 'none',
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '-0.005em',
-              border: '1px solid var(--gold, #C4882A)',
+              border: '1px solid var(--gold)',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
               fontFamily: 'var(--font-ui)',
             }}
@@ -357,7 +357,7 @@ export default async function CaseTypeDetailPage({
               lineHeight: '1.6',
               color: 'var(--color-text-secondary)',
               margin: '0',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             {caseType.description}
@@ -399,7 +399,7 @@ export default async function CaseTypeDetailPage({
                 fontSize: '15px',
                 color: 'var(--color-text-secondary)',
                 margin: '0',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
               {caseType.federalLaw}
@@ -442,7 +442,7 @@ export default async function CaseTypeDetailPage({
                     marginBottom: idx < caseType.typicalClaims.length - 1 ? '10px' : '0',
                     position: 'relative',
                     color: 'var(--color-text-secondary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}
                 >
                   <span
@@ -467,13 +467,13 @@ export default async function CaseTypeDetailPage({
             display: inline-block;
             padding: 8px 24px;
             border-radius: 6px;
-            background: var(--gold, #C4882A);
+            background: var(--gold);
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
             font-size: 13px;
             letter-spacing: -0.005em;
-            border: 1px solid var(--gold, #C4882A);
+            border: 1px solid var(--gold);
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
             font-family: var(--font-ui);
             transition: background-color 150ms ease, border-color 150ms ease;
@@ -518,7 +518,7 @@ export default async function CaseTypeDetailPage({
               fontSize: '16px',
               margin: '0 0 28px',
               color: 'var(--border-default)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             Get detailed case outcomes and win rates for your specific federal district
@@ -583,7 +583,7 @@ export default async function CaseTypeDetailPage({
                   <h3 style={{ fontSize: '14px', fontWeight: 700, margin: '0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                     {related.label}
                   </h3>
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                     NOS {related.nosCode}
                   </p>
                 </Link>

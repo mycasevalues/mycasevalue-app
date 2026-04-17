@@ -153,7 +153,7 @@ export default function HomePage() {
       {/* ═══ 1. HERO SEARCH SECTION ═══ */}
       <section
         style={{
-          background: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
           borderBottom: '1px solid var(--bdr, #E2DFD8)',
           padding: '24px 32px 16px',
         }}
@@ -179,7 +179,7 @@ export default function HomePage() {
             style={{
               fontFamily: 'var(--font-legal)',
               fontWeight: 700,
-              fontSize: 24,
+              fontSize: 28,
               letterSpacing: '-0.02em',
               lineHeight: 1.15,
               margin: '0 0 4px',
@@ -224,7 +224,7 @@ export default function HomePage() {
                 display: 'flex',
                 alignItems: 'center',
                 padding: '0 12px',
-                background: 'var(--card, #FFFFFF)',
+                background: 'var(--card)',
                 gap: 8,
               }}
             >
@@ -280,7 +280,7 @@ export default function HomePage() {
                 justifyContent: 'center',
                 gap: 4,
                 background: 'var(--chrome-bg, #1B2D45)',
-                color: 'var(--card, #FFFFFF)',
+                color: 'var(--card)',
                 fontSize: 13,
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 600,
@@ -310,7 +310,7 @@ export default function HomePage() {
               }}
             >
               Powered by{' '}
-              <span style={{ color: 'var(--link, #0A50A2)', fontWeight: 600 }}>
+              <span style={{ color: 'var(--link)', fontWeight: 600 }}>
                 FederalSearch+
               </span>
             </span>
@@ -319,7 +319,7 @@ export default function HomePage() {
               style={{
                 fontSize: 10,
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link)',
                 textDecoration: 'none',
               }}
             >
@@ -330,7 +330,7 @@ export default function HomePage() {
               style={{
                 fontSize: 10,
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link)',
                 textDecoration: 'none',
               }}
             >
@@ -351,7 +351,7 @@ export default function HomePage() {
       <div
         style={{
           borderBottom: '2px solid var(--bdr, #E2DFD8)',
-          background: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
           padding: '0 20px',
           display: 'flex',
           alignItems: 'stretch',
@@ -498,7 +498,7 @@ export default function HomePage() {
                         alignItems: 'center',
                         justifyContent: 'space-between',
                         padding: '0 8px',
-                        background: 'var(--card, #FFFFFF)',
+                        background: 'var(--card)',
                         border: '1px solid var(--bdr, #E2DFD8)',
                         borderRadius: 2,
                         fontSize: 12,
@@ -531,7 +531,7 @@ export default function HomePage() {
                     height: 32,
                     padding: '0 20px',
                     background: 'var(--chrome-bg, #1B2D45)',
-                    color: 'var(--card, #FFFFFF)',
+                    color: 'var(--card)',
                     fontSize: 12,
                     fontFamily: 'var(--font-ui)',
                     fontWeight: 600,
@@ -548,11 +548,11 @@ export default function HomePage() {
                     height: 32,
                     padding: '0 14px',
                     background: 'transparent',
-                    color: 'var(--link, #0A50A2)',
+                    color: 'var(--link)',
                     fontSize: 11,
                     fontFamily: 'var(--font-ui)',
                     fontWeight: 600,
-                    border: '1px solid var(--link, #0A50A2)',
+                    border: '1px solid var(--link)',
                     borderRadius: 2,
                     cursor: 'pointer',
                   }}
@@ -598,7 +598,7 @@ export default function HomePage() {
                   style={{
                     fontSize: 11,
                     fontFamily: 'var(--font-ui)',
-                    color: 'var(--link, #0A50A2)',
+                    color: 'var(--link)',
                     textDecoration: 'none',
                     marginLeft: 'auto',
                   }}
@@ -623,7 +623,7 @@ export default function HomePage() {
                       width: 6,
                       height: 6,
                       borderRadius: '50%',
-                      background: 'var(--link, #0A50A2)',
+                      background: 'var(--link)',
                       flexShrink: 0,
                     }}
                   />
@@ -632,7 +632,7 @@ export default function HomePage() {
                       flex: 1,
                       fontSize: 11,
                       fontFamily: 'var(--font-ui)',
-                      color: 'var(--link, #0A50A2)',
+                      color: 'var(--link)',
                       cursor: 'pointer',
                       overflow: 'hidden',
                       textOverflow: 'ellipsis',
@@ -701,7 +701,7 @@ export default function HomePage() {
                   style={{
                     fontSize: 11,
                     fontFamily: 'var(--font-ui)',
-                    color: 'var(--link, #0A50A2)',
+                    color: 'var(--link)',
                     lineHeight: 2,
                     cursor: 'pointer',
                   }}
@@ -821,7 +821,7 @@ export default function HomePage() {
               style={{
                 fontSize: 11,
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--link, #0A50A2)',
+                color: 'var(--link)',
                 textDecoration: 'none',
               }}
             >
@@ -845,7 +845,7 @@ export default function HomePage() {
                 className="hp-browse-card"
                 style={{
                   display: 'block',
-                  background: 'var(--card, #FFFFFF)',
+                  background: 'var(--card)',
                   border: '1px solid var(--bdr, #E2DFD8)',
                   borderRadius: 2,
                   borderTop: '3px solid var(--bdr, #E2DFD8)',
@@ -897,7 +897,7 @@ export default function HomePage() {
         style={{
           padding: '12px 24px',
           borderTop: '1px solid var(--bdr, #E2DFD8)',
-          background: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
           textAlign: 'center',
         }}
       >
@@ -929,14 +929,14 @@ export default function HomePage() {
 
         /* Tab active states */
         #tab-precision:checked ~ div .hp-tab-precision {
-          color: var(--link, #0A50A2) !important;
+          color: var(--link) !important;
           font-weight: 600;
-          border-bottom-color: var(--link, #0A50A2) !important;
+          border-bottom-color: var(--link) !important;
         }
         #tab-records:checked ~ div .hp-tab-generic {
           color: var(--text1, #18181A) !important;
           font-weight: 600;
-          border-bottom-color: var(--link, #0A50A2) !important;
+          border-bottom-color: var(--link) !important;
         }
         /* Reset precision active when records is checked */
         #tab-records:checked ~ div .hp-tab-precision {

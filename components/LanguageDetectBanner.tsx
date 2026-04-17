@@ -86,7 +86,7 @@ export default function LanguageDetectBanner() {
       <span
         style={{
           fontSize: '14px',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           color: 'var(--color-text-primary)',
           flex: 1,
         }}
@@ -103,7 +103,7 @@ export default function LanguageDetectBanner() {
             color: 'var(--accent-primary)',
             fontWeight: 600,
             fontSize: '14px',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             cursor: 'pointer',
             textDecoration: 'underline',
             padding: '4px 0',

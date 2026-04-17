@@ -68,13 +68,13 @@ const DISTRICT_RANKINGS = [
 
 export default function ClassActionPage() {
   const accentColor = 'var(--accent-primary)';
-  const secondaryColor = 'var(--accent-primary-hover)';
+  const secondaryColor = 'var(--gold)';
   const textColor = 'var(--color-text-primary)';
   const bgColor = 'var(--color-surface-1)';
   const borderColor = 'var(--border-default)';
 
   return (
-    <div style={{ minHeight: '100vh', background: bgColor, fontFamily: 'var(--font-body)', color: textColor }}>
+    <div style={{ minHeight: '100vh', background: bgColor, fontFamily: 'var(--font-ui)', color: textColor }}>
       {/* Header */}
       <div style={{ background: secondaryColor, padding: '24px 24px', borderBottom: `1px solid ${borderColor}` }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>

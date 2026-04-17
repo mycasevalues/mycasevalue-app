@@ -337,7 +337,7 @@ export default function TeamWorkspace() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
@@ -588,7 +588,7 @@ export default function TeamWorkspace() {
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
                       boxSizing: 'border-box',
@@ -617,7 +617,7 @@ export default function TeamWorkspace() {
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
                       minHeight: '100px',
@@ -745,7 +745,7 @@ export default function TeamWorkspace() {
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
                       boxSizing: 'border-box',
@@ -773,7 +773,7 @@ export default function TeamWorkspace() {
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
                       boxSizing: 'border-box',
@@ -808,7 +808,7 @@ export default function TeamWorkspace() {
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
                       boxSizing: 'border-box',
@@ -843,7 +843,7 @@ export default function TeamWorkspace() {
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
                       boxSizing: 'border-box',
@@ -1155,7 +1155,7 @@ export default function TeamWorkspace() {
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 fontSize: '13px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 backgroundColor: 'var(--color-surface-0)',
                 color: 'var(--color-text-primary)',
                 boxSizing: 'border-box',

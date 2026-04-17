@@ -65,8 +65,8 @@ function getStatusColor(
     case 'operational':
       return {
         bg: 'rgba(34,197,94,0.1)',
-        text: 'var(--data-positive, #176438)',
-        indicator: 'var(--data-positive, #176438)',
+        text: 'var(--data-positive)',
+        indicator: 'var(--data-positive)',
       };
     case 'degraded':
       return {
@@ -77,8 +77,8 @@ function getStatusColor(
     case 'down':
       return {
         bg: '#FEF0EF',
-        text: 'var(--data-negative, #B01E1E)',
-        indicator: 'var(--data-negative, #B01E1E)',
+        text: 'var(--data-negative)',
+        indicator: 'var(--data-negative)',
       };
     default:
       return {
@@ -103,7 +103,7 @@ export default function StatusPage() {
       style={{
         minHeight: '100vh',
         backgroundColor: 'var(--color-surface-0)',
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
         color: 'var(--color-text-primary)',
       }}
     >

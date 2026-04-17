@@ -261,8 +261,8 @@ export default function CalculatorPage() {
       {/* Breadcrumb */}
       <div className="border-b px-6 py-3" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}>
         <div className="max-w-3xl mx-auto">
-          <nav className="flex items-center gap-2 text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
-            <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }} className="hover:underline">
+          <nav className="flex items-center gap-2 text-sm" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+            <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }} className="hover:underline">
               Home
             </Link>
             <span style={{ color: 'var(--border-default)' }}>›</span>
@@ -273,8 +273,8 @@ export default function CalculatorPage() {
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--color-text-inverse)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -290,35 +290,35 @@ export default function CalculatorPage() {
             display: 'inline-flex', alignItems: 'center', gap: 8,
             padding: '4px 8px', marginBottom: 16,
             borderRadius: 999,
-            border: '1px solid rgba(59,130,246,0.2)',
-            background: 'rgba(59,130,246,0.08)',
+            border: '1px solid rgba(10,80,162,0.2)',
+            background: 'rgba(10,80,162,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Settlement Calculator
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--card)',
           }}>
             Estimate settlement value from court data
           </h1>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.6,
             maxWidth: 560,
             margin: 0,
           }}>
-            Range estimates derived from <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link, #0A50A2)' }}>5.1M+</span> federal cases. National benchmarks by case type, severity, and evidence quality.
+            Range estimates derived from <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link)' }}>5.1M+</span> federal cases. National benchmarks by case type, severity, and evidence quality.
           </p>
         </div>
       </div>
@@ -338,7 +338,7 @@ export default function CalculatorPage() {
           <div className="space-y-6">
             {/* Case Type */}
             <div>
-              <label htmlFor="calc-case-type" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-case-type" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
                 Case Type
               </label>
               <select
@@ -352,7 +352,7 @@ export default function CalculatorPage() {
                   borderColor: caseType === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)',
                   color: caseType ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   borderWidth: '1px',
                   fontSize: '14px',
                 }}
@@ -368,14 +368,14 @@ export default function CalculatorPage() {
 
             {/* District Note */}
             <div style={{ padding: '12px 16px', borderRadius: 4, background: 'var(--color-surface-1)', border: '1px solid var(--border-default)' }}>
-              <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontSize: '13px', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontSize: '13px', margin: 0, lineHeight: 1.5 }}>
                 Estimates reflect national averages. District-specific data is available in <a href="/cases" style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600 }}>Case Reports</a>.
               </p>
             </div>
 
             {/* Estimated Damages */}
             <div>
-              <label htmlFor="calc-damages" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-damages" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
                 Estimated Damages ($)
               </label>
               <input
@@ -396,19 +396,19 @@ export default function CalculatorPage() {
                   borderColor: damages === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)',
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   borderWidth: '1px',
                   fontSize: '14px',
                 }}
               />
-              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Total economic and non-economic losses you believe you incurred.
               </p>
             </div>
 
             {/* Represented by Attorney */}
             <div>
-              <label htmlFor="calc-represented" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-represented" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
                 Represented by Attorney?
               </label>
               <select
@@ -422,7 +422,7 @@ export default function CalculatorPage() {
                   borderColor: represented === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)',
                   color: represented ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   borderWidth: '1px',
                   fontSize: '14px',
                 }}
@@ -431,14 +431,14 @@ export default function CalculatorPage() {
                 <option value="yes">Yes — I have an attorney</option>
                 <option value="no">No — self-represented (pro se)</option>
               </select>
-              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Represented plaintiffs statistically achieve higher settlements.
               </p>
             </div>
 
             {/* Severity */}
             <div>
-              <label htmlFor="calc-severity" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-severity" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
                 Injury / Harm Severity (optional)
               </label>
               <select
@@ -450,7 +450,7 @@ export default function CalculatorPage() {
                   height: '48px', borderRadius: 2,
                   borderColor: severity === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)', color: severity ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
+                  fontFamily: 'var(--font-ui)', borderWidth: '1px', fontSize: '14px',
                 }}
               >
                 <option value="">Select severity...</option>
@@ -459,14 +459,14 @@ export default function CalculatorPage() {
                 <option value="severe">Severe — lasting impact, major disruption</option>
                 <option value="catastrophic">Catastrophic — permanent disability or loss</option>
               </select>
-              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Higher severity correlates with larger damages awards.
               </p>
             </div>
 
             {/* Duration of Impact */}
             <div>
-              <label htmlFor="calc-duration" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-duration" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
                 Duration of Impact (optional)
               </label>
               <select
@@ -478,7 +478,7 @@ export default function CalculatorPage() {
                   height: '48px', borderRadius: 2,
                   borderColor: duration === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)', color: duration ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
+                  fontFamily: 'var(--font-ui)', borderWidth: '1px', fontSize: '14px',
                 }}
               >
                 <option value="">Select duration...</option>
@@ -488,14 +488,14 @@ export default function CalculatorPage() {
                 <option value="over3yr">Over 3 years</option>
                 <option value="permanent">Permanent / ongoing</option>
               </select>
-              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Longer-lasting impacts generally result in higher settlement values.
               </p>
             </div>
 
             {/* Evidence Strength */}
             <div>
-              <label htmlFor="calc-evidence" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-evidence" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
                 Evidence Strength (optional)
               </label>
               <select
@@ -507,7 +507,7 @@ export default function CalculatorPage() {
                   height: '48px', borderRadius: 2,
                   borderColor: evidence === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)', color: evidence ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
+                  fontFamily: 'var(--font-ui)', borderWidth: '1px', fontSize: '14px',
                 }}
               >
                 <option value="">Select evidence strength...</option>
@@ -516,14 +516,14 @@ export default function CalculatorPage() {
                 <option value="strong">Strong — well-documented with witnesses/records</option>
                 <option value="overwhelming">Overwhelming — clear liability, extensive documentation</option>
               </select>
-              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Strong documentation and witness testimony increase case value significantly.
               </p>
             </div>
 
             {/* Prior Settlements */}
             <div>
-              <label htmlFor="calc-prior-settlement" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-prior-settlement" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
                 Prior Settlements? (optional)
               </label>
               <select
@@ -535,7 +535,7 @@ export default function CalculatorPage() {
                   height: '48px', borderRadius: 2,
                   borderColor: priorSettlement === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)', color: priorSettlement ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
+                  fontFamily: 'var(--font-ui)', borderWidth: '1px', fontSize: '14px',
                 }}
               >
                 <option value="">Select...</option>
@@ -544,14 +544,14 @@ export default function CalculatorPage() {
                 <option value="near">Yes — near my estimate</option>
                 <option value="above">Yes — above my estimate</option>
               </select>
-              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Existing offers establish a baseline for negotiations.
               </p>
             </div>
 
             {/* Number of Defendants */}
             <div>
-              <label htmlFor="calc-defendants" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-defendants" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
                 Number of Defendants (optional)
               </label>
               <select
@@ -563,7 +563,7 @@ export default function CalculatorPage() {
                   height: '48px', borderRadius: 2,
                   borderColor: defendants === '' ? 'var(--border-default)' : 'var(--accent-primary)',
                   background: 'var(--color-surface-1)', color: defendants ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
+                  fontFamily: 'var(--font-ui)', borderWidth: '1px', fontSize: '14px',
                 }}
               >
                 <option value="">Select...</option>
@@ -571,7 +571,7 @@ export default function CalculatorPage() {
                 <option value="multi">2–3 defendants</option>
                 <option value="complex">4+ defendants (complex)</option>
               </select>
-              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <p className="text-[11px] mt-2" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Multiple defendants can increase complexity and settlement amounts.
               </p>
             </div>
@@ -632,7 +632,7 @@ export default function CalculatorPage() {
             <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
               Estimated Settlement Range
             </h2>
-            <p className="text-sm mb-6" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm mb-6" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
               {results.caseLabel} case · {damages ? <span style={{ fontFamily: 'var(--font-mono)' }}>${Number(damages).toLocaleString()}</span> : ''} in claimed damages
               {represented === 'yes' ? ' · Attorney represented' : ''}
             </p>
@@ -640,7 +640,7 @@ export default function CalculatorPage() {
             {/* Animated Settlement Range Bar */}
             <div className="mb-6" style={{ position: 'relative' }}>
               <div style={{ position: 'relative', height: '40px', marginBottom: '8px' }}>
-                <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: 'rgba(59,130,246,0.08)', borderRadius: 3 }} />
+                <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: 'rgba(10,80,162,0.08)', borderRadius: 3 }} />
                 <div style={{
                   position: 'absolute', top: '16px', height: '8px',
                   left: `${Math.max(0, (results.p10 / results.p90) * 100 * 0.2)}%`,
@@ -651,7 +651,7 @@ export default function CalculatorPage() {
                 }} />
                 <div style={{
                   position: 'absolute', top: '8px', width: '2px', height: '20px',
-                  background: 'var(--accent-primary-hover)',
+                  background: 'var(--gold)',
                   left: `${(results.median / results.p90) * 100}%`,
                   transform: 'translateX(-50%)',
                   zIndex: 10,
@@ -669,12 +669,12 @@ export default function CalculatorPage() {
                 { label: 'P90', value: results.p90, highlight: false },
               ].map((col, i) => (
                 <div key={i} className="p-4 text-center" style={{
-                  background: col.highlight ? 'rgba(59,130,246,0.08)' : 'var(--color-surface-1)',
+                  background: col.highlight ? 'rgba(10,80,162,0.08)' : 'var(--color-surface-1)',
                   border: `1px solid ${col.highlight ? 'var(--accent-primary)' : 'var(--border-default)'}`,
                   borderRadius: 4,
                   ...(col.highlight ? { transform: 'scale(1.02)' } : {}),
                 }}>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: col.highlight ? 'var(--accent-primary)' : 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: col.highlight ? 'var(--accent-primary)' : 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                     {col.label}
                   </p>
                   <p style={{
@@ -700,7 +700,7 @@ export default function CalculatorPage() {
                 borderRadius: 4,
                 minHeight: '200px',
               }}>
-                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                   Plaintiff Win Rate
                 </p>
                 <div style={{
@@ -727,7 +727,7 @@ export default function CalculatorPage() {
                     <p className="text-3xl font-black" style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', marginBottom: '2px' }}>
                       {(results.winRate * 100).toFixed(0)}%
                     </p>
-                    <p className="text-[10px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>of cases</p>
+                    <p className="text-[10px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>of cases</p>
                   </div>
                 </div>
               </div>
@@ -738,7 +738,7 @@ export default function CalculatorPage() {
                 borderRadius: 4,
                 minHeight: '200px',
               }}>
-                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                   Typical Timeline
                 </p>
                 <div style={{
@@ -757,36 +757,36 @@ export default function CalculatorPage() {
                     background: 'var(--accent-primary)',
                     borderRadius: 2,
                   }} />
-                  <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>from filing to resolution</p>
+                  <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>from filing to resolution</p>
                 </div>
               </div>
             </div>
 
             {/* Attorney Impact & Sample Size */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-              <div className="p-5" style={{ background: 'rgba(34,197,94,0.1)', border: '1px solid var(--data-positive, #176438)', borderRadius: 4 }}>
-                <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>With Attorney</p>
-                <p className="text-2xl font-black" style={{ color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>{results.attorneyWinRate}%</p>
+              <div className="p-5" style={{ background: 'rgba(34,197,94,0.1)', border: '1px solid var(--data-positive)', borderRadius: 4 }}>
+                <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>With Attorney</p>
+                <p className="text-2xl font-black" style={{ color: 'var(--data-positive)', fontFamily: 'var(--font-mono)' }}>{results.attorneyWinRate}%</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>win rate</p>
               </div>
-              <div className="p-5" style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid var(--data-negative, #B01E1E)', borderRadius: 4 }}>
-                <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>Pro Se</p>
-                <p className="text-2xl font-black" style={{ color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>{results.proSeWinRate}%</p>
+              <div className="p-5" style={{ background: 'rgba(239,68,68,0.06)', border: '1px solid var(--data-negative)', borderRadius: 4 }}>
+                <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>Pro Se</p>
+                <p className="text-2xl font-black" style={{ color: 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>{results.proSeWinRate}%</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>win rate</p>
               </div>
-              <div className="p-5" style={{ background: 'rgba(59,130,246,0.08)', border: '1px solid var(--accent-primary)', borderRadius: 4 }}>
-                <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>Sample Size</p>
-                <p className="text-2xl font-black" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>n={results.sampleSize.toLocaleString()}</p>
+              <div className="p-5" style={{ background: 'rgba(10,80,162,0.08)', border: '1px solid var(--accent-primary)', borderRadius: 4 }}>
+                <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>Sample Size</p>
+                <p className="text-2xl font-black" style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>n={results.sampleSize.toLocaleString()}</p>
                 <p className="text-[11px]" style={{ color: 'var(--color-text-secondary)' }}>cases analyzed</p>
               </div>
             </div>
 
             {/* Detailed Breakdown */}
             <div className="mb-6 p-6" style={{ background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4 }}>
-              <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+              <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Calculation Breakdown
               </h3>
-              <table style={{ width: '100%', fontFamily: 'var(--font-body)', fontSize: '13px', borderCollapse: 'collapse' }}>
+              <table style={{ width: '100%', fontFamily: 'var(--font-ui)', fontSize: '13px', borderCollapse: 'collapse' }}>
                 <tbody>
                   <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                     <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Base damages claimed</td>
@@ -799,37 +799,37 @@ export default function CalculatorPage() {
                   {results.breakdown.severityMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Severity adjustment</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.severityMult > 1 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.severityMult.toFixed(1)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.severityMult > 1 ? 'var(--data-positive)' : 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.severityMult.toFixed(1)}</td>
                     </tr>
                   )}
                   {results.breakdown.durationMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Duration adjustment</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.durationMult > 1 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.durationMult.toFixed(1)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.durationMult > 1 ? 'var(--data-positive)' : 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.durationMult.toFixed(1)}</td>
                     </tr>
                   )}
                   {results.breakdown.attorneyMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Attorney representation boost</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.attorneyMult.toFixed(2)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: 'var(--data-positive)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.attorneyMult.toFixed(2)}</td>
                     </tr>
                   )}
                   {results.breakdown.evidenceMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Evidence strength adjustment</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.evidenceMult > 1 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.evidenceMult.toFixed(1)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.evidenceMult > 1 ? 'var(--data-positive)' : 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.evidenceMult.toFixed(1)}</td>
                     </tr>
                   )}
                   {results.breakdown.settlementMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Prior settlement adjustment</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.settlementMult > 1 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.settlementMult.toFixed(2)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.settlementMult > 1 ? 'var(--data-positive)' : 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.settlementMult.toFixed(2)}</td>
                     </tr>
                   )}
                   {results.breakdown.defendantsMult !== 1 && (
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Multiple defendants adjustment</td>
-                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.defendantsMult > 1 ? 'var(--data-positive, #176438)' : 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.defendantsMult.toFixed(2)}</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.defendantsMult > 1 ? 'var(--data-positive)' : 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.defendantsMult.toFixed(2)}</td>
                     </tr>
                   )}
                   <tr>
@@ -843,7 +843,7 @@ export default function CalculatorPage() {
             {/* Scenario Comparison */}
             <div className="mb-6 p-6" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                <h3 className="text-[12px] font-bold uppercase tracking-[0.8px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+                <h3 className="text-[12px] font-bold uppercase tracking-[0.8px]" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                   Scenario Comparison
                 </h3>
                 <div style={{ display: 'flex', gap: '8px' }}>
@@ -871,7 +871,7 @@ export default function CalculatorPage() {
                       border: 'none',
                       borderRadius: 2,
                       cursor: scenarios.length >= 3 ? 'not-allowed' : 'pointer',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       textTransform: 'uppercase',
                     }}
                   >
@@ -890,7 +890,7 @@ export default function CalculatorPage() {
                         border: '1px solid var(--border-default)',
                         borderRadius: 2,
                         cursor: 'pointer',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                         textTransform: 'uppercase',
                       }}
                     >
@@ -902,7 +902,7 @@ export default function CalculatorPage() {
 
               {scenarios.length > 0 ? (
                 <div style={{ overflowX: 'auto' }}>
-                  <table style={{ width: '100%', fontFamily: 'var(--font-body)', fontSize: '12px', borderCollapse: 'collapse' }}>
+                  <table style={{ width: '100%', fontFamily: 'var(--font-ui)', fontSize: '12px', borderCollapse: 'collapse' }}>
                     <thead>
                       <tr style={{ borderBottom: '2px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
                         <th style={{ padding: '12px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Label</th>
@@ -924,7 +924,7 @@ export default function CalculatorPage() {
                   </table>
                 </div>
               ) : (
-                <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontSize: '12px', textAlign: 'center', padding: '12px' }}>
+                <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontSize: '12px', textAlign: 'center', padding: '12px' }}>
                   Save up to 3 scenarios to compare side by side
                 </p>
               )}
@@ -935,25 +935,25 @@ export default function CalculatorPage() {
               const realCtx = getRealDataForCategory(caseType);
               if (!realCtx) return null;
               return (
-                <div className="mb-6 p-6" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid var(--link-light, #BAE6FD)', borderRadius: 4 }}>
-                  <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-body)' }}>
+                <div className="mb-6 p-6" style={{ background: 'rgba(10,80,162,0.06)', border: '1px solid var(--link)', borderRadius: 4 }}>
+                  <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--gold)', fontFamily: 'var(--font-ui)' }}>
                     How This Compares to Federal Data
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <div>
                       <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: 'var(--color-text-secondary)' }}>Actual Win Rate</p>
                       <p className="text-xl font-bold" style={{
-                        color: realCtx.wr >= 50 ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
+                        color: realCtx.wr >= 50 ? 'var(--data-positive)' : 'var(--accent-primary)',
                         fontFamily: 'var(--font-mono)',
                       }}>{realCtx.wr.toFixed(1)}%</p>
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: 'var(--color-text-secondary)' }}>Settlement Rate</p>
-                      <p className="text-xl font-bold" style={{ color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-mono)' }}>{realCtx.sp.toFixed(1)}%</p>
+                      <p className="text-xl font-bold" style={{ color: 'var(--wrn-txt)', fontFamily: 'var(--font-mono)' }}>{realCtx.sp.toFixed(1)}%</p>
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: 'var(--color-text-secondary)' }}>Median Duration</p>
-                      <p className="text-xl font-bold" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>{realCtx.mo} mo</p>
+                      <p className="text-xl font-bold" style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>{realCtx.mo} mo</p>
                     </div>
                     {realCtx.rng && (
                       <div>
@@ -975,7 +975,7 @@ export default function CalculatorPage() {
               if (!nos) return null;
               return (
                 <div className="mb-6 text-center p-6" style={{ background: 'var(--accent-primary)', borderRadius: 4 }}>
-                  <p className="text-sm mb-3" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
+                  <p className="text-sm mb-3" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)' }}>
                     See circuit breakdowns, judge data, and detailed outcomes
                   </p>
                   <Link
@@ -1010,7 +1010,7 @@ export default function CalculatorPage() {
               borderRadius: 3,
               fontSize: '11px',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               <span style={{ fontWeight: 600 }}>Data source:</span>
               <span>FJC Integrated Database · Federal civil cases 2000–2024</span>
@@ -1022,11 +1022,11 @@ export default function CalculatorPage() {
 
             {/* Results disclaimer */}
             <div className="p-4 rounded" style={{
-              color: 'var(--wrn-txt, #7A5800)',
-              fontFamily: 'var(--font-body)',
+              color: 'var(--wrn-txt)',
+              fontFamily: 'var(--font-ui)',
               background: 'rgba(234,179,8,0.08)',
-              border: '1px solid var(--wrn-bg, #FCD34D)',
-              borderLeft: '3px solid var(--wrn-txt, #7A5800)',
+              border: '1px solid var(--wrn-txt)',
+              borderLeft: '3px solid var(--wrn-txt)',
               fontSize: '12px',
               lineHeight: '1.6',
             }}>
@@ -1041,12 +1041,12 @@ export default function CalculatorPage() {
           background: 'var(--color-surface-0)',
           borderRadius: 4,
           padding: '32px',
-          borderLeft: '3px solid var(--wrn-txt, #7A5800)',
+          borderLeft: '3px solid var(--wrn-txt)',
         }}>
           <h2 className="text-xs font-bold uppercase tracking-[0.8px] mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Important Disclaimer
           </h2>
-          <p className="text-[12px] leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+          <p className="text-[12px] leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
             The Settlement Calculator provides estimates based on historical aggregate data from federal court records. These are statistical approximations and not predictions. Actual settlement amounts vary significantly based on case facts, legal representation, evidence quality, and many other factors. This calculator is not legal advice. Do not rely on these estimates as a substitute for consulting with a qualified attorney. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>
@@ -1104,7 +1104,7 @@ export default function CalculatorPage() {
                 <h3 className="font-bold mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '14px' }}>
                   {item.title}
                 </h3>
-                <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontSize: '12px', lineHeight: 1.5 }}>
+                <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontSize: '12px', lineHeight: 1.5 }}>
                   {item.description}
                 </p>
               </div>
@@ -1150,7 +1150,7 @@ export default function CalculatorPage() {
                     <h3 className="font-bold mb-2" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '14px' }}>
                       {tool.title}
                     </h3>
-                    <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontSize: '12px', lineHeight: 1.5 }}>
+                    <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontSize: '12px', lineHeight: 1.5 }}>
                       {tool.description}
                     </p>
                   </div>

@@ -47,7 +47,7 @@ export default function AppealsPage() {
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
     border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -56,12 +56,12 @@ export default function AppealsPage() {
   const grounds = data?.grounds || ['Procedural error', 'Evidentiary ruling', 'Legal standard misapplication'];
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
 
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -81,12 +81,12 @@ export default function AppealsPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Appeals Analytics
           </div>
-          <h1 style={{ fontFamily: 'var(--font-ui)', fontSize: 'clamp(24px, 3.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--color-text-inverse, #fff)', margin: '0 0 12px' }}>Know your reversal odds before you file</h1>
+          <h1 style={{ fontFamily: 'var(--font-ui)', fontSize: 'clamp(24px, 3.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--color-text-inverse)', margin: '0 0 12px' }}>Know your reversal odds before you file</h1>
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
             Reversal probability and strategic insight — by case type, circuit, and trial outcome — derived from millions of federal appeals.
           </p>
@@ -176,7 +176,7 @@ export default function AppealsPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {grounds.map((g, i) => (
                     <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                      <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary-hover)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600 }}>{i + 1}</div>
+                      <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: 'rgba(59,130,246,0.08)', color: 'var(--gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600 }}>{i + 1}</div>
                       <span style={{ fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: 1.5 }}>{g}</span>
                     </div>
                   ))}
@@ -185,14 +185,14 @@ export default function AppealsPage() {
 
               {/* Filing Deadline Notice */}
               <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid var(--accent-primary)' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>Appeal Filing Deadline</h3>
-                <p style={{ fontSize: '13px', color: 'var(--accent-primary-hover)', margin: 0, lineHeight: 1.6 }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--gold)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>Appeal Filing Deadline</h3>
+                <p style={{ fontSize: '13px', color: 'var(--gold)', margin: 0, lineHeight: 1.6 }}>
                   Under FRAP Rule 4(a)(1)(A), a notice of appeal must be filed within <strong>30 days</strong> after entry of judgment. If the United States is a party, the deadline extends to <strong>60 days</strong>. Post-trial motions (FRCP 50(b), 52(b), 59) toll this deadline until the motion is decided.
                 </p>
               </div>
 
               {/* Data Source */}
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt)', lineHeight: 1.6 }}>
                 <strong>Data Sources:</strong> Appeal rates derived from FJC Integrated Database and Administrative Office of the U.S. Courts annual reports. Reversal rates reflect circuit-level averages. Individual case outcomes depend on specific facts and legal issues. All outputs should be verified with current case law research.
               </div>
             </div>

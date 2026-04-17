@@ -133,7 +133,7 @@ export default function DataSourcesPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
-          background: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
           padding: '56px 24px 64px',
           position: 'relative',
           overflow: 'hidden',
@@ -153,15 +153,15 @@ export default function DataSourcesPage() {
               background: 'rgba(59,130,246,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 10,
               fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-              color: 'var(--link, #0A50A2)',
+              color: 'var(--link)',
             }}>
-              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
               Data Foundation
             </div>
             <h1 style={{
               fontSize: 'clamp(28px, 4vw, 36px)',
               fontWeight: 700,
-              color: 'var(--card, #FFFFFF)',
+              color: 'var(--card)',
               fontFamily: 'var(--font-ui)',
               letterSpacing: '-0.025em',
               marginBottom: 10,
@@ -184,8 +184,8 @@ export default function DataSourcesPage() {
         {/* Breadcrumb */}
         <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
-            <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
-              <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
+            <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-ui)' }}>
+              <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
                 Home
               </Link>
               <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
@@ -225,7 +225,7 @@ export default function DataSourcesPage() {
                     fontSize: 13,
                     fontWeight: 600,
                     color: 'var(--color-text-secondary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     margin: 0,
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
@@ -272,7 +272,7 @@ export default function DataSourcesPage() {
                       <p style={{
                         fontSize: 14,
                         color: 'var(--color-text-secondary)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                         lineHeight: 1.6,
                         margin: 0,
                       }}>
@@ -324,7 +324,7 @@ export default function DataSourcesPage() {
                           fontSize: 14,
                           fontWeight: 700,
                           color: 'var(--color-text-primary)',
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--font-ui)',
                           margin: 0,
                         }}>
                           {source.frequency}
@@ -358,7 +358,7 @@ export default function DataSourcesPage() {
                           fontSize: 12,
                           fontWeight: 600,
                           color: 'var(--color-text-primary)',
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--font-ui)',
                           margin: '0 0 6px 0',
                         }}>
                           Historical Coverage
@@ -366,7 +366,7 @@ export default function DataSourcesPage() {
                         <p style={{
                           fontSize: 13,
                           color: 'var(--color-text-secondary)',
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--font-ui)',
                           margin: 0,
                         }}>
                           {source.coverage}
@@ -385,7 +385,7 @@ export default function DataSourcesPage() {
                             <span style={{
                               fontSize: 13,
                               color: 'var(--color-text-secondary)',
-                              fontFamily: 'var(--font-body)',
+                              fontFamily: 'var(--font-ui)',
                             }}>
                               {feature}
                             </span>
@@ -436,7 +436,7 @@ export default function DataSourcesPage() {
                   <p style={{
                     fontSize: 14,
                     color: 'var(--color-text-secondary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}>
@@ -498,7 +498,7 @@ export default function DataSourcesPage() {
                       <span style={{
                         fontSize: 14,
                         color: 'var(--color-text-secondary)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}>
                         {item.source}
                       </span>
@@ -549,7 +549,7 @@ export default function DataSourcesPage() {
                       <span style={{
                         fontSize: 14,
                         color: 'var(--color-text-secondary)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}>
                         {item.source}
                       </span>
@@ -557,7 +557,7 @@ export default function DataSourcesPage() {
                         fontSize: 13,
                         fontWeight: 600,
                         color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}>
                         {item.updated}
                       </span>
@@ -590,7 +590,7 @@ export default function DataSourcesPage() {
               <p style={{
                 fontSize: 16,
                 color: 'var(--color-text-secondary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 lineHeight: 1.8,
                 marginBottom: 24,
               }}>
@@ -722,7 +722,7 @@ export default function DataSourcesPage() {
                   <p style={{
                     fontSize: 14,
                     color: 'var(--color-text-secondary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}>
@@ -737,7 +737,7 @@ export default function DataSourcesPage() {
           <section style={{
             padding: 48,
             borderRadius: '4px',
-            background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--link, #0A50A2) 100%)',
+            background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--link) 100%)',
             textAlign: 'center',
           }}>
             <h2 style={{
@@ -752,7 +752,7 @@ export default function DataSourcesPage() {
             <p style={{
               fontSize: 16,
               color: 'rgba(255,255,255,0.9)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.7,
               marginBottom: 32,
             }}>

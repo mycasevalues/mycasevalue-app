@@ -54,7 +54,7 @@ export default function PressPage() {
   const brandColors = [
     { name: 'Navy', hex: 'var(--accent-primary)' },
     { name: 'Primary Blue', hex: 'var(--accent-primary)' },
-    { name: 'Secondary Blue', hex: 'var(--accent-primary-hover)' },
+    { name: 'Secondary Blue', hex: 'var(--gold)' },
     { name: 'Background', hex: 'var(--color-surface-1)' },
     { name: 'Text', hex: 'var(--color-text-primary)' },
     { name: 'Accent Grey', hex: '#E0DDD8' },
@@ -124,7 +124,7 @@ export default function PressPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header Banner */}
         <div style={{
-          background: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
           padding: '48px 24px 40px',
           position: 'relative',
           overflow: 'hidden',
@@ -144,9 +144,9 @@ export default function PressPage() {
               background: 'rgba(59,130,246,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 10,
               fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-              color: 'var(--link, #0A50A2)',
+              color: 'var(--link)',
             }}>
-              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
               Press Kit
             </div>
             <h1
@@ -155,7 +155,7 @@ export default function PressPage() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: 'var(--card, #FFFFFF)',
+                color: 'var(--card)',
                 letterSpacing: '-0.025em',
                 lineHeight: 1.1,
                 marginBottom: 16,
@@ -167,7 +167,7 @@ export default function PressPage() {
               style={{
                 fontSize: 16,
                 color: 'rgba(255,255,255,0.7)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 lineHeight: 1.6,
                 maxWidth: 640,
                 margin: 0,
@@ -201,10 +201,10 @@ export default function PressPage() {
                 alignItems: 'center',
                 gap: '0.5rem',
                 fontSize: '0.875rem',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}
             >
-              <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
+              <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
                 Home
               </Link>
               <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
@@ -233,7 +233,7 @@ export default function PressPage() {
                 style={{
                   fontSize: 16,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: 1.7,
                   margin: 0,
                 }}
@@ -244,7 +244,7 @@ export default function PressPage() {
                 style={{
                   fontSize: 16,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: 1.7,
                   margin: 0,
                 }}
@@ -255,7 +255,7 @@ export default function PressPage() {
                 style={{
                   fontSize: 16,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: 1.7,
                   margin: 0,
                 }}
@@ -313,7 +313,7 @@ export default function PressPage() {
                     style={{
                       fontSize: 14,
                       color: 'var(--color-text-secondary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       margin: 0,
                     }}
                   >
@@ -407,7 +407,7 @@ export default function PressPage() {
                         fontSize: 14,
                         fontWeight: 600,
                         color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                         margin: 0,
                         marginBottom: 4,
                       }}
@@ -418,7 +418,7 @@ export default function PressPage() {
                       style={{
                         fontSize: 12,
                         color: 'var(--color-text-secondary)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                         margin: 0,
                       }}
                     >
@@ -433,7 +433,7 @@ export default function PressPage() {
                 style={{
                   fontSize: 13,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   marginTop: 16,
                   marginBottom: 0,
                 }}
@@ -556,7 +556,7 @@ export default function PressPage() {
                       style={{
                         textAlign: 'center',
                         color: 'var(--color-text-secondary)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}
                     >
                       <svg
@@ -598,7 +598,7 @@ export default function PressPage() {
                       style={{
                         fontSize: 13,
                         color: 'var(--color-text-secondary)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                         margin: 0,
                       }}
                     >
@@ -612,7 +612,7 @@ export default function PressPage() {
               style={{
                 fontSize: 13,
                 color: 'var(--color-text-secondary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 marginTop: 16,
                 marginBottom: 0,
               }}
@@ -656,7 +656,7 @@ export default function PressPage() {
                     style={{
                       fontSize: 16,
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       lineHeight: 1.7,
                       margin: '0 0 16px 0',
                       fontStyle: 'italic',
@@ -668,7 +668,7 @@ export default function PressPage() {
                     style={{
                       fontSize: 14,
                       color: 'var(--color-text-secondary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       margin: 0,
                       fontWeight: 500,
                     }}
@@ -707,7 +707,7 @@ export default function PressPage() {
                 style={{
                   fontSize: 16,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   margin: 0,
                 }}
               >
@@ -742,7 +742,7 @@ export default function PressPage() {
                 style={{
                   fontSize: 16,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: 1.7,
                   margin: '0 0 24px 0',
                 }}
@@ -759,7 +759,7 @@ export default function PressPage() {
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   marginBottom: 24,
                 }}
               >
@@ -782,7 +782,7 @@ export default function PressPage() {
                 style={{
                   fontSize: 14,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: 1.6,
                   margin: 0,
                 }}

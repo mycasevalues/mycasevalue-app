@@ -132,7 +132,7 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
           role="tooltip"
         >
           <div style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontWeight: 600,
             fontSize: '13px',
             marginBottom: '6px',
@@ -141,7 +141,7 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
             {displayLabel}
           </div>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '12px',
             lineHeight: 1.55,
             color: 'var(--bdr, #E2DFD8)',

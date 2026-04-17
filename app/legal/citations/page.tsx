@@ -29,9 +29,9 @@ interface Citation {
 const CATEGORIES = [
   { key: 'constitutional', label: 'Constitutional', color: 'var(--accent-primary)' },
   { key: 'civil_rights', label: 'Civil Rights', color: '#a78bfa' },
-  { key: 'criminal', label: 'Criminal Law', color: 'var(--data-negative, #B01E1E)' },
-  { key: 'regulatory', label: 'Regulatory', color: 'var(--data-positive, #176438)' },
-  { key: 'corporate', label: 'Corporate', color: 'var(--wrn-txt, #7A5800)' },
+  { key: 'criminal', label: 'Criminal Law', color: 'var(--data-negative)' },
+  { key: 'regulatory', label: 'Regulatory', color: 'var(--data-positive)' },
+  { key: 'corporate', label: 'Corporate', color: 'var(--wrn-txt)' },
 ];
 
 const CATEGORY_COLORS: Record<string, string> = Object.fromEntries(CATEGORIES.map(c => [c.key, c.color]));
@@ -404,13 +404,13 @@ export default function CitationsPage() {
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Citation Links</div>
         </div>
         <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
-          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono, monospace)' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive)', fontFamily: 'var(--font-mono, monospace)' }}>
             {CATEGORIES.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Legal Categories</div>
         </div>
         <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
-          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-mono, monospace)' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--wrn-txt)', fontFamily: 'var(--font-mono, monospace)' }}>
             {new Date().getFullYear() - Math.min(...NODES.map(n => n.year))}+
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Years of Precedent</div>

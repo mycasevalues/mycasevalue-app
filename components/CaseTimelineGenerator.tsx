@@ -106,7 +106,7 @@ export default function CaseTimelineGenerator() {
     fontWeight: 600,
     color: 'var(--color-text-primary)',
     marginBottom: '6px',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
   };
 
   const inputStyle: React.CSSProperties = {
@@ -117,7 +117,7 @@ export default function CaseTimelineGenerator() {
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
     boxSizing: 'border-box' as const,
   };
 
@@ -142,7 +142,7 @@ export default function CaseTimelineGenerator() {
   const markerSpacing = containerWidth / (timeline?.length || 8);
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         @media print {
           body {
@@ -162,7 +162,7 @@ export default function CaseTimelineGenerator() {
           <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
             Case Timeline Generator
           </h1>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.4, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.4, fontFamily: 'var(--font-ui)' }}>
             Generate expected federal case timelines based on historical data
           </p>
         </div>
@@ -226,7 +226,7 @@ export default function CaseTimelineGenerator() {
 
               {error && (
                 <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '13px', color: '#CC1019', margin: 0, fontFamily: 'var(--font-body)' }}>{error}</p>
+                  <p style={{ fontSize: '13px', color: '#CC1019', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
                 </div>
               )}
 
@@ -271,7 +271,7 @@ export default function CaseTimelineGenerator() {
                           fontSize="11"
                           fontWeight="600"
                           fill="var(--color-text-primary)"
-                          style={{ fontFamily: 'var(--font-body)' }}
+                          style={{ fontFamily: 'var(--font-ui)' }}
                         >
                           {m.name}
                         </text>
@@ -281,7 +281,7 @@ export default function CaseTimelineGenerator() {
                           textAnchor="middle"
                           fontSize="10"
                           fill="var(--color-text-secondary)"
-                          style={{ fontFamily: 'var(--font-body)' }}
+                          style={{ fontFamily: 'var(--font-ui)' }}
                         >
                           {m.date}
                         </text>
@@ -308,15 +308,15 @@ export default function CaseTimelineGenerator() {
                       borderLeft: `4px solid ${m.isUpcoming ? 'var(--accent-primary)' : 'var(--color-text-muted)'}`,
                     }}>
                       <div style={{ flex: 1 }}>
-                        <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+                        <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                           {m.name}
                         </p>
-                        <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
+                        <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                           {m.date} ({Math.round(m.daysFromFiling / 30.44)} months)
                         </p>
                       </div>
                       {!m.isUpcoming && (
-                        <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-body)' }}>
+                        <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
                           Past
                         </span>
                       )}
@@ -328,7 +328,7 @@ export default function CaseTimelineGenerator() {
               {/* Disclaimer & Export */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div style={{ background: 'rgba(234,179,8,0.1)', padding: '16px', borderRadius: '4px', border: '1px solid var(--wrn-bg, #FCD34D)' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--wrn-txt, #7A5800)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
+                  <p style={{ fontSize: '13px', color: 'var(--wrn-txt, #7A5800)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
                     Statistical averages based on historical case data from 5.1M+ federal court cases. Actual deadlines are set by the court's scheduling order and may vary.
                   </p>
                 </div>

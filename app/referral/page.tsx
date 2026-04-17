@@ -109,10 +109,10 @@ export default function ReferralPage() {
             </h2>
 
             {error && (
-              <div style={{ padding: '12px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', backgroundColor: 'rgba(239,68,68,0.08)', color: 'var(--data-negative, #B01E1E)', border: '1px solid rgba(239,68,68,0.2)' }}>
+              <div style={{ padding: '12px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', backgroundColor: 'rgba(239,68,68,0.08)', color: 'var(--data-negative)', border: '1px solid rgba(239,68,68,0.2)' }}>
                 {error}
                 {error.includes('Sign in') && (
-                  <span>{' '}<Link href="/sign-in" style={{ color: 'var(--accent-primary-hover)', fontWeight: 600 }}>Sign in here</Link></span>
+                  <span>{' '}<Link href="/sign-in" style={{ color: 'var(--gold)', fontWeight: 600 }}>Sign in here</Link></span>
                 )}
               </div>
             )}
@@ -166,7 +166,7 @@ export default function ReferralPage() {
                 {rewards.map((r) => (
                   <tr key={r.count} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '12px 0', fontWeight: 500, color: 'var(--color-text-primary)' }}>{r.count}</td>
-                    <td style={{ padding: '12px 0', color: 'var(--accent-primary-hover)', fontWeight: 500 }}>{r.reward}</td>
+                    <td style={{ padding: '12px 0', color: 'var(--gold)', fontWeight: 500 }}>{r.reward}</td>
                   </tr>
                 ))}
               </tbody>

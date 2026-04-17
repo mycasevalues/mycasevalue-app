@@ -2,7 +2,7 @@ export default function CalculatorLoading() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
       {/* Header skeleton */}
-      <div style={{ background: 'var(--card, #FFFFFF)', padding: '48px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <div style={{ background: 'var(--card)', padding: '48px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ height: '14px', width: '120px', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', marginBottom: '16px' }} />
           <div style={{ height: '36px', width: '60%', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', marginBottom: '12px' }} />

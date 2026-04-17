@@ -118,14 +118,14 @@ export default function ResearchMemoPage() {
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
     border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
@@ -133,8 +133,8 @@ export default function ResearchMemoPage() {
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -146,7 +146,7 @@ export default function ResearchMemoPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', margin: '0 0 16px' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-ui)', margin: '0 0 16px' }}>
             Research Memos Backed by Real Court Data
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
@@ -173,7 +173,7 @@ export default function ResearchMemoPage() {
                   style={{
                     width: '100%', padding: '12px 14px', border: '1px solid var(--border-default)',
                     borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
+                    backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
                     minHeight: '140px', resize: 'vertical', boxSizing: 'border-box' as const,
                   }}
                 />
@@ -207,7 +207,7 @@ export default function ResearchMemoPage() {
 
               {error && (
                 <div style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
+                  <p style={{ fontSize: '13px', color: 'var(--data-negative)', margin: 0 }}>{error}</p>
                 </div>
               )}
 
@@ -217,7 +217,7 @@ export default function ResearchMemoPage() {
                 style={{
                   width: '100%', padding: '16px',
                   backgroundColor: loading || !legalQuestion.trim() ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
+                  color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase', letterSpacing: '0.04em',
                   cursor: loading || !legalQuestion.trim() ? 'not-allowed' : 'pointer',
@@ -238,22 +238,22 @@ export default function ResearchMemoPage() {
                     {loading && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
                   <div style={{ display: 'flex', gap: 8 }}>
-                    <button onClick={copyToClipboard} disabled={loading} style={{ padding: '8px 12px', background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)', color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.5 : 1 }}>
+                    <button onClick={copyToClipboard} disabled={loading} style={{ padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--accent-primary)', color: '#FFFFFF', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.5 : 1 }}>
                       {copied ? 'Copied!' : 'Copy'}
                     </button>
-                    <button onClick={exportAsDocx} disabled={loading || exporting} style={{ padding: '8px 12px', background: 'var(--accent-primary-hover)', color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: loading || exporting ? 'not-allowed' : 'pointer', opacity: loading || exporting ? 0.5 : 1 }}>
+                    <button onClick={exportAsDocx} disabled={loading || exporting} style={{ padding: '8px 12px', background: 'var(--gold)', color: '#FFFFFF', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: loading || exporting ? 'not-allowed' : 'pointer', opacity: loading || exporting ? 0.5 : 1 }}>
                       {exporting ? 'Exporting...' : 'Export as Word'}
                     </button>
                   </div>
                 </div>
 
-                <div ref={outputRef} style={{ maxHeight: '650px', overflowY: 'auto', padding: '16px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.7', fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
+                <div ref={outputRef} style={{ maxHeight: '650px', overflowY: 'auto', padding: '16px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.7', fontFamily: 'var(--font-ui)', whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
                   {memoText}
                   {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: 'var(--accent-primary)', marginLeft: 2, animation: 'blink 1s infinite' }} />}
                 </div>
               </div>
 
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(122,88,0,0.08)', borderLeft: '3px solid var(--wrn-txt)', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt)', lineHeight: 1.6 }}>
                 <strong>Important:</strong> AI-generated research memo for attorney review only — not a substitute for primary legal research. All citations and legal standards must be independently verified through Westlaw, LexisNexis, or other authoritative legal databases.
               </div>
             </div>

@@ -60,11 +60,11 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         }}
       >
-        <p style={{ color: 'var(--color-text-primary)', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-primary)', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
           {label}
         </p>
         {payload.map((entry, index) => (
-          <p key={index} style={{ color: entry.color, fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
+          <p key={index} style={{ color: entry.color, fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-ui)' }}>
             {entry.name}: {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
           </p>
         ))}
@@ -113,7 +113,7 @@ export default function TrendCharts() {
         >
           Federal Filing Trends (2015–2024)
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Total federal civil case filings over the past decade
         </p>
         <ResponsiveContainer width="100%" height={300}>
@@ -125,8 +125,8 @@ export default function TrendCharts() {
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
-            <XAxis dataKey="year" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
-            <YAxis stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
+            <XAxis dataKey="year" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
+            <YAxis stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <Tooltip content={<CustomTooltip />} />
             <Area
               type="monotone"
@@ -159,16 +159,16 @@ export default function TrendCharts() {
         >
           Win Rate Trends by Category (2018–2024)
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Win rate trends across top case categories
         </p>
         <ResponsiveContainer width="100%" height={350}>
           <LineChart data={categoryTrends[0]?.years ? buildCombinedCategoryData(categoryTrends) : []}>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
-            <XAxis dataKey="year" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
-            <YAxis stroke="var(--color-text-secondary)" domain={[0, 100]} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
+            <XAxis dataKey="year" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
+            <YAxis stroke="var(--color-text-secondary)" domain={[0, 100]} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <Tooltip content={<CustomTooltip />} />
-            <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }} />
+            <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }} />
             {categoryTrends.map((cat, idx) => (
               <Line
                 key={cat.category}
@@ -212,7 +212,7 @@ export default function TrendCharts() {
         >
           Top 15 Case Types by Filing Volume
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Most frequently filed federal civil case types
         </p>
         <ResponsiveContainer width="100%" height={500}>
@@ -222,8 +222,8 @@ export default function TrendCharts() {
             margin={{ top: 4, right: 32, left: 300, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
-            <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
-            <YAxis dataKey="label" type="category" stroke="var(--color-text-secondary)" width={300} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
+            <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
+            <YAxis dataKey="label" type="category" stroke="var(--color-text-secondary)" width={300} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <Tooltip content={<CustomTooltip />} />
             <Bar dataKey="count" fill="var(--accent-primary)" radius={[0, 8, 8, 0]} />
           </BarChart>
@@ -249,7 +249,7 @@ export default function TrendCharts() {
         >
           Settlement Rate Trends (2015–2024)
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Percentage of federal civil cases resolved through settlement over time
         </p>
         <ResponsiveContainer width="100%" height={300}>
@@ -261,8 +261,8 @@ export default function TrendCharts() {
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
-            <XAxis dataKey="year" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
-            <YAxis stroke="var(--color-text-secondary)" domain={[0, 100]} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
+            <XAxis dataKey="year" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
+            <YAxis stroke="var(--color-text-secondary)" domain={[0, 100]} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <Tooltip content={<CustomTooltip />} />
             <Area
               type="monotone"
@@ -295,7 +295,7 @@ export default function TrendCharts() {
         >
           Circuit Court Win Rates
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Average win rate by federal circuit
         </p>
         <ResponsiveContainer width="100%" height={350}>
@@ -305,8 +305,8 @@ export default function TrendCharts() {
             margin={{ top: 4, right: 32, left: 120, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
-            <XAxis type="number" domain={[0, 100]} stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
-            <YAxis dataKey="circuit" type="category" stroke="var(--color-text-secondary)" width={120} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
+            <XAxis type="number" domain={[0, 100]} stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
+            <YAxis dataKey="circuit" type="category" stroke="var(--color-text-secondary)" width={120} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <Tooltip
               content={({ active, payload }) => {
                 if (active && payload && payload.length) {
@@ -320,13 +320,13 @@ export default function TrendCharts() {
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
                     >
-                      <p style={{ color: 'var(--color-text-primary)', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                      <p style={{ color: 'var(--color-text-primary)', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
                         {payload[0].payload.circuit}
                       </p>
-                      <p style={{ color: 'var(--accent-primary)', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
+                      <p style={{ color: 'var(--accent-primary)', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-ui)' }}>
                         Win Rate: {payload[0].value}%
                       </p>
-                      <p style={{ color: 'var(--color-text-secondary)', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
+                      <p style={{ color: 'var(--color-text-secondary)', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-ui)' }}>
                         Cases: {payload[0].payload.caseCount.toLocaleString()}
                       </p>
                     </div>
@@ -363,7 +363,7 @@ export default function TrendCharts() {
         >
           How Cases End
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Distribution of case outcomes across all federal civil cases
         </p>
         <ResponsiveContainer width="100%" height={300}>
@@ -373,8 +373,8 @@ export default function TrendCharts() {
             margin={{ top: 4, right: 32, left: 150, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
-            <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
-            <YAxis dataKey="outcome" type="category" stroke="var(--color-text-secondary)" width={150} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
+            <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
+            <YAxis dataKey="outcome" type="category" stroke="var(--color-text-secondary)" width={150} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <Tooltip
               content={({ active, payload }) => {
                 if (active && payload && payload.length) {
@@ -388,10 +388,10 @@ export default function TrendCharts() {
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
                     >
-                      <p style={{ color: 'var(--color-text-primary)', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                      <p style={{ color: 'var(--color-text-primary)', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
                         {payload[0].payload.outcome}
                       </p>
-                      <p style={{ color: payload[0].payload.color, fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
+                      <p style={{ color: payload[0].payload.color, fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-ui)' }}>
                         {payload[0].value}%
                       </p>
                     </div>
@@ -428,7 +428,7 @@ export default function TrendCharts() {
         >
           Settlement vs. Trial Duration by Category
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Average case duration for settlement versus trial across case categories
         </p>
         <ResponsiveContainer width="100%" height={350}>
@@ -438,10 +438,10 @@ export default function TrendCharts() {
             margin={{ top: 4, right: 32, left: 120, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
-            <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
-            <YAxis dataKey="category" type="category" stroke="var(--color-text-secondary)" width={120} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
+            <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
+            <YAxis dataKey="category" type="category" stroke="var(--color-text-secondary)" width={120} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <Tooltip content={<CustomTooltip />} />
-            <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }} />
+            <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }} />
             <Bar dataKey="settlementMonths" fill="#057642" radius={[0, 4, 4, 0]} />
             <Bar dataKey="trialMonths" fill="var(--accent-primary)" radius={[0, 4, 4, 0]} />
           </BarChart>

@@ -90,7 +90,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             border: '1px solid var(--border-default)',
           }}
         >
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-ui)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             API Keys Generated
           </p>
           <p
@@ -114,7 +114,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             border: '1px solid var(--border-default)',
           }}
         >
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-ui)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Requests (Last 24h)
           </p>
           <p
@@ -138,7 +138,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             border: '1px solid var(--border-default)',
           }}
         >
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-ui)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Rate Limit Violations (1h)
           </p>
           <p
@@ -193,7 +193,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
               <div>
                 <p
                   style={{
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '0.875rem',
                     fontWeight: 500,
                     color: 'var(--color-text-primary)',
@@ -225,7 +225,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
               <div style={{ textAlign: 'right' }}>
                 <p
                   style={{
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '0.875rem',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
@@ -236,7 +236,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
                 </p>
                 <p
                   style={{
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '0.75rem',
                     color: 'var(--color-text-muted)',
                     margin: 0,
@@ -286,7 +286,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
               <div>
                 <p
                   style={{
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '0.875rem',
                     fontWeight: 500,
                     color: 'var(--color-text-primary)',
@@ -318,7 +318,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
               <div style={{ textAlign: 'right' }}>
                 <p
                   style={{
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '0.875rem',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
@@ -329,7 +329,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
                 </p>
                 <p
                   style={{
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: '0.75rem',
                     color: 'var(--color-text-muted)',
                     margin: 0,
@@ -353,7 +353,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             borderRadius: '4px',
             fontSize: '0.75rem',
             color: 'var(--link, #0A50A2)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           Currently showing mock data. Connect to Supabase to view real metrics.

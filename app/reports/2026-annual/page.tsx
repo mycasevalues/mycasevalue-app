@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 const AnnualReportCapture = dynamic(() => import('@/components/AnnualReportCapture'), {
   ssr: false,
   loading: () => (
-    <div style={{ padding: 24, textAlign: 'center', color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)', fontSize: 14 }}>
+    <div style={{ padding: 24, textAlign: 'center', color: 'var(--color-text-muted)', fontFamily: 'var(--font-ui)', fontSize: 14 }}>
       Loading PDF generator…
     </div>
   ),

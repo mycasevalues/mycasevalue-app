@@ -51,8 +51,8 @@ export default function ResultsPage() {
       {/* Breadcrumb */}
       <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '12px 0' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
-          <nav style={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}>
-            <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
+          <nav style={{ fontSize: '13px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }}>
+            <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
               Home
             </Link>
             <span style={{ margin: '0 8px', color: '#A8ACB1' }}>&gt;</span>
@@ -63,7 +63,7 @@ export default function ResultsPage() {
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
         paddingTop: '40px',
         paddingBottom: '32px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -84,9 +84,9 @@ export default function ResultsPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Case Results
           </div>
           <h1 style={{
@@ -105,7 +105,7 @@ export default function ResultsPage() {
             color: 'rgba(255,255,255,0.7)',
             margin: '0',
             maxWidth: '600px',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             lineHeight: '1.6'
           }}>
             Federal court outcomes, win rates, and settlement data — contextualized for your case type, district, and procedural posture.
@@ -137,7 +137,7 @@ export default function ResultsPage() {
             color: 'var(--color-text-secondary)',
             margin: '0 0 24px 0',
             lineHeight: '1.6',
-            fontFamily: 'var(--font-body)'
+            fontFamily: 'var(--font-ui)'
           }}>
             Select a case type and district to see detailed results including win rates, settlement ranges, average awards, and case timelines.
           </p>
@@ -182,7 +182,7 @@ export default function ResultsPage() {
                 background: 'var(--color-surface-0)',
                 color: 'var(--color-text-primary)',
                 textDecoration: 'none',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 border: '1px solid var(--border-default)',
                 cursor: 'pointer'
               }}>
@@ -216,7 +216,7 @@ export default function ResultsPage() {
               color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
-              fontFamily: 'var(--font-body)'
+              fontFamily: 'var(--font-ui)'
             }}>
               Percentage of cases won, settled, or dismissed by outcome type.
             </p>
@@ -243,7 +243,7 @@ export default function ResultsPage() {
               color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
-              fontFamily: 'var(--font-body)'
+              fontFamily: 'var(--font-ui)'
             }}>
               Median and average settlement amounts for your case type.
             </p>
@@ -270,7 +270,7 @@ export default function ResultsPage() {
               color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
-              fontFamily: 'var(--font-body)'
+              fontFamily: 'var(--font-ui)'
             }}>
               Average time from filing to resolution.
             </p>
@@ -297,7 +297,7 @@ export default function ResultsPage() {
               color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
-              fontFamily: 'var(--font-body)'
+              fontFamily: 'var(--font-ui)'
             }}>
               How outcomes differ across federal districts.
             </p>
@@ -314,7 +314,7 @@ export default function ResultsPage() {
           margin: '0 auto',
           paddingLeft: '24px',
           paddingRight: '24px',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           lineHeight: '1.6'
         }}>
           All results are based on aggregate data from official federal court records.

@@ -27,7 +27,7 @@ export function ComparisonBar({
           <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
           <XAxis
             dataKey="name"
-            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
+            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
             axisLine={{ stroke: 'var(--border-default)' }}
             tickLine={false}
           />
@@ -53,7 +53,7 @@ export function ComparisonBar({
           />
           {hasCompare && (
             <Legend
-              wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
+              wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }}
             />
           )}
           <Bar

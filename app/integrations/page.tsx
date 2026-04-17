@@ -46,7 +46,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '/attorney/api-access',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary-hover)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6" />
         <polyline points="8 6 2 12 8 18" />
       </svg>
@@ -60,7 +60,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '/attorney',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary-hover)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
         <polyline points="14 2 14 8 20 8" />
         <line x1="16" y1="13" x2="8" y2="13" />
@@ -77,7 +77,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '/contact',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary-hover)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
         <line x1="8" y1="21" x2="16" y2="21" />
         <line x1="12" y1="17" x2="12" y2="21" />
@@ -92,7 +92,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '/contact',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary-hover)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
       </svg>
     ),
@@ -105,7 +105,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '/contact',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary-hover)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
@@ -118,7 +118,7 @@ const INTEGRATIONS = [
     status: 'Available',
     href: '/attorney',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary-hover)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
         <line x1="3" y1="9" x2="21" y2="9" />
         <line x1="3" y1="15" x2="21" y2="15" />
@@ -131,7 +131,7 @@ const INTEGRATIONS = [
 
 export default function IntegrationsPage() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         .integration-card {
           background: var(--color-surface-0);
@@ -169,7 +169,7 @@ export default function IntegrationsPage() {
           padding: 4px 10px;
           font-size: 12px;
           color: var(--color-text-secondary);
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
         }
         .cta-btn:hover {
           background: #B91C1C !important;
@@ -189,8 +189,8 @@ export default function IntegrationsPage() {
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -219,9 +219,9 @@ export default function IntegrationsPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Integrations
           </div>
 
@@ -232,12 +232,12 @@ export default function IntegrationsPage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--card)',
           }}>
             Connect your legal workflow
           </h1>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             maxWidth: '640px',
@@ -318,7 +318,7 @@ export default function IntegrationsPage() {
                   padding: '4px 10px',
                   borderRadius: '4px',
                   background: integration.status === 'Available' ? 'rgba(34,197,94,0.06)' : 'rgba(232, 23, 31, 0.06)',
-                  color: integration.status === 'Available' ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
+                  color: integration.status === 'Available' ? 'var(--data-positive)' : 'var(--accent-primary)',
                   border: integration.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                 }}>
                   {integration.status}
@@ -329,7 +329,7 @@ export default function IntegrationsPage() {
               <p style={{
                 fontSize: '11px',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.08em',
                 margin: '0 0 8px 0',
@@ -481,7 +481,7 @@ export default function IntegrationsPage() {
                   .capability-card:hover {
                     transform: translateY(-2px);
                     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-                    border-color: var(--accent-primary-hover);
+                    border-color: var(--gold);
                   }
                 `}</style>
                 <h3 style={{
@@ -509,7 +509,7 @@ export default function IntegrationsPage() {
                   padding: '4px 10px',
                   borderRadius: '4px',
                   background: capability.status === 'Available' ? 'rgba(34,197,94,0.06)' : 'rgba(232, 23, 31, 0.06)',
-                  color: capability.status === 'Available' ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
+                  color: capability.status === 'Available' ? 'var(--data-positive)' : 'var(--accent-primary)',
                   border: capability.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                   display: 'inline-block',
                 }}>
@@ -669,20 +669,20 @@ export default function IntegrationsPage() {
               <span style={{ color: 'var(--color-text-inverse)' }}>response</span>{' '}
               <span style={{ color: 'var(--color-text-secondary)' }}>=</span>{' '}
               <span style={{ color: 'var(--accent-primary)' }}>await</span>{' '}
-              <span style={{ color: 'var(--accent-primary-hover)' }}>fetch</span>
+              <span style={{ color: 'var(--gold)' }}>fetch</span>
               <span style={{ color: 'var(--border-default)' }}>(</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
-              <span style={{ color: 'var(--data-positive, #176438)' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
+              <span style={{ color: 'var(--data-positive)' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
               <span style={{ color: 'var(--border-default)' }}>,</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
               <span style={{ color: 'var(--border-default)' }}>{'{ '}</span>
               <span style={{ color: 'var(--color-text-inverse)' }}>headers</span>
               <span style={{ color: 'var(--border-default)' }}>{': { '}</span>
-              <span style={{ color: 'var(--data-positive, #176438)' }}>{`'Authorization'`}</span>
+              <span style={{ color: 'var(--data-positive)' }}>{`'Authorization'`}</span>
               <span style={{ color: 'var(--border-default)' }}>{': '}</span>
-              <span style={{ color: 'var(--data-positive, #176438)' }}>{`'Bearer YOUR_API_KEY'`}</span>
+              <span style={{ color: 'var(--data-positive)' }}>{`'Bearer YOUR_API_KEY'`}</span>
               <span style={{ color: 'var(--border-default)' }}>{' } }'}</span>
             </div>
             <div>
@@ -759,7 +759,7 @@ export default function IntegrationsPage() {
               href="/solutions/api"
               style={{
                 background: 'var(--color-surface-0)',
-                border: '2px solid var(--accent-primary-hover)',
+                border: '2px solid var(--gold)',
                 borderRadius: '4px',
                 padding: '32px 24px',
                 textDecoration: 'none',
@@ -778,7 +778,7 @@ export default function IntegrationsPage() {
                 }
               `}</style>
               <div>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary-hover)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
                   <polyline points="16 18 22 12 16 6" />
                   <polyline points="8 6 2 12 8 18" />
                 </svg>
@@ -803,7 +803,7 @@ export default function IntegrationsPage() {
               <span style={{
                 fontSize: '13px',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginTop: '24px',
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.05em',

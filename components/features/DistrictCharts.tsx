@@ -58,14 +58,14 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               margin={{ top: 4, right: 32, left: 200, bottom: 5 }}
             >
               <XAxis type="number" stroke="var(--color-text-secondary)" />
-              <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
+              <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
               <Tooltip
                 contentStyle={{
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
                   color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '13px',
                 }}
               />

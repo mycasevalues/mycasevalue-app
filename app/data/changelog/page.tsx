@@ -69,7 +69,7 @@ export default async function ChangelogPage() {
         .changelog-badge {
           display: inline-block;
           padding: 4px 10px;
-          border-radius: 20px;
+          border-radius: 3px;
           font-size: 11px;
           font-weight: 600;
           letter-spacing: 0.05em;
@@ -79,27 +79,27 @@ export default async function ChangelogPage() {
           display: inline-block;
           padding: 6px 12px;
           border-radius: 16px;
-          background-color: rgba(59,130,246,0.08);
-          color: var(--link, #0A50A2);
+          background-color: rgba(10,80,162,0.08);
+          color: var(--link);
           text-decoration: none;
           font-size: 13px;
           font-weight: 500;
           margin-right: 8px;
           margin-bottom: 8px;
           transition: all 150ms ease-out;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
         }
         .changelog-link-pill:hover {
-          background-color: rgba(59,130,246,0.08);
+          background-color: rgba(10,80,162,0.08);
           color: var(--accent-primary);
           text-decoration: none;
         }
         .changelog-date-pill {
           display: inline-block;
           padding: 6px 12px;
-          border-radius: 20px;
-          background-color: rgba(59,130,246,0.08);
-          color: var(--link, #0A50A2);
+          border-radius: 3px;
+          background-color: rgba(10,80,162,0.08);
+          color: var(--link);
           font-family: var(--font-mono);
           font-size: 12px;
           font-weight: 500;
@@ -116,7 +116,7 @@ export default async function ChangelogPage() {
           transition: all 150ms ease-out;
         }
         .changelog-subscribe-btn:hover {
-          background: rgba(59,130,246,0.08) !important;
+          background: rgba(10,80,162,0.08) !important;
         }
       `}</style>
 
@@ -128,7 +128,7 @@ export default async function ChangelogPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Institutional Dark Hero */}
         <div style={{
-          background: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
           padding: '48px 24px 40px',
           position: 'relative',
           overflow: 'hidden',
@@ -157,21 +157,21 @@ export default async function ChangelogPage() {
               display: 'inline-flex', alignItems: 'center', gap: 6,
               padding: '4px 10px', marginBottom: 16,
               borderRadius: 999,
-              border: '1px solid rgba(59,130,246,0.2)',
-              background: 'rgba(59,130,246,0.08)',
+              border: '1px solid rgba(10,80,162,0.2)',
+              background: 'rgba(10,80,162,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 10,
               fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-              color: 'var(--link, #0A50A2)',
+              color: 'var(--link)',
             }}>
-              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
               Data &amp; Updates
             </div>
 
             <h1 style={{
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 700,
-              color: 'var(--card, #FFFFFF)',
+              color: 'var(--card)',
               letterSpacing: '-0.025em',
               marginBottom: 16,
               lineHeight: 1.1,
@@ -182,7 +182,7 @@ export default async function ChangelogPage() {
             <p style={{
               fontSize: 'clamp(15px, 1.5vw, 17px)',
               color: 'rgba(255,255,255,0.7)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.6,
               maxWidth: 640,
               margin: 0,
@@ -234,7 +234,7 @@ export default async function ChangelogPage() {
                           fontSize: 20,
                           fontWeight: 700,
                           color: 'var(--color-text-primary)',
-                          fontFamily: 'var(--font-ui)',
+                          fontFamily: 'var(--font-legal)',
                           margin: '0 0 12px 0',
                           letterSpacing: '-0.5px',
                         }}>
@@ -245,7 +245,7 @@ export default async function ChangelogPage() {
                         <p style={{
                           fontSize: 15,
                           color: 'var(--color-text-secondary)',
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--font-ui)',
                           lineHeight: 1.7,
                           margin: '0 0 20px 0',
                         }}>
@@ -258,11 +258,11 @@ export default async function ChangelogPage() {
                             <p style={{
                               fontSize: 12,
                               fontWeight: 600,
-                              color: 'var(--accent-primary-hover)',
+                              color: 'var(--gold)',
                               textTransform: 'uppercase',
                               letterSpacing: '0.05em',
                               margin: '0 0 12px 0',
-                              fontFamily: 'var(--font-body)',
+                              fontFamily: 'var(--font-ui)',
                             }}>
                               Affected Case Types
                             </p>
@@ -286,11 +286,11 @@ export default async function ChangelogPage() {
                             <p style={{
                               fontSize: 12,
                               fontWeight: 600,
-                              color: 'var(--accent-primary-hover)',
+                              color: 'var(--gold)',
                               textTransform: 'uppercase',
                               letterSpacing: '0.05em',
                               margin: '0 0 12px 0',
-                              fontFamily: 'var(--font-body)',
+                              fontFamily: 'var(--font-ui)',
                             }}>
                               Affected Districts
                             </p>
@@ -322,7 +322,7 @@ export default async function ChangelogPage() {
                   <p style={{
                     fontSize: 16,
                     color: 'var(--color-text-secondary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     margin: 0,
                   }}>
                     No changelog entries available yet.
@@ -342,7 +342,7 @@ export default async function ChangelogPage() {
               <h2 style={{
                 fontSize: 24,
                 fontWeight: 700,
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-legal)',
                 margin: '0 0 12px 0',
                 letterSpacing: '-0.5px',
               }}>
@@ -352,7 +352,7 @@ export default async function ChangelogPage() {
               <p style={{
                 fontSize: 15,
                 color: 'rgba(255,255,255,0.9)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 lineHeight: 1.6,
                 margin: '0 0 28px 0',
               }}>
@@ -372,7 +372,7 @@ export default async function ChangelogPage() {
                     border: '1px solid rgba(255,255,255,0.2)',
                     background: 'rgba(255,255,255,0.1)',
                     color: 'var(--color-surface-0)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     fontSize: 14,
                   }}
                 />
@@ -388,7 +388,7 @@ export default async function ChangelogPage() {
                     color: 'var(--accent-primary)',
                     fontWeight: 600,
                     fontSize: 14,
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     cursor: 'pointer',
                     transition: 'all 150ms ease-out',
                     minWidth: 140,
@@ -401,7 +401,7 @@ export default async function ChangelogPage() {
               <p style={{
                 fontSize: 12,
                 color: 'rgba(255,255,255,0.6)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 margin: '24px 0 0 0',
               }}>
                 We send updates infrequently. Unsubscribe anytime.
@@ -418,11 +418,11 @@ export default async function ChangelogPage() {
               <p style={{
                 fontSize: 13,
                 color: 'var(--color-text-secondary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 lineHeight: 1.6,
                 margin: 0,
               }}>
-                <strong style={{ color: 'var(--accent-primary-hover)' }}>Update Frequency:</strong> Our data is updated quarterly as new information is available from the FJC Integrated Database and other authoritative sources. Feature releases may occur more frequently. Subscribe to stay informed about all changes.
+                <strong style={{ color: 'var(--gold)' }}>Update Frequency:</strong> Our data is updated quarterly as new information is available from the FJC Integrated Database and other authoritative sources. Feature releases may occur more frequently. Subscribe to stay informed about all changes.
               </p>
             </div>
           </div>

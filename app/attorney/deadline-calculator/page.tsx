@@ -22,9 +22,9 @@ const FRCP_DEFAULTS = [
 ];
 
 const eventCategories = {
-  critical: { bg: 'rgba(204,16,25,0.12)', text: 'var(--data-negative, #B01E1E)', dot: 'var(--data-negative, #B01E1E)', label: 'Critical' },
-  important: { bg: 'rgba(184,110,0,0.12)', text: '#B86E00', dot: '#B86E00', label: 'Important' },
-  planning: { bg: 'rgba(7,135,74,0.12)', text: 'var(--data-positive, #176438)', dot: 'var(--data-positive, #176438)', label: 'Planning' },
+  critical: { bg: 'rgba(204,16,25,0.12)', text: 'var(--data-negative)', dot: 'var(--data-negative)', label: 'Critical' },
+  important: { bg: 'rgba(184,110,0,0.12)', text: 'var(--wrn-txt)', dot: 'var(--wrn-txt)', label: 'Important' },
+  planning: { bg: 'rgba(7,135,74,0.12)', text: 'var(--data-positive)', dot: 'var(--data-positive)', label: 'Planning' },
 };
 
 export default function DeadlineCalculatorPage() {
@@ -142,7 +142,7 @@ export default function DeadlineCalculatorPage() {
     fontWeight: 600,
     color: 'var(--color-text-primary)',
     marginBottom: '6px',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
   };
 
   const inputStyle: React.CSSProperties = {
@@ -154,14 +154,14 @@ export default function DeadlineCalculatorPage() {
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
     transition: 'border-color 0.2s',
     outline: 'none',
     boxSizing: 'border-box' as const,
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         input:focus, select:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
@@ -170,8 +170,8 @@ export default function DeadlineCalculatorPage() {
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -224,7 +224,7 @@ export default function DeadlineCalculatorPage() {
               disabled={allDeadlines.length === 0 || !caseFiledDate}
               style={{
                 padding: '8px 16px',
-                backgroundColor: caseFiledDate ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
+                backgroundColor: caseFiledDate ? 'var(--accent-primary)' : 'var(--bdr)',
                 color: 'var(--color-text-primary)',
                 border: 'none',
                 borderRadius: '4px',
@@ -277,7 +277,7 @@ export default function DeadlineCalculatorPage() {
               style={{
                 padding: '12px 20px',
                 height: '42px',
-                backgroundColor: newEventName.trim() && newEventDays ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
+                backgroundColor: newEventName.trim() && newEventDays ? 'var(--accent-primary)' : 'var(--bdr)',
                 color: 'var(--color-text-primary)',
                 border: 'none',
                 borderRadius: '4px',
@@ -365,13 +365,13 @@ export default function DeadlineCalculatorPage() {
                         <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: 'var(--color-text-secondary)' }}>
                           <span>{deadline.daysAfterFiling} days after filing</span>
                           {isPastDue && (
-                            <span style={{ color: 'var(--data-negative, #B01E1E)', fontWeight: 600 }}>Past due by {Math.abs(daysLeft)} days</span>
+                            <span style={{ color: 'var(--data-negative)', fontWeight: 600 }}>Past due by {Math.abs(daysLeft)} days</span>
                           )}
                           {isUpcoming && (
-                            <span style={{ color: '#B86E00', fontWeight: 600 }}>Due in {daysLeft} days</span>
+                            <span style={{ color: 'var(--wrn-txt)', fontWeight: 600 }}>Due in {daysLeft} days</span>
                           )}
                           {!isPastDue && !isUpcoming && daysLeft > 0 && (
-                            <span style={{ color: 'var(--data-positive, #176438)' }}>Due in {daysLeft} days</span>
+                            <span style={{ color: 'var(--data-positive)' }}>Due in {daysLeft} days</span>
                           )}
                         </div>
                       </div>
@@ -388,7 +388,7 @@ export default function DeadlineCalculatorPage() {
                             style={{
                               background: 'none',
                               border: 'none',
-                              color: 'var(--bdr, #E2DFD8)',
+                              color: 'var(--bdr)',
                               cursor: 'pointer',
                               fontSize: '16px',
                               padding: '4px',

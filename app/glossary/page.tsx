@@ -71,7 +71,7 @@ export default function GlossaryPage() {
               color: 'var(--color-surface-0)',
               letterSpacing: '-1.5px',
               marginBottom: '16px',
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
             }}
           >
             Legal Glossary
@@ -82,7 +82,7 @@ export default function GlossaryPage() {
               lineHeight: 1.6,
               color: 'var(--color-surface-0)',
               maxWidth: '600px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             Plain-English definitions of federal court terms, data concepts, and legal statutes used throughout MyCaseValue.
@@ -145,7 +145,7 @@ export default function GlossaryPage() {
             .glossary-tool-card {
               background: var(--color-surface-0);
               border: 1px solid var(--border-default);
-              border-radius: 12px;
+              border-radius: 2px;
               text-decoration: none;
               display: block;
               transition: all 200ms ease;
@@ -158,33 +158,33 @@ export default function GlossaryPage() {
             }
           `}
         </style>
-        <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, fontFamily: 'var(--font-ui)' }}>
+        <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, fontFamily: 'var(--font-legal)' }}>
           Related Tools
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Link href="/translate" className="glossary-tool-card">
-            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-legal)' }}>
               Case Translator
             </div>
             <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Convert between case types and legal citations.</div>
           </Link>
 
           <Link href="/nos-explorer" className="glossary-tool-card">
-            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-legal)' }}>
               NOS Explorer
             </div>
             <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Browse and explore Nature of Suit codes.</div>
           </Link>
 
           <Link href="/search" className="glossary-tool-card">
-            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-legal)' }}>
               Case Search
             </div>
             <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Search federal court cases by type and location.</div>
           </Link>
 
           <Link href="/methodology" className="glossary-tool-card">
-            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-legal)' }}>
               Our Methodology
             </div>
             <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Learn how we analyze federal court data.</div>

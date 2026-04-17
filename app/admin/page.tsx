@@ -27,7 +27,7 @@ type SectionType = 'overview' | 'content' | 'data' | 'rules' | 'users' | 'email'
 
 const COLORS = {
   primary: 'var(--accent-primary)',
-  dark: 'var(--accent-primary-hover)',
+  dark: 'var(--gold)',
   black: 'var(--color-text-primary)',
 };
 
@@ -315,13 +315,13 @@ export default function AdminPage() {
                         width: '12px',
                         height: '12px',
                         borderRadius: '50%',
-                        backgroundColor: 'var(--data-positive, #176438)',
+                        backgroundColor: 'var(--data-positive)',
                         marginRight: '12px',
                       }}
                     />
                     <div>
                       <p style={{ fontSize: '14px', fontWeight: '500', margin: 0 }}>{status.name}</p>
-                      <p style={{ fontSize: '12px', color: 'var(--data-positive, #176438)', margin: '2px 0 0 0' }}>Operational</p>
+                      <p style={{ fontSize: '12px', color: 'var(--data-positive)', margin: '2px 0 0 0' }}>Operational</p>
                     </div>
                   </div>
                 ))}

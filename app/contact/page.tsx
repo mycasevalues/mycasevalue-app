@@ -66,7 +66,7 @@ export default function ContactPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header Banner */}
         <div style={{
-          background: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
           padding: '56px 24px',
           position: 'relative',
           overflow: 'hidden',
@@ -86,17 +86,17 @@ export default function ContactPage() {
               background: 'rgba(59,130,246,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 10,
               fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-              color: 'var(--link, #0A50A2)',
+              color: 'var(--link)',
             }}>
-              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
               Contact
             </div>
             <h1
               style={{
-                fontSize: 'clamp(28px, 4vw, 36px)',
+                fontSize: '28px',
                 fontWeight: 700,
-                color: 'var(--card, #FFFFFF)',
-                fontFamily: 'var(--font-ui)',
+                color: 'var(--color-text-inverse, #FFFFFF)',
+                fontFamily: 'var(--font-legal)',
                 letterSpacing: '-0.025em',
                 marginBottom: 8,
                 lineHeight: 1.1,
@@ -107,7 +107,7 @@ export default function ContactPage() {
             <p
               style={{
                 fontSize: 16,
-                color: 'rgba(255,255,255,0.6)',
+                color: 'var(--color-text-inverse, #FFFFFF)',
                 fontFamily: 'var(--font-ui)',
                 lineHeight: 1.65,
                 maxWidth: 560,
@@ -121,8 +121,8 @@ export default function ContactPage() {
         {/* Breadcrumb Navigation */}
         <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
-            <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
-              <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
+            <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-ui)' }}>
+              <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
                 Home
               </Link>
               <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                   style={{
                     fontSize: 13,
                     color: 'var(--color-text-secondary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     lineHeight: 1.5,
                     margin: 0,
                   }}
@@ -216,7 +216,7 @@ export default function ContactPage() {
 
         <style>{`
           .contact-quick-link:hover {
-            border-color: var(--link, #0A50A2) !important;
+            border-color: var(--link) !important;
             box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
             transform: translateY(-4px);
           }
@@ -250,7 +250,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: 14,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: 1.6,
                   marginBottom: 16,
                 }}
@@ -267,7 +267,7 @@ export default function ContactPage() {
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -303,7 +303,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: 14,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: 1.6,
                   marginBottom: 16,
                 }}
@@ -320,7 +320,7 @@ export default function ContactPage() {
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -356,7 +356,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: 14,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: 1.6,
                   marginBottom: 16,
                 }}
@@ -373,7 +373,7 @@ export default function ContactPage() {
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -406,11 +406,11 @@ export default function ContactPage() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '8px' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-ui)' }}>
+            <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--gold)', fontFamily: 'var(--font-ui)' }}>
               Response Time
             </span>
           </div>
@@ -418,7 +418,7 @@ export default function ContactPage() {
             style={{
               fontSize: 14,
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: 0,
               lineHeight: 1.6,
             }}
@@ -431,7 +431,7 @@ export default function ContactPage() {
           style={{
             fontSize: 13,
             color: 'var(--color-text-secondary)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             textAlign: 'center',
             marginTop: 24,
             lineHeight: 1.6,

@@ -225,7 +225,7 @@ function CaseSearchContent() {
                 {hasFilters && (
                   <button
                     onClick={handleReset}
-                    className="text-xs text-[var(--link, #0A50A2)] hover:underline"
+                    className="text-xs text-[var(--link)] hover:underline"
                   >
                     Reset
                   </button>
@@ -383,7 +383,7 @@ function CaseSearchContent() {
                 <p className="text-sm text-[var(--data-negative)] mb-2">{error}</p>
                 <button
                   onClick={() => performSearch(page)}
-                  className="text-sm text-[var(--link, #0A50A2)] hover:underline"
+                  className="text-sm text-[var(--link)] hover:underline"
                 >
                   Try again
                 </button>
@@ -412,7 +412,7 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="text-xs px-3 py-1.5 rounded border text-[var(--color-text-muted)] hover:border-[var(--link, #0A50A2)] hover:text-[var(--link, #0A50A2)] hover:bg-white/5 transition-all"
+                      className="text-xs px-3 py-1.5 rounded border text-[var(--color-text-muted)] hover:border-[var(--link)] hover:text-[var(--link)] hover:bg-white/5 transition-all"
                       style={{ borderColor: 'var(--border-default)' }}
                     >
                       {eq}
@@ -440,7 +440,7 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="text-xs px-3 py-1.5 rounded border text-[var(--color-text-muted)] hover:border-[var(--link, #0A50A2)] hover:text-[var(--link, #0A50A2)] transition-all"
+                      className="text-xs px-3 py-1.5 rounded border text-[var(--color-text-muted)] hover:border-[var(--link)] hover:text-[var(--link)] transition-all"
                       style={{ borderColor: 'var(--border-default)' }}
                     >
                       Try: {eq}

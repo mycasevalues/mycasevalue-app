@@ -135,7 +135,7 @@ function StatsCard({
         boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
       }}
     >
-      <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
+      <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
         {label}
       </p>
       <p
@@ -150,7 +150,7 @@ function StatsCard({
         {value}
       </p>
       {subtitle && (
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '12px', margin: '6px 0 0', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '12px', margin: '6px 0 0', fontFamily: 'var(--font-ui)' }}>
           {subtitle}
         </p>
       )}
@@ -177,7 +177,7 @@ export default async function DistrictCaseTypePage({
           <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
             Case data not found
           </h1>
-          <p style={{ color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
+          <p style={{ color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
             This case type and district combination does not exist in our database.
           </p>
           <Link
@@ -186,13 +186,13 @@ export default async function DistrictCaseTypePage({
               display: 'inline-block',
               padding: '8px 24px',
               borderRadius: 4,
-              background: 'var(--gold, #C4882A)',
-              color: 'var(--card, #FFFFFF)',
+              background: 'var(--gold)',
+              color: 'var(--card)',
               textDecoration: 'none',
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '-0.005em',
-              border: '1px solid var(--gold, #C4882A)',
+              border: '1px solid var(--gold)',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
               fontFamily: 'var(--font-ui)',
             }}
@@ -327,7 +327,7 @@ export default async function DistrictCaseTypePage({
                   fontSize: '16px',
                   color: 'var(--border-default)',
                   margin: '0',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 {state.label} Federal Court Data
@@ -410,7 +410,7 @@ export default async function DistrictCaseTypePage({
               lineHeight: '1.6',
               color: 'var(--color-text-secondary)',
               margin: '0',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             This page shows federal court outcome data for {caseType.label} cases filed in {state.label}.
@@ -448,7 +448,7 @@ export default async function DistrictCaseTypePage({
               color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.6',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             {caseType.description}
@@ -482,7 +482,7 @@ export default async function DistrictCaseTypePage({
               fontSize: '15px',
               color: 'var(--color-text-secondary)',
               margin: '0',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             {caseType.federalLaw}
@@ -570,7 +570,7 @@ export default async function DistrictCaseTypePage({
               fontSize: '12px',
               color: 'var(--color-text-secondary)',
               margin: '0',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             <strong>Data Source:</strong> This information is derived from publicly available federal court records from the Federal Judicial Center Integrated Database and CourtListener.

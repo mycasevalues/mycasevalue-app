@@ -137,7 +137,7 @@ export default function RecentlyResearched() {
           backgroundColor: 'var(--color-surface-0)',
           border: '1px solid var(--border-default)',
           borderRadius: '4px',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
         }}
       >
         <h3
@@ -171,7 +171,7 @@ export default function RecentlyResearched() {
         backgroundColor: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
         borderRadius: '4px',
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
       }}
     >
       <h3

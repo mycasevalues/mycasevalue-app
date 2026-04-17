@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 
 export default function IntakeFormsPage() {
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -28,7 +28,7 @@ export default function IntakeFormsPage() {
           <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
             Case Intake Form Generator
           </h1>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.4, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.4, fontFamily: 'var(--font-ui)' }}>
             Generate customized client intake questionnaires by case type
           </p>
         </div>

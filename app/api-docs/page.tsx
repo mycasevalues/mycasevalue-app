@@ -156,7 +156,7 @@ export default function ApiDocsPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
-          background: 'var(--card, #FFFFFF)',
+          background: 'var(--card)',
           padding: '56px 24px 48px',
           position: 'relative',
           overflow: 'hidden',
@@ -176,16 +176,16 @@ export default function ApiDocsPage() {
               background: 'rgba(59,130,246,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 10,
               fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-              color: 'var(--link, #0A50A2)',
+              color: 'var(--link)',
             }}>
-              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
               API Documentation
             </div>
             <h1 style={{
               fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(32px, 4.5vw, 44px)',
               fontWeight: 700,
-              color: 'var(--card, #FFFFFF)',
+              color: 'var(--card)',
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
               marginBottom: 16,
@@ -195,11 +195,11 @@ export default function ApiDocsPage() {
             <p style={{
               fontSize: 'clamp(15px, 1.5vw, 17px)',
               color: 'rgba(255,255,255,0.7)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.6,
               maxWidth: 600,
             }}>
-              Programmatic access to federal court outcome data. <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link, #0A50A2)' }}>v1.0</span> · REST · Bearer auth · JSON
+              Programmatic access to federal court outcome data. <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link)' }}>v1.0</span> · REST · Bearer auth · JSON
             </p>
           </div>
         </div>
@@ -207,8 +207,8 @@ export default function ApiDocsPage() {
         {/* Breadcrumb */}
         <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
-            <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
-              <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
+            <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-ui)' }}>
+              <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
                 Home
               </Link>
               <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
@@ -232,7 +232,7 @@ export default function ApiDocsPage() {
             <p style={{
               fontSize: 16,
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.8,
               marginBottom: 32,
             }}>
@@ -260,7 +260,7 @@ export default function ApiDocsPage() {
                 <p style={{
                   fontSize: 14,
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   lineHeight: 1.6,
                   marginBottom: 16,
                 }}>
@@ -304,7 +304,7 @@ export default function ApiDocsPage() {
                       fontSize: 13,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       marginBottom: 4,
                     }}>
                       Standard Plan
@@ -324,7 +324,7 @@ export default function ApiDocsPage() {
                       fontSize: 13,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       marginBottom: 4,
                     }}>
                       Enterprise Plan
@@ -401,7 +401,7 @@ export default function ApiDocsPage() {
                     <p style={{
                       fontSize: 14,
                       color: 'var(--color-text-secondary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       lineHeight: 1.6,
                       margin: 0,
                     }}>
@@ -615,7 +615,7 @@ r = requests.get(
               <table style={{
                 width: '100%',
                 borderCollapse: 'collapse',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 <thead>
                   <tr style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
@@ -717,7 +717,7 @@ r = requests.get(
             <p style={{
               fontSize: 16,
               color: 'rgba(255,255,255,0.9)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.7,
               marginBottom: 32,
             }}>

@@ -134,7 +134,7 @@ export default function SpanishDisclaimerPage() {
               <p style={{ color: 'var(--color-text-secondary)', lineHeight: '1.6', marginBottom: '12px' }}>
                 La información que proporciones (tipo de caso, estado, etc.) se usa únicamente para generar tu informe. No almacenamos tus datos de forma permanente ni los compartimos con terceros. Consulta nuestra política de privacidad completa en:
               </p>
-              <p style={{ color: 'var(--accent-primary-hover)', fontWeight: '500' }}>
+              <p style={{ color: 'var(--gold)', fontWeight: '500' }}>
                 https://mycasevalues.com/privacy
               </p>
             </section>
@@ -155,7 +155,7 @@ export default function SpanishDisclaimerPage() {
               <p style={{ color: 'var(--color-text-secondary)', lineHeight: '1.6', marginBottom: '12px' }}>
                 Si tienes preguntas sobre este descargo de responsabilidad, contáctanos en:
               </p>
-              <p style={{ color: 'var(--accent-primary-hover)', fontWeight: '500' }}>
+              <p style={{ color: 'var(--gold)', fontWeight: '500' }}>
                 support@mycasevalues.com
               </p>
             </section>
@@ -171,7 +171,7 @@ export default function SpanishDisclaimerPage() {
             <Link href="/search">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
@@ -182,7 +182,7 @@ export default function SpanishDisclaimerPage() {
             <Link href="/calculator">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
@@ -193,7 +193,7 @@ export default function SpanishDisclaimerPage() {
             <Link href="/compare">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
@@ -204,7 +204,7 @@ export default function SpanishDisclaimerPage() {
             <Link href="/nos-explorer">
               <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
@@ -217,7 +217,7 @@ export default function SpanishDisclaimerPage() {
         {/* Language Switcher */}
         <div className="mt-12 p-6 text-center" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
           <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
-            This page is also available in <Link href="/disclaimer" style={{ color: 'var(--accent-primary-hover)', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
+            This page is also available in <Link href="/disclaimer" style={{ color: 'var(--gold)', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
           </p>
         </div>
       </div>

@@ -11,7 +11,7 @@ const btnStyle: React.CSSProperties = {
   color: '#F0F2F5',
   textDecoration: 'none',
   cursor: 'pointer',
-  fontFamily: 'var(--font-body)',
+  fontFamily: 'var(--font-ui)',
 };
 
 export default function ShareButtons({ url, title }: { url: string; title: string }) {

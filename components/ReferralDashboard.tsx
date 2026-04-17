@@ -174,7 +174,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
         <h3 style={{ margin: '0 0 8px 0', color: 'var(--accent-primary)', fontFamily: 'var(--font-heading)' }}>
           Referral Link Not Set
         </h3>
-        <p style={{ margin: '0 0 16px 0', color: 'var(--accent-primary)', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
+        <p style={{ margin: '0 0 16px 0', color: 'var(--accent-primary)', fontSize: '14px', fontFamily: 'var(--font-ui)' }}>
           Your referral link hasn't been generated yet.
         </p>
         <button
@@ -209,7 +209,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
             cursor: 'pointer',
             fontSize: '14px',
             fontWeight: '600',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           Generate Referral Link
@@ -236,7 +236,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
               borderRadius: '4px',
               fontSize: '11px',
               fontWeight: '600',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Beta Pioneer
             </span>
@@ -282,7 +282,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
               fontWeight: '600',
               transition: 'background-color 0.2s',
               whiteSpace: 'nowrap',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             {copied ? 'Copied!' : 'Copy Link'}
@@ -323,7 +323,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                 style={{
                   fontSize: '12px',
                   color: 'var(--color-text-muted)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 Total Referrals
@@ -354,7 +354,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                 style={{
                   fontSize: '12px',
                   color: 'var(--color-text-muted)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 Active (Logged In)
@@ -370,7 +370,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
           Share on LinkedIn
         </h3>
         <div style={{ marginBottom: '12px' }}>
-          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
             Pre-written message:
           </p>
           <div
@@ -381,7 +381,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
               border: '1px solid var(--border-default)',
               fontSize: '13px',
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: '1.5',
               marginBottom: '12px',
             }}
@@ -401,7 +401,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
             fontSize: '13px',
             fontWeight: '600',
             transition: 'background-color 0.2s',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           {linkedInCopied ? 'Message Copied!' : 'Copy Message'}
@@ -431,7 +431,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                   <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
                     {referral.referred_user_id.substring(0, 8)}...
                   </div>
-                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                     Referred on {new Date(referral.created_at).toLocaleDateString()}
                   </div>
                 </div>
@@ -443,7 +443,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                     borderRadius: '20px',
                     fontSize: '11px',
                     fontWeight: '600',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     backgroundColor: referral.activated_at ? 'rgba(34,197,94,0.1)' : 'rgba(234,179,8,0.1)',
                     color: referral.activated_at ? '#065F46' : '#92400E',
                   }}
@@ -465,7 +465,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
           border: '1px solid rgba(59,130,246,0.15)',
           fontSize: '13px',
           color: 'var(--accent-primary-hover)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
         }}
       >
         <strong>How referrals work:</strong> Share your link with friends and colleagues. When they sign up using your link, both of you get rewards. Referrals are marked as "Active" once they've logged in to their account.

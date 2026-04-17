@@ -44,7 +44,7 @@ export default function OSHAContext() {
               fontSize: '0.8125rem',
               color: 'var(--color-text-secondary)',
               margin: 0,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.5,
             }}>
               National workplace safety enforcement (FY{oshaData.year})
@@ -71,7 +71,7 @@ export default function OSHAContext() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Total Inspections
               </div>
@@ -98,7 +98,7 @@ export default function OSHAContext() {
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Total Citations
               </div>
@@ -128,7 +128,7 @@ export default function OSHAContext() {
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
               marginBottom: '0.375rem',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Average Penalty
             </div>
@@ -149,7 +149,7 @@ export default function OSHAContext() {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: '0.75rem',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Citation Types
             </div>
@@ -166,7 +166,7 @@ export default function OSHAContext() {
                     fontSize: '0.8125rem',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     {violation.label}
                   </span>
@@ -215,7 +215,7 @@ export default function OSHAContext() {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: '0.75rem',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}>
               Top States by Inspections
             </div>
@@ -232,7 +232,7 @@ export default function OSHAContext() {
                     fontSize: '0.8125rem',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                   }}>
                     {state.state}
                   </span>
@@ -286,7 +286,7 @@ export default function OSHAContext() {
               fontSize: '0.8125rem',
               color: 'var(--accent-primary-hover)',
               margin: 0,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.5,
               fontWeight: 500,
             }}>
@@ -300,7 +300,7 @@ export default function OSHAContext() {
             color: 'var(--color-text-secondary)',
             marginTop: '1rem',
             marginBottom: 0,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             lineHeight: 1.4,
           }}>
             Source: OSHA Enforcement Data. Includes inspection, citation, and penalty statistics.

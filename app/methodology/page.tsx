@@ -77,7 +77,7 @@ export default function MethodologyPage() {
         .stat-card {
           padding: 1.5rem;
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 2px;
           background: var(--color-surface-0);
           text-align: center;
           transition: all 0.3s ease;
@@ -90,13 +90,13 @@ export default function MethodologyPage() {
           border-left: 3px solid #F59E0B;
           background: rgba(234,179,8,0.08);
           padding: 1.5rem;
-          border-radius: 12px;
+          border-radius: 2px;
         }
         .public-domain-callout {
-          border-left: 3px solid var(--link, #0A50A2);
-          background: rgba(59,130,246,0.06);
+          border-left: 3px solid var(--link);
+          background: rgba(10,80,162,0.06);
           padding: 1.5rem;
-          border-radius: 12px;
+          border-radius: 2px;
         }
         .at-a-glance-grid {
           display: grid;
@@ -117,7 +117,7 @@ export default function MethodologyPage() {
         .at-a-glance-card {
           padding: 1.25rem;
           border: 2px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 2px;
           background: var(--color-surface-0);
           text-align: center;
         }
@@ -148,7 +148,7 @@ export default function MethodologyPage() {
         .confidence-tier {
           padding: 1.5rem;
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 2px;
           background: var(--color-surface-0);
           text-align: center;
         }
@@ -174,7 +174,7 @@ export default function MethodologyPage() {
           color: var(--color-text-secondary);
           background: var(--color-surface-1);
           padding: 0.5rem;
-          border-radius: 12px;
+          border-radius: 2px;
         }
         .stats-table {
           width: 100%;
@@ -218,7 +218,7 @@ export default function MethodologyPage() {
         .related-card {
           padding: 1.5rem;
           border: 1px solid var(--border-default);
-          border-radius: 12px;
+          border-radius: 2px;
           background: var(--color-surface-0);
           text-align: center;
           text-decoration: none;
@@ -237,15 +237,15 @@ export default function MethodologyPage() {
         .related-title {
           font-weight: 600;
           font-size: 0.875rem;
-          color: var(--link-hover, #083D7A);
+          color: var(--link);
           font-family: var(--font-ui, 'Inter', sans-serif);
         }
       `}</style>
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--color-text-inverse)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -268,29 +268,29 @@ export default function MethodologyPage() {
             display: 'inline-flex', alignItems: 'center', gap: 6,
             padding: '4px 10px', marginBottom: 16,
             borderRadius: 999,
-            border: '1px solid rgba(59,130,246,0.2)',
-            background: 'rgba(59,130,246,0.08)',
+            border: '1px solid rgba(10,80,162,0.2)',
+            background: 'rgba(10,80,162,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Research Methodology
           </div>
 
           <h1 style={{
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--color-text-inverse)',
           }}>
             Data provenance & statistical methods
           </h1>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
             color: 'rgba(255,255,255,0.7)',
             maxWidth: 640,
@@ -365,7 +365,7 @@ export default function MethodologyPage() {
                 name: 'CourtListener (Free Law Project)',
                 description: 'We query the CourtListener API and RECAP Archive in real time to surface related federal court opinions and docket records alongside our aggregate outcome data. CourtListener covers 471 jurisdictions with 10M+ opinions.',
                 badge: 'Supplementary',
-                color: 'var(--data-positive, #176438)',
+                color: 'var(--data-positive)',
                 url: 'https://www.courtlistener.com/',
                 icon: 'scale'
               },
@@ -465,9 +465,9 @@ export default function MethodologyPage() {
           <div className="coverage-grid">
             {[
               { v: '5.1M+', l: 'Federal Cases', c: 'var(--color-text-primary)' },
-              { v: '55+', l: 'Years of Data', c: 'var(--data-positive, #176438)' },
+              { v: '55+', l: 'Years of Data', c: 'var(--data-positive)' },
               { v: '20+', l: 'Case Categories', c: 'var(--accent-primary)' },
-              { v: '95', l: 'Federal Districts', c: 'var(--accent-primary-hover)' },
+              { v: '95', l: 'Federal Districts', c: 'var(--gold)' },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
                 <div className="text-3xl sm:text-4xl font-legal font-extrabold mb-2" style={{ color: stat.c }}>{stat.v}</div>

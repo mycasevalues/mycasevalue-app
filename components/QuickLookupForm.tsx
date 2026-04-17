@@ -44,7 +44,7 @@ export default function QuickLookupForm() {
             fontSize: '14px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
           }}
         >
           Case Type
@@ -95,7 +95,7 @@ export default function QuickLookupForm() {
               fontSize: '14px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             District or State

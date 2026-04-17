@@ -133,7 +133,7 @@ export default function JudgeRadar({
         .attr('text-anchor', 'middle')
         .attr('dominant-baseline', 'central')
         .attr('font-size', '11px')
-        .attr('font-family', 'var(--font-body)')
+        .attr('font-family', 'var(--font-ui)')
         .attr('fill', 'var(--color-text-secondary)')
         .attr('font-weight', 500)
         .text(axis.label);
@@ -202,11 +202,11 @@ export default function JudgeRadar({
         role="img"
       />
       <div style={{ display: 'flex', justifyContent: 'center', gap: 24, marginTop: 8 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }}>
           <span style={{ width: 12, height: 3, background: 'var(--accent-primary)', borderRadius: 1, display: 'inline-block' }} />
           Judge Profile
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }}>
           <span style={{ width: 12, height: 3, background: '#E0DDD8', borderRadius: 1, display: 'inline-block', borderTop: '1px dashed #E0DDD8' }} />
           District Average
         </div>

@@ -31,7 +31,7 @@ const DEMO_ALERTS: Alert[] = [
 const priorityColors = {
   high: { bg: 'rgba(204,16,25,0.12)', text: 'var(--accent-primary)', dot: 'var(--accent-primary)' },
   medium: { bg: 'rgba(184,110,0,0.12)', text: '#B86E00', dot: '#B86E00' },
-  low: { bg: 'rgba(7,135,74,0.12)', text: 'var(--data-positive, #176438)', dot: 'var(--data-positive, #176438)' },
+  low: { bg: 'rgba(7,135,74,0.12)', text: 'var(--data-positive)', dot: 'var(--data-positive)' },
 };
 
 export default function PacerMonitorPage() {
@@ -50,7 +50,7 @@ export default function PacerMonitorPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
@@ -58,8 +58,8 @@ export default function PacerMonitorPage() {
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
       `}</style>
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -99,7 +99,7 @@ export default function PacerMonitorPage() {
                   <div key={alert.id} style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '16px 24px', border: '1px solid var(--border-default)', borderLeft: `4px solid ${pc.dot}` }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
                       <div>
-                        <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary-hover)' }}>{alert.caseNumber}</span>
+                        <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--gold)' }}>{alert.caseNumber}</span>
                         <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginLeft: '8px' }}>{alert.court}</span>
                       </div>
                       <span style={{ fontSize: '10px', fontWeight: 600, padding: '2px 8px', borderRadius: '4px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>

@@ -43,13 +43,13 @@ export default function SpanishPage() {
       <div className="border-b" style={{ background: 'var(--color-surface-0)', borderColor: 'var(--border-default)', padding: '12px 24px' }}>
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
-            Esta página también está disponible en <Link href="/" style={{ color: 'var(--accent-primary-hover)', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
+            Esta página también está disponible en <Link href="/" style={{ color: 'var(--gold)', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
           </p>
         </div>
       </div>
 
       {/* Breadcrumb Navigation Header */}
-      <div style={{ background: 'var(--card, #FFFFFF)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '12px 24px' }}>
+      <div style={{ background: 'var(--card)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '12px 24px' }}>
         <div className="max-w-7xl mx-auto px-6">
           <nav style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)' }}>
             <span>Inicio</span>
@@ -78,7 +78,7 @@ export default function SpanishPage() {
             <Link href="/search">
               <div className="p-6 border transition-all hover:shadow-lg hover:border-opacity-100" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
                 <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
@@ -95,7 +95,7 @@ export default function SpanishPage() {
             <Link href="/calculator">
               <div className="p-6 border transition-all hover:shadow-lg hover:border-opacity-100" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
                 <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
@@ -112,7 +112,7 @@ export default function SpanishPage() {
             <Link href="/compare">
               <div className="p-6 border transition-all hover:shadow-lg hover:border-opacity-100" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
                 <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
@@ -129,7 +129,7 @@ export default function SpanishPage() {
             <Link href="/nos-explorer">
               <div className="p-6 border transition-all hover:shadow-lg hover:border-opacity-100" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
                 <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>

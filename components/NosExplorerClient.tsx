@@ -120,7 +120,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
             className="nos-input"
             style={{
               width: '100%', height: 40, paddingLeft: 36, paddingRight: 12,
-              border: '1px solid var(--border-default)', borderRadius: 2, fontFamily: 'var(--font-body)',
+              border: '1px solid var(--border-default)', borderRadius: 2, fontFamily: 'var(--font-ui)',
               fontSize: 14, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
             }}
           />
@@ -131,7 +131,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
           className="nos-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-            fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+            fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -143,7 +143,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
 
       {/* Table */}
       <div className="nos-table-wrap" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2, overflow: 'hidden' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-body)', fontSize: 13 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-ui)', fontSize: 13 }}>
           <thead>
             <tr style={{ background: 'var(--accent-primary)' }}>
               <th className="nos-th" onClick={() => toggleSort('nos')} style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px', width: 70 }}>
@@ -244,7 +244,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                                 display: 'inline-flex', alignItems: 'center', gap: 6,
                                 padding: '8px 16px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)',
                                 borderRadius: 2, fontSize: 12, fontWeight: 600, textDecoration: 'none',
-                                fontFamily: 'var(--font-body)',
+                                fontFamily: 'var(--font-ui)',
                               }}
                             >
                               View Full Report →
@@ -262,7 +262,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
       </div>
 
       {/* Result count */}
-      <div style={{ textAlign: 'center', marginTop: 16, fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+      <div style={{ textAlign: 'center', marginTop: 16, fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
         Showing {filtered.length} of {data.length} NOS codes · Click any row to expand
       </div>
     </div>

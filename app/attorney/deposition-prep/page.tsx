@@ -132,7 +132,7 @@ export default function DepositionPrepPage() {
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
     border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
     transition: 'border-color 0.2s', appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -140,11 +140,11 @@ export default function DepositionPrepPage() {
 
   const labelStyle: React.CSSProperties = {
     display: 'block', fontSize: '13px', fontWeight: 600,
-    color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-ui)',
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
@@ -152,8 +152,8 @@ export default function DepositionPrepPage() {
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -168,7 +168,7 @@ export default function DepositionPrepPage() {
           <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
             Master Every Deposition in Days, Not Weeks
           </h1>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
             Get targeted, organized outlines with strategic questions for any deponent role — plaintiff, defendant, expert, or witness
           </p>
         </div>
@@ -216,7 +216,7 @@ export default function DepositionPrepPage() {
                         backgroundColor: deponentRole === role.value ? 'rgba(10,102,194,0.08)' : 'var(--color-surface-1)',
                         color: deponentRole === role.value ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                         fontSize: '13px', fontWeight: 600, cursor: 'pointer',
-                        transition: 'all 0.2s', fontFamily: 'var(--font-body)',
+                        transition: 'all 0.2s', fontFamily: 'var(--font-ui)',
                       }}
                     >
                       {role.label}
@@ -234,7 +234,7 @@ export default function DepositionPrepPage() {
                   style={{
                     width: '100%', padding: '12px 14px', border: '1px solid var(--border-default)',
                     borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
+                    backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
                     minHeight: '80px', resize: 'vertical', boxSizing: 'border-box' as const,
                   }}
                 />
@@ -245,7 +245,7 @@ export default function DepositionPrepPage() {
 
               {error && (
                 <div style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
+                  <p style={{ fontSize: '13px', color: 'var(--data-negative)', margin: 0 }}>{error}</p>
                 </div>
               )}
 
@@ -280,10 +280,10 @@ export default function DepositionPrepPage() {
                       onClick={copyToClipboard}
                       disabled={loading}
                       style={{
-                        padding: '8px 12px', background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
-                        color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
+                        padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--accent-primary)',
+                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
                         fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer',
-                        opacity: loading ? 0.5 : 1, fontFamily: 'var(--font-body)',
+                        opacity: loading ? 0.5 : 1, fontFamily: 'var(--font-ui)',
                       }}
                     >
                       {copied ? 'Copied!' : 'Copy to Clipboard'}
@@ -292,11 +292,11 @@ export default function DepositionPrepPage() {
                       onClick={exportAsDocx}
                       disabled={loading || exporting}
                       style={{
-                        padding: '8px 12px', background: 'var(--accent-primary-hover)',
-                        color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
+                        padding: '8px 12px', background: 'var(--gold)',
+                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || exporting ? 'not-allowed' : 'pointer',
-                        opacity: loading || exporting ? 0.5 : 1, fontFamily: 'var(--font-body)',
+                        opacity: loading || exporting ? 0.5 : 1, fontFamily: 'var(--font-ui)',
                       }}
                     >
                       {exporting ? 'Exporting...' : 'Export as Word'}
@@ -310,7 +310,7 @@ export default function DepositionPrepPage() {
                     maxHeight: '600px', overflowY: 'auto', padding: '16px',
                     background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)',
                     fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.7',
-                    fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap', wordWrap: 'break-word',
+                    fontFamily: 'var(--font-ui)', whiteSpace: 'pre-wrap', wordWrap: 'break-word',
                   }}
                 >
                   {outlineText}
@@ -319,7 +319,7 @@ export default function DepositionPrepPage() {
               </div>
 
               {/* Disclaimer */}
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt)', lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 <strong>Important:</strong> AI-generated template — requires attorney review and customization. Do not use this outline as-is in a deposition. Questions must be adapted to the specific facts, exhibits, and strategy of your case.
               </div>
             </div>

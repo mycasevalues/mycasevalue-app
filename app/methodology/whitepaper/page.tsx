@@ -6,7 +6,7 @@ import { SITE_URL } from '../../../lib/site-config';
 const MethodologyCapture = dynamic(() => import('@/components/MethodologyCapture'), {
   ssr: false,
   loading: () => (
-    <div style={{ padding: 24, textAlign: 'center', color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)', fontSize: 14 }}>
+    <div style={{ padding: 24, textAlign: 'center', color: 'var(--color-text-muted)', fontFamily: 'var(--font-ui)', fontSize: 14 }}>
       Loading PDF generator…
     </div>
   ),
@@ -32,7 +32,7 @@ export default function WhitepaperPage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       {/* Header Banner */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -48,21 +48,21 @@ export default function WhitepaperPage() {
             display: 'inline-flex', alignItems: 'center', gap: 6,
             padding: '4px 10px', marginBottom: 16,
             borderRadius: 999,
-            border: '1px solid rgba(59,130,246,0.2)',
-            background: 'rgba(59,130,246,0.08)',
+            border: '1px solid rgba(10,80,162,0.2)',
+            background: 'rgba(10,80,162,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Technical Whitepaper
           </div>
           <h1
             style={{
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 700,
-              color: 'var(--card, #FFFFFF)',
+              color: 'var(--color-text-inverse)',
               letterSpacing: '-0.025em',
               marginBottom: 16,
               lineHeight: 1.1,
@@ -74,7 +74,7 @@ export default function WhitepaperPage() {
             style={{
               fontSize: 'clamp(15px, 1.5vw, 17px)',
               color: 'rgba(255,255,255,0.7)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.6,
               maxWidth: 640,
               margin: 0,
@@ -88,12 +88,12 @@ export default function WhitepaperPage() {
       {/* Breadcrumb Navigation */}
       <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
-            <Link href="/" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-ui)' }}>
+            <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
               Home
             </Link>
             <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
-            <Link href="/methodology" style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none' }}>
+            <Link href="/methodology" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
               Methodology
             </Link>
             <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
@@ -130,8 +130,8 @@ export default function WhitepaperPage() {
             style={{
               fontSize: 16,
               fontWeight: 600,
-              color: 'var(--accent-primary-hover)',
-              fontFamily: 'var(--font-ui)',
+              color: 'var(--gold)',
+              fontFamily: 'var(--font-legal)',
               marginBottom: 12,
               marginTop: 0,
             }}
@@ -140,23 +140,23 @@ export default function WhitepaperPage() {
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
             <div>
-              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Version
               </p>
-              <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 1.0
               </p>
             </div>
             <div>
-              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Published
               </p>
-              <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 2026
               </p>
             </div>
             <div>
-              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Contact
               </p>
               <a
@@ -166,7 +166,7 @@ export default function WhitepaperPage() {
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   margin: 0,
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   textDecoration: 'none',
                 }}
               >
@@ -188,7 +188,7 @@ export default function WhitepaperPage() {
               fontWeight: 600,
               color: 'var(--accent-primary)',
               textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

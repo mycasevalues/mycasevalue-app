@@ -266,7 +266,7 @@ export default function DistrictsExplorer({
           border-radius: 12px;
           padding: 8px 12px;
           font-size: 13px;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
           color: var(--color-text-primary);
         }
         .control-input::placeholder {
@@ -466,7 +466,7 @@ export default function DistrictsExplorer({
                       fontSize: 14,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       marginBottom: 4,
                     }}
                   >
@@ -476,7 +476,7 @@ export default function DistrictsExplorer({
                     style={{
                       fontSize: 11,
                       color: 'var(--color-text-secondary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                     }}
                   >
                     {d.abbr}

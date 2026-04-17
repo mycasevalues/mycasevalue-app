@@ -35,7 +35,7 @@ export default function DocumentIntelligencePage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         input:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
@@ -44,8 +44,8 @@ export default function DocumentIntelligencePage() {
       `}</style>
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',

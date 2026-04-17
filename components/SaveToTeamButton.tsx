@@ -216,7 +216,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
                   fontSize: '13px',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   backgroundColor: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
                   minHeight: '80px',

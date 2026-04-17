@@ -82,7 +82,7 @@ const steps = [
     title: 'We Search Real Cases',
     description: 'Our engine instantly analyzes 5.1M+ federal court cases from 55+ years of public records, matching outcomes to your specific situation and district.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5">
         <circle cx="11" cy="11" r="8"/>
         <path d="m21 21-4.35-4.35"/>
         <circle cx="8" cy="8" r="1"/>
@@ -95,7 +95,7 @@ const steps = [
     title: 'Get Your Personalized Report',
     description: 'Seconds later, see win rates, settlement ranges, timelines, judge analytics, and more — all explained in plain English, never legal jargon. 100% from verified federal records.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5">
         <line x1="12" y1="2" x2="12" y2="22"/>
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
       </svg>
@@ -121,21 +121,21 @@ export default function HowItWorksPage() {
       <JsonLd data={jsonLd} />
 
       {/* Header */}
-      <div className="relative overflow-hidden" style={{ background: 'var(--card, #FFFFFF)' }}>
+      <div className="relative overflow-hidden" style={{ background: 'var(--card)' }}>
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }} />
         <div className="relative max-w-5xl mx-auto px-6 py-16 sm:py-20">
           <div className="inline-flex items-center gap-2 px-2 py-1 text-[10px] font-semibold tracking-[0.25em] uppercase mb-5 rounded-[3px] border"
-            style={{ background: 'rgba(26,86,219,0.08)', color: 'var(--link, #0A50A2)', borderColor: 'rgba(26,86,219,0.2)' }}>
+            style={{ background: 'rgba(26,86,219,0.08)', color: 'var(--link)', borderColor: 'rgba(26,86,219,0.2)' }}>
             <span className="w-1 h-1 rounded-full bg-[var(--link)]/80" />
             Methodology
           </div>
-          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'white', lineHeight: '1.1' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'var(--color-text-inverse, #FFFFFF)', lineHeight: '1.1' }}>
             Platform Overview
           </h1>
-          <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
+          <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'var(--color-text-inverse, #FFFFFF)' }}>
             How MyCaseValue transforms public federal court records into actionable litigation intelligence.
           </p>
         </div>
@@ -186,7 +186,7 @@ export default function HowItWorksPage() {
                       height: '36px',
                       borderRadius: '4px',
                       background: 'rgba(26,86,219,0.12)',
-                      color: 'var(--link, #0A50A2)',
+                      color: 'var(--link)',
                       fontSize: '16px',
                       border: '1px solid rgba(26,86,219,0.25)',
                     }}>
@@ -413,7 +413,7 @@ export default function HowItWorksPage() {
                     justifyContent: 'center',
                   }}
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link, #0A50A2)" strokeWidth="1.5">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5">
                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
                     <polyline points="13 2 13 9 20 9" />
                   </svg>
@@ -432,7 +432,7 @@ export default function HowItWorksPage() {
 
       <style>{`
         .feature-card:hover {
-          border-color: var(--link, #0A50A2) !important;
+          border-color: var(--link) !important;
           box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
           transform: translateY(-4px);
         }
@@ -460,7 +460,7 @@ export default function HowItWorksPage() {
                       width: '60px',
                       height: '60px',
                       borderRadius: '50%',
-                      backgroundColor: idx % 2 === 0 ? 'var(--accent-primary)' : 'var(--accent-primary-hover)',
+                      backgroundColor: idx % 2 === 0 ? 'var(--accent-primary)' : 'var(--gold)',
                       color: 'var(--color-surface-0)',
                       display: 'flex',
                       alignItems: 'center',
@@ -477,7 +477,7 @@ export default function HowItWorksPage() {
                     <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                       {step.label}
                     </div>
-                    <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginTop: 4 }}>
+                    <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginTop: 4 }}>
                       {step.description}
                     </div>
                   </div>

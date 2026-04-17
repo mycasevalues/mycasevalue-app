@@ -21,7 +21,7 @@ export default function Loading() {
 
       <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
         {/* Dark Navy Header Skeleton */}
-        <div style={{ background: 'var(--card, #FFFFFF)', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
+        <div style={{ background: 'var(--card)', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(24px, 4vw, 32px) 24px' }}>
             {/* Breadcrumb skeleton */}
             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>

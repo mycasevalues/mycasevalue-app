@@ -39,7 +39,7 @@ const ScoreRing = ({ value, label, color, size = 80 }: { value: number; label: s
   return (
     <div style={{ textAlign: 'center' }}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--border-default)" strokeWidth="6" />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--bdr)" strokeWidth="6" />
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -53,11 +53,11 @@ const ScoreRing = ({ value, label, color, size = 80 }: { value: number; label: s
           transform={`rotate(-90 ${size / 2} ${size / 2})`}
           style={{ transition: 'stroke-dashoffset 0.8s ease' }}
         />
-        <text x={size / 2} y={size / 2 + 1} textAnchor="middle" dominantBaseline="middle" fontSize="18" fontWeight="700" fontFamily="var(--font-mono)" fill="var(--color-text-primary)">
+        <text x={size / 2} y={size / 2 + 1} textAnchor="middle" dominantBaseline="middle" fontSize="18" fontWeight="700" fontFamily="var(--font-mono)" fill="var(--text1, #18181A)">
           {value}%
         </text>
       </svg>
-      <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>{label}</div>
+      <div style={{ fontSize: '11px', color: 'var(--text2, #42403C)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>{label}</div>
     </div>
   );
 };
@@ -139,7 +139,7 @@ export default function CasePredictorPage() {
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
     transition: 'border-color 0.2s',
   };
 
@@ -152,7 +152,7 @@ export default function CasePredictorPage() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{focusStyle}
         {`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
@@ -162,8 +162,8 @@ export default function CasePredictorPage() {
       </style>
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -186,9 +186,9 @@ export default function CasePredictorPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Case Predictor
           </div>
           <h1 className="font-legal" style={{
@@ -197,7 +197,7 @@ export default function CasePredictorPage() {
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--card)',
             margin: 0,
           }}>
             Forecast outcomes with confidence
@@ -226,7 +226,7 @@ export default function CasePredictorPage() {
               </div>
             </div>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-inverse)', fontWeight: 600, fontSize: '18px' }}>
+              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 600, fontSize: '18px' }}>
                 2
               </div>
               <div>
@@ -239,7 +239,7 @@ export default function CasePredictorPage() {
               </div>
             </div>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-inverse)', fontWeight: 600, fontSize: '18px' }}>
+              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 600, fontSize: '18px' }}>
                 3
               </div>
               <div>
@@ -255,7 +255,7 @@ export default function CasePredictorPage() {
         </div>
 
         {/* Data-Driven Insights */}
-        <div style={{ background: 'linear-gradient(135deg, var(--accent-primary) 0%, #003366 100%)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '32px', color: 'var(--color-text-inverse)' }}>
+        <div style={{ background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--chrome-bg) 100%)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '32px', color: 'var(--color-text-inverse)' }}>
           <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-inverse)', margin: '0 0 24px' }}>
             Federal Court Data at Your Fingertips
           </h2>
@@ -384,7 +384,7 @@ export default function CasePredictorPage() {
                     {[
                       { val: 'weak', label: 'Weak', color: '#EA2143' },
                       { val: 'moderate', label: 'Moderate', color: '#E89558' },
-                      { val: 'strong', label: 'Strong', color: 'var(--data-positive, #176438)' },
+                      { val: 'strong', label: 'Strong', color: 'var(--data-positive)' },
                     ].map((opt) => (
                       <button
                         key={opt.val}
@@ -396,7 +396,7 @@ export default function CasePredictorPage() {
                           borderRadius: '4px',
                           border: `1px solid ${caseStrength === opt.val ? opt.color : 'var(--border-default)'}`,
                           backgroundColor: caseStrength === opt.val ? `${opt.color}15` : 'var(--color-surface-1)',
-                          color: caseStrength === opt.val ? opt.color === '#EA2143' ? 'var(--accent-primary)' : opt.color === '#E89558' ? '#B86E00' : 'var(--data-positive, #176438)' : 'var(--color-text-secondary)',
+                          color: caseStrength === opt.val ? opt.color === '#EA2143' ? 'var(--accent-primary)' : opt.color === '#E89558' ? 'var(--wrn-txt)' : 'var(--data-positive)' : 'var(--color-text-secondary)',
                           fontSize: '13px',
                           fontWeight: 600,
                           cursor: 'pointer',
@@ -479,20 +479,20 @@ export default function CasePredictorPage() {
                     fontSize: '11px',
                     fontWeight: 600,
                     backgroundColor: p.confidence === 'High' ? 'rgba(7,132,74,0.08)' : p.confidence === 'Moderate' ? 'rgba(184,110,0,0.08)' : 'rgba(204,16,25,0.08)',
-                    color: p.confidence === 'High' ? 'var(--data-positive, #176438)' : p.confidence === 'Moderate' ? '#B86E00' : 'var(--accent-primary)',
+                    color: p.confidence === 'High' ? 'var(--data-positive)' : p.confidence === 'Moderate' ? 'var(--wrn-txt)' : 'var(--accent-primary)',
                   }}>
                     {p.confidence} Confidence
                   </span>
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '24px' }}>
-                  <ScoreRing value={p.predictedWinRate} label="Win Rate" color={p.predictedWinRate >= 55 ? 'var(--data-positive, #176438)' : p.predictedWinRate >= 40 ? '#B86E00' : 'var(--accent-primary)'} />
+                  <ScoreRing value={p.predictedWinRate} label="Win Rate" color={p.predictedWinRate >= 55 ? 'var(--data-positive)' : p.predictedWinRate >= 40 ? 'var(--wrn-txt)' : 'var(--accent-primary)'} />
                   <ScoreRing value={p.predictedSettlementRate} label="Settlement" color="var(--accent-primary)" />
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ width: 80, height: 80, borderRadius: '50%', border: '6px solid var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{p.predictedDurationMonths}mo</span>
+                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--text1, #18181A)' }}>{p.predictedDurationMonths}mo</span>
                     </div>
-                    <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>Duration</div>
+                    <div style={{ fontSize: '11px', color: 'var(--text2, #42403C)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>Duration</div>
                   </div>
                 </div>
 
@@ -516,13 +516,13 @@ export default function CasePredictorPage() {
                     </div>
                   </div>
                   {/* Range bar */}
-                  <div style={{ height: '8px', background: 'var(--border-default)', borderRadius: '4px', marginTop: '12px', position: 'relative' }}>
+                  <div style={{ height: '8px', background: 'var(--bdr)', borderRadius: '4px', marginTop: '12px', position: 'relative' }}>
                     <div style={{
                       position: 'absolute',
                       left: '10%',
                       right: '10%',
                       height: '100%',
-                      background: 'linear-gradient(90deg, var(--accent-primary), #059669)',
+                      background: 'linear-gradient(90deg, var(--accent-primary), var(--data-positive))',
                       borderRadius: '4px',
                     }} />
                   </div>
@@ -553,8 +553,8 @@ export default function CasePredictorPage() {
                         <span style={{ fontSize: '13px', color: 'var(--color-text-primary)' }}>{o.label}</span>
                         <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{o.percentage}%</span>
                       </div>
-                      <div style={{ height: '8px', background: 'var(--border-default)', borderRadius: '4px', overflow: 'hidden' }}>
-                        <div style={{ height: '100%', width: `${o.percentage}%`, background: o.color === '#EA2143' ? 'var(--accent-primary)' : o.color === '#E89558' ? '#B86E00' : o.color === 'var(--data-positive, #176438)' ? 'var(--data-positive, #176438)' : 'var(--accent-primary)', borderRadius: '4px', transition: 'width 0.5s ease' }} />
+                      <div style={{ height: '8px', background: 'var(--bdr)', borderRadius: '4px', overflow: 'hidden' }}>
+                        <div style={{ height: '100%', width: `${o.percentage}%`, background: o.color === '#EA2143' ? 'var(--accent-primary)' : o.color === '#E89558' ? 'var(--wrn-txt)' : o.color === 'var(--data-positive)' ? 'var(--data-positive)' : 'var(--accent-primary)', borderRadius: '4px', transition: 'width 0.5s ease' }} />
                       </div>
                     </div>
                   ))}
@@ -580,27 +580,27 @@ export default function CasePredictorPage() {
 
               {/* AI-Generated Strategic Insights */}
               {p.aiInsights && (
-                <div style={{ background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                <div style={{ background: 'linear-gradient(135deg, var(--surf) 0%, var(--surf) 100%)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: 'var(--accent-primary)', flexShrink: 0 }}>
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
                     </svg>
-                    <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0' }}>
+                    <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--link)', margin: '0' }}>
                       AI Strategic Insights
                     </h3>
                   </div>
-                  <div style={{ fontSize: '13px', color: '#a78bfa', lineHeight: 1.7, fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap' }}>
+                  <div style={{ fontSize: '13px', color: 'var(--link)', lineHeight: 1.7, fontFamily: 'var(--font-ui)', whiteSpace: 'pre-wrap' }}>
                     {p.aiInsights}
                   </div>
-                  <p style={{ fontSize: '10px', color: '#a78bfa', margin: '12px 0 0', fontFamily: 'var(--font-body)' }}>
+                  <p style={{ fontSize: '10px', color: 'var(--link)', margin: '12px 0 0', fontFamily: 'var(--font-ui)' }}>
                     AI-generated analysis based on historical patterns. Review with legal judgment.
                   </p>
                 </div>
               )}
 
               {/* Disclaimer */}
-              <div style={{ padding: '16px 16px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-                <p style={{ fontSize: '11px', color: '#B86E00', margin: 0, lineHeight: 1.5 }}>
+              <div style={{ padding: '16px 16px', backgroundColor: 'rgba(122,88,0,0.08)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
+                <p style={{ fontSize: '11px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
                   <strong>Disclaimer:</strong> {result.disclaimer}
                 </p>
               </div>
@@ -651,7 +651,7 @@ export default function CasePredictorPage() {
 
         {/* Free-During-Beta Badge */}
         <div style={{ marginTop: '32px', padding: '16px 24px', background: 'linear-gradient(135deg, rgba(21, 128, 61, 0.08) 0%, rgba(21, 128, 61, 0.04) 100%)', border: '1px solid rgba(21, 128, 61, 0.20)', borderRadius: '4px', textAlign: 'center' }}>
-          <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--data-positive, #176438)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+          <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--data-positive)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
             Free During Beta
           </span>
         </div>

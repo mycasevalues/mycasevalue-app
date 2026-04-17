@@ -97,8 +97,8 @@ export default function AboutPage() {
         }
 
         .about-header {
-          background: var(--card, #FFFFFF);
-          color: white;
+          background: var(--card);
+          color: var(--color-text-inverse, #FFFFFF);
           padding: 4rem 1.5rem;
           text-align: left;
           position: relative;
@@ -122,19 +122,19 @@ export default function AboutPage() {
 
         .about-h1 {
           font-family: var(--font-ui);
-          font-size: clamp(1.75rem, 4vw, 2.25rem);
-          font-weight: 700;
+          font-size: 20px;
+          font-weight: 600;
           letter-spacing: -0.025em;
           line-height: 1.1;
           margin-bottom: 1rem;
-          color: white;
+          color: var(--color-text-inverse, #FFFFFF);
         }
 
         .about-intro {
           font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.65;
-          color: rgba(255, 255, 255, 0.6);
+          color: var(--color-text-inverse, #FFFFFF);
           max-width: 42rem;
         }
 
@@ -307,7 +307,7 @@ export default function AboutPage() {
           letter-spacing: -0.005em;
           text-decoration: none;
           background: var(--gold, #C4882A);
-          color: var(--card, #FFFFFF);
+          color: var(--card);
           border: 1px solid var(--gold, #C4882A);
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
           transition: background-color 150ms ease, border-color 150ms ease;
@@ -367,9 +367,9 @@ export default function AboutPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             About MyCaseValue
           </div>
           <h1 className="about-h1">Federal court intelligence, democratized</h1>

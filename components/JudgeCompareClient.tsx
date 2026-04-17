@@ -301,7 +301,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
               lineHeight: 1.6,
               maxWidth: 640,
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             Select up to 3 judges to compare their ruling patterns, motion grant rates, and case outcomes side by side.
@@ -338,7 +338,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                       marginBottom: 8,
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                     }}
                   >
                     Judge {idx + 1}
@@ -359,7 +359,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                         padding: '8px 12px',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: 4,
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                         fontSize: 14,
                         boxSizing: 'border-box',
                       }}
@@ -392,7 +392,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                               textAlign: 'left',
                               cursor: 'pointer',
                               borderBottom: '1px solid rgba(255,255,255,0.05)',
-                              fontFamily: 'var(--font-body)',
+                              fontFamily: 'var(--font-ui)',
                               fontSize: 14,
                             }}
                             onMouseEnter={(e) => {
@@ -444,7 +444,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                         fontSize: 16,
                         fontWeight: 600,
                         color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}
                     >
                       {slot.judge.full_name}
@@ -454,7 +454,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                     style={{
                       fontSize: 12,
                       color: 'var(--color-text-muted)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       marginBottom: '12px',
                       lineHeight: 1.5,
                     }}
@@ -508,7 +508,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                             fontSize: 14,
                             fontWeight: 600,
                             color: 'var(--color-text-primary)',
-                            fontFamily: 'var(--font-body)',
+                            fontFamily: 'var(--font-ui)',
                             marginBottom: '16px',
                             textAlign: 'center',
                           }}
@@ -559,7 +559,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                         fontSize: 16,
                         fontWeight: 600,
                         color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}
                     >
                       {slot.judge?.full_name}
@@ -569,7 +569,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                         fontSize: 12,
                         color: 'var(--color-text-muted)',
                         marginTop: 4,
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                       }}
                     >
                       {slot.judge?.district_id}
@@ -602,7 +602,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                       fontSize: 13,
                       color: 'var(--color-text-primary)',
                       background: 'var(--color-surface-0)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                       minWidth: 160,
                     }}
                   >
@@ -619,7 +619,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                           padding: '16px 24px',
                           textAlign: 'right',
                           background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--color-surface-0)',
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--font-ui)',
                           fontSize: 14,
                           fontWeight: 500,
                           color: 'var(--color-text-primary)',
@@ -646,7 +646,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                   fontSize: 14,
                   fontWeight: 600,
                   cursor: 'pointer',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                 }}
               >
                 Export as PDF

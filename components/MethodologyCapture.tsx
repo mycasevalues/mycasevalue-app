@@ -466,7 +466,7 @@ export default function MethodologyCapture() {
           border: 1px solid var(--border-default);
           border-radius: 8px;
           font-size: 14px;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
           transition: all 0.2s ease;
           box-sizing: border-box;
         }
@@ -487,7 +487,7 @@ export default function MethodologyCapture() {
           border-radius: 8px;
           font-size: 15px;
           font-weight: 600;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
           cursor: pointer;
           transition: all 0.2s ease;
         }
@@ -503,7 +503,7 @@ export default function MethodologyCapture() {
           color: #DC2626;
           font-size: 13px;
           margin-top: 6px;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
         }
         .success-message {
           padding: 16px;
@@ -513,7 +513,7 @@ export default function MethodologyCapture() {
           margin-bottom: 24px;
           font-size: 14px;
           color: #166534;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
         }
         .error-message-box {
           padding: 16px;
@@ -523,7 +523,7 @@ export default function MethodologyCapture() {
           margin-bottom: 24px;
           font-size: 14px;
           color: #991B1B;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
         }
       `}</style>
 
@@ -544,7 +544,7 @@ export default function MethodologyCapture() {
           style={{
             fontSize: 15,
             color: 'var(--color-text-secondary)',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             lineHeight: 1.6,
             marginBottom: 24,
             marginTop: 0,
@@ -575,7 +575,7 @@ export default function MethodologyCapture() {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: 8,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             Full Name
@@ -599,7 +599,7 @@ export default function MethodologyCapture() {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: 8,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             Email Address
@@ -623,7 +623,7 @@ export default function MethodologyCapture() {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: 8,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             Organization
@@ -652,7 +652,7 @@ export default function MethodologyCapture() {
           backgroundColor: 'rgba(0, 65, 130, 0.05)',
           fontSize: 13,
           color: 'var(--color-text-secondary)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           lineHeight: 1.6,
         }}
       >

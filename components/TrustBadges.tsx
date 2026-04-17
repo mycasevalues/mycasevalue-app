@@ -110,7 +110,7 @@ export default function TrustBadges() {
                 style={{
                   fontSize: '13px',
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontWeight: 500,
                   lineHeight: 1.4,
                 }}

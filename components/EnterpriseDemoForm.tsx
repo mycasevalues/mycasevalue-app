@@ -120,7 +120,7 @@ export default function EnterpriseDemoForm() {
         <p style={{
           fontSize: '14px',
           color: 'var(--color-text-secondary)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-ui)',
           lineHeight: 1.6,
         }}>
           We will be in touch within one business day.
@@ -133,7 +133,7 @@ export default function EnterpriseDemoForm() {
     width: '100%',
     padding: '12px 14px',
     fontSize: '14px',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
     color: 'var(--color-text-primary)',
     border: '1px solid var(--border-default)',
     borderRadius: '4px',
@@ -149,14 +149,14 @@ export default function EnterpriseDemoForm() {
     fontSize: '14px',
     fontWeight: 600,
     color: 'var(--color-text-primary)',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
     marginBottom: '8px',
   };
 
   const errorStyle: React.CSSProperties = {
     fontSize: '12px',
     color: 'var(--data-negative, #B01E1E)',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
     marginTop: '4px',
   };
 
@@ -191,7 +191,7 @@ export default function EnterpriseDemoForm() {
           font-weight: 600;
           cursor: pointer;
           transition: background 200ms;
-          font-family: var(--font-body);
+          font-family: var(--font-ui);
         }
         .enterprise-submit:hover:not(:disabled) {
           background: var(--gold-hover, #A87222);
@@ -341,7 +341,7 @@ export default function EnterpriseDemoForm() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 cursor: 'pointer',

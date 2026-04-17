@@ -296,15 +296,15 @@ const ENDPOINTS: Endpoint[] = [
 ];
 
 const methodColors: Record<string, string> = {
-  GET: 'var(--data-positive, #176438)',
-  POST: 'var(--accent-primary-hover)',
-  PUT: '#B86E00',
-  DELETE: 'var(--data-negative, #B01E1E)',
+  GET: 'var(--data-positive)',
+  POST: 'var(--gold)',
+  PUT: 'var(--wrn-txt)',
+  DELETE: 'var(--data-negative)',
 };
 
 export default function ApiAccessPage() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
@@ -316,8 +316,8 @@ export default function ApiAccessPage() {
 
       {/* Hero Section */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -577,7 +577,7 @@ export default function ApiAccessPage() {
                               style={{
                                 fontSize: '11px',
                                 fontWeight: 600,
-                                color: 'var(--data-negative, #B01E1E)',
+                                color: 'var(--data-negative)',
                                 textTransform: 'uppercase',
                                 letterSpacing: '0.5px',
                               }}
@@ -683,7 +683,7 @@ export default function ApiAccessPage() {
                         padding: '8px 12px',
                         backgroundColor: 'var(--color-surface-0)',
                         borderRadius: '4px',
-                        borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative, #B01E1E)' : error.code >= 400 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-positive, #176438)'}`,
+                        borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative)' : error.code >= 400 ? 'var(--wrn-txt)' : 'var(--data-positive)'}`,
                       }}
                     >
                       <code

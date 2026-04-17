@@ -125,7 +125,7 @@ export default function TestimonialCarousel() {
             style={{
               fontSize: '16px',
               color: 'var(--color-text-secondary)',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               margin: '0',
               fontWeight: 300,
               lineHeight: 1.6,
@@ -230,7 +230,7 @@ export default function TestimonialCarousel() {
                 style={{
                   fontSize: '16px',
                   color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontStyle: 'italic',
                   margin: '0 0 24px 0',
                   lineHeight: 1.7,
@@ -257,7 +257,7 @@ export default function TestimonialCarousel() {
                   style={{
                     fontSize: '14px',
                     color: 'var(--color-text-secondary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     margin: '0 0 4px 0',
                     fontWeight: 500,
                   }}
@@ -268,7 +268,7 @@ export default function TestimonialCarousel() {
                   style={{
                     fontSize: '13px',
                     color: 'var(--color-text-secondary)',
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     margin: 0,
                     fontWeight: 300,
                   }}

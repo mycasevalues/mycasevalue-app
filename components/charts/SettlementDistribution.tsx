@@ -19,7 +19,7 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
           <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
           <XAxis
             dataKey="range"
-            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
+            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
             axisLine={{ stroke: 'var(--border-default)' }}
             tickLine={false}
           />
@@ -37,7 +37,7 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
               borderRadius: '4px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
               fontSize: '13px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               padding: '8px 14px',
               color: 'var(--color-text-primary)',
             }}

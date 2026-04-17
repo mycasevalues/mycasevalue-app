@@ -94,7 +94,7 @@ const AnchorNav = () => {
                   fontWeight: 500,
                   color: isTrialButton ? 'var(--accent-primary)' : isActive ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   whiteSpace: 'nowrap',
                   borderBottom: isActive && !isTrialButton ? '2px solid var(--accent-primary)' : '2px solid transparent',
                   transition: 'all 150ms',

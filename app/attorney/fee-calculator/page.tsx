@@ -104,7 +104,7 @@ export default function FeeCalculatorPage() {
     fontWeight: 600,
     color: 'var(--color-text-primary)',
     marginBottom: '6px',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
   };
 
   const inputStyle: React.CSSProperties = {
@@ -116,7 +116,7 @@ export default function FeeCalculatorPage() {
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
     transition: 'border-color 0.2s',
     outline: 'none',
     boxSizing: 'border-box' as const,
@@ -131,11 +131,11 @@ export default function FeeCalculatorPage() {
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -150,7 +150,7 @@ export default function FeeCalculatorPage() {
           <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-ui)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Attorney Fee Calculator
           </h1>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
             Calculate attorney fee structures and compare contingency, hourly, and hybrid arrangements based on your case value.
           </p>
         </div>
@@ -200,7 +200,7 @@ export default function FeeCalculatorPage() {
                   }}
                   style={inputStyle}
                 />
-                <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                   Settlement value, judgment, or case evaluation
                 </p>
               </div>
@@ -232,7 +232,7 @@ export default function FeeCalculatorPage() {
                         fontWeight: 600,
                         cursor: 'pointer',
                         transition: 'all 0.2s',
-                        fontFamily: 'var(--font-body)',
+                        fontFamily: 'var(--font-ui)',
                         textAlign: 'left',
                       }}
                     >
@@ -248,8 +248,8 @@ export default function FeeCalculatorPage() {
               </div>
 
               {/* Info Box */}
-              <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
-                <p style={{ fontSize: '12px', color: '#38bdf8', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
+              <div style={{ background: 'rgba(10,80,162,0.06)', padding: '16px', borderRadius: '4px', border: '1px solid var(--link)' }}>
+                <p style={{ fontSize: '12px', color: 'var(--link)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
                   This calculator shows estimated fees for different arrangements. Actual fees depend on jurisdictional rules, attorney experience, and case complexity.
                 </p>
               </div>
@@ -257,7 +257,7 @@ export default function FeeCalculatorPage() {
               {/* Error */}
               {error && (
                 <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-body)' }}>{error}</p>
+                  <p style={{ fontSize: '13px', color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
                 </div>
               )}
 
@@ -296,7 +296,7 @@ export default function FeeCalculatorPage() {
                     borderRadius: '4px',
                     fontSize: '13px',
                     fontWeight: 600,
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--font-ui)',
                     cursor: 'pointer',
                     transition: 'all 0.2s',
                   }}
@@ -323,24 +323,24 @@ export default function FeeCalculatorPage() {
                     Contingency Fee Tiers
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
-                      <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
+                    <div style={{ padding: '12px', background: 'rgba(10,80,162,0.06)', borderRadius: '4px', border: '1px solid var(--link)' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         25% Contingency
                       </div>
                       <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency25.toLocaleString()}
                       </div>
                     </div>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
-                      <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
+                    <div style={{ padding: '12px', background: 'rgba(10,80,162,0.06)', borderRadius: '4px', border: '1px solid var(--link)' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         33% Contingency (Typical)
                       </div>
                       <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency33.toLocaleString()}
                       </div>
                     </div>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
-                      <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
+                    <div style={{ padding: '12px', background: 'rgba(10,80,162,0.06)', borderRadius: '4px', border: '1px solid var(--link)' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         40% Contingency (Higher Risk)
                       </div>
                       <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
@@ -385,8 +385,8 @@ export default function FeeCalculatorPage() {
                     Hourly Fee Estimate
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
-                      <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
+                    <div style={{ padding: '12px', background: 'rgba(10,80,162,0.06)', borderRadius: '4px', border: '1px solid var(--link)' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         Estimated Hours (Case Phases)
                       </div>
                       <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
@@ -395,7 +395,7 @@ export default function FeeCalculatorPage() {
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                      <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
+                      <div style={{ padding: '12px', background: 'rgba(10,80,162,0.06)', borderRadius: '4px', border: '1px solid var(--link)' }}>
                         <div style={{ fontSize: '11px', color: '#38bdf8', fontWeight: 600 }}>Junior Attorney</div>
                         <div style={{ fontSize: '13px', color: '#38bdf8', marginTop: '4px' }}>
                           ${feeData.hourly.lowRate}/hr
@@ -404,7 +404,7 @@ export default function FeeCalculatorPage() {
                           ${feeData.hourly.totalLow.toLocaleString()}
                         </div>
                       </div>
-                      <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
+                      <div style={{ padding: '12px', background: 'rgba(10,80,162,0.06)', borderRadius: '4px', border: '1px solid var(--link)' }}>
                         <div style={{ fontSize: '11px', color: '#38bdf8', fontWeight: 600 }}>Senior Attorney</div>
                         <div style={{ fontSize: '13px', color: '#38bdf8', marginTop: '4px' }}>
                           ${feeData.hourly.highRate}/hr
@@ -425,27 +425,27 @@ export default function FeeCalculatorPage() {
                     Hybrid Arrangement
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
-                      <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
+                    <div style={{ padding: '12px', background: 'rgba(10,80,162,0.06)', borderRadius: '4px', border: '1px solid var(--link)' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         Upfront Retainer
                       </div>
                       <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.hybrid.retainer.toLocaleString()}
                       </div>
                     </div>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
-                      <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
+                    <div style={{ padding: '12px', background: 'rgba(10,80,162,0.06)', borderRadius: '4px', border: '1px solid var(--link)' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         Ongoing Hourly Rate
                       </div>
                       <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.hybrid.hourlyRate}/hr
                       </div>
                     </div>
-                    <div style={{ padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '4px', border: '1px solid var(--wrn-bg, #FCD34D)' }}>
-                      <div style={{ fontSize: '12px', color: 'var(--wrn-txt, #7A5800)', fontWeight: 600, marginBottom: '4px' }}>
+                    <div style={{ padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '4px', border: '1px solid var(--wrn-bg)' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--wrn-txt)', fontWeight: 600, marginBottom: '4px' }}>
                         Estimated Total (Case Completion)
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#B86E00', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--wrn-txt)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.hybrid.estimatedTotal.toLocaleString()}
                       </div>
                     </div>
@@ -480,7 +480,7 @@ export default function FeeCalculatorPage() {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '8px' }}>
                       <span style={{ fontWeight: 600 }}>Adjusted Fee Award:</span>
-                      <span style={{ fontWeight: 700, color: 'var(--wrn-txt, #7A5800)', fontSize: '15px', fontFamily: 'var(--font-mono)' }}>
+                      <span style={{ fontWeight: 700, color: 'var(--wrn-txt)', fontSize: '15px', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.lodestar.adjustedTotal.toLocaleString()}
                       </span>
                     </div>
@@ -490,7 +490,7 @@ export default function FeeCalculatorPage() {
 
               {/* Beta Badge */}
               <div style={{ ...cardStyle, textAlign: 'center', border: 'none' }}>
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                   Free during public beta
                 </p>
               </div>
@@ -510,7 +510,7 @@ export default function FeeCalculatorPage() {
                 width: '100%',
                 borderCollapse: 'collapse',
                 fontSize: '13px',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 <thead>
                   <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
@@ -634,7 +634,7 @@ export default function FeeCalculatorPage() {
               <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Multiple Arrangement Types
               </h3>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Compare contingency, hourly, and hybrid fee structures with real market rates.
               </p>
             </div>
@@ -647,7 +647,7 @@ export default function FeeCalculatorPage() {
               <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Lodestar Calculation
               </h3>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Calculate fee awards for cases with fee-shifting statutes (civil rights, consumer).
               </p>
             </div>
@@ -660,7 +660,7 @@ export default function FeeCalculatorPage() {
               <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Case-Type Data
               </h3>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Rates and estimates based on 5.1M+ federal case outcomes and settlement data.
               </p>
             </div>
@@ -671,30 +671,30 @@ export default function FeeCalculatorPage() {
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/intake-forms" style={{ textDecoration: 'none' }}>
             <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Intake Forms
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Generate intake questionnaires
               </p>
             </div>
           </Link>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
             <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Demand Letter
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Generate demand letters
               </p>
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
             <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Case Predictor
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Predict case outcomes
               </p>
             </div>

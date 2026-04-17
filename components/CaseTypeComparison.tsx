@@ -74,7 +74,7 @@ export default function CaseTypeComparison() {
             className="cmp-select"
             style={{
               width: '100%', height: 44, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-              fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+              fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
               appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
               backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
             }}
@@ -113,7 +113,7 @@ export default function CaseTypeComparison() {
             className="cmp-select"
             style={{
               width: '100%', height: 44, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-              fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+              fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
               appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
               backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
             }}
@@ -146,7 +146,7 @@ export default function CaseTypeComparison() {
             const bWins = m.higher === 'green' ? m.bVal > m.aVal : m.higher === 'red' ? m.bVal < m.aVal : false;
             return (
               <div key={m.label} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', padding: '12px 16px', borderTop: '1px solid #F0F0F0', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#FAFAFA' }}>
-                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>{m.label}</div>
+                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>{m.label}</div>
                 <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 600, color: aWins ? 'var(--data-positive, #176438)' : 'var(--color-text-primary)' }}>
                   {m.a} {aWins && <span style={{ fontSize: 10, color: 'var(--data-positive, #176438)' }}>●</span>}
                 </div>
@@ -184,7 +184,7 @@ export default function CaseTypeComparison() {
           <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--border-default)" strokeWidth="1.5" style={{ margin: '0 auto 16px' }}>
             <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
           </svg>
-          <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
             Select two case types above to see a side-by-side comparison of win rates, settlement rates, duration, and recovery ranges.
           </p>
         </div>

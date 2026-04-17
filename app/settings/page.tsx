@@ -270,7 +270,7 @@ export default function SettingsPage() {
                   href="/privacy"
                   className="settings-link-button block px-4 py-3 rounded-sm text-sm font-medium transition-colors"
                   style={{
-                    color: 'var(--accent-primary-hover)',
+                    color: 'var(--gold)',
                     border: '1px solid var(--border-default)',
                     backgroundColor: 'var(--color-surface-0)',
                   }}
@@ -281,7 +281,7 @@ export default function SettingsPage() {
                   href="/terms"
                   className="settings-link-button block px-4 py-3 rounded-sm text-sm font-medium transition-colors"
                   style={{
-                    color: 'var(--accent-primary-hover)',
+                    color: 'var(--gold)',
                     border: '1px solid var(--border-default)',
                     backgroundColor: 'var(--color-surface-0)',
                   }}
@@ -291,7 +291,7 @@ export default function SettingsPage() {
                 <button
                   className="settings-link-button w-full px-4 py-3 rounded-sm text-sm font-medium transition-colors text-left"
                   style={{
-                    color: 'var(--accent-primary-hover)',
+                    color: 'var(--gold)',
                     border: '1px solid var(--border-default)',
                     backgroundColor: 'var(--color-surface-0)',
                   }}
@@ -385,7 +385,7 @@ export default function SettingsPage() {
                 <div
                   className="px-3 py-1 rounded-sm text-sm font-semibold whitespace-nowrap ml-4"
                   style={{
-                    backgroundColor: 'var(--data-positive, #176438)',
+                    backgroundColor: 'var(--data-positive)',
                     color: 'white',
                   }}
                 >
@@ -413,7 +413,7 @@ export default function SettingsPage() {
                     href={link.href}
                     className="settings-link-button px-4 py-3 rounded-sm text-sm font-medium transition-colors"
                     style={{
-                      color: 'var(--accent-primary-hover)',
+                      color: 'var(--gold)',
                       border: '1px solid var(--border-default)',
                       backgroundColor: 'var(--color-surface-0)',
                     }}

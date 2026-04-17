@@ -122,7 +122,7 @@ export default function DiscoveryGeneratorPage() {
   const selectStyle: React.CSSProperties = {
     width: '100%', padding: '12px 14px', height: '48px',
     border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px',
-    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
+    color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
     appearance: 'none' as const,
     backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E\")",
     backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center',
@@ -132,7 +132,7 @@ export default function DiscoveryGeneratorPage() {
   const hasAnyText = texts.interrogatories || texts.production || texts.admissions;
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
@@ -140,8 +140,8 @@ export default function DiscoveryGeneratorPage() {
 
       {/* Header */}
       <div style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -153,7 +153,7 @@ export default function DiscoveryGeneratorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-ui)', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
             Draft Discovery Requests in Minutes, Not Hours
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
@@ -221,7 +221,7 @@ export default function DiscoveryGeneratorPage() {
                   style={{
                     width: '100%', padding: '12px 14px', border: '1px solid var(--border-default)',
                     borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-body)',
+                    backgroundColor: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)',
                     minHeight: '80px', resize: 'vertical', boxSizing: 'border-box' as const,
                   }}
                 />
@@ -229,7 +229,7 @@ export default function DiscoveryGeneratorPage() {
 
               {error && (
                 <div style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
+                  <p style={{ fontSize: '13px', color: 'var(--data-negative)', margin: 0 }}>{error}</p>
                 </div>
               )}
 
@@ -239,7 +239,7 @@ export default function DiscoveryGeneratorPage() {
                 style={{
                   width: '100%', padding: '16px',
                   backgroundColor: loading || !caseType ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
+                  color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase', letterSpacing: '0.04em',
                   cursor: loading || !caseType ? 'not-allowed' : 'pointer',
@@ -267,7 +267,7 @@ export default function DiscoveryGeneratorPage() {
                       background: activeTab === tab.key ? 'var(--accent-primary)' : 'transparent',
                       color: activeTab === tab.key ? '#FFF' : 'var(--color-text-secondary)',
                       fontSize: '12px', fontWeight: 600, cursor: 'pointer',
-                      fontFamily: 'var(--font-body)', transition: 'all 0.2s',
+                      fontFamily: 'var(--font-ui)', transition: 'all 0.2s',
                     }}
                   >
                     {tab.label}
@@ -275,7 +275,7 @@ export default function DiscoveryGeneratorPage() {
                       {tab.rule}
                     </span>
                     {texts[tab.key] && (
-                      <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: activeTab === tab.key ? '#FFF' : 'var(--data-positive, #176438)', marginLeft: 6, verticalAlign: 'middle' }} />
+                      <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: activeTab === tab.key ? '#FFF' : 'var(--data-positive)', marginLeft: 6, verticalAlign: 'middle' }} />
                     )}
                   </button>
                 ))}
@@ -293,8 +293,8 @@ export default function DiscoveryGeneratorPage() {
                       onClick={copyToClipboard}
                       disabled={loading || !currentText}
                       style={{
-                        padding: '8px 12px', background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
-                        color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
+                        padding: '8px 12px', background: copied ? 'var(--data-positive)' : 'var(--accent-primary)',
+                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || !currentText ? 'not-allowed' : 'pointer',
                         opacity: loading || !currentText ? 0.5 : 1,
@@ -306,8 +306,8 @@ export default function DiscoveryGeneratorPage() {
                       onClick={exportAsDocx}
                       disabled={loading || exporting || !currentText}
                       style={{
-                        padding: '8px 12px', background: 'var(--accent-primary-hover)',
-                        color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
+                        padding: '8px 12px', background: 'var(--gold)',
+                        color: 'var(--color-text-inverse)', border: 'none', borderRadius: '4px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || exporting || !currentText ? 'not-allowed' : 'pointer',
                         opacity: loading || exporting || !currentText ? 0.5 : 1,
@@ -325,7 +325,7 @@ export default function DiscoveryGeneratorPage() {
                       maxHeight: '600px', overflowY: 'auto', padding: '16px',
                       background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)',
                       fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.7',
-                      fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap', wordWrap: 'break-word',
+                      fontFamily: 'var(--font-ui)', whiteSpace: 'pre-wrap', wordWrap: 'break-word',
                     }}
                   >
                     {currentText}
@@ -339,7 +339,7 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               {/* Disclaimer */}
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(122,88,0,0.08)', borderLeft: '3px solid var(--wrn-txt)', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt)', lineHeight: 1.6 }}>
                 <strong>Important:</strong> Must be reviewed by a licensed attorney and conformed to local court rules before filing. Discovery requests may need to be modified based on local rules regarding number limits, format requirements, and meet-and-confer obligations.
               </div>
             </div>

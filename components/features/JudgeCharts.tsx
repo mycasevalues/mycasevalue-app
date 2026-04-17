@@ -20,7 +20,7 @@ interface JudgeChartsProps {
 
 export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsProps) {
   const chartStyle = {
-    fontFamily: 'var(--font-body)',
+    fontFamily: 'var(--font-ui)',
     fontSize: '12px',
     fill: 'var(--color-text-primary)',
   };
@@ -59,12 +59,12 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             <XAxis
               dataKey="year"
               stroke="var(--color-text-secondary)"
-              tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
+              tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
             />
             <YAxis
               label={{ value: 'Win Rate (%)', angle: -90, position: 'insideLeft' }}
               stroke="var(--color-text-secondary)"
-              tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
+              tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
               domain={[30, 70]}
             />
             <Tooltip
@@ -74,7 +74,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
                 borderRadius: '4px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '13px',
               }}
               cursor={{ stroke: 'var(--color-surface-1)' }}
@@ -120,13 +120,13 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             <XAxis
               type="number"
               stroke="var(--color-text-secondary)"
-              tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}
+              tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
             />
             <YAxis
               dataKey="label"
               type="category"
               width={190}
-              tick={{ fill: 'var(--color-text-secondary)', fontSize: 12, fontFamily: 'var(--font-body)' }}
+              tick={{ fill: 'var(--color-text-secondary)', fontSize: 12, fontFamily: 'var(--font-ui)' }}
             />
             <Tooltip
               contentStyle={{
@@ -135,7 +135,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
                 borderRadius: '4px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 fontSize: '13px',
               }}
               cursor={{ fill: 'rgba(0, 105, 151, 0.05)' }}

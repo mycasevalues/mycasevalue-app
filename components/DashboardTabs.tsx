@@ -57,7 +57,7 @@ export default function DashboardTabs({
     background: activeTab === key ? 'var(--accent-primary)' : 'transparent',
     color: activeTab === key ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)',
     fontSize: '13px', fontWeight: 600, cursor: 'pointer',
-    fontFamily: 'var(--font-body)', transition: 'all 0.2s',
+    fontFamily: 'var(--font-ui)', transition: 'all 0.2s',
     display: 'flex', alignItems: 'center', gap: 6,
   });
 
@@ -150,7 +150,7 @@ export default function DashboardTabs({
               placeholder="Search history..."
               value={historySearch}
               onChange={e => { setHistorySearch(e.target.value); setHistoryPage(0); }}
-              style={{ padding: '8px 14px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '13px', width: 200, fontFamily: 'var(--font-body)' }}
+              style={{ padding: '8px 14px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '13px', width: 200, fontFamily: 'var(--font-ui)' }}
             />
           </div>
 

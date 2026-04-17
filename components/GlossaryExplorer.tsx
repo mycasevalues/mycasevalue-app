@@ -90,7 +90,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               outline: 'none',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               transition: 'all 200ms ease',
             }}
             onFocus={(e) => {

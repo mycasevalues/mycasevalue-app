@@ -156,7 +156,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
             padding: '12px 16px',
             borderRadius: '4px',
             fontSize: '13px',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             pointerEvents: 'none',
             whiteSpace: 'nowrap',
             boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
@@ -186,7 +186,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
         justifyContent: 'center',
         marginTop: '16px',
         fontSize: '12px',
-        fontFamily: 'var(--font-body)',
+        fontFamily: 'var(--font-ui)',
         color: 'var(--color-text-secondary)',
       }}>
         <span>Lower win rate</span>

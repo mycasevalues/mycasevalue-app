@@ -147,8 +147,8 @@ export default function EnterprisePage() {
     <div>
       {/* Hero */}
       <section style={{
-        background: 'var(--card, #FFFFFF)',
-        color: 'var(--card, #FFFFFF)',
+        background: 'var(--card)',
+        color: 'var(--card)',
         padding: '56px 24px 48px',
         position: 'relative',
         overflow: 'hidden',
@@ -159,7 +159,7 @@ export default function EnterprisePage() {
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }} />
-        <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', position: 'relative' }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
             padding: '4px 10px', marginBottom: 16,
@@ -167,20 +167,20 @@ export default function EnterprisePage() {
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: 'var(--link, #0A50A2)',
+            fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase',
+            color: 'var(--link)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Enterprise
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: 'clamp(28px, 4vw, 36px)',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: 'var(--card, #FFFFFF)',
+            color: 'var(--card)',
           }}>
             Enterprise-grade litigation analytics
           </h1>
@@ -201,8 +201,8 @@ export default function EnterprisePage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '2rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             textAlign: 'center',
@@ -215,12 +215,12 @@ export default function EnterprisePage() {
               <div key={f.title} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '24px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '1rem',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
@@ -229,7 +229,7 @@ export default function EnterprisePage() {
                   {f.title}
                 </h3>
                 <p style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '0.875rem',
                   color: 'var(--color-text-secondary)',
                   lineHeight: 1.6,
@@ -247,8 +247,8 @@ export default function EnterprisePage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-0)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '2rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             textAlign: 'center',
@@ -261,11 +261,11 @@ export default function EnterprisePage() {
               <div key={useCase.title} style={{
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '32px 24px',
               }}>
                 <h3 style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '1.125rem',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
@@ -274,7 +274,7 @@ export default function EnterprisePage() {
                   {useCase.title}
                 </h3>
                 <ul style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '0.875rem',
                   color: 'var(--color-text-secondary)',
                   lineHeight: 1.8,
@@ -295,8 +295,8 @@ export default function EnterprisePage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '2rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             textAlign: 'center',
@@ -305,7 +305,7 @@ export default function EnterprisePage() {
             Pricing
           </h2>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
             color: 'var(--color-text-secondary)',
             textAlign: 'center',
@@ -318,15 +318,15 @@ export default function EnterprisePage() {
               width: '100%',
               borderCollapse: 'collapse',
               background: 'var(--color-surface-0)',
-              borderRadius: '4px',
+              borderRadius: '2px',
               overflow: 'hidden',
               border: '1px solid var(--border-default)',
             }}>
               <thead>
                 <tr style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-1)' }}>
-                  <th style={{ padding: '24px 24px', textAlign: 'left', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.875rem' }}>Feature</th>
+                  <th style={{ padding: '24px 24px', textAlign: 'left', fontFamily: 'var(--font-ui)', fontWeight: 600, fontSize: '0.875rem' }}>Feature</th>
                   {PRICING_TIERS.map(tier => (
-                    <th key={tier.name} style={{ padding: '24px 24px', textAlign: 'left', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.875rem' }}>
+                    <th key={tier.name} style={{ padding: '24px 24px', textAlign: 'left', fontFamily: 'var(--font-ui)', fontWeight: 600, fontSize: '0.875rem' }}>
                       {tier.name}
                     </th>
                   ))}
@@ -334,49 +334,49 @@ export default function EnterprisePage() {
               </thead>
               <tbody>
                 <tr style={{ borderTop: '1px solid var(--border-default)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Users</td>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Users</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
                       {tier.users}
                     </td>
                   ))}
                 </tr>
                 <tr style={{ borderTop: '1px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>API Calls/Month</td>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>API Calls/Month</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
                       {tier.apiCalls}
                     </td>
                   ))}
                 </tr>
                 <tr style={{ borderTop: '1px solid var(--border-default)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Custom Dashboards</td>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Custom Dashboards</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
                       {tier.dashboards}
                     </td>
                   ))}
                 </tr>
                 <tr style={{ borderTop: '1px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>White-Label Reports</td>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>White-Label Reports</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
                       {tier.whiteLabel}
                     </td>
                   ))}
                 </tr>
                 <tr style={{ borderTop: '1px solid var(--border-default)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>SSO & Directory Integration</td>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>SSO & Directory Integration</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-primary)' }}>
                       {tier.sso}
                     </td>
                   ))}
                 </tr>
                 <tr style={{ borderTop: '1px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
-                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Price</td>
+                  <td style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Price</td>
                   {PRICING_TIERS.map(tier => (
-                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-body)', fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                    <td key={tier.name} style={{ padding: '16px 24px', fontFamily: 'var(--font-ui)', fontSize: '0.875rem', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                       Contact us
                     </td>
                   ))}
@@ -391,7 +391,7 @@ export default function EnterprisePage() {
       <section style={{ padding: '24px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1.125rem',
             color: 'var(--color-text-secondary)',
             lineHeight: 1.8,
@@ -405,8 +405,8 @@ export default function EnterprisePage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '2rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             textAlign: 'center',
@@ -419,11 +419,11 @@ export default function EnterprisePage() {
               <details key={idx} style={{
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '24px',
               }}>
                 <summary style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '1rem',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
@@ -433,7 +433,7 @@ export default function EnterprisePage() {
                   {item.question}
                 </summary>
                 <p style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-ui)',
                   fontSize: '0.875rem',
                   color: 'var(--color-text-secondary)',
                   lineHeight: 1.6,
@@ -452,8 +452,8 @@ export default function EnterprisePage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-0)' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '2rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             textAlign: 'center',
@@ -462,7 +462,7 @@ export default function EnterprisePage() {
             Request a Demo
           </h2>
           <p style={{
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
             color: 'var(--color-text-secondary)',
             textAlign: 'center',

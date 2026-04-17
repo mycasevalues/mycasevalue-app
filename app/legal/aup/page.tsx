@@ -63,7 +63,7 @@ export default function AUPPage() {
             maxWidth: '1200px',
             margin: '0 auto',
             padding: '0 1.5rem 2rem 1.5rem',
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             color: 'var(--color-text-primary)',
           }}
         >
@@ -73,7 +73,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -92,7 +92,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -126,7 +126,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -178,7 +178,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -200,7 +200,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -232,7 +232,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -254,7 +254,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -289,7 +289,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',
@@ -308,7 +308,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.75rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--gold)',
                 marginBottom: '1rem',
                 borderBottom: '2px solid var(--accent-primary)',
                 paddingBottom: '0.75rem',

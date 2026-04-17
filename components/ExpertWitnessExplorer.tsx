@@ -100,7 +100,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 background: 'var(--color-surface-0)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 transition: 'border-color 0.2s',
               }}
             >
@@ -129,7 +129,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                 fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 background: 'var(--color-surface-0)',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
                 transition: 'border-color 0.2s',
               }}
             >

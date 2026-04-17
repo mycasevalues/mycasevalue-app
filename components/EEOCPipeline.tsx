@@ -55,7 +55,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
               fontSize: '0.8125rem',
               color: 'var(--color-text-secondary)',
               margin: 0,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.5,
             }}>
               National employment discrimination charges (FY{eEOCData.year})
@@ -79,7 +79,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
                       fontSize: '0.8125rem',
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-body)',
+                      fontFamily: 'var(--font-ui)',
                     }}>
                       {stage.label}
                     </span>
@@ -139,7 +139,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Merit Resolution Rate
               </div>
@@ -161,7 +161,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-ui)',
               }}>
                 Federal Lawsuit Rate
               </div>
@@ -188,7 +188,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
               fontSize: '0.8125rem',
               color: 'var(--accent-primary-hover)',
               margin: 0,
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-ui)',
               lineHeight: 1.5,
               fontWeight: 500,
             }}>
@@ -202,7 +202,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
             color: 'var(--color-text-secondary)',
             marginTop: '1rem',
             marginBottom: 0,
-            fontFamily: 'var(--font-body)',
+            fontFamily: 'var(--font-ui)',
             lineHeight: 1.4,
           }}>
             Source: EEOC Annual Reports. Merit resolutions include settlements, conciliations, and administrative closures with benefits to charging parties.
