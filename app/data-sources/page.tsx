@@ -170,7 +170,7 @@ export default function DataSourcesPage() {
               Data Sources and Provenance
             </h1>
             <p style={{
-              fontSize: 15,
+              fontSize: 14,
               color: 'rgba(255,255,255,0.6)',
               fontFamily: 'var(--font-ui)',
               lineHeight: 1.65,
@@ -766,7 +766,7 @@ export default function DataSourcesPage() {
                   padding: '16px 32px',
                   backgroundColor: 'var(--color-surface-0)',
                   color: 'var(--accent-primary)',
-                  fontSize: 15,
+                  fontSize: 14,
                   fontWeight: 700,
                   borderRadius: '4px',
                   textDecoration: 'none',
@@ -783,7 +783,7 @@ export default function DataSourcesPage() {
                   padding: '16px 32px',
                   backgroundColor: 'rgba(255,255,255,0.2)',
                   color: 'var(--color-surface-0)',
-                  fontSize: 15,
+                  fontSize: 14,
                   fontWeight: 700,
                   borderRadius: '4px',
                   textDecoration: 'none',

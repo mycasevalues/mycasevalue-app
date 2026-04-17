@@ -96,10 +96,10 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
       }} />
 
       <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
-        <div style={{ fontSize: 'clamp(18px, 2.5vw, 24px)', marginBottom: 'clamp(6px, 1vw, 12px)' }}>{stat.icon}</div>
+        <div style={{ fontSize: '20px', marginBottom: '8px' }}>{stat.icon}</div>
         <div className="stat-glow font-mono" style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: 'clamp(24px, 4vw, 36px)',
+          fontSize: '28px',
           fontWeight: 600,
           color: stat.color,
           lineHeight: 1.1,
@@ -108,10 +108,10 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
           {stat.prefix}{isVisible ? (stat.value % 1 !== 0 ? count.toFixed(1) : count) : (stat.value % 1 !== 0 ? stat.value.toFixed(1) : stat.value)}{stat.suffix}
         </div>
         <div style={{
-          fontSize: 'clamp(12px, 1.5vw, 14px)',
+          fontSize: '12px',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
-          marginTop: 'clamp(6px, 1vw, 10px)',
+          marginTop: '8px',
           textTransform: 'uppercase',
           letterSpacing: '0.03em',
         }}>
@@ -119,7 +119,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
         </div>
         {stat.sublabel && (
           <div style={{
-            fontSize: 'clamp(10px, 1.2vw, 12px)',
+            fontSize: '12px',
             color: 'var(--color-text-secondary)',
             marginTop: '4px',
             fontWeight: 500,
@@ -227,7 +227,7 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
             position: 'absolute',
             bottom: 'clamp(-32px, -4vw, -24px)',
             right: 0,
-            fontSize: 'clamp(10px, 1vw, 12px)',
+            fontSize: '12px',
             color: 'rgba(107, 114, 128, 0.7)',
             fontStyle: 'italic',
             fontFamily: 'var(--font-ui)',
@@ -265,22 +265,22 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
           marginTop: 'clamp(20px, 3vw, 32px)',
         }}>
           <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
-            <div style={{ fontSize: '36px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>5.1M+</div>
+            <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>5.1M+</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Federal Cases</div>
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>Analyzed</div>
           </div>
           <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
-            <div style={{ fontSize: '36px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>95</div>
+            <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>95</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Federal Districts</div>
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>All US courts</div>
           </div>
           <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(109, 40, 217, 0.09)', borderRadius: '4px' }}>
-            <div style={{ fontSize: '36px', fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>84</div>
+            <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>84</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Case Categories</div>
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>Tracked</div>
           </div>
           <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
-            <div style={{ fontSize: '36px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>55+</div>
+            <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>55+</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Years of Data</div>
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>1970–2025</div>
           </div>

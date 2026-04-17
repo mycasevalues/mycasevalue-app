@@ -151,7 +151,7 @@ export default function LegalSearchPage() {
         <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
           Legal Document Search
         </h1>
-        <p style={{ fontSize: 15, color: 'var(--color-text-muted)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
+        <p style={{ fontSize: 14, color: 'var(--color-text-muted)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
           Search across 7 authoritative legal data sources. Find opinions, regulations, statutes, SEC filings, and government documents from a single interface.
         </p>
       </div>
@@ -191,7 +191,7 @@ export default function LegalSearchPage() {
               borderRadius: 4,
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
-              fontSize: 15,
+              fontSize: 14,
               fontWeight: 600,
               border: 'none',
               cursor: loading ? 'wait' : 'pointer',

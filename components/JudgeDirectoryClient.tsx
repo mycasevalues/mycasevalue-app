@@ -1084,7 +1084,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   {/* Judge Name and District */}
                   <div>
                     <h3 style={{
-                      fontSize: 15,
+                      fontSize: 14,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
                       margin: '0 0 4px 0',

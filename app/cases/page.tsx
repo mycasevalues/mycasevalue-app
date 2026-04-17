@@ -194,7 +194,7 @@ export default function CasesIndexPage() {
             Federal Case Analytics
           </h1>
           <p style={{
-            fontSize: 15, color: 'var(--text3, #78766C)', margin: 0, lineHeight: 1.6, maxWidth: 640,
+            fontSize: 14, color: 'var(--text3, #78766C)', margin: 0, lineHeight: 1.6, maxWidth: 640,
             fontFamily: 'var(--font-ui)',
           }}>
             Outcome data and litigation intelligence across 84 federal case types. Win rates, settlements, and duration benchmarks from 5.1M+ cases.
@@ -273,7 +273,7 @@ export default function CasesIndexPage() {
               width: '100%',
               height: '56px',
               padding: '12px 16px 12px 48px',
-              fontSize: '15px',
+              fontSize: '14px',
               border: '1px solid var(--border-default)',
               borderRadius: '2px',
               background: 'var(--card)',
@@ -362,7 +362,7 @@ export default function CasesIndexPage() {
 
         {filtered.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '60px 24px' }}>
-            <p style={{ fontSize: 18, color: 'var(--text2, #42403C)', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: 14, color: 'var(--text2, #42403C)', fontFamily: 'var(--font-ui)' }}>
               No case types match &ldquo;{search}&rdquo;
             </p>
             <button
@@ -501,7 +501,7 @@ export default function CasesIndexPage() {
                       #{idx + 1}
                     </div>
                     <div>
-                      <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2 }}>
                         {caseType.label}
                       </div>
                       <div style={{ fontSize: 12, color: 'var(--text2, #42403C)' }}>
@@ -651,7 +651,7 @@ export default function CasesIndexPage() {
           <h2 className="font-ui" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', letterSpacing: '-0.3px' }}>
             Ready to research your case?
           </h2>
-          <p style={{ fontSize: 18, color: 'var(--text2, #42403C)', margin: '0 0 32px', lineHeight: 1.6 }}>
+          <p style={{ fontSize: 14, color: 'var(--text2, #42403C)', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
           <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: 'var(--accent-primary, #C4882A)', color: 'var(--card)', borderRadius: '2px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-legal)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
@@ -678,7 +678,7 @@ export default function CasesIndexPage() {
           zIndex: 100,
           boxShadow: 'var(--shadow-sm)',
         }}>
-          <span style={{ color: 'white', fontWeight: 600, fontSize: 15, fontFamily: 'var(--font-ui)' }}>
+          <span style={{ color: 'white', fontWeight: 600, fontSize: 14, fontFamily: 'var(--font-ui)' }}>
             Compare {selectedCategories.size} categor{selectedCategories.size === 1 ? 'y' : 'ies'}
           </span>
           <button

@@ -75,9 +75,9 @@ export default function DisclaimerPage() {
           <h1
             style={{
               fontSize: '28px',
-              fontWeight: 600,
+              fontWeight: 700,
               color: 'var(--color-surface-0)',
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
               letterSpacing: '-1px',
               marginBottom: 12,
             }}
@@ -466,10 +466,10 @@ export default function DisclaimerPage() {
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
             }}>
-              <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Email:</strong> <a href="mailto:support@mycasevalues.com" data-link-type="teal" style={{ color: 'var(--gold)', textDecoration: 'none' }}>support@mycasevalues.com</a>
               </p>
-              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: '12px 0 0 0', fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Website:</strong> <a href="https://mycasevalues.com" data-link-type="teal" style={{ color: 'var(--gold)', textDecoration: 'none' }}>https://mycasevalues.com</a>
               </p>
             </div>
@@ -506,10 +506,10 @@ export default function DisclaimerPage() {
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
             }}>
-              <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Terms of Service:</strong> <a href="/terms" data-link-type="teal" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Read our Terms of Service</a> for rules governing use of MyCaseValue and our limitations of liability.
               </p>
-              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: '12px 0 0 0', fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Privacy Policy:</strong> <a href="/privacy" data-link-type="teal" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Review our Privacy Policy</a> to understand how we collect, use, and protect your data.
               </p>
             </div>

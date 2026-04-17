@@ -331,7 +331,7 @@ export default function BlogPage() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Research & Analysis
           </div>
-          <h1 className="font-ui" style={{
+          <h1 className="font-legal" style={{
             color: 'var(--card)',
             fontSize: '28px',
             fontWeight: 700,
@@ -344,7 +344,7 @@ export default function BlogPage() {
           <p style={{
             color: 'rgba(255,255,255,0.6)',
             fontFamily: 'var(--font-legal)',
-            fontSize: 15,
+            fontSize: 14,
             lineHeight: 1.65,
             maxWidth: 640,
             margin: 0,

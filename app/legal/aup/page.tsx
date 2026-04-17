@@ -39,7 +39,7 @@ export default function AUPPage() {
                 fontWeight: 700,
                 margin: '0 0 1rem 0',
                 lineHeight: 1.2,
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-legal)',
               }}
             >
               Acceptable Use Policy

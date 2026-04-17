@@ -38,7 +38,7 @@ export default function SettingsPage() {
       {/* Navy Header */}
       <header style={{ backgroundColor: 'var(--accent-primary)' }} className="text-white py-8">
         <div className="max-w-6xl mx-auto px-6">
-          <h1 className="text-3xl font-bold" style={{ fontFamily: 'var(--font-ui)' }}>
+          <h1 className="text-3xl font-bold" style={{ fontFamily: 'var(--font-legal)' }}>
             Settings
           </h1>
           <p className="text-sm mt-2 opacity-90">Manage your account and preferences</p>

@@ -297,7 +297,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
       {/* Results */}
       {filtered.length === 0 ? (
         <div style={{ textAlign: 'center', padding: 64, background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2 }}>
-          <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>No judges match your filters.</p>
+          <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>No judges match your filters.</p>
           <button
             onClick={() => { setSearch(''); setCircuitFilter(''); setDistrictFilter(''); setStatusFilter('all'); setPage(1); }}
             style={{ marginTop: 12, border: 'none', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '8px 24px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-ui)' }}
@@ -323,7 +323,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                 {/* Name + badges */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                   <div style={{ flex: 1 }}>
-                    <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 2px', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 2px', fontFamily: 'var(--font-ui)' }}>
                       {judge.name}
                     </p>
                     <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>

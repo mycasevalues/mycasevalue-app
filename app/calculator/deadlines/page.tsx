@@ -152,7 +152,7 @@ export default function DeadlinesCalculatorPage() {
           <h1 style={{ color: 'var(--color-text-inverse)', fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
             Never Miss a Procedural Deadline
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)', fontSize: '14px', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
             Federal Rules of Civil Procedure deadline calculator — visual timelines with FRCP rule citations and weekend/holiday handling.
           </p>
         </div>
@@ -312,7 +312,7 @@ export default function DeadlinesCalculatorPage() {
                             +{d.days} days from {d.from}
                           </span>
                         </div>
-                        <h4 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+                        <h4 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                           {d.label}
                         </h4>
                         <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
@@ -322,7 +322,7 @@ export default function DeadlinesCalculatorPage() {
 
                       {deadlineDate && (
                         <div style={{ textAlign: 'right', minWidth: 130 }}>
-                          <div style={{ fontSize: 15, fontWeight: 600, color: past ? 'var(--data-negative)' : 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                          <div style={{ fontSize: 14, fontWeight: 600, color: past ? 'var(--data-negative)' : 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
                             {formatDate(deadlineDate)}
                           </div>
                           {daysFromNow !== null && (

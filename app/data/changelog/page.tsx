@@ -180,7 +180,7 @@ export default async function ChangelogPage() {
             </h1>
 
             <p style={{
-              fontSize: 'clamp(15px, 1.5vw, 17px)',
+              fontSize: '14px',
               color: 'rgba(255,255,255,0.7)',
               fontFamily: 'var(--font-ui)',
               lineHeight: 1.6,
@@ -243,7 +243,7 @@ export default async function ChangelogPage() {
 
                         {/* Description */}
                         <p style={{
-                          fontSize: 15,
+                          fontSize: 14,
                           color: 'var(--color-text-secondary)',
                           fontFamily: 'var(--font-ui)',
                           lineHeight: 1.7,
@@ -350,7 +350,7 @@ export default async function ChangelogPage() {
               </h2>
 
               <p style={{
-                fontSize: 15,
+                fontSize: 14,
                 color: 'rgba(255,255,255,0.9)',
                 fontFamily: 'var(--font-ui)',
                 lineHeight: 1.6,

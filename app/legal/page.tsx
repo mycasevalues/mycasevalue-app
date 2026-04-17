@@ -98,7 +98,7 @@ export default function LegalDataPage() {
           Research Hub
         </div>
         <h1 style={{
-          fontFamily: 'var(--font-ui)',
+          fontFamily: 'var(--font-legal)',
           fontSize: 40,
           fontWeight: 700,
           color: 'var(--color-text-primary)',
@@ -159,10 +159,10 @@ export default function LegalDataPage() {
 
       {/* -- How It Enhances Your Research -- */}
       <div style={{ marginBottom: 28 }}>
-        <h2 style={{ fontSize: 26, fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: 8, textAlign: 'center' }}>
+        <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, textAlign: 'center' }}>
           Case Outcomes + Legal Context = Competitive Edge
         </h2>
-        <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', textAlign: 'center', maxWidth: 560, margin: '0 auto 28px', lineHeight: 1.6 }}>
+        <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', textAlign: 'center', maxWidth: 560, margin: '0 auto 28px', lineHeight: 1.6 }}>
           Our unique integration connects what actually happened in federal courts with the legal precedents, regulations, and citation patterns that determined the outcomes.
         </p>
         <div style={{
@@ -181,7 +181,7 @@ export default function LegalDataPage() {
               }}
             >
               <div style={{ fontSize: 28, marginBottom: 12 }}>{uc.icon}</div>
-              <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 6 }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 6 }}>
                 {uc.audience}
               </div>
               <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
@@ -216,7 +216,7 @@ export default function LegalDataPage() {
               }}
             >
               <div style={{
-                fontSize: 15,
+                fontSize: 14,
                 fontWeight: 600,
                 color: src.color,
                 marginBottom: 4,
@@ -277,17 +277,17 @@ export default function LegalDataPage() {
         <h3 style={{ fontSize: 22, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 8px' }}>
           Start Researching
         </h3>
-        <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.85)', margin: '0 0 20px', maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
+        <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', margin: '0 0 20px', maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
           Search legal documents, explore citation networks, or check the data pipeline. Free during beta.
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/legal/search" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 15, fontWeight: 600, textDecoration: 'none', background: 'var(--color-surface-0)', color: 'var(--accent-primary)' }}>
+          <Link href="/legal/search" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 14, fontWeight: 600, textDecoration: 'none', background: 'var(--color-surface-0)', color: 'var(--accent-primary)' }}>
             Search Documents
           </Link>
-          <Link href="/legal/citations" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 15, fontWeight: 600, textDecoration: 'none', background: 'transparent', color: 'var(--color-surface-0)', border: '2px solid rgba(255,255,255,0.6)' }}>
+          <Link href="/legal/citations" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 14, fontWeight: 600, textDecoration: 'none', background: 'transparent', color: 'var(--color-surface-0)', border: '2px solid rgba(255,255,255,0.6)' }}>
             Citation Explorer
           </Link>
-          <Link href="/legal/dashboard" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 15, fontWeight: 500, textDecoration: 'none', background: 'transparent', color: 'var(--color-surface-0)', border: '2px solid rgba(255,255,255,0.6)' }}>
+          <Link href="/legal/dashboard" style={{ padding: '12px 28px', borderRadius: 20, fontSize: 14, fontWeight: 500, textDecoration: 'none', background: 'transparent', color: 'var(--color-surface-0)', border: '2px solid rgba(255,255,255,0.6)' }}>
             View Dashboard
           </Link>
         </div>

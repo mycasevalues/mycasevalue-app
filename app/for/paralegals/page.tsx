@@ -53,7 +53,7 @@ export default function ParalegalsPage() {
 
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <h1 style={{ fontSize: '2.25rem', fontWeight: 600, lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '1.5rem' }}>
+        <h1 style={{ fontSize: '2.25rem', fontWeight: 700, lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '1.5rem' }}>
           Cut Research Time in Half. Replace Manual Digging with Data-Backed Answers.
         </h1>
 

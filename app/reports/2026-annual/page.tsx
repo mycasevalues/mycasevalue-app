@@ -31,16 +31,16 @@ export default function AnnualReportPage() {
             FEDERAL COURT DATA REPORT
           </div>
           <h1 style={{
-            fontSize: '26px',
+            fontSize: '28px',
             fontWeight: 700,
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             marginBottom: '16px',
             lineHeight: 1.2,
           }}>
             2026 Federal Court Statistics Annual Report
           </h1>
           <p style={{
-            fontSize: '18px',
+            fontSize: '14px',
             color: 'var(--chrome-text-muted)',
             lineHeight: 1.6,
             maxWidth: '600px',

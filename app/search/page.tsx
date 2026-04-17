@@ -351,10 +351,10 @@ function SearchPageInner() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Federal Case Search
           </div>
-          <h1 className="search-header" style={{ fontFamily: 'var(--font-ui)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--card)', margin: '0 0 12px' }}>
+          <h1 className="search-header" style={{ fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--card)', margin: '0 0 12px' }}>
             Search Federal Court Outcomes
           </h1>
-          <p className="search-header" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+          <p className="search-header" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
             Real outcome data across 84 federal case types, 94 districts, and 5.1M+ cases.
           </p>
         </div>
@@ -763,7 +763,7 @@ function SearchPageInner() {
         <>
           {/* Results for... header */}
           <div style={{ marginBottom: '16px' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0', fontFamily: 'var(--font-ui)' }}>
               Results for &ldquo;{query}&rdquo;
             </h2>
 
@@ -876,7 +876,7 @@ function SearchPageInner() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
-            <h3 style={{ fontSize: '15px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0', fontFamily: 'var(--font-ui)', flex: '1 1 auto' }}>{r.label}</h3>
+            <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0', fontFamily: 'var(--font-ui)', flex: '1 1 auto' }}>{r.label}</h3>
             <span style={{
               fontSize: '12px',
               fontWeight: '600',

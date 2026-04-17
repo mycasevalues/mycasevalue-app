@@ -124,7 +124,7 @@ export default function TranslatePage() {
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               TRANSLATE
             </div>
-            <h1 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-2px', fontFamily: 'var(--font-ui)' }}>
+            <h1 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: 'var(--color-surface-0)', letterSpacing: '-2px', fontFamily: 'var(--font-legal)' }}>
               Legal Jargon Translator
             </h1>
             <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)' }}>

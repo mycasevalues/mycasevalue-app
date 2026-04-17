@@ -90,7 +90,7 @@ export default function ResultsPage() {
             Case Results
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -124,7 +124,7 @@ export default function ResultsPage() {
           textAlign: 'center'
         }}>
           <h2 style={{
-            fontSize: '18px',
+            fontSize: '20px',
             fontWeight: '600',
             color: 'var(--color-text-primary)',
             margin: '0 0 12px 0',

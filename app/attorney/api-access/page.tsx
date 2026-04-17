@@ -351,7 +351,7 @@ export default function ApiAccessPage() {
         <section style={{ marginBottom: '32px' }}>
           <h2
             style={{
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 16px',
@@ -432,7 +432,7 @@ export default function ApiAccessPage() {
         <section style={{ marginBottom: '32px' }}>
           <h2
             style={{
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 16px',
@@ -471,7 +471,7 @@ export default function ApiAccessPage() {
         <section style={{ marginBottom: '32px' }}>
           <h2
             style={{
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 16px',
@@ -710,7 +710,7 @@ export default function ApiAccessPage() {
         <section style={{ marginBottom: '32px' }}>
           <h2
             style={{
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 16px',
@@ -753,7 +753,7 @@ export default function ApiAccessPage() {
         <section style={{ marginBottom: '32px' }}>
           <h2
             style={{
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 16px',
@@ -804,7 +804,7 @@ export default function ApiAccessPage() {
         <section style={{ marginBottom: '32px' }}>
           <h2
             style={{
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 16px',

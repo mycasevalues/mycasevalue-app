@@ -311,7 +311,7 @@ Platform: MyCaseValue Legal Research
           </h1>
 
           <p style={{
-            fontSize: '15px',
+            fontSize: '14px',
             color: 'var(--text3, #78766C)',
             margin: '0',
             lineHeight: '1.6',
@@ -353,7 +353,7 @@ Platform: MyCaseValue Legal Research
               maxWidth: '480px',
               height: '48px',
               padding: '12px 16px',
-              fontSize: '15px',
+              fontSize: '14px',
               fontFamily: 'var(--font-ui)',
               border: '1px solid var(--bdr)',
               borderRadius: '2px',

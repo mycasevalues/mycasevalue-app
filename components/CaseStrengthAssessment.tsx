@@ -324,8 +324,8 @@ function CircularGauge({ score }: { score: number }) {
         >
           <div
             style={{
-              fontSize: '26px',
-              fontWeight: 'bold',
+              fontSize: '28px',
+              fontWeight: 700,
               color: 'var(--color-text-primary)',
               lineHeight: 1,
             }}
@@ -423,8 +423,8 @@ export default function CaseStrengthAssessment() {
         <div style={{ textAlign: 'center', marginBottom: '24px' }}>
           <h1
             style={{
-              fontSize: '24px',
-              fontWeight: 'bold',
+              fontSize: '28px',
+              fontWeight: 700,
               color: 'var(--color-text-primary)',
               marginBottom: '12px',
               margin: '0 0 12px 0',
@@ -490,7 +490,7 @@ export default function CaseStrengthAssessment() {
                 </div>
                 <h3
                   style={{
-                    fontSize: '18px',
+                    fontSize: '16px',
                     fontWeight: '600',
                     color: 'var(--color-text-primary)',
                     margin: '0 0 8px 0',
@@ -565,7 +565,7 @@ export default function CaseStrengthAssessment() {
           <div style={{ marginBottom: '24px' }}>
             <p
               style={{
-                fontSize: '18px',
+                fontSize: '14px',
                 fontWeight: '500',
                 color: 'var(--color-text-primary)',
                 marginBottom: '24px',
@@ -780,8 +780,8 @@ export default function CaseStrengthAssessment() {
           <div style={{ textAlign: 'center', marginBottom: '32px' }}>
             <h2
               style={{
-                fontSize: '24px',
-                fontWeight: 'bold',
+                fontSize: '20px',
+                fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 marginBottom: '32px',
                 margin: '0 0 32px 0',
@@ -841,7 +841,7 @@ export default function CaseStrengthAssessment() {
           <div style={{ marginBottom: '24px' }}>
             <h3
               style={{
-                fontSize: '18px',
+                fontSize: '16px',
                 fontWeight: '600',
                 color: 'var(--color-text-primary)',
                 marginBottom: '16px',
@@ -921,7 +921,7 @@ export default function CaseStrengthAssessment() {
             <p
               style={{
                 fontSize: '24px',
-                fontWeight: 'bold',
+                fontWeight: 700,
                 color: 'var(--accent-primary)',
                 margin: '0',
               }}

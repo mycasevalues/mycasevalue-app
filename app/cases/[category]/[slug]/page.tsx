@@ -161,7 +161,7 @@ export default async function CaseTypeDetailPage({
         style={{ background: 'var(--color-surface-1)' }}
       >
         <div style={{ textAlign: 'center', color: 'var(--color-text-primary)' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px', fontFamily: 'var(--font-legal)', color: 'var(--color-text-primary)' }}>
             Case type not found
           </h1>
           <p style={{ color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
@@ -289,7 +289,7 @@ export default async function CaseTypeDetailPage({
                   fontSize: '20px',
                   fontWeight: 700,
                   margin: '0',
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-legal)',
                   color: 'var(--color-text-inverse)',
                 }}
               >
@@ -396,7 +396,7 @@ export default async function CaseTypeDetailPage({
             </h3>
             <p
               style={{
-                fontSize: '15px',
+                fontSize: '14px',
                 color: 'var(--color-text-secondary)',
                 margin: '0',
                 fontFamily: 'var(--font-ui)',

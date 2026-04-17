@@ -182,7 +182,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
         border: '1px solid var(--border-default)',
       }}
     >
-      <h3 style={{ margin: '0 0 16px 0', color: 'var(--color-text-primary)', fontSize: '18px' }}>
+      <h3 style={{ margin: '0 0 16px 0', color: 'var(--color-text-primary)', fontSize: '16px' }}>
         Share Your Referral Link
       </h3>
 

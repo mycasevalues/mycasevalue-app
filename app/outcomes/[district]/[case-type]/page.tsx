@@ -99,10 +99,10 @@ export default async function OutcomesPage({
       <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--color-surface-1)', color: 'var(--color-text-primary)' }}>
         <div className="text-center">
           <h1 style={{
-            fontSize: '32px',
-            fontWeight: 600,
+            fontSize: '28px',
+            fontWeight: 700,
             marginBottom: '16px',
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             color: 'var(--color-text-primary)',
           }}>Case outcomes not found</h1>
           <p style={{
@@ -295,9 +295,9 @@ export default async function OutcomesPage({
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '8px', flexWrap: 'wrap' }}>
             <h1 style={{
               fontSize: '28px',
-              fontWeight: 600,
+              fontWeight: 700,
               margin: 0,
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
               color: 'var(--color-text-inverse)',
               letterSpacing: '-0.5px',
               flex: 1,
@@ -365,10 +365,10 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontWeight: 600,
-                fontSize: '36px',
+                fontSize: '28px',
                 marginBottom: '8px',
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-mono)',
               }}>
                 {isNaN(districtWinRate ?? 0) ? '—' : `${Math.round(districtWinRate ?? 0)}%`}
               </div>
@@ -387,10 +387,10 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontWeight: 600,
-                fontSize: '36px',
+                fontSize: '28px',
                 marginBottom: '8px',
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-mono)',
               }}>
                 {isNaN(districtDuration ?? 0) ? '—' : `${districtDuration} mo`}
               </div>
@@ -409,10 +409,10 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontWeight: 600,
-                fontSize: '36px',
+                fontSize: '28px',
                 marginBottom: '8px',
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-mono)',
               }}>
                 {isNaN(districtSettleRate ?? 0) ? '—' : `${Math.round(districtSettleRate ?? 0)}%`}
               </div>
@@ -431,10 +431,10 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontWeight: 600,
-                fontSize: '36px',
+                fontSize: '28px',
                 marginBottom: '8px',
                 color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-mono)',
               }}>
                 {isNaN(totalOutcomes ?? 0) ? '—' : `${(totalOutcomes ?? 0).toLocaleString()}+`}
               </div>
@@ -830,7 +830,7 @@ export default async function OutcomesPage({
                   Case Type
                 </div>
                 <div style={{
-                  fontSize: '15px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   color: 'var(--gold)',
                   fontFamily: 'var(--font-ui)',

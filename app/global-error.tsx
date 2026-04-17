@@ -27,7 +27,7 @@ export default function GlobalError({
             margin: 0;
             padding: 0;
             background: var(--color-surface-1);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+            font-family: 'Source Sans 3', 'Inter', system-ui, sans-serif;
           }
         `}</style>
       </head>
@@ -75,7 +75,7 @@ export default function GlobalError({
 
             <h2
               style={{
-                fontSize: '24px',
+                fontSize: '20px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 margin: '0 0 8px',
@@ -87,7 +87,7 @@ export default function GlobalError({
 
             <p
               style={{
-                fontSize: '15px',
+                fontSize: '14px',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 1.6,
                 margin: '0 0 12px',

@@ -943,7 +943,7 @@ export default function FoldersPage() {
             maxWidth: '400px',
             boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2)',
           }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, margin: '0 0 16px', fontFamily: 'var(--font-ui)', color: 'var(--text-primary)' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: 600, margin: '0 0 16px', fontFamily: 'var(--font-ui)', color: 'var(--text-primary)' }}>
               Create New Folder
             </h3>
             <input
@@ -1025,7 +1025,7 @@ export default function FoldersPage() {
             maxWidth: '500px',
             boxShadow: '0 10px 40px rgba(0, 0, 0, 0.2)',
           }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, margin: '0 0 16px', fontFamily: 'var(--font-ui)', color: 'var(--text-primary)' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: 600, margin: '0 0 16px', fontFamily: 'var(--font-ui)', color: 'var(--text-primary)' }}>
               Quick Save to {currentFolder?.name}
             </h3>
             <div style={{ marginBottom: '16px' }}>

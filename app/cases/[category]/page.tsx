@@ -319,9 +319,9 @@ async function CategoryPage({
     console.error('[cases/[category]] Error loading category data:', err);
     return (
       <div style={{ padding: '40px 24px', textAlign: 'center', minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-        <h1 style={{ fontSize: 24, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 16 }}>Data Loading Error</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: 16 }}>Data Loading Error</h1>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: 24 }}>Data for this case type is being compiled. Check back soon.</p>
-        <a href="/cases" style={{ display: 'inline-block', padding: '8px 24px', background: 'var(--gold)', color: 'var(--color-surface-0)', border: '1px solid var(--gold)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 4, textDecoration: 'none', fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', fontFamily: 'var(--font-ui)', margin: '0 auto' }}>Browse all categories</a>
+        <a href="/cases" style={{ display: 'inline-block', padding: '8px 24px', background: 'var(--gold)', color: 'var(--color-surface-0)', border: '1px solid var(--gold)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 4, textDecoration: 'none', fontWeight: 700, fontSize: 13, letterSpacing: '-0.005em', fontFamily: 'var(--font-ui)', margin: '0 auto' }}>Browse all categories</a>
       </div>
     );
   }
@@ -455,7 +455,7 @@ async function CategoryPage({
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4px' }}>
             <h1 style={{
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
               fontSize: '20px',
               fontWeight: 700,
               letterSpacing: '-0.025em',
@@ -1062,7 +1062,7 @@ async function CategoryPage({
                     }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                         <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>{circuit}</span>
-                        <span style={{ fontSize: 15, fontWeight: 600, color, fontFamily: 'var(--font-mono)' }}>{wr}%</span>
+                        <span style={{ fontSize: 14, fontWeight: 600, color, fontFamily: 'var(--font-mono)' }}>{wr}%</span>
                       </div>
                       <div style={{ height: 6, background: 'var(--bdr)', borderRadius: 4, overflow: 'hidden', marginBottom: 6 }}>
                         <div style={{ width: `${Math.min(wr, 100)}%`, height: '100%', background: color, borderRadius: 4 }} />
@@ -1454,7 +1454,7 @@ async function CategoryPage({
               }}
             >
               <div style={{
-                fontSize: '18px',
+                fontSize: '16px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 marginBottom: '8px',
@@ -1499,7 +1499,7 @@ async function CategoryPage({
               }}
             >
               <div style={{
-                fontSize: '18px',
+                fontSize: '16px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 marginBottom: '8px',
@@ -1544,7 +1544,7 @@ async function CategoryPage({
               }}
             >
               <div style={{
-                fontSize: '18px',
+                fontSize: '16px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 marginBottom: '8px',
@@ -1589,7 +1589,7 @@ async function CategoryPage({
               }}
             >
               <div style={{
-                fontSize: '18px',
+                fontSize: '16px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 marginBottom: '8px',
@@ -1630,7 +1630,7 @@ async function CategoryPage({
       }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2 style={{
-            fontSize: '32px',
+            fontSize: '20px',
             fontWeight: 600,
             margin: '0 0 16px 0',
             fontFamily: 'var(--font-ui)',
@@ -1639,7 +1639,7 @@ async function CategoryPage({
             Research Your Case
           </h2>
           <p style={{
-            fontSize: '18px',
+            fontSize: '16px',
             margin: '0 0 32px 0',
             fontFamily: 'var(--font-ui)',
             opacity: 0.95,

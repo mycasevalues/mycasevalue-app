@@ -182,7 +182,7 @@ export default function ApiDocsPage() {
               API Documentation
             </div>
             <h1 style={{
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
               fontSize: '28px',
               fontWeight: 700,
               color: 'var(--card)',
@@ -193,7 +193,7 @@ export default function ApiDocsPage() {
               MyCaseValue API reference
             </h1>
             <p style={{
-              fontSize: 'clamp(15px, 1.5vw, 17px)',
+              fontSize: '14px',
               color: 'rgba(255,255,255,0.7)',
               fontFamily: 'var(--font-ui)',
               lineHeight: 1.6,
@@ -730,7 +730,7 @@ r = requests.get(
                 padding: '16px 32px',
                 backgroundColor: 'var(--color-surface-0)',
                 color: 'var(--accent-primary)',
-                fontSize: 15,
+                fontSize: 14,
                 fontWeight: 700,
                 borderRadius: '4px',
                 textDecoration: 'none',

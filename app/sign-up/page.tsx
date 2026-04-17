@@ -149,7 +149,7 @@ export default function SignUpPage() {
           <p
             style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: '15px',
+              fontSize: '14px',
               color: 'var(--color-text-secondary)',
               lineHeight: 1.6,
               margin: '0 0 12px 0',
@@ -166,7 +166,7 @@ export default function SignUpPage() {
               color: 'var(--color-text-inverse)',
               borderRadius: '2px',
               fontFamily: 'var(--font-ui)',
-              fontSize: '15px',
+              fontSize: '14px',
               fontWeight: 600,
               textDecoration: 'none',
             }}
@@ -307,9 +307,9 @@ export default function SignUpPage() {
             {/* Heading */}
             <h1
               style={{
-                fontFamily: 'var(--font-ui)',
-                fontSize: '24px',
-                fontWeight: 600,
+                fontFamily: 'var(--font-legal)',
+                fontSize: '28px',
+                fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 margin: '0 0 12px 0',
                 lineHeight: 1.2,
@@ -654,7 +654,7 @@ export default function SignUpPage() {
                   border: 'none',
                   borderRadius: '2px',
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '15px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: loading ? 'not-allowed' : 'pointer',
                   opacity: loading ? 0.7 : 1,
@@ -743,7 +743,7 @@ export default function SignUpPage() {
                 <h3
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '15px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 8px 0',
@@ -786,7 +786,7 @@ export default function SignUpPage() {
                 <h3
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '15px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 8px 0',
@@ -829,7 +829,7 @@ export default function SignUpPage() {
                 <h3
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '15px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 8px 0',
@@ -872,7 +872,7 @@ export default function SignUpPage() {
                 <h3
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '15px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 8px 0',
@@ -916,7 +916,7 @@ export default function SignUpPage() {
                 <h3
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '15px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 8px 0',
@@ -959,7 +959,7 @@ export default function SignUpPage() {
                 <h3
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '15px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 8px 0',

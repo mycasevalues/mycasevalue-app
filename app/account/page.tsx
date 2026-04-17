@@ -200,7 +200,7 @@ export default function AccountPage() {
                 Account
               </span>
             </div>
-            <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
+            <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
               Account Settings
             </h1>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
@@ -234,7 +234,7 @@ export default function AccountPage() {
               Account
             </span>
           </div>
-          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
             Account Settings
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
@@ -248,7 +248,7 @@ export default function AccountPage() {
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Profile Card */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Profile Information
             </h2>
 
@@ -300,7 +300,7 @@ export default function AccountPage() {
 
           {/* Password Card */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Change Password
             </h2>
 
@@ -351,7 +351,7 @@ export default function AccountPage() {
 
           {/* Subscription Card */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Subscription Plan
             </h2>
 
@@ -387,7 +387,7 @@ export default function AccountPage() {
 
           {/* API Key Management */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               API Keys
             </h2>
             <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0', lineHeight: 1.5 }}>
@@ -464,7 +464,7 @@ export default function AccountPage() {
 
           {/* Quick Links */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
               Quick Links
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
@@ -510,7 +510,7 @@ export default function AccountPage() {
             `}</style>
 
             <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '2px solid var(--accent-primary)' }}>
-              <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>
+              <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>
                 Danger Zone
               </h2>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.5 }}>

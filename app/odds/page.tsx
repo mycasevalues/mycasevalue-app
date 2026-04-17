@@ -253,7 +253,7 @@ export default function OddsPage() {
             fontSize: '28px',
             fontWeight: 700,
             margin: '0 0 10px',
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             lineHeight: 1.1,
             letterSpacing: '-0.025em',
           }}>
@@ -261,7 +261,7 @@ export default function OddsPage() {
           </h1>
           <p style={{
             color: 'rgba(255,255,255,0.6)',
-            fontSize: 15,
+            fontSize: 14,
             margin: 0,
             maxWidth: 640,
             lineHeight: 1.65,
@@ -424,7 +424,7 @@ export default function OddsPage() {
                   {wrColors?.label || ''}
                 </div>
                 <div style={{
-                  fontSize: 'clamp(56px, 12vw, 80px)',
+                  fontSize: '56px',
                   fontWeight: 600,
                   color: winColor,
                   fontFamily: 'var(--font-ui)',
@@ -700,7 +700,7 @@ export default function OddsPage() {
               {/* Narrative */}
               <div className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
                 <p style={{
-                  fontSize: 15,
+                  fontSize: 14,
                   color: 'var(--color-text-primary)',
                   lineHeight: 1.7,
                   margin: '0 0 12px',

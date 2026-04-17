@@ -172,7 +172,7 @@ export default function TermsPage() {
             paddingBottom: '6px',
             borderRadius: '9999px',
             fontSize: '11px',
-            fontWeight: 'bold',
+            fontWeight: 700,
             letterSpacing: '1.5px',
             textTransform: 'uppercase',
             marginBottom: '16px',
@@ -185,12 +185,12 @@ export default function TermsPage() {
             TERMS
           </div>
           <h1 style={{
-            fontSize: '32px',
-            fontWeight: '600',
+            fontSize: '28px',
+            fontWeight: 700,
             marginBottom: '16px',
             color: 'white',
-            letterSpacing: '-1.5px',
-            fontFamily: 'var(--font-ui)'
+            letterSpacing: '-0.02em',
+            fontFamily: 'var(--font-legal)'
           }}>
             Terms of Service
           </h1>
@@ -261,7 +261,7 @@ export default function TermsPage() {
             color: 'var(--color-text-primary)',
             marginBottom: '32px'
           }}>
-            <p style={{ margin: 0, fontWeight: '600', color: 'var(--accent-primary)', fontSize: '15px', lineHeight: 1.7 }}>
+            <p style={{ margin: 0, fontWeight: '600', color: 'var(--accent-primary)', fontSize: '14px', lineHeight: 1.7 }}>
               IMPORTANT: By using MyCaseValue, you agree that this Service provides informational data only and is NOT legal advice.
               MyCaseValue does not create an attorney-client relationship. Always consult a licensed attorney for legal matters.
             </p>
@@ -572,13 +572,13 @@ export default function TermsPage() {
               color: 'var(--color-text-primary)',
               border: '1px solid var(--border-default)'
             }}>
-              <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>General Support:</strong> <a href="mailto:support@mycasevalues.com" className="legal-contact-email">support@mycasevalues.com</a>
               </p>
-              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: '12px 0 0 0', fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Legal Inquiries:</strong> <a href="mailto:legal@mycasevalues.com" className="legal-contact-email">legal@mycasevalues.com</a>
               </p>
-              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: '12px 0 0 0', fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Website:</strong> <a href="https://mycasevalues.com" className="legal-contact-email">https://mycasevalues.com</a>
               </p>
             </div>
@@ -604,10 +604,10 @@ export default function TermsPage() {
               color: 'var(--color-text-primary)',
               border: '1px solid var(--border-default)'
             }}>
-              <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Privacy Policy:</strong> Review our <a href="/privacy" className="legal-contact-email">Privacy Policy</a> to understand how we collect, use, and protect your data.
               </p>
-              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: '12px 0 0 0', fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Disclaimer:</strong> Read our <a href="/disclaimer" className="legal-contact-email">Disclaimer</a> for important information about the limitations and proper use of MyCaseValue data.
               </p>
             </div>

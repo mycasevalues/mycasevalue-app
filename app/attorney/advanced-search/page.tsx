@@ -383,12 +383,12 @@ export default function AdvancedSearchPage() {
         .search-input {
           width: 100%;
           padding: 14px 16px;
-          fontSize: 15px;
+          font-size: 14px;
           border: 1px solid var(--bdr);
           border-radius: 2px;
           background: var(--card);
           color: var(--text-primary);
-          fontFamily: var(--font-ui);
+          font-family: var(--font-ui);
           box-sizing: border-box;
           transition: border-color 150ms ease, box-shadow 150ms ease;
         }
@@ -612,7 +612,7 @@ export default function AdvancedSearchPage() {
             Advanced Legal Research
           </h1>
           <p style={{
-            fontSize: 15, color: 'var(--text3)', margin: 0, lineHeight: 1.6, maxWidth: 640,
+            fontSize: 14, color: 'var(--text3)', margin: 0, lineHeight: 1.6, maxWidth: 640,
             fontFamily: 'var(--font-ui)',
           }}>
             Search millions of cases, statutes, and legal documents using natural language or Boolean operators.
@@ -945,7 +945,7 @@ export default function AdvancedSearchPage() {
           <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 12, fontFamily: 'var(--font-ui)' }}>
             Start Your Research
           </h2>
-          <p style={{ fontSize: 15, color: 'var(--text2)', marginBottom: 32, fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: 14, color: 'var(--text2)', marginBottom: 32, fontFamily: 'var(--font-ui)' }}>
             Enter a search query above to find relevant cases, statutes, and legal documents.
           </p>
 

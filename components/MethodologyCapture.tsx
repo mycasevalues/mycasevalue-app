@@ -543,7 +543,7 @@ export default function MethodologyCapture() {
         </h2>
         <p
           style={{
-            fontSize: 15,
+            fontSize: 14,
             color: 'var(--color-text-secondary)',
             fontFamily: 'var(--font-ui)',
             lineHeight: 1.6,

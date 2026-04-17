@@ -141,7 +141,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                 <div style={{ flex: 1 }}>
-                  <h4 style={{ fontSize: '15px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px 0', fontFamily: 'var(--font-legal)' }}>
+                  <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px 0', fontFamily: 'var(--font-legal)' }}>
                     {judge.full_name}
                   </h4>
                   {judge.district_id && (

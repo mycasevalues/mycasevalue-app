@@ -289,7 +289,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
               marginBottom: 16,
               color: 'var(--color-text-primary)',
               letterSpacing: '-1.5px',
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
               lineHeight: 1.2,
             }}
           >
@@ -297,7 +297,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
           </h1>
           <p
             style={{
-              fontSize: 'clamp(15px, 2vw, 17px)',
+              fontSize: '14px',
               lineHeight: 1.6,
               maxWidth: 640,
               color: 'var(--color-text-secondary)',

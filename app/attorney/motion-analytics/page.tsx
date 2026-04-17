@@ -128,7 +128,7 @@ export default function MotionAnalyticsPage() {
               </svg>
             </div>
             <div>
-              <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+              <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
                 Win More Motions with Circuit-Specific Data
               </h1>
               <p style={{ fontSize: '14px', color: 'var(--text-tertiary)', margin: '4px 0 0 0' }}>
@@ -267,7 +267,7 @@ export default function MotionAnalyticsPage() {
                   <div style={{ marginBottom: '16px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                       <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const }}>Grant Rate</span>
-                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 600, color: motion.successColor === 'green' ? 'var(--data-positive)' : motion.successColor === 'amber' ? 'var(--wrn-txt)' : 'var(--accent-primary)' }}>
+                      <span className="font-mono" style={{ fontSize: '16px', fontWeight: 600, color: motion.successColor === 'green' ? 'var(--data-positive)' : motion.successColor === 'amber' ? 'var(--wrn-txt)' : 'var(--accent-primary)' }}>
                         {motion.grantRate}%
                       </span>
                     </div>
@@ -423,7 +423,7 @@ export default function MotionAnalyticsPage() {
             <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Analyze Motion Success Rates
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
               Select a case type to view federal motion grant rates, partial grant rates, and average ruling times. Compare multiple case types side by side to inform motion strategy.
             </p>
           </div>

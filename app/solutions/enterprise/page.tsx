@@ -186,7 +186,7 @@ export default function EnterprisePage() {
           </h1>
           <p style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: 15,
+            fontSize: 14,
             color: 'rgba(255,255,255,0.6)',
             maxWidth: 640,
             margin: '0 auto 32px',

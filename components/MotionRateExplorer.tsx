@@ -116,7 +116,7 @@ export default function MotionRateExplorer() {
   };
 
   const titleStyle: React.CSSProperties = {
-    fontSize: '32px',
+    fontSize: '28px',
     fontWeight: 700,
     color: 'var(--color-text-primary)',
     marginBottom: '8px',

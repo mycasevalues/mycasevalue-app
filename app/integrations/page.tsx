@@ -226,7 +226,7 @@ export default function IntegrationsPage() {
           </div>
 
           <h1 style={{
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -635,7 +635,7 @@ export default function IntegrationsPage() {
         }}>
           <h2 style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '24px',
+            fontSize: '20px',
             fontWeight: 600,
             color: 'var(--color-text-inverse)',
             margin: '0 0 12px 0',
@@ -643,7 +643,7 @@ export default function IntegrationsPage() {
             Quick Start with Our API
           </h2>
           <p style={{
-            fontSize: '15px',
+            fontSize: '14px',
             color: 'rgba(255,255,255,0.7)',
             margin: '0 0 24px 0',
             lineHeight: 1.6,
@@ -784,7 +784,7 @@ export default function IntegrationsPage() {
                 </svg>
                 <h3 style={{
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '18px',
+                  fontSize: '16px',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
                   margin: '0 0 12px 0',
@@ -840,7 +840,7 @@ export default function IntegrationsPage() {
                 </svg>
                 <h3 style={{
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '18px',
+                  fontSize: '16px',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
                   margin: '0 0 12px 0',
@@ -880,7 +880,7 @@ export default function IntegrationsPage() {
         }}>
           <h2 style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '24px',
+            fontSize: '20px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 12px 0',
@@ -888,7 +888,7 @@ export default function IntegrationsPage() {
             Need a Custom Integration?
           </h2>
           <p style={{
-            fontSize: '15px',
+            fontSize: '14px',
             color: 'var(--color-text-secondary)',
             margin: '0 0 24px 0',
             lineHeight: 1.6,

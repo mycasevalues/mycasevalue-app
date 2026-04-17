@@ -151,10 +151,10 @@ export default function NOSIndexPage() {
             <h1
               style={{
                 fontSize: '28px',
-                fontWeight: 'bold',
+                fontWeight: 700,
                 color: 'var(--color-surface-0)',
                 margin: 0,
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-legal)',
               }}
             >
               Federal Case Types Directory
@@ -227,8 +227,8 @@ export default function NOSIndexPage() {
             </div>
             <h2
               style={{
-                fontSize: '24px',
-                fontWeight: 'bold',
+                fontSize: '20px',
+                fontWeight: 700,
                 marginBottom: '24px',
                 color: 'var(--color-text-primary)',
                 paddingLeft: '16px',
@@ -311,8 +311,8 @@ export default function NOSIndexPage() {
             </div>
             <h2
               style={{
-                fontSize: '24px',
-                fontWeight: 'bold',
+                fontSize: '20px',
+                fontWeight: 700,
                 marginBottom: '16px',
                 color: 'var(--color-text-primary)',
                 margin: '0 0 16px 0',

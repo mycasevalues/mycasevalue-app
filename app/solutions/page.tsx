@@ -107,7 +107,7 @@ export default function SolutionsPage() {
             style={{
               fontFamily: 'var(--font-legal)',
               fontSize: '28px',
-              fontWeight: 600,
+              fontWeight: 700,
               lineHeight: 1.1,
               marginBottom: '24px',
             }}

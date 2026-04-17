@@ -113,7 +113,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
         <section style={{ marginBottom: '32px' }}>
           <h2
             style={{
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 600,
               fontFamily: 'var(--font-ui)',
               color: 'var(--accent-primary)',
@@ -156,7 +156,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               >
                 <div
                   style={{
-                    fontSize: '15px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--accent-primary)',
                     marginBottom: '8px',
@@ -226,7 +226,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
             {/* Letter header */}
             <div
               style={{
-                fontSize: '18px',
+                fontSize: '14px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--accent-primary)',
@@ -266,7 +266,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                 >
                   <h3
                     style={{
-                      fontSize: '15px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       fontFamily: 'var(--font-ui)',
                       color: 'var(--color-text-primary)',

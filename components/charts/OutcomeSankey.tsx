@@ -121,7 +121,7 @@ export default function OutcomeSankey() {
       .attr('dy', '0.35em')
       .attr('text-anchor', (d: any) => d.id === 0 ? 'end' : 'start')
       .attr('font-size', '13px')
-      .attr('font-family', 'var(--font-ui), Inter, sans-serif')
+      .attr('font-family', 'var(--font-ui)')
       .attr('fill', 'var(--color-text-primary)')
       .text((d: any) => {
         if (d.id === 0) return d.name;

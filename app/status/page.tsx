@@ -118,7 +118,7 @@ export default function StatusPage() {
         <div style={{ marginBottom: '48px' }}>
           <h1
             style={{
-              fontSize: '32px',
+              fontSize: '28px',
               fontWeight: 700,
               margin: '0 0 24px 0',
               fontFamily: 'var(--font-heading)',
@@ -217,7 +217,7 @@ export default function StatusPage() {
         <div>
           <h2
             style={{
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 600,
               margin: '0 0 16px 0',
               fontFamily: 'var(--font-heading)',
@@ -335,7 +335,7 @@ export default function StatusPage() {
         <div style={{ marginTop: '48px' }}>
           <h2
             style={{
-              fontSize: '18px',
+              fontSize: '20px',
               fontWeight: 600,
               margin: '0 0 16px 0',
               fontFamily: 'var(--font-heading)',

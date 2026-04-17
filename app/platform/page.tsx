@@ -577,7 +577,7 @@ export default function PlatformPage() {
             </h1>
             <p style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: 'clamp(15px, 1.5vw, 17px)',
+              fontSize: '14px',
               color: 'rgba(255,255,255,0.7)',
               lineHeight: 1.6,
               maxWidth: 680,

@@ -243,7 +243,7 @@ export default function AdminPage() {
       <div style={{ marginLeft: '240px', flex: 1, padding: '32px', overflowY: 'auto' }}>
         {/* Header */}
         <header style={{ marginBottom: '32px' }}>
-          <h1 style={{ fontSize: 28, fontWeight: 'bold', margin: '0 0 8px 0', color: COLORS.black }}>
+          <h1 style={{ fontSize: 28, fontWeight: 700, margin: '0 0 8px 0', color: COLORS.black }}>
             {getSectionTitle(activeSection)}
           </h1>
           <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
@@ -277,7 +277,7 @@ export default function AdminPage() {
                   <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
                     {metric.label}
                   </p>
-                  <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
+                  <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
                     {metric.value}
                   </p>
                 </div>
@@ -295,7 +295,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 System Status
               </h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
@@ -338,7 +338,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 Recent Activity
               </h2>
               <div style={{ overflowX: 'auto' }}>
@@ -385,7 +385,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 Blog Editor
               </h2>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
@@ -463,7 +463,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 Changelog Editor
               </h2>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
@@ -556,7 +556,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 What's New Editor
               </h2>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
@@ -583,7 +583,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 Manual Refresh Triggers
               </h2>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
@@ -626,7 +626,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 Data Quality Check
               </h2>
               <div style={{ marginBottom: '16px', padding: '12px', backgroundColor: 'rgba(34,197,94,0.06)', borderRadius: '4px', border: '1px solid rgba(34,197,94,0.15)' }}>
@@ -660,7 +660,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 Last Refresh Times
               </h2>
               <div style={{ overflowX: 'auto' }}>
@@ -718,7 +718,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 Local Rules JSON Editor
               </h2>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
@@ -820,7 +820,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 User Management
               </h2>
 
@@ -923,7 +923,7 @@ export default function AdminPage() {
                 <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
                   Subscriber Count
                 </p>
-                <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
+                <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
                   24,847
                 </p>
               </div>
@@ -939,7 +939,7 @@ export default function AdminPage() {
                 <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
                   This Month
                 </p>
-                <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
+                <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
                   12
                 </p>
               </div>
@@ -956,7 +956,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 Recent Emails Sent
               </h2>
               <div style={{ overflowX: 'auto' }}>
@@ -997,7 +997,7 @@ export default function AdminPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
               }}
             >
-              <h2 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 16px 0', color: COLORS.black }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 16px 0', color: COLORS.black }}>
                 Send Test Email
               </h2>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>

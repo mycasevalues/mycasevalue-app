@@ -49,7 +49,7 @@ export default function InflationToggle() {
                 top: '0px',
                 color: 'var(--accent-primary)',
                 fontSize: '12px',
-                fontWeight: 'bold',
+                fontWeight: 700,
               }}>
                 ✓
               </span>

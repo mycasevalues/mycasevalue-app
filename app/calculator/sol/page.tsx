@@ -109,7 +109,7 @@ export default function SOLCalculatorPage() {
           <h1 style={{ color: 'var(--color-text-inverse)', fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
             Know When Your Federal Deadline Expires
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)', fontSize: '14px', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
             Federal filing deadlines across 84 NOS codes — with USC citations, tolling exceptions, and circuit-specific precedent.
           </p>
         </div>
@@ -183,7 +183,7 @@ export default function SOLCalculatorPage() {
                 <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
                   Federal Statute of Limitations
                 </div>
-                <div style={{ fontSize: 'clamp(48px, 10vw, 64px)', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-ui)', lineHeight: 1 }}>
+                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                   {formatPeriod(rule.years)}
                 </div>
                 <div style={{ marginTop: 12, display: 'inline-block', padding: '6px 14px', background: 'rgba(10,80,162,0.08)', borderRadius: 4, fontSize: 14, fontWeight: 600, color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>
@@ -205,7 +205,7 @@ export default function SOLCalculatorPage() {
                     {isExpired ? 'DEADLINE EXPIRED' : 'Days Remaining'}
                   </div>
                   <div style={{
-                    fontSize: 'clamp(40px, 8vw, 56px)', fontWeight: 600,
+                    fontSize: '28px', fontWeight: 700,
                     color: isExpired ? 'var(--data-negative)' : daysRemaining <= 90 ? 'var(--wrn-txt)' : 'var(--data-positive)',
                     fontFamily: 'var(--font-mono)', lineHeight: 1,
                   }}>

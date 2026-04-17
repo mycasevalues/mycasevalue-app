@@ -66,7 +66,7 @@ export default function ServerContent() {
             <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               In plain English
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
               What this data actually tells you
             </h2>
             <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
@@ -127,7 +127,7 @@ export default function ServerContent() {
                   style={{
                     flexShrink: 0,
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '18px',
+                    fontSize: '16px',
                     fontWeight: 600,
                     color: 'var(--accent-primary)',
                     background: 'rgba(10, 102, 194, 0.08)',
@@ -144,7 +144,7 @@ export default function ServerContent() {
                   <h3
                     style={{
                       fontFamily: 'var(--font-ui)',
-                      fontSize: '15px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
                       margin: '0 0 6px 0',
@@ -213,7 +213,7 @@ export default function ServerContent() {
               <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
                 Trusted Case Intelligence
               </p>
-              <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '16px', lineHeight: 1.3 }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '16px', lineHeight: 1.3 }}>
                 Built on the most authoritative federal court records
               </h2>
               <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.7, fontWeight: 300, marginBottom: '24px' }}>
@@ -261,7 +261,7 @@ export default function ServerContent() {
             <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               Case types
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
               84 Federal Case Types Covered
             </h2>
             <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
@@ -332,7 +332,7 @@ export default function ServerContent() {
             <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               What you get
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
               What You Get in Every Report
             </h2>
           </div>
@@ -420,7 +420,7 @@ export default function ServerContent() {
           <div style={{ marginBottom: '48px' }}>
             <h2
               style={{
-                fontSize: '32px',
+                fontSize: '20px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-ui)',
@@ -600,7 +600,7 @@ export default function ServerContent() {
             <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               Who is it for?
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
               Built for everyone in the legal process
             </h2>
             <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
@@ -640,7 +640,7 @@ export default function ServerContent() {
             <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               How we compare
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
               Built for everyone, not just law firms
             </h2>
             <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
@@ -713,7 +713,7 @@ export default function ServerContent() {
             <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               Pricing
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
               Simple, Transparent Pricing
             </h2>
             <p style={{ fontSize: '19px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
@@ -875,7 +875,7 @@ export default function ServerContent() {
             <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               FAQ
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
               Frequently Asked Questions
             </h2>
           </div>
@@ -887,7 +887,7 @@ export default function ServerContent() {
       {/* ── RELATED SOLUTIONS ──────────────────────────────── */}
       <section style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '24px', borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
             Related Solutions
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }} className="related-grid">
@@ -901,7 +901,7 @@ export default function ServerContent() {
                 display: 'block', padding: '24px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)',
                 borderRadius: '4px', textDecoration: 'none', transition: 'all 200ms',
               }} className="related-card">
-                <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>{item.title}</h3>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>{item.title}</h3>
                 <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
               </a>
             ))}
@@ -928,7 +928,7 @@ export default function ServerContent() {
           <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '16px', fontFamily: 'var(--font-ui)', textAlign: 'center' }}>
             Research Tools
           </p>
-          <h2 style={{ fontSize: '36px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '48px', textAlign: 'center', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '48px', textAlign: 'center', letterSpacing: '-0.01em' }}>
             Free Tools for Case Research
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24 }}>
@@ -951,7 +951,7 @@ export default function ServerContent() {
                 }}
               >
                 <div style={{ marginBottom: 8 }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg></div>
-                <h3 style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>
+                <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>
                   {tool.title}
                 </h3>
                 <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0, lineHeight: 1.5 }}>
@@ -967,7 +967,7 @@ export default function ServerContent() {
       <section style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '12px' }}>
               Trusted Data Sources
             </h2>
             <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
@@ -1007,7 +1007,7 @@ export default function ServerContent() {
       <section style={{ background: 'var(--color-text-primary)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
               Platform at a Glance
             </h2>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-ui)', margin: 0 }}>
@@ -1033,7 +1033,7 @@ export default function ServerContent() {
                 textAlign: 'center',
               }}>
                 <p style={{
-                  fontSize: '36px',
+                  fontSize: '28px',
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   fontFamily: 'var(--font-ui)',
@@ -1061,7 +1061,7 @@ export default function ServerContent() {
       <section style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
               How It Works
             </h2>
             <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
@@ -1100,7 +1100,7 @@ export default function ServerContent() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '18px',
+                  fontSize: '16px',
                   fontWeight: 600,
                   margin: '0 auto 16px',
                   fontFamily: 'var(--font-ui)',
@@ -1108,7 +1108,7 @@ export default function ServerContent() {
                   {item.step}
                 </div>
                 <h3 style={{
-                  fontSize: '15px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-ui)',
@@ -1135,7 +1135,7 @@ export default function ServerContent() {
       <section style={{ background: 'var(--color-surface-1)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px' }}>
               Most Common Federal Case Types
             </h2>
             <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
@@ -1168,7 +1168,7 @@ export default function ServerContent() {
                     }} className="featured-type-card">
                       <div style={{ marginBottom: '12px' }}>
                         <h3 style={{
-                          fontSize: '15px',
+                          fontSize: '14px',
                           fontWeight: 600,
                           color: 'var(--color-text-primary)',
                           fontFamily: 'var(--font-ui)',
@@ -1244,10 +1244,10 @@ export default function ServerContent() {
           <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
             Ready to Win Cases with Data
           </p>
-          <h2 style={{ fontSize: '48px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-ui)', marginBottom: '24px', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-ui)', marginBottom: '24px', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
             Research Federal Court Outcomes Instantly
           </h2>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', fontFamily: 'var(--font-ui)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, marginBottom: '48px', fontWeight: 300 }}>
+          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', fontFamily: 'var(--font-ui)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, marginBottom: '48px', fontWeight: 400 }}>
             Access 5.1M+ federal court cases, settlement ranges, judge analytics, and outcome data to make confident case decisions.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '24px' }}>

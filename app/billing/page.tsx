@@ -107,11 +107,11 @@ export default function BillingPage() {
             </span>
           </div>
 
-          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 12px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 12px 0' }}>
             Billing & Subscription
           </h1>
 
-          <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.75)', margin: 0 }}>
+          <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.75)', margin: 0 }}>
             Manage your subscription and billing information
           </p>
         </div>
@@ -166,7 +166,7 @@ export default function BillingPage() {
 
           {/* Plan Features */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Your Plan Includes
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px' }}>
@@ -189,7 +189,7 @@ export default function BillingPage() {
 
           {/* Payment Method (placeholder for future Stripe) */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               Payment Method
             </h2>
             <div style={{ backgroundColor: 'var(--color-surface-1)', borderRadius: '4px', padding: '24px', border: '2px dashed var(--border-default)', textAlign: 'center' }}>

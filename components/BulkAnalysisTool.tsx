@@ -349,7 +349,7 @@ export function BulkAnalysisTool() {
         <h2
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '18px',
+            fontSize: '20px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 8px',
@@ -927,7 +927,7 @@ export function BulkAnalysisTool() {
           </h2>
           <p
             style={{
-              fontSize: '15px',
+              fontSize: '14px',
               color: 'var(--color-text-secondary)',
               lineHeight: '1.6',
               maxWidth: '440px',

@@ -44,7 +44,7 @@ export function ToolPageLayout({
               <div className="flex items-center gap-3 mb-1">
                 <h1
                   className="text-xl sm:text-2xl font-semibold text-[var(--color-text-muted)]"
-                  style={{ fontFamily: 'var(--font-ui)' }}
+                  style={{ fontFamily: 'var(--font-legal)' }}
                 >
                   {title}
                 </h1>

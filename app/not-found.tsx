@@ -61,8 +61,8 @@ export default function NotFound() {
 
           <h1
             style={{
-              fontSize: '24px',
-              fontWeight: 600,
+              fontSize: '28px',
+              fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: '0 0 12px',
               letterSpacing: '-0.01em',
@@ -73,7 +73,7 @@ export default function NotFound() {
 
           <p
             style={{
-              fontSize: '15px',
+              fontSize: '14px',
               color: 'var(--color-text-secondary)',
               maxWidth: '460px',
               lineHeight: 1.6,

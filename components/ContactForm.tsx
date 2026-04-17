@@ -96,7 +96,7 @@ export default function ContactForm() {
         borderRadius: '4px', boxShadow: 'var(--shadow-xs)',
         display: 'flex', flexDirection: 'column', gap: '24px',
       }}>
-        <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '4px' }}>
+        <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '4px' }}>
           Send Us a Message
         </h2>
         {error && (

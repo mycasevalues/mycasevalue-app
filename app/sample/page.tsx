@@ -103,9 +103,9 @@ export default function SampleReportPage() {
           >
             <h1
               style={{
-                fontSize: '32px',
-                fontWeight: 600,
-                fontFamily: 'var(--font-ui)',
+                fontSize: '28px',
+                fontWeight: 700,
+                fontFamily: 'var(--font-legal)',
                 margin: '0 0 8px 0',
                 color: 'var(--color-text-inverse)',
               }}
@@ -291,7 +291,7 @@ export default function SampleReportPage() {
           <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
-                fontSize: '24px',
+                fontSize: '20px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
@@ -330,7 +330,7 @@ export default function SampleReportPage() {
                 </p>
                 <div
                   style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--outcome-win)',
@@ -373,7 +373,7 @@ export default function SampleReportPage() {
                 </p>
                 <div
                   style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--outcome-loss)',
@@ -415,7 +415,7 @@ export default function SampleReportPage() {
                 </p>
                 <div
                   style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--color-text-secondary)',
@@ -462,7 +462,7 @@ export default function SampleReportPage() {
           <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
-                fontSize: '24px',
+                fontSize: '20px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
@@ -573,7 +573,7 @@ export default function SampleReportPage() {
           <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
-                fontSize: '24px',
+                fontSize: '20px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
@@ -612,7 +612,7 @@ export default function SampleReportPage() {
                 </p>
                 <div
                   style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--color-text-primary)',
@@ -654,7 +654,7 @@ export default function SampleReportPage() {
                 </p>
                 <div
                   style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--color-text-primary)',
@@ -696,7 +696,7 @@ export default function SampleReportPage() {
                 </p>
                 <div
                   style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--color-text-primary)',
@@ -733,7 +733,7 @@ export default function SampleReportPage() {
           <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
-                fontSize: '24px',
+                fontSize: '20px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
@@ -949,7 +949,7 @@ export default function SampleReportPage() {
           <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
-                fontSize: '24px',
+                fontSize: '20px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',
@@ -988,7 +988,7 @@ export default function SampleReportPage() {
                 </p>
                 <div
                   style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--outcome-win)',
@@ -1030,7 +1030,7 @@ export default function SampleReportPage() {
                 </p>
                 <div
                   style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--outcome-loss)',
@@ -1072,7 +1072,7 @@ export default function SampleReportPage() {
                 </p>
                 <div
                   style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--accent-primary)',
@@ -1109,7 +1109,7 @@ export default function SampleReportPage() {
           <section style={{ paddingTop: '24px' }}>
             <h2
               style={{
-                fontSize: '24px',
+                fontSize: '20px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
                 marginBottom: '16px',

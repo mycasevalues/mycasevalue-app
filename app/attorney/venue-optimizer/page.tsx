@@ -119,7 +119,7 @@ export default function VenueOptimizerPage() {
               </svg>
             </div>
             <div>
-              <h1 className="font-legal" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
+              <h1 className="font-legal" style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
                 Pick the Court That Wins Your Case
               </h1>
             </div>
@@ -321,7 +321,7 @@ export default function VenueOptimizerPage() {
             <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Find Your Optimal Venue
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
               Select a case type above to see all federal districts ranked by win rate, settlement likelihood, and case speed. Uses real data from 5.1M+ federal cases.
             </p>
           </div>

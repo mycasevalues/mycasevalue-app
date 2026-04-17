@@ -82,7 +82,7 @@ export default function DashboardTabs({
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           {/* Welcome */}
           <div style={{ ...cardStyle, background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-hover) 100%)', color: 'var(--color-text-inverse)', border: 'none' }}>
-            <h2 style={{ fontSize: '24px', fontWeight: 600, margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
               Welcome back, {userName}
             </h2>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
@@ -98,7 +98,7 @@ export default function DashboardTabs({
               { label: 'Active Alerts', value: alertsCount, color: 'var(--wrn-txt, #7A5800)' },  /* Note: warning color kept as-is */
             ].map(stat => (
               <div key={stat.label} style={{ ...cardStyle, textAlign: 'center' }}>
-                <div style={{ fontSize: '32px', fontWeight: 600, color: stat.color, fontFamily: 'var(--font-mono)' }}>{stat.value}</div>
+                <div style={{ fontSize: '28px', fontWeight: 600, color: stat.color, fontFamily: 'var(--font-mono)' }}>{stat.value}</div>
                 <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: 4 }}>{stat.label}</div>
               </div>
             ))}

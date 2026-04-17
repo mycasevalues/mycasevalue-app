@@ -137,7 +137,7 @@ export default function AuthGate({ feature, children }: AuthGateProps) {
 
           <p
             style={{
-              fontSize: 15,
+              fontSize: 14,
               color: 'var(--text2)',
               textAlign: 'center',
               margin: '0 0 28px',

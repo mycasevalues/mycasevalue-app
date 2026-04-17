@@ -675,7 +675,7 @@ export default function AlertsPage() {
                     }}
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'var(--space-2)' }}>
-                      <h3 style={{ fontSize: '15px', fontWeight: '600', fontFamily: 'var(--font-ui)', color: 'var(--text-primary)', margin: 0 }}>
+                      <h3 style={{ fontSize: '16px', fontWeight: '600', fontFamily: 'var(--font-ui)', color: 'var(--text-primary)', margin: 0 }}>
                         {alert.name}
                       </h3>
                       <div style={getStatusBadgeStyle(alert.status)}>
@@ -745,7 +745,7 @@ export default function AlertsPage() {
               borderRadius: '4px'
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-4)', borderBottom: '1px solid var(--bdr)', paddingBottom: 'var(--space-4)' }}>
-                <h2 style={{ fontSize: '18px', fontWeight: '600', fontFamily: 'var(--font-ui)', margin: 0 }}>
+                <h2 style={{ fontSize: '20px', fontWeight: '600', fontFamily: 'var(--font-ui)', margin: 0 }}>
                   {selectedAlert.name}
                 </h2>
                 <button

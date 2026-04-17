@@ -144,8 +144,8 @@ export default function NegotiationPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-ui)', margin: '0 0 16px' }}>Negotiate from Strength with Real Trial Data</h1>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-legal)', margin: '0 0 16px' }}>Negotiate from Strength with Real Trial Data</h1>
+          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
             Benchmark offers against 100K+ settlements, calculate your BATNA, and execute a data-backed negotiation strategy
           </p>
         </div>
@@ -155,7 +155,7 @@ export default function NegotiationPage() {
         <div style={{ display: 'grid', gridTemplateColumns: r ? '380px 1fr' : '1fr', gap: '24px' }} className="negotiation-form-grid">
           {/* Form */}
           <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>Case & Offer Details</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>Case & Offer Details</h2>
             <form onSubmit={handleAnalyze} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
                 <label htmlFor="case-category" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category</label>
@@ -208,7 +208,7 @@ export default function NegotiationPage() {
                   ))}
                 </div>
               </div>
-              <button type="submit" disabled={!caseType || !currentOffer} style={{ width: '100%', padding: '16px', backgroundColor: !caseType || !currentOffer ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '4px', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: !caseType || !currentOffer ? 'not-allowed' : 'pointer' }}>
+              <button type="submit" disabled={!caseType || !currentOffer} style={{ width: '100%', padding: '16px', backgroundColor: !caseType || !currentOffer ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 600, fontFamily: 'var(--font-ui)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: !caseType || !currentOffer ? 'not-allowed' : 'pointer' }}>
                 Analyze Negotiation Position
               </button>
             </form>
@@ -235,7 +235,7 @@ export default function NegotiationPage() {
               {/* BATNA */}
               <div style={{ background: r.batna > parseInt(currentOffer) ? 'rgba(23,100,56,0.08)' : 'rgba(176,30,30,0.08)', borderRadius: '4px', padding: '24px', border: `1px solid ${r.batna > parseInt(currentOffer) ? 'var(--data-positive)' : 'var(--data-negative)'}` }}>
                 <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>BATNA (Best Alternative to Negotiated Agreement)</div>
-                <div style={{ fontSize: '32px', fontWeight: 600, color: r.batna > parseInt(currentOffer) ? 'var(--data-positive)' : 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ fontSize: '28px', fontWeight: 600, color: r.batna > parseInt(currentOffer) ? 'var(--data-positive)' : 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>
                   {formatMoney(r.batna)}
                 </div>
                 <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: 4 }}>

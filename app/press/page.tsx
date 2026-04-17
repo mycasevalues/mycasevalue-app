@@ -152,7 +152,7 @@ export default function PressPage() {
             <h1
               className="press-header"
               style={{
-                fontFamily: 'var(--font-ui)',
+                fontFamily: 'var(--font-legal)',
                 fontSize: '28px',
                 fontWeight: 700,
                 color: 'var(--card)',

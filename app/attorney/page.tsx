@@ -600,7 +600,7 @@ export default function AttorneyPage() {
               margin: '0 0 8px',
               fontSize: '20px',
               fontWeight: '700',
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
               lineHeight: '1.2',
               color: 'var(--text1, #18181A)',
               letterSpacing: '-0.5px',
@@ -613,7 +613,7 @@ export default function AttorneyPage() {
           <p
             style={{
               margin: 0,
-              fontSize: '15px',
+              fontSize: '14px',
               color: 'var(--text2, #42403C)',
               lineHeight: '1.5',
               maxWidth: '700px',
@@ -733,7 +733,7 @@ export default function AttorneyPage() {
                     <h3
                       style={{
                         margin: '0 0 8px 0',
-                        fontSize: '18px',
+                        fontSize: '16px',
                         fontWeight: '600',
                         fontFamily: 'var(--font-ui)',
                         color: 'var(--text1, #18181A)',
@@ -864,7 +864,7 @@ export default function AttorneyPage() {
                   <h3
                     style={{
                       margin: 0,
-                      fontSize: '18px',
+                      fontSize: '16px',
                       fontWeight: '600',
                       fontFamily: 'var(--font-ui)',
                       color: 'var(--text1, #18181A)',
@@ -1151,7 +1151,7 @@ export default function AttorneyPage() {
                 <h3
                   style={{
                     margin: 0,
-                    fontSize: '18px',
+                    fontSize: '16px',
                     fontWeight: '600',
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--text1, #18181A)',

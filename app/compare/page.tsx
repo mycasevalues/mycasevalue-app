@@ -203,7 +203,7 @@ export default function ComparePage() {
             Comparison Tool
           </div>
           <h1 className="compare-header" style={{
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             fontSize: '20px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -214,7 +214,7 @@ export default function ComparePage() {
             Compare Case Types Side by Side
           </h1>
           <p style={{
-            fontSize: 'clamp(14px, 2vw, 16px)',
+            fontSize: '14px',
             color: 'rgba(255,255,255,0.7)',
             margin: 0,
             fontFamily: 'var(--font-ui)',

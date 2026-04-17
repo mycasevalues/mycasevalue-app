@@ -281,12 +281,12 @@ export default function DistrictHeatmapPage() {
               </span>
               <h1
                 style={{
-                  fontSize: '26px',
-                  fontWeight: '600',
+                  fontSize: '28px',
+                  fontWeight: 700,
                   color: 'var(--color-surface-0)',
                   margin: 0,
                   marginBottom: '4px',
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-legal)',
                 }}
               >
                 See Which Courts Give Your Case the Best Odds
@@ -427,7 +427,7 @@ export default function DistrictHeatmapPage() {
               marginBottom: '32px',
             }}
           >
-            <h2 style={{ fontSize: '18px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
               Win Rate by State
             </h2>
             <USChoropleth
@@ -456,7 +456,7 @@ export default function DistrictHeatmapPage() {
           >
             <h2
               style={{
-                fontSize: '18px',
+                fontSize: '20px',
                 fontWeight: '600',
                 color: 'var(--color-text-primary)',
                 margin: '0 0 20px 0',
@@ -733,7 +733,7 @@ export default function DistrictHeatmapPage() {
             >
               <h2
                 style={{
-                  fontSize: '18px',
+                  fontSize: '20px',
                   fontWeight: '600',
                   color: 'var(--color-text-primary)',
                   margin: '0 0 20px 0',
@@ -834,7 +834,7 @@ export default function DistrictHeatmapPage() {
             >
               <h2
                 style={{
-                  fontSize: '18px',
+                  fontSize: '20px',
                   fontWeight: '600',
                   color: 'var(--color-text-primary)',
                   margin: '0 0 20px 0',
@@ -938,7 +938,7 @@ export default function DistrictHeatmapPage() {
           >
             <h2
               style={{
-                fontSize: '24px',
+                fontSize: '20px',
                 fontWeight: '600',
                 color: 'var(--color-surface-0)',
                 margin: '0 0 12px 0',

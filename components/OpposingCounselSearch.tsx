@@ -483,9 +483,9 @@ export default function OpposingCounselSearch() {
             <div>
               <h1
                 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-legal)',
                   fontSize: '28px',
-                  fontWeight: 600,
+                  fontWeight: 700,
                   color: 'var(--color-text-inverse)',
                   margin: 0,
                 }}
@@ -637,7 +637,7 @@ export default function OpposingCounselSearch() {
             >
               Research Opposing Counsel
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 20px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 20px' }}>
               Search by attorney name, firm name, or bar number to view litigation track record, settlement patterns, and strategic tendencies.
             </p>
             <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>Try: Mitchell, Chen, Williams, or Martinez</p>

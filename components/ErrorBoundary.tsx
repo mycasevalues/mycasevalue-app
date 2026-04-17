@@ -119,7 +119,7 @@ function DefaultFallback({ onRetry }: { onRetry: () => void }) {
 
         <p
           style={{
-            fontSize: 15,
+            fontSize: 14,
             color: 'var(--text-tertiary)',
             lineHeight: 1.6,
             margin: '0 0 28px',

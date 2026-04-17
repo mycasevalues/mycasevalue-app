@@ -359,7 +359,7 @@ export default function FindPrintPage() {
 
           <p
             style={{
-              fontSize: 15,
+              fontSize: 14,
               color: 'rgba(255,255,255,0.8)',
               margin: 0,
               lineHeight: 1.6,
@@ -971,7 +971,7 @@ export default function FindPrintPage() {
                 width: '100%',
                 marginTop: 20,
                 padding: '16px 24px',
-                fontSize: 15,
+                fontSize: 14,
                 fontWeight: 600,
                 background: 'var(--gold)',
                 color: 'var(--chrome-bg)',

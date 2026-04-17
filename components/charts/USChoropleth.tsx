@@ -163,11 +163,11 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
             zIndex: 10,
           }}
         >
-          <div style={{ fontWeight: 700, fontSize: '15px', marginBottom: '6px' }}>{tooltip.data.name}</div>
+          <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '6px' }}>{tooltip.data.name}</div>
           <div style={{ display: 'flex', gap: '16px' }}>
             <div>
               <div style={{ fontSize: '11px', opacity: 0.7, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Win Rate</div>
-              <div style={{ fontSize: '18px', fontWeight: 700, color: '#70B5F9', fontFamily: 'var(--font-mono)' }}>{tooltip.data.winRate}%</div>
+              <div style={{ fontSize: '16px', fontWeight: 700, color: '#70B5F9', fontFamily: 'var(--font-mono)' }}>{tooltip.data.winRate}%</div>
             </div>
             <div>
               <div style={{ fontSize: '11px', opacity: 0.7, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Total Cases</div>

@@ -154,7 +154,7 @@ export default function JudgeIntelligencePage() {
             Judge Intelligence
           </div>
           <h1 className="font-legal" style={{
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             fontSize: '20px',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -262,7 +262,7 @@ export default function JudgeIntelligencePage() {
             <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Select a District
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto' }}>
               Choose a state above to view federal judge statistics, ruling patterns, and case tendencies.
             </p>
             <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '24px', flexWrap: 'wrap' }}>

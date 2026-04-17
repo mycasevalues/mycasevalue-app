@@ -68,7 +68,7 @@ export default function ReferralPage() {
             <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Home</Link>
             {' > Referral Program'}
           </div>
-          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
             Referral Program
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
@@ -92,10 +92,10 @@ export default function ReferralPage() {
                 { step: '3', title: 'Earn Rewards', desc: 'Get free premium access for each successful referral.' },
               ].map((item) => (
                 <div key={item.step} style={{ textAlign: 'center' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px', fontSize: '18px', fontWeight: 700 }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px', fontSize: '20px', fontWeight: 700 }}>
                     {item.step}
                   </div>
-                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 6px 0' }}>{item.title}</h3>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 6px 0' }}>{item.title}</h3>
                   <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>{item.desc}</p>
                 </div>
               ))}
@@ -104,7 +104,7 @@ export default function ReferralPage() {
 
           {/* Your Referral Link */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Your Referral Link
             </h2>
 
@@ -152,7 +152,7 @@ export default function ReferralPage() {
 
           {/* Reward Tiers */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)' }}>
-            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Reward Tiers
             </h2>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>

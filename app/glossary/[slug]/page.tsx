@@ -81,7 +81,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
     return (
       <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
         <div className="max-w-3xl mx-auto px-6 py-24">
-          <h1 style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)' }}>
+          <h1 style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)' }}>
             Term not found
           </h1>
           <p style={{ color: 'var(--color-text-secondary)', marginTop: '12px' }}>
@@ -134,8 +134,8 @@ export default async function GlossaryTermPage({ params }: PageProps) {
           {/* Term name */}
           <h1
             style={{
-              fontSize: '32px',
-              fontWeight: 600,
+              fontSize: '28px',
+              fontWeight: 700,
               color: 'var(--color-surface-0)',
               letterSpacing: '-1.5px',
               marginBottom: '12px',
@@ -176,9 +176,9 @@ export default async function GlossaryTermPage({ params }: PageProps) {
           <section className="mb-8" style={{ borderBottom: '1px solid var(--border-default)', paddingBottom: '24px' }}>
             <h2
               style={{
-                fontSize: '18px',
+                fontSize: '20px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-legal)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--accent-primary)',
                 marginBottom: '12px',
               }}
@@ -194,9 +194,9 @@ export default async function GlossaryTermPage({ params }: PageProps) {
           <section className="mb-8" style={{ borderBottom: '1px solid var(--border-default)', paddingBottom: '24px' }}>
             <h2
               style={{
-                fontSize: '18px',
+                fontSize: '20px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-legal)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--accent-primary)',
                 marginBottom: '12px',
               }}
@@ -212,9 +212,9 @@ export default async function GlossaryTermPage({ params }: PageProps) {
           <section className="mb-8" style={{ borderBottom: '1px solid var(--border-default)', paddingBottom: '24px' }}>
             <h2
               style={{
-                fontSize: '18px',
+                fontSize: '20px',
                 fontWeight: 600,
-                fontFamily: 'var(--font-legal)',
+                fontFamily: 'var(--font-ui)',
                 color: 'var(--accent-primary)',
                 marginBottom: '12px',
               }}
@@ -262,9 +262,9 @@ export default async function GlossaryTermPage({ params }: PageProps) {
             <section className="mb-8" style={{ borderBottom: '1px solid var(--border-default)', paddingBottom: '24px' }}>
               <h2
                 style={{
-                  fontSize: '18px',
+                  fontSize: '20px',
                   fontWeight: 600,
-                  fontFamily: 'var(--font-legal)',
+                  fontFamily: 'var(--font-ui)',
                   color: 'var(--accent-primary)',
                   marginBottom: '12px',
                 }}
@@ -302,9 +302,9 @@ export default async function GlossaryTermPage({ params }: PageProps) {
             <section className="mb-0" style={{ paddingBottom: '0' }}>
               <h2
                 style={{
-                  fontSize: '18px',
+                  fontSize: '20px',
                   fontWeight: 600,
-                  fontFamily: 'var(--font-legal)',
+                  fontFamily: 'var(--font-ui)',
                   color: 'var(--accent-primary)',
                   marginBottom: '12px',
                 }}

@@ -177,10 +177,10 @@ export default function CaseTimelinePage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Case Timeline Generator
           </h1>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
             Generate expected federal case timelines with data-backed milestones and statistical comparison.
           </p>
         </div>
@@ -248,7 +248,7 @@ export default function CaseTimelinePage() {
                   color: 'var(--color-text-primary)',
                   border: 'none',
                   borderRadius: '2px',
-                  fontSize: '15px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase',
@@ -362,7 +362,7 @@ export default function CaseTimelinePage() {
                     <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                       Case Type
                     </p>
-                    <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                       {timeline.caseType}
                     </p>
                   </div>
@@ -371,7 +371,7 @@ export default function CaseTimelinePage() {
                     <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                       Filing Date
                     </p>
-                    <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                       {new Date(timeline.filingDate).toLocaleDateString()}
                     </p>
                   </div>
@@ -380,7 +380,7 @@ export default function CaseTimelinePage() {
                     <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                       Projected Resolution
                     </p>
-                    <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                       {new Date(timeline.projectedResolutionDate).toLocaleDateString()} ({timeline.medianDurationMonths} months)
                     </p>
                   </div>

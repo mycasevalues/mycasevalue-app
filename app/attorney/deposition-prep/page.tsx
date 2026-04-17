@@ -171,10 +171,10 @@ export default function DepositionPrepPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Master Every Deposition in Days, Not Weeks
           </h1>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
             Get targeted, organized outlines with strategic questions for any deponent role — plaintiff, defendant, expert, or witness
           </p>
         </div>
@@ -185,7 +185,7 @@ export default function DepositionPrepPage() {
         <div style={{ display: 'grid', gridTemplateColumns: outlineText ? '380px 1fr' : '1fr', gap: '24px' }} className="depo-form-grid">
           {/* Form */}
           <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Deposition Details
             </h2>
 
@@ -263,7 +263,7 @@ export default function DepositionPrepPage() {
                   width: '100%', padding: '16px',
                   backgroundColor: loading || !caseType || !deponentRole ? 'var(--border-default)' : 'var(--accent-primary)',
                   color: 'var(--color-text-primary)', border: 'none', borderRadius: '4px',
-                  fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)',
+                  fontSize: '14px', fontWeight: 600, fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase', letterSpacing: '0.04em',
                   cursor: loading || !caseType || !deponentRole ? 'not-allowed' : 'pointer',
                 }}

@@ -126,13 +126,13 @@ export default function MethodologyPage() {
           font-weight: 900;
           color: var(--accent-primary);
           margin-bottom: 0.5rem;
-          font-family: var(--font-ui, 'Inter', sans-serif);
+          font-family: var(--font-ui);
         }
         .at-a-glance-label {
           font-size: 0.75rem;
           font-weight: 600;
           color: var(--text-tertiary);
-          font-family: var(--font-ui, 'Inter', sans-serif);
+          font-family: var(--font-ui);
         }
         .confidence-tiers {
           display: grid;
@@ -188,7 +188,7 @@ export default function MethodologyPage() {
           font-weight: 600;
           font-size: 0.875rem;
           color: var(--color-text-primary);
-          font-family: var(--font-ui, 'Inter', sans-serif);
+          font-family: var(--font-ui);
         }
         .stats-table td {
           border-bottom: 1px solid var(--border-default);
@@ -202,7 +202,7 @@ export default function MethodologyPage() {
         .stats-stat-name {
           font-weight: 600;
           color: var(--color-text-primary);
-          font-family: var(--font-ui, 'Inter', sans-serif);
+          font-family: var(--font-ui);
         }
         .related-grid {
           display: grid;
@@ -238,7 +238,7 @@ export default function MethodologyPage() {
           font-weight: 600;
           font-size: 0.875rem;
           color: var(--link);
-          font-family: var(--font-ui, 'Inter', sans-serif);
+          font-family: var(--font-ui);
         }
       `}</style>
 

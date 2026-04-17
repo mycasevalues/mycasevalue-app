@@ -162,13 +162,13 @@
 
   /* ── TYPOGRAPHY — Composite Font Shorthand Tokens ── */
   /* Display — page h1 only */
-  --type-display:    700 24px/1.2 var(--font-ui);
-  --type-display-sm: 700 20px/1.25 var(--font-ui);
+  --type-display:    700 28px/1.2 var(--font-legal);
+  --type-display-sm: 700 24px/1.25 var(--font-legal);
 
   /* Heading */
-  --type-heading-lg: 600 17px/1.3 var(--font-ui);
-  --type-heading-md: 600 15px/1.35 var(--font-ui);
-  --type-heading-sm: 600 13px/1.4 var(--font-ui);
+  --type-heading-lg: 600 20px/1.3 var(--font-ui);
+  --type-heading-md: 600 16px/1.35 var(--font-ui);
+  --type-heading-sm: 600 14px/1.4 var(--font-ui);
 
   /* Body — Inter */
   --type-body-lg: 400 15px/1.6 var(--font-body);
@@ -192,9 +192,9 @@
   --type-nav-sm: 400 12px/1 var(--font-body);
 
   /* Individual heading sizes (legacy compat) */
-  --text-h1: 24px;
-  --text-h2: 17px;
-  --text-h3: 15px;
+  --text-h1: 28px;
+  --text-h2: 20px;
+  --text-h3: 16px;
   --text-h4: 14px;
   --text-h5: 13px;
   --text-body-lg: 15px;

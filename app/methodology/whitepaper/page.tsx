@@ -72,7 +72,7 @@ export default function WhitepaperPage() {
           </h1>
           <p
             style={{
-              fontSize: 'clamp(15px, 1.5vw, 17px)',
+              fontSize: '14px',
               color: 'rgba(255,255,255,0.7)',
               fontFamily: 'var(--font-ui)',
               lineHeight: 1.6,
@@ -143,7 +143,7 @@ export default function WhitepaperPage() {
               <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Version
               </p>
-              <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 1.0
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function WhitepaperPage() {
               <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Published
               </p>
-              <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 2026
               </p>
             </div>
@@ -162,7 +162,7 @@ export default function WhitepaperPage() {
               <a
                 href="mailto:research@mycasevalues.com"
                 style={{
-                  fontSize: 15,
+                  fontSize: 14,
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   margin: 0,
@@ -184,7 +184,7 @@ export default function WhitepaperPage() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 8,
-              fontSize: 15,
+              fontSize: 14,
               fontWeight: 600,
               color: 'var(--accent-primary)',
               textDecoration: 'none',

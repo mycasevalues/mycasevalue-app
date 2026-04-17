@@ -144,9 +144,9 @@ export default function ForgotPasswordPage() {
             </div>
             <h1
               style={{
-                fontFamily: 'var(--font-ui)',
-                fontSize: '24px',
-                fontWeight: 600,
+                fontFamily: 'var(--font-legal)',
+                fontSize: '28px',
+                fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 margin: '0 0 12px 0',
                 lineHeight: 1.2,
@@ -184,9 +184,9 @@ export default function ForgotPasswordPage() {
             {/* Heading */}
             <h1
               style={{
-                fontFamily: 'var(--font-ui)',
-                fontSize: '24px',
-                fontWeight: 600,
+                fontFamily: 'var(--font-legal)',
+                fontSize: '28px',
+                fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 margin: '0 0 12px 0',
                 lineHeight: 1.2,
@@ -288,7 +288,7 @@ export default function ForgotPasswordPage() {
                   border: 'none',
                   borderRadius: '4px',
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '15px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: loading ? 'not-allowed' : 'pointer',
                   transition: 'background-color 0.2s, transform 0.1s',

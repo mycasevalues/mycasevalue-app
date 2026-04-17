@@ -105,7 +105,7 @@ export default function LegalDashboardPage() {
           <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
             Data Pipeline Dashboard
           </h1>
-          <p style={{ fontSize: 15, color: 'var(--color-text-muted)', margin: 0, maxWidth: 540, lineHeight: 1.6 }}>
+          <p style={{ fontSize: 14, color: 'var(--color-text-muted)', margin: 0, maxWidth: 540, lineHeight: 1.6 }}>
             Monitor ingestion, processing, and health across all 7 legal data sources in real time.
           </p>
         </div>
@@ -197,7 +197,7 @@ export default function LegalDashboardPage() {
               >
                 {/* Name + status */}
                 <div>
-                  <div style={{ fontSize: 15, fontWeight: 600, color: src.color, marginBottom: 4 }}>{src.name}</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: src.color, marginBottom: 4 }}>{src.name}</div>
                   <span style={{
                     display: 'inline-block',
                     padding: '2px 10px',

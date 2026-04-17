@@ -78,7 +78,7 @@ export default function ClassActionPage() {
       {/* Header */}
       <div style={{ background: 'var(--card)', padding: '40px 24px 32px', borderBottom: `1px solid ${borderColor}` }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px 0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px 0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', letterSpacing: '-0.02em' }}>
             Class Action Intelligence
           </h1>
           <p style={{ fontSize: '14px', margin: '0', color: 'var(--color-text-secondary)', letterSpacing: '-0.01em' }}>
@@ -91,7 +91,7 @@ export default function ClassActionPage() {
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Section 1: Top Case Types */}
         <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: '24px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: '24px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Top Case Types for Class Actions
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
@@ -152,7 +152,7 @@ export default function ClassActionPage() {
 
         {/* Section 2: Recent Class Settlements */}
         <section style={{ marginBottom: '48px' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: '24px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: '24px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Recent Class Action Settlements
           </h2>
           <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>
@@ -189,7 +189,7 @@ export default function ClassActionPage() {
 
         {/* Section 3: Certification by District */}
         <section>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: '24px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: '24px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Class Certification Approval Rates by District
           </h2>
           <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', border: `1px solid ${borderColor}`, overflow: 'hidden' }}>

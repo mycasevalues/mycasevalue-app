@@ -71,7 +71,7 @@ export default function PacerMonitorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-          <h1 className="font-legal" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>PACER Monitoring</h1>
+          <h1 className="font-legal" style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>PACER Monitoring</h1>
           <p style={{ fontSize: '14px', color: 'var(--text-tertiary)', margin: 0 }}>Real-time alerts on case developments, filings, and motions</p>
         </div>
       </div>
@@ -117,7 +117,7 @@ export default function PacerMonitorPage() {
           <div>
             {/* Add to Watch List */}
             <div style={{ background: 'var(--color-surface-0)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
-              <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Watch List</h3>
+              <h3 className="font-legal" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Watch List</h3>
               <div style={{ display: 'flex', gap: '6px', marginBottom: '12px' }}>
                 <input
                   type="text"
@@ -142,7 +142,7 @@ export default function PacerMonitorPage() {
 
             {/* Stats */}
             <div style={{ background: 'var(--color-surface-0)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
-              <h3 className="font-legal" style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Monitor Stats</h3>
+              <h3 className="font-legal" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Monitor Stats</h3>
               {[
                 { label: 'Watched Cases', value: String(watchList.length) },
                 { label: 'Alerts (7 days)', value: String(alerts.length) },

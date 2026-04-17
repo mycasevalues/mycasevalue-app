@@ -185,7 +185,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           <Link href="/districts" style={{
             color: 'var(--accent-primary)',
             textDecoration: 'none',
-            fontWeight: 600,
+            fontWeight: 700,
             fontFamily: 'var(--font-ui)',
           }}>
             Back to all districts

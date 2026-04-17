@@ -119,7 +119,7 @@ export default function AttorneyError({
 
           <p
             style={{
-              fontSize: 15,
+              fontSize: 14,
               color: 'var(--text-tertiary)',
               lineHeight: 1.65,
               margin: '0 0 12px',

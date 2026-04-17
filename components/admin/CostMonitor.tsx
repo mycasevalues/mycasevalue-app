@@ -109,7 +109,7 @@ export default function CostMonitor() {
           <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
             Current Monthly Spend
           </p>
-          <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
+          <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
             ${costData.totalSpend.toFixed(2)}
           </p>
           <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '8px 0 0 0' }}>
@@ -129,7 +129,7 @@ export default function CostMonitor() {
           <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
             Budget Utilization
           </p>
-          <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
+          <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
             {((costData.totalSpend / costData.totalBudget) * 100).toFixed(1)}%
           </p>
           <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '8px 0 0 0' }}>
@@ -149,7 +149,7 @@ export default function CostMonitor() {
           <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
             Projected EOMonth
           </p>
-          <p style={{ fontSize: '28px', fontWeight: 'bold', margin: 0, color: COLORS.primary }}>
+          <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
             ${costData.projectedEOM.toFixed(2)}
           </p>
           <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '8px 0 0 0' }}>

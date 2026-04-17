@@ -86,7 +86,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
 
       {/* Case type name */}
       <div style={{
-        fontSize: '15px',
+        fontSize: '14px',
         fontWeight: 600,
         color: 'var(--color-text-primary)',
       }}>

@@ -147,10 +147,10 @@ export default function FeeCalculatorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Attorney Fee Calculator
           </h1>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
             Calculate attorney fee structures and compare contingency, hourly, and hybrid arrangements based on your case value.
           </p>
         </div>
@@ -161,7 +161,7 @@ export default function FeeCalculatorPage() {
         <div style={{ display: 'grid', gridTemplateColumns: feeData ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
           <div style={{ ...cardStyle, boxShadow: 'var(--shadow-xs)' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Case Details
             </h2>
 
@@ -274,7 +274,7 @@ export default function FeeCalculatorPage() {
                   color: 'var(--color-text-inverse)',
                   border: 'none',
                   borderRadius: '4px',
-                  fontSize: '15px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase',
@@ -321,7 +321,7 @@ export default function FeeCalculatorPage() {
               {/* Contingency Analysis */}
               {feeArrangement === 'contingency' && (
                 <div style={cardStyle}>
-                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                     Contingency Fee Tiers
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -329,7 +329,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         25% Contingency
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency25.toLocaleString()}
                       </div>
                     </div>
@@ -337,7 +337,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         33% Contingency (Typical)
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency33.toLocaleString()}
                       </div>
                     </div>
@@ -345,7 +345,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         40% Contingency (Higher Risk)
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency40.toLocaleString()}
                       </div>
                     </div>
@@ -383,7 +383,7 @@ export default function FeeCalculatorPage() {
               {/* Hourly Analysis */}
               {feeArrangement === 'hourly' && (
                 <div style={cardStyle}>
-                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                     Hourly Fee Estimate
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -423,7 +423,7 @@ export default function FeeCalculatorPage() {
               {/* Hybrid Analysis */}
               {feeArrangement === 'hybrid' && (
                 <div style={cardStyle}>
-                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                     Hybrid Arrangement
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -431,7 +431,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         Upfront Retainer
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.hybrid.retainer.toLocaleString()}
                       </div>
                     </div>
@@ -439,7 +439,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 600, marginBottom: '4px' }}>
                         Ongoing Hourly Rate
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.hybrid.hourlyRate}/hr
                       </div>
                     </div>
@@ -447,7 +447,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: 'var(--wrn-txt)', fontWeight: 600, marginBottom: '4px' }}>
                         Estimated Total (Case Completion)
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: 'var(--wrn-txt)', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--wrn-txt)', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.hybrid.estimatedTotal.toLocaleString()}
                       </div>
                     </div>
@@ -458,7 +458,7 @@ export default function FeeCalculatorPage() {
               {/* Lodestar (if applicable) */}
               {feeData.lodestar && (
                 <div style={{ ...cardStyle, borderColor: 'rgba(245,158,11,0.3)' }}>
-                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                     Lodestar Calculation (Fee-Shifting)
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px' }}>
@@ -482,7 +482,7 @@ export default function FeeCalculatorPage() {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '8px' }}>
                       <span style={{ fontWeight: 600 }}>Adjusted Fee Award:</span>
-                      <span style={{ fontWeight: 700, color: 'var(--wrn-txt)', fontSize: '15px', fontFamily: 'var(--font-mono)' }}>
+                      <span style={{ fontWeight: 700, color: 'var(--wrn-txt)', fontSize: '14px', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.lodestar.adjustedTotal.toLocaleString()}
                       </span>
                     </div>
@@ -633,7 +633,7 @@ export default function FeeCalculatorPage() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z" />
               </svg>
-              <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Multiple Arrangement Types
               </h3>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
@@ -646,7 +646,7 @@ export default function FeeCalculatorPage() {
                 <line x1="3" y1="12" x2="21" y2="12" />
                 <polyline points="3 6 9 12 3 18" />
               </svg>
-              <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Lodestar Calculation
               </h3>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
@@ -659,7 +659,7 @@ export default function FeeCalculatorPage() {
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M9 9h6v6H9z" />
               </svg>
-              <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Case-Type Data
               </h3>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>

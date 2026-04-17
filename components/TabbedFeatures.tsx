@@ -113,11 +113,11 @@ const TabbedFeatures: React.FC = () => {
           </p>
           <h2
             style={{
-              fontSize: '32px',
+              fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: 0,
-              fontFamily: 'var(--font-legal)',
+              fontFamily: 'var(--font-ui)',
             }}
           >
             Powered by real federal court data
@@ -174,7 +174,7 @@ const TabbedFeatures: React.FC = () => {
               >
                 <div
                   style={{
-                    fontSize: '15px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: activeTab === index ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                     margin: '0 0 8px 0',
@@ -307,7 +307,7 @@ const TabbedFeatures: React.FC = () => {
 // Preview Components
 const WinRatePreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+    <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
       Win Rate by Case Type
     </h3>
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -354,7 +354,7 @@ const WinRatePreview: React.FC = () => (
 
 const SettlementPreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+    <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
       Settlement Distribution
     </h3>
     <div
@@ -400,7 +400,7 @@ const SettlementPreview: React.FC = () => (
 
 const JudgeAnalyticsPreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+    <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
       Judge Profile
     </h3>
     <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 20px 0' }}>
@@ -433,7 +433,7 @@ const JudgeAnalyticsPreview: React.FC = () => (
 
 const TimelinePreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+    <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
       Median Disposition Time
     </h3>
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -480,7 +480,7 @@ const TimelinePreview: React.FC = () => (
 
 const DistrictComparisonPreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
+    <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
       Top Federal Districts
     </h3>
     <div
@@ -535,7 +535,7 @@ const DistrictComparisonPreview: React.FC = () => (
 
 const AIPredictionsPreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+    <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
       Predicted Outcome
     </h3>
     <div

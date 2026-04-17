@@ -488,7 +488,7 @@ export default function SOLCalculatorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Statute of Limitations Calculator
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: '8px 0 0 0' }}>
@@ -601,7 +601,7 @@ export default function SOLCalculatorPage() {
                   <h3 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Filing Deadline
                   </h3>
-                  <p style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+                  <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
                     {deadline}
                   </p>
                   <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
@@ -688,7 +688,7 @@ export default function SOLCalculatorPage() {
                   <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Federal Statute
                   </h3>
-                  <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+                  <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
                     {selectedSOLData.federalSOL}
                   </p>
                 </div>
@@ -697,7 +697,7 @@ export default function SOLCalculatorPage() {
                     <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       Discovery Rule
                     </h3>
-                    <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--data-positive)', margin: 0 }}>
+                    <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--data-positive)', margin: 0 }}>
                       Applies
                     </p>
                   </div>

@@ -213,9 +213,9 @@ export default function ResetPasswordPage() {
             </div>
             <h1
               style={{
-                fontFamily: 'var(--font-ui)',
-                fontSize: '24px',
-                fontWeight: 600,
+                fontFamily: 'var(--font-legal)',
+                fontSize: '28px',
+                fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 margin: '0 0 12px 0',
                 lineHeight: 1.2,
@@ -240,9 +240,9 @@ export default function ResetPasswordPage() {
             {/* Heading */}
             <h1
               style={{
-                fontFamily: 'var(--font-ui)',
-                fontSize: '24px',
-                fontWeight: 600,
+                fontFamily: 'var(--font-legal)',
+                fontSize: '28px',
+                fontWeight: 700,
                 color: 'var(--color-text-primary)',
                 margin: '0 0 12px 0',
                 lineHeight: 1.2,
@@ -383,7 +383,7 @@ export default function ResetPasswordPage() {
                   border: 'none',
                   borderRadius: '2px',
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '15px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: loading ? 'not-allowed' : 'pointer',
                   opacity: loading ? 0.7 : 1,

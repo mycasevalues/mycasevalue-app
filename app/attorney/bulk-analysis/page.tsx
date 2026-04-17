@@ -26,9 +26,9 @@ export default function BulkAnalysisPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
           <h1
             style={{
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
               fontSize: '28px',
-              fontWeight: 600,
+              fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
             }}

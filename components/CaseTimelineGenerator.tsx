@@ -128,7 +128,7 @@ export default function CaseTimelineGenerator() {
     color: 'var(--color-surface-0)',
     border: 'none',
     borderRadius: '2px',
-    fontSize: '15px',
+    fontSize: '14px',
     fontWeight: 600,
     fontFamily: 'var(--font-ui)',
     textTransform: 'uppercase',
@@ -159,7 +159,7 @@ export default function CaseTimelineGenerator() {
 
       <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '24px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-surface-0)', fontFamily: 'var(--font-legal)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
             Case Timeline Generator
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.4, fontFamily: 'var(--font-ui)' }}>
@@ -172,7 +172,7 @@ export default function CaseTimelineGenerator() {
         <div style={{ display: 'grid', gridTemplateColumns: timeline ? '350px 1fr' : '1fr', gap: '40px', alignItems: 'start' }}>
           {/* Input Section */}
           <div className="no-print" style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', height: 'fit-content' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Case Information
             </h2>
 
@@ -293,7 +293,7 @@ export default function CaseTimelineGenerator() {
 
               {/* Milestones List */}
               <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
-                <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
                   Timeline Milestones
                 </h2>
 
@@ -342,7 +342,7 @@ export default function CaseTimelineGenerator() {
                     color: 'var(--color-surface-0)',
                     border: 'none',
                     borderRadius: '2px',
-                    fontSize: '15px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-ui)',
                     textTransform: 'uppercase',

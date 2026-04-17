@@ -304,7 +304,7 @@ function SignInForm() {
               <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
             </g>
           </svg>
-          <span style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 700, color: 'var(--color-text-primary)' }}>
+          <span style={{ fontFamily: 'var(--font-ui)', fontSize: '14px', fontWeight: 700, color: 'var(--color-text-primary)' }}>
             MyCase<span style={{ color: 'var(--accent-primary)' }}>Value</span>
           </span>
         </div>
@@ -312,9 +312,9 @@ function SignInForm() {
         {/* Heading */}
         <h1
           style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '24px',
-            fontWeight: 600,
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
+            fontWeight: 700,
             color: 'var(--color-text-primary)',
             margin: '0 0 24px 0',
             lineHeight: 1.2,
@@ -479,7 +479,7 @@ function SignInForm() {
               border: 'none',
               borderRadius: '2px',
               fontFamily: 'var(--font-ui)',
-              fontSize: '15px',
+              fontSize: '14px',
               fontWeight: 600,
               textTransform: 'uppercase',
               cursor: loading ? 'not-allowed' : 'pointer',

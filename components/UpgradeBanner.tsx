@@ -113,7 +113,7 @@ export default function UpgradeBanner() {
             </div>
 
             <h2 style={{
-              fontSize: '32px', fontWeight: 600, color: 'var(--color-text-inverse)',
+              fontSize: '20px', fontWeight: 600, color: 'var(--color-text-inverse)',
               margin: '0 0 16px 0', fontFamily: 'var(--font-ui)', lineHeight: 1.2,
             }}>
               MyCaseValue Attorney Mode
@@ -162,7 +162,7 @@ export default function UpgradeBanner() {
               <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 Case Outcome Prediction
               </div>
-              <div style={{ fontSize: '48px', fontWeight: 600, color: 'var(--accent-primary)', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
+              <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
                 72%
               </div>
               <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>

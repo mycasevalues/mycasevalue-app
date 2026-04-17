@@ -596,7 +596,7 @@ export default function IntakeFormGenerator() {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: selectedInfo ? '1fr 1fr' : '1fr', gap: '24px' }}>
       <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
-        <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+        <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
           Form Configuration
         </h2>
 
@@ -645,7 +645,7 @@ export default function IntakeFormGenerator() {
               color: 'var(--color-surface-0)',
               border: 'none',
               borderRadius: '2px',
-              fontSize: '15px',
+              fontSize: '14px',
               fontWeight: 600,
               fontFamily: 'var(--font-ui)',
               textTransform: 'uppercase',
@@ -688,7 +688,7 @@ export default function IntakeFormGenerator() {
 
       {selectedInfo && (
         <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
             Preview
           </h2>
 

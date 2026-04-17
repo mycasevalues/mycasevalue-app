@@ -20,7 +20,7 @@ export default function WidgetGeneratorPage() {
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 24px' }}>
         <div style={{ marginBottom: '48px' }}>
           <h1 style={{
-            fontSize: '36px',
+            fontSize: '28px',
             fontWeight: 700,
             marginBottom: '12px',
             color: 'var(--text-primary)',

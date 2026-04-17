@@ -494,7 +494,7 @@ export default function CommandPalette({
               background: 'transparent',
               border: 'none',
               outline: 'none',
-              fontSize: '15px',
+              fontSize: '14px',
               color: 'var(--color-text-primary)',
               caretColor: 'var(--accent-primary-hover)',
               fontFamily: 'var(--font-ui)',

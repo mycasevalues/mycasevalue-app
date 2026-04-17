@@ -112,7 +112,7 @@ export default function TestimonialCarousel() {
           />
           <h2
             style={{
-              fontSize: '32px',
+              fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-ui)',

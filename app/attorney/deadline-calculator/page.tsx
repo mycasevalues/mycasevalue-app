@@ -183,7 +183,7 @@ export default function DeadlineCalculatorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Litigation Deadline Calculator
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: '8px 0 0 0' }}>
@@ -219,7 +219,7 @@ export default function DeadlineCalculatorPage() {
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '24px', paddingTop: '20px', borderTop: '1px solid var(--border-default)' }}>
-            <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>Add Custom Deadline</h3>
+            <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>Add Custom Deadline</h3>
             <button
               onClick={handleDownloadCalendar}
               disabled={allDeadlines.length === 0 || !caseFiledDate}
@@ -377,7 +377,7 @@ export default function DeadlineCalculatorPage() {
                         </div>
                       </div>
                       <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
-                        <div style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                        <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                           {deadline.calculatedDate}
                         </div>
                         <span style={{ fontSize: '11px', fontWeight: 600, padding: '2px 8px', borderRadius: '4px', backgroundColor: config.bg, color: config.text, textTransform: 'uppercase' as const }}>

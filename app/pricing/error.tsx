@@ -63,8 +63,8 @@ export default function PricingError({
           </div>
 
           <h1 style={{
-            fontSize: '24px',
-            fontWeight: 600,
+            fontSize: '28px',
+            fontWeight: 700,
             color: 'var(--color-text-primary)',
             margin: '0 0 8px',
             letterSpacing: '-0.01em',
@@ -73,7 +73,7 @@ export default function PricingError({
           </h1>
 
           <p style={{
-            fontSize: '15px',
+            fontSize: '14px',
             color: 'var(--color-text-secondary)',
             lineHeight: 1.6,
             margin: '0 0 24px',
@@ -98,7 +98,7 @@ export default function PricingError({
                 border: 'none',
                 borderRadius: '4px',
                 fontSize: '14px',
-                fontWeight: 600,
+                fontWeight: 700,
                 cursor: 'pointer',
                 transition: 'all 200ms',
                 boxShadow: 'none',
@@ -123,7 +123,7 @@ export default function PricingError({
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 fontSize: '14px',
-                fontWeight: 600,
+                fontWeight: 700,
                 textDecoration: 'none',
                 transition: 'all 200ms',
                 cursor: 'pointer',

@@ -421,7 +421,7 @@ export default function DevelopersPage() {
         <section style={{ marginBottom: '48px' }}>
           <h2
             style={{
-              fontSize: '24px',
+              fontSize: '20px',
               fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: '0 0 24px',
@@ -498,7 +498,7 @@ export default function DevelopersPage() {
         <section style={{ marginBottom: '48px' }}>
           <h2
             style={{
-              fontSize: '24px',
+              fontSize: '20px',
               fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: '0 0 24px',
@@ -659,7 +659,7 @@ export default function DevelopersPage() {
         <section style={{ marginBottom: '48px' }}>
           <h2
             style={{
-              fontSize: '24px',
+              fontSize: '20px',
               fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: '0 0 24px',
@@ -706,7 +706,7 @@ export default function DevelopersPage() {
         <section style={{ marginBottom: '48px' }}>
           <h2
             style={{
-              fontSize: '24px',
+              fontSize: '20px',
               fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: '0 0 24px',
@@ -722,7 +722,7 @@ export default function DevelopersPage() {
         <section style={{ marginBottom: '48px' }}>
           <h2
             style={{
-              fontSize: '24px',
+              fontSize: '20px',
               fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: '0 0 24px',
@@ -793,7 +793,7 @@ export default function DevelopersPage() {
         <section style={{ marginBottom: '48px' }}>
           <h2
             style={{
-              fontSize: '24px',
+              fontSize: '20px',
               fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: '0 0 24px',
@@ -847,7 +847,7 @@ export default function DevelopersPage() {
         <section style={{ marginBottom: '48px' }}>
           <h2
             style={{
-              fontSize: '24px',
+              fontSize: '20px',
               fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: '0 0 24px',
@@ -879,7 +879,7 @@ export default function DevelopersPage() {
         <section style={{ marginBottom: '48px' }}>
           <h2
             style={{
-              fontSize: '24px',
+              fontSize: '20px',
               fontWeight: 700,
               color: 'var(--color-text-primary)',
               margin: '0 0 24px',

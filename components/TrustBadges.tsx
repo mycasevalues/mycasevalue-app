@@ -95,7 +95,7 @@ export default function TrustBadges() {
               {/* Stat number */}
               <div
                 style={{
-                  fontSize: '30px',
+                  fontSize: '28px',
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-mono)',

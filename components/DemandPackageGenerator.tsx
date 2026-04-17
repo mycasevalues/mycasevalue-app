@@ -229,7 +229,7 @@ export default function DemandPackageGenerator() {
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-0)', padding: '24px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ marginBottom: '32px' }}>
-          <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', marginBottom: '8px' }}>
             Demand Letter Data Package
           </h1>
           <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
@@ -246,7 +246,7 @@ export default function DemandPackageGenerator() {
             marginBottom: '24px',
           }}
         >
-          <h2 style={{ fontSize: '18px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '16px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '16px' }}>
             Generate Data Package
           </h2>
 
@@ -333,7 +333,7 @@ export default function DemandPackageGenerator() {
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-              <h2 style={{ fontSize: '18px', fontWeight: '600', color: 'var(--color-text-primary)' }}>Preview</h2>
+              <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--color-text-primary)' }}>Preview</h2>
               <button
                 onClick={handleDownloadPDF}
                 style={{
@@ -404,9 +404,9 @@ function PreviewContent({
   const casesFormatted = new Intl.NumberFormat('en-US').format(totalCases);
 
   return (
-    <div style={{ fontFamily: 'system-ui, -apple-system, sans-serif', color: 'var(--color-text-primary)', lineHeight: '1.6' }}>
+    <div style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', lineHeight: '1.6' }}>
       <div style={{ borderBottom: '2px solid var(--accent-primary)', paddingBottom: '16px', marginBottom: '16px' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--accent-primary)', margin: '0 0 8px 0' }}>
+        <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 8px 0' }}>
           MyCaseValue Research Data Package
         </h1>
         <p style={{ margin: '0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
@@ -415,7 +415,7 @@ function PreviewContent({
       </div>
 
       <div style={{ marginBottom: '24px' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Case Information
         </h3>
         <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>

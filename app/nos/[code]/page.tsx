@@ -815,7 +815,7 @@ export default async function NOSPage({ params }: PageProps) {
 
           <div className="flex items-start justify-between gap-6" style={{ flexWrap: 'wrap' }}>
             <div className="flex-1">
-              <h1 style={{ fontSize: '28px', fontWeight: 600, margin: '0 0 12px 0', fontFamily: 'var(--font-ui)', lineHeight: 1.2, color: 'var(--color-surface-0)' }}>
+              <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 12px 0', fontFamily: 'var(--font-legal)', lineHeight: 1.2, color: 'var(--color-surface-0)' }}>
                 {nosInfo.label}
               </h1>
               <p style={{ fontSize: '14px', color: 'var(--border-default)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -1112,7 +1112,7 @@ export default async function NOSPage({ params }: PageProps) {
                   </div>
                 )}
                 <div style={{ flex: 1, minWidth: '200px' }}>
-                  <div style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-ui)' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-ui)' }}>
                     {statute.title}
                   </div>
                   <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -1251,7 +1251,7 @@ export default async function NOSPage({ params }: PageProps) {
                     With Attorney
                   </div>
                   <div style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     color: getWinRateColor(attyImpact.rwr).text,
                     fontFamily: 'var(--font-mono)',
@@ -1275,7 +1275,7 @@ export default async function NOSPage({ params }: PageProps) {
                     Pro Se (No Attorney)
                   </div>
                   <div style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     color: 'var(--data-negative)',
                     fontFamily: 'var(--font-mono)',
@@ -1302,7 +1302,7 @@ export default async function NOSPage({ params }: PageProps) {
                     Representation Effect
                   </div>
                   <div style={{
-                    fontSize: '36px',
+                    fontSize: '28px',
                     fontWeight: 600,
                     color: 'var(--gold)',
                     fontFamily: 'var(--font-mono)',
@@ -1425,7 +1425,7 @@ export default async function NOSPage({ params }: PageProps) {
           <h2 style={{ fontSize: 20, fontWeight: 600, margin: '0 0 12px 0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
             Research Your {nosInfo.label} Case
           </h2>
-          <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
             Explore detailed outcomes, recovery ranges, and timeline data with our interactive research tool.
           </p>
           <Link href="/" className="cta-button">

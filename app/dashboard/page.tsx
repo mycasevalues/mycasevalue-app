@@ -442,9 +442,9 @@ export default async function DashboardPage() {
                   </span>
                 </div>
                 <h1 style={{
-                  fontFamily: 'var(--font-ui)',
+                  fontFamily: 'var(--font-legal)',
                   fontSize: '20px',
-                  fontWeight: 600,
+                  fontWeight: 700,
                   color: 'var(--color-surface-0)',
                   margin: '0',
                   lineHeight: 1.2,
@@ -534,7 +534,7 @@ export default async function DashboardPage() {
 
           {/* Platform Capabilities Grid */}
           <div style={{ marginBottom: '24px' }}>
-            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', letterSpacing: '-0.3px' }}>Platform Capabilities</h2>
+            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', letterSpacing: '-0.3px' }}>Platform Capabilities</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '16px' }}>
               {[
                 { label: 'AI Case Predictor', href: '/attorney/case-predictor', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v6m0 4v6M2 12h6m4 0h6"/><circle cx="12" cy="12" r="8"/></svg> },
@@ -554,7 +554,7 @@ export default async function DashboardPage() {
 
           {/* Platform Highlights — Top 5 Case Types */}
           <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', marginBottom: '24px' }}>
-            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
+            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
               Platform Highlights — Top Case Types
             </h2>
             <div>
@@ -583,7 +583,7 @@ export default async function DashboardPage() {
 
           {/* Recent Platform Updates */}
           <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', marginBottom: '24px' }}>
-            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
+            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
               Recent Platform Updates
             </h2>
             <div>
@@ -604,7 +604,7 @@ export default async function DashboardPage() {
 
           {/* Explore by Category */}
           <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', marginBottom: '24px' }}>
-            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
+            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
               Explore by Category
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', gap: '12px' }}>
@@ -670,7 +670,7 @@ export default async function DashboardPage() {
 
           {/* Your Plan Section */}
           <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
-            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
+            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
               Your Plan Includes
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -696,7 +696,7 @@ export default async function DashboardPage() {
               marginBottom: '24px',
               boxShadow: 'var(--shadow-xs)',
             }}>
-              <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+              <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
                 Upgrade to unlock more
               </h3>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 20px', lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
@@ -709,7 +709,7 @@ export default async function DashboardPage() {
                 color: 'var(--color-surface-0)',
                 borderRadius: 4,
                 textDecoration: 'none',
-                fontSize: '15px',
+                fontSize: '14px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
                 textTransform: 'uppercase',
@@ -724,7 +724,7 @@ export default async function DashboardPage() {
           {isAttorney && (
             <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-                <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+                <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
                   Attorney Tools
                 </h2>
                 <Link href="/attorney" style={{ fontSize: '13px', color: 'var(--gold)', textDecoration: 'none', fontWeight: 500, fontFamily: 'var(--font-ui)' }}>
@@ -763,7 +763,7 @@ export default async function DashboardPage() {
 
           {/* Quick Research Links */}
           <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', marginBottom: '24px' }}>
-            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
+            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px' }}>
               Quick Research
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px' }}>
@@ -783,7 +783,7 @@ export default async function DashboardPage() {
 
           {/* Platform Stats */}
           <div style={{ backgroundColor: 'var(--accent-primary)', borderRadius: 4, padding: '24px', marginBottom: '24px' }}>
-            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 20px' }}>
+            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 20px' }}>
               Platform Data Coverage
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px' }}>
@@ -805,7 +805,7 @@ export default async function DashboardPage() {
           {/* Search History — Unlimited only */}
           {isUnlimitedPlus && !isExpired && searchHistory.length > 0 && (
             <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
-              <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
+              <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
                 Search History
               </h2>
               <div>
@@ -824,7 +824,7 @@ export default async function DashboardPage() {
 
           {/* Recent Activity Feed */}
           <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', marginBottom: '24px' }}>
-            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
+            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
               Recent Activity
             </h2>
             {recentReports.length > 0 ? (
@@ -883,7 +883,7 @@ export default async function DashboardPage() {
 
           {/* Platform Status Section */}
           <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
-            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
+            <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px' }}>
               Platform Status
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>

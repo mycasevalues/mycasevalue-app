@@ -397,7 +397,7 @@ export default function TeamWorkspace() {
               <div>
                 <h1
                   className="font-legal"
-                  style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: 0 }}
+                  style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-inverse)', margin: 0 }}
                 >
                   Team Workspace
                 </h1>
@@ -560,7 +560,7 @@ export default function TeamWorkspace() {
             >
               <h3
                 className="font-legal"
-                style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 14px' }}
+                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 14px' }}
               >
                 Add Note
               </h3>
@@ -717,7 +717,7 @@ export default function TeamWorkspace() {
             >
               <h3
                 className="font-legal"
-                style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 14px' }}
+                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 14px' }}
               >
                 Add Case
               </h3>
@@ -1104,7 +1104,7 @@ export default function TeamWorkspace() {
             <div>
               <h3
                 className="font-legal"
-                style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}
+                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}
               >
                 Team Members
               </h3>

@@ -172,7 +172,7 @@ export default function PrivacyPage() {
             paddingBottom: '6px',
             borderRadius: '9999px',
             fontSize: '11px',
-            fontWeight: 'bold',
+            fontWeight: 700,
             letterSpacing: '1.5px',
             textTransform: 'uppercase',
             marginBottom: '16px',
@@ -185,12 +185,12 @@ export default function PrivacyPage() {
             PRIVACY
           </div>
           <h1 style={{
-            fontSize: '32px',
-            fontWeight: '600',
+            fontSize: '28px',
+            fontWeight: 700,
             marginBottom: '16px',
             color: 'white',
-            letterSpacing: '-1.5px',
-            fontFamily: 'var(--font-ui)'
+            letterSpacing: '-0.02em',
+            fontFamily: 'var(--font-legal)'
           }}>
             Privacy Policy
           </h1>
@@ -510,13 +510,13 @@ export default function PrivacyPage() {
               color: 'var(--color-text-primary)',
               border: '1px solid var(--border-default)'
             }}>
-              <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Privacy Requests:</strong> <a href="mailto:privacy@mycasevalues.com" className="legal-contact-email">privacy@mycasevalues.com</a>
               </p>
-              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: '12px 0 0 0', fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Support & General Inquiries:</strong> <a href="mailto:support@mycasevalues.com" className="legal-contact-email">support@mycasevalues.com</a>
               </p>
-              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: '12px 0 0 0', fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Website:</strong> <a href="https://mycasevalues.com" className="legal-contact-email">https://mycasevalues.com</a>
               </p>
             </div>
@@ -542,10 +542,10 @@ export default function PrivacyPage() {
               color: 'var(--color-text-primary)',
               border: '1px solid var(--border-default)'
             }}>
-              <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Terms of Service:</strong> Read our <a href="/terms" className="legal-contact-email">Terms of Service</a> to understand the rules governing your use of MyCaseValue and our limitations of liability.
               </p>
-              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+              <p style={{ margin: '12px 0 0 0', fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Disclaimer:</strong> Review our <a href="/disclaimer" className="legal-contact-email">Disclaimer</a> to understand that MyCaseValue provides informational data only and is not legal advice.
               </p>
             </div>

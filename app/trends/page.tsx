@@ -158,7 +158,7 @@ export default function TrendsPage() {
         .mcv-btn--primary:hover { background: var(--gold); border-color: var(--gold); }
         .mcv-badge { background: rgba(10, 102, 194, 0.1); color: var(--accent-primary); border-radius: 3px; }
         h1 { font-family: var(--font-legal); }
-        h2 { font-family: var(--font-legal); }
+        h2 { font-family: var(--font-ui); }
       `}</style>
       <JsonLd data={jsonLd} />
 
@@ -214,7 +214,7 @@ export default function TrendsPage() {
           >
             Federal Court Filing Trends
           </h1>
-          <p className="leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-ui)', fontSize: 15, lineHeight: 1.65 }}>
+          <p className="leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-ui)', fontSize: 14, lineHeight: 1.65 }}>
             Filing patterns and year-over-year shifts across {trends.length} case types, drawn from {totalCases.toLocaleString()} federal cases.
           </p>
         </div>

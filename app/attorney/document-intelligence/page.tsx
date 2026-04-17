@@ -57,13 +57,13 @@ export default function DocumentIntelligencePage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontFamily: 'var(--font-ui)', fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px 0' }}>Document Intelligence</h1>
+          <h1 style={{ fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 4px 0' }}>Document Intelligence</h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: 0 }}>AI-powered legal document analysis for case classification and insights</p>
         </div>
       </div>
 
       <div style={{ maxWidth: '800px', margin: '0 auto', padding: '32px 24px' }}>
-        <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', marginBottom: '32px' }}>
+        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '32px' }}>
           Upload a legal document — complaint, motion, or brief — to receive an AI-powered analysis including case type classification, key claims identified, relevant NOS codes, and comparable federal court outcomes.
         </p>
 
@@ -89,7 +89,7 @@ export default function DocumentIntelligencePage() {
 
         {analysis && (
           <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', boxShadow: 'var(--shadow-xs)' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>Document Analysis</h2>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '16px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>Document Analysis</h2>
             <div style={{ fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>{analysis}</div>
           </div>
         )}

@@ -73,7 +73,7 @@ export default function ApiPage() {
             For Developers / API
           </div>
           <h1 style={{
-            fontFamily: 'var(--font-ui)',
+            fontFamily: 'var(--font-legal)',
             fontSize: '28px',
             fontWeight: 700,
             letterSpacing: '-0.025em',

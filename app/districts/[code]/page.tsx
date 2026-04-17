@@ -264,7 +264,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <p style={{ color: 'var(--text2)', fontSize: 13, fontFamily: 'var(--font-ui)', margin: '0 0 24px' }}>
             The district code &ldquo;{code}&rdquo; does not exist.
           </p>
-          <Link href="/districts" style={{ color: 'var(--link)', textDecoration: 'none', fontWeight: 600, fontFamily: 'var(--font-ui)' }}>
+          <Link href="/districts" style={{ color: 'var(--link)', textDecoration: 'none', fontWeight: 700, fontFamily: 'var(--font-ui)' }}>
             Back to all districts
           </Link>
         </div>
@@ -520,13 +520,13 @@ export default async function DistrictPage({ params }: PageProps) {
                     <div style={{ display: 'flex', gap: 16, marginBottom: 6 }}>
                       <div>
                         <div style={{ ...sectionLabel, fontSize: 9, marginBottom: 2 }}>Win Rate</div>
-                        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 15, fontWeight: 500, color: 'var(--text1)' }}>
+                        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 500, color: 'var(--text1)' }}>
                           {Math.round(ct.winRate * 10) / 10}%
                         </div>
                       </div>
                       <div>
                         <div style={{ ...sectionLabel, fontSize: 9, marginBottom: 2 }}>Cases</div>
-                        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 15, fontWeight: 500, color: 'var(--text1)' }}>
+                        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 500, color: 'var(--text1)' }}>
                           {(ct.count / 1000).toFixed(0)}K
                         </div>
                       </div>

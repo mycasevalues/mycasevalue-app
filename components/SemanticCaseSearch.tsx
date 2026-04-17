@@ -96,7 +96,7 @@ export default function SemanticCaseSearch() {
       {/* Header */}
       <h2
         style={{
-          fontSize: '18px',
+          fontSize: '20px',
           fontWeight: '600',
           fontFamily: 'var(--font-heading)',
           color: 'var(--color-text-primary)',

@@ -186,7 +186,7 @@ export default function KeyCitePage() {
           </h1>
 
           <p style={{
-            fontSize: 15,
+            fontSize: 14,
             color: 'rgba(255,255,255,0.8)',
             margin: 0,
             lineHeight: 1.6,
@@ -233,7 +233,7 @@ export default function KeyCitePage() {
                   width: '100%',
                   height: 48,
                   padding: '12px 16px',
-                  fontSize: 15,
+                  fontSize: 14,
                   border: '1px solid var(--bdr)',
                   borderRadius: 2,
                   background: 'var(--surf)',

@@ -78,10 +78,10 @@ export default function ReportsPage() {
       <div style={{ backgroundColor: 'var(--accent-primary)', padding: '40px 24px', marginBottom: '32px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
+            <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               My Reports
             </h1>
-            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '4px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '4px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' }}>
               Reports
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function ReportsPage() {
         {/* What's In a Report Section */}
         <div style={{ marginBottom: '32px' }}>
           <h2 style={{
-            fontSize: '24px',
+            fontSize: '20px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             marginBottom: '24px',
@@ -201,7 +201,7 @@ export default function ReportsPage() {
         {/* Sample Reports Section */}
         <div style={{ marginBottom: '32px' }}>
           <h2 style={{
-            fontSize: '24px',
+            fontSize: '20px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             marginBottom: '24px',
@@ -286,7 +286,7 @@ export default function ReportsPage() {
             <h2 className="font-legal" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0' }}>
               No reports yet
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
               Your saved case research reports and search history will appear here. Start by running a case lookup.
             </p>
             <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '2px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
@@ -346,7 +346,7 @@ export default function ReportsPage() {
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                          <div style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>
+                          <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>
                             {r.category}
                           </div>
                           {r.district && (

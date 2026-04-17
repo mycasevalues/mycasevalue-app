@@ -39,7 +39,7 @@ export default function ExpertWitnessPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-          <h1 className="font-legal" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
             Expert Witness Intelligence
           </h1>
           <p style={{ fontSize: '14px', color: 'var(--text-tertiary)', margin: '8px 0 0 0' }}>

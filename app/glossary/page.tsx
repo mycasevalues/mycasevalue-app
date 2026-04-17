@@ -66,8 +66,8 @@ export default function GlossaryPage() {
           </div>
           <h1
             style={{
-              fontSize: '32px',
-              fontWeight: 600,
+              fontSize: '28px',
+              fontWeight: 700,
               color: 'var(--color-surface-0)',
               letterSpacing: '-1.5px',
               marginBottom: '16px',
@@ -78,7 +78,7 @@ export default function GlossaryPage() {
           </h1>
           <p
             style={{
-              fontSize: '18px',
+              fontSize: '14px',
               lineHeight: 1.6,
               color: 'var(--color-surface-0)',
               maxWidth: '600px',
