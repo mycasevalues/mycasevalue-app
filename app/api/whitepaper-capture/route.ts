@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { validateEmail } from '../../../lib/sanitize';
+import { sendWhitepaperConfirmation } from '../../../lib/email';
 
 interface WhitepaperCapturePayload {
   email: string;
@@ -20,24 +22,36 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(body.email)) {
+    const cleanEmail = validateEmail(body.email);
+    if (!cleanEmail) {
       return NextResponse.json(
         { error: 'Invalid email address' },
         { status: 400 }
       );
     }
 
-    // TODO: In production, implement:
+    // Sanitize inputs
+    const fullName = body.fullName.slice(0, 255);
+    const organization = body.organization.slice(0, 255);
+
+    // Send confirmation email
+    const emailResult = await sendWhitepaperConfirmation(cleanEmail, fullName, organization);
+
+    // TODO: In production, also implement:
     // 1. Send email with PDF attachment using Resend
     // 2. Store lead information in database (Supabase)
     // 3. Log analytics event
 
-    // For now, just acknowledge receipt
+    if (!emailResult.success) {
+      console.warn('[whitepaper-capture] Email send failed:', emailResult.error);
+      // Still return success to client, but log the error
+    }
+
     return NextResponse.json(
       {
         success: true,
         message: 'Whitepaper request received. PDF is generated on client side.',
+        email_sent: emailResult.success,
       },
       { status: 200 }
     );

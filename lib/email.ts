@@ -548,3 +548,179 @@ export async function sendReportReadyEmail(
   });
 }
 
+/**
+ * Send report download confirmation email
+ */
+export async function sendReportCaptureConfirmation(
+  email: string
+): Promise<{ success: boolean; error?: string }> {
+  if (!isValidEmail(email)) {
+    return { success: false, error: 'Invalid email address' };
+  }
+
+  return sendEmail({
+    to: email,
+    subject: '2026 Federal Court Statistics Annual Report',
+    html: `
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            body { margin: 0; padding: 0; }
+            .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+            .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
+            .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+            .body-content { background-color: white; padding: 32px 24px; }
+            .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+            .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+            .body-content a { color: #0A50A2; text-decoration: none; }
+            .cta-button { background-color: #C4882A; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+            .footer p { margin: 8px 0; }
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="header">
+              <div class="header-text">MyCaseValue</div>
+            </div>
+            <div class="body-content">
+              <h2>Report Download Confirmed</h2>
+              <p>Thank you for downloading the 2026 Federal Court Statistics Annual Report.</p>
+              <p>Your download should begin automatically. If it doesn't, <a href="${SITE_URL}">visit our site</a>.</p>
+              <p>This report contains comprehensive data across all 94 federal districts with settlement patterns, win rates, and case outcomes.</p>
+              <p>Questions? <a href="mailto:support@mycasevalues.com">Contact our support team</a>.</p>
+            </div>
+            <div class="footer">
+              <p>&copy; 2026 MyCaseValue. All rights reserved.</p>
+              <p>This email was sent to ${email}. LexisNexis legal and privacy information.</p>
+            </div>
+          </div>
+        </body>
+      </html>
+    `,
+    text: `Thank you for downloading the 2026 Federal Court Statistics Annual Report. Check your downloads folder.`,
+  });
+}
+
+/**
+ * Send data quality report email
+ */
+export async function sendDataQualityEmail(
+  email: string,
+  reportHtml: string,
+  passed: boolean,
+  summary: string
+): Promise<{ success: boolean; error?: string }> {
+  if (!isValidEmail(email)) {
+    return { success: false, error: 'Invalid email address' };
+  }
+
+  const statusColor = passed ? '#22c55e' : '#ef4444';
+  const statusText = passed ? 'PASSED' : 'FAILED';
+
+  return sendEmail({
+    to: email,
+    subject: `Data Quality Check: ${statusText}`,
+    html: `
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            body { margin: 0; padding: 0; }
+            .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+            .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
+            .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+            .status-badge { display: inline-block; background-color: ${statusColor}; color: white; padding: 8px 16px; border-radius: 4px; font-weight: 600; margin-bottom: 16px; }
+            .body-content { background-color: white; padding: 32px 24px; }
+            .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+            .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+            .report-section { background-color: #FAFBFC; border: 1px solid #e0e0e0; border-radius: 4px; padding: 16px; margin: 16px 0; }
+            .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+            .footer p { margin: 8px 0; }
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="header">
+              <div class="header-text">MyCaseValue Data Quality Check</div>
+            </div>
+            <div class="body-content">
+              <div style="text-align: center;">
+                <div class="status-badge">${statusText}</div>
+              </div>
+              <h2>Quality Report Summary</h2>
+              <p>${summary}</p>
+              <div class="report-section">
+                ${reportHtml}
+              </div>
+              <p>Timestamp: ${new Date().toISOString()}</p>
+            </div>
+            <div class="footer">
+              <p>&copy; 2026 MyCaseValue. All rights reserved.</p>
+              <p>This email was sent to ${email}.</p>
+            </div>
+          </div>
+        </body>
+      </html>
+    `,
+    text: `Data Quality Check: ${statusText}\n\n${summary}`,
+  });
+}
+
+/**
+ * Send whitepaper download confirmation email
+ */
+export async function sendWhitepaperConfirmation(
+  email: string,
+  fullName: string,
+  organization: string
+): Promise<{ success: boolean; error?: string }> {
+  if (!isValidEmail(email)) {
+    return { success: false, error: 'Invalid email address' };
+  }
+
+  return sendEmail({
+    to: email,
+    subject: 'Thank you for downloading the MyCaseValue Whitepaper',
+    html: `
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            body { margin: 0; padding: 0; }
+            .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+            .header { background-color: #18181A; color: white; padding: 24px; text-align: center; }
+            .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+            .body-content { background-color: white; padding: 32px 24px; }
+            .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+            .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+            .cta-button { background-color: #C4882A; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+            .footer p { margin: 8px 0; }
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="header">
+              <div class="header-text">MyCaseValue</div>
+            </div>
+            <div class="body-content">
+              <h2>Thank you, ${fullName}!</h2>
+              <p>Your whitepaper is ready. It contains comprehensive insights into federal court case valuation, settlement patterns, and AI-powered analysis tools built from 5.1M+ court records.</p>
+              <p><strong>Organization:</strong> ${organization}</p>
+              <p><a href="${SITE_URL}" class="cta-button">Explore MyCaseValue</a></p>
+              <p>Have questions about the data or our platform? <a href="mailto:support@mycasevalues.com">Contact us</a> — we're here to help.</p>
+            </div>
+            <div class="footer">
+              <p>&copy; 2026 MyCaseValue. All rights reserved.</p>
+              <p>This email was sent to ${email}. LexisNexis legal and privacy information.</p>
+            </div>
+          </div>
+        </body>
+      </html>
+    `,
+    text: `Thank you for downloading the MyCaseValue Whitepaper.\n\nName: ${fullName}\nOrganization: ${organization}`,
+  });
+}
+

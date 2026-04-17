@@ -13,6 +13,8 @@ import { apiUnauthorized, apiForbidden, apiSuccess } from '../../../../lib/api-r
 import { runDataQualityCheck, summarizeCheckResults } from '../../../../lib/data-quality';
 import { logger } from '../../../../lib/logger';
 import { getSupabaseAdmin } from '@/lib/supabase';
+import { cacheGet, cacheSet } from '../../../../lib/redis';
+import { sendDataQualityEmail } from '../../../../lib/email';
 
 export const dynamic = 'force-dynamic';
 
@@ -68,7 +70,27 @@ export const GET = apiHandler({}, async (request) => {
   }
 
   try {
+    const cacheKey = 'dq:check';
+
+    // Try to get cached result (15-minute TTL)
+    try {
+      const cached = await cacheGet<any>(cacheKey);
+      if (cached) {
+        logger.debug('Data quality check result from cache');
+        return apiSuccess(cached, { cache: 'no-store' });
+      }
+    } catch (error) {
+      logger.warn('Cache retrieval failed, running check', { error });
+    }
+
+    // Run check if not cached
     const result = runDataQualityCheck();
+
+    // Cache the result (15 minutes = 900 seconds)
+    cacheSet(cacheKey, result, 900).catch((error) => {
+      logger.warn('Failed to cache data quality check result', { error });
+    });
+
     return apiSuccess(result, { cache: 'no-store' });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unknown error';
@@ -88,37 +110,42 @@ export const POST = apiHandler({}, async (request) => {
   }
 
   try {
+    // Always run fresh check for POST (force refresh), but don't cache
     const result = runDataQualityCheck();
     const summary = summarizeCheckResults(result);
 
-    // Note: Resend email service not yet available. Notification marked as not sent.
-    // TODO: Implement email notification via Resend when service is available
-    // const emailResult = await resend.emails.send({
-    //   from: 'admin@casecheck.com',
-    //   to: process.env.ADMIN_EMAIL || 'dev@casecheck.com',
-    //   subject: `Data Quality Check: ${result.passed ? 'PASSED' : 'FAILED'}`,
-    //   html: `
-    //     <h2>${summary}</h2>
-    //     <p>Timestamp: ${result.timestamp}</p>
-    //     <p>Checks run: ${result.totalChecks}</p>
-    //     ${result.anomalies.length > 0 ? `<p>Anomalies: ${result.anomalies.length}</p>` : ''}
-    //   `,
-    // });
+    // Build email HTML report
+    const reportHtml = `
+      <p><strong>Checks Run:</strong> ${result.totalChecks}</p>
+      <p><strong>Anomalies Found:</strong> ${result.anomalies.length}</p>
+      ${result.anomalies.length > 0 ? `<p><strong>Details:</strong> ${result.anomalies.join(', ')}</p>` : ''}
+      <p><strong>Timestamp:</strong> ${result.timestamp}</p>
+    `;
 
-    // Log the results for now
+    // Send email notification
+    const adminEmail = process.env.ADMIN_EMAIL || 'dev@casecheck.com';
+    const emailResult = await sendDataQualityEmail(
+      adminEmail,
+      reportHtml,
+      result.passed,
+      summary
+    );
+
     logger.info('Data quality check completed', {
       passed: result.passed,
       anomalies: result.anomalies.length,
       timestamp: result.timestamp,
       summary,
+      emailSent: emailResult.success,
     });
 
     return apiSuccess(
       {
         ...result,
         notification: {
-          sent: false, // Resend integration not yet available
+          sent: emailResult.success,
           message: summary,
+          error: emailResult.error,
         },
       },
       { cache: 'no-store' }

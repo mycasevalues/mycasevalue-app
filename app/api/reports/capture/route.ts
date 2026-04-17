@@ -1,9 +1,12 @@
 export const dynamic = 'force-dynamic';
 
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 import { apiHandler } from '../../../../lib/api-middleware';
 import { apiBadRequest } from '../../../../lib/api-response';
 import { validateEmail, sanitizeString } from '../../../../lib/sanitize';
+import { getRateLimiter } from '../../../../lib/redis';
+import { sendReportCaptureConfirmation } from '../../../../lib/email';
 
 /**
  * POST /api/reports/capture
@@ -17,6 +20,24 @@ import { validateEmail, sanitizeString } from '../../../../lib/sanitize';
 export const POST = apiHandler(
   { rateLimit: { windowMs: 60000, maxRequests: 20 } },
   async (request, { log, clientIp }) => {
+    // Check Redis rate limit
+    const rateLimiter = getRateLimiter();
+    if (rateLimiter && clientIp) {
+      try {
+        const { success, pending, reset, remaining, limit } = await rateLimiter.limit(clientIp);
+        if (!success) {
+          return NextResponse.json(
+            { error: 'Rate limit exceeded', retryAfter: reset },
+            { status: 429, headers: { 'Retry-After': String(Math.ceil((reset - Date.now()) / 1000)) } }
+          );
+        }
+        log.debug('Rate limit check passed', { remaining, limit });
+      } catch (error) {
+        log.warn('Rate limit check failed, allowing request', { error });
+        // Graceful fallback: allow request if rate limit service is down
+      }
+    }
+
     let body: any;
     try {
       body = await request.json();
@@ -65,15 +86,8 @@ export const POST = apiHandler(
       }
     }
 
-    // TODO: Send confirmation email via Resend
-    // const { Resend } = await import('resend');
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: 'noreply@mycasevalues.com',
-    //   to: cleanEmail,
-    //   subject: '2026 Federal Court Statistics Annual Report',
-    //   html: `<p>Thank you for downloading the 2026 Annual Report. Check your downloads.</p>`,
-    // });
+    // Send confirmation email
+    await sendReportCaptureConfirmation(cleanEmail);
 
     return NextResponse.json({
       success: true,

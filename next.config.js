@@ -5,14 +5,13 @@ const withNextIntl = require('next-intl/plugin')('./i18n.ts');
 
 // Sentry configuration wrapper
 let plugins = [];
-if (process.env.NODE_ENV === 'production' && process.env.SENTRY_DSN) {
+if (process.env.SENTRY_AUTH_TOKEN) {
   const { withSentryConfig } = require('@sentry/nextjs');
   plugins.push((config) =>
     withSentryConfig(config, {
-      org: process.env.SENTRY_ORG,
-      project: process.env.SENTRY_PROJECT,
-      authToken: process.env.SENTRY_AUTH_TOKEN,
       silent: true,
+      org: 'mycasevalue',
+      project: 'mycasevalue-app',
     })
   );
 }

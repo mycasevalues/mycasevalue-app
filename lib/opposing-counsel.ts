@@ -4,6 +4,8 @@
  * Data from public PACER records via CourtListener
  */
 
+import { cacheGet, cacheSet } from './redis';
+
 // ─── Type Definitions ────────────────────────────────────────────────
 
 export interface CaseAppearance {
@@ -355,6 +357,7 @@ export async function searchAttorney(query: string): Promise<AttorneyProfile[]> 
   }
 
   const cacheKey = query.toLowerCase().trim();
+  const redisCacheKey = 'oc:' + cacheKey;
 
   // Check local cache first
   const cached = cache.get(cacheKey);
@@ -362,11 +365,20 @@ export async function searchAttorney(query: string): Promise<AttorneyProfile[]> 
     return cached.data;
   }
 
-  // TODO: Implement Supabase cache check with 7-day TTL
-  // const supabaseResult = await checkSupabaseCache(query);
-  // if (supabaseResult) {
-  //   return supabaseResult;
-  // }
+  // Check Redis cache (7-day TTL)
+  try {
+    const redisResult = await cacheGet<AttorneyProfile[]>(redisCacheKey);
+    if (redisResult) {
+      // Populate local cache as well
+      cache.set(cacheKey, {
+        data: redisResult,
+        timestamp: Date.now(),
+      });
+      return redisResult;
+    }
+  } catch (error) {
+    // Graceful fallback: continue if Redis is unavailable
+  }
 
   // For now, filter mock data
   const results = MOCK_ATTORNEYS.filter((attorney) => queryMatches(query, attorney));
@@ -389,8 +401,10 @@ export async function searchAttorney(query: string): Promise<AttorneyProfile[]> 
       timestamp: Date.now(),
     });
 
-    // TODO: Store in Supabase cache asynchronously
-    // storeSupabseCache(query, results).catch(console.error);
+    // Store in Redis cache with 7-day TTL (604800 seconds)
+    cacheSet(redisCacheKey, results, 604800).catch(() => {
+      // Graceful fallback: silent fail if Redis is unavailable
+    });
   }
 
   return results;
