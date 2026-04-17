@@ -1172,6 +1172,7 @@ function SearchPageInner() {
                 { label: 'Odds Checker', href: '/odds' },
                 { label: 'Judge Analytics', href: '/judges' },
                 { label: 'Trends', href: '/trends' },
+                { label: 'Advanced Search', href: '/attorney/advanced-search' },
               ].map(link => (
                 <Link
                   key={link.href}

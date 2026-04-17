@@ -35,6 +35,19 @@ const COLS = [
     ],
   },
   {
+    title: 'RESEARCH TOOLS',
+    links: [
+      { label: 'Advanced Search', href: '/attorney/advanced-search' },
+      { label: 'KeyCite', href: '/attorney/keycite' },
+      { label: 'Secondary Sources', href: '/attorney/secondary-sources' },
+      { label: '50-State Survey', href: '/attorney/state-survey' },
+      { label: 'Compare Text', href: '/attorney/compare-text' },
+      { label: 'Alerts', href: '/attorney/alerts' },
+      { label: 'Research Folders', href: '/attorney/folders' },
+      { label: 'Find & Print', href: '/attorney/find-print' },
+    ],
+  },
+  {
     title: 'COMPANY',
     links: [
       { label: 'About', href: '/about' },
@@ -103,11 +116,11 @@ export default function Footer() {
           padding: '0 24px',
         }}
       >
-        {/* 4-column grid */}
+        {/* 5-column grid */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: 'repeat(5, 1fr)',
             gap: 24,
           }}
           className="footer-grid"
@@ -221,8 +234,11 @@ export default function Footer() {
 
       <style>{`
         .footer-link:hover { color: #FFFFFF !important; }
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .footer-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 480px) {
+          .footer-grid { grid-template-columns: repeat(1, 1fr) !important; }
         }
       `}</style>
     </footer>

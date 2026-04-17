@@ -1033,6 +1033,8 @@ export default function ComparePage() {
                 { name: 'Odds Analyzer', href: '/odds', desc: 'Analyze case outcome probabilities' },
                 { name: 'Trends Dashboard', href: '/trends', desc: 'Track federal court trends' },
                 { name: 'NOS Explorer', href: '/nos-explorer', desc: 'Browse all case types' },
+                { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Deep legal research tool' },
+                { name: 'KeyCite', href: '/attorney/keycite', desc: 'Citation research & validation' },
               ].map((tool, idx) => (
                 <Link
                   key={idx}

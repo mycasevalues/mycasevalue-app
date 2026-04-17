@@ -51,6 +51,7 @@ const NAV_ITEMS: BrowseNavItem[] = [
   { id: 'settlement', label: 'Settlement Data', href: '/cases' },
   { id: '_sep2', label: '', href: '', separator: true },
   { id: 'tools', label: 'Litigation Tools', href: '/attorney', badge: 'AI' },
+  { id: 'research', label: 'Research Tools', href: '/attorney/advanced-search' },
   { id: 'guidance', label: 'Practical Guidance', href: '/methodology' },
   { id: '_sep3', label: '', href: '', separator: true },
   { id: 'saved', label: 'My Research', href: '/dashboard', rightAlign: true },

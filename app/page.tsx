@@ -78,10 +78,10 @@ const BROWSE_CARDS = [
     href: '/attorney',
   },
   {
-    title: 'Practice Areas',
-    description: 'Navigate by claim type, statute, and outcome. 14 categories covering the full federal civil docket.',
-    stat: '14 categories',
-    href: '/cases',
+    title: 'Research Tools',
+    description: 'Advanced legal research including KeyCite, secondary sources, 50-state surveys, and document comparison.',
+    stat: '8 research tools',
+    href: '/attorney/advanced-search',
   },
 ];
 

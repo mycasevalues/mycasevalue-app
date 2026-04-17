@@ -462,6 +462,72 @@ export default function LegalSearchPage() {
         </div>
       </div>
 
+      {/* Related Research Tools */}
+      <div style={{
+        marginTop: 48,
+        padding: '32px',
+        background: 'var(--color-surface-0)',
+        border: '1px solid var(--border-default)',
+        borderRadius: 4,
+      }}>
+        <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0', fontFamily: 'var(--font-ui)' }}>
+          Related Research Tools
+        </h3>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: 16,
+        }}>
+          {[
+            { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Deep legal research' },
+            { name: 'KeyCite', href: '/attorney/keycite', desc: 'Citation validation' },
+            { name: 'Secondary Sources', href: '/attorney/secondary-sources', desc: 'Legal commentary' },
+            { name: 'State Survey', href: '/attorney/state-survey', desc: '50-state analysis' },
+            { name: 'Compare Text', href: '/attorney/compare-text', desc: 'Document comparison' },
+            { name: 'Research Alerts', href: '/attorney/alerts', desc: 'Stay updated' },
+          ].map((tool, idx) => (
+            <Link
+              key={idx}
+              href={tool.href}
+              style={{
+                display: 'block',
+                padding: 16,
+                background: 'var(--color-surface-1)',
+                border: '1px solid var(--border-default)',
+                borderRadius: 4,
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--accent-primary)';
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 2px 8px rgba(9, 102, 195, 0.08)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--border-default)';
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+              }}
+            >
+              <h4 style={{
+                fontSize: 13,
+                fontWeight: 600,
+                color: 'var(--accent-primary)',
+                margin: '0 0 4px 0',
+                fontFamily: 'var(--font-ui)',
+              }}>
+                {tool.name}
+              </h4>
+              <p style={{
+                fontSize: 12,
+                color: 'var(--color-text-secondary)',
+                margin: 0,
+              }}>
+                {tool.desc}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </div>
+
       {/* Back to hub */}
       <div style={{ textAlign: 'center', marginTop: 40 }}>
         <Link href="/legal" style={{ fontSize: 14, color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500 }}>
