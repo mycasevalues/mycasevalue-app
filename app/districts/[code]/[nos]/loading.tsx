@@ -66,7 +66,7 @@ export default function Loading() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--bdr, #E2DFD8)',
                 borderRadius: '4px',
-                padding: '20px',
+                padding: '24px',
               }}
             >
               <div

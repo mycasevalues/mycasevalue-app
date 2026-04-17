@@ -207,7 +207,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           background: var(--color-surface-0);
           border: 1px solid var(--bdr, #E2DFD8);
           border-radius: 12px;
-          padding: 20px;
+          padding: 24px;
           display: flex;
           flex-direction: column;
         }
@@ -270,7 +270,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             alignItems: 'center',
             gap: 8,
             background: 'var(--accent-primary)',
-            color: '#FFFFFF',
+            color: 'var(--card, #FFFFFF)',
             padding: '4px 12px',
             borderRadius: 4,
             fontSize: 11,
@@ -284,7 +284,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
           </div>
 
           <h1 style={{
-            color: '#FFFFFF',
+            color: 'var(--card, #FFFFFF)',
             fontFamily: 'var(--font-heading)',
             letterSpacing: '-1.5px',
             fontSize: 'clamp(28px, 5vw, 48px)',
@@ -586,7 +586,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               background: 'var(--color-surface-0)',
               border: '1px solid var(--bdr, #E2DFD8)',
               borderRadius: '4px',
-              padding: '20px',
+              padding: '24px',
               textDecoration: 'none',
               transition: 'border-color 0.2s',
             }}>
@@ -613,7 +613,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
               background: 'var(--color-surface-0)',
               border: '1px solid var(--bdr, #E2DFD8)',
               borderRadius: '4px',
-              padding: '20px',
+              padding: '24px',
               textDecoration: 'none',
               transition: 'border-color 0.2s',
             }}>

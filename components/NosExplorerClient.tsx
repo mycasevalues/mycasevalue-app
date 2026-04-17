@@ -181,13 +181,13 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                   onClick={() => setExpandedNos(expandedNos === row.nos ? null : row.nos)}
                   style={{ borderBottom: '1px solid #F0F0F0', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#FAFAFA', cursor: 'pointer' }}
                 >
-                  <td style={{ padding: '10px 16px', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--accent-primary-hover)', fontSize: 13 }}>
+                  <td style={{ padding: '8px 16px', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--accent-primary-hover)', fontSize: 13 }}>
                     {row.nos}
                   </td>
-                  <td style={{ padding: '10px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <td style={{ padding: '8px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {row.label}
                   </td>
-                  <td style={{ padding: '10px 8px' }}>
+                  <td style={{ padding: '8px 8px' }}>
                     <span style={{
                       fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 2,
                       background: `${CATEGORY_COLORS[row.category] || 'var(--color-text-secondary)'}15`,
@@ -197,19 +197,19 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                       {row.categoryLabel}
                     </span>
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <td style={{ padding: '8px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {row.total.toLocaleString()}
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: wrColor(row.wr) }}>
+                  <td style={{ padding: '8px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: wrColor(row.wr) }}>
                     {row.wr}%
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <td style={{ padding: '8px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {row.sp}%
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <td style={{ padding: '8px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {row.mo}mo
                   </td>
-                  <td style={{ padding: '10px 16px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--accent-primary)' }}>
+                  <td style={{ padding: '8px 16px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--accent-primary)' }}>
                     {row.rngMd > 0 ? fmtK(row.rngMd) : '–'}
                   </td>
                 </tr>

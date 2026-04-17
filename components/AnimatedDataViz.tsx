@@ -53,7 +53,7 @@ export default function AnimatedDataViz({
         animation: isVisible ? 'fadeInUp 0.6s ease-out' : 'none',
       }}
     >
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <p
           style={{
             fontSize: '11px',

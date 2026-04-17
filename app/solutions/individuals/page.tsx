@@ -58,8 +58,8 @@ export default function IndividualsPage() {
     <div>
       {/* Hero */}
       <section style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -91,7 +91,7 @@ export default function IndividualsPage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
           }}>
             Understand your case value
           </h1>
@@ -108,8 +108,8 @@ export default function IndividualsPage() {
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/sign-up" style={{
               background: 'var(--gold, #C4882A)',
-              color: '#ffffff',
-              padding: '10px 20px',
+              color: 'var(--card, #FFFFFF)',
+              padding: '8px 24px',
               borderRadius: 4,
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
@@ -128,7 +128,7 @@ export default function IndividualsPage() {
             <Link href="/contact" style={{
               background: 'transparent',
               color: 'rgba(255,255,255,0.85)',
-              padding: '10px 20px',
+              padding: '8px 24px',
               borderRadius: 4,
               border: '1px solid rgba(255,255,255,0.2)',
               textDecoration: 'none',
@@ -163,7 +163,7 @@ export default function IndividualsPage() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
-                padding: '20px 16px',
+                padding: '24px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
@@ -191,7 +191,7 @@ export default function IndividualsPage() {
       </section>
 
       {/* Get Started CTA */}
-      <section style={{ padding: '20px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+      <section style={{ padding: '24px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-ui)',
@@ -248,7 +248,7 @@ export default function IndividualsPage() {
       </section>
 
       {/* Share This Research Section */}
-      <section style={{ padding: '20px 16px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '24px 16px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-ui)',
@@ -309,7 +309,7 @@ export default function IndividualsPage() {
       </section>
 
       {/* Related Solutions */}
-      <section style={{ padding: '20px 16px', background: 'var(--color-surface-1)' }}>
+      <section style={{ padding: '24px 16px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-ui)',
@@ -328,7 +328,7 @@ export default function IndividualsPage() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
-                padding: '20px 16px',
+                padding: '24px 16px',
                 textDecoration: 'none',
                 display: 'block',
                 transition: 'box-shadow 200ms ease, border-color 200ms ease',
@@ -361,7 +361,7 @@ export default function IndividualsPage() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
-                padding: '20px 16px',
+                padding: '24px 16px',
                 textDecoration: 'none',
                 display: 'block',
                 transition: 'box-shadow 200ms ease, border-color 200ms ease',
@@ -394,7 +394,7 @@ export default function IndividualsPage() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
-                padding: '20px 16px',
+                padding: '24px 16px',
                 textDecoration: 'none',
                 display: 'block',
                 transition: 'box-shadow 200ms ease, border-color 200ms ease',

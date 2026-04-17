@@ -117,7 +117,7 @@ export default function ResetPasswordPage() {
         alignItems: 'center',
         justifyContent: 'center',
         background: 'var(--accent-primary)',
-        padding: '20px',
+        padding: '24px',
       }}
     >
       <style>{`
@@ -271,7 +271,7 @@ export default function ResetPasswordPage() {
                   backgroundColor: 'rgba(10, 102, 194, 0.06)',
                   border: '1px solid rgba(204,16,25,0.20)',
                   borderRadius: '4px',
-                  marginBottom: '20px',
+                  marginBottom: '24px',
                 }}
               >
                 <p

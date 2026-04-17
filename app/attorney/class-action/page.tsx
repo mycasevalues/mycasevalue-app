@@ -76,7 +76,7 @@ export default function ClassActionPage() {
   return (
     <div style={{ minHeight: '100vh', background: bgColor, fontFamily: 'var(--font-body)', color: textColor }}>
       {/* Header */}
-      <div style={{ background: secondaryColor, padding: '20px 20px', borderBottom: `1px solid ${borderColor}` }}>
+      <div style={{ background: secondaryColor, padding: '24px 24px', borderBottom: `1px solid ${borderColor}` }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h1 style={{ fontSize: '26px', fontWeight: 700, margin: '0 0 8px', color: 'white', fontFamily: 'var(--font-heading)' }}>
             Class Action Intelligence
@@ -88,7 +88,7 @@ export default function ClassActionPage() {
       </div>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Section 1: Top Case Types */}
         <section style={{ marginBottom: '48px' }}>
           <h2 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '24px', color: secondaryColor, fontFamily: 'var(--font-heading)' }}>
@@ -105,7 +105,7 @@ export default function ClassActionPage() {
                     background: 'var(--color-surface-0)',
                     border: `1px solid ${borderColor}`,
                     borderRadius: '4px',
-                    padding: '20px',
+                    padding: '24px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                   }}
                 >

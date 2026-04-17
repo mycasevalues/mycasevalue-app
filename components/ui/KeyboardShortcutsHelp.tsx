@@ -93,7 +93,7 @@ export default function KeyboardShortcutsHelp() {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
 
       {/* Modal */}
-      <div className="relative bg-[var(--surf,#F6F5F2)] rounded-xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden">
+      <div className="relative bg-[var(--surf,#F6F5F2)] rounded shadow-2xl w-full max-w-lg mx-4 overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--bdr, #E2DFD8)]">
           <h2 className="text-lg font-semibold text-gray-100">Keyboard Shortcuts</h2>

@@ -107,7 +107,7 @@ export default function SpanishPricingPage() {
             OPCIONES DE PAGO
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-extrabold mb-4" style={{ color: 'var(--color-surface-0)' }}>
             Precios Simples y Transparentes
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--color-surface-0)', opacity: 0.9 }}>
@@ -128,7 +128,7 @@ export default function SpanishPricingPage() {
               background: 'var(--color-surface-0)',
             }}>
             <div className="mb-6">
-              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
                 Informe Individual
               </h3>
               <div className="flex items-baseline gap-2">
@@ -182,7 +182,7 @@ export default function SpanishPricingPage() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
                 Informes Ilimitados
               </h3>
               <div className="flex items-baseline gap-2">
@@ -230,7 +230,7 @@ export default function SpanishPricingPage() {
               background: 'var(--color-surface-0)',
             }}>
             <div className="mb-6">
-              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
                 Modo Abogado
               </h3>
               <div className="flex items-baseline gap-2">
@@ -284,7 +284,7 @@ export default function SpanishPricingPage() {
 
         {/* Pricing FAQ */}
         <section>
-          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-8 text-center" style={{ color: 'var(--color-text-primary)' }}>
             Preguntas sobre Precios
           </h2>
           <div className="space-y-3 max-w-3xl mx-auto">
@@ -327,7 +327,7 @@ export default function SpanishPricingPage() {
 
         {/* CTA Section */}
         <section className="mt-16 text-center p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             ¿Listo para ver tus probabilidades de caso?
           </h2>
           <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--color-text-secondary)' }}>
@@ -346,7 +346,7 @@ export default function SpanishPricingPage() {
       {/* Available Tools Section */}
       <div style={{ background: 'var(--color-surface-0)', borderTop: '1px solid var(--border-default)', padding: '48px 24px' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

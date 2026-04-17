@@ -72,7 +72,7 @@ export function TopDistrictsTableSkeleton() {
     <>
       <style>{pulseKeyframes}</style>
       <div style={{ background: 'var(--color-surface-0)', border: '1px solid #E0DDD8', borderRadius: '4px', padding: '24px' }}>
-        <SkeletonBox width="160px" height="16px" style={{ marginBottom: '20px' }} />
+        <SkeletonBox width="160px" height="16px" style={{ marginBottom: '24px' }} />
         {[1, 2, 3, 4, 5].map((i) => (
           <div key={i} style={{ display: 'flex', gap: '12px', marginBottom: '12px', alignItems: 'center' }}>
             <SkeletonBox width="32px" height="32px" style={{ borderRadius: '50%' }} />
@@ -91,7 +91,7 @@ export function CircuitTableSkeleton() {
     <>
       <style>{pulseKeyframes}</style>
       <div style={{ background: 'var(--color-surface-0)', border: '1px solid #E0DDD8', borderRadius: '4px', padding: '24px' }}>
-        <SkeletonBox width="200px" height="16px" style={{ marginBottom: '20px' }} />
+        <SkeletonBox width="200px" height="16px" style={{ marginBottom: '24px' }} />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginBottom: '12px' }}>
           <SkeletonBox height="14px" />
           <SkeletonBox height="14px" />
@@ -99,7 +99,7 @@ export function CircuitTableSkeleton() {
           <SkeletonBox height="14px" />
         </div>
         {[1, 2, 3, 4, 5, 6].map((i) => (
-          <div key={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginBottom: '10px' }}>
+          <div key={i} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginBottom: '8px' }}>
             <SkeletonBox height="14px" />
             <SkeletonBox height="14px" />
             <SkeletonBox height="14px" />
@@ -118,7 +118,7 @@ export function MetricsRowSkeleton() {
       <style>{pulseKeyframes}</style>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
         {[1, 2, 3, 4].map((i) => (
-          <div key={i} style={{ background: 'var(--color-surface-0)', border: '1px solid #E0DDD8', borderRadius: '4px', padding: '20px' }}>
+          <div key={i} style={{ background: 'var(--color-surface-0)', border: '1px solid #E0DDD8', borderRadius: '4px', padding: '24px' }}>
             <SkeletonBox width="80px" height="11px" style={{ marginBottom: '12px' }} />
             <SkeletonBox width="100px" height="28px" style={{ marginBottom: '6px' }} />
             <SkeletonBox width="140px" height="12px" />

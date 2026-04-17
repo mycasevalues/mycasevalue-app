@@ -123,8 +123,8 @@ export default function DeadlinesCalculatorPage() {
 
       {/* Header */}
       <header style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -226,9 +226,9 @@ export default function DeadlinesCalculatorPage() {
                 </p>
 
                 {/* Horizontal Timeline */}
-                <div style={{ position: 'relative', padding: '20px 0 0' }}>
+                <div style={{ position: 'relative', padding: '24px 0 0' }}>
                   {/* Timeline line */}
-                  <div style={{ position: 'absolute', top: 28, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-primary-hover))', borderRadius: 2 }} />
+                  <div style={{ position: 'absolute', top: 32, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-primary-hover))', borderRadius: 2 }} />
 
                   {/* Event markers */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', position: 'relative', minHeight: 80 }}>
@@ -296,7 +296,7 @@ export default function DeadlinesCalculatorPage() {
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 12 }}>
                       <div style={{ flex: 1, minWidth: 200 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                           <span style={{
                             display: 'inline-block', padding: '3px 10px', background: 'rgba(59,130,246,0.08)',
                             color: 'var(--accent-primary-hover)', borderRadius: 4, fontSize: 11, fontWeight: 600,

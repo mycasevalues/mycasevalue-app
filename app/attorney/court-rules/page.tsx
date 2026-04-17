@@ -132,8 +132,8 @@ export default function CourtRulesPage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -157,12 +157,12 @@ export default function CourtRulesPage() {
       {/* Main Content */}
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Filters */}
-        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
             Find Your District
           </h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
             <div>
               <label style={labelStyle}>Search by District or State</label>
               <input
@@ -291,7 +291,7 @@ export default function CourtRulesPage() {
         </div>
 
         {filteredDistricts.length === 0 && (
-          <div style={{ textAlign: 'center', padding: '60px 20px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
+          <div style={{ textAlign: 'center', padding: '60px 24px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
             <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
               No districts match your search. Try a different search term or filter.
             </p>

@@ -270,7 +270,7 @@ export default function AdminPage() {
                     backgroundColor: 'var(--color-surface-0)',
                     border: '1px solid #e0e0e0',
                     borderRadius: '4px',
-                    padding: '20px',
+                    padding: '24px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                   }}
                 >
@@ -916,7 +916,7 @@ export default function AdminPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid #e0e0e0',
                   borderRadius: '4px',
-                  padding: '20px',
+                  padding: '24px',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                 }}
               >
@@ -932,7 +932,7 @@ export default function AdminPage() {
                   backgroundColor: 'var(--color-surface-0)',
                   border: '1px solid #e0e0e0',
                   borderRadius: '4px',
-                  padding: '20px',
+                  padding: '24px',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
                 }}
               >

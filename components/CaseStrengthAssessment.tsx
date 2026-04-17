@@ -417,7 +417,7 @@ export default function CaseStrengthAssessment() {
         style={{
           maxWidth: '1200px',
           margin: '0 auto',
-          padding: '40px 20px',
+          padding: '40px 24px',
         }}
       >
         <div style={{ textAlign: 'center', marginBottom: '24px' }}>
@@ -448,7 +448,7 @@ export default function CaseStrengthAssessment() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '20px',
+            gap: '24px',
           }}
         >
           {caseTypes.map((caseType) => {
@@ -526,7 +526,7 @@ export default function CaseStrengthAssessment() {
         style={{
           maxWidth: '700px',
           margin: '0 auto',
-          padding: '40px 20px',
+          padding: '40px 24px',
         }}
       >
         <ProgressBar current={step} total={selectedCaseType.questions.length + 1} />
@@ -765,7 +765,7 @@ export default function CaseStrengthAssessment() {
         style={{
           maxWidth: '900px',
           margin: '0 auto',
-          padding: '40px 20px',
+          padding: '40px 24px',
         }}
       >
         <div
@@ -884,7 +884,7 @@ export default function CaseStrengthAssessment() {
                         marginLeft: '16px',
                         whiteSpace: 'nowrap',
                         fontWeight: '600',
-                        color: isYes ? '#10B981' : 'var(--color-text-muted)',
+                        color: isYes ? 'var(--data-positive, #176438)' : 'var(--color-text-muted)',
                       }}
                     >
                       {isYes ? `+${q.points}` : '−'}
@@ -896,7 +896,7 @@ export default function CaseStrengthAssessment() {
           </div>
 
           {/* Comparison section */}
-          <div style={{ marginBottom: '24px', backgroundColor: 'rgba(59,130,246,0.06)', padding: '20px', borderRadius: '4px' }}>
+          <div style={{ marginBottom: '24px', backgroundColor: 'rgba(59,130,246,0.06)', padding: '24px', borderRadius: '4px' }}>
             <h3
               style={{
                 fontSize: '16px',
@@ -945,7 +945,7 @@ export default function CaseStrengthAssessment() {
             </h3>
             <ol
               style={{
-                paddingLeft: '20px',
+                paddingLeft: '24px',
                 margin: '0',
               }}
             >

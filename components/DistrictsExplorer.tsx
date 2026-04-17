@@ -232,7 +232,7 @@ export default function DistrictsExplorer({
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
           border-radius: 12px;
-          padding: 20px;
+          padding: 24px;
         }
         .stat-label {
           font-size: 11px;
@@ -264,7 +264,7 @@ export default function DistrictsExplorer({
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
           border-radius: 12px;
-          padding: 10px 12px;
+          padding: 8px 12px;
           font-size: 13px;
           font-family: var(--font-body);
           color: var(--color-text-primary);
@@ -456,7 +456,7 @@ export default function DistrictsExplorer({
               style={{
                 background: 'var(--color-surface-0)',
                 borderRadius: 2,
-                padding: '14px 16px',
+                padding: '16px 16px',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>

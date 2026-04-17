@@ -607,7 +607,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-          gap: 20,
+          gap: 24,
           marginBottom: 32,
         }}>
           {state.judges.map(judge => {
@@ -617,7 +617,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
 
             return (
               <div key={judge.id} style={{
-                padding: '20px',
+                padding: '24px',
                 borderRadius: 2,
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
@@ -786,7 +786,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             onClick={() => setState(prev => ({ ...prev, currentPage: Math.max(1, prev.currentPage - 1) }))}
             disabled={state.currentPage === 1}
             style={{
-              padding: '10px 16px',
+              padding: '8px 16px',
               borderRadius: 2,
               border: '1px solid var(--border-default)',
               background: state.currentPage === 1 ? 'var(--color-surface-1)' : 'var(--color-surface-0)',
@@ -817,7 +817,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             return pages.map((item, idx) => {
               if (item === 'ellipsis') {
                 return (
-                  <span key={`ellipsis-${idx}`} style={{ padding: '10px 4px', color: 'var(--color-text-muted)', fontSize: 14, fontWeight: 600, userSelect: 'none' }}>
+                  <span key={`ellipsis-${idx}`} style={{ padding: '8px 4px', color: 'var(--color-text-muted)', fontSize: 14, fontWeight: 600, userSelect: 'none' }}>
                     …
                   </span>
                 );
@@ -830,7 +830,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                   aria-label={`Page ${item}`}
                   aria-current={isCurrentPage ? 'page' : undefined}
                   style={{
-                    padding: '10px 14px',
+                    padding: '8px 16px',
                     borderRadius: 2,
                     border: '1px solid var(--border-default)',
                     background: isCurrentPage ? 'var(--accent-primary)' : 'var(--color-surface-0)',
@@ -851,7 +851,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
             onClick={() => setState(prev => ({ ...prev, currentPage: Math.min(totalPages, prev.currentPage + 1) }))}
             disabled={state.currentPage === totalPages}
             style={{
-              padding: '10px 16px',
+              padding: '8px 16px',
               borderRadius: 2,
               border: '1px solid var(--border-default)',
               background: state.currentPage === totalPages ? 'var(--color-surface-1)' : 'var(--color-surface-0)',
@@ -1049,14 +1049,14 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
                 <div
                   key={judge.id}
                   style={{
-                    padding: '20px',
+                    padding: '24px',
                     borderRadius: 2,
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
                     marginBottom: 16,
                     display: 'grid',
                     gridTemplateColumns: 'auto 1fr auto auto auto auto auto auto',
-                    gap: 20,
+                    gap: 24,
                     alignItems: 'center',
                     transition: 'all 0.2s ease',
                   }}
@@ -1190,7 +1190,7 @@ export default function JudgeDirectoryClient({ initialJudges = [], initialTotal 
 
                   {/* View Profile Link */}
                   <Link href={`/judges/${judge.id}`} style={{
-                    padding: '10px 16px',
+                    padding: '8px 16px',
                     textAlign: 'center',
                     borderRadius: 2,
                     border: '1px solid var(--accent-primary)',

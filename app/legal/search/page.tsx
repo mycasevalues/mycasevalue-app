@@ -53,7 +53,7 @@ const SOURCE_COLORS: Record<string, string> = {
   edgar: 'var(--wrn-txt, #7A5800)',
   caselaw: 'var(--data-positive, #176438)',
   canlii: 'var(--data-negative, #B01E1E)',
-  govinfo: '#6B7280',
+  govinfo: 'var(--color-text-muted)',
 };
 
 const SOURCE_LABELS: Record<string, string> = {
@@ -126,7 +126,7 @@ export default function LegalSearchPage() {
   };
 
   const selectStyle: React.CSSProperties = {
-    padding: '10px 14px',
+    padding: '8px 16px',
     borderRadius: 4,
     border: '1px solid rgba(255,255,255,0.1)',
     fontSize: 14,
@@ -137,7 +137,7 @@ export default function LegalSearchPage() {
   };
 
   return (
-    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '20px 16px 40px' }}>
+    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '24px 16px 40px' }}>
 
       {/* Breadcrumb */}
       <nav style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 24 }}>
@@ -167,7 +167,7 @@ export default function LegalSearchPage() {
               placeholder="Search cases, regulations, filings..."
               style={{
                 width: '100%',
-                padding: '14px 18px 14px 46px',
+                padding: '16px 16px 16px 48px',
                 borderRadius: 4,
                 border: '2px solid var(--bdr, #E2DFD8)',
                 fontSize: 16,
@@ -187,7 +187,7 @@ export default function LegalSearchPage() {
             type="submit"
             disabled={loading}
             style={{
-              padding: '14px 28px',
+              padding: '16px 32px',
               borderRadius: 4,
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
@@ -205,10 +205,10 @@ export default function LegalSearchPage() {
             type="button"
             onClick={() => setShowFilters(!showFilters)}
             style={{
-              padding: '14px 18px',
+              padding: '16px 16px',
               borderRadius: 4,
               background: showFilters ? '#E8F4FD' : 'rgba(255,255,255,0.05)',
-              color: showFilters ? 'var(--accent-primary)' : '#6B7280',
+              color: showFilters ? 'var(--accent-primary)' : 'var(--color-text-muted)',
               fontSize: 14,
               fontWeight: 500,
               border: showFilters ? '1px solid var(--accent-primary)' : '1px solid var(--bdr, #E2DFD8)',
@@ -226,7 +226,7 @@ export default function LegalSearchPage() {
             display: 'flex',
             gap: 12,
             flexWrap: 'wrap',
-            padding: '16px 20px',
+            padding: '16px 24px',
             background: 'var(--color-surface-0)',
             borderRadius: 4,
             border: '1px solid var(--border-default)',
@@ -256,7 +256,7 @@ export default function LegalSearchPage() {
               <button
                 type="button"
                 onClick={() => { setSource('all'); setDocType('all'); setDateFrom(''); setDateTo(''); }}
-                style={{ padding: '10px 16px', borderRadius: 4, background: 'transparent', color: 'var(--color-text-muted)', fontSize: 13, border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+                style={{ padding: '8px 16px', borderRadius: 4, background: 'transparent', color: 'var(--color-text-muted)', fontSize: 13, border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
               >
                 Clear filters
               </button>
@@ -268,7 +268,7 @@ export default function LegalSearchPage() {
       {/* Demo banner */}
       {isDemo && hasSearched && (
         <div style={{
-          padding: '10px 16px',
+          padding: '8px 16px',
           background: 'rgba(234,179,8,0.08)',
           border: '1px solid #FDE68A',
           borderRadius: 4,
@@ -305,7 +305,7 @@ export default function LegalSearchPage() {
           <div
             key={doc.id}
             style={{
-              padding: '20px 24px',
+              padding: '24px 24px',
               borderRadius: 14,
               border: '1px solid var(--border-default)',
               background: 'var(--color-surface-0)',
@@ -323,8 +323,8 @@ export default function LegalSearchPage() {
                 borderRadius: 4,
                 fontSize: 11,
                 fontWeight: 600,
-                color: SOURCE_COLORS[doc.source] || '#6B7280',
-                background: `${SOURCE_COLORS[doc.source] || '#6B7280'}14`,
+                color: SOURCE_COLORS[doc.source] || 'var(--color-text-muted)',
+                background: `${SOURCE_COLORS[doc.source] || 'var(--color-text-muted)'}14`,
                 letterSpacing: '0.02em',
               }}>
                 {SOURCE_LABELS[doc.source] || doc.source}
@@ -400,11 +400,11 @@ export default function LegalSearchPage() {
             onClick={() => doSearch(page - 1)}
             disabled={page <= 1 || loading}
             style={{
-              padding: '10px 18px',
+              padding: '8px 16px',
               borderRadius: 4,
               border: '1px solid rgba(255,255,255,0.1)',
               background: page <= 1 ? 'rgba(255,255,255,0.05)' : 'var(--color-surface-0)',
-              color: page <= 1 ? 'var(--color-text-muted)' : '#374151',
+              color: page <= 1 ? 'var(--color-text-muted)' : 'var(--color-text-secondary)',
               fontSize: 14,
               cursor: page <= 1 ? 'not-allowed' : 'pointer',
             }}
@@ -415,11 +415,11 @@ export default function LegalSearchPage() {
             onClick={() => doSearch(page + 1)}
             disabled={page >= totalPages || loading}
             style={{
-              padding: '10px 18px',
+              padding: '8px 16px',
               borderRadius: 4,
               border: '1px solid rgba(255,255,255,0.1)',
               background: page >= totalPages ? 'rgba(255,255,255,0.05)' : 'var(--color-surface-0)',
-              color: page >= totalPages ? 'var(--color-text-muted)' : '#374151',
+              color: page >= totalPages ? 'var(--color-text-muted)' : 'var(--color-text-secondary)',
               fontSize: 14,
               cursor: page >= totalPages ? 'not-allowed' : 'pointer',
             }}
@@ -432,21 +432,21 @@ export default function LegalSearchPage() {
       {/* Source stats sidebar */}
       <div style={{
         marginTop: 48,
-        padding: '28px 32px',
-        borderRadius: 16,
+        padding: '32px 32px',
+        borderRadius: 6,
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
       }}>
         <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
           Search Across 7 Sources
         </h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 10 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 8 }}>
           {SOURCES.filter(s => s.value !== 'all').map((s) => (
             <button
               key={s.value}
               onClick={() => { setSource(s.value); doSearch(1); }}
               style={{
-                padding: '10px 14px',
+                padding: '8px 16px',
                 borderRadius: 4,
                 border: source === s.value ? `2px solid ${SOURCE_COLORS[s.value]}` : '1px solid var(--border-default)',
                 background: source === s.value ? `${SOURCE_COLORS[s.value]}0A` : 'var(--color-surface-0)',

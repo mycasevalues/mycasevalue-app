@@ -48,7 +48,7 @@ export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps)
         background: 'var(--sidebar2, #F4F3EF)',
         border: '1px solid var(--bdr, #E2DFD8)',
         borderRadius: 2,
-        padding: 10,
+        padding: 8,
       }}
     >
       {/* Header */}
@@ -63,7 +63,7 @@ export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps)
           marginBottom: 5,
           display: 'flex',
           alignItems: 'center',
-          gap: 5,
+          gap: 4,
         }}
       >
         RESEARCH ORGANIZER
@@ -72,7 +72,7 @@ export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps)
             style={{
               fontSize: 9,
               fontWeight: 700,
-              color: '#FFFFFF',
+              color: 'var(--card, #FFFFFF)',
               background: 'var(--link, #0A50A2)',
               borderRadius: 4,
               padding: '1px 5px',

@@ -265,7 +265,7 @@ export default function APISandbox() {
           onChange={(e) => setApiKey(e.target.value)}
           style={{
             width: '100%',
-            padding: '10px 12px',
+            padding: '8px 12px',
             fontSize: '13px',
             border: '1px solid var(--border-default)',
             borderRadius: '4px',
@@ -299,7 +299,7 @@ export default function APISandbox() {
           }}
           style={{
             width: '100%',
-            padding: '10px 12px',
+            padding: '8px 12px',
             fontSize: '13px',
             border: '1px solid var(--border-default)',
             borderRadius: '4px',

@@ -76,7 +76,7 @@ export default function StickyCTA() {
         style={{
           background: 'var(--accent-primary)',
           color: 'var(--color-surface-0)',
-          padding: '10px 20px',
+          padding: '8px 24px',
           borderRadius: '9999px',
           textDecoration: 'none',
           fontFamily: 'var(--font-body)',
@@ -94,7 +94,7 @@ export default function StickyCTA() {
         href="/pricing"
         style={{
           color: 'var(--color-text-secondary)',
-          padding: '10px 16px',
+          padding: '8px 16px',
           textDecoration: 'none',
           fontFamily: 'var(--font-body)',
           fontWeight: 500,

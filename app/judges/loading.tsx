@@ -2,7 +2,7 @@ export default function JudgesLoading() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--surf, #F6F5F2)', fontFamily: 'var(--font-ui)' }}>
       {/* Light header with title skeleton */}
-      <div style={{ background: '#FFFFFF', padding: '48px 24px', borderBottom: '1px solid var(--bdr, #E2DFD8)' }}>
+      <div style={{ background: 'var(--card, #FFFFFF)', padding: '48px 24px', borderBottom: '1px solid var(--bdr, #E2DFD8)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ height: '14px', width: '100px', background: 'var(--bdr, #E2DFD8)', borderRadius: '4px', marginBottom: '16px' }} />
           <div style={{ height: '42px', width: '50%', background: 'var(--bdr, #E2DFD8)', borderRadius: '4px', marginBottom: '12px' }} />
@@ -19,7 +19,7 @@ export default function JudgesLoading() {
         }}>
           {[1, 2, 3, 4, 5, 6].map(i => (
             <div key={i} style={{
-              background: '#FFFFFF',
+              background: 'var(--card, #FFFFFF)',
               border: '1px solid var(--bdr, #E2DFD8)',
               borderRadius: '4px',
               padding: '24px',

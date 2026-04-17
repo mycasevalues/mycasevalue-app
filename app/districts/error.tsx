@@ -38,7 +38,7 @@ export default function Error({
         <div style={{
           maxWidth: 480,
           textAlign: 'center',
-          background: '#FFFFFF',
+          background: 'var(--card, #FFFFFF)',
           border: '1px solid var(--bdr, #E2DFD8)',
           borderRadius: '4px',
           padding: '48px 32px',
@@ -94,7 +94,7 @@ export default function Error({
                 gap: 8,
                 padding: '12px 24px',
                 background: 'var(--accent-primary)',
-                color: '#FFFFFF',
+                color: 'var(--card, #FFFFFF)',
                 border: 'none',
                 borderRadius: '4px',
                 fontSize: '14px',

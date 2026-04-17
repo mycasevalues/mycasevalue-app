@@ -491,7 +491,7 @@ export default function AnnualReportCapture() {
         <button
           onClick={() => setSubmitted(false)}
           style={{
-            padding: '10px 24px',
+            padding: '8px 24px',
             background: 'var(--accent-primary)',
             color: 'var(--color-surface-0)',
             border: 'none',
@@ -683,7 +683,7 @@ export default function AnnualReportCapture() {
                 fontSize: '13px',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 1.8,
-                paddingLeft: '20px',
+                paddingLeft: '24px',
                 margin: 0,
               }}>
                 <li>Executive Summary</li>
@@ -711,7 +711,7 @@ export default function AnnualReportCapture() {
                 fontSize: '13px',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 1.8,
-                paddingLeft: '20px',
+                paddingLeft: '24px',
                 margin: 0,
               }}>
                 <li>5,100,000+ analyzed federal cases</li>

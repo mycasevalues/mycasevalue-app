@@ -152,8 +152,8 @@ export default function DepositionPrepPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -178,12 +178,12 @@ export default function DepositionPrepPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: outlineText ? '380px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Deposition Details
             </h2>
 
-            <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
                 <label style={labelStyle}>Case Category</label>
                 <select value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); }} style={selectStyle}>
@@ -211,7 +211,7 @@ export default function DepositionPrepPage() {
                       type="button"
                       onClick={() => setDeponentRole(role.value)}
                       style={{
-                        padding: '10px', borderRadius: '4px',
+                        padding: '8px', borderRadius: '4px',
                         border: `1px solid ${deponentRole === role.value ? 'var(--accent-primary)' : 'var(--border-default)'}`,
                         backgroundColor: deponentRole === role.value ? 'rgba(10,102,194,0.08)' : 'var(--color-surface-1)',
                         color: deponentRole === role.value ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
@@ -244,7 +244,7 @@ export default function DepositionPrepPage() {
               </div>
 
               {error && (
-                <div style={{ padding: '10px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
+                <div style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
                   <p style={{ fontSize: '13px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
                 </div>
               )}
@@ -253,7 +253,7 @@ export default function DepositionPrepPage() {
                 type="submit"
                 disabled={loading || !caseType || !deponentRole}
                 style={{
-                  width: '100%', padding: '14px',
+                  width: '100%', padding: '16px',
                   backgroundColor: loading || !caseType || !deponentRole ? 'var(--border-default)' : 'var(--accent-primary)',
                   color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)',
@@ -269,8 +269,8 @@ export default function DepositionPrepPage() {
           {/* Output */}
           {outlineText && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: 8 }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: 8 }}>
                   <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                     Deposition Outline
                     {loading && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}

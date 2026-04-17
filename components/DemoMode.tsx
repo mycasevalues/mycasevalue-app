@@ -27,8 +27,8 @@ function DemoModeBadge() {
     <div
       style={{
         position: 'fixed',
-        top: '20px',
-        right: '20px',
+        top: '24px',
+        right: '24px',
         zIndex: 9999,
         backgroundColor: 'var(--text1, #18181A)',
         color: 'var(--color-surface-0)',

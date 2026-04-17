@@ -164,8 +164,8 @@ export default function CaseTimelinePage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -190,12 +190,12 @@ export default function CaseTimelinePage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: timeline ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Case Information
             </h2>
 
-            <form onSubmit={generateTimeline} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <form onSubmit={generateTimeline} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Case Type */}
               <div>
                 <label style={labelStyle}>Case Type *</label>
@@ -243,7 +243,7 @@ export default function CaseTimelinePage() {
                 disabled={!caseType || !filingDate}
                 style={{
                   width: '100%',
-                  padding: '14px',
+                  padding: '16px',
                   backgroundColor: !caseType || !filingDate ? 'var(--border-default)' : 'var(--accent-primary)',
                   color: 'var(--color-surface-0)',
                   border: 'none',
@@ -312,7 +312,7 @@ export default function CaseTimelinePage() {
                     onClick={addCustomMilestone}
                     disabled={!newMilestoneName.trim() || !newMilestoneMonths}
                     style={{
-                      padding: '10px 14px',
+                      padding: '8px 16px',
                       backgroundColor: !newMilestoneName.trim() || !newMilestoneMonths ? 'var(--border-default)' : 'var(--color-surface-0)',
                       color: !newMilestoneName.trim() || !newMilestoneMonths ? 'var(--color-text-muted)' : 'var(--accent-primary)',
                       border: '1px solid var(--border-default)',
@@ -352,12 +352,12 @@ export default function CaseTimelinePage() {
           {timeline && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Timeline Summary Card */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
                   Timeline Summary
                 </h2>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                   <div>
                     <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                       Case Type
@@ -408,14 +408,14 @@ export default function CaseTimelinePage() {
               </div>
 
               {/* Milestone Timeline */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
                   Case Milestones
                 </h2>
 
                 <div style={{ position: 'relative', paddingLeft: '32px' }}>
                   {/* Timeline line */}
-                  <div style={{ position: 'absolute', left: '11px', top: '12px', bottom: '0', width: '2px', background: 'var(--border-default)' }} />
+                  <div style={{ position: 'absolute', left: '12px', top: '12px', bottom: '0', width: '2px', background: 'var(--border-default)' }} />
 
                   {/* Milestones */}
                   {timeline.milestones.map((milestone, idx) => (

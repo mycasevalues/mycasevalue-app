@@ -2,7 +2,7 @@ export default function UpgradeBanner() {
   return (
     <section
       style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         padding: '64px 24px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',
@@ -58,7 +58,7 @@ export default function UpgradeBanner() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 10px 20px;
+          padding: 8px 24px;
           background: var(--gold, #C4882A);
           color: #ffffff;
           border-radius: 3px;
@@ -80,7 +80,7 @@ export default function UpgradeBanner() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 10px 20px;
+          padding: 8px 24px;
           background: transparent;
           color: #ffffff;
           border: 1px solid rgba(255,255,255,0.2);
@@ -159,7 +159,7 @@ export default function UpgradeBanner() {
               background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
             }}>
-              <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '20px', fontFamily: 'var(--font-ui)' }}>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 Case Outcome Prediction
               </div>
               <div style={{ fontSize: '48px', fontWeight: 600, color: 'var(--accent-primary)', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
@@ -168,7 +168,7 @@ export default function UpgradeBanner() {
               <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
                 Favorable Outcome Probability
               </div>
-              <div style={{ height: '1px', background: 'var(--border-default)', marginBottom: '20px' }} />
+              <div style={{ height: '1px', background: 'var(--border-default)', marginBottom: '24px' }} />
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {[
                   { label: 'Win Rate', value: '68%' },

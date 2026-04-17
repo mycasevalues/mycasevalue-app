@@ -43,7 +43,7 @@ interface MeterBarProps {
 }
 
 const MeterBar = ({ value, max, color, label }: MeterBarProps) => (
-  <div style={{ marginBottom: '10px' }}>
+  <div style={{ marginBottom: '8px' }}>
     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
       <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{label}</span>
       <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
@@ -72,7 +72,7 @@ const DistrictBarChart = ({ districts }: DistrictBarChartProps) => {
   const maxCases = Math.max(...districts.map((d) => d.caseCount), 1);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
       {districts.map((district) => (
         <div key={district.district}>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
@@ -108,7 +108,7 @@ const CaseList = ({ cases }: CaseListProps) => (
         trial_win: 'var(--data-positive, #176438)',
         trial_loss: 'var(--data-negative, #B01E1E)',
         settlement: 'var(--accent-primary)',
-        dismissal: '#6B7280',
+        dismissal: 'var(--color-text-muted)',
         other: '#8B5CF6',
       };
 
@@ -222,7 +222,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
       onClick={onToggle}
       style={{
         width: '100%',
-        padding: '20px 24px',
+        padding: '24px 24px',
         border: 'none',
         background: 'none',
         cursor: 'pointer',
@@ -240,7 +240,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
         </div>
 
         {/* Quick Stats */}
-        <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
           <div style={{ textAlign: 'center' }}>
             <div className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)' }}>
               {attorney.winRate}%
@@ -289,7 +289,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
                 fontSize: '13px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
-                margin: '20px 0 14px',
+                margin: '24px 0 16px',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
               }}
@@ -345,7 +345,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
         </div>
 
         {/* Top Districts */}
-        <div style={{ marginTop: '20px' }}>
+        <div style={{ marginTop: '24px' }}>
           <h4
             style={{
               fontFamily: 'var(--font-ui)',
@@ -363,7 +363,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
         </div>
 
         {/* Recent Cases */}
-        <div style={{ marginTop: '20px' }}>
+        <div style={{ marginTop: '24px' }}>
           <h4
             style={{
               fontFamily: 'var(--font-ui)',
@@ -381,7 +381,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
         </div>
 
         {/* Case Type Breakdown */}
-        <div style={{ marginTop: '20px' }}>
+        <div style={{ marginTop: '24px' }}>
           <h4
             style={{
               fontFamily: 'var(--font-ui)',
@@ -506,7 +506,7 @@ export default function OpposingCounselSearch() {
         <form onSubmit={handleSearch} style={{ marginBottom: '24px' }}>
           <div style={{ display: 'flex', gap: '8px' }}>
             <div style={{ flex: 1, position: 'relative' }}>
-              <div style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-text-secondary)' }}>
+              <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-text-secondary)' }}>
                 <SearchIcon />
               </div>
               <input
@@ -586,7 +586,7 @@ export default function OpposingCounselSearch() {
             {/* Disclaimer */}
             <div
               style={{
-                padding: '14px 18px',
+                padding: '16px 16px',
                 backgroundColor: 'rgba(232, 149, 88, 0.12)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',

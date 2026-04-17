@@ -163,7 +163,7 @@ function FilterCheckbox({
         display: 'flex',
         alignItems: 'center',
         height: 24,
-        gap: 7,
+        gap: 8,
         cursor: 'pointer',
         fontSize: 12,
         fontFamily: 'var(--font-sans, var(--font-ui))',
@@ -185,7 +185,7 @@ function FilterCheckbox({
           height: 13,
           border: `1px solid ${checked ? 'var(--link)' : 'var(--bdr-strong)'}`,
           borderRadius: 2,
-          background: checked ? 'var(--link)' : '#FFFFFF',
+          background: checked ? 'var(--link)' : 'var(--card, #FFFFFF)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -195,7 +195,7 @@ function FilterCheckbox({
         onClick={(e) => { e.preventDefault(); onChange(); }}
       >
         {checked && (
-          <span style={{ color: '#FFFFFF', fontSize: 9, fontWeight: 700, lineHeight: 1 }}>✓</span>
+          <span style={{ color: 'var(--card, #FFFFFF)', fontSize: 9, fontWeight: 700, lineHeight: 1 }}>✓</span>
         )}
       </div>
       <span className="filter-label" style={{ flex: 1, transition: 'color 100ms ease' }}>{label}</span>
@@ -252,7 +252,7 @@ function FilterSectionGroup({ section }: { section: FilterSection }) {
 
       {/* Section body */}
       {isOpen && (
-        <div style={{ padding: '5px 14px 10px' }}>
+        <div style={{ padding: '4px 16px 8px' }}>
           {section.options.map((opt) => (
             <FilterCheckbox
               key={opt.label}
@@ -393,7 +393,7 @@ export default function WorkspaceSidebar({
               {/* Search Within Results */}
               {isResultsPage && (
                 <div style={{
-                  padding: '10px 12px 8px',
+                  padding: '8px 12px 8px',
                   borderBottom: '1px solid var(--bdr)',
                 }}>
                   <div style={{
@@ -402,7 +402,7 @@ export default function WorkspaceSidebar({
                     border: '1px solid var(--bdr-strong)',
                     borderRadius: 2,
                     overflow: 'hidden',
-                    background: '#FFFFFF',
+                    background: 'var(--card, #FFFFFF)',
                   }}>
                     <input
                       type="text"
@@ -427,7 +427,7 @@ export default function WorkspaceSidebar({
                         alignItems: 'center',
                         justifyContent: 'center',
                         cursor: 'pointer',
-                        color: '#FFFFFF',
+                        color: 'var(--card, #FFFFFF)',
                         flexShrink: 0,
                       }}
                       aria-label="Search within results"

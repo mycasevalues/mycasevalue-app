@@ -148,7 +148,7 @@ const TabbedFeatures: React.FC = () => {
                 key={feature.id}
                 onClick={() => setActiveTab(index)}
                 style={{
-                  padding: '20px 24px',
+                  padding: '24px 24px',
                   backgroundColor: activeTab === index ? 'var(--color-surface-0)' : 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderBottom: activeTab === index ? 'none' : '1px solid var(--border-default)',
@@ -540,10 +540,10 @@ const AIPredictionsPreview: React.FC = () => (
     </h3>
     <div
       style={{
-        padding: '20px',
+        padding: '24px',
         backgroundColor: 'rgba(255,255,255,0.06)',
         borderRadius: '4px',
-        marginBottom: '20px',
+        marginBottom: '24px',
       }}
     >
       <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '8px' }}>
@@ -563,7 +563,7 @@ const AIPredictionsPreview: React.FC = () => (
         Confidence Score: 82%
       </div>
     </div>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
       <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>
         Probability Distribution:
       </div>

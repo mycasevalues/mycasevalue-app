@@ -125,7 +125,7 @@ export default function FeeCalculatorPage() {
   const cardStyle: React.CSSProperties = {
     background: 'var(--color-surface-0)',
     borderRadius: '4px',
-    padding: '20px',
+    padding: '24px',
     border: '1px solid var(--border-default)',
     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
   };
@@ -134,8 +134,8 @@ export default function FeeCalculatorPage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -165,7 +165,7 @@ export default function FeeCalculatorPage() {
               Case Details
             </h2>
 
-            <form onSubmit={handleCalculate} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <form onSubmit={handleCalculate} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Case Type */}
               <div>
                 <label style={labelStyle}>Case Type *</label>
@@ -267,7 +267,7 @@ export default function FeeCalculatorPage() {
                 disabled={loading || !caseType || !caseValue}
                 style={{
                   width: '100%',
-                  padding: '14px',
+                  padding: '16px',
                   backgroundColor: loading || !caseType || !caseValue ? 'var(--border-default)' : 'var(--accent-primary)',
                   color: 'var(--color-text-inverse)',
                   border: 'none',
@@ -459,7 +459,7 @@ export default function FeeCalculatorPage() {
                   <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                     Lodestar Calculation (Fee-Shifting)
                   </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '8px', borderBottom: '1px solid var(--border-default)' }}>
                       <span>Total Billable Hours:</span>
                       <span style={{ fontWeight: 600 }}>{feeData.lodestar.totalHours} hrs</span>

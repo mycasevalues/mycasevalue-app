@@ -114,10 +114,10 @@ export default async function OutcomesPage({
           }}>This case type and district combination does not exist in our database.</p>
           <Link href="/districts" style={{
             display: 'inline-block',
-            padding: '10px 20px',
+            padding: '8px 24px',
             borderRadius: 4,
             fontWeight: 600,
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
             background: 'var(--gold, #C4882A)',
             border: '1px solid var(--gold, #C4882A)',
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
@@ -164,9 +164,9 @@ export default async function OutcomesPage({
   const durationDiff = districtDuration - nationalDuration;
 
   const getComparisonColor = (diff: number) => {
-    if (diff > 2) return '#10B981'; // green
-    if (diff > -2) return '#F59E0B'; // amber
-    return '#EF4444'; // red
+    if (diff > 2) return 'var(--data-positive, #176438)'; // green
+    if (diff > -2) return 'var(--wrn-txt, #7A5800)'; // amber
+    return 'var(--data-negative, #B01E1E)'; // red
   };
 
   const getComparisonLabel = (diff: number) => {
@@ -193,7 +193,7 @@ export default async function OutcomesPage({
     { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: 'var(--accent-primary-hover)' },
     { label: 'Dismissed', value: Math.round(Math.max(10, 53 - districtSettleRate - districtWinRate * 0.6)), color: 'var(--color-text-secondary)' },
     { label: 'Trial Win', value: Math.round(districtWinRate * 0.6), color: 'var(--color-text-muted)' },
-    { label: 'Trial Loss', value: Math.round(districtWinRate * 0.4), color: '#EF4444' },
+    { label: 'Trial Loss', value: Math.round(districtWinRate * 0.4), color: 'var(--data-negative, #B01E1E)' },
   ];
 
   // JSON-LD schema
@@ -252,7 +252,7 @@ export default async function OutcomesPage({
 
       {/* Header Section - Institutional Dark */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',
@@ -338,7 +338,7 @@ export default async function OutcomesPage({
       {/* Key Stats Section */}
       <div style={{
         background: 'var(--color-surface-0)',
-        padding: 'clamp(20px, 4vw, 32px) 20px',
+        padding: 'clamp(24px, 4vw, 32px) 20px',
         borderBottom: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -346,7 +346,7 @@ export default async function OutcomesPage({
           <div style={{
             fontSize: '12px',
             color: 'var(--color-text-muted)',
-            marginBottom: '20px',
+            marginBottom: '24px',
           }}>
             Last updated: April 2026
           </div>
@@ -361,7 +361,7 @@ export default async function OutcomesPage({
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
-              padding: '20px',
+              padding: '24px',
             }}>
               <div style={{
                 fontWeight: 600,
@@ -383,7 +383,7 @@ export default async function OutcomesPage({
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
-              padding: '20px',
+              padding: '24px',
             }}>
               <div style={{
                 fontWeight: 600,
@@ -405,7 +405,7 @@ export default async function OutcomesPage({
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
-              padding: '20px',
+              padding: '24px',
             }}>
               <div style={{
                 fontWeight: 600,
@@ -427,7 +427,7 @@ export default async function OutcomesPage({
               background: 'var(--color-surface-0)',
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
-              padding: '20px',
+              padding: '24px',
             }}>
               <div style={{
                 fontWeight: 600,
@@ -451,7 +451,7 @@ export default async function OutcomesPage({
 
       {/* Outcome Distribution */}
       <div style={{
-        padding: 'clamp(20px, 4vw, 40px) 20px',
+        padding: 'clamp(24px, 4vw, 40px) 20px',
         background: 'var(--color-surface-1)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -459,7 +459,7 @@ export default async function OutcomesPage({
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
             borderRadius: '4px',
-            padding: 'clamp(20px, 4vw, 32px)',
+            padding: 'clamp(24px, 4vw, 32px)',
           }}>
             <h2 style={{
               fontSize: '22px',
@@ -520,7 +520,7 @@ export default async function OutcomesPage({
 
       {/* How This Compares Section */}
       <div style={{
-        padding: 'clamp(20px, 4vw, 40px) 20px',
+        padding: 'clamp(24px, 4vw, 40px) 20px',
         background: 'var(--color-surface-0)',
         borderBottom: '1px solid var(--border-default)',
       }}>
@@ -555,7 +555,7 @@ export default async function OutcomesPage({
               background: 'var(--color-surface-1)',
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
-              padding: '20px',
+              padding: '24px',
             }}>
               <div style={{
                 fontSize: '11px',
@@ -631,7 +631,7 @@ export default async function OutcomesPage({
               background: 'var(--color-surface-1)',
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
-              padding: '20px',
+              padding: '24px',
             }}>
               <div style={{
                 fontSize: '11px',
@@ -707,7 +707,7 @@ export default async function OutcomesPage({
               background: 'var(--color-surface-1)',
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
-              padding: '20px',
+              padding: '24px',
             }}>
               <div style={{
                 fontSize: '11px',
@@ -783,7 +783,7 @@ export default async function OutcomesPage({
 
       {/* Related Outcomes Section */}
       <div style={{
-        padding: 'clamp(20px, 4vw, 40px) 20px',
+        padding: 'clamp(24px, 4vw, 40px) 20px',
         background: 'var(--color-surface-1)',
         borderBottom: '1px solid var(--border-default)',
       }}>
@@ -801,7 +801,7 @@ export default async function OutcomesPage({
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '20px',
+            gap: '24px',
           }}>
             {relatedCaseTypes.map((relatedType, i) => (
               <Link
@@ -812,7 +812,7 @@ export default async function OutcomesPage({
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
-                  padding: '20px',
+                  padding: '24px',
                   textDecoration: 'none',
                   display: 'block',
                   transition: 'all 0.3s ease',
@@ -853,7 +853,7 @@ export default async function OutcomesPage({
 
       {/* Quick Actions Section */}
       <div style={{
-        padding: 'clamp(20px, 4vw, 40px) 20px',
+        padding: 'clamp(24px, 4vw, 40px) 20px',
         background: 'var(--color-surface-0)',
         borderBottom: '1px solid var(--border-default)',
       }}>
@@ -880,7 +880,7 @@ export default async function OutcomesPage({
                 style={{
                   background: 'var(--accent-primary-hover)',
                   color: 'var(--color-surface-0)',
-                  padding: '16px 20px',
+                  padding: '16px 24px',
                   borderRadius: '4px',
                   textDecoration: 'none',
                   fontSize: '14px',
@@ -903,7 +903,7 @@ export default async function OutcomesPage({
       {/* Related Links Section */}
       <div style={{
         background: 'var(--color-surface-1)',
-        padding: 'clamp(20px, 4vw, 40px) 20px',
+        padding: 'clamp(24px, 4vw, 40px) 20px',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
@@ -919,7 +919,7 @@ export default async function OutcomesPage({
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '20px',
+            gap: '24px',
           }}>
             <Link href={`/cases/${category.id}`} className="outcome-card-link" style={{
               background: 'var(--color-surface-0)',
@@ -988,7 +988,7 @@ export default async function OutcomesPage({
       <div style={{
         background: 'var(--color-surface-0)',
         color: 'var(--color-text-secondary)',
-        padding: 'clamp(20px, 4vw, 40px) 20px',
+        padding: 'clamp(24px, 4vw, 40px) 20px',
         fontSize: '13px',
         fontFamily: 'var(--font-body)',
         lineHeight: '1.7',

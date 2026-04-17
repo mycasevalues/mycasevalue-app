@@ -53,7 +53,7 @@ export default function SpanishDisclaimerPage() {
             IMPORTANTE
           </div>
 
-          <h1 className="text-4xl font-display font-bold mb-4" style={{ color: 'var(--color-surface-0)' }}>
+          <h1 className="text-4xl font-legal font-bold mb-4" style={{ color: 'var(--color-surface-0)' }}>
             Descargo de Responsabilidad
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--color-surface-0)', opacity: 0.9 }}>
@@ -70,7 +70,7 @@ export default function SpanishDisclaimerPage() {
           {/* Disclaimer content with styled cards */}
           <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px' }}>
             <section className="mb-8">
-              <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
+              <h2 className="text-2xl font-legal font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
                 Declaración General
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
@@ -79,7 +79,7 @@ export default function SpanishDisclaimerPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
+              <h2 className="text-2xl font-legal font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
                 No es Asesoramiento Legal
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', lineHeight: '1.6', marginBottom: '12px' }}>
@@ -98,7 +98,7 @@ export default function SpanishDisclaimerPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
+              <h2 className="text-2xl font-legal font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
                 Limitaciones de Datos
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', lineHeight: '1.6', marginBottom: '12px' }}>
@@ -114,7 +114,7 @@ export default function SpanishDisclaimerPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
+              <h2 className="text-2xl font-legal font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
                 Sin Garantía
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', lineHeight: '1.6', marginBottom: '12px' }}>
@@ -128,7 +128,7 @@ export default function SpanishDisclaimerPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
+              <h2 className="text-2xl font-legal font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
                 Privacidad de los Datos
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', lineHeight: '1.6', marginBottom: '12px' }}>
@@ -140,7 +140,7 @@ export default function SpanishDisclaimerPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
+              <h2 className="text-2xl font-legal font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
                 Limitación de Responsabilidad
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', lineHeight: '1.6' }}>
@@ -149,7 +149,7 @@ export default function SpanishDisclaimerPage() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
+              <h2 className="text-2xl font-legal font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
                 Contacto
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', lineHeight: '1.6', marginBottom: '12px' }}>
@@ -164,7 +164,7 @@ export default function SpanishDisclaimerPage() {
 
         {/* Available Tools Section */}
         <section className="mt-16">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

@@ -324,7 +324,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: 4,
-                padding: '20px',
+                padding: '24px',
               }}
             >
               {!slot.judge ? (
@@ -356,7 +356,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                       })}
                       style={{
                         width: '100%',
-                        padding: '10px 12px',
+                        padding: '8px 12px',
                         border: '1px solid rgba(255,255,255,0.1)',
                         borderRadius: 4,
                         fontFamily: 'var(--font-body)',
@@ -548,7 +548,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                   <div
                     key={idx}
                     style={{
-                      padding: '20px',
+                      padding: '24px',
                       borderRight: idx < selectedJudges.length - 1 ? '1px solid var(--border-default)' : 'none',
                       background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--color-surface-0)',
                     }}
@@ -597,7 +597,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                 >
                   <div
                     style={{
-                      padding: '16px 20px',
+                      padding: '16px 24px',
                       fontWeight: 600,
                       fontSize: 13,
                       color: 'var(--color-text-primary)',
@@ -616,7 +616,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                       <div
                         key={idx}
                         style={{
-                          padding: '16px 20px',
+                          padding: '16px 24px',
                           textAlign: 'right',
                           background: idx % 2 === 0 ? 'var(--surf, #F6F5F2)' : 'var(--color-surface-0)',
                           fontFamily: 'var(--font-body)',

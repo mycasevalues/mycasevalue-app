@@ -135,7 +135,7 @@ export default function AnalyticsPage() {
           border: 1px solid rgba(59,130,246,0.2);
           background: rgba(59,130,246,0.08);
           font-family: var(--font-mono);
-          font-size: 10px;
+          font-size: 8px;
           font-weight: 600;
           letter-spacing: 0.15em;
           text-transform: uppercase;
@@ -175,7 +175,7 @@ export default function AnalyticsPage() {
         .metrics-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 20px;
+          gap: 24px;
           margin-bottom: 40px;
         }
 
@@ -255,7 +255,7 @@ export default function AnalyticsPage() {
           border: 1px solid var(--border-default);
           border-left: 4px solid var(--accent-primary);
           border-radius: 12px;
-          padding: 20px;
+          padding: 24px;
           margin-bottom: 40px;
         }
 
@@ -418,7 +418,7 @@ export default function AnalyticsPage() {
             href="/contact"
             style={{
               display: 'inline-block',
-              padding: '10px 20px',
+              padding: '8px 24px',
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               borderRadius: '20px',

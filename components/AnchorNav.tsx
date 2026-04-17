@@ -89,7 +89,7 @@ const AnchorNav = () => {
                 href={item.href}
                 onClick={(e) => handleAnchorClick(e, item.href)}
                 style={{
-                  padding: '14px 20px',
+                  padding: '16px 24px',
                   fontSize: '13px',
                   fontWeight: 500,
                   color: isTrialButton ? 'var(--accent-primary)' : isActive ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',

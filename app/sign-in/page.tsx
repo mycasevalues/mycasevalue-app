@@ -295,7 +295,7 @@ function SignInForm() {
         >
 
         {/* Logo */}
-        <div className="auth-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+        <div className="auth-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
           <svg width="28" height="28" viewBox="-100 -100 200 200">
             <rect x="-100" y="-100" width="200" height="200" rx="26" fill="var(--accent-primary)" />
             <g transform="rotate(12)">
@@ -366,7 +366,7 @@ function SignInForm() {
           </div>
 
           {/* Password Field */}
-          <div style={{ marginBottom: '20px' }}>
+          <div style={{ marginBottom: '24px' }}>
             <div
               style={{
                 display: 'flex',
@@ -455,7 +455,7 @@ function SignInForm() {
                 fontSize: '13px',
                 color: 'var(--accent-primary)',
                 margin: '0 0 16px 0',
-                padding: '10px 12px',
+                padding: '8px 12px',
                 backgroundColor: 'rgba(10, 102, 194, 0.06)',
                 borderRadius: '4px',
                 border: '1px solid rgba(10, 102, 194, 0.2)',

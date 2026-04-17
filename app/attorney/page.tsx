@@ -483,7 +483,7 @@ export default function AttorneyPage() {
       {/* Attorney Toolkit Section */}
       <section
         style={{
-          padding: '60px 20px',
+          padding: '60px 24px',
         }}
       >
         <div
@@ -623,7 +623,7 @@ export default function AttorneyPage() {
       {/* How Attorneys Use MyCaseValue Section */}
       <section
         style={{
-          padding: '60px 20px',
+          padding: '60px 24px',
           backgroundColor: 'var(--card, #FFFFFF)',
         }}
       >
@@ -748,7 +748,7 @@ export default function AttorneyPage() {
       {/* Data-Driven Advantage Stats Section */}
       <section
         style={{
-          padding: '60px 20px',
+          padding: '60px 24px',
         }}
       >
         <div
@@ -852,7 +852,7 @@ export default function AttorneyPage() {
       {/* Everything In Unlimited Plus Section */}
       <section
         style={{
-          padding: '60px 20px',
+          padding: '60px 24px',
           backgroundColor: 'var(--card, #FFFFFF)',
         }}
       >
@@ -916,7 +916,7 @@ export default function AttorneyPage() {
       {/* Get Started CTA Section */}
       <section
         style={{
-          padding: '60px 20px',
+          padding: '60px 24px',
         }}
       >
         <div

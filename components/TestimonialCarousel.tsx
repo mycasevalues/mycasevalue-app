@@ -144,7 +144,7 @@ export default function TestimonialCarousel() {
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
-            gap: '20px',
+            gap: '24px',
           }}
         >
           {/* Previous Button */}
@@ -210,7 +210,7 @@ export default function TestimonialCarousel() {
               }}
             >
               {/* Stars */}
-              <div style={{ marginBottom: '20px', display: 'flex', gap: '4px' }}>
+              <div style={{ marginBottom: '24px', display: 'flex', gap: '4px' }}>
                 {Array.from({ length: currentTestimonial.stars }).map((_, i) => (
                   <svg
                     key={i}

@@ -22,7 +22,7 @@ export default function AnnualReportPage() {
       {/* Dark Navy Hero Header */}
       <div style={{
         backgroundColor: 'var(--accent-primary)',
-        padding: '40px 20px',
+        padding: '40px 24px',
         color: 'var(--color-surface-0)',
         borderBottom: '4px solid var(--accent-primary)',
       }}>
@@ -51,7 +51,7 @@ export default function AnnualReportPage() {
       </div>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 20px' }}>
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Email Capture & Download Section */}
         <AnnualReportCapture />
       </div>

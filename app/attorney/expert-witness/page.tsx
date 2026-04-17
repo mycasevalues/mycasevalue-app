@@ -26,8 +26,8 @@ export default function ExpertWitnessPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -39,7 +39,7 @@ export default function ExpertWitnessPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-          <h1 className="font-display" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+          <h1 className="font-legal" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
             Expert Witness Intelligence
           </h1>
           <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '8px 0 0 0' }}>

@@ -48,7 +48,7 @@ export default function NOSRecoveryRangeClient({
     <section className="px-4 sm:px-6 lg:px-8 pb-12">
       <div className="max-w-6xl mx-auto">
         <div className="content-box">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: '16px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
             <div>
               <h2 className="section-title">Recovery Range Visualization</h2>
               <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '0px', fontFamily: 'var(--font-body)' }}>

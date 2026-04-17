@@ -602,7 +602,7 @@ export default function CourtGuideCapture() {
   };
 
   return (
-    <section className="rounded-lg border-2 border-blue-200 bg-blue-50 p-8">
+    <section className="rounded border-2 border-blue-200 bg-blue-50 p-8">
       <h2 className="mb-4 text-2xl font-bold text-gray-100">
         Download the Complete Guide
       </h2>
@@ -611,7 +611,7 @@ export default function CourtGuideCapture() {
       </p>
 
       {state.submitted ? (
-        <div className="rounded-lg bg-green-50 p-6 text-center">
+        <div className="rounded bg-green-50 p-6 text-center">
           <h3 className="mb-2 font-semibold text-green-900">
             Download started!
           </h3>

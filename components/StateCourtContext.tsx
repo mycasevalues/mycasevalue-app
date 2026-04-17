@@ -108,7 +108,7 @@ export default function StateCourtContext({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="rounded-lg border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
+        className="rounded border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
       >
         <div className="text-sm text-gray-400">
           <p className="font-semibold text-gray-100 mb-2">State Court Comparison</p>
@@ -126,7 +126,7 @@ export default function StateCourtContext({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
+      className="rounded border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
     >
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-gray-100">Federal vs State Court Outcomes</h2>
@@ -235,7 +235,7 @@ export default function StateCourtContext({
 
       {/* Key Difference Callout */}
       <div className="mt-6 pt-6 border-t border-[var(--bdr, #E2DFD8)]">
-        <div className="bg-blue-50 rounded-lg p-4">
+        <div className="bg-blue-50 rounded p-4">
           <p className="text-sm text-gray-300">
             <span className="font-semibold text-gray-100">Key Difference:</span>{' '}
             {federalWinRate > stateData.winRate

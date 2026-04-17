@@ -193,7 +193,7 @@ export default function PlatformPage() {
         .data-flow {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-          gap: 20px;
+          gap: 24px;
           margin: 40px 0;
         }
 
@@ -239,7 +239,7 @@ export default function PlatformPage() {
         }
 
         .comparison-table td {
-          padding: 14px 16px;
+          padding: 16px 16px;
           border-bottom: 1px solid rgba(255,255,255,0.05);
           font-size: 14px;
         }
@@ -397,7 +397,7 @@ export default function PlatformPage() {
           color: var(--color-text-secondary);
           display: flex;
           align-items: baseline;
-          gap: 10px;
+          gap: 8px;
         }
 
         .phase-list li:before {
@@ -413,13 +413,13 @@ export default function PlatformPage() {
         .market-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 20px;
+          gap: 24px;
           margin: 40px 0;
         }
 
         .market-card {
           background: linear-gradient(135deg, var(--accent-primary) 0%, #A78BFA 100%);
-          padding: 28px;
+          padding: 32px;
           border-radius: 12px;
           color: white;
           text-align: center;
@@ -495,8 +495,8 @@ export default function PlatformPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
-          background: '#FFFFFF',
-          color: '#fff',
+          background: 'var(--card, #FFFFFF)',
+          color: 'var(--card, #FFFFFF)',
           padding: '56px 24px 48px',
           position: 'relative',
           overflow: 'hidden',
@@ -528,7 +528,7 @@ export default function PlatformPage() {
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
               marginBottom: 16,
-              color: '#ffffff',
+              color: 'var(--card, #FFFFFF)',
             }}>
               The legal intelligence platform
             </h1>
@@ -931,19 +931,19 @@ export default function PlatformPage() {
                 color: '#6B21A8',
                 fontSize: 14,
               }}>
-                <li style={{ marginBottom: 12, display: 'flex', gap: 10 }}>
+                <li style={{ marginBottom: 12, display: 'flex', gap: 8 }}>
                   <span style={{ fontWeight: 600, flexShrink: 0 }}>→</span>
                   <span>Growing demand for data-driven legal decisions among solo practitioners and small firms</span>
                 </li>
-                <li style={{ marginBottom: 12, display: 'flex', gap: 10 }}>
+                <li style={{ marginBottom: 12, display: 'flex', gap: 8 }}>
                   <span style={{ fontWeight: 600, flexShrink: 0 }}>→</span>
                   <span>Cost pressure driving adoption of alternatives to expensive platforms (Westlaw, Lex Machina)</span>
                 </li>
-                <li style={{ marginBottom: 12, display: 'flex', gap: 10 }}>
+                <li style={{ marginBottom: 12, display: 'flex', gap: 8 }}>
                   <span style={{ fontWeight: 600, flexShrink: 0 }}>→</span>
                   <span>AI integration enabling predictive analytics previously unavailable to general practitioners</span>
                 </li>
-                <li style={{ display: 'flex', gap: 10 }}>
+                <li style={{ display: 'flex', gap: 8 }}>
                   <span style={{ fontWeight: 600, flexShrink: 0 }}>→</span>
                   <span>Regulatory focus on litigation cost control and case evaluation standards</span>
                 </li>
@@ -1108,7 +1108,7 @@ export default function PlatformPage() {
                 <div
                   key={source.name}
                   style={{
-                    padding: 28,
+                    padding: 32,
                     background: 'var(--color-surface-0)',
                     borderRadius: 4,
                     border: '1px solid var(--border-default)',
@@ -1197,7 +1197,7 @@ export default function PlatformPage() {
                 <div
                   key={cap.title}
                   style={{
-                    padding: 28,
+                    padding: 32,
                     background: 'var(--color-surface-1)',
                     borderRadius: 4,
                     border: '1px solid var(--border-default)',
@@ -1262,7 +1262,7 @@ export default function PlatformPage() {
                 <div
                   key={group.category}
                   style={{
-                    padding: 28,
+                    padding: 32,
                     background: 'var(--color-surface-0)',
                     borderRadius: 4,
                     border: '1px solid var(--border-default)',
@@ -1288,7 +1288,7 @@ export default function PlatformPage() {
                       <li
                         key={tool}
                         style={{
-                          padding: '10px 0',
+                          padding: '8px 0',
                           fontSize: 14,
                           color: 'var(--color-text-secondary)',
                           display: 'flex',
@@ -1343,7 +1343,7 @@ export default function PlatformPage() {
                 <div
                   key={audience.segment}
                   style={{
-                    padding: 28,
+                    padding: 32,
                     background: 'var(--color-surface-1)',
                     borderRadius: 4,
                     border: '1px solid var(--border-default)',
@@ -1375,7 +1375,7 @@ export default function PlatformPage() {
         {/* CTA Section */}
         <div style={{
           padding: '64px 24px',
-          background: '#FFFFFF',
+          background: 'var(--card, #FFFFFF)',
           position: 'relative',
           overflow: 'hidden',
           borderTop: '1px solid rgba(255,255,255,0.06)',
@@ -1391,7 +1391,7 @@ export default function PlatformPage() {
               fontSize: 'clamp(24px, 3.5vw, 32px)',
               fontWeight: 700,
               letterSpacing: '-0.02em',
-              color: '#ffffff',
+              color: 'var(--card, #FFFFFF)',
               marginBottom: 16,
             }}>
               Put federal court data to work

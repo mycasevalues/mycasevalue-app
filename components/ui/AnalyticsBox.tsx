@@ -87,7 +87,7 @@ function FullCoverage({ data, onMoreCases, onSimilarFact }: Omit<AnalyticsBoxPro
             style={{
               fontSize: 9,
               fontWeight: 700,
-              color: '#FFFFFF',
+              color: 'var(--card, #FFFFFF)',
               background: 'var(--link, #0A50A2)',
               borderRadius: 4,
               padding: '1px 6px',
@@ -183,7 +183,7 @@ function PartialCoverage({ data }: { data: AnalyticsBoxData }) {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 5,
+          gap: 4,
           marginBottom: 6,
         }}
       >

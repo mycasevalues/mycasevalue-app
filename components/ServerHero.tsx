@@ -16,7 +16,7 @@ export default function ServerHero() {
     <section className="server-hero-content" aria-label="Hero section">
       {/* ── VISUAL 1: HERO — Westlaw-style institutional ────────── */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: '64px 24px 56px',
         position: 'relative',
@@ -47,7 +47,7 @@ export default function ServerHero() {
             <h1 style={{
               fontSize: 'clamp(32px, 4vw, 48px)',
               fontWeight: 700,
-              color: '#ffffff',
+              color: 'var(--card, #FFFFFF)',
               fontFamily: 'var(--font-ui)',
               lineHeight: 1.1,
               marginBottom: 20,
@@ -101,11 +101,11 @@ export default function ServerHero() {
 
           {/* Right: Quick lookup card */}
           <div style={{
-            background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px',
+            background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
             border: '1px solid var(--border-default)',
           }}>
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ marginBottom: '24px' }}>
               <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '4px' }}>
                 Quick Case Lookup
               </h2>
@@ -146,7 +146,7 @@ export default function ServerHero() {
       {/* ── VISUAL 1.6: WHAT IS MYCASEVALUE? ───────────────── */}
       <div id="what-is" data-section style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-          <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px', marginBottom: '32px' }}>
+          <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px', marginBottom: '32px' }}>
             <h2 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '0', lineHeight: 1.3 }}>
               What is MyCaseValue?
             </h2>
@@ -171,7 +171,7 @@ export default function ServerHero() {
       <div id="overview" data-section style={{ background: 'var(--color-surface-1)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px', marginBottom: '8px' }}>
+            <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px', marginBottom: '8px' }}>
               <h2 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                 Analytics Tools
               </h2>
@@ -211,7 +211,7 @@ export default function ServerHero() {
       <div style={{
         background: 'var(--color-surface-0)',
         borderBottom: '1px solid var(--border-default)',
-        padding: '14px 24px',
+        padding: '16px 24px',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>Data sourced from:</span>
@@ -239,7 +239,7 @@ export default function ServerHero() {
       <TrustBar />
 
       {/* ── VISUAL 3: STATS BAR — Terminal metrics strip ────────────── */}
-      <div style={{ background: '#FFFFFF', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '0', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: 'var(--card, #FFFFFF)', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '0', position: 'relative', overflow: 'hidden' }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.025, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -258,13 +258,13 @@ export default function ServerHero() {
             { value: '84', label: 'Case types tracked' },
           ].map((stat, i) => (
             <div key={stat.label} style={{
-              padding: '28px 24px', textAlign: 'center',
+              padding: '32px 24px', textAlign: 'center',
               borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none',
             }}>
               <p style={{
                 fontSize: '32px',
                 fontWeight: 600,
-                color: '#ffffff',
+                color: 'var(--card, #FFFFFF)',
                 fontFamily: 'var(--font-mono)',
                 fontVariantNumeric: 'tabular-nums',
                 lineHeight: 1,
@@ -286,7 +286,7 @@ export default function ServerHero() {
       {/* Quick Lookup is now embedded in the hero card above */}
 
       {/* ── VISUAL 7: INTEGRATED CASE RESEARCH ─────────────── */}
-      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: 'var(--card, #FFFFFF)', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -306,7 +306,7 @@ export default function ServerHero() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
             Integrated Workflow
           </div>
-          <h2 style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-ui)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
             From research to action — without friction
           </h2>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: 600, margin: '0 auto 28px', lineHeight: 1.7 }}>
@@ -314,7 +314,7 @@ export default function ServerHero() {
           </p>
           <a href="/search" style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
-            padding: '10px 20px', background: 'var(--gold, #C4882A)', color: '#ffffff', borderRadius: '3px',
+            padding: '8px 24px', background: 'var(--gold, #C4882A)', color: 'var(--card, #FFFFFF)', borderRadius: '3px',
             fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', textDecoration: 'none',
             fontFamily: 'var(--font-ui)', border: '1px solid var(--gold, #C4882A)',
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
@@ -330,7 +330,7 @@ export default function ServerHero() {
       <div style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderTop: '3px solid var(--accent-primary)', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px' }}>
+            <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px' }}>
               <h2 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                 Work Faster With Smart Analytics
               </h2>
@@ -361,7 +361,7 @@ export default function ServerHero() {
       <div style={{ background: 'var(--color-surface-0)', padding: '64px 24px', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '20px', marginBottom: '8px' }}>
+            <div style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '24px', marginBottom: '8px' }}>
               <h2 style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
                 How It Works
               </h2>
@@ -401,7 +401,7 @@ export default function ServerHero() {
                 style={{
                   background: 'var(--color-surface-1)',
                   border: '1px solid var(--border-default)',
-                  padding: '28px',
+                  padding: '32px',
                 }}
               >
                 <div style={{ marginBottom: '16px' }}>
@@ -462,7 +462,7 @@ export default function ServerHero() {
               'High-value analytics for settlements, timing, and outcomes',
               'Exclusive comparisons via judge and district analytics',
             ].map((text, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px 16px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '12px 16px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
@@ -571,7 +571,7 @@ export default function ServerHero() {
             ].map((seg) => (
               <a key={seg.title} href={seg.href} style={{
                 display: 'block', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
-                padding: '28px 24px', textDecoration: 'none',
+                padding: '32px 24px', textDecoration: 'none',
                 transition: 'box-shadow 200ms, border-color 200ms',
               }} className="who-card">
                 <div style={{ marginBottom: '12px' }}><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={seg.iconPath}/></svg></div>
@@ -607,7 +607,7 @@ export default function ServerHero() {
             ].map((t, i) => (
               <div key={i} style={{
                 background: 'var(--color-surface-1)', border: '1px solid var(--border-default)',
-                padding: '28px', borderLeft: '3px solid var(--accent-primary-hover)',
+                padding: '32px', borderLeft: '3px solid var(--accent-primary-hover)',
               }}>
                 <p style={{ fontSize: '15px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)', lineHeight: 1.7, marginBottom: '16px', fontStyle: 'italic' }}>
                   &ldquo;{t.quote}&rdquo;
@@ -623,7 +623,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── AWARDS / TRUST BADGES GRID ───────────────────── */}
-      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: 'var(--card, #FFFFFF)', padding: '64px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden' }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -643,7 +643,7 @@ export default function ServerHero() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
             Data Provenance
           </div>
-          <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 28px)', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-ui)', marginBottom: 40, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
+          <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 28px)', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 40, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
             Trusted data sources &amp; standards
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }} className="awards-grid">
@@ -658,7 +658,7 @@ export default function ServerHero() {
               { label: 'Daily Updates', sub: 'Fresh data' },
             ].map((award, i) => (
               <div key={i} style={{
-                padding: '20px 16px', background: 'rgba(255,255,255,0.04)',
+                padding: '24px 16px', background: 'rgba(255,255,255,0.04)',
                 border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px',
               }}>
                 <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-body)', margin: '0 0 4px' }}>{award.label}</p>
@@ -705,10 +705,10 @@ export default function ServerHero() {
                   { feature: 'API access', mcv: true, pacer: true, premium: true },
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid var(--border-default)', background: i % 2 === 0 ? 'var(--color-surface-0)' : 'var(--color-surface-1)' }}>
-                    <td style={{ padding: '10px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>{row.feature}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? 'var(--data-positive, #176438)' : '#B91C1C', fontWeight: 600 }}>{row.mcv ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? 'var(--data-positive, #176438)' : 'var(--color-text-muted)' }}>{row.pacer ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? 'var(--data-positive, #176438)' : 'var(--color-text-muted)' }}>{row.premium ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
+                    <td style={{ padding: '8px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>{row.feature}</td>
+                    <td style={{ padding: '8px 16px', textAlign: 'center', color: row.mcv ? 'var(--data-positive, #176438)' : '#B91C1C', fontWeight: 600 }}>{row.mcv ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
+                    <td style={{ padding: '8px 16px', textAlign: 'center', color: row.pacer ? 'var(--data-positive, #176438)' : 'var(--color-text-muted)' }}>{row.pacer ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
+                    <td style={{ padding: '8px 16px', textAlign: 'center', color: row.premium ? 'var(--data-positive, #176438)' : 'var(--color-text-muted)' }}>{row.premium ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -746,7 +746,7 @@ export default function ServerHero() {
                 background: 'var(--color-surface-0)',
               }}>
                 <summary style={{
-                  padding: '16px 20px', cursor: 'pointer', fontSize: '15px',
+                  padding: '16px 24px', cursor: 'pointer', fontSize: '15px',
                   fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)',
                   listStyle: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 }}>
@@ -779,7 +779,7 @@ export default function ServerHero() {
               { label: 'View All Solutions', href: '/solutions' },
             ].map((s) => (
               <a key={s.href} href={s.href} style={{
-                padding: '10px 20px', fontSize: '13px', fontWeight: 600,
+                padding: '8px 24px', fontSize: '13px', fontWeight: 600,
                 color: 'var(--accent-primary-hover)', border: '1px solid var(--border-default)', borderRadius: '4px',
                 textDecoration: 'none', fontFamily: 'var(--font-body)',
                 textTransform: 'uppercase', letterSpacing: '0.04em',
@@ -793,7 +793,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── BOTTOM CTA ────────────────── */}
-      <div style={{ background: '#FFFFFF', padding: '80px 24px', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      <div style={{ background: 'var(--card, #FFFFFF)', padding: '80px 24px', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -813,7 +813,7 @@ export default function ServerHero() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
             Free · No Account Required
           </div>
-          <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 36px)', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-ui)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.1 }}>
+          <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 36px)', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.1 }}>
             Start researching today
           </h2>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: 480, margin: '0 auto 32px', lineHeight: 1.7 }}>
@@ -822,8 +822,8 @@ export default function ServerHero() {
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="/sign-up" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '10px 20px', background: 'var(--gold, #C4882A)',
-              color: '#ffffff', borderRadius: '3px', fontWeight: 600, fontSize: 13,
+              padding: '8px 24px', background: 'var(--gold, #C4882A)',
+              color: 'var(--card, #FFFFFF)', borderRadius: '3px', fontWeight: 600, fontSize: 13,
               fontFamily: 'var(--font-ui)', textDecoration: 'none',
               letterSpacing: '-0.005em', border: '1px solid var(--gold, #C4882A)',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
@@ -833,7 +833,7 @@ export default function ServerHero() {
             </a>
             <a href="/pricing" style={{
               display: 'inline-flex', alignItems: 'center',
-              padding: '10px 20px', background: 'transparent', color: '#ffffff',
+              padding: '8px 24px', background: 'transparent', color: 'var(--card, #FFFFFF)',
               border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4,
               fontWeight: 600, fontSize: 13, fontFamily: 'var(--font-ui)',
               textDecoration: 'none', letterSpacing: '-0.005em',

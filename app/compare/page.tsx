@@ -154,8 +154,8 @@ export default function ComparePage() {
 
       {/* Institutional Header */}
       <header style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -188,7 +188,7 @@ export default function ComparePage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             margin: '0 0 16px',
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
           }}>
             Compare case types side-by-side
           </h1>
@@ -395,7 +395,7 @@ export default function ComparePage() {
                         background: ri % 2 === 0 ? 'var(--color-surface-1)' : 'var(--color-surface-0)',
                       }}>
                         <td style={{
-                          padding: '14px 16px',
+                          padding: '16px 16px',
                           fontWeight: 600,
                           color: 'var(--color-text-primary)',
                           fontSize: 14,
@@ -415,7 +415,7 @@ export default function ComparePage() {
                           return (
                             <td key={s.nos} style={{
                               textAlign: 'center',
-                              padding: '14px 16px',
+                              padding: '16px 16px',
                               color: isBest ? 'var(--accent-primary-hover)' : 'var(--color-text-primary)',
                               fontWeight: isBest ? 700 : 400,
                               fontFamily: 'var(--font-mono)',
@@ -510,7 +510,7 @@ export default function ComparePage() {
 
                       {/* Confidence + Sample Size */}
                       {s.totalCases !== null && (
-                        <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--color-text-secondary)' }}>
+                        <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--color-text-secondary)' }}>
                           <span style={{
                             display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
                             backgroundColor: s.totalCases >= 10000 ? 'var(--data-positive, #176438)' : s.totalCases >= 1000 ? '#C37D16' : s.totalCases >= 100 ? 'var(--data-negative, #B01E1E)' : 'var(--text4, #A8A6A0)',
@@ -521,7 +521,7 @@ export default function ComparePage() {
 
                       {/* Top Districts */}
                       {s.topDistricts.length > 0 && (
-                        <div style={{ marginTop: 10, fontSize: 11, color: 'var(--color-text-secondary)' }}>
+                        <div style={{ marginTop: 8, fontSize: 11, color: 'var(--color-text-secondary)' }}>
                           <span style={{ fontWeight: 600 }}>Top districts: </span>
                           {s.topDistricts.join(', ')}
                         </div>
@@ -692,7 +692,7 @@ export default function ComparePage() {
                     }}>
                       <div style={{
                         width: `${s.winRate}%`,
-                        background: '#15803D',
+                        background: 'var(--data-positive, #176438)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -758,7 +758,7 @@ export default function ComparePage() {
                         <div style={{
                           width: 12,
                           height: 12,
-                          background: '#15803D',
+                          background: 'var(--data-positive, #176438)',
                           borderRadius: 2,
                           margin: '0 auto 4px',
                         }} />

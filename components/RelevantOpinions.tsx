@@ -58,7 +58,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
               fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
-              marginBottom: '20px',
+              marginBottom: '24px',
               fontFamily: 'var(--font-ui)',
             }}>Relevant Opinions</h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
@@ -103,7 +103,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
           <p style={{
             fontSize: '13px',
             color: 'var(--color-text-secondary)',
-            marginBottom: '20px',
+            marginBottom: '24px',
             fontFamily: 'var(--font-body)',
           }}>
             Most-cited federal court opinions for {nosLabel} cases

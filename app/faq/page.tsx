@@ -574,7 +574,7 @@ export default function FAQPage() {
             <span className="w-1 h-1 rounded-full bg-blue-400/80" />
             Frequently Asked
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-bold mb-4 tracking-[-0.025em]" style={{ color: 'white', lineHeight: '1.1' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'white', lineHeight: '1.1' }}>
             Common Questions
           </h1>
           <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
@@ -592,7 +592,7 @@ export default function FAQPage() {
                 <span className="font-mono text-[10px] font-semibold tracking-[0.2em] uppercase tabular-nums" style={{ color: 'rgba(59,130,246,0.6)' }}>
                   {String(sectionIdx + 1).padStart(2, '0')}
                 </span>
-                <h2 className="text-[17px] font-display font-semibold tracking-[-0.01em]" style={{ color: 'var(--color-text-primary)' }}>
+                <h2 className="text-[17px] font-legal font-semibold tracking-[-0.01em]" style={{ color: 'var(--color-text-primary)' }}>
                   {section.category}
                 </h2>
               </div>
@@ -638,7 +638,7 @@ export default function FAQPage() {
 
         {/* Still have questions */}
         <div className="mt-16 p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', borderLeftWidth: '4px', borderLeftColor: 'var(--accent-primary)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             Still Have Questions?
           </h2>
           <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>
@@ -666,7 +666,7 @@ export default function FAQPage() {
 
         {/* Related Tools */}
         <div className="mt-16">
-          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-8 text-center" style={{ color: 'var(--color-text-primary)' }}>
             Related Tools
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

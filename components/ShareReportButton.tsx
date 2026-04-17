@@ -20,7 +20,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
 
   const sizeMap = {
     sm: { padding: '6px 12px', fontSize: '13px' },
-    md: { padding: '10px 16px', fontSize: '14px' },
+    md: { padding: '8px 16px', fontSize: '14px' },
     lg: { padding: '12px 20px', fontSize: '15px' },
   };
 

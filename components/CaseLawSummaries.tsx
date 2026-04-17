@@ -26,7 +26,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="rounded-lg border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
+        className="rounded border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
       >
         <h2 className="text-lg font-semibold text-gray-100 mb-3">Relevant Case Law</h2>
         <div className="text-sm text-gray-400">
@@ -45,7 +45,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
+      className="rounded border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
     >
       <h2 className="text-lg font-semibold text-gray-100 mb-6">Relevant Case Law</h2>
 
@@ -58,7 +58,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="border border-[var(--bdr, #E2DFD8)] rounded-lg overflow-hidden hover:border-[var(--bdr, #E2DFD8)] transition-colors"
+              className="border border-[var(--bdr, #E2DFD8)] rounded overflow-hidden hover:border-[var(--bdr, #E2DFD8)] transition-colors"
             >
               <button
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}

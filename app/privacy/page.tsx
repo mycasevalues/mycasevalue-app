@@ -52,7 +52,7 @@ export default function PrivacyPage() {
 
         .legal-toc-link {
           display: block;
-          padding: 10px 0;
+          padding: 8px 0;
           font-size: 14px;
           color: var(--color-text-secondary);
           text-decoration: none;

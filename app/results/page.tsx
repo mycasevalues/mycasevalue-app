@@ -117,7 +117,7 @@ export default function ResultsPage() {
       <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '24px', paddingBottom: '24px' }}>
         {/* Empty State Card */}
         <div style={{
-          padding: '20px',
+          padding: '24px',
           borderRadius: '4px',
           border: '1px solid var(--border-default)',
           background: 'var(--color-surface-0)',

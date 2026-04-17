@@ -126,7 +126,7 @@ export const ScrollableTable: React.FC<ScrollableTableProps> = ({
           style={{
             width: '40px',
             background: 'linear-gradient(to left, rgba(0,0,0,0.1), transparent)',
-            borderRadius: '0 8px 8px 0',
+            borderRadius: '0 2px 2px 0',
           }}
           aria-hidden="true"
         />

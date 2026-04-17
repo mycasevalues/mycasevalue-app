@@ -92,8 +92,8 @@ export default function CaseDetailPage() {
           <div className="animate-pulse space-y-6">
             <div className="h-6 bg-[rgba(255,255,255,0.08)] rounded w-3/4" />
             <div className="h-4 bg-[rgba(255,255,255,0.04)] rounded w-1/2" />
-            <div className="h-32 bg-[rgba(255,255,255,0.04)] rounded-xl" />
-            <div className="h-24 bg-[rgba(255,255,255,0.04)] rounded-xl" />
+            <div className="h-32 bg-[rgba(255,255,255,0.04)] rounded" />
+            <div className="h-24 bg-[rgba(255,255,255,0.04)] rounded" />
           </div>
         </div>
       </div>
@@ -410,7 +410,7 @@ export default function CaseDetailPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div
-      className="rounded-xl border p-5"
+      className="rounded border p-5"
       style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
     >
       <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">

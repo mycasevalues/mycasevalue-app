@@ -382,7 +382,7 @@ export function BulkAnalysisTool() {
           style={{
             display: 'flex',
             gap: '12px',
-            marginBottom: '20px',
+            marginBottom: '24px',
             alignItems: 'center',
           }}
         >
@@ -422,7 +422,7 @@ export function BulkAnalysisTool() {
         </div>
 
         {loading && (
-          <div style={{ marginBottom: '20px' }}>
+          <div style={{ marginBottom: '24px' }}>
             <div
               style={{
                 width: '100%',
@@ -450,7 +450,7 @@ export function BulkAnalysisTool() {
         {error && (
           <div
             style={{
-              padding: '14px 18px',
+              padding: '16px 16px',
               borderRadius: '4px',
               backgroundColor: 'rgba(239, 68, 68, 0.12)',
               border: '1px solid var(--border-default)',
@@ -501,7 +501,7 @@ export function BulkAnalysisTool() {
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
-                  padding: '20px',
+                  padding: '24px',
                   textAlign: 'center',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 }}
@@ -650,7 +650,7 @@ export function BulkAnalysisTool() {
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
           >
-            <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
               <h3
                 style={{
                   fontFamily: 'var(--font-ui)',
@@ -853,7 +853,7 @@ export function BulkAnalysisTool() {
           {/* Future Enhancement Notes */}
           <div
             style={{
-              padding: '14px 18px',
+              padding: '16px 16px',
               borderRadius: '4px',
               backgroundColor: 'rgba(10, 102, 194, 0.08)',
               border: '1px solid var(--border-default)',

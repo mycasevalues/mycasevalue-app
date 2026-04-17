@@ -55,7 +55,7 @@ export default function AttorneyPageSkeleton({
                   borderTop: i === 1 ? '2px solid var(--accent-primary)' : '2px solid transparent',
                   borderLeft: '1px solid var(--border-default)',
                   borderRight: '1px solid var(--border-default)',
-                  padding: '10px 16px',
+                  padding: '8px 16px',
                 }}
               />
             ))}
@@ -66,7 +66,7 @@ export default function AttorneyPageSkeleton({
         <div style={{
           display: 'grid',
           gridTemplateColumns: columns === 3 ? 'repeat(3, 1fr)' : columns === 2 ? 'repeat(2, 1fr)' : '1fr',
-          gap: 20,
+          gap: 24,
         }}>
           {Array.from({ length: cards }).map((_, i) => (
             <div

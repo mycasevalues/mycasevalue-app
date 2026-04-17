@@ -93,8 +93,8 @@ export default function VenueOptimizerPage() {
       </style>
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -119,7 +119,7 @@ export default function VenueOptimizerPage() {
               </svg>
             </div>
             <div>
-              <h1 className="font-display" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+              <h1 className="font-legal" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
                 Pick the Court That Wins Your Case
               </h1>
             </div>
@@ -197,19 +197,19 @@ export default function VenueOptimizerPage() {
         {data && !loading && (
           <>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '24px' }}>
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>National Win Rate</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>{data.nationalStats.winRate}%</p>
               </div>
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Settlement Rate</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: '#5eead4', margin: 0 }}>{data.nationalStats.settlementRate}%</p>
               </div>
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Median Duration</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0 }}>{data.nationalStats.medianDurationMonths}mo</p>
               </div>
-              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Total Cases</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>{data.nationalStats.totalCases.toLocaleString()}</p>
               </div>
@@ -217,8 +217,8 @@ export default function VenueOptimizerPage() {
 
             {/* Venue Rankings Table */}
             <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-              <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-default)' }}>
-                <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
+                <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
                   Venue Rankings — {data.caseType}
                 </h2>
                 <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '4px 0 0' }}>
@@ -245,7 +245,7 @@ export default function VenueOptimizerPage() {
                     display: 'grid',
                     gridTemplateColumns: '50px 1fr 90px 90px 80px 80px 70px',
                     gap: '8px',
-                    padding: '14px 24px',
+                    padding: '16px 24px',
                     borderBottom: '1px solid var(--border-default)',
                     alignItems: 'center',
                     backgroundColor: v.rank <= 3 ? 'var(--color-surface-1)' : 'transparent',
@@ -290,7 +290,7 @@ export default function VenueOptimizerPage() {
                 <div style={{ padding: '16px 24px', textAlign: 'center' }}>
                   <button
                     onClick={() => setShowAll(true)}
-                    style={{ padding: '8px 20px', border: '1px solid rgba(232,23,31,0.30)', borderRadius: '4px', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', cursor: 'pointer', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--accent-primary)', transition: 'all 0.2s' }}
+                    style={{ padding: '8px 24px', border: '1px solid rgba(232,23,31,0.30)', borderRadius: '4px', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', cursor: 'pointer', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--accent-primary)', transition: 'all 0.2s' }}
                   >
                     Show all {data.venues.length} districts
                   </button>
@@ -299,7 +299,7 @@ export default function VenueOptimizerPage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
+            <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
               <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
@@ -317,7 +317,7 @@ export default function VenueOptimizerPage() {
                 <circle cx="12" cy="12" r="2" />
               </svg>
             </div>
-            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+            <h2 className="font-legal" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Find Your Optimal Venue
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>

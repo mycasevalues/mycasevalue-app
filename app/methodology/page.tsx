@@ -244,8 +244,8 @@ export default function MethodologyPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -285,7 +285,7 @@ export default function MethodologyPage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
           }}>
             Data provenance & statistical methods
           </h1>
@@ -305,7 +305,7 @@ export default function MethodologyPage() {
       {/* Data Coverage at a Glance */}
       <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-1)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-          <h2 className="text-lg font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>Data Coverage at a Glance</h2>
+          <h2 className="text-lg font-legal font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>Data Coverage at a Glance</h2>
           <div className="at-a-glance-grid">
             {[
               { stat: '5.1M+', label: 'Federal Cases' },
@@ -328,7 +328,7 @@ export default function MethodologyPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         {/* Section 1: Processing Pipeline */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>How We Process Data</h2>
+          <h2 className="text-2xl font-legal font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>How We Process Data</h2>
           <div>
             {[
               { step: '1', title: 'Ingestion', desc: 'Raw data is pulled from the FJC IDB (updated quarterly) and CourtListener API. Each record is validated for completeness and coded by Nature of Suit (NOS) classification.' },
@@ -340,7 +340,7 @@ export default function MethodologyPage() {
               <div key={i} className="timeline-item">
                 <div className="timeline-number">{s.step}</div>
                 <div className="pt-0.5">
-                  <h3 className="text-base font-display font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>{s.title}</h3>
+                  <h3 className="text-base font-legal font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>{s.title}</h3>
                   <p className="text-sm leading-relaxed m-0" style={{ color: 'var(--color-text-secondary)' }}>{s.desc}</p>
                 </div>
               </div>
@@ -350,7 +350,7 @@ export default function MethodologyPage() {
 
         {/* Section 2: Data Sources */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Data Sources</h2>
+          <h2 className="text-2xl font-legal font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Data Sources</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
               {
@@ -404,7 +404,7 @@ export default function MethodologyPage() {
                     {source.icon === 'building' && '-'}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-sm font-display font-semibold m-0 mb-1" style={{ color: 'var(--color-text-primary)' }}>{source.name}</h3>
+                    <h3 className="text-sm font-legal font-semibold m-0 mb-1" style={{ color: 'var(--color-text-primary)' }}>{source.name}</h3>
                     <span className="inline-block text-[10px] font-bold px-2 py-0.5" style={{ background: source.color.replace('#', '#').substring(0, 7) + '1F', color: source.color, borderRadius: '9999px' }}>
                       {source.badge}
                     </span>
@@ -424,7 +424,7 @@ export default function MethodologyPage() {
 
         {/* Section 3: Data Accuracy & Confidence */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Data Accuracy & Confidence</h2>
+          <h2 className="text-2xl font-legal font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Data Accuracy & Confidence</h2>
 
           <div className="mb-8">
             <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--color-text-secondary)' }}>
@@ -461,7 +461,7 @@ export default function MethodologyPage() {
 
         {/* Section 4: Dataset Coverage */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Dataset Coverage</h2>
+          <h2 className="text-2xl font-legal font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Dataset Coverage</h2>
           <div className="coverage-grid">
             {[
               { v: '5.1M+', l: 'Federal Cases', c: 'var(--color-text-primary)' },
@@ -470,7 +470,7 @@ export default function MethodologyPage() {
               { v: '95', l: 'Federal Districts', c: 'var(--accent-primary-hover)' },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
-                <div className="text-3xl sm:text-4xl font-display font-extrabold mb-2" style={{ color: stat.c }}>{stat.v}</div>
+                <div className="text-3xl sm:text-4xl font-legal font-extrabold mb-2" style={{ color: stat.c }}>{stat.v}</div>
                 <div className="text-sm font-semibold" style={{ color: 'var(--color-text-secondary)' }}>{stat.l}</div>
               </div>
             ))}
@@ -479,7 +479,7 @@ export default function MethodologyPage() {
 
         {/* Section 5: Frequently Cited Statistics */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Frequently Cited Statistics</h2>
+          <h2 className="text-2xl font-legal font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Frequently Cited Statistics</h2>
           <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--color-text-secondary)' }}>
             These five metrics are the most commonly referenced on MyCaseValue. Each has a specific calculation method rooted in federal court records and administrative classifications.
           </p>
@@ -523,7 +523,7 @@ export default function MethodologyPage() {
 
         {/* Section 6: Limitations */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>Important Limitations</h2>
+          <h2 className="text-2xl font-legal font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>Important Limitations</h2>
           <div className="limitation-callout">
             <ul className="space-y-3 text-sm leading-relaxed m-0 pl-4" style={{ color: 'var(--color-text-secondary)' }}>
               <li>MyCaseValue displays <strong style={{ color: 'var(--color-text-primary)' }}>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
@@ -537,7 +537,7 @@ export default function MethodologyPage() {
 
         {/* Section 7: Public Domain */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>Public Domain Status</h2>
+          <h2 className="text-2xl font-legal font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>Public Domain Status</h2>
           <div className="public-domain-callout">
             <p className="text-sm leading-relaxed m-0" style={{ color: '#003d5c' }}>
               All source data used by MyCaseValue is public domain under 17 U.S.C. § 105 (works of the United States government) or made freely available by the Free Law Project under open-access principles. MyCaseValue's proprietary contribution is in the aggregation, categorization, and presentation of this data — not in the underlying records themselves.
@@ -547,7 +547,7 @@ export default function MethodologyPage() {
 
         {/* Section 8: Related Pages */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Related Pages</h2>
+          <h2 className="text-2xl font-legal font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>Related Pages</h2>
           <div className="related-grid">
             {[
               { href: '/faq', iconPath: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', title: 'FAQ' },

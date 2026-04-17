@@ -175,7 +175,7 @@ export default function LegalDataPage() {
               key={uc.audience}
               style={{
                 padding: '24px',
-                borderRadius: 16,
+                borderRadius: 6,
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
               }}
@@ -209,7 +209,7 @@ export default function LegalDataPage() {
             <div
               key={src.name}
               style={{
-                padding: '16px 20px',
+                padding: '16px 24px',
                 borderRadius: 4,
                 border: '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',
@@ -244,8 +244,8 @@ export default function LegalDataPage() {
 
       {/* -- Enhanced Features -- */}
       <div style={{
-        padding: '20px',
-        borderRadius: 16,
+        padding: '24px',
+        borderRadius: 6,
         background: 'rgba(59,130,246,0.06)',
         border: '1px solid #D4E4F7',
         marginBottom: 20,
@@ -271,7 +271,7 @@ export default function LegalDataPage() {
         textAlign: 'center',
         padding: '24px 20px',
         background: 'var(--accent-primary)',
-        borderRadius: 16,
+        borderRadius: 6,
         color: 'var(--color-surface-0)',
       }}>
         <h3 style={{ fontSize: 22, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 8px' }}>

@@ -58,28 +58,28 @@ export default function CourtGuidePage() {
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-lg border border-[var(--bdr, #E2DFD8)] p-6">
+            <div className="rounded border border-[var(--bdr, #E2DFD8)] p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Court Fundamentals</h3>
               <p className="text-gray-300">
                 Understand how federal courts work, why cases go to federal court, and how to find your district.
               </p>
             </div>
 
-            <div className="rounded-lg border border-[var(--bdr, #E2DFD8)] p-6">
+            <div className="rounded border border-[var(--bdr, #E2DFD8)] p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Case Documents & Data</h3>
               <p className="text-gray-300">
                 Learn what complaints, motions, and judgments mean, and how to interpret win rates and settlements.
               </p>
             </div>
 
-            <div className="rounded-lg border border-[var(--bdr, #E2DFD8)] p-6">
+            <div className="rounded border border-[var(--bdr, #E2DFD8)] p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Using MyCaseValue</h3>
               <p className="text-gray-300">
                 Step-by-step instructions for researching case outcomes and comparing districts.
               </p>
             </div>
 
-            <div className="rounded-lg border border-[var(--bdr, #E2DFD8)] p-6">
+            <div className="rounded border border-[var(--bdr, #E2DFD8)] p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Taking Action</h3>
               <p className="text-gray-300">
                 When to hire an attorney, how to file pro se, and where to find free legal resources.
@@ -89,7 +89,7 @@ export default function CourtGuidePage() {
         </section>
 
         {/* Key Topics Section */}
-        <section className="mb-12 rounded-lg bg-blue-50 p-8">
+        <section className="mb-12 rounded bg-blue-50 p-8">
           <h2 className="mb-6 text-2xl font-bold text-gray-100">
             12 Pages of Practical Guidance
           </h2>

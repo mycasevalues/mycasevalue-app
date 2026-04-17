@@ -238,7 +238,7 @@ const sectionLabel: React.CSSProperties = {
 
 const dataAttrStyle: React.CSSProperties = {
   fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--text4)',
-  marginTop: 10, lineHeight: 1.5,
+  marginTop: 8, lineHeight: 1.5,
 };
 
 /* ── Related districts helper ── */
@@ -355,7 +355,7 @@ export default async function DistrictPage({ params }: PageProps) {
           </div>
 
           {/* 4 Stat blocks */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 9, marginTop: 14 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginTop: 14 }}>
             {[
               { label: 'Win Rate', value: `${districtWinRate}%`, accent: 'var(--pos)' },
               { label: 'Cases/Year', value: `${(caseVolume / 1000).toFixed(1)}K`, accent: 'var(--link)' },
@@ -364,7 +364,7 @@ export default async function DistrictPage({ params }: PageProps) {
             ].map((stat) => (
               <div key={stat.label} style={{
                 background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
-                padding: '10px 12px', position: 'relative', overflow: 'hidden',
+                padding: '8px 12px', position: 'relative', overflow: 'hidden',
               }}>
                 <div style={{ position: 'absolute', left: 0, top: 0, width: 3, height: '100%', background: stat.accent }} />
                 <div style={{ ...sectionLabel, marginBottom: 4 }}>{stat.label}</div>
@@ -410,7 +410,7 @@ export default async function DistrictPage({ params }: PageProps) {
         {/* ── LEFT TOC (202px) ── */}
         <aside style={{
           width: 202, flexShrink: 0, background: 'var(--sidebar)',
-          borderRight: '1px solid var(--bdr)', padding: '14px 0',
+          borderRight: '1px solid var(--bdr)', padding: '16px 0',
           position: 'sticky', top: 94, alignSelf: 'flex-start',
           height: 'calc(100vh - 94px)', overflowY: 'auto',
         }} className="district-toc">
@@ -447,7 +447,7 @@ export default async function DistrictPage({ params }: PageProps) {
         </aside>
 
         {/* ── MAIN CONTENT (flex:1) ── */}
-        <main style={{ flex: 1, minWidth: 0, padding: '18px 22px' }}>
+        <main style={{ flex: 1, minWidth: 0, padding: '16px 24px' }}>
 
           {/* === OVERVIEW: Case Type Distribution === */}
           <section style={{ marginBottom: 24 }}>
@@ -457,7 +457,7 @@ export default async function DistrictPage({ params }: PageProps) {
             }}>
               Case Type Distribution
             </h2>
-            <div style={{ display: 'flex', gap: 20 }}>
+            <div style={{ display: 'flex', gap: 24 }}>
               {/* Left: HorizontalBarChart */}
               <div style={{ flex: '0 0 60%' }}>
                 <HorizontalBarChart
@@ -500,7 +500,7 @@ export default async function DistrictPage({ params }: PageProps) {
             }}>
               Top Case Types & Settlement Ranges
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8 }}>
               {caseTypes.map((ct, idx) => (
                 <Link
                   key={idx}
@@ -553,7 +553,7 @@ export default async function DistrictPage({ params }: PageProps) {
             </h2>
             <div style={{
               background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
-              padding: '14px 16px',
+              padding: '16px 16px',
             }}>
               <div style={{ minHeight: 180 }}>
                 <FilingVolumeTrend
@@ -561,7 +561,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   districtCode={upperCode}
                 />
               </div>
-              <p style={{ fontSize: 11, color: 'var(--text3)', marginTop: 10, margin: '10px 0 0', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 11, color: 'var(--text3)', marginTop: 8, margin: '8px 0 0', fontFamily: 'var(--font-ui)' }}>
                 Federal civil case filings in {districtMeta.fullName} from 2015 to 2024.
               </p>
             </div>
@@ -586,7 +586,7 @@ export default async function DistrictPage({ params }: PageProps) {
             }}>
               Settlement Data
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 9 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
               {[
                 { label: 'Median', value: settlementMedian },
                 { label: 'Mean', value: settlementMean },
@@ -594,7 +594,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 { label: '90th Percentile', value: `$${Math.round(300 + deterministic * 900)}K` },
               ].map(s => (
                 <div key={s.label} style={{
-                  background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2, padding: '10px 12px',
+                  background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2, padding: '8px 12px',
                 }}>
                   <div style={{ ...sectionLabel, marginBottom: 4 }}>{s.label}</div>
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 500, color: 'var(--text1)' }}>{s.value}</div>
@@ -632,7 +632,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 }}>
                   Local Rules & Filing Info
                 </h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
                   <div style={{ background: 'var(--sidebar2)', border: '1px solid var(--bdr)', borderRadius: 2, padding: 14 }}>
                     <div style={{ ...sectionLabel, marginBottom: 8 }}>Brief Page Limits</div>
                     {[
@@ -686,7 +686,7 @@ export default async function DistrictPage({ params }: PageProps) {
                     </a>
                   )}
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8 }}>
                   {(aid.organizations || []).map((org: any, idx: number) => (
                     <div key={idx} style={{ background: 'var(--sidebar2)', border: '1px solid var(--bdr)', borderRadius: 2, padding: 14 }}>
                       <a href={org.website} target="_blank" rel="noopener noreferrer"
@@ -711,7 +711,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   ))}
                 </div>
                 <div style={{
-                  marginTop: 10, padding: '8px 12px',
+                  marginTop: 8, padding: '8px 12px',
                   background: 'var(--wrn-bg)', borderLeft: '3px solid var(--gold)',
                   borderRadius: 2, fontSize: 11, color: 'var(--wrn-txt)', lineHeight: 1.5,
                   fontFamily: 'var(--font-ui)',
@@ -733,7 +733,7 @@ export default async function DistrictPage({ params }: PageProps) {
         {/* ── RIGHT RAIL (232px) ── */}
         <aside style={{
           width: 232, flexShrink: 0, background: 'var(--sidebar)',
-          borderLeft: '1px solid var(--bdr)', padding: '14px 12px',
+          borderLeft: '1px solid var(--bdr)', padding: '16px 12px',
           position: 'sticky', top: 94, alignSelf: 'flex-start',
           height: 'calc(100vh - 94px)', overflowY: 'auto',
         }} className="district-right-rail">
@@ -783,7 +783,7 @@ export default async function DistrictPage({ params }: PageProps) {
           {/* Download Report */}
           <button type="button" style={{
             width: '100%', height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center',
-            background: 'var(--gold)', color: '#FFFFFF', fontSize: 11, fontWeight: 600,
+            background: 'var(--gold)', color: 'var(--card, #FFFFFF)', fontSize: 11, fontWeight: 600,
             fontFamily: 'var(--font-ui)', border: 'none', borderRadius: 2, cursor: 'pointer',
             marginBottom: 4,
           }}>

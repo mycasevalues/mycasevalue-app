@@ -57,7 +57,7 @@ export default function FilingVolumeTrend({
     );
     if (validData.length === 0) return;
 
-    const margin = { top: 24, right: 20, bottom: 24, left: 20 };
+    const margin = { top: 24, right: 24, bottom: 24, left: 20 };
     const w = width - margin.left - margin.right;
     const h = height - margin.top - margin.bottom;
 

@@ -219,7 +219,7 @@ export default function TrendCharts() {
           <BarChart
             data={caseTypeChartData}
             layout="vertical"
-            margin={{ top: 5, right: 30, left: 300, bottom: 5 }}
+            margin={{ top: 4, right: 32, left: 300, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
             <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
@@ -302,7 +302,7 @@ export default function TrendCharts() {
           <BarChart
             data={circuitWinRates}
             layout="vertical"
-            margin={{ top: 5, right: 30, left: 120, bottom: 5 }}
+            margin={{ top: 4, right: 32, left: 120, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
             <XAxis type="number" domain={[0, 100]} stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
@@ -370,7 +370,7 @@ export default function TrendCharts() {
           <BarChart
             data={outcomeBreakdown}
             layout="vertical"
-            margin={{ top: 5, right: 30, left: 150, bottom: 5 }}
+            margin={{ top: 4, right: 32, left: 150, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
             <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />
@@ -435,7 +435,7 @@ export default function TrendCharts() {
           <BarChart
             data={settlementDurations}
             layout="vertical"
-            margin={{ top: 5, right: 30, left: 120, bottom: 5 }}
+            margin={{ top: 4, right: 32, left: 120, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="var(--color-surface-1)" />
             <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />

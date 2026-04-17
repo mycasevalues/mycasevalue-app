@@ -133,7 +133,7 @@ export default function DataSourcesPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
-          background: '#FFFFFF',
+          background: 'var(--card, #FFFFFF)',
           padding: '56px 24px 64px',
           position: 'relative',
           overflow: 'hidden',
@@ -161,7 +161,7 @@ export default function DataSourcesPage() {
             <h1 style={{
               fontSize: 'clamp(28px, 4vw, 36px)',
               fontWeight: 700,
-              color: '#ffffff',
+              color: 'var(--card, #FFFFFF)',
               fontFamily: 'var(--font-ui)',
               letterSpacing: '-0.025em',
               marginBottom: 10,
@@ -418,7 +418,7 @@ export default function DataSourcesPage() {
             }}>
               {methodology.map((method, idx) => (
                 <div key={idx} style={{
-                  padding: 28,
+                  padding: 32,
                   borderRadius: '4px',
                   border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)',
@@ -763,7 +763,7 @@ export default function DataSourcesPage() {
                 href="mailto:enterprise@mycasevalues.com"
                 style={{
                   display: 'inline-block',
-                  padding: '14px 32px',
+                  padding: '16px 32px',
                   backgroundColor: 'var(--color-surface-0)',
                   color: 'var(--accent-primary)',
                   fontSize: 15,
@@ -780,7 +780,7 @@ export default function DataSourcesPage() {
                 href="/methodology"
                 style={{
                   display: 'inline-block',
-                  padding: '14px 32px',
+                  padding: '16px 32px',
                   backgroundColor: 'rgba(255,255,255,0.2)',
                   color: 'var(--color-surface-0)',
                   fontSize: 15,

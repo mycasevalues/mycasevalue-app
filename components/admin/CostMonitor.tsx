@@ -102,7 +102,7 @@ export default function CostMonitor() {
             backgroundColor: 'white',
             border: '1px solid #e0e0e0',
             borderRadius: '4px',
-            padding: '20px',
+            padding: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
           }}
         >
@@ -122,7 +122,7 @@ export default function CostMonitor() {
             backgroundColor: 'white',
             border: '1px solid #e0e0e0',
             borderRadius: '4px',
-            padding: '20px',
+            padding: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
           }}
         >
@@ -142,7 +142,7 @@ export default function CostMonitor() {
             backgroundColor: 'white',
             border: '1px solid #e0e0e0',
             borderRadius: '4px',
-            padding: '20px',
+            padding: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
           }}
         >
@@ -163,7 +163,7 @@ export default function CostMonitor() {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '20px',
+          gap: '24px',
           marginBottom: '32px',
         }}
       >

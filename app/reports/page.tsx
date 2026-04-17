@@ -75,10 +75,10 @@ export default function ReportsPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
       {/* Dark Navy Header */}
-      <div style={{ backgroundColor: 'var(--accent-primary)', padding: '40px 20px', marginBottom: '32px' }}>
+      <div style={{ backgroundColor: 'var(--accent-primary)', padding: '40px 24px', marginBottom: '32px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <h1 className="font-display" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+            <h1 className="font-legal" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
               My Reports
             </h1>
             <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '4px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' }}>
@@ -106,7 +106,7 @@ export default function ReportsPage() {
           background: 'linear-gradient(135deg, rgba(21, 128, 61, 0.08) 0%, rgba(21, 128, 61, 0.04) 100%)',
           border: '1px solid #059669',
           borderRadius: '4px',
-          padding: '20px 24px',
+          padding: '24px 24px',
           marginBottom: '32px',
           display: 'flex',
           alignItems: 'center',
@@ -139,7 +139,7 @@ export default function ReportsPage() {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '20px',
+            gap: '24px',
           }}>
             {[
               'Win Rate Analysis',
@@ -212,7 +212,7 @@ export default function ReportsPage() {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '20px',
+            gap: '24px',
           }}>
             {[
               { name: 'Employment Discrimination', nos: '442' },
@@ -283,7 +283,7 @@ export default function ReportsPage() {
                 <line x1="9" y1="14" x2="15" y2="14" />
               </svg>
             </div>
-            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0' }}>
               No reports yet
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
@@ -304,7 +304,7 @@ export default function ReportsPage() {
                   onClick={() => setTab(t)}
                   style={{
                     flex: 1,
-                    padding: '10px 16px',
+                    padding: '8px 16px',
                     borderRadius: '4px',
                     border: 'none',
                     fontSize: '14px',
@@ -342,7 +342,7 @@ export default function ReportsPage() {
                       key={r.id}
                       href={`/cases/${encodeURIComponent(r.category)}${r.district ? `?district=${encodeURIComponent(r.district)}` : ''}`}
                       className="report-card"
-                      style={{ display: 'block', backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '20px 24px', border: '1px solid var(--border-default)', borderLeft: '4px solid transparent', textDecoration: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
+                      style={{ display: 'block', backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px 24px', border: '1px solid var(--border-default)', borderLeft: '4px solid transparent', textDecoration: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>

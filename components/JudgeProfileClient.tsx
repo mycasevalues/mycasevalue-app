@@ -104,7 +104,7 @@ export default function JudgeProfileClient({
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '20px',
+          gap: '24px',
           marginBottom: '48px',
         }}
       >
@@ -405,7 +405,7 @@ export default function JudgeProfileClient({
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {opinions.map((opinion) => {
               const isExpanded = expandedOpinion === opinion.id;
               const nosLabel = opinion.nos_code ? NOS_CODE_LABELS[opinion.nos_code] || `NOS ${opinion.nos_code}` : null;
@@ -414,7 +414,7 @@ export default function JudgeProfileClient({
                 <div
                   key={opinion.id}
                   style={{
-                    padding: '20px',
+                    padding: '24px',
                     background: 'var(--color-surface-1)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',
@@ -559,7 +559,7 @@ export default function JudgeProfileClient({
       <div
         style={{
           background: 'var(--color-surface-1)',
-          padding: '20px',
+          padding: '24px',
           borderRadius: '4px',
           marginBottom: '48px',
         }}

@@ -231,9 +231,9 @@ export default function HomePage() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: 5,
+                gap: 4,
                 background: 'var(--chrome-bg, #1B2D45)',
-                color: '#FFFFFF',
+                color: 'var(--card, #FFFFFF)',
                 fontSize: 13,
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 600,
@@ -484,7 +484,7 @@ export default function HomePage() {
                     height: 32,
                     padding: '0 20px',
                     background: 'var(--chrome-bg, #1B2D45)',
-                    color: '#FFFFFF',
+                    color: 'var(--card, #FFFFFF)',
                     fontSize: 12,
                     fontFamily: 'var(--font-ui)',
                     fontWeight: 600,
@@ -625,7 +625,7 @@ export default function HomePage() {
                 background: 'var(--sidebar2, #F4F3EF)',
                 border: '1px solid var(--bdr, #E2DFD8)',
                 borderRadius: 2,
-                padding: 10,
+                padding: 8,
                 marginBottom: 10,
               }}
             >
@@ -686,7 +686,7 @@ export default function HomePage() {
                 background: 'var(--sidebar2, #F4F3EF)',
                 border: '1px solid var(--bdr, #E2DFD8)',
                 borderRadius: 2,
-                padding: 10,
+                padding: 8,
               }}
             >
               <div

@@ -65,7 +65,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
     [data]
   );
 
-  const padding = { top: 20, right: 30, bottom: 40, left: 55 };
+  const padding = { top: 24, right: 32, bottom: 40, left: 55 };
   const chartWidth = 500;
   const chartHeight = height - padding.top - padding.bottom;
 
@@ -211,7 +211,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
         backgroundColor: lightModeColors.bg,
         border: `1px solid ${lightModeColors.border}`,
         borderRadius: '4px',
-        padding: '20px',
+        padding: '24px',
         boxSizing: 'border-box',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
       }}

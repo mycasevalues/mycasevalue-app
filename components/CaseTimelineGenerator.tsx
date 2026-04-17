@@ -123,7 +123,7 @@ export default function CaseTimelineGenerator() {
 
   const buttonStyle: React.CSSProperties = {
     width: '100%',
-    padding: '14px',
+    padding: '16px',
     backgroundColor: input.caseType && input.filingDate ? 'var(--accent-primary)' : 'var(--border-default)',
     color: 'var(--color-surface-0)',
     border: 'none',
@@ -157,7 +157,7 @@ export default function CaseTimelineGenerator() {
         }
       `}</style>
 
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '20px 24px' }}>
+      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '24px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
             Case Timeline Generator
@@ -171,12 +171,12 @@ export default function CaseTimelineGenerator() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: timeline ? '350px 1fr' : '1fr', gap: '40px', alignItems: 'start' }}>
           {/* Input Section */}
-          <div className="no-print" style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', height: 'fit-content' }}>
+          <div className="no-print" style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', height: 'fit-content' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Case Information
             </h2>
 
-            <form onSubmit={generateTimeline} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <form onSubmit={generateTimeline} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
                 <label style={labelStyle}>Case Type</label>
                 <select
@@ -292,7 +292,7 @@ export default function CaseTimelineGenerator() {
               </div>
 
               {/* Milestones List */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
                   Timeline Milestones
                 </h2>
@@ -337,7 +337,7 @@ export default function CaseTimelineGenerator() {
                   onClick={handleDownloadPdf}
                   className="no-print"
                   style={{
-                    padding: '14px',
+                    padding: '16px',
                     backgroundColor: 'var(--accent-primary-hover)',
                     color: 'var(--color-surface-0)',
                     border: 'none',

@@ -300,7 +300,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           <p style={{ fontSize: 15, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }}>No judges match your filters.</p>
           <button
             onClick={() => { setSearch(''); setCircuitFilter(''); setDistrictFilter(''); setStatusFilter('all'); setPage(1); }}
-            style={{ marginTop: 12, border: 'none', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '8px 20px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
+            style={{ marginTop: 12, border: 'none', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '8px 24px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
           >
             Clear Filters
           </button>
@@ -316,7 +316,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                 href={`/judges/${judge.slug}`}
                 className="je-card"
                 style={{
-                  display: 'block', padding: 20, borderRadius: 2, border: '1px solid var(--border-default)',
+                  display: 'block', padding: 24, borderRadius: 2, border: '1px solid var(--border-default)',
                   background: 'var(--color-surface-0)', textDecoration: 'none', transition: 'all 0.2s ease',
                 }}
               >
@@ -422,7 +422,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
             <tbody>
               {paginated.map((judge, i) => (
                 <tr key={judge.slug} className="je-tr" style={{ borderBottom: '1px solid #F0F0F0', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#FAFAFA' }}>
-                  <td style={{ padding: '10px 16px' }}>
+                  <td style={{ padding: '8px 16px' }}>
                     <Link href={`/judges/${judge.slug}`} style={{ color: 'var(--accent-primary-hover)', textDecoration: 'none', fontWeight: 600 }}>
                       {judge.name}
                     </Link>
@@ -431,23 +431,23 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                       {judge.seniorStatus && <span style={{ fontSize: 9, fontWeight: 600, color: '#B86E00' }}>SENIOR</span>}
                     </div>
                   </td>
-                  <td style={{ padding: '10px 8px', color: 'var(--color-text-secondary)', fontSize: 12 }}>{judge.district}</td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: wrColor(judge.stats.plaintiffWinRate) }}>
+                  <td style={{ padding: '8px 8px', color: 'var(--color-text-secondary)', fontSize: 12 }}>{judge.district}</td>
+                  <td style={{ padding: '8px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: wrColor(judge.stats.plaintiffWinRate) }}>
                     {judge.stats.plaintiffWinRate}%
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <td style={{ padding: '8px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {judge.stats.motionGrantRate}%
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <td style={{ padding: '8px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {judge.stats.settlementRate}%
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <td style={{ padding: '8px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {judge.stats.medianDurationMonths}mo
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <td style={{ padding: '8px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {judge.stats.totalCases >= 1000 ? `${(judge.stats.totalCases / 1000).toFixed(1)}K` : judge.stats.totalCases}
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontSize: 12, color: 'var(--color-text-secondary)' }}>
+                  <td style={{ padding: '8px 8px', textAlign: 'center', fontSize: 12, color: 'var(--color-text-secondary)' }}>
                     {judge.appointedYear}
                   </td>
                 </tr>

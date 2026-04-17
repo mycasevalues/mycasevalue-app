@@ -34,7 +34,7 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         background: 'var(--color-surface-1)',
         border: '1px solid var(--border-default)',
         borderRadius: '4px',
-        padding: '16px 20px',
+        padding: '16px 24px',
         marginBottom: '24px',
         marginTop: '24px',
         display: 'flex',

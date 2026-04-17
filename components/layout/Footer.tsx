@@ -121,7 +121,7 @@ export default function Footer() {
                   fontSize: 12,
                   fontFamily: 'var(--font-legal)',
                   fontWeight: 700,
-                  color: '#FFFFFF',
+                  color: 'var(--card, #FFFFFF)',
                 }}
               >
                 MyCaseValue

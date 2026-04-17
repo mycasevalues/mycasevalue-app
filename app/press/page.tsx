@@ -124,7 +124,7 @@ export default function PressPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Header Banner */}
         <div style={{
-          background: '#FFFFFF',
+          background: 'var(--card, #FFFFFF)',
           padding: '48px 24px 40px',
           position: 'relative',
           overflow: 'hidden',
@@ -155,7 +155,7 @@ export default function PressPage() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#ffffff',
+                color: 'var(--card, #FFFFFF)',
                 letterSpacing: '-0.025em',
                 lineHeight: 1.1,
                 marginBottom: 16,
@@ -290,7 +290,7 @@ export default function PressPage() {
                 <div
                   key={stat.label}
                   style={{
-                    padding: 28,
+                    padding: 32,
                     borderRadius: '4px',
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',

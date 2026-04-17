@@ -171,8 +171,8 @@ export default function DemandLetterPage() {
       `}</style>
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -197,12 +197,12 @@ export default function DemandLetterPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: letterText ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Case Information
             </h2>
 
-            <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Case Type */}
               <div>
                 <label style={labelStyle}>Case Type *</label>
@@ -252,7 +252,7 @@ export default function DemandLetterPage() {
                       }}
                       style={{
                         flex: 1,
-                        padding: '10px',
+                        padding: '8px',
                         borderRadius: '4px',
                         border: `1px solid ${partyRole === opt.val ? 'var(--accent-primary)' : 'var(--border-default)'}`,
                         backgroundColor: partyRole === opt.val ? 'rgba(10, 102, 194, 0.08)' : 'var(--color-surface-1)',
@@ -372,7 +372,7 @@ export default function DemandLetterPage() {
                 disabled={loading || !caseType || !briefFacts.trim() || !partyRole}
                 style={{
                   width: '100%',
-                  padding: '14px',
+                  padding: '16px',
                   backgroundColor: loading || !caseType || !briefFacts.trim() ? 'var(--border-default)' : 'var(--accent-primary)',
                   color: 'var(--color-surface-0)',
                   border: 'none',
@@ -394,8 +394,8 @@ export default function DemandLetterPage() {
           {/* Generated Letter */}
           {letterText && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', position: 'relative' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: 8 }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', position: 'relative' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: 8 }}>
                   <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                     Generated Demand Letter
                     {loading && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
@@ -503,7 +503,7 @@ export default function DemandLetterPage() {
         {/* Info Section */}
         {!letterText && (
           <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
-            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '20px', border: '1px solid var(--border-default)' }}>
+            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)' }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -515,7 +515,7 @@ export default function DemandLetterPage() {
               </p>
             </div>
 
-            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '20px', border: '1px solid var(--border-default)' }}>
+            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)' }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -527,7 +527,7 @@ export default function DemandLetterPage() {
               </p>
             </div>
 
-            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '20px', border: '1px solid var(--border-default)' }}>
+            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)' }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>

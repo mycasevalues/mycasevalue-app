@@ -165,7 +165,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
     return (
       <div
         style={{
-          padding: '20px',
+          padding: '24px',
           borderRadius: '4px',
           backgroundColor: 'rgba(59,130,246,0.1)',
           border: '1px solid rgba(59,130,246,0.15)',
@@ -221,7 +221,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
   const hasBetaPioneerBadge = stats && stats.total >= 1;
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
       {/* Referral Link Section */}
       <div style={cardStyle}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>

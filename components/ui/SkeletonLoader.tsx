@@ -52,7 +52,7 @@ export function SkeletonChart({ height = '200px', className = '' }: { height?: s
         background: 'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, #FFFFFF 100%)',
         borderRadius: '4px',
       }}>
-        <div style={{ display: 'flex', alignItems: 'flex-end', height: '100%', padding: '20px', gap: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', height: '100%', padding: '24px', gap: '8px' }}>
           {[40, 65, 50, 80, 55, 70, 45, 75, 60, 85, 50, 65].map((h, i) => (
             <div key={i} style={{
               flex: 1,
@@ -104,7 +104,7 @@ export function SkeletonStatRow({ count = 4, className = '' }: { count?: number;
         @media (max-width: 480px) {
           .skeleton-stat-row {
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
-            gap: 10px !important;
+            gap: 8px !important;
           }
         }
       `}</style>

@@ -189,8 +189,8 @@ export default function IntegrationsPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -203,7 +203,7 @@ export default function IntegrationsPage() {
         }} />
         <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative' }}>
           {/* Breadcrumb */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', fontFamily: 'var(--font-mono)', fontSize: '12px', letterSpacing: '0.02em' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontFamily: 'var(--font-mono)', fontSize: '12px', letterSpacing: '0.02em' }}>
             <Link href="/" className="breadcrumb-link" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s ease' }}>
               Home
             </Link>
@@ -232,7 +232,7 @@ export default function IntegrationsPage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
           }}>
             Connect your legal workflow
           </h1>
@@ -297,7 +297,7 @@ export default function IntegrationsPage() {
           {INTEGRATIONS.map((integration) => (
             <div key={integration.name} className="integration-card">
               {/* Icon + Status */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px' }}>
                 <div style={{
                   width: '56px',
                   height: '56px',
@@ -373,7 +373,7 @@ export default function IntegrationsPage() {
                 className="integration-link"
                 style={{
                   display: 'inline-block',
-                  padding: '10px 24px',
+                  padding: '8px 24px',
                   background: 'var(--accent-primary)',
                   color: 'var(--color-text-inverse)',
                   borderRadius: '4px',
@@ -590,7 +590,7 @@ export default function IntegrationsPage() {
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
-                  padding: '28px',
+                  padding: '32px',
                   transition: 'all 0.2s ease',
                   display: 'flex',
                   gap: '16px',
@@ -903,7 +903,7 @@ export default function IntegrationsPage() {
             className="cta-btn"
             style={{
               display: 'inline-block',
-              padding: '14px 32px',
+              padding: '16px 32px',
               background: 'var(--accent-primary)',
               color: 'var(--color-text-inverse)',
               borderRadius: '4px',

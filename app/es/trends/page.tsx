@@ -53,7 +53,7 @@ export default function SpanishTrendsPage() {
             ANÁLISIS
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-extrabold mb-4" style={{ color: 'var(--color-surface-0)' }}>
             Tendencias en Casos Federales
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--color-surface-0)', opacity: 0.9 }}>
@@ -72,7 +72,7 @@ export default function SpanishTrendsPage() {
 
         {/* Key Stats */}
         <section className="mt-16">
-          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-8 text-center" style={{ color: 'var(--color-text-primary)' }}>
             Datos Clave
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -102,7 +102,7 @@ export default function SpanishTrendsPage() {
       {/* Available Tools Section */}
       <div style={{ background: 'var(--color-surface-0)', borderTop: '1px solid var(--border-default)', padding: '48px 24px' }}>
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

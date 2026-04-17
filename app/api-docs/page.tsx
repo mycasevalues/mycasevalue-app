@@ -156,7 +156,7 @@ export default function ApiDocsPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
-          background: '#FFFFFF',
+          background: 'var(--card, #FFFFFF)',
           padding: '56px 24px 48px',
           position: 'relative',
           overflow: 'hidden',
@@ -185,7 +185,7 @@ export default function ApiDocsPage() {
               fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(32px, 4.5vw, 44px)',
               fontWeight: 700,
-              color: '#ffffff',
+              color: 'var(--card, #FFFFFF)',
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
               marginBottom: 16,
@@ -426,7 +426,7 @@ export default function ApiDocsPage() {
                       <code style={{
                         display: 'block',
                         padding: 16,
-                        backgroundColor: '#1F2937',
+                        backgroundColor: 'var(--color-text-primary)',
                         borderRadius: '20px',
                         fontSize: 12,
                         fontFamily: 'monospace',
@@ -506,7 +506,7 @@ export default function ApiDocsPage() {
                 <code style={{
                   display: 'block',
                   padding: 16,
-                  backgroundColor: '#1F2937',
+                  backgroundColor: 'var(--color-text-primary)',
                   borderRadius: '20px',
                   fontSize: 11,
                   fontFamily: 'monospace',
@@ -539,7 +539,7 @@ export default function ApiDocsPage() {
                 <code style={{
                   display: 'block',
                   padding: 16,
-                  backgroundColor: '#1F2937',
+                  backgroundColor: 'var(--color-text-primary)',
                   borderRadius: '20px',
                   fontSize: 11,
                   fontFamily: 'monospace',
@@ -575,7 +575,7 @@ export default function ApiDocsPage() {
                 <code style={{
                   display: 'block',
                   padding: 16,
-                  backgroundColor: '#1F2937',
+                  backgroundColor: 'var(--color-text-primary)',
                   borderRadius: '20px',
                   fontSize: 11,
                   fontFamily: 'monospace',
@@ -727,7 +727,7 @@ r = requests.get(
               href="mailto:enterprise@mycasevalues.com"
               style={{
                 display: 'inline-block',
-                padding: '14px 32px',
+                padding: '16px 32px',
                 backgroundColor: 'var(--color-surface-0)',
                 color: 'var(--accent-primary)',
                 fontSize: 15,

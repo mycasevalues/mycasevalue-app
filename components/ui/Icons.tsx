@@ -24,7 +24,7 @@ export function HeartPulseIcon({ color = 'var(--accent-primary)', size = 24 }: {
   );
 }
 
-export function ShieldIcon({ color = '#2563EB', size = 24 }: { color?: string; size?: number }) {
+export function ShieldIcon({ color = 'var(--link, #0A50A2)', size = 24 }: { color?: string; size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" stroke={color} {...s}>
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />

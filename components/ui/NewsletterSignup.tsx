@@ -115,7 +115,7 @@ export default function NewsletterSignup() {
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
               fontWeight: 600,
-              color: '#16A34A',
+              color: 'var(--data-positive, #176438)',
             }}
           >
             {message}

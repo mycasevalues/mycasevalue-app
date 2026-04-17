@@ -127,7 +127,7 @@ function StatsCard({
   return (
     <div
       style={{
-        padding: '20px',
+        padding: '24px',
         borderRadius: '4px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
@@ -184,10 +184,10 @@ export default async function DistrictCaseTypePage({
             href={`/cases/${category}/${slug}`}
             style={{
               display: 'inline-block',
-              padding: '10px 20px',
+              padding: '8px 24px',
               borderRadius: 4,
               background: 'var(--gold, #C4882A)',
-              color: '#ffffff',
+              color: 'var(--card, #FFFFFF)',
               textDecoration: 'none',
               fontWeight: 600,
               fontSize: 13,
@@ -271,7 +271,7 @@ export default async function DistrictCaseTypePage({
       <header
         style={{
           background: 'var(--accent-primary)',
-          padding: 'clamp(20px, 4vw, 40px) 24px',
+          padding: 'clamp(24px, 4vw, 40px) 24px',
           marginBottom: 'clamp(20px, 4vw, 40px)',
         }}
       >
@@ -365,7 +365,7 @@ export default async function DistrictCaseTypePage({
       </header>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(24px, 4vw, 40px) 24px' }}>
 
         {/* Stats Grid */}
         <div
@@ -493,7 +493,7 @@ export default async function DistrictCaseTypePage({
         <style>{`
           .nav-button {
             display: inline-block;
-            padding: '14px 36px';
+            padding: '16px 32px';
             border-radius: '12px';
             background: 'var(--accent-primary)';
             color: white;
@@ -559,7 +559,7 @@ export default async function DistrictCaseTypePage({
         <div
           style={{
             marginTop: '40px',
-            padding: '16px 20px',
+            padding: '16px 24px',
             borderLeft: '4px solid var(--accent-primary)',
             background: 'rgba(59,130,246,0.06)',
             borderRadius: '4px',

@@ -43,7 +43,7 @@ export default function NotificationToast() {
               exit={{ opacity: 0, x: 100, scale: 0.95 }}
               transition={{ duration: 0.3 }}
               style={{
-                display: 'flex', alignItems: 'center', gap: 10,
+                display: 'flex', alignItems: 'center', gap: 8,
                 padding: '12px 16px', borderRadius: '4px',
                 backgroundColor: colors.bg, border: `1px solid ${colors.border}`,
                 color: colors.text, fontSize: 14, fontWeight: 500,

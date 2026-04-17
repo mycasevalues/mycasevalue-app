@@ -214,7 +214,7 @@ export default function BlogPage() {
         }
 
         .filter-item {
-          padding: 10px 0;
+          padding: 8px 0;
           font-size: 14px;
           color: var(--color-text-secondary);
           cursor: pointer;
@@ -300,7 +300,7 @@ export default function BlogPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         padding: '40px 24px 48px',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',
@@ -332,7 +332,7 @@ export default function BlogPage() {
             Research & Analysis
           </div>
           <h1 className="font-inter" style={{
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
@@ -366,7 +366,7 @@ export default function BlogPage() {
                     {featuredPost.category}
                   </div>
                   <h2
-                    className="font-display font-bold mb-4 transition-colors"
+                    className="font-legal font-bold mb-4 transition-colors"
                     style={{ fontSize: '22px', lineHeight: '1.3', color: 'var(--color-text-primary)', fontWeight: 600 }}
                   >
                     {featuredPost.title}
@@ -423,7 +423,7 @@ export default function BlogPage() {
           {/* Sidebar: Filters */}
           <aside className="md:col-span-1">
             <div className="sidebar-filter sticky top-6">
-              <h3 className="font-display font-bold mb-6" style={{ fontSize: '14px', color: 'var(--color-text-primary)' }}>
+              <h3 className="font-legal font-bold mb-6" style={{ fontSize: '14px', color: 'var(--color-text-primary)' }}>
                 CATEGORIES
               </h3>
               <div>
@@ -457,7 +457,7 @@ export default function BlogPage() {
                       className="block"
                     >
                       <h3
-                        className="font-display font-semibold mb-3 transition-colors"
+                        className="font-legal font-semibold mb-3 transition-colors"
                         style={{ fontSize: '18px', color: 'var(--color-text-primary)', lineHeight: '1.4' }}
                       >
                         {post.title}
@@ -499,7 +499,7 @@ export default function BlogPage() {
       {/* Featured Research Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div style={{ marginBottom: '32px' }}>
-          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-3xl font-legal font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
             Featured Research
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -547,7 +547,7 @@ export default function BlogPage() {
       {/* Browse by Topic Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div style={{ marginBottom: '32px' }}>
-          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-3xl font-legal font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
             Browse by Topic
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -577,7 +577,7 @@ export default function BlogPage() {
       {/* Related Tools Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div style={{ marginBottom: '32px' }}>
-          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-3xl font-legal font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
             Related Tools
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -619,7 +619,7 @@ export default function BlogPage() {
       {/* CTA Section */}
       <div className="max-w-6xl mx-auto px-6 py-12">
         <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             Want deeper analysis? Try Attorney Mode
           </h2>
           <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontSize: '16px' }}>

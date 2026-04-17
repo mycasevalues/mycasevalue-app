@@ -170,8 +170,8 @@ export default function DeadlineCalculatorPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -195,8 +195,8 @@ export default function DeadlineCalculatorPage() {
       {/* Main Content */}
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Input Section */}
-        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginBottom: '24px' }} className="grid-responsive">
+        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', marginBottom: '24px' }} className="grid-responsive">
             <style>{`.grid-responsive { grid-template-columns: 1fr !important; } @media (min-width: 640px) { .grid-responsive { grid-template-columns: 1fr 1fr !important; } } @media (min-width: 1024px) { .grid-responsive { grid-template-columns: 1fr 1fr 1fr !important; } }`}</style>
             <div>
               <label style={labelStyle}>Case Filed Date</label>
@@ -217,7 +217,7 @@ export default function DeadlineCalculatorPage() {
             )}
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', paddingTop: '20px', borderTop: '1px solid var(--border-default)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '24px', paddingTop: '20px', borderTop: '1px solid var(--border-default)' }}>
             <h3 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>Add Custom Deadline</h3>
             <button
               onClick={handleDownloadCalendar}
@@ -303,7 +303,7 @@ export default function DeadlineCalculatorPage() {
                 { label: 'Critical', value: String(allDeadlines.filter(d => d.category === 'critical').length) },
                 { label: 'Days to First Deadline', value: getDaysUntil(allDeadlines[0]?.calculatedDate) > 0 ? String(getDaysUntil(allDeadlines[0]?.calculatedDate)) : 'Past due' },
               ].map((stat, i) => (
-                <div key={i} style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '20px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                <div key={i} style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                   <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     {stat.label}
                   </p>
@@ -409,7 +409,7 @@ export default function DeadlineCalculatorPage() {
               <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
                 Federal Rules of Civil Procedure Reference
               </h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
                 {[
                   { rule: 'FRCP 12(a)', title: 'Time to Serve', content: 'Defendant has 21 days to respond to summons and complaint (or 60 days if served outside U.S.)' },
                   { rule: 'FRCP 26(f)', title: 'Discovery Conference', content: 'Parties must meet within 35 days of service of summons (or per court order)' },
@@ -432,7 +432,7 @@ export default function DeadlineCalculatorPage() {
                 ))}
               </div>
 
-              <div style={{ marginTop: '20px', padding: '14px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', borderLeft: '4px solid var(--accent-primary)' }}>
+              <div style={{ marginTop: '24px', padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', borderLeft: '4px solid var(--accent-primary)' }}>
                 <p style={{ fontSize: '12px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.5 }}>
                   <strong>Disclaimer:</strong> These are default Federal Rules of Civil Procedure deadlines. Individual judges may modify deadlines through scheduling orders, and state courts have different rules. Always check the scheduling order entered in your case and local rules of court. Missing a deadline can result in sanctions, dismissal, or default judgment.
                 </p>

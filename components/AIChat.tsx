@@ -50,7 +50,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
   }
 
   const containerStyle: React.CSSProperties = compact
-    ? { position: 'fixed', bottom: 24, right: 24, zIndex: 1000, width: 400, maxHeight: 500, borderRadius: 16, border: '1px solid var(--border-default)', backgroundColor: 'var(--color-surface-0)', boxShadow: '0 8px 40px rgba(0,0,0,0.15)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }
+    ? { position: 'fixed', bottom: 24, right: 24, zIndex: 1000, width: 400, maxHeight: 500, borderRadius: 6, border: '1px solid var(--border-default)', backgroundColor: 'var(--color-surface-0)', boxShadow: '0 8px 40px rgba(0,0,0,0.15)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }
     : { borderRadius: '4px', border: '1px solid var(--border-default)', backgroundColor: 'var(--color-surface-0)', display: 'flex', flexDirection: 'column', overflow: 'hidden' };
 
   return (

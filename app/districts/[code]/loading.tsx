@@ -32,9 +32,9 @@ export default function Loading() {
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)', display: 'flex', gap: 8, alignItems: 'center' }}>
           <Sk width="40px" height="14px" />
-          <span style={{ color: '#e5e7eb' }}>{'>'}</span>
+          <span style={{ color: 'var(--border-default)' }}>{'>'}</span>
           <Sk width="60px" height="14px" />
-          <span style={{ color: '#e5e7eb' }}>{'>'}</span>
+          <span style={{ color: 'var(--border-default)' }}>{'>'}</span>
           <Sk width="180px" height="14px" />
         </div>
       </nav>
@@ -75,7 +75,7 @@ export default function Loading() {
               background: 'var(--color-surface-0)',
               border: '1px solid var(--bdr, #E2DFD8)',
               borderRadius: '4px',
-              padding: '20px',
+              padding: '24px',
             }}>
               <Sk width="200px" height="15px" style={{ marginBottom: 16 }} />
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid var(--bdr, #E2DFD8)' }}>
@@ -111,7 +111,7 @@ export default function Loading() {
           <Sk width="200px" height="22px" style={{ marginBottom: 24 }} />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
             {[1, 2, 3].map((i) => (
-              <div key={i} style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: '4px', padding: '20px' }}>
+              <div key={i} style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: '4px', padding: '24px' }}>
                 <Sk width="180px" height="15px" style={{ marginBottom: 12 }} />
                 <Sk width="100%" height="12px" style={{ marginBottom: 6 }} />
                 <Sk width="80%" height="12px" />

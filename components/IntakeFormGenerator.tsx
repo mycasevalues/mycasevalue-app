@@ -595,12 +595,12 @@ export default function IntakeFormGenerator() {
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: selectedInfo ? '1fr 1fr' : '1fr', gap: '24px' }}>
-      <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+      <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
         <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
           Form Configuration
         </h2>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div>
             <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Case Type *
@@ -640,7 +640,7 @@ export default function IntakeFormGenerator() {
             disabled={!selectedCaseType || loading}
             style={{
               width: '100%',
-              padding: '14px',
+              padding: '16px',
               backgroundColor: !selectedCaseType || loading ? 'var(--border-default)' : 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               border: 'none',
@@ -687,7 +687,7 @@ export default function IntakeFormGenerator() {
       </div>
 
       {selectedInfo && (
-        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)' }}>
             Preview
           </h2>
@@ -696,13 +696,13 @@ export default function IntakeFormGenerator() {
             <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', borderBottom: '2px solid var(--accent-primary)', paddingBottom: '8px' }}>
               Form Sections:
             </h3>
-            <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.8', fontFamily: 'var(--font-body)' }}>
+            <ul style={{ margin: 0, paddingLeft: '24px', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.8', fontFamily: 'var(--font-body)' }}>
               {selectedInfo.sections.map((section, idx) => (
                 <li key={idx}>{section}</li>
               ))}
             </ul>
 
-            <div style={{ marginTop: '20px', padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '4px', border: '1px solid #FCD34D' }}>
+            <div style={{ marginTop: '24px', padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '4px', border: '1px solid #FCD34D' }}>
               <p style={{ fontSize: '12px', color: '#fbbf24', margin: 0, fontFamily: 'var(--font-body)' }}>
                 <strong>Note:</strong> Each section contains numbered fields with blank lines formatted for printing.
               </p>

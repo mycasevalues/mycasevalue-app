@@ -161,7 +161,7 @@ export default function CasesIndexPage() {
       {/* Header */}
       <div style={{
         background: 'var(--card, #FFFFFF)',
-        padding: '28px 24px 32px',
+        padding: '32px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
         borderBottom: '1px solid var(--bdr, #E2DFD8)',
@@ -182,7 +182,7 @@ export default function CasesIndexPage() {
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
             color: 'var(--chrome-bg, #1B2D45)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#15803D' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Case Intelligence
           </div>
           <h1 className="font-legal" style={{
@@ -203,7 +203,7 @@ export default function CasesIndexPage() {
       {/* Platform Statistics Bar */}
       <div style={{ background: 'var(--card, #FFFFFF)', borderBottom: '1px solid var(--border-default)', padding: '16px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '24px' }}>
             <DataFreshness />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32 }}>
@@ -244,7 +244,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Categories Grid */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 20px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px' }}>
         {/* Search Input */}
         <div style={{ position: 'relative', width: '100%', maxWidth: '480px', marginBottom: '24px' }}>
           <div
@@ -342,7 +342,7 @@ export default function CasesIndexPage() {
             background: var(--card, #FFFFFF);
             border: 1px solid var(--border-default);
             border-radius: 4px;
-            padding: 20px;
+            padding: 24px;
             text-align: center;
             transition: all 0.2s ease;
             text-decoration: none;
@@ -359,7 +359,7 @@ export default function CasesIndexPage() {
         `}} />
 
         {filtered.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '60px 20px' }}>
+          <div style={{ textAlign: 'center', padding: '60px 24px' }}>
             <p style={{ fontSize: 18, color: 'var(--text2, #42403C)', fontFamily: 'var(--font-ui)' }}>
               No case types match &ldquo;{search}&rdquo;
             </p>
@@ -368,7 +368,7 @@ export default function CasesIndexPage() {
               className="clear-search-btn"
               style={{
                 marginTop: 16,
-                padding: '10px 24px',
+                padding: '8px 24px',
                 fontSize: 14,
                 fontWeight: 600,
                 border: '1px solid var(--border-default)',
@@ -517,7 +517,7 @@ export default function CasesIndexPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
               {topWinRateCases.map((caseType) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div style={{ background: 'var(--card, #FFFFFF)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: 20, height: '100%', transition: 'all 0.2s ease', cursor: 'pointer' }}>
+                  <div style={{ background: 'var(--card, #FFFFFF)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: 24, height: '100%', transition: 'all 0.2s ease', cursor: 'pointer' }}>
                     <div style={{ fontSize: 14, color: 'var(--text2, #42403C)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 500 }}>
                       {caseType.categoryLabel}
                     </div>
@@ -608,7 +608,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* CTA */}
-      <div style={{ background: 'var(--card, #FFFFFF)', border: '1px solid var(--border-default)', padding: '60px 20px', textAlign: 'center' }}>
+      <div style={{ background: 'var(--card, #FFFFFF)', border: '1px solid var(--border-default)', padding: '60px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2 className="font-legal" style={{ fontSize: 32, fontWeight: 600, color: 'var(--text-primary)', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
             Ready to research your case?
@@ -650,7 +650,7 @@ export default function CasesIndexPage() {
               color: 'var(--accent-primary, #C4882A)',
               border: 'none',
               borderRadius: '2px',
-              padding: '8px 20px',
+              padding: '8px 24px',
               fontWeight: 600,
               fontSize: 14,
               cursor: 'pointer',
@@ -679,7 +679,7 @@ export default function CasesIndexPage() {
       {selectedCategories.size >= 2 && <div style={{ height: '48px' }} />}
 
       {/* Footer */}
-      <div style={{ background: 'var(--surface-warm, #FAF3E6)', color: 'var(--text2, #42403C)', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid var(--border-default)' }}>
+      <div style={{ background: 'var(--surface-warm, #FAF3E6)', color: 'var(--text2, #42403C)', padding: '40px 24px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ margin: 0 }}>
             <strong>Legal Disclaimer:</strong> This data is for research purposes only and is not legal advice. MyCaseValue provides historical federal court outcome data from public records. This does not constitute a prediction of any case outcome. Consult a qualified attorney for legal advice. © {new Date().getFullYear()} MyCaseValue LLC.

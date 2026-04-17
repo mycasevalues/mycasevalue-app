@@ -149,7 +149,7 @@ export default function GlossaryPage() {
               text-decoration: none;
               display: block;
               transition: all 200ms ease;
-              padding: 20px;
+              padding: 24px;
             }
 
             .glossary-tool-card:hover {

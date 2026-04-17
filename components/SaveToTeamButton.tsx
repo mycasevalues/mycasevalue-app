@@ -120,8 +120,8 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
         <div
           style={{
             position: 'fixed',
-            top: '20px',
-            right: '20px',
+            top: '24px',
+            right: '24px',
             padding: '12px 16px',
             borderRadius: '4px',
             backgroundColor: 'rgba(5, 150, 105, 0.95)',
@@ -212,7 +212,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 placeholder="Why you're saving this..."
                 style={{
                   width: '100%',
-                  padding: '10px 12px',
+                  padding: '8px 12px',
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
                   fontSize: '13px',
@@ -236,7 +236,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
             </div>
 
             {saveError && (
-              <div style={{ marginBottom: '16px', padding: '10px 12px', backgroundColor: 'rgba(220, 38, 38, 0.1)', borderRadius: '4px', border: '1px solid rgba(220, 38, 38, 0.3)' }}>
+              <div style={{ marginBottom: '16px', padding: '8px 12px', backgroundColor: 'rgba(220, 38, 38, 0.1)', borderRadius: '4px', border: '1px solid rgba(220, 38, 38, 0.3)' }}>
                 <p style={{ fontSize: '12px', color: '#dc2626', margin: 0 }}>
                   {saveError}
                 </p>
@@ -252,7 +252,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 onClick={() => setShowModal(false)}
                 disabled={isSaving}
                 style={{
-                  padding: '10px 16px',
+                  padding: '8px 16px',
                   backgroundColor: 'var(--color-surface-1)',
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
@@ -271,7 +271,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 onClick={handleSave}
                 disabled={isSaving}
                 style={{
-                  padding: '10px 16px',
+                  padding: '8px 16px',
                   backgroundColor: 'var(--accent-primary)',
                   color: 'var(--color-surface-0)',
                   border: 'none',

@@ -245,7 +245,7 @@ export default function RecentlyResearched() {
           setHistory([]);
         }}
         style={{
-          marginTop: '10px',
+          marginTop: '8px',
           width: '100%',
           padding: '6px 10px',
           backgroundColor: 'rgba(255,255,255,0.05)',

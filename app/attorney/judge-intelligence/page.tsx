@@ -124,8 +124,8 @@ export default function JudgeIntelligencePage() {
       </style>
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -153,13 +153,13 @@ export default function JudgeIntelligencePage() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
             Judge Intelligence
           </div>
-          <h1 className="font-display" style={{
+          <h1 className="font-legal" style={{
             fontFamily: 'var(--font-ui)',
             fontSize: 'clamp(24px, 3.5vw, 30px)',
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
             margin: 0,
           }}>
             Know your judge before the courtroom
@@ -246,7 +246,7 @@ export default function JudgeIntelligencePage() {
 
         {/* Error */}
         {error && (
-          <div style={{ backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '20px 24px', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px 24px', marginBottom: '24px' }}>
             <p style={{ fontSize: '14px', color: 'var(--accent-primary)', margin: 0 }}>{error}</p>
           </div>
         )}
@@ -259,7 +259,7 @@ export default function JudgeIntelligencePage() {
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
               </svg>
             </div>
-            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+            <h2 className="font-legal" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Select a District
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto' }}>
@@ -308,7 +308,7 @@ export default function JudgeIntelligencePage() {
                       onClick={() => setExpandedJudge(isExpanded ? null : judge.name)}
                       style={{
                         width: '100%',
-                        padding: '20px 24px',
+                        padding: '24px 24px',
                         border: 'none',
                         background: 'none',
                         cursor: 'pointer',
@@ -320,8 +320,8 @@ export default function JudgeIntelligencePage() {
                       }}
                     >
                       <div style={{ flex: 1 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-                          <span className="font-display" style={{ fontSize: '17px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                          <span className="font-legal" style={{ fontSize: '17px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                             {judge.name}
                           </span>
                           {judge.senior && (
@@ -359,7 +359,7 @@ export default function JudgeIntelligencePage() {
                         <div style={{ paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
                           {/* Ruling Patterns */}
                           <div>
-                            <h4 className="font-display" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
+                            <h4 className="font-legal" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
                               Ruling Patterns
                             </h4>
                             <MeterBar value={judge.plaintiffWinRate} max={100} color="#059669" label="Favorable Outcome Rate" />
@@ -371,10 +371,10 @@ export default function JudgeIntelligencePage() {
 
                           {/* Judge Profile */}
                           <div>
-                            <h4 className="font-display" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
+                            <h4 className="font-legal" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
                               Profile
                             </h4>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                               {[
                                 { label: 'Appointed', value: `${judge.appointed} by Pres. ${judge.appointedBy}` },
                                 { label: 'Status', value: judge.senior ? 'Senior Status' : 'Active' },
@@ -388,7 +388,7 @@ export default function JudgeIntelligencePage() {
                               ))}
                             </div>
 
-                            <h4 className="font-display" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '20px 0 12px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
+                            <h4 className="font-legal" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '24px 0 12px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
                               Top Case Types
                             </h4>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
@@ -409,7 +409,7 @@ export default function JudgeIntelligencePage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '24px', padding: '20px 20px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
+            <div style={{ marginTop: '24px', padding: '24px 24px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
               <p style={{ fontSize: '12px', color: '#B86E00', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>

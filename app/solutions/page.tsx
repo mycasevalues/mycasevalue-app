@@ -109,7 +109,7 @@ export default function SolutionsPage() {
               fontSize: '2.5rem',
               fontWeight: 600,
               lineHeight: 1.1,
-              marginBottom: '20px',
+              marginBottom: '24px',
             }}
           >
             Built for Every Legal Professional
@@ -135,7 +135,7 @@ export default function SolutionsPage() {
               justifyContent: 'center',
               gap: '32px',
               flexWrap: 'wrap',
-              marginTop: '20px',
+              marginTop: '24px',
               paddingTop: '20px',
               borderTop: '1px solid rgba(255,255,255,0.2)',
             }}
@@ -283,7 +283,7 @@ export default function SolutionsPage() {
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
-                  padding: '20px 16px',
+                  padding: '24px 16px',
                   textDecoration: 'none',
                   display: 'block',
                   transition: 'box-shadow 200ms ease, border-color 200ms ease',

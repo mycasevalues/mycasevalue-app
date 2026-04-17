@@ -60,8 +60,8 @@ export default function AppealsPage() {
       <style>{`select:focus, input:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
 
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -96,7 +96,7 @@ export default function AppealsPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: showResult && data ? '380px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>Case Information</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
@@ -169,13 +169,13 @@ export default function AppealsPage() {
               </div>
 
               {/* Common Grounds for Reversal */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)' }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                   Most Common Grounds for Reversal
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {grounds.map((g, i) => (
-                    <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+                    <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                       <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary-hover)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600 }}>{i + 1}</div>
                       <span style={{ fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: 1.5 }}>{g}</span>
                     </div>
@@ -184,7 +184,7 @@ export default function AppealsPage() {
               </div>
 
               {/* Filing Deadline Notice */}
-              <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: '20px', border: '1px solid var(--accent-primary)' }}>
+              <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid var(--accent-primary)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>Appeal Filing Deadline</h3>
                 <p style={{ fontSize: '13px', color: 'var(--accent-primary-hover)', margin: 0, lineHeight: 1.6 }}>
                   Under FRAP Rule 4(a)(1)(A), a notice of appeal must be filed within <strong>30 days</strong> after entry of judgment. If the United States is a party, the deadline extends to <strong>60 days</strong>. Post-trial motions (FRCP 50(b), 52(b), 59) toll this deadline until the motion is decided.

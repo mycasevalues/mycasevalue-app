@@ -222,7 +222,7 @@ export async function generateMetadata({
 const categoryColors: Record<string, string> = {
   work: '#94a3b8',
   injury: 'var(--accent-primary)',
-  consumer: '#2563EB',
+  consumer: 'var(--link, #0A50A2)',
   rights: 'var(--accent-primary)',
   money: 'var(--wrn-txt, #7A5800)',
   housing: 'var(--data-positive, #176438)',
@@ -306,7 +306,7 @@ async function CategoryPage({
 
     if (!categoryData) {
       return (
-        <div style={{ padding: '40px 20px', textAlign: 'center' }}>
+        <div style={{ padding: '40px 24px', textAlign: 'center' }}>
           <h1 className="text-2xl font-bold">Category not found</h1>
           <p className="mt-4" style={{ color: 'var(--color-text-secondary)' }}>The case type you&apos;re looking for doesn&apos;t exist.</p>
           <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: 'var(--color-text-primary)', borderRadius: '4px' }}>Browse all categories</a>
@@ -318,10 +318,10 @@ async function CategoryPage({
   } catch (err: unknown) {
     console.error('[cases/[category]] Error loading category data:', err);
     return (
-      <div style={{ padding: '40px 20px', textAlign: 'center', minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <div style={{ padding: '40px 24px', textAlign: 'center', minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <h1 style={{ fontSize: 24, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 16 }}>Data Loading Error</h1>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: 24 }}>Data for this case type is being compiled. Check back soon.</p>
-        <a href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: 'var(--gold, #C4882A)', color: '#ffffff', border: '1px solid var(--gold, #C4882A)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 4, textDecoration: 'none', fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', fontFamily: 'var(--font-ui)', margin: '0 auto' }}>Browse all categories</a>
+        <a href="/cases" style={{ display: 'inline-block', padding: '8px 24px', background: 'var(--gold, #C4882A)', color: 'var(--card, #FFFFFF)', border: '1px solid var(--gold, #C4882A)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 4, textDecoration: 'none', fontWeight: 600, fontSize: 13, letterSpacing: '-0.005em', fontFamily: 'var(--font-ui)', margin: '0 auto' }}>Browse all categories</a>
       </div>
     );
   }
@@ -404,7 +404,7 @@ async function CategoryPage({
       <div style={{
         background: 'var(--color-surface-0)',
         borderBottom: '1px solid var(--border-default)',
-        padding: '16px 20px',
+        padding: '16px 24px',
       }}>
         <div style={{
           maxWidth: 1200,
@@ -427,7 +427,7 @@ async function CategoryPage({
 
       {/* Hero Section */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         padding: '36px 24px 28px',
         color: 'white',
         position: 'relative',
@@ -461,7 +461,7 @@ async function CategoryPage({
               letterSpacing: '-0.025em',
               lineHeight: 1.1,
               margin: '0 0 16px',
-              color: '#ffffff',
+              color: 'var(--card, #FFFFFF)',
             }}>
               {categoryData?.label} Cases
             </h1>
@@ -539,7 +539,7 @@ async function CategoryPage({
       {/* Data Freshness Badge */}
       <div style={{
         background: 'var(--color-surface-1)',
-        padding: '16px 20px',
+        padding: '16px 24px',
         borderBottom: '1px solid var(--border-default)',
         textAlign: 'center',
       }}>
@@ -549,7 +549,7 @@ async function CategoryPage({
       {/* Category Statistics Summary Bar */}
       <div style={{
         background: 'var(--color-surface-0)',
-        padding: '20px 20px',
+        padding: '24px 24px',
         borderBottom: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -557,7 +557,7 @@ async function CategoryPage({
           <div style={{
             fontSize: '12px',
             color: 'var(--color-text-muted)',
-            marginBottom: '20px',
+            marginBottom: '24px',
           }}>
             Last updated: April 2026
           </div>
@@ -584,7 +584,7 @@ async function CategoryPage({
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',
-                    padding: '20px',
+                    padding: '24px',
                     textAlign: 'center',
                   }}>
                     <div style={{
@@ -610,7 +610,7 @@ async function CategoryPage({
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',
-                    padding: '20px',
+                    padding: '24px',
                     textAlign: 'center',
                   }}>
                     <div style={{
@@ -653,7 +653,7 @@ async function CategoryPage({
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',
-                    padding: '20px',
+                    padding: '24px',
                     textAlign: 'center',
                   }}>
                     <div style={{
@@ -679,7 +679,7 @@ async function CategoryPage({
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',
-                    padding: '20px',
+                    padding: '24px',
                     textAlign: 'center',
                   }}>
                     <div style={{
@@ -709,7 +709,7 @@ async function CategoryPage({
           <p style={{
             fontSize: '11px',
             color: 'var(--color-text-muted)',
-            marginTop: '20px',
+            marginTop: '24px',
             marginBottom: 0,
           }}>
             Source: FJC Integrated Database · CourtListener / RECAP · Public Federal Records
@@ -720,7 +720,7 @@ async function CategoryPage({
       {/* Description Section */}
       <div style={{
         background: 'var(--color-surface-0)',
-        padding: '60px 20px',
+        padding: '60px 24px',
         borderBottom: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -749,7 +749,7 @@ async function CategoryPage({
 
       {/* Case Types Grid */}
       <div style={{
-        padding: '60px 20px',
+        padding: '60px 24px',
       }}>
         <style>{`
           .case-type-card:hover {
@@ -777,7 +777,7 @@ async function CategoryPage({
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-            gap: '20px',
+            gap: '24px',
           }}>
             {(categoryData?.opts ?? [])?.map?.((opt) => {
               const allCaseTypes = getAllCaseTypeSEO?.() ?? [];
@@ -800,7 +800,7 @@ async function CategoryPage({
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',
-                    padding: '20px',
+                    padding: '24px',
                     fontFamily: 'var(--font-ui)',
                     textDecoration: 'none',
                     color: 'inherit',
@@ -895,7 +895,7 @@ async function CategoryPage({
       {/* Top Performing Case Types */}
       <div style={{
         background: 'var(--color-surface-0)',
-        padding: '60px 20px',
+        padding: '60px 24px',
         borderTop: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -937,7 +937,7 @@ async function CategoryPage({
             if (top3.length === 0) return null;
 
             return (
-              <div style={{ display: 'grid', gap: '20px' }}>
+              <div style={{ display: 'grid', gap: '24px' }}>
                 {top3.map((item, idx) => {
                   const href = item.slug ? `/cases/${category}/${item.slug}` : `/report/${item.nos}`;
                   return (
@@ -946,7 +946,7 @@ async function CategoryPage({
                       href={href}
                       style={{
                         display: 'block',
-                        padding: '20px 24px',
+                        padding: '24px 24px',
                         background: 'var(--color-surface-1)',
                         border: '1px solid var(--border-default)',
                         borderRadius: '4px',
@@ -1017,7 +1017,7 @@ async function CategoryPage({
       {/* Circuit Win Rate Comparison */}
       <div style={{
         background: 'var(--color-surface-0)',
-        padding: '60px 20px',
+        padding: '60px 24px',
         borderTop: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -1081,7 +1081,7 @@ async function CategoryPage({
 
       {/* Recovery Range Comparison */}
       <div style={{
-        padding: '60px 20px',
+        padding: '60px 24px',
         borderTop: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -1124,7 +1124,7 @@ async function CategoryPage({
                   key={item.nos}
                   href={`/report/${item.nos}`}
                   style={{
-                    display: 'block', padding: '16px 20px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
+                    display: 'block', padding: '16px 24px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
                     borderRadius: 4, textDecoration: 'none', transition: 'all 0.2s ease',
                   }}
                 >
@@ -1171,7 +1171,7 @@ async function CategoryPage({
       {/* Settlement Range Comparison */}
       <div style={{
         background: 'var(--color-surface-0)',
-        padding: '60px 20px',
+        padding: '60px 24px',
         borderTop: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -1219,7 +1219,7 @@ async function CategoryPage({
                     href={`/report/${item.nos}`}
                     style={{
                       display: 'block',
-                      padding: '20px',
+                      padding: '24px',
                       background: 'var(--color-surface-1)',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
@@ -1298,7 +1298,7 @@ async function CategoryPage({
       {/* Stats Section */}
       <div style={{
         background: 'var(--color-surface-0)',
-        padding: '60px 20px',
+        padding: '60px 24px',
         borderTop: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -1419,7 +1419,7 @@ async function CategoryPage({
       {/* Explore More Links */}
       <div style={{
         background: 'var(--color-surface-1)',
-        padding: '60px 20px',
+        padding: '60px 24px',
         borderTop: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -1436,7 +1436,7 @@ async function CategoryPage({
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '20px',
+            gap: '24px',
           }}>
             <Link
               href="/compare"
@@ -1624,7 +1624,7 @@ async function CategoryPage({
       {/* CTA Section */}
       <div style={{
         background: 'var(--accent-primary)',
-        padding: '60px 20px',
+        padding: '60px 24px',
         textAlign: 'center',
         color: 'white',
       }}>

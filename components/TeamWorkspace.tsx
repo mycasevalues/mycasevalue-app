@@ -237,7 +237,7 @@ const statusColors: Record<string, string> = {
   Researching: 'var(--accent-primary)',
   Active: 'var(--data-positive, #176438)',
   Settled: '#B86E00',
-  Closed: '#6B7280',
+  Closed: 'var(--color-text-muted)',
 };
 
 export default function TeamWorkspace() {
@@ -396,7 +396,7 @@ export default function TeamWorkspace() {
               </div>
               <div>
                 <h1
-                  className="font-display"
+                  className="font-legal"
                   style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-inverse)', margin: 0 }}
                 >
                   Team Workspace
@@ -412,7 +412,7 @@ export default function TeamWorkspace() {
               }}
             >
               <span
-                className="font-display"
+                className="font-legal"
                 style={{
                   fontSize: '12px',
                   fontWeight: 600,
@@ -458,7 +458,7 @@ export default function TeamWorkspace() {
               key={tab}
               onClick={() => setActiveTab(tab)}
               style={{
-                padding: '8px 20px',
+                padding: '8px 24px',
                 borderRadius: '4px',
                 border: 'none',
                 fontSize: '14px',
@@ -510,7 +510,7 @@ export default function TeamWorkspace() {
                       boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '10px',
+                      gap: '8px',
                     }}
                   >
                     <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
@@ -553,13 +553,13 @@ export default function TeamWorkspace() {
               style={{
                 background: 'var(--color-surface-0)',
                 borderRadius: '4px',
-                padding: '20px',
+                padding: '24px',
                 border: '1px solid var(--border-default)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
               }}
             >
               <h3
-                className="font-display"
+                className="font-legal"
                 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 14px' }}
               >
                 Add Note
@@ -584,7 +584,7 @@ export default function TeamWorkspace() {
                     onChange={(e) => setNewNoteNOS(e.target.value)}
                     style={{
                       width: '100%',
-                      padding: '10px 12px',
+                      padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
@@ -613,7 +613,7 @@ export default function TeamWorkspace() {
                     onChange={(e) => setNewNoteText(e.target.value)}
                     style={{
                       width: '100%',
-                      padding: '10px 12px',
+                      padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
@@ -630,7 +630,7 @@ export default function TeamWorkspace() {
                   onClick={handleAddNote}
                   disabled={!newNoteText.trim() || !newNoteNOS.trim()}
                   style={{
-                    padding: '10px 16px',
+                    padding: '8px 16px',
                     backgroundColor: newNoteText.trim() && newNoteNOS.trim() ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
                     color: 'var(--color-text-inverse)',
                     border: 'none',
@@ -674,7 +674,7 @@ export default function TeamWorkspace() {
                       boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
                     }}
                   >
-                    <div style={{ marginBottom: '10px' }}>
+                    <div style={{ marginBottom: '8px' }}>
                       <span
                         style={{
                           display: 'inline-block',
@@ -710,13 +710,13 @@ export default function TeamWorkspace() {
               style={{
                 background: 'var(--color-surface-0)',
                 borderRadius: '4px',
-                padding: '20px',
+                padding: '24px',
                 border: '1px solid var(--border-default)',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
               }}
             >
               <h3
-                className="font-display"
+                className="font-legal"
                 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 14px' }}
               >
                 Add Case
@@ -741,7 +741,7 @@ export default function TeamWorkspace() {
                     onChange={(e) => setNewCaseName(e.target.value)}
                     style={{
                       width: '100%',
-                      padding: '10px 12px',
+                      padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
@@ -769,7 +769,7 @@ export default function TeamWorkspace() {
                     onChange={(e) => setNewCaseType(e.target.value)}
                     style={{
                       width: '100%',
-                      padding: '10px 12px',
+                      padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
@@ -804,7 +804,7 @@ export default function TeamWorkspace() {
                     onChange={(e) => setNewCaseDistrict(e.target.value)}
                     style={{
                       width: '100%',
-                      padding: '10px 12px',
+                      padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
@@ -839,7 +839,7 @@ export default function TeamWorkspace() {
                     onChange={(e) => setNewCaseStatus(e.target.value as any)}
                     style={{
                       width: '100%',
-                      padding: '10px 12px',
+                      padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '13px',
@@ -861,7 +861,7 @@ export default function TeamWorkspace() {
                 disabled={!newCaseName.trim() || !newCaseType || !newCaseDistrict}
                 style={{
                   marginTop: '12px',
-                  padding: '10px 16px',
+                  padding: '8px 16px',
                   backgroundColor:
                     newCaseName.trim() && newCaseType && newCaseDistrict ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
                   color: 'var(--color-surface-0)',
@@ -986,7 +986,7 @@ export default function TeamWorkspace() {
                 style={{
                   background: 'var(--color-surface-0)',
                   borderRadius: '4px',
-                  padding: '14px 20px',
+                  padding: '16px 24px',
                   border: '1px solid var(--border-default)',
                   display: 'flex',
                   alignItems: 'center',
@@ -1103,7 +1103,7 @@ export default function TeamWorkspace() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
             <div>
               <h3
-                className="font-display"
+                className="font-legal"
                 style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}
               >
                 Team Members
@@ -1139,7 +1139,7 @@ export default function TeamWorkspace() {
               background: 'var(--color-surface-1)',
               borderRadius: '4px',
               padding: '16px',
-              marginBottom: '20px',
+              marginBottom: '24px',
               display: 'flex',
               gap: '8px',
             }}
@@ -1151,7 +1151,7 @@ export default function TeamWorkspace() {
               placeholder="colleague@firm.com"
               style={{
                 flex: 1,
-                padding: '10px 12px',
+                padding: '8px 12px',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 fontSize: '13px',
@@ -1165,7 +1165,7 @@ export default function TeamWorkspace() {
               onClick={handleInvite}
               disabled={!inviteEmail.trim()}
               style={{
-                padding: '10px 16px',
+                padding: '8px 16px',
                 backgroundColor: inviteEmail.trim() ? 'var(--accent-primary)' : 'var(--bdr, #E2DFD8)',
                 color: 'var(--color-text-inverse)',
                 border: 'none',

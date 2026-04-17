@@ -88,7 +88,7 @@ export default function BillingPage() {
       <div style={{ backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '32px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Breadcrumb */}
-          <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '20px' }}>
+          <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '24px' }}>
             <Link href="/" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none' }}>
               Home
             </Link>
@@ -107,7 +107,7 @@ export default function BillingPage() {
             </span>
           </div>
 
-          <h1 className="font-display" style={{ fontSize: '36px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 12px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: '36px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 12px 0' }}>
             Billing & Subscription
           </h1>
 
@@ -118,11 +118,11 @@ export default function BillingPage() {
       </div>
 
       {/* Main Content */}
-      <div style={{ padding: '40px 20px' }}>
+      <div style={{ padding: '40px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Error Banner */}
           {error && (
-            <div style={{ padding: '14px 18px', marginBottom: '24px', borderRadius: '4px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)' }}>
+            <div style={{ padding: '16px 16px', marginBottom: '24px', borderRadius: '4px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)' }}>
               <p style={{ fontSize: '13px', color: '#E89558', margin: 0 }}>{error}</p>
             </div>
           )}
@@ -134,7 +134,7 @@ export default function BillingPage() {
                   Current Plan
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span className="font-display" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <span className="font-legal" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {details.name}
                   </span>
                   <span style={{ padding: '4px 12px', borderRadius: '4px', fontSize: '12px', fontWeight: 600, backgroundColor: 'rgba(0,105,151,0.06)', color: 'var(--accent-primary-hover)' }}>
@@ -166,12 +166,12 @@ export default function BillingPage() {
 
           {/* Plan Features */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Your Plan Includes
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px' }}>
               {details.features.map((feature) => (
-                <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px 0' }}>
+                <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 0' }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" style={{ flexShrink: 0 }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
@@ -181,7 +181,7 @@ export default function BillingPage() {
             </div>
 
             <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid var(--border-default)' }}>
-              <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+              <Link href="/pricing" style={{ display: 'inline-block', padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
                 {currentPlan === 'free' ? 'Upgrade Plan' : 'Change Plan'}
               </Link>
             </div>
@@ -189,7 +189,7 @@ export default function BillingPage() {
 
           {/* Payment Method (placeholder for future Stripe) */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               Payment Method
             </h2>
             <div style={{ backgroundColor: 'var(--color-surface-1)', borderRadius: '4px', padding: '24px', border: '2px dashed var(--border-default)', textAlign: 'center' }}>

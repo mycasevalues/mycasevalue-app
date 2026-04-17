@@ -51,8 +51,8 @@ export default function FeesPage() {
     <>
       {/* Header */}
       <header style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -108,7 +108,7 @@ export default function FeesPage() {
             </h2>
             <div style={{ display: 'grid', gap: 12 }}>
               {FILING_FEES.map((fee, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 24px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
                   <div style={{ flex: 1, minWidth: 200 }}>
                     <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 2 }}>
                       {fee.label}
@@ -141,7 +141,7 @@ export default function FeesPage() {
             </h2>
             <div style={{ display: 'grid', gap: 12 }}>
               {PACER_FEES.map((fee, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 24px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)', flexWrap: 'wrap', gap: 8 }}>
                   <div style={{ flex: 1, minWidth: 200 }}>
                     <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 2 }}>
                       {fee.label}
@@ -166,9 +166,9 @@ export default function FeesPage() {
             <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 20px', fontFamily: 'var(--font-body)', lineHeight: 1.5 }}>
               Fees vary by district. Below is a sample of common federal districts. Check your specific district&apos;s local rules for the exact fee.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 10 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 8 }}>
               {PRO_HAC_VICE.map((d, i) => (
-                <div key={i} style={{ padding: '14px 18px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)', textAlign: 'center' }}>
+                <div key={i} style={{ padding: '16px 16px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)', textAlign: 'center' }}>
                   <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: 4 }}>
                     {d.district}
                   </div>
@@ -178,14 +178,14 @@ export default function FeesPage() {
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: '14px 0 0', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: '16px 0 0', fontFamily: 'var(--font-body)' }}>
               Range across all federal districts: approximately $100 – $450+
             </p>
           </div>
 
           {/* IFP Fee Waiver Section */}
           <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 4, padding: 'clamp(24px, 4vw, 40px)', marginBottom: 24 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
               <div style={{ width: 36, height: 36, borderRadius: 4, background: 'rgba(34,197,94,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>
                 &#9733;
               </div>
@@ -198,7 +198,7 @@ export default function FeesPage() {
               Under 28 U.S.C. § 1915, courts may authorize individuals to proceed without prepaying filing fees if they demonstrate inability to pay. This is known as proceeding <em>in forma pauperis</em> (IFP).
             </p>
 
-            <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 4, padding: '20px 24px', marginBottom: 16 }}>
+            <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: 4, padding: '24px 24px', marginBottom: 16 }}>
               <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
                 General Eligibility Guidelines
               </h3>
@@ -207,13 +207,13 @@ export default function FeesPage() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gap: 10 }}>
+            <div style={{ display: 'grid', gap: 8 }}>
               <a
                 href="https://www.uscourts.gov/forms/fee-waiver-forms/application-proceed-district-court-without-prepaying-fees-or-costs"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  display: 'flex', alignItems: 'center', gap: 10, padding: '14px 20px',
+                  display: 'flex', alignItems: 'center', gap: 8, padding: '16px 24px',
                   background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4,
                   textDecoration: 'none', color: 'var(--color-text-primary)', transition: 'border-color 0.2s',
                 }}
@@ -230,7 +230,7 @@ export default function FeesPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  display: 'flex', alignItems: 'center', gap: 10, padding: '14px 20px',
+                  display: 'flex', alignItems: 'center', gap: 8, padding: '16px 24px',
                   background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4,
                   textDecoration: 'none', color: 'var(--color-text-primary)', transition: 'border-color 0.2s',
                 }}
@@ -244,7 +244,7 @@ export default function FeesPage() {
               </a>
             </div>
 
-            <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: '14px 0 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: '16px 0 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
               Note: IFP status waives filing fees only — it does not waive service costs, deposition fees, or other litigation expenses. Prisoner litigants must pay filing fees in installments under the PLRA even with IFP status.
             </p>
           </div>

@@ -250,7 +250,7 @@ export default function DemandPackageGenerator() {
             Generate Data Package
           </h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
             <div>
               <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
                 Case Type (NOS Code)
@@ -263,7 +263,7 @@ export default function DemandPackageGenerator() {
                 }}
                 style={{
                   width: '100%',
-                  padding: '10px',
+                  padding: '8px',
                   border: '1px solid var(--bdr, #E2DFD8)',
                   borderRadius: '4px',
                   fontSize: '14px',
@@ -288,7 +288,7 @@ export default function DemandPackageGenerator() {
                 onChange={(e) => setSelectedDistrict(e.target.value)}
                 style={{
                   width: '100%',
-                  padding: '10px',
+                  padding: '8px',
                   border: '1px solid var(--bdr, #E2DFD8)',
                   borderRadius: '4px',
                   fontSize: '14px',
@@ -339,7 +339,7 @@ export default function DemandPackageGenerator() {
                 style={{
                   backgroundColor: 'var(--accent-primary-hover)',
                   color: 'white',
-                  padding: '10px 20px',
+                  padding: '8px 24px',
                   borderRadius: '4px',
                   border: 'none',
                   fontSize: '14px',
@@ -414,7 +414,7 @@ function PreviewContent({
         </p>
       </div>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Case Information
         </h3>
@@ -431,7 +431,7 @@ function PreviewContent({
         </div>
       </div>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Win Rate
         </h3>
@@ -446,7 +446,7 @@ function PreviewContent({
         </div>
       </div>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Median Settlement
         </h3>
@@ -464,7 +464,7 @@ function PreviewContent({
         </div>
       </div>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Time to Resolution
         </h3>
@@ -479,7 +479,7 @@ function PreviewContent({
       </div>
 
       {attorneyData && (
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: '24px' }}>
           <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
             Attorney Representation Impact
           </h3>
@@ -501,7 +501,7 @@ function PreviewContent({
         </div>
       )}
 
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Supporting Statistics
         </h3>
@@ -519,18 +519,18 @@ function PreviewContent({
         </div>
       </div>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Data Sources
         </h3>
-        <ul style={{ margin: '0', paddingLeft: '20px', fontSize: '14px' }}>
+        <ul style={{ margin: '0', paddingLeft: '24px', fontSize: '14px' }}>
           <li>Federal Judicial Center Integrated Database (FJC IDB)</li>
           <li>Bureau of Justice Statistics</li>
           <li>CourtListener Federal Court Records</li>
         </ul>
       </div>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
           Methodology
         </h3>
@@ -550,7 +550,7 @@ function PreviewContent({
           border: '1px solid #FCA5A5',
           padding: '12px',
           borderRadius: '4px',
-          marginBottom: '20px',
+          marginBottom: '24px',
         }}
       >
         <h3 style={{ fontSize: '14px', fontWeight: '600', color: '#B91C1C', marginTop: '0', marginBottom: '8px' }}>

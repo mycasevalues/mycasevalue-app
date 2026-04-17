@@ -67,7 +67,7 @@ export default async function GuidePage({ params }: PageProps) {
 
   if (!nosInfo) {
     return (
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
         <h1 style={{ color: 'var(--color-text-primary)' }}>Case Guide Not Found</h1>
         <p>This NOS code does not have a guide yet.</p>
         <Link href="/nos" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
@@ -83,7 +83,7 @@ export default async function GuidePage({ params }: PageProps) {
 
   if (!content) {
     return (
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
         <h1 style={{ color: 'var(--color-text-primary)' }}>Case Guide</h1>
         <p>A detailed guide for {nosInfo.label} cases is not yet available. View the case data instead.</p>
         <Link href={`/nos/${code}`} style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
@@ -127,7 +127,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontSize: '1.8rem',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
-          marginBottom: '20px',
+          marginBottom: '24px',
           fontFamily: 'var(--font-heading)',
         }}>
           What Is a {nosInfo.label} Case?
@@ -151,7 +151,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontSize: '1.8rem',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
-          marginBottom: '20px',
+          marginBottom: '24px',
           fontFamily: 'var(--font-heading)',
         }}>
           Do I Have a {nosInfo.label} Case?
@@ -159,15 +159,15 @@ export default async function GuidePage({ params }: PageProps) {
         <p style={{
           fontSize: '0.95rem',
           color: '#5c5c5c',
-          marginBottom: '20px',
+          marginBottom: '24px',
           fontFamily: 'var(--font-body)',
         }}>
           Ask yourself these questions:
         </p>
-        <div style={{ display: 'grid', gap: '20px' }}>
+        <div style={{ display: 'grid', gap: '24px' }}>
           {content.doIHaveCase.map((item, idx) => (
             <div key={idx} style={{
-              padding: '20px',
+              padding: '24px',
               backgroundColor: 'var(--color-surface-0)',
               border: '1px solid #e0e0e0',
               borderRadius: '4px',
@@ -176,7 +176,7 @@ export default async function GuidePage({ params }: PageProps) {
                 fontSize: '1rem',
                 fontWeight: 600,
                 color: 'var(--accent-primary)',
-                marginBottom: '10px',
+                marginBottom: '8px',
                 fontFamily: 'var(--font-heading)',
               }}>
                 {item.q}
@@ -201,7 +201,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontSize: '1.8rem',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
-          marginBottom: '20px',
+          marginBottom: '24px',
           fontFamily: 'var(--font-heading)',
         }}>
           What You Must Prove
@@ -209,13 +209,13 @@ export default async function GuidePage({ params }: PageProps) {
         <p style={{
           fontSize: '0.95rem',
           color: '#5c5c5c',
-          marginBottom: '20px',
+          marginBottom: '24px',
           fontFamily: 'var(--font-body)',
         }}>
           To win a {nosInfo.label.toLowerCase()} case, you must establish:
         </p>
         <ol style={{
-          paddingLeft: '20px',
+          paddingLeft: '24px',
           margin: '0 0 30px 0',
         }}>
           {content.whatToProve.map((item, idx) => (
@@ -238,7 +238,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontSize: '1.8rem',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
-          marginBottom: '20px',
+          marginBottom: '24px',
           fontFamily: 'var(--font-heading)',
         }}>
           Why {nosInfo.label} Cases Get Dismissed
@@ -246,15 +246,15 @@ export default async function GuidePage({ params }: PageProps) {
         <p style={{
           fontSize: '0.95rem',
           color: '#5c5c5c',
-          marginBottom: '20px',
+          marginBottom: '24px',
           fontFamily: 'var(--font-body)',
         }}>
           Courts dismiss cases for several reasons. Understanding them helps you strengthen your claim:
         </p>
-        <div style={{ display: 'grid', gap: '15px' }}>
+        <div style={{ display: 'grid', gap: '16px' }}>
           {content.dismissalReasons.map((reason, idx) => (
             <div key={idx} style={{
-              padding: '15px',
+              padding: '16px',
               borderLeft: '4px solid #CC1016',
               backgroundColor: 'rgba(249,115,22,0.06)',
               borderRadius: '4px',
@@ -289,13 +289,13 @@ export default async function GuidePage({ params }: PageProps) {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '20px',
+            gap: '24px',
             marginBottom: '30px',
           }}>
             {/* Win Rate */}
             {realData.wr && winRateColor && (
               <div style={{
-                padding: '20px',
+                padding: '24px',
                 backgroundColor: winRateColor.bg,
                 border: `1px solid ${winRateColor.border}`,
                 borderRadius: '4px',
@@ -331,7 +331,7 @@ export default async function GuidePage({ params }: PageProps) {
             {/* Settlement Rate */}
             {realData.sp && (
               <div style={{
-                padding: '20px',
+                padding: '24px',
                 backgroundColor: 'rgba(59,130,246,0.08)',
                 border: '1px solid var(--accent-primary)',
                 borderRadius: '4px',
@@ -367,7 +367,7 @@ export default async function GuidePage({ params }: PageProps) {
             {/* Median Duration */}
             {duration && (
               <div style={{
-                padding: '20px',
+                padding: '24px',
                 backgroundColor: 'rgba(59,130,246,0.06)',
                 border: '1px solid #378FE9',
                 borderRadius: '4px',
@@ -404,11 +404,11 @@ export default async function GuidePage({ params }: PageProps) {
           {/* Settlement Range */}
           {realData.rng && (
             <div style={{
-              padding: '20px',
+              padding: '24px',
               backgroundColor: 'var(--color-surface-0)',
               border: '1px solid #e0e0e0',
               borderRadius: '4px',
-              marginBottom: '20px',
+              marginBottom: '24px',
             }}>
               <p style={{
                 fontSize: '0.9rem',
@@ -439,7 +439,7 @@ export default async function GuidePage({ params }: PageProps) {
             fontSize: '1.8rem',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
-            marginBottom: '20px',
+            marginBottom: '24px',
             fontFamily: 'var(--font-heading)',
           }}>
             The Value of an Attorney
@@ -448,7 +448,7 @@ export default async function GuidePage({ params }: PageProps) {
           <p style={{
             fontSize: '0.95rem',
             color: '#5c5c5c',
-            marginBottom: '20px',
+            marginBottom: '24px',
             fontFamily: 'var(--font-body)',
           }}>
             Having a licensed attorney makes a significant difference in {nosInfo.label.toLowerCase()} cases:
@@ -457,10 +457,10 @@ export default async function GuidePage({ params }: PageProps) {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '20px',
+            gap: '24px',
           }}>
             <div style={{
-              padding: '20px',
+              padding: '24px',
               backgroundColor: 'rgba(34,197,94,0.1)',
               border: '1px solid #057642',
               borderRadius: '4px',
@@ -493,7 +493,7 @@ export default async function GuidePage({ params }: PageProps) {
             </div>
 
             <div style={{
-              padding: '20px',
+              padding: '24px',
               backgroundColor: 'rgba(249,115,22,0.06)',
               border: '1px solid #C37D16',
               borderRadius: '4px',
@@ -527,8 +527,8 @@ export default async function GuidePage({ params }: PageProps) {
           </div>
 
           <div style={{
-            marginTop: '20px',
-            padding: '15px',
+            marginTop: '24px',
+            padding: '16px',
             backgroundColor: 'rgba(59,130,246,0.08)',
             borderLeft: '4px solid var(--accent-primary)',
             borderRadius: '4px',
@@ -552,14 +552,14 @@ export default async function GuidePage({ params }: PageProps) {
           fontSize: '1.8rem',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
-          marginBottom: '20px',
+          marginBottom: '24px',
           fontFamily: 'var(--font-heading)',
         }}>
           Your Next Steps
         </h2>
 
         <ol style={{
-          paddingLeft: '20px',
+          paddingLeft: '24px',
           margin: '0 0 30px 0',
         }}>
           {content.nextSteps.slice(0, -1).map((step, idx) => (
@@ -588,7 +588,7 @@ export default async function GuidePage({ params }: PageProps) {
 
       {/* Important Disclaimer */}
       <section style={{
-        padding: '20px',
+        padding: '24px',
         backgroundColor: 'rgba(239,68,68,0.06)',
         border: '1px solid #CC1016',
         borderRadius: '4px',
@@ -598,7 +598,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontSize: '1rem',
           fontWeight: 600,
           color: 'var(--data-negative, #B01E1E)',
-          marginBottom: '10px',
+          marginBottom: '8px',
           fontFamily: 'var(--font-heading)',
         }}>
           Important Disclaimer
@@ -620,7 +620,7 @@ export default async function GuidePage({ params }: PageProps) {
           fontSize: '1.8rem',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
-          marginBottom: '20px',
+          marginBottom: '24px',
           fontFamily: 'var(--font-heading)',
         }}>
           Related Resources
@@ -629,10 +629,10 @@ export default async function GuidePage({ params }: PageProps) {
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '20px',
+          gap: '24px',
         }}>
           <Link href={`/nos/${code}`} style={{
-            padding: '20px',
+            padding: '24px',
             backgroundColor: 'rgba(59,130,246,0.08)',
             border: '1px solid var(--accent-primary)',
             borderRadius: '4px',
@@ -659,7 +659,7 @@ export default async function GuidePage({ params }: PageProps) {
           </Link>
 
           <Link href="/calculator" style={{
-            padding: '20px',
+            padding: '24px',
             backgroundColor: 'rgba(59,130,246,0.06)',
             border: '1px solid #378FE9',
             borderRadius: '4px',
@@ -686,7 +686,7 @@ export default async function GuidePage({ params }: PageProps) {
           </Link>
 
           <Link href="/nos" style={{
-            padding: '20px',
+            padding: '24px',
             backgroundColor: 'var(--color-surface-1)',
             border: '1px solid #e0e0e0',
             borderRadius: '4px',

@@ -128,7 +128,7 @@ export default async function ChangelogPage() {
       <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
         {/* Institutional Dark Hero */}
         <div style={{
-          background: '#FFFFFF',
+          background: 'var(--card, #FFFFFF)',
           padding: '48px 24px 40px',
           position: 'relative',
           overflow: 'hidden',
@@ -171,7 +171,7 @@ export default async function ChangelogPage() {
               fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 700,
-              color: '#ffffff',
+              color: 'var(--card, #FFFFFF)',
               letterSpacing: '-0.025em',
               marginBottom: 16,
               lineHeight: 1.1,
@@ -402,7 +402,7 @@ export default async function ChangelogPage() {
                 fontSize: 12,
                 color: 'rgba(255,255,255,0.6)',
                 fontFamily: 'var(--font-body)',
-                margin: '20px 0 0 0',
+                margin: '24px 0 0 0',
               }}>
                 We send updates infrequently. Unsubscribe anytime.
               </p>

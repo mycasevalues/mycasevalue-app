@@ -628,7 +628,7 @@ function TerminalContent() {
 
 function Panel({ title, children, collapsible, collapsed, onToggle }: { title: string; children: React.ReactNode; collapsible?: boolean; collapsed?: boolean; onToggle?: () => void }) {
   return (
-    <div className="rounded-lg border" style={{ background: '#1a1c28', borderColor: '#252833' }}>
+    <div className="rounded border" style={{ background: '#1a1c28', borderColor: '#252833' }}>
       <button
         onClick={collapsible ? onToggle : undefined}
         className={`w-full flex items-center justify-between px-3 py-2 ${collapsible ? 'cursor-pointer hover:bg-white/[0.02]' : 'cursor-default'} transition-colors rounded-t-lg`}

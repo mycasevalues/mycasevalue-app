@@ -157,7 +157,7 @@ function renderNOSImage(code: string, locale: Locale = 'en'): React.ReactElement
             fontSize: '40px',
             fontWeight: '700',
             color: '#000000',
-            marginBottom: '20px',
+            marginBottom: '24px',
           }}
         >
           {label}
@@ -330,7 +330,7 @@ function renderDistrictImage(districtCode: string, locale: Locale = 'en'): React
             fontSize: '48px',
             fontWeight: '700',
             color: '#000000',
-            marginBottom: '10px',
+            marginBottom: '8px',
           }}
         >
           {district.name}
@@ -484,7 +484,7 @@ function renderHomeImage(locale: Locale = 'en'): React.ReactElement {
             fontWeight: '800',
             color: '#000000',
             lineHeight: '1.2',
-            marginBottom: '20px',
+            marginBottom: '24px',
             maxWidth: '800px',
           }}
         >

@@ -40,7 +40,7 @@ export default function MasterDetailLayout({
         style={{
           width: `${masterWidth}%`,
           minWidth: hasSelection ? undefined : '100%',
-          background: '#FFFFFF',
+          background: 'var(--card, #FFFFFF)',
           borderRight: '1px solid var(--border-default, var(--bdr, #E2DFD8))',
         }}
       >
@@ -61,9 +61,9 @@ export default function MasterDetailLayout({
           <div
             className="lg:hidden sticky top-0 z-10"
             style={{
-              background: '#FFFFFF',
+              background: 'var(--card, #FFFFFF)',
               borderBottom: '1px solid var(--bdr, #E2DFD8)',
-              padding: '10px 16px',
+              padding: '8px 16px',
             }}
           >
             <button
@@ -143,7 +143,7 @@ export function MasterListItem({
       style={{
         width: '100%',
         textAlign: 'left',
-        padding: '10px 16px',
+        padding: '8px 16px',
         borderBottom: '1px solid #F0F0F0',
         borderLeft: isActive ? '3px solid var(--gold, #C4882A)' : '3px solid transparent',
         background: isActive ? '#EFF5FF' : 'transparent',

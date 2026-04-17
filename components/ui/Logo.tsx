@@ -45,7 +45,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
       {showText && (
         <div className="flex items-baseline" style={{ lineHeight: 1 }}>
           <span
-            className="font-display font-extrabold"
+            className="font-legal font-extrabold"
             style={{
               fontSize,
               letterSpacing: '-0.5px',
@@ -55,7 +55,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
             MyCase
           </span>
           <span
-            className="font-display font-medium"
+            className="font-legal font-medium"
             style={{
               fontSize,
               letterSpacing: '-0.5px',

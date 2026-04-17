@@ -108,7 +108,7 @@ function StatsCard({
   return (
     <div
       style={{
-        padding: '20px',
+        padding: '24px',
         borderRadius: '4px',
         background: 'var(--color-surface-0)',
         border: '1px solid var(--border-default)',
@@ -171,10 +171,10 @@ export default async function CaseTypeDetailPage({
             href={`/cases/${category}`}
             style={{
               display: 'inline-block',
-              padding: '10px 20px',
+              padding: '8px 24px',
               borderRadius: 4,
               background: 'var(--gold, #C4882A)',
-              color: '#ffffff',
+              color: 'var(--card, #FFFFFF)',
               textDecoration: 'none',
               fontWeight: 600,
               fontSize: 13,
@@ -252,7 +252,7 @@ export default async function CaseTypeDetailPage({
         style={{
           background: 'var(--accent-primary)',
           padding: '16px 24px',
-          marginBottom: '20px',
+          marginBottom: '24px',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -311,7 +311,7 @@ export default async function CaseTypeDetailPage({
       </header>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(24px, 4vw, 40px) 24px' }}>
 
         {/* Stats Grid */}
         <div
@@ -438,7 +438,7 @@ export default async function CaseTypeDetailPage({
                 <li
                   key={idx}
                   style={{
-                    paddingLeft: '20px',
+                    paddingLeft: '24px',
                     marginBottom: idx < caseType.typicalClaims.length - 1 ? '10px' : '0',
                     position: 'relative',
                     color: 'var(--color-text-secondary)',
@@ -465,7 +465,7 @@ export default async function CaseTypeDetailPage({
         <style>{`
           .cta-button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 8px 24px;
             border-radius: 6px;
             background: var(--gold, #C4882A);
             color: #ffffff;

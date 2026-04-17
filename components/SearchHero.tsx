@@ -42,7 +42,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             borderRadius: 2,
             overflow: 'hidden',
             border: dark ? '1px solid rgba(255,255,255,0.10)' : '1px solid var(--bdr, #E2DFD8)',
-            background: dark ? 'rgba(255,255,255,0.04)' : '#FFFFFF',
+            background: dark ? 'rgba(255,255,255,0.04)' : 'var(--card, #FFFFFF)',
             transition: 'border-color 120ms',
           }}
         >
@@ -62,7 +62,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               outline: 'none',
               fontSize: 13,
               fontFamily: 'var(--font-ui)',
-              color: dark ? '#E5E7EB' : 'var(--text1, #18181A)',
+              color: dark ? 'var(--border-default)' : 'var(--text1, #18181A)',
             }}
           />
           <button
@@ -71,7 +71,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               height: 38,
               padding: '0 16px',
               background: 'var(--gold, #C4882A)',
-              color: '#FFFFFF',
+              color: 'var(--card, #FFFFFF)',
               border: 'none',
               fontSize: 13,
               fontWeight: 600,
@@ -101,7 +101,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             fontFamily: 'var(--font-mono)',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
-            color: dark ? '#4B5563' : 'var(--text4, #A8A6A0)',
+            color: dark ? 'var(--color-text-secondary)' : 'var(--text4, #A8A6A0)',
           }}
         >
           Try:
@@ -115,7 +115,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               padding: '4px 8px',
               borderRadius: 2,
               border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid var(--bdr, #E2DFD8)',
-              color: dark ? '#6B7280' : 'var(--link, #0A50A2)',
+              color: dark ? 'var(--color-text-muted)' : 'var(--link, #0A50A2)',
               background: 'transparent',
               cursor: 'pointer',
               fontFamily: 'var(--font-ui)',

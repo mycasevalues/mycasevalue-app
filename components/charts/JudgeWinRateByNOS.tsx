@@ -76,7 +76,7 @@ export default function JudgeWinRateByNOS({
     const svg = d3.select(svgRef.current);
     svg.selectAll('*').remove();
 
-    const margin = { top: 20, right: 100, bottom: 20, left: 200 };
+    const margin = { top: 24, right: 100, bottom: 24, left: 200 };
     const chartWidth = w - margin.left - margin.right;
     const chartHeight = h - margin.top - margin.bottom;
 

@@ -103,7 +103,7 @@ export default function BrowseNav() {
                 fontSize: 12,
                 fontFamily: 'var(--font-sans, var(--font-ui))',
                 fontWeight: isActive ? 600 : 400,
-                color: isActive ? '#FFFFFF' : 'var(--chrome-text-muted)',
+                color: isActive ? 'var(--card, #FFFFFF)' : 'var(--chrome-text-muted)',
                 cursor: 'pointer',
                 borderBottom: isActive ? '3px solid var(--gold)' : '3px solid transparent',
                 whiteSpace: 'nowrap',
@@ -129,7 +129,7 @@ export default function BrowseNav() {
                 <span
                   style={{
                     background: 'var(--gold)',
-                    color: '#FFFFFF',
+                    color: 'var(--card, #FFFFFF)',
                     fontSize: 9,
                     fontWeight: 700,
                     borderRadius: 2,

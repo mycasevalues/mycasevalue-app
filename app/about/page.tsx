@@ -185,7 +185,7 @@ export default function AboutPage() {
           top: 1rem;
           right: 1.25rem;
           font-family: var(--font-mono);
-          font-size: 10px;
+          font-size: 8px;
           font-weight: 600;
           letter-spacing: 0.2em;
           color: rgba(59,130,246,0.4);

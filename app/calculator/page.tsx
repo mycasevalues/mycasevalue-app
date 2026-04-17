@@ -274,7 +274,7 @@ export default function CalculatorPage() {
       {/* Header */}
       <div style={{
         background: 'var(--card, #FFFFFF)',
-        color: '#fff',
+        color: 'var(--card, #FFFFFF)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -306,7 +306,7 @@ export default function CalculatorPage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
           }}>
             Estimate settlement value from court data
           </h1>
@@ -330,7 +330,7 @@ export default function CalculatorPage() {
           style={{
             borderColor: 'var(--border-default)',
             background: 'var(--color-surface-0)',
-            padding: '20px',
+            padding: '24px',
             borderRadius: 4,
           }}
           onSubmit={(e) => { e.preventDefault(); calculate(); }}
@@ -626,7 +626,7 @@ export default function CalculatorPage() {
             borderColor: 'var(--border-default)',
             background: 'var(--color-surface-0)',
             borderRadius: 4,
-            padding: '20px',
+            padding: '24px',
             animation: 'slideUpFadeIn 0.4s ease-out',
           }}>
             <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-1" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
@@ -650,7 +650,7 @@ export default function CalculatorPage() {
                   animation: 'slideUpFadeIn 0.6s ease-out',
                 }} />
                 <div style={{
-                  position: 'absolute', top: '10px', width: '2px', height: '20px',
+                  position: 'absolute', top: '8px', width: '2px', height: '20px',
                   background: 'var(--accent-primary-hover)',
                   left: `${(results.median / results.p90) * 100}%`,
                   transform: 'translateX(-50%)',

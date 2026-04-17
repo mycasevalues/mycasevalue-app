@@ -17,7 +17,7 @@ export default function LoadingPage() {
       `}</style>
 
       {/* Header skeleton */}
-      <div style={{ borderBottom: '1px solid var(--bdr, #E2DFD8)', background: '#FFFFFF' }}>
+      <div style={{ borderBottom: '1px solid var(--bdr, #E2DFD8)', background: 'var(--card, #FFFFFF)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb skeleton */}
           <div style={{ paddingTop: '16px', paddingBottom: '16px' }}>
@@ -46,7 +46,7 @@ export default function LoadingPage() {
           }}
         >
           {Array.from({ length: 4 }).map((_, i) => (
-            <div key={i} style={{ background: '#FFFFFF', padding: '24px', borderRadius: '4px', border: '1px solid var(--bdr, #E2DFD8)' }}>
+            <div key={i} style={{ background: 'var(--card, #FFFFFF)', padding: '24px', borderRadius: '4px', border: '1px solid var(--bdr, #E2DFD8)' }}>
               <div style={{ ...shimmerStyle, height: '14px', width: '120px', borderRadius: '4px', marginBottom: '12px' }} />
               <div style={{ ...shimmerStyle, height: '28px', width: '80px', borderRadius: '4px', marginBottom: '8px' }} />
               <div style={{ ...shimmerStyle, height: '12px', width: '100px', borderRadius: '4px' }} />
@@ -55,14 +55,14 @@ export default function LoadingPage() {
         </div>
 
         {/* Radar chart skeleton */}
-        <div style={{ background: '#FFFFFF', padding: '32px', borderRadius: '4px', border: '1px solid var(--bdr, #E2DFD8)', marginBottom: '40px' }}>
+        <div style={{ background: 'var(--card, #FFFFFF)', padding: '32px', borderRadius: '4px', border: '1px solid var(--bdr, #E2DFD8)', marginBottom: '40px' }}>
           <div style={{ ...shimmerStyle, height: '20px', width: '150px', borderRadius: '4px', marginBottom: '16px' }} />
           <div style={{ ...shimmerStyle, height: '340px', width: '100%', borderRadius: '4px' }} />
         </div>
 
         {/* Table skeleton */}
-        <div style={{ background: '#FFFFFF', padding: '32px', borderRadius: '4px', border: '1px solid var(--bdr, #E2DFD8)' }}>
-          <div style={{ ...shimmerStyle, height: '20px', width: '180px', borderRadius: '4px', marginBottom: '20px' }} />
+        <div style={{ background: 'var(--card, #FFFFFF)', padding: '32px', borderRadius: '4px', border: '1px solid var(--bdr, #E2DFD8)' }}>
+          <div style={{ ...shimmerStyle, height: '20px', width: '180px', borderRadius: '4px', marginBottom: '24px' }} />
           {Array.from({ length: 5 }).map((_, i) => (
             <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid var(--bdr, #E2DFD8)' }}>
               <div style={{ ...shimmerStyle, height: '14px', borderRadius: '4px' }} />

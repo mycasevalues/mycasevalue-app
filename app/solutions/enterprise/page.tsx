@@ -147,8 +147,8 @@ export default function EnterprisePage() {
     <div>
       {/* Hero */}
       <section style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '56px 24px 48px',
         position: 'relative',
         overflow: 'hidden',
@@ -180,7 +180,7 @@ export default function EnterprisePage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
           }}>
             Enterprise-grade litigation analytics
           </h1>
@@ -216,7 +216,7 @@ export default function EnterprisePage() {
                 background: 'var(--color-surface-0)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
-                padding: '20px 16px',
+                padding: '24px 16px',
               }}>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
@@ -262,7 +262,7 @@ export default function EnterprisePage() {
                 background: 'var(--color-surface-1)',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
-                padding: '28px 24px',
+                padding: '32px 24px',
               }}>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
@@ -279,7 +279,7 @@ export default function EnterprisePage() {
                   color: 'var(--color-text-secondary)',
                   lineHeight: 1.8,
                   margin: 0,
-                  paddingLeft: '20px',
+                  paddingLeft: '24px',
                 }}>
                   {useCase.points.map((point, idx) => (
                     <li key={idx} style={{ marginBottom: '8px' }}>{point}</li>
@@ -324,9 +324,9 @@ export default function EnterprisePage() {
             }}>
               <thead>
                 <tr style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-1)' }}>
-                  <th style={{ padding: '20px 24px', textAlign: 'left', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.875rem' }}>Feature</th>
+                  <th style={{ padding: '24px 24px', textAlign: 'left', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.875rem' }}>Feature</th>
                   {PRICING_TIERS.map(tier => (
-                    <th key={tier.name} style={{ padding: '20px 24px', textAlign: 'left', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.875rem' }}>
+                    <th key={tier.name} style={{ padding: '24px 24px', textAlign: 'left', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.875rem' }}>
                       {tier.name}
                     </th>
                   ))}
@@ -388,7 +388,7 @@ export default function EnterprisePage() {
       </section>
 
       {/* Social Proof */}
-      <section style={{ padding: '20px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+      <section style={{ padding: '24px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -466,7 +466,7 @@ export default function EnterprisePage() {
             fontSize: '1rem',
             color: 'var(--color-text-secondary)',
             textAlign: 'center',
-            marginBottom: '20px',
+            marginBottom: '24px',
             lineHeight: 1.6,
           }}>
             Schedule a personalized demo with our enterprise team. We will walk through your use case and discuss custom solutions for your organization.

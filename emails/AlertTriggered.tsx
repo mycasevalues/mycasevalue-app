@@ -101,14 +101,14 @@ const hr: React.CSSProperties = { borderTop: '1px solid var(--border-default)', 
 
 const alertBox: React.CSSProperties = {
   backgroundColor: '#FEF3C7', borderRadius: '4px', border: '1px solid #D97706',
-  padding: '16px 20px', marginBottom: '16px',
+  padding: '16px 24px', marginBottom: '16px',
 };
 const alertLabel: React.CSSProperties = { color: '#78350F', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 4px' };
 const alertValue: React.CSSProperties = { color: '#78350F', fontSize: '15px', fontWeight: 600, margin: 0 };
 
 const detailsBox: React.CSSProperties = {
   backgroundColor: '#FAFBFC', borderRadius: '4px', border: '1px solid var(--border-default)',
-  padding: '16px 20px',
+  padding: '16px 24px',
 };
 const detailRow: React.CSSProperties = { color: 'var(--color-text-primary)', fontSize: '13px', lineHeight: '1.8', margin: 0 };
 

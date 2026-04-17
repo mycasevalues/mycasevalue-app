@@ -158,7 +158,7 @@ export default function OddsPage() {
           font-size: 13px;
           font-weight: 600;
           letter-spacing: -0.005em;
-          padding: 10px 20px;
+          padding: 8px 24px;
           cursor: pointer;
           font-family: var(--font-ui);
           transition: background-color 150ms ease, border-color 150ms ease;
@@ -219,8 +219,8 @@ export default function OddsPage() {
 
       {/* Hero Header */}
       <header style={{
-        background: '#FFFFFF',
-        padding: '28px clamp(16px, 3vw, 24px) 32px',
+        background: 'var(--card, #FFFFFF)',
+        padding: '32px clamp(16px, 3vw, 24px) 32px',
         position: 'relative',
         overflow: 'hidden',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -249,7 +249,7 @@ export default function OddsPage() {
             Odds Calculator
           </div>
           <h1 className="odds-hero" style={{
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
             fontSize: 'clamp(26px, 4vw, 32px)',
             fontWeight: 700,
             margin: '0 0 10px',
@@ -955,7 +955,7 @@ export default function OddsPage() {
                   gridTemplateColumns: 'repeat(3, 1fr)',
                   gap: 16,
                 }}>
-                  <div className="odds-card" style={{ padding: 'clamp(20px, 3vw, 28px)', textAlign: 'center' }}>
+                  <div className="odds-card" style={{ padding: 'clamp(24px, 3vw, 28px)', textAlign: 'center' }}>
                     <p style={{
                       fontSize: 11,
                       fontWeight: 600,
@@ -983,7 +983,7 @@ export default function OddsPage() {
                       in database
                     </p>
                   </div>
-                  <div className="odds-card" style={{ padding: 'clamp(20px, 3vw, 28px)', textAlign: 'center' }}>
+                  <div className="odds-card" style={{ padding: 'clamp(24px, 3vw, 28px)', textAlign: 'center' }}>
                     <p style={{
                       fontSize: 11,
                       fontWeight: 600,
@@ -1011,7 +1011,7 @@ export default function OddsPage() {
                       of 84 NOS codes
                     </p>
                   </div>
-                  <div className="odds-card" style={{ padding: 'clamp(20px, 3vw, 28px)', textAlign: 'center' }}>
+                  <div className="odds-card" style={{ padding: 'clamp(24px, 3vw, 28px)', textAlign: 'center' }}>
                     <p style={{
                       fontSize: 11,
                       fontWeight: 600,
@@ -1060,7 +1060,7 @@ export default function OddsPage() {
                     gap: 8,
                     background: 'var(--accent-primary)',
                     color: 'var(--color-surface-0)',
-                    padding: '14px 32px',
+                    padding: '16px 32px',
                     borderRadius: 2,
                     fontSize: 14,
                     fontWeight: 600,
@@ -1103,7 +1103,7 @@ export default function OddsPage() {
                       style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        padding: '20px',
+                        padding: '24px',
                         background: 'var(--color-surface-1)',
                         border: '1px solid var(--border-default)',
                         borderRadius: 2,
@@ -1127,7 +1127,7 @@ export default function OddsPage() {
                       style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        padding: '20px',
+                        padding: '24px',
                         background: 'var(--color-surface-1)',
                         border: '1px solid var(--border-default)',
                         borderRadius: 2,
@@ -1151,7 +1151,7 @@ export default function OddsPage() {
                       style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        padding: '20px',
+                        padding: '24px',
                         background: 'var(--color-surface-1)',
                         border: '1px solid var(--border-default)',
                         borderRadius: 2,
@@ -1175,7 +1175,7 @@ export default function OddsPage() {
                       style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        padding: '20px',
+                        padding: '24px',
                         background: 'var(--color-surface-1)',
                         border: '1px solid var(--border-default)',
                         borderRadius: 2,
@@ -1362,7 +1362,7 @@ export default function OddsPage() {
                           display: 'flex',
                           justifyContent: 'space-between',
                           alignItems: 'center',
-                          padding: '10px 14px',
+                          padding: '8px 16px',
                           background: selectedNOS === nos ? '#F0F9FF' : 'var(--color-surface-1)',
                           border: selectedNOS === nos ? '1px solid var(--accent-primary-hover)' : '1px solid transparent',
                           borderRadius: 2,

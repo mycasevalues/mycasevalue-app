@@ -19,7 +19,7 @@ export default function ReportSkeleton() {
         .report-skeleton-stat-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          gap: 24px;
         }
         @media (max-width: 768px) {
           .report-skeleton-stat-grid {
@@ -32,11 +32,11 @@ export default function ReportSkeleton() {
       <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
         {/* Dark Navy Header Skeleton */}
         <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 32px) 24px' }}>
+          <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(24px, 4vw, 32px) 24px' }}>
             {/* Breadcrumb skeleton */}
-            <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
               {[1, 2, 3].map((i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <div
                     style={{
                       width: '60px',
@@ -82,7 +82,7 @@ export default function ReportSkeleton() {
         <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
             {/* Description line skeleton */}
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ marginBottom: '24px' }}>
               {skelBar('85%', '14px')}
               <div style={{ marginTop: '8px' }}>
                 {skelBar('70%', '14px')}
@@ -106,7 +106,7 @@ export default function ReportSkeleton() {
             </div>
 
             {/* Data source badges skeleton */}
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               {[1, 2, 3].map((i) => (
                 <div
                   key={i}
@@ -125,7 +125,7 @@ export default function ReportSkeleton() {
         </div>
 
         {/* Main Content Skeleton */}
-        <main style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
+        <main style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(24px, 4vw, 40px) 24px' }}>
           {/* Win Rate Section */}
           <section
             style={{
@@ -151,7 +151,7 @@ export default function ReportSkeleton() {
                   key={i}
                   style={{
                     textAlign: 'center',
-                    padding: '28px 20px',
+                    padding: '32px 24px',
                     background: 'var(--color-surface-1)',
                     borderRadius: '4px',
                     border: '1px solid var(--border-default)',
@@ -193,11 +193,11 @@ export default function ReportSkeleton() {
 
             <div
               style={{
-                marginTop: '20px',
+                marginTop: '24px',
                 height: '12px',
                 width: '50%',
                 background: 'var(--border-default)',
-                margin: '20px auto 0',
+                margin: '24px auto 0',
                 borderRadius: '4px',
                 animation: 'pulse-skeleton 2s ease-in-out infinite',
               }}
@@ -228,7 +228,7 @@ export default function ReportSkeleton() {
                 <div
                   key={i}
                   style={{
-                    padding: '20px',
+                    padding: '24px',
                     background: 'var(--color-surface-1)',
                     borderRadius: '4px',
                     border: '1px solid var(--border-default)',

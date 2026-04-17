@@ -405,7 +405,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           background: var(--color-surface-0);
           border: 1px solid var(--border-default);
           border-radius: 12px;
-          padding: 20px;
+          padding: 24px;
           text-decoration: none;
           transition: all 0.3s ease;
         }
@@ -437,7 +437,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -457,7 +457,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               gap: '6px',
               color: 'rgba(255,255,255,0.5)',
               textDecoration: 'none',
-              marginBottom: '20px',
+              marginBottom: '24px',
               fontSize: '12px',
               fontFamily: 'var(--font-mono)',
               letterSpacing: '0.02em',
@@ -482,7 +482,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
 
           <h1 style={{
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
             fontFamily: 'var(--font-ui)',
             fontSize: 'clamp(24px, 3.5vw, 32px)',
             fontWeight: 700,
@@ -599,7 +599,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   gap: '6px',
                   background: 'var(--accent-primary)',
                   color: 'var(--color-surface-0)',
-                  padding: '10px 16px',
+                  padding: '8px 16px',
                   borderRadius: '20px',
                   fontSize: '12px',
                   fontWeight: '600',

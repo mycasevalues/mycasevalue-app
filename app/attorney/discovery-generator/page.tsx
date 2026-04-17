@@ -140,8 +140,8 @@ export default function DiscoveryGeneratorPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -166,11 +166,11 @@ export default function DiscoveryGeneratorPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: hasAnyText ? '340px 1fr' : '1fr', gap: '24px' }}>
           {/* Form */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)' }}>
+          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Case Details
             </h2>
-            <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category</label>
                 <select value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); }} style={selectStyle}>
@@ -198,7 +198,7 @@ export default function DiscoveryGeneratorPage() {
                       type="button"
                       onClick={() => setPartyRole(role)}
                       style={{
-                        flex: 1, padding: '10px', borderRadius: '4px',
+                        flex: 1, padding: '8px', borderRadius: '4px',
                         border: `1px solid ${partyRole === role ? 'var(--accent-primary)' : 'var(--border-default)'}`,
                         backgroundColor: partyRole === role ? 'rgba(10,102,194,0.08)' : 'var(--color-surface-1)',
                         color: partyRole === role ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
@@ -228,7 +228,7 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               {error && (
-                <div style={{ padding: '10px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
+                <div style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
                   <p style={{ fontSize: '13px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
                 </div>
               )}
@@ -237,7 +237,7 @@ export default function DiscoveryGeneratorPage() {
                 type="submit"
                 disabled={loading || !caseType}
                 style={{
-                  width: '100%', padding: '14px',
+                  width: '100%', padding: '16px',
                   backgroundColor: loading || !caseType ? 'var(--border-default)' : 'var(--accent-primary)',
                   color: '#FFF', border: 'none', borderRadius: '4px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)',
@@ -263,7 +263,7 @@ export default function DiscoveryGeneratorPage() {
                       if (!texts[tab.key] && !loading) generateTab(tab.key);
                     }}
                     style={{
-                      flex: 1, padding: '10px 12px', borderRadius: '4px', border: 'none',
+                      flex: 1, padding: '8px 12px', borderRadius: '4px', border: 'none',
                       background: activeTab === tab.key ? 'var(--accent-primary)' : 'transparent',
                       color: activeTab === tab.key ? '#FFF' : 'var(--color-text-secondary)',
                       fontSize: '12px', fontWeight: 600, cursor: 'pointer',
@@ -282,8 +282,8 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               {/* Content */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '28px', border: '1px solid var(--border-default)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: 8 }}>
+              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: 8 }}>
                   <h2 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                     {TABS.find(t => t.key === activeTab)?.label}
                     {loading && activeTab && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}

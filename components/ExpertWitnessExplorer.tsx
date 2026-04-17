@@ -57,7 +57,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
     <div>
       {/* Filters */}
       <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: '24px' }}>
           <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 12px' }}>
             Expert Type
           </h3>
@@ -83,7 +83,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', marginBottom: '20px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', marginBottom: '24px' }}>
           <div>
             <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '6px' }}>
               Circuit
@@ -93,7 +93,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
               onChange={(e) => setSelectedCircuit(e.target.value)}
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                padding: '8px 12px',
                 height: '40px',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
@@ -122,7 +122,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
               onChange={(e) => setSelectedCaseType(e.target.value)}
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                padding: '8px 12px',
                 height: '40px',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
@@ -188,7 +188,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
               }}
             >
               {/* Header */}
-              <div style={{ marginBottom: '20px' }}>
+              <div style={{ marginBottom: '24px' }}>
                 <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
                   {expert.type}
                 </h3>
@@ -198,7 +198,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
               </div>
 
               {/* Key Stats */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px', paddingBottom: '20px', borderBottom: '1px solid var(--border-default)' }}>
                 <div>
                   <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', margin: '0 0 6px' }}>
                     Total Opinions
@@ -218,7 +218,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
               </div>
 
               {/* Daubert Success Rate Bar */}
-              <div style={{ marginBottom: '20px' }}>
+              <div style={{ marginBottom: '24px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                   <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>
                     Survival Rate (Post-Challenge)
@@ -295,7 +295,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                     <div
                       key={idx}
                       style={{
-                        padding: '10px 12px',
+                        padding: '8px 12px',
                         background: opinion.outcome === 'admitted' ? 'rgba(5, 118, 66, 0.08)' : 'rgba(200, 55, 70, 0.08)',
                         borderRadius: '4px',
                         borderLeft: `3px solid ${opinion.outcome === 'admitted' ? 'var(--data-positive, #176438)' : '#C83746'}`,
@@ -349,7 +349,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                   onClick={() => toggleCircuit(expert.type)}
                   style={{
                     width: '100%',
-                    padding: '10px 12px',
+                    padding: '8px 12px',
                     fontSize: '13px',
                     fontWeight: 600,
                     color: 'var(--accent-primary)',
@@ -429,7 +429,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
           <button
             onClick={clearFilters}
             style={{
-              padding: '10px 16px',
+              padding: '8px 16px',
               fontSize: '14px',
               fontWeight: 600,
               color: 'var(--accent-primary)',
@@ -452,7 +452,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
       )}
 
       {/* Disclaimer */}
-      <div style={{ marginTop: '24px', padding: '16px 20px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
+      <div style={{ marginTop: '24px', padding: '16px 24px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
         <p style={{ fontSize: '12px', color: '#C37D16', margin: 0, lineHeight: 1.6 }}>
           <strong>Disclaimer:</strong> This database provides analytical data on Daubert challenges and expert witness outcomes from federal court opinions. The statistics reflect historical trends and should not be construed as legal advice or guarantees of outcomes. Actual success rates vary significantly based on specific facts, jurisdiction, expert qualifications, and case circumstances. Counsel should conduct independent research and consult with qualified experts when making retention and strategy decisions.
         </p>

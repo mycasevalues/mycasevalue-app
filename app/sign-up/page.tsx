@@ -76,7 +76,7 @@ export default function SignUpPage() {
           alignItems: 'center',
           justifyContent: 'center',
           background: 'var(--accent-primary)',
-          padding: '20px',
+          padding: '24px',
         }}
       >
         <style>{`
@@ -114,7 +114,7 @@ export default function SignUpPage() {
             backgroundColor: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
             borderRadius: '4px',
-            padding: '20px',
+            padding: '24px',
             textAlign: 'center',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
@@ -219,7 +219,7 @@ export default function SignUpPage() {
           border-radius: 8px;
           border: 1px solid var(--border-default);
           background: var(--color-surface-0);
-          padding: 20px;
+          padding: 24px;
           transition: box-shadow 0.2s, transform 0.2s;
         }
         .feature-card:hover {
@@ -543,8 +543,8 @@ export default function SignUpPage() {
                 style={{
                   display: 'flex',
                   alignItems: 'flex-start',
-                  marginBottom: '20px',
-                  gap: '10px',
+                  marginBottom: '24px',
+                  gap: '8px',
                 }}
               >
                 <input
@@ -603,7 +603,7 @@ export default function SignUpPage() {
                     fontSize: '13px',
                     color: 'var(--accent-primary)',
                     margin: '0 0 16px 0',
-                    padding: '10px 12px',
+                    padding: '8px 12px',
                     backgroundColor: 'rgba(10, 102, 194, 0.06)',
                     borderRadius: '4px',
                     border: '1px solid rgba(10, 102, 194, 0.2)',
@@ -620,7 +620,7 @@ export default function SignUpPage() {
                     fontSize: '13px',
                     color: 'var(--accent-primary)',
                     margin: '0 0 16px 0',
-                    padding: '10px 12px',
+                    padding: '8px 12px',
                     backgroundColor: 'rgba(10, 102, 194, 0.06)',
                     borderRadius: '4px',
                     border: '1px solid rgba(10, 102, 194, 0.2)',

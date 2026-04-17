@@ -103,8 +103,8 @@ export default function MotionAnalyticsPage() {
 
       {/* Header */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -128,7 +128,7 @@ export default function MotionAnalyticsPage() {
               </svg>
             </div>
             <div>
-              <h1 className="font-display" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
+              <h1 className="font-legal" style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-surface-0)', margin: 0 }}>
                 Win More Motions with Circuit-Specific Data
               </h1>
               <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
@@ -224,7 +224,7 @@ export default function MotionAnalyticsPage() {
         {!loading && data && !comparisonMode && (
           <>
             <div style={{ marginBottom: '24px' }}>
-              <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+              <h2 className="font-legal" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
                 {data.caseType} — Motion Success Rates
               </h2>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
@@ -240,7 +240,7 @@ export default function MotionAnalyticsPage() {
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',
-                    padding: '20px',
+                    padding: '24px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                   }}
                 >
@@ -267,7 +267,7 @@ export default function MotionAnalyticsPage() {
                   <div style={{ marginBottom: '16px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                       <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const }}>Grant Rate</span>
-                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 600, color: motion.successColor === 'green' ? '#10B981' : motion.successColor === 'amber' ? '#E89558' : 'var(--accent-primary)' }}>
+                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 600, color: motion.successColor === 'green' ? 'var(--data-positive, #176438)' : motion.successColor === 'amber' ? '#E89558' : 'var(--accent-primary)' }}>
                         {motion.grantRate}%
                       </span>
                     </div>
@@ -276,7 +276,7 @@ export default function MotionAnalyticsPage() {
                         style={{
                           height: '100%',
                           width: `${Math.min(motion.grantRate, 100)}%`,
-                          background: motion.successColor === 'green' ? '#10B981' : motion.successColor === 'amber' ? '#E89558' : 'var(--accent-primary)',
+                          background: motion.successColor === 'green' ? 'var(--data-positive, #176438)' : motion.successColor === 'amber' ? '#E89558' : 'var(--accent-primary)',
                           borderRadius: '3px',
                         }}
                       />
@@ -306,7 +306,7 @@ export default function MotionAnalyticsPage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
+            <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
               <p style={{ fontSize: '11px', color: '#C37D16', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
@@ -318,7 +318,7 @@ export default function MotionAnalyticsPage() {
         {!loading && data && data2 && comparisonMode && (
           <>
             <div style={{ marginBottom: '24px' }}>
-              <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+              <h2 className="font-legal" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
                 Motion Success Rate Comparison
               </h2>
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
@@ -326,7 +326,7 @@ export default function MotionAnalyticsPage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
               {/* Left case */}
               <div>
                 <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid var(--accent-primary)' }}>
@@ -340,7 +340,7 @@ export default function MotionAnalyticsPage() {
                         background: 'var(--color-surface-0)',
                         border: '1px solid var(--border-default)',
                         borderRadius: '4px',
-                        padding: '14px',
+                        padding: '16px',
                       }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
@@ -377,7 +377,7 @@ export default function MotionAnalyticsPage() {
                         background: 'var(--color-surface-0)',
                         border: '1px solid var(--border-default)',
                         borderRadius: '4px',
-                        padding: '14px',
+                        padding: '16px',
                       }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
@@ -391,7 +391,7 @@ export default function MotionAnalyticsPage() {
                           style={{
                             height: '100%',
                             width: `${Math.min(motion.grantRate, 100)}%`,
-                            background: '#15803D',
+                            background: 'var(--data-positive, #176438)',
                             borderRadius: '2px',
                           }}
                         />
@@ -403,7 +403,7 @@ export default function MotionAnalyticsPage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
+            <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '4px' }}>
               <p style={{ fontSize: '11px', color: '#C37D16', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> Motion success rates are derived from public federal court statistics (FJC IDB). Actual outcomes depend on jurisdiction, judge, opposing counsel, and case-specific factors.
               </p>
@@ -420,7 +420,7 @@ export default function MotionAnalyticsPage() {
                 <path d="M9 9h6M9 15h6" />
               </svg>
             </div>
-            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+            <h2 className="font-legal" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
               Analyze Motion Success Rates
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>

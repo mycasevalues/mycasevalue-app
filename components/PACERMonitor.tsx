@@ -162,7 +162,7 @@ export default function PACERMonitor() {
             }}
             style={{
               flex: 1,
-              padding: '10px 12px',
+              padding: '8px 12px',
               border: error ? '1px solid #CC1016' : '1px solid var(--bdr, #E2DFD8)',
               borderRadius: '4px',
               fontSize: '14px',
@@ -174,7 +174,7 @@ export default function PACERMonitor() {
           <button
             onClick={handleAddCase}
             style={{
-              padding: '10px 16px',
+              padding: '8px 16px',
               backgroundColor: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               border: 'none',

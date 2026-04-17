@@ -176,7 +176,7 @@ export default function CitationsPage() {
   const nodeMap = new Map(graphNodes.map(n => [n.id, n]));
 
   return (
-    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '20px 16px 40px' }}>
+    <div style={{ maxWidth: 1100, margin: '0 auto', padding: '24px 16px 40px' }}>
 
       {/* Breadcrumb */}
       <nav style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 24 }}>
@@ -200,13 +200,13 @@ export default function CitationsPage() {
         <button
           onClick={() => { setActiveCategory(null); setSelected(null); }}
           style={{
-            padding: '7px 16px',
+            padding: '8px 16px',
             borderRadius: 20,
             fontSize: 13,
             fontWeight: 500,
             border: !activeCategory ? '2px solid var(--accent-primary)' : '1px solid var(--bdr, #E2DFD8)',
             background: !activeCategory ? '#E8F4FD' : 'var(--color-surface-0)',
-            color: !activeCategory ? 'var(--accent-primary)' : '#6B7280',
+            color: !activeCategory ? 'var(--accent-primary)' : 'var(--color-text-muted)',
             cursor: 'pointer',
           }}
         >
@@ -217,13 +217,13 @@ export default function CitationsPage() {
             key={cat.key}
             onClick={() => { setActiveCategory(activeCategory === cat.key ? null : cat.key); setSelected(null); }}
             style={{
-              padding: '7px 16px',
+              padding: '8px 16px',
               borderRadius: 20,
               fontSize: 13,
               fontWeight: 500,
               border: activeCategory === cat.key ? `2px solid ${cat.color}` : '1px solid var(--bdr, #E2DFD8)',
               background: activeCategory === cat.key ? `${cat.color}14` : 'var(--color-surface-0)',
-              color: activeCategory === cat.key ? cat.color : '#6B7280',
+              color: activeCategory === cat.key ? cat.color : 'var(--color-text-muted)',
               cursor: 'pointer',
             }}
           >
@@ -234,7 +234,7 @@ export default function CitationsPage() {
 
       {/* Graph */}
       <div style={{
-        borderRadius: 16,
+        borderRadius: 6,
         border: '1px solid var(--border-default)',
         background: 'var(--color-surface-1)',
         overflow: 'hidden',
@@ -280,7 +280,7 @@ export default function CitationsPage() {
             const hl = isHighlighted(node.id);
             const connections = getConnections(node.id);
             const nodeSize = 8 + connections.length * 2;
-            const color = CATEGORY_COLORS[node.category] || '#6B7280';
+            const color = CATEGORY_COLORS[node.category] || 'var(--color-text-muted)';
             return (
               <g
                 key={node.id}
@@ -329,7 +329,7 @@ export default function CitationsPage() {
             top: 16,
             right: 16,
             width: 280,
-            padding: '20px',
+            padding: '24px',
             borderRadius: 14,
             background: 'var(--color-surface-0)',
             border: '1px solid var(--border-default)',
@@ -391,25 +391,25 @@ export default function CitationsPage() {
         gap: 12,
         marginBottom: 20,
       }}>
-        <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono, monospace)' }}>
             {NODES.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Landmark Cases</div>
         </div>
-        <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: '#a78bfa', fontFamily: 'var(--font-mono, monospace)' }}>
             {CITATIONS.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Citation Links</div>
         </div>
-        <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: '#34d399', fontFamily: 'var(--font-mono, monospace)' }}>
             {CATEGORIES.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Legal Categories</div>
         </div>
-        <div style={{ padding: '20px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
+        <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-mono, monospace)' }}>
             {new Date().getFullYear() - Math.min(...NODES.map(n => n.year))}+
           </div>
@@ -426,7 +426,7 @@ export default function CitationsPage() {
               key={node.id}
               onClick={() => setSelected(node)}
               style={{
-                padding: '16px 20px',
+                padding: '16px 24px',
                 borderRadius: 4,
                 border: selected?.id === node.id ? `2px solid ${CATEGORY_COLORS[node.category]}` : '1px solid var(--border-default)',
                 background: 'var(--color-surface-0)',

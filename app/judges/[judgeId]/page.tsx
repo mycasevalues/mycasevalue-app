@@ -67,7 +67,7 @@ const sectionLabel: React.CSSProperties = {
 };
 const dataAttrStyle: React.CSSProperties = {
   fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--text4)',
-  marginTop: 10, lineHeight: 1.5,
+  marginTop: 8, lineHeight: 1.5,
 };
 
 export default async function JudgeProfilePage({ params }: PageProps) {
@@ -167,7 +167,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
         </nav>
 
         {/* ── Page Header ── */}
-        <header style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '14px 22px 12px' }}>
+        <header style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '16px 24px 12px' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <div style={{ flex: 1 }}>
@@ -185,7 +185,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   {partyLabel !== '—' && (
                     <span style={{
                       display: 'inline-block', marginLeft: 6, padding: '1px 6px',
-                      background: partyColor, color: '#FFFFFF', borderRadius: 2,
+                      background: partyColor, color: 'var(--card, #FFFFFF)', borderRadius: 2,
                       fontSize: 10, fontWeight: 600,
                     }}>
                       {judge.party_of_appointing_president}
@@ -217,7 +217,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
 
                 {/* "Noted For" tags */}
                 {notedFor.length > 0 && (
-                  <div style={{ display: 'flex', gap: 5, marginTop: 6, flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', gap: 4, marginTop: 6, flexWrap: 'wrap' }}>
                     {notedFor.map((tag: string, i: number) => (
                       <span key={i} style={{
                         height: 20, padding: '0 8px', display: 'inline-flex', alignItems: 'center',
@@ -232,9 +232,9 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               </div>
 
               {/* Action buttons (right) */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 5, flexShrink: 0, marginLeft: 16 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4, flexShrink: 0, marginLeft: 16 }}>
                 <button type="button" style={{
-                  height: 30, padding: '0 14px', background: 'var(--gold)', color: '#FFFFFF',
+                  height: 30, padding: '0 14px', background: 'var(--gold)', color: 'var(--card, #FFFFFF)',
                   fontSize: 11, fontWeight: 600, fontFamily: 'var(--font-ui)',
                   border: 'none', borderRadius: 2, cursor: 'pointer', whiteSpace: 'nowrap',
                 }}>
@@ -254,7 +254,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
         </header>
 
         {/* ── CaseCite Box (ABOVE stat blocks) ── */}
-        <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '10px 22px' }}>
+        <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '8px 24px' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
             <div style={{
               background: 'var(--ab)', border: '1px solid var(--ab-border)',
@@ -287,8 +287,8 @@ export default async function JudgeProfilePage({ params }: PageProps) {
         </div>
 
         {/* ── 4 Stat Blocks ── */}
-        <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '10px 22px 12px' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 9 }}>
+        <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '8px 24px 12px' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
             {[
               { label: 'Cases on Record', value: `${aggregated.totalCases || 0}`, accent: 'var(--link)' },
               { label: 'Plaintiff Win Rate', value: `${(aggregated.plaintiffWinRate || 0).toFixed(1)}%`, accent: getWinRateColor(aggregated.plaintiffWinRate || 0).border },
@@ -297,7 +297,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
             ].map(stat => (
               <div key={stat.label} style={{
                 background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: 2,
-                padding: '10px 12px', position: 'relative', overflow: 'hidden',
+                padding: '8px 12px', position: 'relative', overflow: 'hidden',
               }}>
                 <div style={{ position: 'absolute', left: 0, top: 0, width: 3, height: '100%', background: stat.accent }} />
                 <div style={{ ...sectionLabel, marginBottom: 4 }}>{stat.label}</div>
@@ -337,7 +337,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
           {/* ── LEFT TOC (202px) ── */}
           <aside style={{
             width: 202, flexShrink: 0, background: 'var(--sidebar)',
-            borderRight: '1px solid var(--bdr)', padding: '14px 0',
+            borderRight: '1px solid var(--bdr)', padding: '16px 0',
             position: 'sticky', top: 94, alignSelf: 'flex-start',
             height: 'calc(100vh - 94px)', overflowY: 'auto',
           }} className="judge-toc">
@@ -385,7 +385,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
           </aside>
 
           {/* ── MAIN CONTENT (flex:1) ── */}
-          <main style={{ flex: 1, minWidth: 0, padding: '18px 22px' }}>
+          <main style={{ flex: 1, minWidth: 0, padding: '16px 24px' }}>
 
             {/* === Intelligence Summary === */}
             <section style={{ marginBottom: 24 }}>
@@ -406,13 +406,13 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               <div style={{ border: '1px solid var(--bdr)', borderRadius: 2 }}>
                 {intelligenceItems.map((item, i) => (
                   <div key={i} style={{
-                    display: 'flex', gap: 10, padding: '10px 14px',
+                    display: 'flex', gap: 8, padding: '8px 16px',
                     borderBottom: i < intelligenceItems.length - 1 ? '1px solid #F2EFE8' : 'none',
                   }}>
                     {/* Number circle */}
                     <div style={{
                       width: 20, height: 20, borderRadius: '50%', background: 'var(--link)',
-                      color: '#FFFFFF', fontSize: 9, fontFamily: 'var(--font-ui)', fontWeight: 700,
+                      color: 'var(--card, #FFFFFF)', fontSize: 9, fontFamily: 'var(--font-ui)', fontWeight: 700,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2,
                     }}>
                       {i + 1}
@@ -440,7 +440,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
 
             {/* === Overview: Two-column charts === */}
             <section style={{ marginBottom: 24 }}>
-              <div style={{ display: 'flex', gap: 20 }}>
+              <div style={{ display: 'flex', gap: 24 }}>
                 <div style={{ flex: '0 0 58%' }}>
                   <HorizontalBarChart
                     data={caseTypeChartData}
@@ -511,7 +511,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
           {/* ── RIGHT RAIL (232px) ── */}
           <aside style={{
             width: 232, flexShrink: 0, background: 'var(--sidebar)',
-            borderLeft: '1px solid var(--bdr)', padding: '14px 12px',
+            borderLeft: '1px solid var(--bdr)', padding: '16px 12px',
             position: 'sticky', top: 94, alignSelf: 'flex-start',
             height: 'calc(100vh - 94px)', overflowY: 'auto',
           }} className="judge-right-rail">
@@ -589,7 +589,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
             {/* Download Report */}
             <button type="button" style={{
               width: '100%', height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center',
-              background: 'var(--gold)', color: '#FFFFFF', fontSize: 11, fontWeight: 600,
+              background: 'var(--gold)', color: 'var(--card, #FFFFFF)', fontSize: 11, fontWeight: 600,
               fontFamily: 'var(--font-ui)', border: 'none', borderRadius: 2, cursor: 'pointer', marginBottom: 6,
             }}>
               Download Report

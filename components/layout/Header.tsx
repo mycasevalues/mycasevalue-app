@@ -243,7 +243,7 @@ export default function Header() {
                   fontFamily: 'var(--font-baskerville, var(--font-legal))',
                   fontSize: 13,
                   fontWeight: 700,
-                  color: '#FFFFFF',
+                  color: 'var(--card, #FFFFFF)',
                   lineHeight: 1.1,
                   letterSpacing: '-0.01em',
                 }}
@@ -270,7 +270,7 @@ export default function Header() {
         {/* ── CENTER: Search Bar + "Advanced" Link ── */}
         <div className="flex-1 flex items-center gap-2 px-3 hidden md:flex" ref={searchRef}>
           <form onSubmit={handleSearch} className="relative flex-1" style={{ maxWidth: 680 }}>
-            <div className="flex items-center" style={{ height: 34, background: '#FFFFFF', borderRadius: 2, overflow: 'hidden' }}>
+            <div className="flex items-center" style={{ height: 34, background: 'var(--card, #FFFFFF)', borderRadius: 2, overflow: 'hidden' }}>
               {/* Search input */}
               <input
                 ref={searchInputRef}
@@ -283,7 +283,7 @@ export default function Header() {
                 style={{
                   flex: 1,
                   height: 34,
-                  background: '#FFFFFF',
+                  background: 'var(--card, #FFFFFF)',
                   border: 'none',
                   padding: '0 12px',
                   fontSize: 12,
@@ -326,7 +326,7 @@ export default function Header() {
                   width: 84,
                   height: 34,
                   background: 'var(--chrome-bg)',
-                  color: '#FFFFFF',
+                  color: 'var(--card, #FFFFFF)',
                   border: 'none',
                   fontSize: 12,
                   fontWeight: 600,
@@ -337,7 +337,7 @@ export default function Header() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: 5,
+                  gap: 4,
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--chrome-hover)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--chrome-bg)'; }}
@@ -605,7 +605,7 @@ export default function Header() {
                   style={{
                     fontSize: 11,
                     fontWeight: 500,
-                    color: '#FFFFFF',
+                    color: 'var(--card, #FFFFFF)',
                     fontFamily: 'var(--font-sans, var(--font-ui))',
                     textDecoration: 'none',
                     whiteSpace: 'nowrap',
@@ -624,7 +624,7 @@ export default function Header() {
                     height: 28,
                     padding: '0 11px',
                     background: 'var(--gold)',
-                    color: '#FFFFFF',
+                    color: 'var(--card, #FFFFFF)',
                     borderRadius: 2,
                     fontSize: 11,
                     fontWeight: 600,
@@ -663,7 +663,7 @@ export default function Header() {
               style={{
                 flex: 1,
                 height: 34,
-                background: '#FFFFFF',
+                background: 'var(--card, #FFFFFF)',
                 border: 'none',
                 padding: '0 12px',
                 fontSize: 12,
@@ -678,7 +678,7 @@ export default function Header() {
                 height: 34,
                 padding: '0 14px',
                 background: 'var(--chrome-bg)',
-                color: '#FFFFFF',
+                color: 'var(--card, #FFFFFF)',
                 border: 'none',
                 fontSize: 12,
                 fontWeight: 600,
@@ -686,7 +686,7 @@ export default function Header() {
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 5,
+                gap: 4,
               }}
             >
               <SearchIcon size={12} />

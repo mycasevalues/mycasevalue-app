@@ -191,7 +191,7 @@ export default async function Image({
           style={{
             display: 'flex',
             justifyContent: 'space-between',
-            gap: '30px',
+            gap: '32px',
             zIndex: 2,
           }}
         >
@@ -202,7 +202,7 @@ export default async function Image({
               background: 'rgba(0, 82, 204, 0.1)',
               border: '1px solid rgba(0, 82, 204, 0.25)',
               borderRadius: '4px',
-              padding: '18px',
+              padding: '16px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
@@ -213,7 +213,7 @@ export default async function Image({
                 fontSize: '14px',
                 color: '#a0a9d4',
                 fontWeight: '500',
-                marginBottom: '10px',
+                marginBottom: '8px',
               }}
             >
               Avg Win Rate
@@ -236,7 +236,7 @@ export default async function Image({
               background: 'rgba(0, 82, 204, 0.1)',
               border: '1px solid rgba(0, 82, 204, 0.25)',
               borderRadius: '4px',
-              padding: '18px',
+              padding: '16px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
@@ -247,7 +247,7 @@ export default async function Image({
                 fontSize: '14px',
                 color: '#a0a9d4',
                 fontWeight: '500',
-                marginBottom: '10px',
+                marginBottom: '8px',
               }}
             >
               Total Cases
@@ -270,7 +270,7 @@ export default async function Image({
               background: 'rgba(0, 82, 204, 0.1)',
               border: '1px solid rgba(0, 82, 204, 0.25)',
               borderRadius: '4px',
-              padding: '18px',
+              padding: '16px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
@@ -281,7 +281,7 @@ export default async function Image({
                 fontSize: '14px',
                 color: '#a0a9d4',
                 fontWeight: '500',
-                marginBottom: '10px',
+                marginBottom: '8px',
               }}
             >
               Case Types
@@ -302,7 +302,7 @@ export default async function Image({
         <div
           style={{
             position: 'absolute',
-            bottom: '30px',
+            bottom: '32px',
             left: '60px',
             fontSize: '16px',
             color: '#a0a9d4',

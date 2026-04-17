@@ -234,7 +234,7 @@ export default async function ReportPage({
       <style>{`
         .report-breadcrumb-link { color: var(--color-text-inverse); text-decoration: none; transition: opacity 0.2s ease; font-weight: 500; }
         .report-breadcrumb-link:hover { opacity: 0.8; }
-        .report-nos-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(59,130,246,0.08); color: #60a5fa; border: 1px solid rgba(59,130,246,0.2); border-radius: 999px; font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; font-family: var(--font-mono); margin-top: 8px; }
+        .report-nos-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: rgba(59,130,246,0.08); color: #60a5fa; border: 1px solid rgba(59,130,246,0.2); border-radius: 999px; font-weight: 600; font-size: 8px; text-transform: uppercase; letter-spacing: 0.15em; font-family: var(--font-mono); margin-top: 8px; }
 
         @media (max-width: 768px) {
           h1 {
@@ -327,7 +327,7 @@ export default async function ReportPage({
           div[style*="background: #FFFFFF"]::before {
             content: "MyCaseValue.com";
             display: block;
-            font-size: 10px;
+            font-size: 8px;
             font-weight: 600;
             color: var(--text4, #A8A6A0);
             letter-spacing: 0.1em;
@@ -339,7 +339,7 @@ export default async function ReportPage({
           main {
             max-width: 100% !important;
             margin: 0 !important;
-            padding: 20px !important;
+            padding: 24px !important;
           }
 
           /* Print-friendly link colors */
@@ -357,7 +357,7 @@ export default async function ReportPage({
 
       {/* Dark Institutional Header Banner */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         position: 'relative',
         overflow: 'hidden',
@@ -367,8 +367,8 @@ export default async function ReportPage({
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }} />
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 32px) 24px', position: 'relative' }}>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: 13, color: '#B0B8C1', fontFamily: 'var(--font-body)', marginBottom: '20px', letterSpacing: '0.3px' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(24px, 4vw, 32px) 24px', position: 'relative' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 13, color: '#B0B8C1', fontFamily: 'var(--font-body)', marginBottom: '24px', letterSpacing: '0.3px' }}>
             <Link href="/" className="report-breadcrumb-link">Home</Link>
             <span>/</span>
             <Link href="/cases" className="report-breadcrumb-link">Cases</Link>
@@ -410,7 +410,7 @@ export default async function ReportPage({
             title={`${label} — Federal Court Outcome Data`}
           />
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 16 }}>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 16 }}>
             <span style={{ fontSize: 12, padding: '6px 12px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
               FJC IDB · Updated quarterly
             </span>
@@ -424,7 +424,7 @@ export default async function ReportPage({
         </div>
       </div>
 
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(24px, 4vw, 40px) 24px' }}>
         {/* ═══ FREE: Win Rate Analysis ═══ */}
         <section style={{
           background: 'var(--color-surface-0)',
@@ -440,18 +440,18 @@ export default async function ReportPage({
           <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
             Overview of case outcomes
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }} className="win-rate-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '24px' }} className="win-rate-grid">
             <style>{`
               .win-rate-grid { grid-template-columns: repeat(3, 1fr); }
               @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 16px; } }
-              .report-cta-btn { display: inline-block; padding: 10px 20px; background: var(--gold, #C4882A); color: #ffffff; border: 1px solid var(--gold, #C4882A); border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 13px; letter-spacing: -0.005em; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
+              .report-cta-btn { display: inline-block; padding: 8px 24px; background: var(--gold, #C4882A); color: #ffffff; border: 1px solid var(--gold, #C4882A); border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 13px; letter-spacing: -0.005em; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
               .report-cta-btn:hover { background: var(--gold-hover, #A87222); border-color: var(--gold-hover, #A87222); }
               .report-red-link { font-size: 14px; font-weight: 500; color: var(--accent-primary); text-decoration: none; font-family: var(--font-body); transition: color 0.2s ease; }
               .report-red-link:hover { color: var(--accent-primary-hover); }
               .report-related-case { text-decoration: none; color: var(--accent-primary); transition: all 0.2s ease; display: block; }
               .report-related-case:hover { color: var(--accent-primary-hover); padding-left: 4px; }
             `}</style>
-            <div style={{ textAlign: 'center', padding: '28px 20px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+            <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
               <p style={{ fontSize: '40px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {winRate}%
               </p>
@@ -462,7 +462,7 @@ export default async function ReportPage({
                 Trial outcomes
               </p>
             </div>
-            <div style={{ textAlign: 'center', padding: '28px 20px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+            <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
               <p style={{ fontSize: '40px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {settlementRate}%
               </p>
@@ -473,7 +473,7 @@ export default async function ReportPage({
                 Pre-trial resolutions
               </p>
             </div>
-            <div style={{ textAlign: 'center', padding: '28px 20px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+            <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
               <p style={{ fontSize: '40px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {dismissRate}%
               </p>
@@ -486,7 +486,7 @@ export default async function ReportPage({
             </div>
           </div>
           {/* Enhanced Outcome Distribution Visualization */}
-          <div style={{ marginTop: '32px', background: 'var(--color-surface-0)', padding: '20px', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
+          <div style={{ marginTop: '32px', background: 'var(--color-surface-0)', padding: '24px', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
             <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
               Outcome Distribution
             </p>
@@ -602,7 +602,7 @@ export default async function ReportPage({
           <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
             Time and settlement data
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }} className="timeline-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }} className="timeline-grid">
             <style>{`.timeline-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .timeline-grid { grid-template-columns: 1fr; gap: 16px; } }`}</style>
             <div style={{ textAlign: 'center', padding: '24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
               <p style={{ fontSize: 36, fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 8px', lineHeight: 1 }}>
@@ -640,9 +640,9 @@ export default async function ReportPage({
                 <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
                   Distribution of settlement amounts
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }} className="settlement-grid">
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '24px' }} className="settlement-grid">
                   <style>{`.settlement-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 768px) { .settlement-grid { grid-template-columns: 1fr; gap: 16px; } }`}</style>
-                  <div style={{ textAlign: 'center', padding: '28px 20px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
                     <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', margin: '0 0 10px' }}>
                       25th Percentile
                     </p>
@@ -651,7 +651,7 @@ export default async function ReportPage({
                     </p>
                     <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: 0 }}>Conservative</p>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '28px 20px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
                     <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', margin: '0 0 10px' }}>
                       Median
                     </p>
@@ -660,7 +660,7 @@ export default async function ReportPage({
                     </p>
                     <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: 0 }}>Typical</p>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '28px 20px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
                     <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', margin: '0 0 10px' }}>
                       75th Percentile
                     </p>
@@ -670,7 +670,7 @@ export default async function ReportPage({
                     <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', margin: 0 }}>Favorable</p>
                   </div>
                 </div>
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '20px', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '24px', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
                   95% confidence interval: ±{Math.round((settlementRate || 50) * 0.08)}% based on sample size of {totalCases?.toLocaleString() || 'N/A'} cases.
                   {(totalCases || 0) < 500 && ' Limited sample — interpret with caution.'}
                 </p>
@@ -693,9 +693,9 @@ export default async function ReportPage({
                 <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
                   How representation affects outcomes
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '20px' }} className="representation-grid">
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '24px' }} className="representation-grid">
                   <style>{`.representation-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .representation-grid { grid-template-columns: 1fr; gap: 16px; } }`}</style>
-                  <div style={{ textAlign: 'center', padding: '28px 20px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
                     <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', margin: '0 0 10px' }}>
                       Self-Represented (Pro Se)
                     </p>
@@ -706,7 +706,7 @@ export default async function ReportPage({
                       win rate{real?.ps?.total ? ` · ${real.ps.total.toLocaleString()} cases` : ''}
                     </p>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '28px 20px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+                  <div style={{ textAlign: 'center', padding: '32px 24px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
                     <p style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', margin: '0 0 10px' }}>
                       Attorney Represented
                     </p>
@@ -825,7 +825,7 @@ export default async function ReportPage({
                 <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
                   Detailed disposition breakdown
                 </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {(real.ends as Array<{ n?: number; p?: number; label?: string; l?: string; c?: string }>).slice(0, 8).map((end: { n?: number; p?: number; label?: string; l?: string; c?: string }, i: number) => {
                     const totalEnds = (real.ends as Array<{ n?: number; p?: number; label?: string; l?: string; c?: string }>).reduce((s: number, e: { n?: number }) => s + (e.n || 0), 0);
                     const count = end.n || 0;
@@ -839,7 +839,7 @@ export default async function ReportPage({
                           <div style={{
                             height: '100%',
                             width: `${Math.min(pct, 100)}%`,
-                            background: end.c || '#6B7280',
+                            background: end.c || 'var(--color-text-muted)',
                             borderRadius: '4px',
                             transition: 'width 0.5s ease',
                           }} />
@@ -1023,14 +1023,14 @@ export default async function ReportPage({
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
               Key factors affecting outcome
             </h2>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '20px', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
               Common factors that influence case outcomes based on historical data
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 12 }}>
               {real.factors.map((factor: string, i: number) => (
                 <div key={i} style={{
                   padding: '12px 16px', background: 'var(--color-surface-1)', borderRadius: 2, border: '1px solid #F0F3F5',
-                  display: 'flex', alignItems: 'center', gap: 10,
+                  display: 'flex', alignItems: 'center', gap: 8,
                 }}>
                   <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent-primary)', flexShrink: 0 }} />
                   <span style={{ fontSize: 13, color: 'var(--color-text-primary)', fontFamily: 'var(--font-body)' }}>{factor}</span>
@@ -1096,7 +1096,7 @@ export default async function ReportPage({
               <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                 Related case types
               </h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '20px', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
                 Other cases in this category
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
@@ -1152,7 +1152,7 @@ export default async function ReportPage({
               <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
                 Similar case types
               </h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '20px', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
                 Other {categoryLabel || 'federal'} cases with similar outcomes
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '16px' }}>

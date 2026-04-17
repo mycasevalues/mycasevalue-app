@@ -121,7 +121,7 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
             left: '50%',
             transform: 'translateX(-50%)',
             width: '280px',
-            background: '#1F2937',
+            background: 'var(--color-text-primary)',
             color: 'var(--surf, #F6F5F2)',
             borderRadius: '4px',
             padding: '12px 14px',
@@ -157,7 +157,7 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
             transform: 'translateX(-50%) rotate(45deg)',
             width: '10px',
             height: '10px',
-            background: '#1F2937',
+            background: 'var(--color-text-primary)',
           }} />
         </div>
       )}

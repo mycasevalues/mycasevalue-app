@@ -316,8 +316,8 @@ export default function ApiAccessPage() {
 
       {/* Hero Section */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -494,7 +494,7 @@ export default function ApiAccessPage() {
               }}
             >
               {/* Endpoint Header */}
-              <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
                   <span
                     style={{
@@ -532,7 +532,7 @@ export default function ApiAccessPage() {
 
               {/* Parameters */}
               {endpoint.params.length > 0 && (
-                <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-default)' }}>
+                <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                   <h4
                     style={{
                       fontSize: '13px',
@@ -546,7 +546,7 @@ export default function ApiAccessPage() {
                   >
                     Parameters
                   </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     {endpoint.params.map((param, pidx) => (
                       <div key={pidx} style={{ fontSize: '12px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
@@ -594,7 +594,7 @@ export default function ApiAccessPage() {
               )}
 
               {/* cURL Example */}
-              <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                 <h4
                   style={{
                     fontSize: '13px',
@@ -626,7 +626,7 @@ export default function ApiAccessPage() {
               </div>
 
               {/* Response Example */}
-              <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                 <h4
                   style={{
                     fontSize: '13px',
@@ -658,7 +658,7 @@ export default function ApiAccessPage() {
               </div>
 
               {/* Error Codes */}
-              <div style={{ padding: '20px 24px' }}>
+              <div style={{ padding: '24px 24px' }}>
                 <h4
                   style={{
                     fontSize: '13px',
@@ -683,7 +683,7 @@ export default function ApiAccessPage() {
                         padding: '8px 12px',
                         backgroundColor: 'var(--color-surface-0)',
                         borderRadius: '4px',
-                        borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative, #B01E1E)' : error.code >= 400 ? '#F59E0B' : 'var(--data-positive, #176438)'}`,
+                        borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative, #B01E1E)' : error.code >= 400 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-positive, #176438)'}`,
                       }}
                     >
                       <code

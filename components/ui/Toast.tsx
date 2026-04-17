@@ -34,7 +34,7 @@ function ToastItem({ toast }: { toast: ToastType }) {
       className={`
         animate-in fade-in slide-in-from-bottom-4 duration-300
         ${typeStyles[toast.type]}
-        px-4 py-3 rounded-lg border flex items-gap-2 text-sm font-medium
+        px-4 py-3 rounded border flex items-gap-2 text-sm font-medium
         shadow-lg pointer-events-auto
       `}
     >

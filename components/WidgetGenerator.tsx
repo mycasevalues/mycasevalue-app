@@ -73,7 +73,7 @@ export default function WidgetGenerator() {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
       gap: '40px',
-      backgroundColor: '#fff',
+      backgroundColor: 'var(--card, #FFFFFF)',
       borderRadius: '4px',
       padding: '32px',
       border: '1px solid rgba(255,255,255,0.08)',
@@ -103,7 +103,7 @@ export default function WidgetGenerator() {
               onFocus={() => setShowDropdown(true)}
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                padding: '8px 12px',
                 fontSize: '14px',
                 border: '1px solid #d1d5db',
                 borderRadius: '4px',
@@ -117,7 +117,7 @@ export default function WidgetGenerator() {
                 top: '100%',
                 left: 0,
                 right: 0,
-                backgroundColor: '#fff',
+                backgroundColor: 'var(--card, #FFFFFF)',
                 border: '1px solid #d1d5db',
                 borderTop: 'none',
                 borderRadius: '0 0 6px 6px',
@@ -134,12 +134,12 @@ export default function WidgetGenerator() {
                       setSearchQuery('');
                     }}
                     style={{
-                      padding: '10px 12px',
+                      padding: '8px 12px',
                       fontSize: '14px',
                       borderBottom: '1px solid #f3f4f6',
                       cursor: 'pointer',
                       backgroundColor: selectedNos === type.nos ? '#eff6ff' : 'transparent',
-                      color: selectedNos === type.nos ? 'var(--accent-primary)' : '#374151',
+                      color: selectedNos === type.nos ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                     }}
                     onMouseEnter={(e) => {
                       if (selectedNos !== type.nos) {
@@ -198,8 +198,8 @@ export default function WidgetGenerator() {
                   fontSize: '14px',
                   fontWeight: 500,
                   border: displayStyle === style.value ? '2px solid var(--accent-primary)' : '1px solid #d1d5db',
-                  backgroundColor: displayStyle === style.value ? '#eff6ff' : '#fff',
-                  color: displayStyle === style.value ? 'var(--accent-primary)' : '#374151',
+                  backgroundColor: displayStyle === style.value ? '#eff6ff' : 'var(--card, #FFFFFF)',
+                  color: displayStyle === style.value ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                   borderRadius: '4px',
                   cursor: 'pointer',
                   transition: 'all 0.2s',
@@ -249,7 +249,7 @@ export default function WidgetGenerator() {
                 onClick={copyToClipboard}
                 style={{
                   marginTop: '12px',
-                  padding: '10px 16px',
+                  padding: '8px 16px',
                   fontSize: '14px',
                   fontWeight: 500,
                   backgroundColor: 'var(--accent-primary)',

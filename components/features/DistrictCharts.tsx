@@ -55,7 +55,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
             <BarChart
               data={topCaseTypesData}
               layout="vertical"
-              margin={{ top: 5, right: 30, left: 200, bottom: 5 }}
+              margin={{ top: 4, right: 32, left: 200, bottom: 5 }}
             >
               <XAxis type="number" stroke="var(--color-text-secondary)" />
               <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)' }} />

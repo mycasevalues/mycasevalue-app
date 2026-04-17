@@ -268,7 +268,7 @@ export default function DistrictsPage() {
       <div style={{
         background: 'var(--surface-primary)',
         borderBottom: '1px solid var(--surface-border)',
-        padding: '10px clamp(16px, 3vw, 48px)',
+        padding: '8px clamp(16px, 3vw, 48px)',
         overflowX: 'auto',
       }}>
         <div style={{
@@ -289,7 +289,7 @@ export default function DistrictsPage() {
             letterSpacing: '0.05em',
             borderRadius: 3,
             background: 'var(--accent)',
-            color: '#FFFFFF',
+            color: 'var(--card, #FFFFFF)',
             whiteSpace: 'nowrap',
             cursor: 'default',
           }}>
@@ -493,7 +493,7 @@ export default function DistrictsPage() {
 
 function thStyle(overrides: React.CSSProperties = {}): React.CSSProperties {
   return {
-    padding: '10px 12px',
+    padding: '8px 12px',
     fontSize: 10,
     fontFamily: 'var(--font-mono)',
     fontWeight: 600,
@@ -507,7 +507,7 @@ function thStyle(overrides: React.CSSProperties = {}): React.CSSProperties {
 
 function tdStyle(overrides: React.CSSProperties = {}): React.CSSProperties {
   return {
-    padding: '10px 12px',
+    padding: '8px 12px',
     color: 'var(--text-primary)',
     whiteSpace: 'nowrap' as const,
     ...overrides,

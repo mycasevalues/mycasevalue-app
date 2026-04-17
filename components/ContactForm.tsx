@@ -94,7 +94,7 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit} style={{
         padding: '32px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
         borderRadius: '4px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-        display: 'flex', flexDirection: 'column', gap: '20px',
+        display: 'flex', flexDirection: 'column', gap: '24px',
       }}>
         <h2 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: '4px' }}>
           Send Us a Message

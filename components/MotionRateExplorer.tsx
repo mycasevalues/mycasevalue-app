@@ -188,7 +188,7 @@ export default function MotionRateExplorer() {
   };
 
   const tdStyle: React.CSSProperties = {
-    padding: '14px 16px',
+    padding: '16px 16px',
     fontSize: '14px',
     color: 'var(--color-text-primary)',
     borderBottom: '1px solid var(--border-default)',

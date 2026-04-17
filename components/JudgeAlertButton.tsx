@@ -68,7 +68,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
       <button
         onClick={() => setIsOpen(true)}
         style={{
-          padding: '10px 20px',
+          padding: '8px 24px',
           background: 'var(--accent-primary)',
           color: 'var(--color-surface-0)',
           border: 'none',
@@ -197,7 +197,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     }}
                     style={{
                       width: '100%',
-                      padding: '10px 14px',
+                      padding: '8px 16px',
                       fontSize: '14px',
                       border: error ? '1px solid #CC1016' : '1px solid var(--border-default)',
                       borderRadius: '4px',
@@ -230,7 +230,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     onClick={handleClose}
                     style={{
                       flex: 1,
-                      padding: '10px 16px',
+                      padding: '8px 16px',
                       background: 'rgba(255,255,255,0.05)',
                       color: 'var(--color-text-secondary)',
                       border: 'none',
@@ -255,7 +255,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     disabled={loading || !email.trim()}
                     style={{
                       flex: 1,
-                      padding: '10px 16px',
+                      padding: '8px 16px',
                       background: loading || !email.trim() ? 'var(--bdr, #E2DFD8)' : 'var(--accent-primary)',
                       color: 'var(--color-surface-0)',
                       border: 'none',

@@ -198,13 +198,13 @@ function CaseSearchContent() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search by case name, docket number, or keyword..."
-                className="w-full h-11 pl-10 pr-4 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-colors"
+                className="w-full h-11 pl-10 pr-4 rounded border text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition-colors"
                 style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
               />
             </div>
             <button
               type="submit"
-              className="h-11 px-5 rounded-lg bg-[var(--gold, #C4882A)] text-white text-sm font-semibold hover:bg-[var(--gold-hover, #A87222)] transition-colors"
+              className="h-11 px-5 rounded bg-[var(--gold, #C4882A)] text-white text-sm font-semibold hover:bg-[var(--gold-hover, #A87222)] transition-colors"
             >
               Search
             </button>
@@ -215,7 +215,7 @@ function CaseSearchContent() {
           {/* Filter Sidebar */}
           <aside className="w-full lg:w-56 flex-shrink-0">
             <div
-              className="rounded-xl border p-4 space-y-4"
+              className="rounded border p-4 space-y-4"
               style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
             >
               <div className="flex items-center justify-between">
@@ -362,7 +362,7 @@ function CaseSearchContent() {
                 {[...Array(5)].map((_, i) => (
                   <div
                     key={i}
-                    className="rounded-xl border p-5 animate-pulse"
+                    className="rounded border p-5 animate-pulse"
                     style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
                   >
                     <div className="h-5 bg-[rgba(255,255,255,0.08)] rounded w-3/4 mb-3" />
@@ -377,7 +377,7 @@ function CaseSearchContent() {
             {/* Error */}
             {error && (
               <div
-                className="rounded-xl border p-6 text-center"
+                className="rounded border p-6 text-center"
                 style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
               >
                 <p className="text-sm text-red-600 mb-2">{error}</p>
@@ -393,7 +393,7 @@ function CaseSearchContent() {
             {/* Empty state (before search) */}
             {!hasSearched && !loading && (
               <div
-                className="rounded-xl border p-8 text-center"
+                className="rounded border p-8 text-center"
                 style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
               >
                 
@@ -425,7 +425,7 @@ function CaseSearchContent() {
             {/* No results */}
             {hasSearched && !loading && !error && total === 0 && (
               <div
-                className="rounded-xl border p-8 text-center"
+                className="rounded border p-8 text-center"
                 style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
               >
                 <h3 className="text-base font-semibold text-gray-100 mb-2">No Cases Found</h3>
@@ -498,7 +498,7 @@ function CaseResultCard({ result }: { result: SearchResult }) {
   return (
     <Link
       href={`/case/${result.id}`}
-      className="block rounded-xl border p-5 hover:shadow-md transition-all group"
+      className="block rounded border p-5 hover:shadow-md transition-all group"
       style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
     >
       {/* Top row: case name + status */}

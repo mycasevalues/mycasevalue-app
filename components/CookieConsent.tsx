@@ -57,7 +57,7 @@ export default function CookieConsent() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: '20px',
+          gap: '24px',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', flex: 1 }}>
@@ -110,7 +110,7 @@ export default function CookieConsent() {
           <button
             onClick={() => setCookie('rejected')}
             style={{
-              padding: '10px 20px',
+              padding: '8px 24px',
               borderRadius: '4px',
               fontWeight: 600,
               fontSize: '12px',
@@ -129,7 +129,7 @@ export default function CookieConsent() {
           <button
             onClick={() => setCookie('accepted')}
             style={{
-              padding: '10px 20px',
+              padding: '8px 24px',
               borderRadius: '4px',
               fontWeight: 600,
               fontSize: '12px',

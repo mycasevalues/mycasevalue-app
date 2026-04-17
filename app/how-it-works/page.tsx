@@ -134,7 +134,7 @@ export default function HowItWorksPage() {
             <span className="w-1 h-1 rounded-full bg-blue-400/80" />
             Methodology
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-bold mb-4 tracking-[-0.025em]" style={{ color: 'white', lineHeight: '1.1' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'white', lineHeight: '1.1' }}>
             Platform Overview
           </h1>
           <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
@@ -201,7 +201,7 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Content */}
-                  <h2 className="font-display font-semibold mb-3 tracking-[-0.01em]" style={{ color: 'var(--color-text-primary)', fontSize: '17px' }}>
+                  <h2 className="font-legal font-semibold mb-3 tracking-[-0.01em]" style={{ color: 'var(--color-text-primary)', fontSize: '17px' }}>
                     {step.title}
                   </h2>
                   <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '13px', fontWeight: '400', lineHeight: '1.6' }}>
@@ -220,7 +220,7 @@ export default function HowItWorksPage() {
       {/* What's in Your Report Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-3 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3 text-center" style={{ color: 'var(--color-text-primary)' }}>
             What's in Your Report?
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: 'var(--color-text-secondary)' }}>
@@ -283,7 +283,7 @@ export default function HowItWorksPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
               <div key={i} className="text-center p-4 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
-                <div className="text-2xl font-display font-extrabold" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                <div className="text-2xl font-legal font-extrabold" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
                   {stat.value}
                 </div>
                 <div className="text-[11px] font-semibold mt-2" style={{ color: 'var(--color-text-secondary)' }}>
@@ -298,7 +298,7 @@ export default function HowItWorksPage() {
       {/* Data Sources Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-6 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-6 text-center" style={{ color: 'var(--color-text-primary)' }}>
             Verified Public Sources
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: 'var(--color-text-secondary)' }}>
@@ -336,7 +336,7 @@ export default function HowItWorksPage() {
       {/* Platform Features Showcase Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-3 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3 text-center" style={{ color: 'var(--color-text-primary)' }}>
             Platform Features
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: 'var(--color-text-secondary)' }}>
@@ -443,7 +443,7 @@ export default function HowItWorksPage() {
       {/* Data Pipeline Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-12 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-12 text-center" style={{ color: 'var(--color-text-primary)' }}>
             Data Pipeline
           </h2>
 
@@ -504,7 +504,7 @@ export default function HowItWorksPage() {
       {/* Start Exploring CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section style={{ textAlign: 'center' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             Start Exploring
           </h2>
           <p className="mb-8 max-w-2xl mx-auto text-base" style={{ color: 'var(--color-text-secondary)' }}>
@@ -570,7 +570,7 @@ export default function HowItWorksPage() {
       {/* Why Choose Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-8 text-center" style={{ color: 'var(--color-text-primary)' }}>
             Why MyCaseValue Works
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -622,7 +622,7 @@ export default function HowItWorksPage() {
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'rgba(239,68,68,0.08)', borderRadius: '4px' }}>
-          <h2 className="text-3xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-3xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             See what happens in courts like yours
           </h2>
           <p className="mb-8 max-w-2xl mx-auto text-lg" style={{ color: 'var(--color-text-secondary)' }}>

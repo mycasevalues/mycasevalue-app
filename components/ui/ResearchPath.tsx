@@ -28,7 +28,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
         background: 'var(--sidebar2, #F4F3EF)',
         border: '1px solid var(--bdr, #E2DFD8)',
         borderRadius: 2,
-        padding: 10,
+        padding: 8,
       }}
     >
       {/* Header */}
@@ -36,7 +36,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 5,
+          gap: 4,
           marginBottom: 7,
         }}
       >
@@ -56,7 +56,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
           style={{
             fontSize: 9,
             fontWeight: 700,
-            color: '#FFFFFF',
+            color: 'var(--card, #FFFFFF)',
             background: 'var(--link, #0A50A2)',
             borderRadius: 4,
             padding: '1px 5px',
@@ -68,7 +68,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
       </div>
 
       {/* Steps list */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
         {steps.map((step, i) => {
           const isLast = i === steps.length - 1;
           const labelEl = step.href ? (
@@ -113,7 +113,7 @@ export default function ResearchPath({ steps, stepCount }: ResearchPathProps) {
                   height: 7,
                   borderRadius: '50%',
                   border: '2px solid var(--link, #0A50A2)',
-                  background: '#FFFFFF',
+                  background: 'var(--card, #FFFFFF)',
                   flexShrink: 0,
                 }}
               />

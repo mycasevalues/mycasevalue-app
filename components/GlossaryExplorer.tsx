@@ -246,7 +246,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   href={`/glossary/${term.slug}`}
                   style={{
                     display: 'block',
-                    padding: '14px',
+                    padding: '16px',
                     background: 'var(--color-surface-0)',
                     border: '1px solid var(--border-default)',
                     borderRadius: '4px',

@@ -54,7 +54,7 @@ export default function SpanishHowItWorksPage() {
             PROCESO
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--color-surface-0)' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-extrabold mb-4" style={{ color: 'var(--color-surface-0)' }}>
             Cómo Funciona MyCaseValue
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--color-surface-0)', opacity: 0.9 }}>
@@ -76,7 +76,7 @@ export default function SpanishHowItWorksPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+                <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
                   Describe Tu Caso
                 </h2>
                 <p style={{ color: 'var(--color-text-secondary)' }} className="text-lg leading-relaxed">
@@ -95,7 +95,7 @@ export default function SpanishHowItWorksPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+                <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
                   Aceptas la Divulgación
                 </h2>
                 <p style={{ color: 'var(--color-text-secondary)' }} className="text-lg leading-relaxed">
@@ -114,7 +114,7 @@ export default function SpanishHowItWorksPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+                <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
                   Obtenemos Datos
                 </h2>
                 <p style={{ color: 'var(--color-text-secondary)' }} className="text-lg leading-relaxed">
@@ -133,7 +133,7 @@ export default function SpanishHowItWorksPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+                <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
                   Analizamos Resultados
                 </h2>
                 <p style={{ color: 'var(--color-text-secondary)' }} className="text-lg leading-relaxed">
@@ -152,7 +152,7 @@ export default function SpanishHowItWorksPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+                <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
                   Tu Informe
                 </h2>
                 <p style={{ color: 'var(--color-text-secondary)' }} className="text-lg leading-relaxed">
@@ -166,7 +166,7 @@ export default function SpanishHowItWorksPage() {
 
         {/* Key principles */}
         <section className="mt-16">
-          <h2 className="text-3xl font-display font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-3xl font-legal font-bold mb-8" style={{ color: 'var(--color-text-primary)' }}>
             Principios Clave
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -176,7 +176,7 @@ export default function SpanishHowItWorksPage() {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
                 Privacidad Extrema
               </h3>
               <p style={{ color: 'var(--color-text-secondary)' }}>
@@ -191,7 +191,7 @@ export default function SpanishHowItWorksPage() {
                   <path d="M12 6v6l4 2"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
                 Instantáneo
               </h3>
               <p style={{ color: 'var(--color-text-secondary)' }}>
@@ -206,7 +206,7 @@ export default function SpanishHowItWorksPage() {
                   <circle cx="12" cy="12" r="10"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
                 Basado en Hechos
               </h3>
               <p style={{ color: 'var(--color-text-secondary)' }}>
@@ -218,7 +218,7 @@ export default function SpanishHowItWorksPage() {
 
         {/* CTA Section */}
         <section className="mt-16 text-center p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             Listo para comenzar?
           </h2>
           <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>
@@ -237,7 +237,7 @@ export default function SpanishHowItWorksPage() {
       {/* Available Tools Section */}
       <div style={{ background: 'var(--color-surface-0)', borderTop: '1px solid var(--border-default)', padding: '48px 24px' }}>
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

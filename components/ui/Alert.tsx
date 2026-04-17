@@ -50,7 +50,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
       style={{
         borderLeft: `4px solid ${styles.borderColor}`,
         background: styles.background,
-        padding: '16px 20px',
+        padding: '16px 24px',
         borderRadius: '4px',
         display: 'flex',
         gap: '12px',

@@ -69,7 +69,7 @@ export default function DistrictsMapToggle({ children }: Props) {
   const [view, setView] = useState<'map' | 'list'>('map');
 
   const btnBase: React.CSSProperties = {
-    padding: '8px 20px',
+    padding: '8px 24px',
     fontSize: '13px',
     fontWeight: 600,
     fontFamily: 'var(--font-body)',
@@ -87,7 +87,7 @@ export default function DistrictsMapToggle({ children }: Props) {
             ...btnBase,
             background: view === 'map' ? 'var(--accent-primary)' : 'var(--color-surface-0)',
             color: view === 'map' ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
-            borderRadius: '8px 0 0 8px',
+            borderRadius: '2px 0 0 2px',
             borderRight: view === 'map' ? '1px solid var(--accent-primary)' : undefined,
           }}
         >
@@ -99,7 +99,7 @@ export default function DistrictsMapToggle({ children }: Props) {
             ...btnBase,
             background: view === 'list' ? 'var(--accent-primary)' : 'var(--color-surface-0)',
             color: view === 'list' ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
-            borderRadius: '0 8px 8px 0',
+            borderRadius: '0 2px 2px 0',
             borderLeft: view === 'list' ? '1px solid var(--accent-primary)' : undefined,
           }}
         >

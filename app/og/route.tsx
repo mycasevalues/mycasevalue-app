@@ -138,7 +138,7 @@ export async function GET(request: NextRequest) {
                 background: 'rgba(0, 82, 204, 0.1)',
                 border: '1px solid rgba(0, 82, 204, 0.25)',
                 borderRadius: '4px',
-                padding: '20px',
+                padding: '24px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -172,7 +172,7 @@ export async function GET(request: NextRequest) {
                 background: 'rgba(0, 82, 204, 0.1)',
                 border: '1px solid rgba(0, 82, 204, 0.25)',
                 borderRadius: '4px',
-                padding: '20px',
+                padding: '24px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -206,7 +206,7 @@ export async function GET(request: NextRequest) {
                 background: 'rgba(0, 82, 204, 0.1)',
                 border: '1px solid rgba(0, 82, 204, 0.25)',
                 borderRadius: '4px',
-                padding: '20px',
+                padding: '24px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -238,7 +238,7 @@ export async function GET(request: NextRequest) {
           <div
             style={{
               position: 'absolute',
-              bottom: '30px',
+              bottom: '32px',
               left: '60px',
               fontSize: '18px',
               color: '#a0a9d4',
@@ -309,7 +309,7 @@ export async function GET(request: NextRequest) {
             textAlign: 'center',
           }}
         >
-          <div style={{ fontSize: '64px', fontWeight: 'bold', marginBottom: '20px', color: '#ffffff' }}>
+          <div style={{ fontSize: '64px', fontWeight: 'bold', marginBottom: '24px', color: '#ffffff' }}>
             MyCaseValue
           </div>
           <div style={{ fontSize: '32px', color: '#a0a9d4' }}>

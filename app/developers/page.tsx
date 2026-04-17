@@ -366,8 +366,8 @@ export default function DevelopersPage() {
 
       {/* Hero Section */}
       <div style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -399,7 +399,7 @@ export default function DevelopersPage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: '#ffffff',
+            color: 'var(--card, #FFFFFF)',
           }}>
             MyCaseValue REST API
           </h1>
@@ -416,7 +416,7 @@ export default function DevelopersPage() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 20px' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Quick Start */}
         <section style={{ marginBottom: '48px' }}>
           <h2
@@ -521,7 +521,7 @@ export default function DevelopersPage() {
               }}
             >
               {/* Endpoint Header */}
-              <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
                   <span
                     style={{
@@ -559,7 +559,7 @@ export default function DevelopersPage() {
 
               {/* Parameters */}
               {endpoint.params.length > 0 && (
-                <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border-default)' }}>
+                <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                   <h4
                     style={{
                       fontSize: '13px',
@@ -621,7 +621,7 @@ export default function DevelopersPage() {
               )}
 
               {/* Response Example */}
-              <div style={{ padding: '20px 24px' }}>
+              <div style={{ padding: '24px 24px' }}>
                 <h4
                   style={{
                     fontSize: '13px',
@@ -822,7 +822,7 @@ export default function DevelopersPage() {
                     padding: '12px',
                     backgroundColor: 'var(--color-surface-1)',
                     borderRadius: '4px',
-                    borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative, #B01E1E)' : error.code >= 400 ? '#F59E0B' : 'var(--data-positive, #176438)'}`,
+                    borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative, #B01E1E)' : error.code >= 400 ? 'var(--wrn-txt, #7A5800)' : 'var(--data-positive, #176438)'}`,
                   }}
                 >
                   <code

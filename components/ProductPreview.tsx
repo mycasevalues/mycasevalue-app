@@ -73,7 +73,7 @@ export default function ProductPreview() {
               {SAMPLE_CATEGORIES.map((cat) => (
                 <div
                   key={cat.title}
-                  className="border border-[var(--bdr, #E2DFD8)] rounded-xl p-4 hover:shadow-sm transition-shadow"
+                  className="border border-[var(--bdr, #E2DFD8)] rounded p-4 hover:shadow-sm transition-shadow"
                 >
                   <h4 className="text-sm font-semibold text-gray-100 mb-3">
                     {cat.title}

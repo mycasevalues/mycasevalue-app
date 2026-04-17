@@ -89,7 +89,7 @@ export default function SampleReportPage() {
           style={{
             backgroundColor: 'var(--accent-primary)',
             borderBottom: '1px solid var(--accent-primary)',
-            padding: '20px 24px',
+            padding: '24px 24px',
             position: 'sticky',
             top: 0,
             zIndex: 50,
@@ -181,7 +181,7 @@ export default function SampleReportPage() {
                 style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-                  gap: '20px',
+                  gap: '24px',
                 }}
               >
                 <div>
@@ -304,7 +304,7 @@ export default function SampleReportPage() {
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '20px',
+                gap: '24px',
                 marginBottom: '16px',
               }}
             >
@@ -586,7 +586,7 @@ export default function SampleReportPage() {
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '20px',
+                gap: '24px',
                 marginBottom: '24px',
               }}
             >
@@ -962,7 +962,7 @@ export default function SampleReportPage() {
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '20px',
+                gap: '24px',
                 marginBottom: '24px',
               }}
             >

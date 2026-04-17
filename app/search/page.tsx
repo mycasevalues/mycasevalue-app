@@ -315,8 +315,8 @@ function SearchPageInner() {
       `}</style>
       {/* Dark Institutional Header */}
       <div className="search-header" style={{
-        background: '#FFFFFF',
-        color: '#fff',
+        background: 'var(--card, #FFFFFF)',
+        color: 'var(--card, #FFFFFF)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -341,7 +341,7 @@ function SearchPageInner() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
             Case Search
           </div>
-          <h1 className="search-header" style={{ fontFamily: 'var(--font-ui)', fontSize: 'clamp(24px, 3.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#ffffff', margin: '0 0 12px' }}>
+          <h1 className="search-header" style={{ fontFamily: 'var(--font-ui)', fontSize: 'clamp(24px, 3.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--card, #FFFFFF)', margin: '0 0 12px' }}>
             Search federal court outcomes
           </h1>
           <p className="search-header" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -673,7 +673,7 @@ function SearchPageInner() {
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.color = '#6B7280';
+                e.currentTarget.style.color = 'var(--color-text-muted)';
               }}
             >
               ×
@@ -904,7 +904,7 @@ function SearchPageInner() {
             const rd = REAL_DATA[r.nos];
             if (!rd) return null;
             return (
-              <div style={{ display: 'flex', gap: '16px', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid #F0F3F5', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '16px', marginTop: '8px', paddingTop: '10px', borderTop: '1px solid #F0F3F5', alignItems: 'center' }}>
                 <TrendSparkline nosCode={r.nos} width={64} height={28} />
                 {rd.wr != null && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)' }}>
@@ -1216,7 +1216,7 @@ function SearchPageInner() {
 export default function SearchPage() {
   return (
     <Suspense fallback={
-      <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', padding: '60px 20px' }}>
+      <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', padding: '60px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           {[...Array(5)].map((_, i) => <SkeletonResultCard key={i} />)}
         </div>

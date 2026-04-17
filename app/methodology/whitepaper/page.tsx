@@ -32,7 +32,7 @@ export default function WhitepaperPage() {
     <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
       {/* Header Banner */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--card, #FFFFFF)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -62,7 +62,7 @@ export default function WhitepaperPage() {
               fontFamily: 'var(--font-ui)',
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 700,
-              color: '#ffffff',
+              color: 'var(--card, #FFFFFF)',
               letterSpacing: '-0.025em',
               marginBottom: 16,
               lineHeight: 1.1,

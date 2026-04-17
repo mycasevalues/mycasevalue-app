@@ -68,7 +68,7 @@ export function ToolPageLayout({
       {/* Auth Gate \u2014 only shown when requiresPro and not authenticated */}
       {requiresPro && !isAuthenticated ? (
         <div className="max-w-4xl mx-auto px-6 py-12">
-          <div className="rounded-xl border border-[var(--bdr, #E2DFD8)] p-8 sm:p-12 text-center bg-[var(--color-surface-2)]">
+          <div className="rounded border border-[var(--bdr, #E2DFD8)] p-8 sm:p-12 text-center bg-[var(--color-surface-2)]">
             <h2 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
               Sign in to access this tool
             </h2>

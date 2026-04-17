@@ -42,7 +42,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             fontSize: '16px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
-            marginBottom: '20px',
+            marginBottom: '24px',
             marginTop: 0,
             fontFamily: 'var(--font-ui)',
           }}
@@ -99,7 +99,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             fontSize: '16px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
-            marginBottom: '20px',
+            marginBottom: '24px',
             marginTop: 0,
             fontFamily: 'var(--font-ui)',
           }}
@@ -110,7 +110,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           <BarChart
             data={topCaseTypes}
             layout="vertical"
-            margin={{ top: 5, right: 30, left: 200 }}
+            margin={{ top: 4, right: 32, left: 200 }}
           >
             <CartesianGrid
               strokeDasharray="3 3"

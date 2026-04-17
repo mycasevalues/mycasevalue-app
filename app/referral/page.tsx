@@ -68,7 +68,7 @@ export default function ReferralPage() {
             <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Home</Link>
             {' > Referral Program'}
           </div>
-          <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 8px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: '32px', fontWeight: 600, color: 'var(--color-surface-0)', margin: '0 0 8px 0' }}>
             Referral Program
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
@@ -78,11 +78,11 @@ export default function ReferralPage() {
       </div>
 
       {/* Content */}
-      <div style={{ padding: '40px 20px' }}>
+      <div style={{ padding: '40px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* How It Works */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               How It Works
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '24px' }}>
@@ -104,7 +104,7 @@ export default function ReferralPage() {
 
           {/* Your Referral Link */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Your Referral Link
             </h2>
 
@@ -152,14 +152,14 @@ export default function ReferralPage() {
 
           {/* Reward Tiers */}
           <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid var(--border-default)' }}>
-            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
+            <h2 className="font-legal" style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0' }}>
               Reward Tiers
             </h2>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
               <thead>
                 <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
-                  <th style={{ textAlign: 'left', padding: '10px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Milestone</th>
-                  <th style={{ textAlign: 'left', padding: '10px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Reward</th>
+                  <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Milestone</th>
+                  <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Reward</th>
                 </tr>
               </thead>
               <tbody>

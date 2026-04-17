@@ -98,7 +98,7 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
     const data = (REAL_DATA as Record<string, any>)[nosCode];
     const median = data?.rng?.md || 0;
 
-    const margin = { top: 20, right: 30, bottom: 30, left: 30 };
+    const margin = { top: 24, right: 32, bottom: 32, left: 30 };
     const w = width - margin.left - margin.right;
     const h = height - margin.top - margin.bottom;
 
@@ -167,8 +167,8 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
       .attr('font-family', 'var(--font-mono)')
       .attr('fill', 'var(--color-text-secondary)');
 
-    g.selectAll('.domain').attr('stroke', '#e5e7eb');
-    g.selectAll('.tick line').attr('stroke', '#e5e7eb');
+    g.selectAll('.domain').attr('stroke', 'var(--border-default)');
+    g.selectAll('.tick line').attr('stroke', 'var(--border-default)');
 
   }, [nosCode, width, height]);
 

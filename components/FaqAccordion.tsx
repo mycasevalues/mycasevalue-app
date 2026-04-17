@@ -85,7 +85,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                 id={`faq-question-${index}`}
                 style={{
                   width: '100%',
-                  padding: '20px',
+                  padding: '24px',
                   backgroundColor: 'transparent',
                   border: 'none',
                   cursor: 'pointer',
@@ -142,7 +142,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   className="faq-answer"
                   style={{
                     padding: '0 20px 20px 20px',
-                    paddingLeft: '20px',
+                    paddingLeft: '24px',
                     borderTop: '1px solid var(--border-default)',
                     fontFamily: 'var(--font-body)',
                     fontSize: '16px',
