@@ -845,7 +845,7 @@ export default async function NOSPage({ params }: PageProps) {
                 <div className="stat-value" style={{ color: stat.color, display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
                   {stat.value}
                   {stat.showDot && totalCases > 0 && (
-                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? 'var(--data-positive)' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
+                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? 'var(--data-positive)' : totalCases >= 1000 ? 'var(--wrn-txt)' : totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
                   )}
                   {stat.showSample && totalCases > 0 && <SampleSizeIndicator count={totalCases} />}
                 </div>
@@ -939,7 +939,7 @@ export default async function NOSPage({ params }: PageProps) {
                 <div
                   className="outcome-dist-segment"
                   style={{
-                    background: '#B45309',
+                    background: 'var(--wrn-txt)',
                     width: `${outcomeDist.settlement}%`,
                   }}
                   title={`Settlement: ${Math.round(outcomeDist.settlement)}%`}
@@ -967,7 +967,7 @@ export default async function NOSPage({ params }: PageProps) {
                 <span>Win: <strong style={{ color: 'var(--accent-primary)' }}>{Math.round(outcomeDist.win)}%</strong></span>
               </div>
               <div className="outcome-dist-label">
-                <div className="outcome-dist-dot" style={{ background: '#B45309' }}></div>
+                <div className="outcome-dist-dot" style={{ background: 'var(--wrn-txt)' }}></div>
                 <span>Settlement: <strong style={{ color: 'var(--accent-primary)' }}>{Math.round(outcomeDist.settlement)}%</strong></span>
               </div>
               <div className="outcome-dist-label">
@@ -991,7 +991,7 @@ export default async function NOSPage({ params }: PageProps) {
                 let segmentColor = o.color;
                 if (!segmentColor) {
                   if (i === 0) segmentColor = 'var(--data-positive)';
-                  else if (i === 1) segmentColor = '#B45309';
+                  else if (i === 1) segmentColor = 'var(--wrn-txt)';
                   else segmentColor = 'var(--color-text-muted)';
                 }
                 return (
@@ -1355,7 +1355,7 @@ export default async function NOSPage({ params }: PageProps) {
                         <span>Win Rate:</span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                           <strong style={{ color: caseType.wr >= 50 ? 'var(--data-positive)' : 'var(--accent-primary)' }}>{caseType.wr}%</strong>
-                          <span title={`Based on ${caseType.total.toLocaleString()} cases — ${caseType.total >= 10000 ? 'High' : caseType.total >= 1000 ? 'Medium' : caseType.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: caseType.total >= 10000 ? 'var(--data-positive)' : caseType.total >= 1000 ? '#C37D16' : caseType.total >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
+                          <span title={`Based on ${caseType.total.toLocaleString()} cases — ${caseType.total >= 10000 ? 'High' : caseType.total >= 1000 ? 'Medium' : caseType.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: caseType.total >= 10000 ? 'var(--data-positive)' : caseType.total >= 1000 ? 'var(--wrn-txt)' : caseType.total >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
                         </div>
                       </div>
                       <div className="related-type-stat">

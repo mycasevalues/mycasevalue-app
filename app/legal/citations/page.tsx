@@ -28,7 +28,7 @@ interface Citation {
 
 const CATEGORIES = [
   { key: 'constitutional', label: 'Constitutional', color: 'var(--accent-primary)' },
-  { key: 'civil_rights', label: 'Civil Rights', color: '#a78bfa' },
+  { key: 'civil_rights', label: 'Civil Rights', color: 'var(--link)' },
   { key: 'criminal', label: 'Criminal Law', color: 'var(--data-negative)' },
   { key: 'regulatory', label: 'Regulatory', color: 'var(--data-positive)' },
   { key: 'corporate', label: 'Corporate', color: 'var(--wrn-txt)' },
@@ -204,7 +204,7 @@ export default function CitationsPage() {
             borderRadius: 20,
             fontSize: 13,
             fontWeight: 500,
-            border: !activeCategory ? '2px solid var(--accent-primary)' : '1px solid var(--bdr, #E2DFD8)',
+            border: !activeCategory ? '2px solid var(--accent-primary)' : '1px solid var(--bdr)',
             background: !activeCategory ? '#E8F4FD' : 'var(--color-surface-0)',
             color: !activeCategory ? 'var(--accent-primary)' : 'var(--color-text-muted)',
             cursor: 'pointer',
@@ -221,7 +221,7 @@ export default function CitationsPage() {
               borderRadius: 20,
               fontSize: 13,
               fontWeight: 500,
-              border: activeCategory === cat.key ? `2px solid ${cat.color}` : '1px solid var(--bdr, #E2DFD8)',
+              border: activeCategory === cat.key ? `2px solid ${cat.color}` : '1px solid var(--bdr)',
               background: activeCategory === cat.key ? `${cat.color}14` : 'var(--color-surface-0)',
               color: activeCategory === cat.key ? cat.color : 'var(--color-text-muted)',
               cursor: 'pointer',
@@ -398,7 +398,7 @@ export default function CitationsPage() {
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Landmark Cases</div>
         </div>
         <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
-          <div style={{ fontSize: 28, fontWeight: 700, color: '#a78bfa', fontFamily: 'var(--font-mono, monospace)' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono, monospace)' }}>
             {CITATIONS.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Citation Links</div>

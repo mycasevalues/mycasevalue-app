@@ -79,7 +79,7 @@ export default function StudentsPage() {
             },
             {
               title: 'Free Legal Education',
-              description: 'Full access at no cost while you\'re in law school. No subscriptions. No limits. Everything you need to understand real federal litigation.',
+              description: 'Full access at no cost while you are in law school. No subscriptions. No limits. Everything you need to understand real federal litigation.',
             },
           ].map((feature, i) => (
             <div

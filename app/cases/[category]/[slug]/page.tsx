@@ -134,7 +134,7 @@ function StatsCard({
       >
         {value}
         {shouldShowDot && (
-          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? 'var(--data-positive)' : casesCount >= 1000 ? '#C37D16' : casesCount >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
+          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? 'var(--data-positive)' : casesCount >= 1000 ? 'var(--wrn-txt)' : casesCount >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
         )}
       </p>
       {subtitle && (
@@ -479,8 +479,8 @@ export default async function CaseTypeDetailPage({
             transition: background-color 150ms ease, border-color 150ms ease;
           }
           .cta-button:hover {
-            background-color: var(--gold-hover, #A87222);
-            border-color: var(--gold-hover, #A87222);
+            background-color: var(--gold);
+            border-color: var(--gold);
           }
 
           @media (max-width: 768px) {

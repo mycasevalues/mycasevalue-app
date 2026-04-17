@@ -90,7 +90,7 @@ export default function NotFound() {
               transition: all 200ms ease;
             }
             .notfound-link-primary:hover {
-              background: var(--gold-hover, #A87222) !important;
+              background: var(--gold) !important;
               box-shadow: 0 4px 12px rgba(204, 79, 0, 0.3);
             }
             .notfound-link-secondary {
@@ -98,14 +98,14 @@ export default function NotFound() {
             }
             .notfound-link-secondary:hover {
               background: rgba(255,255,255,0.1) !important;
-              border-color: var(--bdr, #E2DFD8) !important;
+              border-color: var(--bdr) !important;
             }
             .notfound-link-tertiary {
               transition: all 200ms ease;
             }
             .notfound-link-tertiary:hover {
               background: rgba(255,255,255,0.05) !important;
-              border-color: var(--bdr, #E2DFD8) !important;
+              border-color: var(--bdr) !important;
             }
           `}</style>
 

@@ -371,7 +371,7 @@ export default function DevelopersPage() {
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -639,7 +639,7 @@ export default function DevelopersPage() {
                   style={{
                     margin: 0,
                     padding: '12px 14px',
-                    backgroundColor: 'var(--chrome-bg, #1B2D45)',
+                    backgroundColor: 'var(--chrome-bg)',
                     color: 'var(--color-text-3)',
                     fontSize: '12px',
                     lineHeight: 1.5,
@@ -684,7 +684,7 @@ export default function DevelopersPage() {
               style={{
                 margin: 0,
                 padding: '12px 14px',
-                backgroundColor: 'var(--chrome-bg, #1B2D45)',
+                backgroundColor: 'var(--chrome-bg)',
                 color: 'var(--color-text-3)',
                 fontSize: '12px',
                 lineHeight: 1.5,
@@ -890,7 +890,7 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold-hover, #A87222) 100%)',
+              background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold) 100%)',
               borderRadius: '4px',
               padding: '32px',
               textAlign: 'center',

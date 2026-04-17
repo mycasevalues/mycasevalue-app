@@ -115,7 +115,7 @@ export default function GlobalError({
 
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
               <style>{`
-                .ge-btn-primary:hover { background: var(--gold-hover, #A87222) !important; }
+                .ge-btn-primary:hover { background: var(--gold) !important; }
                 .ge-btn-secondary:hover { background: rgba(255,255,255,0.1) !important; }
               `}</style>
               <button

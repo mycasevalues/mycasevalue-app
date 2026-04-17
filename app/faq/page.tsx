@@ -416,7 +416,7 @@ const faqs = [
       },
       {
         q: 'What does "dismissal rate" mean?',
-        a: 'Dismissal rate is the percentage of cases that end without a substantive ruling on the merits. Dismissals can result from procedural defects, failure to state a claim, voluntary withdrawal, or lack of jurisdiction. A high dismissal rate does not mean your case will be dismissed — it often reflects technical issues in filings rather than the strength of underlying claims.',
+        a: 'Dismissal rate is the percentage of cases that end without a substantive ruling on the merits. Dismissals can result from procedural defects, failure to state a claim, voluntary withdrawal, or lack of jurisdiction. A high dismissal rate does not mean your case will be dismissed—it often reflects technical issues in filings rather than the strength of underlying claims.',
       },
     ],
   },
@@ -554,7 +554,7 @@ export default function FAQPage() {
       <JsonLd data={jsonLd} />
 
       {/* Header */}
-      <div className="relative overflow-hidden border-b" style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'var(--card)' }}>
+      <div className="relative overflow-hidden border-b" style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}>
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
@@ -586,7 +586,7 @@ export default function FAQPage() {
         <div className="space-y-12">
           {faqs.map((section, sectionIdx) => (
             <section key={sectionIdx}>
-              <div className="flex items-baseline gap-3 mb-5 pb-3 border-b" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+              <div className="flex items-baseline gap-3 mb-5 pb-3 border-b" style={{ borderColor: 'var(--bdr)' }}>
                 <span className="font-mono text-[10px] font-semibold tracking-[0.2em] uppercase tabular-nums" style={{ color: 'rgba(59,130,246,0.6)' }}>
                   {String(sectionIdx + 1).padStart(2, '0')}
                 </span>
@@ -622,7 +622,7 @@ export default function FAQPage() {
                         <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </summary>
-                    <div className="pt-4 mt-4 border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+                    <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--bdr)' }}>
                       <p className="text-[13px] leading-[1.65]" style={{ color: 'var(--color-text-secondary)' }}>
                         {faq.a}
                       </p>

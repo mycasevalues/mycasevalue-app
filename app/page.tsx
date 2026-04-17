@@ -154,7 +154,7 @@ export default function HomePage() {
       <section
         style={{
           background: 'var(--card)',
-          borderBottom: '1px solid var(--bdr, #E2DFD8)',
+          borderBottom: '1px solid var(--bdr)',
           padding: '24px 32px 16px',
         }}
       >
@@ -212,7 +212,7 @@ export default function HomePage() {
               display: 'flex',
               height: 44,
               maxWidth: 820,
-              border: '2px solid var(--chrome-bg, #1B2D45)',
+              border: '2px solid var(--chrome-bg)',
               borderRadius: 2,
               overflow: 'hidden',
             }}
@@ -256,7 +256,7 @@ export default function HomePage() {
                 justifyContent: 'space-between',
                 padding: '0 10px',
                 background: 'var(--surf, #F6F5F2)',
-                borderLeft: '1px solid var(--bdr, #E2DFD8)',
+                borderLeft: '1px solid var(--bdr)',
                 fontSize: 11,
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text2, #42403C)',
@@ -279,7 +279,7 @@ export default function HomePage() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 4,
-                background: 'var(--chrome-bg, #1B2D45)',
+                background: 'var(--chrome-bg)',
                 color: 'var(--card)',
                 fontSize: 13,
                 fontFamily: 'var(--font-ui)',
@@ -350,7 +350,7 @@ export default function HomePage() {
 
       <div
         style={{
-          borderBottom: '2px solid var(--bdr, #E2DFD8)',
+          borderBottom: '2px solid var(--bdr)',
           background: 'var(--card)',
           padding: '0 20px',
           display: 'flex',
@@ -499,7 +499,7 @@ export default function HomePage() {
                         justifyContent: 'space-between',
                         padding: '0 8px',
                         background: 'var(--card)',
-                        border: '1px solid var(--bdr, #E2DFD8)',
+                        border: '1px solid var(--bdr)',
                         borderRadius: 2,
                         fontSize: 12,
                         fontFamily: 'var(--font-ui)',
@@ -530,7 +530,7 @@ export default function HomePage() {
                   style={{
                     height: 32,
                     padding: '0 20px',
-                    background: 'var(--chrome-bg, #1B2D45)',
+                    background: 'var(--chrome-bg)',
                     color: 'var(--card)',
                     fontSize: 12,
                     fontFamily: 'var(--font-ui)',
@@ -615,7 +615,7 @@ export default function HomePage() {
                     alignItems: 'center',
                     gap: 8,
                     padding: '8px 0',
-                    borderBottom: i < RECENT_SEARCHES.length - 1 ? '1px solid var(--bdr, #E2DFD8)' : 'none',
+                    borderBottom: i < RECENT_SEARCHES.length - 1 ? '1px solid var(--bdr)' : 'none',
                   }}
                 >
                   <span
@@ -672,7 +672,7 @@ export default function HomePage() {
             <div
               style={{
                 background: 'var(--sidebar2, #F4F3EF)',
-                border: '1px solid var(--bdr, #E2DFD8)',
+                border: '1px solid var(--bdr)',
                 borderRadius: 2,
                 padding: 8,
                 marginBottom: 10,
@@ -733,7 +733,7 @@ export default function HomePage() {
             <div
               style={{
                 background: 'var(--sidebar2, #F4F3EF)',
-                border: '1px solid var(--bdr, #E2DFD8)',
+                border: '1px solid var(--bdr)',
                 borderRadius: 2,
                 padding: 8,
               }}
@@ -759,7 +759,7 @@ export default function HomePage() {
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     padding: '4px 0',
-                    borderBottom: '1px solid var(--bdr, #E2DFD8)',
+                    borderBottom: '1px solid var(--bdr)',
                   }}
                 >
                   <span
@@ -846,9 +846,9 @@ export default function HomePage() {
                 style={{
                   display: 'block',
                   background: 'var(--card)',
-                  border: '1px solid var(--bdr, #E2DFD8)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: 2,
-                  borderTop: '3px solid var(--bdr, #E2DFD8)',
+                  borderTop: '3px solid var(--bdr)',
                   padding: '12px 14px',
                   textDecoration: 'none',
                   transition: 'border-color 0.15s ease, box-shadow 0.15s ease',
@@ -859,7 +859,7 @@ export default function HomePage() {
                     fontFamily: 'var(--font-legal)',
                     fontSize: 13,
                     fontWeight: 700,
-                    color: 'var(--chrome-bg, #1B2D45)',
+                    color: 'var(--chrome-bg)',
                     margin: '0 0 4px',
                   }}
                 >
@@ -896,7 +896,7 @@ export default function HomePage() {
       <div
         style={{
           padding: '12px 24px',
-          borderTop: '1px solid var(--bdr, #E2DFD8)',
+          borderTop: '1px solid var(--bdr)',
           background: 'var(--card)',
           textAlign: 'center',
         }}
@@ -909,8 +909,7 @@ export default function HomePage() {
             margin: 0,
           }}
         >
-          Federal court data sourced from FJC IDB, CourtListener, RECAP, and PACER. For
-          informational purposes only · Not legal advice.
+          Federal court data sourced from FJC IDB, CourtListener, RECAP, and PACER. For informational purposes only. Not legal advice.
         </p>
       </div>
 

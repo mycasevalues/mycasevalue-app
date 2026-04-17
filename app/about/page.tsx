@@ -103,7 +103,7 @@ export default function AboutPage() {
           text-align: left;
           position: relative;
           overflow: hidden;
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          border-bottom: 1px solid var(--bdr);
         }
 
         .about-header::before {
@@ -315,8 +315,8 @@ export default function AboutPage() {
         }
 
         .contact-link:hover {
-          background: var(--gold-hover, #A87222);
-          border-color: var(--gold-hover, #A87222);
+          background: var(--gold);
+          border-color: var(--gold);
         }
 
         .breadcrumb-wrapper {
@@ -454,7 +454,7 @@ export default function AboutPage() {
                 <strong>MyCaseValue LLC</strong> is registered in West Virginia, United States. We are a team of legal researchers, data engineers, and technologists built around a simple principle: federal court data is public property, and it should be accessible—not gatekept by expensive software vendors or limited to those who can afford legal consultants.
               </p>
               <p className="company-text">
-                We operate with four core commitments: <strong>accuracy</strong> (all data from official public records with documented methodology and rigorous quality checks), <strong>transparency</strong> (our data sources and processing are fully documented and open to scrutiny), <strong>privacy</strong> (we never sell, share, or track individual research behavior), and <strong>accessibility</strong> (free access during beta, with simple plain-English interfaces for everyone).
+                We operate with four core commitments: <strong>accuracy</strong> (all data from official public records with documented methodology and rigorous quality checks), <strong>transparency</strong> (our data sources and processing are fully documented and open to scrutiny), <strong>privacy</strong> (we never sell, share, or track individual research behavior), and <strong>accessibility</strong> (free access during beta, with clear plain-English interfaces for everyone).
               </p>
               <Link href="/contact" className="contact-link">
                 Get in Touch

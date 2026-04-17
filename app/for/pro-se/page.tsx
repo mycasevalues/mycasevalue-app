@@ -58,7 +58,7 @@ export default function ProSeLitigantsPage() {
         </h1>
 
         <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
-          You shouldn't have to hire an attorney to understand your case. MyCaseValue gives you the same federal court outcome data that lawyers use to evaluate cases — real win rates, settlement patterns, judge tendencies, and case timelines. All sourced from public records. All explained in plain language.
+          Navigating federal litigation without counsel need not mean navigating without data. MyCaseValue provides access to the same federal court outcome data that attorneys use to evaluate cases — actual win rates, settlement patterns, judge tendencies, and case timelines. All sourced from public records and presented in accessible language.
         </p>
 
         {/* Feature Cards */}

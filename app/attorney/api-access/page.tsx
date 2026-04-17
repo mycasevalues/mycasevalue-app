@@ -321,7 +321,7 @@ export default function ApiAccessPage() {
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -612,7 +612,7 @@ export default function ApiAccessPage() {
                   style={{
                     margin: 0,
                     padding: '12px 14px',
-                    backgroundColor: 'var(--chrome-bg, #1B2D45)',
+                    backgroundColor: 'var(--chrome-bg)',
                     color: '#D4D4D4',
                     fontSize: '12px',
                     lineHeight: 1.5,
@@ -644,7 +644,7 @@ export default function ApiAccessPage() {
                   style={{
                     margin: 0,
                     padding: '12px 14px',
-                    backgroundColor: 'var(--chrome-bg, #1B2D45)',
+                    backgroundColor: 'var(--chrome-bg)',
                     color: '#D4D4D4',
                     fontSize: '12px',
                     lineHeight: 1.5,
@@ -735,7 +735,7 @@ export default function ApiAccessPage() {
               style={{
                 margin: 0,
                 padding: '12px 14px',
-                backgroundColor: 'var(--chrome-bg, #1B2D45)',
+                backgroundColor: 'var(--chrome-bg)',
                 color: '#D4D4D4',
                 fontSize: '12px',
                 lineHeight: 1.5,

@@ -129,7 +129,7 @@ export default function JudgeIntelligencePage() {
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -159,10 +159,10 @@ export default function JudgeIntelligencePage() {
             fontWeight: 700,
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
-            color: 'var(--card)',
+            color: 'var(--color-text-primary)',
             margin: 0,
           }}>
-            Know your judge before the courtroom
+            Know Your Judge Before the Courtroom
           </h1>
         </div>
       </div>

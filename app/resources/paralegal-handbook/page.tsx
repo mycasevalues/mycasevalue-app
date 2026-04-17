@@ -58,42 +58,42 @@ export default function ParalegalHandbookPage() {
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded border border-[var(--bdr, #E2DFD8)] p-6">
+            <div className="rounded border border-[var(--bdr)] p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Federal Court Structure</h3>
               <p className="text-[var(--color-text-muted)]">
                 District courts, circuit courts, Supreme Court, magistrate judges, and Article III judges explained with clear jurisdiction boundaries.
               </p>
             </div>
 
-            <div className="rounded border border-[var(--bdr, #E2DFD8)] p-6">
+            <div className="rounded border border-[var(--bdr)] p-6">
               <h3 className="mb-3 font-semibold text-blue-900">FRCP Deadline Reference</h3>
               <p className="text-[var(--color-text-muted)]">
                 The 20 most critical Federal Rules of Civil Procedure deadlines with dates, requirements, and cross-references.
               </p>
             </div>
 
-            <div className="rounded border border-[var(--bdr, #E2DFD8)] p-6">
+            <div className="rounded border border-[var(--bdr)] p-6">
               <h3 className="mb-3 font-semibold text-blue-900">SOL Quick Reference</h3>
               <p className="text-[var(--color-text-muted)]">
                 Statute of limitations for all 84 Nature of Suit codes with applicable timeframes from REAL_DATA.
               </p>
             </div>
 
-            <div className="rounded border border-[var(--bdr, #E2DFD8)] p-6">
+            <div className="rounded border border-[var(--bdr)] p-6">
               <h3 className="mb-3 font-semibold text-blue-900">District Directory & Rules</h3>
               <p className="text-[var(--color-text-muted)]">
                 Complete listing of all 95 federal districts with states and PACER codes, plus local rules summaries for 20 largest districts.
               </p>
             </div>
 
-            <div className="rounded border border-[var(--bdr, #E2DFD8)] p-6">
+            <div className="rounded border border-[var(--bdr)] p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Procedural Guides</h3>
               <p className="text-[var(--color-text-muted)]">
                 How to read dockets, serve process, navigate discovery timelines, and use PACER and CourtListener effectively.
               </p>
             </div>
 
-            <div className="rounded border border-[var(--bdr, #E2DFD8)] p-6">
+            <div className="rounded border border-[var(--bdr)] p-6">
               <h3 className="mb-3 font-semibold text-blue-900">Motion & Filing Data</h3>
               <p className="text-[var(--color-text-muted)]">
                 Common motion outcomes data, filing fee schedules, appeal costs, and data-driven insights for case management.
@@ -171,7 +171,7 @@ export default function ParalegalHandbookPage() {
         <ParalegalHandbookCapture />
 
         {/* Additional Info */}
-        <section className="mt-12 border-t border-[var(--bdr, #E2DFD8)] pt-8">
+        <section className="mt-12 border-t border-[var(--bdr)] pt-8">
           <h2 className="mb-4 text-2xl font-bold text-[var(--color-text-muted)]">
             About This Handbook
           </h2>

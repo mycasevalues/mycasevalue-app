@@ -101,10 +101,10 @@ export default function AnalyticsPage() {
         }
 
         .header {
-          background: #FFFFFF;
+          background: var(--card);
           color: #ffffff;
           padding: 48px 24px 40px;
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          border-bottom: 1px solid var(--bdr);
           position: relative;
           overflow: hidden;
         }
@@ -287,8 +287,8 @@ export default function AnalyticsPage() {
             <span className="header-eyebrow-dot animate-pulse" />
             Platform Analytics
           </div>
-          <h1>Platform usage intelligence</h1>
-          <p>Real-time insights into federal court research activity and platform engagement</p>
+          <h1>Platform Usage Intelligence</h1>
+          <p>Real-time insights into federal court research activity and platform engagement.</p>
         </div>
       </div>
 

@@ -185,7 +185,7 @@ export default function PlatformPage() {
         }
 
         .tech-arrow {
-          color: var(--bdr, #E2DFD8);
+          color: var(--bdr);
           font-size: 20px;
           font-weight: 300;
         }
@@ -500,7 +500,7 @@ export default function PlatformPage() {
           padding: '56px 24px 48px',
           position: 'relative',
           overflow: 'hidden',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
+          borderBottom: '1px solid var(--bdr)',
         }}>
           <div aria-hidden style={{
             position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -612,7 +612,7 @@ export default function PlatformPage() {
                 <div className="tech-box">TailwindCSS</div>
               </div>
 
-              <div style={{ textAlign: 'center', color: 'var(--bdr, #E2DFD8)', fontSize: 24 }}>
+              <div style={{ textAlign: 'center', color: 'var(--bdr)', fontSize: 24 }}>
                 {String.fromCharCode(8595)}
               </div>
 
@@ -637,7 +637,7 @@ export default function PlatformPage() {
                 <div className="tech-box">Node.js</div>
               </div>
 
-              <div style={{ textAlign: 'center', color: 'var(--bdr, #E2DFD8)', fontSize: 24 }}>
+              <div style={{ textAlign: 'center', color: 'var(--bdr)', fontSize: 24 }}>
                 {String.fromCharCode(8595)}
               </div>
 
@@ -1378,7 +1378,7 @@ export default function PlatformPage() {
           background: 'var(--card)',
           position: 'relative',
           overflow: 'hidden',
-          borderTop: '1px solid rgba(255,255,255,0.06)',
+          borderTop: '1px solid var(--bdr)',
         }}>
           <div aria-hidden style={{
             position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',

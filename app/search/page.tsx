@@ -36,7 +36,7 @@ const SkeletonResultCard = () => (
       <div style={{
         height: '20px',
         width: '60%',
-        background: 'rgba(255,255,255,0.06)',
+        background: 'var(--bdr)',
         borderRadius: '4px',
         flex: '1 1 auto',
         minWidth: '150px',
@@ -44,7 +44,7 @@ const SkeletonResultCard = () => (
       <div style={{
         height: '20px',
         width: '20%',
-        background: 'rgba(255,255,255,0.06)',
+        background: 'var(--bdr)',
         borderRadius: '4px',
         minWidth: '50px',
       }} />
@@ -52,7 +52,7 @@ const SkeletonResultCard = () => (
     <div style={{
       height: '14px',
       width: '40%',
-      background: 'rgba(255,255,255,0.06)',
+      background: 'var(--bdr)',
       borderRadius: '4px',
     }} />
   </div>
@@ -320,7 +320,7 @@ function SearchPageInner() {
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -339,10 +339,10 @@ function SearchPageInner() {
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
-            Case Search
+            Federal Case Search
           </div>
           <h1 className="search-header" style={{ fontFamily: 'var(--font-ui)', fontSize: 'clamp(24px, 3.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--card)', margin: '0 0 12px' }}>
-            Search federal court outcomes
+            Search Federal Court Outcomes
           </h1>
           <p className="search-header" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
             Real outcome data across 84 federal case types, 94 districts, and 5.1M+ cases.
@@ -1072,7 +1072,7 @@ function SearchPageInner() {
                       <span style={{ color: avgWr >= 50 ? 'var(--data-positive)' : avgWr >= 35 ? 'var(--wrn-txt)' : 'var(--accent-primary)', fontWeight: 600 }}>{avgWr}% win</span>
                       <span style={{ color: 'var(--color-text-secondary)' }}>{totalCases >= 1000 ? `${(totalCases / 1000).toFixed(0)}K cases` : `${totalCases} cases`}</span>
                     </div>
-                    <div style={{ height: 3, background: 'rgba(255,255,255,0.06)', borderRadius: 2, marginTop: 8, overflow: 'hidden' }}>
+                    <div style={{ height: 3, background: 'var(--bdr)', borderRadius: 2, marginTop: 8, overflow: 'hidden' }}>
                       <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? 'var(--data-positive)' : avgWr >= 35 ? 'var(--wrn-txt)' : 'var(--accent-primary)', borderRadius: 2 }} />
                     </div>
                   </Link>

@@ -174,7 +174,7 @@ const faqItems = [
   },
   {
     q: 'Is MyCaseValue legal advice?',
-    a: 'No. MyCaseValue provides legal data for informational and research purposes only. Nothing on this platform constitutes legal advice or creates an attorney-client relationship. Always consult a licensed attorney.',
+    a: 'No. MyCaseValue provides legal data for informational and research purposes only. Nothing on this platform constitutes legal advice or creates an attorney-client relationship. Always consult a licensed attorney for legal guidance.',
   },
   {
     q: 'Does my research activity stay private?',
@@ -201,7 +201,7 @@ export default function PricingPage() {
           text-align: center;
           position: relative;
           overflow: hidden;
-          border-bottom: 1px solid var(--bdr, #E2DFD8);
+          border-bottom: 1px solid var(--bdr);
         }
         .pricing-header > * { position: relative; }
 
@@ -212,7 +212,7 @@ export default function PricingPage() {
           padding: 4px 10px;
           margin-bottom: 16px;
           border-radius: 4px;
-          border: 1px solid var(--bdr, #E2DFD8);
+          border: 1px solid var(--bdr);
           background: var(--card);
           font-family: var(--font-mono);
           font-size: 8px;
@@ -273,7 +273,7 @@ export default function PricingPage() {
           flex-direction: column;
           padding: 1.75rem;
           border-radius: 4px;
-          border: 1px solid var(--bdr, #E2DFD8);
+          border: 1px solid var(--bdr);
           background: var(--card);
           transition: border-color 150ms ease, box-shadow 150ms ease;
           position: relative;
@@ -285,7 +285,7 @@ export default function PricingPage() {
         }
 
         .pricing-card:hover {
-          border-color: var(--chrome-bg, #1B2D45);
+          border-color: var(--chrome-bg);
           box-shadow: 0 2px 8px rgba(27,45,69,0.08);
         }
 
@@ -413,7 +413,7 @@ export default function PricingPage() {
 
         .callout-section {
           background: var(--surface-warm, #FAF3E6);
-          border: 1px solid var(--bdr, #E2DFD8);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 2.5rem;
           margin-bottom: 4rem;
@@ -447,7 +447,7 @@ export default function PricingPage() {
 
         .faq-item {
           background: var(--card);
-          border: 1px solid var(--bdr, #E2DFD8);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 1.5rem;
           margin-bottom: 16px;

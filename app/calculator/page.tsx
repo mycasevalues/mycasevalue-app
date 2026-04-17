@@ -278,7 +278,7 @@ export default function CalculatorPage() {
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -308,7 +308,7 @@ export default function CalculatorPage() {
             marginBottom: 16,
             color: 'var(--card)',
           }}>
-            Estimate settlement value from court data
+            Estimate Settlement Value From Court Data
           </h1>
           <p style={{
             fontFamily: 'var(--font-ui)',
@@ -645,7 +645,7 @@ export default function CalculatorPage() {
                   position: 'absolute', top: '16px', height: '8px',
                   left: `${Math.max(0, (results.p10 / results.p90) * 100 * 0.2)}%`,
                   right: `${Math.max(0, 100 - 100)}%`,
-                  background: 'linear-gradient(90deg, #B0D0F5, #70B5F9, var(--accent-primary), #70B5F9, #B0D0F5)',
+                  background: 'linear-gradient(90deg, #B0D0F5, var(--link), var(--accent-primary), var(--link), #B0D0F5)',
                   borderRadius: 3,
                   animation: 'slideUpFadeIn 0.6s ease-out',
                 }} />

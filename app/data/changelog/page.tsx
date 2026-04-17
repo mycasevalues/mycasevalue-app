@@ -132,7 +132,7 @@ export default async function ChangelogPage() {
           padding: '48px 24px 40px',
           position: 'relative',
           overflow: 'hidden',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
+          borderBottom: '1px solid var(--bdr)',
         }}>
           <div aria-hidden style={{
             position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -333,7 +333,7 @@ export default async function ChangelogPage() {
 
             {/* Subscribe Section */}
             <div style={{
-              background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold-hover, #A87222) 100%)',
+              background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold) 100%)',
               borderRadius: 4,
               padding: '48px 32px',
               color: 'var(--color-surface-0)',

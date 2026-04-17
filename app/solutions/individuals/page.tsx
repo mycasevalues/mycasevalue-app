@@ -63,7 +63,7 @@ export default function IndividualsPage() {
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -148,8 +148,8 @@ export default function IndividualsPage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '2rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             textAlign: 'center',
@@ -194,13 +194,13 @@ export default function IndividualsPage() {
       <section style={{ padding: '24px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '1.75rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             marginBottom: '16px',
           }}>
-            Ready to research your claim?
+            Ready to Research Your Claim?
           </h2>
           <p style={{
             fontFamily: 'var(--font-ui)',
@@ -209,7 +209,7 @@ export default function IndividualsPage() {
             marginBottom: '32px',
             lineHeight: 1.6,
           }}>
-            Start searching free — no account required. Understand your case value and make confident decisions about settlement negotiations.
+            Start searching for free — no account required. Understand your case value and make confident decisions about settlement negotiations.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/search" style={{
@@ -251,13 +251,13 @@ export default function IndividualsPage() {
       <section style={{ padding: '24px 16px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '1.75rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             marginBottom: '24px',
           }}>
-            Share this research
+            Share This Research
           </h2>
           <p style={{
             fontFamily: 'var(--font-ui)',
@@ -312,8 +312,8 @@ export default function IndividualsPage() {
       <section style={{ padding: '24px 16px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '1.75rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             textAlign: 'center',

@@ -103,7 +103,7 @@ export default function DisclaimerPage() {
               lineHeight: 1.5,
             }}
           >
-            Last updated: April 2026. This page is print-friendly. Use your browser's print function (Ctrl+P / Cmd+P).
+            Last updated: April 2026. This page is print-friendly. Use your browser's print function (Ctrl+P or Cmd+P).
           </p>
         </div>
       </div>

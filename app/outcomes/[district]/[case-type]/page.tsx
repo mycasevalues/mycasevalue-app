@@ -254,7 +254,7 @@ export default async function OutcomesPage({
       <div style={{
         background: 'var(--card)',
         padding: '40px 24px 32px',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
         position: 'relative',
         overflow: 'hidden',
       }}>

@@ -48,8 +48,8 @@ const TYPES = [
 
 const SOURCE_COLORS: Record<string, string> = {
   courtlistener: '#1E3A5F',
-  federal_register: '#7C3AED',
-  ecfr: '#0D9488',
+  federal_register: 'var(--link)',
+  ecfr: 'var(--data-positive)',
   edgar: 'var(--wrn-txt)',
   caselaw: 'var(--data-positive)',
   canlii: 'var(--data-negative)',
@@ -169,7 +169,7 @@ export default function LegalSearchPage() {
                 width: '100%',
                 padding: '16px 16px 16px 48px',
                 borderRadius: 4,
-                border: '2px solid var(--bdr, #E2DFD8)',
+                border: '2px solid var(--bdr)',
                 fontSize: 16,
                 color: 'var(--color-text-primary)',
                 outline: 'none',
@@ -211,7 +211,7 @@ export default function LegalSearchPage() {
               color: showFilters ? 'var(--accent-primary)' : 'var(--color-text-muted)',
               fontSize: 14,
               fontWeight: 500,
-              border: showFilters ? '1px solid var(--accent-primary)' : '1px solid var(--bdr, #E2DFD8)',
+              border: showFilters ? '1px solid var(--accent-primary)' : '1px solid var(--bdr)',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
             }}

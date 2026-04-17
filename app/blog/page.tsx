@@ -302,7 +302,7 @@ export default function BlogPage() {
       <div style={{
         background: 'var(--card)',
         padding: '40px 24px 48px',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -339,7 +339,7 @@ export default function BlogPage() {
             lineHeight: 1.1,
             marginBottom: 10,
           }}>
-            Federal court data &amp; litigation insights
+            Federal Court Data & Litigation Insights
           </h1>
           <p style={{
             color: 'rgba(255,255,255,0.6)',

@@ -137,7 +137,7 @@ export default function DataSourcesPage() {
           padding: '56px 24px 64px',
           position: 'relative',
           overflow: 'hidden',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
+          borderBottom: '1px solid var(--bdr)',
         }}>
           <div aria-hidden style={{
             position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -162,12 +162,12 @@ export default function DataSourcesPage() {
               fontSize: 'clamp(28px, 4vw, 36px)',
               fontWeight: 700,
               color: 'var(--card)',
-              fontFamily: 'var(--font-ui)',
+              fontFamily: 'var(--font-legal)',
               letterSpacing: '-0.025em',
               marginBottom: 10,
               lineHeight: 1.1,
             }}>
-              Data Sources &amp; Provenance
+              Data Sources and Provenance
             </h1>
             <p style={{
               fontSize: 15,

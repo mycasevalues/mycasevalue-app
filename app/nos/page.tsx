@@ -239,6 +239,7 @@ export default function NOSIndexPage() {
               {categoryName}
             </h2>
 
+
             <div
               style={{
                 display: 'grid',

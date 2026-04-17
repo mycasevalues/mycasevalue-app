@@ -175,7 +175,7 @@ export default function DeadlineCalculatorPage() {
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -196,8 +196,8 @@ export default function DeadlineCalculatorPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         {/* Input Section */}
         <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', marginBottom: '24px' }} className="grid-responsive">
-            <style>{`.grid-responsive { grid-template-columns: 1fr !important; } @media (min-width: 640px) { .grid-responsive { grid-template-columns: 1fr 1fr !important; } } @media (min-width: 1024px) { .grid-responsive { grid-template-columns: 1fr 1fr 1fr !important; } }`}</style>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', marginBottom: '24px' }}>
+            <style>{`@media (max-width: 639px) { .grid-responsive { grid-template-columns: 1fr !important; } } @media (min-width: 640px) and (max-width: 1023px) { .grid-responsive { grid-template-columns: 1fr 1fr !important; } }`}</style>
             <div>
               <label style={labelStyle}>Case Filed Date</label>
               <input

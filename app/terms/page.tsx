@@ -74,7 +74,7 @@ export default function TermsPage() {
         }
 
         .breadcrumb-home-link {
-          color: var(--bdr, #E2DFD8);
+          color: var(--bdr);
           text-decoration: none;
           transition: color 0.2s;
         }
@@ -157,7 +157,7 @@ export default function TermsPage() {
       <div style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: 'var(--bdr, #E2DFD8)' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: 'var(--bdr)' }}>
             <a href="/" className="breadcrumb-home-link">Home</a>
             <span>/</span>
             <span style={{ color: 'var(--color-surface-0)' }}>Terms of Service</span>
@@ -209,7 +209,7 @@ export default function TermsPage() {
             color: 'rgba(255,255,255,0.6)',
             marginTop: '8px'
           }}>
-            This page is print-friendly. Use your browser's print function (Ctrl+P / Cmd+P) for a formatted PDF.
+            This page is print-friendly. Use your browser's print function (Ctrl+P or Cmd+P) for a formatted PDF.
           </p>
         </div>
       </div>

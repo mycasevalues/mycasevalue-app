@@ -108,7 +108,7 @@ export default function MotionAnalyticsPage() {
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -128,7 +128,7 @@ export default function MotionAnalyticsPage() {
               </svg>
             </div>
             <div>
-              <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
+              <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
                 Win More Motions with Circuit-Specific Data
               </h1>
               <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>

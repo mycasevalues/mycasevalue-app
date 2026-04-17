@@ -88,7 +88,7 @@ function getTopWinRateCaseTypes(): Array<{ nos: string; label: string; wr: numbe
 // Get color for win rate — matches lib/color-scale.ts palette
 function getWinRateColor(wr: number): string {
   if (wr >= 65) return 'var(--data-positive)';
-  if (wr >= 50) return 'var(--chrome-bg, #1B2D45)';
+  if (wr >= 50) return 'var(--chrome-bg)';
   if (wr >= 35) return 'var(--gold, #C4882A)';
   if (wr >= 20) return 'var(--data-negative)';
   return 'var(--data-negative)';
@@ -164,7 +164,7 @@ export default function CasesIndexPage() {
         padding: '32px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid var(--bdr, #E2DFD8)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -180,7 +180,7 @@ export default function CasesIndexPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 11,
             fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase',
-            color: 'var(--chrome-bg, #1B2D45)',
+            color: 'var(--chrome-bg)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Case Intelligence
@@ -216,7 +216,7 @@ export default function CasesIndexPage() {
             </div>
           </div>
           <div>
-            <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--accent-primary-hover, #A87222)', marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--gold)', marginBottom: 4 }}>
               {platformStats.totalNOS}
             </div>
             <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -304,8 +304,8 @@ export default function CasesIndexPage() {
             flex-direction: column;
           }
           .cat-card:hover {
-            border-color: var(--chrome-bg, #1B2D45);
-            box-shadow: 0 0 0 1px var(--chrome-bg, #1B2D45);
+            border-color: var(--chrome-bg);
+            box-shadow: 0 0 0 1px var(--chrome-bg);
           }
           .cat-card-arrow {
             color: var(--accent-primary, #C4882A);
@@ -316,11 +316,11 @@ export default function CasesIndexPage() {
             transform: translateX(4px);
           }
           .clear-search-btn:hover {
-            background: var(--surface-warm, #FAF3E6);
+            background: var(--surf);
             border-color: var(--color-border-medium);
           }
           .cta-link:hover {
-            background: var(--accent-primary-hover, #A87222);
+            background: var(--gold);
             box-shadow: none;
             transform: translateY(-2px);
           }
@@ -437,7 +437,7 @@ export default function CasesIndexPage() {
                       {catStats.totalCases > 0 && (
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 16px', marginBottom: 'auto', padding: '12px 0' }}>
                           <div>
-                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--accent-primary-hover, #A87222)' }}>{catStats.totalCases.toLocaleString()}</div>
+                            <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--gold)' }}>{catStats.totalCases.toLocaleString()}</div>
                             <div style={{ fontSize: 11, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Total Cases</div>
                           </div>
                           <div>
@@ -508,7 +508,7 @@ export default function CasesIndexPage() {
                     </div>
                     <TrendSparkline nosCode={caseType.nos} width={80} height={32} />
                     <div style={{ textAlign: 'right' }}>
-                      <div className="font-mono" style={{ fontSize: 16, fontWeight: 600, color: 'var(--accent-primary-hover, #A87222)' }}>
+                      <div className="font-mono" style={{ fontSize: 16, fontWeight: 600, color: 'var(--gold)' }}>
                         {caseType.total.toLocaleString()}
                       </div>
                       <div style={{ fontSize: 11, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Cases</div>

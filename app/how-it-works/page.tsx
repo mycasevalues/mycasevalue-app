@@ -222,7 +222,7 @@ export default function HowItWorksPage() {
             What's in Your Report?
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: 'var(--color-text-secondary)' }}>
-            Every stat is powered by real outcomes from 5.1M+ federal cases. See what actually happens in courts like yours — not estimates or guesses.
+            Every statistic is powered by real outcomes from 5.1M+ federal cases. See what actually happens in courts like yours—not estimates or guesses.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -506,7 +506,7 @@ export default function HowItWorksPage() {
             Start Exploring
           </h2>
           <p className="mb-8 max-w-2xl mx-auto text-base" style={{ color: 'var(--color-text-secondary)' }}>
-            Get started instantly — no account, no credit card, free during beta
+            Get started instantly—no account, no credit card, free during beta.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, maxWidth: 600, margin: '0 auto' }}>
             {[
@@ -624,7 +624,7 @@ export default function HowItWorksPage() {
             See what happens in courts like yours
           </h2>
           <p className="mb-8 max-w-2xl mx-auto text-lg" style={{ color: 'var(--color-text-secondary)' }}>
-            Free research backed by 5.1M+ real cases. No account. No credit card. No restrictions during beta.
+            Free research backed by 5.1M+ real cases. No account, no credit card, no restrictions during beta.
           </p>
           <a href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold transition-all hover:shadow-lg"

@@ -74,7 +74,7 @@ export default async function JudgesPage() {
       <JsonLd data={jsonLd} />
       {/* Header */}
       <div style={{
-        borderBottom: '1px solid var(--bdr, #E2DFD8)',
+        borderBottom: '1px solid var(--bdr)',
         background: 'var(--card)',
         position: 'relative',
         overflow: 'hidden',
@@ -107,7 +107,7 @@ export default async function JudgesPage() {
               fontSize: 28, fontWeight: 700, marginBottom: 16,
               color: 'var(--color-text-primary)', letterSpacing: '-0.01em', fontFamily: 'var(--font-legal)', lineHeight: 1.2,
             }}>
-              Judicial Analytics
+              Judge Intelligence
             </h1>
 
             <p style={{
@@ -126,7 +126,7 @@ export default async function JudgesPage() {
         <JudgeDirectoryClient initialJudges={initialJudges} initialTotal={initialTotal} />
 
         {/* Advanced Metrics with Radar Preview */}
-        <section style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--bdr, #E2DFD8)', background: 'var(--card)', marginBottom: 48, marginTop: 48, position: 'relative' }}>
+        <section style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--bdr)', background: 'var(--card)', marginBottom: 48, marginTop: 48, position: 'relative' }}>
           <div style={{
             fontSize: 10,
             fontFamily: 'var(--font-mono)',
@@ -149,7 +149,7 @@ export default async function JudgesPage() {
         </section>
 
         {/* Disclaimer */}
-        <div style={{ padding: '12px 16px', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: 3, background: 'var(--tbl-hdr, #EDEAE4)' }}>
+        <div style={{ padding: '12px 16px', border: '1px solid var(--bdr)', borderRadius: 3, background: 'var(--tbl-hdr, #EDEAE4)' }}>
           <h3 style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text3, #78766C)', fontFamily: 'var(--font-mono)', marginBottom: 8 }}>
             Data Methodology
           </h3>

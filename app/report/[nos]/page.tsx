@@ -295,7 +295,7 @@ export default async function ReportPage({
           section {
             page-break-inside: avoid;
             margin-bottom: 2em;
-            border-color: var(--bdr, #E2DFD8) !important;
+            border-color: var(--bdr) !important;
           }
 
           /* Prevent heading orphans */
@@ -358,7 +358,7 @@ export default async function ReportPage({
       {/* Dark Institutional Header Banner */}
       <div style={{
         background: 'var(--color-surface-0)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -445,7 +445,7 @@ export default async function ReportPage({
               .win-rate-grid { grid-template-columns: repeat(3, 1fr); }
               @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 16px; } }
               .report-cta-btn { display: inline-block; padding: 8px 24px; background: var(--gold, #C4882A); color: #ffffff; border: 1px solid var(--gold, #C4882A); border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 13px; letter-spacing: -0.005em; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
-              .report-cta-btn:hover { background: var(--gold-hover, #A87222); border-color: var(--gold-hover, #A87222); }
+              .report-cta-btn:hover { background: var(--gold); border-color: var(--gold); }
               .report-red-link { font-size: 14px; font-weight: 500; color: var(--accent-primary); text-decoration: none; font-family: var(--font-ui); transition: color 0.2s ease; }
               .report-red-link:hover { color: var(--gold); }
               .report-related-case { text-decoration: none; color: var(--accent-primary); transition: all 0.2s ease; display: block; }
@@ -748,7 +748,7 @@ export default async function ReportPage({
                       return (
                         <div key={stateId} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid #F0F3F5' }}>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', width: '36px', fontFamily: 'var(--font-mono)' }}>{stateId}</span>
-                          <div style={{ flex: 1, height: '8px', background: 'rgba(255,255,255,0.06)', borderRadius: '4px', overflow: 'hidden' }}>
+                          <div style={{ flex: 1, height: '8px', background: 'var(--bdr)', borderRadius: '4px', overflow: 'hidden' }}>
                             <div style={{ height: '100%', width: `${Math.min(100, stateWr)}%`, background: stateWr >= natAvg ? 'var(--data-positive)' : 'var(--accent-primary)', borderRadius: '4px', transition: 'width 0.5s ease' }} />
                           </div>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>{Math.round(stateWr)}%</span>
@@ -791,7 +791,7 @@ export default async function ReportPage({
                       return (
                         <div key={circuit} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid #F0F3F5' }}>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', width: '80px', fontFamily: 'var(--font-ui)' }}>{circuit}</span>
-                          <div style={{ flex: 1, height: '8px', background: 'rgba(255,255,255,0.06)', borderRadius: '4px', overflow: 'hidden' }}>
+                          <div style={{ flex: 1, height: '8px', background: 'var(--bdr)', borderRadius: '4px', overflow: 'hidden' }}>
                             <div style={{ height: '100%', width: `${Math.min(100, circuitWr)}%`, background: circuitWr >= natAvg ? 'var(--data-positive)' : 'var(--accent-primary)', borderRadius: '4px', transition: 'width 0.5s ease' }} />
                           </div>
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>{Math.round(circuitWr)}%</span>
@@ -834,7 +834,7 @@ export default async function ReportPage({
                         <span style={{ fontSize: '13px', color: 'var(--color-text-primary)', fontWeight: 500, width: '180px', fontFamily: 'var(--font-ui)', flexShrink: 0 }}>
                           {end.label || end.l || `Outcome ${i + 1}`}
                         </span>
-                        <div style={{ flex: 1, height: '8px', background: 'rgba(255,255,255,0.06)', borderRadius: '4px', overflow: 'hidden' }}>
+                        <div style={{ flex: 1, height: '8px', background: 'var(--bdr)', borderRadius: '4px', overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(pct, 100)}%`,

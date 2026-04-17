@@ -72,7 +72,7 @@ function getStatusColor(
       return {
         bg: '#FDF4EC',
         text: '#B24020',
-        indicator: '#C37D16',
+        indicator: 'var(--wrn-txt)',
       };
     case 'down':
       return {

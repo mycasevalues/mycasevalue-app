@@ -100,14 +100,14 @@ function getTrendData(): TrendEntry[] {
 
 // Category labels and colors
 const CATEGORY_META: Record<string, { label: string; color: string }> = {
-  money: { label: 'Financial', color: '#C37D16' },
+  money: { label: 'Financial', color: 'var(--wrn-txt)' },
   work: { label: 'Employment', color: 'var(--color-text-primary)' },
   injury: { label: 'Injury', color: 'var(--data-negative)' },
-  consumer: { label: 'Consumer', color: '#70B5F9' },
+  consumer: { label: 'Consumer', color: 'var(--link)' },
   rights: { label: 'Civil Rights', color: 'var(--accent-primary)' },
-  housing: { label: 'Housing', color: '#70B5F9' },
+  housing: { label: 'Housing', color: 'var(--link)' },
   medical: { label: 'Medical', color: 'var(--data-negative)' },
-  family: { label: 'Family', color: '#C37D16' },
+  family: { label: 'Family', color: 'var(--wrn-txt)' },
   gov: { label: 'Government', color: 'var(--color-text-secondary)' },
   ip: { label: 'Intellectual Property', color: 'var(--data-positive)' },
   other: { label: 'Other', color: 'var(--color-text-secondary)' },
@@ -155,7 +155,7 @@ export default function TrendsPage() {
         .lex-card { background: var(--color-surface-0); border: 1px solid var(--border-default); border-radius: 12px; }
         .lex-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
         .lex-btn-primary { background: var(--gold, #C4882A); color: #ffffff; border: 1px solid var(--gold, #C4882A); border-radius: 6px; font-size: 13px; font-weight: 600; letter-spacing: -0.005em; padding: 8px 24px; cursor: pointer; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
-        .lex-btn-primary:hover { background: var(--gold-hover, #A87222); border-color: var(--gold-hover, #A87222); }
+        .lex-btn-primary:hover { background: var(--gold); border-color: var(--gold); }
         .lex-badge { background: rgba(10, 102, 194, 0.1); color: var(--accent-primary); border-radius: 12px; }
         h1 { font-family: var(--font-ui); }
         h2 { font-family: var(--font-ui); }
@@ -176,7 +176,7 @@ export default function TrendsPage() {
       {/* Header */}
       <div
         style={{
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
+          borderBottom: '1px solid var(--bdr)',
           background: 'var(--card)',
           position: 'relative',
           overflow: 'hidden',
@@ -204,7 +204,7 @@ export default function TrendsPage() {
           <h1
             className="font-ui"
             style={{
-              color: 'var(--card)',
+              color: 'rgba(255,255,255,0.95)',
               letterSpacing: '-0.025em',
               fontSize: 'clamp(26px, 4vw, 32px)',
               fontWeight: 700,
@@ -374,7 +374,7 @@ export default function TrendsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {circuitData.map((circuit) => {
                   const isAboveAvg = circuit.avgWinRate > nationalAvg;
-                  const indicatorColor = circuit.avgWinRate > 55 ? 'var(--data-positive)' : circuit.avgWinRate < 45 ? 'var(--accent-primary)' : '#70B5F9';
+                  const indicatorColor = circuit.avgWinRate > 55 ? 'var(--data-positive)' : circuit.avgWinRate < 45 ? 'var(--accent-primary)' : 'var(--link)';
                   return (
                     <div
                       key={circuit.circuit}

@@ -24,7 +24,7 @@ const FEATURES = [
   {
     iconPath: 'M12 8c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 2c-2.209 0-4 1.791-4 4v2h8v-2c0-2.209-1.791-4-4-4z',
     title: 'Free Access Programs',
-    desc: 'Qualifying legal aid organizations receive complimentary full access to {SITE_NAME} to serve low-income clients without restrictions.',
+    desc: 'Qualifying legal aid organizations receive complimentary full access to MyCaseValue to serve low-income clients without restrictions.',
   },
   {
     iconPath: 'M9 12l2 2 4-4m-8 4a9 9 0 1 1 18 0 9 9 0 0 1-18 0z',
@@ -63,7 +63,7 @@ export default function LegalAidPage() {
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -93,7 +93,7 @@ export default function LegalAidPage() {
             marginBottom: 16,
             color: 'var(--card)',
           }}>
-            Empowering legal aid &amp; pro-bono
+            Empowering Legal Aid and Pro Bono
           </h1>
           <p style={{
             fontFamily: 'var(--font-ui)',
@@ -148,8 +148,8 @@ export default function LegalAidPage() {
       <section style={{ padding: '40px 24px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '2rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             textAlign: 'center',
@@ -194,13 +194,13 @@ export default function LegalAidPage() {
       <section style={{ padding: '24px 16px', background: 'var(--color-surface-0)', textAlign: 'center' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '1.75rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             marginBottom: '16px',
           }}>
-            Better outcomes for underrepresented clients
+            Better Outcomes for Underrepresented Clients
           </h2>
           <p style={{
             fontFamily: 'var(--font-ui)',
@@ -251,8 +251,8 @@ export default function LegalAidPage() {
       <section style={{ padding: '24px 16px', background: 'var(--color-surface-1)' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: 'var(--font-ui)',
-            fontSize: '1.75rem',
+            fontFamily: 'var(--font-legal)',
+            fontSize: '28px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             textAlign: 'center',

@@ -432,7 +432,7 @@ async function CategoryPage({
         color: 'white',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -514,7 +514,7 @@ async function CategoryPage({
                     if (rd?.total) totalCases += rd.total;
                   }
                   return totalCases > 0 ? (
-                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? 'var(--data-positive)' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
+                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? 'var(--data-positive)' : totalCases >= 1000 ? 'var(--wrn-txt)' : totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
                   ) : null;
                 })()}
               </div>
@@ -635,7 +635,7 @@ async function CategoryPage({
                           if (rd?.total) totalCases += rd.total;
                         }
                         return totalCases > 0 ? (
-                          <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? 'var(--data-positive)' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
+                          <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? 'var(--data-positive)' : totalCases >= 1000 ? 'var(--wrn-txt)' : totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
                         ) : null;
                       })()}
                     </div>
@@ -839,7 +839,7 @@ async function CategoryPage({
                         <div style={{ minWidth: 50 }}>
                           <div style={{ fontSize: '16px', fontWeight: 600, color: isNaN(rdWr) ? 'var(--text4, #A8A6A0)' : rdWr >= 50 ? 'var(--data-positive)' : 'var(--accent-primary)', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                             {isNaN(rdWr) ? '—' : `${rdWr}%`}
-                            <span title={`Based on ${(rdTotal ?? 0).toLocaleString()} cases — ${(rdTotal ?? 0) >= 10000 ? 'High' : (rdTotal ?? 0) >= 1000 ? 'Medium' : (rdTotal ?? 0) >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: (rdTotal ?? 0) >= 10000 ? 'var(--data-positive)' : (rdTotal ?? 0) >= 1000 ? '#C37D16' : (rdTotal ?? 0) >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
+                            <span title={`Based on ${(rdTotal ?? 0).toLocaleString()} cases — ${(rdTotal ?? 0) >= 10000 ? 'High' : (rdTotal ?? 0) >= 1000 ? 'Medium' : (rdTotal ?? 0) >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: (rdTotal ?? 0) >= 10000 ? 'var(--data-positive)' : (rdTotal ?? 0) >= 1000 ? 'var(--wrn-txt)' : (rdTotal ?? 0) >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
                           </div>
                           <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Win Rate</div>
                         </div>
@@ -865,8 +865,8 @@ async function CategoryPage({
 
                   {/* Win rate bar */}
                   {rd && rdWr != null && (
-                    <div style={{ height: 4, background: 'rgba(255,255,255,0.06)', borderRadius: 4, marginBottom: 12, overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: `${Math.min(Math.max(rdWr, 0), 100)}%`, background: isNaN(rdWr) ? 'var(--bdr, #E2DFD8)' : rdWr >= 50 ? 'var(--data-positive)' : 'var(--accent-primary)', borderRadius: 4 }} />
+                    <div style={{ height: 4, background: 'var(--bdr)', borderRadius: 4, marginBottom: 12, overflow: 'hidden' }}>
+                      <div style={{ height: '100%', width: `${Math.min(Math.max(rdWr, 0), 100)}%`, background: isNaN(rdWr) ? 'var(--bdr)' : rdWr >= 50 ? 'var(--data-positive)' : 'var(--accent-primary)', borderRadius: 4 }} />
                     </div>
                   )}
 
@@ -1064,7 +1064,7 @@ async function CategoryPage({
                         <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>{circuit}</span>
                         <span style={{ fontSize: 15, fontWeight: 600, color, fontFamily: 'var(--font-mono)' }}>{wr}%</span>
                       </div>
-                      <div style={{ height: 6, background: 'rgba(255,255,255,0.06)', borderRadius: 4, overflow: 'hidden', marginBottom: 6 }}>
+                      <div style={{ height: 6, background: 'var(--bdr)', borderRadius: 4, overflow: 'hidden', marginBottom: 6 }}>
                         <div style={{ width: `${Math.min(wr, 100)}%`, height: '100%', background: color, borderRadius: 4 }} />
                       </div>
                       <div style={{ fontSize: 11, color: diff >= 0 ? 'var(--data-positive)' : 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>

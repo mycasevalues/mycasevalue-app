@@ -163,7 +163,7 @@ export default function OddsPage() {
           font-family: var(--font-ui);
           transition: background-color 150ms ease, border-color 150ms ease;
         }
-        .odds-btn:hover:not(:disabled) { background: var(--gold-hover, #A87222); border-color: var(--gold-hover, #A87222); }
+        .odds-btn:hover:not(:disabled) { background: var(--gold); border-color: var(--gold); }
         .odds-btn:disabled { background: var(--border-default); color: var(--color-text-secondary); cursor: not-allowed; }
         .odds-card {
           background: var(--color-surface-0);
@@ -206,7 +206,7 @@ export default function OddsPage() {
           height: 100%;
         }
         .explore-card:hover {
-          background: 'rgba(255,255,255,0.06)';
+          background: 'var(--bdr)';
           border-color: 'var(--gold)';
         }
         @media (max-width: 768px) {
@@ -223,7 +223,7 @@ export default function OddsPage() {
         padding: '32px clamp(16px, 3vw, 24px) 32px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div aria-hidden style={{
           position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -257,7 +257,7 @@ export default function OddsPage() {
             lineHeight: 1.1,
             letterSpacing: '-0.025em',
           }}>
-            Know your odds before filing
+            Know Your Odds Before Filing
           </h1>
           <p style={{
             color: 'rgba(255,255,255,0.6)',
@@ -497,7 +497,7 @@ export default function OddsPage() {
                             {item.value.toFixed(1)}%
                           </span>
                         </div>
-                        <div style={{ height: 8, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+                        <div style={{ height: 8, background: 'var(--bdr)', borderRadius: 2, overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(item.value, 100)}%`,
@@ -826,7 +826,7 @@ export default function OddsPage() {
                             {results.winRate.toFixed(1)}%
                           </span>
                         </div>
-                        <div style={{ height: 8, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+                        <div style={{ height: 8, background: 'var(--bdr)', borderRadius: 2, overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(results.winRate, 100)}%`,
@@ -859,7 +859,7 @@ export default function OddsPage() {
                             {nationalAverageWinRate.toFixed(1)}%
                           </span>
                         </div>
-                        <div style={{ height: 8, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+                        <div style={{ height: 8, background: 'var(--bdr)', borderRadius: 2, overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(nationalAverageWinRate, 100)}%`,
@@ -1111,7 +1111,7 @@ export default function OddsPage() {
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)';
+                        (e.currentTarget as HTMLElement).style.background = 'var(--bdr)';
                         (e.currentTarget as HTMLElement).style.borderColor = 'var(--gold)';
                       }}
                       onMouseLeave={(e) => {
@@ -1135,7 +1135,7 @@ export default function OddsPage() {
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)';
+                        (e.currentTarget as HTMLElement).style.background = 'var(--bdr)';
                         (e.currentTarget as HTMLElement).style.borderColor = 'var(--gold)';
                       }}
                       onMouseLeave={(e) => {
@@ -1159,7 +1159,7 @@ export default function OddsPage() {
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)';
+                        (e.currentTarget as HTMLElement).style.background = 'var(--bdr)';
                         (e.currentTarget as HTMLElement).style.borderColor = 'var(--gold)';
                       }}
                       onMouseLeave={(e) => {
@@ -1183,7 +1183,7 @@ export default function OddsPage() {
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)';
+                        (e.currentTarget as HTMLElement).style.background = 'var(--bdr)';
                         (e.currentTarget as HTMLElement).style.borderColor = 'var(--gold)';
                       }}
                       onMouseLeave={(e) => {

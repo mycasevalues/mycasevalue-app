@@ -204,7 +204,7 @@ function CaseSearchContent() {
             </div>
             <button
               type="submit"
-              className="h-11 px-5 rounded bg-[var(--gold, #C4882A)] text-white text-sm font-semibold hover:bg-[var(--gold-hover, #A87222)] transition-colors"
+              className="h-11 px-5 rounded bg-[var(--gold, #C4882A)] text-white text-sm font-semibold hover:bg-[var(--gold)] transition-colors"
             >
               Search
             </button>

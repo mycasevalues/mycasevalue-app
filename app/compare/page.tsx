@@ -159,7 +159,7 @@ export default function ComparePage() {
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid var(--bdr)',
         marginBottom: 0,
       }}>
         <div aria-hidden style={{
@@ -190,7 +190,7 @@ export default function ComparePage() {
             margin: '0 0 16px',
             color: 'var(--color-surface-0)',
           }}>
-            Compare case types side-by-side
+            Compare Case Types Side by Side
           </h1>
           <p style={{
             fontSize: 'clamp(14px, 2vw, 16px)',
@@ -424,7 +424,7 @@ export default function ComparePage() {
                               <div>{formatted}</div>
                               {/* Visual comparison bar for percentage metrics */}
                               {v !== null && (row.key === 'winRate' || row.key === 'settlementRate' || row.key === 'dismissRate') && (
-                                <div style={{ marginTop: 6, height: 4, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden' }}>
+                                <div style={{ marginTop: 6, height: 4, background: 'var(--bdr)', borderRadius: 2, overflow: 'hidden' }}>
                                   <div style={{
                                     height: '100%',
                                     width: `${Math.min(v, 100)}%`,
@@ -481,7 +481,7 @@ export default function ComparePage() {
                               position: 'absolute', top: 8, height: 8,
                               left: `${Math.min(90, (s.rngLo / s.rngHi) * 100)}%`,
                               right: '0%',
-                              background: 'linear-gradient(90deg, #70B5F9, var(--accent-primary))',
+                              background: 'linear-gradient(90deg, var(--link), var(--accent-primary))',
                               borderRadius: 4,
                             }} />
                             <div style={{ position: 'absolute', top: 4, width: 2, height: 16, background: 'var(--gold)', left: `${(s.medianRecovery / s.rngHi) * 100}%`, transform: 'translateX(-50%)' }} />
@@ -513,7 +513,7 @@ export default function ComparePage() {
                         <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--color-text-secondary)' }}>
                           <span style={{
                             display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
-                            backgroundColor: s.totalCases >= 10000 ? 'var(--data-positive)' : s.totalCases >= 1000 ? '#C37D16' : s.totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)',
+                            backgroundColor: s.totalCases >= 10000 ? 'var(--data-positive)' : s.totalCases >= 1000 ? 'var(--wrn-txt)' : s.totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)',
                           }} />
                           n={s.totalCases.toLocaleString()} cases
                         </div>
@@ -608,7 +608,7 @@ export default function ComparePage() {
                         <div style={{
                           flex: 1,
                           height: 28,
-                          background: 'rgba(255,255,255,0.06)',
+                          background: 'var(--bdr)',
                           borderRadius: 2,
                           overflow: 'hidden',
                           position: 'relative',
@@ -711,7 +711,7 @@ export default function ComparePage() {
                       </div>
                       <div style={{
                         width: `${s.settlementRate}%`,
-                        background: '#B45309',
+                        background: 'var(--wrn-txt)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -768,7 +768,7 @@ export default function ComparePage() {
                         <div style={{
                           width: 12,
                           height: 12,
-                          background: '#B45309',
+                          background: 'var(--wrn-txt)',
                           borderRadius: 2,
                           margin: '0 auto 4px',
                         }} />

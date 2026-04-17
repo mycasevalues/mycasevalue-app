@@ -4,7 +4,7 @@
  */
 
 const pulseStyle: React.CSSProperties = {
-  background: 'linear-gradient(90deg, var(--bdr, #E2DFD8) 25%, #F0F0F0 50%, var(--bdr, #E2DFD8) 75%)',
+  background: 'linear-gradient(90deg, var(--bdr) 25%, #F0F0F0 50%, var(--bdr) 75%)',
   backgroundSize: '200% 100%',
   animation: 'skeleton-pulse 1.5s ease-in-out infinite',
   borderRadius: '4px',
@@ -27,7 +27,7 @@ export default function Loading() {
       {/* Breadcrumb skeleton */}
       <nav style={{
         background: 'var(--color-surface-0)',
-        borderBottom: '1px solid var(--bdr, #E2DFD8)',
+        borderBottom: '1px solid var(--bdr)',
         padding: '12px 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)', display: 'flex', gap: 8, alignItems: 'center' }}>
@@ -42,7 +42,7 @@ export default function Loading() {
       {/* Hero skeleton */}
       <header style={{
         background: 'var(--accent-primary)',
-        borderBottom: '1px solid var(--bdr, #E2DFD8)',
+        borderBottom: '1px solid var(--bdr)',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
@@ -73,12 +73,12 @@ export default function Loading() {
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <div key={i} style={{
               background: 'var(--color-surface-0)',
-              border: '1px solid var(--bdr, #E2DFD8)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
             }}>
               <Sk width="200px" height="15px" style={{ marginBottom: 16 }} />
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid var(--bdr, #E2DFD8)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid var(--bdr)' }}>
                 <div>
                   <Sk width="60px" height="10px" style={{ marginBottom: 4 }} />
                   <Sk width="70px" height="22px" />
@@ -96,7 +96,7 @@ export default function Loading() {
         {/* Local Rules section skeleton */}
         <div style={{ marginTop: 48 }}>
           <Sk width="160px" height="22px" style={{ marginBottom: 24 }} />
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: '4px', padding: '24px' }}>
+          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr)', borderRadius: '4px', padding: '24px' }}>
             {[1, 2, 3, 4].map((i) => (
               <div key={i} style={{ marginBottom: i < 4 ? 16 : 0 }}>
                 <Sk width="240px" height="14px" style={{ marginBottom: 6 }} />
@@ -111,7 +111,7 @@ export default function Loading() {
           <Sk width="200px" height="22px" style={{ marginBottom: 24 }} />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
             {[1, 2, 3].map((i) => (
-              <div key={i} style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr, #E2DFD8)', borderRadius: '4px', padding: '24px' }}>
+              <div key={i} style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr)', borderRadius: '4px', padding: '24px' }}>
                 <Sk width="180px" height="15px" style={{ marginBottom: 12 }} />
                 <Sk width="100%" height="12px" style={{ marginBottom: 6 }} />
                 <Sk width="80%" height="12px" />

@@ -70,7 +70,7 @@ export default function ContactPage() {
           padding: '56px 24px',
           position: 'relative',
           overflow: 'hidden',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
+          borderBottom: '1px solid var(--bdr)',
         }}>
           <div aria-hidden style={{
             position: 'absolute', inset: 0, opacity: 0.03, pointerEvents: 'none',
@@ -113,7 +113,7 @@ export default function ContactPage() {
                 maxWidth: 560,
               }}
             >
-              Questions about data methodology, enterprise API access, partnerships, or general support — our team typically responds within one business day.
+              Questions about data methodology, enterprise API access, partnerships, or general support—our team typically responds within one business day.
             </p>
           </div>
         </div>
@@ -423,7 +423,7 @@ export default function ContactPage() {
               lineHeight: 1.6,
             }}
           >
-            We typically respond within 24-48 hours. For urgent account issues, include your account email in your message.
+            We typically respond within 24-48 hours. For urgent account issues, include your account email address in your message.
           </p>
         </div>
 
