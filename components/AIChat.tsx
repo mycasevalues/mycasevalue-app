@@ -115,7 +115,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
         )}
 
         {error && (
-          <div style={{ padding: '8px 14px', borderRadius: '4px', backgroundColor: '#FEF2F2', color: 'var(--color-error)', fontSize: 13 }}>
+          <div style={{ padding: '8px 14px', borderRadius: '4px', backgroundColor: 'var(--data-negative-bg, #FEF2F2)', color: 'var(--color-error)', fontSize: 13 }}>
             Unable to get AI response. Please try again.
           </div>
         )}

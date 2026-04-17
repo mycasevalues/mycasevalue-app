@@ -270,10 +270,10 @@ export default function LegalSearchPage() {
         <div style={{
           padding: '8px 16px',
           background: 'rgba(234,179,8,0.08)',
-          border: '1px solid #FDE68A',
+          border: '1px solid var(--wrn-bg, #FCD34D)',
           borderRadius: 4,
           fontSize: 13,
-          color: '#fbbf24',
+          color: 'var(--wrn-txt, #7A5800)',
           marginBottom: 16,
           display: 'flex',
           alignItems: 'center',

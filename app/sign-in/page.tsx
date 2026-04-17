@@ -304,7 +304,7 @@ function SignInForm() {
               <polygon points="0,0 -40,69.3 -80,0 -40,-69.3" fill="white" opacity="0.24" />
             </g>
           </svg>
-          <span style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 700, color: '#111' }}>
+          <span style={{ fontFamily: 'var(--font-ui)', fontSize: '18px', fontWeight: 700, color: 'var(--color-text-primary)' }}>
             MyCase<span style={{ color: 'var(--accent-primary)' }}>Value</span>
           </span>
         </div>

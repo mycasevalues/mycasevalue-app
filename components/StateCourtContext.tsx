@@ -110,8 +110,8 @@ export default function StateCourtContext({
         transition={{ duration: 0.4 }}
         className="rounded border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
       >
-        <div className="text-sm text-gray-400">
-          <p className="font-semibold text-gray-100 mb-2">State Court Comparison</p>
+        <div className="text-sm text-[var(--color-text-muted)]">
+          <p className="font-semibold text-[var(--color-text-muted)] mb-2">State Court Comparison</p>
           <p>
             State court analysis not yet available for NOS {nosCode}. Check back soon for comparative
             insights.
@@ -129,8 +129,8 @@ export default function StateCourtContext({
       className="rounded border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
     >
       <div className="mb-6">
-        <h2 className="text-lg font-semibold text-gray-100">Federal vs State Court Outcomes</h2>
-        <p className="text-sm text-gray-600 mt-2">
+        <h2 className="text-lg font-semibold text-[var(--color-text-muted)]">Federal vs State Court Outcomes</h2>
+        <p className="text-sm text-[var(--color-text-secondary)] mt-2">
           State court data sourced from CourtListener state court opinions
         </p>
       </div>
@@ -138,7 +138,7 @@ export default function StateCourtContext({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Federal Data Column */}
         <div className="space-y-4">
-          <h3 className="text-sm font-semibold text-gray-100 flex items-center">
+          <h3 className="text-sm font-semibold text-[var(--color-text-muted)] flex items-center">
             <span className="inline-block w-3 h-3 rounded-full bg-[var(--accent-primary)] mr-2"></span>
             Federal Court
           </h3>
@@ -146,8 +146,8 @@ export default function StateCourtContext({
           <div className="space-y-3">
             <div>
               <div className="flex justify-between items-center mb-1">
-                <span className="text-sm text-gray-300">Win Rate</span>
-                <span className="text-sm font-mono font-semibold text-gray-100">{federalWinRate.toFixed(1)}%</span>
+                <span className="text-sm text-[var(--color-text-muted)]">Win Rate</span>
+                <span className="text-sm font-mono font-semibold text-[var(--color-text-muted)]">{federalWinRate.toFixed(1)}%</span>
               </div>
               <div className="w-full bg-[rgba(255,255,255,0.08)] rounded-full h-2">
                 <div
@@ -159,8 +159,8 @@ export default function StateCourtContext({
 
             <div>
               <div className="flex justify-between items-center mb-1">
-                <span className="text-sm text-gray-300">Settlement Rate</span>
-                <span className="text-sm font-mono font-semibold text-gray-100">{federalSettlement.toFixed(1)}%</span>
+                <span className="text-sm text-[var(--color-text-muted)]">Settlement Rate</span>
+                <span className="text-sm font-mono font-semibold text-[var(--color-text-muted)]">{federalSettlement.toFixed(1)}%</span>
               </div>
               <div className="w-full bg-[rgba(255,255,255,0.08)] rounded-full h-2">
                 <div
@@ -172,12 +172,12 @@ export default function StateCourtContext({
 
             <div className="pt-2 border-t border-[var(--bdr, #E2DFD8)]">
               <div className="flex justify-between text-sm mb-2">
-                <span className="text-gray-300">Median Award</span>
-                <span className="font-mono font-semibold text-gray-100">{federalMedianAward}</span>
+                <span className="text-[var(--color-text-muted)]">Median Award</span>
+                <span className="font-mono font-semibold text-[var(--color-text-muted)]">{federalMedianAward}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-300">Median Duration</span>
-                <span className="font-mono font-semibold text-gray-100">{federalMedianDuration} months</span>
+                <span className="text-[var(--color-text-muted)]">Median Duration</span>
+                <span className="font-mono font-semibold text-[var(--color-text-muted)]">{federalMedianDuration} months</span>
               </div>
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function StateCourtContext({
 
         {/* State Court Data Column */}
         <div className="space-y-4">
-          <h3 className="text-sm font-semibold text-gray-100 flex items-center">
+          <h3 className="text-sm font-semibold text-[var(--color-text-muted)] flex items-center">
             <span className="inline-block w-3 h-3 rounded-full bg-[#7c3aed] mr-2"></span>
             State Court
           </h3>
@@ -193,8 +193,8 @@ export default function StateCourtContext({
           <div className="space-y-3">
             <div>
               <div className="flex justify-between items-center mb-1">
-                <span className="text-sm text-gray-300">Win Rate</span>
-                <span className="text-sm font-mono font-semibold text-gray-100">{stateData.winRate.toFixed(1)}%</span>
+                <span className="text-sm text-[var(--color-text-muted)]">Win Rate</span>
+                <span className="text-sm font-mono font-semibold text-[var(--color-text-muted)]">{stateData.winRate.toFixed(1)}%</span>
               </div>
               <div className="w-full bg-[rgba(255,255,255,0.08)] rounded-full h-2">
                 <div
@@ -206,8 +206,8 @@ export default function StateCourtContext({
 
             <div>
               <div className="flex justify-between items-center mb-1">
-                <span className="text-sm text-gray-300">Settlement Rate</span>
-                <span className="text-sm font-mono font-semibold text-gray-100">
+                <span className="text-sm text-[var(--color-text-muted)]">Settlement Rate</span>
+                <span className="text-sm font-mono font-semibold text-[var(--color-text-muted)]">
                   {stateData.settlementRate.toFixed(1)}%
                 </span>
               </div>
@@ -221,12 +221,12 @@ export default function StateCourtContext({
 
             <div className="pt-2 border-t border-[var(--bdr, #E2DFD8)]">
               <div className="flex justify-between text-sm mb-2">
-                <span className="text-gray-300">Median Award</span>
-                <span className="font-mono font-semibold text-gray-100">{stateData.medianAward}</span>
+                <span className="text-[var(--color-text-muted)]">Median Award</span>
+                <span className="font-mono font-semibold text-[var(--color-text-muted)]">{stateData.medianAward}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-300">Median Duration</span>
-                <span className="font-mono font-semibold text-gray-100">{stateData.medianDuration} months</span>
+                <span className="text-[var(--color-text-muted)]">Median Duration</span>
+                <span className="font-mono font-semibold text-[var(--color-text-muted)]">{stateData.medianDuration} months</span>
               </div>
             </div>
           </div>
@@ -235,9 +235,9 @@ export default function StateCourtContext({
 
       {/* Key Difference Callout */}
       <div className="mt-6 pt-6 border-t border-[var(--bdr, #E2DFD8)]">
-        <div className="bg-blue-50 rounded p-4">
-          <p className="text-sm text-gray-300">
-            <span className="font-semibold text-gray-100">Key Difference:</span>{' '}
+        <div className="bg-[var(--color-surface-1)] rounded p-4">
+          <p className="text-sm text-[var(--color-text-muted)]">
+            <span className="font-semibold text-[var(--color-text-muted)]">Key Difference:</span>{' '}
             {federalWinRate > stateData.winRate
               ? `Federal courts show ${(federalWinRate - stateData.winRate).toFixed(1)}% higher win rate on average.`
               : `State courts show ${(stateData.winRate - federalWinRate).toFixed(1)}% higher win rate on average.`}

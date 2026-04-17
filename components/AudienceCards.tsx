@@ -74,10 +74,10 @@ export default function AudienceCards() {
     <section id="who-uses" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-[var(--surf,#F6F5F2)]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text-muted)] mb-3">
             Built for Legal Professionals
           </h2>
-          <p className="text-base text-gray-400 max-w-xl mx-auto">
+          <p className="text-base text-[var(--color-text-muted)] max-w-xl mx-auto">
             Whether you&apos;re representing yourself or preparing a complex federal brief.
           </p>
         </div>
@@ -92,10 +92,10 @@ export default function AudienceCards() {
               <div className="text-brand-blue mb-4">
                 {card.icon}
               </div>
-              <h3 className="text-base font-semibold text-gray-100 mb-3">
+              <h3 className="text-base font-semibold text-[var(--color-text-muted)] mb-3">
                 {card.title}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
                 {card.description}
               </p>
             </div>
@@ -119,10 +119,10 @@ export default function AudienceCards() {
               <div className="text-brand-blue mb-4">
                 {card.icon}
               </div>
-              <h3 className="text-base font-semibold text-gray-100 mb-3">
+              <h3 className="text-base font-semibold text-[var(--color-text-muted)] mb-3">
                 {card.title}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
                 {card.description}
               </p>
             </div>

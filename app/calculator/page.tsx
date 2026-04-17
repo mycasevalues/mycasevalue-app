@@ -294,9 +294,9 @@ export default function CalculatorPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Settlement Calculator
           </div>
           <h1 style={{
@@ -318,7 +318,7 @@ export default function CalculatorPage() {
             maxWidth: 560,
             margin: 0,
           }}>
-            Range estimates derived from <span style={{ fontFamily: 'var(--font-mono)', color: '#60a5fa' }}>5.1M+</span> federal cases. National benchmarks by case type, severity, and evidence quality.
+            Range estimates derived from <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link, #0A50A2)' }}>5.1M+</span> federal cases. National benchmarks by case type, severity, and evidence quality.
           </p>
         </div>
       </div>
@@ -935,7 +935,7 @@ export default function CalculatorPage() {
               const realCtx = getRealDataForCategory(caseType);
               if (!realCtx) return null;
               return (
-                <div className="mb-6 p-6" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid #BAE6FD', borderRadius: 4 }}>
+                <div className="mb-6 p-6" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid var(--link-light, #BAE6FD)', borderRadius: 4 }}>
                   <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-body)' }}>
                     How This Compares to Federal Data
                   </h3>
@@ -1025,7 +1025,7 @@ export default function CalculatorPage() {
               color: 'var(--wrn-txt, #7A5800)',
               fontFamily: 'var(--font-body)',
               background: 'rgba(234,179,8,0.08)',
-              border: '1px solid #FCD34D',
+              border: '1px solid var(--wrn-bg, #FCD34D)',
               borderLeft: '3px solid var(--wrn-txt, #7A5800)',
               fontSize: '12px',
               lineHeight: '1.6',

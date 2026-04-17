@@ -4,8 +4,8 @@ export default function DistrictsLoading() {
       {/* Navy header with title skeleton */}
       <div style={{ background: 'var(--card, #FFFFFF)', padding: '48px 24px', borderBottom: '1px solid var(--bdr, #E2DFD8)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <div style={{ height: '14px', width: '100px', background: '#F0F0F0', borderRadius: '4px', marginBottom: '16px' }} />
-          <div style={{ height: '42px', width: '50%', background: '#F0F0F0', borderRadius: '4px', marginBottom: '12px' }} />
+          <div style={{ height: '14px', width: '100px', background: 'var(--color-surface-1)', borderRadius: '4px', marginBottom: '16px' }} />
+          <div style={{ height: '42px', width: '50%', background: 'var(--color-surface-1)', borderRadius: '4px', marginBottom: '12px' }} />
           <div style={{ height: '14px', width: '70%', background: 'var(--bdr, #E2DFD8)', borderRadius: '4px' }} />
         </div>
       </div>
@@ -27,9 +27,9 @@ export default function DistrictsLoading() {
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
             }}>
               <div style={{ height: '20px', width: '75%', background: 'var(--bdr, #E2DFD8)', borderRadius: '4px', marginBottom: '12px' }} />
-              <div style={{ height: '14px', width: '100%', background: '#F0F0F0', borderRadius: '4px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '100%', background: '#F0F0F0', borderRadius: '4px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '85%', background: '#F0F0F0', borderRadius: '4px' }} />
+              <div style={{ height: '14px', width: '100%', background: 'var(--color-surface-1)', borderRadius: '4px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '100%', background: 'var(--color-surface-1)', borderRadius: '4px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '85%', background: 'var(--color-surface-1)', borderRadius: '4px' }} />
             </div>
           ))}
         </div>

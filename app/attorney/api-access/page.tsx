@@ -577,7 +577,7 @@ export default function ApiAccessPage() {
                               style={{
                                 fontSize: '11px',
                                 fontWeight: 600,
-                                color: '#f87171',
+                                color: 'var(--data-negative, #B01E1E)',
                                 textTransform: 'uppercase',
                                 letterSpacing: '0.5px',
                               }}
@@ -612,7 +612,7 @@ export default function ApiAccessPage() {
                   style={{
                     margin: 0,
                     padding: '12px 14px',
-                    backgroundColor: '#1a1a2e',
+                    backgroundColor: 'var(--chrome-bg, #1B2D45)',
                     color: '#D4D4D4',
                     fontSize: '12px',
                     lineHeight: 1.5,
@@ -644,7 +644,7 @@ export default function ApiAccessPage() {
                   style={{
                     margin: 0,
                     padding: '12px 14px',
-                    backgroundColor: '#1a1a2e',
+                    backgroundColor: 'var(--chrome-bg, #1B2D45)',
                     color: '#D4D4D4',
                     fontSize: '12px',
                     lineHeight: 1.5,
@@ -735,7 +735,7 @@ export default function ApiAccessPage() {
               style={{
                 margin: 0,
                 padding: '12px 14px',
-                backgroundColor: '#1a1a2e',
+                backgroundColor: 'var(--chrome-bg, #1B2D45)',
                 color: '#D4D4D4',
                 fontSize: '12px',
                 lineHeight: 1.5,

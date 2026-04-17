@@ -38,9 +38,9 @@ export default function ServerHero() {
               background: 'rgba(59,130,246,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 10,
               fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-              color: '#60a5fa',
+              color: 'var(--link, #0A50A2)',
             }}>
-              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
               Federal Court Analytics · Live Data
             </div>
 
@@ -301,9 +301,9 @@ export default function ServerHero() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Integrated Workflow
           </div>
           <h2 style={{ fontSize: 'clamp(24px, 3vw, 32px)', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
@@ -638,9 +638,9 @@ export default function ServerHero() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Data Provenance
           </div>
           <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 28px)', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 40, letterSpacing: '-0.025em', lineHeight: 1.15 }}>
@@ -808,9 +808,9 @@ export default function ServerHero() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Free · No Account Required
           </div>
           <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 36px)', fontWeight: 700, color: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)', marginBottom: 16, letterSpacing: '-0.025em', lineHeight: 1.1 }}>

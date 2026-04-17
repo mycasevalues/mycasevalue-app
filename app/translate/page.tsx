@@ -139,7 +139,7 @@ export default function TranslatePage() {
         {/* Translator Form */}
         <div className="p-6 sm:p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
           {/* Free Access Banner */}
-          <div className="mb-8 p-4 flex items-center gap-3" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid #BAE6FD', borderRadius: '4px' }}>
+          <div className="mb-8 p-4 flex items-center gap-3" style={{ background: 'rgba(59,130,246,0.06)', border: '1px solid var(--link-light, #BAE6FD)', borderRadius: '4px' }}>
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--data-positive, #176438)', flexShrink: 0 }} />
             <p className="text-sm" style={{ color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-body)', margin: 0 }}>
               <strong>Unlimited translations</strong> — all features are free during launch
@@ -267,7 +267,7 @@ export default function TranslatePage() {
                         style={{
                           padding: '8px 12px',
                           background: 'var(--color-surface-0)',
-                          border: '1px solid #BAE6FD',
+                          border: '1px solid var(--link-light, #BAE6FD)',
                           borderRadius: '4px',
                           fontSize: '12px',
                           color: '#38bdf8',

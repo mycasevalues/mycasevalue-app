@@ -614,10 +614,10 @@ export default function AnnualReportCapture() {
               <div style={{
                 padding: '12px',
                 background: 'rgba(239,68,68,0.1)',
-                border: '1px solid #FCA5A5',
+                border: '1px solid var(--data-negative-border, #FCA5A5)',
                 borderRadius: '4px',
                 fontSize: '13px',
-                color: '#f87171',
+                color: 'var(--data-negative, #B01E1E)',
               }}>
                 {error}
               </div>

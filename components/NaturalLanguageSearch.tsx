@@ -490,9 +490,9 @@ export default function NaturalLanguageSearch() {
           style={{
             padding: '12px',
             background: 'rgba(239,68,68,0.1)',
-            border: '1px solid #FCA5A5',
+            border: '1px solid var(--data-negative-border, #FCA5A5)',
             borderRadius: '4px',
-            color: '#f87171',
+            color: 'var(--data-negative, #B01E1E)',
             fontSize: '14px',
             fontFamily: 'var(--font-body)',
             marginBottom: '16px',

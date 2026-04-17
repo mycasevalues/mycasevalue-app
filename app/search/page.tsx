@@ -336,9 +336,9 @@ function SearchPageInner() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Case Search
           </div>
           <h1 className="search-header" style={{ fontFamily: 'var(--font-ui)', fontSize: 'clamp(24px, 3.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--card, #FFFFFF)', margin: '0 0 12px' }}>
@@ -444,7 +444,7 @@ function SearchPageInner() {
       )}
 
       {/* AI-Powered Search Section */}
-      <div style={{ marginBottom: '32px', padding: '24px', background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', border: '1px solid #D8BFFF', borderRadius: '4px' }}>
+      <div style={{ marginBottom: '32px', padding: '24px', background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: 'var(--accent-primary)', flexShrink: 0 }}>
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
@@ -472,7 +472,7 @@ function SearchPageInner() {
               height: '44px',
               padding: '0 14px',
               fontSize: '14px',
-              border: '1px solid #D8BFFF',
+              border: '1px solid var(--border-default)',
               borderRadius: '20px',
               background: 'var(--color-surface-0)',
               color: 'var(--color-text-primary)',
@@ -532,7 +532,7 @@ function SearchPageInner() {
 
         {/* AI Error */}
         {aiError && (
-          <div style={{ marginTop: '12px', padding: '12px', background: 'rgba(10, 102, 194, 0.1)', border: '1px solid #D8BFFF', borderRadius: '20px' }}>
+          <div style={{ marginTop: '12px', padding: '12px', background: 'rgba(10, 102, 194, 0.1)', border: '1px solid var(--border-default)', borderRadius: '20px' }}>
             <p style={{ fontSize: '13px', color: 'var(--accent-primary-hover)', margin: '0', fontFamily: 'var(--font-body)' }}>
               {aiError}
             </p>
@@ -541,7 +541,7 @@ function SearchPageInner() {
 
         {/* AI Result */}
         {aiResult && (
-          <div style={{ marginTop: '16px', padding: '16px', background: 'var(--color-surface-0)', border: '1px solid #D8BFFF', borderRadius: '20px' }}>
+          <div style={{ marginTop: '16px', padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '20px' }}>
             <p style={{ fontSize: '12px', fontWeight: '600', color: '#5B21B6', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', marginTop: '0' }}>
               AI Interpretation
             </p>
@@ -557,21 +557,21 @@ function SearchPageInner() {
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                   {aiResult.parameters.caseType && (
                     <div style={{ padding: '8px 12px', background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)', borderRadius: '4px' }}>
-                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#60a5fa', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                      <p style={{ fontSize: '11px', fontWeight: '500', color: 'var(--link, #0A50A2)', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         Case Type: <strong>{aiResult.parameters.caseType}</strong>
                       </p>
                     </div>
                   )}
                   {aiResult.parameters.nosCode && (
-                    <div style={{ padding: '8px 12px', background: 'rgba(234,179,8,0.1)', border: '1px solid #FCD34D', borderRadius: '4px' }}>
-                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#fbbf24', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                    <div style={{ padding: '8px 12px', background: 'rgba(234,179,8,0.1)', border: '1px solid var(--wrn-bg, #FCD34D)', borderRadius: '4px' }}>
+                      <p style={{ fontSize: '11px', fontWeight: '500', color: 'var(--wrn-txt, #7A5800)', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         NOS Code: <strong>{aiResult.parameters.nosCode}</strong>
                       </p>
                     </div>
                   )}
                   {aiResult.parameters.settlementMinimum && (
-                    <div style={{ padding: '8px 12px', background: 'rgba(34,197,94,0.08)', border: '1px solid #86EFAC', borderRadius: '4px' }}>
-                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#4ade80', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                    <div style={{ padding: '8px 12px', background: 'rgba(34,197,94,0.08)', border: '1px solid var(--data-positive-border, #BFEFE5)', borderRadius: '4px' }}>
+                      <p style={{ fontSize: '11px', fontWeight: '500', color: 'var(--data-positive, #176438)', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         Settlement Min: <strong>${aiResult.parameters.settlementMinimum.toLocaleString()}</strong>
                       </p>
                     </div>
@@ -1116,7 +1116,7 @@ function SearchPageInner() {
 
                 const highlights = [
                   { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: 'var(--accent-primary)' },
-                  { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#34d399' },
+                  { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: 'var(--data-positive, #176438)' },
                   { title: 'Fastest Resolution', value: fastestResolution?.label || 'N/A', display: fastestResolution ? `${fastestResolution.mo} months` : 'N/A', color: '#38bdf8' },
                   { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `${fmtK(highestRecovery.rngMd)} median` : 'N/A', color: 'var(--accent-primary)' },
                 ];

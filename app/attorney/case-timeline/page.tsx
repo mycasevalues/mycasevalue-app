@@ -400,7 +400,7 @@ export default function CaseTimelinePage() {
                   </div>
 
                   <div style={{ background: 'rgba(59,130,246,0.06)', padding: '12px', borderRadius: '4px', border: '1px solid rgba(59,130,246,0.15)' }}>
-                    <p style={{ fontSize: '12px', color: '#60a5fa', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: '12px', color: 'var(--link, #0A50A2)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
                       {timeline.statisticalContext}
                     </p>
                   </div>

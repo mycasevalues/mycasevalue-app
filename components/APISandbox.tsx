@@ -341,7 +341,7 @@ export default function APISandbox() {
                     marginBottom: '4px',
                   }}
                 >
-                  {param.name} {param.required && <span style={{ color: '#f87171' }}>*</span>}
+                  {param.name} {param.required && <span style={{ color: 'var(--data-negative, #B01E1E)' }}>*</span>}
                 </label>
                 <input
                   type={param.type === 'integer' ? 'number' : param.type === 'boolean' ? 'text' : 'text'}
@@ -392,7 +392,7 @@ export default function APISandbox() {
           style={{
             padding: '12px',
             backgroundColor: 'rgba(239,68,68,0.1)',
-            border: '1px solid #FECACA',
+            border: '1px solid var(--data-negative-border, #FCA5A5)',
             borderRadius: '4px',
             marginBottom: '16px',
           }}
@@ -400,7 +400,7 @@ export default function APISandbox() {
           <p
             style={{
               fontSize: '12px',
-              color: '#f87171',
+              color: 'var(--data-negative, #B01E1E)',
               margin: 0,
               fontFamily: 'var(--font-mono)',
             }}
@@ -443,7 +443,7 @@ export default function APISandbox() {
             style={{
               margin: 0,
               padding: '12px 14px',
-              backgroundColor: '#1a1a2e',
+              backgroundColor: 'var(--chrome-bg, #1B2D45)',
               color: '#D4D4D4',
               fontSize: '11px',
               lineHeight: 1.5,

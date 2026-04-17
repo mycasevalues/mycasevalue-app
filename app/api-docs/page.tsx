@@ -176,9 +176,9 @@ export default function ApiDocsPage() {
               background: 'rgba(59,130,246,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 10,
               fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-              color: '#60a5fa',
+              color: 'var(--link, #0A50A2)',
             }}>
-              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
               API Documentation
             </div>
             <h1 style={{
@@ -199,7 +199,7 @@ export default function ApiDocsPage() {
               lineHeight: 1.6,
               maxWidth: 600,
             }}>
-              Programmatic access to federal court outcome data. <span style={{ fontFamily: 'var(--font-mono)', color: '#60a5fa' }}>v1.0</span> · REST · Bearer auth · JSON
+              Programmatic access to federal court outcome data. <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link, #0A50A2)' }}>v1.0</span> · REST · Bearer auth · JSON
             </p>
           </div>
         </div>

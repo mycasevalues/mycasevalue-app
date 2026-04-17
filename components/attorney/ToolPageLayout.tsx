@@ -43,21 +43,21 @@ export function ToolPageLayout({
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-1">
                 <h1
-                  className="text-xl sm:text-2xl font-semibold text-gray-100"
+                  className="text-xl sm:text-2xl font-semibold text-[var(--color-text-muted)]"
                   style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
                 >
                   {title}
                 </h1>
                 {requiresPro && (
                   <span
-                    className="inline-flex items-center px-3 py-1 rounded text-sm font-medium bg-blue-50"
+                    className="inline-flex items-center px-3 py-1 rounded text-sm font-medium bg-[var(--color-surface-1)]"
                     style={{ color: 'var(--accent-primary)' }}
                   >
                     Pro
                   </span>
                 )}
               </div>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
                 {description}
               </p>
             </div>
@@ -69,10 +69,10 @@ export function ToolPageLayout({
       {requiresPro && !isAuthenticated ? (
         <div className="max-w-4xl mx-auto px-6 py-12">
           <div className="rounded border border-[var(--bdr, #E2DFD8)] p-8 sm:p-12 text-center bg-[var(--color-surface-2)]">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-100 mb-3">
+            <h2 className="text-xl sm:text-2xl font-semibold text-[var(--color-text-muted)] mb-3">
               Sign in to access this tool
             </h2>
-            <p className="text-gray-400 mb-8 max-w-md mx-auto">
+            <p className="text-[var(--color-text-muted)] mb-8 max-w-md mx-auto">
               This is a Pro attorney tool. Sign in to your MyCaseValue account to continue.
             </p>
             <a
@@ -93,7 +93,7 @@ export function ToolPageLayout({
           {/* Footer Disclaimer */}
           <div className="border-t border-[var(--bdr, #E2DFD8)] bg-[var(--color-surface-2)] mt-12">
             <div className="max-w-4xl mx-auto px-6 py-8">
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
                 This tool is provided for informational and analytical purposes only and does not
                 constitute legal advice. Results should be reviewed by a qualified attorney. MyCaseValue
                 assumes no liability for the use of this tool or accuracy of its results. Always

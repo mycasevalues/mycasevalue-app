@@ -169,7 +169,7 @@ export default async function GuidePage({ params }: PageProps) {
             <div key={idx} style={{
               padding: '24px',
               backgroundColor: 'var(--color-surface-0)',
-              border: '1px solid #e0e0e0',
+              border: '1px solid var(--border-default)',
               borderRadius: '4px',
             }}>
               <p style={{
@@ -369,7 +369,7 @@ export default async function GuidePage({ params }: PageProps) {
               <div style={{
                 padding: '24px',
                 backgroundColor: 'rgba(59,130,246,0.06)',
-                border: '1px solid #378FE9',
+                border: '1px solid var(--link, #0A50A2)',
                 borderRadius: '4px',
               }}>
                 <p style={{
@@ -406,7 +406,7 @@ export default async function GuidePage({ params }: PageProps) {
             <div style={{
               padding: '24px',
               backgroundColor: 'var(--color-surface-0)',
-              border: '1px solid #e0e0e0',
+              border: '1px solid var(--border-default)',
               borderRadius: '4px',
               marginBottom: '24px',
             }}>
@@ -462,7 +462,7 @@ export default async function GuidePage({ params }: PageProps) {
             <div style={{
               padding: '24px',
               backgroundColor: 'rgba(34,197,94,0.1)',
-              border: '1px solid #057642',
+              border: '1px solid var(--data-positive, #176438)',
               borderRadius: '4px',
             }}>
               <p style={{
@@ -495,7 +495,7 @@ export default async function GuidePage({ params }: PageProps) {
             <div style={{
               padding: '24px',
               backgroundColor: 'rgba(249,115,22,0.06)',
-              border: '1px solid #C37D16',
+              border: '1px solid var(--wrn-bg, #FCD34D)',
               borderRadius: '4px',
             }}>
               <p style={{
@@ -590,7 +590,7 @@ export default async function GuidePage({ params }: PageProps) {
       <section style={{
         padding: '24px',
         backgroundColor: 'rgba(239,68,68,0.06)',
-        border: '1px solid #CC1016',
+        border: '1px solid var(--data-negative, #B01E1E)',
         borderRadius: '4px',
         marginBottom: '50px',
       }}>
@@ -661,7 +661,7 @@ export default async function GuidePage({ params }: PageProps) {
           <Link href="/calculator" style={{
             padding: '24px',
             backgroundColor: 'rgba(59,130,246,0.06)',
-            border: '1px solid #378FE9',
+            border: '1px solid var(--link, #0A50A2)',
             borderRadius: '4px',
             textDecoration: 'none',
             color: 'var(--accent-primary)',
@@ -688,7 +688,7 @@ export default async function GuidePage({ params }: PageProps) {
           <Link href="/nos" style={{
             padding: '24px',
             backgroundColor: 'var(--color-surface-1)',
-            border: '1px solid #e0e0e0',
+            border: '1px solid var(--border-default)',
             borderRadius: '4px',
             textDecoration: 'none',
             color: 'var(--accent-primary)',

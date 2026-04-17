@@ -205,7 +205,7 @@ export default function DashboardTabs({
                       Saved {new Date(r.viewed_at).toLocaleDateString()}
                     </div>
                     <div style={{ display: 'flex', gap: 8 }}>
-                      <Link href={`/nos/${r.category}`} style={{ fontSize: '12px', color: '#FFF', background: 'var(--accent-primary)', padding: '4px 12px', borderRadius: 4, textDecoration: 'none', fontWeight: 600 }}>View</Link>
+                      <Link href={`/nos/${r.category}`} style={{ fontSize: '12px', color: 'var(--color-text-inverse, #fff)', background: 'var(--accent-primary)', padding: '4px 12px', borderRadius: 4, textDecoration: 'none', fontWeight: 600 }}>View</Link>
                     </div>
                   </div>
                 ))}
@@ -234,7 +234,7 @@ export default function DashboardTabs({
                   placeholder="Enter case number, e.g. 1:24-cv-01234"
                   style={{ width: '100%', padding: '8px 16px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '13px', marginBottom: 8, boxSizing: 'border-box' as const }}
                 />
-                <button style={{ width: '100%', padding: '8px', background: 'var(--accent-primary)', color: '#FFF', border: 'none', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+                <button style={{ width: '100%', padding: '8px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                   Create Alert
                 </button>
               </div>
@@ -308,7 +308,7 @@ export default function DashboardTabs({
               <code style={{ flex: 1, fontSize: '13px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{apiKey}</code>
               <button
                 onClick={() => { navigator.clipboard.writeText(apiKey); setCopied(true); setTimeout(() => setCopied(false), 2000); }}
-                style={{ padding: '6px 12px', background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)', color: '#FFF', border: 'none', borderRadius: '4px', fontSize: '11px', fontWeight: 600, cursor: 'pointer' }}
+                style={{ padding: '6px 12px', background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)', color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px', fontSize: '11px', fontWeight: 600, cursor: 'pointer' }}
               >
                 {copied ? 'Copied!' : 'Copy'}
               </button>
@@ -326,14 +326,14 @@ export default function DashboardTabs({
             <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--data-negative, #B01E1E)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>Danger Zone</h3>
             <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: 12 }}>Permanently delete your account and all associated data. This action cannot be undone.</p>
             {!showDeleteConfirm ? (
-              <button onClick={() => setShowDeleteConfirm(true)} style={{ padding: '8px 24px', background: 'var(--color-surface-0)', border: '1px solid #CC1016', borderRadius: '4px', fontSize: '13px', color: 'var(--data-negative, #B01E1E)', fontWeight: 600, cursor: 'pointer' }}>
+              <button onClick={() => setShowDeleteConfirm(true)} style={{ padding: '8px 24px', background: 'var(--color-surface-0)', border: '1px solid var(--data-negative, #B01E1E)', borderRadius: '4px', fontSize: '13px', color: 'var(--data-negative, #B01E1E)', fontWeight: 600, cursor: 'pointer' }}>
                 Delete Account
               </button>
             ) : (
-              <div style={{ padding: '16px', background: 'rgba(239,68,68,0.06)', borderRadius: '4px', border: '1px solid #CC1016' }}>
+              <div style={{ padding: '16px', background: 'rgba(239,68,68,0.06)', borderRadius: '4px', border: '1px solid var(--data-negative, #B01E1E)' }}>
                 <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--data-negative, #B01E1E)', marginBottom: 10 }}>Are you sure? This will permanently delete all your data.</p>
                 <div style={{ display: 'flex', gap: 8 }}>
-                  <button style={{ padding: '8px 16px', background: 'var(--data-negative, #B01E1E)', color: '#FFF', border: 'none', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+                  <button style={{ padding: '8px 16px', background: 'var(--data-negative, #B01E1E)', color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                     Yes, Delete Everything
                   </button>
                   <button onClick={() => setShowDeleteConfirm(false)} style={{ padding: '8px 16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '13px', color: 'var(--color-text-secondary)', cursor: 'pointer' }}>

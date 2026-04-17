@@ -53,7 +53,7 @@ export default async function Image({
             width: '100%',
             height: '100%',
             background: '#18181A',
-            color: '#ffffff',
+            color: 'var(--color-text-inverse, #fff)',
             fontFamily: 'Inter, sans-serif',
             alignItems: 'center',
             justifyContent: 'center',
@@ -82,7 +82,7 @@ export default async function Image({
           width: '100%',
           height: '100%',
           background: '#18181A',
-          color: '#ffffff',
+          color: 'var(--color-text-inverse, #fff)',
           fontFamily: 'Inter, sans-serif',
           padding: '60px',
           boxSizing: 'border-box',
@@ -117,7 +117,7 @@ export default async function Image({
               fontSize: '28px',
               fontWeight: '600',
               letterSpacing: '-0.5px',
-              color: '#ffffff',
+              color: 'var(--color-text-inverse, #fff)',
             }}
           >
             MyCaseValue
@@ -151,7 +151,7 @@ export default async function Image({
               lineHeight: '1.2',
               maxWidth: '900px',
               letterSpacing: '-1px',
-              color: '#ffffff',
+              color: 'var(--color-text-inverse, #fff)',
             }}
           >
             {caseData.label}
@@ -194,7 +194,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#0A50A2',
+                color: 'var(--link, #0A50A2)',
               }}
             >
               {winRate}%
@@ -228,7 +228,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#0A50A2',
+                color: 'var(--link, #0A50A2)',
               }}
             >
               {caseCount}
@@ -262,7 +262,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '600',
-                color: '#0A50A2',
+                color: 'var(--link, #0A50A2)',
               }}
             >
               {recovery}

@@ -135,7 +135,7 @@ export default function NegotiationPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: '#FFF', fontFamily: 'var(--font-ui)', margin: '0 0 8px' }}>Negotiate from Strength with Real Trial Data</h1>
+          <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', margin: '0 0 8px' }}>Negotiate from Strength with Real Trial Data</h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
             Benchmark offers against 100K+ settlements, calculate your BATNA, and execute a data-backed negotiation strategy
           </p>
@@ -216,7 +216,7 @@ export default function NegotiationPage() {
                 </div>
                 <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: 4 }}>percentile of historical settlements</div>
                 <div style={{ marginTop: 16, height: 10, background: 'var(--border-default)', borderRadius: 4, position: 'relative' }}>
-                  <div style={{ position: 'absolute', left: `${Math.min(r.offerPercentile, 98)}%`, top: -4, width: 18, height: 18, borderRadius: '50%', background: getWinRateColor(r.offerPercentile).bg, border: '3px solid #FFF', boxShadow: '0 2px 4px rgba(0,0,0,0.2)', transform: 'translateX(-50%)' }} />
+                  <div style={{ position: 'absolute', left: `${Math.min(r.offerPercentile, 98)}%`, top: -4, width: 18, height: 18, borderRadius: '50%', background: getWinRateColor(r.offerPercentile).bg, border: '3px solid var(--card, #FFFFFF)', boxShadow: '0 2px 4px rgba(0,0,0,0.2)', transform: 'translateX(-50%)' }} />
                   <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 16, fontSize: 10, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>
                     <span>{formatMoney(r.p25)}</span><span>{formatMoney(r.p50)}</span><span>{formatMoney(r.p75)}</span>
                   </div>
@@ -268,7 +268,7 @@ export default function NegotiationPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {r.talkingPoints.map((pt, i) => (
                     <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
-                      <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: 'var(--accent-primary)', color: '#FFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600, marginTop: 2 }}>{i + 1}</div>
+                      <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: 'var(--accent-primary)', color: 'var(--color-text-inverse, #fff)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600, marginTop: 2 }}>{i + 1}</div>
                       <p style={{ fontSize: '13px', color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.6 }}>{pt}</p>
                     </div>
                   ))}
@@ -276,7 +276,7 @@ export default function NegotiationPage() {
               </div>
 
               {/* Disclaimer */}
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: '#fde68a', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6 }}>
                 <strong>Important:</strong> AI-generated negotiation intelligence — for attorney use only. Historical data provides context but does not predict specific case outcomes. All negotiation strategies should account for case-specific factors not captured in aggregate data.
               </div>
             </div>

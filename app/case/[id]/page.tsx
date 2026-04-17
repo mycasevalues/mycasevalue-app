@@ -106,8 +106,8 @@ export default function CaseDetailPage() {
       <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 text-center">
           
-          <h1 className="text-lg font-semibold text-gray-100 mb-2">{error || 'Case not found'}</h1>
-          <p className="text-sm text-gray-500 mb-4">
+          <h1 className="text-lg font-semibold text-[var(--color-text-muted)] mb-2">{error || 'Case not found'}</h1>
+          <p className="text-sm text-[var(--color-text-muted)] mb-4">
             The case you are looking for may not exist in our database yet.
           </p>
           <Link
@@ -143,7 +143,7 @@ export default function CaseDetailPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3">
           <Link
             href="/case-search"
-            className="text-xs text-gray-500 hover:text-brand-blue transition-colors"
+            className="text-xs text-[var(--color-text-muted)] hover:text-brand-blue transition-colors"
           >
             &larr; Back to search
           </Link>
@@ -154,7 +154,7 @@ export default function CaseDetailPage() {
         {/* ── SECTION 1: HEADER ── */}
         <div>
           <div className="flex items-start justify-between gap-4 mb-3">
-            <h1 className="text-xl font-bold text-gray-100 leading-snug">
+            <h1 className="text-xl font-bold text-[var(--color-text-muted)] leading-snug">
               {c.caseName}
             </h1>
             {c.status && (
@@ -170,9 +170,9 @@ export default function CaseDetailPage() {
             )}
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--color-text-muted)]">
             {c.court && (
-              <span className="font-medium text-gray-300">{c.court.name}</span>
+              <span className="font-medium text-[var(--color-text-muted)]">{c.court.name}</span>
             )}
             {c.docketNumber && <span>No. {c.docketNumber}</span>}
             {c.filingDate && (
@@ -187,15 +187,15 @@ export default function CaseDetailPage() {
         {/* ── SECTION 2: AI SUMMARY ── */}
         {c.summary && (
           <Section title="Case Overview">
-            <p className="text-sm text-gray-300 leading-relaxed">
+            <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
               {c.summary.text}
             </p>
             {c.summary.confidenceNotes && c.summary.confidenceNotes !== 'No confidence notes.' && (
-              <p className="text-xs text-gray-400 mt-3 italic">
+              <p className="text-xs text-[var(--color-text-muted)] mt-3 italic">
                 Note: {c.summary.confidenceNotes}
               </p>
             )}
-            <p className="text-[10px] text-gray-300 mt-2">
+            <p className="text-[10px] text-[var(--color-text-muted)] mt-2">
               Generated {c.summary.generatedAt ? new Date(c.summary.generatedAt).toLocaleDateString() : 'recently'} &middot; AI-assisted summary from public records
             </p>
           </Section>
@@ -269,8 +269,8 @@ export default function CaseDetailPage() {
                   style={{ borderColor: 'var(--border-default)' }}
                 >
                   <div>
-                    <p className="text-sm font-medium text-gray-100">{op.title}</p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-sm font-medium text-[var(--color-text-muted)]">{op.title}</p>
+                    <p className="text-xs text-[var(--color-text-muted)]">
                       {op.author && `${op.author} · `}
                       {op.date && new Date(op.date).toLocaleDateString()}
                       {op.citation && ` · ${op.citation}`}
@@ -302,15 +302,15 @@ export default function CaseDetailPage() {
                   className="flex items-start gap-3 py-2 border-b last:border-0"
                   style={{ borderColor: 'var(--border-default)' }}
                 >
-                  <span className="text-xs text-gray-400 w-10 flex-shrink-0 text-right tabular-nums">
+                  <span className="text-xs text-[var(--color-text-muted)] w-10 flex-shrink-0 text-right tabular-nums">
                     #{f.number || i + 1}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-gray-100 truncate">
+                    <p className="text-sm text-[var(--color-text-muted)] truncate">
                       {f.title || 'Filing'}
                     </p>
                     {f.date && (
-                      <p className="text-xs text-gray-400">
+                      <p className="text-xs text-[var(--color-text-muted)]">
                         {new Date(f.date).toLocaleDateString()}
                       </p>
                     )}
@@ -328,7 +328,7 @@ export default function CaseDetailPage() {
                 </div>
               ))}
               {c.filings.length > 20 && (
-                <p className="text-xs text-gray-400 pt-2">
+                <p className="text-xs text-[var(--color-text-muted)] pt-2">
                   Showing 20 of {c.filings.length} filings
                 </p>
               )}
@@ -342,10 +342,10 @@ export default function CaseDetailPage() {
             {c.sources.length > 0 ? (
               c.sources.map((s, i) => (
                 <div key={i} className="flex items-center justify-between text-sm">
-                  <span className="text-gray-400 capitalize">{s.sourceName.replace(/_/g, ' ')}</span>
+                  <span className="text-[var(--color-text-muted)] capitalize">{s.sourceName.replace(/_/g, ' ')}</span>
                   <div className="flex items-center gap-3">
                     {s.fetchedAt && (
-                      <span className="text-xs text-gray-400">
+                      <span className="text-xs text-[var(--color-text-muted)]">
                         Last synced {new Date(s.fetchedAt).toLocaleDateString()}
                       </span>
                     )}
@@ -363,12 +363,12 @@ export default function CaseDetailPage() {
                 </div>
               ))
             ) : (
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-[var(--color-text-muted)]">
                 Data from public federal court records.
               </p>
             )}
           </div>
-          <p className="text-[10px] text-gray-300 mt-3">
+          <p className="text-[10px] text-[var(--color-text-muted)] mt-3">
             All data sourced from public federal court and agency records. Not legal advice.
           </p>
         </Section>
@@ -385,16 +385,16 @@ export default function CaseDetailPage() {
                   style={{ borderColor: 'var(--border-default)' }}
                 >
                   <div>
-                    <p className="text-sm text-gray-100 group-hover:text-brand-blue transition-colors">
+                    <p className="text-sm text-[var(--color-text-muted)] group-hover:text-brand-blue transition-colors">
                       {rc.caseName}
                     </p>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-[var(--color-text-muted)]">
                       {rc.courtAbbreviation && `${rc.courtAbbreviation} · `}
                       {rc.filingDate && new Date(rc.filingDate).getFullYear()}
                       {rc.caseType && ` · ${rc.caseType}`}
                     </p>
                   </div>
-                  <span className="text-xs text-gray-300">&rarr;</span>
+                  <span className="text-xs text-[var(--color-text-muted)]">&rarr;</span>
                 </Link>
               ))}
             </div>
@@ -413,7 +413,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       className="rounded border p-5"
       style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
     >
-      <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+      <h2 className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-3">
         {title}
       </h2>
       {children}
@@ -424,8 +424,8 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function DetailRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="text-xs text-gray-400 w-32 flex-shrink-0">{label}</span>
-      <span className="text-sm text-gray-300">{value}</span>
+      <span className="text-xs text-[var(--color-text-muted)] w-32 flex-shrink-0">{label}</span>
+      <span className="text-sm text-[var(--color-text-muted)]">{value}</span>
     </div>
   );
 }
@@ -446,10 +446,10 @@ function ordinalSuffix(n: string): string {
 function PartyGroup({ label, parties }: { label: string; parties: Array<{ name: string; role: string }> }) {
   return (
     <div>
-      <p className="text-xs font-medium text-gray-500 mb-2">{label}</p>
+      <p className="text-xs font-medium text-[var(--color-text-muted)] mb-2">{label}</p>
       <ul className="space-y-1">
         {parties.map((p, i) => (
-          <li key={i} className="text-sm text-gray-200">
+          <li key={i} className="text-sm text-[var(--color-text-muted)]">
             {p.name}
           </li>
         ))}

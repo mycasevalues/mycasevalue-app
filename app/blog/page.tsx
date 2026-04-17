@@ -326,12 +326,12 @@ export default function BlogPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Research & Analysis
           </div>
-          <h1 className="font-inter" style={{
+          <h1 className="font-ui" style={{
             color: 'var(--card, #FFFFFF)',
             fontSize: 'clamp(28px, 4vw, 36px)',
             fontWeight: 700,

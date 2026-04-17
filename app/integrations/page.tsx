@@ -219,9 +219,9 @@ export default function IntegrationsPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Integrations
           </div>
 
@@ -673,16 +673,16 @@ export default function IntegrationsPage() {
               <span style={{ color: 'var(--border-default)' }}>(</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
-              <span style={{ color: '#34d399' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
+              <span style={{ color: 'var(--data-positive, #176438)' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
               <span style={{ color: 'var(--border-default)' }}>,</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
               <span style={{ color: 'var(--border-default)' }}>{'{ '}</span>
               <span style={{ color: 'var(--color-text-inverse)' }}>headers</span>
               <span style={{ color: 'var(--border-default)' }}>{': { '}</span>
-              <span style={{ color: '#34d399' }}>{`'Authorization'`}</span>
+              <span style={{ color: 'var(--data-positive, #176438)' }}>{`'Authorization'`}</span>
               <span style={{ color: 'var(--border-default)' }}>{': '}</span>
-              <span style={{ color: '#34d399' }}>{`'Bearer YOUR_API_KEY'`}</span>
+              <span style={{ color: 'var(--data-positive, #176438)' }}>{`'Bearer YOUR_API_KEY'`}</span>
               <span style={{ color: 'var(--border-default)' }}>{' } }'}</span>
             </div>
             <div>

@@ -247,7 +247,7 @@ function TerminalContent() {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
         <Link href="/" className="text-sm font-bold text-white tracking-tight">
-          MCV<span className="text-blue-400">.</span>
+          MCV<span className="text-[var(--link)]">.</span>
         </Link>
         <form onSubmit={(e) => { e.preventDefault(); performSearch(); }} className="flex-1 max-w-2xl flex items-center gap-2">
           <div className="flex-1 relative">
@@ -259,13 +259,13 @@ function TerminalContent() {
               style={{ background: '#1e2030', borderColor: '#303347' }}
             />
           </div>
-          <button type="submit" className="h-8 px-3 rounded-md bg-blue-600 text-white text-xs font-medium hover:bg-blue-500 transition-colors">Search</button>
+          <button type="submit" className="h-8 px-3 rounded-md bg-[var(--link)] text-white text-xs font-medium hover:bg-[var(--color-surface-1)]0 transition-colors">Search</button>
         </form>
         <div className="flex items-center gap-2">
           {/* Compact mode toggle */}
           <button
             onClick={() => setCompact(!compact)}
-            className={`h-7 px-2 rounded text-[10px] font-medium border transition-colors hidden md:flex items-center gap-1 ${compact ? 'bg-blue-600/20 text-blue-400 border-blue-500/30' : 'text-gray-500 border-gray-700 hover:border-gray-500'}`}
+            className={`h-7 px-2 rounded text-[10px] font-medium border transition-colors hidden md:flex items-center gap-1 ${compact ? 'bg-[var(--link)]/20 text-[var(--link)] border-blue-500/30' : 'text-gray-500 border-gray-700 hover:border-gray-500'}`}
             title={compact ? 'Switch to comfortable view' : 'Switch to compact view'}
           >
             <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -313,7 +313,7 @@ function TerminalContent() {
                     <option value="newest">Newest first</option>
                     <option value="oldest">Oldest first</option>
                   </select>
-                  <button onClick={performSearch} className="w-full h-7 rounded text-xs font-medium bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 transition-colors">
+                  <button onClick={performSearch} className="w-full h-7 rounded text-xs font-medium bg-[var(--link)]/20 text-[var(--link)] hover:bg-[var(--link)]/30 transition-colors">
                     Apply
                   </button>
                 </div>
@@ -326,7 +326,7 @@ function TerminalContent() {
                   <div className="space-y-1">
                     {savedCases.slice(0, 5).map(id => (
                       <button key={id} onClick={() => loadCase(id)}
-                        className={`w-full text-left px-2 py-1 rounded text-[11px] truncate transition-colors ${selectedId === id ? 'bg-blue-600/20 text-blue-300' : 'text-gray-400 hover:bg-white/5'}`}>
+                        className={`w-full text-left px-2 py-1 rounded text-[11px] truncate transition-colors ${selectedId === id ? 'bg-[var(--link)]/20 text-[var(--link)]' : 'text-gray-400 hover:bg-white/5'}`}>
                         Case #{id}
                       </button>
                     ))}
@@ -378,7 +378,7 @@ function TerminalContent() {
               {loading ? 'Searching...' : hasSearched ? `${total} result${total !== 1 ? 's' : ''}` : 'Enter a query'}
             </span>
             {(court || caseType || status) && (
-              <button onClick={() => { setCourt(''); setCaseType(''); setStatus(''); }} className="text-[10px] text-blue-400 hover:underline">Clear filters</button>
+              <button onClick={() => { setCourt(''); setCaseType(''); setStatus(''); }} className="text-[10px] text-[var(--link)] hover:underline">Clear filters</button>
             )}
           </div>
 
@@ -398,7 +398,7 @@ function TerminalContent() {
               <div className="flex flex-wrap justify-center gap-1.5">
                 {['Patent infringement', 'SEC v. Terraform', 'Employment discrimination'].map(q => (
                   <button key={q} onClick={() => { setQuery(q); performSearch(); }}
-                    className="text-[10px] px-2 py-1 rounded border text-gray-500 hover:text-blue-400 hover:border-blue-500/30 transition-colors"
+                    className="text-[10px] px-2 py-1 rounded border text-gray-500 hover:text-[var(--link)] hover:border-blue-500/30 transition-colors"
                     style={{ borderColor: '#303347' }}>
                     {q}
                   </button>
@@ -414,7 +414,7 @@ function TerminalContent() {
               <div className="flex flex-wrap justify-center gap-1.5">
                 {['SEC v. Terraform', 'Patent infringement', 'Civil rights', 'Employment discrimination', 'Class action'].map(q => (
                   <button key={q} onClick={() => { setQuery(q); setTimeout(performSearch, 50); }}
-                    className="text-[10px] px-2 py-1 rounded border text-gray-500 hover:text-blue-400 hover:border-blue-500/30 transition-colors"
+                    className="text-[10px] px-2 py-1 rounded border text-gray-500 hover:text-[var(--link)] hover:border-blue-500/30 transition-colors"
                     style={{ borderColor: '#303347' }}>
                     {q}
                   </button>
@@ -431,7 +431,7 @@ function TerminalContent() {
                 onClick={() => loadCase(r.id)}
                 className={`w-full text-left px-3 ${compact ? 'py-1.5' : 'py-2.5'} border-b transition-colors ${
                   selectedId === r.id
-                    ? 'bg-blue-600/10 border-l-2 border-l-blue-500'
+                    ? 'bg-[var(--link)]/10 border-l-2 border-l-blue-500'
                     : focusIdx === idx
                     ? 'bg-white/[0.03]'
                     : 'hover:bg-white/[0.02]'
@@ -441,7 +441,7 @@ function TerminalContent() {
                 <div className="flex items-start justify-between gap-2">
                   <span className={`${compact ? 'text-[11px]' : 'text-xs'} font-medium text-gray-200 leading-snug line-clamp-1`}>{r.caseName}</span>
                   {r.status && (
-                    <span className={`flex-shrink-0 text-[9px] font-medium px-1.5 py-0.5 rounded ${r.status === 'open' ? 'bg-blue-500/10 text-blue-400' : 'bg-green-500/10 text-green-400'}`}>
+                    <span className={`flex-shrink-0 text-[9px] font-medium px-1.5 py-0.5 rounded ${r.status === 'open' ? 'bg-[var(--color-surface-1)]0/10 text-[var(--link)]' : 'bg-[var(--color-surface-1)]0/10 text-[var(--data-positive)]'}`}>
                       {r.status.toUpperCase()}
                     </span>
                   )}
@@ -491,11 +491,11 @@ function TerminalContent() {
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0">
                     <button onClick={() => handleSave(caseDetail.id)}
-                      className={`h-7 px-2.5 rounded text-[10px] font-medium border transition-colors ${isSaved(caseDetail.id) ? 'bg-blue-600/20 text-blue-400 border-blue-500/30' : 'text-gray-400 border-gray-700 hover:border-gray-500'}`}>
+                      className={`h-7 px-2.5 rounded text-[10px] font-medium border transition-colors ${isSaved(caseDetail.id) ? 'bg-[var(--link)]/20 text-[var(--link)] border-blue-500/30' : 'text-gray-400 border-gray-700 hover:border-gray-500'}`}>
                       {isSaved(caseDetail.id) ? 'Saved' : 'Save'}
                     </button>
                     {caseDetail.status && (
-                      <span className={`text-[10px] font-semibold px-2 py-1 rounded ${caseDetail.status === 'open' ? 'bg-blue-500/10 text-blue-400' : 'bg-green-500/10 text-green-400'}`}>
+                      <span className={`text-[10px] font-semibold px-2 py-1 rounded ${caseDetail.status === 'open' ? 'bg-[var(--color-surface-1)]0/10 text-[var(--link)]' : 'bg-[var(--color-surface-1)]0/10 text-[var(--data-positive)]'}`}>
                         {caseDetail.status.toUpperCase()}
                       </span>
                     )}
@@ -538,7 +538,7 @@ function TerminalContent() {
                         <div className="space-y-0">
                           {caseDetail.filings.slice(0, 15).map((f, i) => (
                             <div key={i} className="flex items-start gap-3 py-1.5 border-b last:border-0" style={{ borderColor: '#252833' }}>
-                              <div className="w-1.5 h-1.5 rounded-full bg-blue-500/50 mt-1.5 flex-shrink-0" />
+                              <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-surface-1)]0/50 mt-1.5 flex-shrink-0" />
                               <div className="flex-1 min-w-0">
                                 <p className="text-[11px] text-gray-300 truncate">{f.title || `Filing #${f.number || i + 1}`}</p>
                                 {f.date && <p className="text-[10px] text-gray-500">{new Date(f.date).toLocaleDateString()}</p>}
@@ -604,7 +604,7 @@ function TerminalContent() {
 
                     {/* Open full page */}
                     <Link href={`/case/${caseDetail.id}`}
-                      className="block text-center text-[10px] text-blue-400 hover:underline py-2">
+                      className="block text-center text-[10px] text-[var(--link)] hover:underline py-2">
                       Open full page &rarr;
                     </Link>
                   </div>

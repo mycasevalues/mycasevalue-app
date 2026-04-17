@@ -62,7 +62,7 @@ export function StatCard({
       )}
     >
       {/* Label — brand .sc-l */}
-      <p className="font-inter font-semibold text-brand-muted uppercase tracking-[0.12em] text-[10px] mb-2.5">
+      <p className="font-ui font-semibold text-brand-muted uppercase tracking-[0.12em] text-[10px] mb-2.5">
         {label}
       </p>
 
@@ -84,7 +84,7 @@ export function StatCard({
 
       {/* Sub — brand .sc-s */}
       {sub && (
-        <p className="font-inter text-brand-gray text-[12px]">
+        <p className="font-ui text-brand-gray text-[12px]">
           {sub}
         </p>
       )}

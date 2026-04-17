@@ -161,9 +161,9 @@ export default async function ChangelogPage() {
               background: 'rgba(59,130,246,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 10,
               fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-              color: '#60a5fa',
+              color: 'var(--link, #0A50A2)',
             }}>
-              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
               Data &amp; Updates
             </div>
 
@@ -410,8 +410,8 @@ export default async function ChangelogPage() {
 
             {/* Disclaimer Section */}
             <div style={{
-              background: '#F0F5FB',
-              border: '1px solid #D5E3F2',
+              background: 'var(--color-surface-1)',
+              border: '1px solid var(--link-light, #BAE6FD)',
               borderRadius: 4,
               padding: '24px 28px',
             }}>

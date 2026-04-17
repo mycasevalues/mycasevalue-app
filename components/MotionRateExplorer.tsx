@@ -145,7 +145,7 @@ export default function MotionRateExplorer() {
     borderRadius: '4px',
     fontSize: '14px',
     color: 'var(--color-text-primary)',
-    backgroundColor: '#FFF',
+    backgroundColor: 'var(--card, #FFFFFF)',
     fontFamily: 'var(--font-body)',
     cursor: 'pointer',
   };
@@ -168,7 +168,7 @@ export default function MotionRateExplorer() {
   const tableStyle: React.CSSProperties = {
     width: '100%',
     borderCollapse: 'collapse',
-    backgroundColor: '#FFF',
+    backgroundColor: 'var(--card, #FFFFFF)',
   };
 
   const theadStyle: React.CSSProperties = {
@@ -226,11 +226,11 @@ export default function MotionRateExplorer() {
 
   const disclaimerStyle: React.CSSProperties = {
     backgroundColor: 'rgba(234,179,8,0.08)',
-    border: '1px solid #FCD34D',
+    border: '1px solid var(--wrn-bg, #FCD34D)',
     borderRadius: '4px',
     padding: '16px',
     fontSize: '13px',
-    color: '#fde68a',
+    color: 'var(--wrn-txt, #7A5800)',
     lineHeight: 1.6,
     marginTop: '32px',
   };

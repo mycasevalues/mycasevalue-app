@@ -452,7 +452,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             </div>
 
             <div style={{
-              background: '#F0F0F0',
+              background: 'var(--color-surface-1)',
               height: 16,
               borderRadius: 4,
               overflow: 'hidden',
@@ -677,7 +677,7 @@ export default async function DistrictNOSPage({ params }: PageProps) {
         {/* Placeholder Sections */}
         <section style={{ marginTop: 56 }}>
           <div style={{
-            background: '#F0F0F0',
+            background: 'var(--color-surface-1)',
             border: '1px dashed var(--bdr, #E2DFD8)',
             borderRadius: '4px',
             padding: '24px',

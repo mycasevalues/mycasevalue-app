@@ -870,7 +870,7 @@ export default async function NOSPage({ params }: PageProps) {
               borderLeft: '3px solid #D97706',
               borderRadius: '4px',
               fontSize: '12px',
-              color: '#fde68a',
+              color: 'var(--wrn-txt, #7A5800)',
               lineHeight: '1.5',
               fontFamily: 'var(--font-body)'
             }}>
@@ -886,7 +886,7 @@ export default async function NOSPage({ params }: PageProps) {
               borderLeft: '3px solid #D97706',
               borderRadius: '4px',
               fontSize: '12px',
-              color: '#fde68a',
+              color: 'var(--wrn-txt, #7A5800)',
               lineHeight: '1.5',
               fontFamily: 'var(--font-body)'
             }}>
@@ -1259,7 +1259,7 @@ export default async function NOSPage({ params }: PageProps) {
                 <div style={{
                   padding: '24px',
                   background: 'rgba(239,68,68,0.06)',
-                  border: '1px solid #CC1016',
+                  border: '1px solid var(--data-negative, #B01E1E)',
                   borderRadius: '4px',
                 }}>
                   <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>

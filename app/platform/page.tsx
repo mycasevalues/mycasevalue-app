@@ -516,9 +516,9 @@ export default function PlatformPage() {
               background: 'rgba(59,130,246,0.08)',
               fontFamily: 'var(--font-mono)', fontSize: 10,
               fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-              color: '#60a5fa',
+              color: 'var(--link, #0A50A2)',
             }}>
-              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+              <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
               Platform
             </div>
             <h1 style={{
@@ -540,7 +540,7 @@ export default function PlatformPage() {
               maxWidth: 680,
               margin: 0,
             }}>
-              Federal court analytics for attorneys, judges, researchers, and institutions — built on <span style={{ fontFamily: 'var(--font-mono)', color: '#60a5fa' }}>5.1M+</span> cases spanning five decades.
+              Federal court analytics for attorneys, judges, researchers, and institutions — built on <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link, #0A50A2)' }}>5.1M+</span> cases spanning five decades.
             </p>
           </div>
         </div>
@@ -709,7 +709,7 @@ export default function PlatformPage() {
               padding: 24,
               background: 'rgba(139,92,246,0.06)',
               borderRadius: 4,
-              border: '1px solid #E9D5FF',
+              border: '1px solid var(--border-default)',
             }}>
               <p style={{
                 color: '#6B21A8',
@@ -914,7 +914,7 @@ export default function PlatformPage() {
               padding: 32,
               background: 'rgba(139,92,246,0.06)',
               borderRadius: 4,
-              border: '1px solid #E9D5FF',
+              border: '1px solid var(--border-default)',
             }}>
               <h3 style={{
                 color: '#6B21A8',

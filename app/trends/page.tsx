@@ -198,13 +198,13 @@ export default function TrendsPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Filing Trends
           </div>
           <h1
-            className="font-inter"
+            className="font-ui"
             style={{
               color: 'var(--card, #FFFFFF)',
               letterSpacing: '-0.025em',
@@ -761,7 +761,7 @@ export default function TrendsPage() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-semibold lex-link">{t.label}</span>
-                      <span className="text-sm font-bold" style={{ color: '#34d399' }}>{t.months}mo</span>
+                      <span className="text-sm font-bold" style={{ color: 'var(--data-positive, #176438)' }}>{t.months}mo</span>
                     </div>
                     <div className="h-1.5 overflow-hidden" style={{ background: 'var(--border-default)', borderRadius: '4px' }}>
                       <div
@@ -962,7 +962,7 @@ export default function TrendsPage() {
                 <div style={{ fontSize: '2rem', marginBottom: '12px' }}>
                   <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg>
                 </div>
-                <h3 className="font-semibold mb-2 group-hover:text-blue-600 transition-colors" style={{ color: 'var(--color-text-primary)' }}>
+                <h3 className="font-semibold mb-2 group-hover:text-[var(--link)] transition-colors" style={{ color: 'var(--color-text-primary)' }}>
                   {item.title}
                 </h3>
                 <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}>

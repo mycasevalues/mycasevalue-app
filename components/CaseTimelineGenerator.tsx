@@ -327,8 +327,8 @@ export default function CaseTimelineGenerator() {
 
               {/* Disclaimer & Export */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ background: 'rgba(234,179,8,0.1)', padding: '16px', borderRadius: '4px', border: '1px solid #FCD34D' }}>
-                  <p style={{ fontSize: '13px', color: '#fbbf24', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
+                <div style={{ background: 'rgba(234,179,8,0.1)', padding: '16px', borderRadius: '4px', border: '1px solid var(--wrn-bg, #FCD34D)' }}>
+                  <p style={{ fontSize: '13px', color: 'var(--wrn-txt, #7A5800)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
                     Statistical averages based on historical case data from 5.1M+ federal court cases. Actual deadlines are set by the court's scheduling order and may vary.
                   </p>
                 </div>

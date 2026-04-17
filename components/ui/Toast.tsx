@@ -18,14 +18,14 @@ function ToastItem({ toast }: { toast: ToastType }) {
   }, [toast.id, removeToast]);
 
   const typeStyles = {
-    success: 'bg-green-50 text-green-900 border-green-200',
-    info: 'bg-blue-50 text-blue-900 border-blue-200',
-    error: 'bg-red-50 text-red-900 border-red-200',
+    success: 'bg-[var(--color-surface-1)] text-green-900 border-green-200',
+    info: 'bg-[var(--color-surface-1)] text-blue-900 border-blue-200',
+    error: 'bg-[var(--color-surface-1)] text-[var(--data-negative)] border-red-200',
   };
 
   const iconColors = {
     success: 'text-green-500',
-    info: 'text-blue-500',
+    info: 'text-[var(--link)]',
     error: 'text-red-500',
   };
 

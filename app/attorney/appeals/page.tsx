@@ -81,12 +81,12 @@ export default function AppealsPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Appeals Analytics
           </div>
-          <h1 style={{ fontFamily: 'var(--font-ui)', fontSize: 'clamp(24px, 3.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFF', margin: '0 0 12px' }}>Know your reversal odds before you file</h1>
+          <h1 style={{ fontFamily: 'var(--font-ui)', fontSize: 'clamp(24px, 3.5vw, 30px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--color-text-inverse, #fff)', margin: '0 0 12px' }}>Know your reversal odds before you file</h1>
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
             Reversal probability and strategic insight — by case type, circuit, and trial outcome — derived from millions of federal appeals.
           </p>
@@ -192,7 +192,7 @@ export default function AppealsPage() {
               </div>
 
               {/* Data Source */}
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: '#fde68a', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6 }}>
                 <strong>Data Sources:</strong> Appeal rates derived from FJC Integrated Database and Administrative Office of the U.S. Courts annual reports. Reversal rates reflect circuit-level averages. Individual case outcomes depend on specific facts and legal issues. All outputs should be verified with current case law research.
               </div>
             </div>

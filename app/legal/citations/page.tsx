@@ -29,8 +29,8 @@ interface Citation {
 const CATEGORIES = [
   { key: 'constitutional', label: 'Constitutional', color: 'var(--accent-primary)' },
   { key: 'civil_rights', label: 'Civil Rights', color: '#a78bfa' },
-  { key: 'criminal', label: 'Criminal Law', color: '#f87171' },
-  { key: 'regulatory', label: 'Regulatory', color: '#34d399' },
+  { key: 'criminal', label: 'Criminal Law', color: 'var(--data-negative, #B01E1E)' },
+  { key: 'regulatory', label: 'Regulatory', color: 'var(--data-positive, #176438)' },
   { key: 'corporate', label: 'Corporate', color: 'var(--wrn-txt, #7A5800)' },
 ];
 
@@ -303,7 +303,7 @@ export default function CitationsPage() {
                   fontSize="10"
                   fontWeight={selected?.id === node.id ? 700 : 500}
                   fill={hl ? 'var(--color-text-primary)' : 'var(--color-text-muted)'}
-                  fontFamily="var(--font-inter, Inter, sans-serif)"
+                  fontFamily="var(--font-ui, Inter, sans-serif)"
                 >
                   {node.name.length > 22 ? node.name.slice(0, 20) + '...' : node.name}
                 </text>
@@ -404,7 +404,7 @@ export default function CitationsPage() {
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Citation Links</div>
         </div>
         <div style={{ padding: '24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
-          <div style={{ fontSize: 28, fontWeight: 700, color: '#34d399', fontFamily: 'var(--font-mono, monospace)' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono, monospace)' }}>
             {CATEGORIES.length}
           </div>
           <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Legal Categories</div>

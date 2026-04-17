@@ -546,8 +546,8 @@ function PreviewContent({
 
       <div
         style={{
-          backgroundColor: '#FEF2F2',
-          border: '1px solid #FCA5A5',
+          backgroundColor: 'var(--data-negative-bg, #FEF2F2)',
+          border: '1px solid var(--data-negative-border, #FCA5A5)',
           padding: '12px',
           borderRadius: '4px',
           marginBottom: '24px',

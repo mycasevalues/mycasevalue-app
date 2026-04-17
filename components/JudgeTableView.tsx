@@ -23,7 +23,7 @@ interface JudgeTableViewProps {
 }
 
 function SortIcon({ active, order }: { active: boolean; order: string }) {
-  if (!active) return <span className="text-gray-300 ml-1">↕</span>;
+  if (!active) return <span className="text-[var(--color-text-muted)] ml-1">↕</span>;
   return <span className="text-brand-blue ml-1">{order === 'asc' ? '↑' : '↓'}</span>;
 }
 
@@ -61,28 +61,28 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
         <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
         <thead>
           <tr className="bg-[var(--color-surface-2)] border-b border-[var(--bdr, #E2DFD8)]">
-            <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-100 whitespace-nowrap"
+            <th className="text-left px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
                 onClick={() => onSort?.('name')}>
               Judge <SortIcon active={sortBy === 'name'} order={sortOrder} />
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide whitespace-nowrap">
               District
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide whitespace-nowrap">
               Circuit
             </th>
-            <th className="text-right px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-100 whitespace-nowrap"
+            <th className="text-right px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
                 onClick={() => onSort?.('cases')}>
               Cases <SortIcon active={sortBy === 'cases'} order={sortOrder} />
             </th>
-            <th className="text-right px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide cursor-pointer hover:text-gray-100 whitespace-nowrap"
+            <th className="text-right px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
                 onClick={() => onSort?.('winRate')}>
               Win % <SortIcon active={sortBy === 'winRate'} order={sortOrder} />
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide whitespace-nowrap">
               Appointed
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-gray-600 text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide whitespace-nowrap">
               Party
             </th>
             <th className="w-10 px-2 py-2.5" aria-label="Save"></th>
@@ -100,7 +100,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
               <tr
                 key={judge.id}
                 className={`border-b border-[var(--bdr, #E2DFD8)] hover:bg-white/5 transition-colors cursor-pointer ${
-                  selectedIdx === idx ? 'bg-blue-50 ring-1 ring-inset ring-brand-blue/30' : idx % 2 === 0 ? '' : 'bg-gray-25'
+                  selectedIdx === idx ? 'bg-[var(--color-surface-1)] ring-1 ring-inset ring-brand-blue/30' : idx % 2 === 0 ? '' : 'bg-[var(--color-surface-1)]'
                 }`}
                 onClick={() => setSelectedIdx(idx)}
               >
@@ -119,19 +119,19 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
                   >
                     <Link
                       href={`/judges/${judge.id}`}
-                      className="text-sm font-semibold text-gray-100 hover:text-brand-blue transition-colors"
+                      className="text-sm font-semibold text-[var(--color-text-muted)] hover:text-brand-blue transition-colors"
                     >
                       {judge.full_name}
                     </Link>
                   </HoverPreview>
                 </td>
-                <td className="px-3 py-2 text-xs text-gray-600 whitespace-nowrap">
+                <td className="px-3 py-2 text-xs text-[var(--color-text-secondary)] whitespace-nowrap">
                   {judge.district_id || '—'}
                 </td>
-                <td className="px-3 py-2 text-xs text-gray-500 whitespace-nowrap">
+                <td className="px-3 py-2 text-xs text-[var(--color-text-muted)] whitespace-nowrap">
                   {judge.circuit ? `${judge.circuit} Circuit` : '—'}
                 </td>
-                <td className="px-3 py-2 text-right font-mono text-xs font-semibold text-gray-100">
+                <td className="px-3 py-2 text-right font-mono text-xs font-semibold text-[var(--color-text-muted)]">
                   {judge.total_cases_handled > 0 ? judge.total_cases_handled.toLocaleString() : '—'}
                 </td>
                 <td className="px-3 py-2 text-right">
@@ -140,15 +140,15 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
                       {winRate.toFixed(1)}%
                     </span>
                   ) : (
-                    <span className="text-xs text-gray-400">—</span>
+                    <span className="text-xs text-[var(--color-text-muted)]">—</span>
                   )}
                 </td>
-                <td className="px-3 py-2 text-xs text-gray-500 whitespace-nowrap">
+                <td className="px-3 py-2 text-xs text-[var(--color-text-muted)] whitespace-nowrap">
                   {judge.appointment_date
                     ? new Date(judge.appointment_date).getFullYear()
                     : '—'}
                   {judge.appointing_president && (
-                    <span className="text-gray-400 ml-1">
+                    <span className="text-[var(--color-text-muted)] ml-1">
                       ({judge.appointing_president.split(' ').pop()})
                     </span>
                   )}
@@ -194,7 +194,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
         </table>
 
         {judges.length === 0 && (
-          <div className="py-16 text-center text-sm text-gray-400">
+          <div className="py-16 text-center text-sm text-[var(--color-text-muted)]">
             No judges match your filters
           </div>
         )}

@@ -41,7 +41,7 @@ const FEATURES = [
         <line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" />
       </svg>
     ),
-    color: '#34d399',
+    color: 'var(--data-positive, #176438)',
     bg: 'rgba(34,197,94,0.06)',
   },
 ];
@@ -51,8 +51,8 @@ const SOURCES = [
   { name: 'Federal Register', records: 'Daily', type: 'Regulations', color: '#a78bfa', description: 'Proposed and final rules, notices, and presidential documents' },
   { name: 'eCFR', records: '~200k', type: 'Federal Code', color: '#0D9488', description: 'Electronic Code of Federal Regulations — current regulatory text' },
   { name: 'EDGAR', records: 'Millions', type: 'SEC Filings', color: 'var(--wrn-txt, #7A5800)', description: '10-K, 10-Q, 8-K, and other corporate filings and disclosures' },
-  { name: 'Caselaw Access', records: '6.7M', type: 'US Cases', color: '#34d399', description: 'Harvard Law Library digitized caselaw spanning 360+ years' },
-  { name: 'CanLII', records: '100k+', type: 'Canadian Law', color: '#f87171', description: 'Canadian court decisions and legislation for cross-border research' },
+  { name: 'Caselaw Access', records: '6.7M', type: 'US Cases', color: 'var(--data-positive, #176438)', description: 'Harvard Law Library digitized caselaw spanning 360+ years' },
+  { name: 'CanLII', records: '100k+', type: 'Canadian Law', color: 'var(--data-negative, #B01E1E)', description: 'Canadian court decisions and legislation for cross-border research' },
   { name: 'GovInfo', records: 'Millions', type: 'Gov Documents', color: 'var(--color-text-muted)', description: 'Congressional records, federal reports, and government publications' },
 ];
 
@@ -98,7 +98,7 @@ export default function LegalDataPage() {
           Research Hub
         </div>
         <h1 style={{
-          fontFamily: 'var(--font-inter, Inter, sans-serif)',
+          fontFamily: 'var(--font-ui, Inter, sans-serif)',
           fontSize: 40,
           fontWeight: 700,
           color: 'var(--color-text-primary)',
@@ -247,7 +247,7 @@ export default function LegalDataPage() {
         padding: '24px',
         borderRadius: 6,
         background: 'rgba(59,130,246,0.06)',
-        border: '1px solid #D4E4F7',
+        border: '1px solid var(--link-light, #BAE6FD)',
         marginBottom: 20,
       }}>
         <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>

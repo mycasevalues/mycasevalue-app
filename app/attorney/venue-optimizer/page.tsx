@@ -203,7 +203,7 @@ export default function VenueOptimizerPage() {
               </div>
               <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Settlement Rate</p>
-                <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: '#5eead4', margin: 0 }}>{data.nationalStats.settlementRate}%</p>
+                <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--data-positive, #176438)', margin: 0 }}>{data.nationalStats.settlementRate}%</p>
               </div>
               <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Median Duration</p>

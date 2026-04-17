@@ -11,9 +11,9 @@ interface CaseLawSummariesProps {
 
 const relevanceColors: Record<string, string> = {
   Landmark: 'bg-red-100 text-red-800',
-  'Frequently Cited': 'bg-blue-100 text-blue-800',
-  Recent: 'bg-green-100 text-green-800',
-  Distinguishing: 'bg-yellow-100 text-yellow-800',
+  'Frequently Cited': 'bg-[var(--color-surface-1)] text-blue-800',
+  Recent: 'bg-green-100 text-[var(--data-positive)]',
+  Distinguishing: 'bg-yellow-100 text-[var(--wrn-txt)]',
 };
 
 export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
@@ -28,9 +28,9 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
         transition={{ duration: 0.4 }}
         className="rounded border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
       >
-        <h2 className="text-lg font-semibold text-gray-100 mb-3">Relevant Case Law</h2>
-        <div className="text-sm text-gray-400">
-          <p className="font-medium text-gray-300 mb-1">Landmark cases and recent precedents</p>
+        <h2 className="text-lg font-semibold text-[var(--color-text-muted)] mb-3">Relevant Case Law</h2>
+        <div className="text-sm text-[var(--color-text-muted)]">
+          <p className="font-medium text-[var(--color-text-muted)] mb-1">Landmark cases and recent precedents</p>
           <p>
             AI-powered analysis of precedents for NOS {nosCode}. See landmark cases and recent opinions
             relevant to this case type.
@@ -47,7 +47,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
       transition={{ duration: 0.4 }}
       className="rounded border border-[var(--bdr, #E2DFD8)] bg-[var(--surf,#F6F5F2)] p-6"
     >
-      <h2 className="text-lg font-semibold text-gray-100 mb-6">Relevant Case Law</h2>
+      <h2 className="text-lg font-semibold text-[var(--color-text-muted)] mb-6">Relevant Case Law</h2>
 
       <div className="space-y-3">
         <AnimatePresence>
@@ -67,7 +67,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-semibold text-gray-100">{caseItem.name}</span>
+                      <span className="font-semibold text-[var(--color-text-muted)]">{caseItem.name}</span>
                       <span
                         className={`inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium ${
                           relevanceColors[caseItem.relevance]
@@ -76,11 +76,11 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
                         {caseItem.relevance}
                       </span>
                     </div>
-                    <div className="flex flex-wrap items-center gap-2 text-xs text-gray-400">
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-muted)]">
                       <span>{caseItem.court}</span>
-                      <span className="text-gray-400">•</span>
+                      <span className="text-[var(--color-text-muted)]">•</span>
                       <span>{caseItem.year}</span>
-                      <span className="text-gray-400">•</span>
+                      <span className="text-[var(--color-text-muted)]">•</span>
                       <span className="font-mono">{caseItem.citation}</span>
                     </div>
                   </div>
@@ -88,7 +88,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
                     <motion.div
                       animate={{ rotate: expandedIndex === index ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
-                      className="text-gray-400"
+                      className="text-[var(--color-text-muted)]"
                     >
                       <svg
                         width="20"
@@ -118,7 +118,7 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
                     className="border-t border-[var(--bdr, #E2DFD8)] bg-[var(--color-surface-2)]"
                   >
                     <div className="p-4">
-                      <p className="text-sm text-gray-300 leading-relaxed">{caseItem.summary}</p>
+                      <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">{caseItem.summary}</p>
                     </div>
                   </motion.div>
                 )}
@@ -129,8 +129,8 @@ export default function CaseLawSummaries({ nosCode }: CaseLawSummariesProps) {
       </div>
 
       <div className="mt-6 pt-6 border-t border-[var(--bdr, #E2DFD8)]">
-        <p className="text-xs text-gray-400">
-          <span className="font-semibold text-gray-300">Source:</span> CourtListener federal court opinions.
+        <p className="text-xs text-[var(--color-text-muted)]">
+          <span className="font-semibold text-[var(--color-text-muted)]">Source:</span> CourtListener federal court opinions.
           Summaries generated by AI analysis of case documents.
         </p>
       </div>

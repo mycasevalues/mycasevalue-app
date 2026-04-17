@@ -1188,7 +1188,7 @@ export default function TeamWorkspace() {
                 padding: '12px 16px',
                 borderRadius: '4px',
                 backgroundColor: 'rgba(5, 150, 105, 0.1)',
-                color: '#34d399',
+                color: 'var(--data-positive, #176438)',
                 fontSize: '13px',
                 marginBottom: '16px',
               }}

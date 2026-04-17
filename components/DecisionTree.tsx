@@ -703,7 +703,7 @@ export default function DecisionTree() {
                     style={{
                       width: '100%',
                       padding: '0.75rem',
-                      border: '1px solid #d1d5db',
+                      border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '0.95rem',
                       boxSizing: 'border-box',
@@ -734,7 +734,7 @@ export default function DecisionTree() {
           <div
             style={{
               backgroundColor: 'rgba(59,130,246,0.06)',
-              border: '1px solid #bfdbfe',
+              border: '1px solid var(--link-light, #BAE6FD)',
               borderRadius: '4px',
               padding: '1.5rem',
             }}
@@ -782,7 +782,7 @@ export default function DecisionTree() {
               marginTop: '1.5rem',
               padding: '1.5rem',
               backgroundColor: 'rgba(234,179,8,0.06)',
-              border: '1px solid #fcd34d',
+              border: '1px solid var(--wrn-bg, #FCD34D)',
               borderRadius: '4px',
             }}
           >
@@ -1087,7 +1087,7 @@ export default function DecisionTree() {
           <div
             style={{
               backgroundColor: 'rgba(255,255,255,0.05)',
-              border: '1px solid #d1d5db',
+              border: '1px solid var(--border-default)',
               borderRadius: '4px',
               padding: '1.5rem',
             }}
@@ -1120,7 +1120,7 @@ export default function DecisionTree() {
           onClick={handleReset}
           style={{
             padding: '0.75rem 1.5rem',
-            border: '1px solid #d1d5db',
+            border: '1px solid var(--border-default)',
             backgroundColor: 'var(--color-surface-0)',
             color: 'var(--color-text-primary)',
             borderRadius: '4px',
@@ -1145,7 +1145,7 @@ export default function DecisionTree() {
               onClick={handlePreviousStep}
               style={{
                 padding: '0.75rem 1.5rem',
-                border: '1px solid #d1d5db',
+                border: '1px solid var(--border-default)',
                 backgroundColor: 'var(--color-surface-0)',
                 color: 'var(--color-text-primary)',
                 borderRadius: '4px',

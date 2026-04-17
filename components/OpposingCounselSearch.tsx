@@ -298,7 +298,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
             </h4>
             <div style={{ display: 'flex', gap: '8px' }}>
               {[
-                { label: 'Early', value: attorney.trialVsSettlement.earlySettlementRate, color: '#34d399' },
+                { label: 'Early', value: attorney.trialVsSettlement.earlySettlementRate, color: 'var(--data-positive, #176438)' },
                 { label: 'Standard', value: attorney.trialVsSettlement.settlementRate - attorney.trialVsSettlement.earlySettlementRate, color: '#B86E00' },
                 { label: 'Late', value: 100 - attorney.trialVsSettlement.settlementRate, color: 'var(--accent-primary)' },
               ].map((s) => (
@@ -557,11 +557,11 @@ export default function OpposingCounselSearch() {
               padding: '12px 16px',
               borderRadius: '4px',
               backgroundColor: 'rgba(220, 38, 38, 0.12)',
-              border: '1px solid #FCA5A5',
+              border: '1px solid var(--data-negative-border, #FCA5A5)',
               marginBottom: '24px',
             }}
           >
-            <p style={{ fontSize: '13px', color: '#f87171', margin: 0 }}>{error}</p>
+            <p style={{ fontSize: '13px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
           </div>
         )}
 

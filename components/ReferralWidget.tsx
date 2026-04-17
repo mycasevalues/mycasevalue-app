@@ -109,8 +109,8 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
           padding: '16px',
           borderRadius: '4px',
           backgroundColor: 'rgba(239,68,68,0.1)',
-          color: '#f87171',
-          border: '1px solid #FECACA',
+          color: 'var(--data-negative, #B01E1E)',
+          border: '1px solid var(--data-negative-border, #FCA5A5)',
         }}
       >
         <p>{error}</p>
@@ -128,7 +128,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
           border: '1px solid rgba(59,130,246,0.15)',
         }}
       >
-        <h3 style={{ margin: '0 0 8px 0', color: '#60a5fa' }}>
+        <h3 style={{ margin: '0 0 8px 0', color: 'var(--link, #0A50A2)' }}>
           Referral Link Not Set
         </h3>
         <p style={{ margin: '0 0 16px 0', color: '#1E3A8A', fontSize: '14px' }}>
@@ -179,7 +179,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
         padding: '24px',
         borderRadius: '4px',
         backgroundColor: 'var(--color-surface-1)',
-        border: '1px solid #E9ECEF',
+        border: '1px solid var(--border-default)',
       }}
     >
       <h3 style={{ margin: '0 0 16px 0', color: 'var(--color-text-primary)', fontSize: '18px' }}>
@@ -193,7 +193,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
           padding: '12px',
           backgroundColor: 'white',
           borderRadius: '4px',
-          border: '1px solid #DEE2E6',
+          border: '1px solid var(--border-default)',
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
@@ -245,7 +245,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
               padding: '12px',
               backgroundColor: 'white',
               borderRadius: '4px',
-              border: '1px solid #DEE2E6',
+              border: '1px solid var(--border-default)',
               textAlign: 'center',
             }}
           >
@@ -274,7 +274,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
               padding: '12px',
               backgroundColor: 'white',
               borderRadius: '4px',
-              border: '1px solid #DEE2E6',
+              border: '1px solid var(--border-default)',
               textAlign: 'center',
             }}
           >
@@ -307,9 +307,9 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
           padding: '12px',
           backgroundColor: 'rgba(234,179,8,0.1)',
           borderRadius: '4px',
-          border: '1px solid #FCD34D',
+          border: '1px solid var(--wrn-bg, #FCD34D)',
           fontSize: '13px',
-          color: '#fbbf24',
+          color: 'var(--wrn-txt, #7A5800)',
         }}
       >
         <strong>Share your link:</strong> Send it to friends, family, or

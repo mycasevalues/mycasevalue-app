@@ -115,7 +115,7 @@ export default function CodeExampleTabs() {
           style={{
             margin: 0,
             padding: '12px 14px',
-            backgroundColor: '#1a1a2e',
+            backgroundColor: 'var(--chrome-bg, #1B2D45)',
             color: '#D4D4D4',
             fontSize: '12px',
             lineHeight: 1.6,

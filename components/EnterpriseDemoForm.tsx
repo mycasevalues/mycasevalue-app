@@ -155,7 +155,7 @@ export default function EnterpriseDemoForm() {
 
   const errorStyle: React.CSSProperties = {
     fontSize: '12px',
-    color: '#f87171',
+    color: 'var(--data-negative, #B01E1E)',
     fontFamily: 'var(--font-body)',
     marginTop: '4px',
   };

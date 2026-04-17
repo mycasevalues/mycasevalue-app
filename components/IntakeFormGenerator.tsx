@@ -629,7 +629,7 @@ export default function IntakeFormGenerator() {
             </select>
           </div>
 
-          <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
+          <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
             <p style={{ fontSize: '12px', color: '#38bdf8', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
               This tool generates a comprehensive intake questionnaire with relevant fields for your case type. You can customize and print the form for client meetings.
             </p>
@@ -702,8 +702,8 @@ export default function IntakeFormGenerator() {
               ))}
             </ul>
 
-            <div style={{ marginTop: '24px', padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '4px', border: '1px solid #FCD34D' }}>
-              <p style={{ fontSize: '12px', color: '#fbbf24', margin: 0, fontFamily: 'var(--font-body)' }}>
+            <div style={{ marginTop: '24px', padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '4px', border: '1px solid var(--wrn-bg, #FCD34D)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--wrn-txt, #7A5800)', margin: 0, fontFamily: 'var(--font-body)' }}>
                 <strong>Note:</strong> Each section contains numbered fields with blank lines formatted for printing.
               </p>
             </div>

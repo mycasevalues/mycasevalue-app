@@ -401,7 +401,7 @@ export default function AccountPage() {
             )}
 
             {newApiKey && (
-              <div style={{ padding: '16px', borderRadius: '4px', marginBottom: '16px', backgroundColor: 'rgba(59,130,246,0.06)', border: '1px solid #B3D4FC' }}>
+              <div style={{ padding: '16px', borderRadius: '4px', marginBottom: '16px', backgroundColor: 'rgba(59,130,246,0.06)', border: '1px solid var(--link-light, #BAE6FD)' }}>
                 <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary-hover)', margin: '0 0 8px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Your New API Key (copy now)
                 </p>
@@ -438,7 +438,7 @@ export default function AccountPage() {
                           <button
                             onClick={() => handleRevokeApiKey(key.id)}
                             className="revoke-btn"
-                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: '#f87171', backgroundColor: 'transparent', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }}
+                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: 'var(--data-negative, #B01E1E)', backgroundColor: 'transparent', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }}
                           >
                             Revoke
                           </button>

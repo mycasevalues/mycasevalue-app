@@ -34,8 +34,8 @@ const SOURCES: SourceStatus[] = [
   { name: 'Federal Register', key: 'federal_register', color: '#a78bfa', status: 'healthy', documents: 89421, lastSync: '8 min ago', syncInterval: '1 hr', latency: 210, uptime: 99.5, trend: 1.8 },
   { name: 'eCFR', key: 'ecfr', color: '#0D9488', status: 'healthy', documents: 198765, lastSync: '25 min ago', syncInterval: '6 hr', latency: 95, uptime: 99.9, trend: 0.3 },
   { name: 'EDGAR', key: 'edgar', color: 'var(--wrn-txt, #7A5800)', status: 'degraded', documents: 1243098, lastSync: '1 hr ago', syncInterval: '30 min', latency: 890, uptime: 97.2, trend: -0.5 },
-  { name: 'Caselaw Access', key: 'caselaw', color: '#34d399', status: 'healthy', documents: 6712340, lastSync: '12 min ago', syncInterval: '4 hr', latency: 178, uptime: 99.7, trend: 0.9 },
-  { name: 'CanLII', key: 'canlii', color: '#f87171', status: 'healthy', documents: 134562, lastSync: '45 min ago', syncInterval: '12 hr', latency: 320, uptime: 99.1, trend: 1.2 },
+  { name: 'Caselaw Access', key: 'caselaw', color: 'var(--data-positive, #176438)', status: 'healthy', documents: 6712340, lastSync: '12 min ago', syncInterval: '4 hr', latency: 178, uptime: 99.7, trend: 0.9 },
+  { name: 'CanLII', key: 'canlii', color: 'var(--data-negative, #B01E1E)', status: 'healthy', documents: 134562, lastSync: '45 min ago', syncInterval: '12 hr', latency: 320, uptime: 99.1, trend: 1.2 },
   { name: 'GovInfo', key: 'govinfo', color: 'var(--color-text-muted)', status: 'offline', documents: 2891234, lastSync: '3 hr ago', syncInterval: '2 hr', latency: 0, uptime: 94.3, trend: -1.1 },
 ];
 
@@ -52,15 +52,15 @@ const PIPELINE_EVENTS: PipelineEvent[] = [
 
 const STATUS_STYLES: Record<string, { bg: string; color: string; label: string }> = {
   healthy: { bg: 'rgba(34,197,94,0.06)', color: 'var(--data-positive, #176438)', label: 'Healthy' },
-  degraded: { bg: 'rgba(234,179,8,0.08)', color: '#fbbf24', label: 'Degraded' },
+  degraded: { bg: 'rgba(234,179,8,0.08)', color: 'var(--wrn-txt, #7A5800)', label: 'Degraded' },
   offline: { bg: '#FEF2F2', color: '#B91C1C', label: 'Offline' },
 };
 
 const EVENT_STYLES: Record<string, { bg: string; color: string; icon: string }> = {
   ingestion: { bg: '#E8F4FD', color: 'var(--accent-primary)', icon: '\u2B07' },
   processing: { bg: '#F5F3FF', color: '#a78bfa', icon: '\u2699' },
-  embedding: { bg: 'rgba(34,197,94,0.06)', color: '#34d399', icon: '\u2728' },
-  error: { bg: '#FEF2F2', color: '#f87171', icon: '\u26A0' },
+  embedding: { bg: 'rgba(34,197,94,0.06)', color: 'var(--data-positive, #176438)', icon: '\u2728' },
+  error: { bg: '#FEF2F2', color: 'var(--data-negative, #B01E1E)', icon: '\u26A0' },
 };
 
 function formatNumber(n: number): string {
@@ -113,7 +113,7 @@ export default function LegalDashboardPage() {
           padding: '8px 16px',
           borderRadius: 4,
           background: 'rgba(34,197,94,0.06)',
-          border: '1px solid #BBF7D0',
+          border: '1px solid var(--data-positive-border, #BFEFE5)',
           fontSize: 13,
           color: 'var(--data-positive, #176438)',
           fontWeight: 500,
@@ -135,7 +135,7 @@ export default function LegalDashboardPage() {
         </div>
         <div style={{ padding: '24px 24px', borderRadius: 14, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Sources Online</div>
-          <div style={{ fontSize: 28, fontWeight: 700, color: '#34d399', fontFamily: 'var(--font-mono, monospace)' }}>{healthySources}/{sources.length}</div>
+          <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono, monospace)' }}>{healthySources}/{sources.length}</div>
           <div style={{ fontSize: 12, color: sources.some(s => s.status !== 'healthy') ? '#B45309' : 'var(--data-positive, #176438)', marginTop: 4 }}>
             {sources.some(s => s.status === 'offline') ? '1 source offline' : sources.some(s => s.status === 'degraded') ? '1 degraded' : 'All healthy'}
           </div>
@@ -380,7 +380,7 @@ export default function LegalDashboardPage() {
                 { stage: 'Ingestion Queue', count: 3421, status: 'active', color: 'var(--accent-primary)' },
                 { stage: 'Text Extraction', count: 892, status: 'active', color: '#a78bfa' },
                 { stage: 'Entity Recognition', count: 456, status: 'active', color: '#0D9488' },
-                { stage: 'Embedding Generation', count: 1203, status: 'active', color: '#34d399' },
+                { stage: 'Embedding Generation', count: 1203, status: 'active', color: 'var(--data-positive, #176438)' },
                 { stage: 'Index Update', count: 78, status: 'active', color: 'var(--wrn-txt, #7A5800)' },
               ].map(stage => (
                 <div key={stage.stage} style={{ textAlign: 'center', padding: '16px' }}>

@@ -393,7 +393,7 @@ export default function DistrictsExplorer({
           <div className="stat-label">Highest Win Rate</div>
           {stats.highestWinRate ? (
             <>
-              <div className="stat-value" style={{ color: '#34d399' }}>
+              <div className="stat-value" style={{ color: 'var(--data-positive, #176438)' }}>
                 {stats.highestWinRate.winRate}%
               </div>
               <div className="stat-meta">{stats.highestWinRate.name}</div>
@@ -512,7 +512,7 @@ export default function DistrictsExplorer({
               <div
                 style={{
                   height: 3,
-                  background: '#F0F3F5',
+                  background: 'var(--color-surface-1)',
                   borderRadius: 2,
                   overflow: 'hidden',
                   marginBottom: 10,
@@ -532,7 +532,7 @@ export default function DistrictsExplorer({
               <div style={{ display: 'flex', gap: 8, fontSize: 11, flexWrap: 'wrap' }}>
                 <span
                   style={{
-                    background: '#F0F3F5',
+                    background: 'var(--color-surface-1)',
                     color: 'var(--color-text-secondary)',
                     padding: '2px 8px',
                     borderRadius: 2,

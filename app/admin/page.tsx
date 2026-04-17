@@ -268,7 +268,7 @@ export default function AdminPage() {
                   key={index}
                   style={{
                     backgroundColor: 'var(--color-surface-0)',
-                    border: '1px solid #e0e0e0',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '4px',
                     padding: '24px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -288,7 +288,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
@@ -315,13 +315,13 @@ export default function AdminPage() {
                         width: '12px',
                         height: '12px',
                         borderRadius: '50%',
-                        backgroundColor: '#22c55e',
+                        backgroundColor: 'var(--data-positive, #176438)',
                         marginRight: '12px',
                       }}
                     />
                     <div>
                       <p style={{ fontSize: '14px', fontWeight: '500', margin: 0 }}>{status.name}</p>
-                      <p style={{ fontSize: '12px', color: '#22c55e', margin: '2px 0 0 0' }}>Operational</p>
+                      <p style={{ fontSize: '12px', color: 'var(--data-positive, #176438)', margin: '2px 0 0 0' }}>Operational</p>
                     </div>
                   </div>
                 ))}
@@ -332,7 +332,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -378,7 +378,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
@@ -456,7 +456,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
@@ -480,7 +480,7 @@ export default function AdminPage() {
                     style={{
                       width: '100%',
                       padding: '8px 12px',
-                      border: '1px solid #e0e0e0',
+                      border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '14px',
                       boxSizing: 'border-box',
@@ -495,7 +495,7 @@ export default function AdminPage() {
                     style={{
                       width: '100%',
                       padding: '8px 12px',
-                      border: '1px solid #e0e0e0',
+                      border: '1px solid var(--border-default)',
                       borderRadius: '4px',
                       fontSize: '14px',
                       boxSizing: 'border-box',
@@ -517,7 +517,7 @@ export default function AdminPage() {
                   style={{
                     width: '100%',
                     padding: '8px 12px',
-                    border: '1px solid #e0e0e0',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '4px',
                     fontSize: '14px',
                     fontFamily: 'inherit',
@@ -550,7 +550,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -576,7 +576,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
@@ -619,7 +619,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
@@ -654,7 +654,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -712,7 +712,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -734,7 +734,7 @@ export default function AdminPage() {
                 style={{
                   width: '100%',
                   padding: '12px',
-                  border: '1px solid #e0e0e0',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '4px',
                   fontSize: '13px',
                   fontFamily: 'monospace',
@@ -749,7 +749,7 @@ export default function AdminPage() {
                   onClick={handleValidateRules}
                   style={{
                     padding: '8px 16px',
-                    backgroundColor: '#6b7280',
+                    backgroundColor: 'var(--text-secondary, #6B7280)',
                     color: 'white',
                     border: 'none',
                     borderRadius: '4px',
@@ -814,7 +814,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -836,7 +836,7 @@ export default function AdminPage() {
                   style={{
                     width: '100%',
                     padding: '8px 12px',
-                    border: '1px solid #e0e0e0',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '4px',
                     fontSize: '14px',
                     boxSizing: 'border-box',
@@ -914,7 +914,7 @@ export default function AdminPage() {
               <div
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
-                  border: '1px solid #e0e0e0',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '4px',
                   padding: '24px',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -930,7 +930,7 @@ export default function AdminPage() {
               <div
                 style={{
                   backgroundColor: 'var(--color-surface-0)',
-                  border: '1px solid #e0e0e0',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '4px',
                   padding: '24px',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -949,7 +949,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '32px',
@@ -991,7 +991,7 @@ export default function AdminPage() {
             <div
               style={{
                 backgroundColor: 'var(--color-surface-0)',
-                border: '1px solid #e0e0e0',
+                border: '1px solid var(--border-default)',
                 borderRadius: '4px',
                 padding: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -1013,7 +1013,7 @@ export default function AdminPage() {
                   style={{
                     width: '100%',
                     padding: '8px 12px',
-                    border: '1px solid #e0e0e0',
+                    border: '1px solid var(--border-default)',
                     borderRadius: '4px',
                     fontSize: '14px',
                     boxSizing: 'border-box',

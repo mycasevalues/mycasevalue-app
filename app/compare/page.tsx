@@ -176,9 +176,9 @@ export default function ComparePage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Comparison Tool
           </div>
           <h1 className="compare-header" style={{
@@ -537,7 +537,7 @@ export default function ComparePage() {
                 padding: '16px',
                 background: 'var(--color-surface-0)',
                 borderRadius: '4px',
-                border: '1px solid #E0DDD8',
+                border: '1px solid var(--border-default)',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
                   <span style={{ display: 'inline-block', padding: '1px 6px', background: 'var(--border-default)', borderRadius: 4, fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.3px' }}>AI</span>
@@ -797,7 +797,7 @@ export default function ComparePage() {
               marginTop: 48,
               padding: 'clamp(24px, 5vw, 32px)',
               background: 'rgba(59,130,246,0.06)',
-              border: '1px solid #BAE6FD',
+              border: '1px solid var(--link-light, #BAE6FD)',
               borderRadius: 4,
             }}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>

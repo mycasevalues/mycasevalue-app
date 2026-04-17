@@ -260,7 +260,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Medicare */}
-          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: 16, border: '1px solid var(--link-light, #BAE6FD)' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -290,7 +290,7 @@ export default function LienCalculator() {
                     borderRadius: 4,
                     fontSize: 13,
                     fontFamily: 'var(--font-mono)',
-                    backgroundColor: '#FFF',
+                    backgroundColor: 'var(--card, #FFFFFF)',
                     color: 'var(--color-text-primary)',
                     outline: 'none',
                     transition: 'border-color 0.2s',
@@ -304,7 +304,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Medicaid */}
-          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: 16, border: '1px solid var(--link-light, #BAE6FD)' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -334,7 +334,7 @@ export default function LienCalculator() {
                     borderRadius: 4,
                     fontSize: 13,
                     fontFamily: 'var(--font-mono)',
-                    backgroundColor: '#FFF',
+                    backgroundColor: 'var(--card, #FFFFFF)',
                     color: 'var(--color-text-primary)',
                     outline: 'none',
                     transition: 'border-color 0.2s',
@@ -348,7 +348,7 @@ export default function LienCalculator() {
           </div>
 
           {/* Workers Compensation */}
-          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: 16, border: '1px solid #D1E0F8' }} /* Note: keeping blue-tinted colors for medical benefits section */>
+          <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: 16, border: '1px solid var(--link-light, #BAE6FD)' }} /* Note: keeping blue-tinted colors for medical benefits section */>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <input
                 type="checkbox"
@@ -378,7 +378,7 @@ export default function LienCalculator() {
                     borderRadius: 4,
                     fontSize: 13,
                     fontFamily: 'var(--font-mono)',
-                    backgroundColor: '#FFF',
+                    backgroundColor: 'var(--card, #FFFFFF)',
                     color: 'var(--color-text-primary)',
                     outline: 'none',
                     transition: 'border-color 0.2s',
@@ -455,7 +455,7 @@ export default function LienCalculator() {
             style={{
               padding: '16px 24px',
               background: 'var(--accent-primary)',
-              color: '#FFF',
+              color: 'var(--color-text-inverse, #fff)',
               border: 'none',
               borderRadius: '4px',
               fontSize: 15,
@@ -537,22 +537,22 @@ export default function LienCalculator() {
                 Medicare Lien (Estimated Range)
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: '#fde68a', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-body)' }}>
                   Low (negotiated reduction):
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#fde68a', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-mono)' }}>
                   {formatCurrency(result.medicareLiensLow)}
                 </div>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: '#fde68a', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-body)' }}>
                   High (full conditional payment):
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#fde68a', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--wrn-txt, #7A5800)', fontFamily: 'var(--font-mono)' }}>
                   {formatCurrency(result.medicareLiensHigh)}
                 </div>
               </div>
-              <div style={{ fontSize: 12, color: '#fde68a', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
+              <div style={{ fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
                 Medicare Secondary Payer (MSP) rules allow for negotiated reduction of conditional payments. The amount shown as "low" reflects typical settlement negotiations where roughly 1/3 of the net settlement is allocated to reduce the Medicare lien.
               </div>
             </div>
@@ -593,14 +593,14 @@ export default function LienCalculator() {
                 Workers Compensation Lien
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-                <div style={{ fontSize: 13, color: '#60a5fa', fontFamily: 'var(--font-body)' }}>
+                <div style={{ fontSize: 13, color: 'var(--link, #0A50A2)', fontFamily: 'var(--font-body)' }}>
                   Reimbursement amount:
                 </div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#60a5fa', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--link, #0A50A2)', fontFamily: 'var(--font-mono)' }}>
                   {formatCurrency(result.workersCompLiens)}
                 </div>
               </div>
-              <div style={{ fontSize: 12, color: '#60a5fa', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
+              <div style={{ fontSize: 12, color: 'var(--link, #0A50A2)', lineHeight: 1.6, fontFamily: 'var(--font-body)', fontStyle: 'italic' }}>
                 Workers compensation liens are generally enforced as stated but may be subject to reduction under applicable state law or settlement negotiation.
               </div>
             </div>
@@ -696,7 +696,7 @@ export default function LienCalculator() {
             borderLeft: '3px solid #D97706',
             borderRadius: 4,
             fontSize: 12,
-            color: '#fde68a',
+            color: 'var(--wrn-txt, #7A5800)',
             lineHeight: 1.6,
             fontFamily: 'var(--font-body)',
           }}>

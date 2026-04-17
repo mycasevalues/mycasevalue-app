@@ -146,7 +146,7 @@ export default function ResearchMemoPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: '#FFF', fontFamily: 'var(--font-ui)', margin: '0 0 8px' }}>
+          <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', margin: '0 0 8px' }}>
             Research Memos Backed by Real Court Data
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
@@ -217,7 +217,7 @@ export default function ResearchMemoPage() {
                 style={{
                   width: '100%', padding: '16px',
                   backgroundColor: loading || !legalQuestion.trim() ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: '#FFF', border: 'none', borderRadius: '4px',
+                  color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase', letterSpacing: '0.04em',
                   cursor: loading || !legalQuestion.trim() ? 'not-allowed' : 'pointer',
@@ -238,10 +238,10 @@ export default function ResearchMemoPage() {
                     {loading && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
                   <div style={{ display: 'flex', gap: 8 }}>
-                    <button onClick={copyToClipboard} disabled={loading} style={{ padding: '8px 12px', background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)', color: '#FFF', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.5 : 1 }}>
+                    <button onClick={copyToClipboard} disabled={loading} style={{ padding: '8px 12px', background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)', color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.5 : 1 }}>
                       {copied ? 'Copied!' : 'Copy'}
                     </button>
-                    <button onClick={exportAsDocx} disabled={loading || exporting} style={{ padding: '8px 12px', background: 'var(--accent-primary-hover)', color: '#FFF', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: loading || exporting ? 'not-allowed' : 'pointer', opacity: loading || exporting ? 0.5 : 1 }}>
+                    <button onClick={exportAsDocx} disabled={loading || exporting} style={{ padding: '8px 12px', background: 'var(--accent-primary-hover)', color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 600, cursor: loading || exporting ? 'not-allowed' : 'pointer', opacity: loading || exporting ? 0.5 : 1 }}>
                       {exporting ? 'Exporting...' : 'Export as Word'}
                     </button>
                   </div>
@@ -253,7 +253,7 @@ export default function ResearchMemoPage() {
                 </div>
               </div>
 
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: '#fde68a', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6 }}>
                 <strong>Important:</strong> AI-generated research memo for attorney review only — not a substitute for primary legal research. All citations and legal standards must be independently verified through Westlaw, LexisNexis, or other authoritative legal databases.
               </div>
             </div>

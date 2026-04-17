@@ -45,7 +45,7 @@ export function SavedReportsSection() {
             backgroundColor: 'rgba(239, 68, 68, 0.08)',
             border: '1px solid rgba(239, 68, 68, 0.2)',
             borderRadius: 4,
-            color: '#ef4444',
+            color: 'var(--data-negative, #B01E1E)',
             fontSize: 13,
           }}
         >
@@ -213,7 +213,7 @@ export function SearchHistorySection() {
               onClick={handleClear}
               style={{
                 padding: '6px 12px',
-                backgroundColor: '#ef4444',
+                backgroundColor: 'var(--data-negative, #B01E1E)',
                 color: 'white',
                 border: 'none',
                 borderRadius: 3,
@@ -257,7 +257,7 @@ export function SearchHistorySection() {
             backgroundColor: 'rgba(239, 68, 68, 0.08)',
             border: '1px solid rgba(239, 68, 68, 0.2)',
             borderRadius: 4,
-            color: '#ef4444',
+            color: 'var(--data-negative, #B01E1E)',
             fontSize: 13,
           }}
         >

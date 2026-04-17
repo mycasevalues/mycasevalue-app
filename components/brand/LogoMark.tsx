@@ -145,7 +145,7 @@ export function LogoLockup({
       <LogoMark size={size} />
       <span
         style={{
-          fontFamily: 'var(--font-jakarta), Plus Jakarta Sans, sans-serif',
+          fontFamily: 'var(--font-ui), Plus Jakarta Sans, sans-serif',
           fontSize,
           fontWeight: 800,
           letterSpacing,

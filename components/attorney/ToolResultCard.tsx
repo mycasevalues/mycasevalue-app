@@ -74,7 +74,7 @@ export function ToolResultCard({
         className="flex items-center justify-between px-8 py-6 border-b border-[var(--bdr, #E2DFD8)]"
         style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
       >
-        <h2 className="text-xl font-semibold text-gray-100">{title}</h2>
+        <h2 className="text-xl font-semibold text-[var(--color-text-muted)]">{title}</h2>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3">
@@ -82,7 +82,7 @@ export function ToolResultCard({
             <button
               onClick={handleExport}
               disabled={isExporting}
-              className="px-4 py-2 rounded-md font-medium text-gray-300 bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 rounded-md font-medium text-[var(--color-text-muted)] bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
                 paddingLeft: '16px',
                 paddingRight: '16px',

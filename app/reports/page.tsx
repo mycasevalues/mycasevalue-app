@@ -104,7 +104,7 @@ export default function ReportsPage() {
         {/* "All Reports Free During Beta" Banner */}
         <div style={{
           background: 'linear-gradient(135deg, rgba(21, 128, 61, 0.08) 0%, rgba(21, 128, 61, 0.04) 100%)',
-          border: '1px solid #059669',
+          border: '1px solid var(--data-positive, #176438)',
           borderRadius: '4px',
           padding: '24px 24px',
           marginBottom: '32px',
@@ -118,7 +118,7 @@ export default function ReportsPage() {
           <p style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: '#34d399',
+            color: 'var(--data-positive, #176438)',
             margin: 0,
           }}>
             All Reports Free During Beta — Explore unlimited case research, settlement data, and judge analytics at no cost.

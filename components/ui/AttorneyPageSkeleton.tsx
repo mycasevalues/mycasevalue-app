@@ -83,7 +83,7 @@ export default function AttorneyPageSkeleton({
               {/* Card header */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
                 <div style={{ height: 18, width: '50%', background: 'var(--border-default)', borderRadius: 2 }} />
-                <div style={{ height: 24, width: 60, background: '#F0F3F5', borderRadius: 2 }} />
+                <div style={{ height: 24, width: 60, background: 'var(--color-surface-1)', borderRadius: 2 }} />
               </div>
               {/* Card body lines */}
               <div style={{ height: 14, width: '90%', background: 'rgba(255,255,255,0.04)', borderRadius: 2, marginBottom: 10 }} />

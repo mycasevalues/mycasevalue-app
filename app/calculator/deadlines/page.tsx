@@ -144,12 +144,12 @@ export default function DeadlinesCalculatorPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             FRCP Deadlines
           </div>
-          <h1 style={{ color: '#FFF', fontFamily: 'var(--font-ui)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
+          <h1 style={{ color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, margin: '0 0 16px' }}>
             Never miss a procedural deadline
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', fontSize: 'clamp(14px, 2vw, 16px)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
@@ -234,7 +234,7 @@ export default function DeadlinesCalculatorPage() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', position: 'relative', minHeight: 80 }}>
                     {/* Start marker */}
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 0, position: 'relative' }}>
-                      <div style={{ width: 14, height: 14, borderRadius: '50%', background: 'var(--accent-primary)', border: '3px solid #FFF', boxShadow: '0 0 0 2px var(--accent-primary)', zIndex: 2 }} />
+                      <div style={{ width: 14, height: 14, borderRadius: '50%', background: 'var(--accent-primary)', border: '3px solid var(--card, #FFFFFF)', boxShadow: '0 0 0 2px var(--accent-primary)', zIndex: 2 }} />
                       <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', marginTop: 8, whiteSpace: 'nowrap', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
                         Day 0
                       </div>
@@ -256,7 +256,7 @@ export default function DeadlinesCalculatorPage() {
                           <div style={{
                             width: 12, height: 12, borderRadius: '50%',
                             background: baseDate && isPastDate(addDays(baseDate, d.days)) ? 'var(--data-negative, #B01E1E)' : 'var(--data-positive, #176438)',
-                            border: '2px solid #FFF',
+                            border: '2px solid var(--card, #FFFFFF)',
                             boxShadow: '0 0 0 2px ' + (baseDate && isPastDate(addDays(baseDate, d.days)) ? 'var(--data-negative, #B01E1E)' : 'var(--data-positive, #176438)'),
                             zIndex: 2,
                           }} />
@@ -343,7 +343,7 @@ export default function DeadlinesCalculatorPage() {
               {/* Disclaimer */}
               <div style={{
                 padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4,
-                fontSize: 12, color: '#fde68a', lineHeight: 1.6, fontFamily: 'var(--font-body)',
+                fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6, fontFamily: 'var(--font-body)',
               }}>
                 <strong>Important:</strong> Based on FRCP default rules — local rules and scheduling orders may modify these deadlines. Weekend and holiday adjustments per FRCP 6(a) are not computed here. Always verify deadlines with the applicable local rules and any court-specific orders.
               </div>

@@ -479,7 +479,7 @@ export default function DemandLetterPage() {
               </div>
 
               {/* Disclaimer */}
-              <div style={{ background: 'linear-gradient(135deg, rgba(234,179,8,0.1) 0%, #FEE2BE 100%)', borderRadius: '4px', padding: '16px', border: '1px solid #FCD34D' }}>
+              <div style={{ background: 'linear-gradient(135deg, rgba(234,179,8,0.1) 0%, #FEE2BE 100%)', borderRadius: '4px', padding: '16px', border: '1px solid var(--wrn-bg, #FCD34D)' }}>
                 <div style={{ display: 'flex', gap: '12px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#B86E00', flexShrink: 0, marginTop: '2px' }}>
                     <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z" />
@@ -490,7 +490,7 @@ export default function DemandLetterPage() {
                     <p style={{ fontSize: '12px', fontWeight: '600', color: '#B86E00', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>
                       Important Disclaimer
                     </p>
-                    <p style={{ fontSize: '12px', color: '#fbbf24', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: '12px', color: 'var(--wrn-txt, #7A5800)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
                       AI-generated template — must be reviewed and modified by a licensed attorney before use.
                     </p>
                   </div>

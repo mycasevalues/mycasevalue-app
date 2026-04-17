@@ -73,7 +73,7 @@ export default function DistrictsMapToggle({ children }: Props) {
     fontSize: '13px',
     fontWeight: 600,
     fontFamily: 'var(--font-body)',
-    border: '1px solid #E0DDD8',
+    border: '1px solid var(--border-default)',
     cursor: 'pointer',
     transition: 'all 150ms ease',
   };

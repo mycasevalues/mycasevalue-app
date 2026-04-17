@@ -609,13 +609,13 @@ export default function SOLCalculatorPage() {
 
                 {/* Warning Banner */}
                 {isExpired && (
-                  <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid #FCA5A5', borderRadius: '4px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid var(--data-negative-border, #FCA5A5)', borderRadius: '4px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DC2626" strokeWidth="2" style={{ flexShrink: 0 }}>
                       <circle cx="12" cy="12" r="10" /><path d="M12 8v4M12 16h.01" />
                     </svg>
                     <div>
-                      <p style={{ fontSize: '13px', fontWeight: 600, color: '#f87171', margin: '0 0 4px' }}>Statute Expired</p>
-                      <p style={{ fontSize: '12px', color: '#fca5a5', margin: 0 }}>
+                      <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--data-negative, #B01E1E)', margin: '0 0 4px' }}>Statute Expired</p>
+                      <p style={{ fontSize: '12px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>
                         This deadline has passed. Consult an attorney immediately about possible exceptions.
                       </p>
                     </div>
@@ -623,13 +623,13 @@ export default function SOLCalculatorPage() {
                 )}
 
                 {isWarning && !isExpired && (
-                  <div style={{ background: 'rgba(234,179,8,0.1)', border: '1px solid #FDE68A', borderRadius: '4px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <div style={{ background: 'rgba(234,179,8,0.1)', border: '1px solid var(--wrn-bg, #FCD34D)', borderRadius: '4px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2" style={{ flexShrink: 0 }}>
                       <path d="M12 2v20M2 10h20" />
                     </svg>
                     <div>
-                      <p style={{ fontSize: '13px', fontWeight: 600, color: '#fbbf24', margin: '0 0 4px' }}>Deadline in {daysRemaining} Days</p>
-                      <p style={{ fontSize: '12px', color: '#fde68a', margin: 0 }}>
+                      <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--wrn-txt, #7A5800)', margin: '0 0 4px' }}>Deadline in {daysRemaining} Days</p>
+                      <p style={{ fontSize: '12px', color: 'var(--wrn-txt, #7A5800)', margin: 0 }}>
                         You are within 90 days of the filing deadline. Act immediately.
                       </p>
                     </div>
@@ -637,15 +637,15 @@ export default function SOLCalculatorPage() {
                 )}
 
                 {!isWarning && !isExpired && daysRemaining && daysRemaining > 0 && (
-                  <div style={{ background: 'rgba(34,197,94,0.12)', border: '1px solid #6EE7B7', borderRadius: '4px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <div style={{ background: 'rgba(34,197,94,0.12)', border: '1px solid var(--data-positive-border, #BFEFE5)', borderRadius: '4px', padding: '16px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" style={{ flexShrink: 0 }}>
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <div>
-                      <p style={{ fontSize: '13px', fontWeight: 600, color: '#34d399', margin: '0 0 4px' }}>
+                      <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--data-positive, #176438)', margin: '0 0 4px' }}>
                         {daysRemaining} days remaining
                       </p>
-                      <p style={{ fontSize: '12px', color: '#34d399', margin: 0 }}>
+                      <p style={{ fontSize: '12px', color: 'var(--data-positive, #176438)', margin: 0 }}>
                         You have sufficient time to prepare your case.
                       </p>
                     </div>
@@ -695,7 +695,7 @@ export default function SOLCalculatorPage() {
                     <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       Discovery Rule
                     </h3>
-                    <p style={{ fontSize: '15px', fontWeight: 600, color: '#34d399', margin: 0 }}>
+                    <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--data-positive, #176438)', margin: 0 }}>
                       Applies
                     </p>
                   </div>

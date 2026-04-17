@@ -186,9 +186,9 @@ export default function CasePredictorPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Case Predictor
           </div>
           <h1 className="font-legal" style={{
@@ -384,7 +384,7 @@ export default function CasePredictorPage() {
                     {[
                       { val: 'weak', label: 'Weak', color: '#EA2143' },
                       { val: 'moderate', label: 'Moderate', color: '#E89558' },
-                      { val: 'strong', label: 'Strong', color: '#34d399' },
+                      { val: 'strong', label: 'Strong', color: 'var(--data-positive, #176438)' },
                     ].map((opt) => (
                       <button
                         key={opt.val}
@@ -580,7 +580,7 @@ export default function CasePredictorPage() {
 
               {/* AI-Generated Strategic Insights */}
               {p.aiInsights && (
-                <div style={{ background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', borderRadius: '4px', padding: '32px', border: '1px solid #D8BFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                <div style={{ background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: 'var(--accent-primary)', flexShrink: 0 }}>
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
@@ -651,7 +651,7 @@ export default function CasePredictorPage() {
 
         {/* Free-During-Beta Badge */}
         <div style={{ marginTop: '32px', padding: '16px 24px', background: 'linear-gradient(135deg, rgba(21, 128, 61, 0.08) 0%, rgba(21, 128, 61, 0.04) 100%)', border: '1px solid rgba(21, 128, 61, 0.20)', borderRadius: '4px', textAlign: 'center' }}>
-          <span style={{ fontSize: '12px', fontWeight: 600, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+          <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--data-positive, #176438)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
             Free During Beta
           </span>
         </div>

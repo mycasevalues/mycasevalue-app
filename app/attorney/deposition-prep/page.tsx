@@ -281,7 +281,7 @@ export default function DepositionPrepPage() {
                       disabled={loading}
                       style={{
                         padding: '8px 12px', background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
-                        color: '#FFF', border: 'none', borderRadius: '4px',
+                        color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
                         fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer',
                         opacity: loading ? 0.5 : 1, fontFamily: 'var(--font-body)',
                       }}
@@ -293,7 +293,7 @@ export default function DepositionPrepPage() {
                       disabled={loading || exporting}
                       style={{
                         padding: '8px 12px', background: 'var(--accent-primary-hover)',
-                        color: '#FFF', border: 'none', borderRadius: '4px',
+                        color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || exporting ? 'not-allowed' : 'pointer',
                         opacity: loading || exporting ? 0.5 : 1, fontFamily: 'var(--font-body)',
@@ -319,7 +319,7 @@ export default function DepositionPrepPage() {
               </div>
 
               {/* Disclaimer */}
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: '#fde68a', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
                 <strong>Important:</strong> AI-generated template — requires attorney review and customization. Do not use this outline as-is in a deposition. Questions must be adapted to the specific facts, exhibits, and strategy of your case.
               </div>
             </div>

@@ -316,7 +316,7 @@ export default function PACERMonitor() {
                         padding: '4px 8px',
                         backgroundColor: 'transparent',
                         color: 'var(--data-negative, #B01E1E)',
-                        border: '1px solid #CC1016',
+                        border: '1px solid var(--data-negative, #B01E1E)',
                         borderRadius: '4px',
                         fontSize: '12px',
                         fontWeight: 500,

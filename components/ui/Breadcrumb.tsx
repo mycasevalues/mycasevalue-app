@@ -123,14 +123,14 @@ export function Breadcrumb() {
 
       {/* Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="py-3">
-        <ol className="flex flex-wrap items-center gap-0 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-0 text-sm text-[var(--color-text-muted)]">
           {breadcrumbs.map((crumb, index) => (
             <li key={crumb.href} className="flex items-center gap-0">
               {crumb.isCurrent ? (
                 // Current page: not a link, styled differently
                 <span
                   aria-current="page"
-                  className="text-gray-100 font-medium"
+                  className="text-[var(--color-text-muted)] font-medium"
                 >
                   {crumb.label}
                 </span>
@@ -145,7 +145,7 @@ export function Breadcrumb() {
                   </Link>
                   {/* Separator after non-current crumbs */}
                   {index < breadcrumbs.length - 1 && (
-                    <span className="mx-2 text-gray-300" aria-hidden="true">
+                    <span className="mx-2 text-[var(--color-text-muted)]" aria-hidden="true">
                       ›
                     </span>
                   )}

@@ -243,9 +243,9 @@ export default function OddsPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Odds Calculator
           </div>
           <h1 className="odds-hero" style={{
@@ -481,7 +481,7 @@ export default function OddsPage() {
                   </h3>
                   <div style={{ display: 'grid', gap: 16 }}>
                     {[
-                      { label: 'Won at Trial', value: results.winRate, color: '#34d399' },
+                      { label: 'Won at Trial', value: results.winRate, color: 'var(--data-positive, #176438)' },
                       { label: 'Settled', value: results.settlementRate, color: 'var(--wrn-txt, #7A5800)' },
                       { label: 'Dismissed', value: results.dismissalRate, color: 'var(--accent-primary)' },
                     ].map(item => (
@@ -753,7 +753,7 @@ export default function OddsPage() {
                       }}
                     >
                       <div className="outcome-donut-inner">
-                        <div style={{ fontSize: 24, fontWeight: 600, color: '#34d399', fontFamily: 'var(--font-mono)' }}>
+                        <div style={{ fontSize: 24, fontWeight: 600, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>
                           {favorablePercentage.toFixed(1)}%
                         </div>
                         <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 }}>
@@ -769,7 +769,7 @@ export default function OddsPage() {
                     gap: 24,
                   }}>
                     {[
-                      { label: 'Win', color: '#34d399', pct: results.winRate },
+                      { label: 'Win', color: 'var(--data-positive, #176438)', pct: results.winRate },
                       { label: 'Settlement', color: 'var(--wrn-txt, #7A5800)', pct: results.settlementRate },
                       { label: 'Dismissed/Other', color: 'var(--color-text-muted)', pct: results.dismissalRate },
                     ].map(item => (
@@ -1206,12 +1206,12 @@ export default function OddsPage() {
                     Attorney Representation Impact
                   </h3>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
-                    <div style={{ padding: 16, background: 'rgba(34,197,94,0.1)', border: '1px solid #057642', borderRadius: 4, textAlign: 'center' }}>
+                    <div style={{ padding: 16, background: 'rgba(34,197,94,0.1)', border: '1px solid var(--data-positive, #176438)', borderRadius: 4, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>With Attorney</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive, #176438)', fontFamily: 'var(--font-mono)' }}>{attyData.rwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.rn ?? 0).toLocaleString()} cases</div>
                     </div>
-                    <div style={{ padding: 16, background: 'rgba(239,68,68,0.06)', border: '1px solid #CC1016', borderRadius: 4, textAlign: 'center' }}>
+                    <div style={{ padding: 16, background: 'rgba(239,68,68,0.06)', border: '1px solid var(--data-negative, #B01E1E)', borderRadius: 4, textAlign: 'center' }}>
                       <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: 4 }}>Pro Se</div>
                       <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-negative, #B01E1E)', fontFamily: 'var(--font-mono)' }}>{attyData.pwr}%</div>
                       <div style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>{(attyData.pn ?? 0).toLocaleString()} cases</div>
@@ -1271,15 +1271,15 @@ export default function OddsPage() {
               <section style={{
                 padding: 'clamp(16px, 4vw, 32px)',
                 background: 'rgba(234,179,8,0.1)',
-                border: '1px solid #FCD34D',
+                border: '1px solid var(--wrn-bg, #FCD34D)',
                 borderRadius: 4,
               }}>
-                <p style={{ fontSize: 13, color: '#fde68a', margin: '0 0 8px', lineHeight: 1.6, fontWeight: 600 }}>
+                <p style={{ fontSize: 13, color: 'var(--wrn-txt, #7A5800)', margin: '0 0 8px', lineHeight: 1.6, fontWeight: 600 }}>
                   Statistical estimate based on historical data — not a prediction of your case outcome.
                 </p>
-                <p style={{ fontSize: 12, color: '#fde68a', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ fontSize: 12, color: 'var(--wrn-txt, #7A5800)', margin: 0, lineHeight: 1.6 }}>
                   Data sourced from the Federal Judicial Center Integrated Database (2000–2024). Individual outcomes vary based on case facts, jurisdiction, and representation. This is not legal advice.{' '}
-                  <Link href="/methodology" className="odds-link" style={{ color: '#fbbf24' }}>Learn about our methodology</Link>
+                  <Link href="/methodology" className="odds-link" style={{ color: 'var(--wrn-txt, #7A5800)' }}>Learn about our methodology</Link>
                 </p>
               </section>
             </div>

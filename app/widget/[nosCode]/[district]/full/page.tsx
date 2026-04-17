@@ -130,7 +130,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
               left: `${p25Pos}%`,
               right: `${100 - p75Pos}%`,
               height: '100%',
-              backgroundColor: '#dbeafe',
+              backgroundColor: 'var(--link-bg, #EFF6FF)',
               borderRadius: '4px',
             }}
           />

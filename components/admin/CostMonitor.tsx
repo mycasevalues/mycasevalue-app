@@ -60,7 +60,7 @@ export default function CostMonitor() {
 
   if (loading) {
     return (
-      <div style={{ backgroundColor: 'white', border: '1px solid #e0e0e0', borderRadius: '4px', padding: '24px' }}>
+      <div style={{ backgroundColor: 'white', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px' }}>
         <p style={{ color: 'var(--color-text-secondary)' }}>Loading cost data...</p>
       </div>
     );
@@ -71,7 +71,7 @@ export default function CostMonitor() {
       <div
         style={{
           backgroundColor: 'rgba(239,68,68,0.06)',
-          border: '1px solid #fecaca',
+          border: '1px solid var(--data-negative-border, #FCA5A5)',
           borderRadius: '4px',
           padding: '24px',
           color: '#991b1b',
@@ -100,7 +100,7 @@ export default function CostMonitor() {
         <div
           style={{
             backgroundColor: 'white',
-            border: '1px solid #e0e0e0',
+            border: '1px solid var(--border-default)',
             borderRadius: '4px',
             padding: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -120,7 +120,7 @@ export default function CostMonitor() {
         <div
           style={{
             backgroundColor: 'white',
-            border: '1px solid #e0e0e0',
+            border: '1px solid var(--border-default)',
             borderRadius: '4px',
             padding: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -140,7 +140,7 @@ export default function CostMonitor() {
         <div
           style={{
             backgroundColor: 'white',
-            border: '1px solid #e0e0e0',
+            border: '1px solid var(--border-default)',
             borderRadius: '4px',
             padding: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -201,7 +201,7 @@ function ServiceCard({ service }: ServiceCardProps) {
     <div
       style={{
         backgroundColor: 'white',
-        border: '1px solid #e0e0e0',
+        border: '1px solid var(--border-default)',
         borderRadius: '4px',
         padding: '24px',
         boxShadow: '0 1px 3px rgba(0,0,0,0.05)',

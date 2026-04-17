@@ -248,7 +248,7 @@ export default function FeeCalculatorPage() {
               </div>
 
               {/* Info Box */}
-              <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
+              <div style={{ background: 'rgba(59,130,246,0.06)', padding: '16px', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
                 <p style={{ fontSize: '12px', color: '#38bdf8', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
                   This calculator shows estimated fees for different arrangements. Actual fees depend on jurisdictional rules, attorney experience, and case complexity.
                 </p>
@@ -323,7 +323,7 @@ export default function FeeCalculatorPage() {
                     Contingency Fee Tiers
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
+                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
                       <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
                         25% Contingency
                       </div>
@@ -331,7 +331,7 @@ export default function FeeCalculatorPage() {
                         ${feeData.contingency25.toLocaleString()}
                       </div>
                     </div>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
+                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
                       <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
                         33% Contingency (Typical)
                       </div>
@@ -339,7 +339,7 @@ export default function FeeCalculatorPage() {
                         ${feeData.contingency33.toLocaleString()}
                       </div>
                     </div>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
+                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
                       <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
                         40% Contingency (Higher Risk)
                       </div>
@@ -385,7 +385,7 @@ export default function FeeCalculatorPage() {
                     Hourly Fee Estimate
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
+                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
                       <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
                         Estimated Hours (Case Phases)
                       </div>
@@ -395,7 +395,7 @@ export default function FeeCalculatorPage() {
                     </div>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                      <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
+                      <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
                         <div style={{ fontSize: '11px', color: '#38bdf8', fontWeight: 600 }}>Junior Attorney</div>
                         <div style={{ fontSize: '13px', color: '#38bdf8', marginTop: '4px' }}>
                           ${feeData.hourly.lowRate}/hr
@@ -404,7 +404,7 @@ export default function FeeCalculatorPage() {
                           ${feeData.hourly.totalLow.toLocaleString()}
                         </div>
                       </div>
-                      <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
+                      <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
                         <div style={{ fontSize: '11px', color: '#38bdf8', fontWeight: 600 }}>Senior Attorney</div>
                         <div style={{ fontSize: '13px', color: '#38bdf8', marginTop: '4px' }}>
                           ${feeData.hourly.highRate}/hr
@@ -425,7 +425,7 @@ export default function FeeCalculatorPage() {
                     Hybrid Arrangement
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
+                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
                       <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
                         Upfront Retainer
                       </div>
@@ -433,7 +433,7 @@ export default function FeeCalculatorPage() {
                         ${feeData.hybrid.retainer.toLocaleString()}
                       </div>
                     </div>
-                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid #E0F2FE' }}>
+                    <div style={{ padding: '12px', background: 'rgba(59,130,246,0.06)', borderRadius: '4px', border: '1px solid var(--link-light, #BAE6FD)' }}>
                       <div style={{ fontSize: '12px', color: '#38bdf8', fontWeight: 600, marginBottom: '4px' }}>
                         Ongoing Hourly Rate
                       </div>
@@ -441,8 +441,8 @@ export default function FeeCalculatorPage() {
                         ${feeData.hybrid.hourlyRate}/hr
                       </div>
                     </div>
-                    <div style={{ padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '4px', border: '1px solid #FCD34D' }}>
-                      <div style={{ fontSize: '12px', color: '#fbbf24', fontWeight: 600, marginBottom: '4px' }}>
+                    <div style={{ padding: '12px', background: 'rgba(234,179,8,0.1)', borderRadius: '4px', border: '1px solid var(--wrn-bg, #FCD34D)' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--wrn-txt, #7A5800)', fontWeight: 600, marginBottom: '4px' }}>
                         Estimated Total (Case Completion)
                       </div>
                       <div style={{ fontSize: '18px', fontWeight: 700, color: '#B86E00', fontFamily: 'var(--font-mono)' }}>

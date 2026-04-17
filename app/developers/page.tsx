@@ -387,9 +387,9 @@ export default function DevelopersPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             API & Integrations
           </div>
           <h1 style={{
@@ -411,7 +411,7 @@ export default function DevelopersPage() {
             maxWidth: 640,
             margin: 0,
           }}>
-            Programmatic access to federal case statistics, win rates, settlement data, and predictive analytics. <span style={{ fontFamily: 'var(--font-mono)', color: '#60a5fa' }}>v1.0</span> · Bearer auth · JSON
+            Programmatic access to federal case statistics, win rates, settlement data, and predictive analytics. <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--link, #0A50A2)' }}>v1.0</span> · Bearer auth · JSON
           </p>
         </div>
       </div>
@@ -604,7 +604,7 @@ export default function DevelopersPage() {
                               style={{
                                 fontSize: '11px',
                                 fontWeight: 600,
-                                color: '#f87171',
+                                color: 'var(--data-negative, #B01E1E)',
                                 textTransform: 'uppercase',
                                 letterSpacing: '0.5px',
                               }}
@@ -639,7 +639,7 @@ export default function DevelopersPage() {
                   style={{
                     margin: 0,
                     padding: '12px 14px',
-                    backgroundColor: '#1a1a2e',
+                    backgroundColor: 'var(--chrome-bg, #1B2D45)',
                     color: '#D4D4D4',
                     fontSize: '12px',
                     lineHeight: 1.5,
@@ -684,7 +684,7 @@ export default function DevelopersPage() {
               style={{
                 margin: 0,
                 padding: '12px 14px',
-                backgroundColor: '#1a1a2e',
+                backgroundColor: 'var(--chrome-bg, #1B2D45)',
                 color: '#D4D4D4',
                 fontSize: '12px',
                 lineHeight: 1.5,

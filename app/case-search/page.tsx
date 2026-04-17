@@ -167,8 +167,8 @@ function CaseSearchContent() {
       {/* Header */}
       <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-          <h1 className="text-xl font-bold text-gray-100 mb-1">Search Federal Cases</h1>
-          <p className="text-sm text-gray-500">
+          <h1 className="text-xl font-bold text-[var(--color-text-muted)] mb-1">Search Federal Cases</h1>
+          <p className="text-sm text-[var(--color-text-muted)]">
             Search individual case records from public federal court data.
           </p>
         </div>
@@ -180,7 +180,7 @@ function CaseSearchContent() {
           <div className="flex gap-2">
             <div className="flex-1 relative">
               <svg
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)]"
                 width="16"
                 height="16"
                 viewBox="0 0 24 24"
@@ -219,7 +219,7 @@ function CaseSearchContent() {
               style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                <span className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider">
                   Filters
                 </span>
                 {hasFilters && (
@@ -234,7 +234,7 @@ function CaseSearchContent() {
 
               {/* Court */}
               <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Court</label>
+                <label className="block text-xs font-medium text-[var(--color-text-muted)] mb-1">Court</label>
                 <input
                   type="text"
                   value={court}
@@ -247,7 +247,7 @@ function CaseSearchContent() {
 
               {/* Case Type */}
               <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Case Type</label>
+                <label className="block text-xs font-medium text-[var(--color-text-muted)] mb-1">Case Type</label>
                 <input
                   type="text"
                   value={caseType}
@@ -261,7 +261,7 @@ function CaseSearchContent() {
               {/* Year Range */}
               <div className="flex gap-2">
                 <div className="flex-1">
-                  <label className="block text-xs font-medium text-gray-400 mb-1">From</label>
+                  <label className="block text-xs font-medium text-[var(--color-text-muted)] mb-1">From</label>
                   <input
                     type="number"
                     value={yearFrom}
@@ -274,7 +274,7 @@ function CaseSearchContent() {
                   />
                 </div>
                 <div className="flex-1">
-                  <label className="block text-xs font-medium text-gray-400 mb-1">To</label>
+                  <label className="block text-xs font-medium text-[var(--color-text-muted)] mb-1">To</label>
                   <input
                     type="number"
                     value={yearTo}
@@ -290,7 +290,7 @@ function CaseSearchContent() {
 
               {/* Status */}
               <div>
-                <label className="block text-xs font-medium text-gray-400 mb-1">Status</label>
+                <label className="block text-xs font-medium text-[var(--color-text-muted)] mb-1">Status</label>
                 <select
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
@@ -308,7 +308,7 @@ function CaseSearchContent() {
               {/* Apply button */}
               <button
                 onClick={() => performSearch(1)}
-                className="w-full h-9 rounded-md bg-[rgba(255,255,255,0.04)] text-sm font-medium text-gray-300 hover:bg-[rgba(255,255,255,0.08)] transition-colors"
+                className="w-full h-9 rounded-md bg-[rgba(255,255,255,0.04)] text-sm font-medium text-[var(--color-text-muted)] hover:bg-[rgba(255,255,255,0.08)] transition-colors"
               >
                 Apply Filters
               </button>
@@ -320,16 +320,16 @@ function CaseSearchContent() {
             {/* Results header */}
             {hasSearched && (
               <div className="flex items-center justify-between mb-4">
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-[var(--color-text-muted)]">
                   {loading ? (
                     'Searching...'
                   ) : total > 0 ? (
                     <>
-                      <span className="font-semibold text-gray-100">{total.toLocaleString()}</span>{' '}
+                      <span className="font-semibold text-[var(--color-text-muted)]">{total.toLocaleString()}</span>{' '}
                       result{total !== 1 ? 's' : ''}
                       {query ? (
                         <>
-                          {' '}for &ldquo;<span className="font-medium text-gray-300">{query}</span>&rdquo;
+                          {' '}for &ldquo;<span className="font-medium text-[var(--color-text-muted)]">{query}</span>&rdquo;
                         </>
                       ) : null}
                     </>
@@ -380,7 +380,7 @@ function CaseSearchContent() {
                 className="rounded border p-6 text-center"
                 style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
               >
-                <p className="text-sm text-red-600 mb-2">{error}</p>
+                <p className="text-sm text-[var(--data-negative)] mb-2">{error}</p>
                 <button
                   onClick={() => performSearch(page)}
                   className="text-sm text-[var(--link, #0A50A2)] hover:underline"
@@ -397,10 +397,10 @@ function CaseSearchContent() {
                 style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
               >
                 
-                <h3 className="text-base font-semibold text-gray-100 mb-2">
+                <h3 className="text-base font-semibold text-[var(--color-text-muted)] mb-2">
                   Search Federal Court Records
                 </h3>
-                <p className="text-sm text-gray-500 mb-5 max-w-md mx-auto">
+                <p className="text-sm text-[var(--color-text-muted)] mb-5 max-w-md mx-auto">
                   Search by case name, docket number, court, or legal topic.
                   Results include AI-generated summaries and classification tags.
                 </p>
@@ -412,7 +412,7 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="text-xs px-3 py-1.5 rounded border text-gray-500 hover:border-[var(--link, #0A50A2)] hover:text-[var(--link, #0A50A2)] hover:bg-white/5 transition-all"
+                      className="text-xs px-3 py-1.5 rounded border text-[var(--color-text-muted)] hover:border-[var(--link, #0A50A2)] hover:text-[var(--link, #0A50A2)] hover:bg-white/5 transition-all"
                       style={{ borderColor: 'var(--border-default)' }}
                     >
                       {eq}
@@ -428,8 +428,8 @@ function CaseSearchContent() {
                 className="rounded border p-8 text-center"
                 style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
               >
-                <h3 className="text-base font-semibold text-gray-100 mb-2">No Cases Found</h3>
-                <p className="text-sm text-gray-500 mb-4">
+                <h3 className="text-base font-semibold text-[var(--color-text-muted)] mb-2">No Cases Found</h3>
+                <p className="text-sm text-[var(--color-text-muted)] mb-4">
                   No cases match your search. Try broadening your query or adjusting filters.
                 </p>
                 <div className="flex flex-wrap justify-center gap-2">
@@ -440,7 +440,7 @@ function CaseSearchContent() {
                         setQuery(eq);
                         performSearch(1);
                       }}
-                      className="text-xs px-3 py-1.5 rounded border text-gray-500 hover:border-[var(--link, #0A50A2)] hover:text-[var(--link, #0A50A2)] transition-all"
+                      className="text-xs px-3 py-1.5 rounded border text-[var(--color-text-muted)] hover:border-[var(--link, #0A50A2)] hover:text-[var(--link, #0A50A2)] transition-all"
                       style={{ borderColor: 'var(--border-default)' }}
                     >
                       Try: {eq}
@@ -470,7 +470,7 @@ function CaseSearchContent() {
                 >
                   Previous
                 </button>
-                <span className="text-xs text-gray-500 px-2">
+                <span className="text-xs text-[var(--color-text-muted)] px-2">
                   Page {page} of {totalPages}
                 </span>
                 <button
@@ -503,7 +503,7 @@ function CaseResultCard({ result }: { result: SearchResult }) {
     >
       {/* Top row: case name + status */}
       <div className="flex items-start justify-between gap-3 mb-2">
-        <h3 className="text-sm font-semibold text-[var(--color-text-primary)] group-hover:text-blue-400 transition-colors leading-snug">
+        <h3 className="text-sm font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--link)] transition-colors leading-snug">
           {result.caseName}
         </h3>
         {result.status && (
@@ -530,20 +530,20 @@ function CaseResultCard({ result }: { result: SearchResult }) {
       </div>
 
       {/* Meta row */}
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-gray-500 mb-3">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[var(--color-text-muted)] mb-3">
         {result.court && (
           <span className="font-medium">{result.court.abbreviation}</span>
         )}
         {result.docketNumber && <span>{result.docketNumber}</span>}
         {filingYear && <span>Filed {filingYear}</span>}
         {result.caseType && (
-          <span className="text-gray-400">{result.caseType}</span>
+          <span className="text-[var(--color-text-muted)]">{result.caseType}</span>
         )}
       </div>
 
       {/* Summary preview */}
       {result.summaryPreview && (
-        <p className="text-xs text-gray-500 leading-relaxed mb-3 line-clamp-2">
+        <p className="text-xs text-[var(--color-text-muted)] leading-relaxed mb-3 line-clamp-2">
           {result.summaryPreview}
         </p>
       )}
@@ -576,7 +576,7 @@ export default function CaseSearchPage() {
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--color-surface-1)' }}>
-          <div className="text-sm text-gray-400">Loading search...</div>
+          <div className="text-sm text-[var(--color-text-muted)]">Loading search...</div>
         </div>
       }
     >

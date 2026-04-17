@@ -566,12 +566,12 @@ export default function FAQPage() {
           <nav className="mb-6 flex items-center gap-2 text-[12px] font-mono" style={{ color: 'rgba(255,255,255,0.4)' }}>
             <a href="/" className="hover:text-white transition-colors">Home</a>
             <span className="opacity-50">/</span>
-            <span className="text-gray-300">FAQ</span>
+            <span className="text-[var(--color-text-muted)]">FAQ</span>
           </nav>
 
           <div className="inline-flex items-center gap-2 px-2 py-1 text-[10px] font-semibold tracking-[0.25em] uppercase mb-5 rounded-[3px] border"
-            style={{ background: 'rgba(26,86,219,0.08)', color: '#60a5fa', borderColor: 'rgba(26,86,219,0.2)' }}>
-            <span className="w-1 h-1 rounded-full bg-blue-400/80" />
+            style={{ background: 'rgba(26,86,219,0.08)', color: 'var(--link, #0A50A2)', borderColor: 'rgba(26,86,219,0.2)' }}>
+            <span className="w-1 h-1 rounded-full bg-[var(--link)]/80" />
             Frequently Asked
           </div>
           <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'white', lineHeight: '1.1' }}>
@@ -647,7 +647,7 @@ export default function FAQPage() {
           <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
             <a href="mailto:support@mycasevalues.com"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
-              style={{ background: 'rgba(59,130,246,0.15)', color: '#60a5fa', borderRadius: '4px' }}>
+              style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--link, #0A50A2)', borderRadius: '4px' }}>
               <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Contact Support
             </a>

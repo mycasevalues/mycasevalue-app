@@ -784,20 +784,20 @@ export default function ParalegalHandbookCapture() {
   };
 
   return (
-    <section className="rounded border-2 border-blue-200 bg-blue-50 p-8">
-      <h2 className="mb-4 text-2xl font-bold text-gray-100">
+    <section className="rounded border-2 border-blue-200 bg-[var(--color-surface-1)] p-8">
+      <h2 className="mb-4 text-2xl font-bold text-[var(--color-text-muted)]">
         Download the Complete Handbook
       </h2>
-      <p className="mb-6 text-gray-300">
+      <p className="mb-6 text-[var(--color-text-muted)]">
         Get instant access to all 30 pages of professional reference material. No credit card required.
       </p>
 
       {state.submitted ? (
-        <div className="rounded bg-green-50 p-6 text-center">
+        <div className="rounded bg-[var(--color-surface-1)] p-6 text-center">
           <h3 className="mb-2 font-semibold text-green-900">
             Download started!
           </h3>
-          <p className="text-green-800">
+          <p className="text-[var(--data-positive)]">
             Check your browser downloads folder for the PDF.
           </p>
           <p className="mt-2 text-sm text-green-700">
@@ -807,7 +807,7 @@ export default function ParalegalHandbookCapture() {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+            <label htmlFor="email" className="block text-sm font-medium text-[var(--color-text-muted)]">
               Your email address
             </label>
             <input
@@ -823,27 +823,27 @@ export default function ParalegalHandbookCapture() {
                 }))
               }
               placeholder="you@example.com"
-              className="mt-2 block w-full rounded-md border border-[var(--bdr, #E2DFD8)] px-4 py-2 text-gray-100 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-2 block w-full rounded-md border border-[var(--bdr, #E2DFD8)] px-4 py-2 text-[var(--color-text-muted)] placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={state.loading}
             />
           </div>
 
           {state.error && (
-            <p className="text-sm text-red-600">{state.error}</p>
+            <p className="text-sm text-[var(--data-negative)]">{state.error}</p>
           )}
 
           <button
             type="submit"
             disabled={state.loading}
-            className="w-full rounded-md bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700 disabled:bg-gray-400"
+            className="w-full rounded-md bg-[var(--link)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--link)] disabled:bg-[var(--color-text-muted)]"
           >
             {state.loading ? 'Generating PDF...' : 'Download Handbook'}
           </button>
 
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-[var(--color-text-muted)]">
             Your email will only be used to send you resources and updates about MyCaseValue.
             We never share or sell your information.
-            <a href="/privacy" className="ml-1 text-blue-600 hover:underline">
+            <a href="/privacy" className="ml-1 text-[var(--link)] hover:underline">
               Privacy Policy
             </a>
           </p>

@@ -365,13 +365,13 @@ export default function DeadlineCalculatorPage() {
                         <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: 'var(--color-text-secondary)' }}>
                           <span>{deadline.daysAfterFiling} days after filing</span>
                           {isPastDue && (
-                            <span style={{ color: '#f87171', fontWeight: 600 }}>Past due by {Math.abs(daysLeft)} days</span>
+                            <span style={{ color: 'var(--data-negative, #B01E1E)', fontWeight: 600 }}>Past due by {Math.abs(daysLeft)} days</span>
                           )}
                           {isUpcoming && (
                             <span style={{ color: '#B86E00', fontWeight: 600 }}>Due in {daysLeft} days</span>
                           )}
                           {!isPastDue && !isUpcoming && daysLeft > 0 && (
-                            <span style={{ color: '#34d399' }}>Due in {daysLeft} days</span>
+                            <span style={{ color: 'var(--data-positive, #176438)' }}>Due in {daysLeft} days</span>
                           )}
                         </div>
                       </div>

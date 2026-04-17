@@ -138,7 +138,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   display: 'block',
                   padding: '16px',
                   background: '#FFF9E6',
-                  border: '1px solid #FFE5B4',
+                  border: '1px solid var(--wrn-bg, #FCD34D)',
                   borderRadius: '4px',
                   textDecoration: 'none',
                   transition: 'all 200ms ease',

@@ -237,7 +237,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
 
             {saveError && (
               <div style={{ marginBottom: '16px', padding: '8px 12px', backgroundColor: 'rgba(220, 38, 38, 0.1)', borderRadius: '4px', border: '1px solid rgba(220, 38, 38, 0.3)' }}>
-                <p style={{ fontSize: '12px', color: '#dc2626', margin: 0 }}>
+                <p style={{ fontSize: '12px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>
                   {saveError}
                 </p>
               </div>

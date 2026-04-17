@@ -117,7 +117,7 @@ const TabbedFeatures: React.FC = () => {
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: 0,
-              fontFamily: 'var(--font-display, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
+              fontFamily: 'var(--font-legal, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
             }}
           >
             Powered by real federal court data
@@ -178,7 +178,7 @@ const TabbedFeatures: React.FC = () => {
                     fontWeight: 600,
                     color: activeTab === index ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                     margin: '0 0 8px 0',
-                    fontFamily: 'var(--font-display, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
+                    fontFamily: 'var(--font-legal, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
                     transition: 'color 0.2s ease',
                   }}
                 >

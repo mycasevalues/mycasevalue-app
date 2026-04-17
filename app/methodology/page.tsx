@@ -126,13 +126,13 @@ export default function MethodologyPage() {
           font-weight: 900;
           color: var(--accent-primary);
           margin-bottom: 0.5rem;
-          font-family: var(--font-inter, 'Inter', sans-serif);
+          font-family: var(--font-ui, 'Inter', sans-serif);
         }
         .at-a-glance-label {
           font-size: 0.75rem;
           font-weight: 600;
           color: #6B7280;
-          font-family: var(--font-inter, 'Inter', sans-serif);
+          font-family: var(--font-ui, 'Inter', sans-serif);
         }
         .confidence-tiers {
           display: grid;
@@ -188,7 +188,7 @@ export default function MethodologyPage() {
           font-weight: 600;
           font-size: 0.875rem;
           color: var(--color-text-primary);
-          font-family: var(--font-inter, 'Inter', sans-serif);
+          font-family: var(--font-ui, 'Inter', sans-serif);
         }
         .stats-table td {
           border-bottom: 1px solid var(--border-default);
@@ -202,7 +202,7 @@ export default function MethodologyPage() {
         .stats-stat-name {
           font-weight: 600;
           color: var(--color-text-primary);
-          font-family: var(--font-inter, 'Inter', sans-serif);
+          font-family: var(--font-ui, 'Inter', sans-serif);
         }
         .related-grid {
           display: grid;
@@ -238,7 +238,7 @@ export default function MethodologyPage() {
           font-weight: 600;
           font-size: 0.875rem;
           color: var(--link-hover, #083D7A);
-          font-family: var(--font-inter, 'Inter', sans-serif);
+          font-family: var(--font-ui, 'Inter', sans-serif);
         }
       `}</style>
 
@@ -272,9 +272,9 @@ export default function MethodologyPage() {
             background: 'rgba(59,130,246,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 10,
             fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
           }}>
-            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: '#22c55e' }} />
+            <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive, #176438)' }} />
             Research Methodology
           </div>
 
@@ -365,7 +365,7 @@ export default function MethodologyPage() {
                 name: 'CourtListener (Free Law Project)',
                 description: 'We query the CourtListener API and RECAP Archive in real time to surface related federal court opinions and docket records alongside our aggregate outcome data. CourtListener covers 471 jurisdictions with 10M+ opinions.',
                 badge: 'Supplementary',
-                color: '#34d399',
+                color: 'var(--data-positive, #176438)',
                 url: 'https://www.courtlistener.com/',
                 icon: 'scale'
               },

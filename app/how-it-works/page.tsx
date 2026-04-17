@@ -130,8 +130,8 @@ export default function HowItWorksPage() {
         }} />
         <div className="relative max-w-5xl mx-auto px-6 py-16 sm:py-20">
           <div className="inline-flex items-center gap-2 px-2 py-1 text-[10px] font-semibold tracking-[0.25em] uppercase mb-5 rounded-[3px] border"
-            style={{ background: 'rgba(26,86,219,0.08)', color: '#60a5fa', borderColor: 'rgba(26,86,219,0.2)' }}>
-            <span className="w-1 h-1 rounded-full bg-blue-400/80" />
+            style={{ background: 'rgba(26,86,219,0.08)', color: 'var(--link, #0A50A2)', borderColor: 'rgba(26,86,219,0.2)' }}>
+            <span className="w-1 h-1 rounded-full bg-[var(--link)]/80" />
             Methodology
           </div>
           <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'white', lineHeight: '1.1' }}>
@@ -188,7 +188,7 @@ export default function HowItWorksPage() {
                       height: '36px',
                       borderRadius: '4px',
                       background: 'rgba(26,86,219,0.12)',
-                      color: '#60a5fa',
+                      color: 'var(--link, #0A50A2)',
                       fontSize: '16px',
                       border: '1px solid rgba(26,86,219,0.25)',
                     }}>

@@ -153,7 +153,7 @@ export default function DiscoveryGeneratorPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '26px', fontWeight: 600, color: '#FFF', fontFamily: 'var(--font-ui)', margin: '0 0 8px', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '26px', fontWeight: 600, color: 'var(--color-text-inverse, #fff)', fontFamily: 'var(--font-ui)', margin: '0 0 8px', letterSpacing: '-0.02em' }}>
             Draft Discovery Requests in Minutes, Not Hours
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
@@ -239,7 +239,7 @@ export default function DiscoveryGeneratorPage() {
                 style={{
                   width: '100%', padding: '16px',
                   backgroundColor: loading || !caseType ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: '#FFF', border: 'none', borderRadius: '4px',
+                  color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase', letterSpacing: '0.04em',
                   cursor: loading || !caseType ? 'not-allowed' : 'pointer',
@@ -294,7 +294,7 @@ export default function DiscoveryGeneratorPage() {
                       disabled={loading || !currentText}
                       style={{
                         padding: '8px 12px', background: copied ? 'var(--data-positive, #176438)' : 'var(--accent-primary)',
-                        color: '#FFF', border: 'none', borderRadius: '4px',
+                        color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || !currentText ? 'not-allowed' : 'pointer',
                         opacity: loading || !currentText ? 0.5 : 1,
@@ -307,7 +307,7 @@ export default function DiscoveryGeneratorPage() {
                       disabled={loading || exporting || !currentText}
                       style={{
                         padding: '8px 12px', background: 'var(--accent-primary-hover)',
-                        color: '#FFF', border: 'none', borderRadius: '4px',
+                        color: 'var(--color-text-inverse, #fff)', border: 'none', borderRadius: '4px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || exporting || !currentText ? 'not-allowed' : 'pointer',
                         opacity: loading || exporting || !currentText ? 0.5 : 1,
@@ -339,7 +339,7 @@ export default function DiscoveryGeneratorPage() {
               </div>
 
               {/* Disclaimer */}
-              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: '#fde68a', lineHeight: 1.6 }}>
+              <div style={{ padding: '16px', background: 'rgba(234,179,8,0.1)', borderLeft: '3px solid #D97706', borderRadius: 4, fontSize: 12, color: 'var(--wrn-txt, #7A5800)', lineHeight: 1.6 }}>
                 <strong>Important:</strong> Must be reviewed by a licensed attorney and conformed to local court rules before filing. Discovery requests may need to be modified based on local rules regarding number limits, format requirements, and meet-and-confer obligations.
               </div>
             </div>

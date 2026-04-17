@@ -14,9 +14,9 @@ interface ConfidenceDotProps {
 }
 
 function getConfidence(n: number): { color: string; label: string } {
-  if (n >= 10000) return { color: '#22c55e', label: 'High confidence' };
+  if (n >= 10000) return { color: 'var(--data-positive, #176438)', label: 'High confidence' };
   if (n >= 1000) return { color: '#f59e0b', label: 'Medium confidence' };
-  if (n >= 100) return { color: '#ef4444', label: 'Low confidence' };
+  if (n >= 100) return { color: 'var(--data-negative, #B01E1E)', label: 'Low confidence' };
   return { color: '#6b7280', label: 'Insufficient data' };
 }
 

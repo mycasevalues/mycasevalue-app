@@ -349,10 +349,10 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             marginTop: '16px',
             padding: '12px',
             background: 'rgba(59,130,246,0.08)',
-            border: '1px solid #93C5FD',
+            border: '1px solid var(--link-light, #BAE6FD)',
             borderRadius: '4px',
             fontSize: '0.75rem',
-            color: '#60a5fa',
+            color: 'var(--link, #0A50A2)',
             fontFamily: 'var(--font-body)',
           }}
         >

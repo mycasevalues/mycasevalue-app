@@ -134,7 +134,7 @@ export function AIChatAssistant() {
               </svg>
               <div>
                 <h3 className="text-white font-semibold text-sm">MyCaseValue AI</h3>
-                <p className="text-blue-100 text-xs">Legal research assistant</p>
+                <p className="text-[var(--link)] text-xs">Legal research assistant</p>
               </div>
             </div>
             <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white transition-colors p-1" aria-label="Close chat">
@@ -147,10 +147,10 @@ export function AIChatAssistant() {
           <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
             {messages.length === 0 ? (
               <div className="space-y-4">
-                <p className="text-sm text-gray-500 text-center mt-4">Ask me anything about federal court data, settlement values, or using MyCaseValue tools.</p>
+                <p className="text-sm text-[var(--color-text-muted)] text-center mt-4">Ask me anything about federal court data, settlement values, or using MyCaseValue tools.</p>
                 <div className="space-y-2">
                   {STARTER_QUESTIONS.map((q) => (
-                    <button key={q} onClick={() => sendMessage(q)} className="w-full text-left px-4 py-3 rounded text-sm text-gray-300 bg-[var(--color-surface-2)] hover:bg-[rgba(255,255,255,0.04)] transition-colors border border-[var(--bdr, #E2DFD8)]">
+                    <button key={q} onClick={() => sendMessage(q)} className="w-full text-left px-4 py-3 rounded text-sm text-[var(--color-text-muted)] bg-[var(--color-surface-2)] hover:bg-[rgba(255,255,255,0.04)] transition-colors border border-[var(--bdr, #E2DFD8)]">
                       {q}
                     </button>
                   ))}
@@ -160,7 +160,7 @@ export function AIChatAssistant() {
               messages.map((msg) => (
                 <div key={msg.id} className={msg.role === 'user' ? 'flex justify-end' : 'flex justify-start'}>
                   <div
-                    className={msg.role === 'user' ? 'max-w-[85%] px-4 py-3 rounded text-sm text-white' : 'max-w-[85%] px-4 py-3 rounded text-sm text-gray-200 bg-[rgba(255,255,255,0.04)]'}
+                    className={msg.role === 'user' ? 'max-w-[85%] px-4 py-3 rounded text-sm text-white' : 'max-w-[85%] px-4 py-3 rounded text-sm text-[var(--color-text-muted)] bg-[rgba(255,255,255,0.04)]'}
                     style={msg.role === 'user' ? { backgroundColor: 'var(--card, #FFFFFF)' } : undefined}
                   >
                     <div className="whitespace-pre-wrap leading-relaxed">{msg.content}</div>
@@ -172,9 +172,9 @@ export function AIChatAssistant() {
               <div className="flex justify-start">
                 <div className="px-4 py-3 rounded bg-[rgba(255,255,255,0.04)]">
                   <div className="flex items-center gap-1.5">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                    <div className="w-2 h-2 bg-[var(--color-text-muted)] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <div className="w-2 h-2 bg-[var(--color-text-muted)] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <div className="w-2 h-2 bg-[var(--color-text-muted)] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@ export function AIChatAssistant() {
                 </svg>
               </button>
             </form>
-            <p className="text-xs text-gray-400 text-center mt-2">AI responses are for informational purposes only</p>
+            <p className="text-xs text-[var(--color-text-muted)] text-center mt-2">AI responses are for informational purposes only</p>
           </div>
         </div>
       )}

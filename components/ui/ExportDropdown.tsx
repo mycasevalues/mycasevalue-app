@@ -23,7 +23,7 @@ export default function ExportDropdown() {
         onClick={() => setOpen(!open)}
         className="
           inline-flex items-center gap-1.5 px-3 py-1.5
-          text-xs font-medium text-gray-600 hover:text-gray-100
+          text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-muted)]
           border border-[var(--bdr, #E2DFD8)] hover:border-[var(--bdr, #E2DFD8)]
           rounded transition-colors duration-150
           hover:bg-[var(--color-surface-2)]
@@ -38,13 +38,13 @@ export default function ExportDropdown() {
         <div className="absolute right-0 mt-2 w-40 bg-[#FFFFFF] border border-[var(--bdr, #E2DFD8)] rounded shadow-lg z-10">
           <button
             onClick={() => handleExport('csv')}
-            className="block w-full text-left px-4 py-2 text-xs font-medium text-gray-300 hover:bg-[var(--color-surface-2)] border-b border-[var(--bdr, #E2DFD8)]"
+            className="block w-full text-left px-4 py-2 text-xs font-medium text-[var(--color-text-muted)] hover:bg-[var(--color-surface-2)] border-b border-[var(--bdr, #E2DFD8)]"
           >
             Export CSV
           </button>
           <button
             onClick={() => handleExport('pdf')}
-            className="block w-full text-left px-4 py-2 text-xs font-medium text-gray-300 hover:bg-[var(--color-surface-2)]"
+            className="block w-full text-left px-4 py-2 text-xs font-medium text-[var(--color-text-muted)] hover:bg-[var(--color-surface-2)]"
           >
             Export PDF
           </button>
