@@ -26,6 +26,21 @@ export async function GET(req: NextRequest) {
   const limit = Math.min(MAX_LIMIT, Math.max(1, parseInt(params.get('limit') || String(DEFAULT_LIMIT), 10)));
   const offset = (page - 1) * limit;
 
+  // Validate yearFrom and yearTo
+  const currentYear = new Date().getFullYear();
+  if (yearFrom) {
+    const yearFromNum = parseInt(yearFrom, 10);
+    if (isNaN(yearFromNum) || yearFromNum < 1900 || yearFromNum > currentYear + 1) {
+      return NextResponse.json({ error: `yearFrom must be a valid year between 1900 and ${currentYear + 1}` }, { status: 400 });
+    }
+  }
+  if (yearTo) {
+    const yearToNum = parseInt(yearTo, 10);
+    if (isNaN(yearToNum) || yearToNum < 1900 || yearToNum > currentYear + 1) {
+      return NextResponse.json({ error: `yearTo must be a valid year between 1900 and ${currentYear + 1}` }, { status: 400 });
+    }
+  }
+
   try {
     const db = getSupabaseAdmin();
 

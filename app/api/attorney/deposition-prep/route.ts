@@ -45,8 +45,8 @@ Tailor all questions specifically to the case type and deponent role provided.`,
           role: 'user',
           content: `Generate a deposition outline for:
 
-Case Type: ${caseType}
-Deponent Role: ${deponentRole}
+Case Type: ${sanitizeForPrompt(caseType, 100)}
+Deponent Role: ${sanitizeForPrompt(deponentRole, 100)}
 ${sanitizedPosition ? `Deponent's Position: ${sanitizedPosition}` : ''}
 
 Create a thorough, organized deposition outline with questions in each of the five required sections.`,

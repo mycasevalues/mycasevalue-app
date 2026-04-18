@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { streamText } from 'ai';
 import { anthropic } from '@ai-sdk/anthropic';
 import { REAL_DATA } from '../../../../lib/realdata';
-import { sanitizeForPrompt } from '../../../../lib/sanitize';
+import { sanitizeForPrompt, validateNOSCode } from '../../../../lib/sanitize';
 import { getSupabaseAdmin } from '../../../../lib/supabase';
 
 // ---------------------------------------------------------------------------
@@ -81,7 +81,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const nosData = REAL_DATA[caseType];
+    const validatedCaseType = validateNOSCode(caseType);
+    if (!validatedCaseType) {
+      return NextResponse.json(
+        { error: 'Invalid case type provided' },
+        { status: 400, headers: withRateLimitHeaders() }
+      );
+    }
+    const nosData = REAL_DATA[validatedCaseType];
     const eco = Math.max(0, parseInt(String(economicDamages)) || 0);
     const pain = Math.max(0, parseInt(String(painSuffering)) || 0);
     const wages = Math.max(0, parseInt(String(lostWages)) || 0);
@@ -113,7 +120,7 @@ Format as a professional letter template that can be customized by the attorney.
           role: 'user',
           content: `Generate a settlement demand letter for the following case:
 
-Case Type: ${caseType}
+Case Type: ${sanitizeForPrompt(validatedCaseType, 100)}
 District: ${district || 'Not specified'}
 Party Role: ${partyRole}
 

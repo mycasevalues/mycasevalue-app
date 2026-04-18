@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     // Verify webhook secret for Supabase Realtime triggers
     const authHeader = req.headers.get('authorization');
     const webhookSecret = process.env.SUPABASE_WEBHOOK_SECRET;
-    if (webhookSecret && authHeader !== `Bearer ${webhookSecret}`) {
+    if (!webhookSecret || authHeader !== `Bearer ${webhookSecret}`) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 

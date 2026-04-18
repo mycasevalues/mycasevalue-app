@@ -92,26 +92,31 @@ function generateProfile(name: string, firmData: { firm: string; city: string; s
 }
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const rawQuery = searchParams.get('q') || '';
+  try {
+    const { searchParams } = new URL(req.url);
+    const rawQuery = searchParams.get('q') || '';
 
-  // Sanitize query parameter before using as object key lookup
-  const query = sanitizeString(rawQuery, 100).toLowerCase();
+    // Sanitize query parameter before using as object key lookup
+    const query = sanitizeString(rawQuery, 100).toLowerCase();
 
-  if (!query || query.length < 2) {
-    return NextResponse.json({ error: 'Search query must be at least 2 characters' }, { status: 400 });
+    if (!query || query.length < 2) {
+      return NextResponse.json({ error: 'Search query must be at least 2 characters' }, { status: 400 });
+    }
+
+    // Find matching firms
+    const matchKey = Object.keys(FIRMS).find((k) => query.includes(k)) || 'default';
+    const firms = FIRMS[matchKey];
+
+    const results = firms.map((f) => generateProfile(query, f));
+
+    return NextResponse.json({
+      query,
+      resultCount: results.length,
+      profiles: results,
+      disclaimer: 'Opposing counsel profiles are generated from aggregate public court record data. Statistics are approximations and should be verified independently before relying on them for case strategy.',
+    });
+  } catch (err) {
+    console.error('[api/attorney/opposing-counsel] error:', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
-
-  // Find matching firms
-  const matchKey = Object.keys(FIRMS).find((k) => query.includes(k)) || 'default';
-  const firms = FIRMS[matchKey];
-
-  const results = firms.map((f) => generateProfile(query, f));
-
-  return NextResponse.json({
-    query,
-    resultCount: results.length,
-    profiles: results,
-    disclaimer: 'Opposing counsel profiles are generated from aggregate public court record data. Statistics are approximations and should be verified independently before relying on them for case strategy.',
-  });
 }

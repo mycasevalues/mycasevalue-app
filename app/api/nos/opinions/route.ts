@@ -31,6 +31,9 @@ export async function GET(req: NextRequest) {
   }
 
   const nosCode = parseInt(codeStr, 10);
+  if (isNaN(nosCode)) {
+    return NextResponse.json({ error: 'Invalid code parameter: must be a numeric NOS code' }, { status: 400 });
+  }
   if (!ENABLED_NOS.has(nosCode)) {
     return NextResponse.json({ opinions: [], message: 'NOS code not enabled for opinions' });
   }

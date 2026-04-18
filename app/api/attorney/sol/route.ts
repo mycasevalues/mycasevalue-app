@@ -187,6 +187,10 @@ export async function POST(
       );
     }
 
+    if (new Date(incidentDate) > new Date()) {
+      return NextResponse.json({ error: 'Incident date cannot be in the future' }, { status: 400 });
+    }
+
     // Look up SOL rule
     const caseTypeRules = SOL_DATABASE[caseType];
     if (!caseTypeRules) {

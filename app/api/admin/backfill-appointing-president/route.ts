@@ -16,6 +16,7 @@
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { secureCompare } from '../../../../lib/sanitize';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 300;
@@ -123,7 +124,7 @@ function parseCSV(text: string): Record<string, string>[] {
 function checkAdminAuth(req: NextRequest): NextResponse | null {
   const secret = req.headers.get('x-admin-secret');
   const expected = process.env.ADMIN_SECRET;
-  if (!expected || !secret || secret !== expected) {
+  if (!expected || !secret || !secureCompare(secret, expected)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   return null;

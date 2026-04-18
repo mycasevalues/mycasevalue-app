@@ -30,13 +30,17 @@ export async function POST(req: NextRequest) {
     }
 
     // Validate URL
+    let parsed: URL;
     try {
-      new URL(url);
+      parsed = new URL(url);
     } catch {
       return NextResponse.json(
         { error: 'Invalid URL format' },
         { status: 400 }
       );
+    }
+    if (!['http:', 'https:'].includes(parsed.protocol)) {
+      return NextResponse.json({ error: 'Invalid URL scheme' }, { status: 400 });
     }
 
     // Check if we already have this URL

@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
   try {
     const { email, nos_code, state, frequency } = await request.json();
 
-    if (!email || !email.includes('@')) {
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json({ success: false, error: 'Valid email required' }, { status: 400 });
     }
 

@@ -278,63 +278,68 @@ const expertsByNOS: Record<string, ExpertCategory[]> = {
 };
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const nos = searchParams.get('nos') || '';
-  const durationRaw = searchParams.get('duration') || '12';
-  const duration = Math.max(6, Math.min(120, parseInt(durationRaw)));
+  try {
+    const { searchParams } = new URL(req.url);
+    const nos = searchParams.get('nos') || '';
+    const durationRaw = searchParams.get('duration') || '12';
+    const duration = Math.max(6, Math.min(120, parseInt(durationRaw)));
 
-  if (!nos) {
-    // Return available NOS codes with expert data
-    const available = Object.entries(REAL_DATA)
-      .filter(([code]) => expertsByNOS[code])
-      .map(([code, d]) => ({ nos: code, label: d.label, total: d.total }))
-      .sort((a, b) => b.total - a.total);
-    return NextResponse.json({ caseTypes: available });
-  }
+    if (!nos) {
+      // Return available NOS codes with expert data
+      const available = Object.entries(REAL_DATA)
+        .filter(([code]) => expertsByNOS[code])
+        .map(([code, d]) => ({ nos: code, label: d.label, total: d.total }))
+        .sort((a, b) => b.total - a.total);
+      return NextResponse.json({ caseTypes: available });
+    }
 
-  // Validate NOS code
-  const validatedNos = validateNOSCode(nos);
-  if (!validatedNos) {
-    return NextResponse.json(
-      { error: 'Invalid NOS code. Provide a 1-4 digit numeric code.' },
-      { status: 400 }
+    // Validate NOS code
+    const validatedNos = validateNOSCode(nos);
+    if (!validatedNos) {
+      return NextResponse.json(
+        { error: 'Invalid NOS code. Provide a 1-4 digit numeric code.' },
+        { status: 400 }
+      );
+    }
+
+    const nosData = REAL_DATA[validatedNos];
+    if (!nosData || !expertsByNOS[validatedNos]) {
+      return NextResponse.json(
+        { error: `No expert witness data available for NOS code ${validatedNos}` },
+        { status: 404 }
+      );
+    }
+
+    const experts = expertsByNOS[validatedNos];
+
+    // Calculate estimated costs
+    // Assume 160 billable hours per month
+    const hoursPerMonth = 160;
+    const totalHours = hoursPerMonth * (duration / 12);
+
+    const costs = experts.map((expert) => {
+      const avgHourlyRate = (expert.feeRangeLow + expert.feeRangeHigh) / 2;
+      return Math.round(avgHourlyRate * totalHours);
+    });
+
+    const estimatedTotalCostLow = Math.round(
+      experts.reduce((sum, expert, i) => sum + expert.feeRangeLow * totalHours, 0)
     );
-  }
 
-  const nosData = REAL_DATA[validatedNos];
-  if (!nosData || !expertsByNOS[validatedNos]) {
-    return NextResponse.json(
-      { error: `No expert witness data available for NOS code ${validatedNos}` },
-      { status: 404 }
+    const estimatedTotalCostHigh = Math.round(
+      experts.reduce((sum, expert, i) => sum + expert.feeRangeHigh * totalHours, 0)
     );
+
+    return NextResponse.json({
+      nos: validatedNos,
+      caseType: nosData.label,
+      experts,
+      estimatedTotalCostLow,
+      estimatedTotalCostHigh,
+      disclaimer: 'Expert witness fees vary significantly based on experience level, geographic location, case complexity, and market conditions. These estimates are for planning purposes only. Actual costs depend on retainer agreements, hourly rates, and case duration. Daubert success rates reflect historical federal court data.',
+    });
+  } catch (err) {
+    console.error('[api/attorney/expert-witness] error:', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
-
-  const experts = expertsByNOS[validatedNos];
-
-  // Calculate estimated costs
-  // Assume 160 billable hours per month
-  const hoursPerMonth = 160;
-  const totalHours = hoursPerMonth * (duration / 12);
-
-  const costs = experts.map((expert) => {
-    const avgHourlyRate = (expert.feeRangeLow + expert.feeRangeHigh) / 2;
-    return Math.round(avgHourlyRate * totalHours);
-  });
-
-  const estimatedTotalCostLow = Math.round(
-    experts.reduce((sum, expert, i) => sum + expert.feeRangeLow * totalHours, 0)
-  );
-
-  const estimatedTotalCostHigh = Math.round(
-    experts.reduce((sum, expert, i) => sum + expert.feeRangeHigh * totalHours, 0)
-  );
-
-  return NextResponse.json({
-    nos: validatedNos,
-    caseType: nosData.label,
-    experts,
-    estimatedTotalCostLow,
-    estimatedTotalCostHigh,
-    disclaimer: 'Expert witness fees vary significantly based on experience level, geographic location, case complexity, and market conditions. These estimates are for planning purposes only. Actual costs depend on retainer agreements, hourly rates, and case duration. Daubert success rates reflect historical federal court data.',
-  });
 }

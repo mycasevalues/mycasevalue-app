@@ -20,6 +20,7 @@ export async function POST(req: NextRequest) {
     }
 
     const sanitized = sanitizeForPrompt(claimsDefenses || '', 1000);
+    const sanitizedDiscoveryType = sanitizeForPrompt(discoveryType, 100);
 
     const typeLabels: Record<string, string> = {
       interrogatories: 'Interrogatories (FRCP Rule 33)',
@@ -61,17 +62,17 @@ Number each request sequentially. Frame each as a clear, specific statement to b
 
 Include a standard DEFINITIONS AND INSTRUCTIONS section at the top with common discovery definitions (e.g., "Document," "Communication," "You/Your," "Identify," "Relate to," "Person").
 
-${typeInstructions[discoveryType] || typeInstructions.interrogatories}
+${typeInstructions[sanitizedDiscoveryType] || typeInstructions.interrogatories}
 
 Format output as a formal legal document ready for attorney review.`,
           providerOptions: { anthropic: { cacheControl: { type: 'ephemeral' } } },
         },
         {
           role: 'user',
-          content: `Generate ${typeLabels[discoveryType] || 'Interrogatories'} for:
+          content: `Generate ${typeLabels[sanitizedDiscoveryType] || 'Interrogatories'} for:
 
-Case Type: ${caseType}
-Party Role: ${partyRole} (propounding party)
+Case Type: ${sanitizeForPrompt(caseType, 100)}
+Party Role: ${sanitizeForPrompt(partyRole, 100)} (propounding party)
 ${sanitized ? `Claims/Defenses: ${sanitized}` : ''}
 
 Generate formal discovery requests appropriate for this case type and party role.`,

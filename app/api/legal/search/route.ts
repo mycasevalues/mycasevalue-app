@@ -233,8 +233,8 @@ export async function GET(request: NextRequest) {
     const typeParam = searchParams.get('type') || undefined;
     const from = searchParams.get('from') || undefined;
     const to = searchParams.get('to') || undefined;
-    const page = Math.max(1, parseInt(searchParams.get('page') || '1'));
-    const limit = Math.min(100, parseInt(searchParams.get('limit') || '20'));
+    const page = parseInt(searchParams.get('page') || '', 10) || 1;
+    const limit = Math.min(parseInt(searchParams.get('limit') || '', 10) || 20, 100);
     const mode = searchParams.get('mode') || 'search';
 
     // Validate source
@@ -263,8 +263,10 @@ export async function GET(request: NextRequest) {
       let query = supabase.from('documents').select('*');
 
       if (q && q.trim()) {
+        // Escape special characters that could break the PostgREST .or() filter syntax
+        const sanitizedQ = q.replace(/[%_(),]/g, (c) => `\\${c}`);
         query = query.or(
-          `title.ilike.%${q}%,snippet.ilike.%${q}%,source_id.ilike.%${q}%`
+          `title.ilike.%${sanitizedQ}%,snippet.ilike.%${sanitizedQ}%,source_id.ilike.%${sanitizedQ}%`
         );
       }
 

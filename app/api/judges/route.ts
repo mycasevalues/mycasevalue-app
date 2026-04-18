@@ -26,11 +26,20 @@ export async function GET(request: Request) {
     const district = searchParams.get('district') || '';
     const president = searchParams.get('president') || '';
     const sortParam = searchParams.get('sort') || 'name';
-    const page = parseInt(searchParams.get('page') || '1', 10);
-    const limit = parseInt(searchParams.get('limit') || '24', 10);
+    const pageRaw = parseInt(searchParams.get('page') || '1', 10);
+    const page = isNaN(pageRaw) ? 1 : Math.max(1, pageRaw);
+    const limitRaw = parseInt(searchParams.get('limit') || '24', 10);
+    const limit = isNaN(limitRaw) ? 24 : Math.min(100, Math.max(1, limitRaw));
     const nosCode = searchParams.get('nosCode') || searchParams.get('nos_code');
     const districtId = searchParams.get('districtId');
     const minCases = parseInt(searchParams.get('min_cases') || '0', 10);
+
+    if (nosCode) {
+      const nosCodeNum = parseInt(nosCode, 10);
+      if (isNaN(nosCodeNum)) {
+        return Response.json({ error: 'Invalid NOS code' }, { status: 400 });
+      }
+    }
 
     // Transform judge data to match frontend expectations
     const transformJudges = (judges: JudgeWithStats[]) => {

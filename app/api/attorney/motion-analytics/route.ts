@@ -103,61 +103,66 @@ const strategicNotes: Record<string, string> = {
 };
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const nos = searchParams.get('nos') || '';
+  try {
+    const { searchParams } = new URL(req.url);
+    const nos = searchParams.get('nos') || '';
 
-  if (!nos) {
-    // Return available NOS codes with motion data
-    const available = Object.entries(REAL_DATA)
-      .filter(([code]) => motionRatesByNOS[code])
-      .map(([code, d]) => ({ nos: code, label: d.label, total: d.total }))
-      .sort((a, b) => b.total - a.total);
-    return NextResponse.json({ caseTypes: available });
+    if (!nos) {
+      // Return available NOS codes with motion data
+      const available = Object.entries(REAL_DATA)
+        .filter(([code]) => motionRatesByNOS[code])
+        .map(([code, d]) => ({ nos: code, label: d.label, total: d.total }))
+        .sort((a, b) => b.total - a.total);
+      return NextResponse.json({ caseTypes: available });
+    }
+
+    // Validate NOS code
+    const validatedNos = validateNOSCode(nos);
+    if (!validatedNos) {
+      return NextResponse.json(
+        { error: 'Invalid NOS code. Provide a 1-4 digit numeric code.' },
+        { status: 400 }
+      );
+    }
+
+    const nosData = REAL_DATA[validatedNos];
+    if (!nosData || !motionRatesByNOS[validatedNos]) {
+      return NextResponse.json(
+        { error: `No motion data available for NOS code ${validatedNos}` },
+        { status: 404 }
+      );
+    }
+
+    const rates = motionRatesByNOS[validatedNos];
+
+    // Build motion stats
+    const motions: MotionStats[] = Object.entries(rates).map(([motionType, stats]) => {
+      const grantRate = stats.grant;
+      const successColor = grantRate >= 50 ? 'green' : grantRate >= 35 ? 'amber' : 'red';
+      const successLevel = grantRate >= 50 ? 'high' : grantRate >= 35 ? 'moderate' : 'low';
+
+      return {
+        motionType,
+        grantRate,
+        partialGrantRate: stats.partial,
+        avgTimeToRulingMonths: stats.months,
+        strategicNotes: strategicNotes[motionType] || 'Consider jurisdiction-specific rules and judge tendencies.',
+        successColor,
+        successLevel,
+      };
+    });
+
+    // Sort by grant rate descending
+    motions.sort((a, b) => b.grantRate - a.grantRate);
+
+    return NextResponse.json({
+      nos: validatedNos,
+      caseType: nosData.label,
+      motions,
+      disclaimer: 'Motion success rates are derived from public federal court statistics (FJC Integrated Database). Actual outcomes vary significantly based on jurisdiction, judge, opposing counsel, and case-specific facts. These estimates are for strategic planning only.',
+    });
+  } catch (err) {
+    console.error('[api/attorney/motion-analytics] error:', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
-
-  // Validate NOS code
-  const validatedNos = validateNOSCode(nos);
-  if (!validatedNos) {
-    return NextResponse.json(
-      { error: 'Invalid NOS code. Provide a 1-4 digit numeric code.' },
-      { status: 400 }
-    );
-  }
-
-  const nosData = REAL_DATA[validatedNos];
-  if (!nosData || !motionRatesByNOS[validatedNos]) {
-    return NextResponse.json(
-      { error: `No motion data available for NOS code ${validatedNos}` },
-      { status: 404 }
-    );
-  }
-
-  const rates = motionRatesByNOS[validatedNos];
-
-  // Build motion stats
-  const motions: MotionStats[] = Object.entries(rates).map(([motionType, stats]) => {
-    const grantRate = stats.grant;
-    const successColor = grantRate >= 50 ? 'green' : grantRate >= 35 ? 'amber' : 'red';
-    const successLevel = grantRate >= 50 ? 'high' : grantRate >= 35 ? 'moderate' : 'low';
-
-    return {
-      motionType,
-      grantRate,
-      partialGrantRate: stats.partial,
-      avgTimeToRulingMonths: stats.months,
-      strategicNotes: strategicNotes[motionType] || 'Consider jurisdiction-specific rules and judge tendencies.',
-      successColor,
-      successLevel,
-    };
-  });
-
-  // Sort by grant rate descending
-  motions.sort((a, b) => b.grantRate - a.grantRate);
-
-  return NextResponse.json({
-    nos: validatedNos,
-    caseType: nosData.label,
-    motions,
-    disclaimer: 'Motion success rates are derived from public federal court statistics (FJC Integrated Database). Actual outcomes vary significantly based on jurisdiction, judge, opposing counsel, and case-specific facts. These estimates are for strategic planning only.',
-  });
 }
