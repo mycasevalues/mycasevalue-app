@@ -270,8 +270,8 @@ export default function MethodologyPage() {
             borderRadius: 999,
             border: '1px solid rgba(10,80,162,0.2)',
             background: 'rgba(10,80,162,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -405,7 +405,7 @@ export default function MethodologyPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-sm font-legal font-semibold m-0 mb-1" style={{ color: 'var(--color-text-primary)' }}>{source.name}</h3>
-                    <span className="inline-block text-[10px] font-bold px-2 py-0.5" style={{ background: source.color.replace('#', '#').substring(0, 7) + '1F', color: source.color, borderRadius: '9999px' }}>
+                    <span className="inline-block text-[10px] font-bold px-2 py-0.5" style={{ background: source.color.replace('#', '#').substring(0, 7) + '1F', color: source.color, borderRadius: '3px' }}>
                       {source.badge}
                     </span>
                   </div>

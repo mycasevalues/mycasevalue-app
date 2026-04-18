@@ -168,7 +168,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
             fontWeight: 500,
             cursor: 'pointer',
             marginBottom: '16px',
-            transition: 'all 0.2s',
+            transition: 'all 200ms',
           }}
           onMouseEnter={(e) => {
             (e.target as HTMLButtonElement).style.backgroundColor = 'var(--border-default)';
@@ -187,7 +187,7 @@ export default function CompareDistricts({ nosCode }: CompareDistrictsProps) {
             style={{
               width: '100%',
               borderCollapse: 'collapse',
-              fontSize: '13px',
+              fontSize: '14px',
             }}
           >
             <thead>

@@ -141,7 +141,7 @@ export default function DemandLetterPage() {
 
   const labelStyle: React.CSSProperties = {
     display: 'block',
-    fontSize: '13px',
+    fontSize: '14px',
     fontWeight: 600,
     color: 'var(--color-text-primary)',
     marginBottom: '6px',
@@ -158,7 +158,7 @@ export default function DemandLetterPage() {
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
     fontFamily: 'var(--font-ui)',
-    transition: 'border-color 0.2s',
+    transition: 'border-color 200ms',
     outline: 'none',
     boxSizing: 'border-box' as const,
   };
@@ -265,10 +265,10 @@ export default function DemandLetterPage() {
                         border: `1px solid ${partyRole === opt.val ? 'var(--accent-primary)' : 'var(--border-default)'}`,
                         backgroundColor: partyRole === opt.val ? 'rgba(10, 102, 194, 0.08)' : 'var(--color-surface-1)',
                         color: partyRole === opt.val ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
-                        fontSize: '13px',
+                        fontSize: '14px',
                         fontWeight: 600,
                         cursor: 'pointer',
-                        transition: 'all 0.2s',
+                        transition: 'all 200ms',
                         fontFamily: 'var(--font-ui)',
                       }}
                     >
@@ -296,7 +296,7 @@ export default function DemandLetterPage() {
                     fontFamily: 'var(--font-ui)',
                   }}
                 />
-                <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                   {briefFacts.length}/3000 characters
                 </p>
               </div>
@@ -319,7 +319,7 @@ export default function DemandLetterPage() {
                       onChange={(e) => setEconomicDamages(e.target.value)}
                       style={inputStyle}
                     />
-                    <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                       Medical bills, lost income, property damage
                     </p>
                   </div>
@@ -335,7 +335,7 @@ export default function DemandLetterPage() {
                       onChange={(e) => setPainSuffering(e.target.value)}
                       style={inputStyle}
                     />
-                    <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                       Emotional distress, physical pain, reduced quality of life
                     </p>
                   </div>
@@ -351,7 +351,7 @@ export default function DemandLetterPage() {
                       onChange={(e) => setLostWages(e.target.value)}
                       style={inputStyle}
                     />
-                    <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                       Lost earnings and reduced earning capacity
                     </p>
                   </div>
@@ -359,7 +359,7 @@ export default function DemandLetterPage() {
                   {(economicDamages || painSuffering || lostWages) && (
                     <div style={{ marginTop: '8px', paddingTop: '12px', borderTop: '1px solid var(--border-default)' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+                        <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                           Total Demand:
                         </span>
                         <span style={{ fontSize: '16px', fontWeight: '700', color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
@@ -374,7 +374,7 @@ export default function DemandLetterPage() {
               {/* Error */}
               {error && (
                 <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
+                  <p style={{ fontSize: '14px', color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
                 </div>
               )}
 
@@ -393,9 +393,9 @@ export default function DemandLetterPage() {
                   fontWeight: 600,
                   fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.04em',
+                  letterSpacing: '0.5px',
                   cursor: loading || !caseType || !briefFacts.trim() ? 'not-allowed' : 'pointer',
-                  transition: 'background-color 0.2s',
+                  transition: 'background-color 200ms',
                 }}
               >
                 {loading ? 'Generating Letter...' : 'Generate Demand Letter'}
@@ -463,7 +463,7 @@ export default function DemandLetterPage() {
                     background: 'var(--color-surface-1)',
                     borderRadius: '4px',
                     border: '1px solid var(--border-default)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-primary)',
                     lineHeight: '1.7',
                     fontFamily: 'var(--font-ui)',
@@ -479,7 +479,7 @@ export default function DemandLetterPage() {
                 {totalDemand > 0 && (
                   <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--border-default)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                      <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                         Total Demand Amount:
                       </span>
                       <span style={{ fontSize: '20px', fontWeight: '700', color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
@@ -522,7 +522,7 @@ export default function DemandLetterPage() {
               <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 AI-Powered Analysis
               </h3>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Our AI references historical settlement data from 5.1M+ federal cases to strengthen your demand.
               </p>
             </div>
@@ -534,7 +534,7 @@ export default function DemandLetterPage() {
               <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Professional Template
               </h3>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Get a complete, customizable template ready for attorney review and modification.
               </p>
             </div>
@@ -546,7 +546,7 @@ export default function DemandLetterPage() {
               <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Case-Specific
               </h3>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Each letter is tailored to your specific case type, jurisdiction, and damages breakdown.
               </p>
             </div>
@@ -556,8 +556,8 @@ export default function DemandLetterPage() {
         {/* Navigation */}
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Case Predictor
               </p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -566,8 +566,8 @@ export default function DemandLetterPage() {
             </div>
           </Link>
           <Link href="/search" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Case Search
               </p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -576,8 +576,8 @@ export default function DemandLetterPage() {
             </div>
           </Link>
           <Link href="/translate" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Jargon Translator
               </p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>

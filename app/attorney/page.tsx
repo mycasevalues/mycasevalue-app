@@ -199,7 +199,7 @@ const FeatureCard = ({
           {badge === 'available' ? 'Available' : 'In Development'}
         </span>
         {href && (
-          <span style={{ fontSize: '13px', color: 'var(--gold)', fontWeight: 600, transition: 'color 0.3s ease' }}>
+          <span style={{ fontSize: '14px', color: 'var(--gold)', fontWeight: 600, transition: 'color 0.3s ease' }}>
             Try it →
           </span>
         )}
@@ -588,7 +588,7 @@ export default function AttorneyPage() {
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Breadcrumb */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '13px', fontFamily: 'var(--font-ui)' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '14px', fontFamily: 'var(--font-ui)' }}>
             <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>Home</Link>
             <span style={{ color: 'var(--bdr)' }}>›</span>
             <span style={{ color: 'var(--text1, #18181A)', fontWeight: 600 }}>Attorney Tools</span>
@@ -754,7 +754,7 @@ export default function AttorneyPage() {
                     </p>
                   </div>
                   <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '13px', color: 'var(--gold)', fontWeight: 600, transition: 'color 0.3s ease' }}>
+                    <span style={{ fontSize: '14px', color: 'var(--gold)', fontWeight: 600, transition: 'color 0.3s ease' }}>
                       Explore →
                     </span>
                   </div>
@@ -1162,7 +1162,7 @@ export default function AttorneyPage() {
                 <p
                   style={{
                     margin: 0,
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--text2, #42403C)',
                     lineHeight: '1.5',
                     fontFamily: 'var(--font-ui)',

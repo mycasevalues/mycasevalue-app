@@ -29,9 +29,9 @@ interface AnalyticsBoxProps {
 
 /* ── Shared label style ── */
 const labelStyle: React.CSSProperties = {
-  fontSize: 9,
+  fontSize: 12,
   textTransform: 'uppercase',
-  letterSpacing: '0.05em',
+  letterSpacing: '0.5px',
   color: 'var(--text3, #78766C)',
   fontFamily: 'var(--font-ui)',
   fontWeight: 600,
@@ -39,7 +39,7 @@ const labelStyle: React.CSSProperties = {
 };
 
 const valueStyle: React.CSSProperties = {
-  fontSize: 11,
+  fontSize: 12,
   fontFamily: 'var(--font-ui)',
   color: 'var(--text2, #42403C)',
   lineHeight: 1.4,
@@ -51,7 +51,7 @@ const monoValueStyle: React.CSSProperties = {
 };
 
 const linkStyle: React.CSSProperties = {
-  fontSize: 11,
+  fontSize: 12,
   color: 'var(--link, #0A50A2)',
   fontFamily: 'var(--font-ui)',
   cursor: 'pointer',
@@ -85,7 +85,7 @@ function FullCoverage({ data, onMoreCases, onSimilarFact }: Omit<AnalyticsBoxPro
           <span style={{ ...labelStyle, marginBottom: 0 }}>PRECISION ANALYTICS</span>
           <span
             style={{
-              fontSize: 9,
+              fontSize: 12,
               fontWeight: 700,
               color: 'var(--card, #FFFFFF)',
               background: 'var(--link, #0A50A2)',
@@ -219,7 +219,7 @@ function PartialCoverage({ data }: { data: AnalyticsBoxData }) {
         <span
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: 11,
+            fontSize: 12,
             color: 'var(--link, #0A50A2)',
             cursor: 'pointer',
           }}

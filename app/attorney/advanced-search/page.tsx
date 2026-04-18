@@ -406,7 +406,7 @@ export default function AdvancedSearchPage() {
         }
         .mode-button {
           padding: 8px 16px;
-          fontSize: 13px;
+          fontSize: 14px;
           fontWeight: 600;
           border: none;
           background: transparent;
@@ -445,7 +445,7 @@ export default function AdvancedSearchPage() {
         }
         .connector-desc {
           color: var(--text3);
-          font-size: 11px;
+          font-size: 12px;
           margin-top: 2px;
           font-family: var(--font-ui);
         }
@@ -483,12 +483,12 @@ export default function AdvancedSearchPage() {
           margin-bottom: 8px;
         }
         .result-meta-item {
-          font-size: 11px;
+          font-size: 12px;
           color: var(--text3);
           fontFamily: var(--font-mono);
         }
         .result-snippet {
-          font-size: 13px;
+          font-size: 14px;
           color: var(--text2);
           line-height: 1.5;
           margin-bottom: 8px;
@@ -522,7 +522,7 @@ export default function AdvancedSearchPage() {
           margin-bottom: 16px;
         }
         .filter-title {
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 700;
           color: var(--text-primary);
           margin-bottom: 12px;
@@ -535,7 +535,7 @@ export default function AdvancedSearchPage() {
           align-items: center;
           gap: 8px;
           padding: 8px 0;
-          font-size: 13px;
+          font-size: 14px;
           color: var(--text2);
           fontFamily: var(--font-ui);
         }
@@ -546,7 +546,7 @@ export default function AdvancedSearchPage() {
         .sort-select {
           width: 100%;
           padding: 8px;
-          font-size: 13px;
+          font-size: 14px;
           border: 1px solid var(--bdr);
           border-radius: 2px;
           background: var(--card);
@@ -597,8 +597,8 @@ export default function AdvancedSearchPage() {
             borderRadius: 3,
             border: '1px solid rgba(10, 80, 160, 0.2)',
             background: 'rgba(10, 80, 160, 0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 11,
-            fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--chrome-bg)',
           }}>
             <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block' }} />
@@ -683,7 +683,7 @@ export default function AdvancedSearchPage() {
                 border: 'none',
                 borderRadius: 2,
                 fontWeight: 600,
-                fontSize: 13,
+                fontSize: 14,
                 fontFamily: 'var(--font-ui)',
                 cursor: 'pointer',
                 transition: 'all 150ms ease',
@@ -712,7 +712,7 @@ export default function AdvancedSearchPage() {
                     <div className="connector-symbol">{conn.symbol}</div>
                     <div className="connector-name">{conn.name}</div>
                     <div className="connector-desc">{conn.description}</div>
-                    <div style={{ marginTop: 4, fontSize: 10, color: 'var(--text3)', fontFamily: 'var(--font-mono)' }}>
+                    <div style={{ marginTop: 4, fontSize: 12, color: 'var(--text3)', fontFamily: 'var(--font-mono)' }}>
                       {conn.example}
                     </div>
                   </div>
@@ -784,7 +784,7 @@ export default function AdvancedSearchPage() {
                     </div>
                     <span>{result.relevance}%</span>
                   </div>
-                  <span style={{ fontSize: 11, color: 'var(--text3)', fontFamily: 'var(--font-ui)', textTransform: 'capitalize' }}>
+                  <span style={{ fontSize: 12, color: 'var(--text3)', fontFamily: 'var(--font-ui)', textTransform: 'capitalize' }}>
                     {result.type}
                   </span>
                 </div>
@@ -968,7 +968,7 @@ export default function AdvancedSearchPage() {
                   background: 'var(--card)',
                   border: '1px solid var(--bdr)',
                   borderRadius: 2,
-                  fontSize: 13,
+                  fontSize: 14,
                   color: 'var(--link)',
                   fontWeight: 500,
                   fontFamily: 'var(--font-ui)',
@@ -1002,9 +1002,9 @@ export default function AdvancedSearchPage() {
               { name: 'State Survey', href: '/attorney/state-survey', desc: 'State-by-state legal survey analysis' },
               { name: 'Alerts', href: '/attorney/alerts', desc: 'Real-time citation and case alerts' },
             ].map(tool => (
-              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                 <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
               </a>
             ))}
           </div>

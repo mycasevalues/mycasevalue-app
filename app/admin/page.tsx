@@ -220,7 +220,7 @@ export default function AdminPage() {
                 cursor: 'pointer',
                 fontSize: '14px',
                 textAlign: 'left',
-                transition: 'background-color 0.2s',
+                transition: 'background-color 200ms',
               }}
               onMouseEnter={(e) => {
                 if (!isActiveItem(item.id as SectionType, activeSection)) {
@@ -736,7 +736,7 @@ export default function AdminPage() {
                   padding: '12px',
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontFamily: 'monospace',
                   marginBottom: '12px',
                   boxSizing: 'border-box',
@@ -787,7 +787,7 @@ export default function AdminPage() {
               >
                 <p
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: rulesValidation.valid ? 'var(--data-positive)' : 'var(--data-negative)',
                     margin: 0,
                   }}

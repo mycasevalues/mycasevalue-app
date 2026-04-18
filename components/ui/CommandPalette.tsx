@@ -506,7 +506,7 @@ export default function CommandPalette({
           {/* Escape hint */}
           <kbd
             style={{
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'var(--color-text-secondary)',
               background: 'var(--color-surface-1)',
               border: '1px solid var(--border-default)',
@@ -537,7 +537,7 @@ export default function CommandPalette({
                 padding: '24px',
                 textAlign: 'center',
                 color: 'var(--color-text-secondary)',
-                fontSize: '13px',
+                fontSize: '14px',
               }}
             >
               {lang === 'es'
@@ -549,11 +549,11 @@ export default function CommandPalette({
               <div key={groupLabel}>
                 <div
                   style={{
-                    fontSize: '11px',
+                    fontSize: '12px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.06em',
+                    letterSpacing: '0.5px',
                     padding: '8px 10px 4px',
                     fontFamily: 'var(--font-ui)',
                   }}
@@ -613,7 +613,7 @@ export default function CommandPalette({
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div
                           style={{
-                            fontSize: '13px',
+                            fontSize: '14px',
                             fontWeight: 500,
                             color: 'var(--color-text-primary)',
                             whiteSpace: 'nowrap',
@@ -627,7 +627,7 @@ export default function CommandPalette({
                         {item.description && (
                           <div
                             style={{
-                              fontSize: '11px',
+                              fontSize: '12px',
                               color: 'var(--color-text-secondary)',
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
@@ -645,7 +645,7 @@ export default function CommandPalette({
                         <span
                           style={{
                             flexShrink: 0,
-                            fontSize: '10px',
+                            fontSize: '12px',
                             fontWeight: 500,
                             color: item.categoryColor,
                             background: `color-mix(in srgb, ${item.categoryColor} 12%, transparent)`,
@@ -662,7 +662,7 @@ export default function CommandPalette({
                       {isSelected && (
                         <kbd
                           style={{
-                            fontSize: '11px',
+                            fontSize: '12px',
                             color: 'var(--accent-primary-hover)',
                             background: 'transparent',
                             border: '2px solid var(--link-hover, #083D7A)',
@@ -693,22 +693,22 @@ export default function CommandPalette({
             gap: '24px',
             padding: '8px 16px',
             borderTop: '1px solid var(--border-default)',
-            fontSize: '10px',
+            fontSize: '12px',
             color: 'var(--color-text-secondary)',
             background: 'var(--color-surface-1)',
             fontFamily: 'var(--font-ui)',
           }}
         >
           <span>
-            <kbd style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', marginRight: '4px' }}>↑↓</kbd>
+            <kbd style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', marginRight: '4px' }}>↑↓</kbd>
             {lang === 'es' ? 'navegar' : 'navigate'}
           </span>
           <span>
-            <kbd style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', marginRight: '4px' }}>↵</kbd>
+            <kbd style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', marginRight: '4px' }}>↵</kbd>
             {lang === 'es' ? 'seleccionar' : 'select'}
           </span>
           <span>
-            <kbd style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', marginRight: '4px' }}>esc</kbd>
+            <kbd style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', marginRight: '4px' }}>esc</kbd>
             {lang === 'es' ? 'cerrar' : 'close'}
           </span>
         </div>

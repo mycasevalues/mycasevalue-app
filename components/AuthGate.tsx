@@ -169,10 +169,10 @@ export default function AuthGate({ feature, children }: AuthGateProps) {
             >
               <span
                 style={{
-                  fontSize: 13,
+                  fontSize: 14,
                   fontWeight: 700,
                   textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
+                  letterSpacing: '0.5px',
                   color: 'var(--gold)',
                 }}
               >
@@ -189,7 +189,7 @@ export default function AuthGate({ feature, children }: AuthGateProps) {
                 $29.99
                 <span
                   style={{
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: 400,
                     color: 'var(--text2)',
                   }}
@@ -224,7 +224,7 @@ export default function AuthGate({ feature, children }: AuthGateProps) {
                     display: 'flex',
                     alignItems: 'center',
                     gap: 10,
-                    fontSize: 13,
+                    fontSize: 14,
                     color: 'var(--text-primary)',
                     lineHeight: 1.4,
                   }}
@@ -269,14 +269,14 @@ export default function AuthGate({ feature, children }: AuthGateProps) {
                 fontWeight: 700,
                 fontFamily: 'var(--font-ui)',
                 textTransform: 'uppercase',
-                letterSpacing: '0.04em',
+                letterSpacing: '0.5px',
                 color: 'var(--text-primary)',
                 background: 'var(--surf)',
                 border: '1px solid var(--bdr)',
                 borderRadius: 3,
                 textDecoration: 'none',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
             >
               Sign In
@@ -292,14 +292,14 @@ export default function AuthGate({ feature, children }: AuthGateProps) {
                 fontWeight: 700,
                 fontFamily: 'var(--font-ui)',
                 textTransform: 'uppercase',
-                letterSpacing: '0.04em',
+                letterSpacing: '0.5px',
                 color: 'white',
                 background: 'var(--gold)',
                 border: 'none',
                 borderRadius: 3,
                 textDecoration: 'none',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
             >
               Start Free Trial

@@ -16,7 +16,7 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
     <div className="w-full p-6" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }} barCategoryGap="20%">
-          <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="var(--bdr)" vertical={false} />
           <XAxis
             dataKey="range"
             tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
@@ -36,7 +36,7 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontFamily: 'var(--font-ui)',
               padding: '8px 14px',
               color: 'var(--color-text-primary)',

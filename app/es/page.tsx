@@ -51,7 +51,7 @@ export default function SpanishPage() {
       {/* Breadcrumb Navigation Header */}
       <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '12px 24px' }}>
         <div className="max-w-7xl mx-auto px-6">
-          <nav style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.5px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)' }}>
             <span>Inicio</span>
           </nav>
         </div>

@@ -98,7 +98,7 @@ export default function MapFallbackList({
                 border: `1px solid ${colorObj.border}`,
                 borderRadius: '4px',
                 textDecoration: 'none',
-                transition: 'all 0.2s ease',
+                transition: 'all 200ms ease',
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
@@ -118,7 +118,7 @@ export default function MapFallbackList({
               >
                 <span
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 500,
                     color: 'var(--color-text-primary)',
                   }}

@@ -101,11 +101,11 @@ const TabbedFeatures: React.FC = () => {
         <div style={{ marginBottom: '64px' }}>
           <p
             style={{
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'var(--accent-primary)',
               textTransform: 'uppercase',
               fontWeight: 600,
-              letterSpacing: '0.08em',
+              letterSpacing: '0.5px',
               margin: '0 0 12px 0',
             }}
           >
@@ -158,7 +158,7 @@ const TabbedFeatures: React.FC = () => {
                   position: 'relative',
                   textAlign: 'left',
                   cursor: 'pointer',
-                  transition: 'background-color 0.2s ease, color 0.2s ease',
+                  transition: 'background-color 200ms ease, color 200ms ease',
                   display: 'block',
                 }}
                 onMouseEnter={(e) => {
@@ -179,7 +179,7 @@ const TabbedFeatures: React.FC = () => {
                     color: activeTab === index ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                     margin: '0 0 8px 0',
                     fontFamily: 'var(--font-legal)',
-                    transition: 'color 0.2s ease',
+                    transition: 'color 200ms ease',
                   }}
                 >
                   {feature.title}
@@ -323,7 +323,7 @@ const WinRatePreview: React.FC = () => (
               display: 'flex',
               justifyContent: 'space-between',
               marginBottom: '8px',
-              fontSize: '13px',
+              fontSize: '14px',
             }}
           >
             <span style={{ color: 'var(--color-text-primary)', fontWeight: 500 }}>{item.label}</span>
@@ -382,7 +382,7 @@ const SettlementPreview: React.FC = () => (
             textAlign: 'center',
           }}
         >
-          <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginBottom: '6px' }}>{item.label}</div>
+          <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '6px' }}>{item.label}</div>
           <div
             style={{
               fontSize: '14px',
@@ -403,7 +403,7 @@ const JudgeAnalyticsPreview: React.FC = () => (
     <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
       Judge Profile
     </h3>
-    <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 20px 0' }}>
+    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 20px 0' }}>
       Hon. Judge Sarah Martinez, U.S. District Court - Northern District of California
     </p>
     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -423,8 +423,8 @@ const JudgeAnalyticsPreview: React.FC = () => (
             borderRadius: '4px',
           }}
         >
-          <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>{item.label}</span>
-          <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{item.value}</span>
+          <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>{item.label}</span>
+          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{item.value}</span>
         </div>
       ))}
     </div>
@@ -449,7 +449,7 @@ const TimelinePreview: React.FC = () => (
               display: 'flex',
               justifyContent: 'space-between',
               marginBottom: '6px',
-              fontSize: '13px',
+              fontSize: '14px',
             }}
           >
             <span style={{ color: 'var(--color-text-primary)', fontWeight: 500 }}>{item.label}</span>
@@ -487,7 +487,7 @@ const DistrictComparisonPreview: React.FC = () => (
       style={{
         borderCollapse: 'collapse',
         width: '100%',
-        fontSize: '13px',
+        fontSize: '14px',
       }}
     >
       <div

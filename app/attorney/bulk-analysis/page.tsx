@@ -54,9 +54,9 @@ export default function BulkAnalysisPage() {
               { name: 'Find & Print', href: '/attorney/find-print', desc: 'Find, print and export legal documents' },
               { name: 'Alerts', href: '/attorney/alerts', desc: 'Real-time citation and case alerts' },
             ].map(tool => (
-              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                 <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
               </a>
             ))}
           </div>

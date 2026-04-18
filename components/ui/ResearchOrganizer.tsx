@@ -54,9 +54,9 @@ export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps)
       {/* Header */}
       <div
         style={{
-          fontSize: 10,
+          fontSize: 12,
           textTransform: 'uppercase',
-          letterSpacing: '0.05em',
+          letterSpacing: '0.5px',
           color: 'var(--text3, #78766C)',
           fontFamily: 'var(--font-ui)',
           fontWeight: 600,
@@ -70,7 +70,7 @@ export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps)
         {typeof itemCount === 'number' && (
           <span
             style={{
-              fontSize: 9,
+              fontSize: 12,
               fontWeight: 700,
               color: 'var(--card, #FFFFFF)',
               background: 'var(--link, #0A50A2)',
@@ -87,7 +87,7 @@ export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps)
       {/* Note text */}
       <p
         style={{
-          fontSize: 10,
+          fontSize: 12,
           fontFamily: 'var(--font-ui)',
           color: 'var(--text3, #78766C)',
           lineHeight: 1.5,
@@ -106,7 +106,7 @@ export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps)
           border: '1px solid var(--link, #0A50A2)',
           background: 'var(--link-light, #EAF1FB)',
           color: 'var(--link, #0A50A2)',
-          fontSize: 11,
+          fontSize: 12,
           fontWeight: 600,
           fontFamily: 'var(--font-ui)',
           borderRadius: 2,

@@ -440,7 +440,7 @@ function PreviewContent({
             <strong>{winRate.toFixed(1)}%</strong> of plaintiffs win or settle favorably in {caseType.label} cases
             nationwide.
           </p>
-          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
+          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
             District-specific outcomes may vary based on local judicial culture and case composition.
           </p>
         </div>
@@ -457,7 +457,7 @@ function PreviewContent({
           <p style={{ margin: '4px 0' }}>
             <strong>Interquartile Range (IQR):</strong> {lowFormatted} to {highFormatted}
           </p>
-          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
+          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
             50% of settlements fall within this range. Cases with greater injury, documented damages, or stronger liability
             tend to settle higher.
           </p>
@@ -472,7 +472,7 @@ function PreviewContent({
           <p style={{ margin: '4px 0' }}>
             <strong>{timeToResolution} months</strong> is the median time from filing to resolution in {caseType.label} cases.
           </p>
-          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
+          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
             Cases that settle typically resolve faster than those proceeding to trial or summary judgment.
           </p>
         </div>
@@ -493,7 +493,7 @@ function PreviewContent({
             <p style={{ margin: '4px 0', fontWeight: '600', color: 'var(--accent-primary)' }}>
               Representation Impact: +{attorneyData.rwr - attorneyData.pwr} percentage points
             </p>
-            <p style={{ margin: '8px 0 4px 0', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
+            <p style={{ margin: '8px 0 4px 0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
               This data demonstrates the significant advantage of attorney representation in federal litigation. Plaintiffs
               represented by counsel achieve substantially higher win rates and settlement values than self-represented litigants.
             </p>
@@ -512,7 +512,7 @@ function PreviewContent({
           <p style={{ margin: '4px 0' }}>
             <strong>Total Cases Analyzed:</strong> {casesFormatted}
           </p>
-          <p style={{ margin: '8px 0 4px 0', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
+          <p style={{ margin: '8px 0 4px 0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
             Data derived from federal court records spanning 2010-2025. Settlement amounts based on reported values in cases
             with available damage data.
           </p>
@@ -556,7 +556,7 @@ function PreviewContent({
         <h3 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--data-negative)', marginTop: '0', marginBottom: '8px' }}>
           Legal Disclaimer
         </h3>
-        <p style={{ fontSize: '13px', color: 'var(--data-negative)', margin: '0' }}>
+        <p style={{ fontSize: '14px', color: 'var(--data-negative)', margin: '0' }}>
           This research data package is for informational purposes only and does not constitute legal advice. Case outcomes
           depend on specific facts, jurisdiction, judge assignment, and legal representation quality. Historical data does not
           guarantee future results. Settlement amounts and win rates represent aggregate data across multiple case types and may

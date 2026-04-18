@@ -25,7 +25,7 @@ export default function FeatureCard({ title, description, icon, href, delay = 0,
         style={{
           padding: 24, borderRadius: '4px', border: '1px solid var(--bdr, #E2DFD8)',
           backgroundColor: 'var(--card, #FFFFFF)', cursor: 'pointer', height: '100%',
-          transition: 'border-color 0.2s',
+          transition: 'border-color 200ms',
         }}
       >
         <div style={{

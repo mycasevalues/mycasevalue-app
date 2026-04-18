@@ -62,9 +62,9 @@ export default function DisclaimerPage() {
               padding: '6px 12px',
               backgroundColor: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: 600,
-              letterSpacing: '0.08em',
+              letterSpacing: '0.5px',
               textTransform: 'uppercase',
               borderRadius: '4px',
               fontFamily: 'var(--font-ui)',
@@ -96,7 +96,7 @@ export default function DisclaimerPage() {
           </p>
           <p
             style={{
-              fontSize: 13,
+              fontSize: 14,
               color: 'rgba(255,255,255,0.6)',
               fontFamily: 'var(--font-ui)',
               marginTop: 12,

@@ -216,7 +216,7 @@ export default function PricingPage() {
           border: 1px solid var(--bdr);
           background: var(--card);
           font-family: var(--font-mono);
-          font-size: 8px;
+          font-size: 12px;
           font-weight: 600;
           letter-spacing: 0.12em;
           text-transform: uppercase;
@@ -306,7 +306,7 @@ export default function PricingPage() {
 
         .card-best-for {
           font-family: var(--font-mono);
-          font-size: 8px;
+          font-size: 12px;
           color: var(--accent-primary, #C4882A);
           font-weight: 600;
           letter-spacing: 0.12em;
@@ -395,7 +395,7 @@ export default function PricingPage() {
           padding: 8px 12px;
           border-radius: 4px;
           font-family: var(--font-ui);
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 600;
           letter-spacing: -0.005em;
           text-decoration: none;

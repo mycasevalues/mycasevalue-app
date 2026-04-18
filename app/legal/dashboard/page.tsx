@@ -93,7 +93,7 @@ export default function LegalDashboardPage() {
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '24px 16px 40px' }}>
 
       {/* Breadcrumb */}
-      <nav style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 24 }}>
+      <nav style={{ fontSize: 14, color: 'var(--color-text-muted)', marginBottom: 24 }}>
         <Link href="/legal" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Research Hub</Link>
         <span style={{ margin: '0 8px' }}>/</span>
         <span>Data Dashboard</span>
@@ -114,7 +114,7 @@ export default function LegalDashboardPage() {
           borderRadius: 4,
           background: 'rgba(34,197,94,0.06)',
           border: '1px solid var(--data-positive-border, #BFEFE5)',
-          fontSize: 13,
+          fontSize: 14,
           color: 'var(--data-positive)',
           fontWeight: 500,
           display: 'flex',
@@ -129,24 +129,24 @@ export default function LegalDashboardPage() {
       {/* Summary cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, marginBottom: 28 }}>
         <div style={{ padding: '24px 24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Total Documents</div>
+          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 4 }}>Total Documents</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono, monospace)' }}>{formatNumber(totalDocs)}</div>
           <div style={{ fontSize: 12, color: 'var(--data-positive)', marginTop: 4 }}>+12,341 today</div>
         </div>
         <div style={{ padding: '24px 24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Sources Online</div>
+          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 4 }}>Sources Online</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive)', fontFamily: 'var(--font-mono, monospace)' }}>{healthySources}/{sources.length}</div>
           <div style={{ fontSize: 12, color: sources.some(s => s.status !== 'healthy') ? 'var(--wrn-txt)' : 'var(--data-positive)', marginTop: 4 }}>
             {sources.some(s => s.status === 'offline') ? '1 source offline' : sources.some(s => s.status === 'degraded') ? '1 degraded' : 'All healthy'}
           </div>
         </div>
         <div style={{ padding: '24px 24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Avg Uptime</div>
+          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 4 }}>Avg Uptime</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono, monospace)' }}>{avgUptime}%</div>
           <div style={{ fontSize: 12, color: 'var(--color-text-muted)', marginTop: 4 }}>30-day rolling</div>
         </div>
         <div style={{ padding: '24px 24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Avg Latency</div>
+          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 4 }}>Avg Latency</div>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono, monospace)' }}>{avgLatency}ms</div>
           <div style={{ fontSize: 12, color: 'var(--color-text-muted)', marginTop: 4 }}>API response time</div>
         </div>
@@ -202,7 +202,7 @@ export default function LegalDashboardPage() {
                     display: 'inline-block',
                     padding: '2px 10px',
                     borderRadius: 4,
-                    fontSize: 11,
+                    fontSize: 12,
                     fontWeight: 600,
                     color: st.color,
                     background: st.bg,
@@ -216,14 +216,14 @@ export default function LegalDashboardPage() {
                   <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono, monospace)' }}>
                     {formatNumber(src.documents)}
                   </div>
-                  <div style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>docs</div>
+                  <div style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>docs</div>
                 </div>
 
                 {/* Health bar */}
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                    <span style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>Uptime</span>
-                    <span style={{ fontSize: 11, fontWeight: 600, color: src.uptime >= 99 ? 'var(--data-positive)' : src.uptime >= 97 ? 'var(--wrn-txt)' : '#B91C1C' }}>
+                    <span style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>Uptime</span>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: src.uptime >= 99 ? 'var(--data-positive)' : src.uptime >= 97 ? 'var(--wrn-txt)' : '#B91C1C' }}>
                       {src.uptime}%
                     </span>
                   </div>
@@ -243,13 +243,13 @@ export default function LegalDashboardPage() {
                   <div style={{ fontSize: 14, fontWeight: 600, color: src.latency === 0 ? 'var(--data-negative)' : src.latency < 300 ? 'var(--color-text-primary)' : 'var(--wrn-txt)', fontFamily: 'var(--font-mono, monospace)' }}>
                     {src.latency === 0 ? '---' : `${src.latency}ms`}
                   </div>
-                  <div style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>latency</div>
+                  <div style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>latency</div>
                 </div>
 
                 {/* Last sync */}
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>{src.lastSync}</div>
-                  <div style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>every {src.syncInterval}</div>
+                  <div style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>every {src.syncInterval}</div>
                 </div>
               </div>
             );
@@ -291,17 +291,17 @@ export default function LegalDashboardPage() {
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 2 }}>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)' }}>{evt.source}</span>
-                    <span style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>{evt.timestamp}</span>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)' }}>{evt.source}</span>
+                    <span style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>{evt.timestamp}</span>
                   </div>
-                  <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{evt.message}</div>
+                  <div style={{ fontSize: 14, color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{evt.message}</div>
                   {evt.count && (
                     <span style={{
                       display: 'inline-block',
                       marginTop: 6,
                       padding: '2px 8px',
                       borderRadius: 4,
-                      fontSize: 11,
+                      fontSize: 12,
                       fontWeight: 600,
                       color: es.color,
                       background: es.bg,
@@ -332,8 +332,8 @@ export default function LegalDashboardPage() {
               ].map(item => (
                 <div key={item.label} style={{ marginBottom: 12 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                    <span style={{ fontSize: 13, color: 'var(--color-text-secondary)' }}>{item.label}</span>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: item.value >= 95 ? 'var(--data-positive)' : item.value >= 90 ? 'var(--wrn-txt)' : 'var(--data-negative)' }}>{item.value}%</span>
+                    <span style={{ fontSize: 14, color: 'var(--color-text-secondary)' }}>{item.label}</span>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: item.value >= 95 ? 'var(--data-positive)' : item.value >= 90 ? 'var(--wrn-txt)' : 'var(--data-negative)' }}>{item.value}%</span>
                   </div>
                   <div style={{ height: 6, borderRadius: 4, background: 'var(--border-default)' }}>
                     <div style={{
@@ -355,7 +355,7 @@ export default function LegalDashboardPage() {
                 const freshColor = fresh === 'current' ? 'var(--data-positive)' : fresh === 'stale' ? 'var(--wrn-txt)' : 'var(--data-negative)';
                 return (
                   <div key={src.key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                    <span style={{ fontSize: 13, color: src.color, fontWeight: 500 }}>{src.name}</span>
+                    <span style={{ fontSize: 14, color: src.color, fontWeight: 500 }}>{src.name}</span>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                       <span style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>synced {src.lastSync}</span>
                       <span style={{
@@ -387,12 +387,12 @@ export default function LegalDashboardPage() {
                   <div style={{ fontSize: 24, fontWeight: 700, color: stage.color, fontFamily: 'var(--font-mono, monospace)' }}>
                     {stage.count.toLocaleString()}
                   </div>
-                  <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{stage.stage}</div>
+                  <div style={{ fontSize: 14, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{stage.stage}</div>
                   <span style={{
                     display: 'inline-block',
                     padding: '2px 8px',
                     borderRadius: 4,
-                    fontSize: 10,
+                    fontSize: 12,
                     fontWeight: 600,
                     color: 'var(--data-positive)',
                     background: 'rgba(34,197,94,0.06)',

@@ -344,8 +344,8 @@ function SearchPageInner() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -364,18 +364,18 @@ function SearchPageInner() {
       <div className="search-layout" style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px', display: 'grid', gridTemplateColumns: '220px 1fr', gap: '32px', fontFamily: 'var(--font-ui)' }}>
         {/* Left sidebar — category filters */}
         <aside className="search-sidebar" style={{ position: 'sticky', top: '128px', alignSelf: 'start' }}>
-          <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
             Filter by Category
           </p>
           <button
             onClick={() => setSelectedCategory(null)}
             style={{
               display: 'block', width: '100%', textAlign: 'left',
-              padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === null ? 700 : 400,
+              padding: '8px 12px', fontSize: '14px', fontWeight: selectedCategory === null ? 700 : 400,
               color: selectedCategory === null ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
               background: selectedCategory === null ? 'rgba(10, 102, 194, 0.06)' : 'transparent',
               border: 'none', borderLeft: selectedCategory === null ? '3px solid var(--accent-primary)' : '3px solid transparent',
-              cursor: 'pointer', fontFamily: 'var(--font-ui)', transition: 'all 120ms',
+              cursor: 'pointer', fontFamily: 'var(--font-ui)', transition: 'all 150ms',
               marginBottom: '2px',
             }}
           >
@@ -388,16 +388,16 @@ function SearchPageInner() {
               style={{
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 width: '100%', textAlign: 'left',
-                padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === cat.id ? 700 : 400,
+                padding: '8px 12px', fontSize: '14px', fontWeight: selectedCategory === cat.id ? 700 : 400,
                 color: selectedCategory === cat.id ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                 background: selectedCategory === cat.id ? 'rgba(10, 102, 194, 0.06)' : 'transparent',
                 border: 'none', borderLeft: selectedCategory === cat.id ? '3px solid var(--accent-primary)' : '3px solid transparent',
-                cursor: 'pointer', fontFamily: 'var(--font-ui)', transition: 'all 120ms',
+                cursor: 'pointer', fontFamily: 'var(--font-ui)', transition: 'all 150ms',
                 marginBottom: '2px',
               }}
             >
               <span>{cat.label}</span>
-              <span style={{ fontSize: '11px', color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)' }}>{cat.count}</span>
+              <span style={{ fontSize: '12px', color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)' }}>{cat.count}</span>
             </button>
           ))}
         </aside>
@@ -415,7 +415,7 @@ function SearchPageInner() {
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0', fontWeight: '500', fontFamily: 'var(--font-ui)' }}>Recently viewed</p>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0', fontWeight: '500', fontFamily: 'var(--font-ui)' }}>Recently viewed</p>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {recentItems.map((item, i) => (
@@ -427,7 +427,7 @@ function SearchPageInner() {
                   background: 'var(--color-surface-0)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   color: 'var(--gold)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-ui)',
@@ -459,11 +459,11 @@ function SearchPageInner() {
           <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: 'var(--accent-primary)', flexShrink: 0 }}>
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
           </svg>
-          <label style={{ fontSize: '13px', fontWeight: '600', color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0' }}>
+          <label style={{ fontSize: '14px', fontWeight: '600', color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0' }}>
             AI-Powered Search (Beta)
           </label>
         </div>
-        <p style={{ fontSize: '13px', color: 'var(--link)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ fontSize: '14px', color: 'var(--link)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Describe your case in natural language. AI will extract key details and find matching case types.
         </p>
         <form onSubmit={handleAISearch} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
@@ -543,7 +543,7 @@ function SearchPageInner() {
         {/* AI Error */}
         {aiError && (
           <div style={{ marginTop: '12px', padding: '12px', background: 'rgba(10, 102, 194, 0.1)', border: '1px solid var(--border-default)', borderRadius: '2px' }}>
-            <p style={{ fontSize: '13px', color: 'var(--gold)', margin: '0', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '14px', color: 'var(--gold)', margin: '0', fontFamily: 'var(--font-ui)' }}>
               {aiError}
             </p>
           </div>
@@ -555,7 +555,7 @@ function SearchPageInner() {
             <p style={{ fontSize: '12px', fontWeight: '600', color: 'var(--link-visited)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', marginTop: '0' }}>
               AI Interpretation
             </p>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-primary)', marginBottom: '12px', lineHeight: '1.6', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-primary)', marginBottom: '12px', lineHeight: '1.6', fontFamily: 'var(--font-ui)' }}>
               {aiResult.interpretation}
             </p>
 
@@ -567,28 +567,28 @@ function SearchPageInner() {
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                   {aiResult.parameters.caseType && (
                     <div style={{ padding: '8px 12px', background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)', borderRadius: '4px' }}>
-                      <p style={{ fontSize: '11px', fontWeight: '500', color: 'var(--link)', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                      <p style={{ fontSize: '12px', fontWeight: '500', color: 'var(--link)', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         Case Type: <strong>{aiResult.parameters.caseType}</strong>
                       </p>
                     </div>
                   )}
                   {aiResult.parameters.nosCode && (
                     <div style={{ padding: '8px 12px', background: 'rgba(234,179,8,0.1)', border: '1px solid var(--wrn-txt)', borderRadius: '4px' }}>
-                      <p style={{ fontSize: '11px', fontWeight: '500', color: 'var(--wrn-txt)', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                      <p style={{ fontSize: '12px', fontWeight: '500', color: 'var(--wrn-txt)', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         NOS Code: <strong>{aiResult.parameters.nosCode}</strong>
                       </p>
                     </div>
                   )}
                   {aiResult.parameters.settlementMinimum && (
                     <div style={{ padding: '8px 12px', background: 'rgba(34,197,94,0.08)', border: '1px solid var(--data-positive-border, #BFEFE5)', borderRadius: '4px' }}>
-                      <p style={{ fontSize: '11px', fontWeight: '500', color: 'var(--data-positive)', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                      <p style={{ fontSize: '12px', fontWeight: '500', color: 'var(--data-positive)', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         Settlement Min: <strong>${aiResult.parameters.settlementMinimum.toLocaleString()}</strong>
                       </p>
                     </div>
                   )}
                   {aiResult.parameters.district && (
                     <div style={{ padding: '8px 12px', background: 'rgba(139,92,246,0.06)', border: '1px solid rgba(139,92,246,0.15)', borderRadius: '4px' }}>
-                      <p style={{ fontSize: '11px', fontWeight: '500', color: 'var(--link-visited)', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                      <p style={{ fontSize: '12px', fontWeight: '500', color: 'var(--link-visited)', margin: '0', fontFamily: 'var(--font-mono)' }}>
                         District: <strong>{aiResult.parameters.district}</strong>
                       </p>
                     </div>
@@ -597,7 +597,7 @@ function SearchPageInner() {
               </div>
             )}
 
-            <p style={{ fontSize: '10px', color: 'var(--color-text-secondary)', marginTop: '12px', marginBottom: '0', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '12px', marginBottom: '0', fontFamily: 'var(--font-ui)' }}>
               {aiResult.disclosure}
             </p>
           </div>
@@ -689,8 +689,8 @@ function SearchPageInner() {
               ×
             </button>
           )}
-          <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginTop: '6px', fontFamily: 'var(--font-ui)' }}>
-            Press <kbd style={{ background: 'var(--color-surface-0)', padding: '2px 6px', borderRadius: '4px', border: '1px solid var(--border-default)', fontSize: '10px', fontWeight: 600 }}>Enter</kbd> to search
+          <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginTop: '6px', fontFamily: 'var(--font-ui)' }}>
+            Press <kbd style={{ background: 'var(--color-surface-0)', padding: '2px 6px', borderRadius: '4px', border: '1px solid var(--border-default)', fontSize: '12px', fontWeight: 600 }}>Enter</kbd> to search
           </div>
         </div>
       </form>
@@ -718,13 +718,13 @@ function SearchPageInner() {
             <circle cx="12" cy="12" r="10" />
             <path d="M12 16v-4m0-4h.01" />
           </svg>
-          <span style={{ fontSize: '13px', fontWeight: '600', color: 'var(--link)', margin: 0, flex: 1, textAlign: 'left' }}>Search Tips</span>
+          <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--link)', margin: 0, flex: 1, textAlign: 'left' }}>Search Tips</span>
           <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: 'var(--link)', transform: tipsExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 150ms' }}>
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </button>
         {tipsExpanded && (
-          <div style={{ padding: '12px 16px', borderTop: '1px solid #BAE6FD', fontSize: '13px', color: '#0C4A6E', lineHeight: '1.6', fontFamily: 'var(--font-ui)' }}>
+          <div style={{ padding: '12px 16px', borderTop: '1px solid var(--bdr)', fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: '1.6', fontFamily: 'var(--font-ui)' }}>
             <div style={{ marginBottom: '8px' }}>• Search by case type name (e.g., 'employment discrimination')</div>
             <div style={{ marginBottom: '8px' }}>• Search by NOS code (e.g., '442')</div>
             <div style={{ marginBottom: '8px' }}>• Search by category (e.g., 'consumer' or 'civil rights')</div>
@@ -773,7 +773,7 @@ function SearchPageInner() {
                 onClick={() => setSelectedCategory(null)}
                 style={{
                   padding: '6px 14px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: selectedCategory === null ? 600 : 500,
                   background: selectedCategory === null ? 'var(--accent-primary)' : 'var(--color-surface-0)',
                   color: selectedCategory === null ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)',
@@ -781,7 +781,7 @@ function SearchPageInner() {
                   borderRadius: '2px',
                   cursor: 'pointer',
                   fontFamily: 'var(--font-ui)',
-                  transition: 'all 120ms ease-out',
+                  transition: 'all 150ms ease-out',
                 }}
                 onMouseEnter={(e) => {
                   if (selectedCategory !== null) {
@@ -806,7 +806,7 @@ function SearchPageInner() {
                   onClick={() => setSelectedCategory(cat.id === selectedCategory ? null : cat.id)}
                   style={{
                     padding: '6px 14px',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: selectedCategory === cat.id ? 600 : 500,
                     background: selectedCategory === cat.id ? 'var(--accent-primary)' : 'var(--color-surface-0)',
                     color: selectedCategory === cat.id ? 'var(--color-text-inverse)' : 'var(--color-text-secondary)',
@@ -814,7 +814,7 @@ function SearchPageInner() {
                     borderRadius: '2px',
                     cursor: 'pointer',
                     fontFamily: 'var(--font-ui)',
-                    transition: 'all 120ms ease-out',
+                    transition: 'all 150ms ease-out',
                   }}
                   onMouseEnter={(e) => {
                     if (selectedCategory !== cat.id) {
@@ -840,7 +840,7 @@ function SearchPageInner() {
           {/* Result count */}
           {!isLoading && results.length > 0 && (
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 <strong style={{ color: 'var(--color-text-primary)' }}>{results.length}</strong> result{results.length !== 1 ? 's' : ''} {selectedCategory && <span>in <strong style={{ color: 'var(--accent-primary)' }}>{categories.find(c => c.id === selectedCategory)?.label}</strong></span>}
               </p>
             </div>
@@ -891,8 +891,8 @@ function SearchPageInner() {
               {r.nos}
             </span>
           </div>
-          <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0', fontFamily: 'var(--font-ui)', lineHeight: '1.5' }}>{r.categoryName}</p>
-          {r.desc && <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '8px 0 0 0', fontFamily: 'var(--font-ui)', lineHeight: '1.4' }}>{r.desc}</p>}
+          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0', fontFamily: 'var(--font-ui)', lineHeight: '1.5' }}>{r.categoryName}</p>
+          {r.desc && <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '8px 0 0 0', fontFamily: 'var(--font-ui)', lineHeight: '1.4' }}>{r.desc}</p>}
           {(r as { aliases?: string[] }).aliases && (r as { aliases: string[] }).aliases.length > 0 && (
             <p
               style={{
@@ -959,7 +959,7 @@ function SearchPageInner() {
         <>
           {/* Popular Searches — Compact */}
           <div style={{ marginTop: '16px', marginBottom: '28px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>Popular searches</p>
+            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>Popular searches</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
               {['Wrongful termination', 'Car accident', 'Medical malpractice', 'Debt collection', 'Discrimination', 'Slip and fall', 'Breach of contract', 'Insurance bad faith', 'Product liability', 'Sexual harassment', 'ADA violation', 'Wage theft'].map(s => (
                 <button
@@ -974,7 +974,7 @@ function SearchPageInner() {
                     color: 'var(--gold)',
                     cursor: 'pointer',
                     fontFamily: 'var(--font-ui)',
-                    transition: 'all 120ms ease-out',
+                    transition: 'all 150ms ease-out',
                     fontWeight: '500',
                   }}
                   onMouseEnter={(e) => {
@@ -996,7 +996,7 @@ function SearchPageInner() {
 
           {/* Top Case Types by Volume */}
           <div style={{ marginBottom: '32px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
               Most Common Federal Case Types
             </p>
             <div style={{ display: 'grid', gap: 8 }}>
@@ -1021,12 +1021,12 @@ function SearchPageInner() {
                     style={{
                       display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px',
                       background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2,
-                      textDecoration: 'none', transition: 'all 0.15s ease',
+                      textDecoration: 'none', transition: 'all 150ms ease',
                     }}
                     onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
-                    <span style={{ width: 24, height: 24, borderRadius: 2, background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 600, flexShrink: 0 }}>
+                    <span style={{ width: 24, height: 24, borderRadius: 2, background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600, flexShrink: 0 }}>
                       {i + 1}
                     </span>
                     <div style={{ flex: 1 }}>
@@ -1046,7 +1046,7 @@ function SearchPageInner() {
 
           {/* Browse by Category Grid */}
           <div style={{ marginBottom: '32px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
               Browse by Category
             </p>
             <div className="search-category-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
@@ -1071,14 +1071,14 @@ function SearchPageInner() {
                     href={`/cases/${cat.id}`}
                     style={{
                       padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)',
-                      borderRadius: 2, textDecoration: 'none', transition: 'all 0.15s ease',
+                      borderRadius: 2, textDecoration: 'none', transition: 'all 150ms ease',
                     }}
                     onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
                     <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>{cat.label}</div>
                     <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: 8 }}>{cat.opts.length} case types</div>
-                    <div style={{ display: 'flex', gap: 12, fontSize: 11, fontFamily: 'var(--font-mono)' }}>
+                    <div style={{ display: 'flex', gap: 12, fontSize: 12, fontFamily: 'var(--font-mono)' }}>
                       <span style={{ color: avgWr >= 50 ? 'var(--data-positive)' : avgWr >= 35 ? 'var(--wrn-txt)' : 'var(--accent-primary)', fontWeight: 600 }}>{avgWr}% win</span>
                       <span style={{ color: 'var(--color-text-secondary)' }}>{totalCases >= 1000 ? `${(totalCases / 1000).toFixed(0)}K cases` : `${totalCases} cases`}</span>
                     </div>
@@ -1093,7 +1093,7 @@ function SearchPageInner() {
 
           {/* Data Highlights Section */}
           <div style={{ marginBottom: '32px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
               Data Highlights
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
@@ -1139,7 +1139,7 @@ function SearchPageInner() {
                       background: 'var(--color-surface-0)',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
-                      transition: 'all 0.15s ease',
+                      transition: 'all 150ms ease',
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = h.color;
@@ -1150,10 +1150,10 @@ function SearchPageInner() {
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
-                    <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+                    <div style={{ fontSize: '12px', fontWeight: 500, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
                       {h.title}
                     </div>
-                    <div style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-ui)', lineHeight: '1.4' }}>
+                    <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-ui)', lineHeight: '1.4' }}>
                       {h.value}
                     </div>
                     <div style={{ fontSize: '14px', fontWeight: '600', color: h.color, fontFamily: 'var(--font-mono)' }}>
@@ -1172,7 +1172,7 @@ function SearchPageInner() {
 
           {/* Quick Actions Bar */}
           <div style={{ marginTop: '32px', padding: '24px 0', borderTop: '1px solid var(--border-default)' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '12px', fontWeight: 500, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px', fontFamily: 'var(--font-ui)' }}>
               Quick Actions
             </p>
             <div style={{ display: 'inline-flex', flexWrap: 'wrap', gap: '12px' }}>
@@ -1197,7 +1197,7 @@ function SearchPageInner() {
                     textDecoration: 'none',
                     color: 'var(--color-text-secondary)',
                     fontFamily: 'var(--font-ui)',
-                    transition: 'all 0.15s ease',
+                    transition: 'all 150ms ease',
                     cursor: 'pointer',
                   }}
                   onMouseEnter={(e) => {

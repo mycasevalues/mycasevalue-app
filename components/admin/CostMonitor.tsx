@@ -220,7 +220,7 @@ function ServiceCard({ service }: ServiceCardProps) {
             color: 'white',
             padding: '4px 12px',
             borderRadius: '4px',
-            fontSize: '11px',
+            fontSize: '12px',
             fontWeight: '600',
             textTransform: 'uppercase',
           }}
@@ -293,7 +293,7 @@ function ServiceCard({ service }: ServiceCardProps) {
             {service.momChange > 0 ? '+' : ''}{service.momChange.toFixed(2)}%
           </span>
         </div>
-        <p style={{ margin: '6px 0 0 0', color: 'var(--color-text-secondary)', fontSize: '11px' }}>
+        <p style={{ margin: '6px 0 0 0', color: 'var(--color-text-secondary)', fontSize: '12px' }}>
           Last month: ${service.lastMonthSpend.toFixed(2)}
         </p>
       </div>

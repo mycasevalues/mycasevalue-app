@@ -234,7 +234,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
               color: 'var(--color-text-inverse)',
               padding: '4px 8px',
               borderRadius: '4px',
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: '600',
               fontFamily: 'var(--font-ui)',
             }}>
@@ -263,7 +263,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
               flex: 1,
               border: 'none',
               outline: 'none',
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-mono)',
               backgroundColor: 'transparent',
@@ -280,7 +280,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
               cursor: 'pointer',
               fontSize: '12px',
               fontWeight: '600',
-              transition: 'background-color 0.2s',
+              transition: 'background-color 200ms',
               whiteSpace: 'nowrap',
               fontFamily: 'var(--font-ui)',
             }}
@@ -379,7 +379,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
               backgroundColor: 'var(--color-surface-1)',
               borderRadius: '4px',
               border: '1px solid var(--border-default)',
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--color-text-primary)',
               fontFamily: 'var(--font-ui)',
               lineHeight: '1.5',
@@ -398,9 +398,9 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
             border: 'none',
             borderRadius: '4px',
             cursor: 'pointer',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: '600',
-            transition: 'background-color 0.2s',
+            transition: 'background-color 200ms',
             fontFamily: 'var(--font-ui)',
           }}
         >
@@ -428,10 +428,10 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                 }}
               >
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
                     {referral.referred_user_id.substring(0, 8)}...
                   </div>
-                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                     Referred on {new Date(referral.created_at).toLocaleDateString()}
                   </div>
                 </div>
@@ -441,7 +441,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                     alignItems: 'center',
                     padding: '4px 10px',
                     borderRadius: '2px',
-                    fontSize: '11px',
+                    fontSize: '12px',
                     fontWeight: '600',
                     fontFamily: 'var(--font-ui)',
                     backgroundColor: referral.activated_at ? 'rgba(34,197,94,0.1)' : 'rgba(234,179,8,0.1)',
@@ -463,7 +463,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
           backgroundColor: 'rgba(59,130,246,0.08)',
           borderRadius: '4px',
           border: '1px solid rgba(59,130,246,0.15)',
-          fontSize: '13px',
+          fontSize: '14px',
           color: 'var(--accent-primary-hover)',
           fontFamily: 'var(--font-ui)',
         }}

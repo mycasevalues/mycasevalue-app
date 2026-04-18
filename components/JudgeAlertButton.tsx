@@ -178,7 +178,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     htmlFor="judge-alert-email"
                     style={{
                       display: 'block',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: '600',
                       color: 'var(--color-text-primary)',
                       marginBottom: '8px',

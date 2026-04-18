@@ -56,11 +56,11 @@ export default function AnimatedDataViz({
       <div style={{ marginBottom: '24px' }}>
         <p
           style={{
-            fontSize: '11px',
+            fontSize: '12px',
             fontWeight: 600,
             color: 'rgba(255, 255, 255, 0.6)',
             textTransform: 'uppercase',
-            letterSpacing: '0.08em',
+            letterSpacing: '0.5px',
             margin: '0 0 4px 0',
             fontFamily: 'var(--font-ui)',
           }}

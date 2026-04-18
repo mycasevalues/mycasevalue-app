@@ -473,8 +473,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             borderRadius: 999,
             border: '1px solid rgba(10,80,162,0.2)',
             background: 'rgba(10,80,162,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -493,7 +493,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             {article.title}
           </h1>
 
-          <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-mono)', letterSpacing: '0.02em' }}>
+          <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-mono)', letterSpacing: '0.02em' }}>
             <span>{article.author}</span>
             <span style={{ margin: '0 12px', color: 'rgba(255,255,255,0.3)' }}>·</span>
             <time>{article.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
@@ -536,7 +536,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                         fontSize: '12px',
                         color: 'var(--color-text-secondary)',
                         textDecoration: 'none',
-                        transition: 'all 0.2s ease',
+                        transition: 'all 200ms ease',
                       }}
                       /* hover handled by CSS */
                     >
@@ -588,7 +588,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '12px' }}>
                 Get More Insights
               </h3>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', fontFamily: 'var(--font-ui)' }}>
                 Explore federal court data with our interactive tools and analytics platform.
               </p>
               <Link
@@ -604,7 +604,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   fontSize: '12px',
                   fontWeight: '600',
                   textDecoration: 'none',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 200ms ease',
                 }}
                 /* hover handled by CSS */
               >

@@ -24,10 +24,10 @@ export default function InflationToggle() {
             color: inflationEnabled ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
             border: 'none',
             borderRadius: '4px',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: 600,
             cursor: 'pointer',
-            transition: 'background-color 0.2s ease, color 0.2s ease',
+            transition: 'background-color 200ms ease, color 200ms ease',
             fontFamily: 'var(--font-ui)',
           }}
           aria-pressed={inflationEnabled}

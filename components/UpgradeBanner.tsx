@@ -63,7 +63,7 @@ export default function UpgradeBanner() {
           color: var(--chrome-text);
           border-radius: 3px;
           font-weight: 600;
-          font-size: 13px;
+          font-size: 14px;
           letter-spacing: -0.005em;
           text-decoration: none;
           font-family: var(--font-ui);
@@ -86,7 +86,7 @@ export default function UpgradeBanner() {
           border: 1px solid rgba(255,255,255,0.2);
           border-radius: 2px;
           font-weight: 600;
-          font-size: 13px;
+          font-size: 14px;
           letter-spacing: -0.005em;
           text-decoration: none;
           font-family: var(--font-ui);
@@ -105,9 +105,9 @@ export default function UpgradeBanner() {
             <div style={{
               display: 'inline-flex', alignItems: 'center',
               background: 'rgba(10, 102, 194, 0.2)', color: 'var(--accent-primary)',
-              fontSize: '11px', fontWeight: 600, textTransform: 'uppercase',
-              padding: '6px 12px', borderRadius: '4px', marginBottom: '16px',
-              letterSpacing: '0.08em',
+              fontSize: '12px', fontWeight: 500, textTransform: 'uppercase',
+              padding: '6px 12px', borderRadius: '3px', marginBottom: '16px',
+              letterSpacing: '0.5px',
             }}>
               NEW
             </div>
@@ -165,7 +165,7 @@ export default function UpgradeBanner() {
               <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
                 72%
               </div>
-              <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+              <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 Favorable Outcome Probability
               </div>
               <div style={{ height: '1px', background: 'var(--border-default)', marginBottom: '24px' }} />
@@ -177,7 +177,7 @@ export default function UpgradeBanner() {
                 ].map((m) => (
                   <div key={m.label} style={{
                     display: 'flex', justifyContent: 'space-between',
-                    fontSize: '13px', fontFamily: 'var(--font-ui)',
+                    fontSize: '14px', fontFamily: 'var(--font-ui)',
                   }}>
                     <span style={{ color: 'var(--color-text-secondary)' }}>{m.label}</span>
                     <span style={{ fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{m.value}</span>

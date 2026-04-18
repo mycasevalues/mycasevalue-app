@@ -324,9 +324,9 @@ export default function FindPrintPage() {
               border: '1px solid rgba(255,255,255,0.2)',
               background: 'rgba(255,255,255,0.1)',
               fontFamily: 'var(--font-mono)',
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: 700,
-              letterSpacing: '0.08em',
+              letterSpacing: '0.5px',
               textTransform: 'uppercase',
               color: 'rgba(255,255,255,0.9)',
             }}
@@ -388,7 +388,7 @@ export default function FindPrintPage() {
                 htmlFor="citation-input"
                 style={{
                   display: 'block',
-                  fontSize: 13,
+                  fontSize: 14,
                   fontWeight: 600,
                   color: 'var(--text-primary)',
                   marginBottom: 12,
@@ -449,7 +449,7 @@ export default function FindPrintPage() {
                   border: 'none',
                   borderRadius: 2,
                   cursor: processingState !== 'idle' && processingState !== 'complete' ? 'not-allowed' : 'pointer',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                   opacity:
                     processingState !== 'idle' && processingState !== 'complete' ? 0.6 : 1,
                 }}
@@ -467,7 +467,7 @@ export default function FindPrintPage() {
                   border: '1px solid var(--bdr)',
                   borderRadius: 2,
                   cursor: 'pointer',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                 }}
               >
                 Clear
@@ -495,7 +495,7 @@ export default function FindPrintPage() {
               >
                 <h3
                   style={{
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: 700,
                     margin: 0,
                     textTransform: 'uppercase',
@@ -529,7 +529,7 @@ export default function FindPrintPage() {
                       padding: '6px 8px',
                       borderRadius: 2,
                       fontFamily: 'var(--font-mono)',
-                      fontSize: 11,
+                      fontSize: 12,
                       color: 'var(--link)',
                     }}
                   >
@@ -548,7 +548,7 @@ export default function FindPrintPage() {
                       padding: '6px 8px',
                       borderRadius: 2,
                       fontFamily: 'var(--font-mono)',
-                      fontSize: 11,
+                      fontSize: 12,
                       color: 'var(--data-positive)',
                     }}
                   >
@@ -565,7 +565,7 @@ export default function FindPrintPage() {
                       padding: '6px 8px',
                       borderRadius: 2,
                       fontFamily: 'var(--font-mono)',
-                      fontSize: 11,
+                      fontSize: 12,
                       color: 'var(--gold)',
                     }}
                   >
@@ -574,7 +574,7 @@ export default function FindPrintPage() {
                 </div>
 
                 <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid var(--bdr)' }}>
-                  <div style={{ fontWeight: 600, color: 'var(--wrn-txt, #C4882A)', fontSize: 11, marginBottom: 6 }}>Tips</div>
+                  <div style={{ fontWeight: 600, color: 'var(--wrn-txt, #C4882A)', fontSize: 12, marginBottom: 6 }}>Tips</div>
                   <ul style={{ margin: 0, paddingLeft: 16 }}>
                     <li>One citation per line</li>
                     <li>Full or short form</li>
@@ -600,7 +600,7 @@ export default function FindPrintPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-primary)' }}>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>
                     {processingState === 'parsing' ? 'Parsing Citations...' : 'Retrieving Documents...'}
                   </span>
                   <span style={{ fontSize: 12, color: 'var(--text-secondary, #666)' }}>{Math.round(processingProgress)}%</span>
@@ -653,7 +653,7 @@ export default function FindPrintPage() {
                   </h2>
                   <p
                     style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       color: 'var(--text-secondary, #666)',
                       margin: 0,
                     }}
@@ -718,7 +718,7 @@ export default function FindPrintPage() {
                       const statusBadge = getStatusBadge(result.status);
                       return (
                         <tr key={result.index} style={{ borderBottom: '1px solid var(--bdr)' }}>
-                          <td style={{ padding: '12px 16px', fontFamily: 'var(--font-mono)', fontSize: 13, fontWeight: 600, color: 'var(--text-primary)' }}>
+                          <td style={{ padding: '12px 16px', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>
                             {result.citation}
                           </td>
                           <td style={{ padding: '12px 16px' }}>
@@ -728,7 +728,7 @@ export default function FindPrintPage() {
                                 padding: '4px 8px',
                                 background: `${getDocTypeColor(result.docType)}20`,
                                 color: getDocTypeColor(result.docType),
-                                fontSize: 11,
+                                fontSize: 12,
                                 fontWeight: 600,
                                 borderRadius: 3,
                               }}
@@ -743,7 +743,7 @@ export default function FindPrintPage() {
                                 padding: '4px 8px',
                                 background: statusBadge.bg,
                                 color: statusBadge.text,
-                                fontSize: 11,
+                                fontSize: 12,
                                 fontWeight: 600,
                                 borderRadius: 3,
                               }}
@@ -791,7 +791,7 @@ export default function FindPrintPage() {
                 <label
                   style={{
                     display: 'block',
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: 600,
                     color: 'var(--text-primary)',
                     marginBottom: 12,
@@ -830,7 +830,7 @@ export default function FindPrintPage() {
                         }
                         style={{ cursor: 'pointer' }}
                       />
-                      <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase' }}>
+                      <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase' }}>
                         {fmt === 'pdf' && 'PDF'}
                         {fmt === 'docx' && 'Word (.docx)'}
                         {fmt === 'txt' && 'Plain Text'}
@@ -853,7 +853,7 @@ export default function FindPrintPage() {
                 <label
                   style={{
                     display: 'block',
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: 600,
                     color: 'var(--text-primary)',
                     marginBottom: 12,
@@ -897,7 +897,7 @@ export default function FindPrintPage() {
                         }
                         style={{ cursor: 'pointer' }}
                       />
-                      <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-primary)' }}>{method.label}</span>
+                      <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--text-primary)' }}>{method.label}</span>
                     </label>
                   ))}
                 </div>
@@ -917,7 +917,7 @@ export default function FindPrintPage() {
               <label
                 style={{
                   display: 'block',
-                  fontSize: 13,
+                  fontSize: 14,
                   fontWeight: 600,
                   color: 'var(--text-primary)',
                   marginBottom: 12,
@@ -957,7 +957,7 @@ export default function FindPrintPage() {
                       }
                       style={{ cursor: 'pointer' }}
                     />
-                    <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-primary)' }}>{opt.label}</span>
+                    <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--text-primary)' }}>{opt.label}</span>
                   </label>
                 ))}
               </div>
@@ -978,7 +978,7 @@ export default function FindPrintPage() {
                 border: 'none',
                 borderRadius: 2,
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
             >
               {`Retrieve ${foundCount} Document${foundCount !== 1 ? 's' : ''}`}
@@ -1041,7 +1041,7 @@ export default function FindPrintPage() {
                       borderBottom: '1px solid var(--bdr)',
                       background: activeHistoryId === batch.id ? 'var(--gold)10' : 'transparent',
                       cursor: 'pointer',
-                      transition: 'all 0.2s',
+                      transition: 'all 200ms',
                     }}
                     onMouseEnter={() => setActiveHistoryId(batch.id)}
                     onMouseLeave={() => setActiveHistoryId(null)}
@@ -1049,10 +1049,10 @@ export default function FindPrintPage() {
                     <td style={{ padding: '12px 16px', fontWeight: 500, color: 'var(--text-primary)' }}>
                       {batch.batchName}
                     </td>
-                    <td style={{ padding: '12px 16px', fontSize: 13, color: 'var(--text-secondary, #666)' }}>
+                    <td style={{ padding: '12px 16px', fontSize: 14, color: 'var(--text-secondary, #666)' }}>
                       {new Date(batch.date).toLocaleDateString()}
                     </td>
-                    <td style={{ padding: '12px 16px', textAlign: 'center', fontSize: 13, color: 'var(--text-secondary, #666)' }}>
+                    <td style={{ padding: '12px 16px', textAlign: 'center', fontSize: 14, color: 'var(--text-secondary, #666)' }}>
                       {batch.foundCount}/{batch.citationCount}
                     </td>
                     <td style={{ padding: '12px 16px', textAlign: 'center' }}>
@@ -1062,7 +1062,7 @@ export default function FindPrintPage() {
                           padding: '4px 8px',
                           background: 'var(--gold)20',
                           color: 'var(--gold)',
-                          fontSize: 11,
+                          fontSize: 12,
                           fontWeight: 600,
                           borderRadius: 3,
                         }}
@@ -1077,7 +1077,7 @@ export default function FindPrintPage() {
                           padding: '4px 8px',
                           background: 'var(--data-positive-bg, #EAF4EF)',
                           color: 'var(--data-positive)',
-                          fontSize: 11,
+                          fontSize: 12,
                           fontWeight: 600,
                           borderRadius: 3,
                         }}
@@ -1103,14 +1103,14 @@ export default function FindPrintPage() {
               style={{
                 flex: 1,
                 padding: '12px 16px',
-                fontSize: 13,
+                fontSize: 14,
                 fontWeight: 600,
                 background: 'var(--card)',
                 color: 'var(--text-primary)',
                 border: '1px solid var(--bdr)',
                 borderRadius: 2,
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
             >
               Load from Folder
@@ -1119,14 +1119,14 @@ export default function FindPrintPage() {
               style={{
                 flex: 1,
                 padding: '12px 16px',
-                fontSize: 13,
+                fontSize: 14,
                 fontWeight: 600,
                 background: 'var(--card)',
                 color: 'var(--text-primary)',
                 border: '1px solid var(--bdr)',
                 borderRadius: 2,
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
             >
               Load Recent Search
@@ -1146,9 +1146,9 @@ export default function FindPrintPage() {
               { name: 'Compare Text', href: '/attorney/compare-text', desc: 'Compare legal documents side by side' },
               { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Advanced legal research search tools' },
             ].map(tool => (
-              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                 <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
               </a>
             ))}
           </div>

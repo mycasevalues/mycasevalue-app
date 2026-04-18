@@ -108,7 +108,7 @@ export default function TrustBadges() {
               {/* Label */}
               <div
                 style={{
-                  fontSize: '13px',
+                  fontSize: '14px',
                   color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-ui)',
                   fontWeight: 500,

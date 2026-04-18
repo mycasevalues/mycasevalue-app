@@ -638,7 +638,7 @@ export default async function GuidePage({ params }: PageProps) {
             borderRadius: '4px',
             textDecoration: 'none',
             color: 'var(--accent-primary)',
-            transition: 'all 0.2s ease',
+            transition: 'all 200ms ease',
           }}>
             <p style={{
               fontSize: '1rem',
@@ -665,7 +665,7 @@ export default async function GuidePage({ params }: PageProps) {
             borderRadius: '4px',
             textDecoration: 'none',
             color: 'var(--accent-primary)',
-            transition: 'all 0.2s ease',
+            transition: 'all 200ms ease',
           }}>
             <p style={{
               fontSize: '1rem',
@@ -692,7 +692,7 @@ export default async function GuidePage({ params }: PageProps) {
             borderRadius: '4px',
             textDecoration: 'none',
             color: 'var(--accent-primary)',
-            transition: 'all 0.2s ease',
+            transition: 'all 200ms ease',
           }}>
             <p style={{
               fontSize: '1rem',

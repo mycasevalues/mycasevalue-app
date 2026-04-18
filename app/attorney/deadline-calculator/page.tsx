@@ -138,7 +138,7 @@ export default function DeadlineCalculatorPage() {
 
   const labelStyle: React.CSSProperties = {
     display: 'block',
-    fontSize: '13px',
+    fontSize: '14px',
     fontWeight: 600,
     color: 'var(--color-text-primary)',
     marginBottom: '6px',
@@ -155,7 +155,7 @@ export default function DeadlineCalculatorPage() {
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
     fontFamily: 'var(--font-ui)',
-    transition: 'border-color 0.2s',
+    transition: 'border-color 200ms',
     outline: 'none',
     boxSizing: 'border-box' as const,
   };
@@ -355,7 +355,7 @@ export default function DeadlineCalculatorPage() {
                             {deadline.event}
                           </h3>
                           {deadline.id.startsWith('custom-') && (
-                            <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--accent-primary)', background: 'rgba(10, 102, 194, 0.1)', padding: '2px 8px', borderRadius: '4px' }}>
+                            <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', background: 'rgba(10, 102, 194, 0.1)', padding: '2px 8px', borderRadius: '4px' }}>
                               Custom
                             </span>
                           )}
@@ -380,7 +380,7 @@ export default function DeadlineCalculatorPage() {
                         <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                           {deadline.calculatedDate}
                         </div>
-                        <span style={{ fontSize: '11px', fontWeight: 600, padding: '2px 8px', borderRadius: '4px', backgroundColor: config.bg, color: config.text, textTransform: 'uppercase' as const }}>
+                        <span style={{ fontSize: '12px', fontWeight: 600, padding: '2px 8px', borderRadius: '4px', backgroundColor: config.bg, color: config.text, textTransform: 'uppercase' as const }}>
                           {config.label}
                         </span>
                         {deadline.id.startsWith('custom-') && (
@@ -423,7 +423,7 @@ export default function DeadlineCalculatorPage() {
                     <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       {ref.rule}
                     </h3>
-                    <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 6px' }}>
+                    <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 6px' }}>
                       {ref.title}
                     </p>
                     <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>

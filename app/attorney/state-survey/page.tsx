@@ -288,9 +288,9 @@ Platform: MyCaseValue Legal Research
             border: '1px solid rgba(196, 136, 42, 0.2)',
             background: 'rgba(196, 136, 42, 0.08)',
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
+            fontSize: '12px',
             fontWeight: '600',
-            letterSpacing: '0.05em',
+            letterSpacing: '0.5px',
             textTransform: 'uppercase',
             color: 'var(--chrome-bg)',
           }}>
@@ -360,7 +360,7 @@ Platform: MyCaseValue Legal Research
               background: 'var(--card)',
               color: 'var(--color-text-primary)',
               cursor: 'pointer',
-              transition: 'border-color 0.2s',
+              transition: 'border-color 200ms',
             }}
           >
             {SURVEY_TOPICS.map(t => (
@@ -393,7 +393,7 @@ Platform: MyCaseValue Legal Research
               {statusCounts.favorable}
             </div>
             <div style={{
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: '500',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -415,7 +415,7 @@ Platform: MyCaseValue Legal Research
               {statusCounts.mixed}
             </div>
             <div style={{
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: '500',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -437,7 +437,7 @@ Platform: MyCaseValue Legal Research
               {statusCounts.unfavorable}
             </div>
             <div style={{
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: '500',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -459,7 +459,7 @@ Platform: MyCaseValue Legal Research
               50
             </div>
             <div style={{
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: '500',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
@@ -494,7 +494,7 @@ Platform: MyCaseValue Legal Research
               {/* Simplified US State Map - Shows all states with colors by status */}
               <defs>
                 <style>{`
-                  .state-path { stroke: 'white'; stroke-width: 0.5; cursor: pointer; transition: opacity 0.2s; }
+                  .state-path { stroke: 'white'; stroke-width: 0.5; cursor: pointer; transition: opacity 200ms; }
                   .state-path:hover { opacity: 0.8; }
                 `}</style>
               </defs>
@@ -659,7 +659,7 @@ Platform: MyCaseValue Legal Research
                 color: 'var(--color-text-primary)',
                 cursor: 'pointer',
                 fontWeight: '500',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
               title={`Sort ${sortOrder === 'asc' ? 'descending' : 'ascending'}`}
             >
@@ -678,7 +678,7 @@ Platform: MyCaseValue Legal Research
                 color: 'var(--color-text-primary)',
                 cursor: 'pointer',
                 fontWeight: '500',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
             >
               Clear Filters
@@ -788,7 +788,7 @@ Platform: MyCaseValue Legal Research
                     style={{
                       borderBottom: '1px solid var(--bdr)',
                       background: idx % 2 === 0 ? 'transparent' : 'var(--surf)',
-                      transition: 'background-color 0.2s',
+                      transition: 'background-color 200ms',
                     }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLTableRowElement).style.background = 'var(--gold)';
@@ -838,7 +838,7 @@ Platform: MyCaseValue Legal Research
                         display: 'inline-block',
                         padding: '4px 12px',
                         borderRadius: '3px',
-                        fontSize: '11px',
+                        fontSize: '12px',
                         fontWeight: '600',
                         backgroundColor: getStatusBgColor(row.status),
                         color: getStatusColor(row.status),
@@ -883,7 +883,7 @@ Platform: MyCaseValue Legal Research
                 background: 'var(--card)',
                 color: 'var(--link)',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
               onMouseEnter={(e) => {
                 (e.target as HTMLButtonElement).style.borderColor = 'var(--link)';
@@ -909,7 +909,7 @@ Platform: MyCaseValue Legal Research
                 background: 'var(--card)',
                 color: 'var(--link)',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
               onMouseEnter={(e) => {
                 (e.target as HTMLButtonElement).style.borderColor = 'var(--link)';
@@ -935,7 +935,7 @@ Platform: MyCaseValue Legal Research
                 background: 'var(--card)',
                 color: 'var(--link)',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
               onMouseEnter={(e) => {
                 (e.target as HTMLButtonElement).style.borderColor = 'var(--link)';
@@ -1104,7 +1104,7 @@ Platform: MyCaseValue Legal Research
                 <div style={{ fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)' }}>
                   Favorable
                 </div>
-                <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>
+                <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
                   Plaintiff-friendly jurisdiction
                 </div>
               </div>
@@ -1122,7 +1122,7 @@ Platform: MyCaseValue Legal Research
                 <div style={{ fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)' }}>
                   Mixed
                 </div>
-                <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>
+                <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
                   Fact-dependent or neutral
                 </div>
               </div>
@@ -1140,7 +1140,7 @@ Platform: MyCaseValue Legal Research
                 <div style={{ fontSize: '12px', fontWeight: '600', color: 'var(--color-text-primary)' }}>
                   Unfavorable
                 </div>
-                <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>
+                <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
                   Defendant-friendly jurisdiction
                 </div>
               </div>
@@ -1160,9 +1160,9 @@ Platform: MyCaseValue Legal Research
               { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Advanced legal research search tools' },
               { name: 'Secondary Sources', href: '/attorney/secondary-sources', desc: 'Legal secondary sources and treatises' },
             ].map(tool => (
-              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                 <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
               </a>
             ))}
           </div>
@@ -1174,7 +1174,7 @@ Platform: MyCaseValue Legal Research
         background: 'var(--surface-warm, #FAF3E6)',
         color: 'var(--text2, #42403C)',
         padding: '40px 24px',
-        fontSize: '13px',
+        fontSize: '14px',
         lineHeight: '1.6',
         borderTop: '1px solid var(--bdr)',
         marginTop: '60px',

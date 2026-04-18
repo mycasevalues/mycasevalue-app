@@ -412,7 +412,7 @@ export default function ApiAccessPage() {
                 <div style={{ fontSize: '20px', marginBottom: '8px' }}>{item.icon}</div>
                 <h3
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 4px',
@@ -453,7 +453,7 @@ export default function ApiAccessPage() {
             <code
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '13px',
+                fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 backgroundColor: 'var(--color-surface-0)',
                 padding: '8px 12px',
@@ -498,7 +498,7 @@ export default function ApiAccessPage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
                   <span
                     style={{
-                      fontSize: '11px',
+                      fontSize: '12px',
                       fontWeight: 600,
                       padding: '4px 10px',
                       borderRadius: '3px',
@@ -515,7 +515,7 @@ export default function ApiAccessPage() {
                   <code
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       color: 'var(--color-text-primary)',
                       backgroundColor: 'var(--color-surface-0)',
                       padding: '4px 8px',
@@ -527,7 +527,7 @@ export default function ApiAccessPage() {
                     {endpoint.path}
                   </code>
                 </div>
-                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0' }}>{endpoint.description}</p>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0' }}>{endpoint.description}</p>
               </div>
 
               {/* Parameters */}
@@ -535,7 +535,7 @@ export default function ApiAccessPage() {
                 <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                   <h4
                     style={{
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
                       margin: '0 0 12px',
@@ -562,7 +562,7 @@ export default function ApiAccessPage() {
                           </code>
                           <span
                             style={{
-                              fontSize: '11px',
+                              fontSize: '12px',
                               color: 'var(--color-text-secondary)',
                               backgroundColor: 'rgba(255,255,255,0.05)',
                               padding: '2px 6px',
@@ -575,7 +575,7 @@ export default function ApiAccessPage() {
                           {param.required && (
                             <span
                               style={{
-                                fontSize: '11px',
+                                fontSize: '12px',
                                 fontWeight: 600,
                                 color: 'var(--data-negative)',
                                 textTransform: 'uppercase',
@@ -597,7 +597,7 @@ export default function ApiAccessPage() {
               <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                 <h4
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 12px',
@@ -629,7 +629,7 @@ export default function ApiAccessPage() {
               <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                 <h4
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 12px',
@@ -661,7 +661,7 @@ export default function ApiAccessPage() {
               <div style={{ padding: '24px 24px' }}>
                 <h4
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 12px',
@@ -728,7 +728,7 @@ export default function ApiAccessPage() {
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
           >
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px' }}>
               All API requests require authentication using a Bearer token in the Authorization header.
             </p>
             <pre
@@ -780,7 +780,7 @@ export default function ApiAccessPage() {
                 <div key={idx}>
                   <p
                     style={{
-                      fontSize: '11px',
+                      fontSize: '12px',
                       color: 'var(--color-text-secondary)',
                       fontWeight: 600,
                       textTransform: 'uppercase',

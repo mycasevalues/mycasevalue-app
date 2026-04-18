@@ -258,7 +258,7 @@ export default function DistrictsPage() {
         <Link href="/" style={{ color: 'var(--link)', textDecoration: 'none' }}>Home</Link>
         <span style={{ color: 'var(--text-tertiary)' }}>›</span>
         <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Districts</span>
-        <span style={{ marginLeft: 'auto', color: 'var(--text-tertiary)', letterSpacing: '0.05em' }}>
+        <span style={{ marginLeft: 'auto', color: 'var(--text-tertiary)', letterSpacing: '0.5px' }}>
           {ALL_ROWS.length} districts · {(totalCasesAll / 1_000_000).toFixed(1)}M+ cases
         </span>
       </div>
@@ -309,10 +309,10 @@ export default function DistrictsPage() {
             display: 'inline-flex',
             alignItems: 'center',
             padding: '4px 12px',
-            fontSize: 11,
+            fontSize: 12,
             fontFamily: 'var(--font-mono)',
             fontWeight: 600,
-            letterSpacing: '0.05em',
+            letterSpacing: '0.5px',
             borderRadius: 3,
             background: 'var(--accent)',
             color: 'var(--card)',
@@ -326,10 +326,10 @@ export default function DistrictsPage() {
               display: 'inline-flex',
               alignItems: 'center',
               padding: '4px 10px',
-              fontSize: 11,
+              fontSize: 12,
               fontFamily: 'var(--font-mono)',
               fontWeight: 500,
-              letterSpacing: '0.05em',
+              letterSpacing: '0.5px',
               borderRadius: 3,
               border: '1px solid var(--surface-border)',
               color: 'var(--text-secondary)',
@@ -356,7 +356,7 @@ export default function DistrictsPage() {
           color: 'var(--text-tertiary)',
         }}>
           <span>Showing 1–{ALL_ROWS.length} of {ALL_ROWS.length} districts</span>
-          <span style={{ letterSpacing: '0.05em' }}>Sorted by: District Name (A→Z)</span>
+          <span style={{ letterSpacing: '0.5px' }}>Sorted by: District Name (A→Z)</span>
         </div>
 
         {/* Table container */}
@@ -371,7 +371,7 @@ export default function DistrictsPage() {
               width: '100%',
               borderCollapse: 'collapse',
               fontFamily: 'var(--font-ui)',
-              fontSize: 13,
+              fontSize: 14,
               minWidth: 900,
             }}>
               <thead>
@@ -412,7 +412,7 @@ export default function DistrictsPage() {
                       </Link>
                     </td>
                     {/* Code */}
-                    <td style={tdStyle({ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.08em', color: 'var(--text-secondary)' })}>
+                    <td style={tdStyle({ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.5px', color: 'var(--text-secondary)' })}>
                       {row.code}
                     </td>
                     {/* Circuit */}
@@ -421,10 +421,10 @@ export default function DistrictsPage() {
                         display: 'inline-block',
                         padding: '2px 8px',
                         borderRadius: 3,
-                        fontSize: 10,
+                        fontSize: 12,
                         fontFamily: 'var(--font-mono)',
                         fontWeight: 600,
-                        letterSpacing: '0.08em',
+                        letterSpacing: '0.5px',
                         background: 'var(--surface-tertiary)',
                         color: 'var(--text-secondary)',
                         border: '1px solid var(--surface-border)',
@@ -463,14 +463,14 @@ export default function DistrictsPage() {
           alignItems: 'center',
           justifyContent: 'space-between',
           marginTop: 12,
-          fontSize: 10,
+          fontSize: 12,
           fontFamily: 'var(--font-mono)',
           color: 'var(--color-text-muted)',
           textTransform: 'uppercase',
-          letterSpacing: '0.08em',
+          letterSpacing: '0.5px',
         }}>
           <span>{ALL_ROWS.length} districts across {CIRCUITS_AVAILABLE.length} circuits</span>
-          <span style={{ letterSpacing: '0.08em' }}>
+          <span style={{ letterSpacing: '0.5px' }}>
             Source: Federal Judicial Center Integrated Database
           </span>
         </div>
@@ -484,7 +484,7 @@ export default function DistrictsPage() {
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div
             style={{
-              fontSize: 10,
+              fontSize: 12,
               fontFamily: 'var(--font-mono)',
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
@@ -502,7 +502,7 @@ export default function DistrictsPage() {
             About This Data
           </h2>
           <p style={{
-            fontSize: 13,
+            fontSize: 14,
             color: 'var(--text-secondary)',
             lineHeight: 1.7,
             margin: '0 0 8px',
@@ -534,10 +534,10 @@ export default function DistrictsPage() {
 function thStyle(overrides: React.CSSProperties = {}): React.CSSProperties {
   return {
     padding: '8px 12px',
-    fontSize: 11,
+    fontSize: 12,
     fontFamily: 'var(--font-mono)',
     fontWeight: 600,
-    letterSpacing: '0.08em',
+    letterSpacing: '0.5px',
     textTransform: 'uppercase' as const,
     color: 'var(--color-text-muted, var(--text-tertiary))',
     backgroundColor: 'var(--color-surface-1, #F4F3EF)',

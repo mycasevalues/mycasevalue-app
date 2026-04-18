@@ -131,7 +131,7 @@ export default function ClassActionPage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: '1.5', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: '1.5', marginBottom: '12px' }}>
                     <p style={{ margin: '4px 0' }}>
                       <strong>Avg per member:</strong> ${stats?.avgPerMember.toLocaleString() || 'N/A'}
                     </p>
@@ -222,7 +222,7 @@ export default function ClassActionPage() {
                               borderRadius: '3px',
                               color: colorInfo.text,
                               fontWeight: 600,
-                              fontSize: '13px',
+                              fontSize: '14px',
                             }}
                           >
                             {district.rate}%

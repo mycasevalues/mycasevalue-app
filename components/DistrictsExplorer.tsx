@@ -195,7 +195,7 @@ export default function DistrictsExplorer({
           margin-bottom: 8px;
         }
         .circuit-card-count {
-          font-size: 11px;
+          font-size: 12px;
           color: var(--color-text-secondary);
           margin-bottom: 6px;
         }
@@ -235,7 +235,7 @@ export default function DistrictsExplorer({
           padding: 24px;
         }
         .stat-label {
-          font-size: 11px;
+          font-size: 12px;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.3px;
@@ -265,7 +265,7 @@ export default function DistrictsExplorer({
           border: 1px solid var(--border-default);
           border-radius: 4px;
           padding: 8px 12px;
-          font-size: 13px;
+          font-size: 14px;
           font-family: var(--font-ui);
           color: var(--color-text-primary);
         }
@@ -474,7 +474,7 @@ export default function DistrictsExplorer({
                   </div>
                   <div
                     style={{
-                      fontSize: 11,
+                      fontSize: 12,
                       color: 'var(--color-text-secondary)',
                       fontFamily: 'var(--font-ui)',
                     }}
@@ -496,7 +496,7 @@ export default function DistrictsExplorer({
                   </div>
                   <div
                     style={{
-                      fontSize: 10,
+                      fontSize: 12,
                       color: 'var(--color-text-secondary)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.3px',
@@ -529,7 +529,7 @@ export default function DistrictsExplorer({
               </div>
 
               {/* Case Type and Cases Filed */}
-              <div style={{ display: 'flex', gap: 8, fontSize: 11, flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: 8, fontSize: 12, flexWrap: 'wrap' }}>
                 <span
                   style={{
                     background: 'var(--color-surface-1)',
@@ -541,7 +541,7 @@ export default function DistrictsExplorer({
                 >
                   {d.caseType}
                 </span>
-                <span style={{ color: 'var(--color-text-muted)', fontSize: 10 }}>
+                <span style={{ color: 'var(--color-text-muted)', fontSize: 12 }}>
                   {(d.casesFiled / 1000).toFixed(1)}K cases
                 </span>
               </div>
@@ -593,7 +593,7 @@ export default function DistrictsExplorer({
             style={{
               color: 'var(--accent-primary-hover)',
               textDecoration: 'none',
-              fontSize: 13,
+              fontSize: 14,
             }}
             onMouseEnter={(e) => ((e.target as HTMLElement).style.textDecoration = 'underline')}
             onMouseLeave={(e) => ((e.target as HTMLElement).style.textDecoration = 'none')}
@@ -605,7 +605,7 @@ export default function DistrictsExplorer({
             style={{
               color: 'var(--accent-primary-hover)',
               textDecoration: 'none',
-              fontSize: 13,
+              fontSize: 14,
             }}
             onMouseEnter={(e) => ((e.target as HTMLElement).style.textDecoration = 'underline')}
             onMouseLeave={(e) => ((e.target as HTMLElement).style.textDecoration = 'none')}
@@ -617,7 +617,7 @@ export default function DistrictsExplorer({
             style={{
               color: 'var(--accent-primary-hover)',
               textDecoration: 'none',
-              fontSize: 13,
+              fontSize: 14,
             }}
             onMouseEnter={(e) => ((e.target as HTMLElement).style.textDecoration = 'underline')}
             onMouseLeave={(e) => ((e.target as HTMLElement).style.textDecoration = 'none')}
@@ -629,7 +629,7 @@ export default function DistrictsExplorer({
             style={{
               color: 'var(--accent-primary-hover)',
               textDecoration: 'none',
-              fontSize: 13,
+              fontSize: 14,
             }}
             onMouseEnter={(e) => ((e.target as HTMLElement).style.textDecoration = 'underline')}
             onMouseLeave={(e) => ((e.target as HTMLElement).style.textDecoration = 'none')}

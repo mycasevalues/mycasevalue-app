@@ -46,7 +46,7 @@ export function SavedReportsSection() {
             border: '1px solid rgba(239, 68, 68, 0.2)',
             borderRadius: 4,
             color: 'var(--data-negative, #B01E1E)',
-            fontSize: 13,
+            fontSize: 14,
           }}
         >
           {error}
@@ -67,7 +67,7 @@ export function SavedReportsSection() {
               color: 'white',
               textDecoration: 'none',
               borderRadius: 4,
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: 600,
             }}
           >
@@ -119,7 +119,7 @@ export function SavedReportsSection() {
                   fontSize: 12,
                   fontWeight: 600,
                   cursor: 'pointer',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                 }}
                 onMouseEnter={e => {
                   (e.target as HTMLButtonElement).style.backgroundColor = 'rgba(239, 68, 68, 0.08)';
@@ -178,10 +178,10 @@ export function SearchHistorySection() {
               border: '1px solid var(--border-default)',
               borderRadius: 4,
               color: 'var(--color-text-secondary)',
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: 600,
               cursor: 'pointer',
-              transition: 'all 0.2s',
+              transition: 'all 200ms',
             }}
             onMouseEnter={e => {
               (e.target as HTMLButtonElement).style.backgroundColor = 'rgba(239, 68, 68, 0.08)';
@@ -205,7 +205,7 @@ export function SearchHistorySection() {
             borderRadius: 4,
           }}
         >
-          <p style={{ color: 'var(--color-text-primary)', fontSize: 13, marginBottom: 8 }}>
+          <p style={{ color: 'var(--color-text-primary)', fontSize: 14, marginBottom: 8 }}>
             Clear all search history? This cannot be undone.
           </p>
           <div style={{ display: 'flex', gap: 8 }}>
@@ -258,7 +258,7 @@ export function SearchHistorySection() {
             border: '1px solid rgba(239, 68, 68, 0.2)',
             borderRadius: 4,
             color: 'var(--data-negative, #B01E1E)',
-            fontSize: 13,
+            fontSize: 14,
           }}
         >
           {error}
@@ -356,7 +356,7 @@ export function UserPreferencesSection() {
           <label
             style={{
               display: 'block',
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: 600,
               color: 'var(--color-text-secondary)',
               marginBottom: 8,
@@ -372,7 +372,7 @@ export function UserPreferencesSection() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: 8,
-                  fontSize: 13,
+                  fontSize: 14,
                   color: 'var(--color-text-primary)',
                   cursor: 'pointer',
                 }}
@@ -398,7 +398,7 @@ export function UserPreferencesSection() {
           <label
             style={{
               display: 'block',
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: 600,
               color: 'var(--color-text-secondary)',
               marginBottom: 8,
@@ -411,7 +411,7 @@ export function UserPreferencesSection() {
               display: 'flex',
               alignItems: 'center',
               gap: 8,
-              fontSize: 13,
+              fontSize: 14,
               color: 'var(--color-text-primary)',
               cursor: 'pointer',
             }}

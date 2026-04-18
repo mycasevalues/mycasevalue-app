@@ -69,7 +69,7 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
       {/* Label */}
       <span
         style={{
-          fontSize: 11,
+          fontSize: 12,
           fontFamily: 'var(--font-ui)',
           fontWeight: 600,
           color: 'var(--text3, #78766C)',
@@ -92,13 +92,13 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
             border: '1px solid var(--bdr-strong, #C8C4B8)',
             borderRadius: 2,
             background: 'var(--card, #FFFFFF)',
-            fontSize: 11,
+            fontSize: 12,
             fontFamily: 'var(--font-ui)',
             color: 'var(--text2, #42403C)',
             cursor: 'pointer',
             whiteSpace: 'nowrap',
             flexShrink: 0,
-            transition: 'border-color 0.15s ease, color 0.15s ease',
+            transition: 'border-color 150ms ease, color 150ms ease',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.borderColor = 'var(--link, #0A50A2)';

@@ -60,7 +60,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         }}
       >
-        <p style={{ color: 'var(--color-text-primary)', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ color: 'var(--color-text-primary)', fontSize: '14px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
           {label}
         </p>
         {payload.map((entry, index) => (
@@ -113,7 +113,7 @@ export default function TrendCharts() {
         >
           Federal Filing Trends (2015–2024)
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Total federal civil case filings over the past decade
         </p>
         <ResponsiveContainer width="100%" height={300}>
@@ -159,7 +159,7 @@ export default function TrendCharts() {
         >
           Win Rate Trends by Category (2018–2024)
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Win rate trends across top case categories
         </p>
         <ResponsiveContainer width="100%" height={350}>
@@ -168,7 +168,7 @@ export default function TrendCharts() {
             <XAxis dataKey="year" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <YAxis stroke="var(--color-text-secondary)" domain={[0, 100]} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <Tooltip content={<CustomTooltip />} />
-            <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }} />
+            <Legend wrapperStyle={{ fontSize: '14px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }} />
             {categoryTrends.map((cat, idx) => (
               <Line
                 key={cat.category}
@@ -212,7 +212,7 @@ export default function TrendCharts() {
         >
           Top 15 Case Types by Filing Volume
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Most frequently filed federal civil case types
         </p>
         <ResponsiveContainer width="100%" height={500}>
@@ -249,7 +249,7 @@ export default function TrendCharts() {
         >
           Settlement Rate Trends (2015–2024)
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Percentage of federal civil cases resolved through settlement over time
         </p>
         <ResponsiveContainer width="100%" height={300}>
@@ -267,7 +267,7 @@ export default function TrendCharts() {
             <Area
               type="monotone"
               dataKey="avgSettlementRate"
-              stroke="#057642"
+              stroke="var(--data-positive)"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorSettlement)"
@@ -295,7 +295,7 @@ export default function TrendCharts() {
         >
           Circuit Court Win Rates
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Average win rate by federal circuit
         </p>
         <ResponsiveContainer width="100%" height={350}>
@@ -320,7 +320,7 @@ export default function TrendCharts() {
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
                     >
-                      <p style={{ color: 'var(--color-text-primary)', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
+                      <p style={{ color: 'var(--color-text-primary)', fontSize: '14px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
                         {payload[0].payload.circuit}
                       </p>
                       <p style={{ color: 'var(--accent-primary)', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-ui)' }}>
@@ -363,7 +363,7 @@ export default function TrendCharts() {
         >
           How Cases End
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Distribution of case outcomes across all federal civil cases
         </p>
         <ResponsiveContainer width="100%" height={300}>
@@ -388,7 +388,7 @@ export default function TrendCharts() {
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
                     >
-                      <p style={{ color: 'var(--color-text-primary)', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
+                      <p style={{ color: 'var(--color-text-primary)', fontSize: '14px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
                         {payload[0].payload.outcome}
                       </p>
                       <p style={{ color: payload[0].payload.color, fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-ui)' }}>
@@ -428,7 +428,7 @@ export default function TrendCharts() {
         >
           Settlement vs. Trial Duration by Category
         </h3>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
           Average case duration for settlement versus trial across case categories
         </p>
         <ResponsiveContainer width="100%" height={350}>
@@ -441,7 +441,7 @@ export default function TrendCharts() {
             <XAxis type="number" stroke="var(--color-text-secondary)" tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <YAxis dataKey="category" type="category" stroke="var(--color-text-secondary)" width={120} tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }} />
             <Tooltip content={<CustomTooltip />} />
-            <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }} />
+            <Legend wrapperStyle={{ fontSize: '14px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }} />
             <Bar dataKey="settlementMonths" fill="#057642" radius={[0, 4, 4, 0]} />
             <Bar dataKey="trialMonths" fill="var(--accent-primary)" radius={[0, 4, 4, 0]} />
           </BarChart>

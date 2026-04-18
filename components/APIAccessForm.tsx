@@ -88,7 +88,7 @@ export default function APIAccessForm() {
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#059669"
+            stroke="var(--data-positive)"
             strokeWidth="2"
           >
             <polyline points="20 6 9 17 4 12" />
@@ -145,7 +145,7 @@ export default function APIAccessForm() {
             htmlFor="name"
             style={{
               display: 'block',
-              fontSize: '13px',
+              fontSize: '12px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: '6px',
@@ -173,7 +173,7 @@ export default function APIAccessForm() {
               color: 'var(--color-text-primary)',
               backgroundColor: 'var(--color-surface-1)',
               boxSizing: 'border-box',
-              transition: 'border-color 0.2s, box-shadow 0.2s',
+              transition: 'border-color 200ms, box-shadow 200ms',
             }}
           />
         </div>
@@ -183,7 +183,7 @@ export default function APIAccessForm() {
             htmlFor="email"
             style={{
               display: 'block',
-              fontSize: '13px',
+              fontSize: '12px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: '6px',
@@ -211,7 +211,7 @@ export default function APIAccessForm() {
               color: 'var(--color-text-primary)',
               backgroundColor: 'var(--color-surface-1)',
               boxSizing: 'border-box',
-              transition: 'border-color 0.2s, box-shadow 0.2s',
+              transition: 'border-color 200ms, box-shadow 200ms',
             }}
           />
         </div>
@@ -221,7 +221,7 @@ export default function APIAccessForm() {
             htmlFor="intendedUse"
             style={{
               display: 'block',
-              fontSize: '13px',
+              fontSize: '12px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               marginBottom: '6px',
@@ -249,7 +249,7 @@ export default function APIAccessForm() {
               backgroundColor: 'var(--color-surface-1)',
               boxSizing: 'border-box',
               resize: 'vertical',
-              transition: 'border-color 0.2s, box-shadow 0.2s',
+              transition: 'border-color 200ms, box-shadow 200ms',
             }}
           />
         </div>
@@ -262,7 +262,7 @@ export default function APIAccessForm() {
               border: '1px solid var(--data-negative-border, #FCA5A5)',
               borderRadius: '4px',
               color: 'var(--data-negative, #B01E1E)',
-              fontSize: '13px',
+              fontSize: '12px',
             }}
           >
             {formState.error}
@@ -278,10 +278,10 @@ export default function APIAccessForm() {
             color: 'var(--color-surface-0)',
             border: 'none',
             borderRadius: '2px',
-            fontSize: '13px',
+            fontSize: '12px',
             fontWeight: 600,
             cursor: formState.loading ? 'not-allowed' : 'pointer',
-            transition: 'background-color 0.2s, transform 0.2s',
+            transition: 'background-color 200ms, transform 200ms',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
             width: '100%',

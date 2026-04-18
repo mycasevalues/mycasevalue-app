@@ -92,14 +92,14 @@ export default function CodeExampleTabs() {
             style={{
               flex: 1,
               padding: '12px 16px',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: activeTab === lang ? 600 : 500,
               color: activeTab === lang ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
               background: activeTab === lang ? 'var(--color-surface-0)' : 'transparent',
               border: 'none',
               borderBottom: activeTab === lang ? '2px solid var(--accent-primary)' : 'none',
               cursor: 'pointer',
-              transition: 'all 0.2s ease',
+              transition: 'all 200ms ease',
               fontFamily: 'var(--font-heading)',
               textTransform: 'capitalize',
             }}

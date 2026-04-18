@@ -113,7 +113,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
       justifyContent: 'space-between',
     }}>
       {/* Header with attribution */}
-      <div style={{ fontSize: '9px', color: 'var(--accent-primary)', fontWeight: 500 }}>
+      <div style={{ fontSize: '12px', color: 'var(--accent-primary)', fontWeight: 500 }}>
         Powered by MyCaseValue
       </div>
 
@@ -141,7 +141,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
         }}>
           {winRate.toFixed(0)}%
         </div>
-        <div style={{ fontSize: '11px', color: 'var(--color-text-muted)' }}>
+        <div style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>
           case outcome rate
         </div>
       </div>
@@ -149,7 +149,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
       {/* Median settlement in monospace */}
       <div style={{
         fontFamily: '"Courier New", monospace',
-        fontSize: '13px',
+        fontSize: '14px',
         fontWeight: 500,
         color: 'var(--color-text-primary)',
         marginTop: '4px',
@@ -161,7 +161,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
       <a
         href={`/nos/${nosCode}`}
         style={{
-          fontSize: '11px',
+          fontSize: '12px',
           color: 'var(--accent-primary)',
           textDecoration: 'none',
           fontWeight: 500,

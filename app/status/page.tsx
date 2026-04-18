@@ -202,7 +202,7 @@ export default function StatusPage() {
             />
             <span
               style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 600,
                 color: overallColors.text,
                 textTransform: 'capitalize',
@@ -278,7 +278,7 @@ export default function StatusPage() {
                     </div>
                     <p
                       style={{
-                        fontSize: '13px',
+                        fontSize: '14px',
                         color: 'var(--color-text-muted)',
                         margin: 0,
                       }}
@@ -318,7 +318,7 @@ export default function StatusPage() {
                     </div>
                     <div
                       style={{
-                        fontSize: '11px',
+                        fontSize: '12px',
                         color: 'var(--color-text-muted)',
                       }}
                     >

@@ -218,7 +218,7 @@ export default function BlogPage() {
           font-size: 14px;
           color: var(--color-text-secondary);
           cursor: pointer;
-          transition: color 0.2s ease;
+          transition: color 200ms ease;
           font-family: var(--font-ui);
         }
 
@@ -246,11 +246,11 @@ export default function BlogPage() {
           border: 1px solid var(--border-default);
           border-radius: 24px;
           padding: 8px 16px;
-          font-size: 13px;
+          font-size: 14px;
           color: var(--color-text-secondary);
           font-weight: 500;
           display: inline-block;
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
           cursor: pointer;
           font-family: var(--font-ui);
           text-decoration: none;
@@ -314,7 +314,7 @@ export default function BlogPage() {
         <div className="max-w-6xl mx-auto" style={{ position: 'relative' }}>
           {/* Breadcrumb Navigation */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20, fontSize: 12, fontFamily: 'var(--font-mono)', letterSpacing: '0.02em' }}>
-            <a href="/" className="blog-breadcrumb-link" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s ease' }}>Home</a>
+            <a href="/" className="blog-breadcrumb-link" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 200ms ease' }}>Home</a>
             <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
             <span style={{ color: 'rgba(255,255,255,0.85)' }}>Blog</span>
           </div>
@@ -324,8 +324,8 @@ export default function BlogPage() {
             borderRadius: 999,
             border: '1px solid rgba(10,80,162,0.2)',
             background: 'rgba(10,80,162,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -536,7 +536,7 @@ export default function BlogPage() {
               <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 {research.description}
               </p>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-primary)', textDecoration: 'none' }}>
+              <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary)', textDecoration: 'none' }}>
                 Read more {'>'}
               </span>
             </div>
@@ -604,11 +604,11 @@ export default function BlogPage() {
                 <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px 0', fontFamily: 'var(--font-legal)' }}>
                   {tool.name}
                 </h3>
-                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                   Explore federal case data interactively.
                 </p>
               </div>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-primary)', marginTop: '16px', textDecoration: 'none' }}>
+              <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary)', marginTop: '16px', textDecoration: 'none' }}>
                 Explore {'>'}
               </span>
             </Link>

@@ -166,7 +166,7 @@ export default function WidgetGenerator() {
               backgroundColor: 'rgba(59,130,246,0.06)',
               border: '1px solid var(--link-light, #BAE6FD)',
               borderRadius: '4px',
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--accent-primary)',
             }}>
               Selected: {selectedCaseType.label}
@@ -202,7 +202,7 @@ export default function WidgetGenerator() {
                   color: displayStyle === style.value ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
                   borderRadius: '4px',
                   cursor: 'pointer',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                   textAlign: 'left',
                 }}
               >
@@ -282,7 +282,7 @@ export default function WidgetGenerator() {
           backgroundColor: 'rgba(234,179,8,0.06)',
           border: '1px solid var(--wrn-bg, #FCD34D)',
           borderRadius: '4px',
-          fontSize: '13px',
+          fontSize: '14px',
           color: 'var(--wrn-txt)',
         }}>
           <strong>Attribution:</strong> All widgets include a "Powered by MyCaseValue" attribution. This is required.
@@ -337,7 +337,7 @@ export default function WidgetGenerator() {
               color: 'var(--color-text-muted)',
             }}>
               <div style={{ fontSize: '16px', marginBottom: '8px' }}>Select a case type to preview</div>
-              <div style={{ fontSize: '13px' }}>The widget will appear here</div>
+              <div style={{ fontSize: '14px' }}>The widget will appear here</div>
             </div>
           )}
         </div>

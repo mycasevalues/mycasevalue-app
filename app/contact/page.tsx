@@ -84,8 +84,8 @@ export default function ContactPage() {
               borderRadius: 999,
               border: '1px solid rgba(59,130,246,0.2)',
               background: 'rgba(59,130,246,0.08)',
-              fontFamily: 'var(--font-mono)', fontSize: 10,
-              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              fontFamily: 'var(--font-mono)', fontSize: 12,
+              fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
               color: 'var(--link)',
             }}>
               <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -200,7 +200,7 @@ export default function ContactPage() {
                 </h3>
                 <p
                   style={{
-                    fontSize: 13,
+                    fontSize: 14,
                     color: 'var(--color-text-secondary)',
                     fontFamily: 'var(--font-ui)',
                     lineHeight: 1.5,
@@ -429,7 +429,7 @@ export default function ContactPage() {
 
         <p
           style={{
-            fontSize: 13,
+            fontSize: 14,
             color: 'var(--color-text-secondary)',
             fontFamily: 'var(--font-ui)',
             textAlign: 'center',

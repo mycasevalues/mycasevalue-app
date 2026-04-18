@@ -352,7 +352,7 @@ export default function TeamWorkspace() {
           <Link
             href="/attorney"
             style={{
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--accent-primary)',
               textDecoration: 'none',
               fontWeight: 500,
@@ -468,7 +468,7 @@ export default function TeamWorkspace() {
                 color: activeTab === tab ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                transition: 'all 0.2s ease',
+                transition: 'all 200ms ease',
               }}
             >
               {tab === 'reports'
@@ -523,7 +523,7 @@ export default function TeamWorkspace() {
                           borderRadius: '4px',
                           backgroundColor: 'rgba(10, 102, 194, 0.12)',
                           color: 'var(--accent-primary)',
-                          fontSize: '11px',
+                          fontSize: '12px',
                           fontWeight: 600,
                         }}
                       >
@@ -587,7 +587,7 @@ export default function TeamWorkspace() {
                       padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
@@ -616,7 +616,7 @@ export default function TeamWorkspace() {
                       padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
@@ -635,7 +635,7 @@ export default function TeamWorkspace() {
                     color: 'var(--color-text-inverse)',
                     border: 'none',
                     borderRadius: '4px',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     cursor: newNoteText.trim() && newNoteNOS.trim() ? 'pointer' : 'not-allowed',
                     textTransform: 'uppercase',
@@ -682,17 +682,17 @@ export default function TeamWorkspace() {
                           borderRadius: '4px',
                           backgroundColor: 'rgba(10, 102, 194, 0.12)',
                           color: 'var(--accent-primary)',
-                          fontSize: '11px',
+                          fontSize: '12px',
                           fontWeight: 600,
                         }}
                       >
                         {note.attachedTo}
                       </span>
                     </div>
-                    <p style={{ fontSize: '13px', color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: '1.5' }}>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: '1.5' }}>
                       {note.text}
                     </p>
-                    <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', margin: 0 }}>
+                    <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>
                       By {note.author} • {new Date(note.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
                     </p>
                   </div>
@@ -744,7 +744,7 @@ export default function TeamWorkspace() {
                       padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
@@ -772,7 +772,7 @@ export default function TeamWorkspace() {
                       padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
@@ -807,7 +807,7 @@ export default function TeamWorkspace() {
                       padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
@@ -842,7 +842,7 @@ export default function TeamWorkspace() {
                       padding: '8px 12px',
                       border: '1px solid var(--border-default)',
                       borderRadius: '4px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--color-surface-0)',
                       color: 'var(--color-text-primary)',
@@ -867,7 +867,7 @@ export default function TeamWorkspace() {
                   color: 'var(--color-surface-0)',
                   border: 'none',
                   borderRadius: '4px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: newCaseName.trim() && newCaseType && newCaseDistrict ? 'pointer' : 'not-allowed',
                   textTransform: 'uppercase',
@@ -906,7 +906,7 @@ export default function TeamWorkspace() {
                     style={{
                       width: '100%',
                       borderCollapse: 'collapse',
-                      fontSize: '13px',
+                      fontSize: '14px',
                     }}
                   >
                     <thead>
@@ -959,7 +959,7 @@ export default function TeamWorkspace() {
                                 borderRadius: '4px',
                                 backgroundColor: `${statusColors[caseItem.status]}15`,
                                 color: statusColors[caseItem.status],
-                                fontSize: '11px',
+                                fontSize: '12px',
                                 fontWeight: 600,
                               }}
                             >
@@ -1078,12 +1078,12 @@ export default function TeamWorkspace() {
                   </svg>
                 </div>
                 <div style={{ flex: 1 }}>
-                  <p style={{ fontSize: '13px', color: 'var(--color-text-primary)', margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-primary)', margin: 0 }}>
                     <strong>{activity.who}</strong> {activity.action}{' '}
                     <span style={{ color: 'var(--accent-primary-hover)' }}>{activity.target}</span>
                   </p>
                 </div>
-                <span style={{ fontSize: '11px', color: 'var(--color-text-muted)', flexShrink: 0 }}>{activity.time}</span>
+                <span style={{ fontSize: '12px', color: 'var(--color-text-muted)', flexShrink: 0 }}>{activity.time}</span>
               </div>
             ))}
           </div>
@@ -1122,7 +1122,7 @@ export default function TeamWorkspace() {
                     borderRadius: '4px',
                     backgroundColor: 'rgba(10, 102, 194, 0.12)',
                     color: 'var(--accent-primary)',
-                    fontSize: '10px',
+                    fontSize: '12px',
                     fontWeight: 600,
                     marginTop: '4px',
                   }}
@@ -1154,7 +1154,7 @@ export default function TeamWorkspace() {
                 padding: '8px 12px',
                 border: '1px solid var(--border-default)',
                 borderRadius: '4px',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: 'var(--font-ui)',
                 backgroundColor: 'var(--color-surface-0)',
                 color: 'var(--color-text-primary)',
@@ -1189,7 +1189,7 @@ export default function TeamWorkspace() {
                 borderRadius: '4px',
                 backgroundColor: 'rgba(5, 150, 105, 0.1)',
                 color: 'var(--data-positive, #176438)',
-                fontSize: '13px',
+                fontSize: '14px',
                 marginBottom: '16px',
               }}
             >
@@ -1228,7 +1228,7 @@ export default function TeamWorkspace() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--accent-primary)',
                     marginBottom: '8px',
@@ -1236,12 +1236,12 @@ export default function TeamWorkspace() {
                 >
                   {member.avatar}
                 </div>
-                <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 2px' }}>
+                <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 2px' }}>
                   {member.name}
                 </p>
                 <span
                   style={{
-                    fontSize: '10px',
+                    fontSize: '12px',
                     fontWeight: 600,
                     padding: '2px 6px',
                     borderRadius: '4px',
@@ -1252,7 +1252,7 @@ export default function TeamWorkspace() {
                 >
                   {member.role}
                 </span>
-                <p style={{ fontSize: '10px', color: 'var(--color-text-muted)', margin: 0 }}>{member.lastActive}</p>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-muted)', margin: 0 }}>{member.lastActive}</p>
               </div>
             ))}
           </div>

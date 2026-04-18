@@ -360,7 +360,7 @@ ${docB}
   const renderSegment = (segment: DiffSegment, isRedlineView: boolean) => {
     const baseStyle: React.CSSProperties = {
       fontFamily: 'var(--font-mono)',
-      fontSize: '13px',
+      fontSize: '14px',
       lineHeight: '1.6',
     };
 
@@ -513,7 +513,7 @@ ${docB}
         </h3>
         <div
           style={{
-            fontSize: '13px',
+            fontSize: '14px',
             lineHeight: '1.6',
             color: 'var(--text1)',
             fontFamily: 'var(--font-mono)',
@@ -549,7 +549,7 @@ ${docB}
         </h3>
         <div
           style={{
-            fontSize: '13px',
+            fontSize: '14px',
             lineHeight: '1.6',
             color: 'var(--text1)',
             fontFamily: 'var(--font-mono)',
@@ -588,7 +588,7 @@ ${docB}
       </h3>
       <div
         style={{
-          fontSize: '13px',
+          fontSize: '14px',
           lineHeight: '1.8',
           color: 'var(--text1)',
           fontFamily: 'var(--font-mono)',
@@ -665,7 +665,7 @@ ${docB}
               <label
                 style={{
                   display: 'block',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   color: 'var(--text1)',
                   marginBottom: '8px',
@@ -683,7 +683,7 @@ ${docB}
                   padding: '10px 12px',
                   border: '1px solid var(--bdr)',
                   borderRadius: '2px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontFamily: 'var(--font-ui)',
                   backgroundColor: 'var(--card)',
                   color: 'var(--text1)',
@@ -700,7 +700,7 @@ ${docB}
                   padding: '12px',
                   border: '1px solid var(--bdr)',
                   borderRadius: '2px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontFamily: 'var(--font-mono)',
                   backgroundColor: 'var(--card)',
                   color: 'var(--text1)',
@@ -715,7 +715,7 @@ ${docB}
               <label
                 style={{
                   display: 'block',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   color: 'var(--text1)',
                   marginBottom: '8px',
@@ -733,7 +733,7 @@ ${docB}
                   padding: '10px 12px',
                   border: '1px solid var(--bdr)',
                   borderRadius: '2px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontFamily: 'var(--font-ui)',
                   backgroundColor: 'var(--card)',
                   color: 'var(--text1)',
@@ -750,7 +750,7 @@ ${docB}
                   padding: '12px',
                   border: '1px solid var(--bdr)',
                   borderRadius: '2px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontFamily: 'var(--font-mono)',
                   backgroundColor: 'var(--card)',
                   color: 'var(--text1)',
@@ -940,7 +940,7 @@ ${docB}
                   backgroundColor: viewMode === 'sidebyside' ? 'var(--gold)' : 'var(--card)',
                   color: viewMode === 'sidebyside' ? '#FFFFFF' : 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all var(--transition-fast)',
@@ -957,7 +957,7 @@ ${docB}
                   backgroundColor: viewMode === 'redline' ? 'var(--gold)' : 'var(--card)',
                   color: viewMode === 'redline' ? '#FFFFFF' : 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all var(--transition-fast)',
@@ -973,7 +973,7 @@ ${docB}
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text1)',
                 cursor: 'pointer',
@@ -997,7 +997,7 @@ ${docB}
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text1)',
                 cursor: 'pointer',
@@ -1021,7 +1021,7 @@ ${docB}
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text1)',
                 cursor: 'pointer',
@@ -1059,7 +1059,7 @@ ${docB}
           >
             <div
               style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text1)',
                 fontWeight: 500,
@@ -1077,7 +1077,7 @@ ${docB}
                   backgroundColor: 'var(--card)',
                   color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all var(--transition-fast)',
@@ -1094,7 +1094,7 @@ ${docB}
                   backgroundColor: 'var(--gold)',
                   color: 'var(--chrome-text)',
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all var(--transition-fast)',
@@ -1127,7 +1127,7 @@ ${docB}
               backgroundColor: 'var(--card)',
               color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',
               transition: 'all var(--transition-fast)',
@@ -1144,7 +1144,7 @@ ${docB}
               backgroundColor: 'var(--card)',
               color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',
               transition: 'all var(--transition-fast)',
@@ -1161,7 +1161,7 @@ ${docB}
               backgroundColor: 'var(--card)',
               color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',
               transition: 'all var(--transition-fast)',
@@ -1221,7 +1221,7 @@ ${docB}
                 >
                   <div
                     style={{
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       fontFamily: 'var(--font-ui)',
                       color: 'var(--text1)',
@@ -1241,7 +1241,7 @@ ${docB}
                   </div>
                   <div
                     style={{
-                      fontSize: '11px',
+                      fontSize: '12px',
                       color: 'var(--text2)',
                       fontFamily: 'var(--font-mono)',
                     }}
@@ -1264,9 +1264,9 @@ ${docB}
               { name: 'Secondary Sources', href: '/attorney/secondary-sources', desc: 'Legal secondary sources and treatises' },
               { name: 'Find & Print', href: '/attorney/find-print', desc: 'Find, print and export legal documents' },
             ].map(tool => (
-              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                 <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
               </a>
             ))}
           </div>

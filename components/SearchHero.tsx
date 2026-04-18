@@ -60,7 +60,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               background: 'transparent',
               border: 'none',
               outline: 'none',
-              fontSize: 13,
+              fontSize: 14,
               fontFamily: 'var(--font-ui)',
               color: dark ? 'var(--border-default)' : 'var(--text1, #18181A)',
             }}
@@ -73,7 +73,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
               background: 'var(--gold, #C4882A)',
               color: 'var(--card, #FFFFFF)',
               border: 'none',
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: 600,
               fontFamily: 'var(--font-ui)',
               cursor: 'pointer',
@@ -97,7 +97,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
       >
         <span
           style={{
-            fontSize: 10,
+            fontSize: 12,
             fontFamily: 'var(--font-mono)',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
@@ -111,7 +111,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             key={ex}
             onClick={() => handleExample(ex)}
             style={{
-              fontSize: 11,
+              fontSize: 12,
               padding: '4px 8px',
               borderRadius: 2,
               border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid var(--bdr, #E2DFD8)',

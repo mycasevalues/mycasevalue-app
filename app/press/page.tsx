@@ -142,8 +142,8 @@ export default function PressPage() {
               borderRadius: 999,
               border: '1px solid rgba(59,130,246,0.2)',
               background: 'rgba(59,130,246,0.08)',
-              fontFamily: 'var(--font-mono)', fontSize: 10,
-              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              fontFamily: 'var(--font-mono)', fontSize: 12,
+              fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
               color: 'var(--link)',
             }}>
               <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -431,7 +431,7 @@ export default function PressPage() {
               </div>
               <p
                 style={{
-                  fontSize: 13,
+                  fontSize: 14,
                   color: 'var(--color-text-secondary)',
                   fontFamily: 'var(--font-ui)',
                   marginTop: 16,
@@ -495,7 +495,7 @@ export default function PressPage() {
                       <p
                         style={{
                           fontFamily: 'var(--font-mono)',
-                          fontSize: 13,
+                          fontSize: 14,
                           color: 'var(--color-text-secondary)',
                           margin: 0,
                           fontWeight: 500,
@@ -596,7 +596,7 @@ export default function PressPage() {
                     </p>
                     <p
                       style={{
-                        fontSize: 13,
+                        fontSize: 14,
                         color: 'var(--color-text-secondary)',
                         fontFamily: 'var(--font-ui)',
                         margin: 0,
@@ -610,7 +610,7 @@ export default function PressPage() {
             </div>
             <p
               style={{
-                fontSize: 13,
+                fontSize: 14,
                 color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-ui)',
                 marginTop: 16,

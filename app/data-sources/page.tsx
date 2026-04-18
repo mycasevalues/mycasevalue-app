@@ -151,8 +151,8 @@ export default function DataSourcesPage() {
               borderRadius: 999,
               border: '1px solid rgba(59,130,246,0.2)',
               background: 'rgba(59,130,246,0.08)',
-              fontFamily: 'var(--font-mono)', fontSize: 10,
-              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              fontFamily: 'var(--font-mono)', fontSize: 12,
+              fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
               color: 'var(--link)',
             }}>
               <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -222,13 +222,13 @@ export default function DataSourcesPage() {
                     {stat.number}
                   </p>
                   <p style={{
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: 600,
                     color: 'var(--color-text-secondary)',
                     fontFamily: 'var(--font-ui)',
                     margin: 0,
                     textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
+                    letterSpacing: '0.5px',
                   }}>
                     {stat.label}
                   </p>
@@ -288,13 +288,13 @@ export default function DataSourcesPage() {
                     }}>
                       <div>
                         <p style={{
-                          fontSize: 11,
+                          fontSize: 12,
                           fontWeight: 600,
                           color: 'var(--color-text-secondary)',
                           fontFamily: 'var(--font-ui)',
                           margin: 0,
                           textTransform: 'uppercase',
-                          letterSpacing: '0.05em',
+                          letterSpacing: '0.5px',
                         }}>
                           Cases
                         </p>
@@ -310,13 +310,13 @@ export default function DataSourcesPage() {
                       </div>
                       <div>
                         <p style={{
-                          fontSize: 11,
+                          fontSize: 12,
                           fontWeight: 600,
                           color: 'var(--color-text-secondary)',
                           fontFamily: 'var(--font-ui)',
                           margin: 0,
                           textTransform: 'uppercase',
-                          letterSpacing: '0.05em',
+                          letterSpacing: '0.5px',
                         }}>
                           Update Frequency
                         </p>
@@ -338,13 +338,13 @@ export default function DataSourcesPage() {
                     borderTop: '1px solid var(--border-default)',
                   }}>
                     <p style={{
-                      fontSize: 11,
+                      fontSize: 12,
                       fontWeight: 600,
                       color: 'var(--color-text-secondary)',
                       fontFamily: 'var(--font-ui)',
                       margin: '0 0 12px 0',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
+                      letterSpacing: '0.5px',
                     }}>
                       Coverage & Features
                     </p>
@@ -364,7 +364,7 @@ export default function DataSourcesPage() {
                           Historical Coverage
                         </p>
                         <p style={{
-                          fontSize: 13,
+                          fontSize: 14,
                           color: 'var(--color-text-secondary)',
                           fontFamily: 'var(--font-ui)',
                           margin: 0,
@@ -383,7 +383,7 @@ export default function DataSourcesPage() {
                               <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <span style={{
-                              fontSize: 13,
+                              fontSize: 14,
                               color: 'var(--color-text-secondary)',
                               fontFamily: 'var(--font-ui)',
                             }}>
@@ -503,7 +503,7 @@ export default function DataSourcesPage() {
                         {item.source}
                       </span>
                       <span style={{
-                        fontSize: 13,
+                        fontSize: 14,
                         fontWeight: 600,
                         color: 'var(--accent-primary)',
                         fontFamily: 'var(--font-ui)',
@@ -554,7 +554,7 @@ export default function DataSourcesPage() {
                         {item.source}
                       </span>
                       <span style={{
-                        fontSize: 13,
+                        fontSize: 14,
                         fontWeight: 600,
                         color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-ui)',
@@ -623,7 +623,7 @@ export default function DataSourcesPage() {
                     background: 'var(--color-surface-0)',
                   }}>
                     <p style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-ui)',

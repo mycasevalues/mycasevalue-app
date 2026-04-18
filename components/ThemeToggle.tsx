@@ -93,7 +93,7 @@ export default function ThemeToggle() {
         color: 'var(--chrome-text-muted)',
         cursor: 'pointer',
         flexShrink: 0,
-        transition: 'color 0.15s ease, background 0.15s ease',
+        transition: 'color 150ms ease, background 150ms ease',
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.color = 'var(--chrome-text, #FFFFFF)';

@@ -456,7 +456,7 @@ export function BulkAnalysisTool() {
               border: '1px solid var(--border-default)',
             }}
           >
-            <p style={{ fontSize: '13px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
+            <p style={{ fontSize: '14px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
           </div>
         )}
       </div>
@@ -508,7 +508,7 @@ export function BulkAnalysisTool() {
               >
                 <p
                   style={{
-                    fontSize: '11px',
+                    fontSize: '12px',
                     color: 'var(--color-text-secondary)',
                     fontWeight: 600,
                     textTransform: 'uppercase',
@@ -569,7 +569,7 @@ export function BulkAnalysisTool() {
                       {item.type}
                     </span>
                     <span
-                      style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: 500 }}
+                      style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontWeight: 500 }}
                     >
                       {item.count} ({item.percentage.toFixed(1)}%)
                     </span>
@@ -628,7 +628,7 @@ export function BulkAnalysisTool() {
                     borderRadius: '4px',
                   }}
                 >
-                  <p style={{ fontSize: '13px', fontWeight: 500, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
+                  <p style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
                     {item.district}
                   </p>
                   <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
@@ -667,7 +667,7 @@ export function BulkAnalysisTool() {
               <table
                 style={{
                   width: '100%',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   borderCollapse: 'collapse',
                 }}
               >

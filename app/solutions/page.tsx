@@ -93,10 +93,10 @@ export default function SolutionsPage() {
           <p
             style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 600,
               textTransform: 'uppercase',
-              letterSpacing: '0.08em',
+              letterSpacing: '0.5px',
               color: 'var(--gold)',
               marginBottom: '16px',
             }}
@@ -252,7 +252,7 @@ export default function SolutionsPage() {
               fontSize: '0.875rem',
               fontWeight: 600,
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.5px',
               margin: 0,
             }}
           >
@@ -374,7 +374,7 @@ export default function SolutionsPage() {
                 fontWeight: 600,
                 fontSize: '0.875rem',
                 textTransform: 'uppercase',
-                letterSpacing: '0.04em',
+                letterSpacing: '0.5px',
                 display: 'inline-block',
               }}
             >
@@ -393,7 +393,7 @@ export default function SolutionsPage() {
                 fontWeight: 600,
                 fontSize: '0.875rem',
                 textTransform: 'uppercase',
-                letterSpacing: '0.04em',
+                letterSpacing: '0.5px',
                 display: 'inline-block',
               }}
             >

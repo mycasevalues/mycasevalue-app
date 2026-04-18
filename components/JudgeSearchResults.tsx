@@ -63,7 +63,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
   if (loading) {
     return (
       <div style={{ marginTop: '32px', marginBottom: '32px' }}>
-        <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-ui)' }}>
           Judges
         </p>
         <div style={{ display: 'grid', gap: '12px' }}>
@@ -108,7 +108,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
 
   return (
     <div style={{ marginTop: '32px', marginBottom: '32px' }}>
-      <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-ui)' }}>
+      <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-ui)' }}>
         Judges <span style={{ color: 'var(--color-text-muted)' }}>({judges.length})</span>
       </p>
       <div style={{ display: 'grid', gap: '12px' }}>
@@ -145,7 +145,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                     {judge.full_name}
                   </h4>
                   {judge.district_id && (
-                    <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 8px 0', fontFamily: 'var(--font-ui)' }}>
                       {judge.district_id}
                     </p>
                   )}
@@ -157,7 +157,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                           background: winRateColor.bg,
                           border: `1px solid ${winRateColor.border}`,
                           borderRadius: '4px',
-                          fontSize: '13px',
+                          fontSize: '14px',
                           fontWeight: '600',
                           color: winRateColor.text,
                           fontFamily: 'var(--font-mono)',

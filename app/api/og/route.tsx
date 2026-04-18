@@ -419,7 +419,7 @@ function renderDistrictImage(districtCode: string, locale: Locale = 'en'): React
               />
               <div
                 style={{
-                  fontSize: '13px',
+                  fontSize: '14px',
                   color: '#666666',
                 }}
               >

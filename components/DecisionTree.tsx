@@ -985,7 +985,7 @@ export default function DecisionTree() {
                 borderRadius: '4px',
                 fontWeight: '500',
                 fontSize: '0.95rem',
-                transition: 'background-color 0.2s ease-in',
+                transition: 'background-color 200ms ease-in',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'var(--accent-primary-hover)';
@@ -1127,7 +1127,7 @@ export default function DecisionTree() {
             cursor: 'pointer',
             fontWeight: '500',
             fontSize: '0.95rem',
-            transition: 'all 0.2s ease-in',
+            transition: 'all 200ms ease-in',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)';
@@ -1152,7 +1152,7 @@ export default function DecisionTree() {
                 cursor: 'pointer',
                 fontWeight: '500',
                 fontSize: '0.95rem',
-                transition: 'all 0.2s ease-in',
+                transition: 'all 200ms ease-in',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)';
@@ -1184,7 +1184,7 @@ export default function DecisionTree() {
                     : 'pointer',
                 fontWeight: '500',
                 fontSize: '0.95rem',
-                transition: 'background-color 0.2s ease-in',
+                transition: 'background-color 200ms ease-in',
               }}
               onMouseEnter={(e) => {
                 if (currentStep !== 2 || isStep2Complete) {

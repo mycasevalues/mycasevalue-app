@@ -249,7 +249,7 @@ export default function APISandbox() {
         <label
           style={{
             display: 'block',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             marginBottom: '8px',
@@ -266,7 +266,7 @@ export default function APISandbox() {
           style={{
             width: '100%',
             padding: '8px 12px',
-            fontSize: '13px',
+            fontSize: '14px',
             border: '1px solid var(--border-default)',
             borderRadius: '4px',
             fontFamily: 'var(--font-mono)',
@@ -280,7 +280,7 @@ export default function APISandbox() {
         <label
           style={{
             display: 'block',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             marginBottom: '8px',
@@ -300,7 +300,7 @@ export default function APISandbox() {
           style={{
             width: '100%',
             padding: '8px 12px',
-            fontSize: '13px',
+            fontSize: '14px',
             border: '1px solid var(--border-default)',
             borderRadius: '4px',
             fontFamily: 'var(--font-mono)',
@@ -320,7 +320,7 @@ export default function APISandbox() {
         <div style={{ marginBottom: '24px' }}>
           <h4
             style={{
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 12px',
@@ -379,7 +379,7 @@ export default function APISandbox() {
           borderRadius: '4px',
           cursor: loading ? 'not-allowed' : 'pointer',
           fontFamily: 'var(--font-heading)',
-          transition: 'all 0.2s ease',
+          transition: 'all 200ms ease',
           marginBottom: '24px',
         }}
       >
@@ -445,7 +445,7 @@ export default function APISandbox() {
               padding: '12px 14px',
               backgroundColor: 'var(--chrome-bg, #1B2D45)',
               color: 'var(--text-disabled)',
-              fontSize: '11px',
+              fontSize: '12px',
               lineHeight: 1.5,
               fontFamily: 'var(--font-mono)',
               overflowX: 'auto',

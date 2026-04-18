@@ -190,7 +190,7 @@ const WizardSteps = ({ step, setStep, formData, setFormData }: {
               style={{ width: '100%', padding: 'var(--space-3) var(--space-4)', fontSize: '14px', border: '1px solid var(--bdr)', borderRadius: '2px' }}
             />
           </div>
-          <p style={{ fontSize: '13px', color: 'var(--text-tertiary)', marginBottom: 0 }}>Give this alert a descriptive name. You can edit it anytime.</p>
+          <p style={{ fontSize: '14px', color: 'var(--text-tertiary)', marginBottom: 0 }}>Give this alert a descriptive name. You can edit it anytime.</p>
         </div>
       )}
 
@@ -470,13 +470,13 @@ export default function AlertsPage() {
       display: 'inline-flex',
       alignItems: 'center',
       gap: 'var(--space-1)',
-      fontSize: '11px',
+      fontSize: '12px',
       fontWeight: '600',
       padding: '0 var(--space-2)',
       height: '20px',
       borderRadius: '3px',
       textTransform: 'uppercase' as const,
-      letterSpacing: '0.05em'
+      letterSpacing: '0.5px'
     };
 
     if (status === 'active') {
@@ -684,7 +684,7 @@ export default function AlertsPage() {
                     </div>
 
                     <p style={{
-                      fontSize: '13px',
+                      fontSize: '14px',
                       color: 'var(--text-tertiary)',
                       fontFamily: 'var(--font-mono)',
                       whiteSpace: 'nowrap',
@@ -697,15 +697,15 @@ export default function AlertsPage() {
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-3)', fontSize: '12px', color: 'var(--text-secondary)' }}>
                       <div>
-                        <div style={{ color: 'var(--text-tertiary)', fontSize: '11px', textTransform: 'uppercase', fontWeight: '600', marginBottom: '2px' }}>Frequency</div>
+                        <div style={{ color: 'var(--text-tertiary)', fontSize: '12px', textTransform: 'uppercase', fontWeight: '600', marginBottom: '2px' }}>Frequency</div>
                         <div style={{ fontFamily: 'var(--font-mono)' }}>{alert.frequency}</div>
                       </div>
                       <div>
-                        <div style={{ color: 'var(--text-tertiary)', fontSize: '11px', textTransform: 'uppercase', fontWeight: '600', marginBottom: '2px' }}>Results</div>
+                        <div style={{ color: 'var(--text-tertiary)', fontSize: '12px', textTransform: 'uppercase', fontWeight: '600', marginBottom: '2px' }}>Results</div>
                         <div style={{ fontFamily: 'var(--font-mono)' }}>{alert.resultsCount.toLocaleString()}</div>
                       </div>
                       <div>
-                        <div style={{ color: 'var(--text-tertiary)', fontSize: '11px', textTransform: 'uppercase', fontWeight: '600', marginBottom: '2px' }}>Last Run</div>
+                        <div style={{ color: 'var(--text-tertiary)', fontSize: '12px', textTransform: 'uppercase', fontWeight: '600', marginBottom: '2px' }}>Last Run</div>
                         <div style={{ fontFamily: 'var(--font-mono)' }}>{alert.lastRunDate}</div>
                       </div>
                     </div>
@@ -715,7 +715,7 @@ export default function AlertsPage() {
                         <span
                           key={type}
                           style={{
-                            fontSize: '11px',
+                            fontSize: '12px',
                             fontWeight: '500',
                             padding: '0 var(--space-2)',
                             height: '20px',
@@ -768,7 +768,7 @@ export default function AlertsPage() {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }} className="alerts-detail-stats-grid">
                 <div>
-                  <label style={{ display: 'block', fontSize: '11px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Status</label>
+                  <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Status</label>
                   <button
                     onClick={() => handleToggleAlert(selectedAlert.id)}
                     style={{
@@ -781,19 +781,19 @@ export default function AlertsPage() {
                   </button>
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '11px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Frequency</label>
+                  <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Frequency</label>
                   <div style={{ fontSize: '14px', color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>
                     {selectedAlert.frequency.charAt(0).toUpperCase() + selectedAlert.frequency.slice(1)}
                   </div>
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '11px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Total Results</label>
+                  <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Total Results</label>
                   <div style={{ fontSize: '14px', color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>
                     {selectedAlert.resultsCount.toLocaleString()}
                   </div>
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '11px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Last Run</label>
+                  <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Last Run</label>
                   <div style={{ fontSize: '14px', color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>
                     {selectedAlert.lastRunDate}
                   </div>
@@ -801,13 +801,13 @@ export default function AlertsPage() {
               </div>
 
               <div style={{ marginBottom: 'var(--space-6)' }}>
-                <label style={{ display: 'block', fontSize: '11px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Search Terms</label>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Search Terms</label>
                 <div style={{
                   padding: 'var(--space-3)',
                   background: 'var(--sidebar)',
                   border: '1px solid var(--bdr)',
                   borderRadius: '2px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontFamily: 'var(--font-mono)',
                   color: 'var(--text-primary)',
                   wordBreak: 'break-all'
@@ -817,7 +817,7 @@ export default function AlertsPage() {
               </div>
 
               <div style={{ marginBottom: 'var(--space-6)' }}>
-                <label style={{ display: 'block', fontSize: '11px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Content Types</label>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Content Types</label>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
                   {selectedAlert.contentTypes.map((type) => (
                     <span
@@ -841,7 +841,7 @@ export default function AlertsPage() {
               </div>
 
               <div style={{ marginBottom: 'var(--space-6)' }}>
-                <label style={{ display: 'block', fontSize: '11px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Delivery Methods</label>
+                <label style={{ display: 'block', fontSize: '12px', fontWeight: '600', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: 'var(--space-2)' }}>Delivery Methods</label>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
                   {selectedAlert.deliveryMethods.map((method) => (
                     <span
@@ -888,7 +888,7 @@ export default function AlertsPage() {
                           borderLeft: '3px solid var(--link)'
                         }}
                       >
-                        <div style={{ fontSize: '13px', fontWeight: '500', color: 'var(--link)', marginBottom: '2px' }}>
+                        <div style={{ fontSize: '14px', fontWeight: '500', color: 'var(--link)', marginBottom: '2px' }}>
                           {result.title}
                         </div>
                         <div style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>
@@ -912,9 +912,9 @@ export default function AlertsPage() {
                 { name: 'Folders', href: '/attorney/folders', desc: 'Organize and manage research folders' },
                 { name: 'PACER Monitor', href: '/attorney/pacer-monitor', desc: 'Monitor federal court PACER filings' },
               ].map(tool => (
-                <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+                <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                   <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                  <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                  <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
                 </a>
               ))}
             </div>

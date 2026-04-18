@@ -108,14 +108,14 @@ export default function ComparePage() {
         .mcv-link {
           color: var(--gold);
           text-decoration: none;
-          transition: color 0.2s ease;
+          transition: color 200ms ease;
         }
         .mcv-link:hover {
           color: var(--link);
           text-decoration: underline;
         }
         .mcv-select {
-          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+          transition: border-color 200ms ease, box-shadow 200ms ease;
         }
         .mcv-select:hover {
           border-color: var(--gold);
@@ -126,7 +126,7 @@ export default function ComparePage() {
           box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.1);
         }
         .mcv-btn {
-          transition: background-color 0.2s ease, opacity 0.2s ease;
+          transition: background-color 200ms ease, opacity 200ms ease;
         }
         .mcv-btn:hover:not(:disabled) {
           background-color: var(--data-negative);
@@ -164,7 +164,7 @@ export default function ComparePage() {
             grid-template-columns: 1fr !important;
           }
           .compare-table {
-            font-size: 11px;
+            font-size: 12px;
           }
           .compare-table th,
           .compare-table td {
@@ -195,8 +195,8 @@ export default function ComparePage() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -231,7 +231,7 @@ export default function ComparePage() {
         background: 'var(--color-surface-0)',
         padding: '12px 0',
         borderBottom: '1px solid var(--border-default)',
-        fontSize: 13,
+        fontSize: 14,
         fontFamily: 'var(--font-ui)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 24px)', paddingRight: 'clamp(16px, 3vw, 24px)' }}>
@@ -324,7 +324,7 @@ export default function ComparePage() {
               marginBottom: 20,
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
-              transition: 'background-color 0.2s ease, opacity 0.2s ease',
+              transition: 'background-color 200ms ease, opacity 200ms ease',
             }}
           >
             Compare
@@ -353,7 +353,7 @@ export default function ComparePage() {
                       padding: '16px 16px',
                       color: 'var(--color-text-secondary)',
                       fontWeight: 600,
-                      fontSize: 13,
+                      fontSize: 14,
                       textTransform: 'uppercase',
                       letterSpacing: '0.3px',
                     }}>
@@ -372,7 +372,7 @@ export default function ComparePage() {
                         </Link>
                         <span style={{
                           display: 'block',
-                          fontSize: 11,
+                          fontSize: 12,
                           fontFamily: 'var(--font-mono)',
                           color: 'var(--color-text-secondary)',
                           fontWeight: 400,
@@ -483,7 +483,7 @@ export default function ComparePage() {
                   const wrColor = getWinRateColor(s.winRate);
                   return (
                     <div key={s.nos} style={{ padding: '16px', background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, fontFamily: 'var(--font-ui)' }}>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 12, fontFamily: 'var(--font-ui)' }}>
                         {s.label}
                       </div>
 
@@ -495,7 +495,7 @@ export default function ComparePage() {
                       {/* Settlement Range Bar */}
                       {s.rngLo !== null && s.rngHi !== null && s.medianRecovery !== null && (
                         <div style={{ marginBottom: 12 }}>
-                          <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', marginBottom: 6, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Settlement Range (P25–P75)</div>
+                          <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', marginBottom: 6, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Settlement Range (P25–P75)</div>
                           <div style={{ position: 'relative', height: 24 }}>
                             <div style={{ position: 'absolute', top: 8, left: 0, right: 0, height: 8, background: 'rgba(59,130,246,0.08)', borderRadius: 4 }} />
                             <div style={{
@@ -507,7 +507,7 @@ export default function ComparePage() {
                             }} />
                             <div style={{ position: 'absolute', top: 4, width: 2, height: 16, background: 'var(--gold)', left: `${(s.medianRecovery / s.rngHi) * 100}%`, transform: 'translateX(-50%)' }} />
                           </div>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: 'var(--color-text-secondary)', marginTop: 4, fontFamily: 'var(--font-mono)' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: 'var(--color-text-secondary)', marginTop: 4, fontFamily: 'var(--font-mono)' }}>
                             <span>${s.rngLo}K</span>
                             <span>${s.medianRecovery}K</span>
                             <span>${s.rngHi}K</span>
@@ -520,18 +520,18 @@ export default function ComparePage() {
                         <div style={{ display: 'flex', gap: 8 }}>
                           <div style={{ flex: 1, padding: '8px', background: 'rgba(34,197,94,0.1)', borderRadius: 4, textAlign: 'center' }}>
                             <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--data-positive)', fontFamily: 'var(--font-mono)' }}>{s.attorneyWR}%</div>
-                            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>w/ attorney</div>
+                            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>w/ attorney</div>
                           </div>
                           <div style={{ flex: 1, padding: '8px', background: 'rgba(239,68,68,0.06)', borderRadius: 4, textAlign: 'center' }}>
                             <div style={{ fontSize: 16, fontWeight: 700, color: 'var(--data-negative)', fontFamily: 'var(--font-mono)' }}>{s.proSeWR}%</div>
-                            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)' }}>pro se</div>
+                            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>pro se</div>
                           </div>
                         </div>
                       )}
 
                       {/* Confidence + Sample Size */}
                       {s.totalCases !== null && (
-                        <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--color-text-secondary)' }}>
+                        <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--color-text-secondary)' }}>
                           <span style={{
                             display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
                             backgroundColor: s.totalCases >= 10000 ? 'var(--data-positive)' : s.totalCases >= 1000 ? 'var(--wrn-txt)' : s.totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)',
@@ -542,7 +542,7 @@ export default function ComparePage() {
 
                       {/* Top Districts */}
                       {s.topDistricts.length > 0 && (
-                        <div style={{ marginTop: 8, fontSize: 11, color: 'var(--color-text-secondary)' }}>
+                        <div style={{ marginTop: 8, fontSize: 12, color: 'var(--color-text-secondary)' }}>
                           <span style={{ fontWeight: 600 }}>Top districts: </span>
                           {s.topDistricts.join(', ')}
                         </div>
@@ -561,17 +561,17 @@ export default function ComparePage() {
                 border: '1px solid var(--border-default)',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
-                  <span style={{ display: 'inline-block', padding: '1px 6px', background: 'var(--border-default)', borderRadius: 4, fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.3px' }}>AI</span>
-                  <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Comparison Summary</span>
+                  <span style={{ display: 'inline-block', padding: '1px 6px', background: 'var(--border-default)', borderRadius: 4, fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', letterSpacing: '0.3px' }}>AI</span>
+                  <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Comparison Summary</span>
                 </div>
-                <p style={{ fontSize: 13, color: 'var(--color-text-primary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: 14, color: 'var(--color-text-primary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-ui)' }}>
                   {stats[0].label} cases show a {stats[0].winRate > stats[1].winRate ? 'higher' : 'lower'} win rate ({stats[0].winRate.toFixed(1)}%) compared to {stats[1].label} ({stats[1].winRate.toFixed(1)}%), with {Math.abs(stats[0].medianDuration - stats[1].medianDuration).toFixed(0)} months difference in median case duration.{' '}
                   {stats[0].medianRecovery !== null && stats[1].medianRecovery !== null
                     ? `Median recovery for ${stats[0].label} ($${stats[0].medianRecovery}K) is ${stats[0].medianRecovery > stats[1].medianRecovery ? 'higher' : 'lower'} than ${stats[1].label} ($${stats[1].medianRecovery}K).`
                     : ''}{' '}
                   Attorney representation provides a {stats[0].attorneyWR !== null && stats[0].proSeWR !== null ? `+${stats[0].attorneyWR - stats[0].proSeWR}%` : 'significant'} advantage in {stats[0].label} and {stats[1].attorneyWR !== null && stats[1].proSeWR !== null ? `+${stats[1].attorneyWR - stats[1].proSeWR}%` : 'significant'} in {stats[1].label} cases.
                 </p>
-                <p style={{ fontSize: 10, color: 'var(--color-text-muted)', marginTop: 8, marginBottom: 0 }}>
+                <p style={{ fontSize: 12, color: 'var(--color-text-muted)', marginTop: 8, marginBottom: 0 }}>
                   AI-generated comparison — for research purposes only.
                 </p>
               </div>
@@ -612,7 +612,7 @@ export default function ComparePage() {
                 return (
                   <div key={metric.key} style={{ marginBottom: 24 }}>
                     <h4 style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 600,
                       color: 'var(--color-text-secondary)',
                       margin: '0 0 12px 0',
@@ -623,7 +623,7 @@ export default function ComparePage() {
                     </h4>
                     {metricStats.map((m, idx) => (
                       <div key={m.label} style={{ marginBottom: 12, display: 'flex', alignItems: 'center', gap: 12 }}>
-                        <div style={{ width: 120, fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                        <div style={{ width: 120, fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)' }}>
                           {m.label}
                         </div>
                         <div style={{
@@ -721,7 +721,7 @@ export default function ComparePage() {
                       }}>
                         {s.winRate > 5 && (
                           <span style={{
-                            fontSize: 11,
+                            fontSize: 12,
                             fontWeight: 600,
                             color: 'var(--color-surface-0)',
                             fontFamily: 'var(--font-mono)',
@@ -740,7 +740,7 @@ export default function ComparePage() {
                       }}>
                         {s.settlementRate > 5 && (
                           <span style={{
-                            fontSize: 11,
+                            fontSize: 12,
                             fontWeight: 600,
                             color: 'var(--color-surface-0)',
                             fontFamily: 'var(--font-mono)',
@@ -759,7 +759,7 @@ export default function ComparePage() {
                       }}>
                         {s.dismissRate > 5 && (
                           <span style={{
-                            fontSize: 11,
+                            fontSize: 12,
                             fontWeight: 600,
                             color: 'var(--color-surface-0)',
                             fontFamily: 'var(--font-mono)',
@@ -917,7 +917,7 @@ export default function ComparePage() {
             boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
           }}>
             <p style={{
-              fontSize: 13,
+              fontSize: 14,
               color: 'var(--color-text-secondary)',
               margin: 0,
               lineHeight: 1.6,
@@ -970,7 +970,7 @@ export default function ComparePage() {
                     padding: 16,
                     cursor: 'pointer',
                     textAlign: 'left',
-                    transition: 'all 0.2s ease',
+                    transition: 'all 200ms ease',
                     fontFamily: 'var(--font-ui)',
                   }}
                   onMouseEnter={(e) => {
@@ -990,14 +990,14 @@ export default function ComparePage() {
                   }}>
                     <span style={{
                       flex: 1,
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
                     }}>
                       {comp.name1}
                     </span>
                     <span style={{
-                      fontSize: 11,
+                      fontSize: 12,
                       fontWeight: 600,
                       color: 'var(--accent-primary)',
                       background: 'rgba(239,68,68,0.08)',
@@ -1010,7 +1010,7 @@ export default function ComparePage() {
                     </span>
                     <span style={{
                       flex: 1,
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
                       textAlign: 'right',
@@ -1067,7 +1067,7 @@ export default function ComparePage() {
                     border: '1px solid var(--border-default)',
                     borderRadius: 4,
                     textDecoration: 'none',
-                    transition: 'all 0.2s ease',
+                    transition: 'all 200ms ease',
                   }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--gold)';
@@ -1088,7 +1088,7 @@ export default function ComparePage() {
                     {tool.name}
                   </h4>
                   <p style={{
-                    fontSize: 13,
+                    fontSize: 14,
                     color: 'var(--color-text-secondary)',
                     margin: 0,
                   }}>

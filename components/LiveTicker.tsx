@@ -108,7 +108,7 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
           background: var(--chrome-bg-dark);
           border-right: 1px solid var(--chrome-border);
           font-family: var(--font-mono);
-          font-size: 8px;
+          font-size: 12px;
           font-weight: 600;
           letter-spacing: 0.15em;
           text-transform: uppercase;
@@ -135,7 +135,7 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
           align-items: center;
           gap: 0;
           font-family: var(--font-mono);
-          font-size: 11px;
+          font-size: 12px;
           font-variant-numeric: tabular-nums;
           color: rgba(255,255,255,0.75);
         }
@@ -160,7 +160,7 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
           gap: 3px;
         }
         .ticker-arrow {
-          font-size: 8px;
+          font-size: 12px;
         }
         .ticker-separator {
           color: rgba(255,255,255,0.2);
@@ -180,9 +180,9 @@ function LiveTicker({ items = DEFAULT_ITEMS }: { items?: TickerItem[] } = {}) {
         }
         @media (max-width: 640px) {
           .live-ticker-strip { height: 26px; }
-          .live-ticker-badge { padding: 0 8px; font-size: 9px; }
+          .live-ticker-badge { padding: 0 8px; font-size: 12px; }
           .ticker-track { padding-left: 100px; }
-          .ticker-row { font-size: 8px; }
+          .ticker-row { font-size: 12px; }
         }
       `}</style>
 

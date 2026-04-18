@@ -385,8 +385,8 @@ export default function DevelopersPage() {
             borderRadius: 999,
             border: '1px solid rgba(10,80,162,0.2)',
             background: 'rgba(10,80,162,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -468,7 +468,7 @@ export default function DevelopersPage() {
               >
                 <p
                   style={{
-                    fontSize: '11px',
+                    fontSize: '12px',
                     color: 'var(--color-text-secondary)',
                     fontWeight: 600,
                     textTransform: 'uppercase',
@@ -481,7 +481,7 @@ export default function DevelopersPage() {
                 <code
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-primary)',
                     wordBreak: 'break-word',
                     fontWeight: 500,
@@ -525,7 +525,7 @@ export default function DevelopersPage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
                   <span
                     style={{
-                      fontSize: '11px',
+                      fontSize: '12px',
                       fontWeight: 700,
                       padding: '4px 10px',
                       borderRadius: '4px',
@@ -542,7 +542,7 @@ export default function DevelopersPage() {
                   <code
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       color: 'var(--color-text-primary)',
                       backgroundColor: 'var(--color-surface-1)',
                       padding: '4px 8px',
@@ -554,7 +554,7 @@ export default function DevelopersPage() {
                     {endpoint.path}
                   </code>
                 </div>
-                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0' }}>{endpoint.description}</p>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0' }}>{endpoint.description}</p>
               </div>
 
               {/* Parameters */}
@@ -562,7 +562,7 @@ export default function DevelopersPage() {
                 <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
                   <h4
                     style={{
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
                       margin: '0 0 12px',
@@ -589,7 +589,7 @@ export default function DevelopersPage() {
                           </code>
                           <span
                             style={{
-                              fontSize: '11px',
+                              fontSize: '12px',
                               color: 'var(--color-text-secondary)',
                               backgroundColor: 'rgba(255,255,255,0.05)',
                               padding: '2px 6px',
@@ -602,7 +602,7 @@ export default function DevelopersPage() {
                           {param.required && (
                             <span
                               style={{
-                                fontSize: '11px',
+                                fontSize: '12px',
                                 fontWeight: 600,
                                 color: 'var(--data-negative)',
                                 textTransform: 'uppercase',
@@ -624,7 +624,7 @@ export default function DevelopersPage() {
               <div style={{ padding: '24px 24px' }}>
                 <h4
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     color: 'var(--color-text-primary)',
                     margin: '0 0 12px',
@@ -677,7 +677,7 @@ export default function DevelopersPage() {
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
           >
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px' }}>
               All API requests require authentication using a Bearer token in the Authorization header.
             </p>
             <pre
@@ -696,7 +696,7 @@ export default function DevelopersPage() {
             >
               {`Authorization: Bearer YOUR_API_KEY`}
             </pre>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0 }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
               To get an API key, visit your account settings or request access below. API keys should never be shared or committed to version control.
             </p>
           </div>
@@ -745,7 +745,7 @@ export default function DevelopersPage() {
                 style={{
                   width: '100%',
                   borderCollapse: 'collapse',
-                  fontSize: '13px',
+                  fontSize: '14px',
                 }}
               >
                 <thead>
@@ -866,7 +866,7 @@ export default function DevelopersPage() {
             }}
           >
             <div style={{ padding: '24px' }}>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 20px' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 20px' }}>
                 Test API endpoints directly in your browser. Requires a valid API key.
               </p>
               {/* APISandbox will be rendered here */}
@@ -923,7 +923,7 @@ export default function DevelopersPage() {
                 fontWeight: 600,
                 fontSize: '14px',
                 fontFamily: 'var(--font-heading)',
-                transition: 'all 0.2s ease',
+                transition: 'all 200ms ease',
                 cursor: 'pointer',
               }}
             >

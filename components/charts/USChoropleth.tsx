@@ -155,7 +155,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
             color: 'var(--color-surface-0)',
             padding: '12px 16px',
             borderRadius: '4px',
-            fontSize: '13px',
+            fontSize: '14px',
             fontFamily: 'var(--font-ui)',
             pointerEvents: 'none',
             whiteSpace: 'nowrap',
@@ -166,15 +166,15 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
           <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '6px' }}>{tooltip.data.name}</div>
           <div style={{ display: 'flex', gap: '16px' }}>
             <div>
-              <div style={{ fontSize: '11px', opacity: 0.7, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Win Rate</div>
+              <div style={{ fontSize: '12px', opacity: 0.7, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Win Rate</div>
               <div style={{ fontSize: '16px', fontWeight: 700, color: '#70B5F9', fontFamily: 'var(--font-mono)' }}>{tooltip.data.winRate}%</div>
             </div>
             <div>
-              <div style={{ fontSize: '11px', opacity: 0.7, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Total Cases</div>
+              <div style={{ fontSize: '12px', opacity: 0.7, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Total Cases</div>
               <div style={{ fontSize: '14px', fontWeight: 600 }}>{tooltip.data.totalCases.toLocaleString()}</div>
             </div>
           </div>
-          <div style={{ fontSize: '11px', opacity: 0.7, marginTop: '6px' }}>Top: {tooltip.data.topCaseType}</div>
+          <div style={{ fontSize: '12px', opacity: 0.7, marginTop: '6px' }}>Top: {tooltip.data.topCaseType}</div>
         </div>
       )}
 

@@ -116,7 +116,7 @@ export default function MotionAnalyticsPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
+          <Link href="/attorney" style={{ fontSize: '14px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Back to Attorney Tools
           </Link>
@@ -153,7 +153,7 @@ export default function MotionAnalyticsPage() {
               <select
                 value={selectedNos}
                 onChange={(e) => setSelectedNos(e.target.value)}
-                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 0.2s' }}
+                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 200ms' }}
               >
                 <option value="">Select case type...</option>
                 {caseTypes.map((ct) => (
@@ -174,14 +174,14 @@ export default function MotionAnalyticsPage() {
                   padding: '12px 20px',
                   borderRadius: '4px',
                   border: '1px solid var(--border-default)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   textTransform: 'uppercase',
-                  letterSpacing: '0.04em',
+                  letterSpacing: '0.5px',
                   cursor: 'pointer',
                   backgroundColor: comparisonMode ? 'var(--accent-primary)' : 'var(--color-surface-0)',
                   color: comparisonMode ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                 }}
               >
                 Compare Side by Side
@@ -198,7 +198,7 @@ export default function MotionAnalyticsPage() {
               <select
                 value={selectedNos2}
                 onChange={(e) => setSelectedNos2(e.target.value)}
-                style={{ width: '100%', maxWidth: '400px', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 0.2s' }}
+                style={{ width: '100%', maxWidth: '400px', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 200ms' }}
               >
                 <option value="">Select second case type...</option>
                 {caseTypes.map((ct) => (
@@ -254,7 +254,7 @@ export default function MotionAnalyticsPage() {
                         borderRadius: '4px',
                         backgroundColor: motion.successColor === 'green' ? 'rgba(23, 100, 56, 0.08)' : motion.successColor === 'amber' ? 'rgba(122, 88, 0, 0.08)' : 'rgba(10, 102, 194, 0.06)',
                         color: motion.successColor === 'green' ? 'var(--data-positive)' : motion.successColor === 'amber' ? 'var(--wrn-txt)' : 'var(--link)',
-                        fontSize: '11px',
+                        fontSize: '12px',
                         fontWeight: 600,
                         textTransform: 'uppercase' as const,
                         whiteSpace: 'nowrap',
@@ -285,20 +285,20 @@ export default function MotionAnalyticsPage() {
 
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid var(--border-default)' }}>
                     <div>
-                      <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, margin: '0 0 4px' }}>Partial Grant</p>
+                      <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, margin: '0 0 4px' }}>Partial Grant</p>
                       <p className="font-mono" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
                         {motion.partialGrantRate}%
                       </p>
                     </div>
                     <div>
-                      <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, margin: '0 0 4px' }}>Avg Time to Ruling</p>
+                      <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, margin: '0 0 4px' }}>Avg Time to Ruling</p>
                       <p className="font-mono" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
                         {motion.avgTimeToRulingMonths} mo
                       </p>
                     </div>
                   </div>
 
-                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
                     <strong>Strategy:</strong> {motion.strategicNotes}
                   </p>
                 </div>
@@ -307,7 +307,7 @@ export default function MotionAnalyticsPage() {
 
             {/* Disclaimer */}
             <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(122,88,0,0.08)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '11px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ fontSize: '12px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
             </div>
@@ -404,7 +404,7 @@ export default function MotionAnalyticsPage() {
 
             {/* Disclaimer */}
             <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(122,88,0,0.08)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '11px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ fontSize: '12px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> Motion success rates are derived from public federal court statistics (FJC IDB). Actual outcomes depend on jurisdiction, judge, opposing counsel, and case-specific factors.
               </p>
             </div>
@@ -439,9 +439,9 @@ export default function MotionAnalyticsPage() {
               { name: 'Discovery Generator', href: '/attorney/discovery-generator', desc: 'Generate discovery requests and responses' },
               { name: 'Court Rules', href: '/attorney/court-rules', desc: 'Federal and state court rules and procedures' },
             ].map(tool => (
-              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                 <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
               </a>
             ))}
           </div>

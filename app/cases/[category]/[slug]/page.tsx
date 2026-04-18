@@ -177,7 +177,7 @@ export default async function CaseTypeDetailPage({
               color: 'var(--color-surface-0)',
               textDecoration: 'none',
               fontWeight: 600,
-              fontSize: 13,
+              fontSize: 14,
               letterSpacing: '-0.005em',
               border: '1px solid var(--gold)',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
@@ -471,7 +471,7 @@ export default async function CaseTypeDetailPage({
             color: var(--chrome-text);
             text-decoration: none;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 14px;
             letter-spacing: -0.005em;
             border: 1px solid var(--gold);
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
@@ -541,7 +541,7 @@ export default async function CaseTypeDetailPage({
               border: 1px solid var(--border-default);
               text-decoration: none;
               color: inherit;
-              transition: all 0.2s ease;
+              transition: all 200ms ease;
               box-shadow: var(--shadow-xs);
             }
             .related-case-card:hover {

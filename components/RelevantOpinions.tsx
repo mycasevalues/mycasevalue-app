@@ -61,7 +61,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
               marginBottom: '24px',
               fontFamily: 'var(--font-ui)',
             }}>Relevant Opinions</h2>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-secondary)', fontSize: '13px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
               <span style={{
                 display: 'inline-block',
                 width: '16px',
@@ -101,7 +101,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
             fontFamily: 'var(--font-ui)',
           }}>Relevant Opinions</h2>
           <p style={{
-            fontSize: '13px',
+            fontSize: '14px',
             color: 'var(--color-text-secondary)',
             marginBottom: '24px',
             fontFamily: 'var(--font-ui)',
@@ -144,13 +144,13 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
                     }}>
                       {op.court && <span>{op.court}</span>}
                       {op.year && <span>{op.year}</span>}
-                      {op.citation && <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px' }}>{op.citation}</span>}
+                      {op.citation && <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px' }}>{op.citation}</span>}
                     </div>
                   </div>
                 </div>
                 {op.summary && (
                   <p style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     marginTop: '8px',
                     marginBottom: 0,
@@ -172,7 +172,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
             display: 'flex',
             alignItems: 'center',
             gap: '6px',
-            fontSize: '11px',
+            fontSize: '12px',
             color: 'var(--color-text-muted)',
             fontFamily: 'var(--font-ui)',
           }}>
@@ -181,7 +181,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
               padding: '1px 6px',
               background: 'var(--color-surface-0)',
               borderRadius: '3px',
-              fontSize: '10px',
+              fontSize: '12px',
               fontWeight: 600,
               color: 'var(--color-text-secondary)',
               letterSpacing: '0.3px',

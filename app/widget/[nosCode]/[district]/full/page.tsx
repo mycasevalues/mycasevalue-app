@@ -80,7 +80,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
       justifyContent: 'space-between',
     }}>
       {/* Attribution */}
-      <div style={{ fontSize: '9px', color: 'var(--accent-primary)', fontWeight: 500 }}>
+      <div style={{ fontSize: '12px', color: 'var(--accent-primary)', fontWeight: 500 }}>
         Powered by MyCaseValue
       </div>
 
@@ -106,14 +106,14 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
         }}>
           {winRate.toFixed(0)}%
         </div>
-        <div style={{ fontSize: '11px', color: 'var(--color-text-muted)' }}>
+        <div style={{ fontSize: '12px', color: 'var(--color-text-muted)' }}>
           favorable outcomes
         </div>
       </div>
 
       {/* Settlement range bar */}
       <div style={{ marginTop: '8px' }}>
-        <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '6px' }}>
+        <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginBottom: '6px' }}>
           Settlement Range (P25–P75)
         </div>
         <div style={{
@@ -155,7 +155,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
               left: `${p25Pos}%`,
               top: '50%',
               transform: 'translateY(-50%)',
-              fontSize: '10px',
+              fontSize: '12px',
               color: 'var(--color-text-primary)',
               fontWeight: 500,
               marginLeft: '4px',
@@ -169,7 +169,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
               right: `${100 - p75Pos}%`,
               top: '50%',
               transform: 'translateY(-50%)',
-              fontSize: '10px',
+              fontSize: '12px',
               color: 'var(--color-text-primary)',
               fontWeight: 500,
               marginRight: '4px',
@@ -189,7 +189,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
         marginTop: '8px',
       }}>
         <div>
-          <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '2px' }}>
+          <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginBottom: '2px' }}>
             Median Settlement
           </div>
           <div style={{
@@ -202,7 +202,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
           </div>
         </div>
         <div>
-          <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '2px' }}>
+          <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginBottom: '2px' }}>
             Avg. Duration
           </div>
           <div style={{

@@ -154,7 +154,7 @@ export default function TrendsPage() {
         a.mcv-link:hover { text-decoration: underline; }
         .mcv-card--default { background: var(--color-surface-0); border: 1px solid var(--border-default); border-radius: 4px; }
         .mcv-card--default:hover { box-shadow: var(--shadow-sm); }
-        .mcv-btn--primary { background: var(--gold, #C4882A); color: var(--chrome-text); border: 1px solid var(--gold, #C4882A); border-radius: 2px; font-size: 13px; font-weight: 600; letter-spacing: -0.005em; padding: 8px 24px; cursor: pointer; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
+        .mcv-btn--primary { background: var(--gold, #C4882A); color: var(--chrome-text); border: 1px solid var(--gold, #C4882A); border-radius: 2px; font-size: 14px; font-weight: 600; letter-spacing: -0.005em; padding: 8px 24px; cursor: pointer; font-family: var(--font-ui); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08); transition: background-color 150ms ease, border-color 150ms ease; }
         .mcv-btn--primary:hover { background: var(--gold); border-color: var(--gold); }
         .mcv-badge { background: rgba(10, 102, 194, 0.1); color: var(--accent-primary); border-radius: 3px; }
         h1 { font-family: var(--font-legal); }
@@ -194,8 +194,8 @@ export default function TrendsPage() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -546,13 +546,13 @@ export default function TrendsPage() {
                     border: '1px solid rgba(213,216,220,0.3)',
                   }}
                 >
-                  <div style={{ fontSize: 11, color: textColor, opacity: 0.8, fontFamily: 'var(--font-ui)', marginBottom: 4, lineHeight: 1.3 }}>
+                  <div style={{ fontSize: 12, color: textColor, opacity: 0.8, fontFamily: 'var(--font-ui)', marginBottom: 4, lineHeight: 1.3 }}>
                     {t.label.length > 25 ? t.label.slice(0, 25) + '…' : t.label}
                   </div>
                   <div style={{ fontSize: 20, fontWeight: 600, color: textColor, fontFamily: 'var(--font-mono)' }}>
                     {fmtK(t.medianMd)}
                   </div>
-                  <div style={{ fontSize: 10, color: textColor, opacity: 0.7, marginTop: 2 }}>
+                  <div style={{ fontSize: 12, color: textColor, opacity: 0.7, marginTop: 2 }}>
                     {t.winRate}% win · {t.months}mo
                   </div>
                 </a>
@@ -560,9 +560,9 @@ export default function TrendsPage() {
             })}
           </div>
           <div className="flex items-center gap-2 mt-4">
-            <span style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>Low</span>
+            <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>Low</span>
             <div style={{ flex: 1, height: 8, borderRadius: 4, background: 'linear-gradient(90deg, rgba(0,23,46,0.05), rgba(0,23,46,0.9))' }} />
-            <span style={{ fontSize: 11, color: 'var(--color-text-secondary)' }}>High</span>
+            <span style={{ fontSize: 12, color: 'var(--color-text-secondary)' }}>High</span>
           </div>
         </section>
 

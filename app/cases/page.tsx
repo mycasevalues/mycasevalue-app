@@ -180,8 +180,8 @@ export default function CasesIndexPage() {
             borderRadius: 3,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 11,
-            fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--chrome-bg)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -213,7 +213,7 @@ export default function CasesIndexPage() {
             <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 4 }}>
               {platformStats.totalCases.toLocaleString()}
             </div>
-            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               Total Cases Analyzed
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function CasesIndexPage() {
             <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--gold)', marginBottom: 4 }}>
               {platformStats.totalNOS}
             </div>
-            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               NOS Code Types
             </div>
           </div>
@@ -229,7 +229,7 @@ export default function CasesIndexPage() {
             <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 4 }}>
               {platformStats.totalCategories}
             </div>
-            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               Case Analytics
             </div>
           </div>
@@ -237,7 +237,7 @@ export default function CasesIndexPage() {
             <div className="font-mono" style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 4 }}>
               55+
             </div>
-            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               Years of Data
             </div>
           </div>
@@ -280,7 +280,7 @@ export default function CasesIndexPage() {
               color: 'var(--text-primary)',
               fontFamily: 'var(--font-ui)',
               boxSizing: 'border-box',
-              transition: 'border-color 0.2s, box-shadow 0.2s',
+              transition: 'border-color 200ms, box-shadow 200ms',
               outline: 'none',
             }}
             onFocus={(e) => {
@@ -311,7 +311,7 @@ export default function CasesIndexPage() {
           }
           .cat-card-arrow {
             color: var(--accent-primary, #C4882A);
-            transition: transform 0.2s ease;
+            transition: transform 200ms ease;
             margin-left: auto;
           }
           .cat-card:hover .cat-card-arrow {
@@ -346,7 +346,7 @@ export default function CasesIndexPage() {
             border-radius: 4px;
             padding: 24px;
             text-align: center;
-            transition: all 0.2s ease;
+            transition: all 200ms ease;
             text-decoration: none;
             color: inherit;
             display: flex;
@@ -379,7 +379,7 @@ export default function CasesIndexPage() {
                 color: 'var(--text-primary)',
                 fontFamily: 'var(--font-ui)',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
                 textTransform: 'uppercase',
               }}
             >
@@ -440,7 +440,7 @@ export default function CasesIndexPage() {
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 16px', marginBottom: 'auto', padding: '12px 0' }}>
                           <div>
                             <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--gold)' }}>{catStats.totalCases.toLocaleString()}</div>
-                            <div style={{ fontSize: 11, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Total Cases</div>
+                            <div style={{ fontSize: 12, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Total Cases</div>
                           </div>
                           <div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -448,21 +448,21 @@ export default function CasesIndexPage() {
                                 {catStats.avgWinRate}%
                               </div>
                               {catStats.avgWinRate > 0 && (
-                                <span style={{ fontSize: 9, fontWeight: 700, color: getWinRateColor(catStats.avgWinRate), background: getWinRateBg(catStats.avgWinRate), border: `1px solid ${getWinRateColor(catStats.avgWinRate)}`, borderRadius: '4px', padding: '1px 4px', whiteSpace: 'nowrap' }}>
+                                <span style={{ fontSize: 12, fontWeight: 700, color: getWinRateColor(catStats.avgWinRate), background: getWinRateBg(catStats.avgWinRate), border: `1px solid ${getWinRateColor(catStats.avgWinRate)}`, borderRadius: '4px', padding: '1px 4px', whiteSpace: 'nowrap' }}>
                                   {getWinRateLabel(catStats.avgWinRate)}
                                 </span>
                               )}
                               <ConfidenceDot n={catStats.totalCases} />
                             </div>
-                            <div style={{ fontSize: 11, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Avg Win Rate</div>
+                            <div style={{ fontSize: 12, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Avg Win Rate</div>
                           </div>
                           <div>
                             <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--text-primary)' }}>{catStats.avgSettlement}%</div>
-                            <div style={{ fontSize: 11, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Settlement Rate</div>
+                            <div style={{ fontSize: 12, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Settlement Rate</div>
                           </div>
                           <div>
                             <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: 'var(--text-primary)' }}>{catStats.avgDuration}mo</div>
-                            <div style={{ fontSize: 11, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Avg Duration</div>
+                            <div style={{ fontSize: 12, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Avg Duration</div>
                           </div>
                         </div>
                       )}
@@ -480,7 +480,7 @@ export default function CasesIndexPage() {
           <div style={{ marginTop: 80 }}>
             <div
               style={{
-                fontSize: 10,
+                fontSize: 12,
                 fontFamily: 'var(--font-mono)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -496,7 +496,7 @@ export default function CasesIndexPage() {
             <div style={{ display: 'grid', gap: 12 }}>
               {topFiledCases.map((caseType, idx) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div style={{ background: 'var(--card)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 80px 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
+                  <div style={{ background: 'var(--card)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 80px 120px', gap: 16, alignItems: 'center', transition: 'all 200ms ease', cursor: 'pointer' }}>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: 'var(--text-primary)' }}>
                       #{idx + 1}
                     </div>
@@ -513,7 +513,7 @@ export default function CasesIndexPage() {
                       <div className="font-mono" style={{ fontSize: 16, fontWeight: 600, color: 'var(--gold)' }}>
                         {caseType.total.toLocaleString()}
                       </div>
-                      <div style={{ fontSize: 11, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Cases</div>
+                      <div style={{ fontSize: 12, color: 'var(--text2, #42403C)', fontWeight: 500 }}>Cases</div>
                     </div>
                   </div>
                 </Link>
@@ -527,7 +527,7 @@ export default function CasesIndexPage() {
           <div style={{ marginTop: 80 }}>
             <div
               style={{
-                fontSize: 10,
+                fontSize: 12,
                 fontFamily: 'var(--font-mono)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -543,7 +543,7 @@ export default function CasesIndexPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
               {topWinRateCases.map((caseType) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/&/g, '').replace(/\s+/g, '-').replace(/-{2,}/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div style={{ background: 'var(--card)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: 24, height: '100%', transition: 'all 0.2s ease', cursor: 'pointer' }}>
+                  <div style={{ background: 'var(--card)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: 24, height: '100%', transition: 'all 200ms ease', cursor: 'pointer' }}>
                     <div style={{ fontSize: 14, color: 'var(--text2, #42403C)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 500 }}>
                       {caseType.categoryLabel}
                     </div>
@@ -559,7 +559,7 @@ export default function CasesIndexPage() {
                       </div>
                       <TrendSparkline nosCode={caseType.nos} width={100} height={40} />
                     </div>
-                    <div style={{ fontSize: 11, color: 'var(--text2, #42403C)', fontWeight: 500 }}>
+                    <div style={{ fontSize: 12, color: 'var(--text2, #42403C)', fontWeight: 500 }}>
                       {caseType.total.toLocaleString()} cases analyzed
                     </div>
                   </div>
@@ -574,7 +574,7 @@ export default function CasesIndexPage() {
           <div style={{ marginTop: 64, marginBottom: 48 }}>
             <div
               style={{
-                fontSize: 10,
+                fontSize: 12,
                 fontFamily: 'var(--font-mono)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -654,7 +654,7 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 14, color: 'var(--text2, #42403C)', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: 'var(--accent-primary, #C4882A)', color: 'var(--card)', borderRadius: '2px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-legal)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
+          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: 'var(--accent-primary, #C4882A)', color: 'var(--card)', borderRadius: '2px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-legal)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.5px', gap: '8px' }}>
             Start Researching
             <ArrowRightIcon size={14} />
           </a>
@@ -692,7 +692,7 @@ export default function CasesIndexPage() {
               fontWeight: 600,
               fontSize: 14,
               cursor: 'pointer',
-              transition: 'all 0.2s ease',
+              transition: 'all 200ms ease',
               fontFamily: 'var(--font-ui)',
               display: 'flex',
               alignItems: 'center',

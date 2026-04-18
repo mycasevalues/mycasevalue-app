@@ -71,7 +71,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
   }
 
   const SortArrow = ({ field }: { field: SortField }) => (
-    <span style={{ marginLeft: 4, opacity: sortField === field ? 1 : 0.3, fontSize: 10 }}>
+    <span style={{ marginLeft: 4, opacity: sortField === field ? 1 : 0.3, fontSize: 12 }}>
       {sortField === field && sortDir === 'asc' ? '▲' : '▼'}
     </span>
   );
@@ -102,7 +102,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
         ].map(s => (
           <div key={s.label} style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2, padding: '16px 12px', textAlign: 'center' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 600, color: s.color }}>{s.value}</div>
-            <div style={{ fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginTop: 2 }}>{s.label}</div>
+            <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginTop: 2 }}>{s.label}</div>
           </div>
         ))}
       </div>
@@ -131,7 +131,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
           className="nos-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-            fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+            fontFamily: 'var(--font-ui)', fontSize: 14, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -143,31 +143,31 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
 
       {/* Table */}
       <div className="nos-table-wrap" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2, overflow: 'hidden' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-ui)', fontSize: 13 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-ui)', fontSize: 14 }}>
           <thead>
             <tr style={{ background: 'var(--accent-primary)' }}>
-              <th className="nos-th" onClick={() => toggleSort('nos')} style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px', width: 70 }}>
+              <th className="nos-th" onClick={() => toggleSort('nos')} style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px', width: 70 }}>
                 NOS<SortArrow field="nos" />
               </th>
-              <th className="nos-th" onClick={() => toggleSort('label')} style={{ textAlign: 'left', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <th className="nos-th" onClick={() => toggleSort('label')} style={{ textAlign: 'left', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Case Type<SortArrow field="label" />
               </th>
-              <th style={{ textAlign: 'left', padding: '12px 8px', color: 'var(--text-tertiary)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <th style={{ textAlign: 'left', padding: '12px 8px', color: 'var(--text-tertiary)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Category
               </th>
-              <th className="nos-th" onClick={() => toggleSort('total')} style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <th className="nos-th" onClick={() => toggleSort('total')} style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Cases<SortArrow field="total" />
               </th>
-              <th className="nos-th" onClick={() => toggleSort('wr')} style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <th className="nos-th" onClick={() => toggleSort('wr')} style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Win %<SortArrow field="wr" />
               </th>
-              <th className="nos-th" onClick={() => toggleSort('sp')} style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <th className="nos-th" onClick={() => toggleSort('sp')} style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Settle %<SortArrow field="sp" />
               </th>
-              <th className="nos-th" onClick={() => toggleSort('mo')} style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <th className="nos-th" onClick={() => toggleSort('mo')} style={{ textAlign: 'right', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Duration<SortArrow field="mo" />
               </th>
-              <th className="nos-th" onClick={() => toggleSort('rngMd')} style={{ textAlign: 'right', padding: '12px 16px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <th className="nos-th" onClick={() => toggleSort('rngMd')} style={{ textAlign: 'right', padding: '12px 16px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Median $<SortArrow field="rngMd" />
               </th>
             </tr>
@@ -181,7 +181,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                   onClick={() => setExpandedNos(expandedNos === row.nos ? null : row.nos)}
                   style={{ borderBottom: '1px solid var(--bdr)', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#FAFAFA', cursor: 'pointer' }}
                 >
-                  <td style={{ padding: '8px 16px', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--accent-primary-hover)', fontSize: 13 }}>
+                  <td style={{ padding: '8px 16px', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--accent-primary-hover)', fontSize: 14 }}>
                     {row.nos}
                   </td>
                   <td style={{ padding: '8px 8px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
@@ -189,7 +189,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                   </td>
                   <td style={{ padding: '8px 8px' }}>
                     <span style={{
-                      fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 2,
+                      fontSize: 12, fontWeight: 600, padding: '2px 8px', borderRadius: 2,
                       background: `${CATEGORY_COLORS[row.category] || 'var(--color-text-secondary)'}15`,
                       color: CATEGORY_COLORS[row.category] || 'var(--color-text-secondary)',
                       textTransform: 'uppercase',
@@ -219,20 +219,20 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                       <div className="nos-expand" style={{ padding: '16px 24px', background: 'var(--color-surface-1)', borderBottom: '2px solid var(--accent-primary-hover)' }}>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16 }}>
                           <div>
-                            <div style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: 4 }}>Recovery Range</div>
+                            <div style={{ fontSize: 12, fontWeight: 600, textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: 4 }}>Recovery Range</div>
                             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: 'var(--color-text-primary)' }}>
                               {fmtK(row.rngLo)} – {fmtK(row.rngMd)} – {fmtK(row.rngHi)}
                             </div>
-                            <div style={{ fontSize: 10, color: 'var(--color-text-secondary)', marginTop: 2 }}>25th / Median / 75th</div>
+                            <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', marginTop: 2 }}>25th / Median / 75th</div>
                           </div>
                           <div>
-                            <div style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: 4 }}>Win Rate</div>
+                            <div style={{ fontSize: 12, fontWeight: 600, textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: 4 }}>Win Rate</div>
                             <div style={{ height: 8, background: 'var(--bdr, #E2DFD8)', borderRadius: 4, overflow: 'hidden', marginTop: 6 }}>
                               <div style={{ width: `${row.wr}%`, height: '100%', background: wrColor(row.wr), borderRadius: 4 }} />
                             </div>
                           </div>
                           <div>
-                            <div style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: 4 }}>Settlement Rate</div>
+                            <div style={{ fontSize: 12, fontWeight: 600, textTransform: 'uppercase', color: 'var(--color-text-secondary)', marginBottom: 4 }}>Settlement Rate</div>
                             <div style={{ height: 8, background: 'var(--bdr, #E2DFD8)', borderRadius: 4, overflow: 'hidden', marginTop: 6 }}>
                               <div style={{ width: `${row.sp}%`, height: '100%', background: 'var(--accent-primary-hover)', borderRadius: 4 }} />
                             </div>

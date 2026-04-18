@@ -24,7 +24,7 @@ export function ComparisonBar({
     <div className="w-full p-6" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
       <ResponsiveContainer width="100%" height={260}>
         <BarChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }} barCategoryGap="25%">
-          <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="var(--bdr)" vertical={false} />
           <XAxis
             dataKey="name"
             tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
@@ -44,7 +44,7 @@ export function ComparisonBar({
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontFamily: 'var(--font-mono)',
               padding: '8px 14px',
               color: 'var(--color-text-primary)',
@@ -53,7 +53,7 @@ export function ComparisonBar({
           />
           {hasCompare && (
             <Legend
-              wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }}
+              wrapperStyle={{ fontSize: '14px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }}
             />
           )}
           <Bar

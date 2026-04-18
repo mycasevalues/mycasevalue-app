@@ -26,21 +26,21 @@ export default function ResultsPage() {
     <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)' }}>
       <style>{`
         .cta-button {
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
         }
         .cta-button:hover {
           background-color: var(--data-negative) !important;
           transform: translateY(-1px);
         }
         .secondary-button {
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
         }
         .secondary-button:hover {
           background-color: var(--color-surface-1);
           border-color: var(--bdr);
         }
         .info-card {
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
         }
         .info-card:hover {
           border-color: var(--bdr);
@@ -51,7 +51,7 @@ export default function ResultsPage() {
       {/* Breadcrumb */}
       <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '12px 0' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
-          <nav style={{ fontSize: '13px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }}>
+          <nav style={{ fontSize: '14px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-secondary)' }}>
             <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
               Home
             </Link>
@@ -82,8 +82,8 @@ export default function ResultsPage() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -151,7 +151,7 @@ export default function ResultsPage() {
                 gap: 8,
                 padding: '12px 20px',
                 borderRadius: 4,
-                fontSize: 13,
+                fontSize: 14,
                 fontWeight: 600,
                 letterSpacing: '-0.005em',
                 background: 'var(--gold, #C4882A)',
@@ -201,18 +201,18 @@ export default function ResultsPage() {
             background: 'var(--color-surface-0)'
           }}>
             <h3 style={{
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: '600',
               color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-ui)',
-              letterSpacing: '0.08em',
+              letterSpacing: '0.5px',
               textTransform: 'uppercase'
             }}>
               Win Rates & Outcomes
             </h3>
             <p style={{
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
@@ -228,18 +228,18 @@ export default function ResultsPage() {
             background: 'var(--color-surface-0)'
           }}>
             <h3 style={{
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: '600',
               color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-ui)',
-              letterSpacing: '0.08em',
+              letterSpacing: '0.5px',
               textTransform: 'uppercase'
             }}>
               Settlement Ranges
             </h3>
             <p style={{
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
@@ -255,18 +255,18 @@ export default function ResultsPage() {
             background: 'var(--color-surface-0)'
           }}>
             <h3 style={{
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: '600',
               color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-ui)',
-              letterSpacing: '0.08em',
+              letterSpacing: '0.5px',
               textTransform: 'uppercase'
             }}>
               Case Duration
             </h3>
             <p style={{
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
@@ -282,18 +282,18 @@ export default function ResultsPage() {
             background: 'var(--color-surface-0)'
           }}>
             <h3 style={{
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: '600',
               color: 'var(--color-text-primary)',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-ui)',
-              letterSpacing: '0.08em',
+              letterSpacing: '0.5px',
               textTransform: 'uppercase'
             }}>
               Regional Variation
             </h3>
             <p style={{
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--color-text-secondary)',
               margin: '0',
               lineHeight: '1.5',
@@ -308,7 +308,7 @@ export default function ResultsPage() {
       {/* Footer */}
       <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center', marginTop: '24px', background: 'var(--color-surface-0)' }}>
         <p style={{
-          fontSize: '11px',
+          fontSize: '12px',
           color: 'var(--color-text-secondary)',
           maxWidth: '600px',
           margin: '0 auto',

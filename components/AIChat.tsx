@@ -72,11 +72,11 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
       {/* Messages */}
       <div style={{ flex: 1, overflowY: 'auto', padding: 16, display: 'flex', flexDirection: 'column', gap: 12, maxHeight: compact ? 320 : 400 }}>
         {history.length === 0 && !completion && (
-          <div style={{ textAlign: 'center', color: 'var(--color-text-muted)', padding: 24, fontSize: 13 }}>
+          <div style={{ textAlign: 'center', color: 'var(--color-text-muted)', padding: 24, fontSize: 14 }}>
             <p style={{ marginBottom: 8 }}>Ask questions about federal court data, settlement values, case trends, and more.</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, justifyContent: 'center' }}>
               {['Average PI settlement?', 'Employment case trends', 'Top districts by volume'].map(q => (
-                <button key={q} onClick={() => { const e = { target: { value: q } } as React.ChangeEvent<HTMLInputElement>; handleInputChange(e); }} style={{ fontSize: 11, padding: '4px 10px', borderRadius: '4px', border: '1px solid var(--border-default)', background: 'var(--color-surface-1)', cursor: 'pointer', color: 'var(--color-text-secondary)' }}>{q}</button>
+                <button key={q} onClick={() => { const e = { target: { value: q } } as React.ChangeEvent<HTMLInputElement>; handleInputChange(e); }} style={{ fontSize: 12, padding: '4px 10px', borderRadius: '4px', border: '1px solid var(--border-default)', background: 'var(--color-surface-1)', cursor: 'pointer', color: 'var(--color-text-secondary)' }}>{q}</button>
               ))}
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
         {history.map((msg, i) => (
           <div key={i} style={{ alignSelf: msg.role === 'user' ? 'flex-end' : 'flex-start', maxWidth: '85%' }}>
             <div style={{
-              padding: '8px 14px', borderRadius: '4px', fontSize: 13, lineHeight: 1.5,
+              padding: '8px 14px', borderRadius: '4px', fontSize: 14, lineHeight: 1.5,
               ...(msg.role === 'user'
                 ? { backgroundColor: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderBottomRightRadius: 4 }
                 : { backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', borderBottomLeftRadius: 4 })
@@ -97,7 +97,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
 
         {completion && (
           <div style={{ alignSelf: 'flex-start', maxWidth: '85%' }}>
-            <div style={{ padding: '8px 14px', borderRadius: '4px', fontSize: 13, lineHeight: 1.5, backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', borderBottomLeftRadius: 4 }}>
+            <div style={{ padding: '8px 14px', borderRadius: '4px', fontSize: 14, lineHeight: 1.5, backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', borderBottomLeftRadius: 4 }}>
               {completion}
               <motion.span animate={{ opacity: [0, 1, 0] }} transition={{ repeat: Infinity, duration: 1 }}>▋</motion.span>
             </div>
@@ -115,7 +115,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
         )}
 
         {error && (
-          <div style={{ padding: '8px 14px', borderRadius: '4px', backgroundColor: 'var(--data-negative-bg, #FEF2F2)', color: 'var(--color-error)', fontSize: 13 }}>
+          <div style={{ padding: '8px 14px', borderRadius: '4px', backgroundColor: 'var(--data-negative-bg, #FEF2F2)', color: 'var(--color-error)', fontSize: 14 }}>
             Unable to get AI response. Please try again.
           </div>
         )}
@@ -130,7 +130,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
           onChange={handleInputChange}
           placeholder={placeholder}
           disabled={isLoading}
-          style={{ flex: 1, padding: '8px 12px', borderRadius: '4px', border: '1px solid var(--border-default)', fontSize: 13, outline: 'none' }}
+          style={{ flex: 1, padding: '8px 12px', borderRadius: '4px', border: '1px solid var(--border-default)', fontSize: 14, outline: 'none' }}
         />
         <button
           type="submit"
@@ -139,7 +139,7 @@ export default function AIChat({ context, type = 'general', placeholder = 'Ask a
             padding: '8px 16px', borderRadius: '4px', border: 'none',
             background: isLoading || !input.trim() ? 'var(--color-text-muted)' : 'var(--accent-primary)',
             color: 'var(--color-text-inverse)', cursor: isLoading || !input.trim() ? 'not-allowed' : 'pointer',
-            fontSize: 13, fontWeight: 600,
+            fontSize: 14, fontWeight: 600,
           }}
         >
           {isLoading ? '...' : 'Ask'}

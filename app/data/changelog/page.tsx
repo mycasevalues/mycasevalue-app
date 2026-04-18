@@ -70,7 +70,7 @@ export default async function ChangelogPage() {
           display: inline-block;
           padding: 4px 10px;
           border-radius: 3px;
-          font-size: 11px;
+          font-size: 12px;
           font-weight: 600;
           letter-spacing: 0.05em;
           text-transform: uppercase;
@@ -82,7 +82,7 @@ export default async function ChangelogPage() {
           background-color: rgba(10,80,162,0.08);
           color: var(--link);
           text-decoration: none;
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 500;
           margin-right: 8px;
           margin-bottom: 8px;
@@ -143,8 +143,8 @@ export default async function ChangelogPage() {
             {/* Mono breadcrumb */}
             <nav style={{
               display: 'flex', alignItems: 'center', gap: 8,
-              fontFamily: 'var(--font-mono)', fontSize: 11,
-              letterSpacing: '0.08em', textTransform: 'uppercase',
+              fontFamily: 'var(--font-mono)', fontSize: 12,
+              letterSpacing: '0.5px', textTransform: 'uppercase',
               color: 'rgba(255,255,255,0.55)', marginBottom: 20,
             }}>
               <Link href="/" style={{ color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }}>Home</Link>
@@ -159,8 +159,8 @@ export default async function ChangelogPage() {
               borderRadius: 999,
               border: '1px solid rgba(10,80,162,0.2)',
               background: 'rgba(10,80,162,0.08)',
-              fontFamily: 'var(--font-mono)', fontSize: 10,
-              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              fontFamily: 'var(--font-mono)', fontSize: 12,
+              fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
               color: 'var(--link)',
             }}>
               <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -260,7 +260,7 @@ export default async function ChangelogPage() {
                               fontWeight: 600,
                               color: 'var(--gold)',
                               textTransform: 'uppercase',
-                              letterSpacing: '0.05em',
+                              letterSpacing: '0.5px',
                               margin: '0 0 12px 0',
                               fontFamily: 'var(--font-ui)',
                             }}>
@@ -288,7 +288,7 @@ export default async function ChangelogPage() {
                               fontWeight: 600,
                               color: 'var(--gold)',
                               textTransform: 'uppercase',
-                              letterSpacing: '0.05em',
+                              letterSpacing: '0.5px',
                               margin: '0 0 12px 0',
                               fontFamily: 'var(--font-ui)',
                             }}>
@@ -416,7 +416,7 @@ export default async function ChangelogPage() {
               padding: '24px 28px',
             }}>
               <p style={{
-                fontSize: 13,
+                fontSize: 14,
                 color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-ui)',
                 lineHeight: 1.6,

@@ -19,7 +19,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
   const secondaryColor = 'var(--accent-primary-hover)';
 
   const sizeMap = {
-    sm: { padding: '6px 12px', fontSize: '13px' },
+    sm: { padding: '6px 12px', fontSize: '14px' },
     md: { padding: '8px 16px', fontSize: '14px' },
     lg: { padding: '12px 20px', fontSize: '14px' },
   };
@@ -85,7 +85,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
     display: 'inline-flex',
     alignItems: 'center',
     gap: '8px',
-    transition: 'all 0.2s ease',
+    transition: 'all 200ms ease',
     position: 'relative' as const,
   };
 
@@ -158,7 +158,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
               fontWeight: 500,
               color: 'var(--color-text-primary)',
               borderBottom: '1px solid var(--border-default)',
-              transition: 'background 0.2s',
+              transition: 'background 200ms',
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.background = 'var(--color-surface-1)';
@@ -172,7 +172,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
               <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
             </svg>
             <div>
-              <p style={{ margin: 0, fontSize: '13px', fontWeight: 600 }}>Copy Link</p>
+              <p style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>Copy Link</p>
               <p style={{ margin: '2px 0 0', fontSize: '12px', color: 'var(--color-text-secondary)' }}>Share this report</p>
             </div>
           </button>
@@ -196,7 +196,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
               fontWeight: 500,
               color: 'var(--color-text-primary)',
               borderBottom: '1px solid var(--border-default)',
-              transition: 'background 0.2s',
+              transition: 'background 200ms',
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.background = 'var(--color-surface-1)';
@@ -209,7 +209,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
               <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
             </svg>
             <div>
-              <p style={{ margin: 0, fontSize: '13px', fontWeight: 600 }}>LinkedIn</p>
+              <p style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>LinkedIn</p>
               <p style={{ margin: '2px 0 0', fontSize: '12px', color: 'var(--color-text-secondary)' }}>Post to your feed</p>
             </div>
           </button>
@@ -232,7 +232,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
               fontSize: '14px',
               fontWeight: 500,
               color: 'var(--color-text-primary)',
-              transition: 'background 0.2s',
+              transition: 'background 200ms',
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.background = 'var(--color-surface-1)';
@@ -245,7 +245,7 @@ export default function ShareReportButton({ variant = 'default', size = 'md' }: 
               <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a14.002 14.002 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
             </svg>
             <div>
-              <p style={{ margin: 0, fontSize: '13px', fontWeight: 600 }}>X/Twitter</p>
+              <p style={{ margin: 0, fontSize: '14px', fontWeight: 600 }}>X/Twitter</p>
               <p style={{ margin: '2px 0 0', fontSize: '12px', color: 'var(--color-text-secondary)' }}>Share on X</p>
             </div>
           </button>

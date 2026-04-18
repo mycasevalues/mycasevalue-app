@@ -137,7 +137,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
   }
 
   const SortArrow = ({ field }: { field: SortField }) => (
-    <span style={{ marginLeft: 4, opacity: sortField === field ? 1 : 0.3, fontSize: 10 }}>
+    <span style={{ marginLeft: 4, opacity: sortField === field ? 1 : 0.3, fontSize: 12 }}>
       {sortField === field && sortDir === 'asc' ? '▲' : '▼'}
     </span>
   );
@@ -151,10 +151,10 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
         .je-th { cursor: pointer; user-select: none; white-space: nowrap; }
         .je-th:hover { color: var(--link-hover, #083D7A) !important; }
         .je-tr:hover { background: var(--color-surface-1) !important; }
-        .je-view-btn { border: 1px solid var(--border-default); background: var(--color-surface-0); padding: 6px 12px; cursor: pointer; font-size: 12px; font-weight: 600; transition: all 0.15s; }
+        .je-view-btn { border: 1px solid var(--border-default); background: var(--color-surface-0); padding: 6px 12px; cursor: pointer; font-size: 14px; font-weight: 600; border-radius: 2px; transition: all 150ms; }
         .je-view-btn:hover { background: var(--color-surface-1); }
         .je-view-btn.active { background: var(--accent-primary); color: var(--color-surface-0); border-color: var(--accent-primary); }
-        .je-page-btn { border: 1px solid var(--border-default); background: var(--color-surface-0); padding: 6px 12px; cursor: pointer; font-size: 13px; font-family: var(--font-mono); min-width: 36px; transition: all 0.15s; }
+        .je-page-btn { border: 1px solid var(--border-default); background: var(--color-surface-0); padding: 6px 12px; cursor: pointer; font-size: 14px; font-family: var(--font-mono); min-width: 36px; border-radius: 2px; transition: all 150ms; }
         .je-page-btn:hover { background: var(--color-surface-1); border-color: var(--link-hover, #083D7A); }
         .je-page-btn.active { background: var(--accent-primary); color: var(--color-surface-0); border-color: var(--accent-primary); }
         .je-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
@@ -175,7 +175,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
         ].map(s => (
           <div key={s.label} style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2, padding: '16px 12px', textAlign: 'center' }}>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 600, color: s.color }}>{s.value}</div>
-            <div style={{ fontSize: 10, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginTop: 2 }}>{s.label}</div>
+            <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginTop: 2 }}>{s.label}</div>
           </div>
         ))}
       </div>
@@ -208,7 +208,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           className="je-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-            fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+            fontFamily: 'var(--font-ui)', fontSize: 14, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -224,7 +224,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           className="je-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-            fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+            fontFamily: 'var(--font-ui)', fontSize: 14, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -240,7 +240,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           className="je-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-            fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+            fontFamily: 'var(--font-ui)', fontSize: 14, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -282,7 +282,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                 border: 'none', background: sortField === field ? 'var(--accent-primary)' : 'var(--color-surface-1)',
                 color: sortField === field ? 'var(--color-surface-0)' : 'var(--color-text-primary)',
                 padding: '4px 10px', borderRadius: 2, fontSize: 12, fontWeight: 600,
-                cursor: 'pointer', fontFamily: 'var(--font-ui)', transition: 'all 0.15s',
+                cursor: 'pointer', fontFamily: 'var(--font-ui)', transition: 'all 150ms',
               }}
             >
               {label}<SortArrow field={field} />
@@ -300,7 +300,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>No judges match your filters.</p>
           <button
             onClick={() => { setSearch(''); setCircuitFilter(''); setDistrictFilter(''); setStatusFilter('all'); setPage(1); }}
-            style={{ marginTop: 12, border: 'none', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '8px 24px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-ui)' }}
+            style={{ marginTop: 12, border: 'none', background: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '8px 24px', borderRadius: 2, fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-ui)' }}
           >
             Clear Filters
           </button>
@@ -317,7 +317,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                 className="je-card"
                 style={{
                   display: 'block', padding: 24, borderRadius: 2, border: '1px solid var(--border-default)',
-                  background: 'var(--color-surface-0)', textDecoration: 'none', transition: 'all 0.2s ease',
+                  background: 'var(--color-surface-0)', textDecoration: 'none', transition: 'all 200ms ease',
                 }}
               >
                 {/* Name + badges */}
@@ -332,16 +332,16 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                   </div>
                   <div style={{ display: 'flex', gap: 4 }}>
                     {judge.chiefJudge && (
-                      <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(10, 102, 194, 0.08)', color: 'var(--accent-primary)', textTransform: 'uppercase' }}>Chief</span>
+                      <span style={{ fontSize: 12, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(10, 102, 194, 0.08)', color: 'var(--accent-primary)', textTransform: 'uppercase' }}>Chief</span>
                     )}
                     {judge.seniorStatus && (
-                      <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(184,110,0,0.08)', color: 'var(--wrn-txt)', textTransform: 'uppercase' }}>Senior</span>
+                      <span style={{ fontSize: 12, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(184,110,0,0.08)', color: 'var(--wrn-txt)', textTransform: 'uppercase' }}>Senior</span>
                     )}
                   </div>
                 </div>
 
                 {/* Appointed info */}
-                <p style={{ fontSize: 11, color: 'var(--color-text-secondary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: 12, color: 'var(--color-text-secondary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
                   Appointed {judge.appointedYear} · {judge.appointedBy.replace('President ', '')}
                 </p>
 
@@ -351,31 +351,31 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: wrColor(judge.stats.plaintiffWinRate) }}>
                       {judge.stats.plaintiffWinRate}%
                     </div>
-                    <div style={{ fontSize: 9, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginTop: 1 }}>Win</div>
+                    <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginTop: 1 }}>Win</div>
                   </div>
                   <div>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: 'var(--accent-primary-hover)' }}>
                       {judge.stats.motionGrantRate}%
                     </div>
-                    <div style={{ fontSize: 9, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginTop: 1 }}>MTD</div>
+                    <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginTop: 1 }}>MTD</div>
                   </div>
                   <div>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: 'var(--accent-primary-hover)' }}>
                       {judge.stats.settlementRate}%
                     </div>
-                    <div style={{ fontSize: 9, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginTop: 1 }}>Settle</div>
+                    <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginTop: 1 }}>Settle</div>
                   </div>
                   <div>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)' }}>
                       {judge.stats.medianDurationMonths}mo
                     </div>
-                    <div style={{ fontSize: 9, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginTop: 1 }}>Dur.</div>
+                    <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginTop: 1 }}>Dur.</div>
                   </div>
                   <div>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)' }}>
                       {judge.stats.totalCases >= 1000 ? `${(judge.stats.totalCases / 1000).toFixed(1)}K` : judge.stats.totalCases}
                     </div>
-                    <div style={{ fontSize: 9, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginTop: 1 }}>Cases</div>
+                    <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginTop: 1 }}>Cases</div>
                   </div>
                 </div>
 
@@ -390,31 +390,31 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
       ) : (
         /* Table View */
         <div className="je-table-wrap" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2, overflow: 'hidden' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-ui)', fontSize: 13 }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-ui)', fontSize: 14 }}>
             <thead>
               <tr style={{ background: 'var(--accent-primary)' }}>
-                <th className="je-th" onClick={() => toggleSort('name')} style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <th className="je-th" onClick={() => toggleSort('name')} style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Judge<SortArrow field="name" />
                 </th>
-                <th style={{ textAlign: 'left', padding: '12px 8px', color: 'var(--text-tertiary)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <th style={{ textAlign: 'left', padding: '12px 8px', color: 'var(--text-tertiary)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   District
                 </th>
-                <th className="je-th" onClick={() => toggleSort('winRate')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <th className="je-th" onClick={() => toggleSort('winRate')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Win Rate<SortArrow field="winRate" />
                 </th>
-                <th className="je-th" onClick={() => toggleSort('motionGrant')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <th className="je-th" onClick={() => toggleSort('motionGrant')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   MTD Grant<SortArrow field="motionGrant" />
                 </th>
-                <th className="je-th" onClick={() => toggleSort('settlement')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <th className="je-th" onClick={() => toggleSort('settlement')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Settle %<SortArrow field="settlement" />
                 </th>
-                <th className="je-th" onClick={() => toggleSort('duration')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <th className="je-th" onClick={() => toggleSort('duration')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Duration<SortArrow field="duration" />
                 </th>
-                <th className="je-th" onClick={() => toggleSort('cases')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <th className="je-th" onClick={() => toggleSort('cases')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Cases<SortArrow field="cases" />
                 </th>
-                <th className="je-th" onClick={() => toggleSort('appointed')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                <th className="je-th" onClick={() => toggleSort('appointed')} style={{ textAlign: 'center', padding: '12px 8px', color: 'var(--color-surface-0)', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Apptd.<SortArrow field="appointed" />
                 </th>
               </tr>
@@ -427,8 +427,8 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                       {judge.name}
                     </Link>
                     <div style={{ display: 'flex', gap: 4, marginTop: 2 }}>
-                      {judge.chiefJudge && <span style={{ fontSize: 9, fontWeight: 600, color: 'var(--accent-primary)' }}>CHIEF</span>}
-                      {judge.seniorStatus && <span style={{ fontSize: 9, fontWeight: 600, color: 'var(--wrn-txt)' }}>SENIOR</span>}
+                      {judge.chiefJudge && <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--accent-primary)' }}>CHIEF</span>}
+                      {judge.seniorStatus && <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--wrn-txt)' }}>SENIOR</span>}
                     </div>
                   </td>
                   <td style={{ padding: '8px 8px', color: 'var(--color-text-secondary)', fontSize: 12 }}>{judge.district}</td>

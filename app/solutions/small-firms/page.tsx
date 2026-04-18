@@ -77,8 +77,8 @@ export default function SmallFirmsPage() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -114,7 +114,7 @@ export default function SmallFirmsPage() {
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
-              fontSize: 13,
+              fontSize: 14,
               letterSpacing: '-0.005em',
               display: 'inline-flex',
               alignItems: 'center',
@@ -134,7 +134,7 @@ export default function SmallFirmsPage() {
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
-              fontSize: 13,
+              fontSize: 14,
               letterSpacing: '-0.005em',
               display: 'inline-block',
             }}>
@@ -246,7 +246,7 @@ export default function SmallFirmsPage() {
               fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.5px',
               display: 'inline-block',
             }}>
               Search Cases
@@ -262,7 +262,7 @@ export default function SmallFirmsPage() {
               fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.5px',
               display: 'inline-block',
             }}>
               Try Calculator
@@ -331,12 +331,12 @@ export default function SmallFirmsPage() {
               }}>
                 72%
               </div>
-              <div style={{ fontSize: '11px', color: 'var(--color-text-muted)', marginBottom: '12px' }}>
+              <div style={{ fontSize: '12px', color: 'var(--color-text-muted)', marginBottom: '12px' }}>
                 case outcome rate
               </div>
               <div style={{
                 fontFamily: '"Courier New", monospace',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 500,
                 color: 'var(--color-text-primary)',
               }}>
@@ -364,7 +364,7 @@ export default function SmallFirmsPage() {
               fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.5px',
               display: 'inline-block',
             }}>
               Create Your Widget

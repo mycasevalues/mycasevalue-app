@@ -240,7 +240,7 @@ export default function PlatformPage() {
         }
 
         .flow-desc {
-          font-size: 13px;
+          font-size: 14px;
           color: var(--link);
           line-height: 1.5;
         }
@@ -514,7 +514,7 @@ export default function PlatformPage() {
           }
 
           .comparison-table {
-            font-size: 11px;
+            font-size: 12px;
           }
 
           .platform-table-wrap {
@@ -557,8 +557,8 @@ export default function PlatformPage() {
               borderRadius: 999,
               border: '1px solid rgba(59,130,246,0.2)',
               background: 'rgba(59,130,246,0.08)',
-              fontFamily: 'var(--font-mono)', fontSize: 10,
-              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              fontFamily: 'var(--font-mono)', fontSize: 12,
+              fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
               color: 'var(--link)',
             }}>
               <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -1190,7 +1190,7 @@ export default function PlatformPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
-                        fontSize: 13,
+                        fontSize: 14,
                         color: 'var(--accent-primary)',
                         textDecoration: 'none',
                         fontWeight: 500,
@@ -1314,13 +1314,13 @@ export default function PlatformPage() {
                   }}
                 >
                   <h4 style={{
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: 700,
                     color: 'var(--accent-primary)',
                     marginBottom: 16,
                     margin: 0,
                     textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
+                    letterSpacing: '0.5px',
                   }}>
                     {group.category}
                   </h4>

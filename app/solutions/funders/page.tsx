@@ -77,8 +77,8 @@ export default function FundersPage() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -114,7 +114,7 @@ export default function FundersPage() {
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
-              fontSize: 13,
+              fontSize: 14,
               letterSpacing: '-0.005em',
               display: 'inline-flex',
               alignItems: 'center',
@@ -134,7 +134,7 @@ export default function FundersPage() {
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
-              fontSize: 13,
+              fontSize: 14,
               letterSpacing: '-0.005em',
               display: 'inline-block',
             }}>
@@ -245,7 +245,7 @@ export default function FundersPage() {
               fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.5px',
               display: 'inline-block',
             }}>
               Research Cases
@@ -261,7 +261,7 @@ export default function FundersPage() {
               fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.5px',
               display: 'inline-block',
             }}>
               Try Calculator

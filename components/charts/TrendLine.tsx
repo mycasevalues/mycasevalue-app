@@ -29,7 +29,7 @@ export function TrendLine({
               <stop offset="95%" stopColor={color} stopOpacity={0.02} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="var(--bdr)" vertical={false} />
           <XAxis
             dataKey="year"
             tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
@@ -48,7 +48,7 @@ export function TrendLine({
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontFamily: 'var(--font-ui)',
               padding: '8px 14px',
               color: 'var(--color-text-primary)',

@@ -167,7 +167,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                 </div>
                 <div
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     lineHeight: 1.5,
                     color: 'var(--color-text-secondary)',
                   }}
@@ -202,7 +202,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   justifyContent: 'center',
                   width: '32px',
                   height: '32px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   borderRadius: '4px',
                   textDecoration: 'none',
@@ -278,7 +278,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   </h3>
                   <p
                     style={{
-                      fontSize: '13px',
+                      fontSize: '14px',
                       lineHeight: 1.6,
                       color: 'var(--color-text-secondary)',
                       margin: '6px 0 0 0',

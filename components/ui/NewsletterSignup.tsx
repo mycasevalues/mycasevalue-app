@@ -46,11 +46,11 @@ export default function NewsletterSignup() {
       {/* Label */}
       <div
         style={{
-          fontSize: '11px',
+          fontSize: '12px',
           fontWeight: 600,
           color: 'var(--accent-primary)',
           textTransform: 'uppercase',
-          letterSpacing: '0.08em',
+          letterSpacing: '0.5px',
           marginBottom: '8px',
         }}
       >
@@ -102,7 +102,7 @@ export default function NewsletterSignup() {
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#16A34A"
+            stroke="var(--data-positive)"
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -176,7 +176,7 @@ export default function NewsletterSignup() {
               background: 'var(--accent-primary)',
               color: 'var(--color-surface-0)',
               fontFamily: 'var(--font-ui)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 600,
               textTransform: 'uppercase',
               cursor: status === 'loading' ? 'wait' : 'pointer',
@@ -195,7 +195,7 @@ export default function NewsletterSignup() {
         <p
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '13px',
+            fontSize: '14px',
             color: 'var(--accent-primary)',
             margin: '12px 0 0',
           }}

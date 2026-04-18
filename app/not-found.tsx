@@ -173,7 +173,7 @@ export default function NotFound() {
                 fontWeight: 600,
                 color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
-                letterSpacing: '0.05em',
+                letterSpacing: '0.5px',
                 margin: '0 0 16px',
               }}
             >
@@ -199,7 +199,7 @@ export default function NotFound() {
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '2px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 500,
                   textDecoration: 'none',
                 }}
@@ -222,7 +222,7 @@ export default function NotFound() {
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '2px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 500,
                   textDecoration: 'none',
                 }}
@@ -245,7 +245,7 @@ export default function NotFound() {
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '2px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 500,
                   textDecoration: 'none',
                 }}
@@ -269,7 +269,7 @@ export default function NotFound() {
                   color: 'var(--color-text-primary)',
                   border: '1px solid var(--border-default)',
                   borderRadius: '2px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 500,
                   textDecoration: 'none',
                 }}

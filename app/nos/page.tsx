@@ -68,7 +68,7 @@ export default function NOSIndexPage() {
           border: 1px solid var(--border-default);
           border-radius: '4px';
           padding: 24px;
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
           text-decoration: none;
           display: block;
           cursor: pointer;
@@ -82,7 +82,7 @@ export default function NOSIndexPage() {
           font-size: 18px;
           color: var(--color-text-primary);
           margin: 0 0 8px 0;
-          transition: color 0.2s ease;
+          transition: color 200ms ease;
         }
         .nos-card:hover h3 {
           color: var(--accent-primary);
@@ -90,7 +90,7 @@ export default function NOSIndexPage() {
         .nos-card-arrow {
           color: var(--accent-primary);
           font-size: 20px;
-          transition: transform 0.2s ease;
+          transition: transform 200ms ease;
         }
         .nos-card:hover .nos-card-arrow {
           transform: translateX(4px);
@@ -101,7 +101,7 @@ export default function NOSIndexPage() {
           font-size: 14px;
           display: inline-block;
           margin-bottom: 16px;
-          transition: color 0.2s ease;
+          transition: color 200ms ease;
         }
         .nos-back-link:hover {
           color: var(--color-text-inverse, #FFFFFF);
@@ -109,7 +109,7 @@ export default function NOSIndexPage() {
         .nos-breadcrumb-link {
           color: var(--link);
           text-decoration: none;
-          transition: color 0.2s ease;
+          transition: color 200ms ease;
         }
         .nos-breadcrumb-link:hover {
           color: var(--link);
@@ -215,7 +215,7 @@ export default function NOSIndexPage() {
           <section key={categoryName} style={{ marginBottom: '64px' }}>
             <div
               style={{
-                fontSize: 10,
+                fontSize: 12,
                 fontFamily: 'var(--font-mono)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -258,7 +258,7 @@ export default function NOSIndexPage() {
                       <h3>{item.label}</h3>
                       <p
                         style={{
-                          fontSize: '13px',
+                          fontSize: '14px',
                           color: 'var(--color-text-secondary)',
                           margin: '0',
                           fontFamily: 'var(--font-mono)',
@@ -271,7 +271,7 @@ export default function NOSIndexPage() {
                   </div>
                   <p
                     style={{
-                      fontSize: '13px',
+                      fontSize: '14px',
                       color: 'var(--color-text-secondary)',
                       margin: '0',
                       fontFamily: 'var(--font-ui)',
@@ -299,7 +299,7 @@ export default function NOSIndexPage() {
           >
             <div
               style={{
-                fontSize: 10,
+                fontSize: 12,
                 fontFamily: 'var(--font-mono)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',

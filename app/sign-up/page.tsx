@@ -220,7 +220,7 @@ export default function SignUpPage() {
           border: 1px solid var(--border-default);
           background: var(--color-surface-0);
           padding: 24px;
-          transition: box-shadow 0.2s, transform 0.2s;
+          transition: box-shadow 200ms, transform 200ms;
         }
         .feature-card:hover {
           box-shadow: 0 4px 16px rgba(27, 58, 92, 0.08);
@@ -355,7 +355,7 @@ export default function SignUpPage() {
                     color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)',
                     boxSizing: 'border-box',
-                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                    transition: 'border-color 200ms, box-shadow 200ms',
                   }}
                 />
               </div>
@@ -395,7 +395,7 @@ export default function SignUpPage() {
                     color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)',
                     boxSizing: 'border-box',
-                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                    transition: 'border-color 200ms, box-shadow 200ms',
                   }}
                 />
               </div>
@@ -431,7 +431,7 @@ export default function SignUpPage() {
                     color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)',
                     boxSizing: 'border-box',
-                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                    transition: 'border-color 200ms, box-shadow 200ms',
                     cursor: 'pointer',
                   }}
                 >
@@ -482,7 +482,7 @@ export default function SignUpPage() {
                     color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)',
                     boxSizing: 'border-box',
-                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                    transition: 'border-color 200ms, box-shadow 200ms',
                   }}
                 />
                 <p
@@ -533,7 +533,7 @@ export default function SignUpPage() {
                     color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)',
                     boxSizing: 'border-box',
-                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                    transition: 'border-color 200ms, box-shadow 200ms',
                   }}
                 />
               </div>
@@ -564,7 +564,7 @@ export default function SignUpPage() {
                   htmlFor="terms"
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-primary)',
                     lineHeight: 1.5,
                     cursor: 'pointer',
@@ -600,7 +600,7 @@ export default function SignUpPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--accent-primary)',
                     margin: '0 0 16px 0',
                     padding: '8px 12px',
@@ -617,7 +617,7 @@ export default function SignUpPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--accent-primary)',
                     margin: '0 0 16px 0',
                     padding: '8px 12px',
@@ -658,7 +658,7 @@ export default function SignUpPage() {
                   fontWeight: 600,
                   cursor: loading ? 'not-allowed' : 'pointer',
                   opacity: loading ? 0.7 : 1,
-                  transition: 'background 0.2s, transform 0.1s, box-shadow 0.2s',
+                  transition: 'background 200ms, transform 150ms, box-shadow 200ms',
                 }}
               >
                 {loading ? 'Creating account...' : 'Create Account'}
@@ -754,7 +754,7 @@ export default function SignUpPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     margin: 0,
                     lineHeight: 1.5,
@@ -797,7 +797,7 @@ export default function SignUpPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     margin: 0,
                     lineHeight: 1.5,
@@ -840,7 +840,7 @@ export default function SignUpPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     margin: 0,
                     lineHeight: 1.5,
@@ -883,7 +883,7 @@ export default function SignUpPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     margin: 0,
                     lineHeight: 1.5,
@@ -927,7 +927,7 @@ export default function SignUpPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     margin: 0,
                     lineHeight: 1.5,
@@ -970,7 +970,7 @@ export default function SignUpPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     margin: 0,
                     lineHeight: 1.5,

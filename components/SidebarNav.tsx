@@ -51,7 +51,7 @@ export default function SidebarNav() {
           color: var(--color-surface-0);
           text-decoration: none;
           font-family: var(--font-ui);
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
           position: relative;
           border-left: 3px solid transparent;
         }

@@ -263,7 +263,7 @@ function ProgressBar({ current, total }: { current: number; total: number }) {
           }}
         />
       </div>
-      <p style={{ marginTop: '8px', fontSize: '13px', color: 'var(--color-text-muted)', margin: '8px 0 0 0' }}>
+      <p style={{ marginTop: '8px', fontSize: '14px', color: 'var(--color-text-muted)', margin: '8px 0 0 0' }}>
         Step {current} of {total}
       </p>
     </div>
@@ -600,7 +600,7 @@ export default function CaseStrengthAssessment() {
                         ? '#E7F3FF'
                         : 'transparent',
                     border: '2px solid transparent',
-                    transition: 'all 0.2s ease',
+                    transition: 'all 200ms ease',
                   }}
                   onMouseEnter={(e) => {
                     if (answers[currentQuestion.id] !== option.value) {
@@ -646,7 +646,7 @@ export default function CaseStrengthAssessment() {
                   padding: '12px 16px',
                   backgroundColor: 'rgba(34,197,94,0.06)',
                   borderLeft: '4px solid var(--data-positive)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   color: 'var(--data-positive, #176438)',
                 }}
               >
@@ -673,7 +673,7 @@ export default function CaseStrengthAssessment() {
                 fontSize: '14px',
                 fontWeight: '600',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease',
+                transition: 'all 200ms ease',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(59,130,246,0.08)';
@@ -698,7 +698,7 @@ export default function CaseStrengthAssessment() {
                   fontSize: '14px',
                   fontWeight: '600',
                   cursor: isAnswered ? 'pointer' : 'not-allowed',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 200ms ease',
                 }}
                 onMouseEnter={(e) => {
                   if (isAnswered) {
@@ -730,7 +730,7 @@ export default function CaseStrengthAssessment() {
                   fontSize: '14px',
                   fontWeight: '600',
                   cursor: isAnswered ? 'pointer' : 'not-allowed',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 200ms ease',
                 }}
                 onMouseEnter={(e) => {
                   if (isAnswered) {
@@ -1023,7 +1023,7 @@ export default function CaseStrengthAssessment() {
                 fontSize: '14px',
                 fontWeight: '600',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease',
+                transition: 'all 200ms ease',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(59,130,246,0.08)';
@@ -1048,7 +1048,7 @@ export default function CaseStrengthAssessment() {
                 fontSize: '14px',
                 fontWeight: '600',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease',
+                transition: 'all 200ms ease',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'var(--accent-primary-hover)';

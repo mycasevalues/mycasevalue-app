@@ -53,7 +53,7 @@ export default function DataFreshness({ style }: DataFreshnessProps) {
         alignItems: 'center',
         background: 'rgba(255,255,255,0.06)',
         color: 'var(--link, #0A50A2)',
-        fontSize: '11px',
+        fontSize: '12px',
         fontWeight: 500,
         fontFamily: 'var(--font-ui)',
         padding: '2px 8px',

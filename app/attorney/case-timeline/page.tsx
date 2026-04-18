@@ -141,7 +141,7 @@ export default function CaseTimelinePage() {
 
   const labelStyle: React.CSSProperties = {
     display: 'block',
-    fontSize: '13px',
+    fontSize: '14px',
     fontWeight: 600,
     color: 'var(--color-text-primary)',
     marginBottom: '6px',
@@ -233,7 +233,7 @@ export default function CaseTimelinePage() {
               {/* Error */}
               {error && (
                 <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '13px', color: '#CC1019', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
+                  <p style={{ fontSize: '14px', color: '#CC1019', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
                 </div>
               )}
 
@@ -252,9 +252,9 @@ export default function CaseTimelinePage() {
                   fontWeight: 600,
                   fontFamily: 'var(--font-ui)',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.04em',
+                  letterSpacing: '0.5px',
                   cursor: !caseType || !filingDate ? 'not-allowed' : 'pointer',
-                  transition: 'background-color 0.2s',
+                  transition: 'background-color 200ms',
                 }}
               >
                 Generate Timeline
@@ -317,11 +317,11 @@ export default function CaseTimelinePage() {
                       color: !newMilestoneName.trim() || !newMilestoneMonths ? 'var(--color-text-muted)' : 'var(--accent-primary)',
                       border: '1px solid var(--border-default)',
                       borderRadius: '2px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       fontFamily: 'var(--font-ui)',
                       cursor: !newMilestoneName.trim() || !newMilestoneMonths ? 'not-allowed' : 'pointer',
-                      transition: 'all 0.2s',
+                      transition: 'all 200ms',
                     }}
                   >
                     Add Milestone
@@ -359,7 +359,7 @@ export default function CaseTimelinePage() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                   <div>
-                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                       Case Type
                     </p>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -368,7 +368,7 @@ export default function CaseTimelinePage() {
                   </div>
 
                   <div>
-                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                       Filing Date
                     </p>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -377,7 +377,7 @@ export default function CaseTimelinePage() {
                   </div>
 
                   <div>
-                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                       Projected Resolution
                     </p>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -386,14 +386,14 @@ export default function CaseTimelinePage() {
                   </div>
 
                   <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '16px' }}>
-                    <p style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                       Progress
                     </p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                       <div style={{ flex: 1, height: '8px', background: 'var(--border-default)', borderRadius: '4px', overflow: 'hidden' }}>
                         <div style={{ height: '100%', background: 'var(--accent-primary)', width: `${timeline.currentProgress}%`, transition: 'width 0.3s' }} />
                       </div>
-                      <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', minWidth: '45px', fontFamily: 'var(--font-ui)' }}>
+                      <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', minWidth: '45px', fontFamily: 'var(--font-ui)' }}>
                         {timeline.currentProgress}%
                       </span>
                     </div>
@@ -435,11 +435,11 @@ export default function CaseTimelinePage() {
                       {/* Card */}
                       <div style={{ padding: '12px', borderLeft: `3px solid ${phaseColors[milestone.phase]}`, background: milestone.completed ? 'rgba(34,197,94,0.06)' : 'var(--color-surface-1)', borderRadius: '4px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', marginBottom: '4px' }}>
-                          <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                          <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                             {milestone.name}
                           </h4>
                           {milestone.completed && (
-                            <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--data-positive)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
+                            <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--data-positive)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
                               Completed
                             </span>
                           )}
@@ -448,7 +448,7 @@ export default function CaseTimelinePage() {
                           <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                             {milestone.plannedMonthsFromFiling.toFixed(1)} months
                           </span>
-                          <span style={{ fontSize: '11px', color: 'var(--color-text-muted)', fontFamily: 'var(--font-ui)' }}>
+                          <span style={{ fontSize: '12px', color: 'var(--color-text-muted)', fontFamily: 'var(--font-ui)' }}>
                             {phaseLabels[milestone.phase]}
                           </span>
                         </div>
@@ -473,8 +473,8 @@ export default function CaseTimelinePage() {
         {/* Navigation */}
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Back to Attorney Mode
               </p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -483,8 +483,8 @@ export default function CaseTimelinePage() {
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Case Predictor
               </p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -493,8 +493,8 @@ export default function CaseTimelinePage() {
             </div>
           </Link>
           <Link href="/attorney/court-rules" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '13px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Court Rules Reference
               </p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>

@@ -312,7 +312,7 @@ export default function TranslatePage() {
                   background: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   lineHeight: '1.5',
                 }}
               >
@@ -369,7 +369,7 @@ export default function TranslatePage() {
                         <span
                           key={j}
                           style={{
-                            fontSize: '10px',
+                            fontSize: '12px',
                             padding: '2px 6px',
                             background: 'rgba(139,92,246,0.08)',
                             color: 'var(--gold)',
@@ -404,7 +404,7 @@ export default function TranslatePage() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                style={{ transform: historyExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}
+                style={{ transform: historyExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 200ms' }}
               >
                 <path d="M6 9l6 6 6-6" />
               </svg>

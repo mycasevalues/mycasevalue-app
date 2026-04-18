@@ -174,8 +174,8 @@ export default function ApiDocsPage() {
               borderRadius: 999,
               border: '1px solid rgba(59,130,246,0.2)',
               background: 'rgba(59,130,246,0.08)',
-              fontFamily: 'var(--font-mono)', fontSize: 10,
-              fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+              fontFamily: 'var(--font-mono)', fontSize: 12,
+              fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
               color: 'var(--link)',
             }}>
               <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -271,7 +271,7 @@ export default function ApiDocsPage() {
                   padding: 12,
                   backgroundColor: 'rgba(255,255,255,0.05)',
                   borderRadius: '2px',
-                  fontSize: 13,
+                  fontSize: 14,
                   fontFamily: 'monospace',
                   color: 'var(--color-text-primary)',
                   wordBreak: 'break-all',
@@ -301,7 +301,7 @@ export default function ApiDocsPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   <div>
                     <p style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-ui)',
@@ -321,7 +321,7 @@ export default function ApiDocsPage() {
                   </div>
                   <div>
                     <p style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 600,
                       color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-ui)',
@@ -372,11 +372,11 @@ export default function ApiDocsPage() {
                         padding: '4px 10px',
                         backgroundColor: endpoint.method === 'GET' ? 'var(--link-light)' : 'var(--data-negative-bg)',
                         color: endpoint.method === 'GET' ? 'var(--link)' : 'var(--data-negative)',
-                        fontSize: '11px',
+                        fontSize: '12px',
                         fontWeight: 700,
                         fontFamily: 'monospace',
                         borderRadius: '4px',
-                        letterSpacing: '0.05em',
+                        letterSpacing: '0.5px',
                       }}>
                         {endpoint.method}
                       </span>
@@ -413,13 +413,13 @@ export default function ApiDocsPage() {
                     {/* Example Request */}
                     <div>
                       <h4 style={{
-                        fontSize: 13,
+                        fontSize: 14,
                         fontWeight: 700,
                         color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-ui)',
                         marginBottom: 12,
                         textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
+                        letterSpacing: '0.5px',
                       }}>
                         Example Request
                       </h4>
@@ -442,13 +442,13 @@ export default function ApiDocsPage() {
                     {/* Example Response */}
                     <div>
                       <h4 style={{
-                        fontSize: 13,
+                        fontSize: 14,
                         fontWeight: 700,
                         color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-ui)',
                         marginBottom: 12,
                         textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
+                        letterSpacing: '0.5px',
                       }}>
                         Example Response
                       </h4>
@@ -508,7 +508,7 @@ export default function ApiDocsPage() {
                   padding: 16,
                   backgroundColor: 'var(--color-text-primary)',
                   borderRadius: '2px',
-                  fontSize: 11,
+                  fontSize: 12,
                   fontFamily: 'monospace',
                   color: 'var(--border-default)',
                   wordBreak: 'break-all',
@@ -541,7 +541,7 @@ export default function ApiDocsPage() {
                   padding: 16,
                   backgroundColor: 'var(--color-text-primary)',
                   borderRadius: '2px',
-                  fontSize: 11,
+                  fontSize: 12,
                   fontFamily: 'monospace',
                   color: 'var(--border-default)',
                   wordBreak: 'break-all',
@@ -577,7 +577,7 @@ export default function ApiDocsPage() {
                   padding: 16,
                   backgroundColor: 'var(--color-text-primary)',
                   borderRadius: '2px',
-                  fontSize: 11,
+                  fontSize: 12,
                   fontFamily: 'monospace',
                   color: 'var(--border-default)',
                   wordBreak: 'break-all',
@@ -621,37 +621,37 @@ r = requests.get(
                   <tr style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-0)' }}>
                     <th style={{
                       padding: 16,
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 600,
                       textAlign: 'left',
                       color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-ui)',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
+                      letterSpacing: '0.5px',
                     }}>
                       Code
                     </th>
                     <th style={{
                       padding: 16,
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 600,
                       textAlign: 'left',
                       color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-ui)',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
+                      letterSpacing: '0.5px',
                     }}>
                       Meaning
                     </th>
                     <th style={{
                       padding: 16,
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 600,
                       textAlign: 'left',
                       color: 'var(--color-text-primary)',
                       fontFamily: 'var(--font-ui)',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
+                      letterSpacing: '0.5px',
                     }}>
                       Description
                     </th>

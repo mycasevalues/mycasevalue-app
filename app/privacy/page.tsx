@@ -58,7 +58,7 @@ export default function PrivacyPage() {
           text-decoration: none;
           border-left: 2px solid transparent;
           padding-left: 16px;
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
           line-height: 1.5;
         }
 
@@ -76,7 +76,7 @@ export default function PrivacyPage() {
         .breadcrumb-home-link {
           color: var(--bdr);
           text-decoration: none;
-          transition: color 0.2s;
+          transition: color 200ms;
         }
 
         .breadcrumb-home-link:hover {
@@ -157,7 +157,7 @@ export default function PrivacyPage() {
       <div style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: 'var(--bdr)' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '12px', color: 'var(--bdr)' }}>
             <a href="/" className="breadcrumb-home-link">Home</a>
             <span>/</span>
             <span style={{ color: 'var(--color-surface-0)' }}>Privacy Policy</span>
@@ -170,8 +170,8 @@ export default function PrivacyPage() {
             paddingRight: '12px',
             paddingTop: '6px',
             paddingBottom: '6px',
-            borderRadius: '9999px',
-            fontSize: '11px',
+            borderRadius: '3px',
+            fontSize: '12px',
             fontWeight: 700,
             letterSpacing: '1.5px',
             textTransform: 'uppercase',
@@ -204,7 +204,7 @@ export default function PrivacyPage() {
             Last updated: April 2026
           </p>
           <p style={{
-            fontSize: '13px',
+            fontSize: '14px',
             lineHeight: '1.5',
             color: 'rgba(255,255,255,0.6)',
             marginTop: '8px'
@@ -556,7 +556,7 @@ export default function PrivacyPage() {
       {/* Footer disclaimer */}
       <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center' }}>
         <p style={{
-          fontSize: '11px',
+          fontSize: '12px',
           maxWidth: '400px',
           margin: '0 auto',
           paddingLeft: '24px',

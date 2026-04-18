@@ -179,12 +179,12 @@ export default function MotionRateExplorer() {
   const thStyle: React.CSSProperties = {
     padding: '16px',
     textAlign: 'left',
-    fontSize: '13px',
+    fontSize: '14px',
     fontWeight: 600,
     color: 'var(--color-text-primary)',
     cursor: 'pointer',
     userSelect: 'none',
-    transition: 'background-color 0.2s',
+    transition: 'background-color 200ms',
   };
 
   const tdStyle: React.CSSProperties = {
@@ -208,13 +208,13 @@ export default function MotionRateExplorer() {
     fontSize: '14px',
     color: 'var(--accent-primary)',
     fontWeight: 600,
-    transition: 'color 0.2s',
+    transition: 'color 200ms',
   };
 
   const circuitTableStyle: React.CSSProperties = {
     width: '100%',
     borderCollapse: 'collapse',
-    fontSize: '13px',
+    fontSize: '14px',
     backgroundColor: 'var(--color-surface-0)',
   };
 
@@ -229,7 +229,7 @@ export default function MotionRateExplorer() {
     border: '1px solid var(--wrn-bg, #FCD34D)',
     borderRadius: '4px',
     padding: '16px',
-    fontSize: '13px',
+    fontSize: '14px',
     color: 'var(--wrn-txt, #7A5800)',
     lineHeight: 1.6,
     marginTop: '32px',
@@ -391,7 +391,7 @@ export default function MotionRateExplorer() {
                       <tr>
                         <td colSpan={5} style={{ padding: '16px', backgroundColor: 'var(--color-surface-0)' }}>
                           <div style={{ marginBottom: '12px' }}>
-                            <h4 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0' }}>
+                            <h4 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0' }}>
                               Circuit Breakdown
                             </h4>
                             <table style={circuitTableStyle}>

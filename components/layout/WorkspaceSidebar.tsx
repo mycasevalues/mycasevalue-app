@@ -195,13 +195,13 @@ function FilterCheckbox({
         onClick={(e) => { e.preventDefault(); onChange(); }}
       >
         {checked && (
-          <span style={{ color: 'var(--card, #FFFFFF)', fontSize: 9, fontWeight: 700, lineHeight: 1 }}>✓</span>
+          <span style={{ color: 'var(--card, #FFFFFF)', fontSize: 12, fontWeight: 700, lineHeight: 1 }}>✓</span>
         )}
       </div>
       <span className="filter-label" style={{ flex: 1, transition: 'color 100ms ease' }}>{label}</span>
       <span style={{
         fontFamily: 'var(--font-mono)',
-        fontSize: 10,
+        fontSize: 12,
         color: 'var(--text3)',
       }}>
         {formatCount(count)}
@@ -247,7 +247,7 @@ function FilterSectionGroup({ section }: { section: FilterSection }) {
         }}
       >
         <span>{section.title}</span>
-        <span style={{ fontSize: 10, color: 'var(--text3)' }}>{isOpen ? '▴' : '▾'}</span>
+        <span style={{ fontSize: 12, color: 'var(--text3)' }}>{isOpen ? '▴' : '▾'}</span>
       </button>
 
       {/* Section body */}
@@ -264,7 +264,7 @@ function FilterSectionGroup({ section }: { section: FilterSection }) {
           ))}
           {section.title === 'Judge' && (
             <div style={{
-              fontSize: 11,
+              fontSize: 12,
               color: 'var(--link)',
               cursor: 'pointer',
               marginTop: 4,
@@ -362,7 +362,7 @@ export default function WorkspaceSidebar({
               href="/"
               style={{
                 fontFamily: 'var(--font-baskerville, var(--font-legal))',
-                fontSize: 13,
+                fontSize: 14,
                 fontWeight: 700,
                 color: 'var(--text1)',
                 textDecoration: 'none',
@@ -411,7 +411,7 @@ export default function WorkspaceSidebar({
                         flex: 1,
                         border: 'none',
                         padding: '0 8px',
-                        fontSize: 11,
+                        fontSize: 12,
                         fontFamily: 'var(--font-sans, var(--font-ui))',
                         color: 'var(--text2)',
                         outline: 'none',
@@ -449,17 +449,17 @@ export default function WorkspaceSidebar({
                 padding: '0 14px',
               }}>
                 <span style={{
-                  fontSize: 11,
+                  fontSize: 12,
                   fontFamily: 'var(--font-sans, var(--font-ui))',
                   fontWeight: 600,
                   textTransform: 'uppercase',
-                  letterSpacing: '0.07em',
+                  letterSpacing: '0.5px',
                   color: 'var(--text2)',
                 }}>
                   Content Types
                 </span>
                 <span style={{
-                  fontSize: 11,
+                  fontSize: 12,
                   color: 'var(--link)',
                   cursor: 'pointer',
                   fontFamily: 'var(--font-sans, var(--font-ui))',
@@ -507,7 +507,7 @@ export default function WorkspaceSidebar({
                       </span>
                       <span style={{
                         fontFamily: 'var(--font-mono)',
-                        fontSize: 10,
+                        fontSize: 12,
                         color: 'var(--text3)',
                       }}>
                         {formatCount(ct.count)}
@@ -538,17 +538,17 @@ export default function WorkspaceSidebar({
                 padding: '0 14px',
               }}>
                 <span style={{
-                  fontSize: 11,
+                  fontSize: 12,
                   fontFamily: 'var(--font-sans, var(--font-ui))',
                   fontWeight: 600,
                   textTransform: 'uppercase',
-                  letterSpacing: '0.07em',
+                  letterSpacing: '0.5px',
                   color: 'var(--text2)',
                 }}>
                   Page Contents
                 </span>
                 <span style={{
-                  fontSize: 11,
+                  fontSize: 12,
                   color: 'var(--link)',
                   cursor: 'pointer',
                   fontFamily: 'var(--font-sans, var(--font-ui))',

@@ -74,15 +74,15 @@ export default function DocumentIntelligencePage() {
             onChange={e => setFile(e.target.files?.[0] || null)}
             style={{ display: 'block', margin: '0 auto 16px', fontSize: '14px' }}
           />
-          {file && <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>Selected: {file.name} ({(file.size / 1024).toFixed(1)} KB)</p>}
+          {file && <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>Selected: {file.name} ({(file.size / 1024).toFixed(1)} KB)</p>}
           <button
             onClick={handleUpload}
             disabled={!file || loading}
-            style={{ padding: '0 28px', height: '48px', background: !file || loading ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '2px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
+            style={{ padding: '0 28px', height: '48px', background: !file || loading ? 'var(--border-default)' : 'var(--accent-primary)', color: 'var(--color-text-primary)', border: 'none', borderRadius: '2px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.5px' }}
           >
             {loading ? 'Analyzing...' : 'Analyze Document'}
           </button>
-          <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '12px' }}>Supported: PDF, TXT, DOC, DOCX · Max 10MB</p>
+          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '12px' }}>Supported: PDF, TXT, DOC, DOCX · Max 10MB</p>
         </div>
 
         {error && <div style={{ padding: '12px 16px', background: 'rgba(10, 102, 194, 0.12)', border: '1px solid var(--border-default)', borderRadius: '4px', color: 'var(--accent-primary)', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
@@ -94,7 +94,7 @@ export default function DocumentIntelligencePage() {
           </div>
         )}
 
-        <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '24px', fontStyle: 'italic' }}>
+        <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '24px', fontStyle: 'italic' }}>
           Document Intelligence uses AI to analyze legal documents. Results are informational only and not legal advice. Documents are processed securely and not stored after analysis.
         </p>
 
@@ -108,9 +108,9 @@ export default function DocumentIntelligencePage() {
               { name: 'Discovery Generator', href: '/attorney/discovery-generator', desc: 'Generate discovery requests and responses' },
               { name: 'Compare Text', href: '/attorney/compare-text', desc: 'Compare legal documents side by side' },
             ].map(tool => (
-              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                 <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
               </a>
             ))}
           </div>

@@ -277,7 +277,7 @@ export default function ResetPasswordPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-ui)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--accent-primary)',
                     margin: 0,
                   }}
@@ -324,7 +324,7 @@ export default function ResetPasswordPage() {
                     color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)',
                     boxSizing: 'border-box',
-                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                    transition: 'border-color 200ms, box-shadow 200ms',
                   }}
                 />
               </div>
@@ -364,7 +364,7 @@ export default function ResetPasswordPage() {
                     color: 'var(--color-text-primary)',
                     backgroundColor: 'var(--color-surface-0)',
                     boxSizing: 'border-box',
-                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                    transition: 'border-color 200ms, box-shadow 200ms',
                   }}
                 />
               </div>
@@ -387,7 +387,7 @@ export default function ResetPasswordPage() {
                   fontWeight: 600,
                   cursor: loading ? 'not-allowed' : 'pointer',
                   opacity: loading ? 0.7 : 1,
-                  transition: 'background-color 0.2s, transform 0.1s',
+                  transition: 'background-color 200ms, transform 150ms',
                 }}
               >
                 {loading ? 'Updating...' : 'Update Password'}

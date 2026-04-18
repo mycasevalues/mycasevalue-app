@@ -179,7 +179,7 @@ export default function CitationsPage() {
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '24px 16px 40px' }}>
 
       {/* Breadcrumb */}
-      <nav style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 24 }}>
+      <nav style={{ fontSize: 14, color: 'var(--color-text-muted)', marginBottom: 24 }}>
         <Link href="/legal" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Research Hub</Link>
         <span style={{ margin: '0 8px' }}>/</span>
         <span>Citation Explorer</span>
@@ -202,7 +202,7 @@ export default function CitationsPage() {
           style={{
             padding: '8px 16px',
             borderRadius: 20,
-            fontSize: 13,
+            fontSize: 14,
             fontWeight: 500,
             border: !activeCategory ? '2px solid var(--accent-primary)' : '1px solid var(--bdr)',
             background: !activeCategory ? '#E8F4FD' : 'var(--color-surface-0)',
@@ -219,7 +219,7 @@ export default function CitationsPage() {
             style={{
               padding: '8px 16px',
               borderRadius: 20,
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: 500,
               border: activeCategory === cat.key ? `2px solid ${cat.color}` : '1px solid var(--bdr)',
               background: activeCategory === cat.key ? `${cat.color}14` : 'var(--color-surface-0)',
@@ -339,7 +339,7 @@ export default function CitationsPage() {
               <span style={{
                 padding: '3px 10px',
                 borderRadius: 4,
-                fontSize: 11,
+                fontSize: 12,
                 fontWeight: 600,
                 color: CATEGORY_COLORS[selected.category],
                 background: `${CATEGORY_COLORS[selected.category]}14`,
@@ -353,10 +353,10 @@ export default function CitationsPage() {
             <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
               {selected.name}
             </h3>
-            <div style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 8 }}>
+            <div style={{ fontSize: 14, color: 'var(--color-text-muted)', marginBottom: 8 }}>
               {selected.court} &middot; {selected.year}
             </div>
-            <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: '0 0 12px' }}>
+            <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: '0 0 12px' }}>
               {selected.significance}
             </p>
             <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 6 }}>
@@ -395,25 +395,25 @@ export default function CitationsPage() {
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono, monospace)' }}>
             {NODES.length}
           </div>
-          <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Landmark Cases</div>
+          <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>Landmark Cases</div>
         </div>
         <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-mono, monospace)' }}>
             {CITATIONS.length}
           </div>
-          <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Citation Links</div>
+          <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>Citation Links</div>
         </div>
         <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--data-positive)', fontFamily: 'var(--font-mono, monospace)' }}>
             {CATEGORIES.length}
           </div>
-          <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Legal Categories</div>
+          <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>Legal Categories</div>
         </div>
         <div style={{ padding: '24px', borderRadius: 4, border: '1px solid var(--border-default)', background: 'var(--color-surface-0)', textAlign: 'center' }}>
           <div style={{ fontSize: 28, fontWeight: 700, color: 'var(--wrn-txt)', fontFamily: 'var(--font-mono, monospace)' }}>
             {new Date().getFullYear() - Math.min(...NODES.map(n => n.year))}+
           </div>
-          <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>Years of Precedent</div>
+          <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>Years of Precedent</div>
         </div>
       </div>
 
@@ -432,26 +432,26 @@ export default function CitationsPage() {
                 background: 'var(--color-surface-0)',
                 textAlign: 'left',
                 cursor: 'pointer',
-                transition: 'border-color 0.15s',
+                transition: 'border-color 150ms',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                 <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)' }}>{node.name}</span>
                 <span style={{ fontSize: 12, color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono, monospace)' }}>{node.year}</span>
               </div>
-              <div style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 6 }}>{node.significance}</div>
+              <div style={{ fontSize: 14, color: 'var(--color-text-muted)', marginBottom: 6 }}>{node.significance}</div>
               <div style={{ display: 'flex', gap: 6 }}>
                 <span style={{
                   padding: '2px 8px',
                   borderRadius: 4,
-                  fontSize: 10,
+                  fontSize: 12,
                   fontWeight: 600,
                   color: CATEGORY_COLORS[node.category],
                   background: `${CATEGORY_COLORS[node.category]}14`,
                 }}>
                   {CATEGORIES.find(c => c.key === node.category)?.label}
                 </span>
-                <span style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>
+                <span style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>
                   {getConnections(node.id).length} citation{getConnections(node.id).length !== 1 ? 's' : ''}
                 </span>
               </div>

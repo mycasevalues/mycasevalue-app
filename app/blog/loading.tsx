@@ -5,7 +5,7 @@ export default function BlogLoading() {
       <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4 animate-pulse"
-            style={{ background: 'rgba(239,68,68,0.08)', color: 'var(--accent-primary)', borderRadius: '9999px' }}>
+            style={{ background: 'rgba(239,68,68,0.08)', color: 'var(--accent-primary)', borderRadius: '3px' }}>
             <div className="w-3 h-3" style={{ background: 'var(--accent-primary)', borderRadius: '50%' }} />
             INSIGHTS & ANALYSIS
           </div>
@@ -30,8 +30,8 @@ export default function BlogLoading() {
                   <div className="h-4 w-5/6 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '4px' }} />
                 </div>
                 <div className="flex gap-2 pt-4">
-                  <div className="h-4 w-20 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '9999px' }} />
-                  <div className="h-4 w-20 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '9999px' }} />
+                  <div className="h-4 w-20 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '3px' }} />
+                  <div className="h-4 w-20 animate-pulse" style={{ background: 'var(--border-default)', borderRadius: '3px' }} />
                 </div>
               </div>
             </div>

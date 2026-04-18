@@ -119,7 +119,7 @@ export default function ParalegalsPage() {
               fontWeight: 600,
               transition: 'all 300ms ease',
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.5px',
             }}
             className="hover:opacity-90 hover:-translate-y-0.5"
           >

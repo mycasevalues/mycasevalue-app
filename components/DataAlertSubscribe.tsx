@@ -110,7 +110,7 @@ export default function DataAlertSubscribe({
               fontSize: '14px',
               fontWeight: 500,
               cursor: 'pointer',
-              transition: 'background-color 0.2s',
+              transition: 'background-color 200ms',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
@@ -127,7 +127,7 @@ export default function DataAlertSubscribe({
             <span>Get notified when data changes</span>
             <span
               style={{
-                transition: 'transform 0.2s',
+                transition: 'transform 200ms',
                 transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
               }}
             >
@@ -148,7 +148,7 @@ export default function DataAlertSubscribe({
                 <label
                   style={{
                     display: 'block',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 500,
                     color: 'var(--color-text-primary)',
                     marginBottom: '6px',
@@ -167,7 +167,7 @@ export default function DataAlertSubscribe({
                     padding: '8px 10px',
                     border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: '4px',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontFamily: 'var(--font-ui)',
                     backgroundColor: 'var(--color-surface-0)',
                     color: 'var(--color-text-primary)',
@@ -180,7 +180,7 @@ export default function DataAlertSubscribe({
                 <label
                   style={{
                     display: 'block',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 500,
                     color: 'var(--color-text-primary)',
                     marginBottom: '6px',
@@ -196,7 +196,7 @@ export default function DataAlertSubscribe({
                     padding: '8px 10px',
                     border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: '4px',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontFamily: 'var(--font-ui)',
                     backgroundColor: 'var(--color-surface-0)',
                     color: 'var(--color-text-primary)',
@@ -225,7 +225,7 @@ export default function DataAlertSubscribe({
               {error && (
                 <p
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--data-negative, #B01E1E)',
                     marginBottom: '12px',
                     margin: 0,
@@ -254,10 +254,10 @@ export default function DataAlertSubscribe({
                     color: 'var(--color-text-primary)',
                     border: '1px solid rgba(255,255,255,0.1)',
                     borderRadius: '4px',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 500,
                     cursor: 'pointer',
-                    transition: 'all 0.2s',
+                    transition: 'all 200ms',
                   }}
                   onMouseEnter={(e) => {
                     (e.target as HTMLButtonElement).style.backgroundColor =
@@ -279,10 +279,10 @@ export default function DataAlertSubscribe({
                     color: 'var(--color-surface-0)',
                     border: 'none',
                     borderRadius: '4px',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 500,
                     cursor: isLoading ? 'not-allowed' : 'pointer',
-                    transition: 'background-color 0.2s',
+                    transition: 'background-color 200ms',
                   }}
                   onMouseEnter={(e) => {
                     if (!isLoading) {

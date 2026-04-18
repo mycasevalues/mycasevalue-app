@@ -221,9 +221,9 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
             border: 'none',
             borderRadius: '4px',
             cursor: 'pointer',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: '600',
-            transition: 'background-color 0.2s',
+            transition: 'background-color 200ms',
             whiteSpace: 'nowrap',
           }}
         >
@@ -261,7 +261,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
             </div>
             <div
               style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 color: 'var(--text-tertiary)',
               }}
             >
@@ -290,7 +290,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
             </div>
             <div
               style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 color: 'var(--text-tertiary)',
               }}
             >
@@ -308,7 +308,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
           backgroundColor: 'rgba(234,179,8,0.1)',
           borderRadius: '4px',
           border: '1px solid var(--wrn-bg, #FCD34D)',
-          fontSize: '13px',
+          fontSize: '14px',
           color: 'var(--wrn-txt, #7A5800)',
         }}
       >

@@ -186,7 +186,7 @@ export default function AboutPage() {
           top: 1rem;
           right: 1.25rem;
           font-family: var(--font-mono);
-          font-size: 8px;
+          font-size: 12px;
           font-weight: 600;
           letter-spacing: 0.2em;
           color: rgba(59,130,246,0.4);
@@ -302,7 +302,7 @@ export default function AboutPage() {
           padding: 8px 20px;
           border-radius: 4px;
           font-family: var(--font-ui);
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 600;
           letter-spacing: -0.005em;
           text-decoration: none;
@@ -365,8 +365,8 @@ export default function AboutPage() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />

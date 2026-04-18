@@ -189,14 +189,14 @@ export default function AccountPage() {
         {/* Header */}
         <div style={{ backgroundColor: 'var(--accent-primary)', padding: '24px 20px' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
-              <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-surface-0)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
+            <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
+              <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 200ms' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-surface-0)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
                 Home
               </Link>
               {' > Account'}
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-              <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Account
               </span>
             </div>
@@ -223,14 +223,14 @@ export default function AccountPage() {
       {/* Dark Navy Header */}
       <div style={{ backgroundColor: 'var(--accent-primary)', padding: '24px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
-            <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-surface-0)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
+          <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
+            <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 200ms' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-surface-0)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
               Home
             </Link>
             {' > Account'}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-            <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+            <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               Account
             </span>
           </div>
@@ -283,7 +283,7 @@ export default function AccountPage() {
               </div>
 
               {profileMsg && (
-                <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: profileMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: profileMsg.type === 'success' ? 'var(--data-positive)' : 'var(--data-negative)', border: `1px solid ${profileMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
+                <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '14px', fontWeight: 500, backgroundColor: profileMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: profileMsg.type === 'success' ? 'var(--data-positive)' : 'var(--data-negative)', border: `1px solid ${profileMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
                   {profileMsg.text}
                 </div>
               )}
@@ -291,7 +291,7 @@ export default function AccountPage() {
               <button
                 type="submit"
                 disabled={saving}
-                style={{ padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.6 : 1, textTransform: 'uppercase' }}
+                style={{ padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.6 : 1, textTransform: 'uppercase' }}
               >
                 {saving ? 'Saving...' : 'Save Changes'}
               </button>
@@ -334,7 +334,7 @@ export default function AccountPage() {
               </div>
 
               {passwordMsg && (
-                <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: passwordMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: passwordMsg.type === 'success' ? 'var(--data-positive)' : 'var(--data-negative)', border: `1px solid ${passwordMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
+                <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '14px', fontWeight: 500, backgroundColor: passwordMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: passwordMsg.type === 'success' ? 'var(--data-positive)' : 'var(--data-negative)', border: `1px solid ${passwordMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
                   {passwordMsg.text}
                 </div>
               )}
@@ -342,7 +342,7 @@ export default function AccountPage() {
               <button
                 type="submit"
                 disabled={passwordSaving}
-                style={{ padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 600, cursor: passwordSaving ? 'not-allowed' : 'pointer', opacity: passwordSaving ? 0.6 : 1, textTransform: 'uppercase' }}
+                style={{ padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: passwordSaving ? 'not-allowed' : 'pointer', opacity: passwordSaving ? 0.6 : 1, textTransform: 'uppercase' }}
               >
                 {passwordSaving ? 'Updating...' : 'Update Password'}
               </button>
@@ -359,18 +359,18 @@ export default function AccountPage() {
               <span className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                 {planLabels[planInfo?.plan || 'free'] || 'Free'}
               </span>
-              <span style={{ padding: '4px 10px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? 'var(--color-surface-1)' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? 'var(--color-text-secondary)' : 'var(--gold)' }}>
+              <span style={{ padding: '4px 10px', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? 'var(--color-surface-1)' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? 'var(--color-text-secondary)' : 'var(--gold)' }}>
                 {planInfo?.plan === 'free' ? 'Free' : 'Active'}
               </span>
             </div>
 
             {planInfo?.grantedAt && (
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Member since {new Date(planInfo.grantedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
             {planInfo?.expiresAt && (
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
                 Renews {new Date(planInfo.expiresAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
@@ -390,22 +390,22 @@ export default function AccountPage() {
             <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               API Keys
             </h2>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0', lineHeight: 1.5 }}>
               Use API keys to access the MyCaseValue REST API programmatically. Keys are scoped to your account and plan.
             </p>
 
             {apiKeyMsg && (
-              <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: apiKeyMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: apiKeyMsg.type === 'success' ? 'var(--data-positive)' : 'var(--data-negative)', border: `1px solid ${apiKeyMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
+              <div style={{ padding: '8px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '14px', fontWeight: 500, backgroundColor: apiKeyMsg.type === 'success' ? 'rgba(34,197,94,0.08)' : 'rgba(239,68,68,0.08)', color: apiKeyMsg.type === 'success' ? 'var(--data-positive)' : 'var(--data-negative)', border: `1px solid ${apiKeyMsg.type === 'success' ? 'rgba(34,197,94,0.2)' : 'rgba(239,68,68,0.2)'}` }}>
                 {apiKeyMsg.text}
               </div>
             )}
 
             {newApiKey && (
               <div style={{ padding: '16px', borderRadius: '4px', marginBottom: '16px', backgroundColor: 'rgba(59,130,246,0.06)', border: '1px solid var(--link-light, #BAE6FD)' }}>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--gold)', margin: '0 0 16px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--gold)', margin: '0 0 16px 0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Your New API Key (copy now)
                 </p>
-                <code style={{ display: 'block', padding: '8px 12px', backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '13px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', wordBreak: 'break-all', border: '1px solid var(--border-default)' }}>
+                <code style={{ display: 'block', padding: '8px 12px', backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '14px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', wordBreak: 'break-all', border: '1px solid var(--border-default)' }}>
                   {newApiKey}
                 </code>
               </div>
@@ -413,7 +413,7 @@ export default function AccountPage() {
 
             {apiKeys.length > 0 && (
               <div style={{ marginBottom: '24px' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                   <thead>
                     <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                       <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Key</th>
@@ -438,7 +438,7 @@ export default function AccountPage() {
                           <button
                             onClick={() => handleRevokeApiKey(key.id)}
                             className="revoke-btn"
-                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: 'var(--data-negative)', backgroundColor: 'transparent', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '4px', cursor: 'pointer', transition: 'all 0.2s' }}
+                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: 'var(--data-negative)', backgroundColor: 'transparent', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '2px', cursor: 'pointer', transition: 'all 200ms' }}
                           >
                             Revoke
                           </button>
@@ -456,7 +456,7 @@ export default function AccountPage() {
             <button
               onClick={handleGenerateApiKey}
               disabled={apiKeyLoading}
-              style={{ padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 600, cursor: apiKeyLoading ? 'not-allowed' : 'pointer', opacity: apiKeyLoading ? 0.6 : 1, textTransform: 'uppercase' }}
+              style={{ padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: apiKeyLoading ? 'not-allowed' : 'pointer', opacity: apiKeyLoading ? 0.6 : 1, textTransform: 'uppercase' }}
             >
               {apiKeyLoading ? 'Generating...' : 'Generate New API Key'}
             </button>
@@ -478,7 +478,7 @@ export default function AccountPage() {
                   key={link.href}
                   href={link.href}
                   className="quick-link-card"
-                  style={{ display: 'block', padding: '16px', borderRadius: '4px', border: '1px solid var(--border-default)', textDecoration: 'none', transition: 'all 0.2s' }}
+                  style={{ display: 'block', padding: '16px', borderRadius: '4px', border: '1px solid var(--border-default)', textDecoration: 'none', transition: 'all 200ms' }}
                 >
                   <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>{link.label}</div>
                   <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{link.desc}</div>
@@ -498,7 +498,7 @@ export default function AccountPage() {
             <button
               onClick={handleSignOut}
               className="sign-out-btn"
-              style={{ width: '100%', padding: '12px', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s' }}
+              style={{ width: '100%', padding: '12px', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', transition: 'all 200ms' }}
             >
               Sign Out
             </button>
@@ -513,7 +513,7 @@ export default function AccountPage() {
               <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>
                 Danger Zone
               </h2>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.5 }}>
                 Permanently delete your account and all associated data. This action cannot be undone.
               </p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>

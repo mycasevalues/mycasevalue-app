@@ -70,8 +70,8 @@ export default function FeesPage() {
             borderRadius: 999,
             border: '1px solid rgba(10,80,162,0.2)',
             background: 'rgba(10,80,162,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -87,7 +87,7 @@ export default function FeesPage() {
       </header>
 
       {/* Breadcrumb */}
-      <nav style={{ background: 'var(--color-surface-0)', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 13, fontFamily: 'var(--font-ui)' }}>
+      <nav style={{ background: 'var(--color-surface-0)', padding: '12px 0', borderBottom: '1px solid var(--border-default)', fontSize: 14, fontFamily: 'var(--font-ui)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
           <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Home</Link>
           <span style={{ color: 'var(--border-default)', margin: '0 8px' }}>/</span>
@@ -116,7 +116,7 @@ export default function FeesPage() {
                     <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                       {fee.note}
                     </div>
-                    <div style={{ fontSize: 11, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', marginTop: 2 }}>
+                    <div style={{ fontSize: 12, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', marginTop: 2 }}>
                       {fee.rule}
                     </div>
                   </div>
@@ -163,13 +163,13 @@ export default function FeesPage() {
             <h2 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
               Pro Hac Vice Admission Fees
             </h2>
-            <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)', lineHeight: 1.5 }}>
+            <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: '0 0 20px', fontFamily: 'var(--font-ui)', lineHeight: 1.5 }}>
               Fees vary by district. Below is a sample of common federal districts. Check your specific district&apos;s local rules for the exact fee.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 8 }}>
               {PRO_HAC_VICE.map((d, i) => (
                 <div key={i} style={{ padding: '16px 16px', background: 'var(--color-surface-1)', borderRadius: 4, border: '1px solid var(--border-default)', textAlign: 'center' }}>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginBottom: 4 }}>
                     {d.district}
                   </div>
                   <div style={{ fontSize: 20, fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
@@ -202,7 +202,7 @@ export default function FeesPage() {
               <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--gold)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
                 General Eligibility Guidelines
               </h3>
-              <div style={{ fontSize: 13, color: 'var(--color-text-primary)', lineHeight: 1.8, fontFamily: 'var(--font-ui)' }}>
+              <div style={{ fontSize: 14, color: 'var(--color-text-primary)', lineHeight: 1.8, fontFamily: 'var(--font-ui)' }}>
                 Courts typically consider whether your income falls below 150% of the federal poverty guidelines. For 2024, this is approximately $22,590 for an individual (varies by household size). You must disclose all income, assets, debts, and monthly expenses on the application. Receipt of government assistance (SSI, SNAP, Medicaid) generally supports eligibility but is not automatically sufficient.
               </div>
             </div>
@@ -215,7 +215,7 @@ export default function FeesPage() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: 8, padding: '16px 24px',
                   background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4,
-                  textDecoration: 'none', color: 'var(--color-text-primary)', transition: 'border-color 0.2s',
+                  textDecoration: 'none', color: 'var(--color-text-primary)', transition: 'border-color 200ms',
                 }}
               >
                 <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'var(--font-ui)' }}>
@@ -232,7 +232,7 @@ export default function FeesPage() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: 8, padding: '16px 24px',
                   background: 'var(--color-surface-1)', border: '1px solid var(--border-default)', borderRadius: 4,
-                  textDecoration: 'none', color: 'var(--color-text-primary)', transition: 'border-color 0.2s',
+                  textDecoration: 'none', color: 'var(--color-text-primary)', transition: 'border-color 200ms',
                 }}
               >
                 <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'var(--font-ui)' }}>

@@ -64,7 +64,7 @@ export default function ReferralPage() {
       {/* Header */}
       <div style={{ backgroundColor: 'var(--accent-primary)', padding: '24px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
+          <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Home</Link>
             {' > Referral Program'}
           </div>
@@ -96,7 +96,7 @@ export default function ReferralPage() {
                     {item.step}
                   </div>
                   <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 6px 0' }}>{item.title}</h3>
-                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>{item.desc}</p>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.5 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -109,7 +109,7 @@ export default function ReferralPage() {
             </h2>
 
             {error && (
-              <div style={{ padding: '12px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '13px', backgroundColor: 'rgba(239,68,68,0.08)', color: 'var(--data-negative)', border: '1px solid rgba(239,68,68,0.2)' }}>
+              <div style={{ padding: '12px 16px', borderRadius: '4px', marginBottom: '16px', fontSize: '14px', backgroundColor: 'rgba(239,68,68,0.08)', color: 'var(--data-negative)', border: '1px solid rgba(239,68,68,0.2)' }}>
                 {error}
                 {error.includes('Sign in') && (
                   <span>{' '}<Link href="/sign-in" style={{ color: 'var(--gold)', fontWeight: 600 }}>Sign in here</Link></span>
@@ -131,7 +131,7 @@ export default function ReferralPage() {
                   </code>
                   <button
                     onClick={handleCopy}
-                    style={{ padding: '12px 20px', backgroundColor: copied ? '#065F46' : 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background-color 0.2s' }}
+                    style={{ padding: '12px 20px', backgroundColor: copied ? 'var(--data-positive)' : 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background-color 200ms' }}
                   >
                     {copied ? 'Copied!' : 'Copy Link'}
                   </button>
@@ -143,7 +143,7 @@ export default function ReferralPage() {
             ) : (
               <button
                 onClick={handleGenerate}
-                style={{ padding: '12px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase' }}
+                style={{ padding: '12px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase' }}
               >
                 Generate Referral Code
               </button>

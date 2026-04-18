@@ -163,7 +163,7 @@ export default function HomePage() {
           {/* Eyebrow */}
           <p
             style={{
-              fontSize: 10,
+              fontSize: 12,
               fontFamily: 'var(--font-ui)',
               fontWeight: 700,
               textTransform: 'uppercase',
@@ -194,7 +194,7 @@ export default function HomePage() {
           {/* Body text */}
           <p
             style={{
-              fontSize: 13,
+              fontSize: 14,
               fontFamily: 'var(--font-ui)',
               color: 'var(--text2, #42403C)',
               lineHeight: 1.65,
@@ -240,7 +240,7 @@ export default function HomePage() {
                   flex: 1,
                   border: 'none',
                   outline: 'none',
-                  fontSize: 13,
+                  fontSize: 14,
                   fontFamily: 'var(--font-ui)',
                   color: 'var(--text1, #18181A)',
                   background: 'transparent',
@@ -258,7 +258,7 @@ export default function HomePage() {
                 padding: '0 10px',
                 background: 'var(--surf, #F6F5F2)',
                 borderLeft: '1px solid var(--bdr)',
-                fontSize: 11,
+                fontSize: 12,
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text2, #42403C)',
                 cursor: 'pointer',
@@ -282,7 +282,7 @@ export default function HomePage() {
                 gap: 4,
                 background: 'var(--chrome-bg)',
                 color: 'var(--card)',
-                fontSize: 13,
+                fontSize: 14,
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 600,
                 border: 'none',
@@ -305,7 +305,7 @@ export default function HomePage() {
           >
             <span
               style={{
-                fontSize: 10,
+                fontSize: 12,
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text3, #78766C)',
               }}
@@ -318,7 +318,7 @@ export default function HomePage() {
             <Link
               href="/search"
               style={{
-                fontSize: 10,
+                fontSize: 12,
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--link)',
                 textDecoration: 'none',
@@ -329,7 +329,7 @@ export default function HomePage() {
             <Link
               href="/methodology"
               style={{
-                fontSize: 10,
+                fontSize: 12,
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--link)',
                 textDecoration: 'none',
@@ -379,7 +379,7 @@ export default function HomePage() {
               cursor: 'pointer',
               borderBottom: '3px solid transparent',
               whiteSpace: 'nowrap',
-              transition: 'color 0.15s ease',
+              transition: 'color 150ms ease',
               userSelect: 'none',
             }}
           >
@@ -401,7 +401,7 @@ export default function HomePage() {
               color: 'var(--text3, #78766C)',
               textDecoration: 'none',
               whiteSpace: 'nowrap',
-              transition: 'color 0.15s ease',
+              transition: 'color 150ms ease',
             }}
           >
             {t}
@@ -481,9 +481,9 @@ export default function HomePage() {
                   <div key={field.label}>
                     <div
                       style={{
-                        fontSize: 10,
+                        fontSize: 12,
                         textTransform: 'uppercase',
-                        letterSpacing: '0.05em',
+                        letterSpacing: '0.5px',
                         color: 'var(--text3, #78766C)',
                         fontFamily: 'var(--font-ui)',
                         fontWeight: 600,
@@ -550,7 +550,7 @@ export default function HomePage() {
                     padding: '0 14px',
                     background: 'transparent',
                     color: 'var(--link)',
-                    fontSize: 11,
+                    fontSize: 12,
                     fontFamily: 'var(--font-ui)',
                     fontWeight: 600,
                     border: '1px solid var(--link)',
@@ -562,7 +562,7 @@ export default function HomePage() {
                 </button>
                 <span
                   style={{
-                    fontSize: 11,
+                    fontSize: 12,
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--text3, #78766C)',
                   }}
@@ -576,7 +576,7 @@ export default function HomePage() {
             <div style={{ marginTop: 4 }}>
               <div
                 style={{
-                  fontSize: 10,
+                  fontSize: 12,
                   fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
@@ -597,7 +597,7 @@ export default function HomePage() {
                 <Link
                   href="/dashboard"
                   style={{
-                    fontSize: 11,
+                    fontSize: 12,
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--link)',
                     textDecoration: 'none',
@@ -631,7 +631,7 @@ export default function HomePage() {
                   <span
                     style={{
                       flex: 1,
-                      fontSize: 11,
+                      fontSize: 12,
                       fontFamily: 'var(--font-ui)',
                       color: 'var(--link)',
                       cursor: 'pointer',
@@ -644,7 +644,7 @@ export default function HomePage() {
                   </span>
                   <span
                     style={{
-                      fontSize: 11,
+                      fontSize: 12,
                       fontFamily: 'var(--font-mono)',
                       color: 'var(--text3, #78766C)',
                       flexShrink: 0,
@@ -654,7 +654,7 @@ export default function HomePage() {
                   </span>
                   <span
                     style={{
-                      fontSize: 10,
+                      fontSize: 12,
                       fontFamily: 'var(--font-ui)',
                       color: 'var(--text4, #A8A6A0)',
                       flexShrink: 0,
@@ -681,7 +681,7 @@ export default function HomePage() {
             >
               <div
                 style={{
-                  fontSize: 10,
+                  fontSize: 12,
                   fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
@@ -700,7 +700,7 @@ export default function HomePage() {
                 <div
                   key={i}
                   style={{
-                    fontSize: 11,
+                    fontSize: 12,
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--link)',
                     lineHeight: 2,
@@ -713,7 +713,7 @@ export default function HomePage() {
               <Link
                 href="/dashboard"
                 style={{
-                  fontSize: 10,
+                  fontSize: 12,
                   fontFamily: 'var(--font-ui)',
                   color: 'var(--text3, #78766C)',
                   textDecoration: 'none',
@@ -741,7 +741,7 @@ export default function HomePage() {
             >
               <div
                 style={{
-                  fontSize: 10,
+                  fontSize: 12,
                   fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
@@ -765,7 +765,7 @@ export default function HomePage() {
                 >
                   <span
                     style={{
-                      fontSize: 10,
+                      fontSize: 12,
                       fontFamily: 'var(--font-ui)',
                       color: 'var(--text3, #78766C)',
                     }}
@@ -774,7 +774,7 @@ export default function HomePage() {
                   </span>
                   <span
                     style={{
-                      fontSize: 11,
+                      fontSize: 12,
                       fontFamily: 'var(--font-mono)',
                       color: 'var(--text1, #18181A)',
                       fontVariantNumeric: 'tabular-nums',
@@ -820,7 +820,7 @@ export default function HomePage() {
             <Link
               href="/cases"
               style={{
-                fontSize: 11,
+                fontSize: 12,
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--link)',
                 textDecoration: 'none',
@@ -852,13 +852,13 @@ export default function HomePage() {
                   borderTop: '3px solid var(--bdr)',
                   padding: '12px 14px',
                   textDecoration: 'none',
-                  transition: 'border-color 0.15s ease, box-shadow 0.15s ease',
+                  transition: 'border-color 150ms ease, box-shadow 150ms ease',
                 }}
               >
                 <h3
                   style={{
                     fontFamily: 'var(--font-legal)',
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: 700,
                     color: 'var(--chrome-bg)',
                     margin: '0 0 4px',
@@ -868,7 +868,7 @@ export default function HomePage() {
                 </h3>
                 <p
                   style={{
-                    fontSize: 11,
+                    fontSize: 12,
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--text3, #78766C)',
                     lineHeight: 1.5,
@@ -880,7 +880,7 @@ export default function HomePage() {
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: 11,
+                    fontSize: 12,
                     color: 'var(--gold, #C4882A)',
                     fontVariantNumeric: 'tabular-nums',
                   }}
@@ -904,7 +904,7 @@ export default function HomePage() {
       >
         <p
           style={{
-            fontSize: 10,
+            fontSize: 12,
             fontFamily: 'var(--font-ui)',
             color: 'var(--text3, #78766C)',
             margin: 0,

@@ -602,7 +602,7 @@ export default function IntakeFormGenerator() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div>
-            <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
+            <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-ui)' }}>
               Case Type *
             </label>
             <select
@@ -649,9 +649,9 @@ export default function IntakeFormGenerator() {
               fontWeight: 600,
               fontFamily: 'var(--font-ui)',
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.5px',
               cursor: !selectedCaseType || loading ? 'not-allowed' : 'pointer',
-              transition: 'background-color 0.2s',
+              transition: 'background-color 200ms',
             }}
           >
             {loading ? 'Generating Form...' : 'Generate Intake Form (.docx)'}
@@ -667,11 +667,11 @@ export default function IntakeFormGenerator() {
                 color: 'var(--accent-primary)',
                 border: '1px solid var(--accent-primary)',
                 borderRadius: '2px',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-ui)',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(10, 102, 194, 0.08)';
@@ -696,7 +696,7 @@ export default function IntakeFormGenerator() {
             <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', borderBottom: '2px solid var(--accent-primary)', paddingBottom: '8px' }}>
               Form Sections:
             </h3>
-            <ul style={{ margin: 0, paddingLeft: '24px', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.8', fontFamily: 'var(--font-ui)' }}>
+            <ul style={{ margin: 0, paddingLeft: '24px', fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: '1.8', fontFamily: 'var(--font-ui)' }}>
               {selectedInfo.sections.map((section, idx) => (
                 <li key={idx}>{section}</li>
               ))}

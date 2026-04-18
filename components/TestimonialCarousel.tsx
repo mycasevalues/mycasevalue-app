@@ -266,7 +266,7 @@ export default function TestimonialCarousel() {
                 </p>
                 <p
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     fontFamily: 'var(--font-ui)',
                     margin: 0,

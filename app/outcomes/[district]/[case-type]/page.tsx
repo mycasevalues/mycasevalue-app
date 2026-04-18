@@ -122,7 +122,7 @@ export default async function OutcomesPage({
             border: '1px solid var(--gold)',
             boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
             textDecoration: 'none',
-            fontSize: 13,
+            fontSize: 14,
             letterSpacing: '-0.005em',
             fontFamily: 'var(--font-ui)',
             transition: 'background-color 150ms ease, border-color 150ms ease',
@@ -266,7 +266,7 @@ export default async function OutcomesPage({
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
           {/* Breadcrumb */}
           <div style={{
-            fontSize: '13px',
+            fontSize: '14px',
             color: 'var(--border-default)',
             fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
@@ -309,7 +309,7 @@ export default async function OutcomesPage({
               color: 'var(--color-text-inverse)',
               padding: '6px 12px',
               borderRadius: '4px',
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: 600,
               letterSpacing: '0.5px',
               textTransform: 'uppercase',
@@ -373,7 +373,7 @@ export default async function OutcomesPage({
                 {isNaN(districtWinRate ?? 0) ? '—' : `${Math.round(districtWinRate ?? 0)}%`}
               </div>
               <div style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
@@ -395,7 +395,7 @@ export default async function OutcomesPage({
                 {isNaN(districtDuration ?? 0) ? '—' : `${districtDuration} mo`}
               </div>
               <div style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
@@ -417,7 +417,7 @@ export default async function OutcomesPage({
                 {isNaN(districtSettleRate ?? 0) ? '—' : `${Math.round(districtSettleRate ?? 0)}%`}
               </div>
               <div style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
@@ -439,7 +439,7 @@ export default async function OutcomesPage({
                 {isNaN(totalOutcomes ?? 0) ? '—' : `${(totalOutcomes ?? 0).toLocaleString()}+`}
               </div>
               <div style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 color: 'var(--color-text-secondary)',
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
@@ -482,7 +482,7 @@ export default async function OutcomesPage({
                     marginBottom: '12px',
                   }}>
                     <span style={{
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       color: 'var(--color-text-secondary)',
                       fontFamily: 'var(--font-ui)',
@@ -558,7 +558,7 @@ export default async function OutcomesPage({
               padding: '24px',
             }}>
               <div style={{
-                fontSize: '11px',
+                fontSize: '12px',
                 color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -576,7 +576,7 @@ export default async function OutcomesPage({
               }}>
                 <div>
                   <div style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
@@ -594,7 +594,7 @@ export default async function OutcomesPage({
                 </div>
                 <div>
                   <div style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
@@ -634,7 +634,7 @@ export default async function OutcomesPage({
               padding: '24px',
             }}>
               <div style={{
-                fontSize: '11px',
+                fontSize: '12px',
                 color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -652,7 +652,7 @@ export default async function OutcomesPage({
               }}>
                 <div>
                   <div style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
@@ -670,7 +670,7 @@ export default async function OutcomesPage({
                 </div>
                 <div>
                   <div style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
@@ -710,7 +710,7 @@ export default async function OutcomesPage({
               padding: '24px',
             }}>
               <div style={{
-                fontSize: '11px',
+                fontSize: '12px',
                 color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -728,7 +728,7 @@ export default async function OutcomesPage({
               }}>
                 <div>
                   <div style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
@@ -746,7 +746,7 @@ export default async function OutcomesPage({
                 </div>
                 <div>
                   <div style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     color: 'var(--color-text-secondary)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
@@ -819,7 +819,7 @@ export default async function OutcomesPage({
                 }}
               >
                 <div style={{
-                  fontSize: '11px',
+                  fontSize: '12px',
                   color: 'var(--color-text-secondary)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
@@ -931,7 +931,7 @@ export default async function OutcomesPage({
               transition: 'all 0.3s ease',
             }}>
               <div style={{
-                fontSize: '11px',
+                fontSize: '12px',
                 color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -961,7 +961,7 @@ export default async function OutcomesPage({
               transition: 'all 0.3s ease',
             }}>
               <div style={{
-                fontSize: '11px',
+                fontSize: '12px',
                 color: 'var(--color-text-secondary)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -989,7 +989,7 @@ export default async function OutcomesPage({
         background: 'var(--color-surface-0)',
         color: 'var(--color-text-secondary)',
         padding: 'clamp(24px, 4vw, 40px) 20px',
-        fontSize: '13px',
+        fontSize: '14px',
         fontFamily: 'var(--font-ui)',
         lineHeight: '1.7',
         borderTop: '1px solid var(--border-default)',
@@ -1002,7 +1002,7 @@ export default async function OutcomesPage({
             <strong style={{ color: 'var(--color-text-primary)' }}>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction for advice specific to your situation.
           </p>
           <p style={{
-            fontSize: '11px',
+            fontSize: '12px',
             color: 'var(--color-text-muted)',
             margin: 0,
           }}>

@@ -94,7 +94,7 @@ export default function AttorneyToolsNav() {
                 textDecoration: 'none',
                 borderBottom: isActive ? '2px solid var(--accent-primary)' : '2px solid transparent',
                 whiteSpace: 'nowrap',
-                transition: 'all 0.15s ease',
+                transition: 'all 150ms ease',
                 fontFamily: 'var(--font-ui)',
               }}
             >

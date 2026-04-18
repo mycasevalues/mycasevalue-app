@@ -251,7 +251,7 @@ export default function FoldersPage() {
         {/* Sidebar - Folder Tree */}
         <div style={{ background: 'var(--card)', borderRadius: '4px', border: '1px solid var(--bdr)', padding: '16px', height: 'fit-content', maxHeight: '80vh', overflowY: 'auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
-            <div style={{ fontSize: '11px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2, #42403C)' }}>
+            <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text2, #42403C)' }}>
               Folders
             </div>
             <button
@@ -267,7 +267,7 @@ export default function FoldersPage() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'var(--chrome-bg)',
-                transition: 'all 0.2s',
+                transition: 'all 200ms',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--gold)')}
               onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--surf)')}
@@ -297,10 +297,10 @@ export default function FoldersPage() {
                       alignItems: 'center',
                       gap: '8px',
                       cursor: 'pointer',
-                      transition: 'all 0.2s',
+                      transition: 'all 200ms',
                       borderLeft: isSelected ? '2px solid var(--link)' : '2px solid transparent',
                       fontFamily: 'var(--font-ui)',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       color: isSelected ? 'var(--link)' : 'var(--text-primary)',
                       fontWeight: isSelected ? 600 : 500,
                     }}
@@ -325,7 +325,7 @@ export default function FoldersPage() {
                     {childFolders.length === 0 && <div style={{ width: '14px' }} />}
                     <FolderIcon size={16} />
                     <span style={{ flex: 1, textAlign: 'left' }}>{folder.name}</span>
-                    <div style={{ fontSize: '11px', color: 'var(--text2, #42403C)', fontWeight: 400 }}>
+                    <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 400 }}>
                       {folder.itemCount}
                     </div>
                   </button>
@@ -345,10 +345,10 @@ export default function FoldersPage() {
                         alignItems: 'center',
                         gap: '8px',
                         cursor: 'pointer',
-                        transition: 'all 0.2s',
+                        transition: 'all 200ms',
                         borderLeft: selectedFolderId === child.id ? '2px solid var(--link)' : '2px solid transparent',
                         fontFamily: 'var(--font-ui)',
-                        fontSize: '13px',
+                        fontSize: '14px',
                         color: selectedFolderId === child.id ? 'var(--link)' : 'var(--text-primary)',
                         fontWeight: selectedFolderId === child.id ? 600 : 500,
                       }}
@@ -361,7 +361,7 @@ export default function FoldersPage() {
                     >
                       <FolderIcon size={16} />
                       <span style={{ flex: 1, textAlign: 'left' }}>{child.name}</span>
-                      <div style={{ fontSize: '11px', color: 'var(--text2, #42403C)', fontWeight: 400 }}>
+                      <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 400 }}>
                         {child.itemCount}
                       </div>
                     </button>
@@ -404,10 +404,10 @@ export default function FoldersPage() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '6px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       color: showFolderAnalysis ? 'white' : 'var(--text-primary)',
-                      transition: 'all 0.2s',
+                      transition: 'all 200ms',
                       fontFamily: 'var(--font-ui)',
                     }}
                   >
@@ -426,10 +426,10 @@ export default function FoldersPage() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '6px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       color: currentFolder.sharedWith && currentFolder.sharedWith.length > 0 ? 'white' : 'var(--text-primary)',
-                      transition: 'all 0.2s',
+                      transition: 'all 200ms',
                       fontFamily: 'var(--font-ui)',
                     }}
                     onMouseEnter={(e) => {
@@ -455,10 +455,10 @@ export default function FoldersPage() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '6px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       color: 'white',
-                      transition: 'all 0.2s',
+                      transition: 'all 200ms',
                       fontFamily: 'var(--font-ui)',
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-1px)')}
@@ -476,7 +476,7 @@ export default function FoldersPage() {
                   <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>
                     {currentFolder.itemCount}
                   </div>
-                  <div style={{ fontSize: '11px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Total Items
                   </div>
                 </div>
@@ -484,7 +484,7 @@ export default function FoldersPage() {
                   <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                     {analysis.totalAnnotations}
                   </div>
-                  <div style={{ fontSize: '11px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Annotations
                   </div>
                 </div>
@@ -492,7 +492,7 @@ export default function FoldersPage() {
                   <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-positive)', fontFamily: 'var(--font-mono)' }}>
                     {analysis.dateRange.oldest}
                   </div>
-                  <div style={{ fontSize: '11px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Date Range Start
                   </div>
                 </div>
@@ -501,7 +501,7 @@ export default function FoldersPage() {
                     <div style={{ fontSize: '20px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                       {currentFolder.sharedWith.length}
                     </div>
-                    <div style={{ fontSize: '11px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       Team Members
                     </div>
                   </div>
@@ -524,7 +524,7 @@ export default function FoldersPage() {
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontSize: '13px', fontFamily: 'var(--font-ui)' }}>Cases</span>
+                      <span style={{ fontSize: '14px', fontFamily: 'var(--font-ui)' }}>Cases</span>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <div style={{ width: '120px', height: '8px', background: 'var(--surf)', borderRadius: '2px', overflow: 'hidden' }}>
                           <div style={{ width: `${(analysis.caseCount / analysis.totalItems) * 100}%`, height: '100%', background: 'var(--link)' }} />
@@ -535,7 +535,7 @@ export default function FoldersPage() {
                       </div>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontSize: '13px', fontFamily: 'var(--font-ui)' }}>Statutes</span>
+                      <span style={{ fontSize: '14px', fontFamily: 'var(--font-ui)' }}>Statutes</span>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <div style={{ width: '120px', height: '8px', background: 'var(--surf)', borderRadius: '2px', overflow: 'hidden' }}>
                           <div style={{ width: `${(analysis.statuteCount / analysis.totalItems) * 100}%`, height: '100%', background: 'var(--data-positive)' }} />
@@ -546,7 +546,7 @@ export default function FoldersPage() {
                       </div>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontSize: '13px', fontFamily: 'var(--font-ui)' }}>Secondary Sources</span>
+                      <span style={{ fontSize: '14px', fontFamily: 'var(--font-ui)' }}>Secondary Sources</span>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <div style={{ width: '120px', height: '8px', background: 'var(--surf)', borderRadius: '2px', overflow: 'hidden' }}>
                           <div style={{ width: `${(analysis.secondaryCount / analysis.totalItems) * 100}%`, height: '100%', background: 'var(--link-visited)' }} />
@@ -566,14 +566,14 @@ export default function FoldersPage() {
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                     <div style={{ padding: '12px', background: 'var(--surf)', borderRadius: '3px' }}>
-                      <div style={{ fontSize: '11px', color: 'var(--text2, #42403C)', fontWeight: 500 }}>Date Range</div>
-                      <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', marginTop: '4px' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500 }}>Date Range</div>
+                      <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)', marginTop: '4px' }}>
                         {analysis.dateRange.oldest} to {analysis.dateRange.newest}
                       </div>
                     </div>
                     <div style={{ padding: '12px', background: 'var(--surf)', borderRadius: '3px' }}>
-                      <div style={{ fontSize: '11px', color: 'var(--text2, #42403C)', fontWeight: 500 }}>Total Annotations</div>
-                      <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--link)', marginTop: '4px' }}>
+                      <div style={{ fontSize: '12px', color: 'var(--text2, #42403C)', fontWeight: 500 }}>Total Annotations</div>
+                      <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginTop: '4px' }}>
                         {analysis.totalAnnotations}
                       </div>
                     </div>
@@ -600,7 +600,7 @@ export default function FoldersPage() {
                     borderRadius: '2px',
                     border: '1px solid var(--bdr)',
                     background: 'var(--surf)',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--text-primary)',
                     boxSizing: 'border-box',
@@ -617,7 +617,7 @@ export default function FoldersPage() {
                   borderRadius: '2px',
                   border: '1px solid var(--bdr)',
                   background: 'var(--surf)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontFamily: 'var(--font-ui)',
                   color: 'var(--text-primary)',
                   cursor: 'pointer',
@@ -640,7 +640,7 @@ export default function FoldersPage() {
                   borderRadius: '2px',
                   border: '1px solid var(--bdr)',
                   background: 'var(--surf)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontFamily: 'var(--font-ui)',
                   color: 'var(--text-primary)',
                   cursor: 'pointer',
@@ -675,7 +675,7 @@ export default function FoldersPage() {
                   fontWeight: 600,
                   color: 'white',
                   cursor: 'pointer',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.3)')}
                 onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.2)')}
@@ -692,7 +692,7 @@ export default function FoldersPage() {
                   fontWeight: 600,
                   color: 'white',
                   cursor: 'pointer',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.3)')}
                 onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.2)')}
@@ -709,7 +709,7 @@ export default function FoldersPage() {
                   fontWeight: 600,
                   color: 'white',
                   cursor: 'pointer',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                   marginLeft: 'auto',
                 }}
                 onClick={() => setSelectedItems(new Set())}
@@ -764,7 +764,7 @@ export default function FoldersPage() {
                         alignItems: 'flex-start',
                         gap: '12px',
                         background: isSelected ? 'rgba(59, 130, 246, 0.05)' : 'transparent',
-                        transition: 'all 0.2s',
+                        transition: 'all 200ms',
                       }}
                       onMouseEnter={(e) => {
                         if (!isSelected) (e.currentTarget.style.background = 'var(--surf)');
@@ -839,7 +839,7 @@ export default function FoldersPage() {
                                 gap: '4px',
                                 padding: '2px 8px',
                                 borderRadius: '3px',
-                                fontSize: '11px',
+                                fontSize: '12px',
                                 fontWeight: 600,
                                 textTransform: 'capitalize',
                                 background: itemColor.bg,
@@ -861,7 +861,7 @@ export default function FoldersPage() {
                                   width: '24px',
                                   height: '24px',
                                   borderRadius: '3px',
-                                  fontSize: '11px',
+                                  fontSize: '12px',
                                   fontWeight: 600,
                                   background: 'var(--link)',
                                   color: 'white',
@@ -881,7 +881,7 @@ export default function FoldersPage() {
                                   gap: '4px',
                                   padding: '2px 8px',
                                   borderRadius: '3px',
-                                  fontSize: '11px',
+                                  fontSize: '12px',
                                   fontWeight: 600,
                                   textTransform: 'capitalize',
                                   background: item.keyCiteStatus === 'positive' ? 'var(--data-positive-bg, #EAF4EF)' : item.keyCiteStatus === 'negative' ? 'var(--data-negative-bg, #FAEAEA)' : 'rgba(100, 100, 100, 0.1)',
@@ -904,7 +904,7 @@ export default function FoldersPage() {
                                 display: 'flex',
                                 alignItems: 'center',
                                 color: 'var(--text2, #42403C)',
-                                transition: 'color 0.2s',
+                                transition: 'color 200ms',
                               }}
                               onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
                               onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text2, #42403C)')}
@@ -973,7 +973,7 @@ export default function FoldersPage() {
                   borderRadius: '2px',
                   border: '1px solid var(--bdr)',
                   background: 'var(--surf)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   fontFamily: 'var(--font-ui)',
@@ -992,7 +992,7 @@ export default function FoldersPage() {
                   border: 'none',
                   background: 'var(--gold)',
                   color: 'white',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   fontFamily: 'var(--font-ui)',
@@ -1029,7 +1029,7 @@ export default function FoldersPage() {
               Quick Save to {currentFolder?.name}
             </h3>
             <div style={{ marginBottom: '16px' }}>
-              <label style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text2, #42403C)', display: 'block', marginBottom: '6px', fontFamily: 'var(--font-ui)' }}>
+              <label style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text2, #42403C)', display: 'block', marginBottom: '6px', fontFamily: 'var(--font-ui)' }}>
                 Case Citation or Title
               </label>
               <input
@@ -1042,7 +1042,7 @@ export default function FoldersPage() {
                   padding: '10px 12px',
                   borderRadius: '2px',
                   border: '1px solid var(--bdr)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontFamily: 'var(--font-ui)',
                   boxSizing: 'border-box',
                 }}
@@ -1059,7 +1059,7 @@ export default function FoldersPage() {
                   borderRadius: '2px',
                   border: '1px solid var(--bdr)',
                   background: 'var(--surf)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   fontFamily: 'var(--font-ui)',
@@ -1078,7 +1078,7 @@ export default function FoldersPage() {
                   border: 'none',
                   background: 'var(--gold)',
                   color: 'white',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   fontFamily: 'var(--font-ui)',
@@ -1102,9 +1102,9 @@ export default function FoldersPage() {
               { name: 'Secondary Sources', href: '/attorney/secondary-sources', desc: 'Legal secondary sources and treatises' },
               { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Advanced legal research search tools' },
             ].map(tool => (
-              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                 <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
               </a>
             ))}
           </div>

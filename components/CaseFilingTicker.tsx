@@ -90,7 +90,7 @@ export default function CaseFilingTicker() {
             fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
             textTransform: 'uppercase',
-            letterSpacing: '0.05em',
+            letterSpacing: '0.5px',
           }}
         >
           Recent federal filings via CourtListener RECAP
@@ -140,7 +140,7 @@ export default function CaseFilingTicker() {
               font-family: var(--font-ui);
               font-size: 14px;
               font-weight: 500;
-              transition: color 0.2s ease;
+              transition: color 200ms ease;
             }
 
             .ticker-link:hover {
@@ -155,7 +155,7 @@ export default function CaseFilingTicker() {
 
             .ticker-metadata {
               color: var(--color-text-secondary);
-              font-size: 13px;
+              font-size: 14px;
               font-family: var(--font-ui);
               margin-left: 4px;
             }

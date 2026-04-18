@@ -88,7 +88,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
         <div
           style={{
             fontFamily: 'var(--font-ui)',
-            fontSize: '13px',
+            fontSize: '14px',
             color: 'var(--color-text-secondary)',
             lineHeight: 1.6,
           }}

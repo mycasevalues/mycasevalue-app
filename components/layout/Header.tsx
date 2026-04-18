@@ -241,7 +241,7 @@ export default function Header() {
               <span
                 style={{
                   fontFamily: 'var(--font-legal)',
-                  fontSize: 13,
+                  fontSize: 14,
                   fontWeight: 700,
                   color: 'var(--card, #FFFFFF)',
                   lineHeight: 1.1,
@@ -252,7 +252,7 @@ export default function Header() {
               </span>
               <span
                 style={{
-                  fontSize: 9,
+                  fontSize: 12,
                   fontWeight: 600,
                   color: 'var(--chrome-text-muted)',
                   textTransform: 'uppercase',
@@ -309,7 +309,7 @@ export default function Header() {
                 }}
               >
                 <span style={{
-                  fontSize: 11,
+                  fontSize: 12,
                   fontFamily: 'var(--font-ui)',
                   color: 'var(--text2)',
                   whiteSpace: 'nowrap',
@@ -317,7 +317,7 @@ export default function Header() {
                 }}>
                   All Jurisdictions
                 </span>
-                <span style={{ fontSize: 9, color: 'var(--text3)' }}>▾</span>
+                <span style={{ fontSize: 12, color: 'var(--text3)' }}>▾</span>
               </div>
               {/* Search button */}
               <button
@@ -379,7 +379,7 @@ export default function Header() {
                       gap: 8,
                       height: 38,
                       padding: '0 12px',
-                      fontSize: 13,
+                      fontSize: 14,
                       fontFamily: 'var(--font-ui)',
                       color: 'var(--link)',
                       textDecoration: 'none',
@@ -391,13 +391,13 @@ export default function Header() {
                   >
                     {/* Type label */}
                     <span style={{
-                      fontSize: 10,
+                      fontSize: 12,
                       color: 'var(--text4)',
                       width: 50,
                       flexShrink: 0,
                       textTransform: 'uppercase',
                       fontWeight: 600,
-                      letterSpacing: '0.05em',
+                      letterSpacing: '0.5px',
                       background: 'var(--sidebar)',
                       padding: '2px 4px',
                       borderRadius: 2,
@@ -408,7 +408,7 @@ export default function Header() {
                     <span style={{ flex: 1 }}>{s.label}</span>
                     <span style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: 11,
+                      fontSize: 12,
                       color: 'var(--text3)',
                     }}></span>
                   </Link>
@@ -416,7 +416,7 @@ export default function Header() {
                 {/* Footer */}
                 <div style={{
                   padding: '8px 12px',
-                  fontSize: 11,
+                  fontSize: 12,
                   color: 'var(--text3)',
                   background: 'var(--sidebar)',
                   fontFamily: 'var(--font-ui)',
@@ -430,7 +430,7 @@ export default function Header() {
           <Link
             href="/case-search"
             style={{
-              fontSize: 11,
+              fontSize: 12,
               fontFamily: 'var(--font-sans, var(--font-ui))',
               color: 'var(--chrome-text-muted)',
               textDecoration: 'none',
@@ -478,9 +478,9 @@ export default function Header() {
               >
                 {item.icon}
                 <span style={{
-                  fontSize: 9,
+                  fontSize: 12,
                   textTransform: 'uppercase',
-                  letterSpacing: '0.04em',
+                  letterSpacing: '0.5px',
                   fontFamily: 'var(--font-ui)',
                   fontWeight: 500,
                 }}>
@@ -531,7 +531,7 @@ export default function Header() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      fontSize: 11,
+                      fontSize: 12,
                       fontWeight: 600,
                       color: 'var(--chrome-text-muted)',
                     }}
@@ -539,7 +539,7 @@ export default function Header() {
                     {initials}
                   </div>
                   <span style={{
-                    fontSize: 11,
+                    fontSize: 12,
                     color: 'var(--chrome-text-muted)',
                     fontFamily: 'var(--font-ui)',
                   }}>
@@ -603,7 +603,7 @@ export default function Header() {
                 <Link
                   href="/sign-in"
                   style={{
-                    fontSize: 11,
+                    fontSize: 12,
                     fontWeight: 500,
                     color: 'var(--card, #FFFFFF)',
                     fontFamily: 'var(--font-ui)',
@@ -626,7 +626,7 @@ export default function Header() {
                     background: 'var(--gold)',
                     color: 'var(--card, #FFFFFF)',
                     borderRadius: 2,
-                    fontSize: 11,
+                    fontSize: 12,
                     fontWeight: 600,
                     fontFamily: 'var(--font-ui)',
                     textDecoration: 'none',

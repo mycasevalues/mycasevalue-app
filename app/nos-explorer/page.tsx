@@ -124,7 +124,7 @@ export default function NosExplorerPage() {
       <div style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--accent-primary)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
-          <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-ui)' }}>
+          <div style={{ paddingTop: 12, display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontFamily: 'var(--font-ui)' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Home</Link>
             <span style={{ color: 'rgba(255,255,255,0.4)' }}>/</span>
             <span style={{ color: 'var(--color-surface-0)' }}>NOS Explorer</span>

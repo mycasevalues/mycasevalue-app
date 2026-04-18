@@ -447,7 +447,7 @@ export default function NaturalLanguageSearch() {
               border: '1px solid rgba(255,255,255,0.1)',
               borderRadius: '4px',
               outline: 'none',
-              transition: 'border-color 0.2s',
+              transition: 'border-color 200ms',
               boxSizing: 'border-box',
             }}
             onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--accent-primary)')}
@@ -466,7 +466,7 @@ export default function NaturalLanguageSearch() {
               border: 'none',
               borderRadius: '4px',
               cursor: isLoading || !query.trim() ? 'not-allowed' : 'pointer',
-              transition: 'background-color 0.2s',
+              transition: 'background-color 200ms',
             }}
             onMouseEnter={(e) => {
               if (!isLoading && query.trim()) {

@@ -90,7 +90,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             border: '1px solid var(--border-default)',
           }}
         >
-          <p style={{ fontFamily: 'var(--font-ui)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-ui)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
             API Keys Generated
           </p>
           <p
@@ -114,7 +114,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             border: '1px solid var(--border-default)',
           }}
         >
-          <p style={{ fontFamily: 'var(--font-ui)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-ui)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
             Requests (Last 24h)
           </p>
           <p
@@ -138,7 +138,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
             border: '1px solid var(--border-default)',
           }}
         >
-          <p style={{ fontFamily: 'var(--font-ui)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-ui)', fontSize: '0.75rem', color: 'var(--color-text-muted)', margin: 0, marginBottom: '4px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
             Rate Limit Violations (1h)
           </p>
           <p

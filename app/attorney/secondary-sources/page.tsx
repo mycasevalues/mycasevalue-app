@@ -568,7 +568,7 @@ export default function SecondarySourcesPage() {
                 fontSize: '12px',
                 fontWeight: '600',
                 textTransform: 'uppercase',
-                letterSpacing: '0.07em',
+                letterSpacing: '0.5px',
                 color: 'var(--text-tertiary)',
                 marginBottom: '12px',
               }}>
@@ -621,7 +621,7 @@ export default function SecondarySourcesPage() {
                 fontSize: '12px',
                 fontWeight: '600',
                 textTransform: 'uppercase',
-                letterSpacing: '0.07em',
+                letterSpacing: '0.5px',
                 color: 'var(--text-tertiary)',
                 marginBottom: '12px',
               }}>
@@ -633,7 +633,7 @@ export default function SecondarySourcesPage() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--text-primary)',
                     cursor: 'pointer',
@@ -661,7 +661,7 @@ export default function SecondarySourcesPage() {
                 fontSize: '12px',
                 fontWeight: '600',
                 textTransform: 'uppercase',
-                letterSpacing: '0.07em',
+                letterSpacing: '0.5px',
                 color: 'var(--text-tertiary)',
                 marginBottom: '12px',
               }}>
@@ -673,7 +673,7 @@ export default function SecondarySourcesPage() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--text-primary)',
                     cursor: 'pointer',
@@ -743,14 +743,14 @@ export default function SecondarySourcesPage() {
                     <span style={{
                       display: 'inline-block',
                       padding: '4px 8px',
-                      fontSize: '11px',
+                      fontSize: '12px',
                       fontWeight: '500',
                       fontFamily: 'var(--font-ui)',
                       backgroundColor: 'var(--link-light)',
                       color: 'var(--link)',
                       borderRadius: '3px',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
+                      letterSpacing: '0.5px',
                     }}>
                       {getCategoryLabel(source.category)}
                     </span>
@@ -779,7 +779,7 @@ export default function SecondarySourcesPage() {
                     {source.title}
                   </h4>
                   <p style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--text-secondary)',
                     marginBottom: '8px',
@@ -816,7 +816,7 @@ export default function SecondarySourcesPage() {
               Search Results
             </h2>
             <p style={{
-              fontSize: '13px',
+              fontSize: '14px',
               fontFamily: 'var(--font-ui)',
               color: 'var(--text-secondary)',
             }}>
@@ -862,14 +862,14 @@ export default function SecondarySourcesPage() {
                     <span style={{
                       display: 'inline-block',
                       padding: '4px 8px',
-                      fontSize: '11px',
+                      fontSize: '12px',
                       fontWeight: '500',
                       fontFamily: 'var(--font-ui)',
                       backgroundColor: source.category === 'treatise' ? 'var(--link-light)' : source.category === 'encyclopedia' ? 'var(--gold-light)' : 'var(--data-positive-bg)',
                       color: source.category === 'treatise' ? 'var(--link)' : source.category === 'encyclopedia' ? 'var(--gold)' : 'var(--data-positive)',
                       borderRadius: '3px',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
+                      letterSpacing: '0.5px',
                     }}>
                       {getCategoryLabel(source.category)}
                     </span>
@@ -902,7 +902,7 @@ export default function SecondarySourcesPage() {
                   </h3>
 
                   <div style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--text-secondary)',
                     marginBottom: '12px',
@@ -914,7 +914,7 @@ export default function SecondarySourcesPage() {
                   </div>
 
                   <p style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--text-secondary)',
                     lineHeight: '1.5',
@@ -935,7 +935,7 @@ export default function SecondarySourcesPage() {
                         style={{
                           display: 'inline-block',
                           padding: '3px 8px',
-                          fontSize: '11px',
+                          fontSize: '12px',
                           fontFamily: 'var(--font-ui)',
                           backgroundColor: 'var(--surface-tertiary)',
                           color: 'var(--text-secondary)',
@@ -990,9 +990,9 @@ export default function SecondarySourcesPage() {
                 { name: 'Folders', href: '/attorney/folders', desc: 'Organize and manage research folders' },
                 { name: 'State Survey', href: '/attorney/state-survey', desc: 'State-by-state legal survey analysis' },
               ].map(tool => (
-                <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+                <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                   <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                  <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                  <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
                 </a>
               ))}
             </div>
@@ -1055,7 +1055,7 @@ export default function SecondarySourcesPage() {
               <span style={{
                 display: 'inline-block',
                 padding: '4px 8px',
-                fontSize: '11px',
+                fontSize: '12px',
                 fontWeight: '500',
                 backgroundColor: 'var(--link-light)',
                 color: 'var(--link)',
@@ -1079,7 +1079,7 @@ export default function SecondarySourcesPage() {
             </div>
 
             <div style={{
-              fontSize: '13px',
+              fontSize: '14px',
               fontFamily: 'var(--font-ui)',
               color: 'var(--text-secondary)',
               lineHeight: '1.6',
@@ -1098,7 +1098,7 @@ export default function SecondarySourcesPage() {
               marginBottom: '20px',
             }}>
               <h3 style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text-primary)',
@@ -1107,7 +1107,7 @@ export default function SecondarySourcesPage() {
                 Coverage
               </h3>
               <p style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--text-secondary)',
                 margin: 0,
@@ -1120,7 +1120,7 @@ export default function SecondarySourcesPage() {
             {selectedSource.tableOfContents && selectedSource.tableOfContents.length > 0 && (
               <div style={{ marginBottom: '20px' }}>
                 <h3 style={{
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: '600',
                   fontFamily: 'var(--font-ui)',
                   color: 'var(--text-primary)',
@@ -1137,7 +1137,7 @@ export default function SecondarySourcesPage() {
                     <li
                       key={idx}
                       style={{
-                        fontSize: '13px',
+                        fontSize: '14px',
                         fontFamily: 'var(--font-ui)',
                         color: 'var(--text-secondary)',
                         padding: '6px 0',

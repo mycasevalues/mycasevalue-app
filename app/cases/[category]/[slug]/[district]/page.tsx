@@ -190,7 +190,7 @@ export default async function DistrictCaseTypePage({
               color: 'var(--card)',
               textDecoration: 'none',
               fontWeight: 600,
-              fontSize: 13,
+              fontSize: 14,
               letterSpacing: '-0.005em',
               border: '1px solid var(--gold)',
               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)',
@@ -504,7 +504,7 @@ export default async function DistrictCaseTypePage({
             letter-spacing: '0.5px';
             margin-right: '12px';
             margin-bottom: '12px';
-            transition: background-color 0.2s ease, transform 0.2s ease;
+            transition: background-color 200ms ease, transform 200ms ease;
           }
           .nav-button:hover {
             background-color: 'var(--data-negative)';

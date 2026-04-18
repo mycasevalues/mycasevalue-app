@@ -65,8 +65,8 @@ export default function ApiPage() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -102,7 +102,7 @@ export default function ApiPage() {
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
-              fontSize: 13,
+              fontSize: 14,
               letterSpacing: '-0.005em',
               display: 'inline-flex',
               alignItems: 'center',
@@ -122,7 +122,7 @@ export default function ApiPage() {
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
-              fontSize: 13,
+              fontSize: 14,
               letterSpacing: '-0.005em',
               display: 'inline-block',
             }}>
@@ -261,7 +261,7 @@ export default function ApiPage() {
             </div>
 
             <div style={{ padding: '32px', background: 'var(--color-surface-0)', borderRadius: '4px', border: '2px solid var(--accent-primary)', boxShadow: '0 4px 16px rgba(10, 102, 194, 0.15)', position: 'relative' }}>
-              <div style={{ position: 'absolute', top: '-12px', left: '24px', background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '4px 12px', borderRadius: '2px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <div style={{ position: 'absolute', top: '-12px', left: '24px', background: 'var(--accent-primary)', color: 'var(--color-surface-1)', padding: '4px 12px', borderRadius: '2px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Most Popular
               </div>
               <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '16px', marginBottom: '8px' }}>Professional</h3>
@@ -326,7 +326,7 @@ export default function ApiPage() {
               fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.5px',
               display: 'inline-block',
             }}>
               View Full Documentation
@@ -342,7 +342,7 @@ export default function ApiPage() {
               fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.5px',
               display: 'inline-block',
             }}>
               Request API Access

@@ -65,7 +65,7 @@ export default function CaseTypeComparison() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: 16, alignItems: 'center', marginBottom: 24 }}>
         {/* Left selector */}
         <div>
-          <label style={{ display: 'block', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 8 }}>
+          <label style={{ display: 'block', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 8 }}>
             Case Type A
           </label>
           <select
@@ -74,7 +74,7 @@ export default function CaseTypeComparison() {
             className="cmp-select"
             style={{
               width: '100%', height: 44, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-              fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+              fontFamily: 'var(--font-ui)', fontSize: 14, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
               appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
               backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
             }}
@@ -104,7 +104,7 @@ export default function CaseTypeComparison() {
 
         {/* Right selector */}
         <div>
-          <label style={{ display: 'block', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 8 }}>
+          <label style={{ display: 'block', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', marginBottom: 8 }}>
             Case Type B
           </label>
           <select
@@ -113,7 +113,7 @@ export default function CaseTypeComparison() {
             className="cmp-select"
             style={{
               width: '100%', height: 44, padding: '0 32px 0 12px', border: '1px solid var(--border-default)', borderRadius: 2,
-              fontFamily: 'var(--font-ui)', fontSize: 13, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
+              fontFamily: 'var(--font-ui)', fontSize: 14, color: 'var(--color-text-primary)', background: 'var(--color-surface-0)',
               appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
               backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
             }}
@@ -136,9 +136,9 @@ export default function CaseTypeComparison() {
         <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: 2, overflow: 'hidden' }}>
           {/* Header row */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', background: 'var(--accent-primary)', padding: '12px 16px' }}>
-            <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text-tertiary)' }}>Metric</div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-surface-0)', textAlign: 'center' }}>{entryA.label}</div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-surface-0)', textAlign: 'center' }}>{entryB.label}</div>
+            <div style={{ fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--text-tertiary)' }}>Metric</div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-surface-0)', textAlign: 'center' }}>{entryA.label}</div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-surface-0)', textAlign: 'center' }}>{entryB.label}</div>
           </div>
           {/* Data rows */}
           {metrics.map((m, i) => {
@@ -148,31 +148,31 @@ export default function CaseTypeComparison() {
               <div key={m.label} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', padding: '12px 16px', borderTop: '1px solid #F0F0F0', background: i % 2 === 0 ? 'var(--color-surface-0)' : '#FAFAFA' }}>
                 <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>{m.label}</div>
                 <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 600, color: aWins ? 'var(--data-positive, #176438)' : 'var(--color-text-primary)' }}>
-                  {m.a} {aWins && <span style={{ fontSize: 10, color: 'var(--data-positive, #176438)' }}>●</span>}
+                  {m.a} {aWins && <span style={{ fontSize: 12, color: 'var(--data-positive, #176438)' }}>●</span>}
                 </div>
                 <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 600, color: bWins ? 'var(--data-positive, #176438)' : 'var(--color-text-primary)' }}>
-                  {m.b} {bWins && <span style={{ fontSize: 10, color: 'var(--data-positive, #176438)' }}>●</span>}
+                  {m.b} {bWins && <span style={{ fontSize: 12, color: 'var(--data-positive, #176438)' }}>●</span>}
                 </div>
               </div>
             );
           })}
           {/* Visual comparison bars */}
           <div style={{ padding: '16px', borderTop: '1px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
-            <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', marginBottom: 12 }}>Win Rate Comparison</div>
+            <div style={{ fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--color-text-secondary)', marginBottom: 12 }}>Win Rate Comparison</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div>
-                <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{entryA.label}</div>
+                <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{entryA.label}</div>
                 <div style={{ height: 24, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden', position: 'relative' }}>
                   <div style={{ width: `${entryA.wr}%`, height: '100%', background: wrColor(entryA.wr), borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 6 }}>
-                    <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-mono)' }}>{entryA.wr}%</span>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-mono)' }}>{entryA.wr}%</span>
                   </div>
                 </div>
               </div>
               <div>
-                <div style={{ fontSize: 11, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{entryB.label}</div>
+                <div style={{ fontSize: 12, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{entryB.label}</div>
                 <div style={{ height: 24, background: 'rgba(255,255,255,0.06)', borderRadius: 2, overflow: 'hidden', position: 'relative' }}>
                   <div style={{ width: `${entryB.wr}%`, height: '100%', background: wrColor(entryB.wr), borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 6 }}>
-                    <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-mono)' }}>{entryB.wr}%</span>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-mono)' }}>{entryB.wr}%</span>
                   </div>
                 </div>
               </div>

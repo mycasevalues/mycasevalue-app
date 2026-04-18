@@ -7,7 +7,7 @@ const btnStyle: React.CSSProperties = {
   background: 'var(--color-surface-0)',
   border: '1px solid var(--border-default)',
   borderRadius: '4px',
-  fontSize: '13px',
+  fontSize: '14px',
   color: 'var(--surf)',
   textDecoration: 'none',
   cursor: 'pointer',

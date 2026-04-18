@@ -57,7 +57,7 @@ export default function ReportPDFButton(props: ReportPDFButtonProps) {
         fontFamily: 'var(--font-ui)',
         cursor: loading ? 'wait' : 'pointer',
         opacity: loading ? 0.7 : 1,
-        transition: 'all 0.2s ease',
+        transition: 'all 200ms ease',
       }}
     >
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

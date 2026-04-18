@@ -79,8 +79,8 @@ export default function AppealsPage() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -100,7 +100,7 @@ export default function AppealsPage() {
             <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>Case Information</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category</label>
                 <select value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); setShowResult(false); }} style={selectStyle}>
                   <option value="">Select category...</option>
                   {SITS.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
@@ -108,7 +108,7 @@ export default function AppealsPage() {
               </div>
               {caseCategory && (
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Type *</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Type *</label>
                   <select value={caseType} onChange={e => { setCaseType(e.target.value); setShowResult(true); }} style={selectStyle}>
                     <option value="">Select type...</option>
                     {caseOptions.map(opt => <option key={opt.label} value={opt.nos}>{opt.label}</option>)}
@@ -116,21 +116,21 @@ export default function AppealsPage() {
                 </div>
               )}
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>District (optional)</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>District (optional)</label>
                 <select value={district} onChange={e => setDistrict(e.target.value)} style={selectStyle}>
                   <option value="">All districts</option>
                   {STATES.filter(s => s.id).map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
                 </select>
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Trial Outcome *</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Trial Outcome *</label>
                 <select value={trialOutcome} onChange={e => setTrialOutcome(e.target.value)} style={selectStyle}>
                   <option value="">Select outcome...</option>
                   {TRIAL_OUTCOMES.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
                 </select>
               </div>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Months Since Judgment (optional)</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Months Since Judgment (optional)</label>
                 <input type="number" placeholder="e.g., 3" value={timeSinceJudgment} onChange={e => setTimeSinceJudgment(e.target.value)} style={{ ...selectStyle, appearance: 'auto' as const, backgroundImage: 'none' }} />
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function AppealsPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Appeal Probability */}
               <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
-                <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Probability of Appeal</div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Probability of Appeal</div>
                 <div style={{ fontSize: '64px', fontWeight: 600, color: getWinRateColor(appealProb).text, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                   {Math.min(95, appealProb)}%
                 </div>
@@ -153,18 +153,18 @@ export default function AppealsPage() {
               {/* Success Rate + Duration */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
-                  <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Reversal Rate</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Reversal Rate</div>
                   <div style={{ fontSize: '28px', fontWeight: 600, color: getWinRateColor(reversalProb).text, fontFamily: 'var(--font-mono)' }}>
                     {reversalProb}%
                   </div>
-                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: 4 }}>of appeals in this circuit</div>
+                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: 4 }}>of appeals in this circuit</div>
                 </div>
                 <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)', textAlign: 'center' }}>
-                  <div style={{ fontSize: '10px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Average Appeal Duration</div>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Average Appeal Duration</div>
                   <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
                     {data.avgDuration}
                   </div>
-                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: 4 }}>months to resolution</div>
+                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: 4 }}>months to resolution</div>
                 </div>
               </div>
 
@@ -177,7 +177,7 @@ export default function AppealsPage() {
                   {grounds.map((g, i) => (
                     <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                       <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: 'rgba(59,130,246,0.08)', color: 'var(--gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600 }}>{i + 1}</div>
-                      <span style={{ fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: 1.5 }}>{g}</span>
+                      <span style={{ fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: 1.5 }}>{g}</span>
                     </div>
                   ))}
                 </div>
@@ -186,7 +186,7 @@ export default function AppealsPage() {
               {/* Filing Deadline Notice */}
               <div style={{ background: 'rgba(59,130,246,0.08)', borderRadius: '4px', padding: '24px', border: '1px solid var(--accent-primary)' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--gold)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>Appeal Filing Deadline</h3>
-                <p style={{ fontSize: '13px', color: 'var(--gold)', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ fontSize: '14px', color: 'var(--gold)', margin: 0, lineHeight: 1.6 }}>
                   Under FRAP Rule 4(a)(1)(A), a notice of appeal must be filed within <strong>30 days</strong> after entry of judgment. If the United States is a party, the deadline extends to <strong>60 days</strong>. Post-trial motions (FRCP 50(b), 52(b), 59) toll this deadline until the motion is decided.
                 </p>
               </div>
@@ -203,19 +203,19 @@ export default function AppealsPage() {
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/negotiation" style={{ textDecoration: 'none' }}>
             <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Negotiation Prep</p>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Negotiation Prep</p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Settlement strategy</p>
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
             <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Case Predictor</p>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Case Predictor</p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Predict outcomes</p>
             </div>
           </Link>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
             <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Demand Letter</p>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>Demand Letter</p>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>Generate letters</p>
             </div>
           </Link>

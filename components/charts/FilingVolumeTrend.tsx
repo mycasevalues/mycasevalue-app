@@ -166,7 +166,7 @@ export default function FilingVolumeTrend({
         const tooltip = tooltipRef.current;
         if (tooltip) {
           tooltip.style.display = 'block';
-          tooltip.innerHTML = `<div style="font-weight: 600; color: var(--accent-primary); font-size: 13px; font-family: var(--font-mono)">${d.year}</div><div style="color: var(--color-text-secondary); font-size: 12px; margin-top: 4px; font-family: var(--font-ui)">Filings: <strong>${d.filings.toLocaleString()}</strong></div>`;
+          tooltip.innerHTML = `<div style="font-weight: 600; color: var(--accent-primary); font-size: 14px; font-family: var(--font-mono)">${d.year}</div><div style="color: var(--color-text-secondary); font-size: 12px; margin-top: 4px; font-family: var(--font-ui)">Filings: <strong>${d.filings.toLocaleString()}</strong></div>`;
           const rect = (this as SVGRectElement).getBoundingClientRect();
           const svgRect = svgRef.current?.getBoundingClientRect();
           if (svgRect) {

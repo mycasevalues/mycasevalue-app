@@ -135,7 +135,7 @@ export default function AnalyticsPage() {
           border: 1px solid rgba(10,80,162,0.2);
           background: rgba(10,80,162,0.08);
           font-family: var(--font-mono);
-          font-size: 8px;
+          font-size: 12px;
           font-weight: 600;
           letter-spacing: 0.15em;
           text-transform: uppercase;
@@ -188,7 +188,7 @@ export default function AnalyticsPage() {
           margin-bottom: 24px;
           font-size: 14px;
           font-family: var(--font-ui);
-          transition: color 0.2s ease;
+          transition: color 200ms ease;
         }
 
         .back-link:hover {
@@ -368,7 +368,7 @@ export default function AnalyticsPage() {
               <BarChart data={caseTypeData} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--border-default)" />
                 <XAxis type="number" stroke="var(--color-text-secondary)" style={{ fontSize: '12px', fontFamily: 'var(--font-ui)' }} />
-                <YAxis dataKey="name" type="category" width={150} stroke="var(--color-text-secondary)" style={{ fontSize: '11px', fontFamily: 'var(--font-ui)' }} />
+                <YAxis dataKey="name" type="category" width={150} stroke="var(--color-text-secondary)" style={{ fontSize: '12px', fontFamily: 'var(--font-ui)' }} />
                 <Tooltip
                   contentStyle={{
                     background: 'var(--color-surface-0)',

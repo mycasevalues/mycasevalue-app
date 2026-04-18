@@ -36,9 +36,9 @@ export default function CaseCiteWithBox({ cases }: CaseCiteWithBoxProps) {
       {/* Header */}
       <div
         style={{
-          fontSize: 9,
+          fontSize: 12,
           textTransform: 'uppercase',
-          letterSpacing: '0.05em',
+          letterSpacing: '0.5px',
           color: 'var(--pos, #176438)',
           fontFamily: 'var(--font-ui)',
           fontWeight: 700,
@@ -64,7 +64,7 @@ export default function CaseCiteWithBox({ cases }: CaseCiteWithBoxProps) {
               href={c.href}
               style={{
                 fontFamily: 'var(--font-legal)',
-                fontSize: 11,
+                fontSize: 12,
                 color: 'var(--link, #0A50A2)',
                 textDecoration: 'none',
                 lineHeight: 1.4,
@@ -76,7 +76,7 @@ export default function CaseCiteWithBox({ cases }: CaseCiteWithBoxProps) {
               <span
                 style={{
                   color: 'var(--bdr-xstrong, #A8A49C)',
-                  fontSize: 11,
+                  fontSize: 12,
                   lineHeight: 1,
                 }}
               >

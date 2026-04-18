@@ -156,7 +156,7 @@ function ContextBar({ pathname }: { pathname: string }) {
           display: 'flex',
           alignItems: 'center',
           gap: 4,
-          fontSize: 11,
+          fontSize: 12,
           fontFamily: 'var(--font-ui)',
           overflowX: 'auto',
           whiteSpace: 'nowrap',
@@ -166,7 +166,7 @@ function ContextBar({ pathname }: { pathname: string }) {
         {crumbs.map((crumb, i) => (
           <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
             {i > 0 && (
-              <span style={{ color: 'var(--text4, #A8A6A0)', fontSize: 10 }}>›</span>
+              <span style={{ color: 'var(--text4, #A8A6A0)', fontSize: 12 }}>›</span>
             )}
             {i === crumbs.length - 1 ? (
               <span style={{ color: 'var(--text1, #18181A)', fontWeight: 500 }}>{crumb.label}</span>

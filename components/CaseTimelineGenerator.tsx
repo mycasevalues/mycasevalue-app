@@ -102,7 +102,7 @@ export default function CaseTimelineGenerator() {
 
   const labelStyle: React.CSSProperties = {
     display: 'block',
-    fontSize: '13px',
+    fontSize: '14px',
     fontWeight: 600,
     color: 'var(--color-text-primary)',
     marginBottom: '6px',
@@ -132,9 +132,9 @@ export default function CaseTimelineGenerator() {
     fontWeight: 600,
     fontFamily: 'var(--font-ui)',
     textTransform: 'uppercase',
-    letterSpacing: '0.04em',
+    letterSpacing: '0.5px',
     cursor: input.caseType && input.filingDate ? 'pointer' : 'not-allowed',
-    transition: 'background-color 0.2s',
+    transition: 'background-color 200ms',
   };
 
   const containerWidth = containerRef.current?.offsetWidth || 800;
@@ -226,7 +226,7 @@ export default function CaseTimelineGenerator() {
 
               {error && (
                 <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '13px', color: '#CC1019', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
+                  <p style={{ fontSize: '14px', color: '#CC1019', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
                 </div>
               )}
 
@@ -311,12 +311,12 @@ export default function CaseTimelineGenerator() {
                         <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                           {m.name}
                         </p>
-                        <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                           {m.date} ({Math.round(m.daysFromFiling / 30.44)} months)
                         </p>
                       </div>
                       {!m.isUpcoming && (
-                        <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
+                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
                           Past
                         </span>
                       )}
@@ -328,7 +328,7 @@ export default function CaseTimelineGenerator() {
               {/* Disclaimer & Export */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div style={{ background: 'rgba(234,179,8,0.1)', padding: '16px', borderRadius: '4px', border: '1px solid var(--wrn-bg, #FCD34D)' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--wrn-txt, #7A5800)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '14px', color: 'var(--wrn-txt, #7A5800)', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-ui)' }}>
                     Statistical averages based on historical case data from 5.1M+ federal court cases. Actual deadlines are set by the court's scheduling order and may vary.
                   </p>
                 </div>
@@ -346,9 +346,9 @@ export default function CaseTimelineGenerator() {
                     fontWeight: 600,
                     fontFamily: 'var(--font-ui)',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.04em',
+                    letterSpacing: '0.5px',
                     cursor: 'pointer',
-                    transition: 'background-color 0.2s',
+                    transition: 'background-color 200ms',
                   }}
                 >
                   Download as PDF

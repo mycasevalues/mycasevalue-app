@@ -106,7 +106,7 @@ export default function VenueOptimizerPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative' }}>
-          <Link href="/" style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
+          <Link href="/" style={{ fontSize: '14px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Home &gt; Attorney Tools &gt; Venue Optimizer
           </Link>
@@ -139,7 +139,7 @@ export default function VenueOptimizerPage() {
                 id="case-type"
                 value={selectedNos}
                 onChange={(e) => setSelectedNos(e.target.value)}
-                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 0.2s' }}
+                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 200ms' }}
               >
                 <option value="">Select case type...</option>
                 {caseTypes.map((ct) => (
@@ -167,14 +167,14 @@ export default function VenueOptimizerPage() {
                       padding: '8px 16px',
                       borderRadius: '4px',
                       border: 'none',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
+                      letterSpacing: '0.5px',
                       cursor: 'pointer',
                       backgroundColor: prioritize === opt.key ? 'var(--accent-primary)' : 'transparent',
                       color: prioritize === opt.key ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
-                      transition: 'all 0.2s',
+                      transition: 'all 200ms',
                     }}
                   >
                     {opt.label}
@@ -199,19 +199,19 @@ export default function VenueOptimizerPage() {
           <>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '24px' }}>
               <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
-                <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>National Win Rate</p>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>National Win Rate</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>{data.nationalStats.winRate}%</p>
               </div>
               <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
-                <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Settlement Rate</p>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Settlement Rate</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--data-positive)', margin: 0 }}>{data.nationalStats.settlementRate}%</p>
               </div>
               <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
-                <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Median Duration</p>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Median Duration</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0 }}>{data.nationalStats.medianDurationMonths}mo</p>
               </div>
               <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
-                <p style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Total Cases</p>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Total Cases</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>{data.nationalStats.totalCases.toLocaleString()}</p>
               </div>
             </div>
@@ -222,20 +222,20 @@ export default function VenueOptimizerPage() {
                 <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
                   Venue Rankings — {data.caseType}
                 </h2>
-                <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '4px 0 0' }}>
+                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '4px 0 0' }}>
                   {data.venues.length} districts ranked by {prioritize === 'winRate' ? 'win rate' : prioritize === 'settlement' ? 'settlement likelihood' : 'case speed'}
                 </p>
               </div>
 
               {/* Table Header */}
               <div style={{ display: 'grid', gridTemplateColumns: '50px 1fr 90px 90px 80px 80px 70px', gap: '8px', padding: '12px 24px', borderBottom: '1px solid var(--border-default)', backgroundColor: 'var(--color-surface-1)' }}>
-                <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const }}>Rank</span>
-                <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const }}>District</span>
-                <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Win Rate</span>
-                <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Settlement</span>
-                <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Duration</span>
-                <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Advantage</span>
-                <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Score</span>
+                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const }}>Rank</span>
+                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const }}>District</span>
+                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Win Rate</span>
+                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Settlement</span>
+                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Duration</span>
+                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Advantage</span>
+                <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Score</span>
               </div>
 
               {/* Rows */}
@@ -268,7 +268,7 @@ export default function VenueOptimizerPage() {
                     {v.medianDurationMonths}mo
                   </span>
                   <span className="font-mono" style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontWeight: 600,
                     textAlign: 'right',
                     color: v.advantage > 0 ? 'var(--data-positive)' : v.advantage < 0 ? 'var(--accent-primary)' : 'var(--text2, #42403C)',
@@ -280,7 +280,7 @@ export default function VenueOptimizerPage() {
                       <div style={{ width: '32px', height: '6px', background: 'var(--border-default)', borderRadius: '3px', overflow: 'hidden' }}>
                         <div style={{ height: '100%', width: `${v.score}%`, background: v.score >= 70 ? 'var(--data-positive)' : v.score >= 50 ? 'var(--wrn-txt)' : 'var(--accent-primary)', borderRadius: '3px' }} />
                       </div>
-                      <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{v.score}</span>
+                      <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{v.score}</span>
                     </div>
                   </div>
                 </div>
@@ -291,7 +291,7 @@ export default function VenueOptimizerPage() {
                 <div style={{ padding: '16px 24px', textAlign: 'center' }}>
                   <button
                     onClick={() => setShowAll(true)}
-                    style={{ padding: '8px 24px', border: '1px solid rgba(232,23,31,0.30)', borderRadius: '4px', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', cursor: 'pointer', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--accent-primary)', transition: 'all 0.2s' }}
+                    style={{ padding: '8px 24px', border: '1px solid rgba(232,23,31,0.30)', borderRadius: '2px', fontSize: '14px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', cursor: 'pointer', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--accent-primary)', transition: 'all 200ms' }}
                   >
                     Show all {data.venues.length} districts
                   </button>
@@ -301,7 +301,7 @@ export default function VenueOptimizerPage() {
 
             {/* Disclaimer */}
             <div style={{ marginTop: '24px', padding: '16px 16px', backgroundColor: 'rgba(122,88,0,0.08)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
-              <p style={{ fontSize: '11px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ fontSize: '12px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
             </div>
@@ -337,9 +337,9 @@ export default function VenueOptimizerPage() {
               { name: 'State Survey', href: '/attorney/state-survey', desc: 'State-by-state legal survey analysis' },
               { name: 'Court Rules', href: '/attorney/court-rules', desc: 'Federal and state court rules and procedures' },
             ].map(tool => (
-              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                 <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
               </a>
             ))}
           </div>

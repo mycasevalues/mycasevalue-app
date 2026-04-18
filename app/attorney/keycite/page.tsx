@@ -115,7 +115,7 @@ export default function KeyCitePage() {
             height="14"
             viewBox="0 0 14 14"
             fill={i < stars ? 'var(--gold)' : 'var(--bdr)'}
-            style={{ transition: 'all 0.2s' }}
+            style={{ transition: 'all 200ms' }}
           >
             <path d="M7 1l2.18 4.41 4.82.7-3.5 3.4.83 4.84L7 11.77l-4.33 2.28.83-4.84-3.5-3.4 4.82-.7z" />
           </svg>
@@ -163,9 +163,9 @@ export default function KeyCitePage() {
             border: '1px solid rgba(255,255,255,0.2)',
             background: 'rgba(255,255,255,0.1)',
             fontFamily: 'var(--font-mono)',
-            fontSize: 11,
+            fontSize: 12,
             fontWeight: 700,
-            letterSpacing: '0.08em',
+            letterSpacing: '0.5px',
             textTransform: 'uppercase',
             color: 'rgba(255,255,255,0.9)',
           }}>
@@ -213,7 +213,7 @@ export default function KeyCitePage() {
             <div>
               <label htmlFor="citation-input" style={{
                 display: 'block',
-                fontSize: 13,
+                fontSize: 14,
                 fontWeight: 600,
                 color: 'var(--text-primary)',
                 marginBottom: 8,
@@ -240,7 +240,7 @@ export default function KeyCitePage() {
                   color: 'var(--text-primary)',
                   fontFamily: 'var(--font-mono)',
                   boxSizing: 'border-box',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                 }}
                 onFocus={(e) => {
                   e.currentTarget.style.borderColor = 'var(--gold)';
@@ -266,8 +266,8 @@ export default function KeyCitePage() {
                 fontFamily: 'var(--font-ui)',
                 cursor: 'pointer',
                 textTransform: 'uppercase',
-                letterSpacing: '0.04em',
-                transition: 'all 0.2s',
+                letterSpacing: '0.5px',
+                transition: 'all 200ms',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'var(--gold-hover)';
@@ -340,7 +340,7 @@ export default function KeyCitePage() {
                 }}>
                   <div>
                     <div style={{
-                      fontSize: 11,
+                      fontSize: 12,
                       fontWeight: 600,
                       color: 'var(--text2)',
                       textTransform: 'uppercase',
@@ -361,7 +361,7 @@ export default function KeyCitePage() {
 
                   <div>
                     <div style={{
-                      fontSize: 11,
+                      fontSize: 12,
                       fontWeight: 600,
                       color: 'var(--text2)',
                       textTransform: 'uppercase',
@@ -380,7 +380,7 @@ export default function KeyCitePage() {
 
                   <div>
                     <div style={{
-                      fontSize: 11,
+                      fontSize: 12,
                       fontWeight: 600,
                       color: 'var(--text2)',
                       textTransform: 'uppercase',
@@ -408,7 +408,7 @@ export default function KeyCitePage() {
                 textAlign: 'right',
               }}>
                 <div style={{
-                  fontSize: 11,
+                  fontSize: 12,
                   fontWeight: 600,
                   color: 'var(--text2)',
                   textTransform: 'uppercase',
@@ -446,7 +446,7 @@ export default function KeyCitePage() {
                   {MOCK_CASE_DATA.treatmentCount.toLocaleString()}
                 </div>
                 <div style={{
-                  fontSize: 11,
+                  fontSize: 12,
                   color: 'var(--text2)',
                 }}>
                   Cases Citing
@@ -515,7 +515,7 @@ export default function KeyCitePage() {
                       {hn.topic}
                     </div>
                     <div style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       color: 'var(--text-primary)',
                       lineHeight: 1.5,
                     }}>
@@ -555,7 +555,7 @@ export default function KeyCitePage() {
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                   borderBottom: activeTab === tab ? '3px solid var(--gold)' : 'none',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                   marginBottom: '-2px',
                 }}
               >
@@ -619,7 +619,7 @@ export default function KeyCitePage() {
                       width: '100%',
                       height: 36,
                       padding: '8px 10px',
-                      fontSize: 13,
+                      fontSize: 14,
                       border: '1px solid var(--bdr)',
                       borderRadius: 2,
                       background: 'var(--surf)',
@@ -658,7 +658,7 @@ export default function KeyCitePage() {
                       width: '100%',
                       height: 36,
                       padding: '8px 10px',
-                      fontSize: 13,
+                      fontSize: 14,
                       border: '1px solid var(--bdr)',
                       borderRadius: 2,
                       background: 'var(--surf)',
@@ -803,7 +803,7 @@ export default function KeyCitePage() {
                       width: '100%',
                       height: 36,
                       padding: '8px 10px',
-                      fontSize: 13,
+                      fontSize: 14,
                       border: '1px solid var(--bdr)',
                       borderRadius: 2,
                       background: 'var(--surf)',
@@ -926,7 +926,7 @@ export default function KeyCitePage() {
                           />
                           <div>
                             <div style={{
-                              fontSize: 11,
+                              fontSize: 12,
                               fontWeight: 700,
                               color: 'var(--gold)',
                               textTransform: 'uppercase',
@@ -936,7 +936,7 @@ export default function KeyCitePage() {
                               {event.year} — {event.type}
                             </div>
                             <div style={{
-                              fontSize: 13,
+                              fontSize: 14,
                               color: 'var(--text-primary)',
                             }}>
                               {event.description}
@@ -987,7 +987,7 @@ export default function KeyCitePage() {
                       }}>
                         <div>
                           <div style={{
-                            fontSize: 11,
+                            fontSize: 12,
                             fontWeight: 600,
                             color: 'var(--gold)',
                             textTransform: 'uppercase',
@@ -1030,7 +1030,7 @@ export default function KeyCitePage() {
                       }}>
                         <span
                           style={{
-                            fontSize: 11,
+                            fontSize: 12,
                             fontWeight: 700,
                             color: getTreatmentColor(ref.treatment),
                             textTransform: 'uppercase',
@@ -1085,7 +1085,7 @@ export default function KeyCitePage() {
                           </span>
                           <div>
                             <div style={{
-                              fontSize: 11,
+                              fontSize: 12,
                               fontWeight: 700,
                               color: getTreatmentColor(neg.flag),
                               textTransform: 'uppercase',
@@ -1124,7 +1124,7 @@ export default function KeyCitePage() {
                             <strong>Rationale:</strong> {neg.rationale}
                           </div>
                           <div style={{
-                            fontSize: 11,
+                            fontSize: 12,
                             color: 'var(--text2)',
                           }}>
                             Affects headnotes: {neg.headnotes.join(', ')}
@@ -1188,7 +1188,7 @@ export default function KeyCitePage() {
             flexWrap: 'wrap',
           }}>
             <div style={{
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: 600,
               color: 'var(--text2)',
               textTransform: 'uppercase',
@@ -1213,8 +1213,8 @@ export default function KeyCitePage() {
                   fontFamily: 'var(--font-ui)',
                   cursor: 'pointer',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.04em',
-                  transition: 'all 0.2s',
+                  letterSpacing: '0.5px',
+                  transition: 'all 200ms',
                   color: 'var(--text-primary)',
                 }}
                 onMouseEnter={(e) => {
@@ -1238,8 +1238,8 @@ export default function KeyCitePage() {
                   fontFamily: 'var(--font-ui)',
                   cursor: 'pointer',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.04em',
-                  transition: 'all 0.2s',
+                  letterSpacing: '0.5px',
+                  transition: 'all 200ms',
                   color: 'var(--text-primary)',
                 }}
                 onMouseEnter={(e) => {
@@ -1263,8 +1263,8 @@ export default function KeyCitePage() {
                   fontFamily: 'var(--font-ui)',
                   cursor: 'pointer',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.04em',
-                  transition: 'all 0.2s',
+                  letterSpacing: '0.5px',
+                  transition: 'all 200ms',
                   color: 'white',
                 }}
                 onMouseEnter={(e) => {
@@ -1294,9 +1294,9 @@ export default function KeyCitePage() {
               { name: 'Compare Text', href: '/attorney/compare-text', desc: 'Compare legal documents side by side' },
               { name: 'Alerts', href: '/attorney/alerts', desc: 'Real-time citation and case alerts' },
             ].map(tool => (
-              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+              <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                 <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
               </a>
             ))}
           </div>
@@ -1308,7 +1308,7 @@ export default function KeyCitePage() {
         background: 'var(--surf)',
         color: 'var(--text2)',
         padding: '40px 24px',
-        fontSize: 13,
+        fontSize: 14,
         lineHeight: 1.6,
         borderTop: '1px solid var(--bdr)',
       }}>

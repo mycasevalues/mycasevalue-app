@@ -14,7 +14,7 @@ export default function UpdatedBadge({ text = 'Updated Q4 2025' }: UpdatedBadgeP
       style={{
         background: 'var(--link-light)',
         color: 'var(--accent-primary)',
-        fontSize: '11px',
+        fontSize: '12px',
         fontWeight: 500,
         padding: '2px 8px',
         borderRadius: '4px',

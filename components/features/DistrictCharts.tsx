@@ -66,7 +66,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                   borderRadius: '4px',
                   color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-ui)',
-                  fontSize: '13px',
+                  fontSize: '14px',
                 }}
               />
               <Bar dataKey="count" fill="var(--accent-primary)" radius={[0, 8, 8, 0]} />

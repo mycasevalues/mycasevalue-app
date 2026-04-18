@@ -31,7 +31,7 @@ type AvailableState = { id: string; label: string };
 const StatBadge = ({ label, value, color }: { label: string; value: string; color: string }) => (
   <div style={{ textAlign: 'center' }}>
     <div className="font-mono" style={{ fontSize: 20, fontWeight: 600, color }}>{value}</div>
-    <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '2px' }}>{label}</div>
+    <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '2px' }}>{label}</div>
   </div>
 );
 
@@ -146,8 +146,8 @@ export default function JudgeIntelligencePage() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -188,7 +188,7 @@ export default function JudgeIntelligencePage() {
                 background: 'var(--color-surface-0)',
                 cursor: 'pointer',
                 fontFamily: 'var(--font-ui)',
-                transition: 'border-color 0.2s',
+                transition: 'border-color 200ms',
               }}
             >
               <option value="">Choose a state...</option>
@@ -221,10 +221,10 @@ export default function JudgeIntelligencePage() {
                       fontWeight: 600,
                       cursor: 'pointer',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
+                      letterSpacing: '0.5px',
                       backgroundColor: sortBy === opt.key ? 'var(--accent-primary)' : 'transparent',
                       color: sortBy === opt.key ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
-                      transition: 'all 0.2s',
+                      transition: 'all 200ms',
                     }}
                   >
                     {opt.label}
@@ -270,7 +270,7 @@ export default function JudgeIntelligencePage() {
                 <button
                   key={s.id}
                   onClick={() => handleStateChange(s.id)}
-                  style={{ padding: '8px 16px', border: '1px solid var(--border-default)', borderRadius: '2px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: 'var(--color-surface-1)', color: 'var(--accent-primary)', transition: 'border-color 0.2s' }}
+                  style={{ padding: '8px 16px', border: '1px solid var(--border-default)', borderRadius: '2px', fontSize: '14px', fontWeight: 500, cursor: 'pointer', background: 'var(--color-surface-1)', color: 'var(--accent-primary)', transition: 'border-color 200ms' }}
                 >
                   {s.label}
                 </button>
@@ -283,7 +283,7 @@ export default function JudgeIntelligencePage() {
         {data && sortedJudges.length > 0 && (
           <>
             <div style={{ marginBottom: '16px' }}>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
                 Showing {sortedJudges.length} federal judges in {data.stateLabel}
               </p>
             </div>
@@ -299,7 +299,7 @@ export default function JudgeIntelligencePage() {
                       borderRadius: '4px',
                       border: isExpanded ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
                       overflow: 'hidden',
-                      transition: 'border-color 0.2s, box-shadow 0.2s',
+                      transition: 'border-color 200ms, box-shadow 200ms',
                       boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)',
                     }}
                   >
@@ -325,12 +325,12 @@ export default function JudgeIntelligencePage() {
                             {judge.name}
                           </span>
                           {judge.senior && (
-                            <span style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '3px', backgroundColor: 'rgba(184,110,0,0.08)', color: 'var(--wrn-txt)' }}>
+                            <span style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '3px', backgroundColor: 'rgba(184,110,0,0.08)', color: 'var(--wrn-txt)' }}>
                               Senior
                             </span>
                           )}
                         </div>
-                        <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0 }}>
+                        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
                           Appointed {judge.appointed} by {judge.appointedBy} · {judge.casesHandled} cases handled
                         </p>
                       </div>
@@ -346,7 +346,7 @@ export default function JudgeIntelligencePage() {
                           fill="none"
                           stroke="var(--color-text-secondary)"
                           strokeWidth="2"
-                          style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}
+                          style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 200ms' }}
                         >
                           <polyline points="6 9 12 15 18 9" />
                         </svg>
@@ -382,8 +382,8 @@ export default function JudgeIntelligencePage() {
                                 { label: 'Median Duration', value: `${judge.medianDurationMonths} months` },
                               ].map((item) => (
                                 <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid var(--border-default)' }}>
-                                  <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>{item.label}</span>
-                                  <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{item.value}</span>
+                                  <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>{item.label}</span>
+                                  <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{item.value}</span>
                                 </div>
                               ))}
                             </div>
@@ -394,7 +394,7 @@ export default function JudgeIntelligencePage() {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                               {judge.topCaseTypes.map((ct) => (
                                 <div key={ct.nos} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 0' }}>
-                                  <span style={{ fontSize: '13px', color: 'var(--color-text-primary)' }}>{ct.label}</span>
+                                  <span style={{ fontSize: '14px', color: 'var(--color-text-primary)' }}>{ct.label}</span>
                                   <span className="font-mono" style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{ct.count} cases</span>
                                 </div>
                               ))}
@@ -425,9 +425,9 @@ export default function JudgeIntelligencePage() {
                   { name: 'Motion Analytics', href: '/attorney/motion-analytics', desc: 'Analyze motion success rates by judge' },
                   { name: 'Court Rules', href: '/attorney/court-rules', desc: 'Federal and state court rules and procedures' },
                 ].map(tool => (
-                  <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 0.2s' }}>
+                  <a key={tool.href} href={tool.href} style={{ display: 'block', padding: '16px', background: 'var(--surf)', border: '1px solid var(--bdr)', borderRadius: '4px', textDecoration: 'none', color: 'inherit', transition: 'border-color 200ms' }}>
                     <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)', marginBottom: '4px' }}>{tool.name}</div>
-                    <div style={{ fontSize: '13px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
+                    <div style={{ fontSize: '14px', color: 'var(--color-text-muted)' }}>{tool.desc}</div>
                   </a>
                 ))}
               </div>

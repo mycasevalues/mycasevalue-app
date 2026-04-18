@@ -232,12 +232,12 @@ function getTopCaseTypesForDistrict(code: string) {
 /* ── Shared inline styles ── */
 
 const sectionLabel: React.CSSProperties = {
-  fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.05em',
+  fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.5px',
   color: 'var(--text3)', fontFamily: 'var(--font-ui)', fontWeight: 600,
 };
 
 const dataAttrStyle: React.CSSProperties = {
-  fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--text4)',
+  fontSize: 12, fontFamily: 'var(--font-ui)', color: 'var(--text4)',
   marginTop: 8, lineHeight: 1.5,
 };
 
@@ -261,7 +261,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <h1 style={{ color: 'var(--text1)', fontSize: 21, fontWeight: 700, fontFamily: 'var(--font-legal)', margin: '0 0 12px' }}>
             District not found
           </h1>
-          <p style={{ color: 'var(--text2)', fontSize: 13, fontFamily: 'var(--font-ui)', margin: '0 0 24px' }}>
+          <p style={{ color: 'var(--text2)', fontSize: 14, fontFamily: 'var(--font-ui)', margin: '0 0 24px' }}>
             The district code &ldquo;{code}&rdquo; does not exist.
           </p>
           <Link href="/districts" style={{ color: 'var(--link)', textDecoration: 'none', fontWeight: 700, fontFamily: 'var(--font-ui)' }}>
@@ -301,7 +301,7 @@ export default async function DistrictPage({ params }: PageProps) {
       {/* ── Breadcrumb ── */}
       <nav style={{
         background: 'var(--color-surface-0)', borderBottom: '1px solid var(--bdr)',
-        padding: '8px 22px', fontSize: 11, fontFamily: 'var(--font-ui)',
+        padding: '8px 22px', fontSize: 12, fontFamily: 'var(--font-ui)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 6 }}>
           <Link href="/" style={{ color: 'var(--text3)', textDecoration: 'none' }}>Home</Link>
@@ -420,7 +420,7 @@ export default async function DistrictPage({ params }: PageProps) {
             marginBottom: 4,
           }}>
             <span style={{ ...sectionLabel }}>Page Contents</span>
-            <span style={{ fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--link)', cursor: 'pointer' }}>Print</span>
+            <span style={{ fontSize: 12, fontFamily: 'var(--font-ui)', color: 'var(--link)', cursor: 'pointer' }}>Print</span>
           </div>
           {[
             { label: 'Overview', active: true, sub: false },
@@ -479,7 +479,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 ].map(kv => (
                   <div key={kv.label} style={{
                     display: 'flex', justifyContent: 'space-between', padding: '4px 0',
-                    borderBottom: '1px solid var(--bdr)', fontSize: 11,
+                    borderBottom: '1px solid var(--bdr)', fontSize: 12,
                   }}>
                     <span style={{ fontFamily: 'var(--font-ui)', color: 'var(--text3)' }}>{kv.label}</span>
                     <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--text1)' }}>{kv.value}</span>
@@ -509,29 +509,29 @@ export default async function DistrictPage({ params }: PageProps) {
                 >
                   <div className="district-case-card" style={{
                     background: 'var(--color-surface-0)', border: '1px solid var(--bdr)', borderRadius: 2,
-                    padding: '12px 14px', cursor: 'pointer', transition: 'border-color 0.15s ease',
+                    padding: '12px 14px', cursor: 'pointer', transition: 'border-color 150ms ease',
                   }}>
                     <h3 style={{
-                      fontSize: 13, fontWeight: 700, color: 'var(--chrome-bg)',
+                      fontSize: 14, fontWeight: 700, color: 'var(--chrome-bg)',
                       margin: '0 0 8px', fontFamily: 'var(--font-legal)',
                     }}>
                       {ct.label}
                     </h3>
                     <div style={{ display: 'flex', gap: 16, marginBottom: 6 }}>
                       <div>
-                        <div style={{ ...sectionLabel, fontSize: 9, marginBottom: 2 }}>Win Rate</div>
+                        <div style={{ ...sectionLabel, fontSize: 12, marginBottom: 2 }}>Win Rate</div>
                         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 500, color: 'var(--text1)' }}>
                           {Math.round(ct.winRate * 10) / 10}%
                         </div>
                       </div>
                       <div>
-                        <div style={{ ...sectionLabel, fontSize: 9, marginBottom: 2 }}>Cases</div>
+                        <div style={{ ...sectionLabel, fontSize: 12, marginBottom: 2 }}>Cases</div>
                         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 500, color: 'var(--text1)' }}>
                           {(ct.count / 1000).toFixed(0)}K
                         </div>
                       </div>
                     </div>
-                    <div style={{ fontSize: 11, fontFamily: 'var(--font-mono)', color: 'var(--gold)' }}>
+                    <div style={{ fontSize: 12, fontFamily: 'var(--font-mono)', color: 'var(--gold)' }}>
                       {ct.settlementRangeText}
                     </div>
                   </div>
@@ -561,7 +561,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   districtCode={upperCode}
                 />
               </div>
-              <p style={{ fontSize: 11, color: 'var(--text3)', marginTop: 8, margin: '8px 0 0', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 12, color: 'var(--text3)', marginTop: 8, margin: '8px 0 0', fontFamily: 'var(--font-ui)' }}>
                 Federal civil case filings in {districtMeta.fullName} from 2015 to 2024.
               </p>
             </div>
@@ -648,12 +648,12 @@ export default async function DistrictPage({ params }: PageProps) {
                   </div>
                   <div style={{ background: 'var(--sidebar2)', border: '1px solid var(--bdr)', borderRadius: 2, padding: 14 }}>
                     <div style={{ ...sectionLabel, marginBottom: 8 }}>Electronic Filing</div>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-ui)', marginBottom: 6 }}>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-ui)', marginBottom: 6 }}>
                       {rules.efilingSystem || 'CM/ECF'}
                     </div>
                     {rules.localRulesUrl && (
                       <a href={rules.localRulesUrl} target="_blank" rel="noopener noreferrer"
-                        style={{ fontSize: 11, color: 'var(--link)', textDecoration: 'none', fontWeight: 500 }}>
+                        style={{ fontSize: 12, color: 'var(--link)', textDecoration: 'none', fontWeight: 500 }}>
                         View Official Local Rules →
                       </a>
                     )}
@@ -662,7 +662,7 @@ export default async function DistrictPage({ params }: PageProps) {
                     <div style={{ ...sectionLabel, marginBottom: 8 }}>{"Clerk's Office"}</div>
                     <div style={{ fontSize: 12, fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}>
                       {rules.clerkContact?.phone && <div>{rules.clerkContact.phone}</div>}
-                      {rules.clerkContact?.address && <div style={{ fontSize: 11, color: 'var(--text3)', marginTop: 3 }}>{rules.clerkContact.address}</div>}
+                      {rules.clerkContact?.address && <div style={{ fontSize: 12, color: 'var(--text3)', marginTop: 3 }}>{rules.clerkContact.address}</div>}
                     </div>
                   </div>
                 </div>
@@ -681,7 +681,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   </h2>
                   {aid.selfRepresentedUrl && (
                     <a href={aid.selfRepresentedUrl} target="_blank" rel="noopener noreferrer"
-                      style={{ fontSize: 11, color: 'var(--link)', textDecoration: 'none', fontWeight: 600, padding: '3px 10px', border: '1px solid var(--link)', borderRadius: 2 }}>
+                      style={{ fontSize: 12, color: 'var(--link)', textDecoration: 'none', fontWeight: 600, padding: '3px 10px', border: '1px solid var(--link)', borderRadius: 2 }}>
                       Court Self-Help Resources →
                     </a>
                   )}
@@ -690,10 +690,10 @@ export default async function DistrictPage({ params }: PageProps) {
                   {(aid.organizations || []).map((org: any, idx: number) => (
                     <div key={idx} style={{ background: 'var(--sidebar2)', border: '1px solid var(--bdr)', borderRadius: 2, padding: 14 }}>
                       <a href={org.website} target="_blank" rel="noopener noreferrer"
-                        style={{ fontSize: 13, fontWeight: 600, color: 'var(--link)', textDecoration: 'none', fontFamily: 'var(--font-legal)' }}>
+                        style={{ fontSize: 14, fontWeight: 600, color: 'var(--link)', textDecoration: 'none', fontFamily: 'var(--font-legal)' }}>
                         {org.name}
                       </a>
-                      <div style={{ fontSize: 11, color: 'var(--text3)', fontFamily: 'var(--font-ui)', marginTop: 4 }}>
+                      <div style={{ fontSize: 12, color: 'var(--text3)', fontFamily: 'var(--font-ui)', marginTop: 4 }}>
                         {org.phone && <div>{org.phone}</div>}
                         {org.serviceArea && <div>Service area: {org.serviceArea}</div>}
                       </div>
@@ -701,7 +701,7 @@ export default async function DistrictPage({ params }: PageProps) {
                         <div style={{ marginTop: 5, display: 'flex', flexWrap: 'wrap', gap: 3 }}>
                           {org.caseTypes.map((ct: string, i: number) => (
                             <span key={i} style={{
-                              fontSize: 9, padding: '1px 6px', background: 'var(--link-light)', color: 'var(--link)',
+                              fontSize: 12, padding: '1px 6px', background: 'var(--link-light)', color: 'var(--link)',
                               borderRadius: 2, fontWeight: 500,
                             }}>{ct}</span>
                           ))}
@@ -713,7 +713,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 <div style={{
                   marginTop: 8, padding: '8px 12px',
                   background: 'var(--wrn-bg)', borderLeft: '3px solid var(--gold)',
-                  borderRadius: 2, fontSize: 11, color: 'var(--wrn-txt)', lineHeight: 1.5,
+                  borderRadius: 2, fontSize: 12, color: 'var(--wrn-txt)', lineHeight: 1.5,
                   fontFamily: 'var(--font-ui)',
                 }}>
                   Many legal aid organizations have income eligibility requirements. Contact the organization directly to confirm eligibility.
@@ -744,11 +744,11 @@ export default async function DistrictPage({ params }: PageProps) {
             {relatedDistricts.map(d => (
               <div key={d.code} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '3px 0' }}>
                 <Link href={`/districts/${d.code}`} style={{
-                  fontSize: 11, fontFamily: 'var(--font-ui)', color: 'var(--link)', textDecoration: 'none',
+                  fontSize: 12, fontFamily: 'var(--font-ui)', color: 'var(--link)', textDecoration: 'none',
                 }}>
                   {d.name}
                 </Link>
-                <span style={{ fontSize: 10, fontFamily: 'var(--font-mono)', color: 'var(--text3)' }}>
+                <span style={{ fontSize: 12, fontFamily: 'var(--font-mono)', color: 'var(--text3)' }}>
                   C{districtMeta.circuit}
                 </span>
               </div>
@@ -769,8 +769,8 @@ export default async function DistrictPage({ params }: PageProps) {
                 display: 'flex', justifyContent: 'space-between', padding: '3px 0',
                 borderBottom: '1px solid var(--bdr)',
               }}>
-                <span style={{ fontSize: 10, fontFamily: 'var(--font-ui)', color: 'var(--text3)' }}>{s.label}</span>
-                <span style={{ fontSize: 10, fontFamily: 'var(--font-mono)', color: 'var(--text1)', fontVariantNumeric: 'tabular-nums' }}>{s.value}</span>
+                <span style={{ fontSize: 12, fontFamily: 'var(--font-ui)', color: 'var(--text3)' }}>{s.label}</span>
+                <span style={{ fontSize: 12, fontFamily: 'var(--font-mono)', color: 'var(--text1)', fontVariantNumeric: 'tabular-nums' }}>{s.value}</span>
               </div>
             ))}
           </div>
@@ -783,20 +783,20 @@ export default async function DistrictPage({ params }: PageProps) {
           {/* Download Report */}
           <button type="button" style={{
             width: '100%', height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center',
-            background: 'var(--gold)', color: 'var(--card)', fontSize: 11, fontWeight: 600,
+            background: 'var(--gold)', color: 'var(--card)', fontSize: 12, fontWeight: 600,
             fontFamily: 'var(--font-ui)', border: 'none', borderRadius: 2, cursor: 'pointer',
             marginBottom: 4,
           }}>
             Download Report
           </button>
-          <p style={{ fontSize: 9, fontFamily: 'var(--font-ui)', color: 'var(--text4)', margin: '0 0 10px', textAlign: 'center' }}>
+          <p style={{ fontSize: 12, fontFamily: 'var(--font-ui)', color: 'var(--text4)', margin: '0 0 10px', textAlign: 'center' }}>
             PDF · Formatted for legal reference
           </p>
 
           {/* Set Alert */}
           <button type="button" style={{
             width: '100%', height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center',
-            background: 'transparent', color: 'var(--link)', fontSize: 11, fontWeight: 600,
+            background: 'transparent', color: 'var(--link)', fontSize: 12, fontWeight: 600,
             fontFamily: 'var(--font-ui)', border: '1px solid var(--link)', borderRadius: 2, cursor: 'pointer',
           }}>
             Set Alert

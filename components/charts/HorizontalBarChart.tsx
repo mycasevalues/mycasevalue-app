@@ -58,7 +58,7 @@ function ConfidenceLegend() {
           />
           <span
             style={{
-              fontSize: 10,
+              fontSize: 12,
               fontFamily: 'var(--font-ui)',
               color: 'var(--text3, #78766C)',
             }}
@@ -109,7 +109,7 @@ function BarRow({
         style={{
           width: 148,
           flexShrink: 0,
-          fontSize: 11,
+          fontSize: 12,
           color: 'var(--text2, #42403C)',
           fontFamily: 'var(--font-ui)',
           textAlign: 'right',
@@ -153,7 +153,7 @@ function BarRow({
           width: 35,
           flexShrink: 0,
           fontFamily: 'var(--font-mono)',
-          fontSize: 11,
+          fontSize: 12,
           color: 'var(--text1, #18181A)',
           textAlign: 'right',
         }}
@@ -213,7 +213,7 @@ export default function HorizontalBarChart({
       {dataSources && (
         <div
           style={{
-            fontSize: 9,
+            fontSize: 12,
             fontFamily: 'var(--font-ui)',
             color: 'var(--text4, #A8A6A0)',
             marginTop: 6,

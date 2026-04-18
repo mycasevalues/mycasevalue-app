@@ -70,7 +70,7 @@ export default function CookieConsent() {
           font-family: var(--font-ui);
           font-weight: 600;
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
           letter-spacing: 0.2px;
           border: none;
           white-space: nowrap;
@@ -123,7 +123,7 @@ export default function CookieConsent() {
               color: 'var(--chrome-text-muted)',
               textDecoration: 'underline',
               fontWeight: 500,
-              transition: 'color 0.2s ease',
+              transition: 'color 200ms ease',
             }}
           >
             Learn more
@@ -161,7 +161,7 @@ export default function CookieConsent() {
               fontSize: '0.9375rem',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
-              transition: 'color 0.2s ease',
+              transition: 'color 200ms ease',
               cursor: 'pointer',
               borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
             }}

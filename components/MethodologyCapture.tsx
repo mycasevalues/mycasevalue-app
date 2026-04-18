@@ -468,7 +468,7 @@ export default function MethodologyCapture() {
           border-radius: 4px;
           font-size: 14px;
           font-family: var(--font-ui);
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
           box-sizing: border-box;
         }
         .form-input:focus {
@@ -490,7 +490,7 @@ export default function MethodologyCapture() {
           font-weight: 600;
           font-family: var(--font-ui);
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
         }
         .form-button:hover:not(:disabled) {
           background-color: var(--gold-hover, #A87222);
@@ -502,7 +502,7 @@ export default function MethodologyCapture() {
         }
         .error-message {
           color: var(--data-negative);
-          font-size: 13px;
+          font-size: 14px;
           margin-top: 6px;
           font-family: var(--font-ui);
         }
@@ -651,7 +651,7 @@ export default function MethodologyCapture() {
           padding: 16,
           borderRadius: '4px',
           backgroundColor: 'rgba(0, 65, 130, 0.05)',
-          fontSize: 13,
+          fontSize: 14,
           color: 'var(--color-text-secondary)',
           fontFamily: 'var(--font-ui)',
           lineHeight: 1.6,

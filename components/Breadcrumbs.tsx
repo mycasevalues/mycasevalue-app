@@ -110,7 +110,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   style={{
                     color: 'var(--color-text-muted)',
                     margin: '0 10px',
-                    fontSize: '11px',
+                    fontSize: '12px',
                     opacity: 0.5,
                     fontFamily: 'var(--font-mono)',
                   }}

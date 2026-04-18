@@ -88,7 +88,7 @@ export default function BillingPage() {
       <div style={{ backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '32px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Breadcrumb */}
-          <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '24px' }}>
+          <div style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '24px' }}>
             <Link href="/" style={{ color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none' }}>
               Home
             </Link>
@@ -102,7 +102,7 @@ export default function BillingPage() {
 
           {/* Badge and Title */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
-            <span style={{ padding: '6px 14px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <span style={{ padding: '6px 14px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               BILLING
             </span>
           </div>
@@ -123,7 +123,7 @@ export default function BillingPage() {
           {/* Error Banner */}
           {error && (
             <div style={{ padding: '16px 16px', marginBottom: '24px', borderRadius: '4px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)' }}>
-              <p style={{ fontSize: '13px', color: 'var(--flag-yellow)', margin: 0 }}>{error}</p>
+              <p style={{ fontSize: '14px', color: 'var(--flag-yellow)', margin: 0 }}>{error}</p>
             </div>
           )}
           {/* Current Plan Card */}
@@ -137,7 +137,7 @@ export default function BillingPage() {
                   <span className="font-legal" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                     {details.name}
                   </span>
-                  <span style={{ padding: '4px 12px', borderRadius: '4px', fontSize: '12px', fontWeight: 600, backgroundColor: 'rgba(0,105,151,0.06)', color: 'var(--gold)' }}>
+                  <span style={{ padding: '4px 12px', borderRadius: '3px', fontSize: '12px', fontWeight: 500, backgroundColor: 'rgba(0,105,151,0.06)', color: 'var(--gold)' }}>
                     Active
                   </span>
                 </div>
@@ -153,12 +153,12 @@ export default function BillingPage() {
             </div>
 
             {planInfo?.grantedAt && (
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '16px 0 0 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '16px 0 0 0' }}>
                 Active since {new Date(planInfo.grantedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
             {planInfo?.expiresAt && (
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '4px 0 0 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '4px 0 0 0' }}>
                 Next billing date: {new Date(planInfo.expiresAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
@@ -172,7 +172,7 @@ export default function BillingPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px' }}>
               {details.features.map((feature) => (
                 <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 0' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" style={{ flexShrink: 0 }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--data-positive)" strokeWidth="2.5" style={{ flexShrink: 0 }}>
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                   <span style={{ fontSize: '14px', color: 'var(--color-text-primary)' }}>{feature}</span>

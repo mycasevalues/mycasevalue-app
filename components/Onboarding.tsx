@@ -337,7 +337,7 @@ export default function Onboarding() {
             {/* Step counter */}
             <div
               style={{
-                fontSize: 11,
+                fontSize: 12,
                 fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
                 color: 'var(--gold, #C4882A)',
                 fontWeight: 600,
@@ -367,7 +367,7 @@ export default function Onboarding() {
             <p
               style={{
                 margin: 0,
-                fontSize: 13,
+                fontSize: 14,
                 fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
                 color: 'var(--text2, #42403C)',
                 lineHeight: 1.55,
@@ -413,7 +413,7 @@ export default function Onboarding() {
                   onClick={() => setCurrentStep((s) => s - 1)}
                   style={{
                     padding: '6px 14px',
-                    fontSize: 13,
+                    fontSize: 14,
                     fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
                     fontWeight: 600,
                     color: 'var(--text1, #18181A)',
@@ -439,7 +439,7 @@ export default function Onboarding() {
                 }}
                 style={{
                   padding: '6px 18px',
-                  fontSize: 13,
+                  fontSize: 14,
                   fontFamily: "var(--font-ui, 'Source Sans 3', sans-serif)",
                   fontWeight: 600,
                   color: '#FFFFFF',
@@ -475,7 +475,7 @@ export default function Onboarding() {
                     i === currentStep
                       ? 'var(--gold, #C4882A)'
                       : 'var(--bdr, #E2DFD8)',
-                  transition: 'width 0.2s ease, background-color 0.2s ease',
+                  transition: 'width 200ms ease, background-color 200ms ease',
                 }}
               />
             ))}

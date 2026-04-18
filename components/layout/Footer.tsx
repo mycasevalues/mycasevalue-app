@@ -61,18 +61,18 @@ const COLS = [
 
 /* ── Column header style ── */
 const colHeaderStyle: React.CSSProperties = {
-  fontSize: 10,
+  fontSize: 12,
   fontFamily: 'var(--font-ui)',
   fontWeight: 600,
   color: 'var(--chrome-text-muted, #8AAAC8)',
   textTransform: 'uppercase',
-  letterSpacing: '0.08em',
+  letterSpacing: '0.5px',
   marginBottom: 8,
 };
 
 /* ── Link style ── */
 const linkStyle: React.CSSProperties = {
-  fontSize: 11,
+  fontSize: 12,
   fontFamily: 'var(--font-ui)',
   color: 'var(--chrome-text-muted, #8AAAC8)',
   textDecoration: 'none',
@@ -142,7 +142,7 @@ export default function Footer() {
             </div>
             <p
               style={{
-                fontSize: 13,
+                fontSize: 14,
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--chrome-text-muted, #8AAAC8)',
                 lineHeight: 1.5,
@@ -155,7 +155,7 @@ export default function Footer() {
             </p>
             <p
               style={{
-                fontSize: 11,
+                fontSize: 12,
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--gold, #C4882A)',
                 marginTop: 4,
@@ -207,7 +207,7 @@ export default function Footer() {
         >
           <p
             style={{
-              fontSize: 10,
+              fontSize: 12,
               fontFamily: 'var(--font-ui)',
               color: 'var(--chrome-text-muted, #8AAAC8)',
               margin: 0,
@@ -220,7 +220,7 @@ export default function Footer() {
           </p>
           <p
             style={{
-              fontSize: 10,
+              fontSize: 12,
               fontFamily: 'var(--font-ui)',
               color: 'var(--chrome-text-muted, #8AAAC8)',
               margin: 0,

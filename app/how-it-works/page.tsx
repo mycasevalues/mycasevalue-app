@@ -202,7 +202,7 @@ export default function HowItWorksPage() {
                   <h2 className="font-legal font-semibold mb-3 tracking-[-0.01em]" style={{ color: 'var(--color-text-primary)', fontSize: '17px' }}>
                     {step.title}
                   </h2>
-                  <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '13px', fontWeight: '400', lineHeight: '1.6' }}>
+                  <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '14px', fontWeight: '400', lineHeight: '1.6' }}>
                     {step.description}
                   </p>
                 </div>
@@ -263,7 +263,7 @@ export default function HowItWorksPage() {
                 <h3 className="font-semibold mb-2" style={{ color: 'var(--color-text-primary)', fontSize: '16px', fontWeight: '600' }}>
                   {item.title}
                 </h3>
-                <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '13px' }}>
+                <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '14px' }}>
                   {item.description}
                 </p>
               </div>
@@ -421,7 +421,7 @@ export default function HowItWorksPage() {
                 <h3 className="font-semibold" style={{ color: 'var(--color-text-primary)', fontSize: '16px', fontWeight: '600', margin: 0 }}>
                   {feature.title}
                 </h3>
-                <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '13px', margin: 0 }}>
+                <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: 0 }}>
                   {feature.description}
                 </p>
               </Link>
@@ -474,10 +474,10 @@ export default function HowItWorksPage() {
                     {idx + 1}
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+                    <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                       {step.label}
                     </div>
-                    <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginTop: 4 }}>
+                    <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginTop: 4 }}>
                       {step.description}
                     </div>
                   </div>

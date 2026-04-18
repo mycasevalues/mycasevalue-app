@@ -31,7 +31,7 @@ export default function WorkspaceFooter() {
     >
       <div
         style={{
-          fontSize: 10,
+          fontSize: 12,
           fontFamily: 'var(--font-ui)',
           color: 'var(--chrome-text-muted)',
           display: 'flex',
@@ -49,7 +49,7 @@ export default function WorkspaceFooter() {
               style={{
                 color: 'var(--chrome-text-muted, #8AAAC8)',
                 textDecoration: 'none',
-                fontSize: 10,
+                fontSize: 12,
                 transition: 'color 120ms',
               }}
               className="wf-link"

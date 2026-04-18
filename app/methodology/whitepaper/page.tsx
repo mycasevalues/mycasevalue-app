@@ -50,8 +50,8 @@ export default function WhitepaperPage() {
             borderRadius: 999,
             border: '1px solid rgba(10,80,162,0.2)',
             background: 'rgba(10,80,162,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -140,7 +140,7 @@ export default function WhitepaperPage() {
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
             <div>
-              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Version
               </p>
               <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -148,7 +148,7 @@ export default function WhitepaperPage() {
               </p>
             </div>
             <div>
-              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Published
               </p>
               <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -156,7 +156,7 @@ export default function WhitepaperPage() {
               </p>
             </div>
             <div>
-              <p style={{ fontSize: 13, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Contact
               </p>
               <a

@@ -98,7 +98,7 @@ function SignInForm() {
           border: 1px solid var(--gold);
           color: var(--color-text-inverse, #FFFFFF);
           border-radius: '2px';
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 600;
           letter-spacing: -0.005em;
           box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
@@ -360,7 +360,7 @@ function SignInForm() {
                 color: 'var(--color-text-primary)',
                 backgroundColor: 'var(--color-surface-0)',
                 boxSizing: 'border-box' as const,
-                transition: 'border-color 0.2s, box-shadow 0.2s',
+                transition: 'border-color 200ms, box-shadow 200ms',
               }}
             />
           </div>
@@ -420,7 +420,7 @@ function SignInForm() {
                 color: 'var(--color-text-primary)',
                 backgroundColor: 'var(--color-surface-0)',
                 boxSizing: 'border-box' as const,
-                transition: 'border-color 0.2s, box-shadow 0.2s',
+                transition: 'border-color 200ms, box-shadow 200ms',
               }}
             />
           </div>
@@ -452,7 +452,7 @@ function SignInForm() {
             <p
               style={{
                 fontFamily: 'var(--font-ui)',
-                fontSize: '13px',
+                fontSize: '14px',
                 color: 'var(--accent-primary)',
                 margin: '0 0 16px 0',
                 padding: '8px 12px',
@@ -484,7 +484,7 @@ function SignInForm() {
               textTransform: 'uppercase',
               cursor: loading ? 'not-allowed' : 'pointer',
               opacity: loading ? 0.7 : 1,
-              transition: 'background-color 0.2s, transform 0.1s',
+              transition: 'background-color 200ms, transform 150ms',
             }}
           >
             {loading ? 'Signing in...' : 'SIGN IN'}
@@ -510,7 +510,7 @@ function SignInForm() {
             style={{
               padding: '0 12px',
               fontFamily: 'var(--font-ui)',
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--color-text-secondary)',
               fontWeight: 500,
             }}

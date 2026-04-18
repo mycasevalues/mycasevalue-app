@@ -440,7 +440,7 @@ export default function SOLCalculatorPage() {
 
   const labelStyle: React.CSSProperties = {
     display: 'block',
-    fontSize: '13px',
+    fontSize: '14px',
     fontWeight: 600,
     color: 'var(--color-text-primary)',
     marginBottom: '6px',
@@ -457,7 +457,7 @@ export default function SOLCalculatorPage() {
     color: 'var(--color-text-primary)',
     backgroundColor: 'var(--color-surface-0)',
     fontFamily: 'var(--font-ui)',
-    transition: 'border-color 0.2s',
+    transition: 'border-color 200ms',
     outline: 'none',
     boxSizing: 'border-box' as const,
   };
@@ -576,7 +576,7 @@ export default function SOLCalculatorPage() {
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                   marginTop: '8px',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                 }}
               >
                 Calculate Deadline
@@ -598,7 +598,7 @@ export default function SOLCalculatorPage() {
                     boxShadow: 'var(--shadow-xs)',
                   }}
                 >
-                  <h3 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-secondary)', margin: '0 0 16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     Filing Deadline
                   </h3>
                   <p style={{ fontSize: '28px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
@@ -616,7 +616,7 @@ export default function SOLCalculatorPage() {
                       <circle cx="12" cy="12" r="10" /><path d="M12 8v4M12 16h.01" />
                     </svg>
                     <div>
-                      <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--data-negative)', margin: '0 0 4px' }}>Statute Expired</p>
+                      <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--data-negative)', margin: '0 0 4px' }}>Statute Expired</p>
                       <p style={{ fontSize: '12px', color: 'var(--data-negative)', margin: 0 }}>
                         This deadline has passed. Consult an attorney immediately about possible exceptions.
                       </p>
@@ -630,7 +630,7 @@ export default function SOLCalculatorPage() {
                       <path d="M12 2v20M2 10h20" />
                     </svg>
                     <div>
-                      <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--wrn-txt)', margin: '0 0 4px' }}>Deadline in {daysRemaining} Days</p>
+                      <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--wrn-txt)', margin: '0 0 4px' }}>Deadline in {daysRemaining} Days</p>
                       <p style={{ fontSize: '12px', color: 'var(--wrn-txt)', margin: 0 }}>
                         You are within 90 days of the filing deadline. Act immediately.
                       </p>
@@ -644,7 +644,7 @@ export default function SOLCalculatorPage() {
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <div>
-                      <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--data-positive)', margin: '0 0 4px' }}>
+                      <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--data-positive)', margin: '0 0 4px' }}>
                         {daysRemaining} days remaining
                       </p>
                       <p style={{ fontSize: '12px', color: 'var(--data-positive)', margin: 0 }}>
@@ -705,12 +705,12 @@ export default function SOLCalculatorPage() {
               </div>
 
               <div style={{ marginBottom: '24px' }}>
-                <h3 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
                   Important Notes
                 </h3>
                 <ul style={{ margin: 0, paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {selectedSOLData.notes.map((note, i) => (
-                    <li key={i} style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    <li key={i} style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                       {note}
                     </li>
                   ))}
@@ -718,12 +718,12 @@ export default function SOLCalculatorPage() {
               </div>
 
               <div style={{ marginBottom: '24px' }}>
-                <h3 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
                   Tolling Rules
                 </h3>
                 <ul style={{ margin: 0, paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {selectedSOLData.tollingRules.map((rule, i) => (
-                    <li key={i} style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                    <li key={i} style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                       {rule}
                     </li>
                   ))}

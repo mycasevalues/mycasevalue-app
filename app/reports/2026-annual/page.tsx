@@ -27,7 +27,7 @@ export default function AnnualReportPage() {
         borderBottom: '4px solid var(--accent-primary)',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '8px', fontSize: '13px', fontWeight: 600, color: 'var(--chrome-text-muted)', letterSpacing: '0.5px' }}>
+          <div style={{ marginBottom: '8px', fontSize: '14px', fontWeight: 600, color: 'var(--chrome-text-muted)', letterSpacing: '0.5px' }}>
             FEDERAL COURT DATA REPORT
           </div>
           <h1 style={{

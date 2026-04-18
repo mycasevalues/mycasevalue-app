@@ -226,7 +226,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
             </p>
             {term.relatedNosCodes.length > 0 && (
               <div style={{ marginTop: '12px' }}>
-                <p style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: '8px' }}>
+                <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-secondary)', marginBottom: '8px' }}>
                   Related NOS Codes:
                 </p>
                 <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -242,7 +242,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                         background: 'var(--surf)',
                         border: '1px solid var(--border-default)',
                         borderRadius: '4px',
-                        fontSize: '13px',
+                        fontSize: '14px',
                         fontWeight: 600,
                         color: 'var(--accent-primary)',
                         textDecoration: 'none',
@@ -324,7 +324,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                       background: 'var(--accent-primary)',
                       color: 'var(--color-surface-0)',
                       borderRadius: '4px',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: 600,
                       textDecoration: 'none',
                       transition: 'all 200ms ease',
@@ -343,7 +343,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
               marginTop: '32px',
               paddingTop: '24px',
               borderTop: '1px solid var(--border-default)',
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--color-text-secondary)',
             }}
           >

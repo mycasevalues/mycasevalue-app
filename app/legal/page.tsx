@@ -91,7 +91,7 @@ export default function LegalDataPage() {
           borderRadius: 20,
           background: 'rgba(10,80,162,0.06)',
           color: 'var(--accent-primary)',
-          fontSize: 13,
+          fontSize: 14,
           fontWeight: 600,
           marginBottom: 16,
         }}>
@@ -148,7 +148,7 @@ export default function LegalDataPage() {
                 <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
                   {feat.description}
                 </p>
-                <div style={{ marginTop: 12, fontSize: 13, fontWeight: 600, color: feat.color }}>
+                <div style={{ marginTop: 12, fontSize: 14, fontWeight: 600, color: feat.color }}>
                   Explore &rarr;
                 </div>
               </CardBody>
@@ -184,7 +184,7 @@ export default function LegalDataPage() {
               <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 6 }}>
                 {uc.audience}
               </div>
-              <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+              <div style={{ fontSize: 14, color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                 {uc.description}
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function LegalDataPage() {
               }}>
                 {src.name}
               </div>
-              <div style={{ fontSize: 13, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{src.type}</div>
+              <div style={{ fontSize: 14, color: 'var(--color-text-secondary)', marginBottom: 4 }}>{src.type}</div>
               <div style={{
                 fontSize: 20,
                 fontWeight: 700,
@@ -233,7 +233,7 @@ export default function LegalDataPage() {
               }}>
                 {src.records}
               </div>
-              <div style={{ fontSize: 11, color: 'var(--color-text-muted)', marginBottom: 6 }}>records</div>
+              <div style={{ fontSize: 12, color: 'var(--color-text-muted)', marginBottom: 6 }}>records</div>
               <div style={{ fontSize: 12, color: 'var(--color-text-muted)', lineHeight: 1.5 }}>
                 {src.description}
               </div>

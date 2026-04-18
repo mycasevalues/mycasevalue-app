@@ -182,7 +182,7 @@ export default function PACERMonitor() {
               fontSize: '14px',
               fontWeight: 500,
               cursor: 'pointer',
-              transition: 'background-color 0.2s',
+              transition: 'background-color 200ms',
             }}
             onMouseEnter={(e) => {
               (e.target as HTMLButtonElement).style.backgroundColor = 'var(--accent-primary-hover)';
@@ -249,7 +249,7 @@ export default function PACERMonitor() {
                   <div>
                     <p
                       style={{
-                        fontSize: '13px',
+                        fontSize: '14px',
                         fontWeight: 500,
                         color: 'var(--color-text-primary)',
                         margin: 0,
@@ -321,7 +321,7 @@ export default function PACERMonitor() {
                         fontSize: '12px',
                         fontWeight: 500,
                         cursor: 'pointer',
-                        transition: 'all 0.2s',
+                        transition: 'all 200ms',
                       }}
                       onMouseEnter={(e) => {
                         (e.target as HTMLButtonElement).style.backgroundColor =

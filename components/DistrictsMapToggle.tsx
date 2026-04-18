@@ -70,7 +70,7 @@ export default function DistrictsMapToggle({ children }: Props) {
 
   const btnBase: React.CSSProperties = {
     padding: '8px 24px',
-    fontSize: '13px',
+    fontSize: '14px',
     fontWeight: 600,
     fontFamily: 'var(--font-ui)',
     border: '1px solid var(--border-default)',

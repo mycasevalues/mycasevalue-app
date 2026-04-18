@@ -116,7 +116,7 @@ export default function WidgetImpressionPanel() {
                   y1={y}
                   x2="870"
                   y2={y}
-                  stroke="#e5e7eb"
+                  stroke="var(--bdr)"
                   strokeWidth="1"
                   strokeDasharray="4"
                 />

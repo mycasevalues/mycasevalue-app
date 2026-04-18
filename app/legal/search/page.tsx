@@ -140,7 +140,7 @@ export default function LegalSearchPage() {
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '24px 16px 40px' }}>
 
       {/* Breadcrumb */}
-      <nav style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 24 }}>
+      <nav style={{ fontSize: 14, color: 'var(--color-text-muted)', marginBottom: 24 }}>
         <Link href="/legal" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Research Hub</Link>
         <span style={{ margin: '0 8px' }}>/</span>
         <span>Document Search</span>
@@ -174,7 +174,7 @@ export default function LegalSearchPage() {
                 color: 'var(--color-text-primary)',
                 outline: 'none',
                 boxSizing: 'border-box',
-                transition: 'border-color 0.15s',
+                transition: 'border-color 150ms',
               }}
               onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
               onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.1)')}
@@ -233,30 +233,30 @@ export default function LegalSearchPage() {
             alignItems: 'center',
           }}>
             <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Source</label>
+              <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Source</label>
               <select value={source} onChange={(e) => setSource(e.target.value)} style={selectStyle}>
                 {SOURCES.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Type</label>
+              <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Type</label>
               <select value={docType} onChange={(e) => setDocType(e.target.value)} style={selectStyle}>
                 {TYPES.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>From</label>
+              <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.5px' }}>From</label>
               <input type="date" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} style={{ ...selectStyle, minWidth: 150 }} />
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>To</label>
+              <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.5px' }}>To</label>
               <input type="date" value={dateTo} onChange={(e) => setDateTo(e.target.value)} style={{ ...selectStyle, minWidth: 150 }} />
             </div>
             <div style={{ marginLeft: 'auto', alignSelf: 'flex-end' }}>
               <button
                 type="button"
                 onClick={() => { setSource('all'); setDocType('all'); setDateFrom(''); setDateTo(''); }}
-                style={{ padding: '8px 16px', borderRadius: 4, background: 'transparent', color: 'var(--color-text-muted)', fontSize: 13, border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+                style={{ padding: '8px 16px', borderRadius: 4, background: 'transparent', color: 'var(--color-text-muted)', fontSize: 14, border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
               >
                 Clear filters
               </button>
@@ -272,7 +272,7 @@ export default function LegalSearchPage() {
           background: 'rgba(234,179,8,0.08)',
           border: '1px solid var(--wrn-txt)',
           borderRadius: 4,
-          fontSize: 13,
+          fontSize: 14,
           color: 'var(--wrn-txt)',
           marginBottom: 16,
           display: 'flex',
@@ -292,7 +292,7 @@ export default function LegalSearchPage() {
             {query.trim() && !loading && <span> for &ldquo;<strong style={{ color: 'var(--color-text-primary)' }}>{query}</strong>&rdquo;</span>}
           </div>
           {total > 0 && totalPages > 1 && (
-            <div style={{ fontSize: 13, color: 'var(--color-text-muted)' }}>
+            <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>
               Page {page} of {totalPages}
             </div>
           )}
@@ -309,7 +309,7 @@ export default function LegalSearchPage() {
               borderRadius: 4,
               border: '1px solid var(--border-default)',
               background: 'var(--color-surface-0)',
-              transition: 'border-color 0.15s, box-shadow 0.15s',
+              transition: 'border-color 150ms, box-shadow 150ms',
               cursor: 'pointer',
             }}
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(9,102,195,0.08)'; }}
@@ -321,7 +321,7 @@ export default function LegalSearchPage() {
                 display: 'inline-block',
                 padding: '3px 10px',
                 borderRadius: 4,
-                fontSize: 11,
+                fontSize: 12,
                 fontWeight: 600,
                 color: SOURCE_COLORS[doc.source] || 'var(--color-text-muted)',
                 background: `${SOURCE_COLORS[doc.source] || 'var(--color-text-muted)'}14`,
@@ -333,7 +333,7 @@ export default function LegalSearchPage() {
                 display: 'inline-block',
                 padding: '3px 10px',
                 borderRadius: 4,
-                fontSize: 11,
+                fontSize: 12,
                 fontWeight: 500,
                 color: 'var(--color-text-muted)',
                 background: 'rgba(255,255,255,0.05)',
@@ -454,7 +454,7 @@ export default function LegalSearchPage() {
                 textAlign: 'left',
               }}
             >
-              <div style={{ fontSize: 13, fontWeight: 600, color: SOURCE_COLORS[s.value] }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: SOURCE_COLORS[s.value] }}>
                 {s.label}
               </div>
             </button>
@@ -496,7 +496,7 @@ export default function LegalSearchPage() {
                 border: '1px solid var(--border-default)',
                 borderRadius: 4,
                 textDecoration: 'none',
-                transition: 'all 0.2s ease',
+                transition: 'all 200ms ease',
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--accent-primary)';
@@ -508,7 +508,7 @@ export default function LegalSearchPage() {
               }}
             >
               <h4 style={{
-                fontSize: 13,
+                fontSize: 14,
                 fontWeight: 600,
                 color: 'var(--accent-primary)',
                 margin: '0 0 4px 0',

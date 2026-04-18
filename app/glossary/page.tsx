@@ -166,28 +166,28 @@ export default function GlossaryPage() {
             <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-legal)' }}>
               Case Translator
             </div>
-            <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Convert between case types and legal citations.</div>
+            <div style={{ fontSize: '14px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Convert between case types and legal citations.</div>
           </Link>
 
           <Link href="/nos-explorer" className="glossary-tool-card">
             <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-legal)' }}>
               NOS Explorer
             </div>
-            <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Browse and explore Nature of Suit codes.</div>
+            <div style={{ fontSize: '14px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Browse and explore Nature of Suit codes.</div>
           </Link>
 
           <Link href="/search" className="glossary-tool-card">
             <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-legal)' }}>
               Case Search
             </div>
-            <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Search federal court cases by type and location.</div>
+            <div style={{ fontSize: '14px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Search federal court cases by type and location.</div>
           </Link>
 
           <Link href="/methodology" className="glossary-tool-card">
             <div style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '8px', fontFamily: 'var(--font-legal)' }}>
               Our Methodology
             </div>
-            <div style={{ fontSize: '13px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Learn how we analyze federal court data.</div>
+            <div style={{ fontSize: '14px', lineHeight: 1.5, color: 'var(--color-text-secondary)' }}>Learn how we analyze federal court data.</div>
           </Link>
         </div>
       </div>

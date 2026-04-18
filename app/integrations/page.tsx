@@ -138,7 +138,7 @@ export default function IntegrationsPage() {
           border: 1px solid var(--border-default);
           border-radius: 4px;
           padding: 32px;
-          transition: all 0.2s ease;
+          transition: all 200ms ease;
           position: relative;
         }
         .integration-card:hover {
@@ -204,7 +204,7 @@ export default function IntegrationsPage() {
         <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative' }}>
           {/* Breadcrumb */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontFamily: 'var(--font-mono)', fontSize: '12px', letterSpacing: '0.02em' }}>
-            <Link href="/" className="breadcrumb-link" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s ease' }}>
+            <Link href="/" className="breadcrumb-link" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 200ms ease' }}>
               Home
             </Link>
             <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
@@ -217,8 +217,8 @@ export default function IntegrationsPage() {
             borderRadius: 999,
             border: '1px solid rgba(59,130,246,0.2)',
             background: 'rgba(59,130,246,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -274,7 +274,7 @@ export default function IntegrationsPage() {
                 color: 'var(--color-text-secondary)',
                 margin: 0,
                 textTransform: 'uppercase' as const,
-                letterSpacing: '0.08em',
+                letterSpacing: '0.5px',
               }}>
                 {stat.label}
               </p>
@@ -311,9 +311,9 @@ export default function IntegrationsPage() {
                   {integration.icon}
                 </div>
                 <span style={{
-                  fontSize: '11px',
+                  fontSize: '12px',
                   fontWeight: 600,
-                  letterSpacing: '0.08em',
+                  letterSpacing: '0.5px',
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
                   borderRadius: '4px',
@@ -327,11 +327,11 @@ export default function IntegrationsPage() {
 
               {/* Category */}
               <p style={{
-                fontSize: '11px',
+                fontSize: '12px',
                 fontWeight: 600,
                 color: 'var(--gold)',
                 textTransform: 'uppercase' as const,
-                letterSpacing: '0.08em',
+                letterSpacing: '0.5px',
                 margin: '0 0 8px 0',
               }}>
                 {integration.category}
@@ -378,11 +378,11 @@ export default function IntegrationsPage() {
                   color: 'var(--color-text-inverse)',
                   borderRadius: '4px',
                   textDecoration: 'none',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   textTransform: 'uppercase' as const,
-                  letterSpacing: '0.05em',
-                  transition: 'all 0.2s ease',
+                  letterSpacing: '0.5px',
+                  transition: 'all 200ms ease',
                 }}
               >
                 Learn More
@@ -473,7 +473,7 @@ export default function IntegrationsPage() {
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
                   padding: '24px',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 200ms ease',
                   position: 'relative',
                 }}
               >
@@ -502,9 +502,9 @@ export default function IntegrationsPage() {
                   {capability.description}
                 </p>
                 <span style={{
-                  fontSize: '11px',
+                  fontSize: '12px',
                   fontWeight: 600,
-                  letterSpacing: '0.08em',
+                  letterSpacing: '0.5px',
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
                   borderRadius: '4px',
@@ -591,7 +591,7 @@ export default function IntegrationsPage() {
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
                   padding: '32px',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 200ms ease',
                   display: 'flex',
                   gap: '16px',
                 }}
@@ -657,7 +657,7 @@ export default function IntegrationsPage() {
             borderRadius: '4px',
             padding: '24px',
             fontFamily: 'var(--font-mono)',
-            fontSize: '13px',
+            fontSize: '14px',
             color: 'var(--border-default)',
             lineHeight: 1.7,
             overflowX: 'auto' as const,
@@ -701,11 +701,11 @@ export default function IntegrationsPage() {
                 color: 'var(--color-text-inverse)',
                 borderRadius: '4px',
                 textDecoration: 'none',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 600,
                 textTransform: 'uppercase' as const,
-                letterSpacing: '0.05em',
-                transition: 'all 0.2s ease',
+                letterSpacing: '0.5px',
+                transition: 'all 200ms ease',
               }}
             >
               View API Documentation →
@@ -766,7 +766,7 @@ export default function IntegrationsPage() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                transition: 'all 0.2s ease',
+                transition: 'all 200ms ease',
                 position: 'relative',
               }}
               className="get-started-link"
@@ -801,12 +801,12 @@ export default function IntegrationsPage() {
                 </p>
               </div>
               <span style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginTop: '24px',
                 textTransform: 'uppercase' as const,
-                letterSpacing: '0.05em',
+                letterSpacing: '0.5px',
               }}>
                 View Docs →
               </span>
@@ -823,7 +823,7 @@ export default function IntegrationsPage() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                transition: 'all 0.2s ease',
+                transition: 'all 200ms ease',
                 position: 'relative',
               }}
               className="get-started-link-contact"
@@ -857,12 +857,12 @@ export default function IntegrationsPage() {
                 </p>
               </div>
               <span style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 600,
                 color: 'var(--accent-primary)',
                 marginTop: '24px',
                 textTransform: 'uppercase' as const,
-                letterSpacing: '0.05em',
+                letterSpacing: '0.5px',
               }}>
                 Get in Touch →
               </span>
@@ -911,8 +911,8 @@ export default function IntegrationsPage() {
               fontSize: '14px',
               fontWeight: 600,
               textTransform: 'uppercase' as const,
-              letterSpacing: '0.05em',
-              transition: 'all 0.2s ease',
+              letterSpacing: '0.5px',
+              transition: 'all 200ms ease',
             }}
           >
             Contact Sales

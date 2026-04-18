@@ -165,7 +165,7 @@ export default function ResearchMemoPage() {
             </h2>
             <form onSubmit={handleGenerate} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Legal Question / Issue *</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Legal Question / Issue *</label>
                 <textarea
                   placeholder="State the legal question or issue to research. Be as specific as possible about the factual scenario and the legal standards at issue..."
                   value={legalQuestion}
@@ -180,7 +180,7 @@ export default function ResearchMemoPage() {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Jurisdiction</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Jurisdiction</label>
                 <select value={jurisdiction} onChange={e => setJurisdiction(e.target.value)} style={selectStyle}>
                   <option value="">Federal (General)</option>
                   {STATES.filter(s => s.id).map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
@@ -188,7 +188,7 @@ export default function ResearchMemoPage() {
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category (optional)</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Category (optional)</label>
                 <select value={caseCategory} onChange={e => { setCaseCategory(e.target.value); setCaseType(''); }} style={selectStyle}>
                   <option value="">Select category...</option>
                   {SITS.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
@@ -197,7 +197,7 @@ export default function ResearchMemoPage() {
 
               {caseCategory && (
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Type</label>
+                  <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px' }}>Case Type</label>
                   <select value={caseType} onChange={e => setCaseType(e.target.value)} style={selectStyle}>
                     <option value="">Select type...</option>
                     {caseOptions.map(opt => <option key={opt.label} value={opt.nos}>{opt.label}</option>)}
@@ -207,7 +207,7 @@ export default function ResearchMemoPage() {
 
               {error && (
                 <div style={{ padding: '8px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '13px', color: 'var(--data-negative)', margin: 0 }}>{error}</p>
+                  <p style={{ fontSize: '14px', color: 'var(--data-negative)', margin: 0 }}>{error}</p>
                 </div>
               )}
 
@@ -219,7 +219,7 @@ export default function ResearchMemoPage() {
                   backgroundColor: loading || !legalQuestion.trim() ? 'var(--border-default)' : 'var(--accent-primary)',
                   color: 'var(--color-text-inverse)', border: 'none', borderRadius: '2px',
                   fontSize: '14px', fontWeight: 600, fontFamily: 'var(--font-ui)',
-                  textTransform: 'uppercase', letterSpacing: '0.04em',
+                  textTransform: 'uppercase', letterSpacing: '0.5px',
                   cursor: loading || !legalQuestion.trim() ? 'not-allowed' : 'pointer',
                 }}
               >
@@ -247,7 +247,7 @@ export default function ResearchMemoPage() {
                   </div>
                 </div>
 
-                <div ref={outputRef} style={{ maxHeight: '650px', overflowY: 'auto', padding: '16px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)', fontSize: '13px', color: 'var(--color-text-primary)', lineHeight: '1.7', fontFamily: 'var(--font-ui)', whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
+                <div ref={outputRef} style={{ maxHeight: '650px', overflowY: 'auto', padding: '16px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)', fontSize: '14px', color: 'var(--color-text-primary)', lineHeight: '1.7', fontFamily: 'var(--font-ui)', whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
                   {memoText}
                   {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: 'var(--accent-primary)', marginLeft: 2, animation: 'blink 1s infinite' }} />}
                 </div>

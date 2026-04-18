@@ -75,7 +75,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                 color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-ui)',
-                fontSize: '13px',
+                fontSize: '14px',
               }}
               cursor={{ stroke: 'var(--color-surface-1)' }}
             />
@@ -136,7 +136,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                 color: 'var(--color-text-primary)',
                 fontFamily: 'var(--font-ui)',
-                fontSize: '13px',
+                fontSize: '14px',
               }}
               cursor={{ fill: 'rgba(0, 105, 151, 0.05)' }}
             />

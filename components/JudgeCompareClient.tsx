@@ -599,7 +599,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                     style={{
                       padding: '16px 24px',
                       fontWeight: 600,
-                      fontSize: 13,
+                      fontSize: 14,
                       color: 'var(--color-text-primary)',
                       background: 'var(--color-surface-0)',
                       fontFamily: 'var(--font-ui)',

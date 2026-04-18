@@ -42,7 +42,7 @@ export default function SearchTabs() {
               border: 'none',
               borderBottom: activeTab === tab.id ? '3px solid var(--accent-primary)' : 'none',
               cursor: 'pointer',
-              transition: 'all 0.2s',
+              transition: 'all 200ms',
               display: 'flex',
               alignItems: 'center',
               gap: '6px',

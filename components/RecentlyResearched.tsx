@@ -142,7 +142,7 @@ export default function RecentlyResearched() {
       >
         <h3
           style={{
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 8px 0',
@@ -176,7 +176,7 @@ export default function RecentlyResearched() {
     >
       <h3
         style={{
-          fontSize: '13px',
+          fontSize: '14px',
           fontWeight: 600,
           color: 'var(--color-text-primary)',
           margin: '0 0 12px 0',
@@ -199,7 +199,7 @@ export default function RecentlyResearched() {
               border: '1px solid var(--border-default)',
               borderRadius: '4px',
               textDecoration: 'none',
-              transition: 'all 0.2s',
+              transition: 'all 200ms',
               cursor: 'pointer',
             }}
             onMouseEnter={(e) => {
@@ -228,7 +228,7 @@ export default function RecentlyResearched() {
             </p>
             <p
               style={{
-                fontSize: '11px',
+                fontSize: '12px',
                 color: 'var(--color-text-muted)',
                 margin: '2px 0 0 0',
               }}
@@ -252,10 +252,10 @@ export default function RecentlyResearched() {
           color: 'var(--color-text-muted)',
           border: '1px solid rgba(255,255,255,0.1)',
           borderRadius: '4px',
-          fontSize: '11px',
+          fontSize: '12px',
           fontWeight: 500,
           cursor: 'pointer',
-          transition: 'all 0.2s',
+          transition: 'all 200ms',
         }}
         onMouseEnter={(e) => {
           (e.target as HTMLButtonElement).style.backgroundColor = 'var(--border-default)';

@@ -21,7 +21,7 @@ const ChevronDownIcon = ({ isExpanded }: { isExpanded: boolean }) => (
     fill="none"
     stroke="currentColor"
     strokeWidth="2"
-    style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}
+    style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 200ms' }}
   >
     <polyline points="6 9 12 15 18 9" />
   </svg>
@@ -130,7 +130,7 @@ const CaseList = ({ cases }: CaseListProps) => (
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 500,
                 color: 'var(--accent-primary)',
                 textDecoration: 'none',
@@ -149,7 +149,7 @@ const CaseList = ({ cases }: CaseListProps) => (
               padding: '4px 8px',
               borderRadius: '4px',
               backgroundColor: outcomeColors[caseItem.outcome] + '1F',
-              fontSize: '11px',
+              fontSize: '12px',
               fontWeight: 600,
               color: outcomeColors[caseItem.outcome],
               textTransform: 'capitalize',
@@ -182,18 +182,18 @@ const CaseTypeTable = ({ breakdown }: CaseTypeTableProps) => (
           alignItems: 'center',
         }}
       >
-        <span style={{ fontSize: '13px', color: 'var(--color-text-primary)' }}>{item.type}</span>
+        <span style={{ fontSize: '14px', color: 'var(--color-text-primary)' }}>{item.type}</span>
         <div style={{ textAlign: 'center' }}>
-          <div className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+          <div className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
             {item.count}
           </div>
-          <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)' }}>cases</div>
+          <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>cases</div>
         </div>
         <div style={{ textAlign: 'center' }}>
-          <div className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-primary)' }}>
+          <div className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary)' }}>
             {item.winRate}%
           </div>
-          <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)' }}>win</div>
+          <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>win</div>
         </div>
       </div>
     ))}
@@ -214,7 +214,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
       border: isExpanded ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
       overflow: 'hidden',
       boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)',
-      transition: 'all 0.2s',
+      transition: 'all 200ms',
     }}
   >
     {/* Header */}
@@ -234,7 +234,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
           <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: '17px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
             {attorney.name}
           </h3>
-          <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: 0 }}>
+          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
             {attorney.firmName} · {attorney.barNumber}
           </p>
         </div>
@@ -245,13 +245,13 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
             <div className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)' }}>
               {attorney.winRate}%
             </div>
-            <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>Win Rate</div>
+            <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>Win Rate</div>
           </div>
           <div style={{ textAlign: 'center' }}>
             <div className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--data-positive)' }}>
               {attorney.settlementRate}%
             </div>
-            <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>Settlement</div>
+            <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', textTransform: 'uppercase' }}>Settlement</div>
           </div>
           <div style={{ color: 'var(--color-text-secondary)' }}>
             <ChevronDownIcon isExpanded={isExpanded} />
@@ -269,7 +269,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
             <h4
               style={{
                 fontFamily: 'var(--font-ui)',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 margin: '0 0 14px',
@@ -286,7 +286,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
             <h4
               style={{
                 fontFamily: 'var(--font-ui)',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 margin: '24px 0 16px',
@@ -306,7 +306,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
                   <div className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: s.color }}>
                     {s.value}%
                   </div>
-                  <div style={{ fontSize: '10px', color: 'var(--color-text-secondary)' }}>{s.label}</div>
+                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{s.label}</div>
                 </div>
               ))}
             </div>
@@ -317,7 +317,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
             <h4
               style={{
                 fontFamily: 'var(--font-ui)',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 600,
                 color: 'var(--color-text-primary)',
                 margin: '0 0 14px',
@@ -349,7 +349,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
           <h4
             style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 14px',
@@ -367,7 +367,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
           <h4
             style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 14px',
@@ -385,7 +385,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
           <h4
             style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: '13px',
+              fontSize: '14px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 14px',
@@ -452,7 +452,7 @@ export default function OpposingCounselSearch() {
           <Link
             href="/"
             style={{
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--color-text-inverse)',
               textDecoration: 'none',
               fontWeight: 500,
@@ -541,7 +541,7 @@ export default function OpposingCounselSearch() {
                 fontWeight: 600,
                 cursor: 'pointer',
                 textTransform: 'uppercase',
-                letterSpacing: '0.04em',
+                letterSpacing: '0.5px',
                 opacity: loading ? 0.7 : 1,
               }}
             >
@@ -561,14 +561,14 @@ export default function OpposingCounselSearch() {
               marginBottom: '24px',
             }}
           >
-            <p style={{ fontSize: '13px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
+            <p style={{ fontSize: '14px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
           </div>
         )}
 
         {/* Results */}
         {result && (
           <>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
               {result.resultCount} result{result.resultCount !== 1 ? 's' : ''} for "{result.query}"
             </p>
 
@@ -592,7 +592,7 @@ export default function OpposingCounselSearch() {
                 borderRadius: '4px',
               }}
             >
-              <p style={{ fontSize: '11px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ fontSize: '12px', color: 'var(--wrn-txt)', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {result.disclaimer}
               </p>
             </div>
@@ -640,7 +640,7 @@ export default function OpposingCounselSearch() {
             <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 20px' }}>
               Search by attorney name, firm name, or bar number to view litigation track record, settlement patterns, and strategic tendencies.
             </p>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>Try: Mitchell, Chen, Williams, or Martinez</p>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>Try: Mitchell, Chen, Williams, or Martinez</p>
           </div>
         )}
       </div>

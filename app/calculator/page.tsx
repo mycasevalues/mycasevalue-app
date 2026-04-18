@@ -324,8 +324,8 @@ export default function CalculatorPage() {
             borderRadius: 999,
             border: '1px solid rgba(10,80,162,0.2)',
             background: 'rgba(10,80,162,0.08)',
-            fontFamily: 'var(--font-mono)', fontSize: 10,
-            fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase',
+            fontFamily: 'var(--font-mono)', fontSize: 12,
+            fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
           }}>
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
@@ -370,7 +370,7 @@ export default function CalculatorPage() {
           <div className="space-y-6">
             {/* Case Type */}
             <div>
-              <label htmlFor="calc-case-type" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-case-type" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '14px', fontWeight: 600 }}>
                 Case Type
               </label>
               <select
@@ -400,14 +400,14 @@ export default function CalculatorPage() {
 
             {/* District Note */}
             <div style={{ padding: '12px 16px', borderRadius: 4, background: 'var(--color-surface-1)', border: '1px solid var(--border-default)' }}>
-              <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontSize: '13px', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontSize: '14px', margin: 0, lineHeight: 1.5 }}>
                 Estimates reflect national averages. District-specific data is available in <a href="/cases" style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 600 }}>Case Reports</a>.
               </p>
             </div>
 
             {/* Estimated Damages */}
             <div>
-              <label htmlFor="calc-damages" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-damages" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '14px', fontWeight: 600 }}>
                 Estimated Damages ($)
               </label>
               <input
@@ -440,7 +440,7 @@ export default function CalculatorPage() {
 
             {/* Represented by Attorney */}
             <div>
-              <label htmlFor="calc-represented" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-represented" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '14px', fontWeight: 600 }}>
                 Represented by Attorney?
               </label>
               <select
@@ -470,7 +470,7 @@ export default function CalculatorPage() {
 
             {/* Severity */}
             <div>
-              <label htmlFor="calc-severity" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-severity" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '14px', fontWeight: 600 }}>
                 Injury / Harm Severity (optional)
               </label>
               <select
@@ -498,7 +498,7 @@ export default function CalculatorPage() {
 
             {/* Duration of Impact */}
             <div>
-              <label htmlFor="calc-duration" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-duration" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '14px', fontWeight: 600 }}>
                 Duration of Impact (optional)
               </label>
               <select
@@ -527,7 +527,7 @@ export default function CalculatorPage() {
 
             {/* Evidence Strength */}
             <div>
-              <label htmlFor="calc-evidence" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-evidence" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '14px', fontWeight: 600 }}>
                 Evidence Strength (optional)
               </label>
               <select
@@ -555,7 +555,7 @@ export default function CalculatorPage() {
 
             {/* Prior Settlements */}
             <div>
-              <label htmlFor="calc-prior-settlement" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-prior-settlement" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '14px', fontWeight: 600 }}>
                 Prior Settlements? (optional)
               </label>
               <select
@@ -583,7 +583,7 @@ export default function CalculatorPage() {
 
             {/* Number of Defendants */}
             <div>
-              <label htmlFor="calc-defendants" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-defendants" className="block mb-3" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', fontSize: '14px', fontWeight: 600 }}>
                 Number of Defendants (optional)
               </label>
               <select
@@ -818,7 +818,7 @@ export default function CalculatorPage() {
               <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
                 Calculation Breakdown
               </h3>
-              <table style={{ width: '100%', fontFamily: 'var(--font-ui)', fontSize: '13px', borderCollapse: 'collapse' }}>
+              <table style={{ width: '100%', fontFamily: 'var(--font-ui)', fontSize: '14px', borderCollapse: 'collapse' }}>
                 <tbody>
                   <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                     <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>Base damages claimed</td>
@@ -949,7 +949,7 @@ export default function CalculatorPage() {
                           <td style={{ padding: '12px', color: 'var(--color-text-primary)', fontWeight: 500 }}>{scenario.label}</td>
                           <td style={{ padding: '12px', textAlign: 'right', color: 'var(--accent-primary)', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{fmt(scenario.median)}</td>
                           <td style={{ padding: '12px', textAlign: 'right', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-mono)' }}>{(scenario.winRate * 100).toFixed(0)}%</td>
-                          <td style={{ padding: '12px', color: 'var(--color-text-secondary)', fontSize: '11px' }}>{scenario.summary}</td>
+                          <td style={{ padding: '12px', color: 'var(--color-text-secondary)', fontSize: '12px' }}>{scenario.summary}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -1040,7 +1040,7 @@ export default function CalculatorPage() {
               padding: '12px 16px',
               background: 'var(--color-surface-0)',
               borderRadius: 4,
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'var(--color-text-secondary)',
               fontFamily: 'var(--font-ui)',
             }}>
@@ -1166,7 +1166,7 @@ export default function CalculatorPage() {
                   borderRadius: 4,
                   padding: '24px',
                   textDecoration: 'none',
-                  transition: 'all 0.2s',
+                  transition: 'all 200ms',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = 'var(--accent-primary)';

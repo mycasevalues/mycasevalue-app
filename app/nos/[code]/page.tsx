@@ -385,7 +385,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .breadcrumb {
-          font-size: 13px;
+          font-size: 14px;
           font-family: var(--font-ui);
           color: var(--border-default);
           margin-bottom: 16px;
@@ -394,7 +394,7 @@ export default async function NOSPage({ params }: PageProps) {
         .breadcrumb a {
           color: var(--border-default);
           text-decoration: none;
-          transition: color 0.2s ease;
+          transition: color 200ms ease;
         }
 
         .breadcrumb a:hover {
@@ -464,10 +464,10 @@ export default async function NOSPage({ params }: PageProps) {
           align-items: center;
           justify-content: center;
           color: var(--color-text-inverse);
-          font-size: 11px;
+          font-size: 12px;
           font-weight: 600;
           font-family: var(--font-ui);
-          transition: opacity 0.2s ease;
+          transition: opacity 200ms ease;
         }
 
         .outcome-legend {
@@ -482,7 +482,7 @@ export default async function NOSPage({ params }: PageProps) {
           display: flex;
           align-items: center;
           gap: 8px;
-          font-size: 13px;
+          font-size: 14px;
           font-family: var(--font-ui);
           color: var(--color-text-secondary);
         }
@@ -512,7 +512,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .related-card-code {
-          font-size: 11px;
+          font-size: 12px;
           font-weight: 600;
           color: var(--color-text-secondary);
           text-transform: uppercase;
@@ -552,7 +552,7 @@ export default async function NOSPage({ params }: PageProps) {
 
         .disclaimer-box p {
           color: var(--wrn-txt);
-          font-size: 13px;
+          font-size: 14px;
           line-height: 1.6;
           margin: 0;
           font-family: var(--font-ui);
@@ -620,7 +620,7 @@ export default async function NOSPage({ params }: PageProps) {
           align-items: center;
           justify-content: center;
           color: var(--color-text-inverse);
-          font-size: 8px;
+          font-size: 12px;
           font-weight: 600;
           font-family: var(--font-ui);
         }
@@ -709,7 +709,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .factor-text {
-          font-size: 13px;
+          font-size: 14px;
           color: var(--color-text-secondary);
           font-family: var(--font-ui);
           line-height: 1.5;
@@ -729,7 +729,7 @@ export default async function NOSPage({ params }: PageProps) {
           padding: 16px;
           text-decoration: none;
           color: inherit;
-          transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+          transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
           display: block;
         }
 
@@ -740,7 +740,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .related-type-label {
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 600;
           color: var(--accent-primary);
           text-transform: uppercase;
@@ -785,13 +785,13 @@ export default async function NOSPage({ params }: PageProps) {
           text-decoration: none;
           color: var(--accent-primary);
           text-align: center;
-          transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+          transition: border-color 200ms ease, box-shadow 200ms ease, background 200ms ease;
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 8px;
           font-weight: 600;
-          font-size: 13px;
+          font-size: 14px;
           font-family: var(--font-ui);
         }
 
@@ -832,7 +832,7 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           {/* Data Freshness Badge */}
           <div style={{ marginBottom: '24px', textAlign: 'center' }}>
-            <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary)', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-ui)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
+            <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary)', fontSize: '12px', fontWeight: 500, fontFamily: 'var(--font-ui)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
           </div>
           <MetricsStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
@@ -901,7 +901,7 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="content-box">
             <h2 className="section-title">10-Year Win Rate Trend</h2>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
               Historical win rate patterns over the past decade (2015-2024)
             </p>
             <WinRateTrend
@@ -918,7 +918,7 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="content-box">
             <h2 className="section-title">Case Resolution Summary</h2>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
               How {nosInfo.label} cases are resolved
             </p>
 
@@ -1031,7 +1031,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Case Disposition Breakdown</h2>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 Detailed breakdown of case dispositions for {nosInfo.label} cases
               </p>
               <DispositionBar data={DISPOSITION_DATA[code]} />
@@ -1055,7 +1055,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Settlement Distribution</h2>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
                 Full distribution shape of monetary recoveries — reveals patterns beyond simple percentiles.
               </p>
               <SettlementViolin nosCode={code} height={140} />
@@ -1115,7 +1115,7 @@ export default async function NOSPage({ params }: PageProps) {
                   <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-ui)' }}>
                     {statute.title}
                   </div>
-                  <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-ui)' }}>
                     {statute.description}
                   </p>
                 </div>
@@ -1151,7 +1151,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Win Rate by Circuit</h2>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 Case outcome rates for {nosInfo.label} cases across federal circuits
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '12px' }}>
@@ -1169,7 +1169,7 @@ export default async function NOSPage({ params }: PageProps) {
                         borderRadius: '4px',
                       }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                          <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
                             {CIRCUIT_NAMES[circuit] || circuit} Circuit
                           </span>
                           <span style={{
@@ -1213,7 +1213,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Key Factors</h2>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
                 Important factors that influence outcomes in {nosInfo.label} cases
               </p>
               <div className="key-factors-grid">
@@ -1235,7 +1235,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Attorney Impact</h2>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 How legal representation affects outcomes in {nosInfo.label} cases
               </p>
 
@@ -1247,7 +1247,7 @@ export default async function NOSPage({ params }: PageProps) {
                   border: `1px solid ${getWinRateColor(attyImpact.rwr).border}`,
                   borderRadius: '4px',
                 }}>
-                  <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                     With Attorney
                   </div>
                   <div style={{
@@ -1271,7 +1271,7 @@ export default async function NOSPage({ params }: PageProps) {
                   border: '1px solid var(--data-negative)',
                   borderRadius: '4px',
                 }}>
-                  <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                     Pro Se (No Attorney)
                   </div>
                   <div style={{
@@ -1298,7 +1298,7 @@ export default async function NOSPage({ params }: PageProps) {
                   flexDirection: 'column',
                   justifyContent: 'center',
                 }}>
-                  <div style={{ fontSize: '11px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                     Representation Effect
                   </div>
                   <div style={{
@@ -1318,7 +1318,7 @@ export default async function NOSPage({ params }: PageProps) {
 
               <div style={{
                 marginTop: '16px',
-                fontSize: '11px',
+                fontSize: '12px',
                 color: 'var(--color-text-muted)',
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -1342,7 +1342,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Related Case Types</h2>
-              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
                 Other case types in the {nosInfo.category} category
               </p>
               <div className="related-types-grid">
@@ -1380,7 +1380,7 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="content-box">
             <h2 className="section-title">Quick Actions</h2>
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
               Next steps for your research
             </p>
             <div className="quick-actions-bar">

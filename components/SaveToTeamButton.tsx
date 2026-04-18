@@ -93,7 +93,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
           cursor: 'pointer',
           textTransform: 'uppercase',
           letterSpacing: '0.5px',
-          transition: 'all 0.2s ease',
+          transition: 'all 200ms ease',
           display: 'inline-flex',
           alignItems: 'center',
           gap: '6px',
@@ -126,7 +126,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
             borderRadius: '4px',
             backgroundColor: 'rgba(5, 150, 105, 0.95)',
             color: 'var(--color-surface-0)',
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: 500,
             boxShadow: 'var(--shadow-md)',
             zIndex: 10001,
@@ -190,7 +190,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
               </button>
             </div>
 
-            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', margin: '0 0 16px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px' }}>
               <strong>{itemTitle}</strong>
             </p>
 
@@ -215,7 +215,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                   padding: '8px 12px',
                   border: '1px solid var(--border-default)',
                   borderRadius: '4px',
-                  fontSize: '13px',
+                  fontSize: '14px',
                   fontFamily: 'var(--font-ui)',
                   backgroundColor: 'var(--color-surface-0)',
                   color: 'var(--color-text-primary)',
@@ -243,7 +243,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
               </div>
             )}
 
-            <p style={{ fontSize: '11px', color: 'var(--color-text-muted)', margin: '0 0 16px' }}>
+            <p style={{ fontSize: '12px', color: 'var(--color-text-muted)', margin: '0 0 16px' }}>
               This will be shared with your team on the Team Workspace
             </p>
 

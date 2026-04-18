@@ -133,12 +133,12 @@ const BarChart: React.FC<{ bars: BarItem[] }> = ({ bars }) => {
           return (
             <div key={bar.nos} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: '13px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
+                <span style={{ fontSize: '14px', fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)' }}>
                   {bar.label}
                 </span>
                 <span
                   style={{
-                    fontSize: '13px',
+                    fontSize: '14px',
                     fontFamily: 'var(--font-mono)',
                     color: colorObj.text,
                     fontWeight: 600,
@@ -216,11 +216,11 @@ const RotatingCards: React.FC<{ cards: CardItem[] }> = ({ cards }) => {
           <div style={{ marginBottom: '12px' }}>
             <div
               style={{
-                fontSize: '11px',
+                fontSize: '12px',
                 fontWeight: 600,
                 color: colorObj.text,
                 textTransform: 'uppercase',
-                letterSpacing: '0.08em',
+                letterSpacing: '0.5px',
                 marginBottom: '4px',
               }}
             >
@@ -239,7 +239,7 @@ const RotatingCards: React.FC<{ cards: CardItem[] }> = ({ cards }) => {
             </div>
             <div
               style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 color: 'var(--color-text-primary)',
                 lineHeight: 1.5,
                 marginBottom: '8px',
@@ -251,7 +251,7 @@ const RotatingCards: React.FC<{ cards: CardItem[] }> = ({ cards }) => {
 
           <p
             style={{
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--color-text-primary)',
               lineHeight: 1.5,
               margin: 0,
@@ -315,7 +315,7 @@ export default function HeroDataViz({ bars = DEFAULT_BARS, cards = DEFAULT_CARDS
     >
       <div
         style={{
-          fontSize: '11px',
+          fontSize: '12px',
           color: 'var(--text3, #78766C)',
           fontFamily: 'var(--font-ui)',
           marginBottom: '24px',

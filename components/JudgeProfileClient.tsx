@@ -308,7 +308,7 @@ export default function JudgeProfileClient({
           >
             <p
               style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--data-negative)',
                 margin: 0,
@@ -395,7 +395,7 @@ export default function JudgeProfileClient({
           >
             <p
               style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--accent-primary-hover)',
                 margin: 0,
@@ -483,7 +483,7 @@ export default function JudgeProfileClient({
                                 border: '1px solid var(--accent-primary)',
                                 borderRadius: '3px',
                                 color: 'var(--accent-primary-hover)',
-                                fontSize: '11px',
+                                fontSize: '12px',
                                 fontWeight: '600',
                               }}
                             >
@@ -502,7 +502,7 @@ export default function JudgeProfileClient({
                                 border: '1px solid rgba(255,255,255,0.1)',
                                 borderRadius: '3px',
                                 color: 'var(--color-text-secondary)',
-                                fontSize: '11px',
+                                fontSize: '12px',
                                 fontWeight: '600',
                               }}
                             >
@@ -518,7 +518,7 @@ export default function JudgeProfileClient({
                       style={{
                         fontSize: '20px',
                         color: 'var(--color-text-muted)',
-                        transition: 'transform 0.2s ease',
+                        transition: 'transform 200ms ease',
                         transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
                       }}
                     >
@@ -537,7 +537,7 @@ export default function JudgeProfileClient({
                     >
                       <p
                         style={{
-                          fontSize: '13px',
+                          fontSize: '14px',
                           fontFamily: 'var(--font-ui)',
                           color: 'var(--color-text-secondary)',
                           margin: 0,
@@ -575,7 +575,7 @@ export default function JudgeProfileClient({
         </p>
         <p
           style={{
-            fontSize: '11px',
+            fontSize: '12px',
             color: 'var(--color-text-muted)',
             margin: 0,
           }}
@@ -620,7 +620,7 @@ export default function JudgeProfileClient({
               fontFamily: 'var(--font-ui)',
               fontWeight: '600',
               fontSize: '14px',
-              transition: 'background-color 0.2s ease',
+              transition: 'background-color 200ms ease',
             }}
             onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.06)')}
             onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--color-surface-0)')}
@@ -641,7 +641,7 @@ export default function JudgeProfileClient({
                 fontWeight: '600',
                 fontSize: '14px',
                 border: '1px solid rgba(255, 255, 255, 0.4)',
-                transition: 'background-color 0.2s ease',
+                transition: 'background-color 200ms ease',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)')}
               onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)')}
@@ -662,7 +662,7 @@ export default function JudgeProfileClient({
               fontWeight: '600',
               fontSize: '14px',
               border: '1px solid rgba(255, 255, 255, 0.4)',
-              transition: 'background-color 0.2s ease',
+              transition: 'background-color 200ms ease',
             }}
             onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)')}
             onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)')}
@@ -780,7 +780,7 @@ function AnalysisSection({ title, content }: { title: string; content: string })
     <div style={{ marginBottom: '24px' }}>
       <h3
         style={{
-          fontSize: '13px',
+          fontSize: '14px',
           fontFamily: 'var(--font-heading)',
           fontWeight: '700',
           color: 'var(--color-text-primary)',
@@ -794,7 +794,7 @@ function AnalysisSection({ title, content }: { title: string; content: string })
       </h3>
       <p
         style={{
-          fontSize: '13px',
+          fontSize: '14px',
           fontFamily: 'var(--font-ui)',
           color: 'var(--color-text-secondary)',
           lineHeight: '1.6',

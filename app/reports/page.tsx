@@ -81,7 +81,7 @@ export default function ReportsPage() {
             <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
               My Reports
             </h1>
-            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '4px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', padding: '4px 12px', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase' }}>
               Reports
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function ReportsPage() {
           alignItems: 'center',
           gap: '12px',
         }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--data-positive)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="20 6 9 17 4 12" />
           </svg>
           <p style={{
@@ -159,7 +159,7 @@ export default function ReportsPage() {
                   borderRadius: '4px',
                   padding: '24px',
                   textAlign: 'center' as const,
-                  transition: 'all 0.2s ease',
+                  transition: 'all 200ms ease',
                 }}
                 className="feature-card"
               >
@@ -229,7 +229,7 @@ export default function ReportsPage() {
                   borderRadius: '4px',
                   padding: '24px',
                   textDecoration: 'none',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 200ms ease',
                 }}
                 className="report-link"
               >
@@ -256,7 +256,7 @@ export default function ReportsPage() {
                       {report.name}
                     </h3>
                     <p style={{
-                      fontSize: '13px',
+                      fontSize: '14px',
                       color: 'var(--color-text-secondary)',
                       margin: 0,
                     }}>
@@ -312,7 +312,7 @@ export default function ReportsPage() {
                     cursor: 'pointer',
                     backgroundColor: tab === t ? 'var(--accent-primary)' : 'transparent',
                     color: tab === t ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
-                    transition: 'all 0.2s',
+                    transition: 'all 200ms',
                   }}
                 >
                   {t === 'reports' ? `Saved Reports (${reports.length})` : `Search History (${searches.length})`}
@@ -325,7 +325,7 @@ export default function ReportsPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <style>{`
                   .report-card {
-                    transition: all 0.2s;
+                    transition: all 200ms;
                   }
                   .report-card:hover {
                     border-left: 4px solid var(--accent-primary);
@@ -350,7 +350,7 @@ export default function ReportsPage() {
                             {r.category}
                           </div>
                           {r.district && (
-                            <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)' }}>
+                            <div style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
                               District: {r.district}
                             </div>
                           )}
@@ -370,7 +370,7 @@ export default function ReportsPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <style>{`
                   .history-card {
-                    transition: all 0.2s;
+                    transition: all 200ms;
                   }
                   .history-card:hover {
                     border-left: 4px solid var(--accent-primary);

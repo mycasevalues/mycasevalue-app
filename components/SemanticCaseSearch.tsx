@@ -134,7 +134,7 @@ export default function SemanticCaseSearch() {
               border: isOverLimit ? '1px solid #CC1016' : '1px solid var(--bdr, #E2DFD8)',
               borderRadius: '4px',
               outline: 'none',
-              transition: 'border-color 0.2s',
+              transition: 'border-color 200ms',
               boxSizing: 'border-box',
               resize: 'vertical',
             }}
@@ -174,7 +174,7 @@ export default function SemanticCaseSearch() {
             border: 'none',
             borderRadius: '4px',
             cursor: isLoading || !description.trim() || isOverLimit ? 'not-allowed' : 'pointer',
-            transition: 'background-color 0.2s',
+            transition: 'background-color 200ms',
           }}
           onMouseEnter={(e) => {
             if (!isLoading && description.trim() && !isOverLimit) {
@@ -324,7 +324,7 @@ export default function SemanticCaseSearch() {
                       >
                         <div
                           style={{
-                            fontSize: '11px',
+                            fontSize: '12px',
                             textTransform: 'uppercase',
                             color: winRateColor.text,
                             fontWeight: '600',
@@ -344,7 +344,7 @@ export default function SemanticCaseSearch() {
                         </div>
                         <div
                           style={{
-                            fontSize: '10px',
+                            fontSize: '12px',
                             color: winRateColor.text,
                             opacity: 0.8,
                           }}
@@ -367,7 +367,7 @@ export default function SemanticCaseSearch() {
                       >
                         <div
                           style={{
-                            fontSize: '11px',
+                            fontSize: '12px',
                             textTransform: 'uppercase',
                             color: 'var(--accent-primary-hover)',
                             fontWeight: '600',
@@ -408,13 +408,13 @@ export default function SemanticCaseSearch() {
                     href={`/nos/${result.nosCode}`}
                     style={{
                       display: 'inline-block',
-                      fontSize: '13px',
+                      fontSize: '14px',
                       fontWeight: '600',
                       color: 'var(--accent-primary)',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-ui)',
                       padding: '4px 0',
-                      transition: 'color 0.2s',
+                      transition: 'color 200ms',
                       cursor: 'pointer',
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-primary-hover)')}

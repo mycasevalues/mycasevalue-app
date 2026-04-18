@@ -72,7 +72,7 @@ export default function MasterDetailLayout({
                 display: 'flex',
                 alignItems: 'center',
                 gap: 6,
-                fontSize: 13,
+                fontSize: 14,
                 fontWeight: 500,
                 fontFamily: 'var(--font-ui)',
                 color: 'var(--link, #0A50A2)',

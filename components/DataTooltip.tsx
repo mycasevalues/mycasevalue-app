@@ -106,8 +106,8 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
         xmlns="http://www.w3.org/2000/svg"
         style={{ flexShrink: 0 }}
       >
-        <circle cx="8" cy="8" r="7" stroke="#9CA3AF" strokeWidth="1.5" />
-        <path d="M8 7v4" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="8" cy="8" r="7" stroke="var(--text-tertiary)" strokeWidth="1.5" />
+        <path d="M8 7v4" stroke="var(--text-tertiary)" strokeWidth="1.5" strokeLinecap="round" />
         <circle cx="8" cy="5" r="0.75" fill="#9CA3AF" />
       </svg>
 
@@ -134,7 +134,7 @@ export default function DataTooltip({ metric, label, body, size = 14 }: DataTool
           <div style={{
             fontFamily: 'var(--font-ui)',
             fontWeight: 600,
-            fontSize: '13px',
+            fontSize: '14px',
             marginBottom: '6px',
             color: 'var(--border-default)',
           }}>

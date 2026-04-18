@@ -116,7 +116,7 @@ export default function BrowseNav() {
                   borderBottom: isActive ? '3px solid var(--gold)' : '3px solid transparent',
                   whiteSpace: 'nowrap',
                   textDecoration: 'none',
-                  transition: 'color 0.15s ease, background 0.15s ease',
+                  transition: 'color 150ms ease, background 150ms ease',
                   ...(item.rightAlign ? { marginLeft: 'auto' } : {}),
                 }}
                 onMouseEnter={(e) => {
@@ -138,7 +138,7 @@ export default function BrowseNav() {
                     style={{
                       background: 'var(--gold)',
                       color: 'var(--card, #FFFFFF)',
-                      fontSize: 9,
+                      fontSize: 12,
                       fontWeight: 700,
                       borderRadius: 2,
                       padding: '2px 4px',
@@ -235,13 +235,13 @@ export default function BrowseNav() {
                     gap: 6,
                     minHeight: 44,
                     padding: '0 20px',
-                    fontSize: 13,
+                    fontSize: 14,
                     fontFamily: 'var(--font-sans, var(--font-ui))',
                     fontWeight: isActive ? 600 : 400,
                     color: isActive ? 'var(--card, #FFFFFF)' : 'var(--chrome-text-muted, #8AAAC8)',
                     textDecoration: 'none',
                     borderLeft: isActive ? '3px solid var(--gold, #C4882A)' : '3px solid transparent',
-                    transition: 'background 0.15s ease',
+                    transition: 'background 150ms ease',
                   }}
                 >
                   {item.label}
@@ -250,7 +250,7 @@ export default function BrowseNav() {
                       style={{
                         background: 'var(--gold)',
                         color: 'var(--card, #FFFFFF)',
-                        fontSize: 9,
+                        fontSize: 12,
                         fontWeight: 700,
                         borderRadius: 2,
                         padding: '2px 4px',
