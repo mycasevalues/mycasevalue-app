@@ -396,14 +396,14 @@ export default async function DashboardPage() {
         }}
       >
         {/* Logo */}
-        <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '32px', padding: '0 8px' }}>
+        <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '32px', padding: '0 8px' }}>
           <div style={{ width: '28px', height: '28px', background: 'var(--accent-primary)', borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
               <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
             </svg>
           </div>
           <span style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)' }}>MyCaseValue</span>
-        </a>
+        </Link>
 
         {/* Navigation */}
         <SidebarNav />

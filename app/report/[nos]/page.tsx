@@ -173,7 +173,7 @@ export default async function ReportPage({
           <div style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-ui)' }}>
             <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 16, color: 'var(--color-text-primary)' }}>Daily limit reached</h1>
             <p style={{ color: 'var(--color-text-secondary)', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
-            <a href="/pricing" style={{ padding: '12px 28px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '2px', textDecoration: 'none', fontWeight: 700 }}>See pricing →</a>
+            <Link href="/pricing" style={{ padding: '12px 28px', background: 'var(--accent-primary)', color: 'var(--color-text-inverse)', borderRadius: '2px', textDecoration: 'none', fontWeight: 700 }}>See pricing →</Link>
             <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
           </div>
         );
@@ -919,9 +919,9 @@ export default async function ReportPage({
             }}>
               Starting at <strong style={{ color: 'var(--color-text-primary)', fontSize: 16 }}>$5.99</strong> for a single report
             </p>
-            <a href="/pricing" className="report-cta-btn">
+            <Link href="/pricing" className="report-cta-btn">
               See Pricing →
-            </a>
+            </Link>
           </section>
         )}
 

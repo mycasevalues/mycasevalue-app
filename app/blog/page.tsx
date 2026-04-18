@@ -314,7 +314,7 @@ export default function BlogPage() {
         <div className="max-w-6xl mx-auto" style={{ position: 'relative' }}>
           {/* Breadcrumb Navigation */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20, fontSize: 12, fontFamily: 'var(--font-mono)', letterSpacing: '0.02em' }}>
-            <a href="/" className="blog-breadcrumb-link" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 200ms ease' }}>Home</a>
+            <Link href="/" className="blog-breadcrumb-link" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 200ms ease' }}>Home</Link>
             <span style={{ color: 'rgba(255,255,255,0.3)' }}>/</span>
             <span style={{ color: 'rgba(255,255,255,0.85)' }}>Blog</span>
           </div>

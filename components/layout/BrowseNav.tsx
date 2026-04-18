@@ -28,6 +28,7 @@ function getActiveSection(pathname: string): string {
   if (pathname.startsWith('/judges')) return 'judges';
   if (pathname.startsWith('/analytics') || pathname.startsWith('/trends') || pathname.startsWith('/compare') || pathname.startsWith('/map')) return 'districts';
   if (pathname.startsWith('/attorney')) return 'tools';
+  if (pathname.startsWith('/calculator')) return 'settlement';
   if (pathname.startsWith('/methodology') || pathname.startsWith('/glossary') || pathname.startsWith('/about')) return 'guidance';
   if (pathname.startsWith('/account') || pathname.startsWith('/dashboard') || pathname.startsWith('/settings')) return 'saved';
   return '';
@@ -50,7 +51,7 @@ const NAV_ITEMS: BrowseNavItem[] = [
   { id: 'court', label: 'Court Records', href: '/cases' },
   { id: 'judges', label: 'Judicial Analytics', href: '/judges' },
   { id: 'districts', label: 'District Intelligence', href: '/districts' },
-  { id: 'settlement', label: 'Settlement Data', href: '/cases' },
+  { id: 'settlement', label: 'Settlement Data', href: '/calculator' },
   { id: '_sep2', label: '', href: '', separator: true },
   { id: 'tools', label: 'Litigation Tools', href: '/attorney', badge: 'AI' },
   { id: 'research', label: 'Research Tools', href: '/attorney/advanced-search' },

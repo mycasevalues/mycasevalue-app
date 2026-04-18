@@ -562,7 +562,7 @@ export default function FAQPage() {
         <div className="relative max-w-3xl mx-auto px-6 py-16 sm:py-20">
           {/* Breadcrumb */}
           <nav className="mb-6 flex items-center gap-2 text-[12px] font-mono" style={{ color: 'rgba(255,255,255,0.4)' }}>
-            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span className="opacity-50">/</span>
             <span className="text-[var(--color-text-muted)]">FAQ</span>
           </nav>

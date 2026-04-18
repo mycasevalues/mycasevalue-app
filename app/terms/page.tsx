@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
@@ -158,7 +159,7 @@ export default function TermsPage() {
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '12px', color: 'var(--bdr)' }}>
-            <a href="/" className="breadcrumb-home-link">Home</a>
+            <Link href="/" className="breadcrumb-home-link">Home</Link>
             <span>/</span>
             <span style={{ color: 'var(--color-surface-0)' }}>Terms of Service</span>
           </nav>

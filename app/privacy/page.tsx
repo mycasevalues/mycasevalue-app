@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
@@ -158,7 +159,7 @@ export default function PrivacyPage() {
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '12px', color: 'var(--bdr)' }}>
-            <a href="/" className="breadcrumb-home-link">Home</a>
+            <Link href="/" className="breadcrumb-home-link">Home</Link>
             <span>/</span>
             <span style={{ color: 'var(--color-surface-0)' }}>Privacy Policy</span>
           </nav>
@@ -543,10 +544,10 @@ export default function PrivacyPage() {
               border: '1px solid var(--border-default)'
             }}>
               <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.7 }}>
-                <strong>Terms of Service:</strong> Read our <a href="/terms" className="legal-contact-email">Terms of Service</a> to understand the rules governing your use of MyCaseValue and our limitations of liability.
+                <strong>Terms of Service:</strong> Read our <Link href="/terms" className="legal-contact-email">Terms of Service</Link> to understand the rules governing your use of MyCaseValue and our limitations of liability.
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '14px', lineHeight: 1.7 }}>
-                <strong>Disclaimer:</strong> Review our <a href="/disclaimer" className="legal-contact-email">Disclaimer</a> to understand that MyCaseValue provides informational data only and is not legal advice.
+                <strong>Disclaimer:</strong> Review our <Link href="/disclaimer" className="legal-contact-email">Disclaimer</Link> to understand that MyCaseValue provides informational data only and is not legal advice.
               </p>
             </div>
           </section>

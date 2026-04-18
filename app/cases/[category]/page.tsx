@@ -309,7 +309,7 @@ async function CategoryPage({
         <div style={{ padding: '40px 24px', textAlign: 'center' }}>
           <h1 className="text-2xl font-bold">Category not found</h1>
           <p className="mt-4" style={{ color: 'var(--color-text-secondary)' }}>The case type you&apos;re looking for doesn&apos;t exist.</p>
-          <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: 'var(--color-text-primary)', borderRadius: '4px' }}>Browse all categories</a>
+          <Link href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: 'var(--color-text-primary)', borderRadius: '4px' }}>Browse all categories</Link>
         </div>
       );
     }
@@ -321,7 +321,7 @@ async function CategoryPage({
       <div style={{ padding: '40px 24px', textAlign: 'center', minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <h1 style={{ fontSize: 24, fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: 16 }}>Data Loading Error</h1>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: 24 }}>Data for this case type is being compiled. Check back soon.</p>
-        <a href="/cases" style={{ display: 'inline-block', padding: '8px 24px', background: 'var(--gold)', color: 'var(--color-surface-0)', border: '1px solid var(--gold)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 4, textDecoration: 'none', fontWeight: 700, fontSize: 14, letterSpacing: '-0.005em', fontFamily: 'var(--font-ui)', margin: '0 auto' }}>Browse all categories</a>
+        <Link href="/cases" style={{ display: 'inline-block', padding: '8px 24px', background: 'var(--gold)', color: 'var(--color-surface-0)', border: '1px solid var(--gold)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)', borderRadius: 4, textDecoration: 'none', fontWeight: 700, fontSize: 14, letterSpacing: '-0.005em', fontFamily: 'var(--font-ui)', margin: '0 auto' }}>Browse all categories</Link>
       </div>
     );
   }

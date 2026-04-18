@@ -256,7 +256,7 @@ export default function DistrictHeatmapPage() {
           <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '16px 24px' }}>
             {/* Breadcrumb */}
             <nav style={{ fontSize: '14px', color: 'var(--color-surface-0)', marginBottom: '16px', opacity: 0.85, fontFamily: 'var(--font-ui)' }}>
-              <a href="/" style={{ color: 'var(--color-surface-0)', textDecoration: 'none' }}>Home</a>
+              <Link href="/" style={{ color: 'var(--color-surface-0)', textDecoration: 'none' }}>Home</Link>
               <span> / </span>
               <span>Map</span>
             </nav>

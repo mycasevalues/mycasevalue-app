@@ -112,7 +112,7 @@ export default function Error({
               Try again
             </button>
             <a
-              href="/tools"
+              href="/attorney"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',

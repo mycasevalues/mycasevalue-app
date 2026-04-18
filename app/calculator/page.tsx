@@ -98,8 +98,24 @@ const CATEGORY_PRIMARY_NOS: Record<string, string> = {
   gov: '950', education: '442',
 };
 
+/* ── SITS id → lookup-table key mapping ─────────────────────────────── */
+const SITS_TO_KEY: Record<string, string> = {
+  'employment-workplace': 'work',
+  'personal-injury': 'injury',
+  'consumer-protection': 'consumer',
+  'civil-rights': 'rights',
+  'money-business': 'money',
+  'housing-property': 'housing',
+  'healthcare-benefits': 'medical',
+  'family-law': 'family',
+  'government': 'gov',
+  'education': 'education',
+  'defense-veterans': 'gov',
+};
+
 function getRealDataForCategory(catId: string): { nos: string; wr: number; sp: number; mo: number; rng: { lo: number; md: number; hi: number } | null; total: number } | null {
-  const nos = CATEGORY_PRIMARY_NOS[catId];
+  const key = SITS_TO_KEY[catId] || catId;
+  const nos = CATEGORY_PRIMARY_NOS[key];
   if (!nos) return null;
   const rd = REAL_DATA[nos] as any;
   if (!rd) return null;
@@ -188,7 +204,8 @@ export default function CalculatorPage() {
     const raw = Number(damages.replace(/[^0-9.]/g, ''));
     if (!caseType || !raw || raw <= 0) return;
 
-    const catMult = DAMAGE_MULTIPLIERS[caseType] ?? { low: 0.15, median: 0.35, high: 0.75 };
+    const key = SITS_TO_KEY[caseType] || caseType;
+    const catMult = DAMAGE_MULTIPLIERS[key] ?? { low: 0.15, median: 0.35, high: 0.75 };
     const attMult = represented === 'yes' ? ATTORNEY_BOOST : 1;
     const sevMult = severity ? (SEVERITY_MULT[severity] ?? 1) : 1;
     const durMult = duration ? (DURATION_MULT[duration] ?? 1) : 1;
@@ -204,7 +221,7 @@ export default function CalculatorPage() {
 
     // Get real data for this category
     const realDataForCat = getRealDataForCategory(caseType);
-    const nosCode = CATEGORY_PRIMARY_NOS[caseType] || '190';
+    const nosCode = CATEGORY_PRIMARY_NOS[key] || '190';
     const attyData = ATTORNEY_IMPACT[nosCode];
 
     setResults({
@@ -213,8 +230,8 @@ export default function CalculatorPage() {
       high: highVal,
       p10: lowVal * 0.55,
       p90: highVal * 1.35,
-      winRate: WIN_RATES[caseType] ?? 0.25,
-      timeline: TIMELINES[caseType] ?? '10–20 months',
+      winRate: WIN_RATES[key] ?? 0.25,
+      timeline: TIMELINES[key] ?? '10–20 months',
       caseLabel: SITS.find(s => s.id === caseType)?.label ?? caseType,
       sampleSize: realDataForCat?.total || 5000,
       avgDuration: realDataForCat?.mo || 12,
@@ -1003,7 +1020,7 @@ export default function CalculatorPage() {
 
             {/* CTA to full report */}
             {(() => {
-              const nos = CATEGORY_PRIMARY_NOS[caseType];
+              const nos = CATEGORY_PRIMARY_NOS[SITS_TO_KEY[caseType] || caseType];
               if (!nos) return null;
               return (
                 <div className="mb-6 text-center p-6" style={{ background: 'var(--accent-primary)', borderRadius: 4 }}>

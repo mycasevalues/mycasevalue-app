@@ -654,10 +654,10 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 14, color: 'var(--text2, #42403C)', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: 'var(--accent-primary, #C4882A)', color: 'var(--card)', borderRadius: '2px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-legal)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.5px', gap: '8px' }}>
+          <Link href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: 'var(--accent-primary, #C4882A)', color: 'var(--card)', borderRadius: '2px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-legal)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.5px', gap: '8px' }}>
             Start Researching
             <ArrowRightIcon size={14} />
-          </a>
+          </Link>
         </div>
       </div>
 
