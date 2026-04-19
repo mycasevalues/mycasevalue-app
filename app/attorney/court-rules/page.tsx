@@ -149,7 +149,7 @@ export default function CourtRulesPage() {
             Never Miss a Local Rule Again
           </h1>
           <p style={{ fontSize: '14px', color: 'var(--text3)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
-            Instant access to filing requirements, page limits, and judge info across all 95 federal districts. Stay compliant, every time.
+            Instant access to filing requirements, page limits, and judge info across all 94 federal districts. Stay compliant, every time.
           </p>
         </div>
       </div>

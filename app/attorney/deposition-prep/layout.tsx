@@ -3,12 +3,12 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Deposition Prep | Attorney Mode',
+  title: 'Deposition Prep — MyCaseValue',
   description: 'Prepare for depositions with AI-powered question generation and case analysis.',
   robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/deposition-prep` },
   openGraph: {
-    title: 'Deposition Prep | Attorney Mode',
+    title: 'Deposition Prep — MyCaseValue',
     description: 'Prepare for depositions with AI-powered question generation and case analysis.',
     url: `${SITE_URL}/attorney/deposition-prep`,
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Deposition Prep | Attorney Mode',
+    title: 'Deposition Prep — MyCaseValue',
     description: 'Prepare for depositions with AI-powered question generation.',
   },
 };

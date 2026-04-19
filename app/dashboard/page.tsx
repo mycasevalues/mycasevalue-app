@@ -481,7 +481,7 @@ export default async function DashboardPage() {
               {/* Federal Districts */}
               <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '24px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
                 <div style={{ color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: 500, marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Federal Districts</div>
-                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>95</div>
+                <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>94</div>
                 <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '8px' }}>U.S. courts covered</div>
               </div>
 
@@ -524,7 +524,7 @@ export default async function DashboardPage() {
             </div>
             <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '16px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>Districts Covered</p>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0 }}>95</p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', margin: 0 }}>94</p>
             </div>
             <div style={{ backgroundColor: 'var(--card)', borderRadius: 4, padding: '16px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
               <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>Uptime Status</p>
@@ -790,7 +790,7 @@ export default async function DashboardPage() {
               {[
                 { label: 'Federal Cases', value: '5.1M+' },
                 { label: 'Case Types', value: '84' },
-                { label: 'Federal Districts', value: '95' },
+                { label: 'Federal Districts', value: '94' },
                 { label: 'Federal Judges', value: '91' },
                 { label: 'Years of Data', value: '25+' },
               ].map((stat) => (

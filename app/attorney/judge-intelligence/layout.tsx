@@ -3,12 +3,12 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Judge Intelligence | Attorney Mode',
+  title: 'Judge Intelligence — MyCaseValue',
   description: 'Research federal judges — see case statistics, ruling patterns, and settlement tendencies by district.',
   robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/judge-intelligence` },
   openGraph: {
-    title: 'Judge Intelligence | Attorney Mode',
+    title: 'Judge Intelligence — MyCaseValue',
     description: 'Research federal judges — see case statistics, ruling patterns, and settlement tendencies.',
     url: `${SITE_URL}/attorney/judge-intelligence`,
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Judge Intelligence | Attorney Mode',
+    title: 'Judge Intelligence — MyCaseValue',
     description: 'Research federal judges — see case statistics, ruling patterns, and settlement tendencies.',
   },
 };

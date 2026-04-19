@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   description: 'Search millions of federal court records for case outcomes, judge analytics, settlement data, and litigation intelligence. Built entirely from public federal court and agency records.',
   openGraph: {
-    title: 'MyCaseValue | Federal Court Intelligence',
+    title: 'MyCaseValue — Federal Court Intelligence',
     description: 'Federal court intelligence platform. Case outcomes, judge analytics, and litigation data from public records.',
     type: 'website',
     siteName: 'MyCaseValue',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MyCaseValue | Federal Court Intelligence',
+    title: 'MyCaseValue — Federal Court Intelligence',
     description: 'Federal court intelligence platform. Case outcomes, judge analytics, and litigation data from public records.',
     images: [`${SITE_URL}/og-image.png`],
   },
@@ -160,7 +160,7 @@ const jsonLd = {
     },
     {
       '@type': 'LegalService',
-      name: 'MyCaseValues',
+      name: 'MyCaseValue',
       url: SITE_URL,
       description: 'Federal court intelligence platform providing case outcome data, settlement ranges, judge analytics, and litigation research tools built from 5.1M+ public federal court records.',
       serviceType: 'Legal Research & Court Data Analytics',
@@ -224,7 +224,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'What case types does MyCaseValue cover?',
-          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue covers 84 federal case types including employment discrimination, personal injury, medical malpractice, product liability, civil rights, wrongful termination, contract disputes, FDCPA violations, and more. Data spans all 95 federal districts.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue covers 84 federal case types including employment discrimination, personal injury, medical malpractice, product liability, civil rights, wrongful termination, contract disputes, FDCPA violations, and more. Data spans all 94 federal districts.' },
         },
         {
           '@type': 'Question',

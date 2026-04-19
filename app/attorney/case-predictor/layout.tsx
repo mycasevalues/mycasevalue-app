@@ -3,12 +3,12 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'AI Case Outcome Predictor | Attorney Mode',
+  title: 'AI Case Outcome Predictor — MyCaseValue',
   description: 'Predict case outcomes using AI analysis of historical federal court data, case factors, and legal precedents.',
   robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/case-predictor` },
   openGraph: {
-    title: 'AI Case Outcome Predictor | Attorney Mode',
+    title: 'AI Case Outcome Predictor — MyCaseValue',
     description: 'Predict case outcomes using AI analysis of historical federal court data and legal precedents.',
     url: `${SITE_URL}/attorney/case-predictor`,
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Case Outcome Predictor | Attorney Mode',
+    title: 'AI Case Outcome Predictor — MyCaseValue',
     description: 'Predict case outcomes using AI analysis of federal court data.',
   },
 };

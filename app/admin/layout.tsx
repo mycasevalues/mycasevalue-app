@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Admin Panel | MyCaseValue',
+  title: 'Admin Panel — MyCaseValue',
   description: 'Administrative dashboard for MyCaseValue platform management.',
   robots: { index: false, follow: false },
   openGraph: {
-    title: 'Admin Panel | MyCaseValue',
+    title: 'Admin Panel — MyCaseValue',
     description: 'Administrative dashboard for MyCaseValue platform management.',
     url: `${SITE_URL}/admin`,
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Admin Panel | MyCaseValue',
+    title: 'Admin Panel — MyCaseValue',
     description: 'Administrative dashboard for MyCaseValue platform management.',
   },
 };

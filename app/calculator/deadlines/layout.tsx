@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Court Deadlines Calculator | MyCaseValue',
+  title: 'Court Deadlines Calculator — MyCaseValue',
   description: 'Free federal court deadlines calculator. Calculate critical FRCP deadlines including service, answers, discovery, and dispositive motions based on key case events.',
   alternates: {
     canonical: `${SITE_URL}/calculator/deadlines`,

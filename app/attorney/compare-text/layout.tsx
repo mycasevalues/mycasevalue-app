@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: 'Compare legal documents side-by-side with word-level redlining. Similarity scoring, diff highlighting, and export for contracts and briefs.',
   alternates: { canonical: `${SITE_URL}/attorney/compare-text` },
   openGraph: {
-    title: 'Text Comparison & Redline | MyCaseValues',
+    title: 'Text Comparison & Redline — MyCaseValue',
     description: 'Compare legal documents side-by-side with word-level redlining. Similarity scoring, diff highlighting, and export.',
     url: `${SITE_URL}/attorney/compare-text`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Text Comparison & Redline | MyCaseValues',
+    title: 'Text Comparison & Redline — MyCaseValue',
     description: 'Compare legal documents side-by-side with word-level redlining.',
   },
   keywords: [

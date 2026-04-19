@@ -3,12 +3,12 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Statute of Limitations Calculator | Attorney Mode',
+  title: 'Statute of Limitations Calculator — MyCaseValue',
   description: 'Calculate statute of limitations deadlines for federal cases by case type, discovery rule, and jurisdiction. Automated deadline tracking and alerts.',
   robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/sol-calculator` },
   openGraph: {
-    title: 'Statute of Limitations Calculator | Attorney Mode',
+    title: 'Statute of Limitations Calculator — MyCaseValue',
     description: 'Calculate statute of limitations deadlines for federal cases.',
     url: `${SITE_URL}/attorney/sol-calculator`,
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Statute of Limitations Calculator | Attorney Mode',
+    title: 'Statute of Limitations Calculator — MyCaseValue',
     description: 'Calculate statute of limitations deadlines for federal cases.',
   },
 };

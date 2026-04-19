@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: 'AI-assisted motion drafting with jurisdiction-specific templates and federal motion success rate analytics by case type and circuit.',
   alternates: { canonical: `${SITE_URL}/attorney/motions` },
   openGraph: {
-    title: 'Motion Drafting | MyCaseValues',
+    title: 'Motion Drafting — MyCaseValue',
     description: 'AI-assisted motion drafting with jurisdiction-specific templates and success rate analytics.',
     url: `${SITE_URL}/attorney/motions`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Motion Drafting | MyCaseValues',
+    title: 'Motion Drafting — MyCaseValue',
     description: 'AI-assisted motion drafting with jurisdiction-specific templates.',
   },
   keywords: [

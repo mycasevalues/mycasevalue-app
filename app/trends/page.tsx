@@ -24,7 +24,7 @@ const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'
 
 export const metadata: Metadata = {
   title: 'Federal Case Trends & Outcome Analysis',
-  description: 'Track federal court outcome trends: Win rates, settlement values, case durations by year. Analyze 84 case types across all 95 districts.',
+  description: 'Track federal court outcome trends: Win rates, settlement values, case durations by year. Analyze 84 case types across all 94 districts.',
   alternates: { canonical: `${SITE_URL}/trends` },
   openGraph: {
     title: 'Case Trends',
@@ -53,7 +53,7 @@ const jsonLd = {
     {
       '@type': 'Dataset',
       name: 'Federal Court Filing Trends',
-      description: 'Aggregate statistics on federal civil litigation trends across 84 case types and 95 districts from 2000-2025.',
+      description: 'Aggregate statistics on federal civil litigation trends across 84 case types and 94 districts from 2000-2025.',
       creator: { '@type': 'Organization', name: 'MyCaseValue' },
       distribution: {
         '@type': 'DataDownload',

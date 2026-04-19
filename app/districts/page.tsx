@@ -7,12 +7,12 @@ import JsonLd from '../../components/JsonLd';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'District Courts — All 95 Federal Judicial Districts',
-  description: 'All 95 federal judicial districts across 13 circuits. Explore win rates, case outcomes, and settlement data by jurisdiction. 5.1M+ cases from FJC IDB.',
+  title: 'District Courts — All 94 Federal Judicial Districts',
+  description: 'All 94 federal judicial districts across 13 circuits. Explore win rates, case outcomes, and settlement data by jurisdiction. 5.1M+ cases from FJC IDB.',
   alternates: { canonical: `${SITE_URL}/districts` },
   openGraph: {
-    title: 'District Court Analytics — All 95 Judicial Districts',
-    description: 'Explore all 95 federal judicial districts across 13 circuits with case outcomes, win rates, and settlement data by jurisdiction.',
+    title: 'District Court Analytics — All 94 Judicial Districts',
+    description: 'Explore all 94 federal judicial districts across 13 circuits with case outcomes, win rates, and settlement data by jurisdiction.',
     type: 'website',
     url: `${SITE_URL}/districts`,
     siteName: 'MyCaseValue',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'District Court Analytics',
-    description: 'Explore all 95 federal judicial districts with case outcomes data.',
+    description: 'Explore all 94 federal judicial districts with case outcomes data.',
     images: [`${SITE_URL}/og-image.png`],
   },
 };
@@ -32,7 +32,7 @@ const jsonLdData = {
     {
       '@type': 'WebPage',
       name: 'Federal District Court Analytics',
-      description: 'All 95 federal judicial districts across 13 circuits with case outcomes, win rates, and settlement data.',
+      description: 'All 94 federal judicial districts across 13 circuits with case outcomes, win rates, and settlement data.',
       url: `${SITE_URL}/districts`,
       image: {
         '@type': 'ImageObject',
@@ -231,7 +231,7 @@ export default function DistrictsPage() {
       {
         '@type': 'CollectionPage',
         name: 'District Court Analytics',
-        description: 'All 95 federal judicial districts with case outcomes, win rates, and settlement data.',
+        description: 'All 94 federal judicial districts with case outcomes, win rates, and settlement data.',
         url: `${SITE_URL}/districts`,
         isPartOf: { '@type': 'WebSite', name: 'MyCaseValue', url: SITE_URL },
       },

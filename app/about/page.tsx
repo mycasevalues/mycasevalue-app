@@ -412,7 +412,7 @@ export default function AboutPage() {
               <div className="source-card">
                 <h3 className="source-title">Federal Judicial Center (FJC IDB)</h3>
                 <p className="source-description">
-                  The U.S. government's official source for federal civil case statistics since 1970. 55+ years of comprehensive data on case type, disposition, duration, and outcomes across all 95 federal districts.
+                  The U.S. government's official source for federal civil case statistics since 1970. 55+ years of comprehensive data on case type, disposition, duration, and outcomes across all 94 federal districts.
                 </p>
               </div>
               <div className="source-card">

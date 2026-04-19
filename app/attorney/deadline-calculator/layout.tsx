@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Federal Court Deadline Calculator | MyCaseValue Attorney Tools',
+  title: 'Federal Court Deadline Calculator — MyCaseValue Attorney Tools',
   description: 'Calculate critical federal court deadlines for your cases. FRCP deadlines, discovery cutoffs, expert disclosures, pretrial conferences, and statute of limitations dates. Automated deadline tracking and reminders.',
   keywords: [
     'federal court deadline calculator',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/attorney/deadline-calculator`,
   },
   openGraph: {
-    title: 'Federal Court Deadline Calculator | MyCaseValue',
+    title: 'Federal Court Deadline Calculator — MyCaseValue',
     description: 'Calculate critical federal court deadlines for your cases. FRCP deadlines, discovery cutoffs, and statute of limitations dates.',
     url: `${SITE_URL}/attorney/deadline-calculator`,
     type: 'website',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Federal Court Deadline Calculator | MyCaseValue',
+    title: 'Federal Court Deadline Calculator — MyCaseValue',
     description: 'Calculate critical federal court deadlines for your cases. FRCP deadlines, discovery cutoffs, and statute of limitations dates.',
   },
   robots: { index: false, follow: false },

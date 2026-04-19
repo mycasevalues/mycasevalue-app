@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Statute of Limitations Calculator | MyCaseValue',
+  title: 'Statute of Limitations Calculator — MyCaseValue',
   description: 'Free federal statute of limitations calculator. Calculate filing deadlines for all 84 federal case types with USC citations and tolling rules.',
   alternates: {
     canonical: `${SITE_URL}/calculator/sol`,

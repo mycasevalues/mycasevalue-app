@@ -353,7 +353,7 @@ const features: { icon: React.ReactNode; title: string; description: string; bad
     icon: <AIIcon />,
     title: 'Local Court Rules Reference',
     description:
-      'Quick-reference guide for local rules across all 95 federal districts, organized by circuit.',
+      'Quick-reference guide for local rules across all 94 federal districts, organized by circuit.',
     badge: 'available' as const,
     href: '/attorney/court-rules',
   },

@@ -185,7 +185,7 @@ export default function ServerHero() {
               { title: 'Case Research', desc: 'Search outcomes across 84 case types with win rates and settlement data', href: '/search' },
               { title: 'Judge Analytics', desc: 'Analyze judicial behavior, ruling patterns, and case-specific tendencies', href: '/judges' },
               { title: 'Settlement Data', desc: 'Real settlement ranges and monetary distributions from court records', href: '/cases' },
-              { title: 'District Comparison', desc: 'Compare win rates and outcomes across 95 federal districts', href: '/districts' },
+              { title: 'District Comparison', desc: 'Compare win rates and outcomes across 94 federal districts', href: '/districts' },
               { title: 'Case Predictor', desc: 'Data-driven outcome predictions based on historical federal case data', href: '/attorney' },
             ].map((tool, i) => (
               <a key={i} href={tool.href} style={{
@@ -253,7 +253,7 @@ export default function ServerHero() {
         }} className="stats-bar-grid">
           {[
             { value: '5.1M+', label: 'Federal cases analyzed' },
-            { value: '95', label: 'Federal districts covered' },
+            { value: '94', label: 'Federal districts covered' },
             { value: '55+ years', label: 'Historical data (1970–2025)' },
             { value: '84', label: 'Case types tracked' },
           ].map((stat, i) => (
@@ -388,7 +388,7 @@ export default function ServerHero() {
               {
                 step: '02',
                 title: 'Choose your district',
-                desc: 'Pick the federal district where your case is filed or would be filed. All 95 districts covered.',
+                desc: 'Pick the federal district where your case is filed or would be filed. All 94 districts covered.',
               },
               {
                 step: '03',
@@ -458,7 +458,7 @@ export default function ServerHero() {
           <div style={{ maxWidth: '720px', margin: '0 auto 48px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="feature-bullets-grid">
             {[
               'Enhanced coverage with data from 5.1M+ federal court cases',
-              'All 95 federal districts with 55+ years of historical data (1970–2025)',
+              'All 94 federal districts with 55+ years of historical data (1970–2025)',
               'High-value analytics for settlements, timing, and outcomes',
               'Exclusive comparisons via judge and district analytics',
             ].map((text, i) => (
@@ -653,7 +653,7 @@ export default function ServerHero() {
               { label: 'CourtListener', sub: 'Free Law Project' },
               { label: 'Bureau of Justice Stats', sub: 'DOJ data' },
               { label: '5.1M+ Cases', sub: 'Analyzed' },
-              { label: '95 districts', sub: 'Full coverage' },
+              { label: '94 districts', sub: 'Full coverage' },
               { label: '55+ Years', sub: 'Historical data (1970–2025)' },
               { label: 'Daily Updates', sub: 'Fresh data' },
             ].map((award, i) => (
@@ -728,7 +728,7 @@ export default function ServerHero() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             {[
               { q: 'Where does MyCaseValue get its data?', a: 'Our data comes from the Federal Judicial Center (FJC), PACER (Public Access to Court Electronic Records), CourtListener (Free Law Project), and the Bureau of Justice Statistics. All data is sourced from official public federal court records.' },
-              { q: 'How many cases are in the database?', a: 'Over 5.1 million federal court cases spanning 55+ years (1970–2025) across all 95 federal judicial districts. We cover 84 case types including employment, personal injury, civil rights, contract disputes, and more.' },
+              { q: 'How many cases are in the database?', a: 'Over 5.1 million federal court cases spanning 55+ years (1970–2025) across all 94 federal judicial districts. We cover 84 case types including employment, personal injury, civil rights, contract disputes, and more.' },
               { q: 'Is MyCaseValue free to use?', a: 'Yes, all features are currently free with no account required — including settlement ranges, judge analytics, circuit breakdowns, and attorney tools.' },
               { q: 'Can I use this data in court?', a: 'MyCaseValue is an informational tool. While the underlying data comes from official court records, our analytics are for research purposes. Consult with an attorney for legal strategy decisions.' },
               { q: 'What case types are covered?', a: 'We cover all 84 federal Nature of Suit (NOS) codes, including employment discrimination (Title VII, ADA, ADEA), personal injury, product liability, medical malpractice, civil rights, contract disputes, insurance, patent, trademark, and more.' },
@@ -736,7 +736,7 @@ export default function ServerHero() {
               { q: 'What is Attorney Mode?', a: 'Attorney Mode provides advanced analytics tools including case outcome prediction, judge intelligence reports, venue optimization, opposing counsel research, bulk analysis, and team workspace features.' },
               { q: 'Do you offer an API?', a: 'Yes. Our REST API provides programmatic access to case analytics data for integration into your own tools and workflows. Documentation and sandbox access are available on our API page.' },
               { q: 'How are win rates calculated?', a: 'Win rates are calculated from final case dispositions in federal court records. We categorize outcomes as favorable verdicts, defense verdicts, settlements, and dismissals based on FJC disposition codes.' },
-              { q: 'Can I compare districts?', a: 'Yes. Our district comparison tool lets you view win rates, settlement ranges, and case timelines side by side across any of the 95 federal judicial districts.' },
+              { q: 'Can I compare districts?', a: 'Yes. Our district comparison tool lets you view win rates, settlement ranges, and case timelines side by side across any of the 94 federal judicial districts.' },
               { q: 'Is there an institutional or academic license?', a: 'Yes. We offer institutional licensing for law schools, research institutions, and government agencies with special pricing and bulk data access. Contact us for details.' },
               { q: 'How do I contact support?', a: 'Visit our contact page or email support directly. We offer email support for all users.' },
             ].map((faq, i) => (

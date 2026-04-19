@@ -29,14 +29,14 @@ interface ApiStatsResponse {
 
 const STATS_EN: StatItem[] = [
   { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: 'var(--surf)' },
-  { value: 95, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: 'var(--surf)' },
+  { value: 94, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: 'var(--surf)' },
   { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '', color: 'var(--accent-primary-hover)' },
   { value: 55, suffix: '+', label: 'Years of Data', sublabel: '1970–2025', icon: '', color: 'var(--surf)' },
 ];
 
 const STATS_ES: StatItem[] = [
   { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: 'var(--surf)' },
-  { value: 95, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: 'var(--surf)' },
+  { value: 94, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: 'var(--surf)' },
   { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '', color: 'var(--accent-primary-hover)' },
   { value: 55, suffix: '+', label: 'Años de Datos', sublabel: '1970–2025', icon: '', color: 'var(--surf)' },
 ];
@@ -270,7 +270,7 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>Analyzed</div>
           </div>
           <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
-            <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>95</div>
+            <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>94</div>
             <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Federal Districts</div>
             <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>All US courts</div>
           </div>

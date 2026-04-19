@@ -10,7 +10,7 @@ interface FormState {
   error: string;
 }
 
-// Federal Districts data (95 districts with state and PACER codes)
+// Federal Districts data (94 districts with state and PACER codes)
 const FEDERAL_DISTRICTS = [
   { state: 'AL', district: 'Northern District of Alabama', code: 'ALN' },
   { state: 'AL', district: 'Middle District of Alabama', code: 'ALM' },
@@ -242,7 +242,7 @@ export default function ParalegalHandbookCapture() {
       checkPageBreak(7);
       addSubheader('District Courts');
       addText(
-        'There are 95 federal judicial districts across the United States. Each district handles civil and criminal cases arising within its geographic area. Districts vary in size and caseload. Some districts like the Southern District of New York are heavily trafficked. Others handle fewer cases. Each district has at least one judge and may have many.',
+        'There are 94 federal judicial districts across the United States. Each district handles civil and criminal cases arising within its geographic area. Districts vary in size and caseload. Some districts like the Southern District of New York are heavily trafficked. Others handle fewer cases. Each district has at least one judge and may have many.',
         9
       );
 
@@ -694,7 +694,7 @@ export default function ParalegalHandbookCapture() {
 
       checkPageBreak(6);
       addSubheader('Data Sources');
-      addText('Our data comes from the Federal Judicial Center Integrated Database (FJC IDB) and CourtListener, which aggregate millions of federal court cases across all 95 districts.', 9);
+      addText('Our data comes from the Federal Judicial Center Integrated Database (FJC IDB) and CourtListener, which aggregate millions of federal court cases across all 94 districts.', 9);
 
       checkPageBreak(6);
       addSubheader('How to Use This Handbook');

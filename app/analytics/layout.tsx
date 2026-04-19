@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Analytics | MyCaseValue',
+  title: 'Analytics — MyCaseValue',
   description: 'View platform analytics and usage statistics.',
   robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/analytics` },
   openGraph: {
-    title: 'Analytics | MyCaseValue',
+    title: 'Analytics — MyCaseValue',
     description: 'View platform analytics and usage statistics.',
     url: `${SITE_URL}/analytics`,
     type: 'website',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Analytics | MyCaseValue',
+    title: 'Analytics — MyCaseValue',
     description: 'View platform analytics and usage statistics.',
   },
 };

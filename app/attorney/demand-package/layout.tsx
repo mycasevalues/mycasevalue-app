@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: 'Build professional demand packages with federal court statistics, medical summaries, settlement calculations, and exhibit organization.',
   alternates: { canonical: `${SITE_URL}/attorney/demand-package` },
   openGraph: {
-    title: 'Demand Package Builder | MyCaseValues',
+    title: 'Demand Package Builder — MyCaseValue',
     description: 'Build professional demand packages with federal court statistics, medical summaries, and settlement calculations.',
     url: `${SITE_URL}/attorney/demand-package`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Demand Package Builder | MyCaseValues',
+    title: 'Demand Package Builder — MyCaseValue',
     description: 'Build professional demand packages with federal court statistics.',
   },
   keywords: [

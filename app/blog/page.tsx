@@ -386,7 +386,7 @@ export default function BlogPage() {
                     <span className="mx-2">•</span>
                     <span>{featuredPost.readTime} min read</span>
                   </div>
-                  <a
+                  <Link
                     href={`/blog/${featuredPost.slug}`}
                     className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
                     style={{
@@ -397,7 +397,7 @@ export default function BlogPage() {
                   >
                     Read Article
                     <ArrowRightIcon size={14} />
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -452,7 +452,7 @@ export default function BlogPage() {
                       {post.category}
                     </div>
 
-                    <a
+                    <Link
                       href={`/blog/${post.slug}`}
                       className="block"
                     >
@@ -462,7 +462,7 @@ export default function BlogPage() {
                       >
                         {post.title}
                       </h3>
-                    </a>
+                    </Link>
 
                     <p
                       className="mb-6 line-clamp-3"
@@ -477,7 +477,7 @@ export default function BlogPage() {
                       <time>{post.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
                     </div>
 
-                    <a
+                    <Link
                       href={`/blog/${post.slug}`}
                       className="inline-flex items-center gap-1 px-3 py-2 rounded text-xs font-semibold transition-all"
                       style={{
@@ -487,7 +487,7 @@ export default function BlogPage() {
                     >
                       Read More
                       <ArrowRightIcon size={12} />
-                    </a>
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -512,22 +512,27 @@ export default function BlogPage() {
             {
               title: 'Employment Discrimination Trends 2020-2024',
               description: 'Analyze settlement patterns and win rates in employment discrimination cases across federal districts.',
+              href: '/blog/employment-discrimination-10-year-analysis',
             },
             {
               title: 'Settlement Rates Across Federal Circuits',
               description: 'Compare how settlement likelihood varies by circuit, judge, and case category.',
+              href: '/blog/settlement-negotiations-what-data-shows',
             },
             {
               title: 'Pro Se Litigation: Success Rates in Federal Court',
               description: 'Examine outcomes for self-represented litigants and factors affecting their success.',
+              href: '/blog/favorable-outcome-districts',
             },
             {
               title: 'How Judge Assignment Affects Case Outcomes',
               description: 'Explore the correlation between judge assignment and case duration, settlement, and verdicts.',
+              href: '/blog/federal-lawsuit-duration-data',
             },
           ].map((research, idx) => (
-            <div
+            <Link
               key={idx}
+              href={research.href}
               className="featured-research-card"
             >
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px 0', lineHeight: 1.4, fontFamily: 'var(--font-legal)' }}>
@@ -539,7 +544,7 @@ export default function BlogPage() {
               <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary)', textDecoration: 'none' }}>
                 Read more {'>'}
               </span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -564,12 +569,13 @@ export default function BlogPage() {
             'Settlement Data',
             'Judge Analytics',
           ].map((topic) => (
-            <span
+            <Link
               key={topic}
+              href={`/blog?topic=${topic.toLowerCase().replace(/\s+/g, '-')}`}
               className="topic-pill"
             >
               {topic}
-            </span>
+            </Link>
           ))}
         </div>
       </div>
@@ -625,14 +631,14 @@ export default function BlogPage() {
           <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', fontSize: '16px' }}>
             Access advanced case analytics, predictive insights, and strategic recommendations powered by 5.1M+ federal court cases.
           </p>
-          <a
-            href="/search"
+          <Link
+            href="/attorney"
             className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold transition-all"
             style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '2px' }}
           >
             Explore Attorney Mode
             <ArrowRightIcon size={16} />
-          </a>
+          </Link>
         </section>
       </div>
 

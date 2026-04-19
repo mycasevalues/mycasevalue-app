@@ -6,7 +6,7 @@ export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Data Sources — Official Federal Records',
-  description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 5.1M+ cases across 95 federal districts with quarterly updates.',
+  description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 5.1M+ cases across 94 federal districts with quarterly updates.',
   alternates: { canonical: `${SITE_URL}/data-sources` },
   openGraph: {
     title: 'MyCaseValue Data Sources',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Data Sources & Methodology',
-    description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 5.1M+ cases across 95 federal districts with quarterly updates.',
+    description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 5.1M+ cases across 94 federal districts with quarterly updates.',
   },
 };
 
@@ -31,7 +31,7 @@ const jsonLd = {
   mainEntity: {
     '@type': 'Dataset',
     name: 'Federal Court Case Analytics',
-    description: '5.1M+ cases from 1970-2025 across 95 federal districts',
+    description: '5.1M+ cases from 1970-2025 across 94 federal districts',
     distribution: {
       '@type': 'DataDownload',
       encodingFormat: 'JSON',

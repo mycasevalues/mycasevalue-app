@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: 'Interactive litigation timeline with data-backed milestones, deadline tracking, and statistical resolution context from federal court records.',
   alternates: { canonical: `${SITE_URL}/attorney/timeline` },
   openGraph: {
-    title: 'Visual Case Timeline | MyCaseValues',
+    title: 'Visual Case Timeline — MyCaseValue',
     description: 'Interactive litigation timeline with data-backed milestones and statistical resolution context.',
     url: `${SITE_URL}/attorney/timeline`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Visual Case Timeline | MyCaseValues',
+    title: 'Visual Case Timeline — MyCaseValue',
     description: 'Interactive litigation timeline with data-backed milestones.',
   },
   keywords: [

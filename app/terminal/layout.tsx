@@ -6,7 +6,7 @@
  */
 
 export const metadata = {
-  title: 'Intelligence Terminal | MyCaseValue',
+  title: 'Intelligence Terminal — MyCaseValue',
   description: 'Professional split-view legal intelligence terminal for federal court research.',
 };
 

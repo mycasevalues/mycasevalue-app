@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: 'Organize cases, statutes, and research notes in hierarchical folders. Add annotations, share with colleagues, and run folder-level analysis.',
   alternates: { canonical: `${SITE_URL}/attorney/folders` },
   openGraph: {
-    title: 'Research Folders | MyCaseValues',
+    title: 'Research Folders — MyCaseValue',
     description: 'Organize cases, statutes, and research notes in hierarchical folders with annotations, sharing, and analysis.',
     url: `${SITE_URL}/attorney/folders`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Research Folders | MyCaseValues',
+    title: 'Research Folders — MyCaseValue',
     description: 'Organize legal research in hierarchical folders with annotations and sharing.',
   },
   keywords: [

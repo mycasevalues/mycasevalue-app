@@ -3,12 +3,12 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Appeals Analyzer | Attorney Mode',
+  title: 'Appeals Analyzer — MyCaseValue',
   description: 'Analyze appellate reversal rates and appeal outcomes by circuit and case type.',
   robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/appeals` },
   openGraph: {
-    title: 'Appeals Analyzer | Attorney Mode',
+    title: 'Appeals Analyzer — MyCaseValue',
     description: 'Analyze appellate reversal rates and appeal outcomes by circuit and case type.',
     url: `${SITE_URL}/attorney/appeals`,
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Appeals Analyzer | Attorney Mode',
+    title: 'Appeals Analyzer — MyCaseValue',
     description: 'Analyze appellate reversal rates and appeal outcomes by circuit and case type.',
   },
 };

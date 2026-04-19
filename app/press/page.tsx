@@ -249,7 +249,7 @@ export default function PressPage() {
                   margin: 0,
                 }}
               >
-                Our platform analyzes 5.1 million+ federal court cases across 84 case types and 95 federal judicial districts, sourced directly from the Federal Judicial Center, PACER, CourtListener, and other authoritative public records. We combine verified outcome data with integrated legal research to show attorneys and pro se litigants not just what happened in court, but why.
+                Our platform analyzes 5.1 million+ federal court cases across 84 case types and 94 federal judicial districts, sourced directly from the Federal Judicial Center, PACER, CourtListener, and other authoritative public records. We combine verified outcome data with integrated legal research to show attorneys and pro se litigants not just what happened in court, but why.
               </p>
               <p
                 style={{

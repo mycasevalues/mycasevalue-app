@@ -6,8 +6,8 @@ import Onboarding from '@/components/Onboarding';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | MyCaseValues',
-    default: 'Attorney Tools | MyCaseValues',
+    template: '%s — MyCaseValue',
+    default: 'Attorney Tools — MyCaseValue',
   },
   description: 'AI-powered attorney tools for case prediction, judge analytics, document intelligence, and litigation strategy. Built on 5.1M+ federal court records.',
   openGraph: {

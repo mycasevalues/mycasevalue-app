@@ -322,7 +322,7 @@ export default function AnalyticsPage() {
         <div className="info-banner">
           <h3>About These Metrics</h3>
           <p>
-            This dashboard shows aggregate analytics from our federal court data platform over the last 30 days. Data includes searches across all 95 federal districts, case analysis, settlement research, and judge comparison tools. All metrics are updated in real-time.
+            This dashboard shows aggregate analytics from our federal court data platform over the last 30 days. Data includes searches across all 94 federal districts, case analysis, settlement research, and judge comparison tools. All metrics are updated in real-time.
           </p>
         </div>
 

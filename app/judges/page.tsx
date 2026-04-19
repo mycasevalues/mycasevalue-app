@@ -19,11 +19,11 @@ export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
   title: 'Judge Intelligence — Federal Court Analytics',
-  description: 'Research federal judges across 95 districts. Win rates, motion rates, settlement patterns, case duration. Data from 5.1M+ federal cases.',
+  description: 'Research federal judges across 94 districts. Win rates, motion rates, settlement patterns, case duration. Data from 5.1M+ federal cases.',
   alternates: { canonical: `${SITE_URL}/judges` },
   openGraph: {
     title: 'Judge Intelligence — Statistics & Analytics',
-    description: 'Research federal judges across all 13 circuits and 95 districts with comprehensive analytics.',
+    description: 'Research federal judges across all 13 circuits and 94 districts with comprehensive analytics.',
     type: 'website',
     url: `${SITE_URL}/judges`,
     images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'Judge Intelligence - MyCaseValue' }],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Judge Intelligence — Statistics & Analytics',
-    description: 'Research federal judges across 95 districts with comprehensive statistics. Compare win rates, motion grant rates, settlement patterns, and case duration for 5.1M+ cases.',
+    description: 'Research federal judges across 94 districts with comprehensive statistics. Compare win rates, motion grant rates, settlement patterns, and case duration for 5.1M+ cases.',
     images: [`${SITE_URL}/og-image.png`],
   },
 };
@@ -114,7 +114,7 @@ export default async function JudgesPage() {
               fontSize: 14, lineHeight: 1.65, maxWidth: 640,
               color: 'var(--text2, #42403C)', fontFamily: 'var(--font-ui)',
             }}>
-              Ruling patterns, case duration, and outcome tendencies across all 95 federal districts. Data from 5.1M+ public federal cases.
+              Ruling patterns, case duration, and outcome tendencies across all 94 federal districts. Data from 5.1M+ public federal cases.
             </p>
           </div>
         </div>
@@ -154,7 +154,7 @@ export default async function JudgesPage() {
             Data Methodology
           </h3>
           <p style={{ fontSize: 12, lineHeight: 1.6, color: 'var(--text3, #4A4940)', fontFamily: 'var(--font-ui)', margin: 0 }}>
-            Judge analytics are derived from publicly available federal court records and PACER data. Metrics include motion grant rates, case duration, win rates, and settlement patterns. Data is updated periodically and covers active Article III judges in the 95 federal judicial districts. MyCaseValue LLC is not a law firm and does not provide legal advice.
+            Judge analytics are derived from publicly available federal court records and PACER data. Metrics include motion grant rates, case duration, win rates, and settlement patterns. Data is updated periodically and covers active Article III judges in the 94 federal judicial districts. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>
       </div>

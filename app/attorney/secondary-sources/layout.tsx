@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   description: 'Browse legal treatises, encyclopedias, law reviews, practice guides, and restatements. Filter by jurisdiction, topic, and source type.',
   alternates: { canonical: `${SITE_URL}/attorney/secondary-sources` },
   openGraph: {
-    title: 'Secondary Sources Library | MyCaseValues',
+    title: 'Secondary Sources Library — MyCaseValue',
     description: 'Browse legal treatises, encyclopedias, law reviews, practice guides, and restatements with jurisdiction and topic filters.',
     url: `${SITE_URL}/attorney/secondary-sources`,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Secondary Sources Library | MyCaseValues',
+    title: 'Secondary Sources Library — MyCaseValue',
     description: 'Browse legal treatises, encyclopedias, law reviews, and practice guides.',
   },
   keywords: [

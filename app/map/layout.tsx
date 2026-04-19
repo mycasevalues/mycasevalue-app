@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Win Rate Map — Federal Courts by District | MyCaseValue',
+  title: 'Win Rate Map — Federal Courts by District — MyCaseValue',
   description: 'Interactive map showing aggregate win rates by US state and federal district. Analyze case outcomes by jurisdiction.',
   alternates: {
     canonical: `${SITE_URL}/map`,

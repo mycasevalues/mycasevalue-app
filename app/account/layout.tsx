@@ -3,12 +3,12 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Account Settings',
+  title: 'Account',
   description: 'Manage your MyCaseValue account settings, subscription, and billing information.',
   robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/account` },
   openGraph: {
-    title: 'Account Settings',
+    title: 'Account',
     description: 'Manage your MyCaseValue account settings, subscription, and billing information.',
     url: `${SITE_URL}/account`,
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Account Settings',
+    title: 'Account',
     description: 'Manage your MyCaseValue account settings, subscription, and billing information.',
   },
 };
