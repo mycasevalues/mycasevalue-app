@@ -132,7 +132,7 @@ export default function KeyCitePage() {
   };
 
   return (
-    <AuthGate feature="KeyCite Citation Analysis">
+    <AuthGate feature="Citation Check">
     <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       {/* Header with status */}
       <div style={{
@@ -182,7 +182,7 @@ export default function KeyCitePage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
           }}>
-            KeyCite Citation Analysis
+            Citation Check
           </h1>
 
           <p style={{
@@ -1314,7 +1314,7 @@ export default function KeyCitePage() {
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ margin: 0, marginBottom: 12 }}>
-            <strong>Disclaimer:</strong> This KeyCite-style analysis is for research purposes. Verify all legal citations through official sources and current legal databases. MyCaseValue provides analytical tools but does not replace Westlaw, LexisNexis, or official legal research.
+            <strong>Disclaimer:</strong> This citation analysis is for research purposes. Verify all legal citations through official sources and current legal databases. MyCaseValue provides analytical tools but does not replace Westlaw, LexisNexis, or official legal research.
           </p>
           <p style={{ margin: 0 }}>
             © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.

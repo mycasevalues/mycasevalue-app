@@ -1156,7 +1156,7 @@ Platform: MyCaseValue Legal Research
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '12px' }}>
             {[
               { name: 'Compare Text', href: '/attorney/compare-text', desc: 'Compare legal documents side by side' },
-              { name: 'KeyCite', href: '/attorney/keycite', desc: 'Citation validation and case treatment analysis' },
+              { name: 'Citation Check', href: '/attorney/keycite', desc: 'Citation validation and case treatment analysis' },
               { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Advanced legal research search tools' },
               { name: 'Secondary Sources', href: '/attorney/secondary-sources', desc: 'Legal secondary sources and treatises' },
             ].map(tool => (

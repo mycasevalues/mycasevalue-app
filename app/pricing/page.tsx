@@ -566,7 +566,7 @@ export default function PricingPage() {
                               • Advanced Search
                             </Link>
                             <Link href="/attorney/keycite" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
-                              • KeyCite Validator
+                              • Citation Check
                             </Link>
                             <Link href="/attorney/judge-intelligence" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
                               • Judge Intelligence

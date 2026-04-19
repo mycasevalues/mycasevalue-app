@@ -105,7 +105,7 @@ const TOOL_URL_MAP: { [key: string]: string } = {
   'Case Timeline': '/attorney/case-timeline',
   'Timeline': '/attorney/timeline',
   'Advanced Search': '/attorney/advanced-search',
-  'KeyCite': '/attorney/keycite',
+  'Citation Check': '/attorney/keycite',
   'Secondary Sources': '/attorney/secondary-sources',
   '50-State Survey': '/attorney/state-survey',
   'Compare Text': '/attorney/compare-text',

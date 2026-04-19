@@ -16,7 +16,7 @@ const DEFAULT_SHORTCUTS: { label: string; href: string }[] = [
   { label: 'Judge Profiles', href: '/judges' },
   { label: 'District Analytics', href: '/districts' },
   { label: 'Settlement Data', href: '/outcomes' },
-  { label: 'CaseCite™', href: '/attorney/keycite' },
+  { label: 'Citation Check', href: '/attorney/keycite' },
   { label: 'Research Organizer', href: '/attorney/folders' },
   { label: 'Folders', href: '/attorney/folders' },
   { label: 'Case Alerts', href: '/dashboard' },

@@ -1142,7 +1142,7 @@ export default function FindPrintPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '12px' }}>
             {[
               { name: 'Folders', href: '/attorney/folders', desc: 'Organize and manage research folders' },
-              { name: 'KeyCite', href: '/attorney/keycite', desc: 'Citation validation and case treatment analysis' },
+              { name: 'Citation Check', href: '/attorney/keycite', desc: 'Citation validation and case treatment analysis' },
               { name: 'Compare Text', href: '/attorney/compare-text', desc: 'Compare legal documents side by side' },
               { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Advanced legal research search tools' },
             ].map(tool => (

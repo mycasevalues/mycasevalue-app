@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import { SITE_URL } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'KeyCite Citation Validator | MyCaseValue',
-  description: 'Validate case citations and track legal treatment using KeyCite-style citation validation. Find citing references, negative treatment, and case history.',
+  title: 'Citation Check — Citation Validator | MyCaseValue',
+  description: 'Validate case citations and track legal treatment with citation checking. Find citing references, negative treatment, and case history.',
   openGraph: {
-    title: 'KeyCite Citation Validator',
-    description: 'Validate case citations and track legal treatment using KeyCite-style citation validation.',
+    title: 'Citation Check — Citation Validator',
+    description: 'Validate case citations and track legal treatment with citation checking.',
     type: 'website',
     url: `${SITE_URL}/attorney/keycite`,
   },

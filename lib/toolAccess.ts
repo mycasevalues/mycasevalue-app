@@ -43,7 +43,7 @@ export const TOOL_ACCESS: ToolAccessEntry[] = [
   { slug: 'sol-calculator', label: 'Statute of Limitations Calculator', premium: false },
   { slug: 'deadline-calculator', label: 'Deadline Calculator', premium: false },
   // Premium tools
-  { slug: 'keycite', label: 'KeyCite Citation Analysis', premium: true },
+  { slug: 'keycite', label: 'Citation Check', premium: true },
   { slug: 'advanced-search', label: 'Advanced Legal Search', premium: true },
   { slug: 'case-predictor', label: 'Case Outcome Predictor', premium: true },
   { slug: 'demand-letter', label: 'Demand Letter Generator', premium: true },

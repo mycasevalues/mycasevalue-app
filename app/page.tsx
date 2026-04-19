@@ -25,20 +25,20 @@ import HomeHeroSearch from '@/components/ui/HomeHeroSearch';
 import HomePrecisionButtons from '@/components/ui/HomePrecisionButtons';
 
 export const metadata: Metadata = {
-  title: 'MyCaseValue Advantage — Federal Court Intelligence Platform',
+  title: 'MyCaseValue — Federal Court Intelligence Platform',
   description:
-    'Institutional-grade litigation intelligence from public federal court records. Case outcomes, judge analytics, venue analysis, and settlement data across all 94 federal districts.',
+    'Litigation intelligence from public federal court records. Case outcomes, judge analytics, venue analysis, and settlement data across all 94 federal districts.',
   openGraph: {
     type: 'website',
-    title: 'MyCaseValue Advantage | Federal Court Intelligence',
+    title: 'MyCaseValue | Federal Court Intelligence',
     images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue' }],
     description: 'Litigation intelligence from public federal court records.',
     url: SITE_URL,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MyCaseValue Advantage | Federal Court Intelligence',
-    description: 'Institutional-grade litigation intelligence from public federal court records.',
+    title: 'MyCaseValue | Federal Court Intelligence',
+    description: 'Litigation intelligence from public federal court records.',
     images: [`${SITE_URL}/og-image.png`],
   },
   alternates: {
@@ -81,18 +81,13 @@ const BROWSE_CARDS = [
   },
   {
     title: 'Research Tools',
-    description: 'Advanced legal research including KeyCite, secondary sources, 50-state surveys, and document comparison.',
+    description: 'Advanced legal research including citation checking, secondary sources, 50-state surveys, and document comparison.',
     stat: '8 research tools',
     href: '/attorney/advanced-search',
   },
 ];
 
-const RECENT_SEARCHES = [
-  { terms: 'Employment discrimination, SDNY, 2023-2025', count: 342, time: '2h ago' },
-  { terms: 'Patent infringement, CACD, summary judgment', count: 128, time: '5h ago' },
-  { terms: 'Civil rights § 1983, NDIL, jury trial', count: 567, time: '1d ago' },
-  { terms: 'Securities fraud, class action, SDNY', count: 89, time: '2d ago' },
-];
+/* Recent searches removed — shown only for authenticated users */
 
 const PLATFORM_STATS = [
   { label: 'Total Cases Indexed', value: '5,147,392' },
@@ -148,7 +143,7 @@ export default function HomePage() {
         style={{
           background: 'var(--card)',
           borderBottom: '1px solid var(--bdr)',
-          padding: '24px 32px 16px',
+          padding: '32px 32px 24px',
         }}
       >
         <div style={{ maxWidth: 824, margin: '0 auto' }}>
@@ -164,15 +159,16 @@ export default function HomePage() {
               margin: '0 0 8px',
             }}
           >
-            MyCaseValue Advantage — Federal Court Intelligence Platform
+            MyCaseValue — Federal Court Intelligence Platform
           </p>
 
           {/* Headline */}
           <h1
+            className="home-hero-h1"
             style={{
               fontFamily: 'var(--font-legal)',
               fontWeight: 700,
-              fontSize: 28,
+              fontSize: 38,
               letterSpacing: '-0.02em',
               lineHeight: 1.15,
               margin: '0 0 4px',
@@ -218,9 +214,9 @@ export default function HomePage() {
                 color: 'var(--text3, #78766C)',
               }}
             >
-              Powered by{' '}
+              Searching{' '}
               <span style={{ color: 'var(--link)', fontWeight: 600 }}>
-                FederalSearch+
+                94 federal districts
               </span>
             </span>
             <Link
@@ -429,7 +425,7 @@ export default function HomePage() {
               <HomePrecisionButtons />
             </div>
 
-            {/* Recent Precision Searches */}
+            {/* Recent Searches — empty state for unauthenticated users */}
             <div style={{ marginTop: 4 }}>
               <div
                 style={{
@@ -441,86 +437,41 @@ export default function HomePage() {
                   marginBottom: 8,
                 }}
               >
-                Recent Precision Searches
+                Recent Searches
               </div>
               <div
                 style={{
-                  display: 'flex',
-                  alignItems: 'baseline',
-                  justifyContent: 'space-between',
-                  marginBottom: 8,
+                  padding: '16px',
+                  background: 'var(--sidebar2, #F4F3EF)',
+                  border: '1px solid var(--bdr)',
+                  borderRadius: 2,
+                  textAlign: 'center',
                 }}
               >
+                <p
+                  style={{
+                    fontSize: 13,
+                    fontFamily: 'var(--font-ui)',
+                    color: 'var(--text3, #78766C)',
+                    margin: '0 0 8px',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Your recent searches will appear here.
+                </p>
                 <Link
-                  href="/dashboard"
+                  href="/sign-in"
                   style={{
                     fontSize: 12,
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--link)',
                     textDecoration: 'none',
-                    marginLeft: 'auto',
+                    fontWeight: 600,
                   }}
                 >
-                  View Research Path →
+                  Sign in to save your research →
                 </Link>
               </div>
-
-              {RECENT_SEARCHES.map((search, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    padding: '8px 0',
-                    borderBottom: i < RECENT_SEARCHES.length - 1 ? '1px solid var(--bdr)' : 'none',
-                  }}
-                >
-                  <span
-                    style={{
-                      width: 6,
-                      height: 6,
-                      borderRadius: '50%',
-                      background: 'var(--link)',
-                      flexShrink: 0,
-                    }}
-                  />
-                  <span
-                    style={{
-                      flex: 1,
-                      fontSize: 12,
-                      fontFamily: 'var(--font-ui)',
-                      color: 'var(--link)',
-                      cursor: 'pointer',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
-                    {search.terms}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 12,
-                      fontFamily: 'var(--font-mono)',
-                      color: 'var(--text3, #78766C)',
-                      flexShrink: 0,
-                    }}
-                  >
-                    {search.count} results
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 12,
-                      fontFamily: 'var(--font-ui)',
-                      color: 'var(--text4, #A8A6A0)',
-                      flexShrink: 0,
-                    }}
-                  >
-                    {search.time}
-                  </span>
-                </div>
-              ))}
             </div>
           </div>
 
@@ -549,36 +500,28 @@ export default function HomePage() {
               >
                 My Alerts
               </div>
-              {[
-                'Employment cases, SDNY',
-                'Patent filings, CACD',
-                'Civil rights, all districts',
-              ].map((alert, i) => (
-                <div
-                  key={i}
-                  style={{
-                    fontSize: 12,
-                    fontFamily: 'var(--font-ui)',
-                    color: 'var(--link)',
-                    lineHeight: 2,
-                    cursor: 'pointer',
-                  }}
-                >
-                  {alert}
-                </div>
-              ))}
-              <Link
-                href="/dashboard"
+              <p
                 style={{
                   fontSize: 12,
                   fontFamily: 'var(--font-ui)',
                   color: 'var(--text3, #78766C)',
-                  textDecoration: 'none',
-                  marginTop: 4,
-                  display: 'block',
+                  lineHeight: 1.5,
+                  margin: '0 0 6px',
                 }}
               >
-                Manage alerts →
+                Set up alerts to track new filings, rulings, and case outcomes.
+              </p>
+              <Link
+                href="/sign-in"
+                style={{
+                  fontSize: 12,
+                  fontFamily: 'var(--font-ui)',
+                  color: 'var(--link)',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                }}
+              >
+                Sign in to create alerts →
               </Link>
             </div>
 
@@ -814,11 +757,12 @@ export default function HomePage() {
         /* Responsive */
         @media (max-width: 768px) {
           .hp-card-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .home-hero-h1 { font-size: 28px !important; }
         }
         @media (max-width: 480px) {
           .hp-card-grid { grid-template-columns: 1fr !important; }
           .home-hero { padding: 16px 16px 12px !important; }
-          .home-hero h1 { font-size: 22px !important; }
+          .home-hero-h1 { font-size: 24px !important; }
         }
       `}</style>
     </main>

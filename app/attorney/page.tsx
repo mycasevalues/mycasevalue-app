@@ -366,7 +366,7 @@ const features: { icon: React.ReactNode; title: string; description: string; bad
   },
   {
     icon: <CheckIcon />,
-    title: 'KeyCite Citation Validator',
+    title: 'Citation Check',
     description: 'Validate case citations with color-coded treatment flags. Track citing references, negative treatment, and case history.',
     badge: 'available' as const,
     href: '/attorney/keycite',
@@ -520,7 +520,7 @@ export default function AttorneyPage() {
           'Case Timeline Generator',
           'Local Court Rules Reference',
           'Advanced Search',
-          'KeyCite Citation Validator',
+          'Citation Check',
           'Secondary Sources Library',
           '50-State Survey',
           'Text Comparison & Redline',

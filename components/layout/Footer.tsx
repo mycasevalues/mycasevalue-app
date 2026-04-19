@@ -38,7 +38,7 @@ const COLS = [
     title: 'RESEARCH TOOLS',
     links: [
       { label: 'Advanced Search', href: '/attorney/advanced-search' },
-      { label: 'KeyCite', href: '/attorney/keycite' },
+      { label: 'Citation Check', href: '/attorney/keycite' },
       { label: 'Secondary Sources', href: '/attorney/secondary-sources' },
       { label: '50-State Survey', href: '/attorney/state-survey' },
       { label: 'Compare Text', href: '/attorney/compare-text' },
