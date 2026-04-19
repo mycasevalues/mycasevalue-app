@@ -115,16 +115,16 @@ export default function LanguageDetectBanner() {
           onMouseLeave={(e) => {
             (e.currentTarget as HTMLButtonElement).style.color = 'var(--accent-primary)';
           }}
-          aria-label="Change to Spanish"
+          aria-label="Cambiar a español"
         >
-          Cambiar a inglés
+          Cambiar a español
         </button>
         <button
           onClick={handleDismiss}
           style={{
             background: 'none',
             border: 'none',
-            color: 'var(--text3, #78766C)',
+            color: 'var(--text3, #4A4940)',
             fontSize: '18px',
             cursor: 'pointer',
             padding: '4px',
@@ -137,7 +137,7 @@ export default function LanguageDetectBanner() {
             (e.currentTarget as HTMLButtonElement).style.color = 'var(--color-text-secondary)';
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.color = 'var(--text4, #A8A6A0)';
+            (e.currentTarget as HTMLButtonElement).style.color = 'var(--text3, #4A4940)';
           }}
           aria-label="Dismiss language suggestion"
         >

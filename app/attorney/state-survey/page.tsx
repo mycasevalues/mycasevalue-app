@@ -312,7 +312,7 @@ Platform: MyCaseValue Legal Research
 
           <p style={{
             fontSize: '14px',
-            color: 'var(--text3, #78766C)',
+            color: 'var(--text3, #4A4940)',
             margin: '0',
             lineHeight: '1.6',
             maxWidth: '640px',

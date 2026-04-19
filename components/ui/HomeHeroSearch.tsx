@@ -54,7 +54,7 @@ export default function HomeHeroSearch() {
             gap: 8,
           }}
         >
-          <span style={{ color: 'var(--text4, #A8A6A0)', flexShrink: 0 }}>
+          <span style={{ color: 'var(--text4, #8A8780)', flexShrink: 0 }}>
             <SearchIcon />
           </span>
           <input

@@ -270,7 +270,7 @@ export default function DistrictsExplorer({
           color: var(--color-text-primary);
         }
         .control-input::placeholder {
-          color: var(--text4, #A8A6A0);
+          color: var(--text4, #8A8780);
         }
         .control-input:focus,
         .control-select:focus {
@@ -376,7 +376,7 @@ export default function DistrictsExplorer({
                         : rate >= 35
                         ? 'var(--wrn-txt, #7A5800)'
                         : 'var(--accent-primary)'
-                      : 'var(--text4, #A8A6A0)',
+                      : 'var(--text4, #8A8780)',
                   }}
                 >
                   {rate !== null ? `${rate}%` : '—'}

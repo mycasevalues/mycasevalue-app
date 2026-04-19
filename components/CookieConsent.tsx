@@ -41,8 +41,8 @@ export default function CookieConsent() {
         left: 0,
         right: 0,
         zIndex: 9999,
-        background: 'var(--color-surface-0)',
-        borderTop: '1px solid var(--border-default)',
+        background: 'var(--card, #FFFFFF)',
+        borderTop: '1px solid var(--bdr, #E2DFD8)',
         boxShadow: '0 -1px 8px rgba(0,0,0,0.06)',
         fontFamily: 'var(--font-ui)',
         animation: 'slideUp 400ms cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -66,7 +66,7 @@ export default function CookieConsent() {
             height="18"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="var(--color-text-secondary)"
+            stroke="var(--text2, #42403C)"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -80,7 +80,7 @@ export default function CookieConsent() {
               margin: 0,
               fontSize: '14px',
               lineHeight: '1.5',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1, #18181A)',
               fontFamily: 'var(--font-ui)',
             }}
           >
@@ -88,7 +88,7 @@ export default function CookieConsent() {
             <Link
               href="/privacy"
               style={{
-                color: 'var(--accent-primary-hover)',
+                color: 'var(--link, #0A50A2)',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
                 fontWeight: 500,
@@ -115,9 +115,9 @@ export default function CookieConsent() {
               fontWeight: 600,
               fontSize: '12px',
               fontFamily: 'var(--font-ui)',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr, #E2DFD8)',
               background: 'transparent',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2, #42403C)',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',
@@ -135,8 +135,8 @@ export default function CookieConsent() {
               fontSize: '12px',
               fontFamily: 'var(--font-ui)',
               border: 'none',
-              background: 'var(--accent-primary)',
-              color: 'var(--color-surface-0)',
+              background: 'var(--chrome-bg, #1B2D45)',
+              color: '#FFFFFF',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',

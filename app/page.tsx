@@ -93,7 +93,7 @@ const PLATFORM_STATS = [
   { label: 'Total Cases Indexed', value: '5,147,392' },
   { label: 'Federal Districts', value: '94' },
   { label: 'Active Judges', value: '3,412' },
-  { label: 'Last Data Refresh', value: '02:00 UTC' },
+  { label: 'Data Source', value: 'FJC IDB' },
   { label: 'Median Processing', value: '< 200ms' },
 ];
 
@@ -155,7 +155,7 @@ export default function HomePage() {
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.14em',
-              color: 'var(--text3, #78766C)',
+              color: 'var(--text3, #4A4940)',
               margin: '0 0 8px',
             }}
           >
@@ -211,7 +211,7 @@ export default function HomePage() {
               style={{
                 fontSize: 12,
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--text3, #78766C)',
+                color: 'var(--text3, #4A4940)',
               }}
             >
               Searching{' '}
@@ -279,7 +279,7 @@ export default function HomePage() {
               alignItems: 'center',
               fontSize: 12,
               fontFamily: 'var(--font-ui)',
-              color: 'var(--text3, #78766C)',
+              color: 'var(--text3, #4A4940)',
               cursor: 'pointer',
               borderBottom: '3px solid transparent',
               whiteSpace: 'nowrap',
@@ -290,25 +290,31 @@ export default function HomePage() {
             {tab.label}
           </label>
         ))}
-        {/* Static nav-style tabs (link elsewhere) */}
+        {/* Static nav links (navigate to other pages — styled differently from tabs) */}
         {['Federal Courts', 'Practice Areas', 'Analytics Tools'].map((t) => (
           <Link
             key={t}
             href={t === 'Federal Courts' ? '/districts' : t === 'Practice Areas' ? '/cases' : '/analytics'}
+            className="hp-nav-link"
             style={{
               height: 39,
               padding: '0 14px',
               display: 'flex',
               alignItems: 'center',
+              gap: 4,
               fontSize: 12,
               fontFamily: 'var(--font-ui)',
-              color: 'var(--text3, #78766C)',
+              color: 'var(--text3, #4A4940)',
               textDecoration: 'none',
               whiteSpace: 'nowrap',
               transition: 'color 150ms ease',
+              borderLeft: '1px solid var(--bdr)',
             }}
           >
             {t}
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true" style={{ opacity: 0.5 }}>
+              <path d="M1 7L7 1M7 1H2.5M7 1V5.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </Link>
         ))}
         <Link
@@ -320,7 +326,7 @@ export default function HomePage() {
             alignItems: 'center',
             fontSize: 12,
             fontFamily: 'var(--font-ui)',
-            color: 'var(--text3, #78766C)',
+            color: 'var(--text3, #4A4940)',
             textDecoration: 'none',
             marginLeft: 'auto',
             whiteSpace: 'nowrap',
@@ -388,7 +394,7 @@ export default function HomePage() {
                         fontSize: 12,
                         textTransform: 'uppercase',
                         letterSpacing: '0.5px',
-                        color: 'var(--text3, #78766C)',
+                        color: 'var(--text3, #4A4940)',
                         fontFamily: 'var(--font-ui)',
                         fontWeight: 600,
                         marginBottom: 3,
@@ -408,7 +414,7 @@ export default function HomePage() {
                         borderRadius: 2,
                         fontSize: 12,
                         fontFamily: 'var(--font-ui)',
-                        color: 'var(--text4, #A8A6A0)',
+                        color: 'var(--text4, #8A8780)',
                         cursor: 'pointer',
                       }}
                     >
@@ -433,7 +439,7 @@ export default function HomePage() {
                   fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
-                  color: 'var(--text3, #78766C)',
+                  color: 'var(--text3, #4A4940)',
                   marginBottom: 8,
                 }}
               >
@@ -452,7 +458,7 @@ export default function HomePage() {
                   style={{
                     fontSize: 13,
                     fontFamily: 'var(--font-ui)',
-                    color: 'var(--text3, #78766C)',
+                    color: 'var(--text3, #4A4940)',
                     margin: '0 0 8px',
                     lineHeight: 1.5,
                   }}
@@ -493,7 +499,7 @@ export default function HomePage() {
                   fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
-                  color: 'var(--text3, #78766C)',
+                  color: 'var(--text3, #4A4940)',
                   fontWeight: 600,
                   marginBottom: 6,
                 }}
@@ -504,7 +510,7 @@ export default function HomePage() {
                 style={{
                   fontSize: 12,
                   fontFamily: 'var(--font-ui)',
-                  color: 'var(--text3, #78766C)',
+                  color: 'var(--text3, #4A4940)',
                   lineHeight: 1.5,
                   margin: '0 0 6px',
                 }}
@@ -545,7 +551,7 @@ export default function HomePage() {
                   fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
-                  color: 'var(--text3, #78766C)',
+                  color: 'var(--text3, #4A4940)',
                   fontWeight: 600,
                   marginBottom: 6,
                 }}
@@ -567,7 +573,7 @@ export default function HomePage() {
                     style={{
                       fontSize: 12,
                       fontFamily: 'var(--font-ui)',
-                      color: 'var(--text3, #78766C)',
+                      color: 'var(--text3, #4A4940)',
                     }}
                   >
                     {stat.label}
@@ -670,7 +676,7 @@ export default function HomePage() {
                   style={{
                     fontSize: 12,
                     fontFamily: 'var(--font-ui)',
-                    color: 'var(--text3, #78766C)',
+                    color: 'var(--text3, #4A4940)',
                     lineHeight: 1.5,
                     margin: '0 0 8px',
                   }}
@@ -706,7 +712,7 @@ export default function HomePage() {
           style={{
             fontSize: 12,
             fontFamily: 'var(--font-ui)',
-            color: 'var(--text3, #78766C)',
+            color: 'var(--text3, #4A4940)',
             margin: 0,
           }}
         >
@@ -740,7 +746,7 @@ export default function HomePage() {
         }
         /* Reset precision active when records is checked */
         #tab-records:checked ~ div .hp-tab-precision {
-          color: var(--text3, #78766C) !important;
+          color: var(--text3, #4A4940) !important;
           font-weight: 400;
           border-bottom-color: transparent !important;
         }

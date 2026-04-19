@@ -30,7 +30,7 @@ const DEFAULT_ITEMS: TickerItem[] = [
 function dirColor(dir?: 'up' | 'down' | 'flat') {
   if (dir === 'up') return 'var(--data-positive, #176438)';
   if (dir === 'down') return '#B91C1C';
-  return 'var(--text4, #A8A6A0)';
+  return 'var(--text4, #8A8780)';
 }
 
 function dirArrow(dir?: 'up' | 'down' | 'flat') {

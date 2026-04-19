@@ -101,7 +101,7 @@ export function SearchHero({ variant = 'light' }: { variant?: 'light' | 'dark' }
             fontFamily: 'var(--font-mono)',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
-            color: dark ? 'var(--color-text-secondary)' : 'var(--text4, #A8A6A0)',
+            color: dark ? 'var(--color-text-secondary)' : 'var(--text4, #8A8780)',
           }}
         >
           Try:

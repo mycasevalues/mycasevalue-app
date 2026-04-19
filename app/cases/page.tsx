@@ -194,7 +194,7 @@ export default function CasesIndexPage() {
             Federal Case Analytics
           </h1>
           <p style={{
-            fontSize: 14, color: 'var(--text3, #78766C)', margin: 0, lineHeight: 1.6, maxWidth: 640,
+            fontSize: 14, color: 'var(--text3, #4A4940)', margin: 0, lineHeight: 1.6, maxWidth: 640,
             fontFamily: 'var(--font-ui)',
           }}>
             Outcome data and litigation intelligence across 84 federal case types. Win rates, settlements, and duration benchmarks from 5.1M+ cases.

@@ -57,7 +57,7 @@ export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps)
           fontSize: 12,
           textTransform: 'uppercase',
           letterSpacing: '0.5px',
-          color: 'var(--text3, #78766C)',
+          color: 'var(--text3, #4A4940)',
           fontFamily: 'var(--font-ui)',
           fontWeight: 600,
           marginBottom: 5,
@@ -89,7 +89,7 @@ export default function ResearchOrganizer({ itemCount }: ResearchOrganizerProps)
         style={{
           fontSize: 12,
           fontFamily: 'var(--font-ui)',
-          color: 'var(--text3, #78766C)',
+          color: 'var(--text3, #4A4940)',
           lineHeight: 1.5,
           margin: '0 0 7px 0',
         }}

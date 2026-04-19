@@ -534,7 +534,7 @@ export default function ComparePage() {
                         <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'var(--color-text-secondary)' }}>
                           <span style={{
                             display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
-                            backgroundColor: s.totalCases >= 10000 ? 'var(--data-positive)' : s.totalCases >= 1000 ? 'var(--wrn-txt)' : s.totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)',
+                            backgroundColor: s.totalCases >= 10000 ? 'var(--data-positive)' : s.totalCases >= 1000 ? 'var(--wrn-txt)' : s.totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #8A8780)',
                           }} />
                           n={s.totalCases.toLocaleString()} cases
                         </div>

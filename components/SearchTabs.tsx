@@ -37,7 +37,7 @@ export default function SearchTabs() {
               fontSize: '14px',
               fontWeight: activeTab === tab.id ? '600' : '500',
               fontFamily: 'var(--font-ui)',
-              color: activeTab === tab.id ? 'var(--accent-primary)' : 'var(--text3, #78766C)',
+              color: activeTab === tab.id ? 'var(--accent-primary)' : 'var(--text3, #4A4940)',
               background: 'transparent',
               border: 'none',
               borderBottom: activeTab === tab.id ? '3px solid var(--accent-primary)' : 'none',
@@ -54,7 +54,7 @@ export default function SearchTabs() {
             }}
             onMouseLeave={(e) => {
               if (activeTab !== tab.id) {
-                e.currentTarget.style.color = 'var(--text3, #78766C)';
+                e.currentTarget.style.color = 'var(--text3, #4A4940)';
               }
             }}
           >

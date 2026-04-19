@@ -74,7 +74,7 @@ export default function LanguageToggle() {
       >
         EN
       </button>
-      <span style={{ color: 'var(--text3, #78766C)' }}>|</span>
+      <span style={{ color: 'var(--text3, #4A4940)' }}>|</span>
       <button
         onClick={() => handleLanguageChange('es')}
         style={{

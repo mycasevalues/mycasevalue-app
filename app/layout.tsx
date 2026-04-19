@@ -24,7 +24,6 @@ const RouteLoadingBar = dynamic(() => import('../components/ui/RouteLoadingBar')
 const CookieConsent = dynamic(() => import('../components/ui/CookieConsent'), { ssr: false });
 const GlobalCommandPalette = dynamic(() => import('../components/ui/GlobalCommandPalette'), { ssr: false });
 const KeyboardShortcutsHelp = dynamic(() => import('../components/ui/KeyboardShortcutsHelp'), { ssr: false });
-const KeyboardShortcuts = dynamic(() => import('../components/KeyboardShortcuts'), { ssr: false });
 const BackToTop = dynamic(() => import('../components/BackToTop'), { ssr: false });
 const WebVitalsReporter = dynamic(() => import('../components/analytics/WebVitalsReporter'), { ssr: false });
 const DemoMode = dynamic(() => import('../components/DemoMode'), { ssr: false });
@@ -359,7 +358,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <WebVitalsReporter />
         <GlobalCommandPalette />
         <KeyboardShortcutsHelp />
-        <KeyboardShortcuts />
         <DemoMode />
         <AIChatAssistant />
         <Analytics />

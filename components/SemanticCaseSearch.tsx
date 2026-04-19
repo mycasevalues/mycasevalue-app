@@ -151,7 +151,7 @@ export default function SemanticCaseSearch() {
         <div
           style={{
             fontSize: '12px',
-            color: isOverLimit ? 'var(--data-negative, #B01E1E)' : 'var(--text3, #78766C)',
+            color: isOverLimit ? 'var(--data-negative, #B01E1E)' : 'var(--text3, #4A4940)',
             fontFamily: 'var(--font-mono)',
             marginBottom: '12px',
             textAlign: 'right',

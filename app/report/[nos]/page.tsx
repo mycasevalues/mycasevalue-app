@@ -287,7 +287,7 @@ export default async function ReportPage({
           a[href]:not([href="#"]):not([href*="javascript"])::after {
             content: " (" attr(href) ")";
             font-size: 0.85em;
-            color: var(--text3, #78766C);
+            color: var(--text3, #4A4940);
             word-break: break-word;
           }
 
@@ -329,7 +329,7 @@ export default async function ReportPage({
             display: block;
             font-size: 12px;
             font-weight: 600;
-            color: var(--text4, #A8A6A0);
+            color: var(--text4, #8A8780);
             letter-spacing: 0.1em;
             text-transform: uppercase;
             margin-bottom: 12px;

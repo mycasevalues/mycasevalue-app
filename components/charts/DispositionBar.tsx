@@ -16,7 +16,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
     settled: 'var(--accent-primary)',
     plaintiffVerdict: 'var(--data-positive, #176438)',
     defenseVerdict: 'var(--data-negative, #B01E1E)',
-    dismissed: 'var(--text4, #A8A6A0)',
+    dismissed: 'var(--text4, #8A8780)',
     summaryJudgment: '#C37D16',
     other: '#E0DDD8',
   };

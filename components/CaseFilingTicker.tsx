@@ -86,7 +86,7 @@ export default function CaseFilingTicker() {
         <div
           style={{
             fontSize: '12px',
-            color: 'var(--text3, #78766C)',
+            color: 'var(--text3, #4A4940)',
             fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
             textTransform: 'uppercase',
@@ -161,7 +161,7 @@ export default function CaseFilingTicker() {
             }
 
             .ticker-court {
-              color: var(--text4, #A8A6A0);
+              color: var(--text4, #8A8780);
               font-size: 12px;
               font-family: var(--font-mono);
             }

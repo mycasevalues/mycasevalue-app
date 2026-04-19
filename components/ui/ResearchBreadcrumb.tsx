@@ -2,7 +2,7 @@
 
 /**
  * ResearchBreadcrumb — Westlaw-style breadcrumb trail.
- * Light mode: var(--text4, #A8A6A0) separators, var(--link, #0A50A2) links, var(--text1, #18181A) current page.
+ * Light mode: var(--text4, #8A8780) separators, var(--link, #0A50A2) links, var(--text1, #18181A) current page.
  */
 
 import Link from 'next/link';

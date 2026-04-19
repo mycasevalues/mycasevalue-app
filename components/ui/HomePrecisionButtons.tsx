@@ -68,7 +68,7 @@ export default function HomePrecisionButtons() {
         style={{
           fontSize: 12,
           fontFamily: 'var(--font-mono)',
-          color: 'var(--text3, #78766C)',
+          color: 'var(--text3, #4A4940)',
         }}
       >
         Matching <strong style={{ color: 'var(--text1)' }}>5,147,392</strong> cases

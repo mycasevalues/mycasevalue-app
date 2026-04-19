@@ -134,7 +134,7 @@ function StatsCard({
       >
         {value}
         {shouldShowDot && (
-          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? 'var(--data-positive)' : casesCount >= 1000 ? 'var(--wrn-txt)' : casesCount >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
+          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? 'var(--data-positive)' : casesCount >= 1000 ? 'var(--wrn-txt)' : casesCount >= 100 ? 'var(--data-negative)' : 'var(--text4, #8A8780)' }} />
         )}
       </p>
       {subtitle && (

@@ -106,7 +106,7 @@ export default function CostMonitor() {
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
           }}
         >
-          <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text3, #4A4940)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
             Current Monthly Spend
           </p>
           <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
@@ -126,7 +126,7 @@ export default function CostMonitor() {
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
           }}
         >
-          <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text3, #4A4940)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
             Budget Utilization
           </p>
           <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
@@ -146,7 +146,7 @@ export default function CostMonitor() {
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
           }}
         >
-          <p style={{ fontSize: '12px', color: 'var(--text3, #78766C)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text3, #4A4940)', margin: '0 0 8px 0', textTransform: 'uppercase' }}>
             Projected EOMonth
           </p>
           <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>

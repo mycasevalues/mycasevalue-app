@@ -96,7 +96,7 @@ export default function MasterDetailLayout({
               alignItems: 'center',
               justifyContent: 'center',
               height: '100%',
-              color: 'var(--text4, #A8A6A0)',
+              color: 'var(--text4, #8A8780)',
             }}
           >
             <div style={{ textAlign: 'center' }}>
@@ -114,7 +114,7 @@ export default function MasterDetailLayout({
               <p style={{ fontSize: 14, fontWeight: 500, color: 'var(--text2, #42403C)' }}>
                 Select an item to see details
               </p>
-              <p style={{ fontSize: 12, marginTop: 4, color: 'var(--text4, #A8A6A0)' }}>
+              <p style={{ fontSize: 12, marginTop: 4, color: 'var(--text4, #8A8780)' }}>
                 Click any item in the list
               </p>
             </div>
@@ -174,7 +174,7 @@ export function MasterListItem({
 export function StatPill({ label, value, color }: { label: string; value: string; color?: string }) {
   return (
     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 12 }}>
-      <span style={{ color: 'var(--text4, #A8A6A0)' }}>{label}</span>
+      <span style={{ color: 'var(--text4, #8A8780)' }}>{label}</span>
       <span
         style={{
           fontFamily: 'var(--font-mono)',

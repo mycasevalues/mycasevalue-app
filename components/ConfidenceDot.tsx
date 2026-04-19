@@ -5,7 +5,7 @@
  * Green (#057642): n ≥ 10,000 cases — High confidence
  * Amber (#C37D16): n ≥ 1,000 cases — Medium confidence
  * Red (#CC1016): n ≥ 100 cases — Low confidence
- * Grey (var(--text4, #A8A6A0)): n < 100 cases — Insufficient data
+ * Grey (var(--text4, #8A8780)): n < 100 cases — Insufficient data
  */
 
 interface ConfidenceDotProps {

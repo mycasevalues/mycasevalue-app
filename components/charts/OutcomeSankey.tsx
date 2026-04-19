@@ -34,7 +34,7 @@ const NODES: SankeyNode[] = [
 
 const LINKS: SankeyLink[] = [
   { source: 0, target: 1, value: 42.2, color: 'var(--link)' },   // Settlement
-  { source: 0, target: 2, value: 18.1, color: 'var(--text4, #A8A6A0)' },   // Dismissed
+  { source: 0, target: 2, value: 18.1, color: 'var(--text4, #8A8780)' },   // Dismissed
   { source: 0, target: 3, value: 15.7, color: 'var(--chrome-text-muted)' },   // Other
   { source: 0, target: 4, value: 9.7,  color: 'var(--accent-primary-hover)' },   // Summary Judgment
   { source: 0, target: 5, value: 3.0,  color: 'var(--link)' },   // Default Judgment

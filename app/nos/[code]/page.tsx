@@ -845,7 +845,7 @@ export default async function NOSPage({ params }: PageProps) {
                 <div className="stat-value" style={{ color: stat.color, display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
                   {stat.value}
                   {stat.showDot && totalCases > 0 && (
-                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? 'var(--data-positive)' : totalCases >= 1000 ? 'var(--wrn-txt)' : totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
+                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? 'var(--data-positive)' : totalCases >= 1000 ? 'var(--wrn-txt)' : totalCases >= 100 ? 'var(--data-negative)' : 'var(--text4, #8A8780)' }} />
                   )}
                   {stat.showSample && totalCases > 0 && <SampleSizeIndicator count={totalCases} />}
                 </div>
@@ -1355,7 +1355,7 @@ export default async function NOSPage({ params }: PageProps) {
                         <span>Win Rate:</span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                           <strong style={{ color: caseType.wr >= 50 ? 'var(--data-positive)' : 'var(--accent-primary)' }}>{caseType.wr}%</strong>
-                          <span title={`Based on ${caseType.total.toLocaleString()} cases — ${caseType.total >= 10000 ? 'High' : caseType.total >= 1000 ? 'Medium' : caseType.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: caseType.total >= 10000 ? 'var(--data-positive)' : caseType.total >= 1000 ? 'var(--wrn-txt)' : caseType.total >= 100 ? 'var(--data-negative)' : 'var(--text4, #A8A6A0)' }} />
+                          <span title={`Based on ${caseType.total.toLocaleString()} cases — ${caseType.total >= 10000 ? 'High' : caseType.total >= 1000 ? 'Medium' : caseType.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: caseType.total >= 10000 ? 'var(--data-positive)' : caseType.total >= 1000 ? 'var(--wrn-txt)' : caseType.total >= 100 ? 'var(--data-negative)' : 'var(--text4, #8A8780)' }} />
                         </div>
                       </div>
                       <div className="related-type-stat">

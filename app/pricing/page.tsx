@@ -244,7 +244,7 @@ export default function PricingPage() {
           font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.65;
-          color: var(--text3, #78766C);
+          color: var(--text3, #4A4940);
           max-width: 42rem;
           margin: 0 auto 1.5rem;
         }

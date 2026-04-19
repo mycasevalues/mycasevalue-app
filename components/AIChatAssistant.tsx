@@ -112,7 +112,7 @@ export function AIChatAssistant() {
         <button
           onClick={() => setIsOpen(true)}
           className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded text-white shadow-lg hover:shadow-xl transition-all"
-          style={{ backgroundColor: 'var(--card, #FFFFFF)', fontFamily: 'var(--font-ui)' }}
+          style={{ backgroundColor: 'var(--chrome-bg, #1B2D45)', fontFamily: 'var(--font-ui)' }}
           aria-label="Open AI Assistant"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -127,7 +127,7 @@ export function AIChatAssistant() {
           className="fixed bottom-6 right-6 z-50 flex flex-col bg-[#FFFFFF] border border-[var(--bdr, #E2DFD8)] shadow-2xl overflow-hidden"
           style={{ width: '400px', maxWidth: 'calc(100vw - 48px)', height: '560px', maxHeight: 'calc(100vh - 48px)', borderRadius: '4px', fontFamily: 'var(--font-ui)' }}
         >
-          <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--bdr, #E2DFD8)]" style={{ backgroundColor: 'var(--card, #FFFFFF)' }}>
+          <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--bdr, #E2DFD8)]" style={{ backgroundColor: 'var(--chrome-bg, #1B2D45)' }}>
             <div className="flex items-center gap-3">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -161,7 +161,7 @@ export function AIChatAssistant() {
                 <div key={msg.id} className={msg.role === 'user' ? 'flex justify-end' : 'flex justify-start'}>
                   <div
                     className={msg.role === 'user' ? 'max-w-[85%] px-4 py-3 rounded text-sm text-white' : 'max-w-[85%] px-4 py-3 rounded text-sm text-[var(--color-text-muted)] bg-[rgba(255,255,255,0.04)]'}
-                    style={msg.role === 'user' ? { backgroundColor: 'var(--card, #FFFFFF)' } : undefined}
+                    style={msg.role === 'user' ? { backgroundColor: 'var(--chrome-bg, #1B2D45)' } : undefined}
                   >
                     <div className="whitespace-pre-wrap leading-relaxed">{msg.content}</div>
                   </div>
@@ -185,7 +185,7 @@ export function AIChatAssistant() {
           <div className="border-t border-[var(--bdr, #E2DFD8)] px-4 py-3">
             <form onSubmit={onSubmit} className="flex items-center gap-2">
               <input ref={inputRef} type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Ask about case values..." className="flex-1 px-4 py-2.5 rounded border border-[var(--bdr, #E2DFD8)] text-sm focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400" disabled={isLoading} />
-              <button type="submit" disabled={!inputValue.trim() || isLoading} className="p-2.5 rounded-full text-white transition-colors disabled:opacity-50" style={{ backgroundColor: 'var(--card, #FFFFFF)' }} aria-label="Send message">
+              <button type="submit" disabled={!inputValue.trim() || isLoading} className="p-2.5 rounded-full text-white transition-colors disabled:opacity-50" style={{ backgroundColor: 'var(--chrome-bg, #1B2D45)' }} aria-label="Send message">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
                 </svg>

@@ -60,7 +60,7 @@ function ConfidenceLegend() {
             style={{
               fontSize: 12,
               fontFamily: 'var(--font-ui)',
-              color: 'var(--text3, #78766C)',
+              color: 'var(--text3, #4A4940)',
             }}
           >
             {t.label}
@@ -215,7 +215,7 @@ export default function HorizontalBarChart({
           style={{
             fontSize: 12,
             fontFamily: 'var(--font-ui)',
-            color: 'var(--text4, #A8A6A0)',
+            color: 'var(--text4, #8A8780)',
             marginTop: 6,
           }}
         >
