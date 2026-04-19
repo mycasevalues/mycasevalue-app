@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 import JsonLd from '../../components/JsonLd';
+import Testimonials from '../../components/Testimonials';
 
 export const revalidate = 0;
 
@@ -391,6 +392,80 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Our Story Section */}
+          <div className="section">
+            <div
+              style={{
+                background: 'var(--surf, var(--sidebar2, #F4F3EF))',
+                border: '1px solid var(--border-default)',
+                borderRadius: 4,
+                padding: '2rem',
+              }}
+            >
+              <h2
+                style={{
+                  fontFamily: 'var(--font-legal)',
+                  fontSize: 28,
+                  fontWeight: 700,
+                  letterSpacing: '-0.02em',
+                  lineHeight: 1.2,
+                  color: 'var(--color-text-primary)',
+                  marginBottom: '1rem',
+                }}
+              >
+                Built by a Litigant, for Everyone.
+              </h2>
+              <p
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: 14,
+                  fontWeight: 400,
+                  lineHeight: 1.7,
+                  color: 'var(--color-text-secondary)',
+                  marginBottom: '0.75rem',
+                }}
+              >
+                MyCaseValue was built by a federal court litigant who couldn&#39;t find accessible data about case outcomes. Every analytics platform was enterprise-gated, priced for BigLaw, and designed for people who already knew the system. The founder built the tool they needed — and made it open to everyone.
+              </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: 14,
+                  fontWeight: 400,
+                  lineHeight: 1.7,
+                  color: 'var(--color-text-secondary)',
+                  marginBottom: '0.75rem',
+                }}
+              >
+                Using MyCaseValue&#39;s own data, the founder researched and reached a settlement in their own federal case — proving that accessible court analytics can make a real difference for individuals navigating the legal system without BigLaw resources.
+              </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: 14,
+                  fontWeight: 400,
+                  lineHeight: 1.7,
+                  color: 'var(--color-text-secondary)',
+                  marginBottom: '0.75rem',
+                }}
+              >
+                Today, MyCaseValue indexes <strong style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>5.1 million federal cases</strong> from the FJC Integrated Database — spanning 55+ years of litigation history across all 94 federal districts. The platform is built around a pro se-first philosophy: accessible pricing, plain-English interfaces, and full data transparency. No black boxes, no enterprise gates, no paywalls between you and public court records.
+              </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  lineHeight: 1.7,
+                  color: 'var(--color-text-primary)',
+                  margin: 0,
+                }}
+              >
+                Open to Everyone — that is not a tagline. It is the founding principle.
+              </p>
+            </div>
+          </div>
+
           {/* What It Is Section */}
           <div className="section">
             <h2 className="section-heading">What It Is</h2>
@@ -444,6 +519,12 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Testimonials Section */}
+          <div className="section">
+            <h2 className="section-heading">What Our Users Say</h2>
+            <Testimonials />
           </div>
 
           {/* About the Company Section */}

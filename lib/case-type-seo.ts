@@ -309,36 +309,29 @@ export function getAllCaseTypeSEO(): CaseTypeSEO[] {
       const nosCode = option.nos;
       const categorySlug = category.id;
 
-      // Check if we already have this mapping (avoid duplicates)
-      if (
-        !mappings.find(
-          (m) => m.nosCode === nosCode && m.categorySlug === categorySlug
-        )
-      ) {
-        const slug = option.d
-          .toLowerCase()
-          .replace(/\s+/g, '-')
-          .replace(/[^a-z0-9-]/g, '');
+      const slug = option.d
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9-]/g, '');
 
-        const federalLaw = FEDERAL_LAW_MAP[nosCode] || 'Federal Question Jurisdiction';
-        const typicalClaims = TYPICAL_CLAIMS_MAP[nosCode] || [
-          'Breach of applicable law',
-          'Negligence or misconduct',
-          'Damages claim',
-          'Injunctive relief',
-          'Attorney fees claim',
-        ];
+      const federalLaw = FEDERAL_LAW_MAP[nosCode] || 'Federal Question Jurisdiction';
+      const typicalClaims = TYPICAL_CLAIMS_MAP[nosCode] || [
+        'Breach of applicable law',
+        'Negligence or misconduct',
+        'Damages claim',
+        'Injunctive relief',
+        'Attorney fees claim',
+      ];
 
-        mappings.push({
-          slug,
-          categorySlug,
-          nosCode,
-          label: option.label,
-          description: generateDescription(nosCode, option.label, federalLaw),
-          federalLaw,
-          typicalClaims: typicalClaims.slice(0, 5), // Limit to 5 claims
-        });
-      }
+      mappings.push({
+        slug,
+        categorySlug,
+        nosCode,
+        label: option.label,
+        description: generateDescription(nosCode, option.label, federalLaw),
+        federalLaw,
+        typicalClaims: typicalClaims.slice(0, 5), // Limit to 5 claims
+      });
     });
   });
 

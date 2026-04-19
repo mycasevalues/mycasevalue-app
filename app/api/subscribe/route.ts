@@ -1,53 +1,43 @@
-/**
- * POST /api/subscribe — Newsletter / waitlist signup
- * Upserts email into the newsletter_subscribers table in Supabase.
- * Graceful fallback: if the table doesn't exist yet, logs and returns success.
- */
-export const dynamic = 'force-dynamic';
-
 import { NextRequest, NextResponse } from 'next/server';
-import { apiHandler } from '../../../lib/api-middleware';
-import { apiSuccess, apiBadRequest } from '../../../lib/api-response';
-import { getSupabaseAdmin } from '../../../lib/supabase';
 
-export const POST = apiHandler(
-  { rateLimit: { windowMs: 60000, maxRequests: 10 } },
-  async (request, { log }) => {
-    const { email } = await request.json();
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Validation: email is required
-    if (!email || typeof email !== 'string') {
-      return apiBadRequest('Email is required');
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const { email, source } = body;
+
+    if (!email || typeof email !== 'string' || !EMAIL_RE.test(email.trim())) {
+      return NextResponse.json(
+        { error: 'Please enter a valid email address.' },
+        { status: 400 }
+      );
     }
 
-    // Validation: email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return apiBadRequest('Invalid email address');
-    }
-
-    const normalized = email.toLowerCase().trim();
-
-    // Try Supabase upsert
+    // Attempt to store in Supabase — gracefully handle missing table
     try {
+      const { getSupabaseAdmin } = await import('@/lib/supabase');
       const supabase = getSupabaseAdmin();
+      const { error } = await supabase.from('subscribers').insert({
+        email: email.trim().toLowerCase(),
+        source: source || 'unknown',
+        created_at: new Date().toISOString(),
+      });
 
-      const { error } = await supabase
-        .from('newsletter_subscribers')
-        .upsert(
-          { email: normalized, subscribed_at: new Date().toISOString(), status: 'active' },
-          { onConflict: 'email' }
-        );
-
+      // If table doesn't exist or other non-critical error, still return success
       if (error) {
-        log.error('Supabase upsert failed', { errorMessage: error.message });
+        console.warn('[subscribe] Supabase insert warning:', error.message);
       }
-    } catch (dbErr: unknown) {
-      const message = dbErr instanceof Error ? dbErr.message : String(dbErr);
-      log.error('Database operation failed', { error: message });
+    } catch (dbError) {
+      // Supabase not configured or table missing — silently succeed
+      console.warn('[subscribe] DB unavailable, skipping persist:', dbError);
     }
 
-    // Return success even if DB operation failed (graceful degradation)
-    return apiSuccess({ success: true, message: 'Subscribed successfully' });
+    return NextResponse.json({ ok: true }, { status: 200 });
+  } catch {
+    return NextResponse.json(
+      { error: 'Internal server error.' },
+      { status: 500 }
+    );
   }
-);
+}

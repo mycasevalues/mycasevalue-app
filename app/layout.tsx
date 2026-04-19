@@ -10,6 +10,7 @@ import WorkspaceShell, { ConditionalFooter, ConditionalHeader } from '../compone
 import ReferralCapture from '../components/ReferralCapture';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Script from 'next/script';
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME } from '../lib/site-config';
@@ -27,7 +28,8 @@ const KeyboardShortcutsHelp = dynamic(() => import('../components/ui/KeyboardSho
 const BackToTop = dynamic(() => import('../components/BackToTop'), { ssr: false });
 const WebVitalsReporter = dynamic(() => import('../components/analytics/WebVitalsReporter'), { ssr: false });
 const DemoMode = dynamic(() => import('../components/DemoMode'), { ssr: false });
-const LanguageDetectBanner = dynamic(() => import('../components/LanguageDetectBanner'), { ssr: false });
+// DISABLED: Spanish site experience not ready — most /es/* routes 404
+// const LanguageDetectBanner = dynamic(() => import('../components/LanguageDetectBanner'), { ssr: false });
 const AIChatAssistant = dynamic(() => import('../components/AIChatAssistant').then(mod => ({ default: mod.AIChatAssistant })), { ssr: false });
 const ToastProvider = dynamic(() => import('../components/ui/Toast').then(mod => ({ default: mod.ToastProvider })), { ssr: false });
 
@@ -308,9 +310,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
         {/* Canonical URL is handled per-page by Next.js metadata.alternates.canonical */}
+        {/* hreflang alternates disabled until Spanish site is complete
         <link rel="alternate" hrefLang="en" href={SITE_URL} />
         <link rel="alternate" hrefLang="es" href={`${SITE_URL}/es`} />
         <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
+        */}
         <meta name="author" content="MyCaseValue LLC" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -341,7 +345,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ErrorBoundary>
           <AnalyticsProvider>
             <ToastProvider>
-              <LanguageDetectBanner />
+              {/* <LanguageDetectBanner /> — disabled until Spanish site is complete */}
               <ConditionalHeader><Header /></ConditionalHeader>
               <ConditionalHeader><BrowseNav /></ConditionalHeader>
               <WorkspaceShell>
@@ -362,6 +366,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AIChatAssistant />
         <Analytics />
         <SpeedInsights />
+        {process.env.NEXT_PUBLIC_CLARITY_ID && (
+          <Script id="microsoft-clarity" strategy="afterInteractive">{`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_ID}");
+          `}</Script>
+        )}
         <script dangerouslySetInnerHTML={{ __html: `
           window.mcvAnalytics = {
             track: function(event, props) {

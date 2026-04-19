@@ -5,20 +5,20 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'Press Kit',
-  description: 'Media resources, brand assets, company information, and press contact for MyCaseValue. Download logos, brand guidelines, and company overview for journalists and media professionals.',
+  title: 'Press Kit — MyCaseValue',
+  description: 'Press kit and media resources for MyCaseValue, the federal court intelligence platform making 5.1M+ case outcomes accessible to everyone. Brand assets, key facts, and press contact.',
   alternates: { canonical: `${SITE_URL}/press` },
   openGraph: {
-    title: 'Press Kit',
-    description: 'Media resources, brand assets, company information, and press contact for MyCaseValue. Download logos, brand guidelines, and company overview for journalists and media professionals.',
+    title: 'Press Kit — MyCaseValue',
+    description: 'Press kit and media resources for MyCaseValue, the federal court intelligence platform making 5.1M+ case outcomes accessible to everyone.',
     url: `${SITE_URL}/press`,
     type: 'website',
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — Federal Court Outcome Data' }],
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue — The Federal Court Record. Open to Everyone.' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Press Kit',
-    description: 'Media resources, brand assets, company information, and press contact for MyCaseValue. Download logos, brand guidelines, and company overview for journalists and media professionals.',
+    title: 'Press Kit — MyCaseValue',
+    description: 'Press kit and media resources for MyCaseValue, the federal court intelligence platform making 5.1M+ case outcomes accessible to everyone.',
   },
 };
 
@@ -31,6 +31,8 @@ const jsonLd = {
     '@type': 'Organization',
     name: 'MyCaseValue',
     url: SITE_URL,
+    foundingDate: '2026',
+    slogan: 'The Federal Court Record. Open to Everyone.',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Media Relations',
@@ -39,80 +41,76 @@ const jsonLd = {
   },
 };
 
+/* ------------------------------------------------------------------ */
+/*  Shared style helpers (Westlaw design tokens)                      */
+/* ------------------------------------------------------------------ */
+const h2Style: React.CSSProperties = {
+  fontSize: 20,
+  fontWeight: 600,
+  fontFamily: 'var(--font-ui)',
+  color: 'var(--color-text-primary)',
+  marginBottom: 24,
+  marginTop: 0,
+};
+
+const bodyStyle: React.CSSProperties = {
+  fontSize: 16,
+  fontFamily: 'var(--font-ui)',
+  color: 'var(--color-text-secondary)',
+  lineHeight: 1.7,
+  margin: 0,
+};
+
+const sectionStyle: React.CSSProperties = {
+  marginBottom: 56,
+};
+
+const cardStyle: React.CSSProperties = {
+  padding: 32,
+  borderRadius: 4,
+  border: '1px solid var(--border-default)',
+  background: 'var(--color-surface-0)',
+  boxShadow: 'var(--shadow-xs)',
+};
+
 export default function PressPage() {
-  const stats = [
-    { label: 'Federal Cases Analyzed', value: '5,100,000+' },
-    { label: 'Case Type Categories', value: '84' },
-    { label: 'Federal Judicial Districts', value: '95' },
-    { label: 'Federal Circuits', value: '13' },
-    { label: 'Data Points Per Case Type', value: '50+' },
-    { label: 'Real-Time AI Analysis Tools', value: 'Yes' },
-    { label: 'Updated from FJC', value: 'Quarterly' },
-    { label: 'Free for Pro Se Litigants', value: 'Yes' },
+  /* ---- Section 2 data ---- */
+  const keyFacts = [
+    { label: 'Launch', value: '2026' },
+    { label: 'Federal Cases', value: '5.1M+' },
+    { label: 'Judicial Districts', value: '94' },
+    { label: 'Years of Data', value: '55+' },
+    { label: 'Pricing', value: '$0 \u2013 $29.99/mo' },
+    { label: 'Bilingual Support', value: 'EN / ES (coming soon)' },
   ];
 
+  /* ---- Section 4 data ---- */
   const brandColors = [
-    { name: 'Navy', hex: 'var(--accent-primary)' },
-    { name: 'Primary Blue', hex: 'var(--accent-primary)' },
-    { name: 'Secondary Blue', hex: 'var(--gold)' },
-    { name: 'Background', hex: 'var(--color-surface-1)' },
-    { name: 'Text', hex: 'var(--color-text-primary)' },
-    { name: 'Accent Grey', hex: '#E0DDD8' },
-  ];
-
-  const logoFormats = [
-    { label: 'SVG Light', filename: 'mycasevalue-logo-light.svg' },
-    { label: 'SVG Dark', filename: 'mycasevalue-logo-dark.svg' },
-    { label: 'PNG Light', filename: 'mycasevalue-logo-light.png' },
-    { label: 'PNG Dark', filename: 'mycasevalue-logo-dark.png' },
-  ];
-
-  const screenshots = [
-    { title: 'Homepage', description: 'Main landing page experience' },
-    { title: 'NOS Report Page', description: 'Nature of Suit case analysis' },
-    { title: 'District Analysis', description: 'Federal district statistics' },
-    { title: 'Case Calculator', description: 'Interactive case analysis tool' },
-    { title: 'Compare Tool', description: 'Side-by-side case comparison' },
-    { title: 'AI Research Assistant', description: 'Intelligent case research features' },
-  ];
-
-  const quotes = [
-    {
-      text: 'Litigation outcomes shouldn\'t be a mystery. MyCaseValue makes 5.1 million federal court decisions transparent and searchable, so attorneys—regardless of firm size—can make informed decisions backed by real data.',
-      author: 'Company Statement',
-    },
-    {
-      text: 'Federal court data is public, but accessing it used to require expensive subscriptions and institutional access. We\'re making it free and integrated so that small firms and pro se litigants can compete with better information.',
-      author: 'Company Statement',
-    },
+    { name: 'Navy', hex: '#1B2D45' },
+    { name: 'Gold', hex: '#C4882A' },
+    { name: 'Cream', hex: '#F6F5F2' },
   ];
 
   return (
     <>
       <style>{`
         @media (max-width: 1024px) {
-          .press-stats-grid {
+          .press-facts-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
-          .press-brand-colors-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-          .press-screenshots-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
+          .press-colors-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
           }
         }
         @media (max-width: 640px) {
-          .press-stats-grid {
+          .press-facts-grid {
             grid-template-columns: 1fr !important;
           }
-          .press-brand-colors-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .press-screenshots-grid {
+          .press-colors-grid {
             grid-template-columns: 1fr !important;
           }
           .press-header h1 {
-            font-size: 28px !important;
+            font-size: 24px !important;
           }
         }
       `}</style>
@@ -153,7 +151,7 @@ export default function PressPage() {
               className="press-header"
               style={{
                 fontFamily: 'var(--font-legal)',
-                fontSize: '28px',
+                fontSize: 28,
                 fontWeight: 700,
                 color: 'var(--card)',
                 letterSpacing: '-0.025em',
@@ -161,7 +159,7 @@ export default function PressPage() {
                 marginBottom: 16,
               }}
             >
-              Democratizing federal court data
+              The Federal Court Record. Open to Everyone.
             </h1>
             <p
               style={{
@@ -173,7 +171,7 @@ export default function PressPage() {
                 margin: 0,
               }}
             >
-              Media resources, brand assets, and story background for journalists covering legal tech and federal court transparency.
+              Press kit, brand assets, and company background for journalists and media professionals covering legal technology and access to justice.
             </p>
           </div>
         </div>
@@ -191,8 +189,8 @@ export default function PressPage() {
             style={{
               maxWidth: 1200,
               margin: '0 auto',
-              paddingLeft: '24px',
-              paddingRight: '24px',
+              paddingLeft: 24,
+              paddingRight: 24,
             }}
           >
             <nav
@@ -215,99 +213,66 @@ export default function PressPage() {
 
         {/* Main Content */}
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 24px' }}>
-          {/* Company Overview */}
-          <section style={{ marginBottom: '48px' }}>
-            <h2
-              style={{
-                fontSize: 28,
-                fontWeight: 600,
-                color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
-                marginBottom: 32,
-              }}
-            >
-              The Story: Leveling the Playing Field
-            </h2>
-            <div style={{ display: 'grid', gap: 24, gridTemplateColumns: '1fr' }}>
-              <p
-                style={{
-                  fontSize: 16,
-                  color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-ui)',
-                  lineHeight: 1.7,
-                  margin: 0,
-                }}
-              >
-                MyCaseValue is breaking down the information asymmetry in litigation. Historically, only large law firms with six-figure legal research subscriptions could access federal court outcome data. We're changing that by making comprehensive federal court analytics—win rates, settlement ranges, case duration, judge tendencies—freely available to anyone.
+
+          {/* ============================================================ */}
+          {/*  Section 1 — About MyCaseValue                               */}
+          {/* ============================================================ */}
+          <section style={sectionStyle}>
+            <h2 style={h2Style}>About MyCaseValue</h2>
+
+            <div style={{ ...cardStyle, display: 'grid', gap: 20 }}>
+              <p style={{ ...bodyStyle, fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                Mission: &ldquo;The Federal Court Record. Open to Everyone.&rdquo;
               </p>
-              <p
-                style={{
-                  fontSize: 16,
-                  color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-ui)',
-                  lineHeight: 1.7,
-                  margin: 0,
-                }}
-              >
-                Our platform analyzes 5.1 million+ federal court cases across 84 case types and 94 federal judicial districts, sourced directly from the Federal Judicial Center, PACER, CourtListener, and other authoritative public records. We combine verified outcome data with integrated legal research to show attorneys and pro se litigants not just what happened in court, but why.
+
+              <p style={bodyStyle}>
+                MyCaseValue is a federal court intelligence platform that makes case outcome data accessible to everyone&mdash;not just BigLaw firms with enterprise budgets. It covers 5.1&nbsp;million federal cases across all 94 judicial districts, sourced from the FJC Integrated Database.
               </p>
-              <p
-                style={{
-                  fontSize: 16,
-                  color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-ui)',
-                  lineHeight: 1.7,
-                  margin: 0,
-                }}
-              >
-                By integrating AI-powered research tools and connecting case outcomes to the regulations and precedents that shaped them, MyCaseValue empowers attorneys to make smarter decisions and helps pro se litigants understand the legal landscape they're navigating.
+
+              <p style={bodyStyle}>
+                The platform was founded by a federal court litigant who built the tool they needed: a way to look up real outcome data&mdash;win rates, settlement ranges, case durations, judge tendencies&mdash;without a six-figure research subscription. That first-hand experience shapes every product decision and keeps the mission focused on accessibility over exclusivity.
+              </p>
+
+              <p style={bodyStyle}>
+                By combining verified public-record data with real-time analytics and AI-powered research tools, MyCaseValue empowers pro&nbsp;se litigants, solo attorneys, law students, researchers, and insurance professionals to make decisions backed by the same data that large firms have relied on for decades.
               </p>
             </div>
           </section>
 
-          {/* Key Statistics */}
-          <section style={{ marginBottom: '64px' }}>
-            <h2
-              style={{
-                fontSize: 28,
-                fontWeight: 600,
-                color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
-                marginBottom: 32,
-              }}
-            >
-              Key Statistics
-            </h2>
+          {/* ============================================================ */}
+          {/*  Section 2 — Key Facts                                       */}
+          {/* ============================================================ */}
+          <section style={sectionStyle}>
+            <h2 style={h2Style}>Key Facts</h2>
+
             <div
-              className="press-stats-grid"
+              className="press-facts-grid"
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(4, 1fr)',
-                gap: 24,
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: 20,
+                marginBottom: 24,
               }}
             >
-              {stats.map((stat) => (
+              {keyFacts.map((fact) => (
                 <div
-                  key={stat.label}
+                  key={fact.label}
                   style={{
-                    padding: 32,
-                    borderRadius: '4px',
-                    border: '1px solid var(--border-default)',
-                    background: 'var(--color-surface-0)',
-                    boxShadow: 'var(--shadow-xs)',
+                    ...cardStyle,
                     textAlign: 'center',
+                    padding: 24,
                   }}
                 >
                   <div
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: 28,
+                      fontSize: 24,
                       fontWeight: 700,
                       color: 'var(--accent-primary)',
-                      marginBottom: 12,
+                      marginBottom: 8,
                     }}
                   >
-                    {stat.value}
+                    {fact.value}
                   </div>
                   <p
                     style={{
@@ -317,490 +282,204 @@ export default function PressPage() {
                       margin: 0,
                     }}
                   >
-                    {stat.label}
+                    {fact.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ ...cardStyle, padding: 24 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-ui)', fontSize: 15 }}>
+                <tbody>
+                  {[
+                    ['Audience', 'Pro se litigants, solo attorneys, law students, researchers, insurance professionals'],
+                    ['Technology', 'Real-time analytics, AI-powered tools, bilingual EN/ES (coming soon)'],
+                    ['Pricing', '$0 \u2013 $29.99/month \u2014 transparent pricing, visible on the website'],
+                    ['Contact', 'press@mycasevalues.com'],
+                  ].map(([label, value]) => (
+                    <tr key={label} style={{ borderBottom: '1px solid var(--border-default)' }}>
+                      <td style={{ padding: '12px 16px 12px 0', fontWeight: 600, color: 'var(--color-text-primary)', whiteSpace: 'nowrap', verticalAlign: 'top' }}>{label}</td>
+                      <td style={{ padding: '12px 0', color: 'var(--color-text-secondary)' }}>
+                        {label === 'Contact' ? (
+                          <a href="mailto:press@mycasevalues.com" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                            {value}
+                          </a>
+                        ) : (
+                          value
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* ============================================================ */}
+          {/*  Section 3 — What Makes Us Different                         */}
+          {/* ============================================================ */}
+          <section style={sectionStyle}>
+            <h2 style={h2Style}>What Makes Us Different</h2>
+
+            <div style={{ display: 'grid', gap: 16 }}>
+              {[
+                {
+                  heading: 'Designed for non-attorneys',
+                  body: 'The only federal court analytics platform built from the ground up for people outside BigLaw\u2014pro se litigants, solo practitioners, students, and researchers.',
+                },
+                {
+                  heading: 'Transparent pricing on the website',
+                  body: 'Every plan from free to $29.99/month is published on the pricing page. No "contact sales," no hidden enterprise quotes.',
+                },
+                {
+                  heading: 'Built by a litigant, not a corporation',
+                  body: 'Founded by someone who needed this tool as a federal court litigant and could not find it anywhere else.',
+                },
+                {
+                  heading: '"Open to Everyone"',
+                  body: 'The mission is accessibility, not exclusivity. Federal court data is public record\u2014MyCaseValue makes it usable.',
+                },
+              ].map((item) => (
+                <div
+                  key={item.heading}
+                  style={{
+                    ...cardStyle,
+                    padding: 24,
+                    borderLeft: '4px solid var(--gold, #C4882A)',
+                  }}
+                >
+                  <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 8px 0' }}>
+                    {item.heading}
+                  </p>
+                  <p style={{ ...bodyStyle, fontSize: 15 }}>
+                    {item.body}
                   </p>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Brand Assets */}
-          <section style={{ marginBottom: '64px' }}>
-            <h2
-              style={{
-                fontSize: 28,
-                fontWeight: 600,
-                color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
-                marginBottom: 32,
-              }}
-            >
-              Brand Assets
-            </h2>
+          {/* ============================================================ */}
+          {/*  Section 4 — Brand Assets                                    */}
+          {/* ============================================================ */}
+          <section style={sectionStyle}>
+            <h2 style={h2Style}>Brand Assets</h2>
 
-            {/* Logo Downloads */}
-            <div style={{ marginBottom: 56 }}>
-              <h3
-                style={{
-                  fontSize: 16,
-                  fontWeight: 600,
-                  color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-ui)',
-                  marginBottom: 20,
-                }}
-              >
-                Logo Downloads
-              </h3>
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(4, 1fr)',
-                  gap: 16,
-                }}
-              >
-                {logoFormats.map((logo) => (
-                  <a
-                    key={logo.filename}
-                    href={`/press/assets/${logo.filename}`}
-                    style={{
-                      padding: 24,
-                      borderRadius: '4px',
-                      border: '1px solid var(--border-default)',
-                      background: 'var(--color-surface-0)',
-                      boxShadow: 'var(--shadow-xs)',
-                      textDecoration: 'none',
-                      textAlign: 'center',
-                      transition: 'all 0.3s ease',
-                      cursor: 'pointer',
-                    }}
-                    className="press-logo-download"
-                    title={`Download ${logo.label}`}
-                  >
-                    <div
-                      style={{
-                        height: 60,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        marginBottom: 12,
-                        borderRadius: '4px',
-                        background: logo.label.includes('Dark')
-                          ? 'var(--accent-primary)'
-                          : 'var(--color-surface-1)',
-                      }}
-                    >
-                      <svg
-                        width="32"
-                        height="32"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke={logo.label.includes('Dark') ? 'var(--color-text-inverse)' : 'var(--color-text-primary)'}
-                        strokeWidth="2"
-                      >
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                      </svg>
-                    </div>
-                    <p
-                      style={{
-                        fontSize: 14,
-                        fontWeight: 600,
-                        color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-ui)',
-                        margin: 0,
-                        marginBottom: 4,
-                      }}
-                    >
-                      {logo.label}
-                    </p>
-                    <p
-                      style={{
-                        fontSize: 12,
-                        color: 'var(--color-text-secondary)',
-                        fontFamily: 'var(--font-ui)',
-                        margin: 0,
-                      }}
-                    >
-                      {logo.filename.endsWith('.svg')
-                        ? 'Vector'
-                        : 'Raster'}
-                    </p>
-                  </a>
-                ))}
-              </div>
-              <p
-                style={{
-                  fontSize: 14,
-                  color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-ui)',
-                  marginTop: 16,
-                  marginBottom: 0,
-                }}
-              >
-                Need a different format or resolution? Email press@mycasevalues.com and we'll send over the full brand kit.
-              </p>
+            <div style={{ ...cardStyle, marginBottom: 24 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-ui)', fontSize: 15 }}>
+                <tbody>
+                  {[
+                    ['Brand Name', 'MyCaseValue (singular)'],
+                    ['Website', 'mycasevalues.com'],
+                    ['Tagline', '\u201CThe Federal Court Record. Open to Everyone.\u201D'],
+                  ].map(([label, value]) => (
+                    <tr key={label} style={{ borderBottom: '1px solid var(--border-default)' }}>
+                      <td style={{ padding: '12px 16px 12px 0', fontWeight: 600, color: 'var(--color-text-primary)', whiteSpace: 'nowrap' }}>{label}</td>
+                      <td style={{ padding: '12px 0', color: 'var(--color-text-secondary)' }}>
+                        {label === 'Website' ? (
+                          <a href="https://mycasevalues.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                            {value}
+                          </a>
+                        ) : (
+                          value
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
 
             {/* Brand Colors */}
-            <div>
-              <h3
-                style={{
-                  fontSize: 16,
-                  fontWeight: 600,
-                  color: 'var(--color-text-primary)',
-                  fontFamily: 'var(--font-ui)',
-                  marginBottom: 20,
-                }}
-              >
-                Brand Colors
-              </h3>
-              <div
-                className="press-brand-colors-grid"
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(3, 1fr)',
-                  gap: 24,
-                }}
-              >
-                {brandColors.map((color) => (
-                  <div
-                    key={color.hex}
-                    style={{
-                      overflow: 'hidden',
-                      borderRadius: '4px',
-                      border: '1px solid var(--border-default)',
-                      background: 'var(--color-surface-0)',
-                      boxShadow: 'var(--shadow-xs)',
-                    }}
-                  >
-                    <div
-                      style={{
-                        height: 120,
-                        background: color.hex,
-                      }}
-                    />
-                    <div style={{ padding: 16 }}>
-                      <p
-                        style={{
-                          fontSize: 14,
-                          fontWeight: 600,
-                          color: 'var(--color-text-primary)',
-                          fontFamily: 'var(--font-ui)',
-                          margin: '0 0 8px 0',
-                        }}
-                      >
-                        {color.name}
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: 'var(--font-mono)',
-                          fontSize: 14,
-                          color: 'var(--color-text-secondary)',
-                          margin: 0,
-                          fontWeight: 500,
-                        }}
-                      >
-                        {color.hex}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Platform Screenshots */}
-          <section style={{ marginBottom: '64px' }}>
-            <h2
-              style={{
-                fontSize: 28,
-                fontWeight: 600,
-                color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
-                marginBottom: 32,
-              }}
-            >
-              Platform Screenshots
-            </h2>
+            <p style={{ fontSize: 15, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', marginBottom: 16 }}>
+              Brand Colors
+            </p>
             <div
-              className="press-screenshots-grid"
+              className="press-colors-grid"
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: 24,
+                gap: 20,
+                marginBottom: 24,
               }}
             >
-              {screenshots.map((screenshot) => (
+              {brandColors.map((color) => (
                 <div
-                  key={screenshot.title}
+                  key={color.name}
                   style={{
                     overflow: 'hidden',
-                    borderRadius: '4px',
+                    borderRadius: 4,
                     border: '1px solid var(--border-default)',
                     background: 'var(--color-surface-0)',
                     boxShadow: 'var(--shadow-xs)',
                   }}
                 >
-                  <div
-                    style={{
-                      height: 180,
-                      background: 'linear-gradient(135deg, var(--color-surface-1) 0%, var(--border-default) 100%)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      borderBottom: '1px solid var(--border-default)',
-                    }}
-                  >
-                    <div
-                      style={{
-                        textAlign: 'center',
-                        color: 'var(--color-text-secondary)',
-                        fontFamily: 'var(--font-ui)',
-                      }}
-                    >
-                      <svg
-                        width="48"
-                        height="48"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <rect x="3" y="3" width="18" height="18" rx="2" />
-                        <circle cx="8.5" cy="8.5" r="1.5" />
-                        <polyline points="21 15 16 10 5 21" />
-                      </svg>
-                      <p
-                        style={{
-                          fontSize: 12,
-                          color: 'var(--color-text-secondary)',
-                          margin: '8px 0 0 0',
-                        }}
-                      >
-                        Screenshot
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ padding: 16 }}>
-                    <p
-                      style={{
-                        fontSize: 14,
-                        fontWeight: 600,
-                        color: 'var(--color-text-primary)',
-                        fontFamily: 'var(--font-ui)',
-                        margin: '0 0 8px 0',
-                      }}
-                    >
-                      {screenshot.title}
+                  <div style={{ height: 80, background: color.hex }} />
+                  <div style={{ padding: 12 }}>
+                    <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 4px 0' }}>
+                      {color.name}
                     </p>
-                    <p
-                      style={{
-                        fontSize: 14,
-                        color: 'var(--color-text-secondary)',
-                        fontFamily: 'var(--font-ui)',
-                        margin: 0,
-                      }}
-                    >
-                      {screenshot.description}
+                    <p style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--color-text-secondary)', margin: 0 }}>
+                      {color.hex}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
-            <p
-              style={{
-                fontSize: 14,
-                color: 'var(--color-text-secondary)',
-                fontFamily: 'var(--font-ui)',
-                marginTop: 16,
-                marginBottom: 0,
-              }}
-            >
-              Screenshots showcase MyCaseValue platform features and data visualizations.
+
+            <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+              Need logos or additional assets? Email{' '}
+              <a href="mailto:press@mycasevalues.com" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                press@mycasevalues.com
+              </a>{' '}
+              and we will send the full brand kit.
             </p>
           </section>
 
-          {/* Press Quotes */}
-          <section style={{ marginBottom: '64px' }}>
-            <h2
-              style={{
-                fontSize: 28,
-                fontWeight: 600,
-                color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
-                marginBottom: 32,
-              }}
-            >
-              Approved Quotes
-            </h2>
+          {/* ============================================================ */}
+          {/*  Media Contact (footer CTA)                                  */}
+          {/* ============================================================ */}
+          <section>
             <div
               style={{
-                display: 'grid',
-                gap: 24,
-              }}
-            >
-              {quotes.map((quote, index) => (
-                <div
-                  key={index}
-                  style={{
-                    padding: 32,
-                    borderRadius: '4px',
-                    border: '1px solid var(--border-default)',
-                    background: 'var(--color-surface-0)',
-                    boxShadow: 'var(--shadow-xs)',
-                    borderLeft: '4px solid var(--accent-primary)',
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: 16,
-                      color: 'var(--color-text-primary)',
-                      fontFamily: 'var(--font-ui)',
-                      lineHeight: 1.7,
-                      margin: '0 0 16px 0',
-                      fontStyle: 'italic',
-                    }}
-                  >
-                    "{quote.text}"
-                  </p>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      color: 'var(--color-text-secondary)',
-                      fontFamily: 'var(--font-ui)',
-                      margin: 0,
-                      fontWeight: 500,
-                    }}
-                  >
-                    — {quote.author}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* In the News */}
-          <section style={{ marginBottom: '64px' }}>
-            <h2
-              style={{
-                fontSize: 28,
-                fontWeight: 600,
-                color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
-                marginBottom: 32,
-              }}
-            >
-              In the News
-            </h2>
-            <div
-              style={{
-                padding: 48,
-                borderRadius: '4px',
-                border: '1px solid var(--border-default)',
-                background: 'var(--color-surface-0)',
-                boxShadow: 'var(--shadow-xs)',
+                ...cardStyle,
+                padding: 40,
+                borderTop: '4px solid var(--gold, #C4882A)',
                 textAlign: 'center',
               }}
             >
-              <p
-                style={{
-                  fontSize: 16,
-                  color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-ui)',
-                  margin: 0,
-                }}
-              >
-                Press mentions will appear here as they are published.
+              <p style={{ fontSize: 16, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+                Media Inquiries
               </p>
-            </div>
-          </section>
-
-          {/* Media Contact */}
-          <section>
-            <h2
-              style={{
-                fontSize: 28,
-                fontWeight: 600,
-                color: 'var(--color-text-primary)',
-                fontFamily: 'var(--font-ui)',
-                marginBottom: 32,
-              }}
-            >
-              Media Contact
-            </h2>
-            <div
-              style={{
-                padding: 40,
-                borderRadius: '4px',
-                border: '1px solid var(--border-default)',
-                background: 'var(--color-surface-0)',
-                boxShadow: 'var(--shadow-xs)',
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 16,
-                  color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-ui)',
-                  lineHeight: 1.7,
-                  margin: '0 0 24px 0',
-                }}
-              >
-                For media inquiries, press releases, interview requests, or other press kit information, please contact:
+              <p style={{ ...bodyStyle, marginBottom: 16 }}>
+                For press releases, interview requests, or additional information:
               </p>
               <a
                 href="mailto:press@mycasevalues.com"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: 12,
+                  gap: 10,
                   fontSize: 18,
                   fontWeight: 600,
                   color: 'var(--accent-primary)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-ui)',
-                  marginBottom: 24,
                 }}
               >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                   <path d="M22 7l-10 7L2 7" />
                 </svg>
                 press@mycasevalues.com
               </a>
-              <p
-                style={{
-                  fontSize: 14,
-                  color: 'var(--color-text-secondary)',
-                  fontFamily: 'var(--font-ui)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                }}
-              >
-                We aim to respond to media inquiries within 24 hours. Please include details about your publication and the nature of your inquiry.
+              <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginTop: 16, marginBottom: 0 }}>
+                We aim to respond within 24 hours. Please include your publication and the nature of your inquiry.
               </p>
             </div>
           </section>
         </div>
       </div>
-
-      <style>{`
-        .press-logo-download:hover {
-          border-color: var(--accent-primary) !important;
-          box-shadow: var(--shadow-lg) !important;
-          transform: translateY(-2px);
-        }
-      `}</style>
     </>
   );
 }

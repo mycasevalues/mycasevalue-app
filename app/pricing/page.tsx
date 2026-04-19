@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 import JsonLd from '../../components/JsonLd';
+import PricingCards from '../../components/PricingCards';
+import TrustSignals from '../../components/TrustSignals';
 
 export const metadata: Metadata = {
   title: 'Pricing — Federal Court Intelligence Plans',
@@ -13,13 +15,13 @@ export const metadata: Metadata = {
     description: 'Transparent pricing for federal court intelligence. Free tier, $5.99 single reports, $9.99/mo unlimited, $29.99/mo attorney mode.',
     type: 'website',
     url: `${SITE_URL}/pricing`,
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue Pricing' }],
+    images: [{ url: `${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('Plans Starting at $0')}&subtitle=${encodeURIComponent('Transparent pricing for federal court intelligence')}`, width: 1200, height: 630, alt: 'MyCaseValue Pricing' }],
   },
   twitter: {
     card: 'summary_large_image',
         title: 'Pricing Built for Every Budget \u2014 MyCaseValue',
     description: 'Transparent pricing for federal court intelligence. Free, $5.99, $9.99/mo, $29.99/mo.',
-    images: [`${SITE_URL}/og-image.png`],
+    images: [`${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('Plans Starting at $0')}&subtitle=${encodeURIComponent('Transparent pricing for federal court intelligence')}`],
   },
 };
 
@@ -40,121 +42,15 @@ const jsonLd = {
       offers: [
         { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'USD', url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Basic court outcome report with essential case data.' },
         { '@type': 'Offer', name: 'Single Report', price: '5.99', priceCurrency: 'USD', url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'One premium report with judge data and detailed analysis.' },
-        { '@type': 'Offer', name: 'Unlimited Reports', price: '9.99', priceCurrency: 'USD', url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Unlimited reports for all case types and districts.' },
-        { '@type': 'Offer', name: 'Attorney Mode', price: '29.99', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1M' }, url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Professional attorney tools with bulk analysis and API access.' },
+        { '@type': 'Offer', name: 'Unlimited Reports (Monthly)', price: '9.99', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1M' }, url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Unlimited reports for all case types and districts.' },
+        { '@type': 'Offer', name: 'Unlimited Reports (Annual)', price: '95.88', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1Y', unitText: '$7.99/mo billed annually' }, url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Unlimited reports for all case types and districts, billed annually.' },
+        { '@type': 'Offer', name: 'Attorney Mode (Monthly)', price: '29.99', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1M' }, url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Professional attorney tools with bulk analysis and API access.' },
+        { '@type': 'Offer', name: 'Attorney Mode (Annual)', price: '287.88', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1Y', unitText: '$23.99/mo billed annually' }, url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Professional attorney tools with bulk analysis and API access, billed annually.' },
       ],
     },
   ],
 };
 
-interface PricingTier {
-  id: string;
-  name: string;
-  bestFor: string;
-  price: string;
-  period: string;
-  description: string;
-  features: string[];
-  ctaText: string;
-  ctaHref: string;
-  highlighted?: boolean;
-}
-
-const tiers: PricingTier[] = [
-  {
-    id: 'free',
-    name: 'Free',
-    bestFor: 'Self-represented litigants',
-    price: '$0',
-    period: 'during public beta',
-    description: 'Essential case data and win rate analysis.',
-    features: [
-      'Win rate percentage by case type + district',
-      'Median settlement amount',
-      'Median case duration',
-      'Sample size with every data point',
-      'All 94 federal district overviews',
-      'All 84 case type pages',
-      '3 lookups per day',
-      'Preview: related regulations per case type',
-    ],
-    ctaText: 'Get Started Free',
-    ctaHref: '/search',
-  },
-  {
-    id: 'single_report',
-    name: 'Single Report',
-    bestFor: 'One specific case analysis',
-    price: '$5.99',
-    period: 'one-time',
-    description: 'Deep dive into one case with full settlement ranges and legal context.',
-    features: [
-      'One full case outcome report',
-      'Full settlement range (10th\u201390th percentile)',
-      'Confidence intervals',
-      'Settlement calculator',
-      'Judge district overview',
-      'Top 3 relevant citations & regulations',
-      'PDF export with legal landscape section',
-      '90-day report access',
-      'Email delivery (no account required)',
-    ],
-    ctaText: 'Buy Single Report',
-    ctaHref: '/search',
-  },
-  {
-    id: 'unlimited',
-    name: 'Unlimited',
-    bestFor: 'Ongoing case research',
-    price: '$9.99',
-    period: '/month',
-    description: 'Unlimited lookups with legal research and trend analysis.',
-    features: [
-      'Unlimited case type + district lookups',
-      'All 84 case types across all 94 districts',
-      'Full settlement percentile ranges',
-      '10-year trend data',
-      'Legal document search (7 sources)',
-      'Citation explorer access',
-      'Related regulations on every case page',
-      'Save unlimited reports (no expiry)',
-      'Watchlist alerts (10 items)',
-      'Judge profiles',
-      'PDF exports without watermark',
-      'English & Spanish',
-    ],
-    ctaText: 'Get Unlimited',
-    ctaHref: '/sign-up',
-    highlighted: true,
-  },
-  {
-    id: 'attorney',
-    name: 'Attorney Mode',
-    bestFor: 'Legal professionals',
-    price: '$29.99',
-    period: '/month',
-    description: 'Full legal intelligence suite for law firms.',
-    features: [
-      'Advanced judge intelligence (motion rates, bias patterns)',
-      'AI case outcome predictor',
-      'Full legal research hub (127K+ documents)',
-      'Citation network analysis & export',
-      'Regulatory alerts (Federal Register monitoring)',
-      'Opposing counsel citation patterns',
-      'Document intelligence (upload complaints/motions)',
-      'Venue selection optimizer (94 districts ranked)',
-      'Bulk analysis (up to 1,000 cases via CSV)',
-      'Full API access (case data + legal docs)',
-      'Team workspace (5 seats included)',
-      'Citation-backed PDF reports',
-      'Daily data refresh across all 7 sources',
-      'Priority support (24-hour response)',
-      'toolsDetail',
-    ],
-    ctaText: 'Try Attorney Mode',
-    ctaHref: '/attorney',
-  },
-];
 
 const faqItems = [
   {
@@ -314,22 +210,6 @@ export default function PricingPage() {
           margin-bottom: 1.25rem;
         }
 
-        .pricing-card.highlighted::before {
-          content: 'MOST POPULAR';
-          position: absolute;
-          top: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          background: var(--accent-primary, #C4882A);
-          color: var(--card, #ffffff);
-          padding: 4px 8px;
-          border-radius: 4px;
-          font-family: var(--font-ui);
-          font-size: 0.6875rem;
-          font-weight: 700;
-          letter-spacing: 0.05em;
-          white-space: nowrap;
-        }
 
         .card-price {
           font-family: var(--font-mono);
@@ -542,60 +422,13 @@ export default function PricingPage() {
 
       {/* Main Content */}
       <div className="pricing-container">
-        {/* Pricing Cards */}
-        <div className="pricing-grid">
-          {tiers.map((tier) => (
-            <div key={tier.id} className={`pricing-card ${tier.highlighted ? 'highlighted' : ''}`}>
-              <h2 className="card-name">{tier.name}</h2>
-              <p className="card-best-for">Best for {tier.bestFor.toLowerCase()}</p>
-              <div className="card-price">{tier.price}</div>
-              <p className="card-period">{tier.period}</p>
-              <p className="card-description">{tier.description}</p>
-              <div className="card-features">
-                <ul>
-                  {tier.features.map((feature, idx) => {
-                    if (feature === 'toolsDetail') {
-                      return (
-                        <li key={idx} style={{ display: 'block', padding: '1rem 0', marginTop: '1rem', borderTop: '1px solid var(--bdr)' }}>
-                          <div style={{ marginBottom: '0.75rem', fontWeight: 600, color: 'var(--color-text-primary)' }}>Key Tools Included:</div>
-                          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', fontSize: '0.8125rem' }}>
-                            <Link href="/attorney/case-predictor" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
-                              • AI Case Predictor
-                            </Link>
-                            <Link href="/attorney/advanced-search" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
-                              • Advanced Search
-                            </Link>
-                            <Link href="/attorney/keycite" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
-                              • Citation Check
-                            </Link>
-                            <Link href="/attorney/judge-intelligence" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
-                              • Judge Intelligence
-                            </Link>
-                            <Link href="/attorney/state-survey" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
-                              • 50-State Survey
-                            </Link>
-                            <Link href="/attorney/document-intelligence" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
-                              • Document Intelligence
-                            </Link>
-                            <div style={{ gridColumn: '1 / -1', marginTop: '0.5rem' }}>
-                              <Link href="/attorney" style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontSize: '0.8125rem', fontWeight: 600 }}>
-                                + 29 more tools →
-                              </Link>
-                            </div>
-                          </div>
-                        </li>
-                      );
-                    }
-                    return <li key={idx}>{feature}</li>;
-                  })}
-                </ul>
-              </div>
-              <Link href={tier.ctaHref} className="card-cta">
-                {tier.ctaText}
-              </Link>
-            </div>
-          ))}
+        {/* Trust Signals */}
+        <div style={{ marginBottom: '2rem' }}>
+          <TrustSignals />
         </div>
+
+        {/* Pricing Cards with Billing Toggle */}
+        <PricingCards />
 
         {/* Callout Section */}
         <div className="callout-section">

@@ -12,6 +12,7 @@ export const SITS = [
     { label: "Sexual harassment", nos: "442", d: "sexual harassment" },
     { label: "Unpaid wages / overtime", nos: "710", d: "unpaid wages" },
     { label: "Retaliation", nos: "442", d: "retaliation" },
+    { label: "Discrimination (General)", nos: "442", d: "discrimination" },
     { label: "Disability discrimination (ADA)", nos: "445", d: "disability discrimination" },
     { label: "Age discrimination (ADEA)", nos: "442", d: "age discrimination" },
     { label: "Race discrimination", nos: "442", d: "race discrimination" },

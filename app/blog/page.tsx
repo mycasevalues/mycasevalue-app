@@ -2,9 +2,55 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
+import EmailCapture from '../../components/EmailCapture';
 
 // Blog post data
 const blogArticles = [
+  {
+    slug: 'first-federal-court-hearing-guide',
+    title: 'Your First Federal Court Hearing: What the Data Shows',
+    description: 'Facing your first federal court appearance? Here\'s what to expect, backed by data from millions of federal cases.',
+    category: 'Pro Se Guide',
+    date: new Date('2026-04-15'),
+    readTime: 9,
+    author: 'MyCaseValue Research Team',
+  },
+  {
+    slug: 'employment-discrimination-case-timeline',
+    title: 'What to Expect: Your Employment Discrimination Case Timeline',
+    description: 'From filing to resolution, here\'s what the data shows about how long employment discrimination cases take in federal court.',
+    category: 'Pro Se Guide',
+    date: new Date('2026-04-08'),
+    readTime: 10,
+    author: 'MyCaseValue Research Team',
+  },
+  {
+    slug: 'pro-se-vs-represented-outcomes',
+    title: 'Pro Se vs. Represented: What the Federal Court Data Shows',
+    description: 'Does having a lawyer actually improve your chances in federal court? We analyzed 5.1 million cases to find out.',
+    category: 'Pro Se Guide',
+    date: new Date('2026-04-01'),
+    readTime: 11,
+    author: 'MyCaseValue Research Team',
+  },
+  {
+    slug: 'understanding-settlement-offers-data-guide',
+    title: 'Understanding Your Settlement Offer: A Data-Driven Guide',
+    description: 'Is your settlement offer fair? Federal court data can help you evaluate whether to accept, counter, or go to trial.',
+    category: 'Pro Se Guide',
+    date: new Date('2026-03-22'),
+    readTime: 10,
+    author: 'MyCaseValue Research Team',
+  },
+  {
+    slug: 'how-to-research-your-federal-case',
+    title: 'How to Research Your Federal Case Before Hiring a Lawyer',
+    description: 'A step-by-step guide to using federal court data to understand your case\'s prospects, from filing trends to settlement ranges.',
+    category: 'Pro Se Guide',
+    date: new Date('2026-03-15'),
+    readTime: 10,
+    author: 'MyCaseValue Research Team',
+  },
   {
     slug: 'employment-discrimination-2024-data',
     title: 'What 5.1 Million Federal Cases Tell Us About Employment Discrimination in 2024',
@@ -130,7 +176,7 @@ const jsonLd = {
 export default function BlogPage() {
   const featuredPost = blogArticles[0];
   const remainingPosts = blogArticles.slice(1);
-  const categories = ['All', 'Trends', 'Settlement Data', 'District Analysis', 'Attorney Insights'];
+  const categories = ['All', 'Pro Se Guide', 'Trends', 'Settlement Data', 'District Analysis', 'Attorney Insights'];
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
@@ -494,6 +540,16 @@ export default function BlogPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Email Capture — Card */}
+      <div className="max-w-6xl mx-auto px-6 pb-16">
+        <EmailCapture
+          heading="Get Weekly Federal Court Insights"
+          subtext="Data-driven analysis of federal court trends, delivered to your inbox."
+          source="blog"
+          variant="card"
+        />
       </div>
 
       {/* Featured Research Section */}

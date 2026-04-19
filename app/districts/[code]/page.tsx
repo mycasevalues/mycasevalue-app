@@ -10,6 +10,7 @@ import JudgeSectionLoader from '../../../components/JudgeSectionLoader';
 import SaveButton from '../../../components/ui/SaveButton';
 import HorizontalBarChart from '../../../components/charts/HorizontalBarChart';
 import ResearchOrganizer from '../../../components/ui/ResearchOrganizer';
+import FreeReportCTA from '../../../components/FreeReportCTA';
 
 /**
  * District Detail Page — Westlaw Precision three-column layout.
@@ -619,6 +620,11 @@ export default async function DistrictPage({ params }: PageProps) {
               Rates are specific to case type within this district. Settlement ranges represent historical median values in thousands of dollars.
               This is not legal advice.
             </p>
+          </section>
+
+          {/* === Free Report CTA === */}
+          <section style={{ marginBottom: 24 }}>
+            <FreeReportCTA district={districtMeta.fullName} />
           </section>
 
           {/* === Local Rules === */}

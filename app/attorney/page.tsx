@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'MyCaseValue',
     images: [
       {
-        url: `${SITE_URL}/og-image.png`,
+        url: `${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('16 Attorney Research Tools')}&subtitle=${encodeURIComponent('AI-powered legal intelligence for attorneys')}`,
         width: 1200,
         height: 630,
         alt: 'Attorney Mode',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Attorney Mode',
     description: 'Advanced AI-powered legal intelligence for attorneys.',
-    images: [`${SITE_URL}/og-image.png`],
+    images: [`${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('16 Attorney Research Tools')}&subtitle=${encodeURIComponent('AI-powered legal intelligence for attorneys')}`],
   },
   keywords: [
     'legal intelligence',

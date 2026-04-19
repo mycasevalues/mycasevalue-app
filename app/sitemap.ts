@@ -131,15 +131,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
   ];
 
-  // ── Spanish locale pages ──────────────────────────────
-  const spanishPages: MetadataRoute.Sitemap = [
-    { url: `${baseUrl}/es`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/es/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/es/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/es/how-it-works`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/es/disclaimer`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
-    { url: `${baseUrl}/es/trends`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-  ];
+  // ── Spanish locale pages (disabled — most /es/* routes 404) ──
+  // Re-enable when the Spanish site experience is complete.
+  // const spanishPages: MetadataRoute.Sitemap = [
+  //   { url: `${baseUrl}/es`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+  //   { url: `${baseUrl}/es/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+  //   { url: `${baseUrl}/es/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+  //   { url: `${baseUrl}/es/how-it-works`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+  //   { url: `${baseUrl}/es/disclaimer`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
+  //   { url: `${baseUrl}/es/trends`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+  // ];
 
   // ── Audience pages (for/) ─────────────────────────────
   const audiencePages: MetadataRoute.Sitemap = [
@@ -227,7 +228,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticPages,
-    ...spanishPages,
+    // ...spanishPages, // disabled until Spanish site is complete
     ...audiencePages,
     ...categoryUrls,
     ...nosUrls,

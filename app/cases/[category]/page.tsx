@@ -8,6 +8,7 @@ import { ArrowRightIcon } from '../../../components/ui/Icons';
 import { SITE_URL } from '../../../lib/site-config';
 import RelatedEntities from '../../../components/RelatedEntities';
 import SaveButton from '../../../components/ui/SaveButton';
+import FreeReportCTA from '../../../components/FreeReportCTA';
 
 export const revalidate = 0;
 
@@ -201,7 +202,7 @@ export async function generateMetadata({
       siteName: 'MyCaseValue',
       images: [
         {
-          url: `${SITE_URL}/og-image.png`,
+          url: `${SITE_URL}/api/og?type=generic&title=${encodeURIComponent(categoryNames[category] || category)}&subtitle=${encodeURIComponent('Federal Court Case Outcomes')}`,
           width: 1200,
           height: 630,
           alt: `${categoryNames[category]} Case Outcomes`,
@@ -1413,6 +1414,16 @@ async function CategoryPage({
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Free Report CTA */}
+      <div style={{
+        padding: '60px 24px',
+        borderTop: '1px solid var(--border-default)',
+      }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          <FreeReportCTA caseType={categoryData?.label} />
         </div>
       </div>
 

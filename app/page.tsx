@@ -23,6 +23,11 @@ import Onboarding from '@/components/Onboarding';
 import JsonLd from '@/components/JsonLd';
 import HomeHeroSearch from '@/components/ui/HomeHeroSearch';
 import HomePrecisionButtons from '@/components/ui/HomePrecisionButtons';
+import FreeReportCTA from '@/components/FreeReportCTA';
+import EmailCapture from '@/components/EmailCapture';
+import TrustSection from '@/components/TrustSection';
+import TrustSignals from '@/components/TrustSignals';
+import Testimonials from '@/components/Testimonials';
 
 export const metadata: Metadata = {
   title: 'MyCaseValue — Federal Court Intelligence Platform',
@@ -31,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'MyCaseValue | Federal Court Intelligence',
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'MyCaseValue' }],
+    images: [{ url: `${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('Federal Court Data — Open to Everyone')}`, width: 1200, height: 630, alt: 'MyCaseValue' }],
     description: 'Litigation intelligence from public federal court records.',
     url: SITE_URL,
   },
@@ -39,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MyCaseValue | Federal Court Intelligence',
     description: 'Litigation intelligence from public federal court records.',
-    images: [`${SITE_URL}/og-image.png`],
+    images: [`${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('Federal Court Data — Open to Everyone')}`],
   },
   alternates: {
     canonical: SITE_URL,
@@ -244,6 +249,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ═══ TRUST SIGNALS ═══ */}
+      <div style={{ padding: '16px 24px 0', maxWidth: 860, margin: '0 auto' }}>
+        <TrustSignals />
+      </div>
 
       {/* ═══ 2. GET STARTED BAR ═══ */}
       <GetStartedBar />
@@ -698,6 +708,111 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+      {/* ═══ FREE REPORT CTA ═══ */}
+      <div
+        style={{
+          padding: '32px 24px',
+          borderTop: '1px solid var(--bdr)',
+        }}
+      >
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          <FreeReportCTA />
+        </div>
+      </div>
+
+      {/* ═══ TESTIMONIALS ═══ */}
+      <div
+        style={{
+          padding: '32px 24px',
+          borderTop: '1px solid var(--bdr)',
+        }}
+      >
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <h2
+            style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: 18,
+              fontWeight: 600,
+              color: 'var(--text1, #18181A)',
+              marginBottom: 16,
+              textAlign: 'center',
+            }}
+          >
+            What Our Users Say
+          </h2>
+          <Testimonials />
+        </div>
+      </div>
+
+      {/* ═══ STAY UPDATED — EMAIL CAPTURE ═══ */}
+      <div
+        style={{
+          padding: '20px 24px',
+          borderTop: '1px solid var(--bdr)',
+        }}
+      >
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          <EmailCapture
+            heading="Stay Updated"
+            subtext="Get notified when new court data is available."
+            source="homepage"
+            variant="inline"
+          />
+        </div>
+      </div>
+
+      {/* ═══ OUR STORY ═══ */}
+      <section
+        style={{
+          padding: '32px 24px',
+          borderTop: '1px solid var(--bdr)',
+          background: 'var(--surf, var(--sidebar2, #F4F3EF))',
+        }}
+      >
+        <div style={{ maxWidth: 680, margin: '0 auto' }}>
+          <h2
+            style={{
+              fontFamily: 'var(--font-legal)',
+              fontSize: 28,
+              fontWeight: 700,
+              letterSpacing: '-0.02em',
+              lineHeight: 1.2,
+              color: 'var(--text1, #18181A)',
+              margin: '0 0 12px',
+            }}
+          >
+            Built by a Litigant, for Everyone.
+          </h2>
+          <p
+            style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: 14,
+              fontWeight: 400,
+              lineHeight: 1.7,
+              color: 'var(--text2, #42403C)',
+              margin: '0 0 14px',
+              maxWidth: 560,
+            }}
+          >
+            MyCaseValue started when our founder faced a federal lawsuit and couldn&#39;t find
+            accessible court data. Every platform was enterprise-priced, designed for BigLaw,
+            and locked behind paywalls. So we built the tool we needed — and made it open to everyone.
+          </p>
+          <Link
+            href="/about"
+            style={{
+              fontFamily: 'var(--font-ui)',
+              fontSize: 13,
+              fontWeight: 600,
+              color: 'var(--link)',
+              textDecoration: 'none',
+            }}
+          >
+            Read our story →
+          </Link>
+        </div>
+      </section>
 
       {/* ═══ DISCLAIMER ═══ */}
       <div

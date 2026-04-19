@@ -521,18 +521,88 @@ function renderHomeImage(locale: Locale = 'en'): React.ReactElement {
   );
 }
 
+// Generic title + subtitle image (used by blog, pricing, attorney, etc.)
+function renderGenericImage(title: string, subtitle?: string): React.ReactElement {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#FFFFFF',
+        backgroundImage: 'linear-gradient(135deg, rgba(10, 102, 194, 0.12) 0%, rgba(0, 65, 130, 0.06) 100%)',
+        padding: '80px',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        justifyContent: 'center',
+      }}
+    >
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div
+          style={{
+            fontSize: title.length > 60 ? '42px' : '56px',
+            fontWeight: '800',
+            color: '#000000',
+            lineHeight: '1.2',
+            marginBottom: subtitle ? '24px' : '40px',
+            maxWidth: '1000px',
+          }}
+        >
+          {title}
+        </div>
+        {subtitle && (
+          <div
+            style={{
+              fontSize: '28px',
+              color: '#555555',
+              lineHeight: '1.4',
+              maxWidth: '800px',
+              marginBottom: '40px',
+            }}
+          >
+            {subtitle}
+          </div>
+        )}
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-end',
+          marginTop: 'auto',
+        }}
+      >
+        <div style={{ fontSize: '16px', color: '#999999' }}>www.mycasevalues.com</div>
+        <div
+          style={{
+            fontSize: '18px',
+            fontWeight: '600',
+            color: '#0A50A2',
+          }}
+        >
+          MyCaseValue
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const type = searchParams.get('type') || 'home';
   const code = searchParams.get('code') || '';
   const district = searchParams.get('district') || '';
+  const title = searchParams.get('title') || '';
+  const subtitle = searchParams.get('subtitle') || '';
   const localeParam = searchParams.get('locale') || 'en';
   const locale = (localeParam === 'es' ? 'es' : 'en') as Locale;
 
   try {
     let imageElement: React.ReactElement;
 
-    if (type === 'nos' && code) {
+    if (type === 'generic' && title) {
+      imageElement = renderGenericImage(title, subtitle || undefined);
+    } else if (type === 'nos' && code) {
       imageElement = renderNOSImage(code, locale);
     } else if (type === 'district' && district) {
       imageElement = renderDistrictImage(district, locale);
