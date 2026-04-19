@@ -480,7 +480,7 @@ export default function LegalSearchPage() {
         }}>
           {[
             { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Deep legal research' },
-            { name: 'Citation Check', href: '/attorney/keycite', desc: 'Citation validation' },
+            { name: 'Citation Check', href: '/attorney/citation-check', desc: 'Citation validation' },
             { name: 'Secondary Sources', href: '/attorney/secondary-sources', desc: 'Legal commentary' },
             { name: 'State Survey', href: '/attorney/state-survey', desc: '50-state analysis' },
             { name: 'Compare Text', href: '/attorney/compare-text', desc: 'Document comparison' },

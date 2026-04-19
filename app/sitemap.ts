@@ -102,7 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/attorney/pacer-monitor`, lastModified: now, changeFrequency: 'monthly', priority: 0.65 },
     { url: `${baseUrl}/attorney/api-access`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/attorney/advanced-search`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/attorney/keycite`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/attorney/citation-check`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/attorney/secondary-sources`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/attorney/state-survey`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/attorney/compare-text`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },

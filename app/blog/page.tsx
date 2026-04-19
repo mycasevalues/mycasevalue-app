@@ -144,7 +144,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: `${SITE_URL}/blog`,
     siteName: 'MyCaseValue',
-    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+    images: [{ url: `${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('Federal Court Research & Insights')}`, width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -555,7 +555,7 @@ export default function BlogPage() {
       {/* Featured Research Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div style={{ marginBottom: '32px' }}>
-          <h2 className="text-3xl font-legal font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: 20, fontWeight: 600, color: 'var(--text1, #18181A)', marginBottom: 8 }}>
             Featured Research
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -608,7 +608,7 @@ export default function BlogPage() {
       {/* Browse by Topic Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div style={{ marginBottom: '32px' }}>
-          <h2 className="text-3xl font-legal font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: 20, fontWeight: 600, color: 'var(--text1, #18181A)', marginBottom: 8 }}>
             Browse by Topic
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
@@ -639,7 +639,7 @@ export default function BlogPage() {
       {/* Related Tools Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div style={{ marginBottom: '32px' }}>
-          <h2 className="text-3xl font-legal font-bold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 style={{ fontFamily: 'var(--font-ui)', fontSize: 20, fontWeight: 600, color: 'var(--text1, #18181A)', marginBottom: 8 }}>
             Related Tools
           </h2>
           <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>

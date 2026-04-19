@@ -31,14 +31,13 @@ const COLS = [
       { label: 'Venue Comparison', href: '/compare' },
       { label: 'Settlement Calculator', href: '/calculator' },
       { label: 'Alert Setup', href: '/dashboard' },
-      { label: 'Methodology', href: '/methodology' },
     ],
   },
   {
     title: 'RESEARCH TOOLS',
     links: [
       { label: 'Advanced Search', href: '/attorney/advanced-search' },
-      { label: 'Citation Check', href: '/attorney/keycite' },
+      { label: 'Citation Check', href: '/attorney/citation-check' },
       { label: 'Secondary Sources', href: '/attorney/secondary-sources' },
       { label: '50-State Survey', href: '/attorney/state-survey' },
       { label: 'Compare Text', href: '/attorney/compare-text' },
@@ -59,6 +58,7 @@ const COLS = [
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Service', href: '/terms' },
       { label: 'Accessibility', href: '/accessibility' },
+      { label: 'Methodology', href: '/methodology' },
     ],
   },
 ];

@@ -241,7 +241,7 @@ export default function PricingCards() {
                             <Link href="/attorney/advanced-search" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
                               • Advanced Search
                             </Link>
-                            <Link href="/attorney/keycite" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                            <Link href="/attorney/citation-check" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
                               • Citation Check
                             </Link>
                             <Link href="/attorney/judge-intelligence" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>

@@ -1261,7 +1261,7 @@ ${docB}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '12px' }}>
             {[
               { name: 'State Survey', href: '/attorney/state-survey', desc: 'State-by-state legal survey analysis' },
-              { name: 'Citation Check', href: '/attorney/keycite', desc: 'Citation validation and case treatment analysis' },
+              { name: 'Citation Check', href: '/attorney/citation-check', desc: 'Citation validation and case treatment analysis' },
               { name: 'Secondary Sources', href: '/attorney/secondary-sources', desc: 'Legal secondary sources and treatises' },
               { name: 'Find & Print', href: '/attorney/find-print', desc: 'Find, print and export legal documents' },
             ].map(tool => (

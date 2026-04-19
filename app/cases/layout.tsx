@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'MyCaseValue',
     images: [
       {
-        url: `${SITE_URL}/og-image.png`,
+        url: `${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('84 Federal Case Types')}`,
         width: 1200,
         height: 630,
         alt: 'Federal Case Types',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Federal Case Categories',
     description: 'Browse 84 case types with real win rates and settlement data.',
-    images: [`${SITE_URL}/og-image.png`],
+    images: [`${SITE_URL}/api/og?type=generic&title=${encodeURIComponent('84 Federal Case Types')}`],
   },
   alternates: {
     canonical: `${SITE_URL}/cases`,

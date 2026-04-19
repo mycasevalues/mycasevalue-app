@@ -88,7 +88,7 @@ const BROWSE_CARDS = [
     title: 'Research Tools',
     description: 'Advanced legal research including citation checking, secondary sources, 50-state surveys, and document comparison.',
     stat: '8 research tools',
-    href: '/attorney/advanced-search',
+    href: '/attorney',
   },
 ];
 
@@ -151,7 +151,7 @@ export default function HomePage() {
           padding: '32px 32px 24px',
         }}
       >
-        <div style={{ maxWidth: 824, margin: '0 auto' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
           {/* Eyebrow */}
           <p
             style={{
@@ -251,7 +251,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ TRUST SIGNALS ═══ */}
-      <div style={{ padding: '16px 24px 0', maxWidth: 860, margin: '0 auto' }}>
+      <div style={{ padding: '16px 24px 0', maxWidth: 800, margin: '0 auto' }}>
         <TrustSignals />
       </div>
 
@@ -626,7 +626,7 @@ export default function HomePage() {
               style={{
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 600,
-                fontSize: 14,
+                fontSize: 20,
                 color: 'var(--text1, #18181A)',
                 margin: 0,
               }}
@@ -728,11 +728,11 @@ export default function HomePage() {
           borderTop: '1px solid var(--bdr)',
         }}
       >
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2
             style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: 18,
+              fontSize: 20,
               fontWeight: 600,
               color: 'var(--text1, #18181A)',
               marginBottom: 16,
@@ -748,7 +748,7 @@ export default function HomePage() {
       {/* ═══ STAY UPDATED — EMAIL CAPTURE ═══ */}
       <div
         style={{
-          padding: '20px 24px',
+          padding: '32px 24px',
           borderTop: '1px solid var(--bdr)',
         }}
       >
@@ -770,12 +770,12 @@ export default function HomePage() {
           background: 'var(--surf, var(--sidebar2, #F4F3EF))',
         }}
       >
-        <div style={{ maxWidth: 680, margin: '0 auto' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2
             style={{
-              fontFamily: 'var(--font-legal)',
-              fontSize: 28,
-              fontWeight: 700,
+              fontFamily: 'var(--font-ui)',
+              fontSize: 20,
+              fontWeight: 600,
               letterSpacing: '-0.02em',
               lineHeight: 1.2,
               color: 'var(--text1, #18181A)',

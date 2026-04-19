@@ -985,7 +985,7 @@ export default function SecondarySourcesPage() {
             <h2 style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-ui)', marginBottom: '16px' }}>Related Tools</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '12px' }}>
               {[
-                { name: 'Citation Check', href: '/attorney/keycite', desc: 'Citation validation and case treatment analysis' },
+                { name: 'Citation Check', href: '/attorney/citation-check', desc: 'Citation validation and case treatment analysis' },
                 { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Advanced legal research search tools' },
                 { name: 'Folders', href: '/attorney/folders', desc: 'Organize and manage research folders' },
                 { name: 'State Survey', href: '/attorney/state-survey', desc: 'State-by-state legal survey analysis' },

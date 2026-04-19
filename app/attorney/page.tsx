@@ -369,7 +369,7 @@ const features: { icon: React.ReactNode; title: string; description: string; bad
     title: 'Citation Check',
     description: 'Validate case citations with color-coded treatment flags. Track citing references, negative treatment, and case history.',
     badge: 'available' as const,
-    href: '/attorney/keycite',
+    href: '/attorney/citation-check',
   },
   {
     icon: <DocumentIcon />,

@@ -466,7 +466,7 @@ const staticPages: Array<{ route: string; importPath: string }> = [
   { route: '/attorney/folders', importPath: '../../app/attorney/folders/page' },
   { route: '/attorney/intake-forms', importPath: '../../app/attorney/intake-forms/page' },
   { route: '/attorney/judge-intelligence', importPath: '../../app/attorney/judge-intelligence/page' },
-  { route: '/attorney/keycite', importPath: '../../app/attorney/keycite/page' },
+  { route: '/attorney/citation-check', importPath: '../../app/attorney/citation-check/page' },
   { route: '/attorney/motion-analytics', importPath: '../../app/attorney/motion-analytics/page' },
   { route: '/attorney/motions', importPath: '../../app/attorney/motions/page' },
   { route: '/attorney/negotiation', importPath: '../../app/attorney/negotiation/page' },

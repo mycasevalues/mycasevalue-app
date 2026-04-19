@@ -908,7 +908,7 @@ export default function AlertsPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '12px' }}>
               {[
                 { name: 'Advanced Search', href: '/attorney/advanced-search', desc: 'Advanced legal research search tools' },
-                { name: 'Citation Check', href: '/attorney/keycite', desc: 'Citation validation and case treatment analysis' },
+                { name: 'Citation Check', href: '/attorney/citation-check', desc: 'Citation validation and case treatment analysis' },
                 { name: 'Folders', href: '/attorney/folders', desc: 'Organize and manage research folders' },
                 { name: 'PACER Monitor', href: '/attorney/pacer-monitor', desc: 'Monitor federal court PACER filings' },
               ].map(tool => (

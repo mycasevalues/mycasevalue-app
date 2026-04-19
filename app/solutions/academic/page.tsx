@@ -161,7 +161,7 @@ export default function AcademicPage() {
             {FEATURES.map(f => {
               let href = '';
               if (f.title === 'Research Tools') href = '/attorney/advanced-search';
-              else if (f.title === 'Custom Data Exports') href = '/attorney/keycite';
+              else if (f.title === 'Custom Data Exports') href = '/attorney/citation-check';
 
               const card = (
                 <div key={f.title} style={{
