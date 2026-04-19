@@ -197,7 +197,7 @@ export default function SpanishFAQPage() {
             AYUDA
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-legal font-extrabold mb-4" style={{ color: 'var(--color-surface-0)' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4" style={{ color: 'var(--color-surface-0)' }}>
             Preguntas Frecuentes
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--color-surface-0)', opacity: 0.9 }}>
@@ -211,7 +211,7 @@ export default function SpanishFAQPage() {
         <div className="space-y-12">
           {faqs.map((section, sectionIdx) => (
             <section key={sectionIdx}>
-              <h2 className="text-xl font-legal font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
                 {section.category}
               </h2>
               <div className="space-y-3">
@@ -256,7 +256,7 @@ export default function SpanishFAQPage() {
 
         {/* Still have questions */}
         <div className="mt-16 text-center p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
-          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
             ¿Aún tienes preguntas?
           </h2>
           <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>
@@ -274,7 +274,7 @@ export default function SpanishFAQPage() {
       {/* Available Tools Section */}
       <div style={{ background: 'var(--color-surface-0)', borderTop: '1px solid var(--border-default)', padding: '48px 24px' }}>
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-2xl font-legal font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

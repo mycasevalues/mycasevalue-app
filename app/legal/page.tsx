@@ -99,7 +99,7 @@ export default function LegalDataPage() {
         </div>
         <h1 style={{
           fontFamily: 'var(--font-legal)',
-          fontSize: 40,
+          fontSize: 28,
           fontWeight: 700,
           color: 'var(--color-text-primary)',
           margin: '0 0 16px',
@@ -194,7 +194,7 @@ export default function LegalDataPage() {
 
       {/* -- Data sources -- */}
       <div style={{ marginBottom: 28 }}>
-        <h2 style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 8, textAlign: 'center' }}>
+        <h2 style={{ fontSize: 20, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', marginBottom: 8, textAlign: 'center' }}>
           7 Authoritative Sources, Unified Search
         </h2>
         <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', textAlign: 'center', maxWidth: 480, margin: '0 auto 20px' }}>
@@ -274,7 +274,7 @@ export default function LegalDataPage() {
         borderRadius: 4,
         color: 'var(--color-surface-0)',
       }}>
-        <h3 style={{ fontSize: 22, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 8px' }}>
+        <h3 style={{ fontSize: 16, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-surface-0)', margin: '0 0 8px' }}>
           Start Researching
         </h3>
         <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', margin: '0 0 20px', maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>

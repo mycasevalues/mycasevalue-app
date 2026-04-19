@@ -145,7 +145,7 @@ export default function NegotiationPage() {
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
           <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-inverse)', fontFamily: 'var(--font-legal)', margin: '0 0 16px' }}>Negotiate from Strength with Real Trial Data</h1>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
+          <p style={{ fontSize: '14px', color: 'var(--text3)', margin: 0, lineHeight: 1.6 }}>
             Benchmark offers against 100K+ settlements, calculate your BATNA, and execute a data-backed negotiation strategy
           </p>
         </div>

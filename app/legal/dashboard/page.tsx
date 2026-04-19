@@ -102,7 +102,7 @@ export default function LegalDashboardPage() {
       {/* Hero */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16, flexWrap: 'wrap', gap: 16 }}>
         <div>
-          <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
+          <h1 style={{ fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
             Data Pipeline Dashboard
           </h1>
           <p style={{ fontSize: 14, color: 'var(--color-text-muted)', margin: 0, maxWidth: 540, lineHeight: 1.6 }}>

@@ -258,7 +258,7 @@ export default async function DistrictPage({ params }: PageProps) {
     return (
       <div style={{ background: 'var(--color-surface-0)', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center', padding: '2rem' }}>
-          <h1 style={{ color: 'var(--text1)', fontSize: 21, fontWeight: 700, fontFamily: 'var(--font-legal)', margin: '0 0 12px' }}>
+          <h1 style={{ color: 'var(--text1)', fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-legal)', margin: '0 0 12px' }}>
             District not found
           </h1>
           <p style={{ color: 'var(--text2)', fontSize: 14, fontFamily: 'var(--font-ui)', margin: '0 0 24px' }}>
@@ -318,7 +318,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <div>
               <h1 style={{
-                fontFamily: 'var(--font-legal)', fontWeight: 700, fontSize: 21,
+                fontFamily: 'var(--font-legal)', fontWeight: 700, fontSize: 28,
                 color: 'var(--text1)', letterSpacing: '-0.02em', margin: '0 0 4px',
               }}>
                 {districtMeta.fullName}

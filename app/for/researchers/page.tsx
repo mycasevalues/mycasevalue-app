@@ -53,7 +53,7 @@ export default function ResearchersPage() {
 
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <h1 style={{ fontSize: '2.25rem', fontWeight: 700, lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '1.5rem' }}>
+        <h1 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-legal)', lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '1.5rem' }}>
           The Most Comprehensive Federal Court Dataset — Ready for Citation
         </h1>
 

@@ -65,7 +65,7 @@ export default function SpanishPage() {
       <div style={{ background: 'var(--color-surface-0)', borderTop: '1px solid var(--border-default)', padding: '48px 24px' }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
-            <h2 className="text-3xl font-legal font-bold mb-4" style={{ color: 'var(--color-text-primary)' }}>
+            <h2 className="text-xl font-bold mb-4" style={{ color: 'var(--color-text-primary)' }}>
               Herramientas Disponibles
             </h2>
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '16px', lineHeight: '1.6' }}>

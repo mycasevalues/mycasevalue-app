@@ -174,7 +174,7 @@ export default function DepositionPrepPage() {
           <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Master Every Deposition in Days, Not Weeks
           </h1>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '14px', color: 'var(--text3)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
             Get targeted, organized outlines with strategic questions for any deponent role — plaintiff, defendant, expert, or witness
           </p>
         </div>

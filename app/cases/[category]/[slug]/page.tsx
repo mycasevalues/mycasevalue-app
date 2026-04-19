@@ -580,7 +580,7 @@ export default async function CaseTypeDetailPage({
                   href={`/cases/${related.categorySlug}/${related.slug}`}
                   className="related-case-card"
                 >
-                  <h3 style={{ fontSize: '14px', fontWeight: 700, margin: '0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, margin: '0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
                     {related.label}
                   </h3>
                   <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>

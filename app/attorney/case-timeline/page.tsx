@@ -180,7 +180,7 @@ export default function CaseTimelinePage() {
           <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Case Timeline Generator
           </h1>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '14px', color: 'var(--text3)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
             Generate expected federal case timelines with data-backed milestones and statistical comparison.
           </p>
         </div>
@@ -262,7 +262,7 @@ export default function CaseTimelinePage() {
 
               {/* Custom Milestones Section */}
               <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '24px', marginTop: '12px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                   Add Custom Milestones
                 </h3>
 

@@ -187,7 +187,7 @@ export default function CitationsPage() {
 
       {/* Hero */}
       <div style={{ marginBottom: 16 }}>
-        <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
+        <h1 style={{ fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
           Citation Explorer
         </h1>
         <p style={{ fontSize: 14, color: 'var(--color-text-muted)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
@@ -350,7 +350,7 @@ export default function CitationsPage() {
                 &times;
               </button>
             </div>
-            <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
+            <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
               {selected.name}
             </h3>
             <div style={{ fontSize: 14, color: 'var(--color-text-muted)', marginBottom: 8 }}>
@@ -419,7 +419,7 @@ export default function CitationsPage() {
 
       {/* Case list */}
       <div style={{ marginBottom: 20 }}>
-        <h2 style={{ fontSize: 22, fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: 16 }}>All Cases in Network</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', marginBottom: 16 }}>All Cases in Network</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 12 }}>
           {NODES.sort((a, b) => b.year - a.year).map(node => (
             <button

@@ -265,7 +265,7 @@ export default function DistrictsPage() {
 
       {/* ── Page Header ── */}
       <header style={{
-        background: 'var(--surface-primary)',
+        background: 'var(--card)',
         borderBottom: '1px solid var(--surface-border)',
         padding: '24px clamp(16px, 3vw, 48px)',
       }}>

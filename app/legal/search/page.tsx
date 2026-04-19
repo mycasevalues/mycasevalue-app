@@ -148,7 +148,7 @@ export default function LegalSearchPage() {
 
       {/* Hero */}
       <div style={{ marginBottom: 16 }}>
-        <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
+        <h1 style={{ fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
           Legal Document Search
         </h1>
         <p style={{ fontSize: 14, color: 'var(--color-text-muted)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>

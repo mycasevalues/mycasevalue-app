@@ -131,10 +131,10 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 24px' }}>
 
         {/* Quick Links Section */}
-        <div style={{ marginBottom: '64px' }}>
+        <div style={{ marginBottom: '48px' }}>
           <h2
             style={{
               fontSize: 24,

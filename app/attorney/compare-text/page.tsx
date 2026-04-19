@@ -617,19 +617,20 @@ ${docB}
         }
       `}</style>
       {/* Header */}
-      <div style={{ backgroundColor: 'var(--chrome-bg)', padding: '32px 40px', color: 'var(--chrome-text)' }} className="compare-page-header">
+      <div style={{ backgroundColor: 'var(--card)', padding: '32px 40px', borderBottom: '1px solid var(--bdr)' }} className="compare-page-header">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h1
             style={{
               fontSize: '28px',
               fontWeight: 700,
               fontFamily: 'var(--font-legal)',
+              color: 'var(--color-text-primary)',
               marginBottom: '8px',
             }}
           >
             Text Comparison & Redline Tool
           </h1>
-          <p style={{ fontSize: '14px', color: 'var(--chrome-text-muted)', marginBottom: 0 }}>
+          <p style={{ fontSize: '14px', color: 'var(--text3)', marginBottom: 0 }}>
             Compare two documents side-by-side or in redlined view. Identify additions, deletions, and modifications.
           </p>
         </div>

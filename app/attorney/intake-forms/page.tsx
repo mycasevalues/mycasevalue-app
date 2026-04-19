@@ -28,7 +28,7 @@ export default function IntakeFormsPage() {
           <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
             Case Intake Form Generator
           </h1>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.4, fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '14px', color: 'var(--text3)', marginBottom: 0, lineHeight: 1.4, fontFamily: 'var(--font-ui)' }}>
             Generate customized client intake questionnaires by case type
           </p>
         </div>

@@ -156,7 +156,7 @@ export default function DiscoveryGeneratorPage() {
           <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
             Draft Discovery Requests in Minutes, Not Hours
           </h1>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
+          <p style={{ fontSize: '14px', color: 'var(--text3)', margin: 0, lineHeight: 1.6 }}>
             Generate compliant interrogatories, production requests, and admissions in FRCP format instantly
           </p>
         </div>

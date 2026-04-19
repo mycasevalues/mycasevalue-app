@@ -35,7 +35,7 @@ export default function CookiePolicyPage() {
           >
             <h1
               style={{
-                fontSize: '2.5rem',
+                fontSize: '28px',
                 fontWeight: 700,
                 margin: '0 0 1rem 0',
                 lineHeight: 1.2,

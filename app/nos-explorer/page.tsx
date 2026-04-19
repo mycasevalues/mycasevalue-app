@@ -132,7 +132,7 @@ export default function NosExplorerPage() {
 
           <div style={{ paddingTop: 16, paddingBottom: 20 }}>
             <h1 style={{
-              fontSize: '20px', fontWeight: 900, marginBottom: 8,
+              fontSize: '28px', fontWeight: 700, marginBottom: 8,
               color: 'var(--color-surface-0)', letterSpacing: '-1.5px', fontFamily: 'var(--font-legal)', lineHeight: 1.2,
             }}>
               NOS Code Explorer

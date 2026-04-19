@@ -462,7 +462,7 @@ export default async function OutcomesPage({
             padding: 'clamp(24px, 4vw, 32px)',
           }}>
             <h2 style={{
-              fontSize: '22px',
+              fontSize: '20px',
               fontWeight: 600,
               color: 'var(--color-text-primary)',
               margin: '0 0 28px 0',
@@ -526,7 +526,7 @@ export default async function OutcomesPage({
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
-            fontSize: '22px',
+            fontSize: '20px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 28px 0',
@@ -789,7 +789,7 @@ export default async function OutcomesPage({
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
-            fontSize: '22px',
+            fontSize: '20px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 28px 0',
@@ -859,7 +859,7 @@ export default async function OutcomesPage({
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
-            fontSize: '22px',
+            fontSize: '20px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 28px 0',
@@ -907,7 +907,7 @@ export default async function OutcomesPage({
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
-            fontSize: '22px',
+            fontSize: '20px',
             fontWeight: 600,
             color: 'var(--color-text-primary)',
             margin: '0 0 28px 0',

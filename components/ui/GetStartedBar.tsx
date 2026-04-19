@@ -9,21 +9,27 @@
  */
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
-const DEFAULT_SHORTCUTS = [
-  'Court Records',
-  'Judge Profiles',
-  'District Analytics',
-  'Settlement Data',
-  'CaseCite™',
-  'Research Organizer',
-  'Folders',
-  'Case Alerts',
-  'Practical Guidance',
+const DEFAULT_SHORTCUTS: { label: string; href: string }[] = [
+  { label: 'Court Records', href: '/cases' },
+  { label: 'Judge Profiles', href: '/judges' },
+  { label: 'District Analytics', href: '/districts' },
+  { label: 'Settlement Data', href: '/outcomes' },
+  { label: 'CaseCite™', href: '/attorney/keycite' },
+  { label: 'Research Organizer', href: '/attorney/folders' },
+  { label: 'Folders', href: '/attorney/folders' },
+  { label: 'Case Alerts', href: '/dashboard' },
+  { label: 'Practical Guidance', href: '/attorney/secondary-sources' },
 ];
 
+interface ShortcutItem {
+  label: string;
+  href: string;
+}
+
 interface GetStartedBarProps {
-  shortcuts?: string[];
+  shortcuts?: ShortcutItem[];
 }
 
 /* ── Gear icon ── */
@@ -49,6 +55,8 @@ function GearIcon() {
 }
 
 export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStartedBarProps) {
+  const router = useRouter();
+
   return (
     <div
       style={{
@@ -82,10 +90,11 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
       </span>
 
       {/* Shortcut pills */}
-      {shortcuts.map((label) => (
+      {shortcuts.map((item) => (
         <button
-          key={label}
+          key={item.label}
           type="button"
+          onClick={() => router.push(item.href)}
           style={{
             height: 26,
             padding: '0 10px',
@@ -109,7 +118,7 @@ export default function GetStartedBar({ shortcuts = DEFAULT_SHORTCUTS }: GetStar
             e.currentTarget.style.color = 'var(--text2, #42403C)';
           }}
         >
-          {label}
+          {item.label}
         </button>
       ))}
 

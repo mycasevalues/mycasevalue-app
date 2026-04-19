@@ -82,7 +82,7 @@ export default function PacerMonitorPage() {
           {/* Alerts Feed */}
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-              <h2 className="font-legal" style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Recent Alerts</h2>
+              <h2 style={{ fontSize: 20, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Recent Alerts</h2>
               <div style={{ display: 'flex', gap: '4px', background: 'var(--color-surface-1)', borderRadius: '4px', border: '1px solid var(--border-default)', padding: '3px' }}>
                 {(['all', 'high', 'medium', 'low'] as const).map((f) => (
                   <button key={f} onClick={() => setFilter(f)} style={{ padding: '4px 8px', borderRadius: '2px', border: 'none', fontSize: '12px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? 'var(--accent-primary)' : 'transparent', color: filter === f ? 'var(--color-surface-0)' : 'var(--color-text-secondary)', textTransform: 'capitalize' as const }}>

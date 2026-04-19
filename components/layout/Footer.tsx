@@ -29,7 +29,7 @@ const COLS = [
     links: [
       { label: 'Precision Analytics', href: '/analytics' },
       { label: 'Venue Comparison', href: '/compare' },
-      { label: 'Settlement Calculator', href: '/attorney' },
+      { label: 'Settlement Calculator', href: '/calculator' },
       { label: 'Alert Setup', href: '/dashboard' },
       { label: 'Methodology', href: '/methodology' },
     ],
@@ -45,12 +45,15 @@ const COLS = [
       { label: 'Alerts', href: '/attorney/alerts' },
       { label: 'Research Folders', href: '/attorney/folders' },
       { label: 'Find & Print', href: '/attorney/find-print' },
+      { label: 'Glossary', href: '/glossary' },
     ],
   },
   {
     title: 'COMPANY',
     links: [
       { label: 'About', href: '/about' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'FAQ', href: '/faq' },
       { label: 'Changelog', href: '/data/changelog' },
       { label: 'Contact', href: '/contact' },
       { label: 'Privacy Policy', href: '/privacy' },

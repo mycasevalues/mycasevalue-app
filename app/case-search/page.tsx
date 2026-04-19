@@ -167,7 +167,7 @@ function CaseSearchContent() {
       {/* Header */}
       <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-          <h1 className="text-xl font-bold text-[var(--color-text-muted)] mb-1">Search Federal Cases</h1>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--color-text-primary)', marginBottom: '0.25rem' }}>Search Federal Cases</h1>
           <p className="text-sm text-[var(--color-text-muted)]">
             Search individual case records from public federal court data.
           </p>

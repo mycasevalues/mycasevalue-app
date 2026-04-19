@@ -87,7 +87,7 @@ export default function AppealsPage() {
             Appeals Analytics
           </div>
           <h1 style={{ fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--color-text-primary)', margin: '0 0 12px' }}>Know Your Reversal Odds Before You File</h1>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
+          <p style={{ fontSize: '14px', color: 'var(--text3)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
             Reversal probability and strategic insight — by case type, circuit, and trial outcome — derived from millions of federal appeals.
           </p>
         </div>

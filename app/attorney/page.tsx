@@ -598,7 +598,7 @@ export default function AttorneyPage() {
           <h1
             style={{
               margin: '0 0 8px',
-              fontSize: '20px',
+              fontSize: '28px',
               fontWeight: '700',
               fontFamily: 'var(--font-legal)',
               lineHeight: '1.2',

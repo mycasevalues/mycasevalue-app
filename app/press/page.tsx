@@ -214,9 +214,9 @@ export default function PressPage() {
         </div>
 
         {/* Main Content */}
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 24px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '48px 24px' }}>
           {/* Company Overview */}
-          <section style={{ marginBottom: '64px' }}>
+          <section style={{ marginBottom: '48px' }}>
             <h2
               style={{
                 fontSize: 28,
@@ -342,7 +342,7 @@ export default function PressPage() {
             <div style={{ marginBottom: 56 }}>
               <h3
                 style={{
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-ui)',
@@ -446,7 +446,7 @@ export default function PressPage() {
             <div>
               <h3
                 style={{
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--color-text-primary)',
                   fontFamily: 'var(--font-ui)',

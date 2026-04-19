@@ -121,9 +121,9 @@ export default function AboutPage() {
         }
 
         .about-h1 {
-          font-family: var(--font-ui);
-          font-size: 20px;
-          font-weight: 600;
+          font-family: var(--font-legal);
+          font-size: 28px;
+          font-weight: 700;
           letter-spacing: -0.025em;
           line-height: 1.1;
           margin-bottom: 1rem;

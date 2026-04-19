@@ -21,6 +21,8 @@ import GetStartedBar from '@/components/ui/GetStartedBar';
 import ResearchOrganizer from '@/components/ui/ResearchOrganizer';
 import Onboarding from '@/components/Onboarding';
 import JsonLd from '@/components/JsonLd';
+import HomeHeroSearch from '@/components/ui/HomeHeroSearch';
+import HomePrecisionButtons from '@/components/ui/HomePrecisionButtons';
 
 export const metadata: Metadata = {
   title: 'MyCaseValue Advantage — Federal Court Intelligence Platform',
@@ -99,16 +101,6 @@ const PLATFORM_STATS = [
   { label: 'Last Data Refresh', value: '02:00 UTC' },
   { label: 'Median Processing', value: '< 200ms' },
 ];
-
-/* ── Inline SVG: Search icon ── */
-function SearchIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="8.5" cy="8.5" r="6" stroke="currentColor" strokeWidth="2" />
-      <path d="M13 13L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
 
 // Structured data for homepage
 const jsonLdData = {
@@ -207,92 +199,8 @@ export default function HomePage() {
             litigant, every attorney, every researcher.
           </p>
 
-          {/* 44px Search bar */}
-          <div
-            style={{
-              display: 'flex',
-              height: 44,
-              maxWidth: 820,
-              border: '2px solid var(--chrome-bg)',
-              borderRadius: 2,
-              overflow: 'hidden',
-            }}
-          >
-            {/* Search input */}
-            <div
-              style={{
-                flex: 1,
-                display: 'flex',
-                alignItems: 'center',
-                padding: '0 12px',
-                background: 'var(--card)',
-                gap: 8,
-              }}
-            >
-              <span style={{ color: 'var(--text4, #A8A6A0)', flexShrink: 0 }}>
-                <SearchIcon />
-              </span>
-              <input
-                type="text"
-                placeholder="Search cases, judges, districts, or legal issues..."
-                aria-label="Search federal court records"
-                style={{
-                  flex: 1,
-                  border: 'none',
-                  outline: 'none',
-                  fontSize: 14,
-                  fontFamily: 'var(--font-ui)',
-                  color: 'var(--text1, #18181A)',
-                  background: 'transparent',
-                }}
-              />
-            </div>
-
-            {/* Jurisdiction dropdown — RIGHT side */}
-            <div
-              style={{
-                width: 152,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '0 10px',
-                background: 'var(--surf, #F6F5F2)',
-                borderLeft: '1px solid var(--bdr)',
-                fontSize: 12,
-                fontFamily: 'var(--font-ui)',
-                color: 'var(--text2, #42403C)',
-                cursor: 'pointer',
-                flexShrink: 0,
-              }}
-            >
-              <span>All Jurisdictions</span>
-              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
-                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-              </svg>
-            </div>
-
-            {/* Search button */}
-            <button
-              type="button"
-              style={{
-                width: 92,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 4,
-                background: 'var(--chrome-bg)',
-                color: 'var(--card)',
-                fontSize: 14,
-                fontFamily: 'var(--font-ui)',
-                fontWeight: 600,
-                border: 'none',
-                cursor: 'pointer',
-                flexShrink: 0,
-              }}
-            >
-              Search
-            </button>
-          </div>
+          {/* 44px Search bar — client component with navigation */}
+          <HomeHeroSearch />
 
           {/* Attribution row */}
           <div
@@ -517,59 +425,8 @@ export default function HomePage() {
                 ))}
               </div>
 
-              {/* Run button row */}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 12,
-                  marginTop: 12,
-                }}
-              >
-                <button
-                  type="button"
-                  style={{
-                    height: 32,
-                    padding: '0 20px',
-                    background: 'var(--chrome-bg)',
-                    color: 'var(--card)',
-                    fontSize: 12,
-                    fontFamily: 'var(--font-ui)',
-                    fontWeight: 600,
-                    border: 'none',
-                    borderRadius: 2,
-                    cursor: 'pointer',
-                  }}
-                >
-                  Run Precision Search
-                </button>
-                <button
-                  type="button"
-                  style={{
-                    height: 32,
-                    padding: '0 14px',
-                    background: 'transparent',
-                    color: 'var(--link)',
-                    fontSize: 12,
-                    fontFamily: 'var(--font-ui)',
-                    fontWeight: 600,
-                    border: '1px solid var(--link)',
-                    borderRadius: 2,
-                    cursor: 'pointer',
-                  }}
-                >
-                  Save Search
-                </button>
-                <span
-                  style={{
-                    fontSize: 12,
-                    fontFamily: 'var(--font-mono)',
-                    color: 'var(--text3, #78766C)',
-                  }}
-                >
-                  Matching <strong style={{ color: 'var(--text1)' }}>5,147,392</strong> cases
-                </span>
-              </div>
+              {/* Run button row — client component with navigation */}
+              <HomePrecisionButtons />
             </div>
 
             {/* Recent Precision Searches */}

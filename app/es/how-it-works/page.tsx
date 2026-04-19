@@ -54,7 +54,7 @@ export default function SpanishHowItWorksPage() {
             PROCESO
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-legal font-extrabold mb-4" style={{ color: 'var(--color-surface-0)' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4" style={{ color: 'var(--color-surface-0)' }}>
             Cómo Funciona MyCaseValue
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--color-surface-0)', opacity: 0.9 }}>

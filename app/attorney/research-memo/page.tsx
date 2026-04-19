@@ -149,7 +149,7 @@ export default function ResearchMemoPage() {
           <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
             Research Memos Backed by Real Court Data
           </h1>
-          <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
+          <p style={{ fontSize: '14px', color: 'var(--text3)', margin: 0, lineHeight: 1.6 }}>
             Generate IRAC memoranda with platform statistics showing outcome trends and settlement data
           </p>
         </div>
