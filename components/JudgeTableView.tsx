@@ -62,7 +62,8 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
         <thead>
           <tr className="bg-[var(--color-surface-2)] border-b border-[var(--bdr, #E2DFD8)]">
             <th className="text-left px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
- onClick={() = style={{ fontSize: 12, fontWeight: 600 }}> onSort?.('name')}>
+ style={{ fontSize: 12, fontWeight: 600 }}
+                onClick={() => onSort?.('name')}>
               Judge <SortIcon active={sortBy === 'name'} order={sortOrder} />
             </th>
             <th className="text-left px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide whitespace-nowrap" style={{ fontSize: 12, fontWeight: 600 }}>
@@ -72,11 +73,13 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
               Circuit
             </th>
             <th className="text-right px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
- onClick={() = style={{ fontSize: 12, fontWeight: 600 }}> onSort?.('cases')}>
+ style={{ fontSize: 12, fontWeight: 600 }}
+                onClick={() => onSort?.('cases')}>
               Cases <SortIcon active={sortBy === 'cases'} order={sortOrder} />
             </th>
             <th className="text-right px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
- onClick={() = style={{ fontSize: 12, fontWeight: 600 }}> onSort?.('winRate')}>
+ style={{ fontSize: 12, fontWeight: 600 }}
+                onClick={() => onSort?.('winRate')}>
               Win % <SortIcon active={sortBy === 'winRate'} order={sortOrder} />
             </th>
             <th className="text-left px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide whitespace-nowrap" style={{ fontSize: 12, fontWeight: 600 }}>
