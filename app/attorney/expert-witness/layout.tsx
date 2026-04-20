@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Expert Witness Database — MyCaseValue',
+  title: 'Expert Witness Database',
   description: 'Find qualified expert witnesses for your federal cases. Database of expert witness profiles, specialties, and previous case experience by jurisdiction.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/expert-witness` },
   openGraph: {
     title: 'Expert Witness Database — MyCaseValue',

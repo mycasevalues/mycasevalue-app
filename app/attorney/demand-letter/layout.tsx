@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Demand Letter Generator — MyCaseValue',
+  title: 'Demand Letter Generator',
   description: 'Generate demand letters with calculated settlement values based on federal court settlement data, case type, and jurisdictional averages.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/demand-letter` },
   openGraph: {
     title: 'Demand Letter Generator — MyCaseValue',

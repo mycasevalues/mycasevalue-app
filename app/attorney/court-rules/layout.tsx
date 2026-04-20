@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Federal Court Rules & Local Rules Reference — MyCaseValue Attorney Tools',
+  title: 'Federal Court Rules & Local Rules Reference',
   description: 'Complete reference for FRCP, FRCP of Appellate Procedure, and local rules for all 94 federal districts. ECF requirements, brief page limits, discovery rules, ADR requirements, and judge standing orders.',
   keywords: [
     'federal court rules',
@@ -31,7 +31,6 @@ export const metadata: Metadata = {
     title: 'Federal Court Rules & Local Rules Reference — MyCaseValue',
     description: 'Complete reference for FRCP and local rules for all 94 federal districts.',
   },
-  robots: { index: false, follow: false },
 };
 
 export default function CourtRulesLayout({ children }: { children: ReactNode }) {

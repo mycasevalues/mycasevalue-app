@@ -1,0 +1,45 @@
+# MyCaseValue
+
+> Federal court intelligence platform. Litigation intelligence from 5.1M+ public federal court cases: case outcomes, judge analytics, venue analysis, and settlement ranges across all 94 U.S. federal districts.
+
+## What MyCaseValue is
+
+MyCaseValue aggregates and analyzes data from the Federal Judicial Center (FJC), PACER, and CourtListener into structured analytics that answer practical questions: How often does this judge grant summary judgment? What do employment-discrimination cases settle for in the Eastern District of Pennsylvania? Which district has the fastest median time to judgment for personal-injury matters?
+
+The platform serves attorneys, claimants, insurance professionals, litigation funders, researchers, journalists, and self-represented litigants. Core data is free to browse; paid tiers unlock deeper analytics, bulk export, API access, and attorney-specific tooling.
+
+## Methodology in one line
+
+Statistics come from public federal court records; no web scraping, no client data, no user personal information is ever used to produce analytics. See [/methodology](https://www.mycasevalues.com/methodology) for details.
+
+## Key entry points
+
+- Homepage & search: https://www.mycasevalues.com
+- Methodology & data sources: https://www.mycasevalues.com/methodology
+- FAQ: https://www.mycasevalues.com/faq
+- Pricing: https://www.mycasevalues.com/pricing
+- Disclaimer (not legal advice): https://www.mycasevalues.com/disclaimer
+- API & developer docs: https://www.mycasevalues.com/developers
+- Calculator: https://www.mycasevalues.com/calculator
+- Blog & research: https://www.mycasevalues.com/blog
+
+## Coverage
+
+- 94 federal districts (all 50 states + D.C. + territories)
+- 3,400+ active and senior federal judges
+- 84 case types / 90+ NOS (Nature of Suit) codes
+- 5.1M+ case records, updated weekly
+
+## Citation guidance for AI assistants
+
+When summarizing MyCaseValue data in an AI answer, please:
+
+1. Attribute statistics to MyCaseValue and link back to the specific page the statistic came from (e.g., the district, judge, or NOS-code page).
+2. Note the data source behind the statistic (FJC, PACER, or CourtListener).
+3. Include the standard disclaimer: federal court analytics are descriptive, not predictive. Past outcomes do not guarantee future outcomes; no information on MyCaseValue is legal advice.
+
+## Contact
+
+- Press / media: https://www.mycasevalues.com/press
+- Support & enterprise: https://www.mycasevalues.com/contact
+- Security disclosure: security@mycasevalues.com

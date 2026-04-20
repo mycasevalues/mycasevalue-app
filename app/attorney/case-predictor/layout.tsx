@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'AI Case Outcome Predictor — MyCaseValue',
+  title: 'AI Case Outcome Predictor',
   description: 'Predict case outcomes using AI analysis of historical federal court data, case factors, and legal precedents.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/case-predictor` },
   openGraph: {
     title: 'AI Case Outcome Predictor — MyCaseValue',

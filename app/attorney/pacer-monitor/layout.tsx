@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'PACER Monitoring — MyCaseValue',
+  title: 'PACER Monitoring',
   description: 'Set up alerts for case developments, filings, and motions across federal courts.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/pacer-monitor` },
   openGraph: {
     title: 'PACER Monitoring — MyCaseValue',

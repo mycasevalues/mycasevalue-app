@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Venue Optimizer — MyCaseValue',
+  title: 'Venue Optimizer',
   description: 'Find the optimal filing district based on case type, win rates, settlement data, and case duration.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/venue-optimizer` },
   openGraph: {
     title: 'Venue Optimizer — MyCaseValue',

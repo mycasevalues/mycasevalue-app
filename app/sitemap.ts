@@ -70,14 +70,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/solutions`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/solutions/individuals`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/solutions/small-firms`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/solutions/law-firms`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    // /solutions/law-firms removed — 301 redirects to /solutions/small-firms (see next.config.js)
     { url: `${baseUrl}/solutions/insurance`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/solutions/funders`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/solutions/academic`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/solutions/government`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/solutions/legal-aid`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/solutions/enterprise`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/solutions/api/widget`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    // Widget generator moved from /solutions/api/widget to /developers/widget (audit consolidation)
+    { url: `${baseUrl}/developers/widget`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/platform`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/data-sources`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/api-docs`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },

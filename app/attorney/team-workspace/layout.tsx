@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Team Workspace — MyCaseValue',
+  title: 'Team Workspace',
   description: 'Collaborate with colleagues — share reports, annotations, and case insights.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/team-workspace` },
   openGraph: {
     title: 'Team Workspace — MyCaseValue',

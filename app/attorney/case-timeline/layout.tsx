@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Federal Case Timeline Generator — MyCaseValue Attorney Tools',
+  title: 'Federal Case Timeline Generator',
   description: 'Generate accurate federal case timelines and milestones for your specific case type and district. Predict discovery closure, expert disclosures, and trial dates based on 5.1M+ historical federal cases.',
   keywords: [
     'case timeline generator',
@@ -24,7 +24,6 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'MyCaseValue',
   },
-  robots: { index: false, follow: false },
 };
 
 export default function CaseTimelineLayout({ children }: { children: ReactNode }) {

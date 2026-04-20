@@ -30,7 +30,7 @@ import TrustSignals from '@/components/TrustSignals';
 import Testimonials from '@/components/Testimonials';
 
 export const metadata: Metadata = {
-  title: 'MyCaseValue — Federal Court Intelligence Platform',
+  title: 'Federal Court Intelligence Platform',
   description:
     'Litigation intelligence from public federal court records. Case outcomes, judge analytics, venue analysis, and settlement data across all 94 federal districts.',
   openGraph: {

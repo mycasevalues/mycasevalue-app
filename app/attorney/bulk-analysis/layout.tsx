@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Bulk Case Analysis — MyCaseValue',
+  title: 'Bulk Case Analysis',
   description: 'Upload and analyze CSV files of multiple cases for portfolio risk assessment and outcome trends.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/bulk-analysis` },
   openGraph: {
     title: 'Bulk Case Analysis — MyCaseValue',

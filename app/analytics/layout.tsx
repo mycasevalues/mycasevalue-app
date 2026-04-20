@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Analytics — MyCaseValue',
+  title: 'Analytics',
   description: 'View platform analytics and usage statistics.',
   robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/analytics` },
