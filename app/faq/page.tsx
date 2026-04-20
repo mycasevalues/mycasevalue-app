@@ -567,12 +567,12 @@ export default function FAQPage() {
             <span className="text-[var(--color-text-muted)]">FAQ</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-2 py-1 text-[10px] font-semibold tracking-[0.25em] uppercase mb-5 rounded-[3px] border"
-            style={{ background: 'rgba(26,86,219,0.08)', color: 'var(--link)', borderColor: 'rgba(26,86,219,0.2)' }}>
+          <div className="inline-flex items-center gap-2 px-2 py-1 text-[10px] tracking-[0.25em] uppercase mb-5 rounded-[3px] border"
+ style={{ background: 'rgba(26,86,219,0.08)', color: 'var(--link)', borderColor: 'rgba(26,86,219,0.2)', fontWeight: 600 }}>
             <span className="w-1 h-1 rounded-full bg-[var(--link)]/80" />
             Frequently Asked
           </div>
-          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'var(--chrome-text, #FFFFFF)', lineHeight: '1.1' }}>
+          <h1 className="font-legal mb-4 tracking-[-0.025em]" style={{ color: 'var(--chrome-text, #FFFFFF)', lineHeight: '1.1', fontSize: 28, fontWeight: 700 }}>
             Common Questions
           </h1>
           <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'var(--chrome-text, #FFFFFF)' }}>
@@ -587,10 +587,10 @@ export default function FAQPage() {
           {faqs.map((section, sectionIdx) => (
             <section key={sectionIdx}>
               <div className="flex items-baseline gap-3 mb-5 pb-3 border-b" style={{ borderColor: 'var(--bdr)' }}>
-                <span className="font-mono text-[10px] font-semibold tracking-[0.2em] uppercase tabular-nums" style={{ color: 'rgba(59,130,246,0.6)' }}>
+                <span className="font-mono text-[10px] tracking-[0.2em] uppercase tabular-nums" style={{ color: 'rgba(59,130,246,0.6)', fontWeight: 600 }}>
                   {String(sectionIdx + 1).padStart(2, '0')}
                 </span>
-                <h2 className="text-[17px] font-legal font-semibold tracking-[-0.01em]" style={{ color: 'var(--text1)' }}>
+                <h2 className="text-[17px] font-legal tracking-[-0.01em]" style={{ color: 'var(--text1)', fontWeight: 600 }}>
                   {section.category}
                 </h2>
               </div>
@@ -605,7 +605,7 @@ export default function FAQPage() {
                       borderRadius: '4px',
                     }}
                   >
-                    <summary className="flex items-start justify-between font-medium select-none" style={{ color: 'var(--text1)' }}>
+                    <summary className="flex items-start justify-between select-none" style={{ color: 'var(--text1)', fontWeight: 500 }}>
                       <span className="flex-1 text-[14px] leading-relaxed pr-4 tracking-[-0.005em]">
                         {faq.q}
                       </span>
@@ -636,7 +636,7 @@ export default function FAQPage() {
 
         {/* Still have questions */}
         <div className="mt-16 p-8 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px', borderLeftWidth: '4px', borderLeftColor: 'var(--link)' }}>
-          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
+          <h2 className="font-legal mb-3" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             Still Have Questions?
           </h2>
           <p className="mb-6" style={{ color: 'var(--text2)' }}>
@@ -644,19 +644,19 @@ export default function FAQPage() {
           </p>
           <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
             <a href="mailto:support@mycasevalues.com"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
-              style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--link)', borderRadius: '4px' }}>
+ className="inline-flex items-center gap-2 px-6 py-3 transition-colors"
+ style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--link)', borderRadius: '4px', fontSize: 14, fontWeight: 600 }}>
               <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Contact Support
             </a>
             <Link href="/methodology"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
-              style={{ background: 'var(--card)', border: '1px solid var(--bdr)', color: 'var(--gold)', borderRadius: '4px' }}>
+ className="inline-flex items-center gap-2 px-6 py-3 transition-colors"
+ style={{ background: 'var(--card)', border: '1px solid var(--bdr)', color: 'var(--gold)', borderRadius: '4px', fontSize: 14, fontWeight: 600 }}>
               Methodology
             </Link>
             <Link href="/glossary"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
-              style={{ background: 'var(--card)', border: '1px solid var(--bdr)', color: 'var(--gold)', borderRadius: '4px' }}>
+ className="inline-flex items-center gap-2 px-6 py-3 transition-colors"
+ style={{ background: 'var(--card)', border: '1px solid var(--bdr)', color: 'var(--gold)', borderRadius: '4px', fontSize: 14, fontWeight: 600 }}>
               Glossary
             </Link>
           </div>
@@ -664,7 +664,7 @@ export default function FAQPage() {
 
         {/* Related Tools */}
         <div className="mt-16">
-          <h2 className="text-2xl font-legal font-bold mb-8 text-center" style={{ color: 'var(--text1)' }}>
+          <h2 className="font-legal mb-8 text-center" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             Related Tools
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -672,10 +672,10 @@ export default function FAQPage() {
               className="group p-6 border transition-all hover:shadow-md"
               style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--text1)' }}>Settlement Calculator</h3>
+                <h3 className="transition-colors" style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Settlement Calculator</h3>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--link)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
+              <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: 14 }}>
                 Estimate settlement ranges based on case type, damages, and severity using federal court data.
               </p>
             </Link>
@@ -684,10 +684,10 @@ export default function FAQPage() {
               className="group p-6 border transition-all hover:shadow-md"
               style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--text1)' }}>Compare Cases</h3>
+                <h3 className="transition-colors" style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Compare Cases</h3>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--link)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
+              <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: 14 }}>
                 Compare up to 3 case types side-by-side to see win rates, settlement ranges, and timelines.
               </p>
             </Link>
@@ -696,10 +696,10 @@ export default function FAQPage() {
               className="group p-6 border transition-all hover:shadow-md"
               style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--text1)' }}>Jargon Translator</h3>
+                <h3 className="transition-colors" style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Jargon Translator</h3>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--link)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
+              <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: 14 }}>
                 Convert complex legal language from court documents into plain English explanations.
               </p>
             </Link>
@@ -708,10 +708,10 @@ export default function FAQPage() {
               className="group p-6 border transition-all hover:shadow-md"
               style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--text1)' }}>NOS Explorer</h3>
+                <h3 className="transition-colors" style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>NOS Explorer</h3>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--link)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
+              <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: 14 }}>
                 Browse all 84 federal Nature of Suit codes and explore case types with detailed breakdowns.
               </p>
             </Link>

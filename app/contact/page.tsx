@@ -106,7 +106,7 @@ export default function ContactPage() {
             </h1>
             <p
               style={{
-                fontSize: 16,
+                fontSize: 14,
                 color: 'var(--chrome-text, #FFFFFF)',
                 fontFamily: 'var(--font-ui)',
                 lineHeight: 1.65,
@@ -137,7 +137,7 @@ export default function ContactPage() {
         <div style={{ marginBottom: '48px' }}>
           <h2
             style={{
-              fontSize: 24,
+              fontSize: 20,
               fontWeight: 600,
               color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
@@ -237,7 +237,7 @@ export default function ContactPage() {
             >
               <h2
                 style={{
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
@@ -290,7 +290,7 @@ export default function ContactPage() {
             >
               <h2
                 style={{
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
@@ -343,7 +343,7 @@ export default function ContactPage() {
             >
               <h2
                 style={{
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',

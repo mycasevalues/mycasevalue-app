@@ -412,9 +412,9 @@ export default function BlogPage() {
                     {featuredPost.category}
                   </div>
                   <h2
-                    className="font-legal font-bold mb-4 transition-colors"
-                    style={{ fontSize: '22px', lineHeight: '1.3', color: 'var(--text1)', fontWeight: 600 }}
-                  >
+ className="font-legal mb-4 transition-colors"
+ style={{ fontSize: '22px', lineHeight: '1.3', color: 'var(--text1)', fontWeight: 600, fontWeight: 700 }}
+ >
                     {featuredPost.title}
                   </h2>
                   <p
@@ -426,21 +426,19 @@ export default function BlogPage() {
                 </div>
                 <div>
                   <div style={{ fontSize: '12px', color: 'var(--text2)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
-                    <span className="font-medium">{featuredPost.author}</span>
+                    <span style={{ fontWeight: 500 }} >{featuredPost.author}</span>
                     <span className="mx-2">•</span>
                     <time>{featuredPost.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                     <span className="mx-2">•</span>
                     <span>{featuredPost.readTime} min read</span>
                   </div>
                   <Link
-                    href={`/blog/${featuredPost.slug}`}
-                    className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-                    style={{
-                      background: 'var(--link)',
-                      color: 'var(--card)',
-                      borderRadius: '4px',
-                    }}
-                  >
+ href={`/blog/${featuredPost.slug}`}
+ className="inline-flex items-center gap-2 px-6 py-3 transition-all"
+ style={{ background: 'var(--link)',
+ color: 'var(--card)',
+ borderRadius: '4px', fontSize: 14, fontWeight: 600 }}
+ >
                     Read Article
                     <ArrowRightIcon size={14} />
                   </Link>
@@ -469,7 +467,7 @@ export default function BlogPage() {
           {/* Sidebar: Filters */}
           <aside className="md:col-span-1">
             <div className="sidebar-filter sticky top-6">
-              <h3 className="font-legal font-bold mb-6" style={{ fontSize: '14px', color: 'var(--text1)' }}>
+              <h3 className="font-legal mb-6" style={{ fontSize: '14px', color: 'var(--text1)', fontWeight: 700 }}>
                 CATEGORIES
               </h3>
               <div>
@@ -503,9 +501,9 @@ export default function BlogPage() {
                       className="block"
                     >
                       <h3
-                        className="font-legal font-semibold mb-3 transition-colors"
-                        style={{ fontSize: '20px', color: 'var(--text1)', lineHeight: '1.4' }}
-                      >
+ className="font-legal mb-3 transition-colors"
+ style={{ fontSize: '20px', color: 'var(--text1)', lineHeight: '1.4', fontWeight: 600 }}
+ >
                         {post.title}
                       </h3>
                     </Link>
@@ -518,19 +516,17 @@ export default function BlogPage() {
                     </p>
 
                     <div style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginBottom: '12px', flex: 1 }}>
-                      <span className="font-medium">{post.author}</span>
+                      <span style={{ fontWeight: 500 }} >{post.author}</span>
                       <span className="mx-1.5">•</span>
                       <time>{post.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
                     </div>
 
                     <Link
-                      href={`/blog/${post.slug}`}
-                      className="inline-flex items-center gap-1 px-3 py-2 rounded text-xs font-semibold transition-all"
-                      style={{
-                        background: 'rgba(239,68,68,0.08)',
-                        color: 'var(--link)',
-                      }}
-                    >
+ href={`/blog/${post.slug}`}
+ className="inline-flex items-center gap-1 px-3 py-2 rounded transition-all"
+ style={{ background: 'rgba(239,68,68,0.08)',
+ color: 'var(--link)', fontSize: 12, fontWeight: 600 }}
+ >
                       Read More
                       <ArrowRightIcon size={12} />
                     </Link>
@@ -681,17 +677,17 @@ export default function BlogPage() {
       {/* CTA Section */}
       <div className="max-w-6xl mx-auto px-6 py-12">
         <section className="text-center p-12 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
-          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
+          <h2 className="font-legal mb-3" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             Want deeper analysis? Try Attorney Mode
           </h2>
           <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '16px' }}>
             Access advanced case analytics, predictive insights, and strategic recommendations powered by 5.1M+ federal court cases.
           </p>
           <Link
-            href="/attorney"
-            className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold transition-all"
-            style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px' }}
-          >
+ href="/attorney"
+ className="inline-flex items-center gap-2 px-8 py-3 transition-all"
+ style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px', fontSize: 14, fontWeight: 600 }}
+ >
             Explore Attorney Mode
             <ArrowRightIcon size={16} />
           </Link>

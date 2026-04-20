@@ -47,7 +47,7 @@ export default function GlossaryPage() {
       <div className="border-b" style={{ borderColor: 'var(--bdr)', background: 'var(--link)' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb */}
-          <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: 'var(--card)' }}>
+          <nav className="mb-6 flex items-center gap-2" style={{ color: 'var(--card)', fontSize: 14 }}>
             <Link href="/" className="hover:opacity-80 transition-opacity">
               Home
             </Link>
@@ -56,9 +56,9 @@ export default function GlossaryPage() {
           </nav>
 
           <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px' }}
-          >
+ className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] tracking-[1.5px] uppercase mb-4"
+ style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px', fontWeight: 700 }}
+ >
             <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--card)" strokeWidth="2.5">
               <path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z" />
             </svg>
@@ -87,7 +87,7 @@ export default function GlossaryPage() {
           >
             Plain-English definitions of federal court terms, data concepts, and legal statutes used throughout MyCaseValue.
           </p>
-          <div className="mt-6 inline-block px-3 py-1.5 text-[13px] font-semibold" style={{ background: 'rgba(255, 255, 255, 0.1)', color: 'var(--card)', borderRadius: '4px' }}>
+          <div className="mt-6 inline-block px-3 py-1.5 text-[13px]" style={{ background: 'rgba(255, 255, 255, 0.1)', color: 'var(--card)', borderRadius: '4px', fontWeight: 600 }}>
             327 Legal Terms
           </div>
         </div>
@@ -109,19 +109,17 @@ export default function GlossaryPage() {
 
         {/* CTA */}
         <div className="text-center pt-8 border-t" style={{ borderColor: 'var(--bdr)' }}>
-          <p className="text-sm mb-4" style={{ color: 'var(--text2)' }}>
+          <p className="mb-4" style={{ color: 'var(--text2)', fontSize: 14 }}>
             Have a term you think should be in this glossary?
           </p>
           <a
-            href="mailto:support@mycasevalues.com"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-            style={{
-              background: 'var(--card)',
-              border: '1px solid var(--bdr)',
-              color: 'var(--text1)',
-              borderRadius: '4px',
-            }}
-          >
+ href="mailto:support@mycasevalues.com"
+ className="inline-flex items-center gap-2 px-5 py-2.5 transition-colors"
+ style={{ background: 'var(--card)',
+ border: '1px solid var(--bdr)',
+ color: 'var(--text1)',
+ borderRadius: '4px', fontSize: 14, fontWeight: 600 }}
+ >
             <svg aria-hidden="true"
               width="14"
               height="14"
