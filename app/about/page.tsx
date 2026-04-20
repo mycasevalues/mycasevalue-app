@@ -99,7 +99,7 @@ export default function AboutPage() {
 
         .about-header {
           background: var(--card);
-          color: var(--chrome-text, #FFFFFF);
+          color: var(--text1);
           padding: 4rem 1.5rem;
           text-align: left;
           position: relative;
@@ -128,14 +128,14 @@ export default function AboutPage() {
           letter-spacing: -0.025em;
           line-height: 1.1;
           margin-bottom: 1rem;
-          color: var(--chrome-text, #FFFFFF);
+          color: var(--text1);
         }
 
         .about-intro {
           font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.65;
-          color: var(--chrome-text, #FFFFFF);
+          color: var(--text2);
           max-width: 42rem;
         }
 

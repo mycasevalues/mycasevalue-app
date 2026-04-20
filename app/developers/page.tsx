@@ -367,7 +367,7 @@ export default function DevelopersPage() {
       {/* Hero Section */}
       <div style={{
         background: 'var(--card)',
-        color: 'var(--card)',
+        color: 'var(--text1)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -399,14 +399,14 @@ export default function DevelopersPage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: 'var(--card)',
+            color: 'var(--text1)',
           }}>
             MyCaseValue REST API
           </h1>
           <p style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '1rem',
-            color: 'rgba(255,255,255,0.7)',
+            color: 'var(--text2)',
             lineHeight: 1.6,
             maxWidth: 640,
             margin: 0,
@@ -530,7 +530,7 @@ export default function DevelopersPage() {
                       padding: '4px 10px',
                       borderRadius: '4px',
                       backgroundColor: `${methodColors[endpoint.method]}`,
-                      color: 'var(--card)',
+                      color: 'var(--text1)',
                       minWidth: '45px',
                       textAlign: 'center',
                       fontFamily: 'var(--font-mono)',
@@ -901,7 +901,7 @@ export default function DevelopersPage() {
               style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--card)',
+                color: 'var(--text1)',
                 margin: '0 0 12px',
                 fontFamily: 'var(--font-heading)',
               }}

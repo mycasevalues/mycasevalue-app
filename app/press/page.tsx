@@ -153,7 +153,7 @@ export default function PressPage() {
                 fontFamily: 'var(--font-legal)',
                 fontSize: 28,
                 fontWeight: 700,
-                color: 'var(--card)',
+                color: 'var(--text1)',
                 letterSpacing: '-0.025em',
                 lineHeight: 1.1,
                 marginBottom: 16,
@@ -164,7 +164,7 @@ export default function PressPage() {
             <p
               style={{
                 fontSize: 16,
-                color: 'rgba(255,255,255,0.7)',
+                color: 'var(--text2)',
                 fontFamily: 'var(--font-ui)',
                 lineHeight: 1.6,
                 maxWidth: 640,

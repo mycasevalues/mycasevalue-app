@@ -326,7 +326,7 @@ function SearchPageInner() {
       {/* Dark Institutional Header */}
       <div className="search-header" style={{
         background: 'var(--card)',
-        color: 'var(--card)',
+        color: 'var(--text1)',
         padding: '40px 24px 32px',
         position: 'relative',
         overflow: 'hidden',
@@ -351,10 +351,10 @@ function SearchPageInner() {
             <span className="animate-pulse" style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--data-positive)' }} />
             Federal Case Search
           </div>
-          <h1 className="search-header" style={{ fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--card)', margin: '0 0 12px' }}>
+          <h1 className="search-header" style={{ fontFamily: 'var(--font-legal)', fontSize: '28px', fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--text1)', margin: '0 0 12px' }}>
             Search Federal Court Outcomes
           </h1>
-          <p className="search-header" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+          <p className="search-header" style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
             Real outcome data across 84 federal case types, 94 districts, and 5.1M+ cases.
           </p>
         </div>
