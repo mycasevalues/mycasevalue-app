@@ -404,9 +404,9 @@ export default function AboutPage() {
             >
               <h2
                 style={{
-                  fontFamily: 'var(--font-legal)',
-                  fontSize: 28,
-                  fontWeight: 700,
+                  fontFamily: 'var(--font-ui)',
+                  fontSize: 20,
+                  fontWeight: 600,
                   letterSpacing: '-0.02em',
                   lineHeight: 1.2,
                   color: 'var(--text1)',

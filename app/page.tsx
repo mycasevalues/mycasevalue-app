@@ -159,7 +159,7 @@ export default function HomePage() {
               fontFamily: 'var(--font-ui)',
               fontWeight: 700,
               textTransform: 'uppercase',
-              letterSpacing: '0.14em',
+              letterSpacing: '0.5px',
               color: 'var(--text3, #4A4940)',
               margin: '0 0 8px',
             }}
@@ -175,7 +175,7 @@ export default function HomePage() {
               fontWeight: 700,
               fontSize: 38,
               letterSpacing: '-0.02em',
-              lineHeight: 1.15,
+              lineHeight: 1.2,
               margin: '0 0 4px',
             }}
           >
@@ -190,9 +190,9 @@ export default function HomePage() {
               fontSize: 14,
               fontFamily: 'var(--font-ui)',
               color: 'var(--text2, #42403C)',
-              lineHeight: 1.65,
+              lineHeight: 1.6,
               maxWidth: 600,
-              margin: '8px 0 14px',
+              margin: '8px 0 12px',
             }}
           >
             5.1 million federal cases across 94 districts. Win rates, settlement ranges,
@@ -251,7 +251,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══ TRUST SIGNALS ═══ */}
-      <div style={{ padding: '16px 24px 0', maxWidth: 800, margin: '0 auto' }}>
+      <div style={{ padding: '16px 24px', maxWidth: 800, margin: '0 auto' }}>
         <TrustSignals />
       </div>
 
@@ -448,7 +448,7 @@ export default function HomePage() {
                   fontSize: 12,
                   fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
+                  letterSpacing: '0.5px',
                   color: 'var(--text3, #4A4940)',
                   marginBottom: 8,
                 }}
@@ -466,7 +466,7 @@ export default function HomePage() {
               >
                 <p
                   style={{
-                    fontSize: 13,
+                    fontSize: 12,
                     fontFamily: 'var(--font-ui)',
                     color: 'var(--text3, #4A4940)',
                     margin: '0 0 8px',
@@ -508,7 +508,7 @@ export default function HomePage() {
                   fontSize: 12,
                   fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
+                  letterSpacing: '0.5px',
                   color: 'var(--text3, #4A4940)',
                   fontWeight: 600,
                   marginBottom: 6,
@@ -560,7 +560,7 @@ export default function HomePage() {
                   fontSize: 12,
                   fontFamily: 'var(--font-mono)',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
+                  letterSpacing: '0.5px',
                   color: 'var(--text3, #4A4940)',
                   fontWeight: 600,
                   marginBottom: 6,
@@ -674,8 +674,8 @@ export default function HomePage() {
                 <h3
                   style={{
                     fontFamily: 'var(--font-legal)',
-                    fontSize: 14,
-                    fontWeight: 700,
+                    fontSize: 16,
+                    fontWeight: 600,
                     color: 'var(--chrome-bg)',
                     margin: '0 0 4px',
                   }}
@@ -789,7 +789,7 @@ export default function HomePage() {
               fontFamily: 'var(--font-ui)',
               fontSize: 14,
               fontWeight: 400,
-              lineHeight: 1.7,
+              lineHeight: 1.6,
               color: 'var(--text2, #42403C)',
               margin: '0 0 14px',
               maxWidth: 560,
@@ -803,7 +803,7 @@ export default function HomePage() {
             href="/about"
             style={{
               fontFamily: 'var(--font-ui)',
-              fontSize: 13,
+              fontSize: 12,
               fontWeight: 600,
               color: 'var(--link)',
               textDecoration: 'none',
