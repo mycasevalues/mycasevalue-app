@@ -23,9 +23,18 @@ describe('HomePage', () => {
 
     const { container } = render(<HomePage />)
 
-    // Check for the main headline
+    // Check for the main headline. The hero headline is the gold `<span>`
+    // "Open to Everyone." — but the <TrustSection> paragraph also contains
+    // the phrase "open to everyone" (lowercase). Use getAllByText and assert
+    // the hero-styled span is among the matches.
     expect(screen.getByText(/The Federal Court Record/i)).toBeInTheDocument()
-    expect(screen.getByText(/Open to Everyone/i)).toBeInTheDocument()
+    const openToEveryoneMatches = screen.getAllByText(/Open to Everyone/i)
+    expect(openToEveryoneMatches.length).toBeGreaterThanOrEqual(1)
+    // The hero match is the <span> with the gold color token
+    const heroMatch = openToEveryoneMatches.find(
+      (el) => el.tagName === 'SPAN' && /gold|C4882A/.test(el.getAttribute('style') || '')
+    )
+    expect(heroMatch).toBeDefined()
   })
 
   it('renders the search input', async () => {
