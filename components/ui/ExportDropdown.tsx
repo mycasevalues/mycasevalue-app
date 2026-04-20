@@ -23,7 +23,7 @@ export default function ExportDropdown() {
         onClick={() => setOpen(!open)}
         className="
           inline-flex items-center gap-1.5 px-3 py-1.5
-          text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-muted)]
+          text-xs font-medium text-[var(--text2)] hover:text-[var(--color-text-muted)]
           border border-[var(--bdr, #E2DFD8)] hover:border-[var(--bdr, #E2DFD8)]
           rounded transition-colors duration-150
           hover:bg-[var(--color-surface-2)]

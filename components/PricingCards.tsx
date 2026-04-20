@@ -233,28 +233,28 @@ export default function PricingCards() {
                     if (feature === 'toolsDetail') {
                       return (
                         <li key={idx} style={{ display: 'block', padding: '1rem 0', marginTop: '1rem', borderTop: '1px solid var(--bdr)' }}>
-                          <div style={{ marginBottom: '0.75rem', fontWeight: 600, color: 'var(--color-text-primary)' }}>Key Tools Included:</div>
+                          <div style={{ marginBottom: '0.75rem', fontWeight: 600, color: 'var(--text1)' }}>Key Tools Included:</div>
                           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', fontSize: '0.8125rem' }}>
-                            <Link href="/attorney/case-predictor" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                            <Link href="/attorney/case-predictor" style={{ color: 'var(--link)', textDecoration: 'none' }}>
                               • AI Case Predictor
                             </Link>
-                            <Link href="/attorney/advanced-search" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                            <Link href="/attorney/advanced-search" style={{ color: 'var(--link)', textDecoration: 'none' }}>
                               • Advanced Search
                             </Link>
-                            <Link href="/attorney/citation-check" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                            <Link href="/attorney/citation-check" style={{ color: 'var(--link)', textDecoration: 'none' }}>
                               • Citation Check
                             </Link>
-                            <Link href="/attorney/judge-intelligence" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                            <Link href="/attorney/judge-intelligence" style={{ color: 'var(--link)', textDecoration: 'none' }}>
                               • Judge Intelligence
                             </Link>
-                            <Link href="/attorney/state-survey" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                            <Link href="/attorney/state-survey" style={{ color: 'var(--link)', textDecoration: 'none' }}>
                               • 50-State Survey
                             </Link>
-                            <Link href="/attorney/document-intelligence" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                            <Link href="/attorney/document-intelligence" style={{ color: 'var(--link)', textDecoration: 'none' }}>
                               • Document Intelligence
                             </Link>
                             <div style={{ gridColumn: '1 / -1', marginTop: '0.5rem' }}>
-                              <Link href="/attorney" style={{ color: 'var(--accent-primary)', textDecoration: 'none', fontSize: '0.8125rem', fontWeight: 600 }}>
+                              <Link href="/attorney" style={{ color: 'var(--link)', textDecoration: 'none', fontSize: '0.8125rem', fontWeight: 600 }}>
                                 + 29 more tools →
                               </Link>
                             </div>

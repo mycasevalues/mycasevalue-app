@@ -49,24 +49,24 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="max-w-6xl mx-auto">
           <div style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '24px',
           }}>
             <h2 style={{
               fontSize: '20px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: '24px',
               fontFamily: 'var(--font-ui)',
             }}>Relevant Opinions</h2>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text2)', fontSize: '14px' }}>
               <span style={{
                 display: 'inline-block',
                 width: '16px',
                 height: '16px',
-                border: '2px solid var(--accent-primary)',
+                border: '2px solid var(--link)',
                 borderTopColor: 'transparent',
                 borderRadius: '50%',
                 animation: 'spin 0.8s linear infinite',
@@ -88,21 +88,21 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
     <section className="px-4 sm:px-6 lg:px-8 pb-12">
       <div className="max-w-6xl mx-auto">
         <div style={{
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           padding: '24px',
         }}>
           <h2 style={{
             fontSize: '20px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginBottom: '4px',
             fontFamily: 'var(--font-ui)',
           }}>Relevant Opinions</h2>
           <p style={{
             fontSize: '14px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             marginBottom: '24px',
             fontFamily: 'var(--font-ui)',
           }}>
@@ -113,8 +113,8 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
             {opinions.map((op) => (
               <div key={op.id} style={{
                 padding: '16px',
-                background: 'var(--color-surface-1)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--surf)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', flexWrap: 'wrap' }}>
@@ -126,7 +126,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
                       style={{
                         fontSize: '14px',
                         fontWeight: 600,
-                        color: 'var(--accent-primary)',
+                        color: 'var(--link)',
                         textDecoration: 'none',
                         fontFamily: 'var(--font-ui)',
                         lineHeight: 1.3,
@@ -139,7 +139,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
                       gap: '12px',
                       marginTop: '4px',
                       fontSize: '12px',
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       fontFamily: 'var(--font-ui)',
                     }}>
                       {op.court && <span>{op.court}</span>}
@@ -151,7 +151,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
                 {op.summary && (
                   <p style={{
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     marginTop: '8px',
                     marginBottom: 0,
                     lineHeight: 1.5,
@@ -168,7 +168,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
           <div style={{
             marginTop: '16px',
             paddingTop: '12px',
-            borderTop: '1px solid var(--border-default)',
+            borderTop: '1px solid var(--bdr)',
             display: 'flex',
             alignItems: 'center',
             gap: '6px',
@@ -179,11 +179,11 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
             <span style={{
               display: 'inline-block',
               padding: '1px 6px',
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '3px',
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               letterSpacing: '0.3px',
             }}>AI</span>
             Summarized by AI — read the full opinion for accuracy.

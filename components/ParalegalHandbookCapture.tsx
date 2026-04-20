@@ -144,7 +144,7 @@ export default function ParalegalHandbookCapture() {
 
       const addHeader = (text: string) => {
         doc.setFontSize(14);
-        doc.setTextColor(10, 102, 194); // var(--accent-primary)
+        doc.setTextColor(10, 102, 194); // var(--link)
         doc.setFont('helvetica', 'bold');
         doc.text(text, margin, yPosition);
         yPosition += 10;
@@ -162,7 +162,7 @@ export default function ParalegalHandbookCapture() {
 
       const addText = (text: string, size: number = 9) => {
         doc.setFontSize(size);
-        doc.setTextColor(15, 15, 15); // var(--color-text-primary)
+        doc.setTextColor(15, 15, 15); // var(--text1)
         const lines = doc.splitTextToSize(text, contentWidth);
         doc.text(lines, margin, yPosition);
         yPosition += lines.length * 3.8 + 1;
@@ -784,7 +784,7 @@ export default function ParalegalHandbookCapture() {
   };
 
   return (
-    <section className="rounded border-2 border-blue-200 bg-[var(--color-surface-1)] p-8">
+    <section className="rounded border-2 border-blue-200 bg-[var(--surf)] p-8">
       <h2 className="mb-4 text-2xl font-bold text-[var(--color-text-muted)]">
         Download the Complete Handbook
       </h2>
@@ -793,7 +793,7 @@ export default function ParalegalHandbookCapture() {
       </p>
 
       {state.submitted ? (
-        <div className="rounded bg-[var(--color-surface-1)] p-6 text-center">
+        <div className="rounded bg-[var(--surf)] p-6 text-center">
           <h3 className="mb-2 font-semibold text-green-900">
             Download started!
           </h3>

@@ -173,34 +173,34 @@ const faqs = [
 
 export default function SpanishFAQPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+    <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header with Dark Navy Background */}
-      <div className="border-b" style={{ background: 'var(--accent-primary)', borderColor: 'var(--border-default)' }}>
+      <div className="border-b" style={{ background: 'var(--link)', borderColor: 'var(--bdr)' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-8 text-sm">
-            <a href="/es" style={{ color: 'var(--color-surface-0)' }} className="hover:opacity-80 transition-opacity">
+            <a href="/es" style={{ color: 'var(--card)' }} className="hover:opacity-80 transition-opacity">
               Inicio
             </a>
-            <span style={{ color: 'var(--color-surface-0)' }} className="opacity-60">/</span>
-            <span style={{ color: 'var(--color-surface-0)' }} className="opacity-80">Preguntas Frecuentes</span>
+            <span style={{ color: 'var(--card)' }} className="opacity-60">/</span>
+            <span style={{ color: 'var(--card)' }} className="opacity-80">Preguntas Frecuentes</span>
           </nav>
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '2px' }}>
+            style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px' }}>
             AYUDA
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4" style={{ color: 'var(--color-surface-0)' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4" style={{ color: 'var(--card)' }}>
             Preguntas Frecuentes
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--color-surface-0)', opacity: 0.9 }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--card)', opacity: 0.9 }}>
             Obtén respuestas a preguntas frecuentes sobre MyCaseValue, datos judiciales federales y cómo usar estadísticas de resultados.
           </p>
         </div>
@@ -211,7 +211,7 @@ export default function SpanishFAQPage() {
         <div className="space-y-12">
           {faqs.map((section, sectionIdx) => (
             <section key={sectionIdx}>
-              <h2 className="text-xl font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ color: 'var(--text1)' }}>
                 {section.category}
               </h2>
               <div className="space-y-3">
@@ -221,11 +221,11 @@ export default function SpanishFAQPage() {
                     className="group p-5 border transition-colors cursor-pointer"
                     style={{
                       borderRadius: '4px',
-                      borderColor: 'var(--border-default)',
-                      background: 'var(--color-surface-0)',
+                      borderColor: 'var(--bdr)',
+                      background: 'var(--card)',
                     }}
                   >
-                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: 'var(--color-text-primary)' }}>
+                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: 'var(--text1)' }}>
                       <span className="flex-1 text-base leading-relaxed pr-4">
                         {faq.q}
                       </span>
@@ -237,13 +237,13 @@ export default function SpanishFAQPage() {
                         stroke="currentColor"
                         strokeWidth="2"
                         className="flex-shrink-0 transition-transform group-open:rotate-180"
-                        style={{ color: 'var(--color-text-primary)', marginTop: '2px' }}
+                        style={{ color: 'var(--text1)', marginTop: '2px' }}
                       >
                         <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </summary>
-                    <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                    <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--bdr)' }}>
+                      <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
                         {faq.a}
                       </p>
                     </div>
@@ -255,16 +255,16 @@ export default function SpanishFAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 text-center p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
-          <h2 className="text-2xl font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+        <div className="mt-16 text-center p-8 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
+          <h2 className="text-2xl font-bold mb-3" style={{ color: 'var(--text1)' }}>
             ¿Aún tienes preguntas?
           </h2>
-          <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>
+          <p className="mb-6" style={{ color: 'var(--text2)' }}>
             Ponte en contacto con nuestro equipo de soporte.
           </p>
           <a href="mailto:support@mycasevalues.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-            style={{ borderRadius: '4px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', color: 'var(--gold)' }}>
+            style={{ borderRadius: '4px', background: 'var(--card)', border: '1px solid var(--bdr)', color: 'var(--gold)' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contactar Soporte
           </a>
@@ -272,60 +272,60 @@ export default function SpanishFAQPage() {
       </div>
 
       {/* Available Tools Section */}
-      <div style={{ background: 'var(--color-surface-0)', borderTop: '1px solid var(--border-default)', padding: '48px 24px' }}>
+      <div style={{ background: 'var(--card)', borderTop: '1px solid var(--bdr)', padding: '48px 24px' }}>
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text1)' }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <Link href="/search">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--surf)', borderRadius: '4px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--color-text-primary)' }}>Buscar Casos</h3>
+                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Buscar Casos</h3>
               </div>
             </Link>
 
             <Link href="/calculator">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--surf)', borderRadius: '4px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--color-text-primary)' }}>Calculadora</h3>
+                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Calculadora</h3>
               </div>
             </Link>
 
             <Link href="/compare">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--surf)', borderRadius: '4px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--color-text-primary)' }}>Comparar Tipos</h3>
+                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Comparar Tipos</h3>
               </div>
             </Link>
 
             <Link href="/nos-explorer">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: 'var(--surf)', borderRadius: '4px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--color-text-primary)' }}>Explorador NOS</h3>
+                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Explorador NOS</h3>
               </div>
             </Link>
           </div>
 
           {/* Language Switcher */}
-          <div className="mt-12 p-6 text-center" style={{ background: 'var(--color-surface-1)', borderRadius: '4px' }}>
-            <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
+          <div className="mt-12 p-6 text-center" style={{ background: 'var(--surf)', borderRadius: '4px' }}>
+            <p className="text-sm" style={{ color: 'var(--text2)' }}>
               This page is also available in <Link href="/faq" style={{ color: 'var(--gold)', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>
           </div>
@@ -333,8 +333,8 @@ export default function SpanishFAQPage() {
       </div>
 
       {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--color-text-secondary)' }}>
+      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--bdr)' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--text2)' }}>
           MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos únicamente para fines informativos y de investigación.
           Esto no es asesoramiento legal. No se crea relación abogado-cliente al usar esta herramienta.
           © {new Date().getFullYear()} MyCaseValue LLC.

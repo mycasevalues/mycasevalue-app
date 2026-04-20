@@ -21,8 +21,8 @@ export default function AUPPage() {
         {/* Header */}
         <section
           style={{
-            background: 'linear-gradient(135deg, var(--gold) 0%, var(--accent-primary) 100%)',
-            color: 'var(--color-surface-0)',
+            background: 'linear-gradient(135deg, var(--gold) 0%, var(--link) 100%)',
+            color: 'var(--card)',
             padding: '1.5rem 1.5rem',
             marginBottom: '1.5rem',
           }}
@@ -64,7 +64,7 @@ export default function AUPPage() {
             margin: '0 auto',
             padding: '0 1.5rem 2rem 1.5rem',
             fontFamily: 'var(--font-ui)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
           }}
         >
           {/* Purpose */}
@@ -75,7 +75,7 @@ export default function AUPPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -94,7 +94,7 @@ export default function AUPPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -128,7 +128,7 @@ export default function AUPPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -180,7 +180,7 @@ export default function AUPPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -202,7 +202,7 @@ export default function AUPPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -234,7 +234,7 @@ export default function AUPPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -256,7 +256,7 @@ export default function AUPPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -291,7 +291,7 @@ export default function AUPPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -310,7 +310,7 @@ export default function AUPPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -323,7 +323,7 @@ export default function AUPPage() {
               style={{
                 fontSize: '1.0625rem',
                 fontWeight: 500,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginBottom: '0.5rem',
               }}
             >
@@ -334,11 +334,11 @@ export default function AUPPage() {
           {/* Footer note */}
           <div
             style={{
-              borderTop: '1px solid var(--border-default)',
+              borderTop: '1px solid var(--bdr)',
               paddingTop: '1rem',
               marginTop: '1.5rem',
               fontSize: '0.9375rem',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
             }}
           >
             <p style={{ lineHeight: 1.6 }}>

@@ -89,7 +89,7 @@ const audiences = [
 
 export default function AboutPage() {
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh' }}>
       <style>{`
         .about-container {
           max-width: 56rem;
@@ -99,7 +99,7 @@ export default function AboutPage() {
 
         .about-header {
           background: var(--card);
-          color: var(--color-text-inverse, #FFFFFF);
+          color: var(--chrome-text, #FFFFFF);
           padding: 4rem 1.5rem;
           text-align: left;
           position: relative;
@@ -128,14 +128,14 @@ export default function AboutPage() {
           letter-spacing: -0.025em;
           line-height: 1.1;
           margin-bottom: 1rem;
-          color: var(--color-text-inverse, #FFFFFF);
+          color: var(--chrome-text, #FFFFFF);
         }
 
         .about-intro {
           font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.65;
-          color: var(--color-text-inverse, #FFFFFF);
+          color: var(--chrome-text, #FFFFFF);
           max-width: 42rem;
         }
 
@@ -152,7 +152,7 @@ export default function AboutPage() {
           font-size: 1.375rem;
           font-weight: 600;
           letter-spacing: -0.02em;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-bottom: 1rem;
           padding-bottom: 0.75rem;
           border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -162,19 +162,19 @@ export default function AboutPage() {
           font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.7;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           margin-bottom: 1rem;
         }
 
         .section-text strong {
-          color: var(--color-text-primary);
+          color: var(--text1);
           font-weight: 600;
         }
 
         .mission-box {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
-          border-left: 3px solid var(--accent-primary);
+          background: var(--card);
+          border: 1px solid var(--bdr);
+          border-left: 3px solid var(--link);
           border-radius: 4px;
           padding: 1.75rem 2rem;
           margin-bottom: 2rem;
@@ -190,7 +190,7 @@ export default function AboutPage() {
           font-size: 12px;
           font-weight: 600;
           letter-spacing: 0.2em;
-          color: rgba(59,130,246,0.4);
+          color: rgba(10,80,160,0.4);
         }
 
         .data-sources-grid {
@@ -207,16 +207,16 @@ export default function AboutPage() {
         }
 
         .source-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 1.5rem;
           transition: border-color 150ms ease, background-color 150ms ease;
         }
 
         .source-card:hover {
-          border-color: rgba(59,130,246,0.3);
-          background: rgba(59,130,246,0.02);
+          border-color: rgba(10,80,160,0.3);
+          background: rgba(10,80,160,0.02);
         }
 
         .source-title {
@@ -224,14 +224,14 @@ export default function AboutPage() {
           font-size: 0.9375rem;
           font-weight: 600;
           letter-spacing: -0.01em;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-bottom: 0.75rem;
         }
 
         .source-description {
           font-family: var(--font-ui);
           font-size: 0.875rem;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           line-height: 1.6;
         }
 
@@ -249,36 +249,36 @@ export default function AboutPage() {
         }
 
         .audience-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 1.5rem;
           transition: border-color 150ms ease, background-color 150ms ease;
         }
 
         .audience-card:hover {
-          border-color: rgba(59,130,246,0.3);
-          background: rgba(59,130,246,0.02);
+          border-color: rgba(10,80,160,0.3);
+          background: rgba(10,80,160,0.02);
         }
 
         .audience-title {
           font-family: var(--font-ui);
           font-size: 1rem;
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-bottom: 0.75rem;
         }
 
         .audience-description {
           font-family: var(--font-ui);
           font-size: 0.875rem;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           line-height: 1.6;
         }
 
         .company-info {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 2rem;
           margin-bottom: 2rem;
@@ -288,7 +288,7 @@ export default function AboutPage() {
           font-family: var(--font-ui);
           font-size: 0.9375rem;
           line-height: 1.8;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           margin-bottom: 1rem;
         }
 
@@ -364,8 +364,8 @@ export default function AboutPage() {
             display: 'inline-flex', alignItems: 'center', gap: 8,
             padding: '4px 8px', marginBottom: 16,
             borderRadius: 999,
-            border: '1px solid rgba(59,130,246,0.2)',
-            background: 'rgba(59,130,246,0.08)',
+            border: '1px solid rgba(10,80,160,0.2)',
+            background: 'rgba(10,80,160,0.08)',
             fontFamily: 'var(--font-mono)', fontSize: 12,
             fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase',
             color: 'var(--link)',
@@ -397,7 +397,7 @@ export default function AboutPage() {
             <div
               style={{
                 background: 'var(--surf, var(--sidebar2, #F4F3EF))',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 borderRadius: 4,
                 padding: '2rem',
               }}
@@ -409,7 +409,7 @@ export default function AboutPage() {
                   fontWeight: 700,
                   letterSpacing: '-0.02em',
                   lineHeight: 1.2,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   marginBottom: '1rem',
                 }}
               >
@@ -421,7 +421,7 @@ export default function AboutPage() {
                   fontSize: 14,
                   fontWeight: 400,
                   lineHeight: 1.7,
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   marginBottom: '0.75rem',
                 }}
               >
@@ -433,7 +433,7 @@ export default function AboutPage() {
                   fontSize: 14,
                   fontWeight: 400,
                   lineHeight: 1.7,
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   marginBottom: '0.75rem',
                 }}
               >
@@ -445,11 +445,11 @@ export default function AboutPage() {
                   fontSize: 14,
                   fontWeight: 400,
                   lineHeight: 1.7,
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   marginBottom: '0.75rem',
                 }}
               >
-                Today, MyCaseValue indexes <strong style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>5.1 million federal cases</strong> from the FJC Integrated Database — spanning 55+ years of litigation history across all 94 federal districts. The platform is built around a pro se-first philosophy: accessible pricing, plain-English interfaces, and full data transparency. No black boxes, no enterprise gates, no paywalls between you and public court records.
+                Today, MyCaseValue indexes <strong style={{ color: 'var(--text1)', fontWeight: 600 }}>5.1 million federal cases</strong> from the FJC Integrated Database — spanning 55+ years of litigation history across all 94 federal districts. The platform is built around a pro se-first philosophy: accessible pricing, plain-English interfaces, and full data transparency. No black boxes, no enterprise gates, no paywalls between you and public court records.
               </p>
               <p
                 style={{
@@ -457,7 +457,7 @@ export default function AboutPage() {
                   fontSize: 14,
                   fontWeight: 600,
                   lineHeight: 1.7,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   margin: 0,
                 }}
               >

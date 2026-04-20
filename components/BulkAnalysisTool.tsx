@@ -43,7 +43,7 @@ interface AnalysisResult {
 
 const focusStyle = `
   input:focus, select:focus, textarea:focus {
-    border-color: var(--accent-primary) !important;
+    border-color: var(--link) !important;
     outline: none;
     box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08);
   }
@@ -338,8 +338,8 @@ export function BulkAnalysisTool() {
       {/* Upload Section */}
       <div
         style={{
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           padding: '32px',
           marginBottom: '24px',
@@ -351,13 +351,13 @@ export function BulkAnalysisTool() {
             fontFamily: 'var(--font-ui)',
             fontSize: '20px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 8px',
           }}
         >
           Upload CSV File
         </h2>
-        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 20px', lineHeight: '1.5' }}>
+        <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 20px', lineHeight: '1.5' }}>
           Select a CSV file with columns: case_type, district, damages_estimate, represented.
           Maximum 1000 rows, 5MB file size.
           <br />
@@ -366,7 +366,7 @@ export function BulkAnalysisTool() {
             style={{
               background: 'none',
               border: 'none',
-              color: 'var(--accent-primary)',
+              color: 'var(--link)',
               textDecoration: 'underline',
               cursor: 'pointer',
               padding: 0,
@@ -394,11 +394,11 @@ export function BulkAnalysisTool() {
             style={{
               flex: 1,
               padding: '12px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               fontSize: '14px',
-              color: 'var(--color-text-primary)',
-              backgroundColor: 'var(--color-surface-0)',
+              color: 'var(--text1)',
+              backgroundColor: 'var(--card)',
             }}
           />
           <button
@@ -407,8 +407,8 @@ export function BulkAnalysisTool() {
             style={{
               padding: '12px 28px',
               height: '48px',
-              backgroundColor: file && !loading ? 'var(--accent-primary)' : 'var(--border-default)',
-              color: 'var(--color-surface-0)',
+              backgroundColor: file && !loading ? 'var(--link)' : 'var(--bdr)',
+              color: 'var(--card)',
               border: 'none',
               borderRadius: '4px',
               fontSize: '14px',
@@ -427,7 +427,7 @@ export function BulkAnalysisTool() {
               style={{
                 width: '100%',
                 height: '8px',
-                backgroundColor: 'var(--border-default)',
+                backgroundColor: 'var(--bdr)',
                 borderRadius: '4px',
                 overflow: 'hidden',
               }}
@@ -436,12 +436,12 @@ export function BulkAnalysisTool() {
                 style={{
                   width: `${progress}%`,
                   height: '100%',
-                  backgroundColor: 'var(--accent-primary)',
+                  backgroundColor: 'var(--link)',
                   transition: 'width 0.3s ease',
                 }}
               />
             </div>
-            <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '8px 0 0', textAlign: 'center' }}>
+            <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '8px 0 0', textAlign: 'center' }}>
               {progress}% complete
             </p>
           </div>
@@ -453,7 +453,7 @@ export function BulkAnalysisTool() {
               padding: '16px 16px',
               borderRadius: '4px',
               backgroundColor: 'rgba(239, 68, 68, 0.12)',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
             }}
           >
             <p style={{ fontSize: '14px', color: 'var(--data-negative, #B01E1E)', margin: 0 }}>{error}</p>
@@ -477,7 +477,7 @@ export function BulkAnalysisTool() {
               {
                 label: 'Cases Analyzed',
                 value: result.summary.totalCases.toString(),
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
               },
               {
                 label: 'Portfolio Win Rate',
@@ -487,19 +487,19 @@ export function BulkAnalysisTool() {
               {
                 label: 'Avg Case Duration',
                 value: `${result.summary.avgCaseDuration}mo`,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
               },
               {
                 label: 'Settlement P25-P75',
                 value: `${formatMoney(result.summary.totalSettlementLo)}-${formatMoney(result.summary.totalSettlementHi)}`,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
               },
             ].map((stat) => (
               <div
                 key={stat.label}
                 style={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
                   padding: '24px',
                   textAlign: 'center',
@@ -509,7 +509,7 @@ export function BulkAnalysisTool() {
                 <p
                   style={{
                     fontSize: '12px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontWeight: 600,
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -536,8 +536,8 @@ export function BulkAnalysisTool() {
           {/* Case Type Distribution */}
           <div
             style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
               marginBottom: '24px',
@@ -549,7 +549,7 @@ export function BulkAnalysisTool() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 margin: '0 0 20px',
               }}
             >
@@ -565,11 +565,11 @@ export function BulkAnalysisTool() {
                       marginBottom: '6px',
                     }}
                   >
-                    <span style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-text-primary)' }}>
+                    <span style={{ fontSize: '14px', fontWeight: 500, color: 'var(--text1)' }}>
                       {item.type}
                     </span>
                     <span
-                      style={{ fontSize: '14px', color: 'var(--color-text-secondary)', fontWeight: 500 }}
+                      style={{ fontSize: '14px', color: 'var(--text2)', fontWeight: 500 }}
                     >
                       {item.count} ({item.percentage.toFixed(1)}%)
                     </span>
@@ -578,7 +578,7 @@ export function BulkAnalysisTool() {
                     style={{
                       width: '100%',
                       height: '8px',
-                      backgroundColor: 'var(--border-default)',
+                      backgroundColor: 'var(--bdr)',
                       borderRadius: '4px',
                       overflow: 'hidden',
                     }}
@@ -587,7 +587,7 @@ export function BulkAnalysisTool() {
                       style={{
                         width: `${item.percentage}%`,
                         height: '100%',
-                        backgroundColor: 'var(--accent-primary)',
+                        backgroundColor: 'var(--link)',
                       }}
                     />
                   </div>
@@ -599,8 +599,8 @@ export function BulkAnalysisTool() {
           {/* District Distribution */}
           <div
             style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
               marginBottom: '24px',
@@ -612,7 +612,7 @@ export function BulkAnalysisTool() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 margin: '0 0 20px',
               }}
             >
@@ -623,15 +623,15 @@ export function BulkAnalysisTool() {
                 <div
                   key={item.district}
                   style={{
-                    background: 'var(--color-surface-1)',
+                    background: 'var(--surf)',
                     padding: '12px',
                     borderRadius: '4px',
                   }}
                 >
-                  <p style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-text-primary)', margin: '0 0 4px' }}>
+                  <p style={{ fontSize: '14px', fontWeight: 500, color: 'var(--text1)', margin: '0 0 4px' }}>
                     {item.district}
                   </p>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0 }}>
                     {item.count} cases ({item.percentage.toFixed(1)}%)
                   </p>
                 </div>
@@ -642,21 +642,21 @@ export function BulkAnalysisTool() {
           {/* Results Table */}
           <div
             style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               overflow: 'hidden',
               marginBottom: '24px',
               boxShadow: 'var(--shadow-xs)',
             }}
           >
-            <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
+            <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--bdr)' }}>
               <h3
                 style={{
                   fontFamily: 'var(--font-ui)',
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   margin: 0,
                 }}
               >
@@ -672,13 +672,13 @@ export function BulkAnalysisTool() {
                 }}
               >
                 <thead>
-                  <tr style={{ backgroundColor: 'var(--color-surface-1)', borderBottom: '1px solid var(--border-default)' }}>
+                  <tr style={{ backgroundColor: 'var(--surf)', borderBottom: '1px solid var(--bdr)' }}>
                     <th
                       style={{
                         padding: '12px 16px',
                         textAlign: 'left',
                         fontWeight: 600,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                       }}
                     >
                       Case Type
@@ -688,7 +688,7 @@ export function BulkAnalysisTool() {
                         padding: '12px 16px',
                         textAlign: 'left',
                         fontWeight: 600,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                       }}
                     >
                       District
@@ -698,7 +698,7 @@ export function BulkAnalysisTool() {
                         padding: '12px 16px',
                         textAlign: 'right',
                         fontWeight: 600,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                       }}
                     >
                       Damages
@@ -708,7 +708,7 @@ export function BulkAnalysisTool() {
                         padding: '12px 16px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                       }}
                     >
                       Win Rate
@@ -718,7 +718,7 @@ export function BulkAnalysisTool() {
                         padding: '12px 16px',
                         textAlign: 'right',
                         fontWeight: 600,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                       }}
                     >
                       Settlement P50
@@ -728,7 +728,7 @@ export function BulkAnalysisTool() {
                         padding: '12px 16px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                       }}
                     >
                       Duration (mo)
@@ -738,7 +738,7 @@ export function BulkAnalysisTool() {
                         padding: '12px 16px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                       }}
                     >
                       Confidence
@@ -751,26 +751,26 @@ export function BulkAnalysisTool() {
                       key={idx}
                       style={{
                         borderBottom:
-                          idx < result.cases.length - 1 ? '1px solid var(--border-default)' : 'none',
+                          idx < result.cases.length - 1 ? '1px solid var(--bdr)' : 'none',
                       }}
                     >
                       <td
                         style={{
                           padding: '12px 16px',
-                          color: 'var(--color-text-primary)',
+                          color: 'var(--text1)',
                           fontWeight: 500,
                         }}
                       >
                         {c.label || c.case_type}
                       </td>
-                      <td style={{ padding: '12px 16px', color: 'var(--color-text-secondary)' }}>
+                      <td style={{ padding: '12px 16px', color: 'var(--text2)' }}>
                         {c.district}
                       </td>
                       <td
                         style={{
                           padding: '12px 16px',
                           textAlign: 'right',
-                          color: 'var(--color-text-secondary)',
+                          color: 'var(--text2)',
                         }}
                       >
                         {formatMoney(c.damages_estimate * 100)}
@@ -789,7 +789,7 @@ export function BulkAnalysisTool() {
                         style={{
                           padding: '12px 16px',
                           textAlign: 'right',
-                          color: 'var(--accent-primary)',
+                          color: 'var(--link)',
                           fontWeight: 500,
                         }}
                       >
@@ -799,7 +799,7 @@ export function BulkAnalysisTool() {
                         style={{
                           padding: '12px 16px',
                           textAlign: 'center',
-                          color: 'var(--color-text-secondary)',
+                          color: 'var(--text2)',
                         }}
                       >
                         {c.avg_duration_months}
@@ -808,7 +808,7 @@ export function BulkAnalysisTool() {
                         style={{
                           padding: '12px 16px',
                           textAlign: 'center',
-                          color: 'var(--color-text-secondary)',
+                          color: 'var(--text2)',
                           fontSize: '12px',
                         }}
                       >
@@ -837,8 +837,8 @@ export function BulkAnalysisTool() {
               style={{
                 padding: '12px 28px',
                 height: '48px',
-                backgroundColor: 'var(--accent-primary)',
-                color: 'var(--color-surface-0)',
+                backgroundColor: 'var(--link)',
+                color: 'var(--card)',
                 border: 'none',
                 borderRadius: '4px',
                 fontSize: '14px',
@@ -856,7 +856,7 @@ export function BulkAnalysisTool() {
               padding: '16px 16px',
               borderRadius: '4px',
               backgroundColor: 'rgba(10, 102, 194, 0.08)',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
             }}
           >
             <p
@@ -883,8 +883,8 @@ export function BulkAnalysisTool() {
       {!result && !loading && (
         <div
           style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '64px 32px',
             textAlign: 'center',
@@ -908,7 +908,7 @@ export function BulkAnalysisTool() {
               height="28"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="var(--accent-primary)"
+              stroke="var(--link)"
               strokeWidth="2"
             >
               <path d="M12 3v12m0 6v0M3 12h12m6 0h0" />
@@ -919,7 +919,7 @@ export function BulkAnalysisTool() {
               fontFamily: 'var(--font-ui)',
               fontSize: '22px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 12px',
             }}
           >
@@ -928,7 +928,7 @@ export function BulkAnalysisTool() {
           <p
             style={{
               fontSize: '14px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               lineHeight: '1.6',
               maxWidth: '440px',
               margin: '0 auto',

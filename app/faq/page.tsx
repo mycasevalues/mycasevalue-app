@@ -404,7 +404,7 @@ const faqs = [
       },
       {
         q: 'How is a plaintiff win defined?',
-        a: 'A plaintiff win is defined as a case resolved by plaintiff verdict — a judgment entered in favor of the plaintiff. This includes both jury verdicts and bench trial decisions. Win rates do not include settlements, dismissals, or transfers. For more details, see our <a href="/methodology" style={{ color: "var(--accent-primary)", textDecoration: "underline" }}>methodology page</a>.',
+        a: 'A plaintiff win is defined as a case resolved by plaintiff verdict — a judgment entered in favor of the plaintiff. This includes both jury verdicts and bench trial decisions. Win rates do not include settlements, dismissals, or transfers. For more details, see our <a href="/methodology" style={{ color: "var(--link)", textDecoration: "underline" }}>methodology page</a>.',
       },
       {
         q: 'Why are settlement amounts underreported?',
@@ -412,7 +412,7 @@ const faqs = [
       },
       {
         q: 'What is the minimum sample size?',
-        a: 'We require a minimum of 30 cases in a category before publishing statistics. This ensures data reliability and prevents misleading conclusions from small datasets. For more details on our confidence methodology, see our <a href="/methodology" style={{ color: "var(--accent-primary)", textDecoration: "underline" }}>methodology page</a>.',
+        a: 'We require a minimum of 30 cases in a category before publishing statistics. This ensures data reliability and prevents misleading conclusions from small datasets. For more details on our confidence methodology, see our <a href="/methodology" style={{ color: "var(--link)", textDecoration: "underline" }}>methodology page</a>.',
       },
       {
         q: 'What does "dismissal rate" mean?',
@@ -509,7 +509,7 @@ const faqs = [
       },
       {
         q: 'Do you offer an API?',
-        a: 'Yes, during beta we offer API access for qualified users. <a href="/contact" style={{ color: "var(--accent-primary)", textDecoration: "underline" }}>Contact us</a> to learn about API availability and integration options.',
+        a: 'Yes, during beta we offer API access for qualified users. <a href="/contact" style={{ color: "var(--link)", textDecoration: "underline" }}>Contact us</a> to learn about API availability and integration options.',
       },
       {
         q: 'Do you have an API?',
@@ -550,7 +550,7 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+    <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       <JsonLd data={jsonLd} />
 
       {/* Header */}
@@ -572,10 +572,10 @@ export default function FAQPage() {
             <span className="w-1 h-1 rounded-full bg-[var(--link)]/80" />
             Frequently Asked
           </div>
-          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'var(--color-text-inverse, #FFFFFF)', lineHeight: '1.1' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'var(--chrome-text, #FFFFFF)', lineHeight: '1.1' }}>
             Common Questions
           </h1>
-          <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'var(--color-text-inverse, #FFFFFF)' }}>
+          <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'var(--chrome-text, #FFFFFF)' }}>
             Platform capabilities, data sources, methodology, and typical usage patterns.
           </p>
         </div>
@@ -590,7 +590,7 @@ export default function FAQPage() {
                 <span className="font-mono text-[10px] font-semibold tracking-[0.2em] uppercase tabular-nums" style={{ color: 'rgba(59,130,246,0.6)' }}>
                   {String(sectionIdx + 1).padStart(2, '0')}
                 </span>
-                <h2 className="text-[17px] font-legal font-semibold tracking-[-0.01em]" style={{ color: 'var(--color-text-primary)' }}>
+                <h2 className="text-[17px] font-legal font-semibold tracking-[-0.01em]" style={{ color: 'var(--text1)' }}>
                   {section.category}
                 </h2>
               </div>
@@ -600,12 +600,12 @@ export default function FAQPage() {
                     key={qIdx}
                     className="group p-6 border transition-colors cursor-pointer hover:border-blue-400/30"
                     style={{
-                      borderColor: 'var(--border-default)',
-                      background: 'var(--color-surface-0)',
+                      borderColor: 'var(--bdr)',
+                      background: 'var(--card)',
                       borderRadius: '4px',
                     }}
                   >
-                    <summary className="flex items-start justify-between font-medium select-none" style={{ color: 'var(--color-text-primary)' }}>
+                    <summary className="flex items-start justify-between font-medium select-none" style={{ color: 'var(--text1)' }}>
                       <span className="flex-1 text-[14px] leading-relaxed pr-4 tracking-[-0.005em]">
                         {faq.q}
                       </span>
@@ -617,13 +617,13 @@ export default function FAQPage() {
                         stroke="currentColor"
                         strokeWidth="2"
                         className="flex-shrink-0 transition-transform group-open:rotate-180"
-                        style={{ color: 'var(--color-text-primary)', marginTop: '2px' }}
+                        style={{ color: 'var(--text1)', marginTop: '2px' }}
                       >
                         <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </summary>
                     <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--bdr)' }}>
-                      <p className="text-[13px] leading-[1.65]" style={{ color: 'var(--color-text-secondary)' }}>
+                      <p className="text-[13px] leading-[1.65]" style={{ color: 'var(--text2)' }}>
                         {faq.a}
                       </p>
                     </div>
@@ -635,11 +635,11 @@ export default function FAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px', borderLeftWidth: '4px', borderLeftColor: 'var(--accent-primary)' }}>
-          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+        <div className="mt-16 p-8 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px', borderLeftWidth: '4px', borderLeftColor: 'var(--link)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
             Still Have Questions?
           </h2>
-          <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>
+          <p className="mb-6" style={{ color: 'var(--text2)' }}>
             Check our detailed methodology, explore our glossary of legal terms, or get in touch with our support team.
           </p>
           <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
@@ -651,12 +651,12 @@ export default function FAQPage() {
             </a>
             <Link href="/methodology"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
-              style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', color: 'var(--gold)', borderRadius: '4px' }}>
+              style={{ background: 'var(--card)', border: '1px solid var(--bdr)', color: 'var(--gold)', borderRadius: '4px' }}>
               Methodology
             </Link>
             <Link href="/glossary"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-colors"
-              style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', color: 'var(--gold)', borderRadius: '4px' }}>
+              style={{ background: 'var(--card)', border: '1px solid var(--bdr)', color: 'var(--gold)', borderRadius: '4px' }}>
               Glossary
             </Link>
           </div>
@@ -664,54 +664,54 @@ export default function FAQPage() {
 
         {/* Related Tools */}
         <div className="mt-16">
-          <h2 className="text-2xl font-legal font-bold mb-8 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-8 text-center" style={{ color: 'var(--text1)' }}>
             Related Tools
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Link href="/calculator"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
+              style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--color-text-primary)' }}>Settlement Calculator</h3>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--accent-primary)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--text1)' }}>Settlement Calculator</h3>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--link)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
                 Estimate settlement ranges based on case type, damages, and severity using federal court data.
               </p>
             </Link>
 
             <Link href="/compare"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
+              style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--color-text-primary)' }}>Compare Cases</h3>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--accent-primary)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--text1)' }}>Compare Cases</h3>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--link)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
                 Compare up to 3 case types side-by-side to see win rates, settlement ranges, and timelines.
               </p>
             </Link>
 
             <Link href="/translate"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
+              style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--color-text-primary)' }}>Jargon Translator</h3>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--accent-primary)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--text1)' }}>Jargon Translator</h3>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--link)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
                 Convert complex legal language from court documents into plain English explanations.
               </p>
             </Link>
 
             <Link href="/nos-explorer"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
+              style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--color-text-primary)' }}>NOS Explorer</h3>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--accent-primary)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: 'var(--text1)' }}>NOS Explorer</h3>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--link)' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
                 Browse all 84 federal Nature of Suit codes and explore case types with detailed breakdowns.
               </p>
             </Link>

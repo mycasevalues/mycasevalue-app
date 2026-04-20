@@ -137,7 +137,7 @@ const FeatureCard = ({
     <div
       style={{
         backgroundColor: 'var(--card)',
-        border: '1px solid var(--border-default)',
+        border: '1px solid var(--bdr)',
         borderRadius: 4,
         padding: '24px',
         display: 'flex',
@@ -192,7 +192,7 @@ const FeatureCard = ({
             border:
               badge === 'available'
                 ? 'none'
-                : '1px solid var(--border-default)',
+                : '1px solid var(--bdr)',
             transition: 'all 0.3s ease',
           }}
         >
@@ -715,7 +715,7 @@ export default function AttorneyPage() {
                 <div
                   style={{
                     backgroundColor: 'var(--card)',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: 4,
                     padding: '24px',
                     display: 'flex',
@@ -835,7 +835,7 @@ export default function AttorneyPage() {
                 key={index}
                 style={{
                   backgroundColor: 'var(--surf, #F6F5F2)',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: 4,
                   padding: '32px',
                   display: 'flex',
@@ -959,7 +959,7 @@ export default function AttorneyPage() {
                 key={index}
                 style={{
                   backgroundColor: 'var(--card)',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: 4,
                   padding: '32px',
                   textAlign: 'center',
@@ -1135,7 +1135,7 @@ export default function AttorneyPage() {
                 style={{
                   padding: '24px',
                   backgroundColor: 'var(--card)',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: 4,
                   textDecoration: 'none',
                   color: 'inherit',

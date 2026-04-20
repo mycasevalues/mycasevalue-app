@@ -185,22 +185,22 @@ export default function AccountPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
+      <div style={{ minHeight: '100vh', backgroundColor: 'var(--surf)' }}>
         {/* Header */}
-        <div style={{ backgroundColor: 'var(--accent-primary)', padding: '24px 20px' }}>
+        <div style={{ backgroundColor: 'var(--link)', padding: '24px 20px' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
-              <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 200ms' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-surface-0)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
+              <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 200ms' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--card)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
                 Home
               </Link>
               {' > Account'}
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-              <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: 'var(--link)', color: 'var(--card)', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Account
               </span>
             </div>
-            <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
+            <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--card)', margin: '0 0 16px 0' }}>
               Account Settings
             </h1>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
@@ -211,7 +211,7 @@ export default function AccountPage() {
 
         {/* Loading Spinner */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '40px' }}>
-          <div style={{ width: 32, height: 32, border: '3px solid var(--border-default)', borderTopColor: 'var(--accent-primary)', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+          <div style={{ width: 32, height: 32, border: '3px solid var(--bdr)', borderTopColor: 'var(--link)', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
           <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
         </div>
       </div>
@@ -219,22 +219,22 @@ export default function AccountPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-1)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--surf)' }}>
       {/* Dark Navy Header */}
-      <div style={{ backgroundColor: 'var(--accent-primary)', padding: '24px 20px' }}>
+      <div style={{ backgroundColor: 'var(--link)', padding: '24px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
-            <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 200ms' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-surface-0)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
+            <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 200ms' }} onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--card)')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}>
               Home
             </Link>
             {' > Account'}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-            <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <span style={{ display: 'inline-block', padding: '6px 12px', backgroundColor: 'var(--link)', color: 'var(--card)', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               Account
             </span>
           </div>
-          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-surface-0)', margin: '0 0 16px 0' }}>
+          <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--card)', margin: '0 0 16px 0' }}>
             Account Settings
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
@@ -247,14 +247,14 @@ export default function AccountPage() {
       <div style={{ padding: '40px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Profile Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+          <div style={{ backgroundColor: 'var(--card)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--bdr)', marginBottom: '24px' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 24px 0' }}>
               Profile Information
             </h2>
 
             <form onSubmit={handleProfileSave}>
               <div style={{ marginBottom: '24px' }}>
-                <label htmlFor="name" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+                <label htmlFor="name" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--text1)', marginBottom: '8px' }}>
                   Full Name
                 </label>
                 <input
@@ -262,12 +262,12 @@ export default function AccountPage() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  style={{ width: '100%', height: '48px', padding: '8px 12px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', boxSizing: 'border-box' }}
+                  style={{ width: '100%', height: '48px', padding: '8px 12px', border: '1px solid var(--bdr)', borderRadius: '4px', fontSize: '14px', color: 'var(--text1)', backgroundColor: 'var(--card)', boxSizing: 'border-box' }}
                 />
               </div>
 
               <div style={{ marginBottom: '24px' }}>
-                <label htmlFor="email" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+                <label htmlFor="email" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--text1)', marginBottom: '8px' }}>
                   Email Address
                 </label>
                 <input
@@ -275,9 +275,9 @@ export default function AccountPage() {
                   type="email"
                   value={user?.email || ''}
                   disabled
-                  style={{ width: '100%', height: '48px', padding: '8px 12px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-secondary)', backgroundColor: 'var(--color-surface-1)', boxSizing: 'border-box', cursor: 'not-allowed' }}
+                  style={{ width: '100%', height: '48px', padding: '8px 12px', border: '1px solid var(--bdr)', borderRadius: '4px', fontSize: '14px', color: 'var(--text2)', backgroundColor: 'var(--surf)', boxSizing: 'border-box', cursor: 'not-allowed' }}
                 />
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>
+                <p style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '4px' }}>
                   Email cannot be changed. Contact support if needed.
                 </p>
               </div>
@@ -291,7 +291,7 @@ export default function AccountPage() {
               <button
                 type="submit"
                 disabled={saving}
-                style={{ padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.6 : 1, textTransform: 'uppercase' }}
+                style={{ padding: '8px 24px', backgroundColor: 'var(--link)', color: 'var(--card)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.6 : 1, textTransform: 'uppercase' }}
               >
                 {saving ? 'Saving...' : 'Save Changes'}
               </button>
@@ -299,14 +299,14 @@ export default function AccountPage() {
           </div>
 
           {/* Password Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+          <div style={{ backgroundColor: 'var(--card)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--bdr)', marginBottom: '24px' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 24px 0' }}>
               Change Password
             </h2>
 
             <form onSubmit={handlePasswordChange}>
               <div style={{ marginBottom: '24px' }}>
-                <label htmlFor="new-password" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+                <label htmlFor="new-password" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--text1)', marginBottom: '8px' }}>
                   New Password
                 </label>
                 <input
@@ -315,12 +315,12 @@ export default function AccountPage() {
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   placeholder="Minimum 8 characters"
-                  style={{ width: '100%', height: '48px', padding: '8px 12px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', boxSizing: 'border-box' }}
+                  style={{ width: '100%', height: '48px', padding: '8px 12px', border: '1px solid var(--bdr)', borderRadius: '4px', fontSize: '14px', color: 'var(--text1)', backgroundColor: 'var(--card)', boxSizing: 'border-box' }}
                 />
               </div>
 
               <div style={{ marginBottom: '24px' }}>
-                <label htmlFor="confirm-password" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+                <label htmlFor="confirm-password" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--text1)', marginBottom: '8px' }}>
                   Confirm New Password
                 </label>
                 <input
@@ -329,7 +329,7 @@ export default function AccountPage() {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Re-enter your new password"
-                  style={{ width: '100%', height: '48px', padding: '8px 12px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', backgroundColor: 'var(--color-surface-0)', boxSizing: 'border-box' }}
+                  style={{ width: '100%', height: '48px', padding: '8px 12px', border: '1px solid var(--bdr)', borderRadius: '4px', fontSize: '14px', color: 'var(--text1)', backgroundColor: 'var(--card)', boxSizing: 'border-box' }}
                 />
               </div>
 
@@ -342,7 +342,7 @@ export default function AccountPage() {
               <button
                 type="submit"
                 disabled={passwordSaving}
-                style={{ padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: passwordSaving ? 'not-allowed' : 'pointer', opacity: passwordSaving ? 0.6 : 1, textTransform: 'uppercase' }}
+                style={{ padding: '8px 24px', backgroundColor: 'var(--link)', color: 'var(--card)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: passwordSaving ? 'not-allowed' : 'pointer', opacity: passwordSaving ? 0.6 : 1, textTransform: 'uppercase' }}
               >
                 {passwordSaving ? 'Updating...' : 'Update Password'}
               </button>
@@ -350,47 +350,47 @@ export default function AccountPage() {
           </div>
 
           {/* Subscription Card */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+          <div style={{ backgroundColor: 'var(--card)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--bdr)', marginBottom: '24px' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 24px 0' }}>
               Subscription Plan
             </h2>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <span className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+              <span className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)' }}>
                 {planLabels[planInfo?.plan || 'free'] || 'Free'}
               </span>
-              <span style={{ padding: '4px 10px', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? 'var(--color-surface-1)' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? 'var(--color-text-secondary)' : 'var(--gold)' }}>
+              <span style={{ padding: '4px 10px', borderRadius: '3px', fontSize: '12px', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? 'var(--surf)' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? 'var(--text2)' : 'var(--gold)' }}>
                 {planInfo?.plan === 'free' ? 'Free' : 'Active'}
               </span>
             </div>
 
             {planInfo?.grantedAt && (
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 16px 0' }}>
                 Member since {new Date(planInfo.grantedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
             {planInfo?.expiresAt && (
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 16px 0' }}>
                 Renews {new Date(planInfo.expiresAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
 
             <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
-              <Link href="/pricing" style={{ display: 'inline-block', padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+              <Link href="/pricing" style={{ display: 'inline-block', padding: '8px 24px', backgroundColor: 'var(--link)', color: 'var(--card)', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
                 {planInfo?.plan === 'free' ? 'Upgrade Plan' : 'Change Plan'}
               </Link>
-              <Link href="/billing" style={{ display: 'inline-block', padding: '8px 24px', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
+              <Link href="/billing" style={{ display: 'inline-block', padding: '8px 24px', backgroundColor: 'var(--surf)', color: 'var(--text1)', border: '1px solid var(--bdr)', borderRadius: '4px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
                 Billing History
               </Link>
             </div>
           </div>
 
           {/* API Key Management */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px 0' }}>
+          <div style={{ backgroundColor: 'var(--card)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--bdr)', marginBottom: '24px' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px 0' }}>
               API Keys
             </h2>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 24px 0', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 24px 0', lineHeight: 1.5 }}>
               Use API keys to access the MyCaseValue REST API programmatically. Keys are scoped to your account and plan.
             </p>
 
@@ -405,7 +405,7 @@ export default function AccountPage() {
                 <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--gold)', margin: '0 0 16px 0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Your New API Key (copy now)
                 </p>
-                <code style={{ display: 'block', padding: '8px 12px', backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', fontSize: '14px', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)', wordBreak: 'break-all', border: '1px solid var(--border-default)' }}>
+                <code style={{ display: 'block', padding: '8px 12px', backgroundColor: 'var(--card)', borderRadius: '4px', fontSize: '14px', fontFamily: 'var(--font-mono)', color: 'var(--text1)', wordBreak: 'break-all', border: '1px solid var(--bdr)' }}>
                   {newApiKey}
                 </code>
               </div>
@@ -415,23 +415,23 @@ export default function AccountPage() {
               <div style={{ marginBottom: '24px' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
                   <thead>
-                    <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
-                      <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Key</th>
-                      <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Created</th>
-                      <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}>Last Used</th>
-                      <th style={{ textAlign: 'right', padding: '8px 0', fontWeight: 600, color: 'var(--color-text-secondary)' }}></th>
+                    <tr style={{ borderBottom: '1px solid var(--bdr)' }}>
+                      <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--text2)' }}>Key</th>
+                      <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--text2)' }}>Created</th>
+                      <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: 'var(--text2)' }}>Last Used</th>
+                      <th style={{ textAlign: 'right', padding: '8px 0', fontWeight: 600, color: 'var(--text2)' }}></th>
                     </tr>
                   </thead>
                   <tbody>
                     {apiKeys.map((key) => (
                       <tr key={key.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                        <td style={{ padding: '8px 0', fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)' }}>
+                        <td style={{ padding: '8px 0', fontFamily: 'var(--font-mono)', color: 'var(--text1)' }}>
                           {key.prefix}...
                         </td>
-                        <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>
+                        <td style={{ padding: '8px 0', color: 'var(--text2)' }}>
                           {new Date(key.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                         </td>
-                        <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)' }}>
+                        <td style={{ padding: '8px 0', color: 'var(--text2)' }}>
                           {key.lastUsed ? new Date(key.lastUsed).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Never'}
                         </td>
                         <td style={{ padding: '8px 0', textAlign: 'right' }}>
@@ -456,15 +456,15 @@ export default function AccountPage() {
             <button
               onClick={handleGenerateApiKey}
               disabled={apiKeyLoading}
-              style={{ padding: '8px 24px', backgroundColor: 'var(--accent-primary)', color: 'var(--color-surface-0)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: apiKeyLoading ? 'not-allowed' : 'pointer', opacity: apiKeyLoading ? 0.6 : 1, textTransform: 'uppercase' }}
+              style={{ padding: '8px 24px', backgroundColor: 'var(--link)', color: 'var(--card)', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: apiKeyLoading ? 'not-allowed' : 'pointer', opacity: apiKeyLoading ? 0.6 : 1, textTransform: 'uppercase' }}
             >
               {apiKeyLoading ? 'Generating...' : 'Generate New API Key'}
             </button>
           </div>
 
           {/* Quick Links */}
-          <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px 0' }}>
+          <div style={{ backgroundColor: 'var(--card)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '1px solid var(--bdr)', marginBottom: '24px' }}>
+            <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 24px 0' }}>
               Quick Links
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
@@ -478,10 +478,10 @@ export default function AccountPage() {
                   key={link.href}
                   href={link.href}
                   className="quick-link-card"
-                  style={{ display: 'block', padding: '16px', borderRadius: '4px', border: '1px solid var(--border-default)', textDecoration: 'none', transition: 'all 200ms' }}
+                  style={{ display: 'block', padding: '16px', borderRadius: '4px', border: '1px solid var(--bdr)', textDecoration: 'none', transition: 'all 200ms' }}
                 >
-                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>{link.label}</div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{link.desc}</div>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '4px' }}>{link.label}</div>
+                  <div style={{ fontSize: '12px', color: 'var(--text2)' }}>{link.desc}</div>
                 </Link>
               ))}
             </div>
@@ -498,7 +498,7 @@ export default function AccountPage() {
             <button
               onClick={handleSignOut}
               className="sign-out-btn"
-              style={{ width: '100%', padding: '12px', backgroundColor: 'var(--color-surface-1)', color: 'var(--color-text-primary)', border: '1px solid var(--border-default)', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', transition: 'all 200ms' }}
+              style={{ width: '100%', padding: '12px', backgroundColor: 'var(--surf)', color: 'var(--text1)', border: '1px solid var(--bdr)', borderRadius: '2px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', transition: 'all 200ms' }}
             >
               Sign Out
             </button>
@@ -509,14 +509,14 @@ export default function AccountPage() {
               }
             `}</style>
 
-            <div style={{ backgroundColor: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '2px solid var(--accent-primary)' }}>
-              <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 16px 0' }}>
+            <div style={{ backgroundColor: 'var(--card)', borderRadius: '4px', padding: '32px', boxShadow: 'var(--shadow-xs)', border: '2px solid var(--link)' }}>
+              <h2 className="font-legal" style={{ fontSize: '20px', fontWeight: 600, color: 'var(--link)', margin: '0 0 16px 0' }}>
                 Danger Zone
               </h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px 0', lineHeight: 1.5 }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 16px 0', lineHeight: 1.5 }}>
                 Permanently delete your account and all associated data. This action cannot be undone.
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>
                 To delete your account, contact{' '}
                 <a href="mailto:support@mycasevalues.com" style={{ color: 'var(--gold)', textDecoration: 'none' }}>support@mycasevalues.com</a>.
               </p>

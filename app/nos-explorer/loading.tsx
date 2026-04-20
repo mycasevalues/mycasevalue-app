@@ -1,6 +1,6 @@
 export default function NosExplorerLoading() {
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', padding: '2rem' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', padding: '2rem' }}>
       {/* Header skeleton */}
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{
@@ -44,8 +44,8 @@ export default function NosExplorerLoading() {
           {Array.from({ length: 12 }).map((_, i) => (
             <div key={i} style={{
               height: '120px',
-              backgroundColor: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              backgroundColor: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '1rem',
             }}>

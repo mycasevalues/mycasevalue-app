@@ -47,8 +47,8 @@ export default function DemandPackageGenerator() {
     const contentWidth = pageWidth - 2 * margin;
     let yPos = margin;
 
-    const primaryColor = 'var(--accent-primary)';
-    const textColor = 'var(--color-text-primary)';
+    const primaryColor = 'var(--link)';
+    const textColor = 'var(--text1)';
 
     const caseData = REAL_DATA[selectedCaseType.nos];
     const attorneyData = ATTORNEY_IMPACT[selectedCaseType.nos];
@@ -226,13 +226,13 @@ export default function DemandPackageGenerator() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-surface-0)', padding: '24px' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: 'var(--card)', padding: '24px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ marginBottom: '32px' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', marginBottom: '8px' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--text1)', fontFamily: 'var(--font-legal)', marginBottom: '8px' }}>
             Demand Letter Data Package
           </h1>
-          <p style={{ fontSize: '16px', color: 'var(--color-text-secondary)', marginBottom: '24px' }}>
+          <p style={{ fontSize: '16px', color: 'var(--text2)', marginBottom: '24px' }}>
             Generate professional research data packages with federal court statistics for inclusion in demand letters.
           </p>
         </div>
@@ -246,13 +246,13 @@ export default function DemandPackageGenerator() {
             marginBottom: '24px',
           }}
         >
-          <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '16px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--text1)', marginBottom: '16px' }}>
             Generate Data Package
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: 'var(--text1)', marginBottom: '8px' }}>
                 Case Type (NOS Code)
               </label>
               <select
@@ -280,7 +280,7 @@ export default function DemandPackageGenerator() {
             </div>
 
             <div>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: 'var(--text1)', marginBottom: '8px' }}>
                 Federal District
               </label>
               <select
@@ -308,7 +308,7 @@ export default function DemandPackageGenerator() {
           <button
             onClick={handleGeneratePackage}
             style={{
-              backgroundColor: 'var(--accent-primary)',
+              backgroundColor: 'var(--link)',
               color: 'white',
               padding: '12px 24px',
               borderRadius: '4px',
@@ -333,7 +333,7 @@ export default function DemandPackageGenerator() {
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--color-text-primary)' }}>Preview</h2>
+              <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--text1)' }}>Preview</h2>
               <button
                 onClick={handleDownloadPDF}
                 style={{
@@ -404,18 +404,18 @@ function PreviewContent({
   const casesFormatted = new Intl.NumberFormat('en-US').format(totalCases);
 
   return (
-    <div style={{ fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', lineHeight: '1.6' }}>
-      <div style={{ borderBottom: '2px solid var(--accent-primary)', paddingBottom: '16px', marginBottom: '16px' }}>
-        <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 8px 0' }}>
+    <div style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)', lineHeight: '1.6' }}>
+      <div style={{ borderBottom: '2px solid var(--link)', paddingBottom: '16px', marginBottom: '16px' }}>
+        <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--link)', fontFamily: 'var(--font-legal)', margin: '0 0 8px 0' }}>
           MyCaseValue Research Data Package
         </h1>
-        <p style={{ margin: '0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+        <p style={{ margin: '0', color: 'var(--text2)', fontSize: '14px' }}>
           Generated: {generatedDate}
         </p>
       </div>
 
       <div style={{ marginBottom: '24px' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text1)', marginBottom: '8px' }}>
           Case Information
         </h3>
         <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
@@ -432,7 +432,7 @@ function PreviewContent({
       </div>
 
       <div style={{ marginBottom: '24px' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', marginBottom: '8px' }}>
           Win Rate
         </h3>
         <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
@@ -440,14 +440,14 @@ function PreviewContent({
             <strong>{winRate.toFixed(1)}%</strong> of plaintiffs win or settle favorably in {caseType.label} cases
             nationwide.
           </p>
-          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+          <p style={{ margin: '4px 0', color: 'var(--text2)', fontSize: '14px' }}>
             District-specific outcomes may vary based on local judicial culture and case composition.
           </p>
         </div>
       </div>
 
       <div style={{ marginBottom: '24px' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', marginBottom: '8px' }}>
           Median Settlement
         </h3>
         <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
@@ -457,7 +457,7 @@ function PreviewContent({
           <p style={{ margin: '4px 0' }}>
             <strong>Interquartile Range (IQR):</strong> {lowFormatted} to {highFormatted}
           </p>
-          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+          <p style={{ margin: '4px 0', color: 'var(--text2)', fontSize: '14px' }}>
             50% of settlements fall within this range. Cases with greater injury, documented damages, or stronger liability
             tend to settle higher.
           </p>
@@ -465,14 +465,14 @@ function PreviewContent({
       </div>
 
       <div style={{ marginBottom: '24px' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', marginBottom: '8px' }}>
           Time to Resolution
         </h3>
         <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
           <p style={{ margin: '4px 0' }}>
             <strong>{timeToResolution} months</strong> is the median time from filing to resolution in {caseType.label} cases.
           </p>
-          <p style={{ margin: '4px 0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+          <p style={{ margin: '4px 0', color: 'var(--text2)', fontSize: '14px' }}>
             Cases that settle typically resolve faster than those proceeding to trial or summary judgment.
           </p>
         </div>
@@ -480,7 +480,7 @@ function PreviewContent({
 
       {attorneyData && (
         <div style={{ marginBottom: '24px' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', marginBottom: '8px' }}>
             Attorney Representation Impact
           </h3>
           <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
@@ -490,10 +490,10 @@ function PreviewContent({
             <p style={{ margin: '4px 0' }}>
               <strong>Pro Se Win Rate:</strong> {attorneyData.pwr}%
             </p>
-            <p style={{ margin: '4px 0', fontWeight: '600', color: 'var(--accent-primary)' }}>
+            <p style={{ margin: '4px 0', fontWeight: '600', color: 'var(--link)' }}>
               Representation Impact: +{attorneyData.rwr - attorneyData.pwr} percentage points
             </p>
-            <p style={{ margin: '8px 0 4px 0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+            <p style={{ margin: '8px 0 4px 0', color: 'var(--text2)', fontSize: '14px' }}>
               This data demonstrates the significant advantage of attorney representation in federal litigation. Plaintiffs
               represented by counsel achieve substantially higher win rates and settlement values than self-represented litigants.
             </p>
@@ -502,7 +502,7 @@ function PreviewContent({
       )}
 
       <div style={{ marginBottom: '24px' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', marginBottom: '8px' }}>
           Supporting Statistics
         </h3>
         <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '4px', fontSize: '14px' }}>
@@ -512,7 +512,7 @@ function PreviewContent({
           <p style={{ margin: '4px 0' }}>
             <strong>Total Cases Analyzed:</strong> {casesFormatted}
           </p>
-          <p style={{ margin: '8px 0 4px 0', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+          <p style={{ margin: '8px 0 4px 0', color: 'var(--text2)', fontSize: '14px' }}>
             Data derived from federal court records spanning 2010-2025. Settlement amounts based on reported values in cases
             with available damage data.
           </p>
@@ -520,7 +520,7 @@ function PreviewContent({
       </div>
 
       <div style={{ marginBottom: '24px' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', marginBottom: '8px' }}>
           Data Sources
         </h3>
         <ul style={{ margin: '0', paddingLeft: '24px', fontSize: '14px' }}>
@@ -531,10 +531,10 @@ function PreviewContent({
       </div>
 
       <div style={{ marginBottom: '24px' }}>
-        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', marginBottom: '8px' }}>
           Methodology
         </h3>
-        <div style={{ backgroundColor: 'var(--color-surface-1)', padding: '12px', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-secondary)' }}>
+        <div style={{ backgroundColor: 'var(--surf)', padding: '12px', borderRadius: '4px', fontSize: '14px', color: 'var(--text2)' }}>
           <p>
             This data package is derived from analysis of 5.1M+ federal civil cases filed in United States District Courts from
             2010-2025. Win rates, settlement data, and case duration statistics are calculated from publicly available case
@@ -566,7 +566,7 @@ function PreviewContent({
       </div>
 
       <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid var(--bdr)' }}>
-        <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '0' }}>
+        <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '0' }}>
           MyCaseValue - Federal Case Outcome Research
         </p>
       </div>

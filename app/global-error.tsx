@@ -16,17 +16,17 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <html lang="en" style={{ background: 'var(--color-surface-1)', margin: 0, padding: 0 }}>
+    <html lang="en" style={{ background: 'var(--surf)', margin: 0, padding: 0 }}>
       <head>
         <title>Error — MyCaseValue</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="var(--accent-primary)" />
+        <meta name="theme-color" content="var(--link)" />
         <style>{`
           body {
             margin: 0;
             padding: 0;
-            background: var(--color-surface-1);
+            background: var(--surf);
             font-family: 'Source Sans 3', 'Inter', system-ui, sans-serif;
           }
         `}</style>
@@ -38,7 +38,7 @@ export default function GlobalError({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'var(--color-surface-1)',
+            background: 'var(--surf)',
             padding: '24px',
           }}
         >
@@ -46,8 +46,8 @@ export default function GlobalError({
             style={{
               maxWidth: 480,
               textAlign: 'center',
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '48px 32px',
               boxShadow: 'var(--shadow-sm)',
@@ -77,7 +77,7 @@ export default function GlobalError({
               style={{
                 fontSize: '20px',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 margin: '0 0 8px',
                 letterSpacing: '-0.01em',
               }}
@@ -88,7 +88,7 @@ export default function GlobalError({
             <p
               style={{
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 lineHeight: 1.6,
                 margin: '0 0 12px',
                 maxWidth: 400,
@@ -102,7 +102,7 @@ export default function GlobalError({
             <p
               style={{
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 lineHeight: 1.6,
                 margin: '0 0 28px',
                 maxWidth: 400,
@@ -127,8 +127,8 @@ export default function GlobalError({
                   alignItems: 'center',
                   gap: 8,
                   padding: '12px 24px',
-                  background: 'var(--accent-primary)',
-                  color: 'var(--color-surface-0)',
+                  background: 'var(--link)',
+                  color: 'var(--card)',
                   border: 'none',
                   borderRadius: '4px',
                   fontSize: '14px',
@@ -147,9 +147,9 @@ export default function GlobalError({
                   alignItems: 'center',
                   gap: 8,
                   padding: '12px 24px',
-                  background: 'var(--color-surface-1)',
-                  color: 'var(--color-text-primary)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--surf)',
+                  color: 'var(--text1)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
                   fontSize: '14px',
                   fontWeight: 600,

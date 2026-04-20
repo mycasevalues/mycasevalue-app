@@ -32,7 +32,7 @@ export default function FreeReportCTA({ caseType, district }: FreeReportCTAProps
           fontSize: 20,
           fontWeight: 600,
           fontFamily: 'var(--font-ui)',
-          color: 'var(--color-text-primary, #18181A)',
+          color: 'var(--text1, #18181A)',
           margin: '0 0 8px',
         }}
       >
@@ -43,7 +43,7 @@ export default function FreeReportCTA({ caseType, district }: FreeReportCTAProps
           fontSize: 14,
           fontWeight: 400,
           fontFamily: 'var(--font-ui)',
-          color: 'var(--color-text-secondary, #42403C)',
+          color: 'var(--text2, #42403C)',
           margin: '0 0 20px',
           lineHeight: 1.5,
         }}

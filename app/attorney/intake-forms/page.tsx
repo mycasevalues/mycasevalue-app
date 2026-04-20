@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function IntakeFormsPage() {
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       {/* Header */}
       <div style={{
         background: 'var(--card)',
@@ -25,7 +25,7 @@ export default function IntakeFormsPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--text1)', fontFamily: 'var(--font-legal)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
             Case Intake Form Generator
           </h1>
           <p style={{ fontSize: '14px', color: 'var(--text3)', marginBottom: 0, lineHeight: 1.4, fontFamily: 'var(--font-ui)' }}>

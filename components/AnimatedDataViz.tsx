@@ -83,7 +83,7 @@ export default function AnimatedDataViz({
               <label
                 style={{
                   fontSize: '12px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   fontFamily: 'var(--font-ui)',
                   fontWeight: 500,
                 }}
@@ -94,7 +94,7 @@ export default function AnimatedDataViz({
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: '12px',
-                  color: 'var(--color-surface-0)',
+                  color: 'var(--card)',
                   fontWeight: 600,
                   animation: isVisible ? `slideInRight 0.6s ease-out ${idx * 0.1}s both` : 'none',
                 }}
@@ -116,7 +116,7 @@ export default function AnimatedDataViz({
               <div
                 style={{
                   height: '100%',
-                  background: 'var(--accent-primary)',
+                  background: 'var(--link)',
                   width: '0%',
                   animation: isVisible
                     ? `fillBar 1s ease-out ${idx * 0.15}s forwards`

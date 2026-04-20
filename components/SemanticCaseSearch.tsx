@@ -87,8 +87,8 @@ export default function SemanticCaseSearch() {
       style={{
         display: 'block',
         padding: '24px',
-        background: 'var(--color-surface-0)',
-        border: '2px solid var(--accent-primary)',
+        background: 'var(--card)',
+        border: '2px solid var(--link)',
         borderRadius: '4px',
         marginBottom: '24px',
       }}
@@ -99,7 +99,7 @@ export default function SemanticCaseSearch() {
           fontSize: '20px',
           fontWeight: '600',
           fontFamily: 'var(--font-heading)',
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginBottom: '8px',
         }}
       >
@@ -108,7 +108,7 @@ export default function SemanticCaseSearch() {
       <p
         style={{
           fontSize: '14px',
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           fontFamily: 'var(--font-ui)',
           marginBottom: '16px',
         }}
@@ -139,7 +139,7 @@ export default function SemanticCaseSearch() {
               resize: 'vertical',
             }}
             onFocus={(e) => {
-              e.currentTarget.style.borderColor = isOverLimit ? 'var(--data-negative, #B01E1E)' : 'var(--accent-primary)';
+              e.currentTarget.style.borderColor = isOverLimit ? 'var(--data-negative, #B01E1E)' : 'var(--link)';
             }}
             onBlur={(e) => {
               e.currentTarget.style.borderColor = isOverLimit ? 'var(--data-negative)' : 'var(--bdr)';
@@ -166,8 +166,8 @@ export default function SemanticCaseSearch() {
           disabled={isLoading || !description.trim() || isOverLimit}
           style={{
             padding: '12px 24px',
-            background: isLoading || !description.trim() || isOverLimit ? 'var(--bdr, #E2DFD8)' : 'var(--accent-primary)',
-            color: 'var(--color-surface-0)',
+            background: isLoading || !description.trim() || isOverLimit ? 'var(--bdr, #E2DFD8)' : 'var(--link)',
+            color: 'var(--card)',
             fontSize: '14px',
             fontWeight: '600',
             fontFamily: 'var(--font-ui)',
@@ -183,7 +183,7 @@ export default function SemanticCaseSearch() {
           }}
           onMouseLeave={(e) => {
             if (!isLoading && description.trim() && !isOverLimit) {
-              e.currentTarget.style.background = 'var(--accent-primary)';
+              e.currentTarget.style.background = 'var(--link)';
             }
           }}
         >
@@ -216,7 +216,7 @@ export default function SemanticCaseSearch() {
             style={{
               fontSize: '12px',
               textTransform: 'uppercase',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               fontWeight: '600',
               fontFamily: 'var(--font-ui)',
               marginBottom: '12px',
@@ -234,8 +234,8 @@ export default function SemanticCaseSearch() {
                   key={result.nosCode}
                   style={{
                     padding: '16px',
-                    background: 'var(--color-surface-0)',
-                    border: '1px solid var(--border-default)',
+                    background: 'var(--card)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '4px',
                   }}
                 >
@@ -255,7 +255,7 @@ export default function SemanticCaseSearch() {
                           fontSize: '14px',
                           fontWeight: '600',
                           fontFamily: 'var(--font-heading)',
-                          color: 'var(--color-text-primary)',
+                          color: 'var(--text1)',
                           marginBottom: '2px',
                         }}
                       >
@@ -264,7 +264,7 @@ export default function SemanticCaseSearch() {
                       <div
                         style={{
                           fontSize: '12px',
-                          color: 'var(--color-text-secondary)',
+                          color: 'var(--text2)',
                           fontFamily: 'var(--font-mono)',
                           marginBottom: '4px',
                         }}
@@ -277,7 +277,7 @@ export default function SemanticCaseSearch() {
                         display: 'inline-block',
                         padding: '4px 12px',
                         background: 'rgba(59,130,246,0.08)',
-                        border: '1px solid var(--accent-primary)',
+                        border: '1px solid var(--link)',
                         borderRadius: '4px',
                         fontSize: '12px',
                         fontWeight: '600',
@@ -293,7 +293,7 @@ export default function SemanticCaseSearch() {
                   <div
                     style={{
                       fontSize: '12px',
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       fontFamily: 'var(--font-ui)',
                       marginBottom: '12px',
                       lineHeight: 1.4,
@@ -359,7 +359,7 @@ export default function SemanticCaseSearch() {
                         style={{
                           padding: '8px 12px',
                           background: 'rgba(59,130,246,0.08)',
-                          border: '1px solid var(--accent-primary)',
+                          border: '1px solid var(--link)',
                           borderRadius: '4px',
                           fontSize: '12px',
                           fontFamily: 'var(--font-mono)',
@@ -394,7 +394,7 @@ export default function SemanticCaseSearch() {
                     <div
                       style={{
                         fontSize: '12px',
-                        color: 'var(--color-text-secondary)',
+                        color: 'var(--text2)',
                         fontFamily: 'var(--font-mono)',
                         marginBottom: '12px',
                       }}
@@ -410,7 +410,7 @@ export default function SemanticCaseSearch() {
                       display: 'inline-block',
                       fontSize: '14px',
                       fontWeight: '600',
-                      color: 'var(--accent-primary)',
+                      color: 'var(--link)',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-ui)',
                       padding: '4px 0',
@@ -418,7 +418,7 @@ export default function SemanticCaseSearch() {
                       cursor: 'pointer',
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-primary-hover)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--accent-primary)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--link)')}
                   >
                     View full report →
                   </Link>

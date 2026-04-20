@@ -131,11 +131,11 @@ const INTEGRATIONS = [
 
 export default function IntegrationsPage() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         .integration-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 32px;
           transition: all 200ms ease;
@@ -144,7 +144,7 @@ export default function IntegrationsPage() {
         .integration-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-          border-color: var(--accent-primary);
+          border-color: var(--link);
         }
         .integration-card:hover::before {
           content: '';
@@ -157,18 +157,18 @@ export default function IntegrationsPage() {
           border-radius: 4px 4px 0 0;
         }
         .breadcrumb-link:hover {
-          color: var(--color-text-inverse) !important;
+          color: var(--chrome-text) !important;
         }
         .integration-link:hover {
           background: var(--data-negative) !important;
         }
         .feature-tag {
-          background: var(--color-surface-1);
-          border: 1px solid var(--border-default);
+          background: var(--surf);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 4px 10px;
           font-size: 12px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           font-family: var(--font-ui);
         }
         .cta-btn:hover {
@@ -250,7 +250,7 @@ export default function IntegrationsPage() {
       </div>
 
       {/* Stats Bar */}
-      <div style={{ background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '24px' }}>
+      <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '24px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' as const }}>
           {[
             { label: 'Available Integrations', value: '3' },
@@ -263,7 +263,7 @@ export default function IntegrationsPage() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: '24px',
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 margin: '0 0 4px 0',
               }}>
                 {stat.value}
@@ -271,7 +271,7 @@ export default function IntegrationsPage() {
               <p style={{
                 fontSize: '12px',
                 fontWeight: 600,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 margin: 0,
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.5px',
@@ -302,8 +302,8 @@ export default function IntegrationsPage() {
                   width: '56px',
                   height: '56px',
                   borderRadius: '4px',
-                  background: 'var(--color-surface-1)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--surf)',
+                  border: '1px solid var(--bdr)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -318,7 +318,7 @@ export default function IntegrationsPage() {
                   padding: '4px 10px',
                   borderRadius: '4px',
                   background: integration.status === 'Available' ? 'rgba(34,197,94,0.06)' : 'rgba(232, 23, 31, 0.06)',
-                  color: integration.status === 'Available' ? 'var(--data-positive)' : 'var(--accent-primary)',
+                  color: integration.status === 'Available' ? 'var(--data-positive)' : 'var(--link)',
                   border: integration.status === 'Available' ? '1px solid var(--cw-border)' : 'none',
                 }}>
                   {integration.status}
@@ -342,7 +342,7 @@ export default function IntegrationsPage() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: '20px',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 margin: '0 0 12px 0',
               }}>
                 {integration.name}
@@ -351,7 +351,7 @@ export default function IntegrationsPage() {
               {/* Description */}
               <p style={{
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 lineHeight: 1.6,
                 margin: '0 0 20px 0',
               }}>
@@ -374,8 +374,8 @@ export default function IntegrationsPage() {
                 style={{
                   display: 'inline-block',
                   padding: '8px 24px',
-                  background: 'var(--accent-primary)',
-                  color: 'var(--color-text-inverse)',
+                  background: 'var(--link)',
+                  color: 'var(--chrome-text)',
                   borderRadius: '4px',
                   textDecoration: 'none',
                   fontSize: '14px',
@@ -403,7 +403,7 @@ export default function IntegrationsPage() {
               fontFamily: 'var(--font-ui)',
               fontSize: '28px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: 0,
             }}>
               Platform Capabilities
@@ -412,13 +412,13 @@ export default function IntegrationsPage() {
               display: 'inline-block',
               width: '4px',
               height: '4px',
-              background: 'var(--accent-primary)',
+              background: 'var(--link)',
               borderRadius: '50%',
             }} />
           </div>
           <p style={{
             fontSize: '16px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             maxWidth: '600px',
             lineHeight: 1.6,
             marginBottom: '32px',
@@ -469,8 +469,8 @@ export default function IntegrationsPage() {
                 key={capability.title}
                 className="capability-card"
                 style={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
                   padding: '24px',
                   transition: 'all 200ms ease',
@@ -488,14 +488,14 @@ export default function IntegrationsPage() {
                   fontFamily: 'var(--font-ui)',
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   margin: '0 0 12px 0',
                 }}>
                   {capability.title}
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   lineHeight: 1.6,
                   margin: '0 0 16px 0',
                 }}>
@@ -509,7 +509,7 @@ export default function IntegrationsPage() {
                   padding: '4px 10px',
                   borderRadius: '4px',
                   background: capability.status === 'Available' ? 'rgba(34,197,94,0.06)' : 'rgba(232, 23, 31, 0.06)',
-                  color: capability.status === 'Available' ? 'var(--data-positive)' : 'var(--accent-primary)',
+                  color: capability.status === 'Available' ? 'var(--data-positive)' : 'var(--link)',
                   border: capability.status === 'Available' ? '1px solid var(--cw-border)' : 'none',
                   display: 'inline-block',
                 }}>
@@ -532,7 +532,7 @@ export default function IntegrationsPage() {
               fontFamily: 'var(--font-ui)',
               fontSize: '28px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: 0,
             }}>
               Data Sources We Connect
@@ -541,13 +541,13 @@ export default function IntegrationsPage() {
               display: 'inline-block',
               width: '4px',
               height: '4px',
-              background: 'var(--accent-primary)',
+              background: 'var(--link)',
               borderRadius: '50%',
             }} />
           </div>
           <p style={{
             fontSize: '16px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             maxWidth: '600px',
             lineHeight: 1.6,
             marginBottom: '32px',
@@ -587,8 +587,8 @@ export default function IntegrationsPage() {
               <div
                 key={source.name}
                 style={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
                   padding: '32px',
                   transition: 'all 200ms ease',
@@ -600,21 +600,21 @@ export default function IntegrationsPage() {
                   fontSize: '32px',
                   lineHeight: 1,
                 }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={source.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={source.iconPath}/></svg>
                 </div>
                 <div>
                   <h3 style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '16px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 8px 0',
                   }}>
                     {source.name}
                   </h3>
                   <p style={{
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}>
@@ -628,7 +628,7 @@ export default function IntegrationsPage() {
 
         {/* API Quick Start */}
         <div style={{
-          background: 'var(--accent-primary)',
+          background: 'var(--link)',
           borderRadius: '4px',
           padding: '48px',
           marginBottom: '48px',
@@ -637,7 +637,7 @@ export default function IntegrationsPage() {
             fontFamily: 'var(--font-ui)',
             fontSize: '20px',
             fontWeight: 600,
-            color: 'var(--color-text-inverse)',
+            color: 'var(--chrome-text)',
             margin: '0 0 12px 0',
           }}>
             Quick Start with Our API
@@ -658,35 +658,35 @@ export default function IntegrationsPage() {
             padding: '24px',
             fontFamily: 'var(--font-mono)',
             fontSize: '14px',
-            color: 'var(--border-default)',
+            color: 'var(--bdr)',
             lineHeight: 1.7,
             overflowX: 'auto' as const,
             border: '1px solid rgba(255,255,255,0.1)',
           }}>
-            <div style={{ color: 'var(--color-text-secondary)', marginBottom: '8px' }}>{'// Fetch case outcome data'}</div>
+            <div style={{ color: 'var(--text2)', marginBottom: '8px' }}>{'// Fetch case outcome data'}</div>
             <div>
-              <span style={{ color: 'var(--accent-primary)' }}>const</span>{' '}
-              <span style={{ color: 'var(--color-text-inverse)' }}>response</span>{' '}
-              <span style={{ color: 'var(--color-text-secondary)' }}>=</span>{' '}
-              <span style={{ color: 'var(--accent-primary)' }}>await</span>{' '}
+              <span style={{ color: 'var(--link)' }}>const</span>{' '}
+              <span style={{ color: 'var(--chrome-text)' }}>response</span>{' '}
+              <span style={{ color: 'var(--text2)' }}>=</span>{' '}
+              <span style={{ color: 'var(--link)' }}>await</span>{' '}
               <span style={{ color: 'var(--gold)' }}>fetch</span>
-              <span style={{ color: 'var(--border-default)' }}>(</span>
+              <span style={{ color: 'var(--bdr)' }}>(</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
               <span style={{ color: 'var(--data-positive)' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
-              <span style={{ color: 'var(--border-default)' }}>,</span>
+              <span style={{ color: 'var(--bdr)' }}>,</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
-              <span style={{ color: 'var(--border-default)' }}>{'{ '}</span>
-              <span style={{ color: 'var(--color-text-inverse)' }}>headers</span>
-              <span style={{ color: 'var(--border-default)' }}>{': { '}</span>
+              <span style={{ color: 'var(--bdr)' }}>{'{ '}</span>
+              <span style={{ color: 'var(--chrome-text)' }}>headers</span>
+              <span style={{ color: 'var(--bdr)' }}>{': { '}</span>
               <span style={{ color: 'var(--data-positive)' }}>{`'Authorization'`}</span>
-              <span style={{ color: 'var(--border-default)' }}>{': '}</span>
+              <span style={{ color: 'var(--bdr)' }}>{': '}</span>
               <span style={{ color: 'var(--data-positive)' }}>{`'Bearer YOUR_API_KEY'`}</span>
-              <span style={{ color: 'var(--border-default)' }}>{' } }'}</span>
+              <span style={{ color: 'var(--bdr)' }}>{' } }'}</span>
             </div>
             <div>
-              <span style={{ color: 'var(--border-default)' }}>{')'}</span>
+              <span style={{ color: 'var(--bdr)' }}>{')'}</span>
             </div>
           </div>
 
@@ -697,8 +697,8 @@ export default function IntegrationsPage() {
               style={{
                 display: 'inline-block',
                 padding: '12px 28px',
-                background: 'var(--accent-primary)',
-                color: 'var(--color-text-inverse)',
+                background: 'var(--link)',
+                color: 'var(--chrome-text)',
                 borderRadius: '4px',
                 textDecoration: 'none',
                 fontSize: '14px',
@@ -725,7 +725,7 @@ export default function IntegrationsPage() {
               fontFamily: 'var(--font-ui)',
               fontSize: '28px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: 0,
             }}>
               Get Started
@@ -734,13 +734,13 @@ export default function IntegrationsPage() {
               display: 'inline-block',
               width: '4px',
               height: '4px',
-              background: 'var(--accent-primary)',
+              background: 'var(--link)',
               borderRadius: '50%',
             }} />
           </div>
           <p style={{
             fontSize: '16px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             maxWidth: '600px',
             lineHeight: 1.6,
             marginBottom: '32px',
@@ -758,7 +758,7 @@ export default function IntegrationsPage() {
             <Link
               href="/solutions/api"
               style={{
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 border: '2px solid var(--gold)',
                 borderRadius: '4px',
                 padding: '32px 24px',
@@ -786,14 +786,14 @@ export default function IntegrationsPage() {
                   fontFamily: 'var(--font-ui)',
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   margin: '0 0 12px 0',
                 }}>
                   API Documentation
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   lineHeight: 1.6,
                   margin: 0,
                 }}>
@@ -815,8 +815,8 @@ export default function IntegrationsPage() {
             <Link
               href="/contact"
               style={{
-                background: 'var(--color-surface-0)',
-                border: '2px solid var(--accent-primary)',
+                background: 'var(--card)',
+                border: '2px solid var(--link)',
                 borderRadius: '4px',
                 padding: '32px 24px',
                 textDecoration: 'none',
@@ -835,21 +835,21 @@ export default function IntegrationsPage() {
                 }
               `}</style>
               <div>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <h3 style={{
                   fontFamily: 'var(--font-ui)',
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   margin: '0 0 12px 0',
                 }}>
                   Contact Our Team
                 </h3>
                 <p style={{
                   fontSize: '14px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   lineHeight: 1.6,
                   margin: 0,
                 }}>
@@ -859,7 +859,7 @@ export default function IntegrationsPage() {
               <span style={{
                 fontSize: '14px',
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginTop: '24px',
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.5px',
@@ -872,8 +872,8 @@ export default function IntegrationsPage() {
 
         {/* Bottom CTA */}
         <div style={{
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           padding: '48px',
           textAlign: 'center' as const,
@@ -882,14 +882,14 @@ export default function IntegrationsPage() {
             fontFamily: 'var(--font-ui)',
             fontSize: '20px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 12px 0',
           }}>
             Need a Custom Integration?
           </h2>
           <p style={{
             fontSize: '14px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             margin: '0 0 24px 0',
             lineHeight: 1.6,
             maxWidth: '560px',
@@ -904,8 +904,8 @@ export default function IntegrationsPage() {
             style={{
               display: 'inline-block',
               padding: '16px 32px',
-              background: 'var(--accent-primary)',
-              color: 'var(--color-text-inverse)',
+              background: 'var(--link)',
+              color: 'var(--chrome-text)',
               borderRadius: '4px',
               textDecoration: 'none',
               fontSize: '14px',

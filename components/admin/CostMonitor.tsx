@@ -23,9 +23,9 @@ interface CostData {
 }
 
 const COLORS = {
-  primary: 'var(--accent-primary)',
+  primary: 'var(--link)',
   dark: 'var(--accent-primary-hover)',
-  black: 'var(--color-text-primary)',
+  black: 'var(--text1)',
 };
 
 const STATUS_COLORS = {
@@ -60,8 +60,8 @@ export default function CostMonitor() {
 
   if (loading) {
     return (
-      <div style={{ backgroundColor: 'white', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px' }}>
-        <p style={{ color: 'var(--color-text-secondary)' }}>Loading cost data...</p>
+      <div style={{ backgroundColor: 'white', border: '1px solid var(--bdr)', borderRadius: '4px', padding: '24px' }}>
+        <p style={{ color: 'var(--text2)' }}>Loading cost data...</p>
       </div>
     );
   }
@@ -100,7 +100,7 @@ export default function CostMonitor() {
         <div
           style={{
             backgroundColor: 'white',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -112,7 +112,7 @@ export default function CostMonitor() {
           <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
             ${costData.totalSpend.toFixed(2)}
           </p>
-          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '8px 0 0 0' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '8px 0 0 0' }}>
             Budget: ${costData.totalBudget.toFixed(2)}
           </p>
         </div>
@@ -120,7 +120,7 @@ export default function CostMonitor() {
         <div
           style={{
             backgroundColor: 'white',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -132,7 +132,7 @@ export default function CostMonitor() {
           <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
             {((costData.totalSpend / costData.totalBudget) * 100).toFixed(1)}%
           </p>
-          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '8px 0 0 0' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '8px 0 0 0' }}>
             ${(costData.totalBudget - costData.totalSpend).toFixed(2)} remaining
           </p>
         </div>
@@ -140,7 +140,7 @@ export default function CostMonitor() {
         <div
           style={{
             backgroundColor: 'white',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -152,7 +152,7 @@ export default function CostMonitor() {
           <p style={{ fontSize: '28px', fontWeight: 700, margin: 0, color: COLORS.primary }}>
             ${costData.projectedEOM.toFixed(2)}
           </p>
-          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '8px 0 0 0' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '8px 0 0 0' }}>
             Based on daily run rate
           </p>
         </div>
@@ -175,7 +175,7 @@ export default function CostMonitor() {
       {/* Footer */}
       <div
         style={{
-          backgroundColor: 'var(--color-surface-0)',
+          backgroundColor: 'var(--card)',
           border: '1px solid rgba(255,255,255,0.08)',
           borderRadius: '4px',
           padding: '16px',
@@ -201,7 +201,7 @@ function ServiceCard({ service }: ServiceCardProps) {
     <div
       style={{
         backgroundColor: 'white',
-        border: '1px solid var(--border-default)',
+        border: '1px solid var(--bdr)',
         borderRadius: '4px',
         padding: '24px',
         boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
@@ -210,7 +210,7 @@ function ServiceCard({ service }: ServiceCardProps) {
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '16px' }}>
         <div>
-          <h3 style={{ fontSize: '16px', fontWeight: '600', margin: 0, color: 'var(--color-text-primary)' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '600', margin: 0, color: 'var(--text1)' }}>
             {service.icon} {service.name}
           </h3>
         </div>
@@ -234,14 +234,14 @@ function ServiceCard({ service }: ServiceCardProps) {
       {/* Spend Info */}
       <div style={{ marginBottom: '16px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-          <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>Current Spend</span>
-          <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)' }}>
+          <span style={{ fontSize: '12px', color: 'var(--text2)' }}>Current Spend</span>
+          <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)' }}>
             ${service.currentSpend.toFixed(2)}
           </span>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-          <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>Monthly Limit</span>
-          <span style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>${service.monthlyBudget.toFixed(2)}</span>
+          <span style={{ fontSize: '12px', color: 'var(--text2)' }}>Monthly Limit</span>
+          <span style={{ fontSize: '14px', color: 'var(--text2)' }}>${service.monthlyBudget.toFixed(2)}</span>
         </div>
       </div>
 
@@ -266,7 +266,7 @@ function ServiceCard({ service }: ServiceCardProps) {
           />
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>Usage</span>
+          <span style={{ fontSize: '12px', color: 'var(--text2)' }}>Usage</span>
           <span style={{ fontSize: '12px', fontWeight: '600', color: statusColor }}>
             {service.usagePercentage.toFixed(1)}%
           </span>
@@ -283,7 +283,7 @@ function ServiceCard({ service }: ServiceCardProps) {
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{ color: 'var(--color-text-secondary)' }}>vs Last Month</span>
+          <span style={{ color: 'var(--text2)' }}>vs Last Month</span>
           <span
             style={{
               fontWeight: '600',
@@ -293,7 +293,7 @@ function ServiceCard({ service }: ServiceCardProps) {
             {service.momChange > 0 ? '+' : ''}{service.momChange.toFixed(2)}%
           </span>
         </div>
-        <p style={{ margin: '6px 0 0 0', color: 'var(--color-text-secondary)', fontSize: '12px' }}>
+        <p style={{ margin: '6px 0 0 0', color: 'var(--text2)', fontSize: '12px' }}>
           Last month: ${service.lastMonthSpend.toFixed(2)}
         </p>
       </div>

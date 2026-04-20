@@ -104,7 +104,7 @@ export default function CaseTimelineGenerator() {
     display: 'block',
     fontSize: '14px',
     fontWeight: 600,
-    color: 'var(--color-text-primary)',
+    color: 'var(--text1)',
     marginBottom: '6px',
     fontFamily: 'var(--font-ui)',
   };
@@ -112,11 +112,11 @@ export default function CaseTimelineGenerator() {
   const inputStyle: React.CSSProperties = {
     width: '100%',
     padding: '12px 14px',
-    border: '1px solid var(--border-default)',
+    border: '1px solid var(--bdr)',
     borderRadius: '4px',
     fontSize: '14px',
-    color: 'var(--color-text-primary)',
-    backgroundColor: 'var(--color-surface-0)',
+    color: 'var(--text1)',
+    backgroundColor: 'var(--card)',
     fontFamily: 'var(--font-ui)',
     boxSizing: 'border-box' as const,
   };
@@ -124,8 +124,8 @@ export default function CaseTimelineGenerator() {
   const buttonStyle: React.CSSProperties = {
     width: '100%',
     padding: '16px',
-    backgroundColor: input.caseType && input.filingDate ? 'var(--accent-primary)' : 'var(--border-default)',
-    color: 'var(--color-surface-0)',
+    backgroundColor: input.caseType && input.filingDate ? 'var(--link)' : 'var(--bdr)',
+    color: 'var(--card)',
     border: 'none',
     borderRadius: '2px',
     fontSize: '14px',
@@ -142,7 +142,7 @@ export default function CaseTimelineGenerator() {
   const markerSpacing = containerWidth / (timeline?.length || 8);
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         @media print {
           body {
@@ -157,9 +157,9 @@ export default function CaseTimelineGenerator() {
         }
       `}</style>
 
-      <div style={{ background: 'var(--accent-primary)', borderBottom: '1px solid var(--border-default)', padding: '24px 24px' }}>
+      <div style={{ background: 'var(--link)', borderBottom: '1px solid var(--bdr)', padding: '24px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-surface-0)', fontFamily: 'var(--font-legal)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--card)', fontFamily: 'var(--font-legal)', margin: '0 0 8px 0', letterSpacing: '-0.02em' }}>
             Case Timeline Generator
           </h1>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.4, fontFamily: 'var(--font-ui)' }}>
@@ -171,8 +171,8 @@ export default function CaseTimelineGenerator() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: timeline ? '350px 1fr' : '1fr', gap: '40px', alignItems: 'start' }}>
           {/* Input Section */}
-          <div className="no-print" style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', height: 'fit-content' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+          <div className="no-print" style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)', height: 'fit-content' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
               Case Information
             </h2>
 
@@ -225,7 +225,7 @@ export default function CaseTimelineGenerator() {
               </div>
 
               {error && (
-                <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
+                <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--bdr)' }}>
                   <p style={{ fontSize: '14px', color: '#CC1019', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
                 </div>
               )}
@@ -244,7 +244,7 @@ export default function CaseTimelineGenerator() {
           {timeline && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
               {/* SVG Timeline */}
-              <div ref={containerRef} style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '40px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
+              <div ref={containerRef} style={{ background: 'var(--card)', borderRadius: '4px', padding: '40px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)' }}>
                 <svg
                   ref={svgRef}
                   width="100%"
@@ -253,7 +253,7 @@ export default function CaseTimelineGenerator() {
                   viewBox={`0 0 ${containerWidth} ${svgHeight}`}
                   preserveAspectRatio="xMidYMid meet"
                 >
-                  <line x1="40" y1="60" x2={containerWidth - 40} y2="60" stroke="var(--border-default)" strokeWidth="2" />
+                  <line x1="40" y1="60" x2={containerWidth - 40} y2="60" stroke="var(--bdr)" strokeWidth="2" />
 
                   {timeline.map((m, idx) => {
                     const x = 40 + (idx * (containerWidth - 80)) / (timeline.length - 1);
@@ -262,15 +262,15 @@ export default function CaseTimelineGenerator() {
 
                     return (
                       <g key={m.name}>
-                        <line x1={x} y1="50" x2={x} y2="70" stroke={m.isUpcoming ? 'var(--accent-primary)' : 'var(--color-text-muted)'} strokeWidth="2" />
-                        <circle cx={x} cy="60" r="6" fill={m.isUpcoming ? 'var(--accent-primary)' : 'var(--color-text-muted)'} />
+                        <line x1={x} y1="50" x2={x} y2="70" stroke={m.isUpcoming ? 'var(--link)' : 'var(--color-text-muted)'} strokeWidth="2" />
+                        <circle cx={x} cy="60" r="6" fill={m.isUpcoming ? 'var(--link)' : 'var(--color-text-muted)'} />
                         <text
                           x={x}
                           y={textY}
                           textAnchor="middle"
                           fontSize="11"
                           fontWeight="600"
-                          fill="var(--color-text-primary)"
+                          fill="var(--text1)"
                           style={{ fontFamily: 'var(--font-ui)' }}
                         >
                           {m.name}
@@ -280,7 +280,7 @@ export default function CaseTimelineGenerator() {
                           y={textY + 14}
                           textAnchor="middle"
                           fontSize="10"
-                          fill="var(--color-text-secondary)"
+                          fill="var(--text2)"
                           style={{ fontFamily: 'var(--font-ui)' }}
                         >
                           {m.date}
@@ -292,8 +292,8 @@ export default function CaseTimelineGenerator() {
               </div>
 
               {/* Milestones List */}
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
-                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+              <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)' }}>
+                <h2 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text1)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
                   Timeline Milestones
                 </h2>
 
@@ -303,20 +303,20 @@ export default function CaseTimelineGenerator() {
                       display: 'flex',
                       alignItems: 'center',
                       padding: '16px',
-                      backgroundColor: m.isUpcoming ? '#F0F9FF' : 'var(--color-surface-1)',
+                      backgroundColor: m.isUpcoming ? '#F0F9FF' : 'var(--surf)',
                       borderRadius: '4px',
-                      borderLeft: `4px solid ${m.isUpcoming ? 'var(--accent-primary)' : 'var(--color-text-muted)'}`,
+                      borderLeft: `4px solid ${m.isUpcoming ? 'var(--link)' : 'var(--color-text-muted)'}`,
                     }}>
                       <div style={{ flex: 1 }}>
-                        <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+                        <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                           {m.name}
                         </p>
-                        <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                        <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                           {m.date} ({Math.round(m.daysFromFiling / 30.44)} months)
                         </p>
                       </div>
                       {!m.isUpcoming && (
-                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
+                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-ui)' }}>
                           Past
                         </span>
                       )}
@@ -339,7 +339,7 @@ export default function CaseTimelineGenerator() {
                   style={{
                     padding: '16px',
                     backgroundColor: 'var(--accent-primary-hover)',
-                    color: 'var(--color-surface-0)',
+                    color: 'var(--card)',
                     border: 'none',
                     borderRadius: '2px',
                     fontSize: '14px',

@@ -80,7 +80,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
       justifyContent: 'space-between',
     }}>
       {/* Attribution */}
-      <div style={{ fontSize: '12px', color: 'var(--accent-primary)', fontWeight: 500 }}>
+      <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 500 }}>
         Powered by MyCaseValue
       </div>
 
@@ -88,7 +88,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
       <div style={{
         fontSize: '14px',
         fontWeight: 600,
-        color: 'var(--color-text-primary)',
+        color: 'var(--text1)',
       }}>
         {caseTypeLabel}
       </div>
@@ -143,7 +143,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
               transform: 'translate(-50%, -50%)',
               width: '3px',
               height: '16px',
-              backgroundColor: 'var(--accent-primary)',
+              backgroundColor: 'var(--link)',
               borderRadius: '2px',
               zIndex: 2,
             }}
@@ -156,7 +156,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
               top: '50%',
               transform: 'translateY(-50%)',
               fontSize: '12px',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontWeight: 500,
               marginLeft: '4px',
             }}
@@ -170,7 +170,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
               top: '50%',
               transform: 'translateY(-50%)',
               fontSize: '12px',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontWeight: 500,
               marginRight: '4px',
               textAlign: 'right',
@@ -196,7 +196,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
             fontFamily: '"Courier New", monospace',
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
           }}>
             {formatSettlementAmount(medianSettlement, { compact: true })}
           </div>
@@ -208,7 +208,7 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
           <div style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
           }}>
             {avgDuration} {avgDuration === 1 ? 'month' : 'months'}
           </div>

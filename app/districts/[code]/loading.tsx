@@ -16,7 +16,7 @@ function Sk({ width = '100%', height = '20px', style }: { width?: string; height
 
 export default function Loading() {
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh' }}>
       <style>{`
         @keyframes skeleton-pulse {
           0% { background-position: 200% 0; }
@@ -26,22 +26,22 @@ export default function Loading() {
 
       {/* Breadcrumb skeleton */}
       <nav style={{
-        background: 'var(--color-surface-0)',
+        background: 'var(--card)',
         borderBottom: '1px solid var(--bdr)',
         padding: '12px 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)', display: 'flex', gap: 8, alignItems: 'center' }}>
           <Sk width="40px" height="14px" />
-          <span style={{ color: 'var(--border-default)' }}>{'>'}</span>
+          <span style={{ color: 'var(--bdr)' }}>{'>'}</span>
           <Sk width="60px" height="14px" />
-          <span style={{ color: 'var(--border-default)' }}>{'>'}</span>
+          <span style={{ color: 'var(--bdr)' }}>{'>'}</span>
           <Sk width="180px" height="14px" />
         </div>
       </nav>
 
       {/* Hero skeleton */}
       <header style={{
-        background: 'var(--accent-primary)',
+        background: 'var(--link)',
         borderBottom: '1px solid var(--bdr)',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
@@ -72,7 +72,7 @@ export default function Loading() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 16 }}>
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <div key={i} style={{
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
@@ -96,7 +96,7 @@ export default function Loading() {
         {/* Local Rules section skeleton */}
         <div style={{ marginTop: 48 }}>
           <Sk width="160px" height="22px" style={{ marginBottom: 24 }} />
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr)', borderRadius: '4px', padding: '24px' }}>
+          <div style={{ background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', padding: '24px' }}>
             {[1, 2, 3, 4].map((i) => (
               <div key={i} style={{ marginBottom: i < 4 ? 16 : 0 }}>
                 <Sk width="240px" height="14px" style={{ marginBottom: 6 }} />
@@ -111,7 +111,7 @@ export default function Loading() {
           <Sk width="200px" height="22px" style={{ marginBottom: 24 }} />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
             {[1, 2, 3].map((i) => (
-              <div key={i} style={{ background: 'var(--color-surface-0)', border: '1px solid var(--bdr)', borderRadius: '4px', padding: '24px' }}>
+              <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', padding: '24px' }}>
                 <Sk width="180px" height="15px" style={{ marginBottom: 12 }} />
                 <Sk width="100%" height="12px" style={{ marginBottom: 6 }} />
                 <Sk width="80%" height="12px" />

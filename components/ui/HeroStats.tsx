@@ -77,7 +77,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
       style={{
         padding: 'clamp(24px, 3vw, 28px) clamp(16px, 2.5vw, 24px)',
         borderRadius: '4px',
-        background: 'var(--color-surface-0)',
+        background: 'var(--card)',
         border: `2px solid ${stat.color}18`,
         position: 'relative',
         overflow: 'hidden',
@@ -110,7 +110,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
         <div style={{
           fontSize: '12px',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginTop: '8px',
           textTransform: 'uppercase',
           letterSpacing: '0.5px',
@@ -120,7 +120,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
         {stat.sublabel && (
           <div style={{
             fontSize: '12px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             marginTop: '4px',
             fontWeight: 500,
           }}>
@@ -264,25 +264,25 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
           gap: 'clamp(12px, 2vw, 16px)',
           marginTop: 'clamp(20px, 3vw, 32px)',
         }}>
-          <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
+          <div style={{ padding: '24px', textAlign: 'center', background: 'var(--card)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
             <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>5.1M+</div>
-            <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Federal Cases</div>
-            <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>Analyzed</div>
+            <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Federal Cases</div>
+            <div style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '4px' }}>Analyzed</div>
           </div>
-          <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
+          <div style={{ padding: '24px', textAlign: 'center', background: 'var(--card)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
             <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>94</div>
-            <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Federal Districts</div>
-            <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>All US courts</div>
+            <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Federal Districts</div>
+            <div style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '4px' }}>All US courts</div>
           </div>
-          <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(109, 40, 217, 0.09)', borderRadius: '4px' }}>
+          <div style={{ padding: '24px', textAlign: 'center', background: 'var(--card)', border: '2px solid rgba(109, 40, 217, 0.09)', borderRadius: '4px' }}>
             <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--accent-primary-hover)', fontFamily: 'var(--font-mono)' }}>84</div>
-            <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Case Categories</div>
-            <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>Tracked</div>
+            <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Case Categories</div>
+            <div style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '4px' }}>Tracked</div>
           </div>
-          <div style={{ padding: '24px', textAlign: 'center', background: 'var(--color-surface-0)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
+          <div style={{ padding: '24px', textAlign: 'center', background: 'var(--card)', border: '2px solid rgba(240, 242, 245, 0.09)', borderRadius: '4px' }}>
             <div style={{ fontSize: '28px', fontWeight: 600, color: 'var(--surf)', fontFamily: 'var(--font-mono)' }}>55+</div>
-            <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Years of Data</div>
-            <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '4px' }}>1970–2025</div>
+            <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginTop: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Years of Data</div>
+            <div style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '4px' }}>1970–2025</div>
           </div>
         </div>
       </noscript>

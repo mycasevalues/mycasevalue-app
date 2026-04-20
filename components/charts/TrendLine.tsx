@@ -13,13 +13,13 @@ interface TrendLineProps {
 }
 
 export function TrendLine({
-  data, color = 'var(--accent-primary)', gradientId = 'trendGrad',
+  data, color = 'var(--link)', gradientId = 'trendGrad',
   label, unit = '', lang = 'en',
 }: TrendLineProps) {
   return (
-    <div className="w-full p-6" style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
+    <div className="w-full p-6" style={{ background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
       {label && (
-        <div className="text-[13px] font-bold tracking-[0.5px] text-[var(--color-text-secondary)] mb-4" style={{ fontFamily: 'var(--font-ui)' }}>{label}</div>
+        <div className="text-[13px] font-bold tracking-[0.5px] text-[var(--text2)] mb-4" style={{ fontFamily: 'var(--font-ui)' }}>{label}</div>
       )}
       <ResponsiveContainer width="100%" height={200}>
         <AreaChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }}>
@@ -32,26 +32,26 @@ export function TrendLine({
           <CartesianGrid strokeDasharray="3 3" stroke="var(--bdr)" vertical={false} />
           <XAxis
             dataKey="year"
-            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}
-            axisLine={{ stroke: 'var(--border-default)' }}
+            tick={{ fontSize: 12, fill: 'var(--text2)', fontFamily: 'var(--font-ui)' }}
+            axisLine={{ stroke: 'var(--bdr)' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 12, fill: 'var(--color-text-secondary)' }}
+            tick={{ fontSize: 12, fill: 'var(--text2)' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}${unit}`}
           />
           <Tooltip
             contentStyle={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               fontSize: '14px',
               fontFamily: 'var(--font-ui)',
               padding: '8px 14px',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
             }}
             formatter={(value: number) => [`${value.toLocaleString()}${unit}`, label || (lang === 'es' ? 'Valor' : 'Value')]}
           />

@@ -61,11 +61,11 @@ export default function MethodologyCapture() {
 
     // Define fonts and colors
     const colors = {
-      primary: [10, 102, 194], // var(--accent-primary)
+      primary: [10, 102, 194], // var(--link)
       darkBlue: [8, 61, 122], // #083D7A (Westlaw link-hover)
-      black: [15, 15, 15], // var(--color-text-primary)
-      darkGray: [75, 85, 99], // var(--color-text-secondary)
-      lightGray: [229, 231, 235], // var(--border-default)
+      black: [15, 15, 15], // var(--text1)
+      darkGray: [75, 85, 99], // var(--text2)
+      lightGray: [229, 231, 235], // var(--bdr)
     };
 
     let currentPage = 1;
@@ -464,7 +464,7 @@ export default function MethodologyCapture() {
         .form-input {
           width: 100%;
           padding: 12px 16px;
-          border: 1px solid var(--border-default);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           font-size: 14px;
           font-family: var(--font-ui);
@@ -473,7 +473,7 @@ export default function MethodologyCapture() {
         }
         .form-input:focus {
           outline: none;
-          border-color: var(--accent-primary);
+          border-color: var(--link);
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
         }
         .form-input.error {
@@ -482,7 +482,7 @@ export default function MethodologyCapture() {
         .form-button {
           width: 100%;
           padding: 12px 24px;
-          background-color: var(--accent-primary);
+          background-color: var(--link);
           color: white;
           border: none;
           border-radius: 4px;
@@ -533,7 +533,7 @@ export default function MethodologyCapture() {
           style={{
             fontSize: 20,
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             fontFamily: 'var(--font-ui)',
             marginBottom: 8,
             marginTop: 0,
@@ -544,7 +544,7 @@ export default function MethodologyCapture() {
         <p
           style={{
             fontSize: 14,
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             fontFamily: 'var(--font-ui)',
             lineHeight: 1.6,
             marginBottom: 24,
@@ -574,7 +574,7 @@ export default function MethodologyCapture() {
               display: 'block',
               fontSize: 14,
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: 8,
               fontFamily: 'var(--font-ui)',
             }}
@@ -598,7 +598,7 @@ export default function MethodologyCapture() {
               display: 'block',
               fontSize: 14,
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: 8,
               fontFamily: 'var(--font-ui)',
             }}
@@ -622,7 +622,7 @@ export default function MethodologyCapture() {
               display: 'block',
               fontSize: 14,
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: 8,
               fontFamily: 'var(--font-ui)',
             }}
@@ -652,7 +652,7 @@ export default function MethodologyCapture() {
           borderRadius: '4px',
           backgroundColor: 'rgba(0, 65, 130, 0.05)',
           fontSize: 14,
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           fontFamily: 'var(--font-ui)',
           lineHeight: 1.6,
         }}

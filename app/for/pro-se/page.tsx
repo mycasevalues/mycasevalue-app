@@ -40,7 +40,7 @@ const jsonLd = {
 
 export default function ProSeLitigantsPage() {
   return (
-    <div style={{ background: 'var(--color-surface-0)' }}>
+    <div style={{ background: 'var(--card)' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -53,11 +53,11 @@ export default function ProSeLitigantsPage() {
 
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-6 py-16">
-        <h1 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-legal)', lineHeight: 1.2, color: 'var(--color-text-primary)', marginBottom: '1.5rem' }}>
+        <h1 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-legal)', lineHeight: 1.2, color: 'var(--text1)', marginBottom: '1.5rem' }}>
           The Data Attorneys Use, Made Accessible to Everyone
         </h1>
 
-        <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>
+        <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'var(--text2)', marginBottom: '2rem' }}>
           Navigating federal litigation without counsel need not mean navigating without data. MyCaseValue provides access to the same federal court outcome data that attorneys use to evaluate cases — actual win rates, settlement patterns, judge tendencies, and case timelines. All sourced from public records and presented in accessible language.
         </p>
 
@@ -86,16 +86,16 @@ export default function ProSeLitigantsPage() {
               key={i}
               style={{
                 padding: '1.5rem',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 boxShadow: 'var(--shadow-xs)',
               }}
             >
-              <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text1)', marginBottom: '0.5rem' }}>
                 {feature.title}
               </h3>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.875rem', color: 'var(--text2)', lineHeight: 1.6 }}>
                 {feature.description}
               </p>
             </div>
@@ -112,8 +112,8 @@ export default function ProSeLitigantsPage() {
               gap: '0.5rem',
               padding: '0.75rem 1.5rem',
               borderRadius: '4px',
-              backgroundColor: 'var(--accent-primary)',
-              color: 'var(--color-surface-0)',
+              backgroundColor: 'var(--link)',
+              color: 'var(--card)',
               textDecoration: 'none',
               fontSize: '0.875rem',
               fontWeight: 600,

@@ -130,7 +130,7 @@ export default function DataSourcesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+      <div style={{ background: 'var(--surf)', minHeight: '100vh' }}>
         {/* Hero Section */}
         <div style={{
           background: 'var(--card)',
@@ -182,14 +182,14 @@ export default function DataSourcesPage() {
         </div>
 
         {/* Breadcrumb */}
-        <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
+        <div style={{ borderBottom: '1px solid var(--bdr)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--surf)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
             <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-ui)' }}>
               <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
                 Home
               </Link>
-              <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
-              <span style={{ color: 'var(--color-text-secondary)' }}>Data Sources</span>
+              <span style={{ color: 'var(--text2)' }}>/</span>
+              <span style={{ color: 'var(--text2)' }}>Data Sources</span>
             </nav>
           </div>
         </div>
@@ -207,15 +207,15 @@ export default function DataSourcesPage() {
                 <div key={idx} style={{
                   padding: 32,
                   borderRadius: '4px',
-                  border: '1px solid var(--border-default)',
-                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--bdr)',
+                  background: 'var(--card)',
                   boxShadow: 'var(--shadow-xs)',
                   textAlign: 'center',
                 }}>
                   <p style={{
                     fontSize: 32,
                     fontWeight: 700,
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     fontFamily: 'var(--font-ui)',
                     margin: '0 0 8px 0',
                   }}>
@@ -224,7 +224,7 @@ export default function DataSourcesPage() {
                   <p style={{
                     fontSize: 14,
                     fontWeight: 600,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontFamily: 'var(--font-ui)',
                     margin: 0,
                     textTransform: 'uppercase',
@@ -242,7 +242,7 @@ export default function DataSourcesPage() {
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
@@ -254,8 +254,8 @@ export default function DataSourcesPage() {
                 <div key={idx} style={{
                   padding: 32,
                   borderRadius: '4px',
-                  border: '1px solid var(--border-default)',
-                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--bdr)',
+                  background: 'var(--card)',
                   boxShadow: 'var(--shadow-xs)',
                 }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 24, marginBottom: 20 }}>
@@ -263,7 +263,7 @@ export default function DataSourcesPage() {
                       <h3 style={{
                         fontSize: 20,
                         fontWeight: 700,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                         fontFamily: 'var(--font-ui)',
                         marginBottom: 8,
                       }}>
@@ -271,7 +271,7 @@ export default function DataSourcesPage() {
                       </h3>
                       <p style={{
                         fontSize: 14,
-                        color: 'var(--color-text-secondary)',
+                        color: 'var(--text2)',
                         fontFamily: 'var(--font-ui)',
                         lineHeight: 1.6,
                         margin: 0,
@@ -290,7 +290,7 @@ export default function DataSourcesPage() {
                         <p style={{
                           fontSize: 12,
                           fontWeight: 600,
-                          color: 'var(--color-text-secondary)',
+                          color: 'var(--text2)',
                           fontFamily: 'var(--font-ui)',
                           margin: 0,
                           textTransform: 'uppercase',
@@ -301,7 +301,7 @@ export default function DataSourcesPage() {
                         <p style={{
                           fontSize: 18,
                           fontWeight: 700,
-                          color: 'var(--accent-primary)',
+                          color: 'var(--link)',
                           fontFamily: 'var(--font-ui)',
                           margin: 0,
                         }}>
@@ -312,7 +312,7 @@ export default function DataSourcesPage() {
                         <p style={{
                           fontSize: 12,
                           fontWeight: 600,
-                          color: 'var(--color-text-secondary)',
+                          color: 'var(--text2)',
                           fontFamily: 'var(--font-ui)',
                           margin: 0,
                           textTransform: 'uppercase',
@@ -323,7 +323,7 @@ export default function DataSourcesPage() {
                         <p style={{
                           fontSize: 14,
                           fontWeight: 700,
-                          color: 'var(--color-text-primary)',
+                          color: 'var(--text1)',
                           fontFamily: 'var(--font-ui)',
                           margin: 0,
                         }}>
@@ -335,12 +335,12 @@ export default function DataSourcesPage() {
 
                   <div style={{
                     paddingTop: 20,
-                    borderTop: '1px solid var(--border-default)',
+                    borderTop: '1px solid var(--bdr)',
                   }}>
                     <p style={{
                       fontSize: 12,
                       fontWeight: 600,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       fontFamily: 'var(--font-ui)',
                       margin: '0 0 12px 0',
                       textTransform: 'uppercase',
@@ -357,7 +357,7 @@ export default function DataSourcesPage() {
                         <p style={{
                           fontSize: 12,
                           fontWeight: 600,
-                          color: 'var(--color-text-primary)',
+                          color: 'var(--text1)',
                           fontFamily: 'var(--font-ui)',
                           margin: '0 0 6px 0',
                         }}>
@@ -365,7 +365,7 @@ export default function DataSourcesPage() {
                         </p>
                         <p style={{
                           fontSize: 14,
-                          color: 'var(--color-text-secondary)',
+                          color: 'var(--text2)',
                           fontFamily: 'var(--font-ui)',
                           margin: 0,
                         }}>
@@ -379,12 +379,12 @@ export default function DataSourcesPage() {
                             alignItems: 'center',
                             gap: 6,
                           }}>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="3" strokeLinecap="round">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="3" strokeLinecap="round">
                               <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <span style={{
                               fontSize: 14,
-                              color: 'var(--color-text-secondary)',
+                              color: 'var(--text2)',
                               fontFamily: 'var(--font-ui)',
                             }}>
                               {feature}
@@ -404,7 +404,7 @@ export default function DataSourcesPage() {
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
@@ -420,14 +420,14 @@ export default function DataSourcesPage() {
                 <div key={idx} style={{
                   padding: 32,
                   borderRadius: '4px',
-                  border: '1px solid var(--border-default)',
-                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--bdr)',
+                  background: 'var(--card)',
                   boxShadow: 'var(--shadow-xs)',
                 }}>
                   <h3 style={{
                     fontSize: 16,
                     fontWeight: 700,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-ui)',
                     marginBottom: 12,
                   }}>
@@ -435,7 +435,7 @@ export default function DataSourcesPage() {
                   </h3>
                   <p style={{
                     fontSize: 14,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontFamily: 'var(--font-ui)',
                     lineHeight: 1.6,
                     margin: 0,
@@ -452,7 +452,7 @@ export default function DataSourcesPage() {
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
@@ -468,14 +468,14 @@ export default function DataSourcesPage() {
               <div style={{
                 padding: 32,
                 borderRadius: '4px',
-                border: '1px solid var(--border-default)',
-                background: 'var(--color-surface-0)',
+                border: '1px solid var(--bdr)',
+                background: 'var(--card)',
                 boxShadow: 'var(--shadow-xs)',
               }}>
                 <h3 style={{
                   fontSize: 18,
                   fontWeight: 700,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                   marginBottom: 24,
                 }}>
@@ -493,11 +493,11 @@ export default function DataSourcesPage() {
                       justifyContent: 'space-between',
                       alignItems: 'center',
                       paddingBottom: 12,
-                      borderBottom: idx < 3 ? '1px solid var(--border-default)' : 'none',
+                      borderBottom: idx < 3 ? '1px solid var(--bdr)' : 'none',
                     }}>
                       <span style={{
                         fontSize: 14,
-                        color: 'var(--color-text-secondary)',
+                        color: 'var(--text2)',
                         fontFamily: 'var(--font-ui)',
                       }}>
                         {item.source}
@@ -505,7 +505,7 @@ export default function DataSourcesPage() {
                       <span style={{
                         fontSize: 14,
                         fontWeight: 600,
-                        color: 'var(--accent-primary)',
+                        color: 'var(--link)',
                         fontFamily: 'var(--font-ui)',
                       }}>
                         {item.frequency}
@@ -519,14 +519,14 @@ export default function DataSourcesPage() {
               <div style={{
                 padding: 32,
                 borderRadius: '4px',
-                border: '1px solid var(--border-default)',
-                background: 'var(--color-surface-0)',
+                border: '1px solid var(--bdr)',
+                background: 'var(--card)',
                 boxShadow: 'var(--shadow-xs)',
               }}>
                 <h3 style={{
                   fontSize: 18,
                   fontWeight: 700,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                   marginBottom: 24,
                 }}>
@@ -544,11 +544,11 @@ export default function DataSourcesPage() {
                       justifyContent: 'space-between',
                       alignItems: 'center',
                       paddingBottom: 12,
-                      borderBottom: idx < 3 ? '1px solid var(--border-default)' : 'none',
+                      borderBottom: idx < 3 ? '1px solid var(--bdr)' : 'none',
                     }}>
                       <span style={{
                         fontSize: 14,
-                        color: 'var(--color-text-secondary)',
+                        color: 'var(--text2)',
                         fontFamily: 'var(--font-ui)',
                       }}>
                         {item.source}
@@ -556,7 +556,7 @@ export default function DataSourcesPage() {
                       <span style={{
                         fontSize: 14,
                         fontWeight: 600,
-                        color: 'var(--color-text-primary)',
+                        color: 'var(--text1)',
                         fontFamily: 'var(--font-ui)',
                       }}>
                         {item.updated}
@@ -573,7 +573,7 @@ export default function DataSourcesPage() {
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
@@ -583,13 +583,13 @@ export default function DataSourcesPage() {
             <div style={{
               padding: 40,
               borderRadius: '4px',
-              border: '1px solid var(--border-default)',
-              background: 'var(--color-surface-0)',
+              border: '1px solid var(--bdr)',
+              background: 'var(--card)',
               boxShadow: 'var(--shadow-xs)',
             }}>
               <p style={{
                 fontSize: 16,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 fontFamily: 'var(--font-ui)',
                 lineHeight: 1.8,
                 marginBottom: 24,
@@ -619,13 +619,13 @@ export default function DataSourcesPage() {
                   <div key={idx} style={{
                     padding: 16,
                     borderRadius: '4px',
-                    border: '1px solid var(--border-default)',
-                    background: 'var(--color-surface-0)',
+                    border: '1px solid var(--bdr)',
+                    background: 'var(--card)',
                   }}>
                     <p style={{
                       fontSize: 14,
                       fontWeight: 600,
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                       fontFamily: 'var(--font-ui)',
                       margin: '0 0 6px 0',
                     }}>
@@ -634,7 +634,7 @@ export default function DataSourcesPage() {
                     <p style={{
                       fontSize: 16,
                       fontWeight: 700,
-                      color: 'var(--accent-primary)',
+                      color: 'var(--link)',
                       fontFamily: 'var(--font-ui)',
                       margin: 0,
                     }}>
@@ -651,7 +651,7 @@ export default function DataSourcesPage() {
             <h2 style={{
               fontSize: 32,
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               fontFamily: 'var(--font-ui)',
               marginBottom: 32,
             }}>
@@ -692,8 +692,8 @@ export default function DataSourcesPage() {
                 <div key={idx} style={{
                   padding: 24,
                   borderRadius: '4px',
-                  border: '1px solid var(--border-default)',
-                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--bdr)',
+                  background: 'var(--card)',
                   boxShadow: 'var(--shadow-xs)',
                 }}>
                   <div style={{
@@ -706,14 +706,14 @@ export default function DataSourcesPage() {
                     justifyContent: 'center',
                     marginBottom: 12,
                   }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                     </svg>
                   </div>
                   <h3 style={{
                     fontSize: 16,
                     fontWeight: 700,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-ui)',
                     marginBottom: 8,
                   }}>
@@ -721,7 +721,7 @@ export default function DataSourcesPage() {
                   </h3>
                   <p style={{
                     fontSize: 14,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontFamily: 'var(--font-ui)',
                     lineHeight: 1.6,
                     margin: 0,
@@ -737,13 +737,13 @@ export default function DataSourcesPage() {
           <section style={{
             padding: 48,
             borderRadius: '4px',
-            background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--link) 100%)',
+            background: 'linear-gradient(135deg, var(--link) 0%, var(--link) 100%)',
             textAlign: 'center',
           }}>
             <h2 style={{
               fontSize: 28,
               fontWeight: 700,
-              color: 'var(--color-surface-0)',
+              color: 'var(--card)',
               fontFamily: 'var(--font-ui)',
               marginBottom: 12,
             }}>
@@ -764,8 +764,8 @@ export default function DataSourcesPage() {
                 style={{
                   display: 'inline-block',
                   padding: '16px 32px',
-                  backgroundColor: 'var(--color-surface-0)',
-                  color: 'var(--accent-primary)',
+                  backgroundColor: 'var(--card)',
+                  color: 'var(--link)',
                   fontSize: 14,
                   fontWeight: 700,
                   borderRadius: '4px',
@@ -782,7 +782,7 @@ export default function DataSourcesPage() {
                   display: 'inline-block',
                   padding: '16px 32px',
                   backgroundColor: 'rgba(255,255,255,0.2)',
-                  color: 'var(--color-surface-0)',
+                  color: 'var(--card)',
                   fontSize: 14,
                   fontWeight: 700,
                   borderRadius: '4px',

@@ -29,7 +29,7 @@ export default function TrustBar() {
 
   return (
     <div style={{
-      background: 'var(--color-surface-0)', borderBottom: '1px solid var(--border-default)', padding: '24px',
+      background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '24px',
     }}>
       <div style={{
         maxWidth: '1140px', margin: '0 auto',
@@ -38,11 +38,11 @@ export default function TrustBar() {
       }}>
         {indicators.map((item, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d={item.icon} />
             </svg>
-            <span style={{ fontSize: '14px', fontWeight: 500, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
-              {item.text}<strong style={{ fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>{item.highlight}</strong>
+            <span style={{ fontSize: '14px', fontWeight: 500, color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
+              {item.text}<strong style={{ fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>{item.highlight}</strong>
             </span>
           </div>
         ))}

@@ -26,7 +26,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
   return (
     <section style={{ marginTop: 56, marginBottom: 56 }}>
       <div style={{
-        background: 'var(--color-surface-0)',
+        background: 'var(--card)',
         border: '1px solid rgba(255,255,255,0.08)',
         borderRadius: '4px',
         padding: 'clamp(24px, 4vw, 32px)',
@@ -34,7 +34,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
         <h2 style={{
           fontSize: 18,
           fontWeight: 700,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           margin: '0 0 8px',
           fontFamily: 'var(--font-heading)',
           letterSpacing: '-0.5px',
@@ -45,7 +45,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
         {subtitle && (
           <p style={{
             fontSize: 14,
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             margin: '0 0 24px',
             fontFamily: 'var(--font-ui)',
           }}>
@@ -65,7 +65,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
               <div
                 key={judge.id}
                 style={{
-                  background: 'var(--color-surface-1)',
+                  background: 'var(--surf)',
                   border: '1px solid rgba(255,255,255,0.08)',
                   borderRadius: '4px',
                   padding: '16px',
@@ -79,7 +79,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                   <Link
                     href={`/judges/${judge.id}`}
                     style={{
-                      color: 'var(--accent-primary)',
+                      color: 'var(--link)',
                       textDecoration: 'none',
                       fontWeight: 600,
                       fontSize: 14,
@@ -93,7 +93,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                   {showDistrict && judge.district_id && (
                     <div style={{
                       fontSize: 12,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       fontFamily: 'var(--font-ui)',
                     }}>
                       {judge.district_id}
@@ -105,7 +105,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                 <div>
                   <div style={{
                     fontSize: 12,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
                     marginBottom: 4,
@@ -127,7 +127,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                 <div>
                   <div style={{
                     fontSize: 12,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.3px',
                     marginBottom: 4,
@@ -138,7 +138,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                   <div style={{
                     fontSize: 14,
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-mono)',
                   }}>
                     {judge.total_cases.toLocaleString()}
@@ -149,7 +149,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                 <Link
                   href={`/judges/${judge.id}`}
                   style={{
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     textDecoration: 'none',
                     fontSize: 14,
                     fontWeight: 500,

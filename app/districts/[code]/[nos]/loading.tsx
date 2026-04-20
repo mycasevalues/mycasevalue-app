@@ -1,9 +1,9 @@
 export default function Loading() {
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh' }}>
       {/* Breadcrumb Skeleton */}
       <nav style={{
-        background: 'var(--color-surface-0)',
+        background: 'var(--card)',
         borderBottom: '1px solid var(--bdr)',
         padding: '12px 0',
       }}>
@@ -22,7 +22,7 @@ export default function Loading() {
 
       {/* Hero Skeleton */}
       <header style={{
-        background: 'var(--accent-primary)',
+        background: 'var(--link)',
         borderBottom: '1px solid var(--bdr)',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
@@ -63,7 +63,7 @@ export default function Loading() {
             <div
               key={i}
               style={{
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '24px',

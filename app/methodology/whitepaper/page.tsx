@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function WhitepaperPage() {
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh' }}>
       {/* Header Banner */}
       <div style={{
         background: 'var(--card)',
@@ -62,7 +62,7 @@ export default function WhitepaperPage() {
               fontFamily: 'var(--font-legal)',
               fontSize: '28px',
               fontWeight: 700,
-              color: 'var(--color-text-inverse)',
+              color: 'var(--chrome-text)',
               letterSpacing: '-0.025em',
               marginBottom: 16,
               lineHeight: 1.1,
@@ -86,18 +86,18 @@ export default function WhitepaperPage() {
       </div>
 
       {/* Breadcrumb Navigation */}
-      <div style={{ borderBottom: '1px solid var(--border-default)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--color-surface-1)' }}>
+      <div style={{ borderBottom: '1px solid var(--bdr)', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: 'var(--surf)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-ui)' }}>
             <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
               Home
             </Link>
-            <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
+            <span style={{ color: 'var(--text2)' }}>/</span>
             <Link href="/methodology" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
               Methodology
             </Link>
-            <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
-            <span style={{ color: 'var(--color-text-secondary)' }}>Whitepaper</span>
+            <span style={{ color: 'var(--text2)' }}>/</span>
+            <span style={{ color: 'var(--text2)' }}>Whitepaper</span>
           </nav>
         </div>
       </div>
@@ -106,9 +106,9 @@ export default function WhitepaperPage() {
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 24px' }}>
         <div
           style={{
-            background: 'var(--color-surface-0)',
+            background: 'var(--card)',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             padding: '48px',
             boxShadow: 'var(--shadow-xs)',
           }}
@@ -122,7 +122,7 @@ export default function WhitepaperPage() {
             marginTop: 48,
             padding: '24px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             backgroundColor: 'rgba(10, 102, 194, 0.05)',
           }}
         >
@@ -140,23 +140,23 @@ export default function WhitepaperPage() {
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
             <div>
-              <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 14, color: 'var(--text2)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Version
               </p>
-              <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--text1)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 1.0
               </p>
             </div>
             <div>
-              <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 14, color: 'var(--text2)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Published
               </p>
-              <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--text1)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 2026
               </p>
             </div>
             <div>
-              <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: 14, color: 'var(--text2)', margin: '0 0 4px 0', fontFamily: 'var(--font-ui)' }}>
                 Contact
               </p>
               <a
@@ -164,7 +164,7 @@ export default function WhitepaperPage() {
                 style={{
                   fontSize: 14,
                   fontWeight: 600,
-                  color: 'var(--accent-primary)',
+                  color: 'var(--link)',
                   margin: 0,
                   fontFamily: 'var(--font-ui)',
                   textDecoration: 'none',
@@ -186,7 +186,7 @@ export default function WhitepaperPage() {
               gap: 8,
               fontSize: 14,
               fontWeight: 600,
-              color: 'var(--accent-primary)',
+              color: 'var(--link)',
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
             }}

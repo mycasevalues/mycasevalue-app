@@ -130,8 +130,8 @@ export default function LegalSearchPage() {
     borderRadius: 4,
     border: '1px solid rgba(255,255,255,0.1)',
     fontSize: 14,
-    color: 'var(--color-text-primary)',
-    background: 'var(--color-surface-0)',
+    color: 'var(--text1)',
+    background: 'var(--card)',
     outline: 'none',
     minWidth: 140,
   };
@@ -141,14 +141,14 @@ export default function LegalSearchPage() {
 
       {/* Breadcrumb */}
       <nav style={{ fontSize: 14, color: 'var(--color-text-muted)', marginBottom: 24 }}>
-        <Link href="/legal" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Research Hub</Link>
+        <Link href="/legal" style={{ color: 'var(--link)', textDecoration: 'none' }}>Research Hub</Link>
         <span style={{ margin: '0 8px' }}>/</span>
         <span>Document Search</span>
       </nav>
 
       {/* Hero */}
       <div style={{ marginBottom: 16 }}>
-        <h1 style={{ fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--color-text-primary)', margin: '0 0 8px', lineHeight: 1.2 }}>
+        <h1 style={{ fontSize: 28, fontWeight: 700, fontFamily: 'var(--font-legal)', color: 'var(--text1)', margin: '0 0 8px', lineHeight: 1.2 }}>
           Legal Document Search
         </h1>
         <p style={{ fontSize: 14, color: 'var(--color-text-muted)', margin: 0, maxWidth: 600, lineHeight: 1.6 }}>
@@ -171,12 +171,12 @@ export default function LegalSearchPage() {
                 borderRadius: 4,
                 border: '2px solid var(--bdr)',
                 fontSize: 16,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 outline: 'none',
                 boxSizing: 'border-box',
                 transition: 'border-color 150ms',
               }}
-              onFocus={(e) => (e.target.style.borderColor = 'var(--accent-primary)')}
+              onFocus={(e) => (e.target.style.borderColor = 'var(--link)')}
               onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.1)')}
             />
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2" style={{ position: 'absolute', left: 16, top: '50%', transform: 'translateY(-50%)' }}>
@@ -189,8 +189,8 @@ export default function LegalSearchPage() {
             style={{
               padding: '16px 32px',
               borderRadius: 4,
-              background: 'var(--accent-primary)',
-              color: 'var(--color-surface-0)',
+              background: 'var(--link)',
+              color: 'var(--card)',
               fontSize: 14,
               fontWeight: 600,
               border: 'none',
@@ -208,10 +208,10 @@ export default function LegalSearchPage() {
               padding: '16px 16px',
               borderRadius: 4,
               background: showFilters ? 'var(--link-light)' : 'rgba(255,255,255,0.05)',
-              color: showFilters ? 'var(--accent-primary)' : 'var(--color-text-muted)',
+              color: showFilters ? 'var(--link)' : 'var(--color-text-muted)',
               fontSize: 14,
               fontWeight: 500,
-              border: showFilters ? '1px solid var(--accent-primary)' : '1px solid var(--bdr)',
+              border: showFilters ? '1px solid var(--link)' : '1px solid var(--bdr)',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
             }}
@@ -227,9 +227,9 @@ export default function LegalSearchPage() {
             gap: 12,
             flexWrap: 'wrap',
             padding: '16px 24px',
-            background: 'var(--color-surface-0)',
+            background: 'var(--card)',
             borderRadius: 4,
-            border: '1px solid var(--border-default)',
+            border: '1px solid var(--bdr)',
             alignItems: 'center',
           }}>
             <div>
@@ -289,7 +289,7 @@ export default function LegalSearchPage() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
           <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>
             {loading ? 'Searching...' : `${total} result${total !== 1 ? 's' : ''} found`}
-            {query.trim() && !loading && <span> for &ldquo;<strong style={{ color: 'var(--color-text-primary)' }}>{query}</strong>&rdquo;</span>}
+            {query.trim() && !loading && <span> for &ldquo;<strong style={{ color: 'var(--text1)' }}>{query}</strong>&rdquo;</span>}
           </div>
           {total > 0 && totalPages > 1 && (
             <div style={{ fontSize: 14, color: 'var(--color-text-muted)' }}>
@@ -307,13 +307,13 @@ export default function LegalSearchPage() {
             style={{
               padding: '24px 24px',
               borderRadius: 4,
-              border: '1px solid var(--border-default)',
-              background: 'var(--color-surface-0)',
+              border: '1px solid var(--bdr)',
+              background: 'var(--card)',
               transition: 'border-color 150ms, box-shadow 150ms',
               cursor: 'pointer',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(9,102,195,0.08)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--link)'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(9,102,195,0.08)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.boxShadow = 'none'; }}
           >
             {/* Meta row */}
             <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8, flexWrap: 'wrap' }}>
@@ -351,13 +351,13 @@ export default function LegalSearchPage() {
 
             {/* Title */}
             <h3
-              style={{ fontSize: 16, fontWeight: 600, color: 'var(--accent-primary)', margin: '0 0 6px', lineHeight: 1.4 }}
+              style={{ fontSize: 16, fontWeight: 600, color: 'var(--link)', margin: '0 0 6px', lineHeight: 1.4 }}
               dangerouslySetInnerHTML={{ __html: highlightQuery(doc.title, query) }}
             />
 
             {/* Snippet */}
             <p
-              style={{ fontSize: 14, color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.65 }}
+              style={{ fontSize: 14, color: 'var(--text2)', margin: 0, lineHeight: 1.65 }}
               dangerouslySetInnerHTML={{ __html: highlightQuery(doc.snippet, query) }}
             />
 
@@ -371,7 +371,7 @@ export default function LegalSearchPage() {
                   href={doc.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ fontSize: 12, color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500 }}
+                  style={{ fontSize: 12, color: 'var(--link)', textDecoration: 'none', fontWeight: 500 }}
                   onClick={(e) => e.stopPropagation()}
                 >
                   View source &#x2197;
@@ -386,7 +386,7 @@ export default function LegalSearchPage() {
       {hasSearched && !loading && results.length === 0 && (
         <div style={{ textAlign: 'center', padding: '48px 20px' }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>&#x1F50D;</div>
-          <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 8px' }}>No results found</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 600, color: 'var(--text1)', margin: '0 0 8px' }}>No results found</h3>
           <p style={{ fontSize: 14, color: 'var(--color-text-muted)', margin: 0 }}>
             Try adjusting your search terms or filters to find what you&apos;re looking for.
           </p>
@@ -403,8 +403,8 @@ export default function LegalSearchPage() {
               padding: '8px 16px',
               borderRadius: 4,
               border: '1px solid rgba(255,255,255,0.1)',
-              background: page <= 1 ? 'rgba(255,255,255,0.05)' : 'var(--color-surface-0)',
-              color: page <= 1 ? 'var(--color-text-muted)' : 'var(--color-text-secondary)',
+              background: page <= 1 ? 'rgba(255,255,255,0.05)' : 'var(--card)',
+              color: page <= 1 ? 'var(--color-text-muted)' : 'var(--text2)',
               fontSize: 14,
               cursor: page <= 1 ? 'not-allowed' : 'pointer',
             }}
@@ -418,8 +418,8 @@ export default function LegalSearchPage() {
               padding: '8px 16px',
               borderRadius: 4,
               border: '1px solid rgba(255,255,255,0.1)',
-              background: page >= totalPages ? 'rgba(255,255,255,0.05)' : 'var(--color-surface-0)',
-              color: page >= totalPages ? 'var(--color-text-muted)' : 'var(--color-text-secondary)',
+              background: page >= totalPages ? 'rgba(255,255,255,0.05)' : 'var(--card)',
+              color: page >= totalPages ? 'var(--color-text-muted)' : 'var(--text2)',
               fontSize: 14,
               cursor: page >= totalPages ? 'not-allowed' : 'pointer',
             }}
@@ -434,10 +434,10 @@ export default function LegalSearchPage() {
         marginTop: 48,
         padding: '32px 32px',
         borderRadius: 4,
-        background: 'var(--color-surface-0)',
-        border: '1px solid var(--border-default)',
+        background: 'var(--card)',
+        border: '1px solid var(--bdr)',
       }}>
-        <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 16px' }}>
+        <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--text1)', margin: '0 0 16px' }}>
           Search Across 7 Sources
         </h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 8 }}>
@@ -448,8 +448,8 @@ export default function LegalSearchPage() {
               style={{
                 padding: '8px 16px',
                 borderRadius: 4,
-                border: source === s.value ? `2px solid ${SOURCE_COLORS[s.value]}` : '1px solid var(--border-default)',
-                background: source === s.value ? `${SOURCE_COLORS[s.value]}0A` : 'var(--color-surface-0)',
+                border: source === s.value ? `2px solid ${SOURCE_COLORS[s.value]}` : '1px solid var(--bdr)',
+                background: source === s.value ? `${SOURCE_COLORS[s.value]}0A` : 'var(--card)',
                 cursor: 'pointer',
                 textAlign: 'left',
               }}
@@ -466,11 +466,11 @@ export default function LegalSearchPage() {
       <div style={{
         marginTop: 48,
         padding: '32px',
-        background: 'var(--color-surface-0)',
-        border: '1px solid var(--border-default)',
+        background: 'var(--card)',
+        border: '1px solid var(--bdr)',
         borderRadius: 4,
       }}>
-        <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 20px 0', fontFamily: 'var(--font-ui)' }}>
+        <h3 style={{ fontSize: 16, fontWeight: 600, color: 'var(--text1)', margin: '0 0 20px 0', fontFamily: 'var(--font-ui)' }}>
           Related Research Tools
         </h3>
         <div style={{
@@ -492,25 +492,25 @@ export default function LegalSearchPage() {
               style={{
                 display: 'block',
                 padding: 16,
-                background: 'var(--color-surface-1)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--surf)',
+                border: '1px solid var(--bdr)',
                 borderRadius: 4,
                 textDecoration: 'none',
                 transition: 'all 200ms ease',
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--accent-primary)';
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--link)';
                 (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 2px 8px rgba(9, 102, 195, 0.08)';
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--border-default)';
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--bdr)';
                 (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
               }}
             >
               <h4 style={{
                 fontSize: 14,
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 margin: '0 0 4px 0',
                 fontFamily: 'var(--font-ui)',
               }}>
@@ -518,7 +518,7 @@ export default function LegalSearchPage() {
               </h4>
               <p style={{
                 fontSize: 12,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 margin: 0,
               }}>
                 {tool.desc}
@@ -530,7 +530,7 @@ export default function LegalSearchPage() {
 
       {/* Back to hub */}
       <div style={{ textAlign: 'center', marginTop: 40 }}>
-        <Link href="/legal" style={{ fontSize: 14, color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500 }}>
+        <Link href="/legal" style={{ fontSize: 14, color: 'var(--link)', textDecoration: 'none', fontWeight: 500 }}>
           &larr; Back to Research Hub
         </Link>
       </div>

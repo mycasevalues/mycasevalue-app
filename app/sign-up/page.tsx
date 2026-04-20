@@ -75,7 +75,7 @@ export default function SignUpPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'var(--accent-primary)',
+          background: 'var(--link)',
           padding: '24px',
         }}
       >
@@ -111,8 +111,8 @@ export default function SignUpPage() {
           style={{
             width: '100%',
             maxWidth: '440px',
-            backgroundColor: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            backgroundColor: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '24px',
             textAlign: 'center',
@@ -140,7 +140,7 @@ export default function SignUpPage() {
               fontFamily: 'var(--font-ui)',
               fontSize: '22px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 12px 0',
             }}
           >
@@ -150,20 +150,20 @@ export default function SignUpPage() {
             style={{
               fontFamily: 'var(--font-ui)',
               fontSize: '14px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               lineHeight: 1.6,
               margin: '0 0 12px 0',
             }}
           >
-            We sent a confirmation link to <strong style={{ color: 'var(--color-text-primary)' }}>{email}</strong>. Click the link to activate your account.
+            We sent a confirmation link to <strong style={{ color: 'var(--text1)' }}>{email}</strong>. Click the link to activate your account.
           </p>
           <Link
             href="/sign-in"
             style={{
               display: 'inline-block',
               padding: '12px 24px',
-              backgroundColor: 'var(--accent-primary)',
-              color: 'var(--color-text-inverse)',
+              backgroundColor: 'var(--link)',
+              color: 'var(--chrome-text)',
               borderRadius: '2px',
               fontFamily: 'var(--font-ui)',
               fontSize: '14px',
@@ -185,7 +185,7 @@ export default function SignUpPage() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        background: 'var(--color-surface-1)',
+        background: 'var(--surf)',
       }}
     >
       <style>{`
@@ -217,8 +217,8 @@ export default function SignUpPage() {
         }
         .feature-card {
           border-radius: '4px';
-          border: 1px solid var(--border-default);
-          background: var(--color-surface-0);
+          border: 1px solid var(--bdr);
+          background: var(--card);
           padding: 24px;
           transition: box-shadow 200ms, transform 200ms;
         }
@@ -231,11 +231,11 @@ export default function SignUpPage() {
           align-items: center;
           gap: 6px;
           padding: 8px 12px;
-          background: var(--color-surface-1);
+          background: var(--surf);
           border-radius: '3px';
-          border: 1px solid var(--border-default);
+          border: 1px solid var(--bdr);
           font-size: 12px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           font-family: var(--font-ui);
         }
       `}</style>
@@ -244,7 +244,7 @@ export default function SignUpPage() {
       <div
         style={{
           backgroundColor: 'var(--data-positive)',
-          color: 'var(--color-text-inverse)',
+          color: 'var(--chrome-text)',
           padding: '12px 24px',
           textAlign: 'center',
           fontFamily: 'var(--font-ui)',
@@ -259,10 +259,10 @@ export default function SignUpPage() {
       {/* Navy Header Strip with Logo */}
       <div
         style={{
-          backgroundColor: 'var(--accent-primary)',
+          backgroundColor: 'var(--link)',
           padding: '24px',
-          color: 'var(--color-text-inverse)',
-          borderBottom: '1px solid var(--border-default)',
+          color: 'var(--chrome-text)',
+          borderBottom: '1px solid var(--bdr)',
         }}
       >
         <div
@@ -297,8 +297,8 @@ export default function SignUpPage() {
           <div
             className="auth-card"
             style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
               boxShadow: 'var(--shadow-sm)',
@@ -310,7 +310,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-legal)',
                 fontSize: '28px',
                 fontWeight: 700,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 margin: '0 0 12px 0',
                 lineHeight: 1.2,
               }}
@@ -329,7 +329,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: '8px',
                   }}
                 >
@@ -348,12 +348,12 @@ export default function SignUpPage() {
                     width: '100%',
                     height: '48px',
                     padding: '12px 16px',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '4px',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-0)',
+                    color: 'var(--text1)',
+                    backgroundColor: 'var(--card)',
                     boxSizing: 'border-box',
                     transition: 'border-color 200ms, box-shadow 200ms',
                   }}
@@ -369,7 +369,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: '8px',
                   }}
                 >
@@ -388,12 +388,12 @@ export default function SignUpPage() {
                     width: '100%',
                     height: '48px',
                     padding: '12px 16px',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '4px',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-0)',
+                    color: 'var(--text1)',
+                    backgroundColor: 'var(--card)',
                     boxSizing: 'border-box',
                     transition: 'border-color 200ms, box-shadow 200ms',
                   }}
@@ -409,7 +409,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: '8px',
                   }}
                 >
@@ -424,12 +424,12 @@ export default function SignUpPage() {
                     width: '100%',
                     height: '48px',
                     padding: '12px 16px',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '4px',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-0)',
+                    color: 'var(--text1)',
+                    backgroundColor: 'var(--card)',
                     boxSizing: 'border-box',
                     transition: 'border-color 200ms, box-shadow 200ms',
                     cursor: 'pointer',
@@ -455,7 +455,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: '8px',
                   }}
                 >
@@ -475,12 +475,12 @@ export default function SignUpPage() {
                     width: '100%',
                     height: '48px',
                     padding: '12px 16px',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '4px',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-0)',
+                    color: 'var(--text1)',
+                    backgroundColor: 'var(--card)',
                     boxSizing: 'border-box',
                     transition: 'border-color 200ms, box-shadow 200ms',
                   }}
@@ -489,7 +489,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '12px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     margin: '6px 0 0 0',
                   }}
                 >
@@ -506,7 +506,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     marginBottom: '8px',
                   }}
                 >
@@ -526,12 +526,12 @@ export default function SignUpPage() {
                     width: '100%',
                     height: '48px',
                     padding: '12px 16px',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '4px',
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-0)',
+                    color: 'var(--text1)',
+                    backgroundColor: 'var(--card)',
                     boxSizing: 'border-box',
                     transition: 'border-color 200ms, box-shadow 200ms',
                   }}
@@ -565,7 +565,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     lineHeight: 1.5,
                     cursor: 'pointer',
                   }}
@@ -601,7 +601,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     margin: '0 0 16px 0',
                     padding: '8px 12px',
                     backgroundColor: 'rgba(10, 102, 194, 0.06)',
@@ -618,7 +618,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--accent-primary)',
+                    color: 'var(--link)',
                     margin: '0 0 16px 0',
                     padding: '8px 12px',
                     backgroundColor: 'rgba(10, 102, 194, 0.06)',
@@ -649,8 +649,8 @@ export default function SignUpPage() {
                   width: '100%',
                   height: '48px',
                   padding: '0',
-                  background: 'var(--accent-primary)',
-                  color: 'var(--color-text-inverse)',
+                  background: 'var(--link)',
+                  color: 'var(--chrome-text)',
                   border: 'none',
                   borderRadius: '2px',
                   fontFamily: 'var(--font-ui)',
@@ -670,14 +670,14 @@ export default function SignUpPage() {
               style={{
                 textAlign: 'center',
                 paddingTop: '16px',
-                borderTop: '1px solid var(--border-default)',
+                borderTop: '1px solid var(--bdr)',
               }}
             >
               <p
                 style={{
                   fontFamily: 'var(--font-ui)',
                   fontSize: '14px',
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   margin: 0,
                 }}
               >
@@ -707,7 +707,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: '20px',
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 margin: '0 0 12px 0',
               }}
             >
@@ -735,7 +735,7 @@ export default function SignUpPage() {
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <path d="M3 3v18h18" />
                     <path d="M18 17V9m-5 8V5m-5 12v-3" />
                   </svg>
@@ -745,7 +745,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -755,7 +755,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     margin: 0,
                     lineHeight: 1.5,
                   }}
@@ -778,7 +778,7 @@ export default function SignUpPage() {
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
                   </svg>
@@ -788,7 +788,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -798,7 +798,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     margin: 0,
                     lineHeight: 1.5,
                   }}
@@ -831,7 +831,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -841,7 +841,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     margin: 0,
                     lineHeight: 1.5,
                   }}
@@ -874,7 +874,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -884,7 +884,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     margin: 0,
                     lineHeight: 1.5,
                   }}
@@ -918,7 +918,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -928,7 +928,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     margin: 0,
                     lineHeight: 1.5,
                   }}
@@ -951,7 +951,7 @@ export default function SignUpPage() {
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                     <polyline points="17 6 23 6 23 12" />
                   </svg>
@@ -961,7 +961,7 @@ export default function SignUpPage() {
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -971,7 +971,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-ui)',
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     margin: 0,
                     lineHeight: 1.5,
                   }}
@@ -989,7 +989,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-ui)',
                 fontSize: '20px',
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 margin: '0 0 12px 0',
               }}
             >
@@ -1000,7 +1000,7 @@ export default function SignUpPage() {
               style={{
                 fontFamily: 'var(--font-ui)',
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 margin: '0 0 16px 0',
                 lineHeight: 1.6,
               }}
@@ -1047,8 +1047,8 @@ export default function SignUpPage() {
       {/* Footer Privacy/Terms Text */}
       <div
         style={{
-          backgroundColor: 'var(--color-surface-0)',
-          borderTop: '1px solid var(--border-default)',
+          backgroundColor: 'var(--card)',
+          borderTop: '1px solid var(--bdr)',
           padding: '24px',
           textAlign: 'center',
           marginTop: 'auto',
@@ -1058,7 +1058,7 @@ export default function SignUpPage() {
           style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '12px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             margin: 0,
           }}
         >

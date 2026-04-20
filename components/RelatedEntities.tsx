@@ -45,14 +45,14 @@ function RelatedItem({ href, label, sublabel, stat, statColor }: {
   return (
     <Link
       href={href}
-      className="flex items-center justify-between px-4 py-2 hover:bg-[var(--color-surface-1)]/50 transition-colors group"
+      className="flex items-center justify-between px-4 py-2 hover:bg-[var(--surf)]/50 transition-colors group"
     >
       <div className="min-w-0 flex-1">
         <div className="text-sm text-[var(--color-text-muted)] font-medium truncate group-hover:text-brand-blue transition-colors">{label}</div>
         {sublabel && <div className="text-[11px] text-[var(--color-text-muted)] truncate">{sublabel}</div>}
       </div>
       {stat && (
-        <span className="text-xs font-mono font-semibold flex-shrink-0 ml-2" style={{ color: statColor || 'var(--color-text-primary)' }}>
+        <span className="text-xs font-mono font-semibold flex-shrink-0 ml-2" style={{ color: statColor || 'var(--text1)' }}>
           {stat}
         </span>
       )}

@@ -40,7 +40,7 @@ const jsonLd = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+    <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       <style>{`
         .legal-toc {
           position: sticky;
@@ -55,7 +55,7 @@ export default function TermsPage() {
           display: block;
           padding: 8px 0;
           font-size: 14px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           text-decoration: none;
           border-left: 2px solid transparent;
           padding-left: 16px;
@@ -81,17 +81,17 @@ export default function TermsPage() {
         }
 
         .breadcrumb-home-link:hover {
-          color: var(--color-surface-0);
+          color: var(--card);
         }
 
         .legal-section-heading {
           font-size: 20px;
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-bottom: 16px;
           margin-top: 48px;
           padding-bottom: 16px;
-          border-bottom: 1px solid var(--border-default);
+          border-bottom: 1px solid var(--bdr);
         }
 
         .legal-section-heading:first-of-type {
@@ -100,7 +100,7 @@ export default function TermsPage() {
 
         .legal-body {
           font-size: 15px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           line-height: 1.7;
           font-weight: 300;
         }
@@ -155,13 +155,13 @@ export default function TermsPage() {
       />
 
       {/* Header */}
-      <div style={{ borderColor: 'var(--border-default)', background: 'var(--accent-primary)' }}>
+      <div style={{ borderColor: 'var(--bdr)', background: 'var(--link)' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '12px', color: 'var(--bdr)' }}>
             <Link href="/" className="breadcrumb-home-link">Home</Link>
             <span>/</span>
-            <span style={{ color: 'var(--color-surface-0)' }}>Terms of Service</span>
+            <span style={{ color: 'var(--card)' }}>Terms of Service</span>
           </nav>
           <div style={{
             display: 'inline-flex',
@@ -178,9 +178,9 @@ export default function TermsPage() {
             textTransform: 'uppercase',
             marginBottom: '16px',
             background: 'rgba(239,68,68,0.08)',
-            color: 'var(--accent-primary)'
+            color: 'var(--link)'
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2.5">
               <path d="M7 7h10v10H7z M7 7v3 M7 10h10 M7 13h10 M7 16h10 M17 7v10" />
             </svg>
             TERMS
@@ -259,10 +259,10 @@ export default function TermsPage() {
             borderRadius: '4px',
             borderLeft: '4px solid var(--flag-yellow)',
             background: 'rgba(239,68,68,0.08)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginBottom: '32px'
           }}>
-            <p style={{ margin: 0, fontWeight: '600', color: 'var(--accent-primary)', fontSize: '14px', lineHeight: 1.7 }}>
+            <p style={{ margin: 0, fontWeight: '600', color: 'var(--link)', fontSize: '14px', lineHeight: 1.7 }}>
               IMPORTANT: By using MyCaseValue, you agree that this Service provides informational data only and is NOT legal advice.
               MyCaseValue does not create an attorney-client relationship. Always consult a licensed attorney for legal matters.
             </p>
@@ -279,7 +279,7 @@ export default function TermsPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Modifications to Terms</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>Modifications to Terms</h4>
               <p className="legal-body">
                 We may modify these Terms at any time, in our sole discretion, including but not limited to changes to Service features, pricing, or policies. All modifications are effective immediately upon posting to this page. Your continued use of MyCaseValue after any modification constitutes your acceptance of the updated Terms. We encourage you to review this page periodically for changes. If you do not accept any modification, your exclusive remedy is to cease using the Service.
               </p>
@@ -298,11 +298,11 @@ export default function TermsPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Service Scope and Limitations</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>Service Scope and Limitations</h4>
               <p className="legal-body">
                 The Service is provided "AS-IS" for informational, research, and due diligence purposes only. It is NOT:
               </p>
-              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
+              <ul style={{ paddingLeft: '24px', color: 'var(--text2)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}>A legal service, legal advice, or legal counsel of any kind</li>
                 <li style={{ marginBottom: '8px' }}>A substitute for consultation with a qualified, licensed attorney</li>
                 <li style={{ marginBottom: '8px' }}>Predictive of any individual case outcome</li>
@@ -319,15 +319,15 @@ export default function TermsPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>No Attorney-Client Relationship</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>No Attorney-Client Relationship</h4>
               <p className="legal-body">
                 Use of MyCaseValue does not create, establish, or imply an attorney-client relationship, professional relationship, or duty of care between you and MyCaseValue, any of its employees, operators, or affiliates. We are not your lawyer and cannot provide legal advice specific to your situation.
               </p>
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>What MyCaseValue Data Does NOT Do:</h4>
-              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>What MyCaseValue Data Does NOT Do:</h4>
+              <ul style={{ paddingLeft: '24px', color: 'var(--text2)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}><strong>Predict case outcomes:</strong> Aggregate historical win rates do not predict what will happen in your specific case. Every case is unique with different facts, law, judge, and representation.</li>
                 <li style={{ marginBottom: '8px' }}><strong>Evaluate your case:</strong> We cannot assess the strength, merit, likelihood of success, or settlement value of your specific case.</li>
                 <li style={{ marginBottom: '8px' }}><strong>Provide valuations:</strong> Settlement ranges shown are historical averages from past cases, not valuations of your claim. They are not reliable predictors of what your case might settle for.</li>
@@ -349,11 +349,11 @@ export default function TermsPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Disclaimer of Warranties</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>Disclaimer of Warranties</h4>
               <p className="legal-body">
                 MyCaseValue is provided on an "AS-IS" and "AS-AVAILABLE" basis. We disclaim all warranties, express, implied, statutory, or otherwise, including but not limited to:
               </p>
-              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
+              <ul style={{ paddingLeft: '24px', color: 'var(--text2)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement</li>
                 <li style={{ marginBottom: '8px' }}>Warranties regarding accuracy, completeness, timeliness, or reliability of data</li>
                 <li style={{ marginBottom: '8px' }}>Warranties that the Service will be uninterrupted, error-free, or secure</li>
@@ -362,11 +362,11 @@ export default function TermsPage() {
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Limitation of Liability</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>Limitation of Liability</h4>
               <p className="legal-body">
                 <strong>In no event shall MyCaseValue be liable for:</strong>
               </p>
-              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
+              <ul style={{ paddingLeft: '24px', color: 'var(--text2)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}>Any errors, omissions, inaccuracies, or gaps in data or analysis</li>
                 <li style={{ marginBottom: '8px' }}>Any decisions you make or actions you take based on information from the Service</li>
                 <li style={{ marginBottom: '8px' }}>Any losses, damages, or costs resulting from reliance on our data or statistics</li>
@@ -388,7 +388,7 @@ export default function TermsPage() {
             <p className="legal-body">
               MyCaseValue aggregates data from official federal court records. While we employ quality checks, we do not guarantee:
             </p>
-            <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
+            <ul style={{ paddingLeft: '24px', color: 'var(--text2)' }} className="legal-body">
               <li style={{ marginBottom: '8px' }}>100% accuracy of historical data or statistical calculations</li>
               <li style={{ marginBottom: '8px' }}>That outcome coding captures all nuances (e.g., partial victories, consent decrees)</li>
               <li style={{ marginBottom: '8px' }}>That settlement amounts are systematically reported (most are confidential)</li>
@@ -407,8 +407,8 @@ export default function TermsPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Permitted Uses</h4>
-              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>Permitted Uses</h4>
+              <ul style={{ paddingLeft: '24px', color: 'var(--text2)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}>Use the Service only for lawful, legitimate research, due diligence, and informational purposes</li>
                 <li style={{ marginBottom: '8px' }}>Use the Service in compliance with all applicable federal, state, and local laws</li>
                 <li style={{ marginBottom: '8px' }}>Respect the intellectual property rights of MyCaseValue and third parties</li>
@@ -417,11 +417,11 @@ export default function TermsPage() {
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Prohibited Activities</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>Prohibited Activities</h4>
               <p className="legal-body">
                 You agree NOT to:
               </p>
-              <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
+              <ul style={{ paddingLeft: '24px', color: 'var(--text2)' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}>Engage in any illegal activity or violate any laws or regulations</li>
                 <li style={{ marginBottom: '8px' }}>Harass, abuse, defame, threaten, or intimidate other users or MyCaseValue personnel</li>
                 <li style={{ marginBottom: '8px' }}>Disrupt, overload, or attack the Service or MyCaseValue's infrastructure</li>
@@ -447,7 +447,7 @@ export default function TermsPage() {
             <p className="legal-body" style={{ marginTop: '16px' }}>
               You may not:
             </p>
-            <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
+            <ul style={{ paddingLeft: '24px', color: 'var(--text2)' }} className="legal-body">
               <li style={{ marginBottom: '8px' }}>Copy, reproduce, or distribute MyCaseValue's presentation or analysis</li>
               <li style={{ marginBottom: '8px' }}>Create competing products based on our methodology</li>
               <li>Claim ownership of our data or analysis</li>
@@ -459,7 +459,7 @@ export default function TermsPage() {
             <p className="legal-body">
               MyCaseValue offers free basic reports and premium paid reports.
             </p>
-            <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
+            <ul style={{ paddingLeft: '24px', color: 'var(--text2)' }} className="legal-body">
               <li style={{ marginBottom: '8px' }}><strong>Single Report:</strong> $5.99 (one-time)</li>
               <li style={{ marginBottom: '8px' }}><strong>Unlimited Reports:</strong> $9.99/month (recurring)</li>
               <li><strong>Attorney Mode:</strong> $29.99/month (recurring)</li>
@@ -478,7 +478,7 @@ export default function TermsPage() {
             <p className="legal-body">
               We may suspend or terminate your access to MyCaseValue at any time, with or without cause, if you:
             </p>
-            <ul style={{ paddingLeft: '24px', color: 'var(--color-text-secondary)' }} className="legal-body">
+            <ul style={{ paddingLeft: '24px', color: 'var(--text2)' }} className="legal-body">
               <li style={{ marginBottom: '8px' }}>Violate these Terms or applicable laws</li>
               <li style={{ marginBottom: '8px' }}>Engage in abusive or disruptive behavior</li>
               <li style={{ marginBottom: '8px' }}>Attempt to hack or disrupt the Service</li>
@@ -507,14 +507,14 @@ export default function TermsPage() {
             <h2 className="legal-section-heading">12. Governing Law & Dispute Resolution</h2>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Governing Law</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>Governing Law</h4>
               <p className="legal-body">
                 These Terms and any dispute arising out of or related to these Terms or the Service shall be governed by and construed in accordance with the laws of the State of West Virginia, without regard to its conflict of law provisions.
               </p>
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Binding Arbitration</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>Binding Arbitration</h4>
               <p className="legal-body">
                 Any dispute, claim, or controversy arising out of or relating to these Terms, the Service, or your use thereof, including the determination of the scope or applicability of this agreement to arbitrate, shall be determined by binding arbitration administered in the State of West Virginia. The arbitration shall be conducted by a single arbitrator in accordance with the rules of the American Arbitration Association (AAA) then in effect. The arbitrator&apos;s decision shall be final and binding, and judgment on the award rendered by the arbitrator may be entered in any court having jurisdiction thereof.
               </p>
@@ -524,7 +524,7 @@ export default function TermsPage() {
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Forum and Venue</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', marginBottom: '12px' }}>Forum and Venue</h4>
               <p className="legal-body">
                 To the extent that any dispute is not subject to arbitration as described above, or if a court of competent jurisdiction determines that the arbitration provision is unenforceable, you agree that any such dispute shall be brought exclusively in the state or federal courts located in the State of West Virginia. You consent to the personal jurisdiction of and venue in such courts and waive any objection as to inconvenient forum.
               </p>
@@ -538,7 +538,7 @@ export default function TermsPage() {
               background: 'rgba(234,179,8,0.08)',
               borderLeft: '3px solid var(--flag-yellow)',
               fontSize: '14px',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               lineHeight: 1.6,
             }}>
               <strong>Notice:</strong> This section contains a binding arbitration clause and class action waiver. Please read it carefully, as it affects your legal rights regarding disputes with MyCaseValue.
@@ -569,9 +569,9 @@ export default function TermsPage() {
               paddingTop: '16px',
               paddingBottom: '16px',
               borderRadius: '4px',
-              background: 'var(--color-surface-0)',
-              color: 'var(--color-text-primary)',
-              border: '1px solid var(--border-default)'
+              background: 'var(--card)',
+              color: 'var(--text1)',
+              border: '1px solid var(--bdr)'
             }}>
               <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>General Support:</strong> <a href="mailto:support@mycasevalues.com" className="legal-contact-email">support@mycasevalues.com</a>
@@ -601,9 +601,9 @@ export default function TermsPage() {
               paddingTop: '16px',
               paddingBottom: '16px',
               borderRadius: '4px',
-              background: 'var(--color-surface-0)',
-              color: 'var(--color-text-primary)',
-              border: '1px solid var(--border-default)'
+              background: 'var(--card)',
+              color: 'var(--text1)',
+              border: '1px solid var(--bdr)'
             }}>
               <p style={{ margin: 0, fontSize: '14px', lineHeight: 1.7 }}>
                 <strong>Privacy Policy:</strong> Review our <a href="/privacy" className="legal-contact-email">Privacy Policy</a> to understand how we collect, use, and protect your data.
@@ -617,14 +617,14 @@ export default function TermsPage() {
       </div>
 
       {/* Footer disclaimer */}
-      <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center' }}>
+      <div style={{ borderTop: '1px solid var(--bdr)', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center' }}>
         <p style={{
           fontSize: '12px',
           maxWidth: '400px',
           margin: '0 auto',
           paddingLeft: '24px',
           paddingRight: '24px',
-          color: 'var(--color-text-secondary)'
+          color: 'var(--text2)'
         }}>
           © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
         </p>

@@ -102,9 +102,9 @@ export default function StatusPage() {
     <div
       style={{
         minHeight: '100vh',
-        backgroundColor: 'var(--color-surface-0)',
+        backgroundColor: 'var(--card)',
         fontFamily: 'var(--font-ui)',
-        color: 'var(--color-text-primary)',
+        color: 'var(--text1)',
       }}
     >
       <div
@@ -238,8 +238,8 @@ export default function StatusPage() {
                 <div
                   key={service.name}
                   style={{
-                    backgroundColor: 'var(--color-surface-0)',
-                    border: '1px solid var(--border-default)',
+                    backgroundColor: 'var(--card)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '4px',
                     padding: '16px',
                     display: 'grid',
@@ -345,8 +345,8 @@ export default function StatusPage() {
           </h2>
           <div
             style={{
-              backgroundColor: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              backgroundColor: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '16px',
               textAlign: 'center',
@@ -363,7 +363,7 @@ export default function StatusPage() {
           style={{
             marginTop: '48px',
             paddingTop: '24px',
-            borderTop: '1px solid var(--border-default)',
+            borderTop: '1px solid var(--bdr)',
             fontSize: '12px',
             color: 'var(--color-text-muted)',
           }}
@@ -373,7 +373,7 @@ export default function StatusPage() {
             <a
               href="mailto:status@mycasevalues.com"
               style={{
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 textDecoration: 'none',
               }}
             >

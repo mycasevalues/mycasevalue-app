@@ -1,6 +1,6 @@
 export default function CompareLoading() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf)', fontFamily: 'var(--font-ui)' }}>
       {/* Header with title skeleton */}
       <div style={{ background: 'var(--card)', padding: '48px 24px', borderBottom: '1px solid var(--bdr)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -18,22 +18,22 @@ export default function CompareLoading() {
         }}>
           {[1, 2].map(i => (
             <div key={i} style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '32px',
               boxShadow: 'var(--shadow-xs)'
             }}>
               {/* Card header */}
-              <div style={{ marginBottom: '24px', paddingBottom: '24px', borderBottom: '1px solid var(--border-default)' }}>
-                <div style={{ height: '24px', width: '80%', background: 'var(--border-default)', borderRadius: '4px' }} />
+              <div style={{ marginBottom: '24px', paddingBottom: '24px', borderBottom: '1px solid var(--bdr)' }}>
+                <div style={{ height: '24px', width: '80%', background: 'var(--bdr)', borderRadius: '4px' }} />
               </div>
 
               {/* Card content rows */}
               {[1, 2, 3, 4, 5].map(j => (
                 <div key={j} style={{ marginBottom: j === 5 ? 0 : '16px' }}>
                   <div style={{ height: '12px', width: '60%', background: 'rgba(255,255,255,0.04)', borderRadius: '4px', marginBottom: '6px' }} />
-                  <div style={{ height: '16px', width: '90%', background: 'var(--border-default)', borderRadius: '4px' }} />
+                  <div style={{ height: '16px', width: '90%', background: 'var(--bdr)', borderRadius: '4px' }} />
                 </div>
               ))}
             </div>

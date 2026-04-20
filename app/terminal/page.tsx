@@ -259,7 +259,7 @@ function TerminalContent() {
               style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }}
             />
           </div>
-          <button type="submit" className="h-8 px-3 rounded-md bg-[var(--link)] text-white text-xs font-medium hover:bg-[var(--color-surface-1)]0 transition-colors">Search</button>
+          <button type="submit" className="h-8 px-3 rounded-md bg-[var(--link)] text-white text-xs font-medium hover:bg-[var(--surf)]0 transition-colors">Search</button>
         </form>
         <div className="flex items-center gap-2">
           {/* Compact mode toggle */}
@@ -441,7 +441,7 @@ function TerminalContent() {
                 <div className="flex items-start justify-between gap-2">
                   <span className={`${compact ? 'text-[11px]' : 'text-xs'} font-medium text-gray-200 leading-snug line-clamp-1`}>{r.caseName}</span>
                   {r.status && (
-                    <span className={`flex-shrink-0 text-[9px] font-medium px-1.5 py-0.5 rounded ${r.status === 'open' ? 'bg-[var(--color-surface-1)]0/10 text-[var(--link)]' : 'bg-[var(--color-surface-1)]0/10 text-[var(--data-positive)]'}`}>
+                    <span className={`flex-shrink-0 text-[9px] font-medium px-1.5 py-0.5 rounded ${r.status === 'open' ? 'bg-[var(--surf)]0/10 text-[var(--link)]' : 'bg-[var(--surf)]0/10 text-[var(--data-positive)]'}`}>
                       {r.status.toUpperCase()}
                     </span>
                   )}
@@ -495,7 +495,7 @@ function TerminalContent() {
                       {isSaved(caseDetail.id) ? 'Saved' : 'Save'}
                     </button>
                     {caseDetail.status && (
-                      <span className={`text-[10px] font-semibold px-2 py-1 rounded ${caseDetail.status === 'open' ? 'bg-[var(--color-surface-1)]0/10 text-[var(--link)]' : 'bg-[var(--color-surface-1)]0/10 text-[var(--data-positive)]'}`}>
+                      <span className={`text-[10px] font-semibold px-2 py-1 rounded ${caseDetail.status === 'open' ? 'bg-[var(--surf)]0/10 text-[var(--link)]' : 'bg-[var(--surf)]0/10 text-[var(--data-positive)]'}`}>
                         {caseDetail.status.toUpperCase()}
                       </span>
                     )}
@@ -538,7 +538,7 @@ function TerminalContent() {
                         <div className="space-y-0">
                           {caseDetail.filings.slice(0, 15).map((f, i) => (
                             <div key={i} className="flex items-start gap-3 py-1.5 border-b last:border-0" style={{ borderColor: 'var(--chrome-border)' }}>
-                              <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-surface-1)]0/50 mt-1.5 flex-shrink-0" />
+                              <div className="w-1.5 h-1.5 rounded-full bg-[var(--surf)]0/50 mt-1.5 flex-shrink-0" />
                               <div className="flex-1 min-w-0">
                                 <p className="text-[11px] text-gray-300 truncate">{f.title || `Filing #${f.number || i + 1}`}</p>
                                 {f.date && <p className="text-[10px] text-gray-500">{new Date(f.date).toLocaleDateString()}</p>}

@@ -110,20 +110,20 @@ function StatsCard({
       style={{
         padding: '24px',
         borderRadius: '4px',
-        background: 'var(--color-surface-0)',
-        border: '1px solid var(--border-default)',
+        background: 'var(--card)',
+        border: '1px solid var(--bdr)',
         textAlign: 'center',
         boxShadow: 'var(--shadow-xs)',
       }}
     >
-      <p style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
+      <p style={{ color: 'var(--text2)', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-ui)' }}>
         {label}
       </p>
       <p
         style={{
           fontSize: '28px',
           fontWeight: 700,
-          color: 'var(--accent-primary)',
+          color: 'var(--link)',
           margin: '0',
           fontFamily: 'var(--font-mono)',
           display: 'flex',
@@ -138,7 +138,7 @@ function StatsCard({
         )}
       </p>
       {subtitle && (
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '12px', margin: '6px 0 0', fontFamily: 'var(--font-ui)' }}>
+        <p style={{ color: 'var(--text2)', fontSize: '12px', margin: '6px 0 0', fontFamily: 'var(--font-ui)' }}>
           {subtitle}
         </p>
       )}
@@ -158,13 +158,13 @@ export default async function CaseTypeDetailPage({
     return (
       <div
         className="min-h-screen flex items-center justify-center"
-        style={{ background: 'var(--color-surface-1)' }}
+        style={{ background: 'var(--surf)' }}
       >
-        <div style={{ textAlign: 'center', color: 'var(--color-text-primary)' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px', fontFamily: 'var(--font-legal)', color: 'var(--color-text-primary)' }}>
+        <div style={{ textAlign: 'center', color: 'var(--text1)' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 16px', fontFamily: 'var(--font-legal)', color: 'var(--text1)' }}>
             Case type not found
           </h1>
-          <p style={{ color: 'var(--color-text-secondary)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
+          <p style={{ color: 'var(--text2)', margin: '0 0 24px', fontFamily: 'var(--font-ui)' }}>
             This case type does not exist in our database.
           </p>
           <Link
@@ -174,7 +174,7 @@ export default async function CaseTypeDetailPage({
               padding: '8px 24px',
               borderRadius: 4,
               background: 'var(--gold)',
-              color: 'var(--color-surface-0)',
+              color: 'var(--card)',
               textDecoration: 'none',
               fontWeight: 600,
               fontSize: 14,
@@ -240,7 +240,7 @@ export default async function CaseTypeDetailPage({
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', color: 'var(--color-text-primary)' }}>
+    <div style={{ background: 'var(--surf)', color: 'var(--text1)' }}>
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -250,7 +250,7 @@ export default async function CaseTypeDetailPage({
       {/* Dark Navy Header Section */}
       <header
         style={{
-          background: 'var(--accent-primary)',
+          background: 'var(--link)',
           padding: '16px 24px',
           marginBottom: '24px',
         }}
@@ -259,25 +259,25 @@ export default async function CaseTypeDetailPage({
           {/* Breadcrumb */}
           <nav style={{ marginBottom: '12px', display: 'none' }}>
             <div style={{ display: 'flex', gap: '8px', fontSize: '14px', alignItems: 'center', flexWrap: 'wrap' }}>
-              <Link href="/" style={{ color: 'var(--color-text-inverse)', textDecoration: 'none' }}>
+              <Link href="/" style={{ color: 'var(--chrome-text)', textDecoration: 'none' }}>
                 Home
               </Link>
-              <span style={{ color: 'var(--border-default)' }}>&gt;</span>
+              <span style={{ color: 'var(--bdr)' }}>&gt;</span>
               <Link
                 href="/cases"
-                style={{ color: 'var(--color-text-inverse)', textDecoration: 'none' }}
+                style={{ color: 'var(--chrome-text)', textDecoration: 'none' }}
               >
                 Cases
               </Link>
-              <span style={{ color: 'var(--border-default)' }}>&gt;</span>
+              <span style={{ color: 'var(--bdr)' }}>&gt;</span>
               <Link
                 href={`/cases/${category}`}
-                style={{ color: 'var(--color-text-inverse)', textDecoration: 'none' }}
+                style={{ color: 'var(--chrome-text)', textDecoration: 'none' }}
               >
                 {getCategoryLabel(category)}
               </Link>
-              <span style={{ color: 'var(--border-default)' }}>&gt;</span>
-              <span style={{ color: 'var(--border-default)' }}>{caseType.label}</span>
+              <span style={{ color: 'var(--bdr)' }}>&gt;</span>
+              <span style={{ color: 'var(--bdr)' }}>{caseType.label}</span>
             </div>
           </nav>
 
@@ -290,7 +290,7 @@ export default async function CaseTypeDetailPage({
                   fontWeight: 700,
                   margin: '0',
                   fontFamily: 'var(--font-legal)',
-                  color: 'var(--color-text-inverse)',
+                  color: 'var(--chrome-text)',
                 }}
               >
                 {caseType.label}
@@ -333,8 +333,8 @@ export default async function CaseTypeDetailPage({
         {/* Description Section */}
         <div
           style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: '32px',
             marginBottom: '48px',
@@ -347,7 +347,7 @@ export default async function CaseTypeDetailPage({
               fontWeight: 700,
               margin: '0 0 16px',
               fontFamily: 'var(--font-ui)',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
             }}
           >
             About {caseType.label}
@@ -355,7 +355,7 @@ export default async function CaseTypeDetailPage({
           <p
             style={{
               lineHeight: '1.6',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               margin: '0',
               fontFamily: 'var(--font-ui)',
             }}
@@ -376,8 +376,8 @@ export default async function CaseTypeDetailPage({
           {/* Federal Law */}
           <div
             style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
               boxShadow: 'var(--shadow-xs)',
@@ -389,7 +389,7 @@ export default async function CaseTypeDetailPage({
                 fontWeight: 700,
                 margin: '0 0 16px',
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
               }}
             >
               Governing Federal Law
@@ -397,7 +397,7 @@ export default async function CaseTypeDetailPage({
             <p
               style={{
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 margin: '0',
                 fontFamily: 'var(--font-ui)',
               }}
@@ -409,8 +409,8 @@ export default async function CaseTypeDetailPage({
           {/* Typical Claims */}
           <div
             style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
               boxShadow: 'var(--shadow-xs)',
@@ -422,7 +422,7 @@ export default async function CaseTypeDetailPage({
                 fontWeight: 700,
                 margin: '0 0 16px',
                 fontFamily: 'var(--font-ui)',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
               }}
             >
               Typical Claims
@@ -441,7 +441,7 @@ export default async function CaseTypeDetailPage({
                     paddingLeft: '24px',
                     marginBottom: idx < caseType.typicalClaims.length - 1 ? '10px' : '0',
                     position: 'relative',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontFamily: 'var(--font-ui)',
                   }}
                 >
@@ -449,7 +449,7 @@ export default async function CaseTypeDetailPage({
                     style={{
                       position: 'absolute',
                       left: '0',
-                      color: 'var(--accent-primary)',
+                      color: 'var(--link)',
                     }}
                   >
                     •
@@ -494,8 +494,8 @@ export default async function CaseTypeDetailPage({
         `}</style>
         <div
           style={{
-            background: 'var(--accent-primary)',
-            color: 'var(--color-text-inverse)',
+            background: 'var(--link)',
+            color: 'var(--chrome-text)',
             borderRadius: '4px',
             padding: '48px 40px',
             textAlign: 'center',
@@ -508,7 +508,7 @@ export default async function CaseTypeDetailPage({
               fontWeight: 700,
               margin: '0 0 12px',
               fontFamily: 'var(--font-ui)',
-              color: 'var(--color-text-inverse)',
+              color: 'var(--chrome-text)',
             }}
           >
             Research Your District
@@ -517,7 +517,7 @@ export default async function CaseTypeDetailPage({
             style={{
               fontSize: '16px',
               margin: '0 0 28px',
-              color: 'var(--border-default)',
+              color: 'var(--bdr)',
               fontFamily: 'var(--font-ui)',
             }}
           >
@@ -537,16 +537,16 @@ export default async function CaseTypeDetailPage({
             .related-case-card {
               padding: 16px;
               border-radius: 4px;
-              background: var(--color-surface-0);
-              border: 1px solid var(--border-default);
+              background: var(--card);
+              border: 1px solid var(--bdr);
               text-decoration: none;
               color: inherit;
               transition: all 200ms ease;
               box-shadow: var(--shadow-xs);
             }
             .related-case-card:hover {
-              border-color: var(--accent-primary);
-              background: var(--color-surface-0);
+              border-color: var(--link);
+              background: var(--card);
               box-shadow: var(--shadow-md);
               transform: translateY(-1px);
             }
@@ -557,7 +557,7 @@ export default async function CaseTypeDetailPage({
               fontWeight: 700,
               margin: '0 0 24px',
               fontFamily: 'var(--font-ui)',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
             }}
           >
             Related Case Types
@@ -580,10 +580,10 @@ export default async function CaseTypeDetailPage({
                   href={`/cases/${related.categorySlug}/${related.slug}`}
                   className="related-case-card"
                 >
-                  <h3 style={{ fontSize: '16px', fontWeight: 600, margin: '0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 600, margin: '0', color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
                     {related.label}
                   </h3>
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                     NOS {related.nosCode}
                   </p>
                 </Link>

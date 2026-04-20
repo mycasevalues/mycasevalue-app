@@ -31,7 +31,7 @@ function DemoModeBadge() {
         right: '24px',
         zIndex: 9999,
         backgroundColor: 'var(--text1, #18181A)',
-        color: 'var(--color-surface-0)',
+        color: 'var(--card)',
         padding: '8px 16px',
         borderRadius: '2px',
         fontSize: '12px',

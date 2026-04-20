@@ -157,12 +157,12 @@ export default async function NOSPage({ params }: PageProps) {
 
   if (!nosInfo) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--color-surface-1)', color: 'var(--color-text-primary)' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--surf)', color: 'var(--text1)' }}>
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Case type not found</h1>
-          <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>NOS code {code} does not exist in our database.</p>
+          <p className="mb-6" style={{ color: 'var(--text2)' }}>NOS code {code} does not exist in our database.</p>
           <Link href="/" className="inline-block px-6 py-3 font-semibold text-white transition"
-            style={{ background: 'var(--accent-primary)', borderRadius: '2px' }}>
+            style={{ background: 'var(--link)', borderRadius: '2px' }}>
             Return to Home
           </Link>
         </div>
@@ -190,8 +190,8 @@ export default async function NOSPage({ params }: PageProps) {
       }))
     : [
         { label: 'Settled', value: outcomeData.fav_set || 30, color: 'var(--data-positive)' },
-        { label: 'Dismissed', value: outcomeData.dismiss || 53, color: 'var(--color-text-secondary)' },
-        { label: 'Trial Win', value: outcomeData.trial_win || 10, color: 'var(--accent-primary)' },
+        { label: 'Dismissed', value: outcomeData.dismiss || 53, color: 'var(--text2)' },
+        { label: 'Trial Win', value: outcomeData.trial_win || 10, color: 'var(--link)' },
         { label: 'Trial Loss', value: outcomeData.trial_loss || 7, color: 'var(--data-negative)' },
       ].map(o => {
         const total = [outcomeData.fav_set || 30, outcomeData.dismiss || 53, outcomeData.trial_win || 10, outcomeData.trial_loss || 7].reduce((s, v) => s + v, 0);
@@ -359,15 +359,15 @@ export default async function NOSPage({ params }: PageProps) {
   };
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: 'var(--font-ui)', background: 'var(--color-surface-1)', color: 'var(--color-text-secondary)' }}>
+    <div className="min-h-screen" style={{ fontFamily: 'var(--font-ui)', background: 'var(--surf)', color: 'var(--text2)' }}>
       <DemoNOSPage />
       <style>{`
         .nos-header {
-          background: var(--color-surface-0);
-          color: var(--color-text-primary);
+          background: var(--card);
+          color: var(--text1);
           position: relative;
           overflow: hidden;
-          border-bottom: 1px solid var(--border-default);
+          border-bottom: 1px solid var(--bdr);
         }
 
         .nos-header::before {
@@ -387,18 +387,18 @@ export default async function NOSPage({ params }: PageProps) {
         .breadcrumb {
           font-size: 14px;
           font-family: var(--font-ui);
-          color: var(--border-default);
+          color: var(--bdr);
           margin-bottom: 16px;
         }
 
         .breadcrumb a {
-          color: var(--border-default);
+          color: var(--bdr);
           text-decoration: none;
           transition: color 200ms ease;
         }
 
         .breadcrumb a:hover {
-          color: var(--color-text-inverse);
+          color: var(--chrome-text);
         }
 
         .breadcrumb-separator {
@@ -409,7 +409,7 @@ export default async function NOSPage({ params }: PageProps) {
           display: inline-block;
           padding: 8px 14px;
           background: var(--gold);
-          color: var(--color-text-inverse);
+          color: var(--chrome-text);
           border-radius: 4px;
           font-size: 12px;
           font-weight: 600;
@@ -419,8 +419,8 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .stat-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 24px;
           text-align: center;
@@ -444,7 +444,7 @@ export default async function NOSPage({ params }: PageProps) {
         .stat-label {
           font-size: 12px;
           font-weight: 600;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           text-transform: uppercase;
           letter-spacing: 0.5px;
           font-family: var(--font-ui);
@@ -455,7 +455,7 @@ export default async function NOSPage({ params }: PageProps) {
           height: 32px;
           border-radius: 4px;
           overflow: hidden;
-          background: var(--color-surface-1);
+          background: var(--surf);
           margin-bottom: 16px;
         }
 
@@ -463,7 +463,7 @@ export default async function NOSPage({ params }: PageProps) {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--color-text-inverse);
+          color: var(--chrome-text);
           font-size: 12px;
           font-weight: 600;
           font-family: var(--font-ui);
@@ -475,7 +475,7 @@ export default async function NOSPage({ params }: PageProps) {
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: 16px;
           padding-top: 16px;
-          border-top: 1px solid var(--border-default);
+          border-top: 1px solid var(--bdr);
         }
 
         .legend-item {
@@ -484,7 +484,7 @@ export default async function NOSPage({ params }: PageProps) {
           gap: 8px;
           font-size: 14px;
           font-family: var(--font-ui);
-          color: var(--color-text-secondary);
+          color: var(--text2);
         }
 
         .legend-color {
@@ -495,8 +495,8 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .related-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 16px;
           text-decoration: none;
@@ -506,7 +506,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .related-card:hover {
-          border-color: var(--accent-primary);
+          border-color: var(--link);
           box-shadow: 0 4px 12px rgba(10, 102, 194, 0.12);
           transform: translateY(-2px);
         }
@@ -514,7 +514,7 @@ export default async function NOSPage({ params }: PageProps) {
         .related-card-code {
           font-size: 12px;
           font-weight: 600;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           text-transform: uppercase;
           letter-spacing: 0.5px;
           font-family: var(--font-ui);
@@ -523,14 +523,14 @@ export default async function NOSPage({ params }: PageProps) {
         .related-card-name {
           font-size: 14px;
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-top: 8px;
           font-family: var(--font-ui);
         }
 
         .related-card-category {
           font-size: 12px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           margin-top: 4px;
           font-family: var(--font-ui);
         }
@@ -560,7 +560,7 @@ export default async function NOSPage({ params }: PageProps) {
 
         .cta-button {
           background: var(--gold);
-          color: var(--color-text-inverse);
+          color: var(--chrome-text);
           padding: 16px 32px;
           border-radius: 4px;
           text-decoration: none;
@@ -593,14 +593,14 @@ export default async function NOSPage({ params }: PageProps) {
         .section-title {
           font-size: 20px;
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-bottom: 20px;
           font-family: var(--font-ui);
         }
 
         .content-box {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 24px;
           box-shadow: var(--shadow-xs);
@@ -611,7 +611,7 @@ export default async function NOSPage({ params }: PageProps) {
           height: 20px;
           border-radius: 4px;
           overflow: hidden;
-          background: var(--color-surface-1);
+          background: var(--surf);
           margin-bottom: 20px;
         }
 
@@ -619,7 +619,7 @@ export default async function NOSPage({ params }: PageProps) {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--color-text-inverse);
+          color: var(--chrome-text);
           font-size: 12px;
           font-weight: 600;
           font-family: var(--font-ui);
@@ -630,7 +630,7 @@ export default async function NOSPage({ params }: PageProps) {
           gap: 16px;
           margin-top: 12px;
           font-size: 12px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           font-family: var(--font-ui);
         }
 
@@ -691,8 +691,8 @@ export default async function NOSPage({ params }: PageProps) {
 
         .factor-item {
           padding: 12px;
-          background: var(--color-surface-1);
-          border: 1px solid var(--border-default);
+          background: var(--surf);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           display: flex;
           align-items: flex-start;
@@ -710,7 +710,7 @@ export default async function NOSPage({ params }: PageProps) {
 
         .factor-text {
           font-size: 14px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
           font-family: var(--font-ui);
           line-height: 1.5;
         }
@@ -723,8 +723,8 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .related-type-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 16px;
           text-decoration: none;
@@ -734,7 +734,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .related-type-card:hover {
-          border-color: var(--accent-primary);
+          border-color: var(--link);
           box-shadow: var(--shadow-sm);
           transform: translateY(-1px);
         }
@@ -742,7 +742,7 @@ export default async function NOSPage({ params }: PageProps) {
         .related-type-label {
           font-size: 14px;
           font-weight: 600;
-          color: var(--accent-primary);
+          color: var(--link);
           text-transform: uppercase;
           letter-spacing: 0.5px;
           font-family: var(--font-ui);
@@ -752,7 +752,7 @@ export default async function NOSPage({ params }: PageProps) {
         .related-type-name {
           font-size: 14px;
           font-weight: 600;
-          color: var(--color-text-primary);
+          color: var(--text1);
           margin-bottom: 8px;
           font-family: var(--font-ui);
         }
@@ -762,7 +762,7 @@ export default async function NOSPage({ params }: PageProps) {
           flex-direction: column;
           gap: 6px;
           font-size: 12px;
-          color: var(--color-text-secondary);
+          color: var(--text2);
         }
 
         .related-type-stat {
@@ -778,12 +778,12 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .quick-action-card {
-          background: var(--color-surface-0);
-          border: 1px solid var(--border-default);
+          background: var(--card);
+          border: 1px solid var(--bdr);
           border-radius: 4px;
           padding: 16px;
           text-decoration: none;
-          color: var(--accent-primary);
+          color: var(--link);
           text-align: center;
           transition: border-color 200ms ease, box-shadow 200ms ease, background 200ms ease;
           display: flex;
@@ -796,7 +796,7 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .quick-action-card:hover {
-          border-color: var(--accent-primary);
+          border-color: var(--link);
           background: rgba(59,130,246,0.06);
           box-shadow: var(--shadow-sm);
         }
@@ -810,15 +810,15 @@ export default async function NOSPage({ params }: PageProps) {
             <span className="breadcrumb-separator">/</span>
             <Link href="/nos">Case Types</Link>
             <span className="breadcrumb-separator">/</span>
-            <span style={{ color: 'var(--color-text-inverse)' }}>{nosInfo.label}</span>
+            <span style={{ color: 'var(--chrome-text)' }}>{nosInfo.label}</span>
           </div>
 
           <div className="flex items-start justify-between gap-6" style={{ flexWrap: 'wrap' }}>
             <div className="flex-1">
-              <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 12px 0', fontFamily: 'var(--font-legal)', lineHeight: 1.2, color: 'var(--color-surface-0)' }}>
+              <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 12px 0', fontFamily: 'var(--font-legal)', lineHeight: 1.2, color: 'var(--card)' }}>
                 {nosInfo.label}
               </h1>
-              <p style={{ fontSize: '14px', color: 'var(--border-default)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--bdr)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 {nosInfo.category}
               </p>
             </div>
@@ -832,14 +832,14 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           {/* Data Freshness Badge */}
           <div style={{ marginBottom: '24px', textAlign: 'center' }}>
-            <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(59,130,246,0.08)', color: 'var(--accent-primary)', fontSize: '12px', fontWeight: 500, fontFamily: 'var(--font-ui)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
+            <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(59,130,246,0.08)', color: 'var(--link)', fontSize: '12px', fontWeight: 500, fontFamily: 'var(--font-ui)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2025</Link>
           </div>
           <MetricsStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: 'Win Rate', value: `${winRate}%`, color: 'var(--accent-primary)', showSample: true, showDot: true },
-              { label: 'Median Duration', value: `${medianDuration} mo`, color: 'var(--accent-primary)', showSample: false, showDot: false },
+              { label: 'Win Rate', value: `${winRate}%`, color: 'var(--link)', showSample: true, showDot: true },
+              { label: 'Median Duration', value: `${medianDuration} mo`, color: 'var(--link)', showSample: false, showDot: false },
               { label: 'Settlement Rate', value: `${settleRate}%`, color: 'var(--data-positive)', showSample: false, showDot: false },
-              { label: 'Cases Analyzed', value: totalCases > 0 ? totalCases.toLocaleString() : '500+', color: 'var(--accent-primary)', showSample: false, showDot: false },
+              { label: 'Cases Analyzed', value: totalCases > 0 ? totalCases.toLocaleString() : '500+', color: 'var(--link)', showSample: false, showDot: false },
             ].map((stat, i) => (
               <MetricsStaggerItem key={i} className="stat-card">
                 <div className="stat-value" style={{ color: stat.color, display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
@@ -901,7 +901,7 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="content-box">
             <h2 className="section-title">10-Year Win Rate Trend</h2>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
               Historical win rate patterns over the past decade (2015-2024)
             </p>
             <WinRateTrend
@@ -918,7 +918,7 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="content-box">
             <h2 className="section-title">Case Resolution Summary</h2>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
               How {nosInfo.label} cases are resolved
             </p>
 
@@ -964,15 +964,15 @@ export default async function NOSPage({ params }: PageProps) {
             <div className="outcome-dist-labels">
               <div className="outcome-dist-label">
                 <div className="outcome-dist-dot" style={{ background: 'var(--data-positive)' }}></div>
-                <span>Win: <strong style={{ color: 'var(--accent-primary)' }}>{Math.round(outcomeDist.win)}%</strong></span>
+                <span>Win: <strong style={{ color: 'var(--link)' }}>{Math.round(outcomeDist.win)}%</strong></span>
               </div>
               <div className="outcome-dist-label">
                 <div className="outcome-dist-dot" style={{ background: 'var(--wrn-txt)' }}></div>
-                <span>Settlement: <strong style={{ color: 'var(--accent-primary)' }}>{Math.round(outcomeDist.settlement)}%</strong></span>
+                <span>Settlement: <strong style={{ color: 'var(--link)' }}>{Math.round(outcomeDist.settlement)}%</strong></span>
               </div>
               <div className="outcome-dist-label">
                 <div className="outcome-dist-dot" style={{ background: 'var(--color-text-muted)' }}></div>
-                <span>Other: <strong style={{ color: 'var(--accent-primary)' }}>{Math.round(outcomeDist.other)}%</strong></span>
+                <span>Other: <strong style={{ color: 'var(--link)' }}>{Math.round(outcomeDist.other)}%</strong></span>
               </div>
             </div>
           </div>
@@ -1015,8 +1015,8 @@ export default async function NOSPage({ params }: PageProps) {
               {outcomePercentages.map((o, i) => (
                 <div key={i} className="legend-item">
                   <div className="legend-color" style={{ background: o.color }}></div>
-                  <span style={{ color: 'var(--color-text-secondary)' }}>
-                    {o.label}: <strong style={{ color: 'var(--accent-primary)' }}>{o.percentage}%</strong>
+                  <span style={{ color: 'var(--text2)' }}>
+                    {o.label}: <strong style={{ color: 'var(--link)' }}>{o.percentage}%</strong>
                   </span>
                 </div>
               ))}
@@ -1031,7 +1031,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Case Disposition Breakdown</h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 Detailed breakdown of case dispositions for {nosInfo.label} cases
               </p>
               <DispositionBar data={DISPOSITION_DATA[code]} />
@@ -1055,7 +1055,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Settlement Distribution</h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
                 Full distribution shape of monetary recoveries — reveals patterns beyond simple percentiles.
               </p>
               <SettlementViolin nosCode={code} height={140} />
@@ -1112,10 +1112,10 @@ export default async function NOSPage({ params }: PageProps) {
                   </div>
                 )}
                 <div style={{ flex: 1, minWidth: '200px' }}>
-                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '6px', fontFamily: 'var(--font-ui)' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', marginBottom: '6px', fontFamily: 'var(--font-ui)' }}>
                     {statute.title}
                   </div>
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-ui)' }}>
+                  <p style={{ fontSize: '14px', color: 'var(--text2)', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-ui)' }}>
                     {statute.description}
                   </p>
                 </div>
@@ -1151,7 +1151,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Win Rate by Circuit</h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 Case outcome rates for {nosInfo.label} cases across federal circuits
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '12px' }}>
@@ -1164,28 +1164,28 @@ export default async function NOSPage({ params }: PageProps) {
                     const cardContent = (
                       <div style={{
                         padding: '12px 16px',
-                        background: 'var(--color-surface-1)',
-                        border: '1px solid var(--border-default)',
+                        background: 'var(--surf)',
+                        border: '1px solid var(--bdr)',
                         borderRadius: '4px',
                       }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                          <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)' }}>
                             {CIRCUIT_NAMES[circuit] || circuit} Circuit
                           </span>
                           <span style={{
                             fontSize: '14px',
                             fontWeight: 600,
-                            color: wr >= winRate ? 'var(--data-positive)' : 'var(--accent-primary)',
+                            color: wr >= winRate ? 'var(--data-positive)' : 'var(--link)',
                             fontFamily: 'var(--font-mono)',
                           }}>
                             {wr}%
                           </span>
                         </div>
-                        <div style={{ height: '4px', background: 'var(--border-default)', borderRadius: '4px', overflow: 'hidden' }}>
+                        <div style={{ height: '4px', background: 'var(--bdr)', borderRadius: '4px', overflow: 'hidden' }}>
                           <div style={{
                             height: '100%',
                             width: `${Math.min(wr, 100)}%`,
-                            background: wr >= winRate ? 'var(--data-positive)' : 'var(--accent-primary)',
+                            background: wr >= winRate ? 'var(--data-positive)' : 'var(--link)',
                             borderRadius: '4px',
                           }} />
                         </div>
@@ -1213,7 +1213,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Key Factors</h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
                 Important factors that influence outcomes in {nosInfo.label} cases
               </p>
               <div className="key-factors-grid">
@@ -1235,7 +1235,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Attorney Impact</h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
                 How legal representation affects outcomes in {nosInfo.label} cases
               </p>
 
@@ -1247,7 +1247,7 @@ export default async function NOSPage({ params }: PageProps) {
                   border: `1px solid ${getWinRateColor(attyImpact.rwr).border}`,
                   borderRadius: '4px',
                 }}>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                     With Attorney
                   </div>
                   <div style={{
@@ -1259,7 +1259,7 @@ export default async function NOSPage({ params }: PageProps) {
                   }}>
                     {attyImpact.rwr}%
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '6px' }}>
                     win rate · {attyImpact.rn.toLocaleString()} cases
                   </div>
                 </div>
@@ -1271,7 +1271,7 @@ export default async function NOSPage({ params }: PageProps) {
                   border: '1px solid var(--data-negative)',
                   borderRadius: '4px',
                 }}>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                     Pro Se (No Attorney)
                   </div>
                   <div style={{
@@ -1283,7 +1283,7 @@ export default async function NOSPage({ params }: PageProps) {
                   }}>
                     {attyImpact.pwr}%
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '6px' }}>
                     win rate · {attyImpact.pn.toLocaleString()} cases
                   </div>
                 </div>
@@ -1292,13 +1292,13 @@ export default async function NOSPage({ params }: PageProps) {
                 <div style={{
                   padding: '24px',
                   background: 'rgba(59,130,246,0.08)',
-                  border: '1px solid var(--accent-primary)',
+                  border: '1px solid var(--link)',
                   borderRadius: '4px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
                 }}>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                     Representation Effect
                   </div>
                   <div style={{
@@ -1310,7 +1310,7 @@ export default async function NOSPage({ params }: PageProps) {
                   }}>
                     +{attyImpact.rwr - attyImpact.pwr}%
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>
+                  <div style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '6px' }}>
                     higher win rate with counsel
                   </div>
                 </div>
@@ -1342,7 +1342,7 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
               <h2 className="section-title">Related Case Types</h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
                 Other case types in the {nosInfo.category} category
               </p>
               <div className="related-types-grid">
@@ -1354,17 +1354,17 @@ export default async function NOSPage({ params }: PageProps) {
                       <div className="related-type-stat">
                         <span>Win Rate:</span>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                          <strong style={{ color: caseType.wr >= 50 ? 'var(--data-positive)' : 'var(--accent-primary)' }}>{caseType.wr}%</strong>
+                          <strong style={{ color: caseType.wr >= 50 ? 'var(--data-positive)' : 'var(--link)' }}>{caseType.wr}%</strong>
                           <span title={`Based on ${caseType.total.toLocaleString()} cases — ${caseType.total >= 10000 ? 'High' : caseType.total >= 1000 ? 'Medium' : caseType.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: caseType.total >= 10000 ? 'var(--data-positive)' : caseType.total >= 1000 ? 'var(--wrn-txt)' : caseType.total >= 100 ? 'var(--data-negative)' : 'var(--text4, #8A8780)' }} />
                         </div>
                       </div>
                       <div className="related-type-stat">
                         <span>Settlement:</span>
-                        <strong style={{ color: 'var(--accent-primary)' }}>{caseType.sp}%</strong>
+                        <strong style={{ color: 'var(--link)' }}>{caseType.sp}%</strong>
                       </div>
                       <div className="related-type-stat">
                         <span>Cases:</span>
-                        <strong style={{ color: 'var(--color-text-secondary)' }}>{caseType.total.toLocaleString()}</strong>
+                        <strong style={{ color: 'var(--text2)' }}>{caseType.total.toLocaleString()}</strong>
                       </div>
                     </div>
                   </Link>
@@ -1380,7 +1380,7 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="content-box">
             <h2 className="section-title">Quick Actions</h2>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
               Next steps for your research
             </p>
             <div className="quick-actions-bar">
@@ -1412,7 +1412,7 @@ export default async function NOSPage({ params }: PageProps) {
               as the sole basis for legal decisions. Actual case outcomes depend on specific facts, jurisdiction,
               and representation. Please consult with a qualified attorney to discuss your individual case.
             </p>
-            <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--border-default)' }}>
+            <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--bdr)' }}>
               <DataFreshness />
             </div>
           </div>
@@ -1420,12 +1420,12 @@ export default async function NOSPage({ params }: PageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 text-center" style={{ background: 'var(--color-surface-0)', borderTop: '1px solid var(--border-default)' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-16 text-center" style={{ background: 'var(--card)', borderTop: '1px solid var(--bdr)' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 style={{ fontSize: 20, fontWeight: 600, margin: '0 0 12px 0', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, margin: '0 0 12px 0', color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
             Research Your {nosInfo.label} Case
           </h2>
-          <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
+          <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '24px', fontFamily: 'var(--font-ui)' }}>
             Explore detailed outcomes, recovery ranges, and timeline data with our interactive research tool.
           </p>
           <Link href="/" className="cta-button">

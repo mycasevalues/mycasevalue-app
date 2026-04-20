@@ -17,9 +17,9 @@ export default function NLRBContext() {
   const totalOutcomes = nlrbData.settledCases + nlrbData.withdrawnCases + nlrbData.dismissedCases + nlrbData.complaintIssued;
   const outcomes = [
     { label: 'Settled', value: nlrbData.settledCases, percentage: Number(((nlrbData.settledCases / totalOutcomes) * 100).toFixed(1)), color: 'var(--data-positive, #176438)' },
-    { label: 'Withdrawn', value: nlrbData.withdrawnCases, percentage: Number(((nlrbData.withdrawnCases / totalOutcomes) * 100).toFixed(1)), color: 'var(--color-text-secondary)' },
+    { label: 'Withdrawn', value: nlrbData.withdrawnCases, percentage: Number(((nlrbData.withdrawnCases / totalOutcomes) * 100).toFixed(1)), color: 'var(--text2)' },
     { label: 'Dismissed', value: nlrbData.dismissedCases, percentage: Number(((nlrbData.dismissedCases / totalOutcomes) * 100).toFixed(1)), color: 'var(--data-negative)' },
-    { label: 'Complaint Issued', value: nlrbData.complaintIssued, percentage: Number(((nlrbData.complaintIssued / totalOutcomes) * 100).toFixed(1)), color: 'var(--accent-primary)' },
+    { label: 'Complaint Issued', value: nlrbData.complaintIssued, percentage: Number(((nlrbData.complaintIssued / totalOutcomes) * 100).toFixed(1)), color: 'var(--link)' },
   ];
 
   return (
@@ -27,8 +27,8 @@ export default function NLRBContext() {
       <div style={{ maxWidth: '24rem', marginLeft: 'auto', marginRight: 'auto' }}>
         <div style={{
           padding: '1.5rem',
-          background: 'var(--color-surface-1)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--surf)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
         }}>
           {/* Header */}
@@ -36,7 +36,7 @@ export default function NLRBContext() {
             <h2 style={{
               fontSize: '1.125rem',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: '0.5rem',
               marginTop: 0,
               fontFamily: 'var(--font-ui)',
@@ -45,7 +45,7 @@ export default function NLRBContext() {
             </h2>
             <p style={{
               fontSize: '0.8125rem',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               margin: 0,
               fontFamily: 'var(--font-ui)',
               lineHeight: 1.5,
@@ -60,12 +60,12 @@ export default function NLRBContext() {
             background: 'rgba(59,130,246,0.08)',
             borderRadius: '4px',
             marginBottom: '1rem',
-            borderLeft: '4px solid var(--accent-primary)',
+            borderLeft: '4px solid var(--link)',
           }}>
             <div style={{
               fontSize: '0.75rem',
               fontWeight: 600,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
               marginBottom: '0.375rem',
@@ -88,7 +88,7 @@ export default function NLRBContext() {
             <div style={{
               fontSize: '0.8125rem',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: '0.75rem',
               fontFamily: 'var(--font-ui)',
             }}>
@@ -106,7 +106,7 @@ export default function NLRBContext() {
                 <span style={{
                   fontSize: '0.8125rem',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                 }}>
                   Unfair Labor Practice (ULP)
@@ -122,21 +122,21 @@ export default function NLRBContext() {
               </div>
               <div style={{
                 height: '20px',
-                background: 'var(--border-default)',
+                background: 'var(--bdr)',
                 borderRadius: '4px',
                 overflow: 'hidden',
               }}>
                 <div style={{
                   height: '100%',
                   width: `${ulpPercentage}%`,
-                  background: 'var(--accent-primary)',
+                  background: 'var(--link)',
                   borderRadius: '4px',
                   transition: 'width 150ms ease',
                 }} />
               </div>
               <div className="font-mono" style={{
                 fontSize: '0.75rem',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 marginTop: '0.25rem',
                 fontFamily: 'var(--font-mono)',
               }}>
@@ -155,7 +155,7 @@ export default function NLRBContext() {
                 <span style={{
                   fontSize: '0.8125rem',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-ui)',
                 }}>
                   Representation Petitions
@@ -171,7 +171,7 @@ export default function NLRBContext() {
               </div>
               <div style={{
                 height: '20px',
-                background: 'var(--border-default)',
+                background: 'var(--bdr)',
                 borderRadius: '4px',
                 overflow: 'hidden',
               }}>
@@ -185,7 +185,7 @@ export default function NLRBContext() {
               </div>
               <div className="font-mono" style={{
                 fontSize: '0.75rem',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 marginTop: '0.25rem',
                 fontFamily: 'var(--font-mono)',
               }}>
@@ -197,12 +197,12 @@ export default function NLRBContext() {
           {/* Outcome Breakdown */}
           <div style={{
             paddingTop: '1rem',
-            borderTop: '1px solid var(--border-default)',
+            borderTop: '1px solid var(--bdr)',
           }}>
             <div style={{
               fontSize: '0.8125rem',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               marginBottom: '0.75rem',
               fontFamily: 'var(--font-ui)',
             }}>
@@ -220,7 +220,7 @@ export default function NLRBContext() {
                   <span style={{
                     fontSize: '0.8125rem',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-ui)',
                   }}>
                     {outcome.label}
@@ -236,7 +236,7 @@ export default function NLRBContext() {
                 </div>
                 <div style={{
                   height: '8px',
-                  background: 'var(--border-default)',
+                  background: 'var(--bdr)',
                   borderRadius: '4px',
                   overflow: 'hidden',
                 }}>
@@ -259,13 +259,13 @@ export default function NLRBContext() {
             gap: '1rem',
             paddingTop: '1rem',
             marginTop: '1rem',
-            borderTop: '1px solid var(--border-default)',
+            borderTop: '1px solid var(--bdr)',
           }}>
             <div>
               <div style={{
                 fontSize: '0.75rem',
                 fontWeight: 600,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
@@ -287,7 +287,7 @@ export default function NLRBContext() {
               <div style={{
                 fontSize: '0.75rem',
                 fontWeight: 600,
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 marginBottom: '0.375rem',
@@ -312,7 +312,7 @@ export default function NLRBContext() {
             padding: '0.75rem',
             background: 'rgba(59,130,246,0.08)',
             borderRadius: '4px',
-            borderLeft: '4px solid var(--accent-primary)',
+            borderLeft: '4px solid var(--link)',
           }}>
             <p style={{
               fontSize: '0.8125rem',
@@ -329,7 +329,7 @@ export default function NLRBContext() {
           {/* Footer Note */}
           <p style={{
             fontSize: '0.75rem',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             marginTop: '1rem',
             marginBottom: 0,
             fontFamily: 'var(--font-ui)',

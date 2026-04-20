@@ -85,7 +85,7 @@ export function JudgePreviewCard({ name, district, circuit, winRate, totalCases,
         </div>
         {party && (
           <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
-            party.includes('Democrat') ? 'bg-[var(--color-surface-1)] text-[var(--link)]' : 'bg-[var(--color-surface-1)] text-[var(--data-negative)]'
+            party.includes('Democrat') ? 'bg-[var(--surf)] text-[var(--link)]' : 'bg-[var(--surf)] text-[var(--data-negative)]'
           }`}>
             {party.includes('Democrat') ? 'D' : 'R'}
           </span>

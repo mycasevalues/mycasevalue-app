@@ -8,8 +8,8 @@ interface SectionLabelProps {
 
 export function SectionLabel({ children }: SectionLabelProps) {
   return (
-    <div className="font-body text-[10px] font-bold tracking-[3px] uppercase mb-5" style={{ color: 'var(--color-text-secondary)', letterSpacing: '3px' }}>
-      <span style={{ color: 'var(--color-text-secondary)' }}>{children}</span>
+    <div className="font-body text-[10px] font-bold tracking-[3px] uppercase mb-5" style={{ color: 'var(--text2)', letterSpacing: '3px' }}>
+      <span style={{ color: 'var(--text2)' }}>{children}</span>
     </div>
   );
 }

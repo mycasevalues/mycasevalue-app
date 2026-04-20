@@ -61,9 +61,9 @@ export default function TrustBadges() {
   return (
     <section
       style={{
-        background: 'var(--color-surface-1)',
+        background: 'var(--surf)',
         padding: '48px 24px',
-        borderBottom: '1px solid var(--border-default)',
+        borderBottom: '1px solid var(--bdr)',
       }}
     >
       <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
@@ -85,7 +85,7 @@ export default function TrustBadges() {
                 alignItems: 'center',
                 textAlign: 'center',
                 paddingRight: idx < badges.length - 1 ? '32px' : '0',
-                borderRight: idx < badges.length - 1 ? '1px solid var(--border-default)' : 'none',
+                borderRight: idx < badges.length - 1 ? '1px solid var(--bdr)' : 'none',
               }}
             >
               {/* Icon */}
@@ -97,7 +97,7 @@ export default function TrustBadges() {
                 style={{
                   fontSize: '28px',
                   fontWeight: 600,
-                  color: 'var(--color-text-primary)',
+                  color: 'var(--text1)',
                   fontFamily: 'var(--font-mono)',
                   lineHeight: 1.2,
                   marginBottom: '8px',
@@ -109,7 +109,7 @@ export default function TrustBadges() {
               <div
                 style={{
                   fontSize: '14px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   fontFamily: 'var(--font-ui)',
                   fontWeight: 500,
                   lineHeight: 1.4,
@@ -137,13 +137,13 @@ export default function TrustBadges() {
           }
 
           .trust-badges-grid > div:nth-child(odd) {
-            border-right: 1px solid var(--border-default);
+            border-right: 1px solid var(--bdr);
             padding-right: 24px;
           }
 
           .trust-badges-grid > div:nth-child(1),
           .trust-badges-grid > div:nth-child(2) {
-            border-bottom: 1px solid var(--border-default);
+            border-bottom: 1px solid var(--bdr);
             padding-bottom: 24px;
           }
         }

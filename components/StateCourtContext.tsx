@@ -130,7 +130,7 @@ export default function StateCourtContext({
     >
       <div className="mb-6">
         <h2 className="text-lg font-semibold text-[var(--color-text-muted)]">Federal vs State Court Outcomes</h2>
-        <p className="text-sm text-[var(--color-text-secondary)] mt-2">
+        <p className="text-sm text-[var(--text2)] mt-2">
           State court data sourced from CourtListener state court opinions
         </p>
       </div>
@@ -139,7 +139,7 @@ export default function StateCourtContext({
         {/* Federal Data Column */}
         <div className="space-y-4">
           <h3 className="text-sm font-semibold text-[var(--color-text-muted)] flex items-center">
-            <span className="inline-block w-3 h-3 rounded-full bg-[var(--accent-primary)] mr-2"></span>
+            <span className="inline-block w-3 h-3 rounded-full bg-[var(--link)] mr-2"></span>
             Federal Court
           </h3>
 
@@ -151,7 +151,7 @@ export default function StateCourtContext({
               </div>
               <div className="w-full bg-[rgba(255,255,255,0.08)] rounded-full h-2">
                 <div
-                  className="bg-[var(--accent-primary)] h-2 rounded-full transition-all"
+                  className="bg-[var(--link)] h-2 rounded-full transition-all"
                   style={{ width: `${federalWinRate}%` }}
                 ></div>
               </div>
@@ -235,7 +235,7 @@ export default function StateCourtContext({
 
       {/* Key Difference Callout */}
       <div className="mt-6 pt-6 border-t border-[var(--bdr, #E2DFD8)]">
-        <div className="bg-[var(--color-surface-1)] rounded p-4">
+        <div className="bg-[var(--surf)] rounded p-4">
           <p className="text-sm text-[var(--color-text-muted)]">
             <span className="font-semibold text-[var(--color-text-muted)]">Key Difference:</span>{' '}
             {federalWinRate > stateData.winRate

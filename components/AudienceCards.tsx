@@ -95,7 +95,7 @@ export default function AudienceCards() {
               <h3 className="text-base font-semibold text-[var(--color-text-muted)] mb-3">
                 {card.title}
               </h3>
-              <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+              <p className="text-sm text-[var(--text2)] leading-relaxed">
                 {card.description}
               </p>
             </div>
@@ -122,7 +122,7 @@ export default function AudienceCards() {
               <h3 className="text-base font-semibold text-[var(--color-text-muted)] mb-3">
                 {card.title}
               </h3>
-              <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+              <p className="text-sm text-[var(--text2)] leading-relaxed">
                 {card.description}
               </p>
             </div>

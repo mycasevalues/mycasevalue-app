@@ -73,7 +73,7 @@ export default function DistrictsMapToggle({ children }: Props) {
     fontSize: '14px',
     fontWeight: 600,
     fontFamily: 'var(--font-ui)',
-    border: '1px solid var(--border-default)',
+    border: '1px solid var(--bdr)',
     cursor: 'pointer',
     transition: 'all 150ms ease',
   };
@@ -85,10 +85,10 @@ export default function DistrictsMapToggle({ children }: Props) {
           onClick={() => setView('map')}
           style={{
             ...btnBase,
-            background: view === 'map' ? 'var(--accent-primary)' : 'var(--color-surface-0)',
-            color: view === 'map' ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
+            background: view === 'map' ? 'var(--link)' : 'var(--card)',
+            color: view === 'map' ? 'var(--card)' : 'var(--text2)',
             borderRadius: '2px 0 0 2px',
-            borderRight: view === 'map' ? '1px solid var(--accent-primary)' : undefined,
+            borderRight: view === 'map' ? '1px solid var(--link)' : undefined,
           }}
         >
           View as Map
@@ -97,10 +97,10 @@ export default function DistrictsMapToggle({ children }: Props) {
           onClick={() => setView('list')}
           style={{
             ...btnBase,
-            background: view === 'list' ? 'var(--accent-primary)' : 'var(--color-surface-0)',
-            color: view === 'list' ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
+            background: view === 'list' ? 'var(--link)' : 'var(--card)',
+            color: view === 'list' ? 'var(--card)' : 'var(--text2)',
             borderRadius: '0 2px 2px 0',
-            borderLeft: view === 'list' ? '1px solid var(--accent-primary)' : undefined,
+            borderLeft: view === 'list' ? '1px solid var(--link)' : undefined,
           }}
         >
           View as List
@@ -109,7 +109,7 @@ export default function DistrictsMapToggle({ children }: Props) {
 
       {view === 'map' && (
         <div style={{
-          background: 'var(--color-surface-0)',
+          background: 'var(--card)',
           border: '1px solid rgba(255,255,255,0.08)',
           borderRadius: '4px',
           padding: 'clamp(16px, 3vw, 32px)',

@@ -96,18 +96,18 @@ export default async function OutcomesPage({
 
   if (!option || !category) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--color-surface-1)', color: 'var(--color-text-primary)' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--surf)', color: 'var(--text1)' }}>
         <div className="text-center">
           <h1 style={{
             fontSize: '28px',
             fontWeight: 700,
             marginBottom: '16px',
             fontFamily: 'var(--font-legal)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
           }}>Case outcomes not found</h1>
           <p style={{
             marginBottom: '32px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             fontSize: '16px',
             fontFamily: 'var(--font-ui)',
             lineHeight: '1.6',
@@ -191,7 +191,7 @@ export default async function OutcomesPage({
   // Outcome distribution
   const outcomes = [
     { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: 'var(--gold)' },
-    { label: 'Dismissed', value: Math.round(Math.max(10, 53 - districtSettleRate - districtWinRate * 0.6)), color: 'var(--color-text-secondary)' },
+    { label: 'Dismissed', value: Math.round(Math.max(10, 53 - districtSettleRate - districtWinRate * 0.6)), color: 'var(--text2)' },
     { label: 'Trial Win', value: Math.round(districtWinRate * 0.6), color: 'var(--color-text-muted)' },
     { label: 'Trial Loss', value: Math.round(districtWinRate * 0.4), color: 'var(--data-negative)' },
   ];
@@ -222,7 +222,7 @@ export default async function OutcomesPage({
   };
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+    <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       {/* Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
@@ -267,7 +267,7 @@ export default async function OutcomesPage({
           {/* Breadcrumb */}
           <div style={{
             fontSize: '14px',
-            color: 'var(--border-default)',
+            color: 'var(--bdr)',
             fontFamily: 'var(--font-ui)',
             marginBottom: '16px',
             letterSpacing: '0.3px',
@@ -276,19 +276,19 @@ export default async function OutcomesPage({
             gap: '8px',
             alignItems: 'center',
           }}>
-            <Link href="/" style={{ color: 'var(--border-default)', textDecoration: 'none' }}>
+            <Link href="/" style={{ color: 'var(--bdr)', textDecoration: 'none' }}>
               Home
             </Link>
             <span style={{ margin: '0 8px' }}>›</span>
-            <Link href="/districts" style={{ color: 'var(--border-default)', textDecoration: 'none' }}>
+            <Link href="/districts" style={{ color: 'var(--bdr)', textDecoration: 'none' }}>
               Districts
             </Link>
             <span style={{ margin: '0 8px' }}>›</span>
-            <Link href={`/outcomes/${district}`} style={{ color: 'var(--border-default)', textDecoration: 'none' }}>
+            <Link href={`/outcomes/${district}`} style={{ color: 'var(--bdr)', textDecoration: 'none' }}>
               {stateName}
             </Link>
             <span style={{ margin: '0 8px' }}>›</span>
-            <span style={{ color: 'var(--color-text-inverse)' }}>{option.label}</span>
+            <span style={{ color: 'var(--chrome-text)' }}>{option.label}</span>
           </div>
 
           {/* Title with Badge */}
@@ -298,15 +298,15 @@ export default async function OutcomesPage({
               fontWeight: 700,
               margin: 0,
               fontFamily: 'var(--font-legal)',
-              color: 'var(--color-text-inverse)',
+              color: 'var(--chrome-text)',
               letterSpacing: '-0.5px',
               flex: 1,
             }}>
               {option.label} Cases in {stateName}
             </h1>
             <div style={{
-              background: 'var(--accent-primary)',
-              color: 'var(--color-text-inverse)',
+              background: 'var(--link)',
+              color: 'var(--chrome-text)',
               padding: '6px 12px',
               borderRadius: '4px',
               fontSize: '12px',
@@ -325,7 +325,7 @@ export default async function OutcomesPage({
             fontSize: '16px',
             margin: '12px 0 0 0',
             fontFamily: 'var(--font-ui)',
-            color: 'var(--border-default)',
+            color: 'var(--bdr)',
             lineHeight: '1.6',
             maxWidth: '700px',
           }}>
@@ -337,9 +337,9 @@ export default async function OutcomesPage({
 
       {/* Key Stats Section */}
       <div style={{
-        background: 'var(--color-surface-0)',
+        background: 'var(--card)',
         padding: 'clamp(24px, 4vw, 32px) 20px',
-        borderBottom: '1px solid var(--border-default)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           {/* Last Updated Timestamp */}
@@ -358,8 +358,8 @@ export default async function OutcomesPage({
           className="stats-cards"
           >
             <div style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
             }}>
@@ -367,21 +367,21 @@ export default async function OutcomesPage({
                 fontWeight: 600,
                 fontSize: '28px',
                 marginBottom: '8px',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 fontFamily: 'var(--font-mono)',
               }}>
                 {isNaN(districtWinRate ?? 0) ? '—' : `${Math.round(districtWinRate ?? 0)}%`}
               </div>
               <div style={{
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
               }}>Win + Settlement Rate</div>
             </div>
             <div style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
             }}>
@@ -389,21 +389,21 @@ export default async function OutcomesPage({
                 fontWeight: 600,
                 fontSize: '28px',
                 marginBottom: '8px',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 fontFamily: 'var(--font-mono)',
               }}>
                 {isNaN(districtDuration ?? 0) ? '—' : `${districtDuration} mo`}
               </div>
               <div style={{
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
               }}>Median Duration</div>
             </div>
             <div style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
             }}>
@@ -411,21 +411,21 @@ export default async function OutcomesPage({
                 fontWeight: 600,
                 fontSize: '28px',
                 marginBottom: '8px',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 fontFamily: 'var(--font-mono)',
               }}>
                 {isNaN(districtSettleRate ?? 0) ? '—' : `${Math.round(districtSettleRate ?? 0)}%`}
               </div>
               <div style={{
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
               }}>Settlement Rate</div>
             </div>
             <div style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
             }}>
@@ -433,14 +433,14 @@ export default async function OutcomesPage({
                 fontWeight: 600,
                 fontSize: '28px',
                 marginBottom: '8px',
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 fontFamily: 'var(--font-mono)',
               }}>
                 {isNaN(totalOutcomes ?? 0) ? '—' : `${(totalOutcomes ?? 0).toLocaleString()}+`}
               </div>
               <div style={{
                 fontSize: '14px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 fontFamily: 'var(--font-ui)',
                 fontWeight: 500,
               }}>Cases Tracked</div>
@@ -452,19 +452,19 @@ export default async function OutcomesPage({
       {/* Outcome Distribution */}
       <div style={{
         padding: 'clamp(24px, 4vw, 40px) 20px',
-        background: 'var(--color-surface-1)',
+        background: 'var(--surf)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{
-            background: 'var(--color-surface-0)',
-            border: '1px solid var(--border-default)',
+            background: 'var(--card)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             padding: 'clamp(24px, 4vw, 32px)',
           }}>
             <h2 style={{
               fontSize: '20px',
               fontWeight: 600,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 28px 0',
               fontFamily: 'var(--font-ui)',
             }}>
@@ -484,7 +484,7 @@ export default async function OutcomesPage({
                     <span style={{
                       fontSize: '14px',
                       fontWeight: 600,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       fontFamily: 'var(--font-ui)',
                     }}>
                       {outcome.label}
@@ -501,7 +501,7 @@ export default async function OutcomesPage({
                   <div style={{
                     height: '12px',
                     borderRadius: '4px',
-                    background: 'var(--border-default)',
+                    background: 'var(--bdr)',
                     overflow: 'hidden',
                   }}>
                     <div style={{
@@ -521,14 +521,14 @@ export default async function OutcomesPage({
       {/* How This Compares Section */}
       <div style={{
         padding: 'clamp(24px, 4vw, 40px) 20px',
-        background: 'var(--color-surface-0)',
-        borderBottom: '1px solid var(--border-default)',
+        background: 'var(--card)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '20px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 28px 0',
             fontFamily: 'var(--font-ui)',
           }}>
@@ -537,7 +537,7 @@ export default async function OutcomesPage({
 
           <p style={{
             fontSize: '14px',
-            color: 'var(--color-text-secondary)',
+            color: 'var(--text2)',
             margin: '0 0 24px 0',
             fontFamily: 'var(--font-ui)',
             lineHeight: '1.6',
@@ -552,14 +552,14 @@ export default async function OutcomesPage({
           }}>
             {/* Win Rate Comparison */}
             <div style={{
-              background: 'var(--color-surface-1)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--surf)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
             }}>
               <div style={{
                 fontSize: '12px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontWeight: 600,
@@ -577,7 +577,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
                   }}>
@@ -586,7 +586,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-ui)',
                   }}>
                     {Math.round(districtWinRate)}%
@@ -595,7 +595,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
                   }}>
@@ -604,7 +604,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontFamily: 'var(--font-ui)',
                   }}>
                     {Math.round(nationalWinRate)}%
@@ -612,7 +612,7 @@ export default async function OutcomesPage({
                 </div>
               </div>
               <div style={{
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 border: `1px solid ${getComparisonColor(winRateDiff)}`,
                 borderRadius: '4px',
                 padding: '8px 12px',
@@ -628,14 +628,14 @@ export default async function OutcomesPage({
 
             {/* Settlement Rate Comparison */}
             <div style={{
-              background: 'var(--color-surface-1)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--surf)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
             }}>
               <div style={{
                 fontSize: '12px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontWeight: 600,
@@ -653,7 +653,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
                   }}>
@@ -671,7 +671,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
                   }}>
@@ -680,7 +680,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontFamily: 'var(--font-ui)',
                   }}>
                     {Math.round(nationalSettleRate)}%
@@ -688,7 +688,7 @@ export default async function OutcomesPage({
                 </div>
               </div>
               <div style={{
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 border: `1px solid ${getComparisonColor(settleRateDiff)}`,
                 borderRadius: '4px',
                 padding: '8px 12px',
@@ -704,14 +704,14 @@ export default async function OutcomesPage({
 
             {/* Duration Comparison */}
             <div style={{
-              background: 'var(--color-surface-1)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--surf)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
             }}>
               <div style={{
                 fontSize: '12px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontWeight: 600,
@@ -729,7 +729,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
                   }}>
@@ -738,7 +738,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     fontFamily: 'var(--font-ui)',
                   }}>
                     {Math.round(districtDuration)}mo
@@ -747,7 +747,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '14px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-ui)',
                   }}>
@@ -756,7 +756,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontFamily: 'var(--font-ui)',
                   }}>
                     {Math.round(nationalDuration)}mo
@@ -764,7 +764,7 @@ export default async function OutcomesPage({
                 </div>
               </div>
               <div style={{
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 border: `1px solid ${getComparisonColor(-durationDiff)}`,
                 borderRadius: '4px',
                 padding: '8px 12px',
@@ -784,14 +784,14 @@ export default async function OutcomesPage({
       {/* Related Outcomes Section */}
       <div style={{
         padding: 'clamp(24px, 4vw, 40px) 20px',
-        background: 'var(--color-surface-1)',
-        borderBottom: '1px solid var(--border-default)',
+        background: 'var(--surf)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '20px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 28px 0',
             fontFamily: 'var(--font-ui)',
           }}>
@@ -809,8 +809,8 @@ export default async function OutcomesPage({
                 href={`/outcomes/${district}/${relatedType.label.toLowerCase().replace(/\s+/g, '-')}`}
                 className="outcome-card-link"
                 style={{
-                  background: 'var(--color-surface-0)',
-                  border: '1px solid var(--border-default)',
+                  background: 'var(--card)',
+                  border: '1px solid var(--bdr)',
                   borderRadius: '4px',
                   padding: '24px',
                   textDecoration: 'none',
@@ -820,7 +820,7 @@ export default async function OutcomesPage({
               >
                 <div style={{
                   fontSize: '12px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                   fontWeight: 600,
@@ -840,7 +840,7 @@ export default async function OutcomesPage({
                 </div>
                 <div style={{
                   fontSize: '12px',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   fontFamily: 'var(--font-ui)',
                 }}>
                   Explore outcomes →
@@ -854,14 +854,14 @@ export default async function OutcomesPage({
       {/* Quick Actions Section */}
       <div style={{
         padding: 'clamp(24px, 4vw, 40px) 20px',
-        background: 'var(--color-surface-0)',
-        borderBottom: '1px solid var(--border-default)',
+        background: 'var(--card)',
+        borderBottom: '1px solid var(--bdr)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '20px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 28px 0',
             fontFamily: 'var(--font-ui)',
           }}>
@@ -879,7 +879,7 @@ export default async function OutcomesPage({
                 href={action.path}
                 style={{
                   background: 'var(--gold)',
-                  color: 'var(--color-surface-0)',
+                  color: 'var(--card)',
                   padding: '16px 24px',
                   borderRadius: '4px',
                   textDecoration: 'none',
@@ -902,14 +902,14 @@ export default async function OutcomesPage({
 
       {/* Related Links Section */}
       <div style={{
-        background: 'var(--color-surface-1)',
+        background: 'var(--surf)',
         padding: 'clamp(24px, 4vw, 40px) 20px',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '20px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 28px 0',
             fontFamily: 'var(--font-ui)',
           }}>
@@ -922,8 +922,8 @@ export default async function OutcomesPage({
             gap: '24px',
           }}>
             <Link href={`/cases/${category.id}`} className="outcome-card-link" style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
               textDecoration: 'none',
@@ -932,7 +932,7 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontSize: '12px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontWeight: 600,
@@ -944,7 +944,7 @@ export default async function OutcomesPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 fontFamily: 'var(--font-ui)',
               }}>
                 All {categoryLabel} Cases
@@ -952,8 +952,8 @@ export default async function OutcomesPage({
             </Link>
 
             <Link href={`/nos/${option.nos}`} className="outcome-card-link" style={{
-              background: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              background: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '24px',
               textDecoration: 'none',
@@ -962,7 +962,7 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontSize: '12px',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontWeight: 600,
@@ -974,7 +974,7 @@ export default async function OutcomesPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--color-text-primary)',
+                color: 'var(--text1)',
                 fontFamily: 'var(--font-ui)',
               }}>
                 {option.label} (NOS {option.nos})
@@ -986,20 +986,20 @@ export default async function OutcomesPage({
 
       {/* Disclaimer */}
       <div style={{
-        background: 'var(--color-surface-0)',
-        color: 'var(--color-text-secondary)',
+        background: 'var(--card)',
+        color: 'var(--text2)',
         padding: 'clamp(24px, 4vw, 40px) 20px',
         fontSize: '14px',
         fontFamily: 'var(--font-ui)',
         lineHeight: '1.7',
-        borderTop: '1px solid var(--border-default)',
+        borderTop: '1px solid var(--bdr)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p style={{ margin: '0 0 16px 0', color: 'var(--color-text-secondary)' }}>
-            <strong style={{ color: 'var(--color-text-primary)' }}>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and CourtListener and are not predictions of your case outcome. Case outcomes vary significantly based on specific facts, law applicable to your jurisdiction, quality of legal representation, and numerous other factors.
+          <p style={{ margin: '0 0 16px 0', color: 'var(--text2)' }}>
+            <strong style={{ color: 'var(--text1)' }}>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and CourtListener and are not predictions of your case outcome. Case outcomes vary significantly based on specific facts, law applicable to your jurisdiction, quality of legal representation, and numerous other factors.
           </p>
-          <p style={{ margin: '0 0 16px 0', color: 'var(--color-text-secondary)' }}>
-            <strong style={{ color: 'var(--color-text-primary)' }}>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction for advice specific to your situation.
+          <p style={{ margin: '0 0 16px 0', color: 'var(--text2)' }}>
+            <strong style={{ color: 'var(--text1)' }}>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction for advice specific to your situation.
           </p>
           <p style={{
             fontSize: '12px',

@@ -61,28 +61,28 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
         <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
         <thead>
           <tr className="bg-[var(--color-surface-2)] border-b border-[var(--bdr, #E2DFD8)]">
-            <th className="text-left px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
+            <th className="text-left px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
                 onClick={() => onSort?.('name')}>
               Judge <SortIcon active={sortBy === 'name'} order={sortOrder} />
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide whitespace-nowrap">
               District
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide whitespace-nowrap">
               Circuit
             </th>
-            <th className="text-right px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
+            <th className="text-right px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
                 onClick={() => onSort?.('cases')}>
               Cases <SortIcon active={sortBy === 'cases'} order={sortOrder} />
             </th>
-            <th className="text-right px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
+            <th className="text-right px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
                 onClick={() => onSort?.('winRate')}>
               Win % <SortIcon active={sortBy === 'winRate'} order={sortOrder} />
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide whitespace-nowrap">
               Appointed
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-[var(--color-text-secondary)] text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide whitespace-nowrap">
               Party
             </th>
             <th className="w-10 px-2 py-2.5" aria-label="Save"></th>
@@ -100,7 +100,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
               <tr
                 key={judge.id}
                 className={`border-b border-[var(--bdr, #E2DFD8)] hover:bg-white/5 transition-colors cursor-pointer ${
-                  selectedIdx === idx ? 'bg-[var(--color-surface-1)] ring-1 ring-inset ring-brand-blue/30' : idx % 2 === 0 ? '' : 'bg-[var(--color-surface-1)]'
+                  selectedIdx === idx ? 'bg-[var(--surf)] ring-1 ring-inset ring-brand-blue/30' : idx % 2 === 0 ? '' : 'bg-[var(--surf)]'
                 }`}
                 onClick={() => setSelectedIdx(idx)}
               >
@@ -125,7 +125,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
                     </Link>
                   </HoverPreview>
                 </td>
-                <td className="px-3 py-2 text-xs text-[var(--color-text-secondary)] whitespace-nowrap">
+                <td className="px-3 py-2 text-xs text-[var(--text2)] whitespace-nowrap">
                   {judge.district_id || '—'}
                 </td>
                 <td className="px-3 py-2 text-xs text-[var(--color-text-muted)] whitespace-nowrap">

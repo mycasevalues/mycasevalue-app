@@ -316,7 +316,7 @@ const ENDPOINTS: Endpoint[] = [
 
 const methodColors: Record<string, string> = {
   GET: 'var(--data-positive)',
-  POST: 'var(--accent-primary)',
+  POST: 'var(--link)',
   PUT: '#B86E00',
   DELETE: 'var(--data-negative)',
 };
@@ -354,11 +354,11 @@ const rateLimitTiers = [
 
 export default function DevelopersPage() {
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf)', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        input:focus, select:focus, textarea:focus { border-color: var(--accent-primary) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus, select:focus, textarea:focus { border-color: var(--link) !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: 20px; } }
         code { font-family: var(--font-mono); }
         pre { font-family: var(--font-mono); }
@@ -423,7 +423,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '20px',
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -459,17 +459,17 @@ export default function DevelopersPage() {
               <div
                 key={idx}
                 style={{
-                  background: 'var(--color-surface-0)',
+                  background: 'var(--card)',
                   borderRadius: '4px',
                   padding: '16px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
                 }}
               >
                 <p
                   style={{
                     fontSize: '12px',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--text2)',
                     fontWeight: 600,
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -482,7 +482,7 @@ export default function DevelopersPage() {
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '14px',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     wordBreak: 'break-word',
                     fontWeight: 500,
                   }}
@@ -500,7 +500,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '20px',
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -512,16 +512,16 @@ export default function DevelopersPage() {
             <div
               key={idx}
               style={{
-                background: 'var(--color-surface-0)',
+                background: 'var(--card)',
                 borderRadius: '4px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid var(--bdr)',
                 overflow: 'hidden',
                 marginBottom: '16px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
               }}
             >
               {/* Endpoint Header */}
-              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
+              <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--bdr)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
                   <span
                     style={{
@@ -530,7 +530,7 @@ export default function DevelopersPage() {
                       padding: '4px 10px',
                       borderRadius: '4px',
                       backgroundColor: `${methodColors[endpoint.method]}`,
-                      color: 'var(--color-surface-0)',
+                      color: 'var(--card)',
                       minWidth: '45px',
                       textAlign: 'center',
                       fontFamily: 'var(--font-mono)',
@@ -543,8 +543,8 @@ export default function DevelopersPage() {
                     style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: '14px',
-                      color: 'var(--color-text-primary)',
-                      backgroundColor: 'var(--color-surface-1)',
+                      color: 'var(--text1)',
+                      backgroundColor: 'var(--surf)',
                       padding: '4px 8px',
                       borderRadius: '4px',
                       wordBreak: 'break-all',
@@ -554,17 +554,17 @@ export default function DevelopersPage() {
                     {endpoint.path}
                   </code>
                 </div>
-                <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0' }}>{endpoint.description}</p>
+                <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0' }}>{endpoint.description}</p>
               </div>
 
               {/* Parameters */}
               {endpoint.params.length > 0 && (
-                <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--border-default)' }}>
+                <div style={{ padding: '24px 24px', borderBottom: '1px solid var(--bdr)' }}>
                   <h4
                     style={{
                       fontSize: '14px',
                       fontWeight: 600,
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                       margin: '0 0 12px',
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
@@ -581,7 +581,7 @@ export default function DevelopersPage() {
                             style={{
                               fontFamily: 'var(--font-mono)',
                               fontSize: '12px',
-                              color: 'var(--accent-primary)',
+                              color: 'var(--link)',
                               fontWeight: 600,
                             }}
                           >
@@ -590,7 +590,7 @@ export default function DevelopersPage() {
                           <span
                             style={{
                               fontSize: '12px',
-                              color: 'var(--color-text-secondary)',
+                              color: 'var(--text2)',
                               backgroundColor: 'rgba(255,255,255,0.05)',
                               padding: '2px 6px',
                               borderRadius: '3px',
@@ -613,7 +613,7 @@ export default function DevelopersPage() {
                             </span>
                           )}
                         </div>
-                        <p style={{ color: 'var(--color-text-secondary)', margin: '0', fontSize: '12px' }}>{param.description}</p>
+                        <p style={{ color: 'var(--text2)', margin: '0', fontSize: '12px' }}>{param.description}</p>
                       </div>
                     ))}
                   </div>
@@ -626,7 +626,7 @@ export default function DevelopersPage() {
                   style={{
                     fontSize: '14px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     margin: '0 0 12px',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
@@ -661,7 +661,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '20px',
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -670,14 +670,14 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '4px',
               padding: '24px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
           >
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 16px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 16px' }}>
               All API requests require authentication using a Bearer token in the Authorization header.
             </p>
             <pre
@@ -696,7 +696,7 @@ export default function DevelopersPage() {
             >
               {`Authorization: Bearer YOUR_API_KEY`}
             </pre>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0 }}>
               To get an API key, visit your account settings or request access below. API keys should never be shared or committed to version control.
             </p>
           </div>
@@ -708,7 +708,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '20px',
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -724,7 +724,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '20px',
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -733,9 +733,9 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '4px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               overflow: 'hidden',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
@@ -749,17 +749,17 @@ export default function DevelopersPage() {
                 }}
               >
                 <thead>
-                  <tr style={{ borderBottom: '1px solid var(--border-default)', background: 'var(--color-surface-1)' }}>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)', background: 'var(--surf)' }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--text1)' }}>
                       Tier
                     </th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--text1)' }}>
                       Requests/Min
                     </th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--text1)' }}>
                       Requests/Day
                     </th>
-                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                    <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, color: 'var(--text1)' }}>
                       Pricing
                     </th>
                   </tr>
@@ -769,21 +769,21 @@ export default function DevelopersPage() {
                     <tr
                       key={idx}
                       style={{
-                        borderBottom: idx < rateLimitTiers.length - 1 ? '1px solid var(--border-default)' : 'none',
-                        background: idx % 2 === 0 ? 'var(--color-surface-0)' : 'var(--color-surface-1)',
+                        borderBottom: idx < rateLimitTiers.length - 1 ? '1px solid var(--bdr)' : 'none',
+                        background: idx % 2 === 0 ? 'var(--card)' : 'var(--surf)',
                       }}
                     >
-                      <td style={{ padding: '12px 16px', color: 'var(--color-text-primary)', fontWeight: 500 }}>{tier.name}</td>
-                      <td style={{ padding: '12px 16px', color: 'var(--color-text-secondary)' }}>{tier.requestsPerMin}</td>
-                      <td style={{ padding: '12px 16px', color: 'var(--color-text-secondary)' }}>{tier.requestsPerDay}</td>
-                      <td style={{ padding: '12px 16px', color: 'var(--color-text-secondary)' }}>{tier.price}</td>
+                      <td style={{ padding: '12px 16px', color: 'var(--text1)', fontWeight: 500 }}>{tier.name}</td>
+                      <td style={{ padding: '12px 16px', color: 'var(--text2)' }}>{tier.requestsPerMin}</td>
+                      <td style={{ padding: '12px 16px', color: 'var(--text2)' }}>{tier.requestsPerDay}</td>
+                      <td style={{ padding: '12px 16px', color: 'var(--text2)' }}>{tier.price}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
-          <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '16px', margin: '16px 0 0' }}>
+          <p style={{ fontSize: '12px', color: 'var(--text2)', marginTop: '16px', margin: '16px 0 0' }}>
             Rate limit status is included in response headers: <code style={{ fontFamily: 'var(--font-mono)' }}>X-RateLimit-Remaining</code> and{' '}
             <code style={{ fontFamily: 'var(--font-mono)' }}>X-RateLimit-Reset</code>.
           </p>
@@ -795,7 +795,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '20px',
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -804,9 +804,9 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '4px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
@@ -820,7 +820,7 @@ export default function DevelopersPage() {
                     alignItems: 'flex-start',
                     gap: '12px',
                     padding: '12px',
-                    backgroundColor: 'var(--color-surface-1)',
+                    backgroundColor: 'var(--surf)',
                     borderRadius: '4px',
                     borderLeft: `3px solid ${error.code >= 500 ? 'var(--data-negative)' : error.code >= 400 ? 'var(--wrn-txt)' : 'var(--data-positive)'}`,
                   }}
@@ -830,13 +830,13 @@ export default function DevelopersPage() {
                       fontFamily: 'var(--font-mono)',
                       fontSize: '12px',
                       fontWeight: 700,
-                      color: 'var(--color-text-primary)',
+                      color: 'var(--text1)',
                       minWidth: '45px',
                     }}
                   >
                     {error.code}
                   </code>
-                  <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0 }}>{error.message}</p>
+                  <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0 }}>{error.message}</p>
                 </div>
               ))}
             </div>
@@ -849,7 +849,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '20px',
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -858,15 +858,15 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: 'var(--color-surface-0)',
+              background: 'var(--card)',
               borderRadius: '4px',
-              border: '1px solid var(--border-default)',
+              border: '1px solid var(--bdr)',
               overflow: 'hidden',
               boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
             }}
           >
             <div style={{ padding: '24px' }}>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: '0 0 20px' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: '0 0 20px' }}>
                 Test API endpoints directly in your browser. Requires a valid API key.
               </p>
               {/* APISandbox will be rendered here */}
@@ -881,7 +881,7 @@ export default function DevelopersPage() {
             style={{
               fontSize: '20px',
               fontWeight: 700,
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               margin: '0 0 24px',
               fontFamily: 'var(--font-heading)',
             }}
@@ -890,7 +890,7 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--gold) 100%)',
+              background: 'linear-gradient(135deg, var(--link) 0%, var(--gold) 100%)',
               borderRadius: '4px',
               padding: '32px',
               textAlign: 'center',
@@ -901,7 +901,7 @@ export default function DevelopersPage() {
               style={{
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--color-surface-0)',
+                color: 'var(--card)',
                 margin: '0 0 12px',
                 fontFamily: 'var(--font-heading)',
               }}
@@ -915,8 +915,8 @@ export default function DevelopersPage() {
               href="/solutions/enterprise"
               style={{
                 display: 'inline-block',
-                backgroundColor: 'var(--color-surface-0)',
-                color: 'var(--accent-primary)',
+                backgroundColor: 'var(--card)',
+                color: 'var(--link)',
                 padding: '12px 32px',
                 borderRadius: '4px',
                 textDecoration: 'none',

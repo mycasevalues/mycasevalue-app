@@ -129,7 +129,7 @@ export default function JudgeWinRateByNOS({
       .attr('dominant-baseline', 'central')
       .attr('font-size', '12px')
       .attr('font-family', 'var(--font-ui)')
-      .attr('fill', 'var(--color-text-secondary)')
+      .attr('fill', 'var(--text2)')
       .attr('font-weight', 500)
       .text((d) => NOS_CODE_LABELS[d.nos_code] || `NOS ${d.nos_code}`);
 

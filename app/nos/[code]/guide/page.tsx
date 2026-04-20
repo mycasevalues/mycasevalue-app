@@ -68,9 +68,9 @@ export default async function GuidePage({ params }: PageProps) {
   if (!nosInfo) {
     return (
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
-        <h1 style={{ color: 'var(--color-text-primary)' }}>Case Guide Not Found</h1>
+        <h1 style={{ color: 'var(--text1)' }}>Case Guide Not Found</h1>
         <p>This NOS code does not have a guide yet.</p>
-        <Link href="/nos" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+        <Link href="/nos" style={{ color: 'var(--link)', textDecoration: 'none' }}>
           Back to Case Types
         </Link>
       </div>
@@ -84,9 +84,9 @@ export default async function GuidePage({ params }: PageProps) {
   if (!content) {
     return (
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
-        <h1 style={{ color: 'var(--color-text-primary)' }}>Case Guide</h1>
+        <h1 style={{ color: 'var(--text1)' }}>Case Guide</h1>
         <p>A detailed guide for {nosInfo.label} cases is not yet available. View the case data instead.</p>
-        <Link href={`/nos/${code}`} style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+        <Link href={`/nos/${code}`} style={{ color: 'var(--link)', textDecoration: 'none' }}>
           View {nosInfo.label} Case Data
         </Link>
       </div>
@@ -103,7 +103,7 @@ export default async function GuidePage({ params }: PageProps) {
       <h1 style={{
         fontSize: '2.5rem',
         fontWeight: 700,
-        color: 'var(--color-text-primary)',
+        color: 'var(--text1)',
         marginBottom: '30px',
         lineHeight: 1.2,
         fontFamily: 'var(--font-legal)',
@@ -126,7 +126,7 @@ export default async function GuidePage({ params }: PageProps) {
         <h2 style={{
           fontSize: '1.8rem',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginBottom: '24px',
           fontFamily: 'var(--font-legal)',
         }}>
@@ -150,7 +150,7 @@ export default async function GuidePage({ params }: PageProps) {
         <h2 style={{
           fontSize: '1.8rem',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginBottom: '24px',
           fontFamily: 'var(--font-legal)',
         }}>
@@ -168,14 +168,14 @@ export default async function GuidePage({ params }: PageProps) {
           {content.doIHaveCase.map((item, idx) => (
             <div key={idx} style={{
               padding: '24px',
-              backgroundColor: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              backgroundColor: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
             }}>
               <p style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginBottom: '8px',
                 fontFamily: 'var(--font-legal)',
               }}>
@@ -200,7 +200,7 @@ export default async function GuidePage({ params }: PageProps) {
         <h2 style={{
           fontSize: '1.8rem',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginBottom: '24px',
           fontFamily: 'var(--font-legal)',
         }}>
@@ -237,7 +237,7 @@ export default async function GuidePage({ params }: PageProps) {
         <h2 style={{
           fontSize: '1.8rem',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginBottom: '24px',
           fontFamily: 'var(--font-legal)',
         }}>
@@ -279,7 +279,7 @@ export default async function GuidePage({ params }: PageProps) {
           <h2 style={{
             fontSize: '1.8rem',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginBottom: '30px',
             fontFamily: 'var(--font-legal)',
           }}>
@@ -333,7 +333,7 @@ export default async function GuidePage({ params }: PageProps) {
               <div style={{
                 padding: '24px',
                 backgroundColor: 'rgba(59,130,246,0.08)',
-                border: '1px solid var(--accent-primary)',
+                border: '1px solid var(--link)',
                 borderRadius: '4px',
               }}>
                 <p style={{
@@ -405,8 +405,8 @@ export default async function GuidePage({ params }: PageProps) {
           {realData.rng && (
             <div style={{
               padding: '24px',
-              backgroundColor: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              backgroundColor: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               marginBottom: '24px',
             }}>
@@ -438,7 +438,7 @@ export default async function GuidePage({ params }: PageProps) {
           <h2 style={{
             fontSize: '1.8rem',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             marginBottom: '24px',
             fontFamily: 'var(--font-legal)',
           }}>
@@ -530,7 +530,7 @@ export default async function GuidePage({ params }: PageProps) {
             marginTop: '24px',
             padding: '16px',
             backgroundColor: 'rgba(59,130,246,0.08)',
-            borderLeft: '4px solid var(--accent-primary)',
+            borderLeft: '4px solid var(--link)',
             borderRadius: '4px',
           }}>
             <p style={{
@@ -551,7 +551,7 @@ export default async function GuidePage({ params }: PageProps) {
         <h2 style={{
           fontSize: '1.8rem',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginBottom: '24px',
           fontFamily: 'var(--font-legal)',
         }}>
@@ -619,7 +619,7 @@ export default async function GuidePage({ params }: PageProps) {
         <h2 style={{
           fontSize: '1.8rem',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           marginBottom: '24px',
           fontFamily: 'var(--font-legal)',
         }}>
@@ -634,10 +634,10 @@ export default async function GuidePage({ params }: PageProps) {
           <Link href={`/nos/${code}`} style={{
             padding: '24px',
             backgroundColor: 'rgba(59,130,246,0.08)',
-            border: '1px solid var(--accent-primary)',
+            border: '1px solid var(--link)',
             borderRadius: '4px',
             textDecoration: 'none',
-            color: 'var(--accent-primary)',
+            color: 'var(--link)',
             transition: 'all 200ms ease',
           }}>
             <p style={{
@@ -664,7 +664,7 @@ export default async function GuidePage({ params }: PageProps) {
             border: '1px solid var(--link)',
             borderRadius: '4px',
             textDecoration: 'none',
-            color: 'var(--accent-primary)',
+            color: 'var(--link)',
             transition: 'all 200ms ease',
           }}>
             <p style={{
@@ -687,11 +687,11 @@ export default async function GuidePage({ params }: PageProps) {
 
           <Link href="/nos" style={{
             padding: '24px',
-            backgroundColor: 'var(--color-surface-1)',
-            border: '1px solid var(--border-default)',
+            backgroundColor: 'var(--surf)',
+            border: '1px solid var(--bdr)',
             borderRadius: '4px',
             textDecoration: 'none',
-            color: 'var(--accent-primary)',
+            color: 'var(--link)',
             transition: 'all 200ms ease',
           }}>
             <p style={{

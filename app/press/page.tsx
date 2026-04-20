@@ -48,7 +48,7 @@ const h2Style: React.CSSProperties = {
   fontSize: 20,
   fontWeight: 600,
   fontFamily: 'var(--font-ui)',
-  color: 'var(--color-text-primary)',
+  color: 'var(--text1)',
   marginBottom: 24,
   marginTop: 0,
 };
@@ -56,7 +56,7 @@ const h2Style: React.CSSProperties = {
 const bodyStyle: React.CSSProperties = {
   fontSize: 16,
   fontFamily: 'var(--font-ui)',
-  color: 'var(--color-text-secondary)',
+  color: 'var(--text2)',
   lineHeight: 1.7,
   margin: 0,
 };
@@ -68,8 +68,8 @@ const sectionStyle: React.CSSProperties = {
 const cardStyle: React.CSSProperties = {
   padding: 32,
   borderRadius: 4,
-  border: '1px solid var(--border-default)',
-  background: 'var(--color-surface-0)',
+  border: '1px solid var(--bdr)',
+  background: 'var(--card)',
   boxShadow: 'var(--shadow-xs)',
 };
 
@@ -119,7 +119,7 @@ export default function PressPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh' }}>
+      <div style={{ background: 'var(--surf)', minHeight: '100vh' }}>
         {/* Header Banner */}
         <div style={{
           background: 'var(--card)',
@@ -179,10 +179,10 @@ export default function PressPage() {
         {/* Breadcrumb Navigation */}
         <div
           style={{
-            borderBottom: '1px solid var(--border-default)',
+            borderBottom: '1px solid var(--bdr)',
             paddingTop: '1rem',
             paddingBottom: '1rem',
-            backgroundColor: 'var(--color-surface-1)',
+            backgroundColor: 'var(--surf)',
           }}
         >
           <div
@@ -205,8 +205,8 @@ export default function PressPage() {
               <Link href="/" style={{ color: 'var(--gold)', textDecoration: 'none' }}>
                 Home
               </Link>
-              <span style={{ color: 'var(--color-text-secondary)' }}>/</span>
-              <span style={{ color: 'var(--color-text-secondary)' }}>Press Kit</span>
+              <span style={{ color: 'var(--text2)' }}>/</span>
+              <span style={{ color: 'var(--text2)' }}>Press Kit</span>
             </nav>
           </div>
         </div>
@@ -221,7 +221,7 @@ export default function PressPage() {
             <h2 style={h2Style}>About MyCaseValue</h2>
 
             <div style={{ ...cardStyle, display: 'grid', gap: 20 }}>
-              <p style={{ ...bodyStyle, fontSize: 18, fontWeight: 600, color: 'var(--color-text-primary)' }}>
+              <p style={{ ...bodyStyle, fontSize: 18, fontWeight: 600, color: 'var(--text1)' }}>
                 Mission: &ldquo;The Federal Court Record. Open to Everyone.&rdquo;
               </p>
 
@@ -268,7 +268,7 @@ export default function PressPage() {
                       fontFamily: 'var(--font-mono)',
                       fontSize: 24,
                       fontWeight: 700,
-                      color: 'var(--accent-primary)',
+                      color: 'var(--link)',
                       marginBottom: 8,
                     }}
                   >
@@ -277,7 +277,7 @@ export default function PressPage() {
                   <p
                     style={{
                       fontSize: 14,
-                      color: 'var(--color-text-secondary)',
+                      color: 'var(--text2)',
                       fontFamily: 'var(--font-ui)',
                       margin: 0,
                     }}
@@ -297,11 +297,11 @@ export default function PressPage() {
                     ['Pricing', '$0 \u2013 $29.99/month \u2014 transparent pricing, visible on the website'],
                     ['Contact', 'press@mycasevalues.com'],
                   ].map(([label, value]) => (
-                    <tr key={label} style={{ borderBottom: '1px solid var(--border-default)' }}>
-                      <td style={{ padding: '12px 16px 12px 0', fontWeight: 600, color: 'var(--color-text-primary)', whiteSpace: 'nowrap', verticalAlign: 'top' }}>{label}</td>
-                      <td style={{ padding: '12px 0', color: 'var(--color-text-secondary)' }}>
+                    <tr key={label} style={{ borderBottom: '1px solid var(--bdr)' }}>
+                      <td style={{ padding: '12px 16px 12px 0', fontWeight: 600, color: 'var(--text1)', whiteSpace: 'nowrap', verticalAlign: 'top' }}>{label}</td>
+                      <td style={{ padding: '12px 0', color: 'var(--text2)' }}>
                         {label === 'Contact' ? (
-                          <a href="mailto:press@mycasevalues.com" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                          <a href="mailto:press@mycasevalues.com" style={{ color: 'var(--link)', textDecoration: 'none' }}>
                             {value}
                           </a>
                         ) : (
@@ -348,7 +348,7 @@ export default function PressPage() {
                     borderLeft: '4px solid var(--gold, #C4882A)',
                   }}
                 >
-                  <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 8px 0' }}>
+                  <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', margin: '0 0 8px 0' }}>
                     {item.heading}
                   </p>
                   <p style={{ ...bodyStyle, fontSize: 15 }}>
@@ -373,11 +373,11 @@ export default function PressPage() {
                     ['Website', 'mycasevalues.com'],
                     ['Tagline', '\u201CThe Federal Court Record. Open to Everyone.\u201D'],
                   ].map(([label, value]) => (
-                    <tr key={label} style={{ borderBottom: '1px solid var(--border-default)' }}>
-                      <td style={{ padding: '12px 16px 12px 0', fontWeight: 600, color: 'var(--color-text-primary)', whiteSpace: 'nowrap' }}>{label}</td>
-                      <td style={{ padding: '12px 0', color: 'var(--color-text-secondary)' }}>
+                    <tr key={label} style={{ borderBottom: '1px solid var(--bdr)' }}>
+                      <td style={{ padding: '12px 16px 12px 0', fontWeight: 600, color: 'var(--text1)', whiteSpace: 'nowrap' }}>{label}</td>
+                      <td style={{ padding: '12px 0', color: 'var(--text2)' }}>
                         {label === 'Website' ? (
-                          <a href="https://mycasevalues.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+                          <a href="https://mycasevalues.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--link)', textDecoration: 'none' }}>
                             {value}
                           </a>
                         ) : (
@@ -391,7 +391,7 @@ export default function PressPage() {
             </div>
 
             {/* Brand Colors */}
-            <p style={{ fontSize: 15, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', marginBottom: 16 }}>
+            <p style={{ fontSize: 15, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--text1)', marginBottom: 16 }}>
               Brand Colors
             </p>
             <div
@@ -409,17 +409,17 @@ export default function PressPage() {
                   style={{
                     overflow: 'hidden',
                     borderRadius: 4,
-                    border: '1px solid var(--border-default)',
-                    background: 'var(--color-surface-0)',
+                    border: '1px solid var(--bdr)',
+                    background: 'var(--card)',
                     boxShadow: 'var(--shadow-xs)',
                   }}
                 >
                   <div style={{ height: 80, background: color.hex }} />
                   <div style={{ padding: 12 }}>
-                    <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)', margin: '0 0 4px 0' }}>
+                    <p style={{ fontSize: 14, fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)', margin: '0 0 4px 0' }}>
                       {color.name}
                     </p>
-                    <p style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--color-text-secondary)', margin: 0 }}>
+                    <p style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--text2)', margin: 0 }}>
                       {color.hex}
                     </p>
                   </div>
@@ -427,9 +427,9 @@ export default function PressPage() {
               ))}
             </div>
 
-            <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', margin: 0 }}>
+            <p style={{ fontSize: 14, color: 'var(--text2)', fontFamily: 'var(--font-ui)', margin: 0 }}>
               Need logos or additional assets? Email{' '}
-              <a href="mailto:press@mycasevalues.com" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+              <a href="mailto:press@mycasevalues.com" style={{ color: 'var(--link)', textDecoration: 'none' }}>
                 press@mycasevalues.com
               </a>{' '}
               and we will send the full brand kit.
@@ -448,7 +448,7 @@ export default function PressPage() {
                 textAlign: 'center',
               }}
             >
-              <p style={{ fontSize: 16, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', margin: '0 0 8px 0' }}>
+              <p style={{ fontSize: 16, fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--text1)', margin: '0 0 8px 0' }}>
                 Media Inquiries
               </p>
               <p style={{ ...bodyStyle, marginBottom: 16 }}>
@@ -462,7 +462,7 @@ export default function PressPage() {
                   gap: 10,
                   fontSize: 18,
                   fontWeight: 600,
-                  color: 'var(--accent-primary)',
+                  color: 'var(--link)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-ui)',
                 }}
@@ -473,7 +473,7 @@ export default function PressPage() {
                 </svg>
                 press@mycasevalues.com
               </a>
-              <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginTop: 16, marginBottom: 0 }}>
+              <p style={{ fontSize: 14, color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginTop: 16, marginBottom: 0 }}>
                 We aim to respond within 24 hours. Please include your publication and the nature of your inquiry.
               </p>
             </div>

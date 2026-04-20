@@ -143,7 +143,7 @@ export default function DemandLetterPage() {
     display: 'block',
     fontSize: '14px',
     fontWeight: 600,
-    color: 'var(--color-text-primary)',
+    color: 'var(--text1)',
     marginBottom: '6px',
     fontFamily: 'var(--font-ui)',
   };
@@ -152,11 +152,11 @@ export default function DemandLetterPage() {
     width: '100%',
     padding: '12px 14px',
     height: 'auto',
-    border: '1px solid var(--border-default)',
+    border: '1px solid var(--bdr)',
     borderRadius: '4px',
     fontSize: '14px',
-    color: 'var(--color-text-primary)',
-    backgroundColor: 'var(--color-surface-0)',
+    color: 'var(--text1)',
+    backgroundColor: 'var(--card)',
     fontFamily: 'var(--font-ui)',
     transition: 'border-color 200ms',
     outline: 'none',
@@ -164,10 +164,10 @@ export default function DemandLetterPage() {
   };
 
   return (
-    <div style={{ background: 'var(--color-surface-1)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ background: 'var(--surf)', minHeight: '100vh', fontFamily: 'var(--font-ui)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: var(--shadow-focus); }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: var(--link); box-shadow: var(--shadow-focus); }
         @media (max-width: 768px) {
           .demand-form-grid { grid-template-columns: 1fr !important; }
         }
@@ -190,7 +190,7 @@ export default function DemandLetterPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1080px', margin: '0 auto', position: 'relative' }}>
-          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text-primary)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 700, color: 'var(--text1)', fontFamily: 'var(--font-legal)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
             Demand Letters That Get Results
           </h1>
           <p style={{ fontSize: '14px', color: 'var(--text3)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
@@ -203,8 +203,8 @@ export default function DemandLetterPage() {
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: letterText ? '1fr 1fr' : '1fr', gap: '24px' }} className="demand-form-grid">
           {/* Input Form */}
-          <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)' }}>
-            <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--color-text-primary)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
+          <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 600, color: 'var(--text1)', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
               Case Information
             </h2>
 
@@ -262,9 +262,9 @@ export default function DemandLetterPage() {
                         flex: 1,
                         padding: '8px',
                         borderRadius: '4px',
-                        border: `1px solid ${partyRole === opt.val ? 'var(--accent-primary)' : 'var(--border-default)'}`,
-                        backgroundColor: partyRole === opt.val ? 'rgba(10, 102, 194, 0.08)' : 'var(--color-surface-1)',
-                        color: partyRole === opt.val ? 'var(--accent-primary)' : 'var(--color-text-secondary)',
+                        border: `1px solid ${partyRole === opt.val ? 'var(--link)' : 'var(--bdr)'}`,
+                        backgroundColor: partyRole === opt.val ? 'rgba(10, 102, 194, 0.08)' : 'var(--surf)',
+                        color: partyRole === opt.val ? 'var(--link)' : 'var(--text2)',
                         fontSize: '14px',
                         fontWeight: 600,
                         cursor: 'pointer',
@@ -296,14 +296,14 @@ export default function DemandLetterPage() {
                     fontFamily: 'var(--font-ui)',
                   }}
                 />
-                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                   {briefFacts.length}/3000 characters
                 </p>
               </div>
 
               {/* Damages Section */}
-              <div style={{ background: 'var(--color-surface-1)', padding: '16px', borderRadius: '4px', border: '1px solid var(--border-default)' }}>
-                <p style={{ fontSize: '12px', fontWeight: '600', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
+              <div style={{ background: 'var(--surf)', padding: '16px', borderRadius: '4px', border: '1px solid var(--bdr)' }}>
+                <p style={{ fontSize: '12px', fontWeight: '600', color: 'var(--text2)', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 12px', fontFamily: 'var(--font-ui)' }}>
                   Damages Breakdown
                 </p>
 
@@ -319,7 +319,7 @@ export default function DemandLetterPage() {
                       onChange={(e) => setEconomicDamages(e.target.value)}
                       style={inputStyle}
                     />
-                    <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                       Medical bills, lost income, property damage
                     </p>
                   </div>
@@ -335,7 +335,7 @@ export default function DemandLetterPage() {
                       onChange={(e) => setPainSuffering(e.target.value)}
                       style={inputStyle}
                     />
-                    <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                       Emotional distress, physical pain, reduced quality of life
                     </p>
                   </div>
@@ -351,18 +351,18 @@ export default function DemandLetterPage() {
                       onChange={(e) => setLostWages(e.target.value)}
                       style={inputStyle}
                     />
-                    <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
+                    <p style={{ fontSize: '12px', color: 'var(--text2)', margin: '4px 0 0', fontFamily: 'var(--font-ui)' }}>
                       Lost earnings and reduced earning capacity
                     </p>
                   </div>
 
                   {(economicDamages || painSuffering || lostWages) && (
-                    <div style={{ marginTop: '8px', paddingTop: '12px', borderTop: '1px solid var(--border-default)' }}>
+                    <div style={{ marginTop: '8px', paddingTop: '12px', borderTop: '1px solid var(--bdr)' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+                        <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
                           Total Demand:
                         </span>
-                        <span style={{ fontSize: '16px', fontWeight: '700', color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                        <span style={{ fontSize: '16px', fontWeight: '700', color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                           ${((parseInt(economicDamages) || 0) + (parseInt(painSuffering) || 0) + (parseInt(lostWages) || 0)).toLocaleString()}
                         </span>
                       </div>
@@ -373,8 +373,8 @@ export default function DemandLetterPage() {
 
               {/* Error */}
               {error && (
-                <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--border-default)' }}>
-                  <p style={{ fontSize: '14px', color: 'var(--accent-primary)', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
+                <div style={{ padding: '12px 14px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid var(--bdr)' }}>
+                  <p style={{ fontSize: '14px', color: 'var(--link)', margin: 0, fontFamily: 'var(--font-ui)' }}>{error}</p>
                 </div>
               )}
 
@@ -385,8 +385,8 @@ export default function DemandLetterPage() {
                 style={{
                   width: '100%',
                   padding: '16px',
-                  backgroundColor: loading || !caseType || !briefFacts.trim() ? 'var(--border-default)' : 'var(--accent-primary)',
-                  color: 'var(--color-text-primary)',
+                  backgroundColor: loading || !caseType || !briefFacts.trim() ? 'var(--bdr)' : 'var(--link)',
+                  color: 'var(--text1)',
                   border: 'none',
                   borderRadius: '4px',
                   fontSize: '14px',
@@ -406,11 +406,11 @@ export default function DemandLetterPage() {
           {/* Generated Letter */}
           {letterText && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '32px', border: '1px solid var(--border-default)', boxShadow: 'var(--shadow-xs)', position: 'relative' }}>
+              <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '32px', border: '1px solid var(--bdr)', boxShadow: 'var(--shadow-xs)', position: 'relative' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: 8 }}>
-                  <h2 style={{ fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+                  <h2 style={{ fontSize: 16, fontWeight: 600, color: 'var(--text1)', margin: 0 }}>
                     Generated Demand Letter
-                    {loading && <span style={{ fontSize: 12, color: 'var(--accent-primary)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
+                    {loading && <span style={{ fontSize: 12, color: 'var(--link)', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
                   <div style={{ display: 'flex', gap: 8 }}>
                     <button
@@ -418,7 +418,7 @@ export default function DemandLetterPage() {
                       disabled={loading}
                       style={{
                         padding: '8px 12px',
-                        background: copied ? 'var(--data-positive)' : 'var(--accent-primary)',
+                        background: copied ? 'var(--data-positive)' : 'var(--link)',
                         color: 'var(--chrome-text)',
                         border: 'none',
                         borderRadius: '4px',
@@ -460,11 +460,11 @@ export default function DemandLetterPage() {
                     maxHeight: '600px',
                     overflowY: 'auto',
                     padding: '16px',
-                    background: 'var(--color-surface-1)',
+                    background: 'var(--surf)',
                     borderRadius: '4px',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid var(--bdr)',
                     fontSize: '14px',
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     lineHeight: '1.7',
                     fontFamily: 'var(--font-ui)',
                     whiteSpace: 'pre-wrap',
@@ -472,17 +472,17 @@ export default function DemandLetterPage() {
                   }}
                 >
                   {letterText}
-                  {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: 'var(--accent-primary)', marginLeft: 2, animation: 'blink 1s infinite' }} />}
+                  {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: 'var(--link)', marginLeft: 2, animation: 'blink 1s infinite' }} />}
                 </div>
 
                 {/* Total Demand Display */}
                 {totalDemand > 0 && (
-                  <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--border-default)' }}>
+                  <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--bdr)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)' }}>
+                      <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
                         Total Demand Amount:
                       </span>
-                      <span style={{ fontSize: '20px', fontWeight: '700', color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+                      <span style={{ fontSize: '20px', fontWeight: '700', color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                         ${totalDemand.toLocaleString()}
                       </span>
                     </div>
@@ -515,38 +515,38 @@ export default function DemandLetterPage() {
         {/* Info Section */}
         {!letterText && (
           <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
-            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
+            <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '24px', border: '1px solid var(--bdr)' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 AI-Powered Analysis
               </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Our AI references historical settlement data from 5.1M+ federal cases to strengthen your demand.
               </p>
             </div>
 
-            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
+            <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '24px', border: '1px solid var(--bdr)' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Professional Template
               </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Get a complete, customizable template ready for attorney review and modification.
               </p>
             </div>
 
-            <div style={{ background: 'var(--color-surface-0)', borderRadius: '4px', padding: '24px', border: '1px solid var(--border-default)' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" style={{ marginBottom: '12px' }}>
+            <div style={{ background: 'var(--card)', borderRadius: '4px', padding: '24px', border: '1px solid var(--bdr)' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 16px', fontFamily: 'var(--font-ui)' }}>
                 Case-Specific
               </h3>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-ui)' }}>
                 Each letter is tailored to your specific case type, jurisdiction, and damages breakdown.
               </p>
             </div>
@@ -554,33 +554,33 @@ export default function DemandLetterPage() {
         )}
 
         {/* Navigation */}
-        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--border-default)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+        <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid var(--bdr)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--link)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Case Predictor
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Predict case outcomes
               </p>
             </div>
           </Link>
           <Link href="/search" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--link)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Case Search
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Find case data
               </p>
             </div>
           </Link>
           <Link href="/translate" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-primary)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-default)'; e.currentTarget.style.boxShadow = 'none'; }}>
-              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-primary)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
+            <div style={{ padding: '16px', background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', cursor: 'pointer', transition: 'all 200ms' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--link)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--bdr)'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text1)', margin: '0 0 4px', fontFamily: 'var(--font-ui)' }}>
                 Jargon Translator
               </p>
-              <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', margin: 0, fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '12px', color: 'var(--text2)', margin: 0, fontFamily: 'var(--font-ui)' }}>
                 Translate legal terms
               </p>
             </div>

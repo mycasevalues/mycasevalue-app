@@ -134,8 +134,8 @@ export default function RecentlyResearched() {
       <div
         style={{
           padding: '16px',
-          backgroundColor: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          backgroundColor: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           fontFamily: 'var(--font-ui)',
         }}
@@ -144,7 +144,7 @@ export default function RecentlyResearched() {
           style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
             margin: '0 0 8px 0',
             fontFamily: 'var(--font-heading)',
           }}
@@ -168,8 +168,8 @@ export default function RecentlyResearched() {
     <div
       style={{
         padding: '16px',
-        backgroundColor: 'var(--color-surface-0)',
-        border: '1px solid var(--border-default)',
+        backgroundColor: 'var(--card)',
+        border: '1px solid var(--bdr)',
         borderRadius: '4px',
         fontFamily: 'var(--font-ui)',
       }}
@@ -178,7 +178,7 @@ export default function RecentlyResearched() {
         style={{
           fontSize: '14px',
           fontWeight: 600,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           margin: '0 0 12px 0',
           fontFamily: 'var(--font-heading)',
         }}
@@ -195,8 +195,8 @@ export default function RecentlyResearched() {
               display: 'flex',
               flexDirection: 'column',
               padding: '8px 10px',
-              backgroundColor: 'var(--color-surface-0)',
-              border: '1px solid var(--border-default)',
+              backgroundColor: 'var(--card)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               textDecoration: 'none',
               transition: 'all 200ms',
@@ -205,19 +205,19 @@ export default function RecentlyResearched() {
             onMouseEnter={(e) => {
               const el = e.currentTarget;
               el.style.backgroundColor = 'rgba(59,130,246,0.08)';
-              el.style.borderColor = 'var(--accent-primary)';
+              el.style.borderColor = 'var(--link)';
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget;
-              el.style.backgroundColor = 'var(--color-surface-0)';
-              el.style.borderColor = 'var(--border-default)';
+              el.style.backgroundColor = 'var(--card)';
+              el.style.borderColor = 'var(--bdr)';
             }}
           >
             <p
               style={{
                 fontSize: '12px',
                 fontWeight: 500,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 margin: 0,
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
@@ -258,7 +258,7 @@ export default function RecentlyResearched() {
           transition: 'all 200ms',
         }}
         onMouseEnter={(e) => {
-          (e.target as HTMLButtonElement).style.backgroundColor = 'var(--border-default)';
+          (e.target as HTMLButtonElement).style.backgroundColor = 'var(--bdr)';
         }}
         onMouseLeave={(e) => {
           (e.target as HTMLButtonElement).style.backgroundColor = 'rgba(255,255,255,0.05)';

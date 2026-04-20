@@ -79,15 +79,15 @@ export default function CookieConsent() {
           transform: translateY(-1px);
         }
         .cookie-banner-accept {
-          background-color: var(--accent-primary);
-          color: var(--color-surface-0);
+          background-color: var(--link);
+          color: var(--card);
         }
         .cookie-banner-accept:hover {
           background-color: var(--gold-hover, #A87222);
         }
         .cookie-banner-essential {
           background-color: transparent;
-          color: var(--color-surface-0);
+          color: var(--card);
           border: 1.5px solid rgba(255, 255, 255, 0.3);
         }
         .cookie-banner-essential:hover {
@@ -110,7 +110,7 @@ export default function CookieConsent() {
           style={{
             margin: 0,
             fontSize: '0.9375rem',
-            color: 'var(--color-surface-0)',
+            color: 'var(--card)',
             fontFamily: 'var(--font-ui)',
             lineHeight: '1.6',
             letterSpacing: '0.3px',
@@ -156,7 +156,7 @@ export default function CookieConsent() {
             href="/legal/cookies"
             style={{
               padding: '0.625rem 1.25rem',
-              color: 'var(--color-surface-0)',
+              color: 'var(--card)',
               textDecoration: 'none',
               fontSize: '0.9375rem',
               fontFamily: 'var(--font-ui)',

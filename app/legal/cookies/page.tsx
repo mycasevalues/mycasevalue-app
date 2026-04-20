@@ -21,8 +21,8 @@ export default function CookiePolicyPage() {
         {/* Header */}
         <section
           style={{
-            background: 'linear-gradient(135deg, var(--link) 0%, var(--accent-primary) 100%)',
-            color: 'var(--color-surface-0)',
+            background: 'linear-gradient(135deg, var(--link) 0%, var(--link) 100%)',
+            color: 'var(--card)',
             padding: '1.5rem 1.5rem',
             marginBottom: '1.5rem',
           }}
@@ -64,7 +64,7 @@ export default function CookiePolicyPage() {
             margin: '0 auto',
             padding: '0 1.5rem 2rem 1.5rem',
             fontFamily: 'var(--font-ui)',
-            color: 'var(--color-text-primary)',
+            color: 'var(--text1)',
           }}
         >
           {/* What Are Cookies */}
@@ -75,7 +75,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -97,7 +97,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -108,8 +108,8 @@ export default function CookiePolicyPage() {
             </p>
             <div
               style={{
-                background: 'var(--color-surface-1)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--surf)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '1.5rem',
                 marginBottom: '1.5rem',
@@ -139,7 +139,7 @@ export default function CookiePolicyPage() {
               <p
                 style={{
                   fontSize: '0.9375rem',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   margin: '0.5rem 0 0 0',
                   fontStyle: 'italic',
                 }}
@@ -157,7 +157,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -168,8 +168,8 @@ export default function CookiePolicyPage() {
             </p>
             <div
               style={{
-                background: 'var(--color-surface-1)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--surf)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '1.5rem',
                 marginBottom: '1.5rem',
@@ -196,7 +196,7 @@ export default function CookiePolicyPage() {
               <p
                 style={{
                   fontSize: '0.9375rem',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   margin: '0.5rem 0 0 0',
                   fontStyle: 'italic',
                 }}
@@ -214,7 +214,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -225,8 +225,8 @@ export default function CookiePolicyPage() {
             </p>
             <div
               style={{
-                background: 'var(--color-surface-1)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--surf)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '1.5rem',
                 marginBottom: '1.5rem',
@@ -253,7 +253,7 @@ export default function CookiePolicyPage() {
               <p
                 style={{
                   fontSize: '0.9375rem',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   margin: '0.5rem 0 0 0',
                   fontStyle: 'italic',
                 }}
@@ -271,7 +271,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -282,8 +282,8 @@ export default function CookiePolicyPage() {
             </p>
             <div
               style={{
-                background: 'var(--color-surface-1)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--surf)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '1.5rem',
                 marginBottom: '1.5rem',
@@ -310,7 +310,7 @@ export default function CookiePolicyPage() {
               <p
                 style={{
                   fontSize: '0.9375rem',
-                  color: 'var(--color-text-secondary)',
+                  color: 'var(--text2)',
                   margin: '0.5rem 0 0 0',
                   fontStyle: 'italic',
                 }}
@@ -328,7 +328,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -368,7 +368,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -379,8 +379,8 @@ export default function CookiePolicyPage() {
             </p>
             <div
               style={{
-                background: 'var(--color-surface-1)',
-                border: '1px solid var(--border-default)',
+                background: 'var(--surf)',
+                border: '1px solid var(--bdr)',
                 borderRadius: '4px',
                 padding: '1.5rem',
               }}
@@ -412,7 +412,7 @@ export default function CookiePolicyPage() {
                 lineHeight: 1.7,
                 fontSize: '1.0625rem',
                 marginTop: '1.5rem',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
               }}
             >
               Disabling cookies may impact Platform functionality and your user experience.
@@ -427,7 +427,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -448,7 +448,7 @@ export default function CookiePolicyPage() {
                 }}
               >
                 <thead>
-                  <tr style={{ background: '#F0F4F8', borderBottom: '2px solid var(--accent-primary)' }}>
+                  <tr style={{ background: '#F0F4F8', borderBottom: '2px solid var(--link)' }}>
                     <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 600, color: 'var(--gold)' }}>
                       Cookie Type
                     </th>
@@ -464,37 +464,37 @@ export default function CookiePolicyPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)' }}>
                     <td style={{ padding: '1rem' }}>Session Token</td>
                     <td style={{ padding: '1rem' }}>Essential</td>
                     <td style={{ padding: '1rem' }}>Session</td>
                     <td style={{ padding: '1rem' }}>User authentication</td>
                   </tr>
-                  <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)' }}>
                     <td style={{ padding: '1rem' }}>Authentication</td>
                     <td style={{ padding: '1rem' }}>Essential</td>
                     <td style={{ padding: '1rem' }}>1 year</td>
                     <td style={{ padding: '1rem' }}>Account security</td>
                   </tr>
-                  <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)' }}>
                     <td style={{ padding: '1rem' }}>CSRF Protection</td>
                     <td style={{ padding: '1rem' }}>Essential</td>
                     <td style={{ padding: '1rem' }}>Session</td>
                     <td style={{ padding: '1rem' }}>Security</td>
                   </tr>
-                  <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)' }}>
                     <td style={{ padding: '1rem' }}>Google Analytics</td>
                     <td style={{ padding: '1rem' }}>Analytics</td>
                     <td style={{ padding: '1rem' }}>2 years</td>
                     <td style={{ padding: '1rem' }}>User behavior tracking</td>
                   </tr>
-                  <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)' }}>
                     <td style={{ padding: '1rem' }}>Vercel Analytics</td>
                     <td style={{ padding: '1rem' }}>Analytics</td>
                     <td style={{ padding: '1rem' }}>1 year</td>
                     <td style={{ padding: '1rem' }}>Performance monitoring</td>
                   </tr>
-                  <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--bdr)' }}>
                     <td style={{ padding: '1rem' }}>Language Preference</td>
                     <td style={{ padding: '1rem' }}>Preference</td>
                     <td style={{ padding: '1rem' }}>1 year</td>
@@ -519,7 +519,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -541,7 +541,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: 'var(--gold)',
                 marginBottom: '1rem',
-                borderBottom: '2px solid var(--accent-primary)',
+                borderBottom: '2px solid var(--link)',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -554,7 +554,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.0625rem',
                 fontWeight: 500,
-                color: 'var(--accent-primary)',
+                color: 'var(--link)',
                 marginBottom: '0.5rem',
               }}
             >
@@ -565,11 +565,11 @@ export default function CookiePolicyPage() {
           {/* Footer note */}
           <div
             style={{
-              borderTop: '1px solid var(--border-default)',
+              borderTop: '1px solid var(--bdr)',
               paddingTop: '1rem',
               marginTop: '1.5rem',
               fontSize: '0.9375rem',
-              color: 'var(--color-text-secondary)',
+              color: 'var(--text2)',
             }}
           >
             <p style={{ lineHeight: 1.6 }}>

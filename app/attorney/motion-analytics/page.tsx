@@ -37,7 +37,7 @@ export default function MotionAnalyticsPage() {
   const focusStyle = `
     select:focus, input:focus {
       outline: none;
-      border-color: var(--accent-primary);
+      border-color: var(--link);
       box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08);
     }
   `;
@@ -92,7 +92,7 @@ export default function MotionAnalyticsPage() {
   }, [selectedNos, selectedNos2, comparisonMode]);
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--color-surface-1)', fontFamily: 'var(--font-ui)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--surf)', fontFamily: 'var(--font-ui)' }}>
       <style>{focusStyle}
         {`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
@@ -116,19 +116,19 @@ export default function MotionAnalyticsPage() {
           backgroundSize: '60px 60px',
         }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-          <Link href="/attorney" style={{ fontSize: '14px', color: 'var(--accent-primary)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
+          <Link href="/attorney" style={{ fontSize: '14px', color: 'var(--link)', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '12px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Back to Attorney Tools
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M9 9h6M9 15h6" />
               </svg>
             </div>
             <div>
-              <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--color-text-primary)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
+              <h1 className="font-legal" style={{ fontSize: 28, fontWeight: 700, color: 'var(--text1)', margin: '0 0 16px 0', letterSpacing: '-0.02em' }}>
                 Win More Motions with Circuit-Specific Data
               </h1>
               <p style={{ fontSize: '14px', color: 'var(--text-tertiary)', margin: '4px 0 0 0' }}>
@@ -144,16 +144,16 @@ export default function MotionAnalyticsPage() {
 
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '32px 24px' }}>
         {/* Controls */}
-        <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: 'var(--shadow-xs)' }}>
+        <div style={{ background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: 'var(--shadow-xs)' }}>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'flex-end' }}>
             <div style={{ flex: '1 1 300px' }}>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
                 Case Type
               </label>
               <select
                 value={selectedNos}
                 onChange={(e) => setSelectedNos(e.target.value)}
-                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 200ms' }}
+                style={{ width: '100%', padding: '12px 14px', height: '48px', border: '1px solid var(--bdr)', borderRadius: '4px', fontSize: '14px', color: 'var(--text1)', background: 'var(--card)', fontFamily: 'var(--font-ui)', transition: 'border-color 200ms' }}
               >
                 <option value="">Select case type...</option>
                 {caseTypes.map((ct) => (
@@ -165,7 +165,7 @@ export default function MotionAnalyticsPage() {
             </div>
 
             <div style={{ flex: '0 0 auto' }}>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
                 Comparison
               </label>
               <button
@@ -173,14 +173,14 @@ export default function MotionAnalyticsPage() {
                 style={{
                   padding: '12px 20px',
                   borderRadius: '4px',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid var(--bdr)',
                   fontSize: '14px',
                   fontWeight: 600,
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                   cursor: 'pointer',
-                  backgroundColor: comparisonMode ? 'var(--accent-primary)' : 'var(--color-surface-0)',
-                  color: comparisonMode ? 'var(--color-surface-0)' : 'var(--color-text-secondary)',
+                  backgroundColor: comparisonMode ? 'var(--link)' : 'var(--card)',
+                  color: comparisonMode ? 'var(--card)' : 'var(--text2)',
                   transition: 'all 200ms',
                 }}
               >
@@ -191,14 +191,14 @@ export default function MotionAnalyticsPage() {
 
           {/* Second case selector in comparison mode */}
           {comparisonMode && (
-            <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--border-default)' }}>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
+            <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--bdr)' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
                 Compare with
               </label>
               <select
                 value={selectedNos2}
                 onChange={(e) => setSelectedNos2(e.target.value)}
-                style={{ width: '100%', maxWidth: '400px', padding: '12px 14px', height: '48px', border: '1px solid var(--border-default)', borderRadius: '4px', fontSize: '14px', color: 'var(--color-text-primary)', background: 'var(--color-surface-0)', fontFamily: 'var(--font-ui)', transition: 'border-color 200ms' }}
+                style={{ width: '100%', maxWidth: '400px', padding: '12px 14px', height: '48px', border: '1px solid var(--bdr)', borderRadius: '4px', fontSize: '14px', color: 'var(--text1)', background: 'var(--card)', fontFamily: 'var(--font-ui)', transition: 'border-color 200ms' }}
               >
                 <option value="">Select second case type...</option>
                 {caseTypes.map((ct) => (
@@ -214,9 +214,9 @@ export default function MotionAnalyticsPage() {
         {/* Loading */}
         {loading && (
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
-            <div style={{ width: 36, height: 36, border: '3px solid var(--border-default)', borderTopColor: 'var(--accent-primary)', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
+            <div style={{ width: 36, height: 36, border: '3px solid var(--bdr)', borderTopColor: 'var(--link)', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
             <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>Analyzing motion data...</p>
+            <p style={{ fontSize: '14px', color: 'var(--text2)' }}>Analyzing motion data...</p>
           </div>
         )}
 
@@ -224,10 +224,10 @@ export default function MotionAnalyticsPage() {
         {!loading && data && !comparisonMode && (
           <>
             <div style={{ marginBottom: '24px' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--text1)', margin: '0 0 8px' }}>
                 {data.caseType} — Motion Success Rates
               </h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0 }}>
                 Based on federal court data for {data.caseType} cases
               </p>
             </div>
@@ -237,15 +237,15 @@ export default function MotionAnalyticsPage() {
                 <div
                   key={motion.motionType}
                   style={{
-                    background: 'var(--color-surface-0)',
-                    border: '1px solid var(--border-default)',
+                    background: 'var(--card)',
+                    border: '1px solid var(--bdr)',
                     borderRadius: '4px',
                     padding: '24px',
                     boxShadow: 'var(--shadow-xs)',
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '16px' }}>
-                    <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+                    <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', margin: 0 }}>
                       {motion.motionType}
                     </h3>
                     <div
@@ -266,8 +266,8 @@ export default function MotionAnalyticsPage() {
 
                   <div style={{ marginBottom: '16px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                      <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase' as const }}>Grant Rate</span>
-                      <span className="font-mono" style={{ fontSize: '16px', fontWeight: 600, color: motion.successColor === 'green' ? 'var(--data-positive)' : motion.successColor === 'amber' ? 'var(--wrn-txt)' : 'var(--accent-primary)' }}>
+                      <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text2)', textTransform: 'uppercase' as const }}>Grant Rate</span>
+                      <span className="font-mono" style={{ fontSize: '16px', fontWeight: 600, color: motion.successColor === 'green' ? 'var(--data-positive)' : motion.successColor === 'amber' ? 'var(--wrn-txt)' : 'var(--link)' }}>
                         {motion.grantRate}%
                       </span>
                     </div>
@@ -276,29 +276,29 @@ export default function MotionAnalyticsPage() {
                         style={{
                           height: '100%',
                           width: `${Math.min(motion.grantRate, 100)}%`,
-                          background: motion.successColor === 'green' ? 'var(--data-positive)' : motion.successColor === 'amber' ? 'var(--wrn-txt)' : 'var(--accent-primary)',
+                          background: motion.successColor === 'green' ? 'var(--data-positive)' : motion.successColor === 'amber' ? 'var(--wrn-txt)' : 'var(--link)',
                           borderRadius: '3px',
                         }}
                       />
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid var(--border-default)' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid var(--bdr)' }}>
                     <div>
-                      <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, margin: '0 0 4px' }}>Partial Grant</p>
-                      <p className="font-mono" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+                      <p style={{ fontSize: '12px', color: 'var(--text2)', fontWeight: 600, textTransform: 'uppercase' as const, margin: '0 0 4px' }}>Partial Grant</p>
+                      <p className="font-mono" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: 0 }}>
                         {motion.partialGrantRate}%
                       </p>
                     </div>
                     <div>
-                      <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 600, textTransform: 'uppercase' as const, margin: '0 0 4px' }}>Avg Time to Ruling</p>
-                      <p className="font-mono" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', margin: 0 }}>
+                      <p style={{ fontSize: '12px', color: 'var(--text2)', fontWeight: 600, textTransform: 'uppercase' as const, margin: '0 0 4px' }}>Avg Time to Ruling</p>
+                      <p className="font-mono" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', margin: 0 }}>
                         {motion.avgTimeToRulingMonths} mo
                       </p>
                     </div>
                   </div>
 
-                  <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--text2)', lineHeight: 1.5, margin: 0 }}>
                     <strong>Strategy:</strong> {motion.strategicNotes}
                   </p>
                 </div>
@@ -318,10 +318,10 @@ export default function MotionAnalyticsPage() {
         {!loading && data && data2 && comparisonMode && (
           <>
             <div style={{ marginBottom: '24px' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', margin: '0 0 8px' }}>
+              <h2 style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--text1)', margin: '0 0 8px' }}>
                 Motion Success Rate Comparison
               </h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', margin: 0 }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', margin: 0 }}>
                 {data.caseType} vs {data2.caseType}
               </p>
             </div>
@@ -329,7 +329,7 @@ export default function MotionAnalyticsPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '24px' }}>
               {/* Left case */}
               <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid var(--accent-primary)' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid var(--link)' }}>
                   {data.caseType}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -337,24 +337,24 @@ export default function MotionAnalyticsPage() {
                     <div
                       key={motion.motionType}
                       style={{
-                        background: 'var(--color-surface-0)',
-                        border: '1px solid var(--border-default)',
+                        background: 'var(--card)',
+                        border: '1px solid var(--bdr)',
                         borderRadius: '4px',
                         padding: '16px',
                       }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{motion.motionType}</span>
-                        <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--accent-primary)' }}>
+                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text1)' }}>{motion.motionType}</span>
+                        <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--link)' }}>
                           {motion.grantRate}%
                         </span>
                       </div>
-                      <div style={{ height: '4px', background: 'var(--border-default)', borderRadius: '2px', overflow: 'hidden' }}>
+                      <div style={{ height: '4px', background: 'var(--bdr)', borderRadius: '2px', overflow: 'hidden' }}>
                         <div
                           style={{
                             height: '100%',
                             width: `${Math.min(motion.grantRate, 100)}%`,
-                            background: 'var(--accent-primary)',
+                            background: 'var(--link)',
                             borderRadius: '2px',
                           }}
                         />
@@ -366,7 +366,7 @@ export default function MotionAnalyticsPage() {
 
               {/* Right case */}
               <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid var(--data-positive)' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text1)', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid var(--data-positive)' }}>
                   {data2.caseType}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -374,19 +374,19 @@ export default function MotionAnalyticsPage() {
                     <div
                       key={motion.motionType}
                       style={{
-                        background: 'var(--color-surface-0)',
-                        border: '1px solid var(--border-default)',
+                        background: 'var(--card)',
+                        border: '1px solid var(--bdr)',
                         borderRadius: '4px',
                         padding: '16px',
                       }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-text-primary)' }}>{motion.motionType}</span>
+                        <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text1)' }}>{motion.motionType}</span>
                         <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--data-positive)' }}>
                           {motion.grantRate}%
                         </span>
                       </div>
-                      <div style={{ height: '4px', background: 'var(--border-default)', borderRadius: '2px', overflow: 'hidden' }}>
+                      <div style={{ height: '4px', background: 'var(--bdr)', borderRadius: '2px', overflow: 'hidden' }}>
                         <div
                           style={{
                             height: '100%',
@@ -413,17 +413,17 @@ export default function MotionAnalyticsPage() {
 
         {/* Empty state */}
         {!selectedNos && !loading && (
-          <div style={{ background: 'var(--color-surface-0)', border: '1px solid var(--border-default)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
+          <div style={{ background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: 'var(--shadow-xs)' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M9 9h6M9 15h6" />
               </svg>
             </div>
-            <h2 style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--color-text-primary)', margin: '0 0 12px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-ui)', color: 'var(--text1)', margin: '0 0 12px' }}>
               Analyze Motion Success Rates
             </h2>
-            <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text2)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
               Select a case type to view federal motion grant rates, partial grant rates, and average ruling times. Compare multiple case types side by side to inform motion strategy.
             </p>
           </div>

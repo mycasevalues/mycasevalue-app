@@ -157,7 +157,7 @@ export default function CommandPalette({
             label: opt.label,
             description: opt.d,
             category: cat.label,
-            categoryColor: cat.color || 'var(--color-text-secondary)',
+            categoryColor: cat.color || 'var(--text2)',
             nos: opt.nos,
             type: 'case',
           });
@@ -212,7 +212,7 @@ export default function CommandPalette({
     ];
 
     pages.forEach((p) => {
-      items.push({ ...p, categoryColor: 'var(--color-text-secondary)', type: 'page' as const });
+      items.push({ ...p, categoryColor: 'var(--text2)', type: 'page' as const });
     });
 
     // Quick actions
@@ -454,8 +454,8 @@ export default function CommandPalette({
           zIndex: 9999,
           width: 'min(95vw, 560px)',
           maxHeight: '60vh',
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           boxShadow: '0 10px 20px rgba(0, 23, 46, 0.15)',
           overflow: 'hidden',
@@ -472,12 +472,12 @@ export default function CommandPalette({
             gap: '12px',
             padding: '0 16px',
             height: '48px',
-            borderBottom: '1px solid var(--border-default)',
-            background: 'var(--color-surface-0)',
+            borderBottom: '1px solid var(--bdr)',
+            background: 'var(--card)',
           }}
         >
           {/* Search icon */}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
             <circle cx="11" cy="11" r="8" />
             <path d="M21 21l-4.35-4.35" />
           </svg>
@@ -495,7 +495,7 @@ export default function CommandPalette({
               border: 'none',
               outline: 'none',
               fontSize: '14px',
-              color: 'var(--color-text-primary)',
+              color: 'var(--text1)',
               caretColor: 'var(--accent-primary-hover)',
               fontFamily: 'var(--font-ui)',
               height: '100%',
@@ -507,9 +507,9 @@ export default function CommandPalette({
           <kbd
             style={{
               fontSize: '12px',
-              color: 'var(--color-text-secondary)',
-              background: 'var(--color-surface-1)',
-              border: '1px solid var(--border-default)',
+              color: 'var(--text2)',
+              background: 'var(--surf)',
+              border: '1px solid var(--bdr)',
               borderRadius: '4px',
               padding: '4px 8px',
               lineHeight: 1.4,
@@ -536,7 +536,7 @@ export default function CommandPalette({
               style={{
                 padding: '24px',
                 textAlign: 'center',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--text2)',
                 fontSize: '14px',
               }}
             >
@@ -551,7 +551,7 @@ export default function CommandPalette({
                   style={{
                     fontSize: '12px',
                     fontWeight: 600,
-                    color: 'var(--color-text-primary)',
+                    color: 'var(--text1)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
                     padding: '8px 10px 4px',
@@ -576,10 +576,10 @@ export default function CommandPalette({
                         gap: '12px',
                         padding: '12px 12px',
                         borderRadius: '4px',
-                        borderLeft: isSelected ? '3px solid var(--accent-primary)' : '3px solid transparent',
+                        borderLeft: isSelected ? '3px solid var(--link)' : '3px solid transparent',
                         cursor: 'pointer',
-                        background: isSelected ? 'var(--color-surface-1)' : 'transparent',
-                        color: isSelected ? 'var(--color-text-primary)' : 'var(--color-text-primary)',
+                        background: isSelected ? 'var(--surf)' : 'transparent',
+                        color: isSelected ? 'var(--text1)' : 'var(--text1)',
                         transition: 'all 100ms ease-out',
                       }}
                     >
@@ -593,7 +593,7 @@ export default function CommandPalette({
                             <polyline points="14 2 14 8 20 8" />
                           </svg>
                         ) : item.type === 'page' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                             <polyline points="9 22 9 12 15 12 15 22" />
                           </svg>
@@ -615,7 +615,7 @@ export default function CommandPalette({
                           style={{
                             fontSize: '14px',
                             fontWeight: 500,
-                            color: 'var(--color-text-primary)',
+                            color: 'var(--text1)',
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
@@ -628,7 +628,7 @@ export default function CommandPalette({
                           <div
                             style={{
                               fontSize: '12px',
-                              color: 'var(--color-text-secondary)',
+                              color: 'var(--text2)',
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
@@ -692,10 +692,10 @@ export default function CommandPalette({
             justifyContent: 'center',
             gap: '24px',
             padding: '8px 16px',
-            borderTop: '1px solid var(--border-default)',
+            borderTop: '1px solid var(--bdr)',
             fontSize: '12px',
-            color: 'var(--color-text-secondary)',
-            background: 'var(--color-surface-1)',
+            color: 'var(--text2)',
+            background: 'var(--surf)',
             fontFamily: 'var(--font-ui)',
           }}
         >

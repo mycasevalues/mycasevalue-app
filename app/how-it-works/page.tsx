@@ -71,7 +71,7 @@ const steps = [
     title: 'Tell Us Your Situation',
     description: 'No legal background required. Select your case type from 84 plain-English categories and your federal district. Takes 30 seconds.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5">
         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
       </svg>
@@ -112,7 +112,7 @@ const trustStats = [
 
 export default function HowItWorksPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+    <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       <style dangerouslySetInnerHTML={{ __html: `
         .hover\\:shadow-md:hover {
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -132,23 +132,23 @@ export default function HowItWorksPage() {
             <span className="w-1 h-1 rounded-full bg-[var(--link)]/80" />
             Methodology
           </div>
-          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'var(--color-text-inverse, #FFFFFF)', lineHeight: '1.1' }}>
+          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4 tracking-[-0.025em]" style={{ color: 'var(--chrome-text, #FFFFFF)', lineHeight: '1.1' }}>
             Platform Overview
           </h1>
-          <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'var(--color-text-inverse, #FFFFFF)' }}>
+          <p className="text-[15px] leading-relaxed max-w-2xl" style={{ color: 'var(--chrome-text, #FFFFFF)' }}>
             How MyCaseValue transforms public federal court records into actionable litigation intelligence.
           </p>
         </div>
       </div>
 
       {/* Breadcrumb Navigation */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}>
         <div className="max-w-5xl mx-auto px-6 py-3">
-          <nav style={{ fontSize: '14px', color: 'var(--color-text-secondary)' }}>
-            <a href="/" style={{ color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
+          <nav style={{ fontSize: '14px', color: 'var(--text2)' }}>
+            <a href="/" style={{ color: 'var(--text2)', textDecoration: 'none' }}>
               Home
             </a>
-            <span style={{ margin: '0 8px', color: 'var(--border-default)' }}>›</span>
+            <span style={{ margin: '0 8px', color: 'var(--bdr)' }}>›</span>
             <span>Platform Overview</span>
           </nav>
         </div>
@@ -166,8 +166,8 @@ export default function HowItWorksPage() {
                 {/* Card */}
                 <div className="border h-full transition-all duration-200 hover:border-blue-400/40 animate-in fade-in slide-in-from-bottom-4 relative"
                   style={{
-                    borderColor: 'var(--border-default)',
-                    background: 'var(--color-surface-0)',
+                    borderColor: 'var(--bdr)',
+                    background: 'var(--card)',
                     borderRadius: '4px',
                     padding: '32px',
                     animationDelay: `${idx * 100}ms`,
@@ -199,10 +199,10 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Content */}
-                  <h2 className="font-legal font-semibold mb-3 tracking-[-0.01em]" style={{ color: 'var(--color-text-primary)', fontSize: '17px' }}>
+                  <h2 className="font-legal font-semibold mb-3 tracking-[-0.01em]" style={{ color: 'var(--text1)', fontSize: '17px' }}>
                     {step.title}
                   </h2>
-                  <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '14px', fontWeight: '400', lineHeight: '1.6' }}>
+                  <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: '14px', fontWeight: '400', lineHeight: '1.6' }}>
                     {step.description}
                   </p>
                 </div>
@@ -218,10 +218,10 @@ export default function HowItWorksPage() {
       {/* What's in Your Report Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-legal font-bold mb-3 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3 text-center" style={{ color: 'var(--text1)' }}>
             What's in Your Report?
           </h2>
-          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: 'var(--color-text-secondary)' }}>
+          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: 'var(--text2)' }}>
             Every statistic is powered by real outcomes from 5.1M+ federal cases. See what actually happens in courts like yours—not estimates or guesses.
           </p>
 
@@ -252,18 +252,18 @@ export default function HowItWorksPage() {
                 description: 'Track how outcomes have changed over time to understand current judicial patterns and trends.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
                 {/* Red Icon */}
                 <div className="mb-4" style={{ width: '24px', height: '24px' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5">
                     <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
                     <path d="M9 12l2 2 4-4"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold mb-2" style={{ color: 'var(--color-text-primary)', fontSize: '16px', fontWeight: '600' }}>
+                <h3 className="font-semibold mb-2" style={{ color: 'var(--text1)', fontSize: '16px', fontWeight: '600' }}>
                   {item.title}
                 </h3>
-                <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '14px' }}>
+                <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: '14px' }}>
                   {item.description}
                 </p>
               </div>
@@ -273,18 +273,18 @@ export default function HowItWorksPage() {
       </div>
 
       {/* Trust Stats Bar */}
-      <section className="py-12 border-y" style={{ borderColor: 'var(--border-default)' }}>
+      <section className="py-12 border-y" style={{ borderColor: 'var(--bdr)' }}>
         <div className="max-w-5xl mx-auto px-6">
-          <p className="text-center text-sm font-semibold mb-8" style={{ color: 'var(--color-text-secondary)' }}>
+          <p className="text-center text-sm font-semibold mb-8" style={{ color: 'var(--text2)' }}>
             POWERING SMARTER LEGAL DECISIONS
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
-              <div key={i} className="text-center p-4 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
-                <div className="text-2xl font-legal font-extrabold" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono)' }}>
+              <div key={i} className="text-center p-4 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
+                <div className="text-2xl font-legal font-extrabold" style={{ color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
                   {stat.value}
                 </div>
-                <div className="text-[11px] font-semibold mt-2" style={{ color: 'var(--color-text-secondary)' }}>
+                <div className="text-[11px] font-semibold mt-2" style={{ color: 'var(--text2)' }}>
                   {stat.label}
                 </div>
               </div>
@@ -296,10 +296,10 @@ export default function HowItWorksPage() {
       {/* Data Sources Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-legal font-bold mb-6 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-6 text-center" style={{ color: 'var(--text1)' }}>
             Verified Public Sources
           </h2>
-          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: 'var(--color-text-secondary)' }}>
+          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: 'var(--text2)' }}>
             Unlike traditional legal research tools, we don't estimate or filter outcomes. 100% of our data comes directly from official federal court records — auditable and transparent.
           </p>
 
@@ -318,11 +318,11 @@ export default function HowItWorksPage() {
                 description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
               },
             ].map((source, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
-                <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
+                <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--text1)' }}>
                   {source.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
                   {source.description}
                 </p>
               </div>
@@ -334,10 +334,10 @@ export default function HowItWorksPage() {
       {/* Platform Features Showcase Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-legal font-bold mb-3 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3 text-center" style={{ color: 'var(--text1)' }}>
             Platform Features
           </h2>
-          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: 'var(--color-text-secondary)' }}>
+          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: 'var(--text2)' }}>
             Specialized tools built for outcome research — faster and more transparent than traditional enterprise legal software.
           </p>
 
@@ -389,8 +389,8 @@ export default function HowItWorksPage() {
                 href={feature.href}
                 style={{
                   padding: '24px',
-                  border: '1px solid var(--border-default)',
-                  background: 'var(--color-surface-0)',
+                  border: '1px solid var(--bdr)',
+                  background: 'var(--card)',
                   borderRadius: '4px',
                   textDecoration: 'none',
                   color: 'inherit',
@@ -407,7 +407,7 @@ export default function HowItWorksPage() {
                     width: '40px',
                     height: '40px',
                     borderRadius: '4px',
-                    backgroundColor: 'var(--color-surface-1)',
+                    backgroundColor: 'var(--surf)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -418,10 +418,10 @@ export default function HowItWorksPage() {
                     <polyline points="13 2 13 9 20 9" />
                   </svg>
                 </div>
-                <h3 className="font-semibold" style={{ color: 'var(--color-text-primary)', fontSize: '16px', fontWeight: '600', margin: 0 }}>
+                <h3 className="font-semibold" style={{ color: 'var(--text1)', fontSize: '16px', fontWeight: '600', margin: 0 }}>
                   {feature.title}
                 </h3>
-                <p className="leading-relaxed" style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: 0 }}>
+                <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: '14px', margin: 0 }}>
                   {feature.description}
                 </p>
               </Link>
@@ -441,7 +441,7 @@ export default function HowItWorksPage() {
       {/* Data Pipeline Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-legal font-bold mb-12 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-12 text-center" style={{ color: 'var(--text1)' }}>
             Data Pipeline
           </h2>
 
@@ -460,8 +460,8 @@ export default function HowItWorksPage() {
                       width: '60px',
                       height: '60px',
                       borderRadius: '50%',
-                      backgroundColor: idx % 2 === 0 ? 'var(--accent-primary)' : 'var(--gold)',
-                      color: 'var(--color-surface-0)',
+                      backgroundColor: idx % 2 === 0 ? 'var(--link)' : 'var(--gold)',
+                      color: 'var(--card)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -474,10 +474,10 @@ export default function HowItWorksPage() {
                     {idx + 1}
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-primary)', fontFamily: 'var(--font-ui)' }}>
+                    <div style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text1)', fontFamily: 'var(--font-ui)' }}>
                       {step.label}
                     </div>
-                    <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'var(--font-ui)', marginTop: 4 }}>
+                    <div style={{ fontSize: '12px', color: 'var(--text2)', fontFamily: 'var(--font-ui)', marginTop: 4 }}>
                       {step.description}
                     </div>
                   </div>
@@ -487,7 +487,7 @@ export default function HowItWorksPage() {
                     style={{
                       width: '40px',
                       height: '2px',
-                      backgroundColor: 'var(--border-default)',
+                      backgroundColor: 'var(--bdr)',
                       margin: '0 24px',
                       flexShrink: 0,
                     }}
@@ -502,10 +502,10 @@ export default function HowItWorksPage() {
       {/* Start Exploring CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section style={{ textAlign: 'center' }}>
-          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
             Start Exploring
           </h2>
-          <p className="mb-8 max-w-2xl mx-auto text-base" style={{ color: 'var(--color-text-secondary)' }}>
+          <p className="mb-8 max-w-2xl mx-auto text-base" style={{ color: 'var(--text2)' }}>
             Get started instantly—no account, no credit card, free during beta.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, maxWidth: 600, margin: '0 auto' }}>
@@ -531,8 +531,8 @@ export default function HowItWorksPage() {
                 href={btn.href}
                 style={{
                   padding: '16px 24px',
-                  backgroundColor: 'var(--accent-primary)',
-                  color: 'var(--color-surface-0)',
+                  backgroundColor: 'var(--link)',
+                  color: 'var(--card)',
                   textDecoration: 'none',
                   borderRadius: '2px',
                   fontWeight: 600,
@@ -559,7 +559,7 @@ export default function HowItWorksPage() {
 
       <style>{`
         .start-exploring-btn:hover {
-          background-color: var(--accent-primary) !important;
+          background-color: var(--link) !important;
           box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
           transform: translateY(-2px);
         }
@@ -568,7 +568,7 @@ export default function HowItWorksPage() {
       {/* Why Choose Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
         <section>
-          <h2 className="text-2xl font-legal font-bold mb-8 text-center" style={{ color: 'var(--color-text-primary)' }}>
+          <h2 className="text-2xl font-legal font-bold mb-8 text-center" style={{ color: 'var(--text1)' }}>
             Why MyCaseValue Works
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -604,11 +604,11 @@ export default function HowItWorksPage() {
                 description: 'Available in English and Spanish. Legal data democratized for all communities.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)', borderRadius: '4px' }}>
-                <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
+                <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--text1)' }}>
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
                   {item.description}
                 </p>
               </div>
@@ -619,16 +619,16 @@ export default function HowItWorksPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
-        <section className="text-center p-12 border" style={{ borderColor: 'var(--border-default)', background: 'rgba(239,68,68,0.08)', borderRadius: '4px' }}>
-          <h2 className="text-3xl font-legal font-bold mb-3" style={{ color: 'var(--color-text-primary)' }}>
+        <section className="text-center p-12 border" style={{ borderColor: 'var(--bdr)', background: 'rgba(239,68,68,0.08)', borderRadius: '4px' }}>
+          <h2 className="text-3xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
             See what happens in courts like yours
           </h2>
-          <p className="mb-8 max-w-2xl mx-auto text-lg" style={{ color: 'var(--color-text-secondary)' }}>
+          <p className="mb-8 max-w-2xl mx-auto text-lg" style={{ color: 'var(--text2)' }}>
             Free research backed by 5.1M+ real cases. No account, no credit card, no restrictions during beta.
           </p>
           <a href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold transition-all hover:shadow-lg"
-            style={{ background: 'var(--accent-primary)', color: 'var(--color-surface-0)', borderRadius: '2px' }}>
+            style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px' }}>
             Start Free Research
             <ArrowRightIcon size={16} />
           </a>

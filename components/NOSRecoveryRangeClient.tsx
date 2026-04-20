@@ -51,7 +51,7 @@ export default function NOSRecoveryRangeClient({
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
             <div>
               <h2 className="section-title">Recovery Range Visualization</h2>
-              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', marginBottom: '0px', fontFamily: 'var(--font-ui)' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text2)', marginBottom: '0px', fontFamily: 'var(--font-ui)' }}>
                 Typical monetary recovery for {nosLabel} cases {inflationEnabled ? '(in 2024 dollars)' : '(in thousands)'}
               </p>
             </div>
@@ -77,26 +77,26 @@ export default function NOSRecoveryRangeClient({
 
           <div className="recovery-percentiles" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'center', marginTop: '28px' }}>
             <div>
-              <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+              <div style={{ fontSize: '12px', color: 'var(--text2)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                 P25
               </div>
-              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                 {fmtK(adjustedRange.lo)}
               </div>
             </div>
             <div>
-              <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+              <div style={{ fontSize: '12px', color: 'var(--text2)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                 P50 (Median)
               </div>
-              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                 {fmtK(adjustedRange.md)}
               </div>
             </div>
             <div>
-              <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+              <div style={{ fontSize: '12px', color: 'var(--text2)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                 P75
               </div>
-              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)' }}>
+              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
                 {fmtK(adjustedRange.hi)}
               </div>
             </div>

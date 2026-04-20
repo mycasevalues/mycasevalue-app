@@ -31,8 +31,8 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
   return (
     <div
       style={{
-        background: 'var(--color-surface-1)',
-        border: '1px solid var(--border-default)',
+        background: 'var(--surf)',
+        border: '1px solid var(--bdr)',
         borderRadius: '4px',
         padding: '16px 24px',
         marginBottom: '24px',
@@ -47,7 +47,7 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         style={{
           fontSize: '12px',
           fontWeight: 600,
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           textTransform: 'uppercase',
           letterSpacing: '0.5px',
           margin: '0',
@@ -63,12 +63,12 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         onClick={handlePrint}
         style={{
           padding: '8px 16px',
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           fontSize: '14px',
           fontWeight: 500,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           fontFamily: 'var(--font-ui)',
           cursor: 'pointer',
           transition: 'all 200ms ease',
@@ -77,12 +77,12 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
           gap: '6px',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = 'var(--color-surface-1)';
-          e.currentTarget.style.borderColor = 'var(--color-text-secondary)';
+          e.currentTarget.style.background = 'var(--surf)';
+          e.currentTarget.style.borderColor = 'var(--text2)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.background = 'var(--color-surface-0)';
-          e.currentTarget.style.borderColor = 'var(--border-default)';
+          e.currentTarget.style.background = 'var(--card)';
+          e.currentTarget.style.borderColor = 'var(--bdr)';
         }}
       >
         <svg
@@ -106,12 +106,12 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         onClick={handleCopyLink}
         style={{
           padding: '8px 16px',
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           fontSize: '14px',
           fontWeight: 500,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           fontFamily: 'var(--font-ui)',
           cursor: 'pointer',
           transition: 'all 200ms ease',
@@ -120,12 +120,12 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
           gap: '6px',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = 'var(--color-surface-1)';
-          e.currentTarget.style.borderColor = 'var(--color-text-secondary)';
+          e.currentTarget.style.background = 'var(--surf)';
+          e.currentTarget.style.borderColor = 'var(--text2)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.background = 'var(--color-surface-0)';
-          e.currentTarget.style.borderColor = 'var(--border-default)';
+          e.currentTarget.style.background = 'var(--card)';
+          e.currentTarget.style.borderColor = 'var(--bdr)';
         }}
       >
         <svg
@@ -148,12 +148,12 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         href={`/report/${nos}`}
         style={{
           padding: '8px 16px',
-          background: 'var(--color-surface-0)',
-          border: '1px solid var(--border-default)',
+          background: 'var(--card)',
+          border: '1px solid var(--bdr)',
           borderRadius: '4px',
           fontSize: '14px',
           fontWeight: 500,
-          color: 'var(--color-text-primary)',
+          color: 'var(--text1)',
           fontFamily: 'var(--font-ui)',
           textDecoration: 'none',
           transition: 'all 200ms ease',
@@ -162,12 +162,12 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
           gap: '6px',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.background = 'var(--color-surface-1)';
-          e.currentTarget.style.borderColor = 'var(--color-text-secondary)';
+          e.currentTarget.style.background = 'var(--surf)';
+          e.currentTarget.style.borderColor = 'var(--text2)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.background = 'var(--color-surface-0)';
-          e.currentTarget.style.borderColor = 'var(--border-default)';
+          e.currentTarget.style.background = 'var(--card)';
+          e.currentTarget.style.borderColor = 'var(--bdr)';
         }}
       >
         <svg

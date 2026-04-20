@@ -113,7 +113,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
       justifyContent: 'space-between',
     }}>
       {/* Header with attribution */}
-      <div style={{ fontSize: '12px', color: 'var(--accent-primary)', fontWeight: 500 }}>
+      <div style={{ fontSize: '12px', color: 'var(--link)', fontWeight: 500 }}>
         Powered by MyCaseValue
       </div>
 
@@ -121,7 +121,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
       <div style={{
         fontSize: '14px',
         fontWeight: 600,
-        color: 'var(--color-text-primary)',
+        color: 'var(--text1)',
         marginTop: '4px',
       }}>
         {caseTypeLabel}
@@ -151,7 +151,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
         fontFamily: '"Courier New", monospace',
         fontSize: '14px',
         fontWeight: 500,
-        color: 'var(--color-text-primary)',
+        color: 'var(--text1)',
         marginTop: '4px',
       }}>
         {formattedSettlement} median
@@ -162,7 +162,7 @@ export default function WidgetPage({ params }: WidgetPageProps) {
         href={`/nos/${nosCode}`}
         style={{
           fontSize: '12px',
-          color: 'var(--accent-primary)',
+          color: 'var(--link)',
           textDecoration: 'none',
           fontWeight: 500,
           marginTop: '4px',

@@ -87,7 +87,7 @@ export default function CaseDetailPage() {
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+      <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
           <div className="animate-pulse space-y-6">
             <div className="h-6 bg-[rgba(255,255,255,0.08)] rounded w-3/4" />
@@ -103,7 +103,7 @@ export default function CaseDetailPage() {
   // Error state
   if (error || !caseData) {
     return (
-      <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+      <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 text-center">
           
           <h1 className="text-lg font-semibold text-[var(--color-text-muted)] mb-2">{error || 'Case not found'}</h1>
@@ -134,11 +134,11 @@ export default function CaseDetailPage() {
   });
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--color-surface-1)' }}>
+    <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
       {/* Back link */}
       <div
         className="border-b"
-        style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
+        style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3">
           <Link
@@ -226,8 +226,8 @@ export default function CaseDetailPage() {
                         key={`${t.category}-${t.tag}`}
                         className="text-xs px-2.5 py-1 rounded border"
                         style={{
-                          borderColor: 'var(--border-default)',
-                          color: 'var(--color-text-secondary)',
+                          borderColor: 'var(--bdr)',
+                          color: 'var(--text2)',
                           background: t.category === 'practice_area' ? 'rgba(10,80,162,0.10)' : t.category === 'claim_type' ? 'rgba(234,179,8,0.12)' : 'transparent',
                         }}
                       >
@@ -266,7 +266,7 @@ export default function CaseDetailPage() {
                 <div
                   key={i}
                   className="flex items-start justify-between gap-3 py-2 border-b last:border-0"
-                  style={{ borderColor: 'var(--border-default)' }}
+                  style={{ borderColor: 'var(--bdr)' }}
                 >
                   <div>
                     <p className="text-sm font-medium text-[var(--color-text-muted)]">{op.title}</p>
@@ -300,7 +300,7 @@ export default function CaseDetailPage() {
                 <div
                   key={i}
                   className="flex items-start gap-3 py-2 border-b last:border-0"
-                  style={{ borderColor: 'var(--border-default)' }}
+                  style={{ borderColor: 'var(--bdr)' }}
                 >
                   <span className="text-xs text-[var(--color-text-muted)] w-10 flex-shrink-0 text-right tabular-nums">
                     #{f.number || i + 1}
@@ -382,7 +382,7 @@ export default function CaseDetailPage() {
                   key={rc.id}
                   href={`/case/${rc.id}`}
                   className="flex items-center justify-between py-2 border-b last:border-0 group"
-                  style={{ borderColor: 'var(--border-default)' }}
+                  style={{ borderColor: 'var(--bdr)' }}
                 >
                   <div>
                     <p className="text-sm text-[var(--color-text-muted)] group-hover:text-brand-blue transition-colors">
@@ -411,7 +411,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <div
       className="rounded border p-5"
-      style={{ borderColor: 'var(--border-default)', background: 'var(--color-surface-0)' }}
+      style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
     >
       <h2 className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-3">
         {title}

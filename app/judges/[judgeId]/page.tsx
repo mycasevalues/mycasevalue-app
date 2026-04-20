@@ -185,7 +185,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   {partyLabel !== '—' && (
                     <span style={{
                       display: 'inline-block', marginLeft: 6, padding: '1px 6px',
-                      background: partyColor, color: 'var(--color-text-inverse)', borderRadius: 3,
+                      background: partyColor, color: 'var(--chrome-text)', borderRadius: 3,
                       fontSize: 12, fontWeight: 600,
                     }}>
                       {judge.party_of_appointing_president}
@@ -234,7 +234,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               {/* Action buttons (right) */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4, flexShrink: 0, marginLeft: 16 }}>
                 <button type="button" style={{
-                  height: 30, padding: '0 14px', background: 'var(--gold)', color: 'var(--color-text-inverse)',
+                  height: 30, padding: '0 14px', background: 'var(--gold)', color: 'var(--chrome-text)',
                   fontSize: 12, fontWeight: 600, fontFamily: 'var(--font-ui)',
                   border: 'none', borderRadius: 3, cursor: 'pointer', whiteSpace: 'nowrap',
                 }}>
@@ -412,7 +412,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                     {/* Number circle */}
                     <div style={{
                       width: 20, height: 20, borderRadius: '50%', background: 'var(--link)',
-                      color: 'var(--color-text-inverse)', fontSize: 12, fontFamily: 'var(--font-ui)', fontWeight: 700,
+                      color: 'var(--chrome-text)', fontSize: 12, fontFamily: 'var(--font-ui)', fontWeight: 700,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2,
                     }}>
                       {i + 1}
@@ -589,7 +589,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
             {/* Download Report */}
             <button type="button" style={{
               width: '100%', height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center',
-              background: 'var(--gold)', color: 'var(--color-text-inverse)', fontSize: 12, fontWeight: 600,
+              background: 'var(--gold)', color: 'var(--chrome-text)', fontSize: 12, fontWeight: 600,
               fontFamily: 'var(--font-ui)', border: 'none', borderRadius: 3, cursor: 'pointer', marginBottom: 6,
             }}>
               Download Report

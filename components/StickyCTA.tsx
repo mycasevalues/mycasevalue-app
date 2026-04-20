@@ -61,8 +61,8 @@ export default function StickyCTA() {
         display: 'flex',
         alignItems: 'center',
         gap: '12px',
-        background: 'var(--color-surface-0)',
-        border: '1px solid var(--border-default)',
+        background: 'var(--card)',
+        border: '1px solid var(--bdr)',
         borderRadius: '4px',
         padding: '8px',
         boxShadow: '0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06)',
@@ -74,8 +74,8 @@ export default function StickyCTA() {
       <Link
         href="/cases"
         style={{
-          background: 'var(--accent-primary)',
-          color: 'var(--color-surface-0)',
+          background: 'var(--link)',
+          color: 'var(--card)',
           padding: '8px 24px',
           borderRadius: '2px',
           textDecoration: 'none',
@@ -93,7 +93,7 @@ export default function StickyCTA() {
       <Link
         href="/pricing"
         style={{
-          color: 'var(--color-text-secondary)',
+          color: 'var(--text2)',
           padding: '8px 16px',
           textDecoration: 'none',
           fontFamily: 'var(--font-ui)',

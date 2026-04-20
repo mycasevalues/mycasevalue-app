@@ -41,7 +41,7 @@ export default function CourtGuideCapture() {
 
       const addHeader = (text: string) => {
         doc.setFontSize(14);
-        doc.setTextColor(10, 102, 194); // var(--accent-primary)
+        doc.setTextColor(10, 102, 194); // var(--link)
         doc.setFont('helvetica', 'bold');
         doc.text(text, margin, yPosition);
         yPosition += 10;
@@ -602,7 +602,7 @@ export default function CourtGuideCapture() {
   };
 
   return (
-    <section className="rounded border-2 border-blue-200 bg-[var(--color-surface-1)] p-8">
+    <section className="rounded border-2 border-blue-200 bg-[var(--surf)] p-8">
       <h2 className="mb-4 text-2xl font-bold text-[var(--color-text-muted)]">
         Download the Complete Guide
       </h2>
@@ -611,7 +611,7 @@ export default function CourtGuideCapture() {
       </p>
 
       {state.submitted ? (
-        <div className="rounded bg-[var(--color-surface-1)] p-6 text-center">
+        <div className="rounded bg-[var(--surf)] p-6 text-center">
           <h3 className="mb-2 font-semibold text-green-900">
             Download started!
           </h3>
