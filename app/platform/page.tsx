@@ -539,7 +539,7 @@ export default function PlatformPage() {
         {/* Hero Section */}
         <div style={{
           background: 'var(--card)',
-          color: 'var(--card)',
+          color: 'var(--text1)',
           padding: '56px 24px 48px',
           position: 'relative',
           overflow: 'hidden',
@@ -571,14 +571,14 @@ export default function PlatformPage() {
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
               marginBottom: 16,
-              color: 'var(--card)',
+              color: 'var(--text1)',
             }}>
               The legal intelligence platform
             </h1>
             <p style={{
               fontFamily: 'var(--font-ui)',
               fontSize: '14px',
-              color: 'rgba(255,255,255,0.7)',
+              color: 'var(--text2)',
               lineHeight: 1.6,
               maxWidth: 680,
               margin: 0,

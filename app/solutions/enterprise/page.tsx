@@ -148,7 +148,7 @@ export default function EnterprisePage() {
       {/* Hero */}
       <section style={{
         background: 'var(--card)',
-        color: 'var(--card)',
+        color: 'var(--text1)',
         padding: '56px 24px 48px',
         position: 'relative',
         overflow: 'hidden',
@@ -180,14 +180,14 @@ export default function EnterprisePage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: 'var(--card)',
+            color: 'var(--text1)',
           }}>
             Enterprise-grade litigation analytics
           </h1>
           <p style={{
             fontFamily: 'var(--font-ui)',
             fontSize: 14,
-            color: 'rgba(255,255,255,0.6)',
+            color: 'var(--text2)',
             maxWidth: 640,
             margin: '0 auto 32px',
             lineHeight: 1.65,

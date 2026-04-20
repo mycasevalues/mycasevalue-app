@@ -95,7 +95,7 @@ export default function ContactPage() {
               style={{
                 fontSize: '28px',
                 fontWeight: 700,
-                color: 'var(--chrome-text, #FFFFFF)',
+                color: 'var(--text1)',
                 fontFamily: 'var(--font-legal)',
                 letterSpacing: '-0.025em',
                 marginBottom: 8,
@@ -107,7 +107,7 @@ export default function ContactPage() {
             <p
               style={{
                 fontSize: 14,
-                color: 'var(--chrome-text, #FFFFFF)',
+                color: 'var(--text1)',
                 fontFamily: 'var(--font-ui)',
                 lineHeight: 1.65,
                 maxWidth: 560,

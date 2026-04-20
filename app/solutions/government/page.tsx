@@ -59,7 +59,7 @@ export default function GovernmentPage() {
       {/* Hero */}
       <section style={{
         background: 'var(--card)',
-        color: 'var(--card)',
+        color: 'var(--text1)',
         padding: '48px 24px 40px',
         position: 'relative',
         overflow: 'hidden',
@@ -91,14 +91,14 @@ export default function GovernmentPage() {
             letterSpacing: '-0.025em',
             lineHeight: 1.1,
             marginBottom: 16,
-            color: 'var(--card)',
+            color: 'var(--text1)',
           }}>
             Data-driven judicial policy
           </h1>
           <p style={{
             fontFamily: 'var(--font-ui)',
             fontSize: '1.125rem',
-            color: 'rgba(255,255,255,0.7)',
+            color: 'var(--text2)',
             maxWidth: '640px',
             margin: '0 auto 32px',
             lineHeight: 1.6,
@@ -127,10 +127,10 @@ export default function GovernmentPage() {
             </Link>
             <Link href="/contact?type=government-demo" style={{
               background: 'transparent',
-              color: 'rgba(255,255,255,0.85)',
+              color: 'var(--text2)',
               padding: '8px 24px',
               borderRadius: 2,
-              border: '1px solid rgba(255,255,255,0.2)',
+              border: '1px solid var(--bdr)',
               textDecoration: 'none',
               fontFamily: 'var(--font-ui)',
               fontWeight: 600,
