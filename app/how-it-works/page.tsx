@@ -258,7 +258,7 @@ export default function HowItWorksPage() {
                     <path d="M9 12l2 2 4-4"/>
                   </svg>
                 </div>
-                <h3 className="mb-2" style={{ color: 'var(--text1)', fontSize: '16px', fontWeight: '600', fontWeight: 600 }}>
+                <h3 className="mb-2" style={{ color: 'var(--text1)', fontSize: '16px', fontWeight: 600 }}>
                   {item.title}
                 </h3>
                 <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: '14px' }}>
@@ -416,7 +416,7 @@ export default function HowItWorksPage() {
                     <polyline points="13 2 13 9 20 9" />
                   </svg>
                 </div>
-                <h3 style={{ color: 'var(--text1)', fontSize: '16px', fontWeight: '600', margin: 0, fontWeight: 600 }}>
+                <h3 style={{ color: 'var(--text1)', fontSize: '16px', fontWeight: 600, margin: 0 }}>
                   {feature.title}
                 </h3>
                 <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: '14px', margin: 0 }}>
