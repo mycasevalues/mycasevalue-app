@@ -165,7 +165,7 @@ export default function TrendsPage() {
       {/* Breadcrumb */}
       <div style={{ background: 'var(--card)', borderBottom: '1px solid var(--bdr)', padding: '16px 0' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <nav className="flex items-center gap-2 text-sm" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
+          <nav className="flex items-center gap-2" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: 14 }}>
             <a href="/" className="mcv-link" style={{ fontWeight: 500 }}>Home</a>
             <span style={{ color: 'var(--bdr)' }}>›</span>
             <span style={{ color: 'var(--text1)', fontWeight: 500 }}>Trends</span>
@@ -234,10 +234,10 @@ export default function TrendsPage() {
                 key={i}
                 className="text-center p-4 mcv-card--default"
               >
-                <div className="text-2xl font-legal font-extrabold" style={{ color: 'var(--text1)' }}>
+                <div className="font-legal" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                   {stat.v}
                 </div>
-                <div className="text-[11px] font-semibold mt-2" style={{ color: 'var(--text2)' }}>
+                <div className="text-[11px] mt-2" style={{ color: 'var(--text2)', fontWeight: 600 }}>
                   {stat.l}
                 </div>
               </div>
@@ -253,7 +253,7 @@ export default function TrendsPage() {
       <div className="max-w-6xl mx-auto px-6 py-12 space-y-16">
         {/* Interactive Trend Charts */}
         <section className="pt-4">
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Interactive Visualizations
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -264,7 +264,7 @@ export default function TrendsPage() {
 
         {/* Top 10 Most Filed Case Types */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Most Filed Case Types
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -285,21 +285,21 @@ export default function TrendsPage() {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-3">
                       <span
-                        className="text-xs font-bold w-6 h-6 flex items-center justify-center rounded"
-                        style={{ background: 'var(--link)', color: 'var(--chrome-text)' }}
-                      >
+ className="w-6 h-6 flex items-center justify-center rounded"
+ style={{ background: 'var(--link)', color: 'var(--chrome-text)', fontSize: 12, fontWeight: 700 }}
+ >
                         {i + 1}
                       </span>
-                      <span className="text-sm font-semibold" style={{ color: 'var(--text1)' }}>
+                      <span style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>
                         {t.label}
                       </span>
                       <span
-                        className="text-[10px] font-bold px-2 py-0.5 mcv-badge"
-                      >
+ className="text-[10px] px-2 py-0.5 mcv-badge" style={{ fontWeight: 700 }}
+ >
                         {CATEGORY_META[t.category]?.label || t.category}
                       </span>
                     </div>
-                    <div className="flex items-center gap-4 text-xs" style={{ color: 'var(--text2)' }}>
+                    <div className="flex items-center gap-4" style={{ color: 'var(--text2)', fontSize: 12 }}>
                       <span>{t.total.toLocaleString()} cases</span>
                       <span style={{ color: 'var(--gold)' }}>{t.winRate}% win</span>
                       <span>{t.months}mo avg</span>
@@ -322,7 +322,7 @@ export default function TrendsPage() {
 
         {/* Category Breakdown */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Cases by Category
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -339,11 +339,11 @@ export default function TrendsPage() {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 rounded" style={{ background: c.color }} />
-                      <span className="text-sm font-semibold" style={{ color: 'var(--text1)' }}>
+                      <span style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>
                         {c.label}
                       </span>
                     </div>
-                    <span className="text-xs font-bold" style={{ color: c.color }}>
+                    <span style={{ color: c.color, fontSize: 12, fontWeight: 700 }}>
                       {c.total.toLocaleString()} cases
                     </span>
                   </div>
@@ -361,7 +361,7 @@ export default function TrendsPage() {
 
         {/* Circuit Court Performance */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Circuit Court Performance
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -381,10 +381,10 @@ export default function TrendsPage() {
                       className="p-4 mcv-card--default"
                     >
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-sm font-semibold" style={{ color: 'var(--text1)' }}>
+                        <span style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>
                           {circuit.circuit}
                         </span>
-                        <span className="text-sm font-bold" style={{ color: indicatorColor }}>
+                        <span style={{ color: indicatorColor, fontSize: 14, fontWeight: 700 }}>
                           {circuit.avgWinRate}%
                         </span>
                       </div>
@@ -414,7 +414,7 @@ export default function TrendsPage() {
         {/* Win Rate Extremes */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+            <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
               Highest Win Rates
             </h2>
             <p className="mb-4" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.875rem' }}>
@@ -430,14 +430,14 @@ export default function TrendsPage() {
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm mcv-link">{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: 'var(--gold)' }}>{t.winRate}%</span>
+                  <span className="mcv-link" style={{ fontSize: 14 }}>{t.label}</span>
+                  <span style={{ color: 'var(--gold)', fontSize: 14, fontWeight: 700 }}>{t.winRate}%</span>
                 </a>
               ))}
             </div>
           </div>
           <div>
-            <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+            <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
               Lowest Win Rates
             </h2>
             <p className="mb-4" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.875rem' }}>
@@ -453,8 +453,8 @@ export default function TrendsPage() {
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm mcv-link">{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: 'var(--link)' }}>{t.winRate}%</span>
+                  <span className="mcv-link" style={{ fontSize: 14 }}>{t.label}</span>
+                  <span style={{ color: 'var(--link)', fontSize: 14, fontWeight: 700 }}>{t.winRate}%</span>
                 </a>
               ))}
             </div>
@@ -464,7 +464,7 @@ export default function TrendsPage() {
         {/* Duration Extremes */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+            <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
               Fastest to Resolve
             </h2>
             <p className="mb-4" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.875rem' }}>
@@ -480,14 +480,14 @@ export default function TrendsPage() {
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm mcv-link">{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: 'var(--gold)' }}>{t.months} months</span>
+                  <span className="mcv-link" style={{ fontSize: 14 }}>{t.label}</span>
+                  <span style={{ color: 'var(--gold)', fontSize: 14, fontWeight: 700 }}>{t.months} months</span>
                 </a>
               ))}
             </div>
           </div>
           <div>
-            <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+            <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
               Longest to Resolve
             </h2>
             <p className="mb-4" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.875rem' }}>
@@ -503,8 +503,8 @@ export default function TrendsPage() {
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm mcv-link">{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: 'var(--link)' }}>{t.months} months</span>
+                  <span className="mcv-link" style={{ fontSize: 14 }}>{t.label}</span>
+                  <span style={{ color: 'var(--link)', fontSize: 14, fontWeight: 700 }}>{t.months} months</span>
                 </a>
               ))}
             </div>
@@ -513,7 +513,7 @@ export default function TrendsPage() {
 
         {/* Case Type Comparison Tool */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Compare Case Types
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -524,7 +524,7 @@ export default function TrendsPage() {
 
         {/* Settlement Value Heatmap */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Settlement Value Heatmap
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -568,16 +568,16 @@ export default function TrendsPage() {
 
         {/* Recovery Ranges */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Recovery Ranges by Case Type
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
             Typical monetary recovery ranges (25th, 50th, and 75th percentile) for common case types, in thousands.
           </p>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: '0 4px' }}>
+            <table className="w-full" style={{ borderCollapse: 'separate', borderSpacing: '0 4px', fontSize: 14 }}>
               <thead>
-                <tr className="text-left text-[11px] font-bold uppercase tracking-wider" style={{ color: 'var(--text2)' }}>
+                <tr className="text-left text-[11px] uppercase tracking-wider" style={{ color: 'var(--text2)', fontWeight: 700 }}>
                   <th className="px-4 py-2">Case Type</th>
                   <th className="px-4 py-2 text-right">25th %ile</th>
                   <th className="px-4 py-2 text-right">Median</th>
@@ -596,13 +596,13 @@ export default function TrendsPage() {
                     <td className="px-4 py-2.5 text-right mcv-card--default" style={{ color: 'var(--text2)' }}>
                       {fmtK(t.medianLo)}
                     </td>
-                    <td className="px-4 py-2.5 text-right font-semibold mcv-card--default" style={{ color: 'var(--link)' }}>
+                    <td className="px-4 py-2.5 text-right mcv-card--default" style={{ color: 'var(--link)', fontWeight: 600 }}>
                       {fmtK(t.medianMd)}
                     </td>
                     <td className="px-4 py-2.5 text-right mcv-card--default" style={{ color: 'var(--text2)' }}>
                       {fmtK(t.medianHi)}
                     </td>
-                    <td className="px-4 py-2.5 text-right font-semibold mcv-card--default" style={{ color: 'var(--gold)', borderRadius: '0 4px 4px 0' }}>
+                    <td className="px-4 py-2.5 text-right mcv-card--default" style={{ color: 'var(--gold)', borderRadius: '0 4px 4px 0', fontWeight: 600 }}>
                       {t.winRate}%
                     </td>
                   </tr>
@@ -614,7 +614,7 @@ export default function TrendsPage() {
 
         {/* How Cases End */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             How Cases End
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -650,11 +650,11 @@ export default function TrendsPage() {
                     >
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-3 h-3 rounded" style={{ background: outcome.color }} />
-                        <span className="text-sm font-semibold" style={{ color: 'var(--text1)' }}>
+                        <span style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>
                           {outcome.outcome}
                         </span>
                       </div>
-                      <div className="text-2xl font-bold font-mono" style={{ color: outcome.color, fontFamily: 'var(--font-mono)' }}>
+                      <div className="font-mono" style={{ color: outcome.color, fontFamily: 'var(--font-mono)', fontSize: 20, fontWeight: 700 }}>
                         {outcome.percentage}%
                       </div>
                     </div>
@@ -666,7 +666,7 @@ export default function TrendsPage() {
 
           {/* Sankey Diagram */}
           <div className="mcv-card p-6 mt-8">
-            <h3 className="font-legal font-semibold mb-4" style={{ color: 'var(--text1)', fontSize: '1.1rem' }}>
+            <h3 className="font-legal mb-4" style={{ color: 'var(--text1)', fontSize: '1.1rem', fontWeight: 600 }}>
               Case Flow: Filing to Disposition
             </h3>
             <OutcomeSankey />
@@ -675,7 +675,7 @@ export default function TrendsPage() {
 
         {/* Win Rate by Category */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Win Rate by Category
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -712,10 +712,10 @@ export default function TrendsPage() {
                       }}
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-semibold" style={{ color: 'var(--text1)' }}>
+                        <span style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>
                           {c.label}
                         </span>
-                        <span className="text-sm font-bold" style={{ color: barColor }}>
+                        <span style={{ color: barColor, fontSize: 14, fontWeight: 700 }}>
                           {c.avgWr}%
                         </span>
                       </div>
@@ -738,7 +738,7 @@ export default function TrendsPage() {
 
         {/* Case Duration by Type */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Case Duration by Type
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -746,7 +746,7 @@ export default function TrendsPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="font-semibold mb-4" style={{ color: 'var(--text1)', fontSize: '1rem' }}>
+              <h3 className="mb-4" style={{ color: 'var(--text1)', fontSize: '1rem', fontWeight: 600 }}>
                 Fastest Resolution
               </h3>
               <div className="space-y-3">
@@ -758,8 +758,8 @@ export default function TrendsPage() {
                     style={{ textDecoration: 'none' }}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-semibold mcv-link">{t.label}</span>
-                      <span className="text-sm font-bold" style={{ color: 'var(--data-positive)' }}>{t.months}mo</span>
+                      <span className="mcv-link" style={{ fontSize: 14, fontWeight: 600 }}>{t.label}</span>
+                      <span style={{ color: 'var(--data-positive)', fontSize: 14, fontWeight: 700 }}>{t.months}mo</span>
                     </div>
                     <div className="h-1.5 overflow-hidden" style={{ background: 'var(--bdr)', borderRadius: '4px' }}>
                       <div
@@ -775,7 +775,7 @@ export default function TrendsPage() {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold mb-4" style={{ color: 'var(--text1)', fontSize: '1rem' }}>
+              <h3 className="mb-4" style={{ color: 'var(--text1)', fontSize: '1rem', fontWeight: 600 }}>
                 Longest Duration
               </h3>
               <div className="space-y-3">
@@ -787,8 +787,8 @@ export default function TrendsPage() {
                     style={{ textDecoration: 'none' }}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-semibold mcv-link">{t.label}</span>
-                      <span className="text-sm font-bold" style={{ color: 'var(--link)' }}>{t.months}mo</span>
+                      <span className="mcv-link" style={{ fontSize: 14, fontWeight: 600 }}>{t.label}</span>
+                      <span style={{ color: 'var(--link)', fontSize: 14, fontWeight: 700 }}>{t.months}mo</span>
                     </div>
                     <div className="h-1.5 overflow-hidden" style={{ background: 'var(--bdr)', borderRadius: '4px' }}>
                       <div
@@ -808,7 +808,7 @@ export default function TrendsPage() {
 
         {/* Settlement Rate Ranking */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Settlement Rate Ranking
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -831,20 +831,20 @@ export default function TrendsPage() {
                   >
                     <div className="flex items-center gap-4 mb-2">
                       <span
-                        className="text-sm font-bold w-7 h-7 flex items-center justify-center rounded"
-                        style={{ background: 'var(--gold)', color: 'var(--card)' }}
-                      >
+ className="w-7 h-7 flex items-center justify-center rounded"
+ style={{ background: 'var(--gold)', color: 'var(--card)', fontSize: 14, fontWeight: 700 }}
+ >
                         {i + 1}
                       </span>
                       <div className="flex-1">
-                        <div className="text-sm font-semibold" style={{ color: 'var(--text1)' }}>
+                        <div style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>
                           {t.label}
                         </div>
-                        <div className="text-xs" style={{ color: 'var(--text2)' }}>
+                        <div style={{ color: 'var(--text2)', fontSize: 12 }}>
                           {t.settlementPct}% of {t.label} cases settle before trial
                         </div>
                       </div>
-                      <span className="text-sm font-bold" style={{ color: 'var(--gold)' }}>
+                      <span style={{ color: 'var(--gold)', fontSize: 14, fontWeight: 700 }}>
                         {t.settlementPct}%
                       </span>
                     </div>
@@ -866,7 +866,7 @@ export default function TrendsPage() {
 
         {/* Annual Filing Volume */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Annual Filing Volume
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -889,10 +889,10 @@ export default function TrendsPage() {
                 {volumes.map((v) => (
                   <div key={v.year} className="flex-1">
                     <div className="mb-3 flex flex-col items-center">
-                      <div className="text-lg font-bold" style={{ color: 'var(--text1)' }}>
+                      <div style={{ color: 'var(--text1)', fontSize: 16, fontWeight: 700 }}>
                         {v.volume.toLocaleString()}
                       </div>
-                      <div className="text-xs" style={{ color: 'var(--text2)' }}>
+                      <div style={{ color: 'var(--text2)', fontSize: 12 }}>
                         {v.year}
                       </div>
                     </div>
@@ -914,7 +914,7 @@ export default function TrendsPage() {
 
         {/* Related Analysis */}
         <section>
-          <h2 className="font-legal font-bold mb-2" style={{ color: 'var(--text1)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: '20px', fontWeight: 700 }}>
             Related Analysis
           </h2>
           <p className="mb-8" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -960,13 +960,13 @@ export default function TrendsPage() {
                 <div style={{ fontSize: '2rem', marginBottom: '12px' }}>
                   <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg>
                 </div>
-                <h3 className="font-semibold mb-2 group-hover:text-[var(--link)] transition-colors" style={{ color: 'var(--text1)' }}>
+                <h3 className="mb-2 group-hover:text-[var(--link)] transition-colors" style={{ color: 'var(--text1)', fontWeight: 600 }}>
                   {item.title}
                 </h3>
                 <p style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: '0.875rem' }}>
                   {item.description}
                 </p>
-                <div className="mt-4 text-sm font-semibold" style={{ color: 'var(--gold)' }}>
+                <div className="mt-4" style={{ color: 'var(--gold)', fontSize: 14, fontWeight: 600 }}>
                   Explore →
                 </div>
               </Link>
@@ -981,7 +981,7 @@ export default function TrendsPage() {
             background: 'var(--link)',
           }}
         >
-          <h2 className="font-legal font-bold mb-3" style={{ color: 'var(--card)', fontSize: '20px' }}>
+          <h2 className="font-legal mb-3" style={{ color: 'var(--card)', fontSize: '20px', fontWeight: 700 }}>
             Want details for your specific case?
           </h2>
           <p className="mb-6 max-w-xl mx-auto" style={{ color: '#B0C4DE', fontFamily: 'var(--font-ui)', fontSize: '0.95rem' }}>
@@ -989,25 +989,23 @@ export default function TrendsPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="/odds"
-              className="mcv-btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            >
+ href="/odds"
+ className="mcv-btn-primary inline-flex items-center gap-2 px-6 py-3 transition-all" style={{ fontSize: 14, fontWeight: 600 }}
+ >
               Check My Odds — Free
               <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
             <a
-              href="/search"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{
-                border: '1px solid var(--bdr)',
-                color: 'var(--text1)',
-                background: 'var(--card)',
-                borderRadius: '4px',
-                textDecoration: 'none',
-              }}
-            >
+ href="/search"
+ className="inline-flex items-center gap-2 px-6 py-3 transition-all"
+ style={{ border: '1px solid var(--bdr)',
+ color: 'var(--text1)',
+ background: 'var(--card)',
+ borderRadius: '4px',
+ textDecoration: 'none', fontSize: 14, fontWeight: 600 }}
+ >
               Search Cases
             </a>
           </div>
