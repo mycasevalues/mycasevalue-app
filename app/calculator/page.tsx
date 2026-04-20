@@ -988,7 +988,9 @@ export default function CalculatorPage() {
                     <div>
                       <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: 'var(--text2)' }}>Actual Win Rate</p>
                       <p style={{
- color: realCtx.wr style={{ fontSize: 20, fontWeight: 700 }} >= 50 ? 'var(--data-positive)' : 'var(--link)',
+                        fontSize: 20,
+                        fontWeight: 700,
+                        color: realCtx.wr >= 50 ? 'var(--data-positive)' : 'var(--link)',
                         fontFamily: 'var(--font-mono)',
                       }}>{realCtx.wr.toFixed(1)}%</p>
                     </div>
