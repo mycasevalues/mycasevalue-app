@@ -40,13 +40,13 @@ export default function ProductPreview() {
     <section className="px-4 md:px-8 py-14 md:py-20 bg-[var(--surf,#F6F5F2)]">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
-          <p className="text-xs font-semibold text-brand-blue uppercase tracking-widest mb-3">
+          <p className="text-brand-blue uppercase tracking-widest mb-3" style={{ fontSize: 12, fontWeight: 600 }}>
             Preview
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text-muted)] mb-3">
+          <h2 className="md: text-[var(--color-text-muted)] mb-3" style={{ fontSize: 20, fontWeight: 700 }}>
             See What the Data Looks Like
           </h2>
-          <p className="text-base text-[var(--color-text-muted)] max-w-xl mx-auto">
+          <p className="text-[var(--color-text-muted)] max-w-xl mx-auto" style={{ fontSize: 14 }}>
             Win rates, settlement rates, and case timelines organized by
             category from real federal court records.
           </p>
@@ -61,7 +61,7 @@ export default function ProductPreview() {
               <div className="w-2.5 h-2.5 rounded-full bg-gray-600" />
             </div>
             <div className="flex-1 ml-3">
-              <div className="bg-gray-700 rounded-md px-3 py-1 text-xs text-[var(--color-text-muted)] max-w-sm font-mono">
+              <div className="bg-gray-700 rounded-md px-3 py-1 text-[var(--color-text-muted)] max-w-sm font-mono" style={{ fontSize: 12 }}>
                 mycasevalues.com/cases
               </div>
             </div>
@@ -75,12 +75,12 @@ export default function ProductPreview() {
                   key={cat.title}
                   className="border border-[var(--bdr, #E2DFD8)] rounded p-4 hover:shadow-sm transition-shadow"
                 >
-                  <h4 className="text-sm font-semibold text-[var(--color-text-muted)] mb-3">
+                  <h4 className="text-[var(--color-text-muted)] mb-3" style={{ fontSize: 14, fontWeight: 600 }}>
                     {cat.title}
                   </h4>
                   <div className="grid grid-cols-2 gap-y-3 gap-x-2">
                     <div>
-                      <div className="text-lg font-bold text-brand-blue tabular-nums">
+                      <div className="text-brand-blue tabular-nums" style={{ fontSize: 16, fontWeight: 700 }}>
                         {cat.cases}
                       </div>
                       <div className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider">
@@ -89,9 +89,9 @@ export default function ProductPreview() {
                     </div>
                     <div>
                       <div
-                        className="text-lg font-bold tabular-nums"
-                        style={{ color: cat.winColor }}
-                      >
+ className="tabular-nums"
+ style={{ color: cat.winColor, fontSize: 16, fontWeight: 700 }}
+ >
                         {cat.winRate}
                       </div>
                       <div className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider">
@@ -99,7 +99,7 @@ export default function ProductPreview() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-[var(--color-text-muted)] tabular-nums">
+                      <div className="text-[var(--color-text-muted)] tabular-nums" style={{ fontSize: 14, fontWeight: 600 }}>
                         {cat.settlementRate}
                       </div>
                       <div className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider">
@@ -107,7 +107,7 @@ export default function ProductPreview() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-[var(--color-text-muted)] tabular-nums">
+                      <div className="text-[var(--color-text-muted)] tabular-nums" style={{ fontSize: 14, fontWeight: 600 }}>
                         {cat.duration}
                       </div>
                       <div className="text-[10px] text-[var(--color-text-muted)] uppercase tracking-wider">
@@ -132,9 +132,9 @@ export default function ProductPreview() {
 
         <div className="text-center mt-8">
           <Link
-            href="/cases"
-            className="inline-flex items-center justify-center px-6 py-2.5 rounded bg-[var(--gold,#C4882A)] text-white font-semibold text-sm transition-colors hover:bg-[var(--gold-hover,#A87222)]"
-          >
+ href="/cases"
+ className="inline-flex items-center justify-center px-6 py-2.5 rounded bg-[var(--gold,#C4882A)] text-white transition-colors hover:bg-[var(--gold-hover,#A87222)]" style={{ fontSize: 14, fontWeight: 600 }}
+ >
             Explore All Case Types &rarr;
           </Link>
         </div>

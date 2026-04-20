@@ -29,7 +29,7 @@ interface RelatedEntitiesProps {
 function SectionHeader({ title, count }: { title: string; count?: number }) {
   return (
     <div className="flex items-center justify-between px-4 py-2 border-b border-[var(--bdr, #E2DFD8)]">
-      <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">{title}</span>
+      <span className="uppercase tracking-wider text-[var(--color-text-muted)]" style={{ fontSize: 12, fontWeight: 600 }}>{title}</span>
       {count != null && <span className="text-[10px] text-[var(--color-text-muted)] bg-[rgba(255,255,255,0.04)] px-1.5 py-0.5 rounded">{count}</span>}
     </div>
   );
@@ -48,11 +48,11 @@ function RelatedItem({ href, label, sublabel, stat, statColor }: {
       className="flex items-center justify-between px-4 py-2 hover:bg-[var(--surf)]/50 transition-colors group"
     >
       <div className="min-w-0 flex-1">
-        <div className="text-sm text-[var(--color-text-muted)] font-medium truncate group-hover:text-brand-blue transition-colors">{label}</div>
+        <div className="text-[var(--color-text-muted)] truncate group-hover:text-brand-blue transition-colors" style={{ fontSize: 14, fontWeight: 500 }}>{label}</div>
         {sublabel && <div className="text-[11px] text-[var(--color-text-muted)] truncate">{sublabel}</div>}
       </div>
       {stat && (
-        <span className="text-xs font-mono font-semibold flex-shrink-0 ml-2" style={{ color: statColor || 'var(--text1)' }}>
+        <span className="font-mono flex-shrink-0 ml-2" style={{ color: statColor || 'var(--text1)', fontSize: 12, fontWeight: 600 }}>
           {stat}
         </span>
       )}
@@ -72,7 +72,7 @@ export default function RelatedEntities({ context }: RelatedEntitiesProps) {
       <div className="sticky top-[80px] h-[calc(100vh-120px)] overflow-y-auto">
         {/* Header */}
         <div className="px-4 py-3 border-b border-[var(--bdr, #E2DFD8)]">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-[var(--color-text-muted)]">Related</h3>
+          <h3 className="uppercase tracking-wider text-[var(--color-text-muted)]" style={{ fontSize: 12, fontWeight: 700 }}>Related</h3>
         </div>
 
         {/* Related Case Types */}
@@ -111,15 +111,15 @@ export default function RelatedEntities({ context }: RelatedEntitiesProps) {
         <div className="mt-2">
           <SectionHeader title="Quick Actions" />
           <div className="px-4 py-2 space-y-1">
-            <Link href="/compare" className="flex items-center gap-2 text-xs text-[var(--color-text-muted)] hover:text-brand-blue py-1">
+            <Link href="/compare" className="flex items-center gap-2 text-[var(--color-text-muted)] hover:text-brand-blue py-1" style={{ fontSize: 12 }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 3v18M3 9h6M15 9h6M3 15h6M15 15h6"/></svg>
               Compare case types
             </Link>
-            <Link href="/calculator" className="flex items-center gap-2 text-xs text-[var(--color-text-muted)] hover:text-brand-blue py-1">
+            <Link href="/calculator" className="flex items-center gap-2 text-[var(--color-text-muted)] hover:text-brand-blue py-1" style={{ fontSize: 12 }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
               Estimate settlement
             </Link>
-            <Link href="/attorney/case-predictor" className="flex items-center gap-2 text-xs text-[var(--color-text-muted)] hover:text-brand-blue py-1">
+            <Link href="/attorney/case-predictor" className="flex items-center gap-2 text-[var(--color-text-muted)] hover:text-brand-blue py-1" style={{ fontSize: 12 }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707"/></svg>
               Predict outcome
             </Link>

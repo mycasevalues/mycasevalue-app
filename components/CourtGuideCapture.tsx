@@ -603,7 +603,7 @@ export default function CourtGuideCapture() {
 
   return (
     <section className="rounded border-2 border-blue-200 bg-[var(--surf)] p-8">
-      <h2 className="mb-4 text-2xl font-bold text-[var(--color-text-muted)]">
+      <h2 className="mb-4 text-[var(--color-text-muted)]" style={{ fontSize: 20, fontWeight: 700 }}>
         Download the Complete Guide
       </h2>
       <p className="mb-6 text-[var(--color-text-muted)]">
@@ -612,20 +612,20 @@ export default function CourtGuideCapture() {
 
       {state.submitted ? (
         <div className="rounded bg-[var(--surf)] p-6 text-center">
-          <h3 className="mb-2 font-semibold text-green-900">
+          <h3 className="mb-2 text-green-900" style={{ fontWeight: 600 }}>
             Download started!
           </h3>
           <p className="text-[var(--data-positive)]">
             Check your browser downloads folder for the PDF.
           </p>
-          <p className="mt-2 text-sm text-green-700">
+          <p className="mt-2 text-green-700" style={{ fontSize: 14 }}>
             We have also sent a copy to {state.email}
           </p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-[var(--color-text-muted)]">
+            <label htmlFor="email" className="block text-[var(--color-text-muted)]" style={{ fontSize: 14, fontWeight: 500 }}>
               Your email address
             </label>
             <input
@@ -647,18 +647,18 @@ export default function CourtGuideCapture() {
           </div>
 
           {state.error && (
-            <p className="text-sm text-[var(--data-negative)]">{state.error}</p>
+            <p className="text-[var(--data-negative)]" style={{ fontSize: 14 }}>{state.error}</p>
           )}
 
           <button
-            type="submit"
-            disabled={state.loading}
-            className="w-full rounded-md bg-[var(--link)] px-6 py-3 font-semibold text-white transition-colors hover:bg-[var(--link)] disabled:bg-[var(--color-text-muted)]"
-          >
+ type="submit"
+ disabled={state.loading}
+ className="w-full rounded-md bg-[var(--link)] px-6 py-3 text-white transition-colors hover:bg-[var(--link)] disabled:bg-[var(--color-text-muted)]" style={{ fontWeight: 600 }}
+ >
             {state.loading ? 'Generating PDF...' : 'Download Guide'}
           </button>
 
-          <p className="text-xs text-[var(--color-text-muted)]">
+          <p className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>
             Your email will only be used to send you resources and updates about MyCaseValue.
             We never share or sell your information.
             <a href="/privacy" className="ml-1 text-[var(--link)] hover:underline">

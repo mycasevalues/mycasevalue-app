@@ -74,39 +74,35 @@ export function ToolResultCard({
         className="flex items-center justify-between px-8 py-6 border-b border-[var(--bdr, #E2DFD8)]"
         style={{ fontFamily: 'var(--font-ui)' }}
       >
-        <h2 className="text-xl font-semibold text-[var(--color-text-muted)]">{title}</h2>
+        <h2 className="text-[var(--color-text-muted)]" style={{ fontSize: 20, fontWeight: 600 }}>{title}</h2>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3">
           {onExport && (
             <button
-              onClick={handleExport}
-              disabled={isExporting}
-              className="px-4 py-2 rounded-md font-medium text-[var(--color-text-muted)] bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              style={{
-                paddingLeft: '16px',
-                paddingRight: '16px',
-                paddingTop: '8px',
-                paddingBottom: '8px',
-              }}
-            >
+ onClick={handleExport}
+ disabled={isExporting}
+ className="px-4 py-2 rounded-md text-[var(--color-text-muted)] bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+ style={{ paddingLeft: '16px',
+ paddingRight: '16px',
+ paddingTop: '8px',
+ paddingBottom: '8px', fontWeight: 500 }}
+ >
               {isExporting ? 'Exporting...' : 'Export'}
             </button>
           )}
 
           {onSave && (
             <button
-              onClick={handleSave}
-              disabled={isSaving}
-              className="px-6 py-2 rounded-md font-medium text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              style={{
-                backgroundColor: 'var(--link)',
-                paddingLeft: '24px',
-                paddingRight: '24px',
-                paddingTop: '8px',
-                paddingBottom: '8px',
-              }}
-            >
+ onClick={handleSave}
+ disabled={isSaving}
+ className="px-6 py-2 rounded-md text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+ style={{ backgroundColor: 'var(--link)',
+ paddingLeft: '24px',
+ paddingRight: '24px',
+ paddingTop: '8px',
+ paddingBottom: '8px', fontWeight: 500 }}
+ >
               {isSaving ? 'Saving...' : 'Save'}
             </button>
           )}

@@ -96,7 +96,7 @@ export default function KeyboardShortcutsHelp() {
       <div className="relative bg-[var(--surf,#F6F5F2)] rounded shadow-2xl w-full max-w-lg mx-4 overflow-hidden">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--bdr, #E2DFD8)]">
-          <h2 className="text-lg font-semibold text-[var(--color-text-muted)]">Keyboard Shortcuts</h2>
+          <h2 className="text-[var(--color-text-muted)]" style={{ fontSize: 16, fontWeight: 600 }}>Keyboard Shortcuts</h2>
           <button
             onClick={() => setIsOpen(false)}
             className="p-1 text-[var(--color-text-muted)] hover:text-[var(--text2)] rounded"
@@ -111,18 +111,18 @@ export default function KeyboardShortcutsHelp() {
         <div className="px-6 py-4 max-h-[60vh] overflow-y-auto">
           {SHORTCUTS.map((section) => (
             <div key={section.category} className="mb-5 last:mb-0">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)] mb-2">
+              <h3 className="uppercase tracking-wider text-[var(--color-text-muted)] mb-2" style={{ fontSize: 12, fontWeight: 600 }}>
                 {section.category}
               </h3>
               <div className="space-y-2">
                 {section.items.map((shortcut, i) => (
                   <div key={i} className="flex items-center justify-between">
-                    <span className="text-sm text-[var(--color-text-muted)]">{shortcut.description}</span>
+                    <span className="text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>{shortcut.description}</span>
                     <div className="flex items-center gap-1">
                       {shortcut.keys.map((key, ki) => (
                         <span key={ki}>
-                          {ki > 0 && <span className="text-[var(--color-text-muted)] text-xs mx-0.5">+</span>}
-                          <kbd className="inline-flex items-center justify-center min-w-[24px] h-6 px-1.5 text-xs font-mono font-medium text-[var(--text2)] bg-[rgba(255,255,255,0.04)] border border-[var(--bdr, #E2DFD8)] rounded">
+                          {ki > 0 && <span className="text-[var(--color-text-muted)] mx-0.5" style={{ fontSize: 12 }}>+</span>}
+                          <kbd className="inline-flex items-center justify-center min-w-[24px] h-6 px-1.5 font-mono text-[var(--text2)] bg-[rgba(255,255,255,0.04)] border border-[var(--bdr, #E2DFD8)] rounded" style={{ fontSize: 12, fontWeight: 500 }}>
                             {key}
                           </kbd>
                         </span>

@@ -62,21 +62,21 @@ export function StatCard({
       )}
     >
       {/* Label — brand .sc-l */}
-      <p className="font-ui font-semibold text-brand-muted uppercase tracking-[0.12em] text-[10px] mb-2.5">
+      <p className="font-ui text-brand-muted uppercase tracking-[0.12em] text-[10px] mb-2.5" style={{ fontWeight: 600 }}>
         {label}
       </p>
 
       {/* Value — brand .sc-v: IBM Plex Mono 600, 26px, -0.5px, brand-blue */}
       <p
         className={cn(
-          'font-mono font-semibold text-brand-blue leading-none mb-1',
+          'font-mono  text-brand-blue leading-none mb-1',
           variant === 'large' ? 'text-[32px] tracking-[-0.5px]' : 'text-[26px] tracking-[-0.5px]'
         )}
         style={{ fontVariantNumeric: 'tabular-nums' }}
       >
         {value}
         {trend && (
-          <span className={cn('ml-2 text-lg font-medium', trendColors[trend])}>
+          <span className={cn('ml-2  ', trendColors[trend])}>
             {trendIcons[trend]}
           </span>
         )}

@@ -74,10 +74,10 @@ export default function AudienceCards() {
     <section id="who-uses" className="scroll-mt-[72px] px-4 md:px-8 py-16 md:py-24 bg-[var(--surf,#F6F5F2)]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text-muted)] mb-3">
+          <h2 className="md: text-[var(--color-text-muted)] mb-3" style={{ fontSize: 20, fontWeight: 700 }}>
             Built for Legal Professionals
           </h2>
-          <p className="text-base text-[var(--color-text-muted)] max-w-xl mx-auto">
+          <p className="text-[var(--color-text-muted)] max-w-xl mx-auto" style={{ fontSize: 14 }}>
             Whether you&apos;re representing yourself or preparing a complex federal brief.
           </p>
         </div>
@@ -92,10 +92,10 @@ export default function AudienceCards() {
               <div className="text-brand-blue mb-4">
                 {card.icon}
               </div>
-              <h3 className="text-base font-semibold text-[var(--color-text-muted)] mb-3">
+              <h3 className="text-[var(--color-text-muted)] mb-3" style={{ fontSize: 14, fontWeight: 600 }}>
                 {card.title}
               </h3>
-              <p className="text-sm text-[var(--text2)] leading-relaxed">
+              <p className="text-[var(--text2)] leading-relaxed" style={{ fontSize: 14 }}>
                 {card.description}
               </p>
             </div>
@@ -119,10 +119,10 @@ export default function AudienceCards() {
               <div className="text-brand-blue mb-4">
                 {card.icon}
               </div>
-              <h3 className="text-base font-semibold text-[var(--color-text-muted)] mb-3">
+              <h3 className="text-[var(--color-text-muted)] mb-3" style={{ fontSize: 14, fontWeight: 600 }}>
                 {card.title}
               </h3>
-              <p className="text-sm text-[var(--text2)] leading-relaxed">
+              <p className="text-[var(--text2)] leading-relaxed" style={{ fontSize: 14 }}>
                 {card.description}
               </p>
             </div>
@@ -133,7 +133,7 @@ export default function AudienceCards() {
         <div className="text-center mt-8">
           <button
             onClick={() => setExpanded(!expanded)}
-            className="inline-flex items-center gap-2 text-sm font-medium text-brand-blue hover:text-brand-blue/80 transition-colors"
+            className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-blue/80 transition-colors"
           >
             {expanded ? 'Show fewer' : 'Also built for students, researchers & more'}
             <svg

@@ -60,7 +60,7 @@ export default function SaveButton({ item, size = 'sm', showLabel = false }: Sav
         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
       </svg>
       {showLabel && (
-        <span className={`text-xs font-medium ${saved ? 'text-brand-blue' : 'text-[var(--color-text-muted)]'}`}>
+        <span className={`  ${saved ? 'text-brand-blue' : 'text-[var(--color-text-muted)]'}`}>
           {saved ? 'Saved' : 'Save'}
         </span>
       )}

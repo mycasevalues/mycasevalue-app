@@ -80,11 +80,11 @@ export function JudgePreviewCard({ name, district, circuit, winRate, totalCases,
     <div className="p-4">
       <div className="flex items-start justify-between mb-2">
         <div>
-          <div className="text-sm font-semibold text-[var(--color-text-muted)]">{name}</div>
-          <div className="text-xs text-[var(--color-text-muted)]">{district} {circuit ? `· ${circuit}` : ''}</div>
+          <div className="text-[var(--color-text-muted)]" style={{ fontSize: 14, fontWeight: 600 }}>{name}</div>
+          <div className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>{district} {circuit ? `· ${circuit}` : ''}</div>
         </div>
         {party && (
-          <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
+          <span className={`text-[10px]  px-1.5 py-0.5 rounded ${
             party.includes('Democrat') ? 'bg-[var(--surf)] text-[var(--link)]' : 'bg-[var(--surf)] text-[var(--data-negative)]'
           }`}>
             {party.includes('Democrat') ? 'D' : 'R'}
@@ -94,20 +94,20 @@ export function JudgePreviewCard({ name, district, circuit, winRate, totalCases,
       <div className="flex gap-4 mt-3 pt-3 border-t border-[var(--bdr, #E2DFD8)]">
         {winRate != null && (
           <div>
-            <div className="text-xs text-[var(--color-text-muted)]">Win Rate</div>
-            <div className="text-sm font-mono font-bold" style={{ color: winRate >= 50 ? 'var(--data-positive, #176438)' : winRate >= 35 ? '#B45309' : '#B91C1C' }}>
+            <div className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>Win Rate</div>
+            <div className="font-mono" style={{ color: winRate style={{ fontSize: 14, fontWeight: 700 }} >= 50 ? 'var(--data-positive, #176438)' : winRate >= 35 ? '#B45309' : '#B91C1C' }}>
               {winRate.toFixed(1)}%
             </div>
           </div>
         )}
         {totalCases != null && totalCases > 0 && (
           <div>
-            <div className="text-xs text-[var(--color-text-muted)]">Cases</div>
-            <div className="text-sm font-mono font-bold text-[var(--color-text-muted)]">{totalCases.toLocaleString()}</div>
+            <div className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>Cases</div>
+            <div className="font-mono text-[var(--color-text-muted)]" style={{ fontSize: 14, fontWeight: 700 }}>{totalCases.toLocaleString()}</div>
           </div>
         )}
       </div>
-      <div className="mt-3 text-[10px] text-brand-blue font-medium">Click to view full profile →</div>
+      <div className="mt-3 text-[10px] text-brand-blue" style={{ fontWeight: 500 }}>Click to view full profile →</div>
     </div>
   );
 }
@@ -122,19 +122,19 @@ export function CaseTypePreviewCard({ label, nos, totalCases, winRate, settlemen
 }) {
   return (
     <div className="p-4">
-      <div className="text-sm font-semibold text-[var(--color-text-muted)] mb-1">{label}</div>
-      <div className="text-xs text-[var(--color-text-muted)] mb-3">NOS Code: {nos}</div>
+      <div className="text-[var(--color-text-muted)] mb-1" style={{ fontSize: 14, fontWeight: 600 }}>{label}</div>
+      <div className="text-[var(--color-text-muted)] mb-3" style={{ fontSize: 12 }}>NOS Code: {nos}</div>
       <div className="grid grid-cols-2 gap-3 pt-3 border-t border-[var(--bdr, #E2DFD8)]">
         {totalCases != null && (
           <div>
             <div className="text-[10px] text-[var(--color-text-muted)]">Cases</div>
-            <div className="text-xs font-mono font-bold text-[var(--color-text-muted)]">{totalCases.toLocaleString()}</div>
+            <div className="font-mono text-[var(--color-text-muted)]" style={{ fontSize: 12, fontWeight: 700 }}>{totalCases.toLocaleString()}</div>
           </div>
         )}
         {winRate != null && (
           <div>
             <div className="text-[10px] text-[var(--color-text-muted)]">Win Rate</div>
-            <div className="text-xs font-mono font-bold" style={{ color: winRate >= 50 ? 'var(--data-positive, #176438)' : '#B45309' }}>
+            <div className="font-mono" style={{ color: winRate style={{ fontSize: 12, fontWeight: 700 }} >= 50 ? 'var(--data-positive, #176438)' : '#B45309' }}>
               {winRate}%
             </div>
           </div>
@@ -142,17 +142,17 @@ export function CaseTypePreviewCard({ label, nos, totalCases, winRate, settlemen
         {settlementRate != null && (
           <div>
             <div className="text-[10px] text-[var(--color-text-muted)]">Settlement</div>
-            <div className="text-xs font-mono font-bold text-[var(--color-text-muted)]">{settlementRate}%</div>
+            <div className="font-mono text-[var(--color-text-muted)]" style={{ fontSize: 12, fontWeight: 700 }}>{settlementRate}%</div>
           </div>
         )}
         {duration != null && (
           <div>
             <div className="text-[10px] text-[var(--color-text-muted)]">Duration</div>
-            <div className="text-xs font-mono font-bold text-[var(--color-text-muted)]">{duration}mo</div>
+            <div className="font-mono text-[var(--color-text-muted)]" style={{ fontSize: 12, fontWeight: 700 }}>{duration}mo</div>
           </div>
         )}
       </div>
-      <div className="mt-3 text-[10px] text-brand-blue font-medium">Click for full analysis →</div>
+      <div className="mt-3 text-[10px] text-brand-blue" style={{ fontWeight: 500 }}>Click for full analysis →</div>
     </div>
   );
 }

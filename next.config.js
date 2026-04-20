@@ -192,6 +192,8 @@ const nextConfig = {
     { source: '/report', destination: '/reports', permanent: true },
     // /outcomes/[state] — legacy paths, send to /cases
     { source: '/outcomes/:state([A-Z]{2})', destination: '/cases', permanent: true },
+    // /security → /privacy (no dedicated security policy page yet)
+    { source: '/security', destination: '/privacy', permanent: false },
     // /es/* untranslated pages → English equivalents (Spanish has only: disclaimer, faq, how-it-works, pricing, trends)
     { source: '/es/sign-in', destination: '/sign-in', permanent: false },
     { source: '/es/sign-up', destination: '/sign-up', permanent: false },

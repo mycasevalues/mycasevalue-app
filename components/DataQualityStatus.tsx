@@ -74,16 +74,16 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
     return (
       <div className="rounded-card bg-surface-1 border border-border-light p-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-semibold text-text-color-primary">Data Quality Status</h3>
+          <h3 className="text-text-color-primary" style={{ fontSize: 14, fontWeight: 600 }}>Data Quality Status</h3>
           <button
-            onClick={runCheck}
-            disabled={loading}
-            className="px-3 py-1 text-xs font-medium bg-[var(--gold,#C4882A)] text-white rounded hover:bg-[var(--gold-hover,#A87222)] disabled:opacity-50"
-          >
+ onClick={runCheck}
+ disabled={loading}
+ className="px-3 py-1 bg-[var(--gold,#C4882A)] text-white rounded hover:bg-[var(--gold-hover,#A87222)] disabled:opacity-50" style={{ fontSize: 12, fontWeight: 500 }}
+ >
             Run Check
           </button>
         </div>
-        <p className="text-xs text-text-color-secondary mt-2">No check results yet</p>
+        <p className="text-text-color-secondary mt-2" style={{ fontSize: 12 }}>No check results yet</p>
       </div>
     );
   }
@@ -92,12 +92,12 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
     <div className="rounded-card bg-surface-1 border border-border-light p-4">
       {/* Header with pass/fail badge */}
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-sm font-semibold text-text-color-primary">Data Quality Status</h3>
+        <h3 className="text-text-color-primary" style={{ fontSize: 14, fontWeight: 600 }}>Data Quality Status</h3>
         <button
-          onClick={runCheck}
-          disabled={loading}
-          className="px-3 py-1 text-xs font-medium bg-brand-blue text-white rounded hover:bg-brand-blue-dark disabled:opacity-50 transition-colors"
-        >
+ onClick={runCheck}
+ disabled={loading}
+ className="px-3 py-1 bg-brand-blue text-white rounded hover:bg-brand-blue-dark disabled:opacity-50 transition-colors" style={{ fontSize: 12, fontWeight: 500 }}
+ >
           {loading ? 'Checking...' : 'Run Check'}
         </button>
       </div>
@@ -105,7 +105,7 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
       {/* Error state */}
       {error && (
         <div className="bg-data-bg-neg border border-data-negative rounded-card-sm p-3 mb-3">
-          <p className="text-xs font-medium text-data-negative">Error: {error}</p>
+          <p className="text-data-negative" style={{ fontSize: 12, fontWeight: 500 }}>Error: {error}</p>
         </div>
       )}
 
@@ -115,7 +115,7 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
           {/* Pass/fail badge and timestamp */}
           <div className="flex items-center gap-2 mb-3">
             <div
-              className={`inline-flex items-center gap-1 px-2 py-1 rounded text-xs font-semibold transition-colors ${
+              className={`inline-flex items-center gap-1 px-2 py-1 rounded   transition-colors ${
                 result.passed
                   ? 'bg-data-bg-pos text-data-positive border border-data-positive'
                   : 'bg-data-bg-neg text-data-negative border border-data-negative'
@@ -124,26 +124,26 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
               <span className={`w-2 h-2 rounded-full ${result.passed ? 'bg-data-positive' : 'bg-data-negative'}`} />
               {result.passed ? 'PASSED' : 'FAILED'}
             </div>
-            <span className="text-xs text-text-color-secondary">
+            <span className="text-text-color-secondary" style={{ fontSize: 12 }}>
               {new Date(result.timestamp).toLocaleTimeString()}
             </span>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-2 mb-3 text-xs">
+          <div className="grid grid-cols-3 gap-2 mb-3" style={{ fontSize: 12 }}>
             <div className="bg-surface-0 rounded-card-sm p-2 border border-border-light">
-              <div className="text-text-color-muted font-medium">Checks</div>
-              <div className="text-base font-semibold text-text-color-primary">{result.totalChecks}</div>
+              <div className="text-text-color-muted" style={{ fontWeight: 500 }}>Checks</div>
+              <div className="text-text-color-primary" style={{ fontSize: 14, fontWeight: 600 }}>{result.totalChecks}</div>
             </div>
             <div className="bg-surface-0 rounded-card-sm p-2 border border-border-light">
-              <div className="text-text-color-muted font-medium">Issues</div>
-              <div className={`text-base font-semibold ${result.anomalies.length > 0 ? 'text-data-negative' : 'text-data-positive'}`}>
+              <div className="text-text-color-muted" style={{ fontWeight: 500 }}>Issues</div>
+              <div className={`  ${result.anomalies.length > 0 ? 'text-data-negative' : 'text-data-positive'}`}>
                 {result.anomalies.length}
               </div>
             </div>
             <div className="bg-surface-0 rounded-card-sm p-2 border border-border-light">
-              <div className="text-text-color-muted font-medium">Critical</div>
-              <div className={`text-base font-semibold ${result.anomalies.filter((a) => a.severity === 'critical').length > 0 ? 'text-data-negative' : 'text-data-positive'}`}>
+              <div className="text-text-color-muted" style={{ fontWeight: 500 }}>Critical</div>
+              <div className={`  ${result.anomalies.filter((a) => a.severity === 'critical').length > 0 ? 'text-data-negative' : 'text-data-positive'}`}>
                 {result.anomalies.filter((a) => a.severity === 'critical').length}
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
           {/* Anomalies list */}
           {result.anomalies.length > 0 && (
             <div className="border-t border-border-light pt-3">
-              <h4 className="text-xs font-semibold text-text-color-primary mb-2">Anomalies</h4>
+              <h4 className="text-text-color-primary mb-2" style={{ fontSize: 12, fontWeight: 600 }}>Anomalies</h4>
               <div className="space-y-2 max-h-48 overflow-y-auto">
                 {result.anomalies.map((anomaly, idx) => (
                   <div
@@ -165,7 +165,7 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
                   >
                     <div className="flex items-start gap-2">
                       <span
-                        className={`text-xs font-bold px-1.5 py-0.5 rounded ${
+                        className={`  px-1.5 py-0.5 rounded ${
                           anomaly.severity === 'critical'
                             ? 'bg-data-negative text-white'
                             : 'bg-data-neutral text-white'
@@ -175,11 +175,11 @@ export default function DataQualityStatus({ adminToken, onError }: DataQualitySt
                       </span>
                       <div className="flex-1">
                         {anomaly.nosCode && (
-                          <div className="text-xs font-mono text-text-color-secondary mb-0.5">
+                          <div className="font-mono text-text-color-secondary mb-0.5" style={{ fontSize: 12 }}>
                             NOS {anomaly.nosCode}
                           </div>
                         )}
-                        <p className="text-xs text-text-color-primary leading-tight">
+                        <p className="text-text-color-primary leading-tight" style={{ fontSize: 12 }}>
                           {anomaly.description}
                         </p>
                       </div>

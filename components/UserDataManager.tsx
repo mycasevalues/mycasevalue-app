@@ -22,9 +22,9 @@ export function SavedReportsSection() {
       }}
     >
       <h2
-        className="text-xl font-bold mb-4"
-        style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}
-      >
+ className="mb-4"
+ style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}
+ >
         Saved Reports
       </h2>
       <p style={{ color: 'var(--text2)', fontSize: 14, marginBottom: 16 }}>
@@ -160,9 +160,9 @@ export function SearchHistorySection() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
         <div>
           <h2
-            className="text-xl font-bold"
-            style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}
-          >
+ 
+ style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}
+ >
             Search History
           </h2>
           <p style={{ color: 'var(--text2)', fontSize: 14, marginTop: 4 }}>
@@ -344,9 +344,9 @@ export function UserPreferencesSection() {
       }}
     >
       <h2
-        className="text-xl font-bold mb-6"
-        style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}
-      >
+ className="mb-6"
+ style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}
+ >
         Preferences
       </h2>
 

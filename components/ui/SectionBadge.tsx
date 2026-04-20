@@ -16,7 +16,7 @@ export function SectionBadge({ label }: SectionBadgeProps) {
           background: 'var(--link)',
           borderRadius: '50%',
         }}></span>
-        <span className="text-xs font-medium tracking-[0.5px] uppercase" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)' }}>
+        <span className="tracking-[0.5px] uppercase" style={{ color: 'var(--text2)', fontFamily: 'var(--font-ui)', fontSize: 12, fontWeight: 500 }}>
           {label}
         </span>
       </div>

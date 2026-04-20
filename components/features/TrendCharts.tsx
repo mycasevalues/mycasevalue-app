@@ -104,13 +104,11 @@ export default function TrendCharts() {
         }}
       >
         <h3
-          className="text-lg font-semibold mb-6"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontWeight: 600,
-            color: 'var(--text1)',
-          }}
-        >
+ className="mb-6"
+ style={{ fontFamily: 'var(--font-ui)',
+ fontWeight: 600,
+ color: 'var(--text1)', fontSize: 16 }}
+ >
           Federal Filing Trends (2015–2024)
         </h3>
         <p style={{ color: 'var(--text2)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
@@ -150,13 +148,11 @@ export default function TrendCharts() {
         }}
       >
         <h3
-          className="text-lg font-semibold mb-6"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontWeight: 600,
-            color: 'var(--text1)',
-          }}
-        >
+ className="mb-6"
+ style={{ fontFamily: 'var(--font-ui)',
+ fontWeight: 600,
+ color: 'var(--text1)', fontSize: 16 }}
+ >
           Win Rate Trends by Category (2018–2024)
         </h3>
         <p style={{ color: 'var(--text2)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
@@ -203,13 +199,11 @@ export default function TrendCharts() {
         }}
       >
         <h3
-          className="text-lg font-semibold mb-6"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontWeight: 600,
-            color: 'var(--text1)',
-          }}
-        >
+ className="mb-6"
+ style={{ fontFamily: 'var(--font-ui)',
+ fontWeight: 600,
+ color: 'var(--text1)', fontSize: 16 }}
+ >
           Top 15 Case Types by Filing Volume
         </h3>
         <p style={{ color: 'var(--text2)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
@@ -240,13 +234,11 @@ export default function TrendCharts() {
         }}
       >
         <h3
-          className="text-lg font-semibold mb-6"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontWeight: 600,
-            color: 'var(--text1)',
-          }}
-        >
+ className="mb-6"
+ style={{ fontFamily: 'var(--font-ui)',
+ fontWeight: 600,
+ color: 'var(--text1)', fontSize: 16 }}
+ >
           Settlement Rate Trends (2015–2024)
         </h3>
         <p style={{ color: 'var(--text2)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
@@ -286,13 +278,11 @@ export default function TrendCharts() {
         }}
       >
         <h3
-          className="text-lg font-semibold mb-6"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontWeight: 600,
-            color: 'var(--text1)',
-          }}
-        >
+ className="mb-6"
+ style={{ fontFamily: 'var(--font-ui)',
+ fontWeight: 600,
+ color: 'var(--text1)', fontSize: 16 }}
+ >
           Circuit Court Win Rates
         </h3>
         <p style={{ color: 'var(--text2)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
@@ -354,13 +344,11 @@ export default function TrendCharts() {
         }}
       >
         <h3
-          className="text-lg font-semibold mb-6"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontWeight: 600,
-            color: 'var(--text1)',
-          }}
-        >
+ className="mb-6"
+ style={{ fontFamily: 'var(--font-ui)',
+ fontWeight: 600,
+ color: 'var(--text1)', fontSize: 16 }}
+ >
           How Cases End
         </h3>
         <p style={{ color: 'var(--text2)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>
@@ -419,13 +407,11 @@ export default function TrendCharts() {
         }}
       >
         <h3
-          className="text-lg font-semibold mb-6"
-          style={{
-            fontFamily: 'var(--font-ui)',
-            fontWeight: 600,
-            color: 'var(--text1)',
-          }}
-        >
+ className="mb-6"
+ style={{ fontFamily: 'var(--font-ui)',
+ fontWeight: 600,
+ color: 'var(--text1)', fontSize: 16 }}
+ >
           Settlement vs. Trial Duration by Category
         </h3>
         <p style={{ color: 'var(--text2)', fontSize: '14px', marginBottom: '16px', fontFamily: 'var(--font-ui)' }}>

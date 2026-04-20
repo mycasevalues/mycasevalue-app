@@ -173,10 +173,10 @@ export default function ShortcutHelpModal({ isOpen, onClose }: ShortcutHelpModal
           }}
         >
           <h2
-            id="shortcut-help-title"
-            className="text-base font-semibold"
-            style={{ fontFamily: 'var(--font-ui, "Source Sans 3", sans-serif)' }}
-          >
+ id="shortcut-help-title"
+ 
+ style={{ fontFamily: 'var(--font-ui, "Source Sans 3", sans-serif)', fontSize: 14, fontWeight: 600 }}
+ >
             Keyboard Shortcuts
           </h2>
           <button
@@ -196,21 +196,19 @@ export default function ShortcutHelpModal({ isOpen, onClose }: ShortcutHelpModal
           {SHORTCUT_CATEGORIES.map((section) => (
             <div key={section.category} className="mb-6 last:mb-0">
               <h3
-                className="text-[11px] font-semibold uppercase tracking-widest mb-3"
-                style={{
-                  color: 'var(--gold, #C4882A)',
-                  fontFamily: 'var(--font-ui, "Source Sans 3", sans-serif)',
-                }}
-              >
+ className="text-[11px] uppercase tracking-widest mb-3"
+ style={{ color: 'var(--gold, #C4882A)',
+ fontFamily: 'var(--font-ui, "Source Sans 3", sans-serif)', fontWeight: 600 }}
+ >
                 {section.category}
               </h3>
               <div className="space-y-2">
                 {section.items.map((shortcut, i) => (
                   <div key={i} className="flex items-center justify-between py-1">
                     <span
-                      className="text-sm"
-                      style={{ color: 'var(--text-primary, #1B2D45)' }}
-                    >
+ 
+ style={{ color: 'var(--text-primary, #1B2D45)', fontSize: 14 }}
+ >
                       {shortcut.description}
                     </span>
                     <div className="flex items-center gap-1 ml-4 flex-shrink-0">
@@ -218,23 +216,21 @@ export default function ShortcutHelpModal({ isOpen, onClose }: ShortcutHelpModal
                         <React.Fragment key={ki}>
                           {ki > 0 && (
                             <span
-                              className="text-xs mx-0.5"
-                              style={{ color: 'var(--text-tertiary, #8A8A8A)' }}
-                            >
+ className="mx-0.5"
+ style={{ color: 'var(--text-tertiary, #8A8A8A)', fontSize: 12 }}
+ >
                               +
                             </span>
                           )}
                           <kbd
-                            className="inline-flex items-center justify-center min-w-[26px] h-[26px] px-1.5 text-xs font-medium"
-                            style={{
-                              fontFamily: 'var(--font-mono, "IBM Plex Mono", monospace)',
-                              color: 'var(--text-primary, #1B2D45)',
-                              background: 'var(--card, #FFFFFF)',
-                              border: '1px solid var(--bdr, #E2DFD8)',
-                              borderRadius: '2px',
-                              boxShadow: '0 1px 2px rgba(0,0,0,0.06)',
-                            }}
-                          >
+ className="inline-flex items-center justify-center min-w-[26px] h-[26px] px-1.5"
+ style={{ fontFamily: 'var(--font-mono, "IBM Plex Mono", monospace)',
+ color: 'var(--text-primary, #1B2D45)',
+ background: 'var(--card, #FFFFFF)',
+ border: '1px solid var(--bdr, #E2DFD8)',
+ borderRadius: '2px',
+ boxShadow: '0 1px 2px rgba(0,0,0,0.06)', fontSize: 12, fontWeight: 500 }}
+ >
                             {k}
                           </kbd>
                         </React.Fragment>
@@ -258,14 +254,12 @@ export default function ShortcutHelpModal({ isOpen, onClose }: ShortcutHelpModal
           <p className="text-[11px]" style={{ color: 'var(--text-tertiary, #8A8A8A)' }}>
             Press{' '}
             <kbd
-              className="px-1 py-0.5 text-[10px] font-medium"
-              style={{
-                fontFamily: 'var(--font-mono, "IBM Plex Mono", monospace)',
-                background: 'var(--surf, #F6F5F2)',
-                border: '1px solid var(--bdr, #E2DFD8)',
-                borderRadius: '2px',
-              }}
-            >
+ className="px-1 py-0.5 text-[10px]"
+ style={{ fontFamily: 'var(--font-mono, "IBM Plex Mono", monospace)',
+ background: 'var(--surf, #F6F5F2)',
+ border: '1px solid var(--bdr, #E2DFD8)',
+ borderRadius: '2px', fontWeight: 500 }}
+ >
               ?
             </kbd>{' '}
             anytime to toggle this panel

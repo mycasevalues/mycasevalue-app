@@ -123,15 +123,15 @@ export function Breadcrumb() {
 
       {/* Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="py-3">
-        <ol className="flex flex-wrap items-center gap-0 text-sm text-[var(--color-text-muted)]">
+        <ol className="flex flex-wrap items-center gap-0 text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>
           {breadcrumbs.map((crumb, index) => (
             <li key={crumb.href} className="flex items-center gap-0">
               {crumb.isCurrent ? (
                 // Current page: not a link, styled differently
                 <span
-                  aria-current="page"
-                  className="text-[var(--color-text-muted)] font-medium"
-                >
+ aria-current="page"
+ className="text-[var(--color-text-muted)]" style={{ fontWeight: 500 }}
+ >
                   {crumb.label}
                 </span>
               ) : (

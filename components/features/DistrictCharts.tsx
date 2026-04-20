@@ -43,12 +43,10 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           }}
         >
           <h3
-            className="text-lg font-bold mb-6"
-            style={{
-              color: 'var(--text1)',
-              fontFamily: 'var(--font-ui)',
-            }}
-          >
+ className="mb-6"
+ style={{ color: 'var(--text1)',
+ fontFamily: 'var(--font-ui)', fontSize: 16, fontWeight: 700 }}
+ >
             Top Case Types by Volume
           </h3>
           <ResponsiveContainer width="100%" height={300}>

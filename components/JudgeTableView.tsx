@@ -58,31 +58,31 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
         <ExportDropdown />
       </div>
       <div ref={tableRef} className="overflow-x-auto" tabIndex={0} role="grid" aria-label="Judge directory table">
-        <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
+        <table className="w-full" style={{ borderCollapse: 'separate', borderSpacing: 0, fontSize: 14 }}>
         <thead>
           <tr className="bg-[var(--color-surface-2)] border-b border-[var(--bdr, #E2DFD8)]">
-            <th className="text-left px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
-                onClick={() => onSort?.('name')}>
+            <th className="text-left px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
+ onClick={() = style={{ fontSize: 12, fontWeight: 600 }}> onSort?.('name')}>
               Judge <SortIcon active={sortBy === 'name'} order={sortOrder} />
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide whitespace-nowrap" style={{ fontSize: 12, fontWeight: 600 }}>
               District
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide whitespace-nowrap" style={{ fontSize: 12, fontWeight: 600 }}>
               Circuit
             </th>
-            <th className="text-right px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
-                onClick={() => onSort?.('cases')}>
+            <th className="text-right px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
+ onClick={() = style={{ fontSize: 12, fontWeight: 600 }}> onSort?.('cases')}>
               Cases <SortIcon active={sortBy === 'cases'} order={sortOrder} />
             </th>
-            <th className="text-right px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
-                onClick={() => onSort?.('winRate')}>
+            <th className="text-right px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide cursor-pointer hover:text-[var(--color-text-muted)] whitespace-nowrap"
+ onClick={() = style={{ fontSize: 12, fontWeight: 600 }}> onSort?.('winRate')}>
               Win % <SortIcon active={sortBy === 'winRate'} order={sortOrder} />
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide whitespace-nowrap" style={{ fontSize: 12, fontWeight: 600 }}>
               Appointed
             </th>
-            <th className="text-left px-3 py-2.5 font-semibold text-[var(--text2)] text-xs uppercase tracking-wide whitespace-nowrap">
+            <th className="text-left px-3 py-2.5 text-[var(--text2)] uppercase tracking-wide whitespace-nowrap" style={{ fontSize: 12, fontWeight: 600 }}>
               Party
             </th>
             <th className="w-10 px-2 py-2.5" aria-label="Save"></th>
@@ -118,32 +118,32 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
                     }
                   >
                     <Link
-                      href={`/judges/${judge.id}`}
-                      className="text-sm font-semibold text-[var(--color-text-muted)] hover:text-brand-blue transition-colors"
-                    >
+ href={`/judges/${judge.id}`}
+ className="text-[var(--color-text-muted)] hover:text-brand-blue transition-colors" style={{ fontSize: 14, fontWeight: 600 }}
+ >
                       {judge.full_name}
                     </Link>
                   </HoverPreview>
                 </td>
-                <td className="px-3 py-2 text-xs text-[var(--text2)] whitespace-nowrap">
+                <td className="px-3 py-2 text-[var(--text2)] whitespace-nowrap" style={{ fontSize: 12 }}>
                   {judge.district_id || '—'}
                 </td>
-                <td className="px-3 py-2 text-xs text-[var(--color-text-muted)] whitespace-nowrap">
+                <td className="px-3 py-2 text-[var(--color-text-muted)] whitespace-nowrap" style={{ fontSize: 12 }}>
                   {judge.circuit ? `${judge.circuit} Circuit` : '—'}
                 </td>
-                <td className="px-3 py-2 text-right font-mono text-xs font-semibold text-[var(--color-text-muted)]">
+                <td className="px-3 py-2 text-right font-mono text-[var(--color-text-muted)]" style={{ fontSize: 12, fontWeight: 600 }}>
                   {judge.total_cases_handled > 0 ? judge.total_cases_handled.toLocaleString() : '—'}
                 </td>
                 <td className="px-3 py-2 text-right">
                   {winRate != null ? (
-                    <span className="font-mono text-xs font-bold" style={{ color: wrColor }}>
+                    <span className="font-mono" style={{ color: wrColor, fontSize: 12, fontWeight: 700 }}>
                       {winRate.toFixed(1)}%
                     </span>
                   ) : (
-                    <span className="text-xs text-[var(--color-text-muted)]">—</span>
+                    <span className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>—</span>
                   )}
                 </td>
-                <td className="px-3 py-2 text-xs text-[var(--color-text-muted)] whitespace-nowrap">
+                <td className="px-3 py-2 text-[var(--color-text-muted)] whitespace-nowrap" style={{ fontSize: 12 }}>
                   {judge.appointment_date
                     ? new Date(judge.appointment_date).getFullYear()
                     : '—'}
@@ -156,12 +156,12 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
                 <td className="px-3 py-2">
                   {party && (
                     <span
-                      className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded"
-                      style={{
-                        color: partyColor,
-                        background: partyColor ? `${partyColor}15` : undefined,
-                      }}
-                    >
+ className="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded"
+ style={{
+ color: partyColor,
+ background: partyColor ? `${partyColor}15` : undefined,
+ }} style={{ fontWeight: 600 }}
+ >
                       <span
                         className="w-1.5 h-1.5 rounded-full"
                         style={{ background: partyColor }}
@@ -194,7 +194,7 @@ export default function JudgeTableView({ judges, onSort, sortBy = 'name', sortOr
         </table>
 
         {judges.length === 0 && (
-          <div className="py-16 text-center text-sm text-[var(--color-text-muted)]">
+          <div className="py-16 text-center text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>
             No judges match your filters
           </div>
         )}

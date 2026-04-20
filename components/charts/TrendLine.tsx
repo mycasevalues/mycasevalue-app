@@ -19,7 +19,7 @@ export function TrendLine({
   return (
     <div className="w-full p-6" style={{ background: 'var(--card)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
       {label && (
-        <div className="text-[13px] font-bold tracking-[0.5px] text-[var(--text2)] mb-4" style={{ fontFamily: 'var(--font-ui)' }}>{label}</div>
+        <div className="text-[13px] tracking-[0.5px] text-[var(--text2)] mb-4" style={{ fontFamily: 'var(--font-ui)', fontWeight: 700 }}>{label}</div>
       )}
       <ResponsiveContainer width="100%" height={200}>
         <AreaChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }}>
