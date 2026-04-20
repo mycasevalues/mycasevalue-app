@@ -185,6 +185,35 @@ const nextConfig = {
     { source: '/judge', destination: '/judges', permanent: true },
     { source: '/judge/:path*', destination: '/judges/:path*', permanent: true },
     { source: '/case', destination: '/cases', permanent: true },
+    // Missing /for/* audience pages → /solutions/* equivalents
+    { source: '/for/academic', destination: '/solutions/academic', permanent: true },
+    { source: '/for/legal-aid', destination: '/solutions/legal-aid', permanent: true },
+    // /report → /reports (the actual page is plural)
+    { source: '/report', destination: '/reports', permanent: true },
+    // /outcomes/[state] — legacy paths, send to /cases
+    { source: '/outcomes/:state([A-Z]{2})', destination: '/cases', permanent: true },
+    // /es/* untranslated pages → English equivalents (Spanish has only: disclaimer, faq, how-it-works, pricing, trends)
+    { source: '/es/sign-in', destination: '/sign-in', permanent: false },
+    { source: '/es/sign-up', destination: '/sign-up', permanent: false },
+    { source: '/es/about', destination: '/about', permanent: false },
+    { source: '/es/contact', destination: '/contact', permanent: false },
+    { source: '/es/blog', destination: '/blog', permanent: false },
+    { source: '/es/blog/:path*', destination: '/blog/:path*', permanent: false },
+    { source: '/es/cases', destination: '/cases', permanent: false },
+    { source: '/es/cases/:path*', destination: '/cases/:path*', permanent: false },
+    { source: '/es/judges', destination: '/judges', permanent: false },
+    { source: '/es/judges/:path*', destination: '/judges/:path*', permanent: false },
+    { source: '/es/districts', destination: '/districts', permanent: false },
+    { source: '/es/districts/:path*', destination: '/districts/:path*', permanent: false },
+    { source: '/es/calculator', destination: '/calculator', permanent: false },
+    { source: '/es/attorney', destination: '/attorney', permanent: false },
+    { source: '/es/attorney/:path*', destination: '/attorney/:path*', permanent: false },
+    { source: '/es/methodology', destination: '/methodology', permanent: false },
+    { source: '/es/methodology/:path*', destination: '/methodology/:path*', permanent: false },
+    { source: '/es/glossary', destination: '/glossary', permanent: false },
+    { source: '/es/glossary/:path*', destination: '/glossary/:path*', permanent: false },
+    { source: '/es/terms', destination: '/terms', permanent: false },
+    { source: '/es/privacy', destination: '/privacy', permanent: false },
   ],
 };
 
