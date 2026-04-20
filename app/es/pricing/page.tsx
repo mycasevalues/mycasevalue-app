@@ -93,7 +93,7 @@ export default function SpanishPricingPage() {
       <div className="border-b" style={{ background: 'var(--link)', borderColor: 'var(--bdr)' }}>
         <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-2 mb-8 text-sm">
+          <nav className="flex items-center gap-2 mb-8" style={{ fontSize: 14 }}>
             <a href="/es" style={{ color: 'var(--card)' }} className="hover:opacity-80 transition-opacity">
               Inicio
             </a>
@@ -102,15 +102,15 @@ export default function SpanishPricingPage() {
           </nav>
 
           {/* Red Accent Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '4px' }}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] tracking-[1.5px] uppercase mb-6"
+ style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '4px', fontWeight: 700 }}>
             OPCIONES DE PAGO
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4" style={{ color: 'var(--card)' }}>
+          <h1 className="font-legal mb-4" style={{ color: 'var(--card)', fontSize: 28, fontWeight: 700 }}>
             Precios Simples y Transparentes
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--card)', opacity: 0.9 }}>
+          <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--card)', opacity: 0.9, fontSize: 16 }}>
             Accede a datos de resultados de casos federales desde solo $5.99. Sin tarifas ocultas. Sin suscripciones obligatorias (a menos que quieras acceso ilimitado).
           </p>
         </div>
@@ -128,14 +128,14 @@ export default function SpanishPricingPage() {
               background: 'var(--card)',
             }}>
             <div className="mb-6">
-              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--text1)' }}>
+              <h3 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: 16, fontWeight: 600 }}>
                 Informe Individual
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: 'var(--text1)', fontFamily: 'var(--font-mono)' }}>
+                <span style={{ color: 'var(--text1)', fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700 }}>
                   $5.99
                 </span>
-                <span className="text-sm" style={{ color: 'var(--text2)' }}>
+                <span style={{ color: 'var(--text2)', fontSize: 14 }}>
                   de una sola vez
                 </span>
               </div>
@@ -154,7 +154,7 @@ export default function SpanishPricingPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: 'var(--text2)' }}>
+                  <span style={{ color: 'var(--text2)', fontSize: 14 }}>
                     {feature}
                   </span>
                 </li>
@@ -162,9 +162,9 @@ export default function SpanishPricingPage() {
             </ul>
 
             <Link
-              href="/search"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all hover:opacity-90"
-              style={{ borderRadius: '4px', background: 'var(--surf)', color: 'var(--text1)', border: '1px solid var(--bdr)' }}>
+ href="/search"
+ className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 transition-all hover:opacity-90"
+ style={{ borderRadius: '4px', background: 'var(--surf)', color: 'var(--text1)', border: '1px solid var(--bdr)', fontSize: 14, fontWeight: 600 }}>
               Comprar un informe
             </Link>
           </div>
@@ -176,20 +176,20 @@ export default function SpanishPricingPage() {
               borderColor: 'var(--link)',
               background: 'var(--card)',
             }}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ borderRadius: '4px', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--link)' }}>
+            <div className="inline-flex items-center gap-2 px-3 py-1 text-[11px] tracking-[1.5px] uppercase mb-4"
+ style={{ borderRadius: '4px', background: 'rgba(10, 102, 194, 0.08)', color: 'var(--link)', fontWeight: 700 }}>
               MEJOR VALOR
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--text1)' }}>
+              <h3 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: 16, fontWeight: 600 }}>
                 Informes Ilimitados
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: 'var(--link)', fontFamily: 'var(--font-mono)' }}>
+                <span style={{ color: 'var(--link)', fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700 }}>
                   $9.99
                 </span>
-                <span className="text-sm" style={{ color: 'var(--text2)' }}>
+                <span style={{ color: 'var(--text2)', fontSize: 14 }}>
                   /mes
                 </span>
               </div>
@@ -207,7 +207,7 @@ export default function SpanishPricingPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: 'var(--text2)' }}>
+                  <span style={{ color: 'var(--text2)', fontSize: 14 }}>
                     {feature}
                   </span>
                 </li>
@@ -215,9 +215,9 @@ export default function SpanishPricingPage() {
             </ul>
 
             <Link
-              href="/sign-up"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all hover:opacity-90"
-              style={{ borderRadius: '4px', background: 'var(--link)', color: 'var(--card)' }}>
+ href="/sign-up"
+ className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 transition-all hover:opacity-90"
+ style={{ borderRadius: '4px', background: 'var(--link)', color: 'var(--card)', fontSize: 14, fontWeight: 600 }}>
               Obtener ilimitado
             </Link>
           </div>
@@ -230,14 +230,14 @@ export default function SpanishPricingPage() {
               background: 'var(--card)',
             }}>
             <div className="mb-6">
-              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--text1)' }}>
+              <h3 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: 16, fontWeight: 600 }}>
                 Modo Abogado
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>
+                <span style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)', fontSize: 28, fontWeight: 700 }}>
                   $29.99
                 </span>
-                <span className="text-sm" style={{ color: 'var(--text2)' }}>
+                <span style={{ color: 'var(--text2)', fontSize: 14 }}>
                   /mes
                 </span>
               </div>
@@ -258,7 +258,7 @@ export default function SpanishPricingPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--link)" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: 'var(--text2)' }}>
+                  <span style={{ color: 'var(--text2)', fontSize: 14 }}>
                     {feature}
                   </span>
                 </li>
@@ -266,9 +266,9 @@ export default function SpanishPricingPage() {
             </ul>
 
             <Link
-              href="/attorney"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all hover:opacity-90"
-              style={{ borderRadius: '4px', background: 'var(--gold)', color: 'var(--card)' }}>
+ href="/attorney"
+ className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 transition-all hover:opacity-90"
+ style={{ borderRadius: '4px', background: 'var(--gold)', color: 'var(--card)', fontSize: 14, fontWeight: 600 }}>
               Probar Modo Abogado
             </Link>
           </div>
@@ -277,14 +277,14 @@ export default function SpanishPricingPage() {
 
         {/* Plan Notes */}
         <div className="text-center p-6 mb-12" style={{ background: 'var(--card)', borderColor: 'var(--bdr)', border: '1px solid var(--bdr)', borderRadius: '4px' }}>
-          <p className="text-sm" style={{ color: 'var(--text2)' }}>
+          <p style={{ color: 'var(--text2)', fontSize: 14 }}>
             Todos los planes incluyen citas de fuentes, soporte bilingüe (inglés/español) y un aviso de "no es asesoramiento legal".
           </p>
         </div>
 
         {/* Pricing FAQ */}
         <section>
-          <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: 'var(--text1)' }}>
+          <h2 className="mb-8 text-center" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             Preguntas sobre Precios
           </h2>
           <div className="space-y-3 max-w-3xl mx-auto">
@@ -298,8 +298,8 @@ export default function SpanishPricingPage() {
                   background: 'var(--card)',
                 }}
               >
-                <summary className="flex items-start justify-between font-semibold select-none" style={{ color: 'var(--text1)' }}>
-                  <span className="flex-1 text-base leading-relaxed pr-4">
+                <summary className="flex items-start justify-between select-none" style={{ color: 'var(--text1)', fontWeight: 600 }}>
+                  <span className="flex-1 leading-relaxed pr-4" style={{ fontSize: 14 }}>
                     {faq.q}
                   </span>
                   <svg
@@ -316,7 +316,7 @@ export default function SpanishPricingPage() {
                   </svg>
                 </summary>
                 <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--bdr)' }}>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
+                  <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: 14 }}>
                     {faq.a}
                   </p>
                 </div>
@@ -327,15 +327,15 @@ export default function SpanishPricingPage() {
 
         {/* CTA Section */}
         <section className="mt-16 text-center p-8 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
-          <h2 className="text-2xl font-bold mb-3" style={{ color: 'var(--text1)' }}>
+          <h2 className="mb-3" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             ¿Listo para ver tus probabilidades de caso?
           </h2>
           <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--text2)' }}>
             Genera tu informe básico gratuito instantáneamente, luego actualiza a características premium si deseas análisis más profundo.
           </p>
           <a href="/odds"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '2px', background: 'var(--link)', color: 'var(--card)' }}>
+ className="inline-flex items-center gap-2 px-6 py-3 transition-all"
+ style={{ borderRadius: '2px', background: 'var(--link)', color: 'var(--card)', fontSize: 14, fontWeight: 600 }}>
             Consultar Mi Tipo de Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -346,7 +346,7 @@ export default function SpanishPricingPage() {
       {/* Available Tools Section */}
       <div style={{ background: 'var(--card)', borderTop: '1px solid var(--bdr)', padding: '48px 24px' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text1)' }}>
+          <h2 className="mb-6" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -357,7 +357,7 @@ export default function SpanishPricingPage() {
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Buscar Casos</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Buscar Casos</h3>
               </div>
             </Link>
 
@@ -368,7 +368,7 @@ export default function SpanishPricingPage() {
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Calculadora</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Calculadora</h3>
               </div>
             </Link>
 
@@ -379,7 +379,7 @@ export default function SpanishPricingPage() {
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Comparar Tipos</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Comparar Tipos</h3>
               </div>
             </Link>
 
@@ -390,14 +390,14 @@ export default function SpanishPricingPage() {
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Explorador NOS</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Explorador NOS</h3>
               </div>
             </Link>
           </div>
 
           {/* Language Switcher */}
           <div className="mt-12 p-6 text-center" style={{ background: 'var(--surf)', borderRadius: '4px' }}>
-            <p className="text-sm" style={{ color: 'var(--text2)' }}>
+            <p style={{ color: 'var(--text2)', fontSize: 14 }}>
               This page is also available in <Link href="/pricing" style={{ color: 'var(--gold)', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>
           </div>

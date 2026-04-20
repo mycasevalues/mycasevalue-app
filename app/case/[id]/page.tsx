@@ -106,14 +106,14 @@ export default function CaseDetailPage() {
       <div className="min-h-screen" style={{ background: 'var(--surf)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 text-center">
           
-          <h1 className="text-lg font-semibold text-[var(--color-text-muted)] mb-2">{error || 'Case not found'}</h1>
-          <p className="text-sm text-[var(--color-text-muted)] mb-4">
+          <h1 className="text-[var(--color-text-muted)] mb-2" style={{ fontSize: 16, fontWeight: 600 }}>{error || 'Case not found'}</h1>
+          <p className="text-[var(--color-text-muted)] mb-4" style={{ fontSize: 14 }}>
             The case you are looking for may not exist in our database yet.
           </p>
           <Link
-            href="/case-search"
-            className="inline-flex items-center text-sm text-brand-blue hover:underline"
-          >
+ href="/case-search"
+ className="inline-flex items-center text-brand-blue hover:underline" style={{ fontSize: 14 }}
+ >
             &larr; Back to search
           </Link>
         </div>
@@ -142,9 +142,9 @@ export default function CaseDetailPage() {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3">
           <Link
-            href="/case-search"
-            className="text-xs text-[var(--color-text-muted)] hover:text-brand-blue transition-colors"
-          >
+ href="/case-search"
+ className="text-[var(--color-text-muted)] hover:text-brand-blue transition-colors" style={{ fontSize: 12 }}
+ >
             &larr; Back to search
           </Link>
         </div>
@@ -154,25 +154,23 @@ export default function CaseDetailPage() {
         {/* ── SECTION 1: HEADER ── */}
         <div>
           <div className="flex items-start justify-between gap-4 mb-3">
-            <h1 className="text-xl font-bold text-[var(--color-text-muted)] leading-snug">
+            <h1 className="text-[var(--color-text-muted)] leading-snug" style={{ fontSize: 20, fontWeight: 700 }}>
               {c.caseName}
             </h1>
             {c.status && (
               <span
-                className="flex-shrink-0 text-[10px] font-semibold px-2.5 py-1 rounded uppercase tracking-wider"
-                style={{
-                  background: c.status === 'open' ? 'rgba(10,80,162,0.10)' : c.status === 'closed' ? 'rgba(22,101,52,0.15)' : 'rgba(255,255,255,0.05)',
-                  color: c.status === 'open' ? 'var(--link)' : c.status === 'closed' ? '#4ade80' : '#9ca3af',
-                }}
-              >
+ className="flex-shrink-0 text-[10px] px-2.5 py-1 rounded uppercase tracking-wider"
+ style={{ background: c.status === 'open' ? 'rgba(10,80,162,0.10)' : c.status === 'closed' ? 'rgba(22,101,52,0.15)' : 'rgba(255,255,255,0.05)',
+ color: c.status === 'open' ? 'var(--link)' : c.status === 'closed' ? '#4ade80' : '#9ca3af', fontWeight: 600 }}
+ >
                 {c.status}
               </span>
             )}
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--color-text-muted)]">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>
             {c.court && (
-              <span className="font-medium text-[var(--color-text-muted)]">{c.court.name}</span>
+              <span className="text-[var(--color-text-muted)]" style={{ fontWeight: 500 }}>{c.court.name}</span>
             )}
             {c.docketNumber && <span>No. {c.docketNumber}</span>}
             {c.filingDate && (
@@ -187,11 +185,11 @@ export default function CaseDetailPage() {
         {/* ── SECTION 2: AI SUMMARY ── */}
         {c.summary && (
           <Section title="Case Overview">
-            <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
+            <p className="text-[var(--color-text-muted)] leading-relaxed" style={{ fontSize: 14 }}>
               {c.summary.text}
             </p>
             {c.summary.confidenceNotes && c.summary.confidenceNotes !== 'No confidence notes.' && (
-              <p className="text-xs text-[var(--color-text-muted)] mt-3 italic">
+              <p className="text-[var(--color-text-muted)] mt-3 italic" style={{ fontSize: 12 }}>
                 Note: {c.summary.confidenceNotes}
               </p>
             )}
@@ -223,14 +221,12 @@ export default function CaseDetailPage() {
                   <div className="flex flex-wrap gap-1.5">
                     {c.tags.map((t) => (
                       <span
-                        key={`${t.category}-${t.tag}`}
-                        className="text-xs px-2.5 py-1 rounded border"
-                        style={{
-                          borderColor: 'var(--bdr)',
-                          color: 'var(--text2)',
-                          background: t.category === 'practice_area' ? 'rgba(10,80,162,0.10)' : t.category === 'claim_type' ? 'rgba(234,179,8,0.12)' : 'transparent',
-                        }}
-                      >
+ key={`${t.category}-${t.tag}`}
+ className="px-2.5 py-1 rounded border"
+ style={{ borderColor: 'var(--bdr)',
+ color: 'var(--text2)',
+ background: t.category === 'practice_area' ? 'rgba(10,80,162,0.10)' : t.category === 'claim_type' ? 'rgba(234,179,8,0.12)' : 'transparent', fontSize: 12 }}
+ >
                         {t.tag}
                       </span>
                     ))}
@@ -269,8 +265,8 @@ export default function CaseDetailPage() {
                   style={{ borderColor: 'var(--bdr)' }}
                 >
                   <div>
-                    <p className="text-sm font-medium text-[var(--color-text-muted)]">{op.title}</p>
-                    <p className="text-xs text-[var(--color-text-muted)]">
+                    <p className="text-[var(--color-text-muted)]" style={{ fontSize: 14, fontWeight: 500 }}>{op.title}</p>
+                    <p className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>
                       {op.author && `${op.author} · `}
                       {op.date && new Date(op.date).toLocaleDateString()}
                       {op.citation && ` · ${op.citation}`}
@@ -278,11 +274,11 @@ export default function CaseDetailPage() {
                   </div>
                   {op.sourceUrl && (
                     <a
-                      href={op.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-brand-blue hover:underline flex-shrink-0"
-                    >
+ href={op.sourceUrl}
+ target="_blank"
+ rel="noopener noreferrer"
+ className="text-brand-blue hover:underline flex-shrink-0" style={{ fontSize: 12 }}
+ >
                       View
                     </a>
                   )}
@@ -302,33 +298,33 @@ export default function CaseDetailPage() {
                   className="flex items-start gap-3 py-2 border-b last:border-0"
                   style={{ borderColor: 'var(--bdr)' }}
                 >
-                  <span className="text-xs text-[var(--color-text-muted)] w-10 flex-shrink-0 text-right tabular-nums">
+                  <span className="text-[var(--color-text-muted)] w-10 flex-shrink-0 text-right tabular-nums" style={{ fontSize: 12 }}>
                     #{f.number || i + 1}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-[var(--color-text-muted)] truncate">
+                    <p className="text-[var(--color-text-muted)] truncate" style={{ fontSize: 14 }}>
                       {f.title || 'Filing'}
                     </p>
                     {f.date && (
-                      <p className="text-xs text-[var(--color-text-muted)]">
+                      <p className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>
                         {new Date(f.date).toLocaleDateString()}
                       </p>
                     )}
                   </div>
                   {f.documentUrl && (
                     <a
-                      href={f.documentUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-brand-blue hover:underline flex-shrink-0"
-                    >
+ href={f.documentUrl}
+ target="_blank"
+ rel="noopener noreferrer"
+ className="text-brand-blue hover:underline flex-shrink-0" style={{ fontSize: 12 }}
+ >
                       Doc
                     </a>
                   )}
                 </div>
               ))}
               {c.filings.length > 20 && (
-                <p className="text-xs text-[var(--color-text-muted)] pt-2">
+                <p className="text-[var(--color-text-muted)] pt-2" style={{ fontSize: 12 }}>
                   Showing 20 of {c.filings.length} filings
                 </p>
               )}
@@ -341,21 +337,21 @@ export default function CaseDetailPage() {
           <div className="space-y-2">
             {c.sources.length > 0 ? (
               c.sources.map((s, i) => (
-                <div key={i} className="flex items-center justify-between text-sm">
+                <div key={i} className="flex items-center justify-between" style={{ fontSize: 14 }}>
                   <span className="text-[var(--color-text-muted)] capitalize">{s.sourceName.replace(/_/g, ' ')}</span>
                   <div className="flex items-center gap-3">
                     {s.fetchedAt && (
-                      <span className="text-xs text-[var(--color-text-muted)]">
+                      <span className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>
                         Last synced {new Date(s.fetchedAt).toLocaleDateString()}
                       </span>
                     )}
                     {s.sourceUrl && (
                       <a
-                        href={s.sourceUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-brand-blue hover:underline"
-                      >
+ href={s.sourceUrl}
+ target="_blank"
+ rel="noopener noreferrer"
+ className="text-brand-blue hover:underline" style={{ fontSize: 12 }}
+ >
                         View source
                       </a>
                     )}
@@ -363,7 +359,7 @@ export default function CaseDetailPage() {
                 </div>
               ))
             ) : (
-              <p className="text-sm text-[var(--color-text-muted)]">
+              <p className="text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>
                 Data from public federal court records.
               </p>
             )}
@@ -385,16 +381,16 @@ export default function CaseDetailPage() {
                   style={{ borderColor: 'var(--bdr)' }}
                 >
                   <div>
-                    <p className="text-sm text-[var(--color-text-muted)] group-hover:text-brand-blue transition-colors">
+                    <p className="text-[var(--color-text-muted)] group-hover:text-brand-blue transition-colors" style={{ fontSize: 14 }}>
                       {rc.caseName}
                     </p>
-                    <p className="text-xs text-[var(--color-text-muted)]">
+                    <p className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>
                       {rc.courtAbbreviation && `${rc.courtAbbreviation} · `}
                       {rc.filingDate && new Date(rc.filingDate).getFullYear()}
                       {rc.caseType && ` · ${rc.caseType}`}
                     </p>
                   </div>
-                  <span className="text-xs text-[var(--color-text-muted)]">&rarr;</span>
+                  <span className="text-[var(--color-text-muted)]" style={{ fontSize: 12 }}>&rarr;</span>
                 </Link>
               ))}
             </div>
@@ -413,7 +409,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       className="rounded border p-5"
       style={{ borderColor: 'var(--bdr)', background: 'var(--card)' }}
     >
-      <h2 className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-3">
+      <h2 className="text-[var(--color-text-muted)] uppercase tracking-wider mb-3" style={{ fontSize: 12, fontWeight: 600 }}>
         {title}
       </h2>
       {children}
@@ -424,8 +420,8 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function DetailRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="text-xs text-[var(--color-text-muted)] w-32 flex-shrink-0">{label}</span>
-      <span className="text-sm text-[var(--color-text-muted)]">{value}</span>
+      <span className="text-[var(--color-text-muted)] w-32 flex-shrink-0" style={{ fontSize: 12 }}>{label}</span>
+      <span className="text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>{value}</span>
     </div>
   );
 }
@@ -446,10 +442,10 @@ function ordinalSuffix(n: string): string {
 function PartyGroup({ label, parties }: { label: string; parties: Array<{ name: string; role: string }> }) {
   return (
     <div>
-      <p className="text-xs font-medium text-[var(--color-text-muted)] mb-2">{label}</p>
+      <p className="text-[var(--color-text-muted)] mb-2" style={{ fontSize: 12, fontWeight: 500 }}>{label}</p>
       <ul className="space-y-1">
         {parties.map((p, i) => (
-          <li key={i} className="text-sm text-[var(--color-text-muted)]">
+          <li key={i} className="text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>
             {p.name}
           </li>
         ))}

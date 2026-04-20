@@ -183,7 +183,7 @@ export default function SpanishFAQPage() {
       <div className="border-b" style={{ background: 'var(--link)', borderColor: 'var(--bdr)' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-2 mb-8 text-sm">
+          <nav className="flex items-center gap-2 mb-8" style={{ fontSize: 14 }}>
             <a href="/es" style={{ color: 'var(--card)' }} className="hover:opacity-80 transition-opacity">
               Inicio
             </a>
@@ -192,15 +192,15 @@ export default function SpanishFAQPage() {
           </nav>
 
           {/* Red Accent Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px' }}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] tracking-[1.5px] uppercase mb-6"
+ style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px', fontWeight: 700 }}>
             AYUDA
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4" style={{ color: 'var(--card)' }}>
+          <h1 className="font-legal mb-4" style={{ color: 'var(--card)', fontSize: 28, fontWeight: 700 }}>
             Preguntas Frecuentes
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--card)', opacity: 0.9 }}>
+          <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--card)', opacity: 0.9, fontSize: 16 }}>
             Obtén respuestas a preguntas frecuentes sobre MyCaseValue, datos judiciales federales y cómo usar estadísticas de resultados.
           </p>
         </div>
@@ -211,7 +211,7 @@ export default function SpanishFAQPage() {
         <div className="space-y-12">
           {faqs.map((section, sectionIdx) => (
             <section key={sectionIdx}>
-              <h2 className="text-xl font-bold mb-6" style={{ color: 'var(--text1)' }}>
+              <h2 className="mb-6" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                 {section.category}
               </h2>
               <div className="space-y-3">
@@ -225,8 +225,8 @@ export default function SpanishFAQPage() {
                       background: 'var(--card)',
                     }}
                   >
-                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: 'var(--text1)' }}>
-                      <span className="flex-1 text-base leading-relaxed pr-4">
+                    <summary className="flex items-start justify-between select-none" style={{ color: 'var(--text1)', fontWeight: 600 }}>
+                      <span className="flex-1 leading-relaxed pr-4" style={{ fontSize: 14 }}>
                         {faq.q}
                       </span>
                       <svg
@@ -243,7 +243,7 @@ export default function SpanishFAQPage() {
                       </svg>
                     </summary>
                     <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--bdr)' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: 'var(--text2)' }}>
+                      <p className="leading-relaxed" style={{ color: 'var(--text2)', fontSize: 14 }}>
                         {faq.a}
                       </p>
                     </div>
@@ -256,15 +256,15 @@ export default function SpanishFAQPage() {
 
         {/* Still have questions */}
         <div className="mt-16 text-center p-8 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
-          <h2 className="text-2xl font-bold mb-3" style={{ color: 'var(--text1)' }}>
+          <h2 className="mb-3" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             ¿Aún tienes preguntas?
           </h2>
           <p className="mb-6" style={{ color: 'var(--text2)' }}>
             Ponte en contacto con nuestro equipo de soporte.
           </p>
           <a href="mailto:support@mycasevalues.com"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-            style={{ borderRadius: '4px', background: 'var(--card)', border: '1px solid var(--bdr)', color: 'var(--gold)' }}>
+ className="inline-flex items-center gap-2 px-5 py-2.5 transition-colors"
+ style={{ borderRadius: '4px', background: 'var(--card)', border: '1px solid var(--bdr)', color: 'var(--gold)', fontSize: 14, fontWeight: 600 }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contactar Soporte
           </a>
@@ -274,7 +274,7 @@ export default function SpanishFAQPage() {
       {/* Available Tools Section */}
       <div style={{ background: 'var(--card)', borderTop: '1px solid var(--bdr)', padding: '48px 24px' }}>
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text1)' }}>
+          <h2 className="mb-6" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -285,7 +285,7 @@ export default function SpanishFAQPage() {
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Buscar Casos</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Buscar Casos</h3>
               </div>
             </Link>
 
@@ -296,7 +296,7 @@ export default function SpanishFAQPage() {
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Calculadora</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Calculadora</h3>
               </div>
             </Link>
 
@@ -307,7 +307,7 @@ export default function SpanishFAQPage() {
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Comparar Tipos</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Comparar Tipos</h3>
               </div>
             </Link>
 
@@ -318,14 +318,14 @@ export default function SpanishFAQPage() {
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Explorador NOS</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Explorador NOS</h3>
               </div>
             </Link>
           </div>
 
           {/* Language Switcher */}
           <div className="mt-12 p-6 text-center" style={{ background: 'var(--surf)', borderRadius: '4px' }}>
-            <p className="text-sm" style={{ color: 'var(--text2)' }}>
+            <p style={{ color: 'var(--text2)', fontSize: 14 }}>
               This page is also available in <Link href="/faq" style={{ color: 'var(--gold)', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>
           </div>

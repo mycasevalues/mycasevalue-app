@@ -38,10 +38,10 @@ export default function SettingsPage() {
       {/* Navy Header */}
       <header style={{ backgroundColor: 'var(--link)' }} className="text-white py-8">
         <div className="max-w-6xl mx-auto px-6">
-          <h1 className="text-3xl font-bold" style={{ fontFamily: 'var(--font-legal)' }}>
+          <h1 style={{ fontFamily: 'var(--font-legal)', fontSize: 28, fontWeight: 700 }}>
             Settings
           </h1>
-          <p className="text-sm mt-2 opacity-90">Manage your account and preferences</p>
+          <p className="mt-2 opacity-90" style={{ fontSize: 14 }}>Manage your account and preferences</p>
         </div>
       </header>
 
@@ -67,13 +67,11 @@ export default function SettingsPage() {
                 { label: 'Subscription', id: 'subscription' },
               ].map((item) => (
                 <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className="settings-nav-link block px-3 py-2 text-sm rounded-sm transition-colors"
-                  style={{
-                    color: 'var(--text2)',
-                  }}
-                >
+ key={item.id}
+ href={`#${item.id}`}
+ className="settings-nav-link block px-3 py-2 rounded-sm transition-colors"
+ style={{ color: 'var(--text2)', fontSize: 14 }}
+ >
                   {item.label}
                 </a>
               ))}
@@ -91,73 +89,65 @@ export default function SettingsPage() {
                 backgroundColor: 'var(--card)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}>
+              <h2 className="mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                 Account Information
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--text2)' }}>
+                  <label className="block mb-2" style={{ color: 'var(--text2)', fontSize: 14, fontWeight: 600 }}>
                     Full Name
                   </label>
                   <div
-                    className="px-3 py-2 rounded-sm text-sm"
-                    style={{
-                      backgroundColor: 'var(--surf)',
-                      color: 'var(--text2)',
-                      border: '1px solid var(--bdr)',
-                    }}
-                  >
+ className="px-3 py-2 rounded-sm"
+ style={{ backgroundColor: 'var(--surf)',
+ color: 'var(--text2)',
+ border: '1px solid var(--bdr)', fontSize: 14 }}
+ >
                     John Federal Analyst
                   </div>
-                  <p className="text-xs mt-2" style={{ color: 'var(--text-tertiary)' }}>
+                  <p className="mt-2" style={{ color: 'var(--text-tertiary)', fontSize: 12 }}>
                     Display only. Contact support to change.
                   </p>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--text2)' }}>
+                  <label className="block mb-2" style={{ color: 'var(--text2)', fontSize: 14, fontWeight: 600 }}>
                     Email Address
                   </label>
                   <div
-                    className="px-3 py-2 rounded-sm text-sm"
-                    style={{
-                      backgroundColor: 'var(--surf)',
-                      color: 'var(--text2)',
-                      border: '1px solid var(--bdr)',
-                    }}
-                  >
+ className="px-3 py-2 rounded-sm"
+ style={{ backgroundColor: 'var(--surf)',
+ color: 'var(--text2)',
+ border: '1px solid var(--bdr)', fontSize: 14 }}
+ >
                     john@casecheck.legal
                   </div>
-                  <p className="text-xs mt-2" style={{ color: 'var(--text-tertiary)' }}>
+                  <p className="mt-2" style={{ color: 'var(--text-tertiary)', fontSize: 12 }}>
                     Primary account email
                   </p>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--text2)' }}>
+                  <label className="block mb-2" style={{ color: 'var(--text2)', fontSize: 14, fontWeight: 600 }}>
                     Account Created
                   </label>
                   <div
-                    className="px-3 py-2 rounded-sm text-sm"
-                    style={{
-                      backgroundColor: 'var(--surf)',
-                      color: 'var(--text2)',
-                      border: '1px solid var(--bdr)',
-                    }}
-                  >
+ className="px-3 py-2 rounded-sm"
+ style={{ backgroundColor: 'var(--surf)',
+ color: 'var(--text2)',
+ border: '1px solid var(--bdr)', fontSize: 14 }}
+ >
                     January 15, 2024
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--text2)' }}>
+                  <label className="block mb-2" style={{ color: 'var(--text2)', fontSize: 14, fontWeight: 600 }}>
                     Account Type
                   </label>
                   <div
-                    className="px-3 py-2 rounded-sm text-sm"
-                    style={{
-                      backgroundColor: 'var(--surf)',
-                      color: 'var(--text2)',
-                      border: '1px solid var(--bdr)',
-                    }}
-                  >
+ className="px-3 py-2 rounded-sm"
+ style={{ backgroundColor: 'var(--surf)',
+ color: 'var(--text2)',
+ border: '1px solid var(--bdr)', fontSize: 14 }}
+ >
                     Research User
                   </div>
                 </div>
@@ -173,22 +163,20 @@ export default function SettingsPage() {
                 backgroundColor: 'var(--card)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}>
+              <h2 className="mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                 Preferences
               </h2>
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-semibold mb-2" style={{ color: 'var(--text2)' }}>
+                  <label className="block mb-2" style={{ color: 'var(--text2)', fontSize: 14, fontWeight: 600 }}>
                     Default District
                   </label>
                   <select
-                    className="w-full px-3 py-2 rounded-sm text-sm"
-                    style={{
-                      border: '1px solid var(--bdr)',
-                      backgroundColor: 'var(--card)',
-                      color: 'var(--text2)',
-                    }}
-                  >
+ className="w-full px-3 py-2 rounded-sm"
+ style={{ border: '1px solid var(--bdr)',
+ backgroundColor: 'var(--card)',
+ color: 'var(--text2)', fontSize: 14 }}
+ >
                     <option>All Districts</option>
                     <option>N.D. California</option>
                     <option>C.D. California</option>
@@ -203,12 +191,12 @@ export default function SettingsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold mb-3" style={{ color: 'var(--text2)' }}>
+                  <label className="block mb-3" style={{ color: 'var(--text2)', fontSize: 14, fontWeight: 600 }}>
                     Preferred Case Types
                   </label>
                   <div className="space-y-2">
                     {['Patent', 'Copyright', 'Trademark', 'Antitrust', 'Securities', 'Employment'].map((caseType) => (
-                      <label key={caseType} className="flex items-center text-sm">
+                      <label key={caseType} className="flex items-center" style={{ fontSize: 14 }}>
                         <input
                           type="checkbox"
                           className="mr-3 rounded-sm"
@@ -224,7 +212,7 @@ export default function SettingsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold mb-3" style={{ color: 'var(--text2)' }}>
+                  <label className="block mb-3" style={{ color: 'var(--text2)', fontSize: 14, fontWeight: 600 }}>
                     Notification Preferences
                   </label>
                   <div className="space-y-2">
@@ -233,7 +221,7 @@ export default function SettingsPage() {
                       { label: 'Weekly litigation digest', checked: true },
                       { label: 'New judge assignment alerts', checked: false },
                     ].map((pref) => (
-                      <label key={pref.label} className="flex items-center text-sm">
+                      <label key={pref.label} className="flex items-center" style={{ fontSize: 14 }}>
                         <input
                           type="checkbox"
                           className="mr-3 rounded-sm"
@@ -259,43 +247,37 @@ export default function SettingsPage() {
                 backgroundColor: 'var(--card)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}>
+              <h2 className="mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                 Data & Privacy
               </h2>
-              <p className="text-sm mb-6" style={{ color: 'var(--text2)' }}>
+              <p className="mb-6" style={{ color: 'var(--text2)', fontSize: 14 }}>
                 Manage how your data is collected, used, and protected.
               </p>
               <div className="space-y-3">
                 <a
-                  href="/privacy"
-                  className="settings-link-button block px-4 py-3 rounded-sm text-sm font-medium transition-colors"
-                  style={{
-                    color: 'var(--gold)',
-                    border: '1px solid var(--bdr)',
-                    backgroundColor: 'var(--card)',
-                  }}
-                >
+ href="/privacy"
+ className="settings-link-button block px-4 py-3 rounded-sm transition-colors"
+ style={{ color: 'var(--gold)',
+ border: '1px solid var(--bdr)',
+ backgroundColor: 'var(--card)', fontSize: 14, fontWeight: 500 }}
+ >
                   View Privacy Policy {'>'}
                 </a>
                 <a
-                  href="/terms"
-                  className="settings-link-button block px-4 py-3 rounded-sm text-sm font-medium transition-colors"
-                  style={{
-                    color: 'var(--gold)',
-                    border: '1px solid var(--bdr)',
-                    backgroundColor: 'var(--card)',
-                  }}
-                >
+ href="/terms"
+ className="settings-link-button block px-4 py-3 rounded-sm transition-colors"
+ style={{ color: 'var(--gold)',
+ border: '1px solid var(--bdr)',
+ backgroundColor: 'var(--card)', fontSize: 14, fontWeight: 500 }}
+ >
                   Terms of Service {'>'}
                 </a>
                 <button
-                  className="settings-link-button w-full px-4 py-3 rounded-sm text-sm font-medium transition-colors text-left"
-                  style={{
-                    color: 'var(--gold)',
-                    border: '1px solid var(--bdr)',
-                    backgroundColor: 'var(--card)',
-                  }}
-                >
+ className="settings-link-button w-full px-4 py-3 rounded-sm transition-colors text-left"
+ style={{ color: 'var(--gold)',
+ border: '1px solid var(--bdr)',
+ backgroundColor: 'var(--card)', fontSize: 14, fontWeight: 500 }}
+ >
                   Request Data Export
                 </button>
               </div>
@@ -310,11 +292,11 @@ export default function SettingsPage() {
                 backgroundColor: 'var(--card)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}>
+              <h2 className="mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                 Appearance
               </h2>
               <div>
-                <label className="block text-sm font-semibold mb-3" style={{ color: 'var(--text2)' }}>
+                <label className="block mb-3" style={{ color: 'var(--text2)', fontSize: 14, fontWeight: 600 }}>
                   View Density
                 </label>
                 <div className="space-y-2">
@@ -322,7 +304,7 @@ export default function SettingsPage() {
                     { value: 'compact', label: 'Compact' },
                     { value: 'comfortable', label: 'Comfortable' },
                   ].map((option) => (
-                    <label key={option.value} className="flex items-center text-sm">
+                    <label key={option.value} className="flex items-center" style={{ fontSize: 14 }}>
                       <input
                         type="radio"
                         name="density"
@@ -364,7 +346,7 @@ export default function SettingsPage() {
                 backgroundColor: 'var(--card)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}>
+              <h2 className="mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                 Subscription
               </h2>
               <div
@@ -375,20 +357,18 @@ export default function SettingsPage() {
                 }}
               >
                 <div>
-                  <h3 className="font-semibold mb-1" style={{ color: 'var(--text1)' }}>
+                  <h3 className="mb-1" style={{ color: 'var(--text1)', fontWeight: 600 }}>
                     MyCaseValue Free Launch
                   </h3>
-                  <p className="text-sm" style={{ color: 'var(--text2)' }}>
+                  <p style={{ color: 'var(--text2)', fontSize: 14 }}>
                     Free access during public launch period. Premium features available during beta.
                   </p>
                 </div>
                 <div
-                  className="px-3 py-1 rounded-sm text-sm font-semibold whitespace-nowrap ml-4"
-                  style={{
-                    backgroundColor: 'var(--data-positive)',
-                    color: 'white',
-                  }}
-                >
+ className="px-3 py-1 rounded-sm whitespace-nowrap ml-4"
+ style={{ backgroundColor: 'var(--data-positive)',
+ color: 'white', fontSize: 14, fontWeight: 600 }}
+ >
                   Active
                 </div>
               </div>
@@ -396,7 +376,7 @@ export default function SettingsPage() {
 
             {/* Quick Links Section */}
             <section className="rounded-sm p-6" style={{ border: '1px solid var(--bdr)', backgroundColor: 'var(--card)' }}>
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)' }}>
+              <h2 className="mb-6" style={{ fontFamily: 'var(--font-ui)', color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                 Quick Links
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -409,15 +389,13 @@ export default function SettingsPage() {
                   { label: 'Contact Support', href: '/support' },
                 ].map((link) => (
                   <Link
-                    key={link.href}
-                    href={link.href}
-                    className="settings-link-button px-4 py-3 rounded-sm text-sm font-medium transition-colors"
-                    style={{
-                      color: 'var(--gold)',
-                      border: '1px solid var(--bdr)',
-                      backgroundColor: 'var(--card)',
-                    }}
-                  >
+ key={link.href}
+ href={link.href}
+ className="settings-link-button px-4 py-3 rounded-sm transition-colors"
+ style={{ color: 'var(--gold)',
+ border: '1px solid var(--bdr)',
+ backgroundColor: 'var(--card)', fontSize: 14, fontWeight: 500 }}
+ >
                     {link.label}
                   </Link>
                 ))}

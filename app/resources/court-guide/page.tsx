@@ -34,10 +34,10 @@ export default function CourtGuidePage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-900 to-blue-800 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-2xl font-bold text-white sm:text-3xl">
+          <h1 className="text-white " style={{ fontSize: 20, fontWeight: 700 }}>
             Federal Court Research Guide
           </h1>
-          <p className="mt-4 text-lg text-[var(--link)]">
+          <p className="mt-4 text-[var(--link)]" style={{ fontSize: 16 }}>
             for Non-Lawyers
           </p>
           <p className="mt-6 text-blue-50">
@@ -50,37 +50,37 @@ export default function CourtGuidePage() {
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Guide Overview */}
         <section className="mb-12">
-          <h2 className="mb-6 text-3xl font-bold text-[var(--color-text-muted)]">
+          <h2 className="mb-6 text-[var(--color-text-muted)]" style={{ fontSize: 28, fontWeight: 700 }}>
             What You'll Learn
           </h2>
-          <p className="mb-6 text-lg text-[var(--color-text-muted)]">
+          <p className="mb-6 text-[var(--color-text-muted)]" style={{ fontSize: 16 }}>
             This comprehensive 12-page guide walks you through federal court research in plain English. No legal background required.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded border border-[var(--bdr)] p-6">
-              <h3 className="mb-3 font-semibold text-blue-900">Court Fundamentals</h3>
+              <h3 className="mb-3 text-blue-900" style={{ fontWeight: 600 }}>Court Fundamentals</h3>
               <p className="text-[var(--color-text-muted)]">
                 Understand how federal courts work, why cases go to federal court, and how to find your district.
               </p>
             </div>
 
             <div className="rounded border border-[var(--bdr)] p-6">
-              <h3 className="mb-3 font-semibold text-blue-900">Case Documents & Data</h3>
+              <h3 className="mb-3 text-blue-900" style={{ fontWeight: 600 }}>Case Documents & Data</h3>
               <p className="text-[var(--color-text-muted)]">
                 Learn what complaints, motions, and judgments mean, and how to interpret win rates and settlements.
               </p>
             </div>
 
             <div className="rounded border border-[var(--bdr)] p-6">
-              <h3 className="mb-3 font-semibold text-blue-900">Using MyCaseValue</h3>
+              <h3 className="mb-3 text-blue-900" style={{ fontWeight: 600 }}>Using MyCaseValue</h3>
               <p className="text-[var(--color-text-muted)]">
                 Step-by-step instructions for researching case outcomes and comparing districts.
               </p>
             </div>
 
             <div className="rounded border border-[var(--bdr)] p-6">
-              <h3 className="mb-3 font-semibold text-blue-900">Taking Action</h3>
+              <h3 className="mb-3 text-blue-900" style={{ fontWeight: 600 }}>Taking Action</h3>
               <p className="text-[var(--color-text-muted)]">
                 When to hire an attorney, how to file pro se, and where to find free legal resources.
               </p>
@@ -90,51 +90,51 @@ export default function CourtGuidePage() {
 
         {/* Key Topics Section */}
         <section className="mb-12 rounded bg-[var(--surf)] p-8">
-          <h2 className="mb-6 text-2xl font-bold text-[var(--color-text-muted)]">
+          <h2 className="mb-6 text-[var(--color-text-muted)]" style={{ fontSize: 20, fontWeight: 700 }}>
             12 Pages of Practical Guidance
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
             <ul className="space-y-2 text-[var(--color-text-muted)]">
               <li className="flex items-start">
-                <span className="mr-3 text-blue-900 font-semibold">1.</span>
+                <span className="mr-3 text-blue-900" style={{ fontWeight: 600 }}>1.</span>
                 <span>What Is Federal Court?</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-blue-900 font-semibold">2.</span>
+                <span className="mr-3 text-blue-900" style={{ fontWeight: 600 }}>2.</span>
                 <span>Finding Your Federal District</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-blue-900 font-semibold">3.</span>
+                <span className="mr-3 text-blue-900" style={{ fontWeight: 600 }}>3.</span>
                 <span>Understanding Nature of Suit Codes</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-blue-900 font-semibold">4.</span>
+                <span className="mr-3 text-blue-900" style={{ fontWeight: 600 }}>4.</span>
                 <span>What Case Documents Mean</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-blue-900 font-semibold">5.</span>
+                <span className="mr-3 text-blue-900" style={{ fontWeight: 600 }}>5.</span>
                 <span>How to Read Win Rates & Settlement Data</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-blue-900 font-semibold">6.</span>
+                <span className="mr-3 text-blue-900" style={{ fontWeight: 600 }}>6.</span>
                 <span>How to Use MyCaseValue Step by Step</span>
               </li>
             </ul>
             <ul className="space-y-2 text-[var(--color-text-muted)]">
               <li className="flex items-start">
-                <span className="mr-3 text-blue-900 font-semibold">7.</span>
+                <span className="mr-3 text-blue-900" style={{ fontWeight: 600 }}>7.</span>
                 <span>Statute of Limitations & Timing</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-blue-900 font-semibold">8.</span>
+                <span className="mr-3 text-blue-900" style={{ fontWeight: 600 }}>8.</span>
                 <span>Hiring an Attorney</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-blue-900 font-semibold">9.</span>
+                <span className="mr-3 text-blue-900" style={{ fontWeight: 600 }}>9.</span>
                 <span>Pro Se Resources</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-blue-900 font-semibold">10.</span>
+                <span className="mr-3 text-blue-900" style={{ fontWeight: 600 }}>10.</span>
                 <span>Key Legal Terms Glossary</span>
               </li>
             </ul>
@@ -146,7 +146,7 @@ export default function CourtGuidePage() {
 
         {/* Additional Info */}
         <section className="mt-12 border-t border-[var(--bdr)] pt-8">
-          <h2 className="mb-4 text-2xl font-bold text-[var(--color-text-muted)]">
+          <h2 className="mb-4 text-[var(--color-text-muted)]" style={{ fontSize: 20, fontWeight: 700 }}>
             About This Guide
           </h2>
           <p className="mb-4 text-[var(--color-text-muted)]">
@@ -155,7 +155,7 @@ export default function CourtGuidePage() {
           <p className="mb-4 text-[var(--color-text-muted)]">
             The guide covers federal civil cases only (not criminal). It helps you understand publicly available court data and how to use tools like MyCaseValue to research cases.
           </p>
-          <p className="text-sm text-[var(--color-text-muted)]">
+          <p className="text-[var(--color-text-muted)]" style={{ fontSize: 14 }}>
             This guide is not legal advice. Always consult a licensed attorney for advice about your specific case.
           </p>
         </section>

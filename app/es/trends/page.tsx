@@ -39,7 +39,7 @@ export default function SpanishTrendsPage() {
       <div className="border-b" style={{ background: 'var(--link)', borderColor: 'var(--bdr)' }}>
         <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-2 mb-8 text-sm">
+          <nav className="flex items-center gap-2 mb-8" style={{ fontSize: 14 }}>
             <a href="/es" style={{ color: 'var(--card)' }} className="hover:opacity-80 transition-opacity">
               Inicio
             </a>
@@ -48,15 +48,15 @@ export default function SpanishTrendsPage() {
           </nav>
 
           {/* Red Accent Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px' }}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] tracking-[1.5px] uppercase mb-6"
+ style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px', fontWeight: 700 }}>
             ANÁLISIS
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4" style={{ color: 'var(--card)' }}>
+          <h1 className="font-legal mb-4" style={{ color: 'var(--card)', fontSize: 28, fontWeight: 700 }}>
             Tendencias en Casos Federales
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--card)', opacity: 0.9 }}>
+          <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--card)', opacity: 0.9, fontSize: 16 }}>
             Explora cómo están evolucionando los litigios federales año tras año.
           </p>
         </div>
@@ -72,28 +72,28 @@ export default function SpanishTrendsPage() {
 
         {/* Key Stats */}
         <section className="mt-16">
-          <h2 className="text-2xl font-legal font-bold mb-8 text-center" style={{ color: 'var(--text1)' }}>
+          <h2 className="font-legal mb-8 text-center" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             Datos Clave
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 border text-center" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
-              <div className="text-3xl font-bold mb-2" style={{ color: 'var(--link)' }}>5.1M+</div>
-              <p className="text-sm" style={{ color: 'var(--text2)' }}>Casos federales analizados</p>
+              <div className="mb-2" style={{ color: 'var(--link)', fontSize: 28, fontWeight: 700 }}>5.1M+</div>
+              <p style={{ color: 'var(--text2)', fontSize: 14 }}>Casos federales analizados</p>
             </div>
 
             <div className="p-6 border text-center" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
-              <div className="text-3xl font-bold mb-2" style={{ color: 'var(--gold)' }}>84</div>
-              <p className="text-sm" style={{ color: 'var(--text2)' }}>Tipos de casos cubiertos</p>
+              <div className="mb-2" style={{ color: 'var(--gold)', fontSize: 28, fontWeight: 700 }}>84</div>
+              <p style={{ color: 'var(--text2)', fontSize: 14 }}>Tipos de casos cubiertos</p>
             </div>
 
             <div className="p-6 border text-center" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
-              <div className="text-3xl font-bold mb-2" style={{ color: 'var(--link)' }}>94</div>
-              <p className="text-sm" style={{ color: 'var(--text2)' }}>Distritos federales</p>
+              <div className="mb-2" style={{ color: 'var(--link)', fontSize: 28, fontWeight: 700 }}>94</div>
+              <p style={{ color: 'var(--text2)', fontSize: 14 }}>Distritos federales</p>
             </div>
 
             <div className="p-6 border text-center" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
-              <div className="text-3xl font-bold mb-2" style={{ color: 'var(--gold)' }}>Gratis</div>
-              <p className="text-sm" style={{ color: 'var(--text2)' }}>Durante el lanzamiento</p>
+              <div className="mb-2" style={{ color: 'var(--gold)', fontSize: 28, fontWeight: 700 }}>Gratis</div>
+              <p style={{ color: 'var(--text2)', fontSize: 14 }}>Durante el lanzamiento</p>
             </div>
           </div>
         </section>
@@ -102,7 +102,7 @@ export default function SpanishTrendsPage() {
       {/* Available Tools Section */}
       <div style={{ background: 'var(--card)', borderTop: '1px solid var(--bdr)', padding: '48px 24px' }}>
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-2xl font-legal font-bold mb-6" style={{ color: 'var(--text1)' }}>
+          <h2 className="font-legal mb-6" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -113,7 +113,7 @@ export default function SpanishTrendsPage() {
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Buscar Casos</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Buscar Casos</h3>
               </div>
             </Link>
 
@@ -124,7 +124,7 @@ export default function SpanishTrendsPage() {
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Calculadora</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Calculadora</h3>
               </div>
             </Link>
 
@@ -135,7 +135,7 @@ export default function SpanishTrendsPage() {
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Comparar Tipos</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Comparar Tipos</h3>
               </div>
             </Link>
 
@@ -146,14 +146,14 @@ export default function SpanishTrendsPage() {
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Explorador NOS</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Explorador NOS</h3>
               </div>
             </Link>
           </div>
 
           {/* Language Switcher */}
           <div className="mt-12 p-6 text-center" style={{ background: 'var(--surf)', borderRadius: '4px' }}>
-            <p className="text-sm" style={{ color: 'var(--text2)' }}>
+            <p style={{ color: 'var(--text2)', fontSize: 14 }}>
               This page is also available in <Link href="/trends" style={{ color: 'var(--gold)', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>
           </div>

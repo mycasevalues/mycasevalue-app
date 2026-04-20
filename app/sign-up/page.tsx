@@ -644,7 +644,7 @@ export default function SignUpPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="auth-btn"
+                className="auth-btn mcv-btn mcv-btn--primary mcv-btn--lg mcv-btn--full"
                 style={{
                   width: '100%',
                   height: '48px',

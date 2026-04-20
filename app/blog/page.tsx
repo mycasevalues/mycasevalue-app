@@ -434,7 +434,7 @@ export default function BlogPage() {
                   </div>
                   <Link
  href={`/blog/${featuredPost.slug}`}
- className="inline-flex items-center gap-2 px-6 py-3 transition-all"
+ className="inline-flex items-center gap-2 px-6 py-3 transition-all mcv-btn mcv-btn--primary"
  style={{ background: 'var(--link)',
  color: 'var(--card)',
  borderRadius: '4px', fontSize: 14, fontWeight: 600 }}
@@ -684,7 +684,7 @@ export default function BlogPage() {
           </p>
           <Link
  href="/attorney"
- className="inline-flex items-center gap-2 px-8 py-3 transition-all"
+ className="inline-flex items-center gap-2 px-8 py-3 transition-all mcv-btn mcv-btn--primary mcv-btn--lg"
  style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '2px', fontSize: 14, fontWeight: 600 }}
  >
             Explore Attorney Mode

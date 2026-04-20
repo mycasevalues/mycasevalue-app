@@ -246,7 +246,7 @@ function TerminalContent() {
         <button onClick={() => setSidebarOpen(!sidebarOpen)} className="w-8 h-8 flex items-center justify-center rounded hover:bg-white/5 text-gray-400 transition-colors">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
-        <Link href="/" className="text-sm font-bold text-white tracking-tight">
+        <Link href="/" className="text-white tracking-tight" style={{ fontSize: 14, fontWeight: 700 }}>
           MCV<span className="text-[var(--link)]">.</span>
         </Link>
         <form onSubmit={(e) => { e.preventDefault(); performSearch(); }} className="flex-1 max-w-2xl flex items-center gap-2">
@@ -255,17 +255,17 @@ function TerminalContent() {
             <input
               type="text" value={query} onChange={e => setQuery(e.target.value)}
               placeholder="Search cases, dockets, parties..."
-              className="w-full h-8 pl-8 pr-3 rounded-md text-xs text-white placeholder:text-gray-500 border focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 outline-none transition-colors"
+              className="w-full h-8 pl-8 pr-3 rounded-md text-white placeholder:text-gray-500 border focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 outline-none transition-colors"
               style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }}
             />
           </div>
-          <button type="submit" className="h-8 px-3 rounded-md bg-[var(--link)] text-white text-xs font-medium hover:bg-[var(--surf)]0 transition-colors">Search</button>
+          <button type="submit" className="h-8 px-3 rounded-md bg-[var(--link)] text-white hover:bg-[var(--surf)]0 transition-colors" style={{ fontSize: 12, fontWeight: 500 }}>Search</button>
         </form>
         <div className="flex items-center gap-2">
           {/* Compact mode toggle */}
           <button
             onClick={() => setCompact(!compact)}
-            className={`h-7 px-2 rounded text-[10px] font-medium border transition-colors hidden md:flex items-center gap-1 ${compact ? 'bg-[var(--link)]/20 text-[var(--link)] border-blue-500/30' : 'text-gray-500 border-gray-700 hover:border-gray-500'}`}
+            className={`h-7 px-2 rounded text-[10px]  border transition-colors hidden md:flex items-center gap-1 ${compact ? 'bg-[var(--link)]/20 text-[var(--link)] border-blue-500/30' : 'text-gray-500 border-gray-700 hover:border-gray-500'}`}
             title={compact ? 'Switch to comfortable view' : 'Switch to compact view'}
           >
             <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -292,28 +292,28 @@ function TerminalContent() {
             <div className="p-3 space-y-4">
               {/* Filters */}
               <div>
-                <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-2">Filters</p>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-2" style={{ fontWeight: 600 }}>Filters</p>
                 <div className="space-y-2">
                   <input type="text" value={court} onChange={e => setCourt(e.target.value)} placeholder="Court (e.g. SDNY)"
-                    className="w-full h-7 px-2 rounded text-xs border outline-none focus:border-blue-500 text-gray-300 placeholder:text-gray-400"
+                    className="w-full h-7 px-2 rounded border outline-none focus:border-blue-500 text-gray-300 placeholder:text-gray-400"
                     style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }} />
                   <input type="text" value={caseType} onChange={e => setCaseType(e.target.value)} placeholder="Case type"
-                    className="w-full h-7 px-2 rounded text-xs border outline-none focus:border-blue-500 text-gray-300 placeholder:text-gray-400"
+                    className="w-full h-7 px-2 rounded border outline-none focus:border-blue-500 text-gray-300 placeholder:text-gray-400"
                     style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }} />
                   <select value={status} onChange={e => setStatus(e.target.value)}
-                    className="w-full h-7 px-2 rounded text-xs border outline-none text-gray-300"
+                    className="w-full h-7 px-2 rounded border outline-none text-gray-300"
                     style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }}>
                     <option value="">All statuses</option>
                     <option value="open">Open</option>
                     <option value="closed">Closed</option>
                   </select>
                   <select value={sort} onChange={e => setSort(e.target.value)}
-                    className="w-full h-7 px-2 rounded text-xs border outline-none text-gray-300"
+                    className="w-full h-7 px-2 rounded border outline-none text-gray-300"
                     style={{ background: 'var(--chrome-hover)', borderColor: 'var(--chrome-active)' }}>
                     <option value="newest">Newest first</option>
                     <option value="oldest">Oldest first</option>
                   </select>
-                  <button onClick={performSearch} className="w-full h-7 rounded text-xs font-medium bg-[var(--link)]/20 text-[var(--link)] hover:bg-[var(--link)]/30 transition-colors">
+                  <button onClick={performSearch} className="w-full h-7 rounded bg-[var(--link)]/20 text-[var(--link)] hover:bg-[var(--link)]/30 transition-colors" style={{ fontSize: 12, fontWeight: 500 }}>
                     Apply
                   </button>
                 </div>
@@ -322,7 +322,7 @@ function TerminalContent() {
               {/* Saved */}
               {savedCases.length > 0 && (
                 <div>
-                  <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-2">Saved ({savedCases.length})</p>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-2" style={{ fontWeight: 600 }}>Saved ({savedCases.length})</p>
                   <div className="space-y-1">
                     {savedCases.slice(0, 5).map(id => (
                       <button key={id} onClick={() => loadCase(id)}
@@ -337,7 +337,7 @@ function TerminalContent() {
               {/* Recent Searches */}
               {recentSearches.length > 0 && (
                 <div>
-                  <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-2">Recent</p>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-2" style={{ fontWeight: 600 }}>Recent</p>
                   <div className="space-y-0.5">
                     {recentSearches.slice(0, 5).map((q, i) => (
                       <button key={i} onClick={() => { setQuery(q); performSearch(); }}
@@ -351,7 +351,7 @@ function TerminalContent() {
 
               {/* Nav */}
               <div>
-                <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mb-2">Navigate</p>
+                <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-2" style={{ fontWeight: 600 }}>Navigate</p>
                 <div className="space-y-0.5">
                   {[
                     { label: 'Case Types', href: '/cases' },
@@ -360,7 +360,7 @@ function TerminalContent() {
                     { label: 'Data Sources', href: '/data-sources' },
                     { label: 'Pricing', href: '/pricing' },
                   ].map(n => (
-                    <Link key={n.href} href={n.href} className="block px-2 py-1 rounded text-xs text-gray-400 hover:bg-white/5 hover:text-gray-200 transition-colors">
+                    <Link key={n.href} href={n.href} className="block px-2 py-1 rounded text-gray-400 hover:bg-white/5 hover:text-gray-200 transition-colors" style={{ fontSize: 12 }}>
                       {n.label}
                     </Link>
                   ))}
@@ -394,7 +394,7 @@ function TerminalContent() {
           {/* Empty */}
           {!loading && hasSearched && results.length === 0 && (
             <div className="p-6 text-center">
-              <p className="text-sm text-gray-500 mb-3">No cases found.</p>
+              <p className="text-gray-500 mb-3" style={{ fontSize: 14 }}>No cases found.</p>
               <div className="flex flex-wrap justify-center gap-1.5">
                 {['Patent infringement', 'SEC v. Terraform', 'Employment discrimination'].map(q => (
                   <button key={q} onClick={() => { setQuery(q); performSearch(); }}
@@ -410,7 +410,7 @@ function TerminalContent() {
           {/* Pre-search */}
           {!loading && !hasSearched && (
             <div className="p-6 text-center">
-              <p className="text-xs text-gray-500 mb-4">Search federal court records by case name, docket number, or legal topic.</p>
+              <p className="text-gray-500 mb-4" style={{ fontSize: 12 }}>Search federal court records by case name, docket number, or legal topic.</p>
               <div className="flex flex-wrap justify-center gap-1.5">
                 {['SEC v. Terraform', 'Patent infringement', 'Civil rights', 'Employment discrimination', 'Class action'].map(q => (
                   <button key={q} onClick={() => { setQuery(q); setTimeout(performSearch, 50); }}
@@ -439,9 +439,9 @@ function TerminalContent() {
                 style={{ borderBottomColor: 'var(--chrome-hover)', borderLeftColor: selectedId === r.id ? undefined : 'transparent' }}
               >
                 <div className="flex items-start justify-between gap-2">
-                  <span className={`${compact ? 'text-[11px]' : 'text-xs'} font-medium text-gray-200 leading-snug line-clamp-1`}>{r.caseName}</span>
+                  <span className={`${compact ? 'text-[11px]' : ''}  text-gray-200 leading-snug line-clamp-1`}>{r.caseName}</span>
                   {r.status && (
-                    <span className={`flex-shrink-0 text-[9px] font-medium px-1.5 py-0.5 rounded ${r.status === 'open' ? 'bg-[var(--surf)]0/10 text-[var(--link)]' : 'bg-[var(--surf)]0/10 text-[var(--data-positive)]'}`}>
+                    <span className={`flex-shrink-0 text-[9px]  px-1.5 py-0.5 rounded ${r.status === 'open' ? 'bg-[var(--surf)]0/10 text-[var(--link)]' : 'bg-[var(--surf)]0/10 text-[var(--data-positive)]'}`}>
                       {r.status.toUpperCase()}
                     </span>
                   )}
@@ -481,7 +481,7 @@ function TerminalContent() {
                 {/* Header */}
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div>
-                    <h1 className="text-base font-bold text-white leading-snug mb-1">{caseDetail.caseName}</h1>
+                    <h1 className="text-white leading-snug mb-1" style={{ fontSize: 14, fontWeight: 700 }}>{caseDetail.caseName}</h1>
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-gray-400">
                       {caseDetail.court && <span className="text-gray-300">{caseDetail.court.name}</span>}
                       {caseDetail.docketNumber && <span>No. {caseDetail.docketNumber}</span>}
@@ -491,11 +491,11 @@ function TerminalContent() {
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0">
                     <button onClick={() => handleSave(caseDetail.id)}
-                      className={`h-7 px-2.5 rounded text-[10px] font-medium border transition-colors ${isSaved(caseDetail.id) ? 'bg-[var(--link)]/20 text-[var(--link)] border-blue-500/30' : 'text-gray-400 border-gray-700 hover:border-gray-500'}`}>
+                      className={`h-7 px-2.5 rounded text-[10px]  border transition-colors ${isSaved(caseDetail.id) ? 'bg-[var(--link)]/20 text-[var(--link)] border-blue-500/30' : 'text-gray-400 border-gray-700 hover:border-gray-500'}`}>
                       {isSaved(caseDetail.id) ? 'Saved' : 'Save'}
                     </button>
                     {caseDetail.status && (
-                      <span className={`text-[10px] font-semibold px-2 py-1 rounded ${caseDetail.status === 'open' ? 'bg-[var(--surf)]0/10 text-[var(--link)]' : 'bg-[var(--surf)]0/10 text-[var(--data-positive)]'}`}>
+                      <span className={`text-[10px]  px-2 py-1 rounded ${caseDetail.status === 'open' ? 'bg-[var(--surf)]0/10 text-[var(--link)]' : 'bg-[var(--surf)]0/10 text-[var(--data-positive)]'}`}>
                         {caseDetail.status.toUpperCase()}
                       </span>
                     )}
@@ -508,7 +508,7 @@ function TerminalContent() {
                     {/* Summary */}
                     {caseDetail.summary && (
                       <Panel title="Case Overview">
-                        <p className="text-xs text-gray-300 leading-relaxed">{caseDetail.summary.text}</p>
+                        <p className="text-gray-300 leading-relaxed" style={{ fontSize: 12 }}>{caseDetail.summary.text}</p>
                         {caseDetail.summary.confidenceNotes && caseDetail.summary.confidenceNotes !== 'No confidence notes.' && (
                           <p className="text-[10px] text-gray-500 mt-2 italic">Note: {caseDetail.summary.confidenceNotes}</p>
                         )}
@@ -524,7 +524,7 @@ function TerminalContent() {
                             return ps.length > 0 ? (
                               <div key={role}>
                                 <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">{role}s</p>
-                                {ps.map((p, i) => <p key={i} className="text-xs text-gray-300">{p.name}</p>)}
+                                {ps.map((p, i) => <p key={i} className="text-gray-300" style={{ fontSize: 12 }}>{p.name}</p>)}
                               </div>
                             ) : null;
                           })}
@@ -555,7 +555,7 @@ function TerminalContent() {
                         <div className="space-y-1">
                           {caseDetail.relatedCases.map(rc => (
                             <button key={rc.id} onClick={() => loadCase(rc.id)}
-                              className="w-full text-left px-2 py-1.5 rounded text-xs text-gray-400 hover:bg-white/5 hover:text-gray-200 transition-colors">
+                              className="w-full text-left px-2 py-1.5 rounded text-gray-400 hover:bg-white/5 hover:text-gray-200 transition-colors">
                               <span className="text-gray-300">{rc.caseName}</span>
                               <span className="text-[10px] text-gray-500 ml-2">{rc.courtAbbreviation} {rc.filingDate && new Date(rc.filingDate).getFullYear()}</span>
                             </button>
@@ -614,7 +614,7 @@ function TerminalContent() {
 
             {!caseLoading && !caseDetail && selectedId && (
               <div className="p-6 text-center">
-                <p className="text-sm text-gray-500">Case not found.</p>
+                <p className="text-gray-500" style={{ fontSize: 14 }}>Case not found.</p>
               </div>
             )}
           </div>
@@ -633,7 +633,7 @@ function Panel({ title, children, collapsible, collapsed, onToggle }: { title: s
         onClick={collapsible ? onToggle : undefined}
         className={`w-full flex items-center justify-between px-3 py-2 ${collapsible ? 'cursor-pointer hover:bg-white/[0.02]' : 'cursor-default'} transition-colors rounded-t-lg`}
       >
-        <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest">{title}</p>
+        <p className="text-[10px] text-gray-500 uppercase tracking-widest" style={{ fontWeight: 600 }}>{title}</p>
         {collapsible && (
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.5" className={`text-gray-600 transition-transform ${collapsed ? '-rotate-90' : ''}`}>
             <path d="M2 3.5L5 6.5L8 3.5" />
@@ -658,7 +658,7 @@ function MetaRow({ label, value }: { label: string; value: string }) {
 
 export default function TerminalPage() {
   return (
-    <Suspense fallback={<div className="h-screen flex items-center justify-center" style={{ background: 'var(--chrome-bg-dark)' }}><p className="text-gray-500 text-sm">Loading terminal...</p></div>}>
+    <Suspense fallback={<div className="h-screen flex items-center justify-center" style={{ background: 'var(--chrome-bg-dark)' }}><p className="text-gray-500" style={{ fontSize: 14 }}>Loading terminal...</p></div>}>
       <TerminalContent />
     </Suspense>
   );

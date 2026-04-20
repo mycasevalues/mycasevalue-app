@@ -119,7 +119,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
       <div className="border-b" style={{ borderColor: 'var(--bdr)', background: 'var(--link)' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb */}
-          <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: 'var(--card)' }}>
+          <nav className="mb-6 flex items-center gap-2" style={{ color: 'var(--card)', fontSize: 14 }}>
             <Link href="/" className="hover:opacity-80 transition-opacity">
               Home
             </Link>

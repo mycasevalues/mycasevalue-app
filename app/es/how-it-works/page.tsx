@@ -40,7 +40,7 @@ export default function SpanishHowItWorksPage() {
       <div className="border-b" style={{ background: 'var(--link)', borderColor: 'var(--bdr)' }}>
         <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-2 mb-8 text-sm">
+          <nav className="flex items-center gap-2 mb-8" style={{ fontSize: 14 }}>
             <a href="/es" style={{ color: 'var(--card)' }} className="hover:opacity-80 transition-opacity">
               Inicio
             </a>
@@ -49,15 +49,15 @@ export default function SpanishHowItWorksPage() {
           </nav>
 
           {/* Red Accent Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '4px' }}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] tracking-[1.5px] uppercase mb-6"
+ style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '4px', fontWeight: 700 }}>
             PROCESO
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-legal font-bold mb-4" style={{ color: 'var(--card)' }}>
+          <h1 className="font-legal mb-4" style={{ color: 'var(--card)', fontSize: 28, fontWeight: 700 }}>
             Cómo Funciona MyCaseValue
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--card)', opacity: 0.9 }}>
+          <p className="leading-relaxed max-w-2xl" style={{ color: 'var(--card)', opacity: 0.9, fontSize: 16 }}>
             Te mostramos datos reales de resultados federales en 60 segundos. Sin asesoramiento legal. Sin sorpresas.
           </p>
         </div>
@@ -72,14 +72,14 @@ export default function SpanishHowItWorksPage() {
             <div className="flex gap-6">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-12 w-12" style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '4px' }}>
-                  <span className="text-lg font-bold">1</span>
+                  <span style={{ fontSize: 16, fontWeight: 700 }} >1</span>
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
+                <h2 className="font-legal mb-3" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                   Describe Tu Caso
                 </h2>
-                <p style={{ color: 'var(--text2)' }} className="text-lg leading-relaxed">
+                <p style={{ color: 'var(--text2)', fontSize: 16 }} className="leading-relaxed">
                   Responde preguntas sencillas sobre tu situación: tipo de caso, estado, cuándo sucedió, y si otros están afectados. No se requiere información detallada ni personal.
                 </p>
               </div>
@@ -91,14 +91,14 @@ export default function SpanishHowItWorksPage() {
             <div className="flex gap-6">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-12 w-12" style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '4px' }}>
-                  <span className="text-lg font-bold">2</span>
+                  <span style={{ fontSize: 16, fontWeight: 700 }} >2</span>
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
+                <h2 className="font-legal mb-3" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                   Aceptas la Divulgación
                 </h2>
-                <p style={{ color: 'var(--text2)' }} className="text-lg leading-relaxed">
+                <p style={{ color: 'var(--text2)', fontSize: 16 }} className="leading-relaxed">
                   Confirmas que entiendes que MyCaseValue muestra datos históricos de casos similares, NO una predicción de tu caso específico. No es asesoramiento legal. No hay relación abogado-cliente.
                 </p>
               </div>
@@ -110,14 +110,14 @@ export default function SpanishHowItWorksPage() {
             <div className="flex gap-6">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-12 w-12" style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '4px' }}>
-                  <span className="text-lg font-bold">3</span>
+                  <span style={{ fontSize: 16, fontWeight: 700 }} >3</span>
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
+                <h2 className="font-legal mb-3" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                   Obtenemos Datos
                 </h2>
-                <p style={{ color: 'var(--text2)' }} className="text-lg leading-relaxed">
+                <p style={{ color: 'var(--text2)', fontSize: 16 }} className="leading-relaxed">
                   Nuestro sistema busca en 5.1M+ casos federales del Centro Judicial Federal, CourtListener y PACER para encontrar casos similares al tuyo.
                 </p>
               </div>
@@ -129,14 +129,14 @@ export default function SpanishHowItWorksPage() {
             <div className="flex gap-6">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-12 w-12" style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '4px' }}>
-                  <span className="text-lg font-bold">4</span>
+                  <span style={{ fontSize: 16, fontWeight: 700 }} >4</span>
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
+                <h2 className="font-legal mb-3" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                   Analizamos Resultados
                 </h2>
-                <p style={{ color: 'var(--text2)' }} className="text-lg leading-relaxed">
+                <p style={{ color: 'var(--text2)', fontSize: 16 }} className="leading-relaxed">
                   Analizamos cómo terminaron esos casos: tasas de victoria, acuerdos, desestimaciones, cronogramas típicos y factores que los tribunales consideran.
                 </p>
               </div>
@@ -148,14 +148,14 @@ export default function SpanishHowItWorksPage() {
             <div className="flex gap-6">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-12 w-12" style={{ background: 'var(--link)', color: 'var(--card)', borderRadius: '4px' }}>
-                  <span className="text-lg font-bold">5</span>
+                  <span style={{ fontSize: 16, fontWeight: 700 }} >5</span>
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
+                <h2 className="font-legal mb-3" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
                   Tu Informe
                 </h2>
-                <p style={{ color: 'var(--text2)' }} className="text-lg leading-relaxed">
+                <p style={{ color: 'var(--text2)', fontSize: 16 }} className="leading-relaxed">
                   Recibe un informe gratuito que muestra lo que sucedió en casos como el tuyo: números, tasas, cronogramas. Premium desbloqueará análisis de jueces y datos de circuitos.
                 </p>
               </div>
@@ -166,7 +166,7 @@ export default function SpanishHowItWorksPage() {
 
         {/* Key principles */}
         <section className="mt-16">
-          <h2 className="text-3xl font-legal font-bold mb-8" style={{ color: 'var(--text1)' }}>
+          <h2 className="font-legal mb-8" style={{ color: 'var(--text1)', fontSize: 28, fontWeight: 700 }}>
             Principios Clave
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -176,7 +176,7 @@ export default function SpanishHowItWorksPage() {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--text1)' }}>
+              <h3 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: 16, fontWeight: 600 }}>
                 Privacidad Extrema
               </h3>
               <p style={{ color: 'var(--text2)' }}>
@@ -191,7 +191,7 @@ export default function SpanishHowItWorksPage() {
                   <path d="M12 6v6l4 2"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--text1)' }}>
+              <h3 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: 16, fontWeight: 600 }}>
                 Instantáneo
               </h3>
               <p style={{ color: 'var(--text2)' }}>
@@ -206,7 +206,7 @@ export default function SpanishHowItWorksPage() {
                   <circle cx="12" cy="12" r="10"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-legal font-semibold mb-2" style={{ color: 'var(--text1)' }}>
+              <h3 className="font-legal mb-2" style={{ color: 'var(--text1)', fontSize: 16, fontWeight: 600 }}>
                 Basado en Hechos
               </h3>
               <p style={{ color: 'var(--text2)' }}>
@@ -218,15 +218,15 @@ export default function SpanishHowItWorksPage() {
 
         {/* CTA Section */}
         <section className="mt-16 text-center p-8 border" style={{ borderColor: 'var(--bdr)', background: 'var(--card)', borderRadius: '4px' }}>
-          <h2 className="text-2xl font-legal font-bold mb-3" style={{ color: 'var(--text1)' }}>
+          <h2 className="font-legal mb-3" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             Listo para comenzar?
           </h2>
           <p className="mb-6" style={{ color: 'var(--text2)' }}>
             Genera tu informe gratuito en 60 segundos. Sin registro requerido.
           </p>
           <a href="/odds"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '2px', background: 'var(--link)', color: 'var(--card)' }}>
+ className="inline-flex items-center gap-2 px-6 py-3 transition-all"
+ style={{ borderRadius: '2px', background: 'var(--link)', color: 'var(--card)', fontSize: 14, fontWeight: 600 }}>
             Consultar Mi Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -237,7 +237,7 @@ export default function SpanishHowItWorksPage() {
       {/* Available Tools Section */}
       <div style={{ background: 'var(--card)', borderTop: '1px solid var(--bdr)', padding: '48px 24px' }}>
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl font-legal font-bold mb-6" style={{ color: 'var(--text1)' }}>
+          <h2 className="font-legal mb-6" style={{ color: 'var(--text1)', fontSize: 20, fontWeight: 700 }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -248,7 +248,7 @@ export default function SpanishHowItWorksPage() {
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Buscar Casos</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Buscar Casos</h3>
               </div>
             </Link>
 
@@ -259,7 +259,7 @@ export default function SpanishHowItWorksPage() {
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Calculadora</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Calculadora</h3>
               </div>
             </Link>
 
@@ -270,7 +270,7 @@ export default function SpanishHowItWorksPage() {
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Comparar Tipos</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Comparar Tipos</h3>
               </div>
             </Link>
 
@@ -281,14 +281,14 @@ export default function SpanishHowItWorksPage() {
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: 'var(--text1)' }}>Explorador NOS</h3>
+                <h3 style={{ color: 'var(--text1)', fontSize: 14, fontWeight: 600 }}>Explorador NOS</h3>
               </div>
             </Link>
           </div>
 
           {/* Language Switcher */}
           <div className="mt-12 p-6 text-center" style={{ background: 'var(--surf)', borderRadius: '4px' }}>
-            <p className="text-sm" style={{ color: 'var(--text2)' }}>
+            <p style={{ color: 'var(--text2)', fontSize: 14 }}>
               This page is also available in <Link href="/how-it-works" style={{ color: 'var(--gold)', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>
           </div>
