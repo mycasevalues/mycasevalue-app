@@ -166,7 +166,7 @@ export default function Footer() {
                 marginBottom: 0,
               }}
             >
-              No enterprise price tag.
+              No enterprise contracts. No locked data.
             </p>
           </div>
 
