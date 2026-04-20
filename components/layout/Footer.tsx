@@ -81,7 +81,7 @@ const linkStyle: React.CSSProperties = {
   color: 'var(--chrome-text-muted, #8AAAC8)',
   textDecoration: 'none',
   lineHeight: 2.1,
-  transition: 'color 120ms',
+  transition: 'color 150ms',
 };
 
 /* ── Gold cube logo (20px) ── */

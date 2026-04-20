@@ -413,7 +413,7 @@ export default function BlogPage() {
                   </div>
                   <h2
  className="font-legal mb-4 transition-colors"
- style={{ fontSize: '22px', lineHeight: '1.3', color: 'var(--text1)', fontWeight: 600, fontWeight: 700 }}
+ style={{ fontSize: '20px', lineHeight: '1.3', color: 'var(--text1)', fontWeight: 600 }}
  >
                     {featuredPost.title}
                   </h2>
@@ -453,7 +453,6 @@ export default function BlogPage() {
                     <circle cx="8.5" cy="8.5" r="1.5"/>
                     <polyline points="21 15 16 10 5 21"/>
                   </svg>
-                  <p>Featured Article Image</p>
                 </div>
               </div>
             </div>

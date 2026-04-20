@@ -75,7 +75,7 @@ const BROWSE_CARDS = [
   {
     title: 'Settlement Ranges',
     description: 'Median and mean settlement data by case type, district, and year. Updated weekly from public records.',
-    stat: 'Updated weekly',
+    stat: '84 case types',
     href: '/cases',
   },
   {
