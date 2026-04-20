@@ -11,7 +11,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'MyCaseValue en Español - Datos de Casos Federales',
+  title: 'En Español — Datos de Casos Federales',
   description: 'Investiga resultados reales de 5.1M+ casos judiciales federales. Tasas de éxito, rangos de acuerdos, plazos y análisis de jueces. Gratuito, privado e instantáneo.',
   alternates: {
     canonical: `${SITE_URL}/es`,

@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Fee & Contingency Calculator — MyCaseValue',
+  title: 'Fee & Contingency Calculator',
   description: 'Calculate contingency fees and attorney costs based on expected settlement ranges and federal court outcome data for your case type.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/fee-calculator` },
   openGraph: {
     title: 'Fee & Contingency Calculator — MyCaseValue',

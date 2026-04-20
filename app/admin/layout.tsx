@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Admin Panel — MyCaseValue',
+  title: 'Admin Panel',
   description: 'Administrative dashboard for MyCaseValue platform management.',
   robots: { index: false, follow: false },
   openGraph: {

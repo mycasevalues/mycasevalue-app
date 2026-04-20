@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Case Settlement Widget — MyCaseValue',
+  title: 'Case Settlement Widget',
   robots: 'noindex, nofollow',
 };
 

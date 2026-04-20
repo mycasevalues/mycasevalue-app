@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Class Action Analytics — MyCaseValue',
+  title: 'Class Action Analytics',
   description: 'Analyze class action settlements, recovery data, and litigation outcomes.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/class-action` },
   openGraph: {
     title: 'Class Action Analytics — MyCaseValue',

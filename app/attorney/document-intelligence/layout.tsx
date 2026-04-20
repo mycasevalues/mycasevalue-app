@@ -4,7 +4,6 @@ import { SITE_URL } from '@/lib/site-config'
 export const metadata: Metadata = {
   title: 'Document Intelligence',
   description: 'AI-powered legal document analysis tool',
-  robots: { index: false },
   openGraph: {
     title: 'Document Intelligence',
     description: 'AI-powered legal document analysis tool',

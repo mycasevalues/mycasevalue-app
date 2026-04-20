@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Statute of Limitations Calculator — MyCaseValue',
+  title: 'Statute of Limitations Calculator',
   description: 'Calculate statute of limitations deadlines for federal cases by case type, discovery rule, and jurisdiction. Automated deadline tracking and alerts.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/sol-calculator` },
   openGraph: {
     title: 'Statute of Limitations Calculator — MyCaseValue',

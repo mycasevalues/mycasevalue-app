@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Motion Analytics — MyCaseValue',
+  title: 'Motion Analytics',
   description: 'Analyze motion success rates and judge tendencies. Track motion outcomes, timeline predictions, and success probabilities for your federal cases.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/motion-analytics` },
   openGraph: {
     title: 'Motion Analytics — MyCaseValue',

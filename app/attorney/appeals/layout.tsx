@@ -3,9 +3,8 @@ import { ReactNode } from 'react';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Appeals Analyzer — MyCaseValue',
+  title: 'Appeals Analyzer',
   description: 'Analyze appellate reversal rates and appeal outcomes by circuit and case type.',
-  robots: { index: false, follow: false },
   alternates: { canonical: `${SITE_URL}/attorney/appeals` },
   openGraph: {
     title: 'Appeals Analyzer — MyCaseValue',

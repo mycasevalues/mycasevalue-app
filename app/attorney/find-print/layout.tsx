@@ -3,7 +3,7 @@ import { SITE_URL } from '@/lib/site-config';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Find & Print Documents — MyCaseValue',
+  title: 'Find & Print Documents',
   description: 'Batch retrieve up to 100 legal documents by citation. Download, email, or print cases, statutes, and regulations in your preferred format.',
   alternates: { canonical: `${SITE_URL}/attorney/find-print` },
   openGraph: {

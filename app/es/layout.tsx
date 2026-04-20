@@ -7,7 +7,7 @@ import { SITE_URL } from '../../lib/site-config';
  */
 
 export const metadata: Metadata = {
-  title: 'MyCaseValue en Español',
+  title: 'En Español',
   description: 'Datos de resultados de casos federales en español. Tasas de victoria, acuerdos y cronogramas de 5.1M+ casos judiciales federales.',
   openGraph: {
     locale: 'es_ES',

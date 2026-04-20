@@ -188,6 +188,21 @@ const nextConfig = {
     // Missing /for/* audience pages → /solutions/* equivalents
     { source: '/for/academic', destination: '/solutions/academic', permanent: true },
     { source: '/for/legal-aid', destination: '/solutions/legal-aid', permanent: true },
+    // Audit consolidation: /for/* ↔ /solutions/* taxonomy unification.
+    // /solutions/* is the canonical namespace. These four were runtime redirect()
+    // pages (which emit 307/temporary) — promoted to permanent edge 301s for SEO.
+    // The 4 /for/* pages with unique content (pro-se, paralegals, researchers,
+    // students) remain in place; no /solutions/* equivalents exist yet.
+    { source: '/for/attorneys', destination: '/attorney', permanent: true },
+    { source: '/for/enterprise', destination: '/solutions/enterprise', permanent: true },
+    { source: '/for/individuals', destination: '/solutions/individuals', permanent: true },
+    { source: '/for/small-firms', destination: '/solutions/small-firms', permanent: true },
+    // /solutions/law-firms was a redirect-only stub → /solutions/small-firms
+    { source: '/solutions/law-firms', destination: '/solutions/small-firms', permanent: true },
+    // Widget generator: misfiled under /solutions/api/ — developer artifact.
+    // Move to /developers/widget; 301 the old URL + the /solutions/api index.
+    { source: '/solutions/api/widget', destination: '/developers/widget', permanent: true },
+    { source: '/solutions/api', destination: '/developers', permanent: true },
     // /report → /reports (the actual page is plural)
     { source: '/report', destination: '/reports', permanent: true },
     // /outcomes/[state] — legacy paths, send to /cases

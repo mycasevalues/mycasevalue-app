@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Legal Translator — Plain English Legal Terms — MyCaseValue',
+  title: 'Legal Translator — Plain English Legal Terms',
   description: 'Translate complex legal terminology into plain English. Understand court documents, legal filings, and case outcomes in everyday language. Free tool.',
   alternates: { canonical: `${SITE_URL}/translate` },
   openGraph: {

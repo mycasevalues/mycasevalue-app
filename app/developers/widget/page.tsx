@@ -5,12 +5,12 @@ import WidgetGenerator from '@/components/WidgetGenerator';
 export const metadata: Metadata = {
   title: 'Widget Generator',
   description: 'Build and customize embeddable case settlement widgets for your website.',
-  alternates: { canonical: `${SITE_URL}/solutions/api/widget` },
+  alternates: { canonical: `${SITE_URL}/developers/widget` },
   openGraph: {
     title: 'Widget Generator',
     description: 'Create embeddable widgets to display case settlement data on your website.',
     type: 'website',
-    url: `${SITE_URL}/solutions/api/widget`,
+    url: `${SITE_URL}/developers/widget`,
   },
 };
 
